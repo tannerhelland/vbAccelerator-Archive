@@ -1,0 +1,836 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Toolbar/vbAccelerator_ToolBar_and_CoolMenu_Control/VB6_Toolbar_Complete_Source_zip_mWinGeneral_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:08 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: mWinGeneral.bas</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: mWinGeneral.bas" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Toolbar</a>&#160;.&#160;<a href="article.html">vbAccelerator Toolbar and CoolMenu Control v3.5</a>&#160;.&#160;<a href="VB6_Toolbar_Complete_Source.html">VB6 Toolbar Complete Source</a>&#160;.&#160;mWinGeneral.bas</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="CoolMenu_Toolbar_Control_Documentation.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />CoolMenu Toolbar Control Documentation</a> (5K)</p><p /><p class="nav"><a href="VB5_Toolbar_Complete_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Toolbar Complete Source</a> (263K)</p><p class="nav"><a href="VB5_Toolbar_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Toolbar Control Binary</a> (78K)</p><p class="nav"><a href="VB5_Toolbar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Toolbar Demonstration</a> (97K)</p><p /><p class="nav"><a href="VB6_Toolbar_Complete_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Toolbar Complete Source</a> (261K)</p><p class="nav"><a href="VB6_Toolbar_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Toolbar Control Binary</a> (80K)</p><p class="nav"><a href="VB6_Toolbar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Toolbar Demonstration</a> (93K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1317</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1317&amp;type=Zip&amp;title=VB6%20Toolbar%20Complete%20Source%2Ezip%5FmWinGeneral">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 2 / 2</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:4 November 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />11 May 2003<br /><p class="update">Bug fix release to fix accelerator and chevron problems.</p><p class="update">Coolmenu accelerators caused problems - sometimes the menus
+triggered without the Alt- key being pressed, othertimes they did not trigger
+when they should.  The logic has been rewritten to correct this.</p><p class="update">Chevrons created by the toolbar did not trigger when clicked with 
+the mouse.  Fixed.  The chevron now also uses a Menu window class as a base so it
+draws in the same way as menus on the system.</p><p class="update">Some non-English keys did not work as accelerators. Fixed with code
+provided by Sergey Pitutin.</p><p class="update">The Toolbar, Rebar and ToolbarHost controls could not be hosted
+on a UserControl.  They now can. Thanks to Alexander Stetsenko for the information.</p><p class="update">The MDI buttons in the toolbar host control now render using XP
+Visual Style if appropriate.  Thanks to Nguyen Tuan Anh for the suggestion.</p><p class="update"><i>SaveLayout</i> and <i>RestoreLayout</i> (beta) methods have been
+added to the Rebar based on a method suggested by Ralph Brugger at LinkPool.  Feedback
+please!</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=7">PopupMenu DLL - Create Unlimited Popup Menus</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: mWinGeneral.bas</h1><pre>Attribute VB_Name = "mWinGeneral"
+Option Explicit
+' =========================================================================
+' mWinGeneral.bas
+'
+' vbAccelerator Toolbar control
+' Copyright  1998-2000 Steve McMahon (steve@vbaccelerator.com)
+'
+' Contains all the Windows declares required for the
+' Rebar/Toolbar/CoolMenu control.
+'
+' -------------------------------------------------------------------------
+' Visit vbAccelerator at http://vbaccelerator.com
+' =========================================================================
+
+Public Type RECT
+    left As Long
+    top As Long
+    right As Long
+    bottom As Long
+End Type
+Public Type POINTAPI
+    x As Long
+    y As Long
+End Type
+Public Type Msg
+    hwnd As Long
+    message As Long
+    wParam As Long
+    lParam As Long
+    time As Long
+    pt As POINTAPI
+End Type
+Public Type WINDOWPOS
+   hwnd As Long
+   hWndInsertAfter As Long
+   x As Long
+   y As Long
+   cx As Long
+   cy As Long
+   flags As Long
+End Type
+Public Type NCCALCSIZE_PARAMS
+   rgrc(0 To 2) As RECT
+   lppos As Long 'WINDOWPOS
+End Type
+Public Type DRAWITEMSTRUCT
+   CtlType As Long
+   CtlID As Long
+   itemID As Long
+   itemAction As Long
+   itemState As Long
+   hwndItem As Long
+   hdc As Long
+   rcItem As RECT
+   itemData As Long
+End Type
+Public Type MOUSEHOOKSTRUCT
+    pt As POINTAPI
+    hwnd As Long
+    wHitTestCode As Long
+    dwExtraInfo As Long
+End Type
+
+Public Declare Function CreateWindowEX Lib "user32" Alias "CreateWindowExA"
+ (ByVal dwExStyle As Long, ByVal lpClassName As String, ByVal lpWindowName As
+ String, ByVal dwStyle As Long, ByVal x As Long, ByVal y As Long, ByVal nWidth
+ As Long, ByVal nHeight As Long, ByVal hWndParent As Long, ByVal hMenu As Long,
+ ByVal hInstance As Long, lpParam As Any) As Long
+Public Declare Function DestroyWindow Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Any) As Long
+Public Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long) As Long
+Public Declare Function GetClassLong Lib "user32" Alias "GetClassLongA" (ByVal
+ hwnd As Long, ByVal nIndex As Long) As Long
+Public Declare Function ShowWindow Lib "user32" (ByVal hwnd As Long, ByVal
+ nCmdShow As Long) As Long
+Public Declare Function MoveWindow Lib "user32" (ByVal hwnd As Long, ByVal x As
+ Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ bRepaint As Long) As Long
+Public Declare Function SetWindowPos Lib "user32" (ByVal hwnd As Long, ByVal
+ hWndInsertAfter As Long, ByVal x As Long, ByVal y As Long, ByVal cx As Long,
+ ByVal cy As Long, ByVal wFlags As Long) As Long
+Public Declare Function getActiveWindow Lib "user32" Alias "GetActiveWindow" ()
+ As Long
+Public Declare Function GetWindow Lib "user32" (ByVal hwnd As Long, ByVal wCmd
+ As Long) As Long
+Public Const GW_OWNER = 4
+Public Const GW_HWNDNEXT = 2
+Public Const GW_CHILD = 5
+
+Public Declare Function UpdateWindow Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function InvalidateRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT, ByVal bErase As Long) As Long
+Public Declare Function InvalidateRectAsNull Lib "user32" Alias
+ "InvalidateRect" (ByVal hwnd As Long, lpRect As Any, ByVal bErase As Long) As
+ Long
+Public Declare Function LockWindowUpdate Lib "user32" (ByVal hwndLock As Long)
+ As Long
+Public Declare Function RedrawWindowAsNull Lib "user32" Alias "RedrawWindow"
+ (ByVal hwnd As Long, lprcUpdate As Any, ByVal hrgnUpdate As Long, ByVal
+ fuRedraw As Long) As Long
+Public Const RDW_ALLCHILDREN = &amp;H80
+Public Const RDW_ERASE = &amp;H4
+Public Const RDW_ERASENOW = &amp;H200
+Public Const RDW_FRAME = &amp;H400
+Public Const RDW_INTERNALPAINT = &amp;H2
+Public Const RDW_INVALIDATE = &amp;H1
+Public Const RDW_NOCHILDREN = &amp;H40
+Public Const RDW_NOERASE = &amp;H20
+Public Const RDW_NOFRAME = &amp;H800
+Public Const RDW_NOINTERNALPAINT = &amp;H10
+Public Const RDW_UPDATENOW = &amp;H100
+Public Const RDW_VALIDATE = &amp;H8
+
+Public Declare Function GetParent Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function SetParent Lib "user32" (ByVal hWndCHild As Long, ByVal
+ hWndNewParent As Long) As Long
+
+Public Declare Function ScreenToClient Lib "user32" (ByVal hwnd As Long,
+ lpPoint As POINTAPI) As Long
+Public Declare Function ClientToScreen Lib "user32" (ByVal hwnd As Long,
+ lpPoint As POINTAPI) As Long
+Public Declare Function MapWindowPoints Lib "user32" (ByVal hwndFrom As Long,
+ ByVal hWndTo As Long, lppt As Any, ByVal cPoints As Long) As Long
+Public Declare Function WindowFromPoint Lib "user32" (ByVal xPoint As Long,
+ ByVal yPoint As Long) As Long
+
+Public Declare Function IsWindow Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function IsWindowVisible Lib "user32" (ByVal hwnd As Long) As
+ Long
+Public Declare Function IsZoomed Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function GetWindowRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Public Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Public Declare Function InflateRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Public Declare Function OffsetRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Public Declare Function UnionRect Lib "user32" (lpDestRect As RECT, lpSrc1Rect
+ As RECT, lpSrc2Rect As RECT) As Long
+Public Declare Function FillRect Lib "user32" (ByVal hdc As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+Public Declare Function SetFocusAPI Lib "user32" Alias "SetFocus" (ByVal hwnd
+ As Long) As Long
+
+Public Declare Function GetProp Lib "user32" Alias "GetPropA" (ByVal hwnd As
+ Long, ByVal lpString As String) As Long
+Public Declare Function SetProp Lib "user32" Alias "SetPropA" (ByVal hwnd As
+ Long, ByVal lpString As String, ByVal hData As Long) As Long
+Public Declare Function RemoveProp Lib "user32" Alias "RemovePropA" (ByVal hwnd
+ As Long, ByVal lpString As String) As Long
+
+Public Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+Public Declare Function SendMessageLong Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Public Declare Function PostMessage Lib "user32" Alias "PostMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As Long)
+ As Long
+
+Public Declare Function ReleaseCapture Lib "user32" () As Long
+
+Declare Function GetSystemMetrics Lib "user32" (ByVal nIndex As Long) As Long
+
+Public Const SM_CYSMSIZE = 31
+Public Const SM_CXSMSIZE = 30
+Public Const SM_CXSMICON = 49
+Public Const SM_CYSMICON = 50
+
+Public Type TPMPARAMS
+    cbSize As Long
+    rcExclude As RECT
+End Type
+
+Public Type MENUITEMINFO
+    cbSize As Long
+    fMask As Long
+    fType As Long
+    fState As Long
+    wId As Long
+    hSubMenu As Long
+    hbmpChecked As Long
+    hbmpUnchecked As Long
+    dwItemData As Long
+    dwTypeData As Long
+    cch As Long
+End Type
+
+Public Declare Function GetMenu Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function SetMenu Lib "user32" (ByVal hwnd As Long, ByVal hMenu
+ As Long) As Long
+Public Declare Function GetSubMenu Lib "user32" (ByVal hMenu As Long, ByVal
+ nPos As Long) As Long
+Public Declare Function TrackPopupMenu Lib "user32" (ByVal hMenu As Long, ByVal
+ wFlags As Long, ByVal x As Long, ByVal y As Long, ByVal nReserved As Long,
+ ByVal hwnd As Long, lprc As Any) As Long
+Public Declare Function TrackPopupMenuEx Lib "user32" (ByVal hMenu As Long,
+ ByVal un As Long, ByVal n1 As Long, ByVal n2 As Long, ByVal hwnd As Long,
+ lpTPMParams As TPMPARAMS) As Long
+Public Declare Function GetCursorPos Lib "user32" (lpPoint As POINTAPI) As Long
+Public Declare Function PtInRect Lib "user32" (lpRect As RECT, ByVal x As Long,
+ ByVal y As Long) As Long
+Public Declare Function GetMenuItemCount Lib "user32" (ByVal hMenu As Long) As
+ Long
+Public Declare Function GetMenuItemInfo Lib "user32" Alias "GetMenuItemInfoA"
+ (ByVal hMenu As Long, ByVal un As Long, ByVal b As Boolean, lpMenuItemInfo As
+ MENUITEMINFO) As Long
+Public Declare Function InsertMenuItem Lib "user32" Alias "InsertMenuItemA"
+ (ByVal hMenu As Long, ByVal un As Long, ByVal bool As Boolean, lpMenuItemInfo
+ As MENUITEMINFO) As Long
+Public Declare Function GetSystemMenu Lib "user32" (ByVal hwnd As Long, ByVal
+ bRevert As Long) As Long
+Public Declare Function RemoveMenu Lib "user32" (ByVal hMenu As Long, ByVal
+ nPosition As Long, ByVal wFlags As Long) As Long
+Public Const MF_STRING = &amp;H0&amp;
+Public Const MF_POPUP = &amp;H10&amp;
+Public Const MF_BYPOSITION = &amp;H400&amp;
+Public Const MF_DISABLED = &amp;H2&amp;
+Public Const MFS_GRAYED = &amp;H3&amp;
+Public Const MFS_DISABLED = MFS_GRAYED
+Public Const MIIM_STATE = &amp;H1&amp;
+Public Const MIIM_ID = &amp;H2&amp;
+Public Const MIIM_SUBMENU = &amp;H4&amp;
+Public Const MIIM_CHECKMARKS = &amp;H8&amp;
+Public Const MIIM_TYPE = &amp;H10&amp;
+Public Const MIIM_DATA = &amp;H20&amp;
+Public Const TPM_CENTERALIGN = &amp;H4&amp;
+Public Const TPM_LEFTALIGN = &amp;H0&amp;
+Public Const TPM_LEFTBUTTON = &amp;H0&amp;
+Public Const TPM_RIGHTALIGN = &amp;H8&amp;
+Public Const TPM_RIGHTBUTTON = &amp;H2&amp;
+Public Const TPM_TOPALIGN = &amp;H0
+Public Const TPM_VCENTERALIGN = &amp;H10
+Public Const TPM_BOTTOMALIGN = &amp;H20
+Public Const TPM_HORIZONTAL = &amp;H0             '/* Horz alignment matters more */
+Public Const TPM_VERTICAL = &amp;H40              '/* Vert alignment matters more */
+Public Const TPM_NONOTIFY = &amp;H80              '/* Don't send any notification
+ msgs */
+Public Const TPM_RETURNCMD = &amp;H100
+
+Public Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" (pDest As
+ Any, pSrc As Any, ByVal ByteLen As Long)
+
+Public Type BITMAP
+    bmType As Long
+    bmWidth As Long
+    bmHeight As Long
+    bmWidthBytes As Long
+    bmPlanes As Integer
+    bmBitsPixel As Integer
+    bmBits As Long
+End Type
+Public Declare Function GetObjectAPI Lib "gdi32" Alias "GetObjectA" (ByVal
+ hObject As Long, ByVal nCount As Long, lpObject As Any) As Long
+Public Declare Function CreateDCAsNull Lib "gdi32" Alias "CreateDCA" (ByVal
+ lpDriverName As String, lpDeviceName As Any, lpOutput As Any, lpInitData As
+ Any) As Long
+Public Declare Function CreateCompatibleDC Lib "gdi32" (ByVal hdc As Long) As
+ Long
+Public Declare Function CreateCompatibleBitmap Lib "gdi32" (ByVal hdc As Long,
+ ByVal nWidth As Long, ByVal nHeight As Long) As Long
+Public Declare Function GetWindowDC Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal
+ hObject As Long) As Long
+Public Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As Long
+Public Declare Function DeleteDC Lib "gdi32" (ByVal hdc As Long) As Long
+Public Declare Function GetDC Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function ReleaseDC Lib "user32" (ByVal hwnd As Long, ByVal hdc
+ As Long) As Long
+Public Declare Function CreateRectRgn Lib "gdi32" (ByVal X1 As Long, ByVal Y1
+ As Long, ByVal X2 As Long, ByVal Y2 As Long) As Long
+Public Declare Function LoadImage Lib "user32" Alias "LoadImageA" (ByVal hInst
+ As Long, ByVal lpsz As String, ByVal un1 As Long, ByVal n1 As Long, ByVal n2
+ As Long, ByVal un2 As Long) As Long
+Public Declare Function LoadImageLong Lib "user32" Alias "LoadImageA" (ByVal
+ hInst As Long, ByVal lpsz As Long, ByVal un1 As Long, ByVal n1 As Long, ByVal
+ n2 As Long, ByVal un2 As Long) As Long
+Public Const CF_BITMAP = 2
+Public Const LR_LOADMAP3DCOLORS = &amp;H1000&amp;
+Public Const LR_LOADFROMFILE = &amp;H10
+Public Const LR_LOADTRANSPARENT = &amp;H20
+Public Const IMAGE_BITMAP = 0
+Public Declare Function DrawIconEx Lib "user32" (ByVal hdc As Long, ByVal xLeft
+ As Long, ByVal yTop As Long, ByVal hIcon As Long, ByVal cxWidth As Long, ByVal
+ cyWidth As Long, ByVal istepIfAniCur As Long, ByVal hbrFlickerFreeDraw As
+ Long, ByVal diFlags As Long) As Long
+Public Const DI_MASK = &amp;H1&amp;
+Public Const DI_IMAGE = &amp;H2&amp;
+Public Const DI_NORMAL = &amp;H3&amp;
+Public Const DI_COMPAT = &amp;H4&amp;
+Public Const DI_DEFAULTSIZE = &amp;H8&amp;
+Public Declare Function MoveToEx Lib "gdi32" (ByVal hdc As Long, ByVal x As
+ Long, ByVal y As Long, lpPoint As POINTAPI) As Long
+Public Declare Function LineTo Lib "gdi32" (ByVal hdc As Long, ByVal x As Long,
+ ByVal y As Long) As Long
+Public Declare Function DrawFrameControl Lib "user32" (ByVal lHDC As Long, tR
+ As RECT, ByVal eFlag As Long, ByVal eStyle As Long) As Long
+Public Declare Function DrawEdge Lib "user32" (ByVal hdc As Long, qrc As RECT,
+ ByVal edge As Long, ByVal grfFlags As Long) As Long
+Public Declare Function DrawCaption Lib "user32" (ByVal hwnd As Long, ByVal hdc
+ As Long, pcRect As RECT, ByVal un As Long) As Long
+Public Declare Function CreatePen Lib "gdi32" (ByVal nPenStyle As Long, ByVal
+ nWidth As Long, ByVal crColor As Long) As Long
+Public Const PS_SOLID = 0
+Public Declare Function SetTextColor Lib "gdi32" (ByVal hdc As Long, ByVal
+ crColor As Long) As Long
+Public Const TRANSPARENT = 1
+Public Const OPAQUE = 2
+Public Declare Function SetBkMode Lib "gdi32" (ByVal hdc As Long, ByVal nBkMode
+ As Long) As Long
+Public Declare Function CreateSolidBrush Lib "gdi32" (ByVal crColor As Long) As
+ Long
+Public Declare Function GetSysColorBrush Lib "user32" (ByVal nIndex As Long) As
+ Long
+Public Declare Function OleTranslateColor Lib "oleaut32.dll" (ByVal lOleColor
+ As Long, ByVal lHPalette As Long, lColorRef As Long) As Long
+Public Declare Function BitBlt Lib "gdi32" (ByVal hDestDC As Long, ByVal x As
+ Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal dwRop As Long)
+ As Long
+Public Declare Function DrawText Lib "user32" Alias "DrawTextA" (ByVal hdc As
+ Long, ByVal lpStr As String, ByVal nCount As Long, lpRect As RECT, ByVal
+ wFormat As Long) As Long
+' General Win declares:
+Public Declare Function GetSysColor Lib "user32" (ByVal nIndex As Long) As Long
+' Sys colours:
+Public Const COLOR_WINDOWFRAME = 6
+Public Const COLOR_BTNFACE = 15
+Public Const COLOR_BTNTEXT = 18
+Public Const COLOR_INACTIVECAPTION = 3
+Public Const COLOR_ACTIVEBORDER = 10
+Public Const COLOR_ACTIVECAPTION = 2
+Public Const COLOR_INACTIVEBORDER = 11
+Public Const COLOR_GRADIENTACTIVECAPTION = 27
+Public Const COLOR_GRADIENTINACTIVECAPTION = 28
+Public Declare Function SetWindowTheme Lib "uxtheme.dll" (ByVal hwnd As Long,
+ ByVal pszSubAppName As Long, ByVal pszSubIdList As Long) As Long
+
+Public Declare Function SystemParametersInfo Lib "user32" Alias
+ "SystemParametersInfoA" (ByVal uAction As Long, ByVal uParam As Long, ByRef
+ lpvParam As Any, ByVal fuWinIni As Long) As Long
+Public Const SPI_GETGRADIENTCAPTIONS = &amp;H1008&amp;
+
+Public Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Long) As
+ Integer
+Public Declare Function FindWindowEx Lib "user32" Alias "FindWindowExA" (ByVal
+ hWnd1 As Long, ByVal hWnd2 As Long, ByVal lpsz1 As String, lpsz2 As Any) As
+ Long
+Public Declare Function GetClassName Lib "user32" Alias "GetClassNameA" (ByVal
+ hwnd As Long, ByVal lpClassName As String, ByVal nMaxCount As Long) As Long
+
+Public Const ICON_SMALL = 0
+Public Const ICON_BIG = 1
+Public Const WM_GETICON = &amp;H7F&amp;
+
+Public Const ODT_BUTTON = 4
+
+' Syscommand values:
+Public Const SC_MOVE = &amp;HF012&amp;
+Public Const SC_MINIMIZE = &amp;HF020&amp;
+Public Const SC_CLOSE = &amp;HF060&amp;
+Public Const SC_KEYMENU = &amp;HF100&amp;
+
+'Window Styles:
+Public Const WS_OVERLAPPED = &amp;H0&amp;
+Public Const WS_MINIMIZE = &amp;H20000000
+Public Const WS_DISABLED = &amp;H8000000
+Public Const WS_MAXIMIZE = &amp;H1000000
+Public Const WS_CAPTION = &amp;HC00000           '     /* WS_BORDER | WS_DLGFRAME 
+ */
+Public Const WS_VSCROLL = &amp;H200000
+Public Const WS_HSCROLL = &amp;H100000
+Public Const WS_SYSMENU = &amp;H80000
+Public Const WS_THICKFRAME = &amp;H40000
+Public Const WS_GROUP = &amp;H20000
+Public Const WS_TABSTOP = &amp;H10000
+Public Const WS_MINIMIZEBOX = &amp;H20000
+Public Const WS_MAXIMIZEBOX = &amp;H10000
+
+Public Const WS_POPUP = &amp;H80000000
+Public Const WS_CHILD = &amp;H40000000
+Public Const WS_VISIBLE = &amp;H10000000
+Public Const WS_CLIPCHILDREN = &amp;H2000000
+Public Const WS_CLIPSIBLINGS = &amp;H4000000
+Public Const WS_BORDER = &amp;H800000
+Public Const WS_DLGFRAME = &amp;H400000
+
+Public Const WS_EX_DLGMODALFRAME = &amp;H1&amp;
+Public Const WS_EX_NOPARENTNOTIFY = &amp;H4&amp;
+Public Const WS_EX_TOPMOST = &amp;H8&amp;
+Public Const WS_EX_ACCEPTFILES = &amp;H10&amp;
+Public Const WS_EX_TRANSPARENT = &amp;H20&amp;
+Public Const WS_EX_MDICHILD = &amp;H40&amp;
+Public Const WS_EX_TOOLWINDOW = &amp;H80&amp;
+Public Const WS_EX_WINDOWEDGE = &amp;H100&amp;
+Public Const WS_EX_CLIENTEDGE = &amp;H200&amp;
+Public Const WS_EX_CONTEXTHELP = &amp;H400&amp;
+Public Const WS_EX_RIGHT = &amp;H1000&amp;
+Public Const WS_EX_LEFT = &amp;H0&amp;
+Public Const WS_EX_RTLREADING = &amp;H2000&amp;
+Public Const WS_EX_LTRREADING = &amp;H0&amp;
+Public Const WS_EX_LEFTSCROLLBAR = &amp;H4000&amp;
+Public Const WS_EX_RIGHTSCROLLBAR = &amp;H0&amp;
+Public Const WS_EX_CONTROLPARENT = &amp;H10000
+Public Const WS_EX_STATICEDGE = &amp;H20000
+Public Const WS_EX_APPWINDOW = &amp;H40000
+Public Const WS_EX_OVERLAPPEDWINDOW = WS_EX_WINDOWEDGE Or WS_EX_CLIENTEDGE
+Public Const WS_EX_PALETTEWINDOW = (WS_EX_WINDOWEDGE Or WS_EX_TOOLWINDOW Or
+ WS_EX_TOPMOST)
+Public Const WS_EX_NOACTIVATE = &amp;H8000000
+
+Public Const CW_USEDEFAULT = &amp;H80000000
+
+' Class long values:
+Public Const GCL_HICON = (-14)
+Public Const GCL_HICONSM = (-34)
+
+' Messages:
+Public Const WM_DESTROY = &amp;H2
+Public Const WM_CLOSE = &amp;H10
+Public Const WM_SIZE = &amp;H5
+Public Const WM_ACTIVATE = &amp;H6
+Public Const WM_SETFOCUS = &amp;H7
+Public Const WM_KILLFOCUS = &amp;H8
+Public Const WM_PAINT = &amp;HF
+Public Const WM_ERASEBKGND = &amp;H14
+Public Const WM_SHOWWINDOW = &amp;H18
+Public Const WM_ACTIVATEAPP = &amp;H1C
+Public Const WM_CANCELMODE = &amp;H1F
+Public Const WM_SETCURSOR = &amp;H20
+Public Const WM_GETMINMAXINFO = &amp;H24
+Public Const WM_DRAWITEM = &amp;H2B
+Public Const WM_WINDOWPOSCHANGING = &amp;H46
+Public Const WM_WINDOWPOSCHANGED = &amp;H47
+Public Const WM_NOTIFY = &amp;H4E
+Public Const WM_NCHITTEST = &amp;H84
+Public Const WM_STYLECHANGED = &amp;H7D
+Public Const WM_NCCALCSIZE = &amp;H83
+Public Const WM_NCPAINT = &amp;H85
+Public Const WM_NCACTIVATE = &amp;H86
+Public Const WM_NCLBUTTONDOWN = &amp;HA1
+Public Const WM_NCMBUTTONDOWN = &amp;HA7
+Public Const WM_NCRBUTTONDOWN = &amp;HA4
+Public Const WM_KEYDOWN = &amp;H100
+Public Const WM_KEYUP = &amp;H101
+Public Const WM_COMMAND = &amp;H111
+Public Const WM_SYSCOMMAND = &amp;H112
+Public Const WM_INITMENU = &amp;H116
+Public Const WM_INITMENUPOPUP = &amp;H117
+Public Const WM_MENUSELECT = &amp;H11F
+Public Const WM_MENUCHAR = &amp;H120
+Public Const WM_EXITSIZEMOVE = &amp;H232
+Public Const WM_MOUSEMOVE = &amp;H200
+Public Const WM_LBUTTONDOWN = &amp;H201
+Public Const WM_LBUTTONUP = &amp;H202
+Public Const WM_RBUTTONDOWN = &amp;H204
+Public Const WM_RBUTTONUP = &amp;H205
+Public Const WM_MBUTTONDOWN = &amp;H207
+Public Const WM_MBUTTONUP = &amp;H208
+Public Const WM_PARENTNOTIFY = &amp;H210
+Public Const WM_ENTERMENULOOP = &amp;H211
+Public Const WM_EXITMENULOOP = &amp;H212
+Public Const WM_MDIACTIVATE = &amp;H222
+Public Const WM_MDIRESTORE = &amp;H223
+Public Const WM_MDIMAXIMIZE = &amp;H225
+Public Const WM_MDIGETACTIVE = &amp;H229
+Public Const WM_MDISETMENU = &amp;H230
+Public Const WM_USER = &amp;H400
+
+
+' WM_NCHITTEST return values:
+Public Const HTBORDER = 18
+Public Const HTBOTTOM = 15
+Public Const HTBOTTOMLEFT = 16
+Public Const HTBOTTOMRIGHT = 17
+Public Const HTCAPTION = 2
+Public Const HTCLIENT = 1
+Public Const HTERROR = (-2)
+Public Const HTGROWBOX = 4
+Public Const HTHSCROLL = 6
+Public Const HTLEFT = 10
+Public Const HTMAXBUTTON = 9
+Public Const HTMENU = 5
+Public Const HTMINBUTTON = 8
+Public Const HTNOWHERE = 0
+Public Const HTRIGHT = 11
+Public Const HTSYSMENU = 3
+Public Const HTTOP = 12
+Public Const HTTOPLEFT = 13
+Public Const HTTOPRIGHT = 14
+Public Const HTTRANSPARENT = (-1)
+Public Const HTVSCROLL = 7
+Public Const HTREDUCE = HTMINBUTTON
+Public Const HTSIZE = HTGROWBOX
+Public Const HTSIZEFIRST = HTLEFT
+Public Const HTSIZELAST = HTBOTTOMRIGHT
+Public Const HTZOOM = HTMAXBUTTON
+
+' WM_NCCALCSIZE return values;
+Public Const WVR_ALIGNBOTTOM = &amp;H40
+Public Const WVR_ALIGNLEFT = &amp;H20
+Public Const WVR_ALIGNRIGHT = &amp;H80
+Public Const WVR_ALIGNTOP = &amp;H10
+Public Const WVR_HREDRAW = &amp;H100
+Public Const WVR_VALIDRECTS = &amp;H400
+Public Const WVR_VREDRAW = &amp;H200
+Public Const WVR_REDRAW = (WVR_HREDRAW Or WVR_VREDRAW)
+
+' Window Long:
+Public Const GWL_STYLE = (-16)
+Public Const GWL_EXSTYLE = (-20)
+Public Const GWL_USERDATA = (-21)
+Public Const GWL_WNDPROC = -4
+Public Const GWL_HWNDPARENT = (-8)
+
+' WM_ACTIVATE wParam LoWords:
+Public Const WA_INACTIVE = 0
+Public Const WA_CLICKACTIVE = 2
+Public Const WA_ACTIVE = 1
+
+' Show window
+Public Const SW_SHOW = 5
+Public Const SW_HIDE = 0
+Public Const SW_SHOWNORMAL = 1
+
+' SetWIndowPos
+Public Const HWND_TOPMOST = -1
+Public Const HWND_DESKTOP = 0
+Public Const SWP_NOSIZE = &amp;H1
+Public Const SWP_NOMOVE = &amp;H2
+Public Const SWP_NOREDRAW = &amp;H8
+Public Const SWP_SHOWWINDOW = &amp;H40
+Public Const SWP_FRAMECHANGED = &amp;H20        '  The frame changed: send
+ WM_NCCALCSIZE
+Public Const SWP_DRAWFRAME = SWP_FRAMECHANGED
+Public Const SWP_HIDEWINDOW = &amp;H80
+Public Const SWP_NOACTIVATE = &amp;H10
+Public Const SWP_NOCOPYBITS = &amp;H100
+Public Const SWP_NOOWNERZORDER = &amp;H200      '  Don't do owner Z ordering
+Public Const SWP_NOREPOSITION = SWP_NOOWNERZORDER
+Public Const SWP_NOZORDER = &amp;H4
+
+' DrawFrameControl:
+Public Const DFC_CAPTION = 1
+Public Const DFC_MENU = 2
+Public Const DFC_SCROLL = 3
+Public Const DFC_BUTTON = 4
+'#if(WINVER &gt;= =&amp;H0500)
+Public Const DFC_POPUPMENU = 5
+'#endif /* WINVER &gt;= =&amp;H0500 */
+
+Public Const DFCS_CAPTIONCLOSE = &amp;H0
+Public Const DFCS_CAPTIONMIN = &amp;H1
+Public Const DFCS_CAPTIONMAX = &amp;H2
+Public Const DFCS_CAPTIONRESTORE = &amp;H3
+Public Const DFCS_CAPTIONHELP = &amp;H4
+
+Public Const DFCS_INACTIVE = &amp;H100
+Public Const DFCS_PUSHED = &amp;H200
+Public Const DFCS_CHECKED = &amp;H400
+
+' DrawEdge:
+Public Const BDR_RAISEDOUTER = &amp;H1
+Public Const BDR_SUNKENOUTER = &amp;H2
+Public Const BDR_RAISEDINNER = &amp;H4
+Public Const BDR_SUNKENINNER = &amp;H8
+
+Public Const BDR_OUTER = &amp;H3
+Public Const BDR_INNER = &amp;HC
+Public Const BDR_RAISED = &amp;H5
+Public Const BDR_SUNKEN = &amp;HA
+
+Public Const EDGE_RAISED = (BDR_RAISEDOUTER Or BDR_RAISEDINNER)
+Public Const EDGE_SUNKEN = (BDR_SUNKENOUTER Or BDR_SUNKENINNER)
+Public Const EDGE_ETCHED = (BDR_SUNKENOUTER Or BDR_RAISEDINNER)
+Public Const EDGE_BUMP = (BDR_RAISEDOUTER Or BDR_SUNKENINNER)
+
+Public Const BF_LEFT = &amp;H1
+Public Const BF_TOP = &amp;H2
+Public Const BF_RIGHT = &amp;H4
+Public Const BF_BOTTOM = &amp;H8
+
+Public Const BF_TOPLEFT = (BF_TOP Or BF_LEFT)
+Public Const BF_TOPRIGHT = (BF_TOP Or BF_RIGHT)
+Public Const BF_BOTTOMLEFT = (BF_BOTTOM Or BF_LEFT)
+Public Const BF_BOTTOMRIGHT = (BF_BOTTOM Or BF_RIGHT)
+Public Const BF_RECT = (BF_LEFT Or BF_TOP Or BF_RIGHT Or BF_BOTTOM)
+
+Public Const BF_MIDDLE = &amp;H800         '/* Fill in the middle */
+Public Const BF_SOFT = &amp;H1000          '/* For softer buttons */
+Public Const BF_ADJUST = &amp;H2000        '/* Calculate the space left over */
+Public Const BF_FLAT = &amp;H4000          '/* For flat rather than 3D borders */
+Public Const BF_MONO = &amp;H8000&amp;          '/* For monochrome borders */
+
+' Button control:
+Public Const BM_GETCHECK = &amp;HF0&amp;
+Public Const BM_GETSTATE = &amp;HF2&amp;
+Public Const BST_UNCHECKED = &amp;H0&amp;
+Public Const BST_CHECKED = &amp;H1&amp;
+Public Const BST_INDETERMINATE = &amp;H2&amp;
+Public Const BST_PUSHED = &amp;H4&amp;
+Public Const BST_FOCUS = &amp;H8&amp;
+
+' flags for DrawCaption
+Public Const DC_ACTIVE = &amp;H1
+Public Const DC_SMALLCAP = &amp;H2
+Public Const DC_ICON = &amp;H4
+Public Const DC_TEXT = &amp;H8
+Public Const DC_INBUTTON = &amp;H10
+'#if(WINVER &gt;= 0x0500)
+Public Const DC_GRADIENT = &amp;H20
+'#endif /* WINVER &gt;= 0x0500 */
+
+' Draw text
+Public Const DT_LEFT = &amp;H0
+Public Const DT_CENTER = &amp;H1
+Public Const DT_VCENTER = &amp;H4
+Public Const DT_SINGLELINE = &amp;H20
+Public Const DT_BOTTOM = &amp;H8
+
+#Const DEBUGMSGBOX = 0
+ 
+ 
+Public Declare Function VkKeyScanEx Lib "user32" _
+    Alias "VkKeyScanExA" (ByVal ch As Byte, _
+    ByVal dwhkl As Long) As Integer
+Public Declare Function GetKeyboardLayoutList Lib "user32" _
+    (ByVal nBuff As Long, lpList As Long) As Long
+'Public Declare Function SystemParametersInfo Lib "user32" _
+    Alias "SystemParametersInfoA" (ByVal uAction As Long, _
+    ByVal uParam As Long, lpvParam As Any, ByVal fuWinIni As Long) As Long
+Public Const SPI_GETDEFAULTINPUTLANG = 89
+
+
+'&lt;CSCM&gt;
+'-------------------------------------------------------------------------------
+-
+' Project    :       ABToolBar3
+' Procedure  :       CharToKeyCode
+' Created by :       Sergey Pitutin
+' Machine    :       ATHLONXP
+' Date-Time  :       19.01.2003-22:48:51
+'
+' Parameters :       ch
+'                    iLang
+'-------------------------------------------------------------------------------
+-
+'&lt;/CSCM&gt;
+Public Function CharToKeyCode(ch As String, _
+    Optional iLang As Integer = &amp;H409) As Integer
+Static nLayouts As Long, Layouts() As Long
+Dim i As Long, bChar As Byte, iKey As Integer, iLay As Long, DefLay As Long
+
+If Len(ch) &lt;&gt; 1&amp; Then Exit Function
+bChar = Asc(ch)
+If bChar &gt;= 65 And bChar &lt;= 122 Then 'between 'A' and 'z' - english
+    CharToKeyCode = Asc(UCase$(ch))
+    Exit Function
+End If
+SystemParametersInfo SPI_GETDEFAULTINPUTLANG, 0&amp;, DefLay, 0&amp;
+If iLang = (DefLay And &amp;HFFFF&amp;) Then
+' Specified language is on the default layout
+    iKey = VkKeyScanEx(bChar, DefLay) And &amp;HFF
+    If iKey &lt;&gt; 255 Then
+        CharToKeyCode = iKey
+    End If
+    Exit Function
+End If
+' Initialize Layouts array
+If nLayouts = 0&amp; Then
+    nLayouts = GetKeyboardLayoutList(0&amp;, ByVal 0&amp;)
+    ReDim Layouts(0&amp; To nLayouts - 1&amp;)
+    GetKeyboardLayoutList nLayouts, Layouts(0&amp;)
+End If
+' Search for layout with specified language
+For i = 0&amp; To nLayouts - 1&amp;
+    If iLang = (Layouts(i) And &amp;HFFFF&amp;) Then
+        iKey = VkKeyScanEx(bChar, Layouts(i)) And &amp;HFF
+        If iKey &lt;&gt; 255 Then
+            CharToKeyCode = iKey
+        End If
+        Exit Function
+    End If
+Next
+' Not found - search char on default layout
+iKey = VkKeyScanEx(bChar, DefLay) And &amp;HFF
+If (iKey &lt;&gt; 255) And (iKey &lt;&gt; 0) Then
+    CharToKeyCode = iKey
+    Exit Function
+End If
+' Not found - search char on any layout
+For i = 0&amp; To nLayouts - 1&amp;
+    iKey = VkKeyScanEx(bChar, Layouts(i)) And &amp;HFF
+    If (iKey &lt;&gt; 255) And (iKey &lt;&gt; 0) Then
+        CharToKeyCode = iKey
+        Exit Function
+    End If
+Next
+End Function
+ 
+Public Sub debugmsg(ByVal sMsg As String)
+#If DEBUGMSGBOX = 1 Then
+   MsgBox sMsg, vbInformation
+#Else
+   Debug.Print sMsg
+#End If
+End Sub
+
+Public Property Get BlendColor( _
+      ByVal oColorFrom As OLE_COLOR, _
+      ByVal oColorTo As OLE_COLOR, _
+      Optional ByVal alpha As Long = 128 _
+   ) As Long
+Dim lCFrom As Long
+Dim lCTo As Long
+   lCFrom = TranslateColor(oColorFrom)
+   lCTo = TranslateColor(oColorTo)
+Dim lSrcR As Long
+Dim lSrcG As Long
+Dim lSrcB As Long
+Dim lDstR As Long
+Dim lDstG As Long
+Dim lDstB As Long
+   lSrcR = lCFrom And &amp;HFF
+   lSrcG = (lCFrom And &amp;HFF00&amp;) \ &amp;H100&amp;
+   lSrcB = (lCFrom And &amp;HFF0000) \ &amp;H10000
+   lDstR = lCTo And &amp;HFF
+   lDstG = (lCTo And &amp;HFF00&amp;) \ &amp;H100&amp;
+   lDstB = (lCTo And &amp;HFF0000) \ &amp;H10000
+     
+   
+   BlendColor = RGB( _
+      ((lSrcR * alpha) / 255) + ((lDstR * (255 - alpha)) / 255), _
+      ((lSrcG * alpha) / 255) + ((lDstG * (255 - alpha)) / 255), _
+      ((lSrcB * alpha) / 255) + ((lDstB * (255 - alpha)) / 255) _
+      )
+      
+End Property
+
+Public Property Get VSNetControlColor() As Long
+   VSNetControlColor = BlendColor(vbButtonFace, VSNetBackgroundColor, 195)
+End Property
+
+Public Property Get VSNetBackgroundColor() As Long
+   VSNetBackgroundColor = BlendColor(vbWindowBackground, vbButtonFace, 220)
+End Property
+Public Property Get VSNetCheckedColor() As Long
+   VSNetCheckedColor = BlendColor(vbHighlight, vbWindowBackground, 30)
+End Property
+Public Property Get VSNetBorderColor() As Long
+   VSNetBorderColor = TranslateColor(vbHighlight)
+End Property
+Public Property Get VSNetSelectionColor() As Long
+   VSNetSelectionColor = BlendColor(vbHighlight, vbWindowBackground, 70)
+End Property
+Public Property Get VSNetPressedColor() As Long
+   VSNetPressedColor = BlendColor(vbHighlight, VSNetSelectionColor, 70)
+End Property
+Public Function TranslateColor(ByVal oClr As OLE_COLOR, _
+                        Optional hPal As Long = 0) As Long
+    ' Convert Automation color to Windows color
+    If OleTranslateColor(oClr, hPal, TranslateColor) Then
+        TranslateColor = -1
+    End If
+End Function
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Toolbar</a>&#160;.&#160;<a href="article.html">vbAccelerator Toolbar and CoolMenu Control v3.5</a>&#160;.&#160;<a href="VB6_Toolbar_Complete_Source.html">VB6 Toolbar Complete Source</a>&#160;.&#160;mWinGeneral.bas</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 May 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Toolbar/vbAccelerator_ToolBar_and_CoolMenu_Control/VB6_Toolbar_Complete_Source_zip_mWinGeneral_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:08 GMT -->
+</html>

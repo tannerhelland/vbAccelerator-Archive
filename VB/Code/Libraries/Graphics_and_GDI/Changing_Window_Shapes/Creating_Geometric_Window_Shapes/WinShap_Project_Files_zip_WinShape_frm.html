@@ -1,0 +1,381 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Changing_Window_Shapes/Creating_Geometric_Window_Shapes/WinShap_Project_Files_zip_WinShape_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:55 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: WinShape.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: WinShape.frm" /><link rel="stylesheet" href="../../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../../index.html">VB</a>&#160;.&#160;<a href="../../../../index.html">Code</a>&#160;.&#160;<a href="../../../index.html">Libraries</a>&#160;.&#160;<a href="../../index.html">Graphics and GDI</a>&#160;.&#160;<a href="../index.html">Changing Window Shapes</a>&#160;.&#160;<a href="article.html">A window that's star-shaped, circular or tank-shaped</a>&#160;.&#160;<a href="WinShap_Project_Files.html">WinShap Project Files</a>&#160;.&#160;WinShape.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="WinShap_Project_Files.html"><img src="../../../../../../res/get.png" width="8" height="8" alt="Download Page" />WinShap Project Files</a> (28K)</p><br /><br /><img src="../../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2870</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2870&amp;type=Zip&amp;title=WinShap%20Project%20Files%2Ezip%5FWinShape">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../../res/update.png" width="8" height="8" alt="Update" />13 Aug 1999<br />First Posted</p><br /><br /><img src="../../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: WinShape.frm</h1><pre>VERSION 5.00
+Begin VB.Form frmShape 
+   Caption         =   "WindowShaper"
+   ClientHeight    =   3195
+   ClientLeft      =   5280
+   ClientTop       =   1995
+   ClientWidth     =   3660
+   ControlBox      =   0   'False
+   BeginProperty Font 
+      Name            =   "Arial"
+      Size            =   20.25
+      Charset         =   0
+      Weight          =   700
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "WinShape.frx":0000
+   LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
+   ScaleHeight     =   3195
+   ScaleWidth      =   3660
+   Begin VB.Menu mnuTop 
+      Caption         =   " "
+      Begin VB.Menu mnuRight 
+         Caption         =   "&amp;Move"
+         Index           =   0
+      End
+      Begin VB.Menu mnuRight 
+         Caption         =   "-"
+         Index           =   1
+      End
+      Begin VB.Menu mnuRight 
+         Caption         =   "&amp;Title Bar"
+         Checked         =   -1  'True
+         Index           =   2
+      End
+      Begin VB.Menu mnuRight 
+         Caption         =   "&amp;Shape"
+         Index           =   3
+         Begin VB.Menu mnuShape 
+            Caption         =   "&amp;Normal"
+            Checked         =   -1  'True
+            Index           =   0
+         End
+         Begin VB.Menu mnuShape 
+            Caption         =   "&amp;Round Rectangle"
+            Index           =   1
+         End
+         Begin VB.Menu mnuShape 
+            Caption         =   "&amp;Ellipse"
+            Index           =   2
+         End
+         Begin VB.Menu mnuShape 
+            Caption         =   "&amp;Star"
+            Index           =   3
+         End
+         Begin VB.Menu mnuShape 
+            Caption         =   "&amp;Ladder"
+            Index           =   4
+         End
+         Begin VB.Menu mnuShape 
+            Caption         =   "&amp;Holed!"
+            Index           =   5
+         End
+         Begin VB.Menu mnuShape 
+            Caption         =   "&amp;What?"
+            Index           =   6
+         End
+      End
+      Begin VB.Menu mnuRight 
+         Caption         =   "-"
+         Index           =   4
+      End
+      Begin VB.Menu mnuRight 
+         Caption         =   "&amp;Close"
+         Index           =   5
+      End
+   End
+End
+Attribute VB_Name = "frmShape"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+' Shape options:
+Private Enum EWSShapes
+    wshpNone = 0
+    wshpRoundRectangle = 1
+    wshpEllipse = 2
+    wshpStar = 3
+    wshpLadder = 4
+    wshpHoled = 5
+    wshpWhat = 6
+End Enum
+Private m_eShape As EWSShapes
+
+' Write text on the form:
+Private Declare Function DrawText Lib "user32" Alias "DrawTextA" (ByVal hdc As
+ Long, ByVal lpStr As String, ByVal nCount As Long, lpRect As RECT, ByVal
+ wFormat As Long) As Long
+Private Type RECT
+    left As Long
+    top As Long
+    right As Long
+    bottom As Long
+End Type
+
+' Move the windows with the keys:
+Private Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal
+ hWnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+    Private Const SC_MOVE = &amp;HF010&amp;
+    Private Const WM_SYSCOMMAND = &amp;H112
+
+' Move the window with the mouse:
+Private Declare Function SetCapture Lib "user32" (ByVal hWnd As Long) As Long
+Private Declare Function ReleaseCapture Lib "user32" () As Long
+Private Declare Function GetCursorPos Lib "user32" (lpPoint As POINTAPI) As Long
+Private m_bMoving As Boolean
+Private m_sXOffset As Single
+Private m_sYOffset As Single
+
+Private Property Get TitleBar() As Boolean
+    TitleBar = (Me.Caption &lt;&gt; "")
+End Property
+Private Property Let TitleBar(ByVal bTitlebar As Boolean)
+    If (TitleBar &lt;&gt; bTitlebar) Then
+        If (bTitlebar) Then
+            Me.Caption = "WindowShaper"
+        Else
+            Me.Caption = ""
+        End If
+    End If
+End Property
+Private Property Get Shape() As EWSShapes
+    Shape = m_eShape
+End Property
+Private Property Let Shape(ByVal eShape As EWSShapes)
+Dim hRgn As Long
+Dim lW As Long
+Dim lH As Long
+Dim i As Integer
+Dim hR1 As Long, hR2 As Long, lR As Long
+Dim lL As Long, lT As Long, lW1 As Long, lH1 As Long
+    
+    If (eShape &lt;&gt; m_eShape) Then
+    
+        For i = wshpNone To wshpWhat
+            mnuShape(i).Checked = (i = eShape)
+        Next i
+    
+        ' Get size in pixels:
+        lW = Me.Width \ Screen.TwipsPerPixelX
+        lH = Me.Height \ Screen.TwipsPerPixelY
+        
+        ' Create a region of the appropriate shape:
+        Select Case eShape
+        Case wshpNone
+            ' Select a Region = 0 to reset:
+            hRgn = 0
+        Case wshpRoundRectangle
+            ' Simple region:
+            hRgn = CreateRoundRectRgn(0, 0, lW, lH, 64, 64)
+        Case wshpEllipse
+            ' Simple region:
+            hRgn = CreateEllipticRgn(0, 0, lW, lH)
+        Case wshpStar
+            ' A polygon region:
+            Dim tStar(0 To 10) As POINTAPI
+            ' This is not geometrically correct, but gives the idea...
+            tStar(0).X = lW \ 2: tStar(0).Y = 0
+            tStar(1).X = (lW * 2) \ 3: tStar(1).Y = lH \ 3
+            tStar(2).X = lW: tStar(2).Y = tStar(1).Y
+            tStar(3).X = (lW * 9) \ 12: tStar(3).Y = (lH * 7) \ 12
+            tStar(4).X = lW: tStar(4).Y = lH
+            tStar(5).X = lW \ 2: tStar(5).Y = (lH * 9) \ 12
+            tStar(6).X = 0: tStar(6).Y = tStar(4).Y
+            tStar(7).X = (lW * 3) \ 12: tStar(7).Y = tStar(3).Y
+            tStar(8).X = 0: tStar(8).Y = tStar(2).Y
+            tStar(9).X = lW \ 3: tStar(9).Y = tStar(1).Y
+            LSet tStar(10) = tStar(0)
+            hRgn = CreatePolygonRgn(tStar(0), 11, WINDING)
+        Case wshpLadder
+            ' OR Combine two rectangular regions:
+            hR1 = CreateRectRgn(0, 0, lW / 2, lH / 2)
+            hR2 = CreateRectRgn(lW / 2, lH / 2, lW, lH)
+            hRgn = CreateRectRgn(0, 0, 0, 0)
+            ' NB the destination must be a valid region handle before this is
+             called:
+            lR = CombineRgn(hRgn, hR1, hR2, RGN_OR)
+            DeleteObject hR1
+            DeleteObject hR2
+        Case wshpHoled
+            ' Difference Combine two rectangular regions:
+            hR1 = CreateRectRgn(0, 0, lW, lH)
+            hR2 = CreateRectRgn(lW / 4, lH / 4, lW * 3 / 4, lH * 3 / 4)
+            hRgn = CreateRectRgn(0, 0, 0, 0)
+            lR = CombineRgn(hRgn, hR1, hR2, RGN_DIFF)
+            DeleteObject hR1
+            DeleteObject hR2
+        Case wshpWhat
+            ' OR a random set of regions together for rather bizarre shape:
+            hRgn = CreateRectRgn(0, 0, 0, 0)
+            For i = 1 To 5
+                lL = (Rnd * lW + 1)
+                lT = (Rnd * lH + 1)
+                lW1 = (Rnd * lW + 1) \ 2
+                lH1 = (Rnd * lH + 1) \ 2
+                Select Case (i Mod 3)
+                Case 1
+                    hR1 = CreateEllipticRgn(lL, lT, lL + lW1, lL + lH1)
+                Case 2
+                    hR1 = CreateRoundRectRgn(lL, lT, lL + lW1, lT + lH1, lW1 \
+                     5, lH1 \ 5)
+                Case Else
+                    hR1 = CreateRectRgn(lL, lT, lL + lW1, lT + lH1)
+                End Select
+                lR = CombineRgn(hRgn, hR1, hRgn, RGN_OR)
+                DeleteObject hR1
+            Next i
+        End Select
+        
+        ' Change the region:
+        SetWindowRgn Me.hWnd, hRgn, 1
+        ' We don't need to manage the hRgn object -
+        ' Windows does this for us.
+        
+        ' Store the shape:
+        m_eShape = eShape
+    End If
+End Property
+
+Private Sub Form_Load()
+    Randomize Timer
+End Sub
+
+Private Sub Form_LostFocus()
+    Form_MouseUp vbLeftButton, 0, 0, 0
+End Sub
+
+Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y
+ As Single)
+    Select Case True
+    Case (Button And vbLeftButton) = vbLeftButton
+        ' Set flag saying we're moving:
+        m_bMoving = True
+        ' Determine where the mouse is relative to the top,left of the form:
+            ' The vertical border of the form has a width Width-ScaleWidth\2:
+        m_sXOffset = X + (Me.Width - Me.ScaleWidth) \ 2
+            ' Approximate the horizontal offset due to title bar &amp; horizontal
+             border:
+        m_sYOffset = Y + (Me.Height - Me.ScaleHeight) - (Me.Width -
+         Me.ScaleWidth) \ 2
+        ' Ensure all messages go to this window:
+        SetCapture Me.hWnd
+    Case (Button And vbRightButton) = vbRightButton
+        Me.PopupMenu mnuTop
+    End Select
+End Sub
+
+Private Sub Form_MouseMove(Button As Integer, Shift As Integer, X As Single, Y
+ As Single)
+Dim tP As POINTAPI
+    If (m_bMoving) Then
+        ' If we're moving, then place the form on the screen where the mouse is,
+        ' taking into account where we initially clicked on the form:
+        GetCursorPos tP
+        Me.Move tP.X * Screen.TwipsPerPixelX - m_sXOffset, tP.Y *
+         Screen.TwipsPerPixelY - m_sYOffset
+    End If
+End Sub
+
+Private Sub Form_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As
+ Single)
+    If (m_bMoving) Then
+        ' Clear capture.  We also call this during LostFocus just in case
+        ReleaseCapture
+        m_bMoving = False
+    End If
+End Sub
+
+
+Private Sub Form_Paint()
+Dim sText As String
+Dim tR As RECT
+Dim lH As Long
+    
+    ' Show a caption on the form:
+    Me.Cls
+    sText = "Right Click for some Shape Related fun!"
+    tR.right = Me.ScaleWidth \ Screen.TwipsPerPixelX
+    tR.bottom = Me.ScaleHeight \ Screen.TwipsPerPixelY
+    DrawText Me.hdc, sText, Len(sText), tR, (1&amp; Or &amp;H10&amp;)
+    
+End Sub
+
+Private Sub Form_Resize()
+    Form_Paint
+End Sub
+
+Private Sub mnuRight_Click(Index As Integer)
+Dim lP As Long
+    Select Case Index
+    Case 0  ' Move
+        ' Emulates clicking the Move option in a system menu:
+        lP = ((Me.left \ Screen.TwipsPerPixelX) And &amp;HFFFF&amp;)    ' horiz pos is
+         loword
+        lP = lP + (Me.top \ Screen.TwipsPerPixelY \ &amp;H10000)    ' vert pos is
+         hiword
+        SendMessage Me.hWnd, WM_SYSCOMMAND, SC_MOVE, lP
+    Case 2  ' Title bar
+        mnuRight(2).Checked = Not (mnuRight(2).Checked)
+        TitleBar = mnuRight(2).Checked
+    Case 5  ' Exit
+        Unload Me
+    End Select
+End Sub
+
+Private Sub mnuShape_Click(Index As Integer)
+    Shape = Index
+End Sub
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../../index.html">VB</a>&#160;.&#160;<a href="../../../../index.html">Code</a>&#160;.&#160;<a href="../../../index.html">Libraries</a>&#160;.&#160;<a href="../../index.html">Graphics and GDI</a>&#160;.&#160;<a href="../index.html">Changing Window Shapes</a>&#160;.&#160;<a href="article.html">A window that's star-shaped, circular or tank-shaped</a>&#160;.&#160;<a href="WinShap_Project_Files.html">WinShap Project Files</a>&#160;.&#160;WinShape.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Changing_Window_Shapes/Creating_Geometric_Window_Shapes/WinShap_Project_Files_zip_WinShape_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:55 GMT -->
+</html>

@@ -1,0 +1,399 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_1/CDRip_DLL_Source_zip_CDRip_paranoia_p_block_c.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: CDRip_paranoia_p_block.c</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: CDRip_paranoia_p_block.c" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" /><link rel="contents" href="CDRip_DLL_Source.html" /><link rel="meta" type="application/rdf+xml" href="CDRip%20DLL%20Source.html" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">CD Ripping in VB Part 1</a>&#160;.&#160;<a href="CDRip_DLL_Source.html">CDRip DLL Source</a>&#160;.&#160;CDRip_paranoia_p_block.c</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="CDRip_DLL_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />CDRip DLL Source</a> (87K)</p><p class="nav"><a href="CDRip_DLL.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />CDRip DLL</a> (84K)</p><p /><p class="nav"><a href="VB5_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 CD Ripper</a> (103K)</p><p /><p class="nav"><a href="VB6_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 CD Ripper</a> (99K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:15102</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=15102&amp;type=Zip&amp;title=CDRip%20DLL%20Source%2Ezip%5FCDRip%5Fparanoia%5Fp%5Fblock">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />6 May 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14896">CDEx</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3489">CD Track Listing Using freedb.org</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: CDRip_paranoia_p_block.c</h1><p>This file is part of the download <a href="CDRip_DLL_Source.html">CDRip DLL Source</a>, which is described in the article <a href="article.html">CD Ripping in VB Part 1</a>.</p><pre>#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;limits.h&gt;
+#include "p_block.h"
+#include "../interface/cdda_interface.h"
+#include "cdda_paranoia.h"
+
+linked_list *new_list(void *(*newp)(void),void (*freep)(void *)){
+  linked_list *ret=calloc(1,sizeof(linked_list));
+  ret-&gt;new_poly=newp;
+  ret-&gt;free_poly=freep;
+  return(ret);
+}
+
+linked_element *add_elem(linked_list *l,void *elem){
+
+  linked_element *ret=calloc(1,sizeof(linked_element));
+  ret-&gt;stamp=l-&gt;current++;
+  ret-&gt;ptr=elem;
+  ret-&gt;list=l;
+
+  if(l-&gt;head)
+    l-&gt;head-&gt;prev=ret;
+  else
+    l-&gt;tail=ret;    
+  ret-&gt;next=l-&gt;head;
+  ret-&gt;prev=NULL;
+  l-&gt;head=ret;
+  l-&gt;active++;
+
+  return(ret);
+}
+
+linked_element *new_elem(linked_list *list){
+  void *new=list-&gt;new_poly();
+  return(add_elem(list,new));
+}
+
+void free_elem(linked_element *e,int free_ptr){
+  linked_list *l=e-&gt;list;
+  if(free_ptr)l-&gt;free_poly(e-&gt;ptr);
+
+  if(e==l-&gt;head)
+    l-&gt;head=e-&gt;next;
+  if(e==l-&gt;tail)
+    l-&gt;tail=e-&gt;prev;
+    
+  if(e-&gt;prev)
+    e-&gt;prev-&gt;next=e-&gt;next;
+  if(e-&gt;next)
+    e-&gt;next-&gt;prev=e-&gt;prev;
+
+  l-&gt;active--;
+  free(e);
+} 
+
+void free_list(linked_list *list,int free_ptr){
+  while(list-&gt;head)
+    free_elem(list-&gt;head,free_ptr);
+  free(list);
+}
+
+void *get_elem(linked_element *e){
+  return(e-&gt;ptr);
+}
+
+linked_list *copy_list(linked_list *list){
+  linked_list *new=new_list( (void*)list-&gt;new_poly, (void*)list-&gt;free_poly);
+  linked_element *i=list-&gt;tail;
+
+  while(i){
+    add_elem(new,i-&gt;ptr);
+    i=i-&gt;prev;
+  }
+  return(new);
+}
+
+/**** C_block stuff ******************************************************/
+
+static c_block *i_cblock_constructor(cdrom_paranoia *p){
+  c_block *ret=calloc(1,sizeof(c_block));
+  return(ret);
+}
+
+void i_cblock_destructor(c_block *c){
+  if(c){
+    if(c-&gt;vector)free(c-&gt;vector);
+    if(c-&gt;flags)free(c-&gt;flags);
+    c-&gt;e=NULL;
+    free(c);
+  }
+}
+
+c_block *new_c_block(cdrom_paranoia *p){
+  linked_element *e=new_elem(p-&gt;cache);
+  c_block *c=e-&gt;ptr;
+  c-&gt;e=e;
+  c-&gt;p=p;
+  return(c);
+}
+
+void free_c_block(c_block *c){
+  /* also rid ourselves of v_fragments that reference this block */
+  v_fragment *v=v_first(c-&gt;p);
+  
+  while(v){
+    v_fragment *next=v_next(v);
+    if(v-&gt;one==c)free_v_fragment(v);
+    v=next;
+  }    
+
+  free_elem(c-&gt;e,1);
+}
+
+static v_fragment *i_vfragment_constructor(void){
+  v_fragment *ret=calloc(1,sizeof(v_fragment));
+  return(ret);
+}
+
+static void i_v_fragment_destructor(v_fragment *v){
+  free(v);
+}
+
+v_fragment *new_v_fragment(cdrom_paranoia *p,c_block *one,
+            long begin, long end, int last){
+  linked_element *e=new_elem(p-&gt;fragments);
+  v_fragment *b=e-&gt;ptr;
+  
+  b-&gt;e=e;
+  b-&gt;p=p;
+
+  b-&gt;one=one;
+  b-&gt;begin=begin;
+  b-&gt;vector=one-&gt;vector+begin-one-&gt;begin;
+  b-&gt;size=end-begin;
+  b-&gt;lastsector=last;
+
+  return(b);
+}
+
+void free_v_fragment(v_fragment *v){
+  free_elem(v-&gt;e,1);
+}
+
+c_block *c_first(cdrom_paranoia *p){
+  if(p-&gt;cache-&gt;head)
+    return(p-&gt;cache-&gt;head-&gt;ptr);
+  return(NULL);
+}
+
+c_block *c_last(cdrom_paranoia *p){
+  if(p-&gt;cache-&gt;tail)
+    return(p-&gt;cache-&gt;tail-&gt;ptr);
+  return(NULL);
+}
+
+c_block *c_next(c_block *c){
+  if(c-&gt;e-&gt;next)
+    return(c-&gt;e-&gt;next-&gt;ptr);
+  return(NULL);
+}
+
+c_block *c_prev(c_block *c){
+  if(c-&gt;e-&gt;prev)
+    return(c-&gt;e-&gt;prev-&gt;ptr);
+  return(NULL);
+}
+
+v_fragment *v_first(cdrom_paranoia *p){
+  if(p-&gt;fragments-&gt;head){
+    return(p-&gt;fragments-&gt;head-&gt;ptr);
+  }
+  return(NULL);
+}
+
+v_fragment *v_last(cdrom_paranoia *p){
+  if(p-&gt;fragments-&gt;tail)
+    return(p-&gt;fragments-&gt;tail-&gt;ptr);
+  return(NULL);
+}
+
+v_fragment *v_next(v_fragment *v){
+  if(v-&gt;e-&gt;next)
+    return(v-&gt;e-&gt;next-&gt;ptr);
+  return(NULL);
+}
+
+v_fragment *v_prev(v_fragment *v){
+  if(v-&gt;e-&gt;prev)
+    return(v-&gt;e-&gt;prev-&gt;ptr);
+  return(NULL);
+}
+
+void recover_cache(cdrom_paranoia *p){
+  linked_list *l=p-&gt;cache;
+
+  /* Are we at/over our allowed cache size? */
+  while(l-&gt;active&gt;p-&gt;cache_limit)
+    /* cull from the tail of the list */
+    free_c_block(c_last(p));
+
+}
+
+int16_t *v_buffer(v_fragment *v){
+  if(!v-&gt;one)return(NULL);
+  if(!cv(v-&gt;one))return(NULL);
+  return(v-&gt;vector);
+}
+
+/* alloc a c_block not on a cache list */
+c_block *c_alloc(int16_t *vector,long begin,long size){
+  c_block *c=calloc(1,sizeof(c_block));
+  c-&gt;vector=vector;
+  c-&gt;begin=begin;
+  c-&gt;size=size;
+  return(c);
+}
+
+void c_set(c_block *v,long begin){
+  v-&gt;begin=begin;
+}
+
+/* pos here is vector position from zero */
+void c_insert(c_block *v,long pos,int16_t *b,long size){
+  int vs=cs(v);
+  if(pos&lt;0 || pos&gt;vs)return;
+
+  if(v-&gt;vector)
+    v-&gt;vector=realloc(v-&gt;vector,sizeof(int16_t)*(size+vs));
+  else
+    v-&gt;vector=malloc(sizeof(int16_t)*size);
+  
+  if(pos&lt;vs)memmove(v-&gt;vector+pos+size,v-&gt;vector+pos,
+             (vs-pos)*sizeof(int16_t));
+  memcpy(v-&gt;vector+pos,b,size*sizeof(int16_t));
+
+  v-&gt;size+=size;
+}
+
+void c_remove(c_block *v,long cutpos,long cutsize){
+  int vs=cs(v);
+  if(cutpos&lt;0 || cutpos&gt;vs)return;
+  if(cutpos+cutsize&gt;vs)cutsize=vs-cutpos;
+  if(cutsize&lt;0)cutsize=vs-cutpos;
+  if(cutsize&lt;1)return;
+
+  memmove(v-&gt;vector+cutpos,v-&gt;vector+cutpos+cutsize,
+            (vs-cutpos-cutsize)*sizeof(int16_t));
+  
+  v-&gt;size-=cutsize;
+}
+
+void c_overwrite(c_block *v,long pos,int16_t *b,long size){
+  int vs=cs(v);
+
+  if(pos&lt;0)return;
+  if(pos+size&gt;vs)size=vs-pos;
+
+  memcpy(v-&gt;vector+pos,b,size*sizeof(int16_t));
+}
+
+void c_append(c_block *v, int16_t *vector, long size){
+  int vs=cs(v);
+
+  /* update the vector */
+  if(v-&gt;vector)
+    v-&gt;vector=realloc(v-&gt;vector,sizeof(int16_t)*(size+vs));
+  else
+    v-&gt;vector=malloc(sizeof(int16_t)*size);
+  memcpy(v-&gt;vector+vs,vector,sizeof(int16_t)*size);
+
+  v-&gt;size+=size;
+}
+
+void c_removef(c_block *v, long cut){
+  c_remove(v,0,cut);
+  v-&gt;begin+=cut;
+}
+
+
+
+/**** Initialization *************************************************/
+
+#ifndef WIN32
+void i_paranoia_firstlast(cdrom_paranoia *p){
+  int i;
+  cdrom_drive *d=p-&gt;d;
+  p-&gt;current_lastsector=-1;
+  for(i=cdda_sector_gettrack(d,p-&gt;cursor);i&lt;cdda_tracks(d);i++)
+    if(!cdda_track_audiop(d,i))
+      p-&gt;current_lastsector=cdda_track_lastsector(d,i-1);
+  if(p-&gt;current_lastsector==-1)
+    p-&gt;current_lastsector=cdda_disc_lastsector(d);
+
+  p-&gt;current_firstsector=-1;
+  for(i=cdda_sector_gettrack(d,p-&gt;cursor);i&gt;0;i--)
+    if(!cdda_track_audiop(d,i))
+      p-&gt;current_firstsector=cdda_track_firstsector(d,i+1);
+  if(p-&gt;current_firstsector==-1)
+    p-&gt;current_firstsector=cdda_disc_firstsector(d);
+
+}
+#endif
+
+cdrom_paranoia *paranoia_init(cdrom_drive *d){
+  cdrom_paranoia *p=calloc(1,sizeof(cdrom_paranoia));
+
+  p-&gt;cache=new_list((void *)&amp;i_cblock_constructor,
+          (void *)&amp;i_cblock_destructor);
+
+  p-&gt;fragments=new_list((void *)&amp;i_vfragment_constructor,
+         (void *)&amp;i_v_fragment_destructor);
+
+  p-&gt;readahead=150;
+  p-&gt;sortcache=sort_alloc(p-&gt;readahead*CD_FRAMEWORDS);
+  p-&gt;d=d;
+  p-&gt;dynoverlap=MAX_SECTOR_OVERLAP*CD_FRAMEWORDS;
+  p-&gt;cache_limit=JIGGLE_MODULO;
+  p-&gt;enable=PARANOIA_MODE_FULL;
+
+#ifndef WIN32
+  p-&gt;cursor=cdda_disc_firstsector(d);
+#else
+  p-&gt;cursor= 0;
+#endif
+
+  p-&gt;lastread=LONG_MAX;
+
+#ifndef WIN32
+  /* One last one... in case data and audio tracks are mixed... */
+  i_paranoia_firstlast(p);
+#endif
+
+  return(p);
+}
+
+void paranoia_set_range(cdrom_paranoia *p, long start, long end)
+{
+  p-&gt;cursor = start;
+  p-&gt;current_firstsector = start;
+  p-&gt;current_lastsector = end;
+}
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">CD Ripping in VB Part 1</a>&#160;.&#160;<a href="CDRip_DLL_Source.html">CDRip DLL Source</a>&#160;.&#160;CDRip_paranoia_p_block.c</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 12 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_1/CDRip_DLL_Source_zip_CDRip_paranoia_p_block_c.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+</html>

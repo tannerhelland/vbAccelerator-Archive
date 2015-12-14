@@ -1,0 +1,368 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Drop_Shadows/VB6_Alpha_Shadow_Creator_zip_cDIBShadowCreator_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cDIBShadowCreator.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cDIBShadowCreator.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;<a href="article.html">Programmatic Creation of Drop-Shadows</a>&#160;.&#160;<a href="VB6_Alpha_Shadow_Creator.html">VB6 Alpha Shadow Creator</a>&#160;.&#160;cDIBShadowCreator.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Alpha_Shadow_Creator.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Alpha Shadow Creator</a> (96K)</p><p /><p class="nav"><a href="VB6_Alpha_Shadow_Creator.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Alpha Shadow Creator</a> (89K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:14840</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14840&amp;type=Zip&amp;title=VB6%20Alpha%20Shadow%20Creator%2Ezip%5FcDIBShadowCreator">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />16 Apr 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11998">Resampling with Alpha</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3304">Softening, Blurring, Sharpening and Embossing images</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cDIBShadowCreator.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "cDIBShadowCreator"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Type SAFEARRAYBOUND
+    cElements As Long
+    lLbound As Long
+End Type
+Private Type SAFEARRAY2D
+    cDims As Integer
+    fFeatures As Integer
+    cbElements As Long
+    cLocks As Long
+    pvData As Long
+    Bounds(0 To 1) As SAFEARRAYBOUND
+End Type
+Private Declare Function VarPtrArray Lib "msvbvm60.dll" Alias "VarPtr" (Ptr()
+ As Any) As Long
+Private Declare Function GetPixelAPI Lib "gdi32" Alias "GetPixel" (ByVal hdc As
+ Long, ByVal x As Long, ByVal y As Long) As Long
+Private Declare Function OleTranslateColor Lib "OLEPRO32.DLL" (ByVal OLE_COLOR
+ As Long, ByVal HPALETTE As Long, pccolorref As Long) As Long
+Private Const CLR_INVALID = -1
+
+
+Private m_cDIBSource As cAlphaDibSection
+Private m_cDIBSourceScaled As cAlphaDibSection
+Private m_cDIBResult As cAlphaDibSection
+Private m_lMatrixSize As Long
+Private m_lOffsetX As Long
+Private m_lOffsetY As Long
+Private m_oShadowColour As OLE_COLOR
+Private m_oTransparentColour As OLE_COLOR
+Private m_lSourceScale As Long
+Private m_lOpacity As Long
+Private m_bResizeToHoldShadow As Boolean
+
+Public Property Get ResizeToHoldShadow() As Boolean
+   ResizeToHoldShadow = m_bResizeToHoldShadow
+End Property
+Public Property Let ResizeToHoldShadow(ByVal value As Boolean)
+   m_bResizeToHoldShadow = value
+End Property
+
+Public Property Get TransparentColor() As OLE_COLOR
+   If (m_oTransparentColour = -1) Then
+      If Not (m_cDIBSource Is Nothing) Then
+         TransparentColor = GetPixelAPI(m_cDIBSource.hdc, 0, 0)
+      Else
+         TransparentColor = &amp;HFFFFFF
+      End If
+   Else
+      TransparentColor = m_oTransparentColour
+   End If
+End Property
+Public Property Let TransparentColor(ByVal value As OLE_COLOR)
+   m_oTransparentColour = value
+   createScaledSource
+End Property
+Public Property Get ShadowColor() As OLE_COLOR
+   ShadowColor = m_oShadowColour
+End Property
+Public Property Let ShadowColor(ByVal value As OLE_COLOR)
+   m_oShadowColour = value
+End Property
+Public Property Get MatrixSize() As Long
+   MatrixSize = m_lMatrixSize
+End Property
+Public Property Let MatrixSize(ByVal value As Long)
+   m_lMatrixSize = value
+End Property
+Public Property Get OffsetX() As Long
+   OffsetX = m_lOffsetX
+End Property
+Public Property Let OffsetX(ByVal value As Long)
+   m_lOffsetX = value
+End Property
+Public Property Get OffsetY() As Long
+   OffsetY = m_lOffsetY
+End Property
+Public Property Let OffsetY(ByVal value As Long)
+   m_lOffsetY = value
+End Property
+Public Property Get Opacity() As Long
+   Opacity = m_lOpacity
+End Property
+Public Property Let Opacity(ByVal value As Long)
+   m_lOpacity = value
+End Property
+
+Public Property Get ScaledSourceDib() As cAlphaDibSection
+   Set ScaledSourceDib = m_cDIBSourceScaled
+End Property
+
+Public Property Let DibSource(ByRef cDib As cAlphaDibSection)
+   Set m_cDIBSource = cDib
+   createScaledSource
+End Property
+Public Property Get DibResult() As cAlphaDibSection
+   Set DibResult = m_cDIBResult
+End Property
+
+Public Property Get SourceScale() As Long
+   SourceScale = m_lSourceScale
+End Property
+Public Property Let SourceScale(ByVal lScale As Long)
+   If (lScale &gt; 0) Then
+      m_lSourceScale = lScale
+      createScaledSource
+   Else
+      Err.Raise 5, "Scale must be greater than 0"
+   End If
+End Property
+
+Private Sub createScaledSource()
+   '
+   If Not (m_cDIBSource Is Nothing) Then
+      Dim lTransColor As Long
+      If (m_oTransparentColour = -1) Then
+         lTransColor = GetPixelAPI(m_cDIBSource.hdc, 0, 0)
+      Else
+         OleTranslateColor m_oTransparentColour, 0, lTransColor
+      End If
+      Dim cDibT As cAlphaDibSection
+      Set cDibT = m_cDIBSource.Clone()
+      cDibT.SetColourTransparent lTransColor, 255, True
+      Dim lNewWidth As Long
+      lNewWidth = m_cDIBSource.Width \ m_lSourceScale
+      Set m_cDIBSourceScaled = cDibT.AlphaResample(lNewWidth)
+      m_cDIBSourceScaled.PreMultiplyAlpha
+   End If
+   '
+End Sub
+
+Public Sub CreateShadow()
+   '
+Dim lWidth As Long
+Dim lHeight As Long
+Dim lOrgX As Long
+Dim lOrgY As Long
+
+   If (m_bResizeToHoldShadow) Then
+      lWidth = m_cDIBSourceScaled.Width + Abs(m_lOffsetX) + (m_lMatrixSize + 1)
+       * 2
+      lHeight = m_cDIBSourceScaled.Height + Abs(m_lOffsetY) + (m_lMatrixSize +
+       1) * 2
+      If (m_lOffsetX &lt; 0) Then
+         lOrgX = Abs(m_lOffsetX)
+      End If
+      If (m_lOffsetY &lt; 0) Then
+         lOrgY = Abs(m_lOffsetY)
+      End If
+   Else
+      lWidth = m_cDIBSourceScaled.Width
+      lHeight = m_cDIBSourceScaled.Height
+   End If
+
+   Set m_cDIBResult = New cAlphaDibSection
+   m_cDIBResult.Create lWidth, lHeight
+   
+   
+   ' Create the shadow:
+Dim tSA As SAFEARRAY2D
+Dim tSATo As SAFEARRAY2D
+Dim bDib() As Byte
+Dim bDibTo() As Byte
+Dim lX As Long
+Dim lY As Long
+Dim lFromX As Long
+Dim lFromY As Long
+Dim lAlpha As Long
+Dim lShadowRed As Long
+Dim lShadowGreen As Long
+Dim lShadowBlue As Long
+Dim xEnd As Long
+Dim yEnd As Long
+Dim xEndRes As Long
+Dim yEndRes As Long
+Dim x As Long
+Dim y As Long
+Dim xArrayStart As Long
+Dim xArrayEnd As Long
+Dim yArrayStart As Long
+Dim yArrayEnd As Long
+Dim lShadowColour As Long
+Dim lDiv As Long
+   
+   OleTranslateColor m_oShadowColour, 0, lShadowColour
+   lShadowRed = lShadowColour And &amp;HFF&amp;
+   lShadowGreen = (lShadowColour And &amp;HFF00&amp;) \ &amp;H100&amp;
+   lShadowBlue = (lShadowColour And &amp;HFF0000) \ &amp;H10000
+   
+   With tSA
+      .cbElements = 1
+      .cDims = 2
+      .Bounds(0).lLbound = 0
+      .Bounds(0).cElements = m_cDIBSourceScaled.Height
+      .Bounds(1).lLbound = 0
+      .Bounds(1).cElements = m_cDIBSourceScaled.BytesPerScanLine()
+      .pvData = m_cDIBSourceScaled.DIBSectionBitsPtr
+   End With
+   CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+    
+   With tSATo
+      .cbElements = 1
+      .cDims = 2
+      .Bounds(0).lLbound = 0
+      .Bounds(0).cElements = m_cDIBResult.Height
+      .Bounds(1).lLbound = 0
+      .Bounds(1).cElements = m_cDIBResult.BytesPerScanLine()
+      .pvData = m_cDIBResult.DIBSectionBitsPtr
+   End With
+   CopyMemory ByVal VarPtrArray(bDibTo()), VarPtr(tSATo), 4
+   
+   xEnd = m_cDIBSourceScaled.BytesPerScanLine - 4
+   yEnd = m_cDIBSourceScaled.Height - 1
+   xEndRes = m_cDIBResult.BytesPerScanLine - 4
+   yEndRes = m_cDIBResult.Height - 1
+   
+   lDiv = (m_lMatrixSize * 2 + 1) * (m_lMatrixSize * 2 + 1)
+   
+   For lX = 0 To xEndRes Step 4
+   
+      lFromX = lX - IIf(m_lOffsetX &gt; 0, m_lOffsetX, 0) * 4 - m_lMatrixSize * 4
+      
+      xArrayStart = lFromX - 4 * m_lMatrixSize
+      If (xArrayStart &lt; 0) Then
+         xArrayStart = 0
+      End If
+      xArrayEnd = lFromX + 4 * m_lMatrixSize
+      If (xArrayEnd &gt; xEnd) Then
+         xArrayEnd = xEnd
+      End If
+         
+         
+      For lY = 0 To yEndRes
+      
+         lFromY = lY + IIf(m_lOffsetY &lt; 0, m_lOffsetY, 0) - m_lMatrixSize
+                     
+         yArrayStart = lFromY - m_lMatrixSize
+         If (yArrayStart &lt; 0) Then
+            yArrayStart = 0
+         End If
+         yArrayEnd = lFromY + m_lMatrixSize
+         If (yArrayEnd &gt; yEnd) Then
+            yArrayEnd = yEnd
+         End If
+               
+         lAlpha = 0
+            
+         For x = xArrayStart To xArrayEnd Step 4
+            For y = yArrayStart To yArrayEnd
+               lAlpha = lAlpha + bDib(x + 3, y)
+            Next y
+         Next x
+               
+         lAlpha = lAlpha \ lDiv
+         lAlpha = lAlpha * m_lOpacity \ 255
+         
+         bDibTo(lX, lY) = lShadowBlue * lAlpha \ 255
+         bDibTo(lX + 1, lY) = lShadowGreen * lAlpha \ 255
+         bDibTo(lX + 2, lY) = lShadowRed * lAlpha \ 255
+         bDibTo(lX + 3, lY) = lAlpha
+               
+      Next lY
+   
+   Next lX
+      
+   
+   CopyMemory ByVal VarPtrArray(bDibTo), 0&amp;, 4
+   CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+   
+   
+   ' Composite the scaled source over the top:
+   lWidth = m_cDIBSourceScaled.Width
+   lHeight = m_cDIBSourceScaled.Height
+   If (lOrgX + lWidth) &gt; m_cDIBResult.Width Then
+      lWidth = m_cDIBResult.Width - lOrgX
+   End If
+   If (lOrgY + lHeight) &gt; m_cDIBResult.Height Then
+      lHeight = m_cDIBResult.Height - lOrgY
+   End If
+   m_cDIBSourceScaled.AlphaPaintPicture m_cDIBResult.hdc, lOrgX, lOrgY, lWidth,
+    lHeight
+   
+   ' done
+End Sub
+
+Private Sub Class_Initialize()
+   m_oTransparentColour = -1
+   m_oShadowColour = &amp;H808080
+   m_lSourceScale = 1
+   m_lOffsetX = 4
+   m_lOffsetY = -4
+   m_lMatrixSize = 3
+   m_lOpacity = 128
+   m_bResizeToHoldShadow = True
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;<a href="article.html">Programmatic Creation of Drop-Shadows</a>&#160;.&#160;<a href="VB6_Alpha_Shadow_Creator.html">VB6 Alpha Shadow Creator</a>&#160;.&#160;cDIBShadowCreator.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 18 April 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Drop_Shadows/VB6_Alpha_Shadow_Creator_zip_cDIBShadowCreator_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+</html>

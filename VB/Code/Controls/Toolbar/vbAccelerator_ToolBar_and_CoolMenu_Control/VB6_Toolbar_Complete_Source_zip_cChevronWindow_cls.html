@@ -1,0 +1,269 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Toolbar/vbAccelerator_ToolBar_and_CoolMenu_Control/VB6_Toolbar_Complete_Source_zip_cChevronWindow_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:08 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cChevronWindow.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cChevronWindow.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Toolbar</a>&#160;.&#160;<a href="article.html">vbAccelerator Toolbar and CoolMenu Control v3.5</a>&#160;.&#160;<a href="VB6_Toolbar_Complete_Source.html">VB6 Toolbar Complete Source</a>&#160;.&#160;cChevronWindow.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="CoolMenu_Toolbar_Control_Documentation.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />CoolMenu Toolbar Control Documentation</a> (5K)</p><p /><p class="nav"><a href="VB5_Toolbar_Complete_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Toolbar Complete Source</a> (263K)</p><p class="nav"><a href="VB5_Toolbar_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Toolbar Control Binary</a> (78K)</p><p class="nav"><a href="VB5_Toolbar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Toolbar Demonstration</a> (97K)</p><p /><p class="nav"><a href="VB6_Toolbar_Complete_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Toolbar Complete Source</a> (261K)</p><p class="nav"><a href="VB6_Toolbar_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Toolbar Control Binary</a> (80K)</p><p class="nav"><a href="VB6_Toolbar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Toolbar Demonstration</a> (93K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1317</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1317&amp;type=Zip&amp;title=VB6%20Toolbar%20Complete%20Source%2Ezip%5FcChevronWindow">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 2 / 2</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:4 November 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />11 May 2003<br /><p class="update">Bug fix release to fix accelerator and chevron problems.</p><p class="update">Coolmenu accelerators caused problems - sometimes the menus
+triggered without the Alt- key being pressed, othertimes they did not trigger
+when they should.  The logic has been rewritten to correct this.</p><p class="update">Chevrons created by the toolbar did not trigger when clicked with 
+the mouse.  Fixed.  The chevron now also uses a Menu window class as a base so it
+draws in the same way as menus on the system.</p><p class="update">Some non-English keys did not work as accelerators. Fixed with code
+provided by Sergey Pitutin.</p><p class="update">The Toolbar, Rebar and ToolbarHost controls could not be hosted
+on a UserControl.  They now can. Thanks to Alexander Stetsenko for the information.</p><p class="update">The MDI buttons in the toolbar host control now render using XP
+Visual Style if appropriate.  Thanks to Nguyen Tuan Anh for the suggestion.</p><p class="update"><i>SaveLayout</i> and <i>RestoreLayout</i> (beta) methods have been
+added to the Rebar based on a method suggested by Ralph Brugger at LinkPool.  Feedback
+please!</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=7">PopupMenu DLL - Create Unlimited Popup Menus</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cChevronWindow.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "cChevronWindow"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+
+Implements ISubclass
+
+Private m_hWnd As Long
+Private m_hWndParent As Long
+Private m_bIsShown As Boolean
+
+Public Sub MouseEvent(ByVal iMsg As Long, ByVal hwnd As Long, x As Long, y As
+ Long, ByVal hitTest As Long)
+Dim bOk As Boolean
+   'Debug.Print "MOuseEvent", iMsg, hwnd, x, y
+   bOk = True
+   If (iMsg = WM_LBUTTONDOWN) Or (iMsg = WM_RBUTTONDOWN) Or (iMsg =
+    WM_MBUTTONDOWN) Or _
+      (iMsg = WM_NCLBUTTONDOWN) Or (iMsg = WM_NCRBUTTONDOWN) Or (iMsg =
+       WM_NCLMBUTTONDOWN) Then
+      hwnd = WindowFromPoint(x, y)
+      'Debug.Print "Button Down on window", Hex(hwnd)
+      
+      bOk = False
+      If (hwnd = m_hWnd) Or (GetParent(hwnd) = m_hWnd) Then
+         'Debug.Print "Window is me"
+         bOk = True
+      Else
+         Dim sBuf As String
+         sBuf = String$(256, 0)
+         GetClassName hwnd, sBuf, 255
+         sBuf = UCase(sBuf)
+         'Debug.Print sBuf
+         If (InStr(sBuf, "#32768") &gt; 0) Then
+            bOk = True
+         End If
+      End If
+   End If
+   If Not bOk Then
+      Destroy
+   End If
+End Sub
+
+Public Property Get IsShown() As Boolean
+   IsShown = m_bIsShown
+End Property
+
+Public Property Get hwnd() As Long
+   hwnd = m_hWnd
+End Property
+
+Private Sub Capture(ByVal hwnd As Long)
+Dim lC As Long
+   If m_hWnd &lt;&gt; 0 Then
+      lC = GetProp(m_hWnd, "vbal:CapturedCount")
+      lC = lC + 1
+      SetProp m_hWnd, "vbal:CapturedCount", lC
+      SetProp m_hWnd, "vbal:Captured:" &amp; lC, hwnd
+      SetProp m_hWnd, "vbal:Parent:" &amp; lC, GetParent(hwnd)
+      SetParent hwnd, m_hWnd
+   End If
+End Sub
+Public Sub Show(ByVal hWndParent As Long, ByVal hWndCapture As Long, ByVal x As
+ Long, ByVal y As Long, ByVal cx As Long, ByVal cy As Long)
+Dim tR As RECT
+Dim lhWnd As Long
+
+   Create hWndParent, cx + 4, cy + 4
+   Capture hWndCapture
+
+   SendMessageLong m_hWndParent, WM_ENTERMENULOOP, 1, 0
+   SetWindowPos m_hWnd, 0, x, y, cx + 4, cy + 4, SWP_SHOWWINDOW Or
+    SWP_FRAMECHANGED Or SWP_NOOWNERZORDER Or SWP_NOZORDER Or SWP_NOACTIVATE
+   GetClientRect m_hWnd, tR
+   lhWnd = GetProp(m_hWnd, "vbal:Captured:1")
+   If lhWnd &lt;&gt; 0 Then
+      MoveWindow lhWnd, tR.left + 2, tR.top + 2, tR.right - tR.left - 4,
+       tR.bottom - tR.top - 4, 1
+   End If
+   m_bIsShown = True
+   AttachMouseHook Me
+         
+   Do While m_bIsShown
+      DoEvents
+   Loop
+   
+End Sub
+Private Sub Create(ByVal hWndParent As Long, ByVal width As Long, ByVal height
+ As Long)
+Dim lStyle As Long
+Dim lExStyle As Long
+   
+   
+   Destroy
+   
+   lStyle = WS_POPUP Or WS_CLIPSIBLINGS Or WS_CLIPSIBLINGS
+   lExStyle = WS_EX_TOOLWINDOW Or WS_EX_TOPMOST Or WS_EX_CONTROLPARENT Or
+    WS_EX_NOACTIVATE 'Or WS_EX_WINDOWEDGE WS_EX_DLGMODALFRAME
+   m_hWnd = CreateWindowEX( _
+      lExStyle, _
+      "#32768", "", lStyle, _
+      0, 0, width, height, _
+      hWndParent, 0, App.hInstance, ByVal 0&amp;)
+      
+   If m_hWnd &lt;&gt; 0 Then
+      m_hWndParent = hWndParent
+      AttachMessage Me, m_hWndParent, WM_CANCELMODE
+      AttachMessage Me, m_hWndParent, WM_ACTIVATEAPP
+      AttachMessage Me, m_hWnd, WM_PAINT
+      
+      SetProp m_hWnd, "vbalTbar:ChevronPtr", ObjPtr(Me)
+   End If
+   
+End Sub
+
+Public Sub Destroy()
+Dim lC As Long, l As Long
+Dim lhWnd As Long, lhWndParent As Long
+Dim lR As Long
+
+   DetachMouseHook Me
+   If m_hWnd &lt;&gt; 0 Then
+      DetachMessage Me, m_hWndParent, WM_CANCELMODE
+      DetachMessage Me, m_hWndParent, WM_ACTIVATEAPP
+      DetachMessage Me, m_hWnd, WM_PAINT
+      lC = GetProp(m_hWnd, "vbal:CapturedCount")
+      For l = 1 To lC
+         lhWnd = GetProp(m_hWnd, "vbal:Captured:" &amp; l)
+         If lhWnd &lt;&gt; 0 Then
+            lhWndParent = GetProp(m_hWnd, "vbal:Parent:" &amp; l)
+            SetParent lhWnd, lhWndParent
+            RemoveProp m_hWnd, "vbal:Captured:" &amp; l
+            RemoveProp m_hWnd, "vbal:Parent:" &amp; l
+      
+            ShowWindow lhWnd, SW_HIDE
+            SetParent lhWnd, 0
+            lR = DestroyWindow(lhWnd)
+            'Debug.Assert (lR &lt;&gt; 0)
+            
+         End If
+      Next l
+      DestroyWindow m_hWnd
+      m_hWnd = 0
+      m_hWndParent = 0
+   End If
+   m_bIsShown = False
+End Sub
+
+Private Sub Class_Terminate()
+   Destroy
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As EMsgResponse)
+   '
+End Property
+
+Private Property Get ISubclass_MsgResponse() As EMsgResponse
+   ISubclass_MsgResponse = emrPreprocess
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+Static s_iRefCount As Long
+Dim tR As RECT
+Dim tJunk As POINTAPI
+Dim hPen As Long
+Dim hPenOld As Long
+   '
+   Select Case iMsg
+   Case WM_PAINT
+      ' Border
+      hdc = GetDC(m_hWnd)
+      GetWindowRect m_hWnd, tR
+      OffsetRect tR, -tR.left, -tR.top
+      MoveToEx hdc, tR.left, tR.top, tJunk
+      hPen = CreatePen(PS_SOLID, 1, GetSysColor(vb3DShadow And &amp;H1F&amp;))
+      hPenOld = SelectObject(hdc, hPen)
+      LineTo hdc, tR.right - 1, 0
+      LineTo hdc, tR.right - 1, tR.bottom - 1
+      LineTo hdc, tR.left, tR.bottom - 1
+      LineTo hdc, tR.left, tR.top
+      SelectObject hdc, hPenOld
+      DeleteObject hPen
+      ReleaseDC m_hWnd, hdc
+   
+   Case WM_ACTIVATEAPP, WM_CANCELMODE
+      If m_bIsShown Then
+         Destroy
+      End If
+      
+   End Select
+   
+End Function
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Toolbar</a>&#160;.&#160;<a href="article.html">vbAccelerator Toolbar and CoolMenu Control v3.5</a>&#160;.&#160;<a href="VB6_Toolbar_Complete_Source.html">VB6 Toolbar Complete Source</a>&#160;.&#160;cChevronWindow.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 May 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Toolbar/vbAccelerator_ToolBar_and_CoolMenu_Control/VB6_Toolbar_Complete_Source_zip_cChevronWindow_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:08 GMT -->
+</html>

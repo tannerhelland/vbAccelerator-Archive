@@ -1,0 +1,137 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Selection_Fade/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:56:24 GMT -->
+<head>
+
+<title>vbAccelerator - Fading Out Selected Areas Using UpdatedLayeredWindow</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="In Windows 2000 and XP, when you click a Start Menu item, such as 'Run' an after image of 
+the item you've clicked remains on screen and fades out whilst the Run box starts up.  This article
+provides a reusable form-class you can use to provide this effect in your application." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;Fading Out Selected Areas Using UpdatedLayeredWindow</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="FadeRect_Source_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />FadeRect Source Code</a> (30K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3488</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3488&amp;type=Article&amp;title=Fading%20Out%20Selected%20Areas%20Using%20UpdatedLayeredWindow">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />3 Feb 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2946">Window Shapes Using Layering</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Fading Out Selected Areas Using UpdatedLayeredWindow</h1><p class="splash">Create the Windows 2000/XP Start Menu fade-out effect in your application</p><img src="fadeRect.png" width="330" height="204" alt="Selection Fade Out Demonstration" /><p /><p>In Windows 2000 and XP, when you click a Start Menu item, such as "Run" an after image of 
+the item you've clicked remains on screen and fades out whilst the Run box starts up.  This article
+provides a reusable form-class you can use to provide this effect in your application.</p><h2>About The Download</h2><p>The download provides a reusable form, <i>fFadeRect</i>, which allows you to 
+add fade-out effects to any application.  This form has one important method, 
+<i>FadeRect</i>, which takes the following parameters:</p><ul><li><i>lLeft</i>, <i>lTop</i>, <i>lWidth</i>, <i>lHeight</i> - The position relative
+to the screen to display the fade out effect.</li><li><i>lSrcLeft</i>, <i>lSrcTop</i> - The position to source the fade out image from.
+You can either specify a Device Context using the optional <i>lhDCSrc</i> parameter,
+in which case these parameters are relative to that Device Context, or leave the
+source Device Context blank, in which case the desktop device context is used and
+the position is relative to the top-left of the screen.</li></ul><p>By default, calling <i>FadeRect</i> will check if the system specifies that menu
+fades should be done, and will simply exit if not.  You can force a fade to occur
+by setting the <i>ForceFade</i> property.  Finally, you can specify how long the
+fade should take by setting the <i>FadeStepSize</i> property.  This accepts values
+between 1 and 255 and specifies how much alpha to subtract each time the timer fires.
+A setting of 1 will make the fade very sloooow, whereas a setting of 128 or above will
+result in virtually no fade at all.  The default setting is 15.</p><h2>Fade Effects</h2><img src="winExample.png" width="358" height="192" /><br /><p><small><strong>Start-Run Menu Fading out</strong></small></p><p>There are two ways you can go about performing a fade effect on the desktop. 
+Both techniques use the new Layered Windows APIs built into Windows 2000 and XP.  
+The first method is to use drawing indirection using the <i>SetLayeredWindowsAttributes</i> 
+API call.  This is described further in <a href="http://www.vbaccelerator.com/article.asp?id=2946">Window Shapes Using Layering</a>.  The second technique is to use the more powerful <i>UpdateLayeredWindow</i> 
+call, which is used for this code.  Using <i>UpdateLayeredWindow</i> gives you complete
+control of per-pixel alpha drawn to the screen since all drawing is done to an offscreen
+DC before being supplied to Windows to draw using the API.  This additional power is
+also makes the API a bit more difficult to use, since you need to be able to draw
+everything onto the DC.</p><h2>Selection Fading in 2000 and XP</h2><p>With some difficulty, you can discover that fades on menu items are accomplished
+using a different window to the actual menu itself, with a class name 
+"SysFader".  This window is used to display
+fade-ins of menus and fade-outs of selected items, and is transparent to the mouse.  To
+create a similar window, the following extended styles need to be set:</p><ul><li><i>WS_EX_LAYERED</i> - Tells Windows to combine this window with other windows beneath
+it using the specified alpha functions.</li><li><i>WS_EX_TRANSPARENT</i> - Makes the Window transparent to the mouse.</li><li><i>WS_EX_TOOLWINDOW</i> - Ensure it doesn't appear in the taskbar.</li><li><i>WS_EX_TOPMOST</i> - Display window on top.</li></ul><p>Once a window with these styles has been created, the contents can be set using
+the <i>UpdateLayeredWindow</i> API.  This API works in a similar way to 
+<i>AlphaBlend</i> (see <a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a> for more
+details) but additionally specifies the size of the layered window.  UpdateLayeredWindow
+is declared as follows:</p><pre>
+Private Type BLENDFUNCTION
+   BlendOp As Byte
+   BlendFlags As Byte
+   SourceConstantAlpha As Byte
+   AlphaFormat As Byte
+End Type
+
+' AlphaFormat flags:
+Private Const AC_SRC_OVER As Long = &amp;H0&amp;
+Private Const AC_SRC_ALPHA = &amp;H1
+
+Private Declare Function UpdateLayeredWindow Lib "user32" ( _
+    ByVal hwnd As Long, _	' layered window handle
+    ByVal hdcDst As Long, _	' destination device context; typically zero
+    pptDst As Any, _		' start POINT on destination, default to (0,0)
+    psize As Any, _		' SIZE to draw: use last psize if not set.
+    ByVal hdcSrc As Long, _	' source device context
+    pptSrc As Any, _		' start POINT on source, defaults to (0,0)
+    ByVal crKey As Long, _	' Transparent Color when ULW_COLORKEY flag set
+    pblend As BLENDFUNCTION, _	' Alpha blending function
+    ByVal dwFlags As Long _	' Flags specifying operation
+   ) As Long
+' UpdateLayeredWindow flags:
+Private Const ULW_COLORKEY As Long = &amp;H1&amp;
+Private Const ULW_ALPHA As Long = &amp;H2&amp;
+Private Const ULW_OPAQUE As Long = &amp;H4&amp;
+</pre><p>To perform a fade of a selection, the code then runs through these steps:</p><ol><li>Loads the fade form.</li><li>Sets the extended styles for transparency and layering</li><li>Moves the form to the correct position</li><li>Makes the form topmost and visible (initially it will be completely transparent).</li><li>Calls <i>UpdateLayeredWindow</i> to transfer the desktop's contents at the point into
+the Window, with an initial alpha amout of 255 (i.e. opaque).</li><li>Initiates a timer.  Each time the timer fires, an amount is subtracted from the
+alpha and <i>UpdateLayeredWindow</i> is called again with the new alpha.</li><li>When the alpha reaches zero the timer is stopped and the form unloaded.</li></ol><h2>Only If You Want It</h2><p>Whether menu items fade out on clicking is one of the Advanced -&gt; Performance options
+which can be set in the System Properties.  This value is accessible using the
+<i>SystemParametersInfo</i> call, as follows:</p><pre>
+Private Declare Function SystemParametersInfo Lib "user32" _
+      Alias "SystemParametersInfoA" ( _
+      ByVal uAction As Long, ByVal uParam As Long, _
+      ByRef lpvParam As Any, ByVal fuWinIni As Long) As Long
+Private Const SPI_GETSELECTIONFADE As Long = &amp;H1014&amp;
+
+..
+
+Public Property Get FadeEffectsSelected() As Boolean
+Dim lFade As Long
+   SystemParametersInfo SPI_GETSELECTIONFADE, 0, lFade, 0
+   FadeEffectsSelected = Not (lFade = 0)
+End Property
+</pre><p>Of course, you're free to ignore this setting if you want to.</p><h2>Conclusion</h2><p>fFadeRect provides a simple way to add selection fade outs to a VB application.
+The technique should be easy to migrate to .NET as well.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;Fading Out Selected Areas Using UpdatedLayeredWindow</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 5 February 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Selection_Fade/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:56:25 GMT -->
+</html>

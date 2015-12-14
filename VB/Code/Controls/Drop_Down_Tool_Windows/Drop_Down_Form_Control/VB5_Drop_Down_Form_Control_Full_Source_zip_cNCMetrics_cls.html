@@ -1,0 +1,270 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Drop_Down_Tool_Windows/Drop_Down_Form_Control/VB5_Drop_Down_Form_Control_Full_Source_zip_cNCMetrics_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:54 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cNCMetrics.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cNCMetrics.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Drop Down Tool Windows</a>&#160;.&#160;<a href="article.html">vbAccelerator Drop-Down and Popup Form Control</a>&#160;.&#160;<a href="VB5_Drop_Down_Form_Control_Full_Source.html">VB5 Drop Down Form Control Full Source</a>&#160;.&#160;cNCMetrics.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Drop_Down_Form_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Drop Down Form Control Binary</a> (18K)</p><p class="nav"><a href="VB5_Drop_Down_Form_Control_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Drop Down Form Control Demonstration</a> (44K)</p><p class="nav"><a href="VB5_Drop_Down_Form_Control_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Drop Down Form Control Full Source</a> (81K)</p><p /><p class="nav"><a href="VB6_Drop_Down_Form_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Drop Down Form Control Binary</a> (19K)</p><p class="nav"><a href="VB6_Drop_Down_Form_Control_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Drop Down Form Control Demonstration</a> (48K)</p><p class="nav"><a href="VB6_Drop_Down_Form_Control_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Drop Down Form Control Full Source</a> (86K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1088</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1088&amp;type=Zip&amp;title=VB5%20Drop%20Down%20Form%20Control%20Full%20Source%2Ezip%5FcNCMetrics">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />21 Mar 2000<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13011">Emulating Modal Forms</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1185">Creating drop-down tool windows</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cNCMetrics.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cNCMetrics"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Const SPI_GETICONMETRICS = 45
+Private Const SPI_GETICONTITLELOGFONT = 31
+Private Const LF_FACESIZE = 32
+Private Const LF_FULLFACESIZE = 64
+
+' Normal log font structure:
+Private Type LOGFONT
+    lfHeight As Long
+    lfWidth As Long
+    lfEscapement As Long
+    lfOrientation As Long
+    lfWeight As Long
+    lfItalic As Byte
+    lfUnderline As Byte
+    lfStrikeOut As Byte
+    lfCharSet As Byte
+    lfOutPrecision As Byte
+    lfClipPrecision As Byte
+    lfQuality As Byte
+    lfPitchAndFamily As Byte
+    lfFaceName(LF_FACESIZE) As Byte
+End Type
+Private Enum CNCMetricsFontWeightConstants
+   FW_DONTCARE = 0
+   FW_THIN = 100
+   FW_EXTRALIGHT = 200
+   FW_ULTRALIGHT = 200
+   FW_LIGHT = 300
+   FW_NORMAL = 400
+   FW_REGULAR = 400
+   FW_MEDIUM = 500
+   FW_SEMIBOLD = 600
+   FW_DEMIBOLD = 600
+   FW_BOLD = 700
+   FW_EXTRABOLD = 800
+   FW_ULTRABOLD = 800
+   FW_HEAVY = 900
+   FW_BLACK = 900
+End Enum
+' For some bizarre reason, maybe to do with byte
+' alignment, the LOGFONT structure we must apply
+' to NONCLIENTMETRICS seems to require an LF_FACESIZE
+' 4 bytes smaller than normal:
+Private Type NMLOGFONT
+    lfHeight As Long
+    lfWidth As Long
+    lfEscapement As Long
+    lfOrientation As Long
+    lfWeight As Long
+    lfItalic As Byte
+    lfUnderline As Byte
+    lfStrikeOut As Byte
+    lfCharSet As Byte
+    lfOutPrecision As Byte
+    lfClipPrecision As Byte
+    lfQuality As Byte
+    lfPitchAndFamily As Byte
+    lfFaceName(LF_FACESIZE - 4) As Byte
+End Type
+Private Type NONCLIENTMETRICS
+    cbSize As Long
+    iBorderWidth As Long
+    iScrollWidth As Long
+    iScrollHeight As Long
+    iCaptionWidth As Long
+    iCaptionHeight As Long
+    lfCaptionFont As NMLOGFONT
+    iSMCaptionWidth As Long
+    iSMCaptionHeight As Long
+    lfSMCaptionFont As NMLOGFONT
+    iMenuWidth As Long
+    iMenuHeight As Long
+    lfMenuFont As NMLOGFONT
+    lfStatusFont As NMLOGFONT
+    lfMessageFont As NMLOGFONT
+End Type
+Private Const SPI_GETNONCLIENTMETRICS = 41
+Private Const SPI_SETNONCLIENTMETRICS = 42
+Private Declare Function SystemParametersInfo Lib "user32" Alias
+ "SystemParametersInfoA" ( _
+    ByVal uAction As Long, _
+    ByVal uParam As Long, _
+    lpvParam As Any, _
+    ByVal fuWinIni As Long) As Long
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+Private Declare Function GetDeviceCaps Lib "gdi32" (ByVal hDC As Long, ByVal
+ nIndex As Long) As Long
+Private Const LOGPIXELSY = 90        '  Logical pixels/inch in Y
+Private Declare Function CreateFontIndirect Lib "gdi32" Alias
+ "CreateFontIndirectA" (lpLogFont As LOGFONT) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+
+Private m_tNCM As NONCLIENTMETRICS
+Private m_tLF As LOGFONT
+
+Public Enum CNCMetricsFontTypes
+    IconFont = 1
+    CaptionFont = 2
+    SMCaptionFont = 3
+    MenuFOnt = 4
+    StatusFont = 5
+    MessageFont = 6
+End Enum
+
+Public Function GetMetrics() As Boolean
+Dim lR As Long
+    ' Get Non-client metrics:
+    m_tNCM.cbSize = 340 'LenB(m_tNCM) - why doesn't this go?
+    lR = SystemParametersInfo( _
+            SPI_GETNONCLIENTMETRICS, _
+            0, _
+            m_tNCM, _
+            0)
+    If (lR &lt;&gt; 0) Then
+        ' Get icon font:
+        lR = SystemParametersInfo( _
+            SPI_GETICONTITLELOGFONT, _
+            0, _
+            m_tLF, _
+            0)
+        GetMetrics = (lR &lt;&gt; 0)
+    End If
+End Function
+Property Get Font( _
+      ByVal hDC As Long, _
+      ByVal eFontNum As CNCMetricsFontTypes _
+   ) As Long
+Dim lR As Long
+Dim tLF As LOGFONT
+
+   Select Case eFontNum
+   Case StatusFont
+      CopyMemory tLF, m_tNCM.lfStatusFont, LenB(m_tNCM.lfStatusFont)
+   Case SMCaptionFont
+      CopyMemory tLF, m_tNCM.lfSMCaptionFont, LenB(m_tNCM.lfSMCaptionFont)
+   Case MessageFont
+      CopyMemory tLF, m_tNCM.lfMessageFont, LenB(m_tNCM.lfMessageFont)
+   Case MenuFOnt
+      CopyMemory tLF, m_tNCM.lfMenuFont, LenB(m_tNCM.lfMenuFont)
+   Case IconFont
+      CopyMemory tLF, m_tLF, LenB(m_tLF)
+   Case CaptionFont
+      CopyMemory tLF, m_tNCM.lfCaptionFont, LenB(m_tNCM.lfCaptionFont)
+   Case Else
+      Exit Property
+   End Select
+    
+   ' If you want an API hFont, just do this:
+   Font = CreateFontIndirect(tLF)
+   
+   ' This demonstrates how to return a VB style font.
+   ' Remember to use DeleteObject hFont when you've
+   ' finished with it.
+   'Dim sFnt As New StdFont
+   'pLogFontToStdFont tLF, hDC, sFnt
+   'Set Font = sFnt
+   
+End Property
+Private Sub pLogFontToStdFont(ByRef tLF As LOGFONT, ByVal hDC As Long, ByRef
+ sFnt As StdFont)
+   With sFnt
+      .Name = StrConv(tLF.lfFaceName, vbUnicode)
+      If tLF.lfHeight &lt; 1 Then
+         .Size = Abs((72# / GetDeviceCaps(hDC, LOGPIXELSY)) * tLF.lfHeight)
+      Else
+         .Size = tLF.lfHeight
+      End If
+      .Charset = tLF.lfCharSet
+      .Italic = Not (tLF.lfItalic = 0)
+      .Underline = Not (tLF.lfUnderline = 0)
+      .Strikethrough = Not (tLF.lfStrikeOut = 0)
+      .Bold = (tLF.lfWeight &gt; FW_REGULAR)
+   End With
+End Sub
+Property Get CaptionHeight() As Long
+    CaptionHeight = m_tNCM.iCaptionHeight
+End Property
+Property Get CaptionWIdth() As Long
+    CaptionWIdth = m_tNCM.iCaptionWidth
+End Property
+Property Get MenuHeight() As Long
+    MenuHeight = m_tNCM.iMenuHeight
+End Property
+Property Get MenuWidth() As Long
+    MenuWidth = m_tNCM.iMenuWidth
+End Property
+Property Get ScrollHeight() As Long
+    ScrollHeight = m_tNCM.iScrollHeight
+End Property
+Property Get ScrollWidth() As Long
+    ScrollWidth = m_tNCM.iScrollWidth
+End Property
+Property Get SMCaptionHeight() As Long
+    SMCaptionHeight = m_tNCM.iSMCaptionHeight
+End Property
+Property Get SMCaptionWIdth() As Long
+    SMCaptionWIdth = m_tNCM.iSMCaptionWidth
+End Property
+Property Get BorderWidth() As Long
+    BorderWidth = m_tNCM.iBorderWidth
+End Property
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Drop Down Tool Windows</a>&#160;.&#160;<a href="article.html">vbAccelerator Drop-Down and Popup Form Control</a>&#160;.&#160;<a href="VB5_Drop_Down_Form_Control_Full_Source.html">VB5 Drop Down Form Control Full Source</a>&#160;.&#160;cNCMetrics.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Drop_Down_Tool_Windows/Drop_Down_Form_Control/VB5_Drop_Down_Form_Control_Full_Source_zip_cNCMetrics_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:54 GMT -->
+</html>

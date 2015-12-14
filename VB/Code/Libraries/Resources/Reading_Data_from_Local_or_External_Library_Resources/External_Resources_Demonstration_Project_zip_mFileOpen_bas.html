@@ -1,0 +1,350 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Resources/Reading_Data_from_Local_or_External_Library_Resources/External_Resources_Demonstration_Project_zip_mFileOpen_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:51 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: mFileOpen.bas</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: mFileOpen.bas" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Resources</a>&#160;.&#160;<a href="article.html">Reading Data from Local or External Library Resources</a>&#160;.&#160;<a href="External_Resources_Demonstration_Project.html">External Resources Demonstration Project</a>&#160;.&#160;mFileOpen.bas</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="External_Resources_Demonstration_Project.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />External Resources Demonstration Project</a> (52K)</p><p /><p class="nav"><a href="JPG_Resource_File_Sample_Project.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />JPG Resource File Sample Project</a> (43K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2676</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2676&amp;type=Zip&amp;title=External%20Resources%20Demonstration%20Project%2Ezip%5FmFileOpen">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />1 Nov 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: mFileOpen.bas</h1><pre>Attribute VB_Name = "mFileOpenSave"
+Option Explicit
+
+Private Const MAX_PATH = 260
+Private Type OPENFILENAME
+    lStructSize As Long          ' Filled with UDT size
+    hWndOwner As Long            ' Tied to Owner
+    hInstance As Long            ' Ignored (used only by templates)
+    lpstrFilter As String        ' Tied to Filter
+    lpstrCustomFilter As String  ' Ignored (exercise for reader)
+    nMaxCustFilter As Long       ' Ignored (exercise for reader)
+    nFilterIndex As Long         ' Tied to FilterIndex
+    lpstrFile As String          ' Tied to FileName
+    nMaxFile As Long             ' Handled internally
+    lpstrFileTitle As String     ' Tied to FileTitle
+    nMaxFileTitle As Long        ' Handled internally
+    lpstrInitialDir As String    ' Tied to InitDir
+    lpstrTitle As String         ' Tied to DlgTitle
+    flags As Long                ' Tied to Flags
+    nFileOffset As Integer       ' Ignored (exercise for reader)
+    nFileExtension As Integer    ' Ignored (exercise for reader)
+    lpstrDefExt As String        ' Tied to DefaultExt
+    lCustData As Long            ' Ignored (needed for hooks)
+    lpfnHook As Long             ' Ignored (good luck with hooks)
+    lpTemplateName As Long       ' Ignored (good luck with templates)
+End Type
+
+Private Declare Function GetOpenFileName Lib "COMDLG32" _
+    Alias "GetOpenFileNameA" (file As OPENFILENAME) As Long
+Private Declare Function GetSaveFileName Lib "COMDLG32" _
+    Alias "GetSaveFileNameA" (file As OPENFILENAME) As Long
+
+Private Declare Function CommDlgExtendedError Lib "COMDLG32" () As Long
+Private Declare Function lstrlen Lib "kernel32" Alias "lstrlenA" (ByVal
+ lpString As String) As Long
+
+Private m_lApiReturn As Long
+Private m_lExtendedError As Long
+Public Enum EOpenFile
+    OFN_READONLY = &amp;H1
+    OFN_OVERWRITEPROMPT = &amp;H2
+    OFN_HIDEREADONLY = &amp;H4
+    OFN_NOCHANGEDIR = &amp;H8
+    OFN_SHOWHELP = &amp;H10
+    OFN_ENABLEHOOK = &amp;H20
+    OFN_ENABLETEMPLATE = &amp;H40
+    OFN_ENABLETEMPLATEHANDLE = &amp;H80
+    OFN_NOVALIDATE = &amp;H100
+    OFN_ALLOWMULTISELECT = &amp;H200
+    OFN_EXTENSIONDIFFERENT = &amp;H400
+    OFN_PATHMUSTEXIST = &amp;H800
+    OFN_FILEMUSTEXIST = &amp;H1000
+    OFN_CREATEPROMPT = &amp;H2000
+    OFN_SHAREAWARE = &amp;H4000
+    OFN_NOREADONLYRETURN = &amp;H8000
+    OFN_NOTESTFILECREATE = &amp;H10000
+    OFN_NONETWORKBUTTON = &amp;H20000
+    OFN_NOLONGNAMES = &amp;H40000
+    OFN_EXPLORER = &amp;H80000
+    OFN_NODEREFERENCELINKS = &amp;H100000
+    OFN_LONGNAMES = &amp;H200000
+End Enum
+
+Private Const MAX_FILE = 260&amp;
+
+Public Function VBGetOpenFileName(Filename As String, _
+                           Optional FileTitle As String, _
+                           Optional FileMustExist As Boolean = True, _
+                           Optional MultiSelect As Boolean = False, _
+                           Optional ReadOnly As Boolean = False, _
+                           Optional HideReadOnly As Boolean = False, _
+                           Optional Filter As String = "All (*.*)| *.*", _
+                           Optional FilterIndex As Long = 1, _
+                           Optional InitDir As String, _
+                           Optional DlgTitle As String, _
+                           Optional DefaultExt As String, _
+                           Optional Owner As Long = -1, _
+                           Optional flags As Long = 0) As Boolean
+
+Dim opfile As OPENFILENAME, s As String, afFlags As Long
+Dim lMax As Long
+    
+   m_lApiReturn = 0
+   m_lExtendedError = 0
+
+   With opfile
+       .lStructSize = Len(opfile)
+       
+       ' Add in specific flags and strip out non-VB flags
+       
+       .flags = (-FileMustExist * OFN_FILEMUSTEXIST) Or _
+               (-MultiSelect * OFN_ALLOWMULTISELECT) Or _
+                (-ReadOnly * OFN_READONLY) Or _
+                (-HideReadOnly * OFN_HIDEREADONLY) Or _
+                (flags And CLng(Not (OFN_ENABLEHOOK Or _
+                                     OFN_ENABLETEMPLATE)))
+       ' Owner can take handle of owning window
+       If Owner &lt;&gt; -1 Then .hWndOwner = Owner
+       ' InitDir can take initial directory string
+       .lpstrInitialDir = InitDir
+       ' DefaultExt can take default extension
+       .lpstrDefExt = DefaultExt
+       ' DlgTitle can take dialog box title
+       .lpstrTitle = DlgTitle
+       
+       ' To make Windows-style filter, replace | and : with nulls
+       Dim ch As String, i As Integer
+       For i = 1 To Len(Filter)
+           ch = Mid$(Filter, i, 1)
+           If ch = "|" Or ch = ":" Then
+               s = s &amp; vbNullChar
+           Else
+               s = s &amp; ch
+           End If
+       Next
+       ' Put double null at end
+       s = s &amp; vbNullChar &amp; vbNullChar
+       .lpstrFilter = s
+       .nFilterIndex = FilterIndex
+   
+       ' Pad file and file title buffers to maximum path
+       lMax = MAX_PATH
+       If (.flags And OFN_ALLOWMULTISELECT) = OFN_ALLOWMULTISELECT Then
+         lMax = 8192
+       End If
+       s = Filename &amp; String$(lMax - Len(Filename), 0)
+       .lpstrFile = s
+       .nMaxFile = lMax
+       s = FileTitle &amp; String$(lMax - Len(FileTitle), 0)
+       .lpstrFileTitle = s
+       .nMaxFileTitle = lMax
+       ' All other fields set to zero
+       
+       m_lApiReturn = GetOpenFileName(opfile)
+       Select Case m_lApiReturn
+       Case 1
+           ' Success
+           VBGetOpenFileName = True
+           If (.flags And OFN_ALLOWMULTISELECT) = OFN_ALLOWMULTISELECT Then
+               FileTitle = ""
+               lMax = InStr(.lpstrFile, Chr$(0) &amp; Chr$(0))
+               If (lMax = 0) Then
+                  Filename = StrZToStr(.lpstrFile)
+               Else
+                  Filename = left$(.lpstrFile, lMax - 1)
+               End If
+           Else
+               Filename = StrZToStr(.lpstrFile)
+               FileTitle = StrZToStr(.lpstrFileTitle)
+           End If
+           flags = .flags
+           ' Return the filter index
+           FilterIndex = .nFilterIndex
+           ' Look up the filter the user selected and return that
+           Filter = FilterLookup(.lpstrFilter, FilterIndex)
+           If (.flags And OFN_READONLY) Then ReadOnly = True
+       Case 0
+           ' Cancelled
+           VBGetOpenFileName = False
+           Filename = ""
+           FileTitle = ""
+           flags = 0
+           FilterIndex = -1
+           Filter = ""
+       Case Else
+           ' Extended error
+           m_lExtendedError = CommDlgExtendedError()
+           VBGetOpenFileName = False
+           Filename = ""
+           FileTitle = ""
+           flags = 0
+           FilterIndex = -1
+           Filter = ""
+       End Select
+   End With
+   End Function
+Function VBGetSaveFileName(Filename As String, _
+                              Optional FileTitle As String, _
+                              Optional OverWritePrompt As Boolean = True, _
+                              Optional Filter As String = "All (*.*)| *.*", _
+                              Optional FilterIndex As Long = 1, _
+                              Optional InitDir As String, _
+                              Optional DlgTitle As String, _
+                              Optional DefaultExt As String, _
+                              Optional Owner As Long = -1, _
+                              Optional flags As Long _
+                           ) As Boolean
+               
+       Dim opfile As OPENFILENAME, s As String
+   
+       m_lApiReturn = 0
+       m_lExtendedError = 0
+   
+   With opfile
+       .lStructSize = Len(opfile)
+       
+       ' Add in specific flags and strip out non-VB flags
+       .flags = (-OverWritePrompt * OFN_OVERWRITEPROMPT) Or _
+                OFN_HIDEREADONLY Or _
+                (flags And CLng(Not (OFN_ENABLEHOOK Or _
+                                     OFN_ENABLETEMPLATE)))
+       ' Owner can take handle of owning window
+       If Owner &lt;&gt; -1 Then .hWndOwner = Owner
+       ' InitDir can take initial directory string
+       .lpstrInitialDir = InitDir
+       ' DefaultExt can take default extension
+       .lpstrDefExt = DefaultExt
+       ' DlgTitle can take dialog box title
+       .lpstrTitle = DlgTitle
+              
+       ' Make new filter with bars (|) replacing nulls and double null at end
+       Dim ch As String, i As Integer
+       For i = 1 To Len(Filter)
+           ch = Mid$(Filter, i, 1)
+           If ch = "|" Or ch = ":" Then
+               s = s &amp; vbNullChar
+           Else
+               s = s &amp; ch
+           End If
+       Next
+       ' Put double null at end
+       s = s &amp; vbNullChar &amp; vbNullChar
+       .lpstrFilter = s
+       .nFilterIndex = FilterIndex
+   
+       ' Pad file and file title buffers to maximum path
+       s = Filename &amp; String$(MAX_PATH - Len(Filename), 0)
+       .lpstrFile = s
+       .nMaxFile = MAX_PATH
+       s = FileTitle &amp; String$(MAX_FILE - Len(FileTitle), 0)
+       .lpstrFileTitle = s
+       .nMaxFileTitle = MAX_FILE
+       ' All other fields zero
+       
+       m_lApiReturn = GetSaveFileName(opfile)
+       Select Case m_lApiReturn
+       Case 1
+           VBGetSaveFileName = True
+           Filename = StrZToStr(.lpstrFile)
+           FileTitle = StrZToStr(.lpstrFileTitle)
+           flags = .flags
+           ' Return the filter index
+           FilterIndex = .nFilterIndex
+           ' Look up the filter the user selected and return that
+           Filter = FilterLookup(.lpstrFilter, FilterIndex)
+       Case 0
+           ' Cancelled:
+           VBGetSaveFileName = False
+           Filename = ""
+           FileTitle = ""
+           flags = 0
+           FilterIndex = 0
+           Filter = ""
+       Case Else
+           ' Extended error:
+           VBGetSaveFileName = False
+           m_lExtendedError = CommDlgExtendedError()
+           Filename = ""
+           FileTitle = ""
+           flags = 0
+           FilterIndex = 0
+           Filter = ""
+       End Select
+   End With
+End Function
+
+Private Function StrZToStr(s As String) As String
+    StrZToStr = left$(s, lstrlen(s))
+End Function
+
+Private Function FilterLookup(ByVal sFilters As String, ByVal iCur As Long) As
+ String
+    Dim iStart As Long, iEnd As Long, s As String
+    iStart = 1
+    If sFilters = "" Then Exit Function
+    Do
+        ' Cut out both parts marked by null character
+        iEnd = InStr(iStart, sFilters, vbNullChar)
+        If iEnd = 0 Then Exit Function
+        iEnd = InStr(iEnd + 1, sFilters, vbNullChar)
+        If iEnd Then
+            s = Mid$(sFilters, iStart, iEnd - iStart)
+        Else
+            s = Mid$(sFilters, iStart)
+        End If
+        iStart = iEnd + 1
+        If iCur = 1 Then
+            FilterLookup = s
+            Exit Function
+        End If
+        iCur = iCur - 1
+    Loop While iCur
+End Function
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Resources</a>&#160;.&#160;<a href="article.html">Reading Data from Local or External Library Resources</a>&#160;.&#160;<a href="External_Resources_Demonstration_Project.html">External Resources Demonstration Project</a>&#160;.&#160;mFileOpen.bas</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Resources/Reading_Data_from_Local_or_External_Library_Resources/External_Resources_Demonstration_Project_zip_mFileOpen_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:51 GMT -->
+</html>

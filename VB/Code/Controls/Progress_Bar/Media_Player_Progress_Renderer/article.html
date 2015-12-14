@@ -1,0 +1,133 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Progress_Bar/Media_Player_Progress_Renderer/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:55:06 GMT -->
+<head>
+
+<title>vbAccelerator - Media Progress Bar Renderer</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Windows Media Player has a neat progress bar showing how
+its getting on whilst burning files to CD or other long operations.
+This article presents a reusable class which draws a progress bar
+in a similar presentation.  The resulting bar can be drawn to 
+anything that exposes an hDC, and therefore can be integrated
+with a progress bar or even a Custom-Draw ListView exactly as 
+Media Player does.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Progress Bar</a>&#160;.&#160;Media Progress Bar Renderer</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Media_Progress_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Media Progress Sample</a> (62K)</p><p /><p class="nav"><a href="VB6_Media_Progress_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Media Progress Sample</a> (57K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:12288</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12288&amp;type=Article&amp;title=Media%20Progress%20Bar%20Renderer">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />5 Jul 2003<br /><p class="update">
+Rendering did not succeed on some Win9x/ME systems - the <span class="code">AlphaBlend</span>
+.
+Fixed by using all code alpha blending for any pre-2000 system.
+</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3173">Image Processing Using DIB Sections </a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3162">Hue Luminance and Saturation (HLS) Model and Manipulating Colours</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Media Progress Bar Renderer</h1><p class="splash">How to render a gradient progress bar like the one in Windows Media Player</p><img src="mediaProgress.png" width="359" height="303" alt="Media Progress Bar Render Sample." /><p /><p>Windows Media Player has a neat progress bar showing how
+its getting on whilst burning files to CD or other long operations.
+This article presents a reusable class which draws a progress bar
+in a similar presentation.  The resulting bar can be drawn to 
+anything that exposes an <i>hDC</i>, and therefore can be integrated
+with a progress bar or even a Custom-Draw ListView exactly as 
+Media Player does.
+</p><h2>Using the Class</h2><p>
+The class has two modes of operation: automatic sizing (which emulates the 
+rendering performed by Media Player) and user-defined sizing.  These 
+are controlled by the <span class="code">AutoSize</span> flag.
+</p><ol><li><p>
+When 
+<span class="code">AutoSize</span> is <span class="code">False</span>, 
+setting the <span class="code">Width</span> property directly controls the
+width of the progress bar.
+</p></li><li><p>
+When <span class="code">AutoSize</span> is <span class="code">True</span> 
+the <span class="code">Width</span> property is read-only, and
+returns the minimum width the bar requires to fully draw.  The 
+<span class="code">MinWidth</span> property can be set to force the
+bar to draw into a wider area, which is useful if you have a column
+of bars to draw and you want them all to be the same width.  The actual 
+drawn width of the bar can be calculated using this code:
+</p><pre>
+   Width = IIF(bar.MinWidth &gt; bar.Width, bar.MinWidth, bar.Width)
+</pre></li></ol><p>
+The other properties control the appearance of the bar.  
+The background of the progress
+bar always draws black.  The colour of the progress effect is controlled using the 
+<span class="code">BarColor</span> property:  typically you will set this to a 
+bright colour since the border and gradient bar will be rendered in a 
+darker shade of this colour and only the text at the leading edge of the progress 
+bar is actually in the pure form of the colour.
+</p><p>
+The 
+<span class="code">Text</span> property
+sets the text displayed on the bar, <span class="code">ShowPercent</span> tells
+the control whether to display a percentage progress at the end of the caption.
+You can set the percentage progress either by using the 
+<span class="code">Min</span>, <span class="code">Max</span> and 
+<span class="code">Value</span> properties, or by setting the 
+<span class="code">Percent</span> property directly.
+</p><h2>Rendering Description</h2><p>
+Rendering of the bar proceeds in three stages:
+</p><ol><li><p><strong>Border and Gradient Progress Bar</strong></p>.
+<img src="step1.png" width="123" height="22" alt="Border and Progress Bar" /><p>This is drawn into a memory DC. The colours, based on the Media Player
+equivalent, are black for the background and a grey with R,G,B values of 100
+for the border and end of the gradient.  The gradient is drawn using 
+the API call <span class="code">GradientFillRect</span> unless the code
+is running under NT4 or Windows95, in which case a solid bar is drawn.</p></li><li><p><strong>Creating the Text</strong></p><img src="step2.png" width="123" height="22" alt="The Text" /><p>We want the intensity of the text to be related to the gradient 
+background over which it is drawn.  Therefore the text is drawn
+into a memory DIB with all bits set to alpha = 0 (transparent)
+so it can be alpha blended with the background.
+</p></li><li><p><strong>Blending the Text and Background</strong></p><img src="step3.png" width="123" height="22" alt="Text and Background combined" /><p>
+The transparent text DIB is alpha blended with the orignal background DIB
+using a constant alpha of 128 (or 50%).  This is either done using the
+system API <span class="code">AlphaBlend</span> function or using a code
+version if running under NT4 or Windows9x/ME (note that although Windows 98 and above
+support <span class="code">AlphaBlend</span>, it can be buggy).
+      </p></li><li><p><strong>Colourising the Result</strong></p><img src="step4.png" width="123" height="22" alt="Colourised result" /><p>To get the final result, the DIB is colourised, but only in the area
+of the border and the gradient bar.  This means the text which isn't
+on top of the bar remains grayed.  This is achieved by applying 
+<a href="http://www.vbaccelerator.com/article.asp?id=3173">colourisation</a> to the appropriate 
+pixels of the output.
+</p></li></ol><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Progress Bar</a>&#160;.&#160;Media Progress Bar Renderer</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 6 July 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Progress_Bar/Media_Player_Progress_Renderer/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:55:08 GMT -->
+</html>

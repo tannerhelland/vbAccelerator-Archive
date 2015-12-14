@@ -1,0 +1,179 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Dealing_with_Circular_References/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:04 GMT -->
+<head>
+
+<title>vbAccelerator - Dealing with Circular References</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="VB and COM makes a lot of things easy to do, particularly using and dealing with objects:
+you just create them and normally they clear themselves up automatically once you're finished
+with them.  However, one side effect of the way COM works is that it is possible to create objects
+which cannot terminate properly: this problem is known as a 'Circular Reference'.
+The effects of a circular reference can range from using more memory than you ought to
+(possibly to the extent that you get an Out Of Memory error) to much harsher effects
+when you are experimenting with API calls." /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;Dealing with Circular References</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Circular_References_-_Broken_Code.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Circular References - Broken Code</a> (10K)</p><p class="nav"><a href="Circular_References_-_Fix_1.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Circular References - Fix 1</a> (11K)</p><p class="nav"><a href="Circular_References_-_Fix_2.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Circular References - Fix 2</a> (12K)</p><p class="nav"><a href="Circular_References_-_Fix_3.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Circular References - Fix 3</a> (11K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2190</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2190&amp;type=Article&amp;title=Dealing%20with%20Circular%20References">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 1</a></p><p class="nav">Updated:13 December 2003</p>
+<br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />23 Dec 2002<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Dealing with Circular References</h1><p class="splash">Why you get circular references in VB and two methods to prevent the problem.</p><img src="circular.png" width="260" height="180" alt="Circular References Graphic" /><p /><p>VB and COM makes a lot of things easy to do, particularly using and dealing with objects:
+you just create them and normally they clear themselves up automatically once you're finished
+with them.  However, one side effect of the way COM works is that it is possible to create objects
+which cannot terminate properly: this problem is known as a "Circular Reference".
+</p><p>The effects of a circular reference can range from using more memory than you ought to
+(possibly to the extent that you get an Out Of Memory error) to much harsher effects
+when you are experimenting with API calls.</p><h2>How VB Determines When to Terminate an Object</h2><p>Normally, you don't need to worry about object termination.  If you create an object
+using the New operator, you know that VB when the object goes out of scope VB will 
+try to call its <i>_Terminate</i> method (if it has one) and clear up any memory 
+associated with it.  You can also set any object reference you have
+to <i>Nothing</i> which will do the same thing.  So how does VB know when there are
+no outstanding references to the object?  After all, you can run code like this:</p><pre>
+Dim m_c As New Collection
+
+Private Sub Form_Load()
+   Dim c1 As New MyClass
+   c1.Name = "This Will Terminate At The End Of Form_Load"
+  
+   Dim c2 As New MyClass
+   c2.Name = c1.Name
+   m_c.Add c2
+
+End Sub ' c1 will terminate here, but c2 will not
+</pre><p>The answer to this is provided by the fundamentals of COM objects.  All VB objects
+are either explicitly created as COM objects (if they are exposed objects compiled into 
+an ActiveX binary) or are created as such internally within VB.  All COM objects must
+follow the COM contract, which means they must implement at least three methods:</p><ol><li>QueryInterface</li><li>AddRef</li><li>Release</li></ol><p>The second two of these are of interest to how VB knows when to terminate an object.
+Whenever the <i>AddRef</i> method of a COM object is called, the object itself must
+increment an internal reference count by 1.  Whenever <i>Release</i> is called, the 
+object decrements the count. When the internal reference count of the object reaches
+zero then it can be terminated and any resources associated with it cleared up.</p><p>A C++ coder using a COM object has complete control over when <i>AddRef</i> and
+<i>Release</i> are called. This means that you can decide if a particular object always
+lives within the lifetime of another object, and decide not to call <i>AddRef</i>.  This
+is considerably more flexibility than you have with VB.  VB <strong>always</strong>
+calls <i>AddRef</i> and <i>Release</i> for you at the correct moments.  That is fine,
+except it results in a problem called Circular References.</p><h2>Creating a Circular Reference</h2><p>A circular reference occurs when there are two objects which refer to each other.
+Say you have a class which manages a series of Worker objects that perform specific tasks,
+and the Worker objects need to notify their parent, or to interact with data held by 
+the parent.  What happens is this:</p><ul><li>When you create the Parent object in VB, AddRef is called.  Parent now has a reference
+count of 1</li><li>When Parent creates an instance of a Worker, AddRef is called on the Worker.  Worker now
+also has a reference count of 1</li><li>Worker gets a reference to the Parent object to allow it to notify or interact with the
+data.  The Parent object reference count is incremented to 2.</li><li>When Parent later goes out of scope, VB calls Release.  This reduces the parent reference
+count to 1 (the reference held by the Worker).  However, this now means that Parent still
+has a reference count of 1.  Unless something can tell the Worker object to release its
+reference, both Parent and Worker will remain with reference counts until the application
+terminates.  Remember that since the Parent does not enter the Class_Terminate method,
+there is nothing that will occur in the code to allow you to know that its main reference
+has been terminated and so it looks from Parent's point of view that it is still 
+required, even though it is only a child class which is requiring it!</li></ul><p>The only way that these objects can go out of scope is when the VB process finally shuts
+down.  Then VB will terminate all the remaining objects it knows about, and the order in
+which that occurs is not known.  Fine if the order doesn't affect the object VB is terminating, 
+but not so good if you need to ensure if something terminates first (e.g. to close a handle).</p><p>The circular reference problem typically occurs when you're trying to create a 
+strongly typed collection of objects for a control.  When you modify elements of the
+object held in the collection typically this has to affect the control itself.  However, if
+the child object has a reference to the control to notify the control about the change, then 
+you have a circular reference.</p><h2>Resolving Circular References</h2><p>There are three ways you can go about preventing circular references.  These are:</p><ol><li>Using a Late Bound events</li><li>Providing a "Dispose" style method.</li><li>Using Non-Counted References</li></ol><p>Whilst the event method is a possible solution, it is not covered here.  The problem with
+using events is that the events have to be wired up at design time. If you don't know
+how many child objects you're going to have then it is all but impossible to design a 
+solution to fix this.</p><p>The other two solutions are demonstrated in the example projects 
+and are covered in turn.</p><h3>Providing a "Dispose" Style Method</h3><p>The problem with a circular reference is there is no event which automatically occurs
+when the owner of the Parent object releases its reference.  Clearly, however, you can
+provide a method in the Parent object which goes through any child Worker objects and
+terminates the object reference.  By doing this, the Worker objects release their references
+on the parent, so the additional reference count is removed, and then the Parent object
+can terminate as soon as it goes out of scope.</p><p>This method is demonstrated in the Fix 1 download.  However, whilst it works ok, 
+it has two distinct disadvantages:</p><ol><li>The owner of the object needs to know when it releases its reference.  That's fine for
+a DLL object, but very difficult for something like a control, because VB's form engine
+is actually in charge of when it wants to terminate the object.</li><li>The user of the object needs to remember to call the "Dispose" style 
+method.  This isn't a very natural way to code in VB and easily forgotten.</li></ol><p>Ideally there would be a way of coding these objects which could be used in a normal
+VB style by any user.  Luckily there is, but you need to incorporate a few hacks.</p><h3>Using Non-Counted References</h3><p>This method is the equivalent of what a C++ coder would do when they knew they did
+not have to call <i>AddRef</i> or <i>Release</i> on an object reference because its scope 
+could never go outside the bounds of the parent object.  There are two ways you can
+go about doing this:</p><ol><li><p><strong>Using object pointers.</strong></p><p>The object pointer technique, first demonstrated by Bruce McKinney in his legendary
+book Hardcore Visual Basic (a book that is still causing embarassment via my harddrive, as his
+frequent use of the term "Hardcore" seems to convince others I've been up 
+to tricks on the Internet. Then again, things could be worse; it could have been called 
+Teenage Beaver Visual Basic, although I suppose that would have been somewhat unlikely), is 
+a tried and trusted technique on this site.  The concept is simple: all COM objects
+are accessed through a pointer in memory, and this is returned by VB's <i>ObjPtr</i>
+function.  Calling <i>ObjPtr</i> does not change the reference count. Therefore if you
+can somehow reconstruct an object from its pointer, then you have a method to store
+an object without changing its reference count.</p><p>Luckily there is a way, as follows:</p><pre>
+   ' To Retrieve the Object From the Long Value:
+   Private Property Get ObjectFromPtr(ByVal lPtr As Long) As Object
+   Dim objT As Object
+       ' Bruce McKinney's code for getting an Object from the
+       ' object pointer:
+       CopyMemory objT, lPtr, 4
+       Set ObjectFromPtr = objT
+       CopyMemory objT, 0&amp;, 4
+   End Property
+</pre><p>The Fix 2 download demonstrates this technique.</p></li><li><p><strong>Using IUnknown</strong></p><p>If you have access to a Type Library which provides the basic <i>IUnknown</i> COM 
+object interface,
+containing <i>QueryInterface</i>, <i>AddRef</i> and <i>Release</i>, you can cast your
+object to that type and call the <i>Release</i> method on it as soon as you have copied
+the object reference.  This decrements the reference count by 1 and hence as soon as the 
+parent reference goes out of scope <i>Class_Terminate</i> can be called.</p><p>Note that VB itself appears to know about the <i>IUnknown</i> interface even though 
+you won't see it in the object browser.  Declaring something as <i>IUnknown</i> is equivalent to 
+using <i>As Object</i> in VB, but VB does not allow you to call the <i>AddRef</i> or <i>Release</i> 
+methods through this route (you'll get an error).  To use <i>IUnknown</i> properly 
+you need a Type Library, and you need to prefix the <i>IUnknown</i> type declaration 
+with the Type Library's name, otherwise you get VB's mindless version.</p><p>This version is demonstrated in the Fix 3 download.  Looking at the code, it is a whole
+lot more VB-like than the Fix 2 version and actually almost quite nice!  However, there's
+a downside.  If the Worker classes are terminated prior to the Parent class, you get
+a GPF.  Whether you can be entirely sure which order VB will terminate its objects, 
+I'm not certain whether this a good idea.</p></li></ol><h2>Wrap Up</h2><p>COM reference counting and the circular reference problem associated with it are
+one of the major bugbears with all COM related projects.  You will note that the .NET
+Framework, like Java, does away with reference counting altogether and takes 
+a completely different approach to managing objects in memory.  That means you do have
+no choice but to consider the "Dispose" route if you need to be certain when 
+objects terminate in .NET, but at least it is obvious that this will be a problem and
+there are certain constructs, such as the <i>IDisposable</i> interface and the
+<i>using</i> language features that make it more likely that these will be used correctly.</p><p>This article demonstrates how you get a circular reference and a number of 
+techniques for removing the problem.  Although all have a measure of danger, so do 
+circular references with no attempt at resolution. If used judiciously, you should find
+the techniques presented here will stop these problems in their tracks.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;Dealing with Circular References</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 4 January 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Dealing_with_Circular_References/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:06 GMT -->
+</html>

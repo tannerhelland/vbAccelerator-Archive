@@ -1,0 +1,890 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/ActiveX_Documenter/ActiveX_Documenter_Source_zip_cVBALImageList_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:20:03 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cVBALImageList.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cVBALImageList.cls" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">ActiveX Documenter</a>&#160;.&#160;<a href="ActiveX_Documenter_Source.html">ActiveX Documenter Source</a>&#160;.&#160;cVBALImageList.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="ActiveX_Documenter_Source.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />ActiveX Documenter Source</a> (349K)</p><p /><p class="nav"><a href="VB5_ActiveX_Documenter.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ActiveX Documenter</a> (148K)</p><p /><p class="nav"><a href="VB6_ActiveX_Documenter.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ActiveX Documenter</a> (138K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1990</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1990&amp;type=Zip&amp;title=ActiveX%20Documenter%20Source%2Ezip%5FcVBALImageList">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 2 / 2</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:4 August 2003</p>
+<br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />23 Feb 2003<br /><p class="update">Fixed hacks to determine default interface and events; you can
+      now generate documentation for any TLB</p><p class="update">Types exposed by Type Libraries are now documented correctly;
+      previously types appeared as Classes with constant members.</p><p class="update">Documentation associated with Types or enumerated members in 
+      Type Libraries now included.</p><p class="update">Documentation generation now 100x quicker for large type
+      libraries.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2314">StringBuilder Class for VB</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1418">Two code only solutions for displaying Common/Dialogs</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1417">vbAccelerator Status Bar Control</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2518">Complete Registry control</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=7">PopupMenu DLL - Create Unlimited Popup Menus</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1272">vbAccelerator Toolbar and CoolMenu Control v3.5</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2766">vbAccelerator TabStrip Control</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cVBALImageList.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cVBALImageList"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+
+' =========================================================================
+' vbAccelerator Image List Control Demonstrator
+' Copyright  1998 Steve McMahon (steve@vbaccelerator.com)
+'
+' Implements an Image List control in VB using COMCTL32.DLL
+'
+' Visit vbAccelerator at www.vbaccelerator.com
+' =========================================================================
+Private Declare Function ImageList_Copy Lib "COMCTL32" (ByVal himlDst As Long,
+ ByVal iDst As Long, ByVal himlSrc As Long, ByVal iSrc As Long, ByVal uFlags As
+ Long) As Long
+Private Declare Function ImageList_Create Lib "COMCTL32" (ByVal MinCx As Long,
+ ByVal MinCy As Long, ByVal flags As Long, ByVal cInitial As Long, ByVal cGrow
+ As Long) As Long
+Private Declare Function ImageList_Destroy Lib "COMCTL32" (ByVal hImageList As
+ Long) As Long
+Private Declare Function ImageList_DrawEx Lib "COMCTL32" (ByVal hIml As Long,
+ ByVal i As Long, ByVal hdcDst As Long, ByVal x As Long, ByVal y As Long, ByVal
+ dx As Long, ByVal dy As Long, ByVal rgbBk As Long, ByVal rgbFg As Long, ByVal
+ fStyle As Long) As Long
+Private Declare Function ImageList_Remove Lib "COMCTL32" (ByVal hImageList As
+ Long, ByVal ImgIndex As Long) As Long
+Private Declare Function DestroyCursor Lib "user32" (ByVal hCursor As Long) As
+ Long
+Private Declare Function GetPixel Lib "gdi32" (ByVal hDC As Long, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function ImageList_AddMasked Lib "COMCTL32" (ByVal hImageList
+ As Long, ByVal hbmImage As Long, ByVal crMask As Long) As Long
+Private Declare Function ImageList_AddIcon Lib "COMCTL32" (ByVal hIml As Long,
+ ByVal hIcon As Long) As Long
+
+Private Const CLR_NONE = -1
+
+Private Const ILCF_MOVE = &amp;H0&amp;
+Private Const ILCF_SWAP = &amp;H1&amp;
+Private Const ILC_MASK = &amp;H1&amp;
+
+Private Const LR_COPYRETURNORG = &amp;H4
+
+Private Const SRCCOPY = &amp;HCC0020
+
+' -----------
+' ENUMS
+' -----------
+Public Enum eilIconState
+  Normal = 0
+  Disabled = 1
+End Enum
+
+Public Enum ImageTypes
+  IMAGE_BITMAP = 0
+  IMAGE_ICON = 1
+  IMAGE_CURSOR = 2
+End Enum
+
+Public Enum eilColourDepth
+    ILC_COLOR = &amp;H0
+    ILC_COLOR4 = &amp;H4
+    ILC_COLOR8 = &amp;H8
+    ILC_COLOR16 = &amp;H10
+    ILC_COLOR24 = &amp;H18
+    ILC_COLOR32 = &amp;H20
+End Enum
+
+Public Enum eilSwapTypes
+   eilCopy = ILCF_MOVE
+   eilSwap = ILCF_SWAP
+End Enum
+
+' ------------------
+' Private variables:
+' ------------------
+Private m_hIml As Long
+Private m_lIconSizeX As Long
+Private m_lIconSizeY As Long
+Private m_eColourDepth As eilColourDepth
+Private m_sKey() As String
+Private m_HDC As Long
+
+Public Property Let OwnerHDC(ByVal lHDC As Long)
+   m_HDC = lHDC
+End Property
+
+Public Property Get SystemColourDepth() As eilColourDepth
+Dim lR As Long
+Dim lHDC As Long
+   lHDC = CreateDCAsNull("DISPLAY", ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)
+   lR = GetDeviceCaps(lHDC, BITSPIXEL)
+   DeleteDC lHDC
+   SystemColourDepth = lR
+End Property
+
+Public Sub SwapOrCopyImage( _
+      ByVal vKeySrc As Variant, _
+      ByVal vKeyDst As Variant, _
+      Optional ByVal eSwap As eilSwapTypes = eilSwap _
+   )
+Dim lDst As Long
+Dim lSrc As Long
+Dim sKeyDst As String
+Dim sKeySrc As String
+
+   If (m_hIml &lt;&gt; 0) Then
+      lDst = ItemIndex(vKeySrc)
+      If (lDst &gt; -1) Then
+         lSrc = ItemIndex(vKeyDst)
+         If (lSrc &gt; -1) Then
+            ImageList_Copy m_hIml, lDst, m_hIml, lSrc, eSwap
+            sKeyDst = m_sKey(lDst)
+            sKeySrc = m_sKey(lSrc)
+            m_sKey(lDst) = sKeySrc
+            m_sKey(lSrc) = sKeyDst
+         End If
+      End If
+   End If
+End Sub
+
+Public Function Create() As Boolean
+     
+     ' Do we already have an image list?  Kill it if we have:
+    Destroy
+
+    'Create the Imagelist:
+    m_hIml = ImageList_Create(m_lIconSizeX, m_lIconSizeY, ILC_MASK Or
+     m_eColourDepth, 4, 4)
+    If (m_hIml &lt;&gt; 0) And (m_hIml &lt;&gt; -1) Then
+      ' Ok
+      Create = True
+    Else
+      m_hIml = 0
+    End If
+    
+End Function
+Public Sub Destroy()
+   ' Kill the image list if we have one:
+   If (hIml &lt;&gt; 0) Then
+      ImageList_Destroy hIml
+      m_hIml = 0
+   End If
+   Erase m_sKey
+End Sub
+Public Sub DrawImage( _
+        ByVal vKey As Variant, _
+        ByVal hDC As Long, _
+        ByVal xPixels As Integer, _
+        ByVal yPixels As Integer, _
+        Optional ByVal bSelected = False, _
+        Optional ByVal bCut = False, _
+        Optional ByVal bDisabled = False, _
+        Optional ByVal oCutDitherColour As OLE_COLOR = vbWindowBackground, _
+        Optional ByVal hExternalIml As Long = 0 _
+    )
+Dim hIcon As Long
+Dim lFlags As Long
+Dim lhIml As Long
+Dim lColor As Long
+Dim iImgIndex As Long
+
+   ' Draw the image at 1 based index or key supplied in vKey.
+   ' on the hDC at xPixels,yPixels with the supplied options.
+   ' You can even draw an ImageList from another ImageList control
+   ' if you supply the handle to hExternalIml with this function.
+   
+   iImgIndex = ItemIndex(vKey)
+   If (iImgIndex &gt; -1) Then
+      If (hExternalIml &lt;&gt; 0) Then
+          lhIml = hExternalIml
+      Else
+          lhIml = hIml
+      End If
+      
+      lFlags = ILD_TRANSPARENT
+      If (bSelected) Or (bCut) Then
+          lFlags = lFlags Or ILD_SELECTED
+      End If
+      
+      If (bCut) Then
+        ' Draw dithered:
+        lColor = TranslateColor(oCutDitherColour)
+        If (lColor = -1) Then lColor = GetSysColor(COLOR_WINDOW)
+        ImageList_DrawEx _
+              lhIml, _
+              iImgIndex, _
+              hDC, _
+              xPixels, yPixels, 0, 0, _
+              CLR_NONE, lColor, _
+              lFlags
+      ElseIf (bDisabled) Then
+        ' extract a copy of the icon:
+        hIcon = ImageList_GetIcon(hIml, iImgIndex, 0)
+        ' Draw it disabled at x,y:
+        DrawState hDC, 0, 0, hIcon, 0, xPixels, yPixels, m_lIconSizeX,
+         m_lIconSizeY, DST_ICON Or DSS_DISABLED
+        ' Clear up the icon:
+        DestroyIcon hIcon
+              
+      Else
+        ' Standard draw:
+        ImageList_Draw _
+            lhIml, _
+            iImgIndex, _
+            hDC, _
+            xPixels, _
+            yPixels, _
+            lFlags
+      End If
+   End If
+End Sub
+
+Public Property Get IconSizeX() As Long
+   ' Returns the icon width
+    IconSizeX = m_lIconSizeX
+End Property
+Public Property Let IconSizeX(ByVal lSizeX As Long)
+   ' Sets the icon width.  NB no change at runtime unless you
+   ' call Create and add all the images in again.
+    m_lIconSizeX = lSizeX
+End Property
+Public Property Get IconSizeY() As Long
+   ' Returns the icon height:
+    IconSizeY = m_lIconSizeY
+End Property
+Public Property Let IconSizeY(ByVal lSizeY As Long)
+   ' Sets the icon height.  NB no change at runtime unless you
+   ' call Create and add all the images in again.
+    m_lIconSizeY = lSizeY
+End Property
+Public Property Get ColourDepth() As eilColourDepth
+   ' Returns the ColourDepth:
+    ColourDepth = m_eColourDepth
+End Property
+Public Property Let ColourDepth(ByVal eDepth As eilColourDepth)
+   ' Sets the ColourDepth.  NB no change at runtime unless you
+   ' call Create and rebuild the image list.
+    m_eColourDepth = eDepth
+End Property
+
+Public Property Get ImageCount() As Integer
+   ' Returns the number of images in the ImageList:
+   If (hIml &lt;&gt; 0) Then
+      ImageCount = ImageList_GetImageCount(hIml)
+   End If
+End Property
+Public Sub RemoveImage(ByVal vKey As Variant)
+Dim lIndex As Long
+Dim i As Long
+   ' Removes an image from the ImageList:
+   If (hIml &lt;&gt; 0) Then
+      lIndex = ItemIndex(vKey)
+      ImageList_Remove hIml, lIndex
+      ' Fix up the keys:
+      For i = lIndex To ImageCount - 1
+         m_sKey(i) = m_sKey(i + 1)
+      Next i
+      pEnsureKeys
+   End If
+
+End Sub
+Public Property Get KeyExists(ByVal sKey As String) As Boolean
+Dim iL As Long
+Dim iU As Long
+   If ImageCount &gt; 0 Then
+      On Error Resume Next
+      iU = UBound(m_sKey)
+      If Err.Number &lt;&gt; 0 Then
+         iU = 0
+      End If
+      If (iU &lt;&gt; ImageCount - 1) Then
+         pEnsureKeys
+      End If
+      For iL = 0 To ImageCount - 1
+         If m_sKey(iL) = sKey Then
+            KeyExists = True
+            Exit For
+         End If
+      Next iL
+   End If
+End Property
+
+Public Property Get ItemIndex(ByVal vKey As Variant) As Long
+Dim lR As Long
+Dim i As Long
+   ' Returns the 0 based Index for the selected
+   ' Image list item:
+   If (IsNumeric(vKey)) Then
+      lR = vKey
+      If (lR &gt; 0) And (lR &lt;= ImageCount) Then
+         ItemIndex = lR - 1
+      Else
+         ' error
+         Err.Raise 9, App.EXEName &amp; ".vbalImageList"
+         ItemIndex = -1
+      End If
+   Else
+      lR = -1
+      For i = 0 To ImageCount - 1
+         If (m_sKey(i) = vKey) Then
+            lR = i
+            Exit For
+         End If
+      Next i
+      If (lR &gt; 0) And (lR &lt;= ImageCount) Then
+         ItemIndex = lR
+      Else
+         Err.Raise 9, App.EXEName &amp; ".vbalImageList"
+         ItemIndex = -1
+      End If
+   End If
+End Property
+Public Property Get ItemKey(ByVal iIndex As Long) As Variant
+   ' Returns the Key for an image:
+   If (iIndex &gt; 0) And (iIndex &lt;= ImageCount) Then
+      ItemKey = m_sKey(iIndex - 1)
+   Else
+      Err.Raise 9, App.EXEName &amp; ".vbalImageList"
+   End If
+End Property
+Public Property Let ItemKey(ByVal iIndex As Long, ByVal vKey As Variant)
+   ' Sets the Key for the an image:
+   iIndex = iIndex - 1
+   If (iIndex &gt; 0) And (iIndex &lt; ImageCount) Then
+      SetKey iIndex, vKey
+   Else
+      Err.Raise 9, App.EXEName &amp; ".vbalImageList"
+   End If
+End Property
+Public Property Get ItemPicture(ByVal vKey As Variant) As IPicture
+Dim lIndex As Long
+Dim hIcon As Long
+   ' Returns a StdPicture for an image in the ImageList:
+   lIndex = ItemIndex(vKey)
+   If (lIndex &gt; -1) Then
+      hIcon = ImageList_GetIcon(m_hIml, lIndex, ILD_TRANSPARENT)
+      If (hIcon &lt;&gt; 0) Then
+         Set ItemPicture = IconToPicture(hIcon)
+         ' Don't destroy the icon - it is now owned by
+         ' the picture object
+      End If
+   End If
+   
+End Property
+Public Property Get ItemCopyOfIcon(ByVal vKey As Variant) As Long
+Dim lIndex As Long
+   ' Returns a hIcon for an image in the ImageList.  User must
+   ' call DestroyIcon on the returned handle.
+   lIndex = ItemIndex(vKey)
+   If (lIndex &gt; -1) Then
+      ItemCopyOfIcon = ImageList_GetIcon(m_hIml, lIndex, ILD_TRANSPARENT)
+   End If
+End Property
+Public Sub Clear()
+   ' Recreates the image list.
+   Create
+End Sub
+Public Function AddFromFile( _
+        ByVal sFIleName As String, _
+        ByVal iType As ImageTypes, _
+        Optional ByVal vKey As Variant, _
+        Optional ByVal bMapSysColors As Boolean = False, _
+        Optional ByVal lBackColor As OLE_COLOR = -1, _
+        Optional ByVal vKeyAfter As Variant _
+    ) As Long
+Dim hImage As Long
+Dim un2 As Long
+Dim lR As Long
+    
+   ' Adds an image or series of images from a file:
+   If (hIml &lt;&gt; 0) Then
+      un2 = LR_LOADFROMFILE
+      ' Load the image from file:
+      If bMapSysColors Then
+          un2 = un2 Or LR_LOADMAP3DCOLORS
+      End If
+      hImage = LoadImage(App.hInstance, sFIleName, iType, 0, 0, un2)
+      AddFromFile = AddFromHandle(hImage, iType, vKey, lBackColor, vKeyAfter)
+      Select Case iType
+      Case IMAGE_ICON
+         DestroyIcon hImage
+      Case IMAGE_CURSOR
+         DestroyCursor hImage
+      Case IMAGE_BITMAP
+         DeleteObject hImage
+      End Select
+   Else
+      ' no image list...
+      AddFromFile = False
+   End If
+                  
+End Function
+Public Function AddFromResourceID( _
+      ByVal lID As Long, _
+      ByVal hInst As Long, _
+      ByVal iType As ImageTypes, _
+      Optional ByVal vKey As Variant, _
+      Optional ByVal bMapSysColors As Boolean = False, _
+      Optional ByVal lBackColor As OLE_COLOR = -1, _
+      Optional ByVal vKeyAfter As Variant _
+    ) As Long
+Dim hImage As Long
+Dim un2 As Long
+Dim lR As Long
+Dim iX As Long, iY As Long
+    
+   ' Adds an image or series of images from a resource id.  Note this will
+   ' only work when working on a resource in a compiled executable:
+   If (hIml &lt;&gt; 0) Then
+      ' Load the image from file:
+      If bMapSysColors Then
+          un2 = un2 Or LR_LOADMAP3DCOLORS
+      End If
+      ' Choose the icon closest to the image list size:
+      If iType &lt;&gt; IMAGE_BITMAP Then
+         iX = m_lIconSizeX
+         iY = m_lIconSizeY
+      End If
+      If hInst = 0 Then
+         ' Assume we're trying to pick a shared
+         ' resource
+         un2 = un2 Or LR_COPYRETURNORG
+      End If
+      hImage = LoadImageLong(hInst, lID, iType, iX, iY, un2)
+      AddFromResourceID = AddFromHandle(hImage, iType, vKey, lBackColor,
+       vKeyAfter)
+      Select Case iType
+      Case IMAGE_ICON
+         DestroyIcon hImage
+      Case IMAGE_CURSOR
+         DestroyCursor hImage
+      Case IMAGE_BITMAP
+         DeleteObject hImage
+      End Select
+   Else
+      ' no image list...
+      AddFromResourceID = False
+   End If
+   
+End Function
+
+Public Function AddFromHandle( _
+      ByVal hImage As Long, _
+      ByVal iType As ImageTypes, _
+      Optional ByVal vKey As Variant, _
+      Optional ByVal lBackColor As OLE_COLOR = -1, _
+      Optional ByVal vKeyAfter As Variant _
+   ) As Boolean
+Dim lR As Long
+Dim lDst As Long
+Dim bOk As Boolean
+Dim bInsert As Boolean
+Dim i As Long, j As Long
+Dim iOrigCount As Long
+Dim iCount As Long
+Dim sSwapKey As String
+
+   ' Adds an image or series of images from a GDI image handle.
+   If (m_hIml &lt;&gt; 0) Then
+      If (hImage &lt;&gt; 0) Then
+         iOrigCount = ImageCount
+         
+         bOk = True
+         If Not IsMissing(vKeyAfter) Then
+            If (ImageCount &gt; 0) Then
+               If vKeyAfter = 0 Then
+                  bInsert = False
+                  lDst = 0
+               Else
+                  bInsert = True
+                  bOk = False
+                  lDst = ItemIndex(vKeyAfter)
+                  If (lDst &gt; -1) Then
+                     bOk = True
+                  End If
+               End If
+            End If
+         End If
+         
+         If (bOk) Then
+            If (iType = IMAGE_BITMAP) Then
+               ' And add it to the image list:
+               If (lBackColor = -1) Then
+                   ' Ideally Determine the top left pixel of the
+                   ' bitmap and use as back colour...
+                   Dim lHDCDisp As Long, lHDC As Long, hBmpOld As Long
+                   lHDCDisp = CreateDCAsNull("DISPLAY", ByVal 0&amp;, ByVal 0&amp;,
+                    ByVal 0&amp;)
+                   If lHDCDisp &lt;&gt; 0 Then
+                     lHDC = CreateCompatibleDC(lHDCDisp)
+                     DeleteDC lHDCDisp
+                     If lHDC &lt;&gt; 0 Then
+                        hBmpOld = SelectObject(lHDC, hImage)
+                        If hBmpOld &lt;&gt; 0 Then
+                           ' Get the colour of the 0,0 pixel:
+                           lBackColor = GetPixel(lHDC, 0, 0)
+                           SelectObject lHDC, hBmpOld
+                        End If
+                        DeleteObject lHDC
+                     End If
+                  End If
+               End If
+               lR = ImageList_AddMasked(hIml, hImage, lBackColor)
+            ElseIf (iType = IMAGE_ICON) Or (iType = IMAGE_CURSOR) Then
+               ' Add the icon:
+               lR = ImageList_AddIcon(hIml, hImage)
+            End If
+         End If
+         
+         If (lR &gt; -1) Then
+            If (bInsert) Then
+               If (lDst &lt; ImageCount - 1) Then
+                  ' We are inserting and have to swap all
+                  ' the images.
+                  pEnsureKeys
+                  iCount = ImageCount
+                  For i = iOrigCount - 1 To lDst Step -1
+                     For j = i To i + iCount - iOrigCount - 1
+                        ImageList_Copy m_hIml, j + 1, m_hIml, j, eilSwap
+                        sSwapKey = m_sKey(j)
+                        m_sKey(j) = m_sKey(j + 1)
+                        m_sKey(j + 1) = sSwapKey
+                     Next j
+                  Next i
+                  
+               End If
+            End If
+         End If
+         
+      Else
+          lR = -1
+      End If
+   Else
+      lR = -1
+   End If
+   
+   If (lR &lt;&gt; -1) Then
+      If bInsert Then
+         SetKey lDst, vKey
+      Else
+         SetKey lR, vKey
+      End If
+      AddFromHandle = (lR &lt;&gt; -1)
+   End If
+   pEnsureKeys
+   
+End Function
+Public Function AddFromPictureBox( _
+        ByVal hDC As Long, _
+        pic As Object, _
+        Optional ByVal vKey As Variant, _
+        Optional ByVal LeftPixels As Long = 0, _
+        Optional ByVal TopPixels As Long = 0, _
+        Optional ByVal lBackColor As OLE_COLOR = -1 _
+    ) As Long
+Dim lHDC As Long
+Dim lhBmp As Long, lhBmpOld As Long
+Dim tBM As BITMAP
+Dim lAColor As Long
+Dim lW As Long, lH As Long
+Dim hBrush As Long
+Dim tR As RECT
+Dim lR As Long
+Dim lBPixel As Long
+   
+   ' Adds an image or series of images from an area of a PictureBox
+   ' or other Device Context:
+   lR = -1
+   If (hIml &lt;&gt; 0) Then
+      ' Create a DC to hold the bitmap to transfer into the image list:
+      lHDC = CreateCompatibleDC(hDC)
+      If (lHDC &lt;&gt; 0) Then
+          lhBmp = CreateCompatibleBitmap(hDC, m_lIconSizeX, m_lIconSizeY)
+          If (lhBmp &lt;&gt; 0) Then
+              ' Get the backcolor to use:
+              If (lBackColor = -1) Then
+                  ' None specified, use the colour at 0,0:
+                  lBackColor = GetPixel(pic.hDC, 0, 0)
+              Else
+                  ' Try to get the specified backcolor:
+                  If OleTranslateColor(lBackColor, 0, lAColor) Then
+                      ' Failed- use default of silver
+                      lBackColor = &amp;HC0C0C0
+                  Else
+                      ' Set to GDI version of OLE Color
+                      lBackColor = lAColor
+                  End If
+              End If
+              ' Select the bitmap into the DC
+              lhBmpOld = SelectObject(lHDC, lhBmp)
+              ' Clear the background:
+              hBrush = CreateSolidBrush(lBackColor)
+              tR.Right = m_lIconSizeX: tR.Bottom = m_lIconSizeY
+              FillRect lHDC, tR, hBrush
+              DeleteObject hBrush
+              
+              ' Get the source picture's dimension:
+              GetObjectAPI pic.Picture.handle, LenB(tBM), tBM
+              lW = 16
+              lH = 16
+              If (lW + LeftPixels &gt; tBM.bmWidth) Then
+                  lW = tBM.bmWidth - LeftPixels
+              End If
+              If (lH + TopPixels &gt; tBM.bmHeight) Then
+                  lH = tBM.bmHeight - TopPixels
+              End If
+              If (lW &gt; 0) And (lH &gt; 0) Then
+                  ' Blt from the picture into the bitmap:
+                  lR = BitBlt(lHDC, 0, 0, lW, lH, hDC, LeftPixels, TopPixels,
+                   SRCCOPY)
+                  Debug.Assert (lR &lt;&gt; 0)
+              End If
+              
+              ' We now have the image in the bitmap, so select it out of the DC:
+              SelectObject lHDC, lhBmpOld
+              ' And add it to the image list:
+              AddFromHandle lhBmp, IMAGE_BITMAP, vKey, lBackColor
+                  
+              DeleteObject lhBmp
+          End If
+          ' Clear up the DC:
+          DeleteDC lHDC
+      End If
+   End If
+
+   If (lR &lt;&gt; -1) Then
+        SetKey lR, vKey
+   End If
+   
+   AddFromPictureBox = lR + 1
+   pEnsureKeys
+   
+End Function
+Private Sub SetKey(ByVal lIndex As Long, ByVal vKey As Variant)
+Dim sKey As String
+Dim lI As Long
+
+   If (IsEmpty(vKey) Or IsMissing(vKey)) Then
+      sKey = ""
+   Else
+      sKey = vKey
+   End If
+    
+   If (m_hIml &lt;&gt; 0) Then
+      
+      On Error Resume Next
+      lI = UBound(m_sKey)
+      If (Err.Number = 0) Then
+         If (lIndex &gt; lI) Then
+            ReDim Preserve m_sKey(0 To lIndex) As String
+         End If
+      Else
+         ReDim Preserve m_sKey(0 To lIndex) As String
+      End If
+      
+      For lI = 0 To UBound(m_sKey)
+         If Not lI = lIndex Then
+            If Trim$(m_sKey(lI)) &lt;&gt; "" Then
+               If m_sKey(lI) = vKey Then
+                  Err.Raise 457
+                  Exit Sub
+               End If
+            End If
+         End If
+      Next lI
+      m_sKey(lIndex) = vKey
+   End If
+End Sub
+Public Property Get hIml() As Long
+   ' Returns the ImageList handle:
+    hIml = m_hIml
+End Property
+Public Property Get ImagePictureStrip( _
+      Optional ByVal vStartKey As Variant, _
+      Optional ByVal vEndKey As Variant, _
+      Optional ByVal oBackColor As OLE_COLOR = vbButtonFace _
+   ) As IPicture
+Dim iStart As Long
+Dim iEnd As Long
+Dim iImgIndex As Long
+Dim lHDC As Long
+Dim lParenthDC As Long
+Dim lhBmp As Long
+Dim lhBmpOld As Long
+Dim lSizeX As Long
+Dim hBr As Long
+Dim tR As RECT
+Dim lColor As Long
+   
+   If (m_hIml &lt;&gt; 0) Then
+      If (IsMissing(vStartKey)) Then
+         iStart = 0
+      Else
+         iStart = ItemIndex(vStartKey)
+      End If
+      If (IsMissing(vEndKey)) Then
+         iEnd = ImageCount - 1
+      Else
+         iEnd = ItemIndex(vEndKey)
+      End If
+      
+      If (iEnd &gt; iStart) And (iEnd &gt; -1) Then
+         lParenthDC = m_HDC
+         lHDC = CreateCompatibleDC(lParenthDC)
+         If (lHDC &lt;&gt; 0) Then
+            lSizeX = ImageCount * m_lIconSizeX
+            lhBmp = CreateCompatibleBitmap(lParenthDC, lSizeX, m_lIconSizeY)
+            If (lhBmp &lt;&gt; 0) Then
+               lhBmpOld = SelectObject(lHDC, lhBmp)
+               If (lhBmpOld &lt;&gt; 0) Then
+                  lColor = TranslateColor(oBackColor)
+                  tR.Bottom = m_lIconSizeY
+                  tR.Right = lSizeX
+                  hBr = CreateSolidBrush(lColor)
+                  FillRect lHDC, tR, hBr
+                  DeleteObject hBr
+                  For iImgIndex = iStart To iEnd
+                     ImageList_Draw m_hIml, iImgIndex, lHDC, iImgIndex *
+                      m_lIconSizeX, 0, ILD_TRANSPARENT
+                  Next iImgIndex
+                  SelectObject lHDC, lhBmpOld
+                  Set ImagePictureStrip = BitmapToPicture(lhBmp)
+               Else
+                  DeleteObject lhBmp
+               End If
+            End If
+            DeleteDC lHDC
+         End If
+      End If
+   End If
+   
+End Property
+
+Public Function IconToPicture(ByVal hIcon As Long) As IPicture
+    
+    If hIcon = 0 Then Exit Function
+        
+    ' This is all magic if you ask me:
+    Dim NewPic As Picture, PicConv As PictDesc, IGuid As Guid
+    
+    PicConv.cbSizeofStruct = Len(PicConv)
+    PicConv.picType = vbPicTypeIcon
+    PicConv.hImage = hIcon
+    
+    ' Fill in magic IPicture GUID {7BF80980-BF32-101A-8BBB-00AA00300CAB}
+    With IGuid
+        .Data1 = &amp;H7BF80980
+        .Data2 = &amp;HBF32
+        .Data3 = &amp;H101A
+        .Data4(0) = &amp;H8B
+        .Data4(1) = &amp;HBB
+        .Data4(2) = &amp;H0
+        .Data4(3) = &amp;HAA
+        .Data4(4) = &amp;H0
+        .Data4(5) = &amp;H30
+        .Data4(6) = &amp;HC
+        .Data4(7) = &amp;HAB
+    End With
+    OleCreatePictureIndirect PicConv, IGuid, True, NewPic
+    
+    Set IconToPicture = NewPic
+    
+End Function
+
+Public Function BitmapToPicture(ByVal hBmp As Long) As IPicture
+
+   If (hBmp = 0) Then Exit Function
+   
+   Dim NewPic As Picture, tPicConv As PictDesc, IGuid As Guid
+   
+   ' Fill PictDesc structure with necessary parts:
+   With tPicConv
+      .cbSizeofStruct = Len(tPicConv)
+      .picType = vbPicTypeBitmap
+      .hImage = hBmp
+   End With
+   
+   ' Fill in IDispatch Interface ID
+   With IGuid
+      .Data1 = &amp;H20400
+      .Data4(0) = &amp;HC0
+      .Data4(7) = &amp;H46
+   End With
+   
+   ' Create a picture object:
+   OleCreatePictureIndirect tPicConv, IGuid, True, NewPic
+   
+   ' Return it:
+   Set BitmapToPicture = NewPic
+      
+
+End Function
+
+Private Sub pEnsureKeys()
+Dim iCount As Long
+Dim iU As Long
+   If m_hIml &lt;&gt; 0 Then
+      iCount = ImageCount
+      On Error Resume Next
+      iU = UBound(m_sKey)
+      If (Err.Number &lt;&gt; 0) Then iU = -1
+      Err.Clear
+      If (iU &lt;&gt; iCount - 1) Then
+         ReDim Preserve m_sKey(0 To iCount - 1) As String
+      End If
+   End If
+End Sub
+
+Private Sub Class_Initialize()
+   m_lIconSizeX = 16
+   m_lIconSizeY = 16
+   m_eColourDepth = ILC_COLOR
+End Sub
+
+Private Sub Class_Terminate()
+    Destroy
+End Sub
+
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">ActiveX Documenter</a>&#160;.&#160;<a href="ActiveX_Documenter_Source.html">ActiveX Documenter Source</a>&#160;.&#160;cVBALImageList.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/ActiveX_Documenter/ActiveX_Documenter_Source_zip_cVBALImageList_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:20:03 GMT -->
+</html>

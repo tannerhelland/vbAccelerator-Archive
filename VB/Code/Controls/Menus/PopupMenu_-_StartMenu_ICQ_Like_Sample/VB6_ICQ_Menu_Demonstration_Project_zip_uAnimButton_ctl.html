@@ -1,0 +1,401 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Menus/PopupMenu_-_StartMenu_ICQ_Like_Sample/VB6_ICQ_Menu_Demonstration_Project_zip_uAnimButton_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:13 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: uAnimButton.ctl</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: uAnimButton.ctl" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Menus</a>&#160;.&#160;<a href="article.html">Using the cNewMenu DLL to Create Start Menu/ICQ Style Pop-up Menus</a>&#160;.&#160;<a href="VB6_ICQ_Menu_Demonstration_Project.html">VB6 ICQ Menu Demonstration Project</a>&#160;.&#160;uAnimButton.ctl</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_ICQ_Menu_Demonstration_Project.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ICQ Menu Demonstration Project</a> (68K)</p><p /><p class="nav"><a href="VB6_ICQ_Menu_Demonstration_Project.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ICQ Menu Demonstration Project</a> (59K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:369</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=369&amp;type=Zip&amp;title=VB6%20ICQ%20Menu%20Demonstration%20Project%2Ezip%5FuAnimButton">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />13 Feb 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: uAnimButton.ctl</h1><pre>VERSION 5.00
+Begin VB.UserControl uAnimButton 
+   ClientHeight    =   375
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   1305
+   ScaleHeight     =   25
+   ScaleMode       =   3  'Pixel
+   ScaleWidth      =   87
+   Begin VB.Timer tmrAnim 
+      Enabled         =   0   'False
+      Interval        =   100
+      Left            =   840
+      Top             =   120
+   End
+End
+Attribute VB_Name = "uAnimButton"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+' ===========================================================================
+' Name:     uAnimButton
+' Author:   Steve McMahon
+' Date:     24 January 1999
+'
+' A very simple animated button.  When the mouse moves over,
+' it animates a picture strip.  When pressed or the mouse is
+' not over, it shows the default image.
+'
+' ---------------------------------------------------------------------------
+' Visit vbAccelerator - advanced, free VB source code.
+'     http://vbaccelerator.com
+' ===========================================================================
+
+Private Type POINTAPI
+   X As Long
+   Y As Long
+End Type
+Private Type RECT
+    left As Long
+    tOp As Long
+    Right As Long
+    Bottom As Long
+End Type
+Private Declare Function DrawEdge Lib "user32" (ByVal hDC As Long, qrc As RECT,
+ ByVal edge As Long, ByVal grfFlags As Long) As Long
+    Private Const BF_LEFT = &amp;H1
+    Private Const BF_BOTTOM = &amp;H8
+    Private Const BF_RIGHT = &amp;H4
+    Private Const BF_TOP = &amp;H2
+    Private Const BF_RECT = (BF_LEFT Or BF_TOP Or BF_RIGHT Or BF_BOTTOM)
+    Private Const BDR_INNER = &amp;HC
+    Private Const BDR_OUTER = &amp;H3
+    Private Const BDR_RAISED = &amp;H5
+    Private Const BDR_RAISEDINNER = &amp;H4
+    Private Const BDR_RAISEDOUTER = &amp;H1
+    Private Const BDR_SUNKEN = &amp;HA
+    Private Const BDR_SUNKENINNER = &amp;H8
+    Private Const BDR_SUNKENOUTER = &amp;H2
+    Private Const EDGE_BUMP = (BDR_RAISEDOUTER Or BDR_SUNKENINNER)
+    Private Const EDGE_ETCHED = (BDR_SUNKENOUTER Or BDR_RAISEDINNER)
+    Private Const EDGE_RAISED = (BDR_RAISEDOUTER Or BDR_RAISEDINNER)
+    Private Const EDGE_SUNKEN = (BDR_SUNKENOUTER Or BDR_SUNKENINNER)
+Private Declare Function GetClientRect Lib "user32" (ByVal hWnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function GetWindowRect Lib "user32" (ByVal hWnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function GetCursorPos Lib "user32" (lpPoint As POINTAPI) As Long
+Private Declare Function InflateRect Lib "user32" (lpRect As RECT, ByVal X As
+ Long, ByVal Y As Long) As Long
+Private Declare Function BitBlt Lib "gdi32" (ByVal hDestDC As Long, ByVal X As
+ Long, ByVal Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal dwRop As Long)
+ As Long
+Private Declare Function PtInRect Lib "user32" (lpRect As RECT, ByVal X As
+ Long, ByVal Y As Long) As Long
+
+Private m_pic As StdPicture
+Private m_lXCells As Long, m_lYCells As Long
+Private m_lCellWidth As Long, m_lCellHeight As Long
+Private m_lWidth As Long, m_lHeight As Long
+Private m_lCell As Long
+Private m_lCellCount As Long
+Private m_lDefaultCell As Long
+Private m_bPressed As Boolean
+Private m_bInterlock As Boolean
+Private m_lCellSteps() As Long
+Private m_lStep As Long
+
+Public Event Click()
+
+Public Property Get Interval() As Long
+   Interval = tmrAnim.Interval
+End Property
+Public Property Let Interval(ByVal lInterval As Long)
+   tmrAnim.Interval = lInterval
+   PropertyChanged "Interval"
+End Property
+
+Public Property Get CellSteps(ByVal lCell As Long) As Long
+   CellSteps = m_lCellSteps(lCell)
+End Property
+Public Property Let CellSteps(ByVal lCell As Long, ByVal lSteps As Long)
+   m_lCellSteps(lCell) = lSteps
+End Property
+
+Public Property Get BackColor() As OLE_COLOR
+   BackColor = UserControl.BackColor
+End Property
+Public Property Let BackColor(ByVal oColor As OLE_COLOR)
+   UserControl.BackColor = oColor
+   PropertyChanged "BackColor"
+End Property
+
+Public Property Get CellCount() As Long
+   CellCount = m_lCellCount
+End Property
+Public Property Get DefaultCell() As Long
+   DefaultCell = m_lDefaultCell
+End Property
+Public Property Let DefaultCell(ByVal lCell As Long)
+   m_lDefaultCell = lCell
+   m_lCell = lCell
+   Draw
+   PropertyChanged "DefaultCell"
+End Property
+
+Public Property Get XCells() As Long
+   XCells = m_lXCells
+End Property
+Public Property Let XCells(ByVal lX As Long)
+   m_lXCells = lX
+   If (lX &lt;&gt; 0) Then
+      m_lCellWidth = m_lWidth \ m_lXCells
+      m_lCellCount = m_lXCells * m_lYCells
+      If (m_lCellCount &gt; 0) Then
+         ReDim Preserve m_lCellSteps(0 To m_lCellCount - 1) As Long
+      End If
+      PropertyChanged "XCells"
+   End If
+End Property
+Public Property Get YCells() As Long
+   YCells = m_lYCells
+End Property
+Public Property Let YCells(ByVal lY As Long)
+   m_lYCells = lY
+   If (lY &lt;&gt; 0) Then
+      m_lCellHeight = m_lHeight \ m_lYCells
+      If (m_lCellCount &gt; 0) Then
+         ReDim Preserve m_lCellSteps(0 To m_lCellCount - 1) As Long
+      End If
+      m_lCellCount = m_lXCells * m_lYCells
+      PropertyChanged "YCells"
+   End If
+End Property
+Public Property Set Picture(ByRef s As StdPicture)
+   Set m_pic = s
+   If Not (m_pic Is Nothing) Then
+      m_lWidth = UserControl.ScaleX(s.Width, vbHimetric, vbPixels)
+      m_lHeight = UserControl.ScaleY(s.Height, vbHimetric, vbPixels)
+      XCells = m_lXCells
+      YCells = m_lYCells
+      Draw
+   End If
+   PropertyChanged "Picture"
+End Property
+Public Property Get Cell() As Long
+   Cell = m_lCell
+   PropertyChanged "Cell"
+End Property
+Public Sub Step()
+   m_lStep = m_lStep + 1
+   If (m_lStep &gt; m_lCellSteps(m_lCell)) Then
+      m_lStep = 0
+      m_lCell = m_lCell + 1
+      If (m_lCell &gt;= m_lCellCount) Then
+         m_lCell = 0
+      End If
+      Draw
+   End If
+End Sub
+
+Public Sub Draw()
+Dim tR As RECT
+Dim lEdge As Long
+Dim lLeft As Long, lTop As Long
+Dim lWidth As Long, lHeight As Long
+Dim lSrcLeft As Long, lSrcTOp As Long
+Static bPressed As Boolean
+
+   If (m_bPressed &lt;&gt; bPressed) Then
+      UserControl.Cls
+   End If
+
+   GetClientRect UserControl.hWnd, tR
+   If (m_bPressed) Then
+      lEdge = EDGE_SUNKEN
+   Else
+      lEdge = EDGE_RAISED
+   End If
+   DrawEdge UserControl.hDC, tR, lEdge, BF_RECT
+   InflateRect tR, -1, -1
+   
+   lLeft = tR.left + (tR.Right - tR.left - m_lCellWidth) \ 2 + 1
+   lTop = tR.tOp + (tR.Bottom - tR.tOp - m_lCellHeight) \ 2 + 1
+   If (lLeft &lt; tR.left) Then
+      lLeft = tR.left
+      lWidth = tR.Right - tR.left
+   Else
+      lWidth = m_lCellWidth
+   End If
+   If (lTop &lt; tR.tOp) Then
+      lTop = tR.tOp
+      lHeight = tR.Bottom - tR.tOp
+   Else
+      lHeight = m_lCellHeight - 1
+   End If
+   
+   If Not (m_pic Is Nothing) Then
+      lSrcLeft = (m_lCell Mod m_lXCells) * m_lCellWidth
+      lSrcTOp = (m_lCell \ m_lXCells) * m_lCellHeight
+      If (m_bPressed) Then
+         lLeft = lLeft + 1
+         lTop = lTop + 1
+      End If
+      
+      UserControl.PaintPicture m_pic, lLeft, lTop, lWidth, lHeight, lSrcLeft,
+       lSrcTOp, lWidth, lHeight
+   End If
+   
+   bPressed = m_bPressed
+   
+End Sub
+
+Private Sub tmrAnim_Timer()
+Dim tP As POINTAPI
+Dim tR As RECT
+   GetCursorPos tP
+   GetWindowRect UserControl.hWnd, tR
+   If (PtInRect(tR, tP.X, tP.Y) = 0) Then
+      tmrAnim.Enabled = False
+      m_lCell = m_lDefaultCell
+      If Not (m_bInterlock) Then
+         Draw
+      End If
+      m_bInterlock = False
+   Else
+      If Not (m_bInterlock) Then
+         Step
+         Draw
+      End If
+   End If
+End Sub
+
+Private Sub UserControl_Initialize()
+   m_lCellCount = 1
+   m_lXCells = 1
+   m_lYCells = 1
+   m_lDefaultCell = 0
+   m_lCell = 0
+   ReDim m_lCellSteps(0 To 0) As Long
+End Sub
+
+Private Sub UserControl_KeyDown(KeyCode As Integer, Shift As Integer)
+   If (KeyCode = vbKeyReturn) Or (KeyCode = vbKeySpace) Then
+      UserControl_MouseDown 1, 0, 15, 15
+   End If
+End Sub
+
+Private Sub UserControl_KeyUp(KeyCode As Integer, Shift As Integer)
+   If (KeyCode = vbKeyReturn) Or (KeyCode = vbKeySpace) Then
+      UserControl_MouseUp 1, 0, 15, 15
+   End If
+End Sub
+
+Private Sub UserControl_MouseDown(Button As Integer, Shift As Integer, X As
+ Single, Y As Single)
+   m_bPressed = True
+   tmrAnim.Enabled = False
+   m_lCell = m_lDefaultCell
+   Draw
+End Sub
+
+Private Sub UserControl_MouseMove(Button As Integer, Shift As Integer, X As
+ Single, Y As Single)
+   If (Button = 0) Then
+      If Not (tmrAnim.Enabled) Then
+         tmrAnim.Enabled = True
+      End If
+   Else
+      If (X &gt; 0) And (X &lt; UserControl.ScaleWidth) And (Y &gt; 0) And (Y &lt;
+       UserControl.ScaleHeight) Then
+         If Not (m_bPressed) Then
+            m_bPressed = True
+            Draw
+         End If
+      Else
+         If (m_bPressed) Then
+            m_bPressed = False
+            Draw
+         End If
+      End If
+   End If
+End Sub
+
+Private Sub UserControl_MouseUp(Button As Integer, Shift As Integer, X As
+ Single, Y As Single)
+Dim tP As POINTAPI
+Dim tR As RECT
+   m_bInterlock = True
+   tmrAnim.Enabled = True
+   m_bPressed = False
+   If (X &gt; 0) And (X &lt; UserControl.ScaleWidth) And (Y &gt; 0) And (Y &lt;
+    UserControl.ScaleHeight) Then
+      RaiseEvent Click
+   End If
+   Draw
+End Sub
+
+Private Sub UserControl_Paint()
+   Draw
+End Sub
+
+Private Sub UserControl_ReadProperties(PropBag As PropertyBag)
+   Set Picture = PropBag.ReadProperty("Picture", Nothing)
+   XCells = PropBag.ReadProperty("XCells", 1)
+   YCells = PropBag.ReadProperty("YCells", 1)
+   DefaultCell = PropBag.ReadProperty("DefaultCell", 0)
+   Interval = PropBag.ReadProperty("Interval", 200)
+End Sub
+
+Private Sub UserControl_Terminate()
+   tmrAnim.Enabled = False
+End Sub
+
+Private Sub UserControl_WriteProperties(PropBag As PropertyBag)
+   PropBag.WriteProperty "Picture", m_pic, Nothing
+   PropBag.WriteProperty "XCells", XCells, 1
+   PropBag.WriteProperty "YCells", YCells, 1
+   PropBag.WriteProperty "DefaultCell", DefaultCell, 0
+   PropBag.WriteProperty "Interval", Interval, 200
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Menus</a>&#160;.&#160;<a href="article.html">Using the cNewMenu DLL to Create Start Menu/ICQ Style Pop-up Menus</a>&#160;.&#160;<a href="VB6_ICQ_Menu_Demonstration_Project.html">VB6 ICQ Menu Demonstration Project</a>&#160;.&#160;uAnimButton.ctl</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Menus/PopupMenu_-_StartMenu_ICQ_Like_Sample/VB6_ICQ_Menu_Demonstration_Project_zip_uAnimButton_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:13 GMT -->
+</html>

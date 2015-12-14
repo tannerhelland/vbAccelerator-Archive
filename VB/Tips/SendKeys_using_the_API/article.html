@@ -1,0 +1,155 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/SendKeys_using_the_API/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:44:05 GMT -->
+<head>
+
+<title>vbAccelerator - SendKeys using the API</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+VB provides the SendKeys command which is supposed
+to create key events in the focus control.  However, in practice SendKeys sometimes
+doesn't work correctly, it is missing some keys and doesn't offer much flexibility 
+in controlling the sequence of key strokes that gets sent.  This article demonstrates
+using the Win32 keybd_event API call to circumvent these
+limitations.
+" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;SendKeys using the API</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="SendKeys_Demonstration.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />SendKeys Demonstration</a> (16K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:12687</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12687&amp;type=Article&amp;title=SendKeys%20using%20the%20API">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:11 September 2003</p>
+<br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />5 Sep 2003<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12635">Convert a Character Code to a string describing the Keyboard Keys which must be pressed</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2964">Moving, Clicking and Tracking the MousePointer in Code</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1015">Get the state of a key at any time</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>SendKeys using the API</h1><img src="sendKeys.png" width="292" height="305" alt="SendKeys Demonstration" /><p /><p>
+VB provides the <span class="code">SendKeys</span> command which is supposed
+to create key events in the focus control.  However, in practice SendKeys sometimes
+doesn't work correctly, it is missing some keys and doesn't offer much flexibility 
+in controlling the sequence of key strokes that gets sent.  This article demonstrates
+using the Win32 <span class="code">keybd_event</span> API call to circumvent these
+limitations.
+</p><h2>About <span class="code">keybd_event</span></h2><p>
+The <span class="code">keybd_event</span> functions synthesizes keystrokes; it is 
+essentially the same routine that is called by a keyboard driver to generate real
+key events.  Although the function has been superceded in NT and more modern 9x versions
+by <span class="code">SendInput</span> it is still implemented on all systems and works
+well in most cases.
+</p><p><span class="code">keybd_event</span> itself takes two useful parameters; the virtual
+key code to emulate a keystroke for and a flag indicating whether the event is a 
+key up or key down event.  
+</p><p>
+There are two ways of setting the virtual key code.  Firstly, you can use the 
+virtual key constant directly.  VB contains constants for most of the virtual key codes
+in the <span class="code">KeyCodeConstants</span> enumeration, however, there are
+a number of missing keys such as the right mouse button key on the keyboard.  Secondly,
+you can use the API <span class="code">VkKeyScan</span> function to get the key code
+for a particular character.
+</p><p>
+Bringing this together, we can write simple functions to create key down and key up 
+events:
+</p><pre>
+Private Declare Sub keybd_event Lib "user32" ( _
+   ByVal bVk As Byte, ByVal bScan As Byte, _
+   ByVal dwFlags As Long, ByVal dwExtraInfo As Long)
+Private Const KEYEVENTF_EXTENDEDKEY = &amp;H1
+Private Const KEYEVENTF_KEYUP = &amp;H2
+
+Private Declare Function GetVersion Lib "kernel32" () As Long
+Private Declare Function VkKeyScan Lib "user32" Alias "VkKeyScanA" ( _
+   ByVal cChar As Byte) As Integer
+Private Declare Function VkKeyScanW Lib "user32" ( _
+   ByVal cChar As Integer) As Integer
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+
+Public Sub KeyDown(ByVal vKey As KeyCodeConstants)
+   keybd_event vKey, 0, KEYEVENTF_EXTENDEDKEY, 0
+End Sub
+
+Public Sub KeyUp(ByVal vKey As KeyCodeConstants)
+   keybd_event vKey, 0, KEYEVENTF_EXTENDEDKEY Or KEYEVENTF_KEYUP, 0
+End Sub
+
+Public Function KeyCode(ByVal sChar As String) As KeyCodeConstants
+Dim bNt As Boolean
+Dim iKeyCode As Integer
+Dim b() As Byte
+Dim iKey As Integer
+Dim vKey As KeyCodeConstants
+Dim iShift As ShiftConstants
+
+   ' Determine if we have Unicode support or not:
+   bNt = ((GetVersion() And &amp;H80000000) = 0)
+   
+   ' Get the keyboard scan code for the character:
+   If (bNt) Then
+      b = sChar
+      CopyMemory iKey, b(0), 2
+      iKeyCode = VkKeyScanW(iKey)
+   Else
+      b = StrConv(sChar, vbFromUnicode)
+      iKeyCode = VkKeyScan(b(0))
+   End If
+   
+   KeyCode = (iKeyCode And &amp;HFF&amp;)
+
+End Function
+</pre><p>
+Being able to independently make key down and key up calls can make using
+send keys more flexible.  However, you should be careful to ensure you
+pair key down and up calls, particularly with the control, alt and shift keys
+otherwise your computer can become hard to use!
+</p><h2>Demonstration Application</h2><p>
+The demonstration application takes the code given above and wraps
+an implementation of the VB SendKeys parser around it in a class
+called <span class="code">cSendKeys</span>.  This class can be
+used almost as a drop in replacement for the VB SendKeys function,
+the only difference being that you need to create an instance
+of the class and use it to call the <span class="code">SendKeys</span>
+method.  The application uses this class to perform a variety of 
+key operations on it's own form (although practically you would probably
+use this code to automate another window).
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;SendKeys using the API</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 8 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/SendKeys_using_the_API/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:44:08 GMT -->
+</html>

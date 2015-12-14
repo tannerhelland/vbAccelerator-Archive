@@ -1,0 +1,703 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Colour_Depth_Reduction/VB5_Colour_Depth_Sample_zip_cDIBSectionSave_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:47 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cDIBSectionSave.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cDIBSectionSave.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;<a href="article.html">Colour Depth Control</a>&#160;.&#160;<a href="VB5_Colour_Depth_Sample.html">VB5 Colour Depth Sample</a>&#160;.&#160;cDIBSectionSave.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Colour_Depth_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Colour Depth Sample</a> (128K)</p><p /><p class="nav"><a href="VB6_Colour_Depth_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Colour Depth Sample</a> (123K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:3214</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3214&amp;type=Zip&amp;title=VB5%20Colour%20Depth%20Sample%2Ezip%5FcDIBSectionSave">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><p class="nav">&#160;&#160;Brian Schimpf</p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />13 Jan 2003<br /><p class="update">Added VB6 Version</p><p class="update">Tidied up the demonstration code classes to make them easier to reuse.</p><p class="update">Previously the optimal palette method was checking 3 times too many pixels in the 
+x direction. Now corrected; the performance is consequently a little better...</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3211">Optimised Colour Reduction Using Octrees</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3172">Floyd-Stucci Colour Reduction Methods and Gray Scaling</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3017">True Colour DIBSection</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cDIBSectionSave.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cDIBSectionSave"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal
+ hObject As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+Private Declare Function CreateDCAsNull Lib "gdi32" Alias "CreateDCA" (ByVal
+ lpDriverName As String, lpDeviceName As Any, lpOutput As Any, lpInitData As
+ Any) As Long
+Private Declare Function DeleteDC Lib "gdi32" (ByVal hdc As Long) As Long
+Private Declare Function CreateCompatibleDC Lib "gdi32" (ByVal hdc As Long) As
+ Long
+
+Private Type RGBQUAD
+    rgbBlue As Byte
+    rgbGreen As Byte
+    rgbRed As Byte
+    rgbReserved As Byte
+End Type
+Private Type BITMAPINFOHEADER '40 bytes
+    biSize As Long
+    biWidth As Long
+    biHeight As Long
+    biPlanes As Integer
+    biBitCount As Integer
+    biCompression As Long
+    biSizeImage As Long
+    biXPelsPerMeter As Long
+    biYPelsPerMeter As Long
+    biClrUsed As Long
+    biClrImportant As Long
+End Type
+Private Type BITMAPINFO2
+    bmiHeader As BITMAPINFOHEADER
+    bmiColors(0 To 1) As RGBQUAD
+End Type
+Private Type BITMAPINFO16
+    bmiHeader As BITMAPINFOHEADER
+    bmiColors(0 To 15) As RGBQUAD
+End Type
+Private Type BITMAPINFO256
+    bmiHeader As BITMAPINFOHEADER
+    bmiColors(0 To 255) As RGBQUAD
+End Type
+
+Private Const BI_RGB = 0&amp;
+Private Const BI_RLE4 = 2&amp;
+Private Const BI_RLE8 = 1&amp;
+Private Const DIB_RGB_COLORS = 0 '  color table in RGBs
+
+Private Declare Function CreateDIBSection2 Lib "gdi32" Alias "CreateDIBSection"
+ _
+    (ByVal hdc As Long, _
+    pBitmapInfo As BITMAPINFO2, _
+    ByVal un As Long, _
+    lplpVoid As Long, _
+    ByVal handle As Long, _
+    ByVal dw As Long) As Long
+Private Declare Function CreateDIBSection16 Lib "gdi32" Alias
+ "CreateDIBSection" _
+    (ByVal hdc As Long, _
+    pBitmapInfo As BITMAPINFO16, _
+    ByVal un As Long, _
+    lplpVoid As Long, _
+    ByVal handle As Long, _
+    ByVal dw As Long) As Long
+Private Declare Function CreateDIBSection256 Lib "gdi32" Alias
+ "CreateDIBSection" _
+    (ByVal hdc As Long, _
+    pBitmapInfo As BITMAPINFO256, _
+    ByVal un As Long, _
+    lplpVoid As Long, _
+    ByVal handle As Long, _
+    ByVal dw As Long) As Long
+
+Private Const BITMAPTYPE As Integer = &amp;H4D42
+Private Type BITMAPFILEHEADER
+   bfType As Integer '- type  ="BM" i.e &amp;H4D42 - 2
+   bfSize As Long ' - size in bytes of file - 6
+   bfReserved1 As Integer ' - reserved, must be 0 - 8
+   bfReserved2 As Integer ' - reserved, must be 0 - 10
+   bfOffBits As Long ' offset from this structure to the bitmap bits - 14
+End Type
+
+Private Declare Function CreateFile Lib "kernel32" Alias "CreateFileA" (ByVal
+ lpFileName As String, ByVal dwDesiredAccess As Long, ByVal dwShareMode As
+ Long, lpSecurityAttributes As Any, ByVal dwCreationDisposition As Long, ByVal
+ dwFlagsAndAttributes As Long, ByVal hTemplateFile As Long) As Long
+Private Declare Function ReadFile Lib "kernel32" (ByVal hFile As Long, lpBuffer
+ As Any, ByVal nNumberOfBytesToRead As Long, lpNumberOfBytesRead As Long,
+ lpOverlapped As Any) As Long
+Private Declare Function WriteFile Lib "kernel32" (ByVal hFile As Long,
+ lpBuffer As Any, ByVal nNumberOfBytesToWrite As Long, lpNumberOfBytesWritten
+ As Long, lpOverlapped As Any) As Long
+Private Declare Function SetFilePointer Lib "kernel32" (ByVal hFile As Long,
+ ByVal lDistanceToMove As Long, lpDistanceToMoveHigh As Long, ByVal
+ dwMoveMethod As Long) As Long
+Private Declare Function CloseHandle Lib "kernel32" (ByVal hObject As Long) As
+ Long
+Private Const INVALID_HANDLE_VALUE = -1
+Private Const CREATE_ALWAYS = 2
+Private Const GENERIC_READ = &amp;H80000000
+Private Const GENERIC_WRITE = &amp;H40000000
+Private Const FILE_ATTRIBUTE_ARCHIVE = &amp;H20
+Private Const FILE_ATTRIBUTE_COMPRESSED = &amp;H800
+Private Const FILE_ATTRIBUTE_DIRECTORY = &amp;H10
+Private Const FILE_ATTRIBUTE_HIDDEN = &amp;H2
+Private Const FILE_ATTRIBUTE_NORMAL = &amp;H80
+Private Const FILE_ATTRIBUTE_READONLY = &amp;H1
+Private Const FILE_ATTRIBUTE_SYSTEM = &amp;H4
+Private Const FILE_ATTRIBUTE_TEMPORARY = &amp;H100
+Private Const FILE_BEGIN = 0
+Private Declare Function GlobalLock Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function GlobalAlloc Lib "kernel32" (ByVal wFlags As Long,
+ ByVal dwBytes As Long) As Long
+Private Declare Function GlobalFree Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function GlobalUnlock Lib "kernel32" (ByVal hMem As Long) As
+ Long
+Private Const GMEM_FIXED = &amp;H0
+Private Const GMEM_ZEROINIT = &amp;H40
+Private Const GPTR = (GMEM_FIXED Or GMEM_ZEROINIT)
+Private Const FORMAT_MESSAGE_ALLOCATE_BUFFER = &amp;H100
+Private Const FORMAT_MESSAGE_ARGUMENT_ARRAY = &amp;H2000
+Private Const FORMAT_MESSAGE_FROM_HMODULE = &amp;H800
+Private Const FORMAT_MESSAGE_FROM_STRING = &amp;H400
+Private Const FORMAT_MESSAGE_FROM_SYSTEM = &amp;H1000
+Private Const FORMAT_MESSAGE_IGNORE_INSERTS = &amp;H200
+Private Const FORMAT_MESSAGE_MAX_WIDTH_MASK = &amp;HFF
+Private Declare Function FormatMessage Lib "kernel32" Alias "FormatMessageA"
+ (ByVal dwFlags As Long, lpSource As Any, ByVal dwMessageId As Long, ByVal
+ dwLanguageId As Long, ByVal lpBuffer As String, ByVal nSize As Long, Arguments
+ As Long) As Long
+
+Private Declare Function GetDIBits Lib "gdi32" (ByVal aHDC As Long, ByVal
+ hBitmap As Long, ByVal nStartScan As Long, ByVal nNumScans As Long, lpBits As
+ Long, lpBI As BITMAPINFO256, ByVal wUsage As Long) As Long
+Private Declare Function CreateDIBitmap Lib "gdi32" (ByVal hdc As Long,
+ lpInfoHeader As BITMAPINFOHEADER, ByVal dwUsage As Long, lpInitBits As Any,
+ lpInitInfo As BITMAPINFO256, ByVal wUsage As Long) As Long
+
+
+Public Enum EDSSColourDepthConstants
+   edss2Colour
+   edss16Colour
+   edss256Colour
+   edssTrueColour
+End Enum
+
+Public Enum EDSSColourReductionConstants
+   edssSystemDefault
+   edssUsePalette
+   edssGeneratePalette
+End Enum
+
+Private m_eColourDepth As EDSSColourDepthConstants
+Private m_eReductionMethod As EDSSColourReductionConstants
+Private m_cPalette As cPalette
+      
+Private m_tBI2 As BITMAPINFO2
+Private m_tBI16 As BITMAPINFO16
+Private m_tBI256 As cDIBSectionSave.BITMAPINFO256
+Private m_hDib As Long
+Private m_lPtr As Long
+Private m_cD As cDIBSection
+      
+Public Property Get ColourDepth() As EDSSColourDepthConstants
+   ColourDepth = m_eColourDepth
+End Property
+Public Property Let ColourDepth(ByVal value As EDSSColourDepthConstants)
+   m_eColourDepth = value
+End Property
+Public Property Get ReductionMethod() As EDSSColourReductionConstants
+   ReductionMethod = m_eReductionMethod
+End Property
+Public Property Let ReductionMethod(ByVal value As EDSSColourReductionConstants)
+   m_eReductionMethod = value
+End Property
+Public Property Get Palette() As cPalette
+   Set Palette = m_cPalette
+End Property
+Public Property Let Palette(cPal As cPalette)
+   Set m_cPalette = cPal
+End Property
+Public Property Set Palette(cPal As cPalette)
+   Set m_cPalette = cPal
+End Property
+
+Public Function Convert( _
+      ByRef cDIB As cDIBSection _
+   ) As Boolean
+Dim tBIH As BITMAPINFOHEADER
+
+   ClearUp
+
+   If m_eColourDepth = edssTrueColour Then
+      ' Copy DIB Section:
+      Set m_cD = New cDIBSection
+      m_cD.Create cDIB.Width, cDIB.Height
+      cDIB.PaintPicture m_cD.hdc
+      
+   Else
+      ' We must create a new DIBSection of the correct colour depth to save.
+      ' Also, we may need to perform a colour depth reduction before saving
+      
+      ' First create the DIBSection
+      Dim bSuccess As Boolean
+      Dim lHDC As Long, hBmpOld As Long, lHDCWOrk As Long, i As Long
+      Dim cDIBWork As cDIBSection
+      Dim cColReduce As New cColourReduceDIB
+      Dim bBltIn As Boolean
+               
+      ' Do any colour reduction as required:
+      Select Case ReductionMethod
+      Case edssSystemDefault
+         bBltIn = True
+         
+      Case edssUsePalette
+         Set cDIBWork = New cDIBSection
+         cDIBWork.Create cDIB.Width, cDIB.Height
+         cColReduce.ApplyPalette cDIB, cDIBWork, m_cPalette
+      
+      Case edssGeneratePalette
+         Select Case ColourDepth
+         Case edss256Colour
+            ' Create optimal palette using octree quantisation:
+            Set m_cPalette = New cPalette
+            m_cPalette.CreateOptimal cDIB
+            Set cDIBWork = New cDIBSection
+            cDIBWork.Create cDIB.Width, cDIB.Height
+            cColReduce.ApplyPalette cDIB, cDIBWork, m_cPalette, False
+            
+         Case edss16Colour
+            ' Use a default palette
+            Set m_cPalette = New cPalette
+            m_cPalette.Create16Colour
+            Set cDIBWork = New cDIBSection
+            cDIBWork.Create cDIB.Width, cDIB.Height
+            cColReduce.ApplyPalette cDIB, cDIBWork, m_cPalette
+            
+         Case edss2Colour
+            ' Use a default palette
+            Set cDIBWork = New cDIBSection
+            cDIBWork.Create cDIB.Width, cDIB.Height
+            cColReduce.BlackAndWhite cDIB, cDIBWork
+         
+         End Select
+      End Select
+                              
+      ' Create our output DIB section (with appropriate palette):
+      Select Case ColourDepth
+      Case edss2Colour
+         pbCreate2ColourDIBSection m_hDib, m_tBI2, m_lPtr, cDIB.Width,
+          cDIB.Height
+      Case edss16Colour
+         pbCreate16ColourDIBSection m_hDib, m_tBI16, m_lPtr, cDIB.Width,
+          cDIB.Height
+      Case edss256Colour
+         pbCreate256ColourDIBSection m_hDib, m_tBI256, m_lPtr, cDIB.Width,
+          cDIB.Height, m_cPalette
+      End Select
+      
+      If Not m_hDib = 0 Then
+                              
+         ' Blit the appropriate true colour DIB into our DIB:
+         lHDC = CreateDCAsNull("DISPLAY", ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)
+         lHDCWOrk = CreateCompatibleDC(lHDC)
+         DeleteDC lHDC
+         hBmpOld = SelectObject(lHDCWOrk, m_hDib)
+         cDIB.PaintPicture lHDCWOrk
+         
+         If bBltIn Then
+            cDIB.LoadPictureBlt lHDCWOrk
+         End If
+         
+         SelectObject lHDCWOrk, hBmpOld
+         DeleteDC lHDCWOrk
+                  
+                  
+      End If
+      
+   End If
+   
+End Function
+Public Function Save(ByVal sFileName As String) As Boolean
+Dim bSuccess As Boolean
+   ' Save the bitmap we created:
+   Select Case ColourDepth
+   Case edss2Colour
+      bSuccess = SaveToBitmap2(m_tBI2, m_lPtr, sFileName)
+   Case edss16Colour
+      bSuccess = SaveToBitmap16(m_tBI16, m_lPtr, sFileName)
+   Case edss256Colour
+      bSuccess = SaveToBitmap256(m_tBI256, m_lPtr, sFileName)
+   Case Else
+      bSuccess = m_cD.SavePicture(sFileName)
+   End Select
+   Save = bSuccess
+End Function
+Private Sub ClearUp()
+   If Not (m_hDib = 0) Then
+      DeleteObject m_hDib
+   End If
+   Set m_cD = Nothing
+End Sub
+
+Private Function pbCreate2ColourDIBSection(ByRef hDib As Long, ByRef tBI As
+ BITMAPINFO2, ByRef lPtr As Long, ByVal lWidth As Long, ByVal lheight As Long)
+ As Boolean
+Dim lScanSize As Long
+Dim lHDC As Long
+   lHDC = CreateDCAsNull("DISPLAY", ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)
+   With tBI.bmiHeader
+       .biSize = Len(tBI.bmiHeader)
+       .biWidth = lWidth
+       .biHeight = lheight
+       .biPlanes = 1
+       .biBitCount = 1
+       .biCompression = BI_RGB
+       lScanSize = lWidth \ 8
+       lScanSize = lScanSize + lScanSize Mod 4
+       .biSizeImage = lScanSize * .biHeight
+   End With
+   With tBI.bmiColors(1)
+      .rgbBlue = &amp;HFF: .rgbRed = &amp;HFF: .rgbGreen = &amp;HFF
+   End With
+   hDib = CreateDIBSection2( _
+           lHDC, _
+           tBI, _
+           DIB_RGB_COLORS, _
+           lPtr, _
+           0, 0)
+   pbCreate2ColourDIBSection = (hDib &lt;&gt; 0)
+   DeleteDC lHDC
+End Function
+Private Function pbCreate16ColourDIBSection(ByRef hDib As Long, ByRef tBI As
+ BITMAPINFO16, ByRef lPtr As Long, ByVal lWidth As Long, ByVal lheight As Long)
+ As Boolean
+Dim lScanSize As Long
+Dim lHDC As Long
+Dim i As Long
+   lHDC = CreateDCAsNull("DISPLAY", ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)
+   With tBI.bmiHeader
+       .biSize = Len(tBI.bmiHeader)
+       .biWidth = lWidth
+       .biHeight = lheight
+       .biPlanes = 1
+       .biBitCount = 4
+       .biCompression = BI_RGB
+       lScanSize = lWidth \ 2
+       lScanSize = lScanSize + lScanSize Mod 4
+       .biSizeImage = lScanSize * .biHeight
+   End With
+   Dim cP As New cPalette
+   cP.Create16Colour
+   For i = 0 To 15
+      With tBI.bmiColors(i)
+         .rgbBlue = cP.Red(i + 1)
+         .rgbGreen = cP.Green(i + 1)
+         .rgbRed = cP.Blue(i + 1)
+      End With
+   Next
+   hDib = CreateDIBSection16( _
+           lHDC, _
+           tBI, _
+           DIB_RGB_COLORS, _
+           lPtr, _
+           0, 0)
+   pbCreate16ColourDIBSection = (hDib &lt;&gt; 0)
+   DeleteDC lHDC
+End Function
+Private Function pbCreate256ColourDIBSection(ByRef hDib As Long, ByRef tBI As
+ BITMAPINFO256, ByRef lPtr As Long, ByVal lWidth As Long, ByVal lheight As
+ Long, Optional ByRef cP As cPalette = Nothing) As Boolean
+Dim lScanSize As Long
+Dim lHDC As Long
+Dim i As Long
+Dim iMax As Long
+   lHDC = CreateDCAsNull("DISPLAY", ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)
+   With tBI.bmiHeader
+       .biSize = Len(tBI.bmiHeader)
+       .biWidth = lWidth
+       .biHeight = lheight
+       .biPlanes = 1
+       .biBitCount = 8
+       .biCompression = BI_RGB
+       lScanSize = (lWidth + lWidth Mod 4)
+       .biSizeImage = lScanSize * .biHeight
+   End With
+   ' Halftone palette:
+   If cP Is Nothing Then
+      Set cP = New cPalette
+      cP.CreateHalfTone
+   End If
+   iMax = 255
+   If iMax &gt;= cP.Count Then
+      iMax = cP.Count - 1
+   End If
+   For i = 0 To iMax
+      With tBI.bmiColors(i)
+         .rgbBlue = cP.Blue(i + 1)
+         .rgbGreen = cP.Green(i + 1)
+         .rgbRed = cP.Red(i + 1)
+      End With
+   Next
+   hDib = CreateDIBSection256( _
+           lHDC, _
+           tBI, _
+           DIB_RGB_COLORS, _
+           lPtr, _
+           0, 0)
+   pbCreate256ColourDIBSection = (hDib &lt;&gt; 0)
+   DeleteDC lHDC
+End Function
+      
+      
+Private Function SaveToBitmap256(ByRef tBI As cDIBSectionSave.BITMAPINFO256,
+ ByVal lPtrBits As Long, ByVal sFileName As String)
+Dim tBH As BITMAPFILEHEADER
+Dim tRGBQ As RGBQUAD
+Dim hFile As Long
+Dim lBytesWritten As Long
+Dim lSize As Long
+Dim lR As Long
+Dim bErr As Boolean
+Dim hMem As Long, lPtr As Long
+Dim lErr As Long
+
+   ' Prepare the BITMAPFILEHEADER
+   With tBH
+      .bfType = BITMAPTYPE
+      .bfOffBits = 14 + Len(tBI)
+      .bfSize = .bfOffBits + tBI.bmiHeader.biSizeImage
+   End With
+   hFile = CreateFile(sFileName, _
+                 GENERIC_READ Or GENERIC_WRITE, _
+                  ByVal 0&amp;, _
+                  ByVal 0&amp;, _
+                  CREATE_ALWAYS, _
+                  FILE_ATTRIBUTE_NORMAL, _
+                  0)
+   lErr = Err.LastDllError
+   If (hFile = INVALID_HANDLE_VALUE) Then
+      ' error
+      Err.Raise 17, App.EXEName &amp; ".cDIBSection256", ApiError(lErr)
+   Else
+      
+      ' Writing the BITMAPFILEINFOHEADER is somewhat painful
+      ' due to non-byte alignment of structure...
+      hMem = GlobalAlloc(GPTR, 14)
+      lPtr = GlobalLock(hMem)
+      CopyMemory ByVal lPtr, tBH.bfType, 2
+      CopyMemory ByVal lPtr + 2, tBH.bfSize, 4
+      CopyMemory ByVal lPtr + 6, 0&amp;, 4
+      CopyMemory ByVal lPtr + 10, tBH.bfOffBits, 4
+      lSize = 14
+      lR = WriteFile(hFile, ByVal lPtr, lSize, lBytesWritten, ByVal 0&amp;)
+      GlobalUnlock hMem
+      GlobalFree hMem
+      
+      ' Add the BITMAPINFOHEADER and colour palette:
+      bErr = FileErrHandler(lR, lSize, lBytesWritten)
+      If Not bErr Then
+         lSize = Len(tBI)
+         lR = WriteFile(hFile, tBI, lSize, lBytesWritten, ByVal 0&amp;)
+         bErr = FileErrHandler(lR, lSize, lBytesWritten)
+      End If
+      
+      If Not bErr Then
+         ' Its easy to write the bitmap data, though...
+         lSize = tBI.bmiHeader.biSizeImage
+         lR = WriteFile(hFile, ByVal lPtrBits, lSize, lBytesWritten, ByVal 0&amp;)
+         bErr = FileErrHandler(lR, lSize, lBytesWritten)
+      End If
+      
+      
+      CloseHandle hFile
+      SaveToBitmap256 = Not (bErr)
+   End If
+
+End Function
+
+      
+Private Function SaveToBitmap16(ByRef tBI As BITMAPINFO16, ByVal lPtrBits As
+ Long, ByVal sFileName As String)
+Dim tBH As BITMAPFILEHEADER
+Dim tRGBQ As RGBQUAD
+Dim hFile As Long
+Dim lBytesWritten As Long
+Dim lSize As Long
+Dim lR As Long
+Dim bErr As Boolean
+Dim hMem As Long, lPtr As Long
+Dim lErr As Long
+
+   ' Prepare the BITMAPFILEHEADER
+   With tBH
+      .bfType = BITMAPTYPE
+      .bfOffBits = 14 + Len(tBI)
+      .bfSize = .bfOffBits + tBI.bmiHeader.biSizeImage
+   End With
+   hFile = CreateFile(sFileName, _
+                 GENERIC_READ Or GENERIC_WRITE, _
+                  ByVal 0&amp;, _
+                  ByVal 0&amp;, _
+                  CREATE_ALWAYS, _
+                  FILE_ATTRIBUTE_NORMAL, _
+                  0)
+   lErr = Err.LastDllError
+   If (hFile = INVALID_HANDLE_VALUE) Then
+      ' error
+      Err.Raise 17, App.EXEName &amp; ".cDIBSection256", ApiError(lErr)
+   Else
+      
+      ' Writing the BITMAPFILEINFOHEADER is somewhat painful
+      ' due to non-byte alignment of structure...
+      hMem = GlobalAlloc(GPTR, 14)
+      lPtr = GlobalLock(hMem)
+      CopyMemory ByVal lPtr, tBH.bfType, 2
+      CopyMemory ByVal lPtr + 2, tBH.bfSize, 4
+      CopyMemory ByVal lPtr + 6, 0&amp;, 4
+      CopyMemory ByVal lPtr + 10, tBH.bfOffBits, 4
+      lSize = 14
+      lR = WriteFile(hFile, ByVal lPtr, lSize, lBytesWritten, ByVal 0&amp;)
+      GlobalUnlock hMem
+      GlobalFree hMem
+      
+      ' Add the BITMAPINFOHEADER and colour palette:
+      bErr = FileErrHandler(lR, lSize, lBytesWritten)
+      If Not bErr Then
+         lSize = Len(tBI)
+         lR = WriteFile(hFile, tBI, lSize, lBytesWritten, ByVal 0&amp;)
+         bErr = FileErrHandler(lR, lSize, lBytesWritten)
+      End If
+      
+      If Not bErr Then
+         ' Its easy to write the bitmap data, though...
+         lSize = tBI.bmiHeader.biSizeImage
+         lR = WriteFile(hFile, ByVal lPtrBits, lSize, lBytesWritten, ByVal 0&amp;)
+         bErr = FileErrHandler(lR, lSize, lBytesWritten)
+      End If
+      
+      
+      CloseHandle hFile
+      SaveToBitmap16 = Not (bErr)
+   End If
+
+End Function
+
+Private Function SaveToBitmap2(ByRef tBI As BITMAPINFO2, ByVal lPtrBits As
+ Long, ByVal sFileName As String)
+Dim tBH As BITMAPFILEHEADER
+Dim tRGBQ As RGBQUAD
+Dim hFile As Long
+Dim lBytesWritten As Long
+Dim lSize As Long
+Dim lR As Long
+Dim bErr As Boolean
+Dim hMem As Long, lPtr As Long
+Dim lErr As Long
+
+   ' Prepare the BITMAPFILEHEADER
+   With tBH
+      .bfType = BITMAPTYPE
+      .bfOffBits = 14 + Len(tBI)
+      .bfSize = .bfOffBits + tBI.bmiHeader.biSizeImage
+   End With
+   hFile = CreateFile(sFileName, _
+                 GENERIC_READ Or GENERIC_WRITE, _
+                  ByVal 0&amp;, _
+                  ByVal 0&amp;, _
+                  CREATE_ALWAYS, _
+                  FILE_ATTRIBUTE_NORMAL, _
+                  0)
+   lErr = Err.LastDllError
+   If (hFile = INVALID_HANDLE_VALUE) Then
+      ' error
+      Err.Raise 17, App.EXEName &amp; ".cDIBSection256", ApiError(lErr)
+   Else
+      
+      ' Writing the BITMAPFILEINFOHEADER is somewhat painful
+      ' due to non-byte alignment of structure...
+      hMem = GlobalAlloc(GPTR, 14)
+      lPtr = GlobalLock(hMem)
+      CopyMemory ByVal lPtr, tBH.bfType, 2
+      CopyMemory ByVal lPtr + 2, tBH.bfSize, 4
+      CopyMemory ByVal lPtr + 6, 0&amp;, 4
+      CopyMemory ByVal lPtr + 10, tBH.bfOffBits, 4
+      lSize = 14
+      lR = WriteFile(hFile, ByVal lPtr, lSize, lBytesWritten, ByVal 0&amp;)
+      GlobalUnlock hMem
+      GlobalFree hMem
+      
+      ' Add the BITMAPINFOHEADER and colour palette:
+      bErr = FileErrHandler(lR, lSize, lBytesWritten)
+      If Not bErr Then
+         lSize = Len(tBI)
+         lR = WriteFile(hFile, tBI, lSize, lBytesWritten, ByVal 0&amp;)
+         bErr = FileErrHandler(lR, lSize, lBytesWritten)
+      End If
+      
+      If Not bErr Then
+         ' Its easy to write the bitmap data, though...
+         lSize = tBI.bmiHeader.biSizeImage
+         lR = WriteFile(hFile, ByVal lPtrBits, lSize, lBytesWritten, ByVal 0&amp;)
+         bErr = FileErrHandler(lR, lSize, lBytesWritten)
+      End If
+      
+      
+      CloseHandle hFile
+      SaveToBitmap2 = Not (bErr)
+   End If
+
+End Function
+Private Function ApiError(ByVal e As Long) As String
+    Dim s As String, c As Long
+    s = String(256, 0)
+    c = FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM Or _
+                      FORMAT_MESSAGE_IGNORE_INSERTS, _
+                      0, e, 0&amp;, s, Len(s), ByVal 0)
+    If c Then ApiError = Left$(s, c)
+End Function
+
+Private Function FileErrHandler(ByVal lR As Long, ByVal lSize As Long, ByVal
+ lBytes As Long) As Boolean
+   If (lR = 0) Or Not (lSize = lBytes) Then
+      'Err.Raise
+      FileErrHandler = True
+   End If
+End Function
+
+
+Private Sub Class_Terminate()
+   ClearUp
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;<a href="article.html">Colour Depth Control</a>&#160;.&#160;<a href="VB5_Colour_Depth_Sample.html">VB5 Colour Depth Sample</a>&#160;.&#160;cDIBSectionSave.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Colour_Depth_Reduction/VB5_Colour_Depth_Sample_zip_cDIBSectionSave_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:47 GMT -->
+</html>

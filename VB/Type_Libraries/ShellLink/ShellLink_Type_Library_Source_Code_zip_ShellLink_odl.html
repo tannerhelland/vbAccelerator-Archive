@@ -1,0 +1,219 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Type_Libraries/ShellLink/ShellLink_Type_Library_Source_Code_zip_ShellLink_odl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:26 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: ShellLink.odl</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: ShellLink.odl" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Type Libraries</a>&#160;.&#160;<a href="article.html">VB IShellLink Interface (ShellLink.tlb)</a>&#160;.&#160;<a href="ShellLink_Type_Library_Source_Code.html">ShellLink Type Library Source Code</a>&#160;.&#160;ShellLink.odl</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="ShellLink_Type_Library_Source_Code.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />ShellLink Type Library Source Code</a> (1K)</p><p class="nav"><a href="ShellLink_Type_Library.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />ShellLink Type Library</a> (3K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:4024</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4024&amp;type=Zip&amp;title=ShellLink%20Type%20Library%20Source%20Code%2Ezip%5FShellLink">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;Bruce McKinney</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />12 Feb 2003<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4012">Adding, Deleting and Viewing Recent Documents</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: ShellLink.odl</h1><pre>[
+    uuid(80AFED2D-2F2B-4bf0-8292-A8E781349E34),
+    helpstring("VB IShellLink Interface"),
+    version(1.0)
+]
+library IShellLinkVB
+{
+    importlib("stdole2.tlb");
+
+    typedef enum {
+       APITRUE = 1,
+       APIFALSE = 0
+    } BOOL;
+
+    typedef struct tagUUID {        
+       long Data1;
+       short Data2;
+       short Data3;
+       unsigned char Data4[8];
+    } UUID;
+
+    typedef enum {
+        SLR_NO_UI = 1,
+        SLR_ANY_MATCH = 2,
+        SLR_UPDATE = 4
+    } EShellLinkResolveFlags;
+
+    typedef enum {
+        SLGP_SHORTPATH = 1,
+        SLGP_UNCPRIORITY = 2
+    } EShellLinkGP;
+
+    typedef enum {
+        SW_HIDE = 0,
+        SW_SHOWNORMAL = 1,
+        SW_NORMAL = 1,
+        SW_SHOWMINIMIZED = 2,
+        SW_SHOWMAXIMIZED = 3,
+        SW_MAXIMIZE = 3,
+        SW_SHOWNOACTIVATE = 4,
+        SW_SHOW = 5,
+        SW_MINIMIZE = 6,
+        SW_SHOWMINNOACTIVE = 7,
+        SW_SHOWNA = 8,
+        SW_RESTORE = 9,
+        SW_SHOWDEFAULT = 10,
+        SW_MAX = 10
+    } EShowWindowFlags;
+
+    [
+       uuid(0000010C-0000-0000-C000-000000000046),
+       helpstring("Visual Basic version of IPersist"),
+       odl
+    ]
+    interface IPersistVB : IUnknown 
+    {
+       HRESULT _stdcall GetClassID([in, out] UUID* pClassID);
+    };
+
+    [
+       odl,
+       uuid(0000010B-0000-0000-C000-000000000046),
+       helpstring("Visual Basic version of IPersistFile")
+    ]
+    interface IPersistFileVB : IPersistVB 
+    {
+       [helpstring("Checks for changes since last file write")]
+       HRESULT _stdcall IsDirty();
+       [helpstring("Opens the specified file and initializes the object from
+        its contents")]
+       HRESULT _stdcall Load(
+                    [in] LPWSTR pszFileName, 
+                    [in] long dwMode);
+       [helpstring("Saves the object into the specified file")]
+       HRESULT _stdcall Save(
+                    [in] LPWSTR pszFileName, 
+                    [in] BOOL fRemember);
+       [helpstring("Notifies the object that save is completed")]
+       HRESULT _stdcall SaveCompleted([in] LPWSTR pszFileName);
+       [helpstring("Gets the current name of the file associated with the
+        object")]
+       HRESULT _stdcall GetCurFile([in] long ppszFileName);
+    };
+
+    [
+       odl,
+       uuid(000214EE-0000-0000-C000-000000000046),
+       helpstring("Visual Basic version of IShellLinkA interface")
+    ]
+    interface IShellLinkVB : IUnknown 
+    {
+       [helpstring("Retrieves the path and filename of a shell link object")]
+       HRESULT _stdcall GetPath(
+                    [in, out] LPSTR pszFile, 
+                    [in] int cchMaxPath, 
+                    [in, out] void* pfd, 
+                    [in] EShellLinkGP fFlags);
+       [helpstring("Retrieves the list of shell link item identifiers")]
+       HRESULT _stdcall GetIDList([out, retval] long* ppidl);
+       [helpstring("Sets the list of shell link item identifiers")]
+       HRESULT _stdcall SetIDList([in] long pidl);
+       [helpstring("Retrieves the shell link description string")]
+       HRESULT _stdcall GetDescription(
+                    [in, out] LPSTR pszName, 
+                    [in] int cchMaxName);
+       [helpstring("Sets the shell link description string")]
+       HRESULT _stdcall SetDescription([in] LPSTR pszName);
+       [helpstring("Retrieves the name of the shell link working directory")]
+       HRESULT _stdcall GetWorkingDirectory(
+                    [in, out] LPSTR pszDir, 
+                    [in] int cchMaxPath);
+       [helpstring("Sets the name of the shell link working directory")]
+       HRESULT _stdcall SetWorkingDirectory([in] LPSTR pszDir);
+       [helpstring("Retrieves the shell link command-line arguments")]
+       HRESULT _stdcall GetArguments(
+                    [in, out] LPSTR pszArgs, 
+                    [in] int cchMaxPath);
+       [helpstring("Sets the shell link command-line arguments")]
+       HRESULT _stdcall SetArguments([in] LPSTR pszArgs);
+       [propget, helpstring("Retrieves or sets the shell link hot key")]
+       HRESULT _stdcall Hotkey([out, retval] short* pwHotkey);
+       [propput, helpstring("Retrieves or sets the shell link hot key")]
+       HRESULT _stdcall Hotkey([in] short pwHotkey);
+       [propget, helpstring("Retrieves or sets the shell link show command")]
+       HRESULT _stdcall ShowCmd([out, retval] EShowWindowFlags* piShowCmd);
+       [propput, helpstring("Retrieves or sets the shell link show command")]
+       HRESULT _stdcall ShowCmd([in] EShowWindowFlags piShowCmd);
+       [helpstring("Retrieves the location (path and index) of the shell link
+        icon")]
+       HRESULT _stdcall GetIconLocation(
+                    [in, out] LPSTR pszIconPath, 
+                    [in] int cchIconPath, 
+                    [in, out] int* piIcon);
+       [helpstring("Sets the location (path and index) of the shell link icon")]
+       HRESULT _stdcall SetIconLocation(
+                    [in] LPSTR pszIconPath, 
+                    [in] int iIcon);
+       [helpstring("Sets the shell link relative path")]
+       HRESULT _stdcall SetRelativePath(
+                    [in] LPSTR pszPathRel, 
+                    [in] long dwReserved);
+       [helpstring("Resolves a shell link. The system searches for the shell
+        link object and updates the shell link path and its list of identifiers
+        (if necessary)")]
+       HRESULT _stdcall Resolve(
+                    [in] long hwnd, 
+                    [in] EShellLinkResolveFlags fFlags);
+       [helpstring("Sets the shell link path and filename")]
+       HRESULT _stdcall SetPath([in] LPSTR pszFile);
+    };
+
+
+
+    [
+       uuid(00021401-0000-0000-C000-000000000046),
+       helpstring("Visual Basic CShellLink class")
+    ]
+    coclass CShellLink {
+       [default] interface IShellLinkVB;
+    };
+
+
+}
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Type Libraries</a>&#160;.&#160;<a href="article.html">VB IShellLink Interface (ShellLink.tlb)</a>&#160;.&#160;<a href="ShellLink_Type_Library_Source_Code.html">ShellLink Type Library Source Code</a>&#160;.&#160;ShellLink.odl</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Type_Libraries/ShellLink/ShellLink_Type_Library_Source_Code_zip_ShellLink_odl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:26 GMT -->
+</html>

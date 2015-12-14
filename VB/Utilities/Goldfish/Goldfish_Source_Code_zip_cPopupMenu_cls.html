@@ -1,0 +1,4223 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/Goldfish/Goldfish_Source_Code_zip_cPopupMenu_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:23 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cPopupMenu.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cPopupMenu.cls" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Goldfish</a>&#160;.&#160;<a href="Goldfish_Source_Code.html">Goldfish Source Code</a>&#160;.&#160;cPopupMenu.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Goldfish_Source_Code.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />Goldfish Source Code</a> (353K)</p><p /><p class="nav"><a href="VB5_Goldfish_Executable.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Goldfish Executable</a> (149K)</p><p /><p class="nav"><a href="VB6_Goldfish_Exectuable.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Goldfish Exectuable</a> (148K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2037</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2037&amp;type=Zip&amp;title=Goldfish%20Source%20Code%2Ezip%5FcPopupMenu">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />19 Dec 2002<br /><p class="update">vbAccelerator CoolMenu Toolbar and Menu controls version 3 incorporated.</p><p class="update">XP Visual Styles implemented</p><p class="update">Stability updates.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=16">Add Your App to the Systray the Easy Way</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1418">Two code only solutions for displaying Common/Dialogs</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1416">vbAccelerator No Status Bar Control</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2518">Complete Registry control</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=7">PopupMenu DLL - Create Unlimited Popup Menus</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1272">vbAccelerator Toolbar and CoolMenu Control v3.5</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2188">Sophisticated Control Over Window Sizing and Moving </a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cPopupMenu.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cPopupMenu"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+'
+ ===============================================================================
+=======
+' Name:     vbAccelerator PopupMenu Component
+' Author:   Steve McMahon (steve@vbaccelerator.com)
+' Date:     22 November 2002
+'
+' Requires: SSUBTMR.DLL
+'           pcDibSection.cls
+'           pcDottedBrush.cls
+'           pcMemDC.cls
+'           pcMouse.cls
+'           pcNCMetrics.cls
+'           pcStoreMenu.cls
+'           mGDIAPI.bas
+'           mFindNewMenuWindow.bas
+'
+' Copyright  1998-2002 Steve McMahon for vbAccelerator
+'
+ -------------------------------------------------------------------------------
+-------
+' Visit vbAccelerator - advanced free source code for VB programmers
+' http://vbaccelerator.com
+'
+ -------------------------------------------------------------7-----------------
+-------
+
+
+' Creates unlimited new popup menus using the API
+Implements ISubclass
+
+Private m_cNCM As New pcNCMetrics
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+' The messages we will intercept &amp; send
+Private Const WM_DESTROY = &amp;H2
+Private Const WM_MENUSELECT = &amp;H11F
+Private Const WM_MEASUREITEM = &amp;H2C
+Private Const WM_DRAWITEM = &amp;H2B
+Private Const WM_COMMAND = &amp;H111
+Private Const WM_MENUCHAR = &amp;H120
+Private Const WM_INITMENUPOPUP = &amp;H117
+Private Const WM_WININICHANGE = &amp;H1A
+Private Const WM_ENTERMENULOOP = &amp;H211
+Private Const WM_EXITMENULOOP = &amp;H212
+
+Private Const WM_NOTIFY = &amp;H4E
+
+' Win98+, 2k+
+Private Const WM_MENURBUTTONUP = &amp;H122
+Private Const WM_MENUDRAG = &amp;H123
+Private Const WM_MENUGETOBJECT = &amp;H124
+Private Const WM_UNINITMENUPOPUP = &amp;H125
+Private Const WM_MENUCOMMAND = &amp;H126
+
+' Array of menu items
+Private m_tMI() As tMenuItem
+Private m_iMenuCount As Long
+
+' Stored menus:
+Private m_cStoredMenu() As pcStoreMenu
+Private m_iStoreCount As Long
+Private m_sCurrentlyRestoredKey As String
+
+' Handle to image list for drawing icons:
+Private m_hIml As Long
+Private m_lIconSize As Long
+
+' Where to get a tick icon for checked stuff (or -1 to use Win default):
+Private m_lTickIconIndex As Long
+' Where to get a option button icon for checked stuff (or -1 to use Win default)
+Private m_lOptionIconIndex As Long
+
+' hWNd of owner:
+Private m_hWndOwner As Long
+Private m_hWndAttached As Long
+' Height of a menu item:
+Private m_lMenuItemHeight As Long
+
+' colours
+Private m_oActiveMenuColor As Long
+Private m_oInActiveMenuColor As Long
+Private m_oMenuBackgroundColor As Long
+Private m_oActiveMenuBackColor As Long
+
+' Sub menus:
+Private m_lSubMenuCount As Long
+Private m_hSubMenus() As Long
+' Next id to choose for a menu item:
+Private m_lLastMaxId As Long
+
+Private m_bGradientHighlight As Boolean
+Private m_bButtonHighlightStyle As Boolean
+Private m_bHighlightCheckedItems As Boolean
+Private m_OfficeXPStyle As Boolean
+
+Private m_sTag As String
+Private m_bDrawHeadersAsSeparators As Boolean
+
+Private m_bAcceleratorsActive As Boolean
+
+Private m_cMemDC As pcMemDC
+Private m_cBrush As pcDottedBrush
+Private m_fnt As StdFont
+Private m_fntSymbol As StdFont
+Private m_cBitmap As pcMemDC
+Private m_cBitmapLight As pcMemDC
+Private m_cBitmapDark As pcMemDC
+Private m_bImageProcessBitmap As Boolean
+Private m_pic As IPicture
+
+' Window/handles
+Private Type tMenuWindowHandle
+   hMenu As Long
+   hwnd As Long
+End Type
+Private m_tWnd() As tMenuWindowHandle
+Private m_iWndCount As Long
+
+' Chevron related
+Private Type tMenuWindowHandleSize
+   tMWH As tMenuWindowHandle
+   tR As RECT
+   iSequence As Long
+End Type
+Private m_bShowInfrequent As Boolean
+Private WithEvents m_tmrChevron As CTimer
+Attribute m_tmrChevron.VB_VarHelpID = -1
+Private m_lChevronStartTime As Long
+Private m_lChevronIndex As Long
+Private m_lHoverIndex As Long
+Private m_tChevronWnd() As tMenuWindowHandleSize
+Private m_iChevronWndCount As Long
+Private m_lTopMenuIndex As Long
+Private m_lWndIndex As Long
+Private WithEvents m_tmrChevronNavigate As CTimer
+Attribute m_tmrChevronNavigate.VB_VarHelpID = -1
+        
+Private m_ptrVb6ImageList As Long
+Private m_bNoAnimation As Boolean
+        
+Public Enum ECNMHeaderStyle
+   ecnmHeaderCaptionBar = 0
+   ecnmHeaderSeparator = 1
+End Enum
+
+' Events:
+Public Event Click(ItemNumber As Long)
+Public Event ItemHighlight(ItemNumber As Long, bEnabled As Boolean, bSeparator
+ As Boolean)
+Public Event MenuExit()
+Public Event InitPopupMenu(ParentItemNumber As Long)
+Public Event UnInitPopupMenu(ParentItemNumber As Long)
+Public Event DrawItem(ByVal hdc As Long, ByVal lMenuIndex As Long, ByRef lLeft
+ As Long, ByRef lTop As Long, ByRef lRight As Long, ByRef lBottom As Long,
+ ByVal bSelected As Boolean, ByVal bChecked As Boolean, ByVal bDisabled As
+ Boolean, bDoDefault As Boolean)
+Public Event MeasureItem(ByVal lMenuIndex As Long, ByRef lWidth As Long, ByRef
+ lHeight As Long)
+
+Public Sub ToolbarMenuChevronPress()
+   If m_iChevronWndCount &gt; 1 Then
+      ' Debug.Print "Preparing to Navigate"
+      Set m_tmrChevronNavigate = New CTimer
+      m_tmrChevronNavigate.Interval = 10
+      m_tmrChevronNavigate.Item = 2
+   End If
+End Sub
+
+Public Property Get AcceleratorsActive() As Boolean
+   AcceleratorsActive = (m_hWndOwner = GetActiveWindow())
+End Property
+Public Property Get BackgroundPicture() As StdPicture
+   Set BackgroundPicture = m_pic
+End Property
+Public Property Let BackgroundPicture(ByRef iPic As StdPicture)
+   pSetPicture iPic
+End Property
+Public Property Set BackgroundPicture(ByRef iPic As StdPicture)
+   pSetPicture iPic
+End Property
+Public Property Get ImageProcessHighlights() As Boolean
+   ImageProcessHighlights = m_bImageProcessBitmap
+End Property
+Public Property Let ImageProcessHighlights(ByVal bState As Boolean)
+   If Not bState = m_bImageProcessBitmap Then
+      m_bImageProcessBitmap = bState
+      If Not (m_cBitmap Is Nothing) Then
+         If bState Then
+            imageProcessBackgroundBitmap
+         Else
+            Set m_cBitmapLight = Nothing
+            Set m_cBitmapDark = Nothing
+         End If
+      End If
+   End If
+End Property
+Private Sub pSetPicture(ByRef iPic As IPicture)
+   If Not iPic Is Nothing Then
+      Set m_pic = iPic
+      Set m_cBitmapLight = Nothing
+      Set m_cBitmapDark = Nothing
+      
+      Set m_cBitmap = New pcMemDC
+      m_cBitmap.CreateFromPicture iPic
+      
+      imageProcessBackgroundBitmap
+   Else
+      Set m_cBitmap = Nothing
+      Set m_cBitmapLight = Nothing
+      Set m_cBitmapDark = Nothing
+   End If
+End Sub
+Private Sub imageProcessBackgroundBitmap()
+   If m_bImageProcessBitmap Then
+      Dim cDib As New pcDibSection
+      If cDib.Create(m_cBitmap.Width, m_cBitmap.Height) Then
+         
+         ' create a lighter version:
+         cDib.LoadPictureBlt m_cBitmap.hdc
+         cDib.Lighten 30
+         Set m_cBitmapLight = New pcMemDC
+         m_cBitmapLight.Width = m_cBitmap.Width
+         m_cBitmapLight.Height = m_cBitmap.Height
+         cDib.PaintPicture m_cBitmapLight.hdc
+         
+         ' create a darker version:
+         cDib.LoadPictureBlt m_cBitmap.hdc
+         cDib.Fade 120
+         Set m_cBitmapDark = New pcMemDC
+         m_cBitmapDark.Width = m_cBitmap.Width
+         m_cBitmapDark.Height = m_cBitmap.Height
+         cDib.PaintPicture m_cBitmapDark.hdc
+         
+      End If
+   End If
+End Sub
+Public Sub ClearBackgroundPicture()
+   pSetPicture Nothing
+End Sub
+Private Property Get hFontSymbol() As Long
+Dim iFn As IFont
+   Set iFn = m_fntSymbol
+   hFontSymbol = iFn.hFont
+End Property
+Public Property Let Font( _
+      fntThis As IFont _
+   )
+   pSetFont fntThis
+End Property
+Public Property Set Font( _
+      fntThis As IFont _
+   )
+   pSetFont fntThis
+End Property
+Public Property Get Font() As IFont
+Dim lHDC As Long
+   If m_fnt Is Nothing Then
+      lHDC = CreateDCAsNull("DISPLAY", ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)
+      Set Font = m_cNCM.Font(lHDC, MenuFOnt)
+      DeleteDC lHDC
+   Else
+      Set Font = m_fnt
+   End If
+End Property
+Private Sub pSetFont(fntThis As IFont)
+   
+   Set m_fnt = fntThis
+   m_fntSymbol.Size = Font.Size * 1.3
+   
+   Dim tR As RECT, hFntOld As Long
+   hFntOld = SelectObject(m_cMemDC.hdc, hFont)
+   DrawText m_cMemDC.hdc, "Xg", -1, tR, DT_LEFT Or DT_SINGLELINE Or DT_CALCRECT
+   SelectObject m_cMemDC.hdc, hFntOld
+   m_lMenuItemHeight = tR.Bottom - tR.Top + 2
+   If m_lMenuItemHeight &lt; m_lIconSize - 1 Then
+      m_lMenuItemHeight = m_lIconSize - 1
+   End If
+   
+   Dim i As Long
+   For i = 1 To m_iMenuCount
+      ResetMenuForRecalc i
+   Next i
+   
+End Sub
+Private Property Get hFont() As Long
+Dim iFn As IFont
+   Set iFn = Font
+   hFont = iFn.hFont
+End Property
+Private Property Get hFontBold() As Long
+Dim iFn As IFont
+Dim iFn2 As IFont
+   Set iFn = Font
+   iFn.Clone iFn2
+   iFn2.Bold = True
+   hFontBold = iFn2.hFont
+End Property
+Public Property Let ActiveMenuForeColor(ByVal oColor As OLE_COLOR)
+   m_oActiveMenuColor = oColor
+End Property
+Public Property Get ActiveMenuForeColor() As OLE_COLOR
+   If m_oActiveMenuColor = CLR_INVALID Then
+      ActiveMenuForeColor = vbHighlightText
+   Else
+      ActiveMenuForeColor = m_oActiveMenuColor
+   End If
+End Property
+Public Property Let ActiveMenuBackgroundColor(ByVal oColor As OLE_COLOR)
+   m_oActiveMenuBackColor = oColor
+End Property
+Public Property Get ActiveMenuBackgroundColor() As OLE_COLOR
+   If m_oActiveMenuBackColor = CLR_INVALID Then
+      ActiveMenuBackgroundColor = vbHighlight
+   Else
+      ActiveMenuBackgroundColor = m_oActiveMenuBackColor
+   End If
+End Property
+Public Property Let InActiveMenuForeColor(ByVal oColor As OLE_COLOR)
+   m_oInActiveMenuColor = oColor
+End Property
+Public Property Get InActiveMenuForeColor() As OLE_COLOR
+   If m_oInActiveMenuColor = CLR_INVALID Then
+      InActiveMenuForeColor = vbMenuText
+   Else
+      InActiveMenuForeColor = m_oInActiveMenuColor
+   End If
+End Property
+Public Property Let MenuBackgroundColor(ByVal oColor As OLE_COLOR)
+   m_oMenuBackgroundColor = oColor
+End Property
+Public Property Get MenuBackgroundColor() As OLE_COLOR
+   If m_oMenuBackgroundColor = CLR_INVALID Then
+      If (m_OfficeXPStyle) Then
+         MenuBackgroundColor = vbWindowBackground
+      Else
+         MenuBackgroundColor = vbMenuBar
+      End If
+   Else
+      MenuBackgroundColor = m_oMenuBackgroundColor
+   End If
+End Property
+
+Friend Function AcceleratorPress(ByVal nKeyCode As KeyCodeConstants, ByVal
+ wMask As ShiftConstants) As Boolean
+Dim i As Long
+   ' 1.2TI
+   ' we need to check if the object which owns is
+   ' is the active system window:
+   If getTheActiveWindow Then
+      For i = 1 To m_iMenuCount
+         If Not m_tMI(i).iShortCutShiftKey = 0 Then
+            'Debug.Print "Accel Press..."; nKeyCode, wMask,
+             m_tMI(i).iShortCutShiftKey, m_tMI(i).iShortCutShiftMask
+            If m_tMI(i).iShortCutShiftMask = wMask Then
+               If m_tMI(i).iShortCutShiftKey = nKeyCode Then
+                  ' 1.2SPM Need to check if item is enabled/visible before it
+                   is clicked!
+                  If m_tMI(i).bEnabled And m_tMI(i).bVisible Then
+                     ' Yo!
+                     raiseClickEventSub i
+                     AcceleratorPress = True
+                     Exit For
+                  End If
+               End If
+            End If
+         End If
+      Next i
+   Else
+      'Debug.Print "Ignoring accelerator: owner form is not active"
+   End If
+End Function
+Private Function getTheActiveWindow() As Boolean
+Dim lhWnd As Long
+   lhWnd = GetActiveWindow()
+   If lhWnd = m_hWndOwner Then
+      ' is active
+      getTheActiveWindow = True
+   Else
+      lhWnd = GetProp(lhWnd, TOOLWINDOWPARENTWINDOWHWND)
+      If lhWnd = m_hWndOwner Then
+         ' is active
+         getTheActiveWindow = True
+      End If
+   End If
+End Function
+Public Property Get IDForItem(ByVal lIndex As Long) As Long
+   If lIndex &gt; 0 And lIndex &lt;= m_iMenuCount Then
+      IDForItem = m_tMI(lIndex).lActualID
+   End If
+End Property
+Public Property Get ItemForID(ByVal wID As Long) As Long
+Dim lIndex As Long
+   For lIndex = 1 To m_iMenuCount
+      If m_tMI(lIndex).lActualID = wID Then
+         ItemForID = lIndex
+         Exit For
+      End If
+   Next lIndex
+End Property
+
+Public Sub EmulateMenuClick(ByVal wID As Long)
+Dim lIndex As Long
+   For lIndex = 1 To m_iMenuCount
+      If m_tMI(lIndex).lActualID = wID Then
+         RaiseClickEvent wID
+         Exit For
+      End If
+   Next lIndex
+End Sub
+Public Property Get OfficeXpStyle() As Boolean
+   OfficeXpStyle = m_OfficeXPStyle
+End Property
+Public Property Let OfficeXpStyle(ByVal bState As Boolean)
+   m_OfficeXPStyle = bState
+End Property
+Public Property Get GradientHighlight() As Boolean
+   GradientHighlight = m_bGradientHighlight
+End Property
+Public Property Let GradientHighlight(ByVal bState As Boolean)
+   m_bGradientHighlight = bState
+End Property
+Public Property Get ButtonHighlight() As Boolean
+   ButtonHighlight = m_bButtonHighlightStyle
+End Property
+Public Property Let ButtonHighlight(ByVal bState As Boolean)
+   m_bButtonHighlightStyle = bState
+End Property
+Public Property Get HeaderStyle() As ECNMHeaderStyle
+   If (m_bDrawHeadersAsSeparators) Then
+      HeaderStyle = ecnmHeaderSeparator
+   Else
+      HeaderStyle = ecnmHeaderCaptionBar
+   End If
+End Property
+Public Property Let HeaderStyle(ByVal eStyle As ECNMHeaderStyle)
+   If (eStyle = ecnmHeaderCaptionBar) Then
+      m_bDrawHeadersAsSeparators = False
+   Else
+      m_bDrawHeadersAsSeparators = True
+   End If
+End Property
+
+Public Property Get Count() As Long
+   Count = m_iMenuCount
+End Property
+
+Public Property Get HighlightCheckedItems() As Boolean
+    HighlightCheckedItems = m_bHighlightCheckedItems
+End Property
+Public Property Let HighlightCheckedItems(ByVal bState As Boolean)
+    m_bHighlightCheckedItems = bState
+End Property
+Public Property Get NoMenuAnimation() As Boolean
+   NoMenuAnimation = m_bNoAnimation
+End Property
+Public Property Let NoMenuAnimation(ByVal bState As Boolean)
+   m_bNoAnimation = bState
+End Property
+Public Property Get Tag() As String
+   Tag = m_sTag
+End Property
+Public Property Let Tag(ByVal sTag As String)
+   m_sTag = sTag
+End Property
+Public Property Get CurrentlyRestoredKey() As String
+   CurrentlyRestoredKey = m_sCurrentlyRestoredKey
+End Property
+Public Sub Store(ByVal sKey As String)
+Dim lIndex As Long
+Dim i As Long
+Dim bShowInfrequent As Boolean
+   m_sCurrentlyRestoredKey = ""
+   bShowInfrequent = m_bShowInfrequent
+   If Not bShowInfrequent Then
+      showInfrequentlyUsed True
+   End If
+   ' Save the menu under the key sKey:
+   lIndex = plStored(sKey)
+   If (lIndex = 0) Then
+      ' We need a new item
+      m_iStoreCount = m_iStoreCount + 1
+      ReDim Preserve m_cStoredMenu(1 To m_iStoreCount) As pcStoreMenu
+      Set m_cStoredMenu(m_iStoreCount) = New pcStoreMenu
+      lIndex = m_iStoreCount
+   End If
+   With m_cStoredMenu(lIndex)
+      .Key = sKey
+      .Store m_tMI(), m_iMenuCount
+   End With
+   m_sCurrentlyRestoredKey = sKey
+   If Not bShowInfrequent Then
+      showInfrequentlyUsed False
+   End If
+End Sub
+Public Sub Restore(ByVal sKey As String)
+Dim lIndex As Long
+Dim bShowInfrequent As Boolean
+   ' Restore the menu from the key sKey:
+   If (sKey &lt;&gt; m_sCurrentlyRestoredKey) Then
+      lIndex = plStored(sKey)
+      If (lIndex &gt; 0) Then
+         ' Clear any menu:
+         Clear
+         m_sCurrentlyRestoredKey = ""
+         bShowInfrequent = m_bShowInfrequent
+         If Not bShowInfrequent Then
+            showInfrequentlyUsed True
+         End If
+         
+         ' Restore from storage:
+         m_cStoredMenu(lIndex).Restore Me
+         
+         If Not bShowInfrequent Then
+            showInfrequentlyUsed False
+         End If
+         
+         m_sCurrentlyRestoredKey = sKey
+      Else
+         ' Error
+         Debug.Print "Failed to restore..."
+      End If
+   Else
+      Debug.Print "Nothing to do.."
+   End If
+End Sub
+Public Function StoreToFile( _
+      Optional ByVal iFile As Long = -1, _
+      Optional ByVal sFile As String = "" _
+   )
+
+   ' SPM Deprecated.  Use SaveToXml instead
+   
+Dim i As Long
+Dim iUseFile As Integer
+      
+   ' Really we should be de/serialising to a PStream via the IStream
+   ' interface (i.e. PropertyBag)
+   
+   If iFile &lt; 1 And sFile = "" Then
+      Err.Raise 9, App.EXEName &amp; ".cPopupMenu", "Invalid call to
+       RestoreFromFile; specify file name or handle."
+      Exit Function
+   End If
+   
+   
+   If m_iStoreCount &gt; 0 Then
+On Error Resume Next
+      Kill sFile
+      Err.Clear
+
+On Error GoTo ErrorHandler
+
+      If iFile = -1 Then
+         iUseFile = FreeFile
+         Open sFile For Binary Access Write Lock Read As #iUseFile
+      Else
+         iUseFile = iFile
+      End If
+      Put #iUseFile, , "vbalNewMenu"
+      Put #iUseFile, , m_iStoreCount
+      For i = 1 To m_iStoreCount
+         m_cStoredMenu(i).Serialise iUseFile
+      Next i
+      
+      If iFile = -1 Then
+         Close #iUseFile
+      End If
+      iUseFile = 0
+      
+   Else
+      Err.Raise 9, App.EXEName &amp; ".cPopupMenu", "No stored menus to save"
+   End If
+   
+   Exit Function
+   
+ErrorHandler:
+Dim lErr As Long, sErr As String
+   lErr = Err.Number: sErr = Err.Description
+   If iUseFile &gt; 0 And iFile = -1 Then
+      Close #iUseFile
+      iUseFile = 0
+   End If
+   Err.Raise lErr, App.EXEName &amp; ".cPopupMenu", sErr
+   Exit Function
+   
+End Function
+Public Function RestoreFromFile( _
+      Optional ByVal iFile As Long = -1, _
+      Optional ByVal sFile As String = "" _
+   )
+
+   ' SPM Deprecated.  Use LoadFromXml instead
+   
+Dim i As Long
+Dim iUseFile As Long
+Dim sBuf As String
+Dim lCount As Long
+Dim bFail As Boolean
+Dim sError As String
+
+   ' Really we should be de/serialising to a PStream via the IStream
+   ' interface (i.e. PropertyBag)
+   
+   If iFile &lt; 1 And sFile = "" Then
+      Err.Raise 9, App.EXEName &amp; ".cPopupMenu", "Invalid call to
+       RestoreFromFile; specify file name or handle."
+      Exit Function
+   End If
+
+On Error GoTo ErrorHandler
+        
+   If iFile = -1 Then
+      iUseFile = FreeFile
+      Open sFile For Binary Access Read Lock Write As #iUseFile
+   Else
+      iUseFile = iFile
+   End If
+   
+   sBuf = Space$(11)
+   Get #iUseFile, , sBuf
+   If sBuf = "vbalNewMenu" Then
+      Get #iUseFile, , lCount
+      If lCount &gt; 0 Then
+      
+         Clear
+         m_iStoreCount = lCount
+         ReDim m_cStoredMenu(1 To m_iStoreCount) As pcStoreMenu
+      
+         For i = 1 To m_iStoreCount
+            Set m_cStoredMenu(i) = New pcStoreMenu
+            If Not (m_cStoredMenu(i).Deserialise(iUseFile)) Then
+               bFail = True
+               sError = m_cStoredMenu(i).Error
+               Exit For
+            End If
+         Next i
+      End If
+      If iFile = -1 Then
+         Close #iUseFile
+      End If
+      iUseFile = 0
+      If bFail Then
+         Err.Raise 9, App.EXEName &amp; ".cPopupMenu", sError
+      Else
+         RestoreFromFile = True
+      End If
+   Else
+      If iFile = -1 Then
+         Close #iUseFile
+      End If
+      iUseFile = 0
+      Err.Raise 9, App.EXEName &amp; ".cPopupMenu", "Not a cNewMenu file stream."
+   End If
+               
+   Exit Function
+   
+ErrorHandler:
+Dim lErr As Long, sErr As String
+   lErr = Err.Number: sErr = Err.Description
+   If iUseFile &gt; 0 And iFile = -1 Then
+      Close #iUseFile
+      iUseFile = 0
+   End If
+   Err.Raise lErr, App.EXEName &amp; ".cPopupMenu", sErr
+   Exit Function
+   Resume 0
+End Function
+Private Property Get plStored(ByVal sKey As String) As Long
+Dim i As Long
+   For i = 1 To m_iStoreCount
+      If (m_cStoredMenu(i).Key = sKey) Then
+         plStored = i
+         Exit For
+      End If
+   Next i
+End Property
+Public Property Get hWndOwner() As Long
+   hWndOwner = m_hWndOwner
+End Property
+Public Property Let hWndOwner(ByVal hWndA As Long)
+   
+   ' Clear up:
+   Clear
+
+   ' Set for new owner:
+   m_hWndOwner = hWndA
+   
+End Property
+
+Public Property Let ImageList( _
+        ByRef vImageList As Variant _
+    )
+    m_hIml = 0
+    m_ptrVb6ImageList = 0
+    If (VarType(vImageList) = vbLong) Then
+        ' Assume a handle to an image list:
+        m_hIml = vImageList
+    ElseIf (VarType(vImageList) = vbObject) Then
+        ' Assume a VB image list:
+        On Error Resume Next
+        ' Get the image list initialised..
+        vImageList.ListImages(1).Draw 0, 0, 0, 1
+        m_hIml = vImageList.hImageList
+        If (Err.Number = 0) Then
+            ' Check for VB6 image list:
+            If (TypeName(vImageList) = "ImageList") Then
+                If (vImageList.ListImages.Count &lt;&gt;
+                 ImageList_GetImageCount(m_hIml)) Then
+                    Dim o As Object
+                    Set o = vImageList
+                    m_ptrVb6ImageList = ObjPtr(o)
+                End If
+            End If
+        Else
+            Debug.Print "Failed to Get Image list Handle", "cVGrid.ImageList"
+        End If
+        On Error GoTo 0
+    End If
+    If (m_hIml &lt;&gt; 0) Then
+        If (m_ptrVb6ImageList &lt;&gt; 0) Then
+            m_lIconSize = vImageList.ImageHeight
+        Else
+            Dim rc As RECT
+            ImageList_GetImageRect m_hIml, 0, rc
+            m_lIconSize = rc.Bottom - rc.Top
+        End If
+    End If
+End Property
+
+Public Function AddItem( _
+        ByVal sCaption As String, _
+        Optional ByVal sHelptext As String = "", _
+        Optional ByVal lItemData As Long = 0, _
+        Optional ByVal lParentIndex As Long = 0, _
+        Optional ByVal lIconIndex As Long = -1, _
+        Optional ByVal bChecked As Boolean = False, _
+        Optional ByVal bEnabled As Boolean = True, _
+        Optional ByVal sKey As String = "" _
+    ) As Long
+Dim lID As Long
+   m_iMenuCount = m_iMenuCount + 1
+   ReDim Preserve m_tMI(1 To m_iMenuCount) As tMenuItem
+   lID = plGetNewID()
+   With m_tMI(m_iMenuCount)
+       .lID = lID
+       .lActualID = lID
+       pSetMenuCaption m_iMenuCount, sCaption, (sCaption = "-")
+       .sAccelerator = psExtractAccelerator(sCaption)
+       .sHelptext = sHelptext
+       .lIconIndex = lIconIndex
+       If (lParentIndex &lt;&gt; 0) Then
+          .lParentId = m_tMI(lParentIndex).lActualID
+       End If
+       .lParentIndex = lParentIndex
+       .lItemData = lItemData
+       .bChecked = bChecked
+       .bEnabled = bEnabled
+       .bCreated = True
+       .bVisible = True
+       .bComboBox = False
+       .bTextBox = False
+       .bDragOff = False
+       .bInfrequent = False
+       .bChevronBehaviour = False
+       .bChevronAppearance = False
+       .bShowCheckAndIcon = False
+       .sKey = sKey
+   End With
+   pAddNewMenuItem m_tMI(m_iMenuCount)
+   If (m_tMI(m_iMenuCount).bTitle) Then
+      Header(m_iMenuCount) = True
+      m_tMI(m_iMenuCount).lHeight = (m_lMenuItemHeight + 6) * 3 \ 4
+   Else
+      If (m_tMI(m_iMenuCount).sCaption = "-") Then
+         m_tMI(m_iMenuCount).lHeight = 6
+      Else
+         m_tMI(m_iMenuCount).lHeight = m_lMenuItemHeight + 6
+      End If
+   End If
+   ItemData(m_iMenuCount) = lItemData
+   AddItem = m_iMenuCount
+   
+End Function
+Public Function InsertItem( _
+      ByVal sCaption As String, _
+      ByVal vKeyBefore As Variant, _
+      Optional ByVal sHelptext As String = "", _
+      Optional ByVal lItemData As Long = 0, _
+      Optional ByVal lIconIndex As Long = -1, _
+      Optional ByVal bChecked As Boolean = False, _
+      Optional ByVal bEnabled As Boolean = True, _
+      Optional ByVal sKey As String = "" _
+   ) As Long
+Dim lIndexBefore As Long
+Dim lID As Long
+   'Inserts an item into a menu:
+   lIndexBefore = plMenuIndex(vKeyBefore)
+   If (lIndexBefore &gt; 0) Then
+      m_iMenuCount = m_iMenuCount + 1
+      ReDim Preserve m_tMI(1 To m_iMenuCount) As tMenuItem
+      lID = plGetNewID()
+      With m_tMI(m_iMenuCount)
+         .lID = lID
+         .lActualID = lID
+          pSetMenuCaption m_iMenuCount, sCaption, (sCaption = "-")
+         .sAccelerator = psExtractAccelerator(sCaption)
+         .sHelptext = sHelptext
+         .lIconIndex = lIconIndex
+         .lItemData = lItemData
+         .bChecked = bChecked
+         .bEnabled = bEnabled
+         .bCreated = True
+         .bVisible = True
+         .bComboBox = False
+         .bTextBox = False
+         .bDragOff = False
+         .bInfrequent = False
+         .bChevronAppearance = False
+         .bChevronBehaviour = False
+         .bShowCheckAndIcon = False
+         .sKey = sKey
+      End With
+      pInsertNewMenuitem m_tMI(m_iMenuCount), lIndexBefore
+      InsertItem = m_iMenuCount
+   End If
+End Function
+Public Function ReplaceItem( _
+      ByVal vKey As Variant, _
+      Optional ByVal sCaption As Variant, _
+      Optional ByVal sHelptext As Variant, _
+      Optional ByVal lItemData As Variant, _
+      Optional ByVal lIconIndex As Variant, _
+      Optional ByVal bChecked As Variant, _
+      Optional ByVal bEnabled As Variant _
+   ) As Long
+Dim lIndex As Long
+Dim sItems() As String
+Dim lH() As Long
+Dim lR As Long
+Dim lFlags As Long
+Dim lPosition As Long
+Dim tMI As MENUITEMINFO
+Dim hSubMenu As Long
+
+   ' Replaces a menu item with a new one.  Works
+   ' around a bug with the caption property where if
+   ' you changed the size of the caption the menu did
+   ' not resize.  Also allows you to change the help
+   ' text, item data, icon, check and enable at the
+   ' same time.
+   
+   ' Check valid index:
+   lIndex = plMenuIndex(vKey)
+   If (lIndex &gt; 0) Then
+      If Not IsMissing(sCaption) Then
+         pSetMenuCaption lIndex, sCaption, (sCaption = "-")
+      End If
+      If Not IsMissing(sHelptext) Then
+         m_tMI(lIndex).sHelptext = sHelptext
+      End If
+      If Not IsMissing(lItemData) Then
+         m_tMI(lIndex).lItemData = lItemData
+      End If
+      If Not IsMissing(lIconIndex) Then
+         m_tMI(lIndex).lIconIndex = lIconIndex
+      End If
+      If Not IsMissing(bChecked) Then
+         m_tMI(lIndex).bChecked = bChecked
+      End If
+      If Not IsMissing(bEnabled) Then
+         m_tMI(lIndex).bEnabled = bEnabled
+      End If
+      
+      pHierarchyForIndex lIndex, lH(), sItems()
+      lPosition = lH(UBound(lH)) - 1
+      ' Check if there is a sub menu:
+      tMI.cbSize = Len(tMI)
+      tMI.fMask = MIIM_SUBMENU
+      GetMenuItemInfo m_tMI(lIndex).hMenu, m_tMI(lIndex).lActualID, 0, tMI
+      hSubMenu = tMI.hSubMenu
+      ' Remove the menu item:
+      lR = RemoveMenu(m_tMI(lIndex).hMenu, m_tMI(lIndex).lActualID,
+       MF_BYCOMMAND)
+      ' Insert it back again at the corect position with the same ID etc:
+      lFlags = plMenuFlags(lIndex)
+      lFlags = (lFlags Or MF_OWNERDRAW) And Not MF_STRING Or MF_BYPOSITION
+      lR = InsertMenuByLong(m_tMI(lIndex).hMenu, lPosition, lFlags,
+       m_tMI(lIndex).lID, m_tMI(lIndex).lID)
+      If (hSubMenu &lt;&gt; 0) Then
+         ' If we had a submenu then put that back again:
+         lFlags = lFlags And Not MF_BYPOSITION Or MF_BYCOMMAND
+         lFlags = lFlags Or MF_POPUP
+         lR = ModifyMenuByLong(m_tMI(lIndex).hMenu, m_tMI(lIndex).lID, lFlags,
+          hSubMenu, m_tMI(lIndex).lActualID)
+      End If
+      If (lR = 0) Then
+         Debug.Print "Failed to insert new menu item."
+      End If
+   End If
+   
+End Function
+Public Sub RemoveItem( _
+        ByVal vKey As Variant _
+    )
+Dim lIndex As Long
+    lIndex = IndexForKey(vKey)
+    If (lIndex &gt; 0) Then
+        pRemoveItem lIndex
+    End If
+End Sub
+Private Sub pRemoveItem( _
+        ByVal lIndex As Long _
+    )
+Dim hMenusToDestroy() As Long
+Dim lCount As Long
+Dim lDestroy As Long
+Dim lRealCount As Long
+Dim lR As Long
+Dim lMaxID As Long
+Dim lSubIndex As Long
+Dim lNew() As Long
+
+    ' Remove the Item:
+    lR = RemoveMenu(m_tMI(lIndex).hMenu, m_tMI(lIndex).lActualID, MF_BYCOMMAND)
+    m_tMI(lIndex).bMarkToDestroy = True
+    ' Loop though all the children of the item at Index and determine
+    ' what there is to remove:
+    pRemoveSubMenus m_tMI(lIndex).lActualID, 1, hMenusToDestroy(), lCount
+            
+    ' Destroy the menus:
+    For lDestroy = 1 To lCount
+        DestroyMenu hMenusToDestroy(lDestroy)
+        ' Debug.Print "Destroyed sub-menu:" &amp; hMenusToDestroy(lDestroy)
+    Next lDestroy
+        
+    ' Now repopulate the array &amp; sort out the indexes to remove
+    ' the indexes marked for deletion:
+    If (lCount &gt; 0) Or (lR &lt;&gt; 0) Then
+    
+      lRealCount = 0
+      For lIndex = 1 To m_iMenuCount
+         
+         If Not (m_tMI(lIndex).bMarkToDestroy) Then
+            If (GetMenuItemCount(m_tMI(lIndex).lActualID) = -1) Then
+               If (m_tMI(lIndex).lActualID &gt; lMaxID) Then
+                  lMaxID = m_tMI(lIndex).lActualID
+               End If
+            End If
+            lRealCount = lRealCount + 1
+            
+            If (lRealCount &lt;&gt; lIndex) Then
+               ' A much neater way than previously (set all the items
+                independently!
+               ' what was I thinking of)
+               LSet m_tMI(lRealCount) = m_tMI(lIndex)
+               ' problem: the parent index of a menu is now changed by the
+                modification:
+               For lSubIndex = 1 To m_iMenuCount
+                  If m_tMI(lSubIndex).lParentIndex = lIndex Then
+                     m_tMI(lSubIndex).lParentIndex = lRealCount
+                     m_tMI(lSubIndex).lParentId = m_tMI(lRealCount).lActualID
+                  End If
+               Next lSubIndex
+            End If
+            
+         End If
+      Next lIndex
+
+      ReDim Preserve m_tMI(1 To lRealCount) As tMenuItem
+      m_iMenuCount = lRealCount
+      If (lMaxID &gt; m_iMenuCount) Then
+         m_lLastMaxId = lMaxID
+      Else
+         m_lLastMaxId = m_iMenuCount
+      End If
+      
+      
+    End If
+
+End Sub
+Private Sub pRemoveSubMenus( _
+        ByVal lParentId As Long, _
+        ByVal lStartIndex As Long, _
+        ByRef hMenusToDestroy() As Long, _
+        ByRef lMenuToDestroyCount As Long _
+    )
+Dim lIndex As Long
+    
+    For lIndex = 1 To m_iMenuCount
+        If (m_tMI(lIndex).lParentId = lParentId) Then
+            m_tMI(lIndex).bMarkToDestroy = True
+            pAddToDestroyArray m_tMI(lIndex).hMenu, hMenusToDestroy(),
+             lMenuToDestroyCount
+            pRemoveSubMenus m_tMI(lIndex).lActualID, lIndex, hMenusToDestroy(),
+             lMenuToDestroyCount
+        End If
+    Next lIndex
+End Sub
+Private Sub pAddToDestroyArray( _
+        ByVal hMenu As Long, _
+        ByRef hMenusToDestroy() As Long, _
+        ByRef lMenuToDestroyCount As Long _
+    )
+Dim lIndex As Long
+Dim bFound As Boolean
+    For lIndex = 1 To lMenuToDestroyCount
+        If (hMenusToDestroy(lIndex) = hMenu) Then
+            bFound = True
+            Exit For
+        End If
+    Next lIndex
+    If Not (bFound) Then
+        lMenuToDestroyCount = lMenuToDestroyCount + 1
+        ReDim Preserve hMenusToDestroy(1 To lMenuToDestroyCount) As Long
+        hMenusToDestroy(lMenuToDestroyCount) = hMenu
+    End If
+End Sub
+Public Function ClearSubMenusOfItem( _
+        ByVal vKey As Variant _
+    ) As Long
+Dim hMenu As Long
+Dim iMenu As Long
+Dim lIndex As Long
+    lIndex = plMenuIndex(vKey)
+    If (lIndex &gt; 0) Then
+        ' The idea is to leave just the submenu
+        ' but with nothing in it:
+        
+        ' The ActualID of a sub-menu will be the
+        ' handle to the submenu:
+        hMenu = m_tMI(lIndex).lActualID
+            
+        ' Now remove all the items in the sub-menu,
+        ' mark them for destruction and also do
+        ' any sub-menus they may have:
+        For iMenu = m_iMenuCount To 1 Step -1
+            If (iMenu &lt;= m_iMenuCount) Then
+                If (m_tMI(iMenu).hMenu = hMenu) Then
+                    pRemoveItem iMenu
+                End If
+            End If
+        Next iMenu
+        
+        For iMenu = 1 To m_iMenuCount
+            If (m_tMI(iMenu).lActualID = hMenu) Then
+                ClearSubMenusOfItem = iMenu
+                Exit For
+            End If
+        Next iMenu
+    End If
+End Function
+
+Private Sub pInsertNewMenuitem( _
+      ByRef tMI As tMenuItem, _
+      ByVal lIndexBefore As Long _
+   )
+Dim lPIndex As Long
+Dim hMenu As Long
+Dim lFlags As Long
+Dim lPosition As Long
+Dim lR As Long
+Dim lH() As Long
+Dim sItems() As String
+
+   ' Find out where we're inserting into existing sub menu:
+   hMenu = m_tMI(lIndexBefore).hMenu
+   
+   If (hMenu &lt;&gt; 0) Then
+      pHierarchyForIndex lIndexBefore, lH(), sItems()
+      lPosition = lH(UBound(lH)) - 1
+      
+      lFlags = plMenuFlags(m_iMenuCount)
+      lFlags = (lFlags Or MF_OWNERDRAW) And Not MF_STRING Or MF_BYPOSITION
+      lR = InsertMenuByLong(hMenu, lPosition, lFlags, tMI.lID, tMI.lID)
+      If (lR = 0) Then
+          Debug.Print "Failed to insert new Menu item"
+      Else
+         ' Store the hMenu for this item:
+         tMI.hMenu = hMenu
+      End If
+   End If
+        
+End Sub
+Private Sub pSetMenuCaption( _
+        ByVal iItem As Long, _
+        ByVal sCaption As String, _
+        ByVal bSeparator As Boolean _
+    )
+Dim sCap As String
+Dim sShortCut As String
+Dim iPos As Long
+   
+   m_tMI(iItem).sInputCaption = sCaption
+   
+   If (bSeparator) Then
+       m_tMI(iItem).sCaption = "-"
+   Else
+      ' Check if this is a title:
+      If (Left$(sCaption, 1) = "-") Then
+         m_tMI(iItem).bTitle = True
+         sCaption = Mid$(sCaption, 2)
+      End If
+   
+      ' Check if this menu item will have a menu bar break:
+      pParseCaption sCaption, "|", m_tMI(iItem).bMenuBarBreak
+      ' Check if this menu item will be on the same line as
+      ' the last one:
+      pParseCaption sCaption, "^", m_tMI(iItem).bMenuBreak
+      
+      ' Check if we have a shortcut to the menu item:
+      iPos = InStr(sCaption, vbTab)
+      If (iPos &lt;&gt; 0) Then
+          sCap = Left$(sCaption, (iPos - 1))
+          ' Extract the ctrl key item:
+          sShortCut = Mid$(sCaption, (iPos + 1))
+          pParseMenuShortcut iItem, sShortCut
+      Else
+          sCap = sCaption
+      End If
+      m_tMI(iItem).sAccelerator = psExtractAccelerator(sCap)
+      m_tMI(iItem).sCaption = sCap
+      
+   End If
+
+End Sub
+Private Sub pParseCaption(ByRef sCaption As String, ByVal sToken As String,
+ ByRef bFlag As Boolean)
+Dim iPos As Long
+Dim iPos2 As Long
+Dim sCap As String
+
+   iPos = InStr(sCaption, sToken)
+   If (iPos &lt;&gt; 0) Then
+      ' Check for double token (i.e. interpret as untokenised character):
+      iPos2 = InStr(sCaption, sToken &amp; sToken)
+      If (iPos2 &lt;&gt; 0) Then
+         bFlag = False
+         If (iPos2 &gt; 1) Then
+            sCap = Left$(sCaption, iPos - 1)
+         End If
+         If (iPos2 + 1 &lt; Len(sCaption)) Then
+            sCap = sCap &amp; Mid$(sCaption, iPos2 + 1)
+         End If
+      Else
+         bFlag = True
+         If (iPos &gt; 1) Then
+            sCap = Left$(sCaption, iPos - 1)
+         End If
+         If (iPos &lt; Len(sCaption)) Then
+            sCap = sCap &amp; Mid$(sCaption, iPos + 1)
+         End If
+         sCaption = sCap
+      End If
+   Else
+      bFlag = False
+   End If
+End Sub
+Private Sub pParseMenuShortcut( _
+        ByVal iItem As Long, _
+        ByVal sShortCut As String _
+    )
+Dim iPos As Long
+Dim iNextPos As Long
+Dim iCount As Long
+Dim sBits() As String
+Dim sKeyNum As String
+
+   sShortCut = Trim$(sShortCut)
+
+   m_tMI(iItem).iShortCutShiftMask = 0
+   m_tMI(iItem).iShortCutShiftKey = 0
+   m_tMI(iItem).sShortCutDisplay = sShortCut
+   
+   If Len(sShortCut) &gt; 0 Then
+      iPos = 1
+      iNextPos = InStr(iPos, sShortCut, "+")
+      Do While iNextPos &lt;&gt; 0
+         iCount = iCount + 1
+         ReDim Preserve sBits(1 To iCount) As String
+         sBits(iCount) = Mid$(sShortCut, iPos, iNextPos - iPos)
+         iPos = iNextPos + 1
+         iNextPos = InStr(iPos, sShortCut, "+")
+      Loop
+      If iPos &lt;= Len(sShortCut) Then
+         iCount = iCount + 1
+         ReDim Preserve sBits(1 To iCount) As String
+         sBits(iCount) = Mid$(sShortCut, iPos)
+      End If
+      
+      ' Parse the bits:
+      For iPos = 1 To iCount
+         If Len(sBits(iPos)) = 1 Then
+            m_tMI(iItem).iShortCutShiftKey = Asc(UCase$(sBits(iPos)))
+         Else
+            Select Case sBits(iPos)
+            Case "Ctrl"
+               m_tMI(iItem).iShortCutShiftMask =
+                m_tMI(iItem).iShortCutShiftMask Or vbCtrlMask
+            Case "Alt"
+               m_tMI(iItem).iShortCutShiftMask =
+                m_tMI(iItem).iShortCutShiftMask Or vbAltMask
+            Case "Shift"
+               m_tMI(iItem).iShortCutShiftMask =
+                m_tMI(iItem).iShortCutShiftMask Or vbShiftMask
+            Case "Home"
+               m_tMI(iItem).iShortCutShiftKey = vbKeyHome
+            Case "End"
+               m_tMI(iItem).iShortCutShiftKey = vbKeyEnd
+            Case "Left Arrow"
+               m_tMI(iItem).iShortCutShiftKey = vbKeyLeft
+            Case "Right Arrow"
+               m_tMI(iItem).iShortCutShiftKey = vbKeyRight
+            Case "Up Arrow"
+               m_tMI(iItem).iShortCutShiftKey = vbKeyUp
+            Case "Down Arrow"
+               m_tMI(iItem).iShortCutShiftKey = vbKeyDown
+            Case "Break"
+               m_tMI(iItem).iShortCutShiftKey = vbKeyClear
+            Case "Page Up"
+               m_tMI(iItem).iShortCutShiftKey = vbKeyPageUp
+            Case "Page Up"
+               m_tMI(iItem).iShortCutShiftKey = vbKeyPageDown
+            Case "Del"
+               m_tMI(iItem).iShortCutShiftKey = vbKeyDelete
+            Case "Esc"
+               m_tMI(iItem).iShortCutShiftKey = vbKeyEscape
+            Case "Tab"
+               m_tMI(iItem).iShortCutShiftKey = vbKeyTab
+            Case "Enter"
+               m_tMI(iItem).iShortCutShiftKey = vbKeyReturn
+            Case Else
+               If Left$(sShortCut, 1) = "F" Then
+                  sKeyNum = Mid$(sShortCut, (iPos + 1))
+                  m_tMI(iItem).iShortCutShiftKey = vbKeyF1 + Val(sKeyNum) - 1
+               End If
+            End Select
+         End If
+      Next iPos
+   End If
+    
+End Sub
+Private Function pHierarchyForIndex( _
+        ByVal lIndex As Long, _
+        ByRef lHierarchy() As Long, _
+        ByRef sItems() As String _
+    ) As String
+Dim lH() As Long
+Dim sI() As String
+Dim lItems As Long
+Dim hMenuSeek As Long
+Dim lPid As Long
+Dim bComplete As Boolean
+Dim l As Long
+Dim lNewIndex As Long
+Dim sOut As String
+
+    Erase lHierarchy
+    Erase sItems
+    ' Now determine the hierarchy for this item:
+    hMenuSeek = m_tMI(lIndex).hMenu
+    Do
+        lItems = lItems + 1
+        ReDim Preserve lH(1 To lItems) As Long
+        ReDim Preserve sI(1 To lItems) As String
+        lH(lItems) = plMenuPositionForIndex(hMenuSeek, lIndex)
+        sI(lItems) = m_tMI(lIndex).sCaption
+        lPid = m_tMI(lIndex).lParentId
+        If (lPid &lt;&gt; 0) Then
+            lNewIndex = plGetIndexForId(m_tMI(lIndex).lParentId)
+            ' Debug.Print lNewIndex
+            lIndex = lNewIndex
+            hMenuSeek = m_tMI(lIndex).hMenu
+        Else
+            bComplete = True
+        End If
+    Loop While Not (bComplete)
+    
+    ReDim lHierarchy(1 To lItems) As Long
+    ReDim sItems(1 To lItems) As String
+    For l = lItems To 1 Step -1
+        lHierarchy(l) = lH(lItems - l + 1)
+        sItems(l) = sI(lItems - l + 1)
+    Next l
+
+End Function
+Private Function plMenuPositionForIndex( _
+        ByVal hMenuSeek As Long, _
+        ByVal lIndex As Long _
+    ) As Long
+Dim l As Long
+Dim lPos As Long
+Dim tMII As MENUITEMINFO
+Dim lCount As Long
+   ' fixed bug where this returned the wrong menu item...
+   lCount = GetMenuItemCount(hMenuSeek)
+   If (lCount &gt; 0) Then
+      For l = 0 To lCount - 1
+         tMII.cbSize = Len(tMII)
+         tMII.fMask = MIIM_ID
+         GetMenuItemInfo hMenuSeek, l, True, tMII
+         If (tMII.wID = m_tMI(lIndex).lActualID) And (m_tMI(lIndex).hMenu =
+          hMenuSeek) Then
+            plMenuPositionForIndex = l + 1
+         End If
+      Next l
+   End If
+End Function
+Private Function plFindItemInMenu( _
+        ByVal hMenuSeek As Long, _
+        ByVal lPosition As Long _
+    ) As Long
+Dim lPos As Long
+Dim l As Long, i As Long
+Dim lID As Long
+Dim lCount As Long
+Dim tMII As MENUITEMINFO
+   
+   ' fixed bug where this returned the wrong menu item...
+   tMII.cbSize = Len(tMII)
+   tMII.fMask = MIIM_ID
+   GetMenuItemInfo hMenuSeek, lPosition - 1, True, tMII
+      
+   For i = 1 To m_iMenuCount
+      If m_tMI(i).lActualID = tMII.wID And m_tMI(i).hMenu = hMenuSeek Then
+         plFindItemInMenu = i
+         Exit Function
+      End If
+   Next i
+   
+End Function
+Private Function plMenuIndex(ByVal vKey As Variant) As Long
+Dim i As Long
+   ' Signal default
+   plMenuIndex = -1
+   ' Check for numeric key (i.e. index):
+   If (IsNumeric(vKey)) Then
+      i = CLng(vKey)
+      If (i &gt; 0) And (i &lt;= m_iMenuCount) Then
+         plMenuIndex = i
+      End If
+   Else
+      ' Check for string key:
+      For i = 1 To m_iMenuCount
+          If (m_tMI(i).sKey = vKey) Then
+              plMenuIndex = i
+              Exit Function
+          End If
+      Next i
+   End If
+End Function
+Public Property Get IndexForKey( _
+      ByVal sKey As String _
+   ) As Long
+Dim i As Long
+   i = plMenuIndex(sKey)
+   If i = -1 Then i = 0
+   IndexForKey = i
+End Property
+Public Property Get ItemKey( _
+      ByVal lIndex As Long _
+   ) As String
+   ItemKey = m_tMI(lIndex).sKey
+End Property
+Public Property Let ItemKey( _
+      ByVal lIndex As Long, _
+      ByVal sKey As String _
+   )
+   m_tMI(lIndex).sKey = sKey
+End Property
+Public Property Get ItemData( _
+        ByVal lIndex As Long _
+    ) As Long
+    ItemData = m_tMI(lIndex).lItemData
+End Property
+Public Property Get ItemParentIndex( _
+      ByVal lIndex As Long _
+   ) As Long
+   ItemParentIndex = m_tMI(lIndex).lParentIndex
+End Property
+Public Property Let ItemData( _
+      ByVal lIndex As Long, _
+      ByVal lItemData As Long _
+   )
+Dim tMII As MENUITEMINFO
+   m_tMI(lIndex).lItemData = lItemData
+   If (lIndex &gt; 0) And (lIndex &lt;= m_iMenuCount) Then
+      tMII.cbSize = Len(tMII)
+      tMII.fMask = MIIM_DATA
+      GetMenuItemInfo m_tMI(lIndex).hMenu, m_tMI(lIndex).lActualID, False, tMII
+      tMII.dwItemData = lItemData
+      SetMenuItemInfo m_tMI(lIndex).hMenu, m_tMI(lIndex).lActualID, False, tMII
+   End If
+End Property
+   
+Public Property Let ItemIcon( _
+      ByVal lIndex As Long, _
+      ByVal lIconIndex As Long _
+   )
+   m_tMI(lIndex).lIconIndex = lIconIndex
+End Property
+Public Property Get ItemIcon( _
+      ByVal lIndex As Long _
+   ) As Long
+   ItemIcon = m_tMI(lIndex).lIconIndex
+End Property
+Public Property Get ItemInfrequentlyUsed( _
+      ByVal lIndex As Long _
+   ) As Boolean
+   ItemInfrequentlyUsed = m_tMI(lIndex).bInfrequent
+End Property
+Public Property Let ItemInfrequentlyUsed( _
+      ByVal lIndex As Long, _
+      ByVal bState As Boolean _
+   )
+   m_tMI(lIndex).bInfrequent = bState
+   ResetMenuForRecalc lIndex
+   setInfrequentSeparatorsAndChevrons m_tMI(lIndex).hMenu
+End Property
+Public Property Get HideInfrequentlyUsed() As Boolean
+   HideInfrequentlyUsed = Not (m_bShowInfrequent)
+End Property
+Public Property Let HideInfrequentlyUsed(ByVal bState As Boolean)
+   If (bState = m_bShowInfrequent) Then
+      showInfrequentlyUsed Not (bState)
+   End If
+End Property
+
+Public Property Get Checked( _
+        ByVal lIndex As Long _
+    ) As Boolean
+Dim tMII As MENUITEMINFO
+    tMII.fMask = MIIM_STATE
+    tMII.cbSize = LenB(tMII)
+    GetMenuItemInfo m_tMI(lIndex).hMenu, m_tMI(lIndex).lActualID, False, tMII
+    m_tMI(lIndex).bChecked = ((tMII.fState And MFS_CHECKED) = MFS_CHECKED)
+    Checked = m_tMI(lIndex).bChecked
+End Property
+Public Property Let Checked( _
+        ByVal lIndex As Long, _
+        ByVal bChecked As Boolean _
+    )
+Dim lFlag As Long
+Dim lFlagNot As Long
+
+    m_tMI(lIndex).bChecked = bChecked
+    If (bChecked) Then
+        lFlag = MF_CHECKED
+        lFlagNot = 0
+    Else
+        lFlag = 0
+        lFlagNot = MF_CHECKED
+    End If
+    pSetMenuFlag lIndex, lFlag, lFlagNot
+    
+End Property
+Public Property Get RadioCheck(ByVal lIndex As Long) As Boolean
+' BMS 19/9/99: Added Property Get RadioChecked, to allow client to
+' determine if an item is of type RadioCheck or not.
+   If (lIndex &gt; 0) Then
+      RadioCheck = m_tMI(lIndex).bRadioCheck
+   End If
+End Property
+Public Property Let RadioCheck( _
+      ByVal lIndex As Long, _
+      ByVal bRadioCheck As Boolean _
+   )
+' BMS 20/9/99: Added Property Let RadioChecked, to allow client to
+' set if an item is of type RadioCheck or not.
+Dim lFlag As Long
+Dim lFlagNot As Long
+   If bRadioCheck Then
+      If m_tMI(lIndex).bChecked Then
+         Checked(lIndex) = False
+      End If
+   End If
+   m_tMI(lIndex).bRadioCheck = bRadioCheck
+   If (bRadioCheck) Then
+      lFlag = MFT_RADIOCHECK
+      lFlagNot = 0
+   Else
+      lFlag = 0
+      lFlagNot = MFT_RADIOCHECK
+   End If
+   pSetMenuFlag lIndex, lFlag, lFlagNot
+End Property
+Public Property Get ShowCheckAndIcon(ByVal lIndex As Long) As Boolean
+   ShowCheckAndIcon = m_tMI(lIndex).bShowCheckAndIcon
+End Property
+Public Property Let ShowCheckAndIcon(ByVal lIndex As Long, ByVal bState As
+ Boolean)
+   m_tMI(lIndex).bShowCheckAndIcon = bState
+   ResetMenuForRecalc lIndex
+End Property
+Public Property Get RedisplayMenuOnClick(ByVal lIndex As Long) As Boolean
+   RedisplayMenuOnClick = m_tMI(lIndex).bChevronBehaviour
+End Property
+Public Property Let RedisplayMenuOnClick(ByVal lIndex As Long, ByVal bState As
+ Boolean)
+   m_tMI(lIndex).bChevronBehaviour = bState
+End Property
+
+Public Sub GroupToggle(ByVal lIndex As Long, Optional ByVal bRadio As Boolean =
+ True)
+Dim hMenuSeek As Long
+Dim lPos As Long
+Dim l As Long
+Dim lCount As Long
+Dim tMII As MENUITEMINFO
+   
+   ' Check a radio item and toggle off any others within
+   ' this menu space:
+   If lIndex &gt; 0 And lIndex &lt;= m_iMenuCount Then
+      RadioCheck(lIndex) = True
+      hMenuSeek = m_tMI(lIndex).hMenu
+      lPos = plMenuPositionForIndex(hMenuSeek, lIndex) - 1
+      If lPos &gt; -1 Then
+         For l = lPos - 1 To 0 Step -1
+            tMII.cbSize = Len(tMII)
+            tMII.fMask = MIIM_ID Or MIIM_TYPE
+            GetMenuItemInfo hMenuSeek, l, True, tMII
+            If (tMII.fType And MF_SEPARATOR) &lt;&gt; MF_SEPARATOR Then
+               lIndex = plGetIndexForId(tMII.wID)
+               RadioCheck(lIndex) = False
+            Else
+               Exit For
+            End If
+         Next l
+         
+         For l = lPos + 1 To GetMenuItemCount(hMenuSeek) - 1
+            tMII.cbSize = Len(tMII)
+            tMII.fMask = MIIM_TYPE Or MIIM_ID
+            GetMenuItemInfo hMenuSeek, l, True, tMII
+            If (tMII.fType And MF_SEPARATOR) &lt;&gt; MF_SEPARATOR Then
+               lIndex = plGetIndexForId(tMII.wID)
+               RadioCheck(lIndex) = False
+            Else
+               Exit For
+            End If
+         Next l
+      End If
+   End If
+   
+End Sub
+
+Public Property Get Enabled( _
+        ByVal lIndex As Long _
+    ) As Boolean
+    
+    Enabled = m_tMI(lIndex).bEnabled
+
+End Property
+Public Property Let Enabled( _
+        ByVal lIndex As Long, _
+        ByVal bEnabled As Boolean _
+    )
+Dim lFlag As Long
+Dim lFlagNot As Long
+
+    m_tMI(lIndex).bEnabled = bEnabled
+    If (bEnabled) Then
+        lFlag = MF_ENABLED
+        lFlagNot = MF_GRAYED
+    Else
+        lFlag = MF_DISABLED
+        lFlagNot = MF_GRAYED
+    End If
+    pSetMenuFlag lIndex, lFlag, lFlagNot
+    
+End Property
+Public Property Get Caption( _
+        ByVal lIndex As Long _
+    ) As String
+   
+   Caption = m_tMI(lIndex).sCaption
+   
+End Property
+Public Property Let Caption( _
+        ByVal lIndex As Long, _
+        ByVal sCaption As String _
+    )
+
+   m_tMI(lIndex).sInputCaption = sCaption
+   m_tMI(lIndex).sCaption = sCaption
+   m_tMI(lIndex).sAccelerator = psExtractAccelerator(sCaption)
+   
+   ResetMenuForRecalc lIndex
+   
+End Property
+Public Property Get Visible( _
+      ByVal lIndex As Long _
+   ) As Boolean
+   Visible = m_tMI(lIndex).bVisible
+End Property
+Public Property Let Visible( _
+      ByVal lIndex As Long, _
+      ByVal bState As Boolean _
+   )
+   m_tMI(lIndex).bVisible = bState
+   ResetMenuForRecalc lIndex
+End Property
+
+Public Property Get HelpText( _
+      ByVal lIndex As Long _
+   ) As String
+   HelpText = m_tMI(lIndex).sHelptext
+End Property
+Public Property Let HelpText( _
+      ByVal lIndex As Long, _
+      ByVal sHelptext As String _
+   )
+   m_tMI(lIndex).sHelptext = sHelptext
+End Property
+
+Private Sub showInfrequentlyUsed(ByVal bState As Boolean)
+Dim i As Long
+Dim bChange As Boolean
+
+   bChange = Not (m_bShowInfrequent = bState)
+
+   ' set the state (if not already...)
+   m_bShowInfrequent = bState
+   ' Debug.Print "showInfrequentyUsed:", bState
+   
+   If (bChange) Or (Not m_bShowInfrequent) Then
+      ' ensure all items get measured correctly:
+      For i = 1 To m_iMenuCount
+         If m_tMI(i).bInfrequent Then
+            ResetMenuForRecalc i
+         End If
+      Next i
+      
+      '
+      If Not (bState) Then
+         
+         ' which menus should we add chevrons to?
+         ' which separators should we also set as infrequent?
+         
+         Dim hMenu() As Long
+         Dim iMenuCount As Long
+         Dim j As Long
+         Dim lIndex As Long
+         
+         ' determine which menus contain infrequent items:
+         For i = 1 To m_iMenuCount
+            lIndex = 0
+            For j = 1 To iMenuCount
+               If lIndex = 0 Then
+                  If m_tMI(i).hMenu = hMenu(j) Then
+                     lIndex = j
+                     Exit For
+                  End If
+               End If
+            Next j
+            If (lIndex = 0) Then
+               ReDim Preserve hMenu(1 To iMenuCount + 1) As Long
+               iMenuCount = iMenuCount + 1
+               hMenu(iMenuCount) = m_tMI(i).hMenu
+            End If
+         Next i
+
+         ' correct separators &amp; add chevrons:
+         For j = 1 To iMenuCount
+            setInfrequentSeparatorsAndChevrons hMenu(j)
+         Next j
+         
+         ' done.
+         
+      Else
+         ' remove chevrons:
+         For i = m_iMenuCount To 1 Step -1
+            If i &lt;= m_iMenuCount Then
+               If m_tMI(i).bChevronAppearance Then
+                  pRemoveItem i
+               End If
+            End If
+         Next i
+      End If
+   End If
+   
+End Sub
+
+Private Sub setInfrequentSeparatorsAndChevrons(ByVal hMenu As Long)
+Dim i As Long
+Dim iCount As Long
+Dim tMI As MENUITEMINFO
+Dim lIndex As Long
+Dim lGroupFrequentCount As Long
+Dim lInFrequentCount As Long
+Dim lParentIndex As Long
+Dim bSeparator As Boolean
+Dim sKey As String
+Dim lR As Long
+
+   tMI.cbSize = LenB(tMI)
+   tMI.fMask = MIIM_ID
+   iCount = GetMenuItemCount(hMenu)
+   For i = 1 To iCount
+      lR = GetMenuItemInfo(hMenu, i - 1, True, tMI)
+      lIndex = ItemForID(tMI.wID)
+      If lIndex &gt; 0 Then
+         bSeparator = isSeparator(lIndex)
+         If bSeparator Then
+            m_tMI(lIndex).bInfrequent = (lGroupFrequentCount = 0)
+            lGroupFrequentCount = 0
+         Else
+            If m_tMI(lIndex).bInfrequent Then
+               lInFrequentCount = lInFrequentCount + 1
+               lParentIndex = m_tMI(lIndex).lParentIndex
+            Else
+               lGroupFrequentCount = lGroupFrequentCount + 1
+            End If
+         End If
+      End If
+   Next i
+   
+   ' remove chevrons:
+   sKey = m_sCurrentlyRestoredKey
+   m_sCurrentlyRestoredKey = ""
+   For i = m_iMenuCount To 1 Step -1
+      If i &lt;= m_iMenuCount Then
+         If m_tMI(i).hMenu = hMenu Then
+            If m_tMI(i).bChevronAppearance Then
+               pRemoveItem i
+            End If
+         End If
+      End If
+   Next i
+   m_sCurrentlyRestoredKey = sKey
+   
+   If (lInFrequentCount &gt; 0) And Not (m_bShowInfrequent) Then
+      i = AddItem("v-chevron-v", , , lParentIndex)
+      m_tMI(i).bChevronAppearance = True
+      m_tMI(i).bChevronBehaviour = True
+      ItemData(i) = &amp;HCAFECAFE
+   End If
+   
+
+End Sub
+
+Private Function isSeparator(ByVal lIndex As Long) As Boolean
+   If Trim$(m_tMI(lIndex).sCaption = "-") Then
+      isSeparator = True
+   End If
+End Function
+
+Private Sub ResetMenuForRecalc(ByVal lIndex As Long)
+   
+Dim tMI As MENUITEMINFO
+Dim hMenu As Long
+Dim hSubMenu As Long
+Dim lFlags As Long
+Dim lR As Long
+Dim lPosition As Long
+Dim iCount As Long, i As Long
+
+   ' Modify the menu item:
+   hMenu = m_tMI(lIndex).hMenu
+   tMI.cbSize = Len(tMI)
+   tMI.fMask = MIIM_SUBMENU
+   GetMenuItemInfo hMenu, m_tMI(lIndex).lActualID, 0, tMI
+   hSubMenu = tMI.hSubMenu
+   iCount = GetMenuItemCount(hMenu)
+   tMI.fMask = MIIM_ID
+   For i = 0 To iCount - 1
+      GetMenuItemInfo hMenu, i, 1, tMI
+      If (tMI.wID &lt;&gt; m_tMI(lIndex).lActualID) Then
+         lPosition = lPosition + 1
+      Else
+         Exit For
+      End If
+   Next i
+   ' remove it from the menu:
+   RemoveMenu hMenu, m_tMI(lIndex).lActualID, MF_BYCOMMAND
+   
+   ' Insert it back again at the corect position with the same ID etc:
+   lFlags = plMenuFlags(lIndex)
+   lFlags = (lFlags Or MF_OWNERDRAW) And Not MF_STRING Or MF_BYPOSITION
+   lR = InsertMenuByLong(m_tMI(lIndex).hMenu, lPosition, lFlags,
+    m_tMI(lIndex).lID, m_tMI(lIndex).lItemData)
+   If (hSubMenu &lt;&gt; 0) Then
+      ' If we had a submenu then put that back again:
+      lFlags = lFlags And Not MF_BYPOSITION Or MF_BYCOMMAND
+      lFlags = lFlags Or MF_POPUP
+      lR = ModifyMenuByLong(m_tMI(lIndex).hMenu, m_tMI(lIndex).lID, lFlags,
+       hSubMenu, m_tMI(lIndex).lItemData)
+   End If
+
+End Sub
+Public Property Get Header( _
+      ByVal lIndex As Long _
+   ) As Boolean
+   Header = m_tMI(lIndex).bTitle
+End Property
+Public Property Let Header( _
+      ByVal lIndex As Long, _
+      ByVal bState As Boolean _
+   )
+   m_tMI(lIndex).bTitle = bState
+   If (bState) Then
+      If Not m_tMI(lIndex).bDragOff Then
+         ' disable the item
+         pSetMenuFlag lIndex, MF_DISABLED, MF_GRAYED
+      Else
+         ' neither disabled nor grayed
+         pSetMenuFlag lIndex, 0, MF_DISABLED Or MF_GRAYED
+      End If
+   End If
+End Property
+Public Property Get OwnerDraw( _
+      ByVal lIndex As Long _
+   ) As Boolean
+   OwnerDraw = m_tMI(lIndex).bOwnerDraw
+End Property
+Public Property Let OwnerDraw( _
+      ByVal lIndex As Long, _
+      ByVal bState As Boolean _
+   )
+   m_tMI(lIndex).bOwnerDraw = bState
+End Property
+
+Public Property Get Default( _
+      ByVal lIndex As Long _
+   ) As Boolean
+   Default = m_tMI(lIndex).bDefault
+End Property
+Public Property Let Default( _
+      ByVal lIndex As Long, _
+      ByVal bState As Boolean _
+   )
+   m_tMI(lIndex).bDefault = bState
+   ' Modify this menu item to reflect the new properties:
+   ResetMenuForRecalc lIndex
+End Property
+
+Public Sub Clear()
+Dim lMenu As Long
+    
+   m_lLastMaxId = &amp;H800
+   ' Clear up all submenus we have created:
+   For lMenu = 1 To m_lSubMenuCount
+       DestroyMenu m_hSubMenus(lMenu)
+   Next lMenu
+   m_lSubMenuCount = 0
+   Erase m_hSubMenus
+   
+   ' Clear the main menu we have created:
+   If (m_iMenuCount &gt; 0) Then
+      DestroyMenu m_tMI(1).hMenu
+   End If
+
+   ' Clear up the array:
+   m_iMenuCount = 0
+   Erase m_tMI
+   
+End Sub
+
+Public Function ShowPopupMenu( _
+      ByVal lLeft As Long, _
+      ByVal lTop As Long, _
+      Optional ByVal lExcludeLeft As Long = 0, _
+      Optional ByVal lExcludeTop As Long = 0, _
+      Optional ByVal lExcludeRight As Long = 0, _
+      Optional ByVal lExcludeBottom As Long = 0, _
+      Optional ByVal bTryToKeepLeft As Boolean = True _
+   ) As Long
+Dim tP As POINTAPI
+Dim tP2 As POINTAPI
+Dim tPM As TPMPARAMS
+Dim lR As Long
+Dim lIndex As Long
+Dim i As Long
+Dim lUN As Long
+Dim bIsSubclass As Boolean
+
+   If Count = 0 Then
+      Exit Function
+   End If
+   
+   tP.x = lLeft \ Screen.TwipsPerPixelX
+   tP.y = lTop \ Screen.TwipsPerPixelY
+   ClientToScreen m_hWndOwner, tP
+   
+   If Abs(lExcludeLeft - lExcludeRight) &gt; 0 Or Abs(lExcludeTop -
+    lExcludeBottom) &gt; 0 Then
+      tP2.x = lExcludeLeft \ Screen.TwipsPerPixelX
+      tP2.y = lExcludeTop \ Screen.TwipsPerPixelY
+      ClientToScreen m_hWndOwner, tP2
+      tPM.rcExclude.Left = tP2.x
+      tPM.rcExclude.Top = tP2.y
+      tP2.x = lExcludeRight \ Screen.TwipsPerPixelX
+      tP2.y = lExcludeBottom \ Screen.TwipsPerPixelY
+      ClientToScreen m_hWndOwner, tP2
+      tPM.rcExclude.Right = tP2.x
+      tPM.rcExclude.Bottom = tP2.y
+   End If
+   tPM.cbSize = Len(tPM)
+   lUN = TPM_RETURNCMD
+   If Not (bTryToKeepLeft) Then
+      lUN = lUN Or TPM_VERTICAL
+   End If
+   If (m_bNoAnimation) Then
+      lUN = lUN Or TPM_NOANIMATION
+   End If
+   SendMessageLong m_hWndOwner, WM_ENTERMENULOOP, 1, 0
+   bIsSubclass = (m_hWndAttached &lt;&gt; 0)
+   showInfrequentlyUsed m_bShowInfrequent
+   CreateSubClass m_hWndOwner
+   lR = TrackPopupMenuEx(m_tMI(1).hMenu, lUN, tP.x, tP.y, m_hWndOwner, tPM)
+   ' Find the index of the item with id lR within the menu:
+   If lR &gt; 0 Then
+      lIndex = ItemForID(lR)
+      ShowPopupMenu = lIndex
+   End If
+   If Not bIsSubclass Then
+      If lR &gt; 0 Then
+         If m_tMI(lIndex).bChevronBehaviour Then
+            If Not m_tMI(lIndex).bChevronAppearance Then
+               raiseClickEventSub lIndex
+            End If
+            ShowPopupMenu = chevronPress(lIndex)
+         Else
+            raiseClickEventSub lIndex
+         End If
+      End If
+      DestroySubClass
+   End If
+   removeWindowHandles
+   SendMessageLong m_hWndOwner, WM_EXITMENULOOP, 1, 0
+   
+   ' The WM_COMMAND message is sent after this sub exits.
+End Function
+Public Function ShowPopupMenuAtIndex( _
+      ByVal lLeft As Long, _
+      ByVal lTop As Long, _
+      Optional ByVal lExcludeLeft As Long = 0, _
+      Optional ByVal lExcludeTop As Long = 0, _
+      Optional ByVal lExcludeRight As Long = 0, _
+      Optional ByVal lExcludeBottom As Long = 0, _
+      Optional ByVal bTryToKeepLeft As Boolean = True, _
+      Optional ByVal lIndex As Long = 1 _
+   ) As Long
+Dim tP As POINTAPI
+Dim tP2 As POINTAPI
+Dim tPM As TPMPARAMS
+Dim lR As Long
+Dim i As Long
+Dim lUN As Long
+Dim bIsSubclass As Boolean
+Dim hMenu As Long
+
+   If lIndex &gt; 0 Then
+      If lIndex &lt;= 0 Or lIndex &gt; Count Then
+         Exit Function
+      End If
+      hMenu = m_tMI(lIndex).hMenu
+   Else
+      If Count = 0 Then
+         Exit Function
+      End If
+      hMenu = m_tMI(1).hMenu
+   End If
+   
+   tP.x = lLeft \ Screen.TwipsPerPixelX
+   tP.y = lTop \ Screen.TwipsPerPixelY
+   ClientToScreen m_hWndOwner, tP
+   
+   If Abs(lExcludeLeft - lExcludeRight) &gt; 0 Or Abs(lExcludeTop -
+    lExcludeBottom) &gt; 0 Then
+      tP2.x = lExcludeLeft \ Screen.TwipsPerPixelX
+      tP2.y = lExcludeTop \ Screen.TwipsPerPixelY
+      ClientToScreen m_hWndOwner, tP2
+      tPM.rcExclude.Left = tP2.x
+      tPM.rcExclude.Top = tP2.y
+      tP2.x = lExcludeRight \ Screen.TwipsPerPixelX
+      tP2.y = lExcludeBottom \ Screen.TwipsPerPixelY
+      ClientToScreen m_hWndOwner, tP2
+      tPM.rcExclude.Right = tP2.x
+      tPM.rcExclude.Bottom = tP2.y
+   End If
+   tPM.cbSize = Len(tPM)
+   lUN = TPM_RETURNCMD
+   If Not (bTryToKeepLeft) Then
+      lUN = lUN Or TPM_VERTICAL
+   End If
+   If (m_bNoAnimation) Then
+      lUN = lUN Or TPM_NOANIMATION
+   End If
+   SendMessageLong m_hWndOwner, WM_ENTERMENULOOP, 1, 0
+   bIsSubclass = (m_hWndAttached &lt;&gt; 0)
+   showInfrequentlyUsed m_bShowInfrequent
+   CreateSubClass m_hWndOwner
+   lR = TrackPopupMenuEx(hMenu, lUN, tP.x, tP.y, m_hWndOwner, tPM)
+   ' Find the index of the item with id lR within the menu:
+   If lR &gt; 0 Then
+      lIndex = ItemForID(lR)
+      ShowPopupMenuAtIndex = lIndex
+   End If
+   If Not bIsSubclass Then
+      If lR &gt; 0 Then
+         If m_tMI(lIndex).bChevronBehaviour Then
+            If Not m_tMI(lIndex).bChevronAppearance Then
+               raiseClickEventSub lIndex
+            End If
+            ShowPopupMenuAtIndex = chevronPress(lIndex)
+         Else
+            raiseClickEventSub lIndex
+         End If
+      End If
+      DestroySubClass
+   End If
+   removeWindowHandles
+   SendMessageLong m_hWndOwner, WM_EXITMENULOOP, 1, 0
+   
+   ' The WM_COMMAND message is sent after this sub exits.
+End Function
+
+Public Function ShowPopupAbsolute( _
+      ByVal lLeftPixel As Long, _
+      ByVal lTopPixel As Long, _
+      Optional ByVal lIndex As Long = 0, _
+      Optional ByVal bTryToKeepLeft As Boolean = True _
+   ) As Long
+Dim tR As RECT
+Dim lUN As Long
+Dim hMenu As Long
+Dim bIsSubclass As Boolean
+Dim lR As Long
+   
+   If lIndex &gt; 0 Then
+      If lIndex &lt;= 0 Or lIndex &gt; Count Then
+         Exit Function
+      End If
+      hMenu = m_tMI(lIndex).hMenu
+   Else
+      If Count = 0 Then
+         Exit Function
+      End If
+      hMenu = m_tMI(1).hMenu
+   End If
+
+   lUN = TPM_RETURNCMD
+   If Not (bTryToKeepLeft) Then
+      lUN = lUN Or TPM_VERTICAL
+   End If
+   If (m_bNoAnimation) Then
+      lUN = lUN Or TPM_NOANIMATION
+   End If
+   SendMessageLong m_hWndOwner, WM_ENTERMENULOOP, 1, 0
+   showInfrequentlyUsed m_bShowInfrequent
+   bIsSubclass = (m_hWndAttached &lt;&gt; 0)
+   CreateSubClass m_hWndOwner
+   lR = TrackPopupMenu(hMenu, lUN, lLeftPixel, lTopPixel, 0, m_hWndOwner, tR)
+   ' Find the index of the item with id lR within the menu:
+   lIndex = ItemForID(lR)
+   ShowPopupAbsolute = lIndex
+   If Not bIsSubclass Then
+      If lR &gt; 0 Then
+         If m_tMI(lIndex).bChevronBehaviour Then
+            If Not m_tMI(lIndex).bChevronAppearance Then
+               raiseClickEventSub lIndex
+            End If
+            ShowPopupAbsolute = chevronPress(lIndex)
+         Else
+            raiseClickEventSub lIndex
+         End If
+      End If
+      DestroySubClass
+   End If
+   removeWindowHandles
+   SendMessageLong m_hWndOwner, WM_EXITMENULOOP, 1, 0
+   
+   ' The WM_COMMAND message is sent after this sub exits.
+   
+End Function
+Private Sub pSetMenuFlag( _
+        ByVal lIndex As Long, _
+        ByVal lFlag As Long, _
+        ByVal lFlagNot As Long _
+    )
+Dim tMII As MENUITEMINFO
+Dim lFlags As Long
+
+    lFlags = plMenuFlags(lIndex)
+    lFlags = (lFlags Or MF_OWNERDRAW) And Not MF_STRING
+    tMII.fMask = MIIM_SUBMENU
+    tMII.cbSize = LenB(tMII)
+    GetMenuItemInfo m_tMI(lIndex).hMenu, m_tMI(lIndex).lActualID, False, tMII
+    If (tMII.hSubMenu &lt;&gt; 0) Then
+        lFlags = lFlags Or MF_POPUP
+    End If
+    lFlags = lFlags And Not MF_BYPOSITION Or MF_BYCOMMAND
+    
+    lFlags = lFlags Or lFlag
+    lFlags = lFlags And Not lFlagNot
+    
+    ModifyMenuByLong m_tMI(lIndex).hMenu, m_tMI(lIndex).lActualID, lFlags,
+     m_tMI(lIndex).lActualID, m_tMI(lIndex).lItemData
+    
+End Sub
+Public Property Get hMenu(ByVal lIndex As Long) As Long
+   hMenu = m_tMI(lIndex).hMenu
+End Property
+
+Private Sub pAddNewMenuItem( _
+        ByRef tMI As tMenuItem _
+    )
+Dim tMII As MENUITEMINFO
+Dim hMenu As Long
+Dim lPIndex As Long
+Dim lFlags As Long
+Dim lR As Long
+Dim hMenuNew As Long
+Dim bOk As Boolean
+Dim i As Long
+
+    ' Find out where we're adding this item:
+    With tMI
+        If (.lParentId = 0) Then
+            ' This is a new top level menu item:
+            If (m_iMenuCount = 1) Then
+               ' Create a new menu
+               hMenu = CreatePopupMenu()
+            Else
+               ' Use the existing menu:
+               hMenu = m_tMI(1).hMenu
+            End If
+        Else
+            ' We are adding to an existing menu:
+            ' First we need to determine if there is already a sub menu for the
+             parent item:
+            lPIndex = plGetIndexForId(tMI.lParentId)
+            If (lPIndex = 0) Then
+                ' Debug.Print " *** Couldn't find parent... *** "
+            Else
+                ' Determine if the parent menu has a sub-menu:
+                tMII.fMask = MIIM_SUBMENU
+                tMII.cbSize = LenB(tMII)
+                GetMenuItemInfo m_tMI(lPIndex).hMenu, m_tMI(lPIndex).lActualID,
+                 False, tMII
+                hMenu = tMII.hSubMenu
+                If (hMenu = 0) Then
+                    ' We don't have a sub menu for this item so we're
+                    ' going to have to add one:
+                    ' Debug.Print "Adding new sub-menu:"
+                    
+                    ' Create the new menu item and store it's handle so we can
+                     clear up
+                    ' again later:
+                    hMenu = CreatePopupMenu()
+                    If (hMenu = 0) Then
+                        Debug.Print " *** Failed to create sub menu *** "
+                    Else
+                        ' Check if hMenu isn't an ID:
+                        bOk = False
+                        If Not (pbIDIsUnique(hMenu)) Then
+                           For i = 1 To 100
+                              hMenuNew = CreatePopupMenu()
+                              If (pbIDIsUnique(hMenuNew)) Then
+                                 DestroyMenu hMenu
+                                 hMenu = hMenuNew
+                                 bOk = True
+                                 Exit For
+                              Else
+                                 DestroyMenu hMenuNew
+                              End If
+                           Next i
+                           If Not bOk Then
+                              ' .. out of menu handles ...
+                              DestroyMenu hMenu
+                             Debug.Print "Out of Menu Handles"
+                             Exit Sub
+                        End If
+                     End If
+                    
+                    m_lSubMenuCount = m_lSubMenuCount + 1
+                    ReDim Preserve m_hSubMenus(1 To m_lSubMenuCount) As Long
+                    m_hSubMenus(m_lSubMenuCount) = hMenu
+                    
+                    ' Now set the parent item so it has a popup menu:
+                    lFlags = plMenuFlags(lPIndex)
+                    lFlags = (lFlags Or MF_OWNERDRAW) And Not MF_STRING
+                    lFlags = lFlags Or MF_POPUP
+                    lFlags = lFlags And Not MF_BYPOSITION Or MF_BYCOMMAND
+                    
+                    lR = ModifyMenuByLong(m_tMI(lPIndex).hMenu,
+                     m_tMI(lPIndex).lActualID, lFlags, hMenu,
+                     m_tMI(lPIndex).lItemData)
+                    ItemData(lPIndex) = m_tMI(lPIndex).lItemData
+                    If (lR = 0) Then
+                        Debug.Print "Failed to modify menu to add the sub menu
+                         " &amp; WinAPIError(Err.LastDllError)
+                    End If
+                    
+                    ' WHen you add a sub menu to an item, its id becomes the
+                     sub menu handle:
+                    m_tMI(lPIndex).lActualID = hMenu
+                    tMI.lParentId = hMenu
+                    End If
+                End If
+            End If
+        End If
+        
+        If (hMenu &lt;&gt; 0) Then
+            lFlags = plMenuFlags(m_iMenuCount)
+            lFlags = (lFlags Or MF_OWNERDRAW) And Not MF_STRING Or MF_BYPOSITION
+            lR = AppendMenuBylong(hMenu, lFlags, tMI.lID, tMI.lItemData)
+            If (lR = 0) Then
+                Debug.Print "Failed to add new Menu item"
+            End If
+        End If
+        
+        ' Store the hMenu for this item:
+        .hMenu = hMenu
+        
+    End With
+End Sub
+Private Function plMenuFlags( _
+        ByVal lIndex As Long _
+    )
+Dim lFlags As Long
+   
+   With m_tMI(lIndex)
+      If (.bChecked) Then
+          lFlags = lFlags Or MF_CHECKED
+      Else
+          lFlags = lFlags Or MF_UNCHECKED
+      End If
+      If (.bEnabled) Then
+          lFlags = lFlags Or MF_ENABLED
+      Else
+          lFlags = lFlags Or MF_GRAYED
+      End If
+      If Left$(Trim$(.sInputCaption), 1) = "-" Or (.bTitle And Not .bDragOff)
+       Or Not (isVisible(lIndex)) Then
+         ' Debug.Print .sInputCaption
+         lFlags = lFlags Or MF_SEPARATOR
+      End If
+      If (m_tMI(lIndex).bMenuBarBreak) Then
+         lFlags = lFlags Or MF_MENUBARBREAK
+      End If
+      If (m_tMI(lIndex).bMenuBreak) Then
+         lFlags = lFlags Or MF_MENUBREAK
+      End If
+        
+   End With
+   plMenuFlags = lFlags
+   
+End Function
+Private Function psExtractAccelerator( _
+        ByVal sCaption As String _
+    )
+Dim i As Long
+
+    For i = 1 To Len(sCaption)
+        If (Mid$(sCaption, i, 1) = "&amp;") Then
+            If (i &lt; Len(sCaption)) Then
+                psExtractAccelerator = UCase$(Mid$(sCaption, (i + 1), 1))
+            End If
+            Exit For
+        End If
+    Next i
+End Function
+Private Function plGetNewID() As Long
+Dim lID As Long
+
+    If (m_lLastMaxId &lt; m_iMenuCount) Then
+        m_lLastMaxId = m_iMenuCount
+    Else
+        m_lLastMaxId = m_lLastMaxId + 1
+    End If
+    lID = m_lLastMaxId
+    Do Until (pbIDIsUnique(lID))
+        lID = lID + 1
+        m_lLastMaxId = lID
+    Loop
+    plGetNewID = lID
+End Function
+Private Function pbIDIsUnique( _
+        ByVal lID As Long _
+    ) As Boolean
+Dim bFound As Boolean
+Dim lMenu As Long
+    For lMenu = 1 To m_iMenuCount
+        If (m_tMI(lMenu).lActualID = lID) Or (m_tMI(lMenu).lID = lID) Then
+            bFound = True
+            Exit For
+        End If
+    Next lMenu
+    pbIDIsUnique = Not (bFound)
+End Function
+Property Let TickIconIndex( _
+        ByVal lTickIconIndex As Long _
+    )
+    m_lTickIconIndex = lTickIconIndex
+End Property
+Property Get TickIconIndex() As Long
+    TickIconIndex = m_lTickIconIndex
+End Property
+Property Let OptionIconIndex( _
+        ByVal lOptionIconIndex As Long _
+    )
+    m_lOptionIconIndex = lOptionIconIndex
+End Property
+Property Get OptionIconIndex() As Long
+    OptionIconIndex = m_lOptionIconIndex
+End Property
+
+Public Sub CreateSubClass(hWndA As Long)
+   If m_hWndAttached = hWndA Then
+   Else
+      DestroySubClass
+      'Debug.Print "SUBCLASSING"
+      AttachMessage Me, hWndA, WM_MENUSELECT
+      AttachMessage Me, hWndA, WM_MEASUREITEM
+      AttachMessage Me, hWndA, WM_DRAWITEM
+      AttachMessage Me, hWndA, WM_COMMAND
+      AttachMessage Me, hWndA, WM_MENUCHAR
+      AttachMessage Me, hWndA, WM_INITMENUPOPUP
+      AttachMessage Me, hWndA, WM_UNINITMENUPOPUP
+      AttachMessage Me, hWndA, WM_MENURBUTTONUP
+      AttachMessage Me, hWndA, WM_WININICHANGE
+      AttachMessage Me, hWndA, WM_DESTROY
+      m_hWndAttached = hWndA
+   End If
+End Sub
+
+Public Sub DestroySubClass()
+    If (m_hWndAttached &lt;&gt; 0) Then
+      'Debug.Print "NOT SUBCLASSING"
+      DetachMessage Me, m_hWndAttached, WM_MENUSELECT
+      DetachMessage Me, m_hWndAttached, WM_MEASUREITEM
+      DetachMessage Me, m_hWndAttached, WM_DRAWITEM
+      DetachMessage Me, m_hWndAttached, WM_COMMAND
+      DetachMessage Me, m_hWndAttached, WM_MENUCHAR
+      DetachMessage Me, m_hWndAttached, WM_INITMENUPOPUP
+      DetachMessage Me, m_hWndAttached, WM_UNINITMENUPOPUP
+      DetachMessage Me, m_hWndAttached, WM_MENURBUTTONUP
+      DetachMessage Me, m_hWndAttached, WM_WININICHANGE
+      DetachMessage Me, m_hWndAttached, WM_DESTROY
+      m_hWndAttached = 0
+    End If
+End Sub
+Friend Function plGetIndexForId( _
+        ByVal lItemId As Long _
+    ) As Long
+Dim l As Long
+Dim lIndex As Long
+    'Debug.Print "Finding Index:"
+    'Debug.Print lItemId
+    lIndex = 0
+    For l = 1 To m_iMenuCount
+        'Debug.Print "    Index at l = " &amp; m_tMI(l).lId
+        If (m_tMI(l).lActualID = lItemId) Then
+            lIndex = l
+            Exit For
+        End If
+    Next l
+    plGetIndexForId = lIndex
+End Function
+Private Function RaiseClickEvent(lID As Long) As Boolean
+' Return true from this if we have completely handled the
+' click on our own:
+Dim lIndex As Long
+
+
+   ' Find the Index of this menu id within our own array:
+   lIndex = plGetIndexForId(lID)
+   
+   ' If we find it, then raise a click event for it:
+   If (lIndex &gt; 0) Then
+   
+      If m_tMI(lIndex).bChevronBehaviour Then
+         chevronPress lIndex
+         
+      Else
+   
+         ' Send a click event with the index:
+         raiseClickEventSub lIndex
+         
+         ' If this was one of the VB menu entries we have
+         ' subclassed, we want to return false.  Then the
+         ' click will filter through to the original Click
+         ' event so your code should work as normal:
+         If Not (m_tMI(lIndex).bIsAVBMenu) Then
+            RaiseClickEvent = True
+         End If
+      End If
+       
+   Else
+
+      ' This is a problem.  We've got a click on
+      ' a menu id which doesn't seem to be any
+      ' of the menu items of the form.  It shouldn't
+      ' happen, but return false anyway so we don't eat
+      ' the message.
+      Debug.Print "Failed to find index"
+            
+      RaiseClickEvent = False
+   End If
+   
+End Function
+Private Sub raiseClickEventSub(ByVal lIndex As Long)
+   
+   ' Check if this isn't a special chevron item:
+   If m_tMI(lIndex).lItemData = VBALCHEVRONMENUCONST Then
+      If parseToolbarItem(lIndex) Then
+         Exit Sub
+      End If
+   End If
+   RaiseEvent Click(lIndex)
+End Sub
+Private Function parseToolbarItem(ByVal lIndex As Long) As Boolean
+   
+   ' try and parse the key:
+   If Len(m_tMI(lIndex).sKey) &gt; 4 Then
+      Dim iPos As Long, iNextPos As Long
+      Dim iPiece As Long
+      Dim sBit() As String
+      iPos = 1
+      Do
+         iPiece = iPiece + 1
+         ReDim Preserve sBit(1 To iPiece) As String
+         iNextPos = InStr(iPos, m_tMI(lIndex).sKey, ":")
+         If (iNextPos = 0) Then
+            sBit(iPiece) = Mid$(m_tMI(lIndex).sKey, iPos)
+         Else
+            sBit(iPiece) = Mid$(m_tMI(lIndex).sKey, iPos, iNextPos - iPos)
+            iPos = iNextPos + 1
+         End If
+      Loop While (iNextPos &gt; 0)
+      
+      Dim lhWnd As Long, lPtr As Long, iButton As Long, i As Long
+      Dim sKey As String
+      If iPiece &gt; 1 Then
+         If sBit(1) = "_VBALCC" Then
+            If IsNumeric(sBit(2)) Then
+               lhWnd = CLng(sBit(2))
+               If IsWindow(lhWnd) Then
+                  lPtr = GetProp(lhWnd, "vbalTbar:ControlPtr")
+                  If (Not (lPtr = 0)) Then
+                     Dim o As Object
+                     Set o = ObjectFromPtr(lPtr)
+                     If Not (o Is Nothing) Then
+                        Select Case sBit(3)
+                        Case "CST"
+                           ' customise
+                           iButton = &amp;H10000
+                        Case "RST"
+                           ' reset
+                           iButton = &amp;H20000
+                        Case "AOR"
+                           ' do nothing
+                           iButton = &amp;H30000
+                        Case "BTN"
+                           ' flip the visible state for the specifed button.
+                           If IsNumeric(sBit(4)) Then
+                              ' Get the button id:
+                              iButton = CLng(sBit(4))
+                              ' Set the check state:
+                              Checked(lIndex) = Not (Checked(lIndex))
+                              ' Now we need also to set the visible state for
+                               the menu item
+                              ' which corresponds.
+                              If (iPiece &gt; 4) Then
+                                 sKey = ""
+                                 For i = 5 To iPiece
+                                    If (i &gt; 5) Then
+                                       sKey = sKey &amp; ":"
+                                    End If
+                                    sKey = sKey &amp; sBit(i)
+                                 Next i
+                                 i = IndexForKey(sKey)
+                                 If (i &gt; 0) Then
+                                    Visible(i) = Checked(lIndex)
+                                 End If
+                              End If
+                           Else
+                              Exit Function
+                           End If
+                        End Select
+                        
+                        ' Send details of what we did to the toolbar:
+                        Dim tHdr As NMHDR
+                        tHdr.hwndFrom = lhWnd
+                        tHdr.code = VBALCHEVRONMENUCONST
+                        tHdr.idfrom = iButton
+                        SendMessageAsAny m_hWndOwner, WM_NOTIFY, 0, tHdr
+                                                
+                        parseToolbarItem = True
+                        
+                     End If
+                  End If
+               End If
+            End If
+         End If
+      End If
+   End If
+
+End Function
+Private Sub RaiseHighlightEvent(lID As Long)
+Dim lIndex As Long
+Dim sCaption As String
+Dim bSeparator As Boolean
+
+   lIndex = plGetIndexForId(lID)
+   ' Debug.Print lIndex
+   If (lIndex &gt; 0) Then
+      sCaption = Trim$(m_tMI(lIndex).sCaption)
+      ' Debug.Print sCaption
+      If Len(sCaption) &gt;= 1 Then
+         If Left$(sCaption, 1) = "-" Then
+            bSeparator = True
+         End If
+      End If
+      If m_tMI(lIndex).bChevronBehaviour Then
+         chevronHover lIndex, True
+      Else
+         chevronHover 0, False
+         RaiseEvent ItemHighlight(lIndex, m_tMI(lIndex).bEnabled, bSeparator)
+      End If
+   Else
+      Debug.Print "Failed to find Index for Highlight Id:", lID, lIndex
+   End If
+End Sub
+Private Sub RaiseInitMenuEvent( _
+        ByVal hMenu As Long, _
+        ByVal bState As Boolean _
+    )
+Dim lIndex As Long
+Dim lParentId As Long
+Dim bFound As Boolean
+
+   ' not hovering over a chevron
+   chevronHover 0, False
+   ' Firstly, we need to find the index of an item
+   ' in hMenu:
+   For lIndex = m_iMenuCount To 1 Step -1
+       If (m_tMI(lIndex).hMenu = hMenu) Then
+           lParentId = m_tMI(lIndex).lParentId
+           bFound = True
+       End If
+       If (bFound) Then
+           If (m_tMI(lIndex).lActualID = lParentId) Then
+              If bState Then
+                 RaiseEvent InitPopupMenu(lIndex)
+              Else
+                 RaiseEvent UnInitPopupMenu(lIndex)
+              End If
+              Exit For
+           End If
+       End If
+   Next lIndex
+                
+End Sub
+Private Sub RaiseMenuExitEvent()
+   ' not over a chevron:
+   chevronHover 0, False
+   ' raise the event:
+   RaiseEvent MenuExit
+End Sub
+Private Sub chevronHover(ByVal lIndex As Long, ByVal bState As Boolean)
+   '
+   If bState Then
+      If Not (lIndex = m_lChevronIndex) Then ' check for already hovering
+         timeBeginPeriod 10
+         m_lChevronStartTime = timeGetTime()
+         m_lHoverIndex = lIndex
+         m_lChevronIndex = lIndex
+         evaluateMenuWindows
+         If m_tMI(lIndex).bChevronAppearance Then
+            m_tmrChevron.Interval = 500
+         Else
+            m_tmrChevron.Interval = -1
+         End If
+      End If
+   Else
+      If m_lChevronIndex &lt;&gt; 0 Or (m_lHoverIndex &lt;&gt; lIndex) Then
+         m_lHoverIndex = lIndex
+      End If
+      m_lChevronIndex = 0
+      m_tmrChevron.Interval = -1
+      timeEndPeriod 10
+   End If
+   '
+End Sub
+
+Private Function pGetTextPosition( _
+        ByVal lHDC As Long, _
+        ByVal lIndex As Long, _
+        ByRef rcItem As RECT _
+    )
+Dim tC As RECT
+Dim lDiff As Long
+Dim lMenuHeight As Long
+
+   lMenuHeight = m_lMenuItemHeight
+    
+    ' Determine the size of the text to draw:
+    DrawText lHDC, m_tMI(lIndex).sCaption, Len(m_tMI(lIndex).sCaption), tC,
+     DT_CALCRECT
+    
+    ' We want to centre the text vertically:
+    lDiff = lMenuHeight - (tC.Bottom - tC.Top)
+    If (lDiff &gt; 0) Then
+        rcItem.Top = rcItem.Top + lDiff \ 2
+    End If
+    
+   ' All normal menu items are indented by to
+   ' accomodate icon &amp; checked surround for icon:
+   rcItem.Left = rcItem.Left + lMenuHeight + 2
+    
+End Function
+Private Function DrawItem(ByVal wParam As Long, ByVal lparam As Long) As Long
+Dim tDIS As DRAWITEMSTRUCT
+Dim hBr As Long, hPen As Long, hPenOld As Long
+Dim tR As RECT, tTR As RECT, tWR As RECT
+Dim tJunk As POINTAPI
+Dim lHDC As Long
+Dim hFntOld As Long, hFntSymOld As Long, hFontInt As Long
+Dim tMII As MENUITEMINFO
+Dim bRadioCheck As Boolean, bChecked As Boolean
+Dim bDisabled As Boolean, bHighlighted As Boolean
+Dim bHeader As Boolean, bSeparator As Boolean
+Dim bDefault As Boolean
+Dim bInfrequent As Boolean, bChevron As Boolean
+Dim bPriorInfrequent As Boolean, bNextInfrequent As Boolean
+Dim bDoDefault As Boolean
+Dim lID As Long
+Dim lSelLeft As Long
+Dim sCC As String
+Dim lIconIndex As Long
+Dim lX As Long, lY As Long
+Dim hBrush As Long
+Dim lIndex As Long
+Dim bCanHighlight As Boolean
+   CopyMemory tDIS, ByVal lparam, Len(tDIS)
+   Debug.Print "Drawing item", tDIS.itemID
+   
+   If tDIS.CtlType = ODT_MENU Then
+      
+      lIndex = (plGetIndexForId(tDIS.itemID))
+      If (lIndex &gt; 0) Then
+      
+         If Not isVisible(lIndex) Then
+            DrawItem = True
+            Exit Function
+         End If
+
+         ' ensure the memory dc is big enough:
+         m_cMemDC.Width = tDIS.rcItem.Right - tDIS.rcItem.Left + 2
+         m_cMemDC.Height = tDIS.rcItem.Bottom - tDIS.rcItem.Top + 2
+         lHDC = m_cMemDC.hdc
+
+         LSet tR = tDIS.rcItem
+         OffsetRect tR, -tR.Left, -tR.Top
+
+         ' Get info about the menu item:
+         tMII.cbSize = LenB(tMII)
+         tMII.fMask = MIIM_TYPE Or MIIM_STATE 'Or MIIM_DATA
+         ReDim b(0 To 128) As Byte
+         tMII.dwTypeData = VarPtr(b(0))
+         GetMenuItemInfo tDIS.hwndItem, tDIS.itemID, False, tMII
+            
+         bRadioCheck = m_tMI(lIndex).bRadioCheck  '((tMII.fType And
+          MFT_RADIOCHECK) = MFT_RADIOCHECK)
+         bDisabled = Not (m_tMI(lIndex).bEnabled) '((tMII.fState And
+          MFS_DISABLED) = MFS_DISABLED)
+         bChecked = ((tMII.fState And MFS_CHECKED) = MFS_CHECKED) Or bRadioCheck
+         bHighlighted = ((tMII.fState And MFS_HILITE) = MFS_HILITE)
+         bHeader = m_tMI(lIndex).bTitle
+         bSeparator = isSeparator(lIndex)
+         bDefault = m_tMI(lIndex).bDefault
+         bInfrequent = m_tMI(lIndex).bInfrequent
+         bChevron = m_tMI(lIndex).bChevronAppearance
+         
+         'Debug.Print lIndex, m_tMI(lIndex).sCaption, bInfrequent, bSeparator
+                  
+         ' Fill background:
+         tR.Bottom = tR.Bottom + 1
+         tR.Right = tR.Right + 1
+         LSet tTR = tR
+                  
+         If bInfrequent Then
+            getNextAndPriorInfrequentStates lIndex, bPriorInfrequent,
+             bNextInfrequent
+            LSet tWR = tTR
+            If (m_OfficeXPStyle) Then
+               fillWithLighterControlColour lHDC, tWR, tDIS.rcItem.Top
+            Else
+               fillWithLighterBackColor lHDC, tWR, tDIS.rcItem.Top, True
+            End If
+            If Not bPriorInfrequent Then
+               If Not (bHighlighted) Then
+                  tWR.Bottom = tWR.Top + 1
+                  fillWithNormalBackground lHDC, tWR, tDIS.rcItem.Top
+                  LSet tWR = tTR
+                  If Not (m_OfficeXPStyle) Then
+                     hPen = CreatePen(PS_SOLID, 1,
+                      TranslateColor(vbButtonShadow))
+                     hPenOld = SelectObject(lHDC, hPen)
+                     MoveToEx lHDC, tWR.Left, tWR.Top + 1, tJunk
+                     LineTo lHDC, tWR.Right, tWR.Top + 1
+                     SelectObject lHDC, hPenOld
+                     DeleteObject hPen
+                  End If
+               End If
+            End If
+            If Not bNextInfrequent Then
+               hPen = CreatePen(PS_SOLID, 1, TranslateColor(vb3DHighlight))
+               hPenOld = SelectObject(lHDC, hPen)
+               MoveToEx lHDC, tWR.Left, tWR.Bottom - 2, tJunk
+               LineTo lHDC, tWR.Right, tWR.Bottom - 2
+               SelectObject lHDC, hPenOld
+               DeleteObject hPen
+            End If
+         Else
+            fillWithNormalBackground lHDC, tTR, tDIS.rcItem.Top
+         End If
+         
+         If (m_OfficeXPStyle) Then
+            Dim tSideRect As RECT
+            LSet tSideRect = tTR
+            tSideRect.Right = m_lMenuItemHeight + 8
+            fillWithLighterControlColour lHDC, tSideRect, tDIS.rcItem.Top
+         End If
+         
+         tR.Top = tR.Top + 1
+         SetBkMode lHDC, TRANSPARENT
+                  
+         ' set the appropriate font:
+         If bDefault Then
+            hFntOld = SelectObject(lHDC, hFontBold)
+         Else
+            hFntOld = SelectObject(lHDC, hFont)
+         End If
+
+         bDoDefault = True
+         If (m_tMI(lIndex).bOwnerDraw) Then
+            ' this is unfortunate
+            LSet tTR = tDIS.rcItem
+            Dim lW As Long, lH As Long
+            lW = tTR.Right - tTR.Left + 1
+            lH = tTR.Bottom - tTR.Top + 1
+            tTR.Top = tTR.Top - 1
+            tTR.Bottom = tTR.Bottom + 1
+            BitBlt tDIS.hdc, tDIS.rcItem.Left, tDIS.rcItem.Top, lW, lH, lHDC,
+             0, 0, vbSrcCopy
+            RaiseEvent DrawItem(tDIS.hdc, lIndex, tTR.Left, tTR.Top, tTR.Right,
+             tTR.Bottom, bHighlighted, bChecked, bDisabled, bDoDefault)
+            BitBlt lHDC, 0, 0, lW, lH, tDIS.hdc, tDIS.rcItem.Left,
+             tDIS.rcItem.Top, vbSrcCopy
+            tR.Left = tTR.Left - tDIS.rcItem.Left
+            tR.Top = tTR.Top - tDIS.rcItem.Top + 1
+         End If
+         ' ensure we have the window handle for the menu:
+         addWindowHandle tDIS.hdc, m_tMI(lIndex).hMenu
+         
+         If (bDoDefault) Then
+         
+            If bSeparator Or (bHeader And Not (HeaderStyle =
+             ecnmHeaderCaptionBar)) Then
+               ' Separator:
+               LSet tWR = tR
+               tWR.Top = (tWR.Bottom - tWR.Top - 2) \ 2 + tWR.Top
+               tWR.Bottom = tWR.Top + 2
+               InflateRect tWR, -12, 0
+               If m_bImageProcessBitmap And Not (m_cBitmapLight Is Nothing) Then
+                  tWR.Bottom = tWR.Top
+                  fillWithHighlightBackColor lHDC, tWR, tDIS.rcItem.Top +
+                   tWR.Top
+                  tWR.Top = tWR.Top + 1
+                  tWR.Bottom = tWR.Top
+                  fillWithLighterBackColor lHDC, tWR, tDIS.rcItem.Top +
+                   tWR.Top, False
+               Else
+                  If (m_OfficeXPStyle) Then
+                     Dim tWRS As RECT
+                     LSet tWRS = tWR
+                     tWRS.Left = tSideRect.Right + 4
+                     tWRS.Right = tWRS.Right + 20
+                     tWRS.Top = tWRS.Top + 1
+                     tWRS.Bottom = tWRS.Top
+                     DrawEdge lHDC, tWRS, BDR_SUNKENOUTER, BF_TOP Or BF_BOTTOM,
+                      True
+                  Else
+                     DrawEdge lHDC, tWR, BDR_SUNKENOUTER, BF_TOP Or BF_BOTTOM,
+                      False
+                  End If
+               End If
+            End If
+            
+            If bChevron Then
+               '
+               LSet tWR = tR
+               tWR.Top = tWR.Bottom - 15
+               If bHighlighted Then
+                  If (m_OfficeXPStyle) Then
+                     fillWithLighterSelectedColour lHDC, tWR, tDIS.rcItem.Top +
+                      tWR.Top
+                  Else
+                     fillWithLighterControlColour lHDC, tWR, tDIS.rcItem.Top +
+                      tWR.Top
+                  End If
+                  LSet tTR = tWR
+                  InflateRect tTR, -1, -1
+                  DrawEdge lHDC, tTR, BDR_RAISEDINNER, BF_RECT, m_OfficeXPStyle
+               End If
+               
+               ' draw the chevron:
+               hPen = CreatePen(PS_SOLID, 1,
+                TranslateColor(InActiveMenuForeColor))
+               hPenOld = SelectObject(lHDC, hPen)
+               LSet tTR = tWR
+               tTR.Left = ((tTR.Right - tTR.Left) \ 2) - 3 + tTR.Left
+               tTR.Top = tTR.Top + 2
+               
+               MoveToEx lHDC, tTR.Left, tTR.Top, tJunk
+               LineTo lHDC, tTR.Left + 3, tTR.Top + 3
+               MoveToEx lHDC, tTR.Left, tTR.Top + 1, tJunk
+               LineTo lHDC, tTR.Left + 3, tTR.Top + 3 + 1
+               
+               MoveToEx lHDC, tTR.Left, tTR.Top + 4, tJunk
+               LineTo lHDC, tTR.Left + 3, tTR.Top + 3 + 4
+               MoveToEx lHDC, tTR.Left, tTR.Top + 1 + 4, tJunk
+               LineTo lHDC, tTR.Left + 3, tTR.Top + 3 + 1 + 4
+               
+               MoveToEx lHDC, tTR.Left + 4, tTR.Top, tJunk
+               LineTo lHDC, tTR.Left + 4 - 3, tTR.Top + 3
+               MoveToEx lHDC, tTR.Left + 4, tTR.Top + 1, tJunk
+               LineTo lHDC, tTR.Left + 4 - 3, tTR.Top + 3 + 1
+               
+               MoveToEx lHDC, tTR.Left + 4, tTR.Top + 4, tJunk
+               LineTo lHDC, tTR.Left + 4 - 3, tTR.Top + 3 + 4
+               MoveToEx lHDC, tTR.Left + 4, tTR.Top + 1 + 4, tJunk
+               LineTo lHDC, tTR.Left + 4 - 3, tTR.Top + 3 + 1 + 4
+               
+               
+               SelectObject lHDC, hPenOld
+               DeleteObject hPen
+               
+               '
+            End If
+
+            If (Not (bSeparator Or bChevron)) Or bHeader Then
+               ' Text item:
+               
+               lID = tMII.dwItemData
+      
+               ' Icon?
+               lIconIndex = m_tMI(lIndex).lIconIndex
+               
+               If bChecked Or lIconIndex &gt; -1 Then
+                  lSelLeft = tR.Left + 4 + (tR.Bottom - tR.Top + 1 - 4)
+                  If m_tMI(lIndex).bShowCheckAndIcon Then
+                     lSelLeft = lSelLeft + m_lMenuItemHeight + 8
+                  End If
+               End If
+               
+               If bHighlighted And Not (bHeader Or bDisabled) Then
+               
+                  If m_bGradientHighlight Then
+                     ' Draw a gradient:
+                     LSet tWR = tR
+                     tWR.Left = tR.Left + lSelLeft + 1
+                     tWR.Right = tWR.Left + 4 + (tR.Bottom - tR.Top + 1 - 4)
+                     hBr =
+                      CreateSolidBrush(TranslateColor(ActiveMenuBackgroundColor)
+                     )
+                     FillRect lHDC, tWR, hBr
+                     DeleteObject hBr
+                     LSet tWR = tR
+                     tWR.Left = tWR.Left + 4 + (tR.Bottom - tR.Top + 1 - 4)
+                     DrawGradient lHDC, tWR,
+                      TranslateColor(ActiveMenuBackgroundColor),
+                      TranslateColor(MenuBackgroundColor), False
+                  ElseIf m_bButtonHighlightStyle Then
+                     ' do nothing now
+                  Else
+                     ' standard:
+                     If (m_OfficeXPStyle) Then
+                        LSet tWR = tR
+                        tWR.Left = tWR.Left + 1
+                        tWR.Right = tWR.Right - 2
+                        fillWithLighterSelectedColour lHDC, tWR,
+                         tDIS.rcItem.Top + tWR.Top
+                        DrawEdge lHDC, tWR, 0, 0, True
+                     Else
+                        LSet tWR = tR
+                        tWR.Left = lSelLeft + 1
+                        fillWithHighlightBackColor lHDC, tWR, tDIS.rcItem.Top +
+                         tWR.Top
+                     End If
+                  End If
+                  
+               End If
+               
+               If m_bButtonHighlightStyle And bChecked And Not (bHighlighted)
+                And Not (bDisabled) Then
+                  LSet tWR = tR
+                  fillWithLighterBackColor lHDC, tWR, tDIS.rcItem.Top +
+                   tWR.Top, False
+               End If
+               
+               If bDisabled Then
+                  SetTextColor lHDC, TranslateColor(vb3DHighlight)
+               Else
+                  If bHighlighted Then
+                     SetTextColor lHDC, TranslateColor(ActiveMenuForeColor)
+                  Else
+                     SetTextColor lHDC, TranslateColor(InActiveMenuForeColor)
+                  End If
+               End If
+               
+               LSet tWR = tR
+               
+               If (bHeader) Then
+                  ' no icons/checks
+               Else
+                  
+                  ' Get the check/icon space:
+                  If m_bButtonHighlightStyle Then
+                     InflateRect tWR, -2, 0
+                     tWR.Bottom = tWR.Bottom - 1
+                  Else
+                     tWR.Left = tWR.Left + 1
+                  End If
+                  tWR.Right = tWR.Left + (tWR.Bottom - tWR.Top + 1 - 2)
+                  
+                  ' Check:
+                  If bChecked Then
+                                 
+                     ' Colour in:
+                     If Not (bHighlighted) And Not (bDisabled) Then
+                        If Not m_bButtonHighlightStyle Then
+                           tWR.Top = tWR.Top + 1
+                           If (m_OfficeXPStyle) Then
+                              fillWithLighterControlColour lHDC, tWR,
+                               tDIS.rcItem.Top + tWR.Top
+                           Else
+                              fillWithLighterBackColor lHDC, tWR,
+                               tDIS.rcItem.Top + tWR.Top, False
+                           End If
+                           tWR.Top = tWR.Top - 1
+                        End If
+                        If bDisabled Then
+                           SetTextColor lHDC, TranslateColor(vb3DHighlight)
+                        End If
+                     End If
+                     If Not bDisabled Then
+                        If bHighlighted And Not (m_OfficeXPStyle) Then
+                           SetTextColor lHDC,
+                            TranslateColor(ActiveMenuForeColor)
+                        Else
+                           SetTextColor lHDC,
+                            TranslateColor(InActiveMenuForeColor)
+                        End If
+                     End If
+                     
+                     tWR.Right = tWR.Right + 1
+                     If Not m_bButtonHighlightStyle Then
+                        If (m_OfficeXPStyle) Then
+                           tWR.Top = tWR.Top + 1
+                           tWR.Bottom = tWR.Bottom - 1
+                           DrawEdge lHDC, tWR, BDR_SUNKENOUTER, BF_RECT,
+                            m_OfficeXPStyle
+                           tWR.Top = tWR.Top - 1
+                           tWR.Bottom = tWR.Bottom + 1
+                        Else
+                           tWR.Bottom = tWR.Bottom - 1
+                           DrawEdge lHDC, tWR, BDR_SUNKENOUTER, BF_RECT,
+                            m_OfficeXPStyle
+                           tWR.Bottom = tWR.Bottom + 1
+                        End If
+                     End If
+                     
+                     If lIconIndex = -1 Or m_tMI(lIndex).bShowCheckAndIcon Then
+                        ' Draw the appropriate symbol:
+                        hFontInt = SelectObject(lHDC, hFntOld)
+                        hFntSymOld = SelectObject(lHDC, hFontSymbol)
+                        If bHighlighted And Not (m_OfficeXPStyle) Then
+                           SetTextColor lHDC,
+                            TranslateColor(InActiveMenuForeColor)
+                        End If
+                        If bRadioCheck Then
+                           pDrawText lHDC, "h", tWR, DT_VCENTER Or DT_CENTER Or
+                            DT_SINGLELINE, bDisabled
+                        Else
+                           pDrawText lHDC, "b", tWR, DT_VCENTER Or DT_CENTER Or
+                            DT_SINGLELINE, bDisabled
+                        End If
+                        SelectObject lHDC, hFntSymOld
+                        If bDefault Then
+                           hFntOld = SelectObject(lHDC, hFontBold)
+                        Else
+                           hFntOld = SelectObject(lHDC, hFont)
+                        End If
+                        If bHighlighted And Not (m_OfficeXPStyle) Then
+                           SetTextColor lHDC,
+                            TranslateColor(ActiveMenuForeColor)
+                        Else
+                           SetTextColor lHDC,
+                            TranslateColor(InActiveMenuForeColor)
+                        End If
+                     End If
+                     
+                     If lIconIndex &gt; -1 Then
+                        
+                        If m_tMI(lIndex).bShowCheckAndIcon Then
+                           OffsetRect tWR, m_lMenuItemHeight + 8, 0
+                        End If
+                        
+                        lX = tWR.Left + (tWR.Right - tWR.Left + 1 -
+                         m_lIconSize) \ 2
+                        lY = tWR.Top + (tWR.Bottom - tWR.Top + 1 - m_lIconSize)
+                         \ 2
+                        If bDisabled Then
+                           ImageListDrawIconDisabled m_ptrVb6ImageList, lHDC,
+                            m_hIml, lIconIndex, lX, lY, m_lIconSize
+                        Else
+                           If (bHighlighted And m_OfficeXPStyle) Then
+                              mMenu.ImageListDrawIconDisabled
+                               m_ptrVb6ImageList, lHDC, m_hIml, lIconIndex, lX
+                               + 1, lY + 1, m_lIconSize, True
+                              ImageListDrawIcon m_ptrVb6ImageList, lHDC,
+                               m_hIml, lIconIndex, lX - 1, lY - 1
+                           Else
+                              ImageListDrawIcon m_ptrVb6ImageList, lHDC,
+                               m_hIml, lIconIndex, lX, lY
+                           End If
+                        End If
+                     
+                        If m_tMI(lIndex).bShowCheckAndIcon Then
+                           OffsetRect tWR, -(m_lMenuItemHeight + 8), 0
+                        End If
+                     
+                     End If
+                     
+                  Else
+                     
+                     If lIconIndex &gt; -1 Then
+                     
+                        If m_tMI(lIndex).bShowCheckAndIcon Then
+                           If bHighlighted And Not (bHeader Or bDisabled) Then
+                              If Not m_bButtonHighlightStyle Then
+                                 LSet tTR = tWR
+                                 tTR.Right = m_lMenuItemHeight + 8
+                                 If Not (m_OfficeXPStyle) Then
+                                    ' draw the highlight where the check is:
+                                    fillWithHighlightBackColor lHDC, tTR,
+                                     tDIS.rcItem.Top + tTR.Top
+                                 End If
+                              End If
+                           End If
+                           ' move:
+                           OffsetRect tWR, m_lMenuItemHeight + 8, 0
+                        End If
+                     
+                        If bHighlighted And Not (bDisabled Or m_OfficeXPStyle)
+                         Then
+                           If Not (m_bButtonHighlightStyle) Then
+                              tWR.Right = tWR.Right + 1
+                              DrawEdge lHDC, tWR, BDR_RAISEDINNER, BF_RECT,
+                               m_OfficeXPStyle
+                              tWR.Right = tWR.Right - 1
+                           End If
+                        End If
+                        lX = tWR.Left + (tWR.Right - tWR.Left + 1 -
+                         m_lIconSize) \ 2
+                        lY = tWR.Top + (tWR.Bottom - tWR.Top + 1 - m_lIconSize)
+                         \ 2
+                        lX = lX + 2 * Abs(m_bButtonHighlightStyle)
+                        If bDisabled Then
+                           ImageListDrawIconDisabled m_ptrVb6ImageList, lHDC,
+                            m_hIml, lIconIndex, lX, lY, m_lIconSize
+                        Else
+                           If (bHighlighted And m_OfficeXPStyle) Then
+                              ImageListDrawIconDisabled m_ptrVb6ImageList,
+                               lHDC, m_hIml, lIconIndex, lX + 1, lY + 1,
+                               m_lIconSize, True
+                              ImageListDrawIcon m_ptrVb6ImageList, lHDC,
+                               m_hIml, lIconIndex, lX - 1, lY - 1
+                           Else
+                              ImageListDrawIcon m_ptrVb6ImageList, lHDC,
+                               m_hIml, lIconIndex, lX, lY
+                           End If
+                        End If
+                     
+                        If m_tMI(lIndex).bShowCheckAndIcon Then
+                           OffsetRect tWR, -(m_lMenuItemHeight + 8), 0
+                        End If
+                     
+                     End If
+         
+                  End If
+                  
+               End If
+                        
+               ' Draw text:
+               If bHeader Then
+               
+                  hFontInt = SelectObject(lHDC, hFntOld)
+                  hFntSymOld = SelectObject(lHDC,
+                   m_cNCM.FontHandle(SMCaptionFont))
+                  tWR.Left = tWR.Left + 1
+                  tWR.Top = tWR.Top + 1
+                  
+                  If HeaderStyle = ecnmHeaderCaptionBar Then
+                     ' caption bar:
+                     If bHighlighted And m_tMI(lIndex).bDragOff Then
+                        hBrush =
+                         CreateSolidBrush(TranslateColor(vbActiveTitleBar))
+                        SetTextColor lHDC, TranslateColor(vbTitleBarText)
+                        dragOffHighlighted lIndex
+                     Else
+                        hBrush =
+                         CreateSolidBrush(TranslateColor(vbInactiveTitleBar))
+                        SetTextColor lHDC, TranslateColor(vbInactiveCaptionText)
+                     End If
+                     FillRect lHDC, tWR, hBrush
+                     DeleteObject hBrush
+                     DrawText lHDC, m_tMI(lIndex).sCaption, -1, tWR, DT_CENTER
+                      Or DT_SINGLELINE Or DT_VCENTER
+                  Else
+                     ' separator:
+                     DrawText lHDC, m_tMI(lIndex).sCaption, -1, tTR, DT_LEFT Or
+                      DT_SINGLELINE Or DT_CALCRECT
+                     InflateRect tTR, 2, 0
+                     tR.Left = tWR.Left + ((tWR.Right - tWR.Left) - (tTR.Right
+                      - tTR.Left)) \ 2
+                     tR.Right = tR.Left + (tTR.Right - tTR.Left)
+                     tR.Top = tWR.Top + ((tWR.Bottom - tWR.Top) - (tTR.Bottom -
+                      tTR.Top)) \ 2
+                     tR.Bottom = tR.Top + (tTR.Bottom - tTR.Top)
+                     If m_cBitmap Is Nothing Then
+                        hBr =
+                         CreateSolidBrush(TranslateColor(MenuBackgroundColor))
+                        FillRect lHDC, tR, hBr
+                        DeleteObject hBr
+                     Else
+                        TileArea lHDC, tR.Left, tR.Top, tR.Right - tR.Left + 1,
+                         tR.Bottom - tR.Top + 1, m_cBitmap.hdc,
+                         m_cBitmap.Width, m_cBitmap.Height, 0, tDIS.rcItem.Top
+                     End If
+                     SetTextColor lHDC, TranslateColor(InActiveMenuForeColor)
+                     tR.Left = tR.Left + 2
+                     DrawText lHDC, m_tMI(lIndex).sCaption, -1, tR, DT_LEFT Or
+                      DT_SINGLELINE
+                  End If
+                  SelectObject lHDC, hFntSymOld
+                  hFntOld = SelectObject(lHDC, hFontInt)
+               
+               Else
+                  ' Not header
+                  
+                  If m_bButtonHighlightStyle And Not (bDisabled) Or
+                   (m_OfficeXPStyle) Then
+                     SetTextColor lHDC, TranslateColor(InActiveMenuForeColor)
+                  End If
+                  
+                  LSet tWR = tR
+                  tWR.Left = tR.Left + 4 + (tR.Bottom - tR.Top + 1 - 4) + 2 + 1
+                  If m_tMI(lIndex).bShowCheckAndIcon Then
+                     tWR.Left = tWR.Left + (tR.Bottom - tR.Top + 1)
+                  End If
+                  If (m_OfficeXPStyle) Then
+                     tWR.Left = tWR.Left + 4
+                  End If
+                  pDrawText lHDC, m_tMI(lIndex).sCaption, tWR, DT_LEFT Or
+                   DT_SINGLELINE Or DT_VCENTER, bDisabled
+                  If Len(m_tMI(lIndex).sShortCutDisplay) &gt; 0 Then
+                     tWR.Left = tWR.Left + m_tMI(lIndex).lShortCutStartPos + 4
+                      + 4
+                     pDrawText lHDC, m_tMI(lIndex).sShortCutDisplay, tWR,
+                      DT_LEFT Or DT_SINGLELINE Or DT_VCENTER, bDisabled
+                  End If
+                  
+                  ' Highlighted:
+                  If m_bButtonHighlightStyle And Not (bDisabled) Then
+                     LSet tWR = tR
+                     InflateRect tWR, 0, 1
+                     tWR.Right = tWR.Right - 2
+                     tWR.Bottom = tWR.Bottom - 1
+                     If bHighlighted Then
+                        DrawEdge lHDC, tWR, BDR_RAISEDINNER, BF_RECT,
+                         m_OfficeXPStyle
+                     ElseIf bChecked Then
+                        tWR.Top = tWR.Top + 1
+                        DrawEdge lHDC, tWR, BDR_SUNKENOUTER, BF_RECT,
+                         m_OfficeXPStyle
+                     End If
+                  End If
+                  
+               End If
+               
+            End If
+            
+            SelectObject lHDC, hFntOld
+                        
+            If Not hFntOld = 0 Then
+               SelectObject lHDC, hFntOld
+            End If
+            DrawItem = True
+         End If
+         BitBlt tDIS.hdc, tDIS.rcItem.Left, tDIS.rcItem.Top, tDIS.rcItem.Right
+          - tDIS.rcItem.Left + 1, tDIS.rcItem.Bottom - tDIS.rcItem.Top + 1,
+          lHDC, 0, 0, vbSrcCopy
+
+      Else
+          'Debug.Print "Failed to find item to draw.", tDI.itemID, lIndex
+      End If
+      
+   Else
+      DrawItem = CallOldWindowProc(m_hWndOwner, WM_DRAWITEM, wParam, lparam)
+   End If
+   
+End Function
+Private Sub getNextAndPriorInfrequentStates(ByVal lIndex As Long, ByRef
+ bPriorInfrequent As Boolean, ByRef bNextInfrequent As Boolean)
+Dim lCount As Long
+Dim lPrior As Long
+Dim lNext As Long
+Dim lPosition As Long
+
+   ' need to find out our position on this menu, then derive
+   ' the prior &amp; subsequent menu position
+   
+   ' very inefficient..
+   lCount = GetMenuItemCount(m_tMI(lIndex).hMenu)
+   lPosition = plMenuPositionForIndex(m_tMI(lIndex).hMenu, lIndex)
+   lPrior = plFindItemInMenu(m_tMI(lIndex).hMenu, lPosition - 1)
+   lNext = plFindItemInMenu(m_tMI(lIndex).hMenu, lPosition + 1)
+   If lPrior &gt; 0 Then
+      bPriorInfrequent = (m_tMI(lPrior).bInfrequent)
+   End If
+   If lNext &gt; 0 Then
+      bNextInfrequent = (m_tMI(lNext).bInfrequent)
+   End If
+   
+End Sub
+Private Sub fillWithLighterBackColor(ByVal lHDC As Long, tR As RECT, ByVal
+ lOffsetY As Long, ByVal bInfrequent As Boolean)
+Dim hBrush As Long
+   SetBkMode lHDC, OPAQUE
+   If Not m_cBitmapLight Is Nothing Then
+      TileArea lHDC, tR.Left, tR.Top, tR.Right - tR.Left + 1, tR.Bottom -
+       tR.Top + 1, m_cBitmapLight.hdc, m_cBitmapLight.Width,
+       m_cBitmapLight.Height, 0, lOffsetY
+   Else
+      If (NoPalette) Then
+         If bInfrequent Then
+            hBrush =
+             CreateSolidBrush(SlightlyLighterColour(MenuBackgroundColor))
+         Else
+            hBrush = CreateSolidBrush(LighterColour(MenuBackgroundColor))
+         End If
+         FillRect lHDC, tR, hBrush
+         DeleteObject hBrush
+      Else
+         m_cBrush.Rectangle lHDC, tR.Left, tR.Top, tR.Right - tR.Left + 1,
+          tR.Bottom - tR.Top + 1, 1, PATCOPY, True, MenuBackgroundColor,
+          vb3DHighlight
+      End If
+   End If
+   SetBkMode lHDC, TRANSPARENT
+End Sub
+Private Sub fillWithHighlightBackColor(ByVal lHDC As Long, tR As RECT, ByVal
+ lOffsetY As Long)
+Dim hBr As Long
+   If m_cBitmapDark Is Nothing Then
+      hBr = CreateSolidBrush(TranslateColor(ActiveMenuBackgroundColor))
+      FillRect lHDC, tR, hBr
+      DeleteObject hBr
+   Else
+      TileArea lHDC, tR.Left, tR.Top, tR.Right - tR.Left + 1, tR.Bottom -
+       tR.Top + 1, m_cBitmapDark.hdc, m_cBitmapDark.Width,
+       m_cBitmapDark.Height, 0, lOffsetY
+   End If
+End Sub
+Private Sub fillWithNormalBackground(ByVal lHDC As Long, tR As RECT, ByVal
+ lOffsetY As Long)
+Dim hBrush As Long
+   If m_cBitmap Is Nothing Then
+      hBrush = CreateSolidBrush(TranslateColor(MenuBackgroundColor))
+      FillRect lHDC, tR, hBrush
+      DeleteObject hBrush
+   Else
+      TileArea lHDC, tR.Left, tR.Top, tR.Right - tR.Left + 1, tR.Bottom -
+       tR.Top + 1, m_cBitmap.hdc, m_cBitmap.Width, m_cBitmap.Height, 0, lOffsetY
+   End If
+End Sub
+Private Sub fillWithLighterControlColour(ByVal lHDC As Long, tR As RECT, ByVal
+ lOffsetY As Long)
+
+Dim hBrush As Long
+   SetBkMode lHDC, OPAQUE
+   If Not m_cBitmapLight Is Nothing Then
+      TileArea lHDC, tR.Left, tR.Top, tR.Right - tR.Left + 1, tR.Bottom -
+       tR.Top + 1, m_cBitmapLight.hdc, m_cBitmapLight.Width,
+       m_cBitmapLight.Height, 0, lOffsetY
+   Else
+      If (NoPalette) Then
+         hBrush = CreateSolidBrush(BlendColor(vbButtonFace,
+          MenuBackgroundColor))
+         FillRect lHDC, tR, hBrush
+         DeleteObject hBrush
+      Else
+         m_cBrush.Rectangle lHDC, tR.Left, tR.Top, tR.Right - tR.Left + 1,
+          tR.Bottom - tR.Top + 1, 1, PATCOPY, True, MenuBackgroundColor,
+          vb3DHighlight
+      End If
+   End If
+   SetBkMode lHDC, TRANSPARENT
+End Sub
+
+Private Sub fillWithLighterSelectedColour(ByVal lHDC As Long, tR As RECT, ByVal
+ lOffsetY As Long)
+
+Dim hBrush As Long
+   SetBkMode lHDC, OPAQUE
+   If Not m_cBitmapLight Is Nothing Then
+      TileArea lHDC, tR.Left, tR.Top, tR.Right - tR.Left + 1, tR.Bottom -
+       tR.Top + 1, m_cBitmapLight.hdc, m_cBitmapLight.Width,
+       m_cBitmapLight.Height, 0, lOffsetY
+   Else
+      If (NoPalette) Then
+         hBrush = CreateSolidBrush(BlendColor(vbHighlight, MenuBackgroundColor))
+         FillRect lHDC, tR, hBrush
+         DeleteObject hBrush
+      Else
+         m_cBrush.Rectangle lHDC, tR.Left, tR.Top, tR.Right - tR.Left + 1,
+          tR.Bottom - tR.Top + 1, 1, PATCOPY, True, MenuBackgroundColor,
+          vb3DHighlight
+      End If
+   End If
+   SetBkMode lHDC, TRANSPARENT
+End Sub
+
+Private Sub dragOffHighlighted(ByVal lIndex As Long)
+   '
+   Debug.Print "Drag-off highlighted ", lIndex
+   '
+End Sub
+Private Function pDrawText(ByVal lHDC As Long, ByVal sText As String, tR As
+ RECT, ByVal dtFlags As Long, ByVal bDisabled As Boolean)
+Dim tWR As RECT
+   LSet tWR = tR
+   If bDisabled Then
+      If (m_OfficeXPStyle) Then
+         SetTextColor lHDC, TranslateColor(vbHighlight)
+      Else
+         SetTextColor lHDC, TranslateColor(vb3DHighlight)
+         OffsetRect tWR, 1, 1
+      End If
+   End If
+   DrawText lHDC, sText, -1, tWR, dtFlags
+   If bDisabled Then
+      If Not (m_OfficeXPStyle) Then
+         SetTextColor lHDC, TranslateColor(vbButtonShadow)
+         OffsetRect tWR, -1, -1
+         DrawText lHDC, sText, -1, tWR, dtFlags
+      End If
+   End If
+End Function
+
+Private Sub addWindowHandle(ByVal lHDC As Long, ByVal hMenu As Long)
+Dim lhWnd As Long
+Dim i As Long, j As Long, k As Long
+Dim bFound As Boolean
+
+   ' Works for W2k
+   lhWnd = WindowFromDC(lHDC)
+   
+   ' else
+   If lhWnd = 0 Then
+      EnumerateWindows
+      For i = 1 To EnumerateWindowsCount
+         k = EnumerateWindowshWnd(i)
+         bFound = False
+         For j = 1 To m_iWndCount
+            If m_tWnd(j).hwnd = k Then
+               bFound = True
+            End If
+         Next j
+         If Not bFound Then
+            lhWnd = k
+            Exit For
+         End If
+      Next i
+   End If
+   
+   If Not (lhWnd = 0) Then
+      For i = 1 To m_iWndCount
+         If m_tWnd(i).hMenu = hMenu Then
+            ' already have it
+            Exit Sub
+         End If
+      Next i
+      ReDim Preserve m_tWnd(1 To m_iWndCount + 1) As tMenuWindowHandle
+      m_iWndCount = m_iWndCount + 1
+      With m_tWnd(m_iWndCount)
+         .hMenu = hMenu
+         .hwnd = lhWnd
+      End With
+      'Debug.Print "Added ", m_iWndCount, hMenu, lhWnd
+   Else
+      Debug.Print "No handle for dc ", lHDC
+   End If
+End Sub
+Private Sub removeWindowHandle(ByVal hMenu As Long)
+Dim i As Long
+Dim lIndex As Long
+   For i = m_iWndCount To 1 Step -1
+      If m_tWnd(i).hMenu = hMenu Then
+         lIndex = i
+         Exit For
+      End If
+   Next i
+   If lIndex &gt; 0 Then
+      If m_iWndCount &gt; 1 Then
+         For i = lIndex To m_iWndCount - 1
+            LSet m_tWnd(i) = m_tWnd(i + 1)
+         Next i
+         m_iWndCount = m_iWndCount - 1
+      Else
+         m_iWndCount = 0
+         Erase m_tWnd
+      End If
+   End If
+End Sub
+Private Sub removeWindowHandles()
+   m_iWndCount = 0
+   Erase m_tWnd
+End Sub
+Private Sub evaluateMenuWindows()
+Dim i As Long
+Dim tR As RECT
+   m_iChevronWndCount = 0
+   Erase m_tChevronWnd
+   For i = 1 To m_iWndCount
+      If IsWindow(m_tWnd(i).hwnd) Then
+         ' Debug.Print "eMW:IsWindow", i, m_tWnd(i).hwnd
+         If IsWindowVisible(m_tWnd(i).hwnd) Then
+            'Debug.Print "eMW:IsWindowVisible", i, m_tWnd(i).hWnd
+            m_iChevronWndCount = m_iChevronWndCount + 1
+            ReDim Preserve m_tChevronWnd(1 To m_iChevronWndCount) As
+             tMenuWindowHandleSize
+            LSet m_tChevronWnd(m_iChevronWndCount).tMWH = m_tWnd(i)
+            GetWindowRect m_tWnd(i).hwnd, tR
+            LSet m_tChevronWnd(m_iChevronWndCount).tR = tR
+         End If
+      End If
+   Next i
+   ' Debug.Print "eMW:End", m_iWndCount, m_iChevronWndCount
+End Sub
+Private Function chevronPress(ByVal lIndex As Long) As Long
+Dim lWndIndex As Long
+Dim lOrigIndex As Long
+Dim i As Long
+Dim bIsChevron As Boolean
+Dim bInfrequentReset As Boolean
+      
+   'Debug.Print "ChevronPress:", lIndex
+   lOrigIndex = lIndex
+   
+   ' Ensure that we are not using the chevron item as the index, as it will
+   ' be removed when the showInfrequent flag is reset:
+   For i = 1 To m_iMenuCount
+      If m_tMI(i).hMenu = m_tMI(lIndex).hMenu Then
+         If i &lt;&gt; lIndex Then
+            If m_tMI(i).bChevronAppearance = False Then
+               lIndex = i
+               Exit For
+            End If
+         End If
+      End If
+   Next i
+      
+   ' now reshow the popup menu with the show infrequent flag reset:
+   If m_tMI(lOrigIndex).bChevronAppearance Then
+      ' Debug.Print "Clicked something with Chevron Appearance"
+      bInfrequentReset = True
+      showInfrequentlyUsed True
+   End If
+      
+   Do
+      m_lWndIndex = cacheChevronMenuWindows(lIndex)
+      If m_lWndIndex &lt;= 0 Then
+         ' Debug.Print "Failed to find window index"
+         Exit Function
+      End If
+                  
+      removeWindowHandles
+      
+      If m_tChevronWnd(m_lWndIndex).iSequence &gt; 0 Then
+         ' When the menu gets shown we're going to try &amp; navigate to the
+          correct submenu:
+         Set m_tmrChevronNavigate = New CTimer
+         m_tmrChevronNavigate.Item = 2
+         m_tmrChevronNavigate.Interval = 10
+      End If
+      lIndex = ShowPopupAbsolute(m_tChevronWnd(m_lWndIndex).tR.Left,
+       m_tChevronWnd(m_lWndIndex).tR.Top, m_lTopMenuIndex)
+      
+      bIsChevron = False
+      If lIndex &gt; 0 Then
+         bIsChevron = m_tMI(lIndex).bChevronBehaviour
+         If bIsChevron Then
+            If Not m_tMI(lIndex).bChevronAppearance Then
+               raiseClickEventSub lIndex
+            Else
+               If Not bInfrequentReset Then
+                  ' Ensure that we are not using the chevron item as the index,
+                   as it will
+                  ' be removed when the showInfrequent flag is reset:
+                  For i = 1 To m_iMenuCount
+                     If m_tMI(i).hMenu = m_tMI(lIndex).hMenu Then
+                        If i &lt;&gt; lIndex Then
+                           If m_tMI(i).bChevronAppearance = False Then
+                              lIndex = i
+                              Exit For
+                           End If
+                        End If
+                     End If
+                  Next i
+                  bInfrequentReset = True
+                  showInfrequentlyUsed True
+               End If
+            End If
+         End If
+      End If
+   
+   Loop While bIsChevron
+         
+   ' putting the infrequent flag back to normal again emulates the Office
+    behaviour:
+   If bInfrequentReset Then
+      showInfrequentlyUsed False
+   End If
+   chevronPress = lIndex
+   
+      
+   'lPtr = GetProp(m_hWndOwner, "vbalTbar:OwnsMenu:" &amp; ObjPtr(Me))
+   'Debug.Print lPtr
+   'If Not (lPtr = 0) Then
+   '   ' is it up to the toolbar to redisplay this menu?
+   '   Dim cTbar As Object
+   '   Dim lhWnd As Long
+   '   Set cTbar = ObjectFromPtr(lPtr)
+   '   lhWnd = cTbar.hWnd
+   '   Debug.Print "TOOLBAR HWND;"; lhWnd
+   '   Exit Function
+   '   '
+   'End If
+   
+End Function
+Private Function cacheChevronMenuWindows(ByVal lIndex As Long) As Long
+Dim i As Long
+Dim j As Long
+Dim lWndIndex As Long
+Dim hMenu As Long
+Dim iSequence As Long
+Dim lPtr As Long
+      
+   ' Get the wnd for this menu:
+   For j = 1 To m_iChevronWndCount
+      If m_tChevronWnd(j).tMWH.hMenu = m_tMI(lIndex).hMenu Then
+         lWndIndex = j
+         Exit For
+      End If
+   Next j
+      
+   For i = 1 To m_iChevronWndCount
+      m_tChevronWnd(i).iSequence = 0
+   Next i
+   
+   ' Find out if this item has a parent menu:
+   m_lTopMenuIndex = lIndex
+   i = lIndex
+   Do
+      If m_tMI(i).lParentIndex &lt;&gt; 0 Then
+         i = m_tMI(i).lParentIndex
+         ' Check if this parent is part of the shown menu tree:
+         For j = 1 To m_iChevronWndCount
+            If m_tChevronWnd(j).tMWH.hMenu = m_tMI(i).hMenu Then
+               ' It is a part of the shown menu tree, therefore we
+               ' adjust the window &amp; index to show:
+               iSequence = iSequence + 1
+               m_tChevronWnd(j).iSequence = iSequence
+               lWndIndex = j
+               m_lTopMenuIndex = i
+            End If
+         Next j
+      End If
+   Loop While m_tMI(i).lParentIndex &gt; 0
+
+   cacheChevronMenuWindows = lWndIndex
+
+End Function
+
+
+Private Function isVisible(ByVal lIndex As Long) As Boolean
+   If m_tMI(lIndex).bVisible Then
+      If m_tMI(lIndex).bInfrequent And Not (m_bShowInfrequent) Then
+         isVisible = False
+      Else
+         isVisible = True
+      End If
+   Else
+      isVisible = False
+   End If
+End Function
+
+Private Function MeasureItem(ByVal wParam As Long, ByVal lparam As Long) As Long
+Dim tMIS As MEASUREITEMSTRUCT
+Dim lIndex As Long
+Dim tR As RECT
+Dim hFntOld As Long
+Dim hMenuThis As Long
+Dim l As Long
+Dim lID As Long
+Dim lMaxCaptionWidth As Long
+Dim lCaptionWidth As Long
+Dim lMaxShortCutWidth As Long
+Dim lShortCutWidth() As Long
+Dim lMaxTotalWidth As Long
+Dim lTotalWidth As Long
+Dim lMenuIndex() As Long
+Dim lCount As Long
+Dim tMII As MENUITEMINFO
+   
+   CopyMemory tMIS, ByVal lparam, LenB(tMIS)
+   
+   If tMIS.CtlType = ODT_MENU Then
+   
+      lIndex = (plGetIndexForId(tMIS.itemID))
+            
+      If (lIndex &lt;&gt; 0) Then
+            
+         If Not isVisible(lIndex) Then
+            'Debug.Print "Item invisible", lIndex
+            tMIS.itemHeight = 0
+            tMIS.itemWidth = 8
+            m_tMI(lIndex).lHeight = 0
+            m_tMI(lIndex).lWidth = 8
+            CopyMemory ByVal lparam, tMIS, LenB(tMIS)
+            Exit Function
+         End If
+                  
+         If Trim$(m_tMI(lIndex).sCaption = "-") Then
+            tMIS.itemWidth = 8
+            If (m_OfficeXPStyle) Then
+               tMIS.itemHeight = 3
+            Else
+               tMIS.itemHeight = 8
+            End If
+         ElseIf m_tMI(lIndex).bChevronAppearance Then
+            tMIS.itemWidth = 8
+            tMIS.itemHeight = 18
+         Else
+            ' every item causes us to re-evaluate every other in the same
+             menu...
+            hFntOld = SelectObject(m_cMemDC.hdc, hFont)
+            hMenuThis = m_tMI(lIndex).hMenu
+            lCount = GetMenuItemCount(hMenuThis)
+            ReDim lMenuIndex(1 To lCount) As Long
+            ReDim lShortCutWidth(1 To lCount) As Long
+            
+            For l = 0 To lCount - 1
+               tMII.cbSize = Len(tMII)
+               tMII.fMask = MIIM_ID
+               lID = GetMenuItemInfo(hMenuThis, l, True, tMII)
+               lMenuIndex(l + 1) = (plGetIndexForId(tMII.wID))
+               If lMenuIndex(l + 1) &gt; 0 Then
+                  ' Get the width of this item:
+                  If m_tMI(lMenuIndex(l + 1)).bDefault Then
+                     hFntOld = SelectObject(m_cMemDC.hdc, hFontBold)
+                  End If
+                  DrawText m_cMemDC.hdc, m_tMI(lMenuIndex(l + 1)).sCaption, -1,
+                   tR, DT_CALCRECT Or DT_LEFT Or DT_SINGLELINE
+                  lCaptionWidth = tR.Right - tR.Left
+                  If m_tMI(lMenuIndex(l + 1)).bShowCheckAndIcon Then
+                     ' add an additional space for the icon
+                     lCaptionWidth = lCaptionWidth + (m_lMenuItemHeight) + 4
+                  End If
+                  If lCaptionWidth &gt; lMaxCaptionWidth Then
+                     lMaxCaptionWidth = lCaptionWidth
+                  End If
+                  If (m_OfficeXPStyle) Then
+                     lCaptionWidth = lCaptionWidth + 4
+                  End If
+                  lTotalWidth = lCaptionWidth
+                  If Len(m_tMI(lMenuIndex(l + 1)).sShortCutDisplay) &gt; 0 Then
+                     DrawText m_cMemDC.hdc, m_tMI(lMenuIndex(l +
+                      1)).sShortCutDisplay, -1, tR, DT_CALCRECT Or DT_LEFT Or
+                      DT_SINGLELINE
+                     lShortCutWidth(l + 1) = tR.Right - tR.Left
+                     If lShortCutWidth(l + 1) &gt; lMaxShortCutWidth Then
+                        lMaxShortCutWidth = lShortCutWidth(l + 1)
+                     End If
+                     lTotalWidth = lTotalWidth + lShortCutWidth(l + 1)
+                  End If
+                  If lTotalWidth &gt; lMaxTotalWidth Then
+                     lMaxTotalWidth = lTotalWidth
+                  End If
+                  If m_tMI(lMenuIndex(l + 1)).bDefault Then
+                     SelectObject m_cMemDC.hdc, hFntOld
+                  End If
+               End If
+            Next l
+            SelectObject m_cMemDC.hdc, hFntOld
+            
+            For l = 1 To lCount
+               If lMenuIndex(l) &gt; 0 Then
+                  m_tMI(lMenuIndex(l)).lShortCutStartPos = lMaxTotalWidth -
+                   lShortCutWidth(l) + 10 'lMaxCaptionWidt
+               End If
+            Next l
+            
+            tMIS.itemWidth = 4 + m_lMenuItemHeight + 6 + lMaxTotalWidth + 4
+            If lMaxShortCutWidth &gt; 0 Then
+               tMIS.itemWidth = tMIS.itemWidth + 12
+            End If
+                        
+            ' menu item height is always the same
+            tMIS.itemHeight = m_lMenuItemHeight + 6
+            If m_tMI(lIndex).bTitle Then
+               tMIS.itemHeight = tMIS.itemHeight * 3 \ 4
+            End If
+         End If
+         
+         If (m_tMI(lIndex).bOwnerDraw) Then
+            RaiseEvent MeasureItem(lIndex, tMIS.itemWidth, tMIS.itemHeight)
+         End If
+         m_tMI(lIndex).lWidth = tMIS.itemWidth
+         m_tMI(lIndex).lHeight = tMIS.itemHeight
+                  
+         CopyMemory ByVal lparam, tMIS, LenB(tMIS)
+      End If
+      
+   Else
+      MeasureItem = CallOldWindowProc(m_hWndOwner, WM_MEASUREITEM, wParam,
+       lparam)
+   End If
+   
+End Function
+
+Private Sub pDrawMenuCaption( _
+        ByVal lHDC As Long, _
+        ByVal lIndex As Long, _
+        ByRef tR As RECT _
+    )
+Dim sText As String
+Dim tSR As RECT
+Dim hFont As Long
+Dim hFontOld As Long
+
+   If m_tMI(lIndex).bDefault Then
+      hFont = m_cNCM.BoldenedFontHandle(MenuFOnt)
+      If hFont &lt;&gt; 0 Then
+         hFontOld = SelectObject(lHDC, hFont)
+      End If
+   End If
+   
+   sText = Trim$(m_tMI(lIndex).sCaption)
+   DrawText lHDC, sText, Len(sText), tR, DT_LEFT
+   
+   sText = Trim$(m_tMI(lIndex).sShortCutDisplay)
+   If (sText &lt;&gt; "") Then
+       CopyMemory tSR, tR, LenB(tR)
+       tSR.Left = m_tMI(lIndex).lShortCutStartPos
+       DrawText lHDC, sText, Len(sText), tSR, DT_LEFT
+   End If
+    
+   If hFontOld &lt;&gt; 0 Then
+      SelectObject lHDC, hFontOld
+   End If
+   If hFont &lt;&gt; 0 Then
+      DeleteObject hFont
+   End If
+    
+End Sub
+Private Function plParseMenuChar( _
+        ByVal hMenu As Long, _
+        ByVal iChar As Integer _
+    ) As Long
+Dim sChar As String
+Dim lPos As Long
+Dim l As Long
+    
+    sChar = UCase$(Chr$(iChar))
+    For l = 1 To m_iMenuCount
+        If (m_tMI(l).hMenu = hMenu) Then
+            If (m_tMI(l).sAccelerator = sChar) Then
+                plParseMenuChar = &amp;H20000 + lPos
+                ' Debug.Print "Found Menu Char"
+                Exit Function
+            End If
+            lPos = lPos + 1
+        End If
+    Next l
+    
+End Function
+
+Public Property Get MenuItemHeight(ByVal lIndex As Long) As Long
+   MenuItemHeight = m_tMI(lIndex).lHeight
+End Property
+Public Property Get MenuItemWidth(ByVal lIndex As Long) As Long
+   MenuItemWidth = m_tMI(lIndex).lWidth
+End Property
+
+Private Sub Class_Initialize()
+   Debug.Print "cPopupMenu:Initialize"
+   
+   ' Control:
+   m_lLastMaxId = &amp;H800
+   
+   ' Stuff for drawing:
+   Set m_cMemDC = New pcMemDC
+   m_cMemDC.Width = Screen.Width \ Screen.TwipsPerPixelY
+   m_cMemDC.Height = 24
+   
+   m_oActiveMenuColor = CLR_INVALID
+   m_oInActiveMenuColor = CLR_INVALID
+   m_oMenuBackgroundColor = CLR_INVALID
+   m_oActiveMenuBackColor = CLR_INVALID
+   
+   Set m_cNCM = New pcNCMetrics
+   m_cNCM.GetMetrics
+   Set m_fntSymbol = New StdFont
+   m_fntSymbol.Name = "Marlett"
+   m_fntSymbol.Size = Font.Size * 1.2
+   
+   Set m_cBrush = New pcDottedBrush
+   m_cBrush.Create
+   
+   pSetFont Nothing
+   
+   m_lTickIconIndex = -1
+   m_lOptionIconIndex = -1
+   HighlightCheckedItems = True
+   m_bImageProcessBitmap = True
+   
+   ' Stuff for infrequently used:
+   m_bShowInfrequent = True
+   Set m_tmrChevron = New CTimer
+   
+   ' Keyboard processing
+   mMenu.AttachKeyboardHook Me
+   
+   
+End Sub
+
+Private Sub Class_Terminate()
+Dim i As Long
+   
+   Set m_cMemDC = Nothing
+   mMenu.DetachKeyboardHook Me
+   DestroySubClass
+   Clear
+   ' Remove the graphics:
+   ClearBackgroundPicture
+   ' Clear the non-client object, removing any fonts:
+   Set m_cNCM = Nothing
+   ClearUpWorkDC
+   ' Clear up any stored menus:
+   For i = 1 To m_iStoreCount
+      Set m_cStoredMenu(i) = Nothing
+   Next i
+   Erase m_cStoredMenu
+   m_iStoreCount = 0
+   Set m_tmrChevron = Nothing
+   Set m_tmrChevronNavigate = Nothing
+   
+   Debug.Print "cPopupMenu:Terminate"
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As EMsgResponse)
+   '
+End Property
+
+Private Property Get ISubclass_MsgResponse() As EMsgResponse
+   Select Case CurrentMessage
+   Case WM_COMMAND, WM_DRAWITEM, WM_MEASUREITEM
+      ISubclass_MsgResponse = emrConsume
+   Case Else
+      ISubclass_MsgResponse = emrPreprocess
+   End Select
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lparam As Long) As Long
+    Dim lMenuId As Long, hMenu As Long, lItem As Long
+Dim lMenuCount As Long
+Dim lHiWord As Long
+Dim bEnabled As Boolean, bSeparator As Boolean
+Dim bFound As Boolean
+Dim bNoDefault As Boolean
+Dim iChar As Integer
+Dim lFlag As Long
+Dim bHandled As Boolean
+Dim lR As Long
+
+   ' Debug.Print iMsg
+
+    Select Case iMsg
+    
+    ' Handle Menu Select events:
+    Case WM_MENUSELECT
+        ' Extract the menu id and flags for the selected
+        ' menu item:
+        lHiWord = wParam \ &amp;H10000
+        lMenuId = wParam And &amp;HFFFF&amp;
+        
+        ' MenuId 0 corresponds to a separator on the system
+        ' menu:
+        If (lMenuId &lt;&gt; 0) Then
+            
+            ' Extract separator &amp; enabled/disabled from the flags
+            ' stored in the High Word of wParam:
+            bSeparator = ((lHiWord And MF_SEPARATOR) = MF_SEPARATOR)
+            bEnabled = ((lHiWord And MF_DISABLED) = MF_DISABLED) Or ((lHiWord
+             And MF_GRAYED) = MF_GRAYED)
+            
+            ' Menu handle is passed in as lParam:
+            hMenu = lparam
+            If hMenu = 0 Then
+               'Debug.Print "Exit menu..."
+            End If
+            
+            ' Now check if the message is a menu item higlight,
+            ' or whether it is indicating exit from the menu:
+            lMenuCount = GetMenuItemCount(hMenu)
+            For lItem = 0 To lMenuCount - 1
+                If (lMenuId = GetMenuItemID(hMenu, lItem)) Then
+                    bFound = True
+                    Exit For
+                End If
+            Next lItem
+            
+            ' Raise a highlight or menu exit as required:
+            If (bFound) Then
+                RaiseHighlightEvent lMenuId
+            Else
+                RaiseMenuExitEvent
+            End If
+            
+        End If
+        
+    ' Handle menu click events:
+    Case WM_COMMAND
+        'Debug.Print "Got a WM_COMMAND", wParam, lParam
+        
+        ' Commands from menus are identified by an lParam of 0
+        ' (otherwise it is set the hWnd of the control):
+        bHandled = False
+        If (lparam = 0) Or (lparam = m_hWndAttached) Then
+            ' Low order word of the wParam item is the menu item id:
+            lMenuId = (wParam And &amp;HFFFF&amp;)
+            
+            'Debug.Print "ID: " &amp; lMenuId
+            If (RaiseClickEvent(lMenuId)) Then
+                ' Don't send on the WM_COMMAND if the item
+                ' wasn't a VB menu, it might interfere
+                ' with some other control items!
+            Else
+               'Handled
+               ISubclass_WindowProc = 1
+               bHandled = True
+            End If
+         End If
+         If Not bHandled Then
+            ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lparam)
+         End If
+         
+   ' Draw Menu items:
+   Case WM_DRAWITEM
+      ' Debug.Print lParam, wParam
+      If (DrawItem(wParam, lparam)) Then
+         ISubclass_WindowProc = 1
+      Else
+         ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lparam)
+      End If
+        
+   ' Measure Menu items prior to drawing them:
+   Case WM_MEASUREITEM
+      ISubclass_WindowProc = MeasureItem(wParam, lparam)
+    
+   ' Handle accelerator (&amp;key) messages in the menu:
+   Case WM_MENUCHAR
+      ' Check that this is my menu:
+      lFlag = wParam \ &amp;H10000
+      If ((lFlag And MF_SYSMENU) &lt;&gt; MF_SYSMENU) Then
+         hMenu = lparam
+         iChar = (wParam And &amp;HFFFF&amp;)
+         ' Debug.Print hMenu, Chr$(iChar)
+         ' See if this corresponds to an accelerator on the menu:
+         lR = plParseMenuChar(hMenu, iChar)
+         If lR &gt; 0 Then
+            bHandled = True
+            ISubclass_WindowProc = lR
+         End If
+      End If
+      If Not bHandled Then
+         ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lparam)
+      End If
+        
+   Case WM_INITMENUPOPUP, WM_UNINITMENUPOPUP
+      ' Check the sys menu flag:
+      If (lparam \ &amp;H10000) &gt; 0 Then
+          ' System menu.
+      Else
+          hMenu = wParam
+          ' Find the item which is the parent
+          ' of this popup menu:
+          RaiseInitMenuEvent hMenu, (iMsg = WM_INITMENUPOPUP)
+          If iMsg = WM_UNINITMENUPOPUP Then ' Win98+/2000 only
+            removeWindowHandle hMenu
+          End If
+      End If
+               
+   Case WM_MENURBUTTONUP
+      Debug.Print "Got RButtonUp"
+            
+   Case WM_WININICHANGE
+      m_cNCM.GetMetrics
+      
+      'Debug.Print "WININICHANGE"
+      'If Not m_cNCM Is Nothing Then
+      '   ' Clear any pre-created font handles:
+      '   m_cNCM.ClearUp
+      'End If
+      '' First ensure we have the correct font:
+      'pSelectMenuFont True
+      '' Now replace every menu item so the new sizes of the
+      '' the menu items are correctly displayed...
+      'For lR = 1 To m_iMenuCount
+      '   ReplaceItem lR
+      'Next lR
+      '
+      ' Make sure we pass the message on for
+      ' default processing!
+   
+   Case WM_DESTROY
+      Class_Terminate
+   
+   Case Else
+     ' Debug.Print "Got an unrequested message:", iMsg
+   End Select
+
+End Function
+
+Private Sub m_tmrChevron_ThatTime()
+Dim lTime As Long
+Dim i As Long
+Dim bOk As Boolean
+Dim lhWnd As Long
+
+   If Not (m_bShowInfrequent) Then
+      If m_lChevronIndex &gt; 0 Then
+         lTime = timeGetTime()
+         If (lTime - m_lChevronStartTime) &gt; 1000 Then ' 1000 ms is the hover
+          time
+            ' are we over the appropriate window?
+            Dim tP As POINTAPI
+            GetCursorPos tP
+            lhWnd = WindowFromPoint(tP.x, tP.y)
+            For i = 1 To m_iChevronWndCount
+               If (m_tChevronWnd(i).tMWH.hwnd = lhWnd) Then
+                  If (m_tChevronWnd(i).tMWH.hMenu =
+                   m_tMI(m_lChevronIndex).hMenu) Then
+                     bOk = True
+                  End If
+               End If
+            Next i
+            ' stop the timer
+            m_tmrChevron.Interval = -1
+            
+            If bOk Then
+               ' cancel the menu by clicking the chevron.
+               ' when the
+               mouse_event MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0
+               mouse_event MOUSEEVENTF_LEFTUP, 0, 0, 0, 0
+            End If
+         End If
+      End If
+   End If
+End Sub
+
+Private Sub m_tmrChevronNavigate_ThatTime()
+   '
+   ' stop the timer
+   ' Debug.Print "THATTIME", m_tmrChevronNavigate.Item
+   m_tmrChevronNavigate.Interval = -1
+   
+   Dim i As Long
+   Dim j As Long
+   Dim iCount As Long
+   Dim tMI As MENUITEMINFO
+   Dim hMenuIn As Long
+   Dim hMenuTarget As Long
+   Dim lIndex As Long
+   Dim lH As Long
+   Dim iThis As Long
+   Dim tR As RECT
+   Dim pcM As New pcMouse
+   Dim tP As POINTAPI
+   Dim bOk As Boolean
+   
+   GetCursorPos tP
+   iThis = 0
+   If IsNumeric(m_tmrChevronNavigate.Item) Then
+      i = m_tmrChevronNavigate.Item
+      If i &gt; 0 And i &lt;= m_iChevronWndCount Then
+         bOk = True
+         hMenuTarget = m_tChevronWnd(i).tMWH.hMenu
+         hMenuIn = m_tChevronWnd(i - 1).tMWH.hMenu
+         iCount = GetMenuItemCount(hMenuIn)
+         For j = 1 To iCount
+            tMI.cbSize = LenB(tMI)
+            tMI.fMask = MIIM_SUBMENU Or MIIM_ID
+            GetMenuItemInfo hMenuIn, j - 1, True, tMI
+            lIndex = ItemForID(tMI.wID)
+            If lIndex &gt; 0 Then
+               ' Debug.Print j, lIndex, tMI.hSubMenu, hMenuTarget, hMenuIn
+               If tMI.hSubMenu = hMenuTarget Then
+                  ' Debug.Print i, m_iWndCount
+                  If (i - 1) &lt;= m_iWndCount Then
+                     GetWindowRect m_tWnd(i - 1).hwnd, tR
+                     ' Debug.Print "Got it", tR.Left, tR.Top
+                     pcM.MoveTo tR.Left + (tR.Right - tR.Left) \ 2, tR.Top + lH
+                      + 8
+                     pcM.Click vbLeftButton
+                     Exit For
+                  End If
+               Else
+                  lH = lH + m_tMI(lIndex).lHeight
+               End If
+            End If
+         Next j
+      
+         If m_tmrChevronNavigate.Item &lt; m_iChevronWndCount Then
+            m_tmrChevronNavigate.Item = m_tmrChevronNavigate.Item + 1
+            m_tmrChevronNavigate.Interval = 10
+         End If
+      End If
+   End If
+         
+   pcM.MoveTo tP.x, tP.y
+   
+   '
+End Sub
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Goldfish</a>&#160;.&#160;<a href="Goldfish_Source_Code.html">Goldfish Source Code</a>&#160;.&#160;cPopupMenu.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/Goldfish/Goldfish_Source_Code_zip_cPopupMenu_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:23 GMT -->
+</html>

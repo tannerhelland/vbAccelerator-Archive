@@ -1,0 +1,325 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Windows/Creating_New_Desktops/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:48 GMT -->
+<head>
+<title>vbAccelerator - Creating New Desktops and Running Applications</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+All varieties of Windows NT since 3.51 include the ability to create and run multiple desktops.
+Normally, this feature isn't used, and all applications run within the 'Default'
+desktop.  However, if you want to create a kiosk-style application which has a full-screen
+interface, and prevents Ctrl+Alt+Del or any of the other standard Windows options from
+being accessed, then this technique is the way to do it.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" />
+<link rel="contents" href="../index.html" /><link rel="meta" type="application/rdf+xml" href="article.rdf" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Windows</a>&#160;.&#160;Creating New Desktops and Running Applications</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_New_Desktop_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 New Desktop Sample</a> (35K)</p><p /><p class="nav"><a href="VB6_New_Desktop_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 New Desktop Sample</a> (35K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:15313</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=15313&amp;type=Article&amp;title=Creating%20New%20Desktops%20and%20Running%20Applications">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />12 Jun 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2521">Icons without forms and document association icons in VB</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Creating New Desktops and Running Applications</h1><p class="splash">Get an entire desktop to yourself and disable Ctrl+Alt+Del</p><img src="onMyOwn.png" width="384" height="154" alt="Mine! All Mine!  Notepad running on a new desktop" /><p /><p>
+All varieties of Windows NT since 3.51 include the ability to create and run multiple desktops.
+Normally, this feature isn't used, and all applications run within the "Default"
+desktop.  However, if you want to create a kiosk-style application which has a full-screen
+interface, and prevents Ctrl+Alt+Del or any of the other standard Windows options from
+being accessed, then this technique is the way to do it.
+</p><h2>About Desktops</h2><p>
+Windows NT is divided at the top level into <span class="i">Window Stations</span> and 
+<span class="i">Desktops</span>.  More than one of each of these objects can be present at the
+same time, but only one Desktop within one Window Station can be interactive at any time.
+The definitions of Window Stations and Desktops can be looked up in more detail at MSDN; here's 
+a quick overview:
+</p><ul><li>A <span class="i">Window Station</span> contains a clipboard, global atoms and any desktops.
+The Window Station assigned to the logon session of the interactive user also contains the
+keyboard, mouse and display device.  Only this Window Station can be displayed to the user,
+or receive user input.</li><li>A <span class="i">Desktop</span> has a logical display surface and contains windows, menus
+and hooks.  Only one desktop at a time is active.  The active desktop is called the
+<span class="i">Input Desktop</span> and is the one that is displayed to the active user and
+that receives user input.</li></ul><p>
+Under Windows XP, you will find that a logged on Windows Station typically contains three 
+desktops:
+</p><ol><li><span class="i">Default</span> - where Explorer (normally) runs and where you spend 
+most of your time.</li><li><span class="i">Winlogin</span> - where the login screen is shown.</li><li><span class="i">Disconnect</span> - used by Terminal Services.</li></ol><h2>Creating New Desktops and Running Applications</h2><p>
+Creating a new desktop for your application gives you a lot of control, but of
+course that also means more responsibility.  By default, your new desktop
+has nothing on it: no start menu and no task bar.  Ctrl + Alt + Del 
+brings up the task manager, but it doesn't bring it up on your new desktop, it
+brings it up on the Default desktop.  If you create an application which
+cannot be ended in the new desktop (which is easy to do in a full-screen
+application and is frequently what you want to achieve), then there is literally
+no way out other than shutting down the computer with the power-down button!
+</p><p>
+In theory, it is possible to write an application which starts in one desktop,
+creates a new desktop and then switches to it and shows its forms there.  However,
+to do this you need a multi-threaded message loop, which isn't supported by VB.
+Even if you could create a multi-threaded message loop, trying to use an IDE
+to debug the thing would become extremely painful, since IDE errors and breakpoints
+will be triggered on the IDE desktop rather than the one you're running in.
+</p><p>
+A somewhat easier approach is to use a <span class="i">bootstrap</span> application.  
+The bootstrap application is responsible for creating the new desktop
+and launching your application into it, then waiting for your application to end, at which
+point it returns you to the original desktop.  The greatest advantage of this method
+is you can develop your application as if it were a normal application in VB, and only
+when you genuinely want it to run in kiosk mode do you need to start it from the
+bootstrapper.  The disadvantage is that you have two executables, and if the user
+has suitable access to the machine could in theory run the version on your local
+desktop.  You can prevent this from occurring by adding a check to your release build of the
+main application to confirm it is running in the correct desktop.
+</p><h2>A Bootstrap Application</h2><p>
+The sample provided with the downloads includes a bootstrap application which starts a new
+desktop and runs the sample Kiosk application on it. It does this using 
+the <span class="code">cDesktop</span> class,
+which has just two methods:
+</p><ul><li><span class="code">Create(ByVal sDesktopName As String)</span><br />
+Creates a new desktop with the specified name.</li><li><span class="code">StartProcess(ByVal sPath As String)</span><br />
+Executes the application with the specified path in the new desktop, and waits until it finishes.</li></ul><p>
+Typically, then, a bootstrap application will contain something like the following in the <span class="code">Main</span> method:
+</p><pre>
+Public Sub Main()
+
+   Dim cNewDesktop As New cDesktop
+   
+   cNewDesktop.Create "MyDesktop"
+   cNewDesktop.StartProcess App.Path &amp; "\" &amp; APP_EXE_NAME
+      
+End Sub
+</pre><p>
+If you want your application to have an icon, then you can do this by creating a .res file,
+as described in the article <a href="http://www.vbaccelerator.com/article.asp?id=2521">Icons without forms</a>.
+</p><h2>cDesktop Code</h2><p>
+The <span class="code">cDesktop</span> class is straightforward code.  The three
+main things it has to do are:
+</p><ol><li>Create a new desktop and switch to it</li><li>Start a process in the new desktop, and wait until it completes</li><li>Close the desktop</li></ol><p>
+Creating a new desktop and switching are performed using the sensibly named
+<span class="code">CreateDesktop</span> and <span class="code">SwitchDesktop</span>
+functions. Here is the code (error handling omitted for clarity):
+</p><pre>
+Private Declare Function CreateDesktop Lib "user32" Alias "CreateDesktopW" ( _
+      ByVal lpszDesktop As Long, _
+      ByVal lpszDevice As Long, _
+      pDevmode As Any, _
+      ByVal dwFlags As Long, _
+      ByVal dwDesiredAccess As Long, _
+      lpsa As Any _
+   ) As Long
+Private Declare Function SwitchDesktop Lib "user32" (ByVal hDesktop As Long) As Long
+Private Declare Function GetThreadDesktop Lib "user32" (ByVal dwThread As Long) As Long
+Private Declare Function GetCurrentThreadId Lib "kernel32" () As Long
+Private Declare Function OpenInputDesktop Lib "user32" ( _
+      ByVal dwFlags As Long, _
+      ByVal fInherit As Boolean, _
+      ByVal dwDesiredAccess As Long _
+   ) As Long
+Private Const DESKTOP_SWITCHDESKTOP = &amp;H100&amp;
+Private Const GENERIC_ALL = &amp;H10000000
+
+Public Sub Create(ByVal sDesktopName As String)
+   m_hDesktopThreadOld = GetThreadDesktop(GetCurrentThreadId())
+   m_hDesktopInputOld = OpenInputDesktop(0, False, DESKTOP_SWITCHDESKTOP)
+   m_hDesktop = CreateDesktop( _
+      StrPtr(sDesktopName), ByVal 0&amp;, ByVal 0&amp;, 0, GENERIC_ALL, ByVal 0&amp;)
+   SetThreadDesktop m_hDesktop
+   SwitchDesktop m_hDesktop
+</pre><p>
+To create a process and run it on the new desktop, you must use the lower-level
+<span class="code">CreateProcess</span> API rather than <span class="code">Shell</span>
+or <span class="code">ShellExecute</span>, as this is the only one which
+allows you to specify a desktop to run the application on.  <span class="code">CreateProcess</span>
+takes a lot of parameters, but typically you don't need to fill many of
+them in.  Here's the code:
+</p><pre>
+Private Type PROCESS_INFORMATION
+   hProcess As Long
+   hThread As Long
+   dwProcessId As Long
+   dwThreadId As Long
+End Type
+
+Private Type STARTUPINFOW
+   cbSize As Long
+   lpReserved As Long
+   lpDesktop As Long
+   lpTitle As Long
+   dwX As Long
+   dwY As Long
+   dwXSize As Long
+   dwYSize As Long
+   dwXCountChars As Long
+   dwYCountChars As Long
+   dwFillAttribute As Long
+   dwFlags As Long
+   wShowWindow As Integer
+   cbReserved2 As Integer
+   lpReserved2 As Long
+   hStdInput As Long
+   hStdOutput As Long
+   hStdError As Long
+End Type
+
+Private Declare Function CreateProcess Lib "kernel32" Alias "CreateProcessW" ( _
+      ByVal lpApplicationName As Long, _
+      ByVal lpCommandLine As Long, _
+      lpProcessAttributes As Any, _
+      lpThreadAttributes As Any, _
+      ByVal bInheritHandles As Long, _
+      ByVal dwCreationFlags As Long, _
+      lpEnvironment As Any, _
+      ByVal lpCurrentDirectory As Long, _
+      lpStartupInfo As STARTUPINFOW, _
+      lpProcessInformation As PROCESS_INFORMATION _
+   ) As Long
+
+
+Public Sub StartProcess(ByVal sPath As String)
+Dim tSi As STARTUPINFOW
+Dim tPi As PROCESS_INFORMATION
+Dim lR As Long
+Dim lErr As Long
+
+   ' Must set the desktop to run on in the
+   ' STARTUPINFO structure:
+   tSi.cbSize = Len(tSi)
+   tSi.lpTitle = StrPtr(m_sDesktop)
+   tSi.lpDesktop = StrPtr(m_sDesktop)
+   
+   lR = CreateProcess( _
+      StrPtr(sPath), ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;, _
+      1, 0, ByVal 0&amp;, ByVal 0&amp;, tSi, tPi)
+   
+   If (lR = 0) Then
+   
+      lErr = Err.LastDllError
+      ' Make sure we get back into the desktop
+      ' that contains the application that is
+      ' using this class:
+      ClearUp
+      ' Now show the error
+      ApiErrorHandler lErr, True
+      
+   Else
+      
+      ' Wait until the process has completed:
+      WaitForSingleObject tPi.hProcess, INFINITE
+      
+      ' Done. Not sure if we need to close these
+      ' handles, but it doesn't cause a problem
+      CloseHandle tPi.hProcess
+      CloseHandle tPi.hThread
+           
+      ' Once no more processes are running on
+      ' the desktop it will automatically
+      ' close.
+           
+   End If
+
+End Sub
+</pre><p>
+To get back to the original desktop we simply
+switch back to the original desktop and close the new desktop handle.  
+Note that Windows automatically closes desktops which no longer have any applications 
+running on them, so this is not usually necessary:
+</p><pre>
+Public Sub ClearUp()
+   SwitchDesktop m_hDesktopInputOld
+   SetThreadDesktop m_hDesktopThreadOld
+   CloseDesktop m_hDesktop
+End Sub
+</pre><p>
+The sample kiosk application demonstrates checking the desktop name to ensure
+it is running in the correct desktop.  This is done using the
+<span class="code">GetUserObjectInformation</span> API call:
+</p><pre>
+Private Declare Function OpenInputDesktop Lib "user32" ( _
+      ByVal dwFlags As Long, _
+      ByVal fInherit As Boolean, _
+      ByVal dwDesiredAccess As Long _
+   ) As Long
+Private Declare Function CloseHandle Lib "kernel32" ( _
+      ByVal hObject As Long _
+   ) As Long
+Private Declare Function GetUserObjectInformation Lib "user32" _
+   Alias "GetUserObjectInformationW" ( _
+      ByVal hObj As Long, _
+      ByVal nIndex As Long, _
+      pvInfo As Any, _
+      ByVal nLength As Long, _
+      lpnLengthNeeded As Long _
+   ) As Long
+Private Const UOI_FLAGS = 1
+Private Const UOI_NAME = 2
+Private Const UOI_TYPE = 3
+Private Const UOI_USER_SID = 4
+
+Private Const DESKTOP_READOBJECTS = &amp;H1&amp;
+
+Public Function GetDesktopName() As String
+Dim hDesktop As Long
+Dim lR As Long
+Dim lSize As Long
+Dim sBuff As String
+Dim iPos As Long
+   
+   hDesktop = OpenInputDesktop(0, False, DESKTOP_READOBJECTS)
+   If Not (hDesktop = 0) Then
+      lSize = (Len(DESKTOP_NAME) + 1) * 2
+      ReDim bBuff(0 To lSize - 1) As Byte
+      lR = GetUserObjectInformation(hDesktop, UOI_NAME, bBuff(0), lSize, lSize)
+      sBuff = bBuff
+      iPos = InStr(sBuff, vbNullChar)
+      If (iPos &gt; 1) Then
+         sBuff = Left(sBuff, iPos - 1)
+      End If
+      GetDesktopName = sBuff
+      CloseHandle hDesktop
+   End If
+End Function
+</pre><h2>Conclusion</h2><p>
+This article demonstrates a simple way to get the an entire desktop, free of any Shell or
+Explorer bits like the TaskBar or the Alt-Tab list, and also prevents the user from 
+escaping from your application using Ctrl+Alt+Del.  The code will run on any NT or above 
+system.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Windows</a>&#160;.&#160;Creating New Desktops and Running Applications</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 12 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Windows/Creating_New_Desktops/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:49 GMT -->
+</html>

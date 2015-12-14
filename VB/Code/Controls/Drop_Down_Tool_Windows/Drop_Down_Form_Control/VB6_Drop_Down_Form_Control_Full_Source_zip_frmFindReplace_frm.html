@@ -1,0 +1,499 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Drop_Down_Tool_Windows/Drop_Down_Form_Control/VB6_Drop_Down_Form_Control_Full_Source_zip_frmFindReplace_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:55 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmFindReplace.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmFindReplace.frm" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Drop Down Tool Windows</a>&#160;.&#160;<a href="article.html">vbAccelerator Drop-Down and Popup Form Control</a>&#160;.&#160;<a href="VB6_Drop_Down_Form_Control_Full_Source.html">VB6 Drop Down Form Control Full Source</a>&#160;.&#160;frmFindReplace.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Drop_Down_Form_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Drop Down Form Control Binary</a> (18K)</p><p class="nav"><a href="VB5_Drop_Down_Form_Control_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Drop Down Form Control Demonstration</a> (44K)</p><p class="nav"><a href="VB5_Drop_Down_Form_Control_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Drop Down Form Control Full Source</a> (81K)</p><p /><p class="nav"><a href="VB6_Drop_Down_Form_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Drop Down Form Control Binary</a> (19K)</p><p class="nav"><a href="VB6_Drop_Down_Form_Control_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Drop Down Form Control Demonstration</a> (48K)</p><p class="nav"><a href="VB6_Drop_Down_Form_Control_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Drop Down Form Control Full Source</a> (86K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1131</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1131&amp;type=Zip&amp;title=VB6%20Drop%20Down%20Form%20Control%20Full%20Source%2Ezip%5FfrmFindReplace">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />21 Mar 2000<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13011">Emulating Modal Forms</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1185">Creating drop-down tool windows</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmFindReplace.frm</h1><pre>VERSION 5.00
+Object = "*\AvbalDropDownForm6.vbp"
+Begin VB.Form frmFindReplace 
+   BorderStyle     =   5  'Sizable ToolWindow
+   ClientHeight    =   2115
+   ClientLeft      =   3825
+   ClientTop       =   3885
+   ClientWidth     =   6390
+   ControlBox      =   0   'False
+   BeginProperty Font 
+      Name            =   "Tahoma"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "frmFindReplace.frx":0000
+   LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
+   ScaleHeight     =   2115
+   ScaleWidth      =   6390
+   ShowInTaskbar   =   0   'False
+   Begin vbalDropDownForm6.vbalDropDownClient ddcDropDown 
+      Align           =   1  'Align Top
+      Height          =   135
+      Left            =   0
+      ToolTipText     =   "Drag to make this menu float"
+      Top             =   0
+      Width           =   6390
+      _ExtentX        =   11271
+      _ExtentY        =   238
+      Caption         =   "Find and Replace"
+   End
+   Begin VB.PictureBox picControls 
+      BorderStyle     =   0  'None
+      Height          =   1935
+      Left            =   0
+      ScaleHeight     =   1935
+      ScaleWidth      =   6315
+      TabIndex        =   1
+      Top             =   180
+      Width           =   6315
+      Begin VB.ComboBox cboFindWhat 
+         Height          =   315
+         Left            =   1080
+         TabIndex        =   10
+         Top             =   120
+         Width           =   3735
+      End
+      Begin VB.CommandButton cmdFindNext 
+         Caption         =   "&amp;Find Next"
+         Default         =   -1  'True
+         Height          =   375
+         Left            =   4980
+         TabIndex        =   9
+         Top             =   60
+         Width           =   1335
+      End
+      Begin VB.CommandButton cmdCancel 
+         Cancel          =   -1  'True
+         Caption         =   "Cancel"
+         Height          =   375
+         Left            =   4980
+         TabIndex        =   8
+         Top             =   480
+         Width           =   1335
+      End
+      Begin VB.CommandButton cmdReplace 
+         Caption         =   "&amp;Replace"
+         Height          =   375
+         Left            =   4980
+         TabIndex        =   7
+         Top             =   1020
+         Width           =   1335
+      End
+      Begin VB.CommandButton cmdReplaceAll 
+         Caption         =   "Replace &amp;All"
+         Height          =   375
+         Left            =   4980
+         TabIndex        =   6
+         Top             =   1440
+         Width           =   1335
+      End
+      Begin VB.ComboBox cboReplaceWith 
+         Height          =   315
+         Left            =   1080
+         TabIndex        =   5
+         Top             =   480
+         Width           =   3735
+      End
+      Begin VB.CheckBox chkOption 
+         Caption         =   "Matc&amp;h Case"
+         Height          =   255
+         Index           =   0
+         Left            =   1080
+         TabIndex        =   4
+         Top             =   1020
+         Width           =   2115
+      End
+      Begin VB.CheckBox chkOption 
+         Caption         =   "Find &amp;Whole Words Only"
+         Height          =   255
+         Index           =   1
+         Left            =   1080
+         TabIndex        =   3
+         Top             =   1260
+         Width           =   2115
+      End
+      Begin VB.CheckBox chkOption 
+         Caption         =   "Find in Se&amp;lection Only"
+         Height          =   255
+         Index           =   2
+         Left            =   1080
+         TabIndex        =   2
+         Top             =   1500
+         Width           =   2115
+      End
+      Begin VB.Label lblFindWhat 
+         Caption         =   "Fi&amp;nd what:"
+         Height          =   255
+         Left            =   60
+         TabIndex        =   0
+         Top             =   180
+         Width           =   1275
+      End
+      Begin VB.Label lblReplace 
+         Caption         =   "Replace wi&amp;th:"
+         Height          =   255
+         Left            =   60
+         TabIndex        =   11
+         Top             =   540
+         Width           =   1275
+      End
+   End
+End
+Attribute VB_Name = "frmFindReplace"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Public Enum EFRFindTypeOptions
+   FR_DEFAULT = &amp;H0
+   FR_DOWN = &amp;H1
+   FR_WHOLEWORD = &amp;H2
+   FR_MATCHCASE = &amp;H4&amp;
+End Enum
+
+Public Event DoFind(ByVal sWhat As String, ByVal eOptions As
+ EFRFindTypeOptions, ByVal bFindNext As Boolean, ByVal bSelection As Boolean)
+Public Event DoReplace(ByVal sWhat As String, ByVal sWith As String, ByVal
+ eOptions As EFRFindTypeOptions, ByVal bFindNext As Boolean, ByVal bSelection
+ As Boolean, ByVal bReplaceAll As Boolean)
+
+Private m_sFindHistory() As String
+Private m_iFindHistoryCount As Long
+Private m_sReplaceHistory() As String
+Private m_iReplaceHistoryCount As Long
+Private m_iMaxHistorySize As Long
+Private m_sFindWhat As String
+Private m_sReplaceWith As String
+
+Private m_bMatchCase As Boolean
+Private m_bWholeWord As Boolean
+Private m_bSelection As Boolean
+
+Public Enum EFRModeConstants
+   efrFind = 0
+   efrReplace = 1
+End Enum
+Private m_eMode As EFRModeConstants
+
+Private m_bLoaded As Boolean
+
+Public Property Let ShowState(ByVal eState As EWindowShowState)
+   ' This is to allow the parent form
+   ' to control the current drop-down state:
+   ddcDropDown.ShowState = eState
+End Property
+Public Property Get ShowState() As EWindowShowState
+   ' This is to allow the parent form
+   ' to control the current drop-down state:
+   ShowState = ddcDropDown.ShowState
+End Property
+
+Public Property Let Mode(ByVal eMode As EFRModeConstants)
+   m_eMode = eMode
+   If (m_bLoaded) Then
+      If (eMode = efrFind) Then
+         cmdReplace.Caption = "&amp;Replace..."
+      Else
+         cmdReplace.Caption = "&amp;Replace"
+      End If
+      lblReplace.Visible = (eMode = efrReplace)
+      cboReplaceWith.Visible = (eMode = efrReplace)
+      cmdReplaceAll.Visible = (eMode = efrReplace)
+   End If
+End Property
+Public Property Get Mode() As EFRModeConstants
+   Mode = m_eMode
+End Property
+
+Public Property Let MaxHistorySize(ByVal lSize As Long)
+   m_iMaxHistorySize = lSize
+End Property
+Public Property Get MaxHistorySize() As Long
+   MaxHistorySize = m_iMaxHistorySize
+End Property
+
+Public Property Get FindHistoryCount() As Long
+   FindHistoryCount = m_iFindHistoryCount
+End Property
+Public Property Get FindHistory(ByVal lIndex As Long) As String
+   FindHistory = m_sFindHistory(lIndex)
+End Property
+Public Sub AddFindHistory(ByVal sText As String)
+Dim i As Long
+Dim sCurrent As String
+   pAddHistory sText, m_sFindHistory(), m_iFindHistoryCount
+   sCurrent = cboFindWhat.Text
+   If (m_bLoaded) Then
+      cboFindWhat.Clear
+      For i = 1 To m_iFindHistoryCount
+         cboFindWhat.AddItem m_sFindHistory(i)
+      Next i
+      cboFindWhat.Text = sCurrent
+   End If
+End Sub
+Public Sub AddReplaceHistory(ByVal sText As String)
+Dim i As Long
+Dim sCurrent As String
+   pAddHistory sText, m_sReplaceHistory(), m_iReplaceHistoryCount
+   If (m_bLoaded) Then
+      cboReplaceWith.Clear
+      For i = 1 To m_iReplaceHistoryCount
+         cboReplaceWith.AddItem m_sReplaceHistory(i)
+      Next i
+      cboReplaceWith.Text = sCurrent
+   End If
+End Sub
+Public Property Let FindWhat(ByVal sText As String)
+   m_sFindWhat = sText
+   If (m_bLoaded) Then
+      cboFindWhat.Text = sText
+   End If
+End Property
+Public Property Let ReplaceWith(ByVal sText As String)
+   
+   m_sReplaceWith = sText
+   If (m_bLoaded) Then
+      cboReplaceWith.Text = sText
+   End If
+End Property
+Private Sub pAddHistory( _
+      ByVal sText As String, _
+      ByRef sHistory() As String, _
+      ByRef iCount As Long _
+   )
+Dim i As Long
+Dim iFound As Long
+Dim iMax As Long
+   
+   ' Check if already there:
+   For i = 1 To iCount
+      If (sHistory(i) = sText) Then
+         iFound = i
+         Exit For
+      End If
+   Next i
+   
+   ' Add this item as required:
+   If (iFound) Then
+      ' Swap iFound &amp; 1:
+      If (iFound &lt;&gt; 1) Then
+         sHistory(iFound) = sHistory(1)
+         sHistory(1) = sText
+      End If
+   Else
+      ' Move all down and insert at 1:
+      iMax = iCount + 1
+      If (iMax &gt; m_iMaxHistorySize) Then
+         iMax = m_iMaxHistorySize
+      End If
+      If (iMax &gt; iCount) Then
+         iCount = iCount + 1
+         ReDim Preserve sHistory(1 To iCount) As String
+      End If
+      For i = iMax To 2 Step -1
+         sHistory(i) = sHistory(i - 1)
+      Next i
+      sHistory(1) = sText
+   End If
+   
+End Sub
+
+
+Public Property Get MatchCase() As Boolean
+   MatchCase = m_bMatchCase
+End Property
+Public Property Let MatchCase(ByVal bState As Boolean)
+   m_bMatchCase = bState
+   If (m_bLoaded) Then
+      chkOption(0).Value = Abs(bState)
+   End If
+End Property
+Public Property Get WholeWord() As Boolean
+   WholeWord = m_bWholeWord
+End Property
+Public Property Let WholeWord(ByVal bState As Boolean)
+   m_bWholeWord = bState
+   If (m_bLoaded) Then
+      chkOption(1).Value = Abs(bState)
+   End If
+End Property
+Public Property Get SelectionOnly() As Boolean
+   SelectionOnly = m_bSelection
+End Property
+Public Property Let SelectionOnly(ByVal bState As Boolean)
+   m_bSelection = bState
+   If (m_bLoaded) Then
+      chkOption(2).Value = Abs(bState)
+   End If
+End Property
+
+Private Sub chkOption_Click(Index As Integer)
+   Select Case Index
+   Case 0
+      m_bMatchCase = (chkOption(Index).Value = Checked)
+   Case 1
+      m_bWholeWord = (chkOption(Index).Value = Checked)
+   Case 2
+      m_bSelection = (chkOption(Index).Value = Checked)
+   End Select
+End Sub
+
+Private Sub cmdCancel_Click()
+   Me.Hide
+End Sub
+
+Private Sub cmdFindNext_Click()
+Dim eOption As EFRFindTypeOptions
+   eOption = peGetOption()
+   RaiseEvent DoFind(cboFindWhat.Text, eOption, True, m_bSelection)
+End Sub
+
+Private Sub cmdReplace_Click()
+Dim eOption As EFRFindTypeOptions
+   If m_eMode = efrFind Then
+      Mode = efrReplace
+   Else
+      eOption = peGetOption()
+      RaiseEvent DoReplace(cboFindWhat.Text, cboReplaceWith.Text, eOption,
+       True, m_bSelection, False)
+   End If
+End Sub
+
+Private Sub cmdReplaceAll_Click()
+Dim eOption As EFRFindTypeOptions
+   eOption = peGetOption()
+   RaiseEvent DoReplace(cboFindWhat.Text, cboReplaceWith.Text, eOption, True,
+    m_bSelection, True)
+End Sub
+
+Private Function peGetOption() As EFRFindTypeOptions
+Dim eOption As EFRFindTypeOptions
+   eOption = FR_DOWN
+   eOption = eOption Or (Abs(m_bMatchCase) * FR_MATCHCASE)
+   eOption = eOption Or (Abs(m_bWholeWord) * FR_WHOLEWORD)
+   peGetOption = eOption
+End Function
+
+Private Sub Form_Initialize()
+   m_iMaxHistorySize = 5
+End Sub
+
+Private Sub Form_Load()
+Dim i As Long
+
+   ' Add History items:
+   For i = 1 To m_iFindHistoryCount
+      cboFindWhat.AddItem m_sFindHistory(i)
+   Next i
+   FindWhat = m_sFindWhat
+   For i = 1 To m_iReplaceHistoryCount
+      cboReplaceWith.AddItem m_sReplaceHistory(i)
+   Next i
+   ReplaceWith = m_sReplaceWith
+   
+   chkOption(0).Value = Abs(m_bMatchCase)
+   chkOption(1).Value = Abs(m_bWholeWord)
+   chkOption(2).Value = Abs(m_bSelection)
+   
+   m_bLoaded = True
+   Mode = m_eMode
+   
+End Sub
+
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+   If (UnloadMode = vbFormControlMenu) Then
+      ' Don't unload except in VB code.
+      Cancel = True
+      Me.Hide
+   End If
+End Sub
+
+Private Sub ddcDropDown_AppActivate(ByVal bState As Boolean)
+   ' Emulate Word - hide away floating
+   ' toolwindows when we're not the focus
+   ' app:
+   If (bState) Then
+      If ddcDropDown.ShowState = ewssFloating Then
+         Me.Show
+      End If
+   Else
+      If ddcDropDown.ShowState = ewssFloating Then
+         Me.Hide
+      End If
+   End If
+End Sub
+
+Private Sub ddcDropDown_CaptionResize()
+   ' Here you would resize your form/move the
+   ' contents to accommodate the change in size
+   ' of the caption:
+   Me.Height = ddcDropDown.Height + picControls.Height + Me.Height -
+    Me.ScaleHeight
+End Sub
+
+Private Sub ddcDropDown_CloseClick()
+   ' User pressed the close button on the
+   ' ToolWindow:
+   Unload Me
+End Sub
+
+
+Private Sub Form_Resize()
+   picControls.Move 0, ddcDropDown.Height
+End Sub
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Drop Down Tool Windows</a>&#160;.&#160;<a href="article.html">vbAccelerator Drop-Down and Popup Form Control</a>&#160;.&#160;<a href="VB6_Drop_Down_Form_Control_Full_Source.html">VB6 Drop Down Form Control Full Source</a>&#160;.&#160;frmFindReplace.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Drop_Down_Tool_Windows/Drop_Down_Form_Control/VB6_Drop_Down_Form_Control_Full_Source_zip_frmFindReplace_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:55 GMT -->
+</html>

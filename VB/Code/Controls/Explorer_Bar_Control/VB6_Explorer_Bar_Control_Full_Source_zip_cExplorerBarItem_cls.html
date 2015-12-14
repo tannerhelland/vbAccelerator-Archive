@@ -1,0 +1,419 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Explorer_Bar_Control/VB6_Explorer_Bar_Control_Full_Source_zip_cExplorerBarItem_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:21:25 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cExplorerBarItem.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cExplorerBarItem.cls" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator Explorer Bar Control</a>&#160;.&#160;<a href="VB6_Explorer_Bar_Control_Full_Source.html">VB6 Explorer Bar Control Full Source</a>&#160;.&#160;cExplorerBarItem.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Explorer_Bar_Control.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Explorer Bar Control</a> (63K)</p><p class="nav"><a href="VB5_ExplorerBar_Control_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ExplorerBar Control Demonstration</a> (83K)</p><p class="nav"><a href="VB5_ExplorerBar_Control_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ExplorerBar Control Full Source</a> (221K)</p><p /><p class="nav"><a href="VB6_Explorer_Bar_Control_Binary.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Explorer Bar Control Binary</a> (64K)</p><p class="nav"><a href="VB6_Explorer_Bar_Control_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Explorer Bar Control Demonstration</a> (81K)</p><p class="nav"><a href="VB6_Explorer_Bar_Control_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Explorer Bar Control Full Source</a> (221K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:12217</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12217&amp;type=Zip&amp;title=VB6%20Explorer%20Bar%20Control%20Full%20Source%2Ezip%5FcExplorerBarItem">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 7 / 16</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 3 / 6</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:13 January 2004</p>
+<br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />15 Nov 2003<br /><p class="update">Added Watermark and Title Icon properties.</p><p class="update">Titlebars in Search mode can now wrap onto
+more than one line.</p><p class="update">Control can now be resized horizontally
+or vertically at runtime and items are wrapped correctly.</p><p class="update">Bug fixes: font property, Title background
+colour properties, MSVBVM50.DLL dependency, large number of
+items truncated, key navigation.  See the BugTrak for full
+details.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4091">Drawing with XP Visual Styles</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12140">vbAccelerator COM/VB Support Type Library (vbaCOM.Tlb)</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4590">Bitmap Extractor Utility</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2522">Reading Data from Local or External Library Resources</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cExplorerBarItem.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cExplorerBarItem"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+Private m_lID As Long
+Private m_lBarId As Long
+Private m_hWnd As Long
+
+Friend Sub fInit(ByVal hWnd As Long, ByVal lBarId As Long, ByVal lId As Long)
+   m_hWnd = hWnd
+   m_lBarId = lBarId
+   m_lID = lId
+End Sub
+
+Public Property Get ItemType() As EExplorerBarItemTypes
+Attribute ItemType.VB_Description = "Gets/sets the type of this item.  The
+ default type is a Link, which can be clicked.  Other types are Text, which is
+ like a link but can't be clicked, and Control place holder, which only
+ displays the control set using the Control property."
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      ItemType = itm.ItemType
+   End If
+End Property
+Public Property Let ItemType(ByVal eType As EExplorerBarItemTypes)
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      itm.ItemType = eType
+      ctl.fBarChanged itm.BarID, False, False
+   End If
+End Property
+
+Public Property Get IconIndex() As Long
+Attribute IconIndex.VB_Description = "Gets/sets the index of the icon to
+ display for this item.  Note icon indexes are 0-based unlike other indexes in
+ this control."
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      IconIndex = itm.IconIndex
+   End If
+End Property
+Public Property Let IconIndex(ByVal lIconIndex As Long)
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      Dim lIconIndexBefore As Long
+      lIconIndexBefore = itm.IconIndex
+      Dim bHeightChange As Boolean
+      If (lIconIndexBefore = -1) And (lIconIndex &gt; -1) Then
+         bHeightChange = True
+      ElseIf (lIconIndexBefore &gt; -1) And (lIconIndex = -1) Then
+         bHeightChange = True
+      End If
+      itm.IconIndex = lIconIndex
+      ctl.fBarChanged itm.BarID, bHeightChange, False
+   End If
+End Property
+Public Property Get Text() As String
+Attribute Text.VB_Description = "Gets/sets the text for this item."
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      Text = itm.Text
+   End If
+End Property
+Public Property Let Text(ByVal sText As String)
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      If (itm.Text &lt;&gt; sText) Then
+         ctl.fTextChanged itm.Text, sText
+         itm.Text = sText
+         ctl.fBarChanged itm.BarID, True, False
+      End If
+   End If
+End Property
+Public Property Get ToolTipText() As String
+Attribute ToolTipText.VB_Description = "Gets/sets the tooltip text for this
+ item."
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      ToolTipText = itm.ToolTipText
+   End If
+End Property
+Public Property Let ToolTipText(ByVal sToolTipText As String)
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      itm.ToolTipText = sToolTipText
+   End If
+End Property
+Public Property Get Font() As IFont
+Attribute Font.VB_Description = "Gets/sets the font this item is drawn in. Set
+ to Nothing to use the default font."
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      Set Font = itm.Font
+   End If
+End Property
+Public Property Let Font(iFnt As IFont)
+   pSetFont iFnt
+End Property
+Public Property Set Font(iFnt As IFont)
+   pSetFont iFnt
+End Property
+Private Sub pSetFont(iFnt As IFont)
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      Set itm.Font = iFnt
+      ctl.fBarChanged itm.BarID, True, False
+   End If
+End Sub
+Public Property Get Bold() As Boolean
+Attribute Bold.VB_Description = "Gets/sets whether this item is drawn using a
+ bold version of the font or not."
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      Bold = itm.Bold
+   End If
+End Property
+Public Property Let Bold(ByVal bState As Boolean)
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      If Not (itm.Bold = bState) Then
+         itm.Bold = bState
+         ctl.fBarChanged itm.BarID, True, False
+      End If
+   End If
+End Property
+Public Property Get SpacingAfter() As Long
+Attribute SpacingAfter.VB_Description = "Gets/sets the spacing after this item
+ in the control, in pixels.  Defaults to 0."
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      SpacingAfter = itm.SpacingAfter
+   End If
+End Property
+Public Property Let SpacingAfter(ByVal lPixels As Long)
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      If Not (itm.SpacingAfter = lPixels) Then
+         itm.SpacingAfter = lPixels
+         ctl.fBarChanged itm.BarID, True, False
+      End If
+   End If
+End Property
+Public Property Get Control() As Object
+Attribute Control.VB_Description = "Gets/sets the control associated with this
+ item."
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      If Not (itm.lPtrPanel = 0) Then
+         Set Control = ObjectFromPtr(itm.lPtrPanel)
+      End If
+   End If
+End Property
+Public Property Let Control(ctl As Object)
+   pSetControl ctl
+End Property
+Public Property Set Control(ctl As Object)
+   pSetControl ctl
+End Property
+Private Sub pSetControl(ctlItem As Object)
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      If (ctlItem Is Nothing) Then
+         If Not (itm.lPtrPanel = 0) Then
+            On Error Resume Next
+            ObjectFromPtr(itm.lPtrPanel).Visible = False
+         End If
+         itm.lPtrPanel = 0
+      Else
+         ' 2003-07-05: Is there already something there
+         If Not (itm.lPtrPanel = 0) Then
+            On Error Resume Next
+            ObjectFromPtr(itm.lPtrPanel).Visible = False
+         End If
+         itm.lPtrPanel = 0
+         
+         itm.lPtrPanel = ObjPtr(ctlItem)
+         If TypeName(ctlItem) = "PictureBox" Then
+            Dim pc As pcExplorerBar
+            Set pc = ctl.fGetBarInternal(itm.BarID)
+            ctlItem.BackColor = ctl.DefaultPanelColor(pc.IsSpecial)
+         End If
+         ctl.fContainControl ctlItem
+         
+      End If
+      ctl.fBarChanged itm.BarID, True, False
+   End If
+End Sub
+Public Property Get TextColor() As OLE_COLOR
+Attribute TextColor.VB_Description = "Gets/sets the colour this item's text is
+ drawn in.  Use -1 for the default colour."
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      TextColor = itm.TextColor
+   End If
+End Property
+Public Property Let TextColor(ByVal oColor As OLE_COLOR)
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      itm.TextColor = oColor
+      ctl.fBarChanged m_lBarId, False, False
+   End If
+End Property
+Public Property Get TextColorOver() As OLE_COLOR
+Attribute TextColorOver.VB_Description = "Gets/sets the colour this item's text
+ is drawn in when the mouse is over.  Use -1 for the default colour."
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      TextColorOver = itm.TextColorOver
+   End If
+End Property
+Public Property Let TextColorOver(ByVal oColor As OLE_COLOR)
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      itm.TextColorOver = oColor
+      ctl.fBarChanged m_lBarId, False, False
+   End If
+End Property
+Public Property Get CanClick() As Boolean
+Attribute CanClick.VB_Description = "Gets/sets whether this item can be clicked
+ or not."
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      CanClick = itm.CanClick
+   End If
+End Property
+Public Property Let CanClick(ByVal bState As Boolean)
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      itm.CanClick = bState
+   End If
+End Property
+Public Property Get Key() As String
+Attribute Key.VB_Description = "Gets the key for this item."
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      Key = itm.Key
+   End If
+End Property
+Public Property Get Tag() As String
+Attribute Tag.VB_Description = "Gets/sets a string value associated with this
+ item."
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      Tag = itm.Tag
+   End If
+End Property
+Public Property Let Tag(ByVal sTag As String)
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      itm.Tag = sTag
+   End If
+End Property
+Public Property Get ItemData() As Long
+Attribute ItemData.VB_Description = "Gets/sets a long value associated with
+ this item."
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      ItemData = itm.ItemData
+   End If
+End Property
+Public Property Let ItemData(ByVal lItemData As Long)
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      itm.ItemData = lItemData
+   End If
+End Property
+Public Property Get Index() As Long
+Attribute Index.VB_Description = "Gets/sets the index (order) of this item
+ within its bar."
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      Dim pc As pcExplorerBar
+      Set pc = ctl.fGetBarInternal(itm.BarID)
+      Index = pc.ItemIndex(itm.Key)
+   End If
+End Property
+Public Property Let Index(ByVal lIndex As Long)
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      Dim pc As pcExplorerBar
+      Set pc = ctl.fGetBarInternal(itm.BarID)
+      pc.ItemIndex(itm.Key) = lIndex
+   End If
+End Property
+Public Sub EnsureVisible()
+Dim ctl As vbalExplorerBarCtl
+   If (Verify(ctl, m_hWnd, m_lID, 2)) Then
+      Dim itm As pcExplorerBarItem
+      Set itm = ctl.fGetItemInternal(m_lID)
+      ctl.fEnsureItemVisible itm.BarID, m_lID
+   End If
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator Explorer Bar Control</a>&#160;.&#160;<a href="VB6_Explorer_Bar_Control_Full_Source.html">VB6 Explorer Bar Control Full Source</a>&#160;.&#160;cExplorerBarItem.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 15 November 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Explorer_Bar_Control/VB6_Explorer_Bar_Control_Full_Source_zip_cExplorerBarItem_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:21:25 GMT -->
+</html>

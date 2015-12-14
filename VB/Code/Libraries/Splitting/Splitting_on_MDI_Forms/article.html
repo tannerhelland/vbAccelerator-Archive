@@ -1,0 +1,278 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Splitting/Splitting_on_MDI_Forms/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:56:41 GMT -->
+<head>
+
+<title>vbAccelerator - Splitting Aligned Controls on MDI Forms</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This article provides an easy to use class which allows resizing of any aligned control
+on an MDI form.  The code is also available packaged as a DLL for ease of debugging,
+as it uses a subclass which can make things awkward in the IDE." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Splitting</a>&#160;.&#160;Splitting Aligned Controls on MDI Forms</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_MDI_Splitter_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 MDI Splitter Code</a> (21K)</p><p class="nav"><a href="VB5_MdiSplitter_DLL.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 MdiSplitter DLL</a> (7K)</p><p /><p class="nav"><a href="VB6_MDI_Splitter_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 MDI Splitter Code</a> (20K)</p><p class="nav"><a href="VB6_MdiSplitter_DLL.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 MdiSplitter DLL</a> (7K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3746</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3746&amp;type=Article&amp;title=Splitting%20Aligned%20Controls%20on%20MDI%20Forms">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />6 Feb 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1022">Get the Desktop Device Context</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2188">Sophisticated Control Over Window Sizing and Moving </a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1020">Restrict Mouse Movement to an Area of the Desktop</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1160">Moving Forms and Creating Resize Gripper Boxes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13">Creating Single Pixel Dotted Lines</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12">Animated Cursors in VB</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Splitting Aligned Controls on MDI Forms</h1><p class="splash">An easy to use class which allows controls aligned to the sides of MDI Forms to be Resized</p><img src="mdiSplit.png" width="395" height="304" alt="MDI Split Demonstration" /><p /><p>This article provides an easy to use class which allows resizing of any aligned control
+on an MDI form.  The code is also available packaged as a DLL for ease of debugging,
+as it uses a subclass which can make things awkward in the IDE.</p><h2>How to Use It</h2><p>Using this component is rather straightforward.  First, drop a PictureBox onto
+your MDI form (here I'm assuming its called "picLeft" and has been
+aligned to the left of the MDI form.  Then either reference the vbalMdiTab DLL 
+if you're using that, or add <i>cMDISplit.cls</i> from the download and make 
+a reference to the appropriate
+<a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing and Timer Assistant</a>.  If you don't 
+use the DLL version, note that debugging may become difficult if any part of your
+form is covered by the VB IDE.</p><p>Once that's done, then you simply create an instance of the class and attach it:</p><pre>
+Private m_cSplitLeft as cMDISplit
+
+Private Sub Form_Load
+   m_cSplitLeft.Attach picLeft
+End Sub
+</pre><p>You can customise the splitter operation by setting the properties:</p><ul><li><strong>FullDrag</strong><br />
+Gets/sets whether the contents of the PictureBox are displayed and sized during
+dragging or not.  Defaults to True.  If your PictureBox contains a large number
+of control, or other items in the MDI Window are likely to flicker during resizing
+you may want to turn this off.</li><li><strong>SplitSize</strong><br />
+Gets/sets the size of the split area at the edge of the control, in pixels. 
+Defaults to 4 pixels.</li><li><strong>MinSize</strong><br />
+Gets/sets the minimum size allowed for the PictureBox during splitting.</li><li><strong>MaxSize</strong><br />
+Gets/sets the maximum size allowed for the PictureBox during splitting.</li></ul><h2>Two Methods of Splitting; One Class</h2><p>There are two techniques you can use to provide this type of splitting.  The first is to 
+make the exposed edge of the aligned control look like a Window edge to windows.  This means
+that Windows then automatically shows the right cursor, and when you click, starts to resize
+the object, just like you would resize a Window.  The second is to set the correct cursor whenever
+the mouse is over the splitting point, and when the user clicks to start tracking the mouse 
+position and displaying where the window will end up.  I'll cover these in turn.</p><h3>Splitting Using Windows Resizing</h3><p>Windows sends a <i>WM_NCHITTEST</i> message to all windows and controls whenever the mouse
+moves over them.  The response to this message tells Windows how the area is expected to 
+behave: whether its a client area, or a border and so on.  This technique is described in
+more detail in the article <a href="http://www.vbaccelerator.com/article.asp?id=1160">Moving Forms and Creating Resize Gripper Boxes</a>,
+but in this instance all we need to do is to tell Windows that the mouse is over a border when
+its at the exposed edge of the control and then the rest is done automatically.  Which return value
+we provide depends on which side of the form the control is aligned to: if its aligned left,
+then the exposed edge is on the right and we want the right edge to behave like a right border on
+a window and so returning <i>HTRIGHT</i> provides the appropriate behaviour.  Here's the fragment of
+code which does this:</p><pre>
+Private Const WM_NCHITTEST = &amp;H84&amp;
+
+Private Enum EHitTestAreas
+   HTERROR = (-2)
+   HTTRANSPARENT = (-1)
+   HTNOWHERE = 0
+   HTCLIENT = 1
+   HTCAPTION = 2
+   HTSYSMENU = 3
+   HTGROWBOX = 4
+   HTMENU = 5
+   HTHSCROLL = 6
+   HTVSCROLL = 7
+   HTMINBUTTON = 8
+   HTMAXBUTTON = 9
+   HTLEFT = 10
+   HTRIGHT = 11
+   HTTOP = 12
+   HTTOPLEFT = 13
+   HTBOTTOM = 15
+   HTBOTTOMLEFT = 16
+   HTBOTTOMRIGHT = 17
+   HTBORDER = 18
+End Enum
+
+...
+
+Private Function getHitCode() As EHitTestAreas
+   
+   Dim tR As RECT
+   Dim tP As POINTAPI
+   Dim eCode As EHitTestAreas
+   
+   ' Get Client Area of Control:
+   GetClientRect m_hWnd, tR
+   ' Get Mouse Position:
+   GetCursorPos tP
+   ' Change Mouse Position to Client Coordinates:
+   ScreenToClient m_hWnd, tP
+
+   ' Modify the rectangle so it represents the
+   ' resizing area for the control:
+   Select Case m_eAlign
+   Case vbAlignBottom
+      tR.bottom = tR.top + m_lSize
+      eCode = HTTOP
+   Case vbAlignTop
+      tR.top = tR.bottom - m_lSize
+      eCode = HTBOTTOM
+   Case vbAlignLeft
+      tR.left = tR.right - m_lSize
+      eCode = HTRIGHT
+   Case vbAlignRight
+      tR.right = tR.left + m_lSize
+      eCode = HTLEFT
+   End Select
+
+   ' Check if the mouse is over the resizing area:
+   If Not (PtInRect(tR, tP.x, tP.y) = 0) Then
+      getHitCode = eCode
+   Else
+      getHitCode = HTNOWHERE
+   End If
+
+End Function
+
+...
+
+Private Function ISubClass_WindowProc( _
+       ByVal hwnd As Long, ByVal iMsg As Long, _
+       ByVal wParam As Long, ByVal lParam As Long _
+   ) As Long
+   
+   Select Case iMsg
+   
+   Case WM_NCHITTEST
+      ' Full Drag:
+      Dim eCode As EHitTestAreas
+      eCode = getHitCode()
+      If (eCode = HTNOWHERE) Then
+         ' Let Windows do standard processing:
+         ISubClass_WindowProc = _
+           CallOldWindowProc(hwnd, iMsg, wParam, lParam)
+      Else
+         ' Tell Windows its a border:
+         ISubClass_WindowProc = eCode
+      End If
+
+   ...
+  
+   End Select
+
+End Function
+</pre><p>Once that's done, you just need a check to ensure that the object isn't made too 
+large or too small. This is done by intercepting the <i>WM_SIZING</i> message, which
+allows you to modify the size of an object before Windows has actually moved it.
+More details of how to do this are provided in the article 
+<a href="http://www.vbaccelerator.com/article.asp?id=2188">Sophisticated Control Over Window Sizing and Moving</a></p>.
+
+<h3>Splitting By Tracking Mouse Position</h3><p>Its not always desirable to use the standard move commands to split the Window, since
+this can result in many windows being resized.  Visual Studio and Visual Studio.NET
+instead display a splitter bar which shows where you're moving the item to, and only
+resize once the user has finished dragging the splitter.</p><p>For this method, you need to be able to do three things:</p><ol><li>Set the mouse pointer to a N-S or E-W arrow when the mouse moves over the resizing area.</li><li>Respond to mouse clicks and then track the mouse until the button is released.</li><li>Draw a splitter bar for the tracked mouse positions.</li></ol><p>VB provides you with a <i>MousePointer</i> property for a control, but this isn't 
+particularly effective when you only want to set the pointer for a particular area of
+a control.  A more powerful technique is to respond to the <i>WM_SETCURSOR</i> message
+sent to each Window as the mouse moves.  This method is also used in the article
+<a href="http://www.vbaccelerator.com/article.asp?id=12">Animated Cursors in VB</a>.  Basically whenever <i>WM_SETCURSOR</i>
+is sent Windows checks to see if True or False is returned.  If False is returned, then Windows
+applies the default cursor.  Otherwise, it doesn't do anything and you can set your own
+cursor using the <i>SetCursor</i> API function.  Here's a snippet of code demonstrating
+the <i>WM_SETCURSOR</i> processing used in this class:</p><pre>
+Private Declare Function LoadCursorLong Lib "user32" _
+      Alias "LoadCursorA" ( _
+      ByVal hInstance As Long, ByVal lpCursorName As Long _
+   ) As Long
+Private Declare Function DestroyCursor Lib "user32" ( _
+      ByVal hCursor As Long _
+   ) As Long
+Private Declare Function SetCursor Lib "user32" ( _
+      ByVal hCursor As Long _
+   ) As Long
+
+Private Const WM_SETCURSOR = &amp;H20
+
+Private Const IDC_SIZENS = 32645&amp;
+Private Const IDC_SIZEWE = 32644&amp;
+
+
+Private Sub Attach()
+   ...
+   Select Case m_eAlign
+   Case vbAlignTop, vbAlignBottom
+     m_hCur = LoadCursorLong(0, IDC_SIZENS)
+   Case Else
+     m_hCur = LoadCursorLong(0, IDC_SIZEWE)
+   End Select
+
+End Sub
+
+Private Function ISubClass_WindowProc( _
+       ByVal hwnd As Long, ByVal iMsg As Long, _
+       ByVal wParam As Long, ByVal lParam As Long _
+   ) As Long
+   
+   Select Case iMsg
+   ...   
+
+   Case WM_SETCURSOR
+      ' non-full drag
+      eCode = getHitCode()
+      Select Case eCode
+      Case HTTOP, HTBOTTOM
+         SetCursor m_hCur
+         ISubClass_WindowProc = 1
+      Case HTRIGHT, HTLEFT
+         SetCursor m_hCur
+         ISubClass_WindowProc = 1
+      Case Else
+         ISubClass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lParam)
+      End Select
+   End Select
+
+End Function
+</pre><p>Responding to mouse clicks and tracking the mouse is straightforward.  Normally, you'd
+use the VB Mouse events to do it, however, since this class is self contained and doesn't
+keep any references to its controls, it uses the equivalent Windows messages
+(<i>WM_LBUTTONDOWN</i>, <i>WM_MOUSEMOVE</i>, <i>WM_LBUTTONUP</i>).  The only interesting
+point is that you can use the <i>ClipCursorRect</i> API to constrain the mouse 
+within a certain area, which is described in the Tip <a href="http://www.vbaccelerator.com/article.asp?id=1020">Restrict
+Mouse Movement</a>.</p><p>To draw the splitter bar itself, we need to be able to draw anywhere on the MDI form, or
+any of its children.  This can't be achieved directly using VB commands, however it can
+be done by drawing onto the Desktop.  The tip <a href="http://www.vbaccelerator.com/article.asp?id=1022">Get the
+Desktop Device Context</a> describes how to get the desktop device context.  Once you 
+have this you can draw the splitter.  Firstly, Visual Studio and most other Windows
+applications draw these splitter bars using a dithered brush, typically with 50% of the
+pixels set black.  The article <a href="http://www.vbaccelerator.com/article.asp?id=13">Creating Single Pixel Dotted
+Lines</a> describes how to create a patterned brush like this.  Once that's been created, 
+then you need away of drawing onto the screen so that when you move the splitter it can
+be restored again.  There are two ways of doing this: firstly, you could copy the area of
+the desktop underneath the splitter area and restore it again later, or secondly you can
+use the XOR drawing mode to draw onto the screen.  When using XOR as a drawing mode, drawing
+the same thing twice removes the original.  The second technique is used for this code.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Splitting</a>&#160;.&#160;Splitting Aligned Controls on MDI Forms</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 6 February 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Splitting/Splitting_on_MDI_Forms/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:56:42 GMT -->
+</html>

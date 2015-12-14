@@ -1,0 +1,322 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/Using_WinAmp_Plugins/VB6_Winamp_Plugin_Client_zip_cWinampPlugin_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cWinampPlugin.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cWinampPlugin.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" /><link rel="contents" href="VB6_Winamp_Plugin_Client.html" /><link rel="meta" type="application/rdf+xml" href="VB6%20Winamp%20Plugin%20Client.html" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">Using WinAmp In Plugins From VB</a>&#160;.&#160;<a href="VB6_Winamp_Plugin_Client.html">VB6 Winamp Plugin Client</a>&#160;.&#160;cWinampPlugin.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Winamp_Plugin_Client.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Winamp Plugin Client</a> (65K)</p><p /><p class="nav"><a href="VB6_Winamp_Plugin_Client.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Winamp Plugin Client</a> (62K)</p><p /><p class="nav"><a href="Winamp_Plugin_Wrapper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Winamp Plugin Wrapper</a> (40K)</p><p class="nav"><a href="Winamp_Plugins.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Winamp Plugins</a> (344K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:15247</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=15247&amp;type=Zip&amp;title=VB6%20Winamp%20Plugin%20Client%2Ezip%5FcWinampPlugin">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />27 May 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14896">CDEx</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3432">Streaming .WAV File Player </a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cWinampPlugin.cls</h1><p>This file is part of the download <a href="VB6_Winamp_Plugin_Client.html">VB6 Winamp Plugin Client</a>, which is described in the article <a href="article.html">Using WinAmp In Plugins From VB</a>.</p><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cWinAmpAudioConverter"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Enum ETrackSeekType
+   SEEK_FRAME = 100
+   SEEK_PERCENT = 101
+   SEEK_TIME = 102
+End Enum
+
+Private Declare Function Initialise Lib "WinAmpPluginWrapper.dll" (ByVal hWnd
+ As Long, ByVal strPath As String) As Long
+Private Declare Sub CleanUp Lib "WinAmpPluginWrapper.dll" ()
+Private Declare Function OpenStream Lib "WinAmpPluginWrapper.dll" (ByVal
+ strPath As String) As Long
+Private Declare Function CloseStream Lib "WinAmpPluginWrapper.dll" () As Long
+Private Declare Function Read Lib "WinAmpPluginWrapper.dll" (pbData As Any,
+ ByVal dwNumBytes As Long) As Long
+Private Declare Function GetBufferSize Lib "WinAmpPluginWrapper.dll" () As Long
+
+Private Declare Function GetSampleRate Lib "WinAmpPluginWrapper.dll" () As Long
+Private Declare Function GetChannels Lib "WinAmpPluginWrapper.dll" () As Long
+Private Declare Function GetBytesPerSample Lib "WinAmpPluginWrapper.dll" () As
+ Long
+
+Private Declare Function GetTrackTotalTime Lib "WinAmpPluginWrapper.dll" () As
+ Long
+Private Declare Function GetPluginCount Lib "WinAmpPluginWrapper.dll" () As Long
+Private Declare Function SeekStream Lib "WinAmpPluginWrapper.dll" Alias "Seek"
+ (ByVal lOff As Long, ByVal nFrom As Long) As Long
+
+
+Private Declare Function LocalAlloc Lib "kernel32" (ByVal wFlags As Long, ByVal
+ wBytes As Long) As Long
+Private Declare Function LocalFree Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function LocalLock Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function LocalUnlock Lib "kernel32" (ByVal hMem As Long) As Long
+Private Const GMEM_ZEROINIT = &amp;H40
+Private Const GMEM_FIXED = &amp;H0
+Private Const GPTR = (GMEM_FIXED Or GMEM_ZEROINIT)
+
+Private m_lCount As Long
+Private m_bOpen As Boolean
+Private m_lBufferSize As Long
+Private m_lTotalBytes As Long
+Private m_lReadBytes As Long
+
+Private m_bBuffersAllocated As Boolean
+Private m_ptrBuf() As Long
+Private m_hMemBuf() As Long
+Private m_iBufCount As Long
+
+Private Const BUFFER_COUNT = 5
+Private Const CHUNKS_PER_READ = 4
+
+Public Sub Init(ByVal sPath As String, ByVal hWnd As Long)
+   m_lCount = Initialise(hWnd, sPath)
+End Sub
+
+Public Function OpenFile(ByVal sFile As String) As Boolean
+   
+   CloseFile
+   If (m_lCount &gt; 0) Then
+      If (OpenStream(sFile) &lt;&gt; 0) Then
+         m_lBufferSize = GetBufferSize()
+         If (AllocateBuffers()) Then
+            m_lTotalBytes = ((GetTrackTotalTime() * 1#) * (GetSampleRate() *
+             1#) * GetChannels() * 2) / 1000#
+            m_lReadBytes = 0
+            m_bOpen = True
+            OpenFile = True
+         Else
+            CloseFile
+         End If
+      End If
+   End If
+   
+End Function
+
+Public Property Get FileIsOpen() As Boolean
+   FileIsOpen = m_bOpen
+End Property
+
+Private Sub FreeBuffers()
+Dim i As Long
+   For i = 0 To m_iBufCount - 1
+      If Not (m_ptrBuf(i) = 0) Then
+         LocalUnlock m_hMemBuf(i)
+         m_ptrBuf(i) = 0
+      End If
+      If Not (m_hMemBuf(i) = 0) Then
+         LocalFree m_hMemBuf(i)
+         m_hMemBuf(i) = 0
+      End If
+   Next i
+End Sub
+
+Private Function AllocateBuffers() As Boolean
+Dim i As Long
+Dim bFail As Boolean
+
+   If Not (m_bBuffersAllocated) Then
+      m_iBufCount = BUFFER_COUNT
+      ReDim m_hMemBuf(0 To m_iBufCount - 1) As Long
+      ReDim m_ptrBuf(0 To m_iBufCount - 1) As Long
+      For i = 0 To m_iBufCount - 1
+         m_hMemBuf(i) = LocalAlloc(GPTR, m_lBufferSize * CHUNKS_PER_READ)
+         If (m_hMemBuf(i) = 0) Then
+            bFail = True
+            Exit For
+         Else
+            m_ptrBuf(i) = LocalLock(m_hMemBuf(i))
+            If m_ptrBuf(i) = 0 Then
+               bFail = True
+               Exit For
+            End If
+         End If
+      Next i
+   
+      If (bFail) Then
+         FreeBuffers
+      Else
+         m_bBuffersAllocated = True
+         AllocateBuffers = True
+      End If
+   Else
+      AllocateBuffers = True
+   End If
+   
+End Function
+
+Public Sub CloseFile()
+   If (m_bOpen) Then
+      CloseStream
+      m_bOpen = False
+   End If
+End Sub
+Public Property Get Percent() As Long
+Dim lPercent As Long
+   If (m_bOpen) Then
+      Percent = (TrackCurrentTime * 100) / TrackTotalTime
+   Else
+      Percent = 0
+   End If
+End Property
+
+Public Property Get SampleRate() As Long
+   If (m_bOpen) Then
+      SampleRate = GetSampleRate()
+   Else
+      SampleRate = 0
+   End If
+End Property
+
+Public Property Get Channels() As Long
+   If (m_bOpen) Then
+      Channels = GetChannels()
+   End If
+End Property
+
+Public Sub TrackSeek(ByVal lTime As Long)
+   If (m_bOpen) Then
+      SeekStream lTime, SEEK_TIME
+      m_lReadBytes = (lTime * 2# * GetSampleRate() * GetChannels()) / 1000#
+   End If
+End Sub
+
+Public Property Get TrackTotalTime() As Long
+   If (m_bOpen) Then
+      TrackTotalTime = GetTrackTotalTime()
+   End If
+End Property
+
+Public Property Get TrackCurrentTime() As Long
+   If (m_bOpen) Then
+      TrackCurrentTime = (m_lReadBytes / (GetSampleRate() * GetChannels() * 2))
+       * 1000
+   End If
+End Property
+
+Public Property Get PluginCount() As Long
+   PluginCount = GetPluginCount()
+End Property
+
+Public Function ConvertChunk(ByVal iBuffer As Long) As Long
+Dim lRead As Long
+Dim lThisRead As Long
+Dim lChunk As Long
+Dim lPtr As Long
+   
+   If (m_bOpen) And (m_lReadBytes &lt; m_lTotalBytes) Then
+      lPtr = m_ptrBuf(iBuffer - 1)
+      For lChunk = 1 To CHUNKS_PER_READ
+         
+         lThisRead = Read(ByVal lPtr, m_lBufferSize)
+         
+         If (lThisRead = 0) Then
+            lRead = m_lTotalBytes - m_lReadBytes
+            m_lReadBytes = m_lTotalBytes
+            Exit For
+         End If
+         
+         ' In some cases, the track total time is adjusted as play continues...
+         m_lTotalBytes = ((GetTrackTotalTime() * 1#) * (GetSampleRate() * 1#) *
+          GetChannels() * 2) / 1000#
+         'Debug.Print lThisRead, m_lTotalBytes
+         
+         lPtr = UnsignedAdd(lPtr, lThisRead)
+         lRead = lRead + lThisRead
+         If (m_lReadBytes + lRead &gt; m_lTotalBytes) Then
+            lRead = m_lTotalBytes - m_lReadBytes
+            Exit For
+         End If
+         
+      Next lChunk
+      
+      m_lReadBytes = m_lReadBytes + lRead
+               
+   End If
+   
+   ConvertChunk = lRead
+   
+End Function
+
+Private Function UnsignedAdd(Start As Long, Incr As Long) As Long
+' This function is useful when doing pointer arithmetic,
+' but note it only works for positive values of Incr
+
+   If Start And &amp;H80000000 Then 'Start &lt; 0
+      UnsignedAdd = Start + Incr
+   ElseIf (Start Or &amp;H80000000) &lt; -Incr Then
+      UnsignedAdd = Start + Incr
+   Else
+      UnsignedAdd = (Start + &amp;H80000000) + (Incr + &amp;H80000000)
+   End If
+   
+End Function
+
+Public Property Get ReadBufferPtr(ByVal iBuffer As Long)
+   If (m_bOpen) Then
+      ReadBufferPtr = m_ptrBuf(iBuffer - 1)
+   End If
+End Property
+
+Public Property Get BufferCount() As Long
+   BufferCount = m_iBufCount
+End Property
+
+Private Sub ClearUp()
+   If (m_lCount &gt; 0) Then
+      CleanUp
+      m_lCount = 0
+   End If
+   FreeBuffers
+End Sub
+
+Private Sub Class_Terminate()
+   ClearUp
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">Using WinAmp In Plugins From VB</a>&#160;.&#160;<a href="VB6_Winamp_Plugin_Client.html">VB6 Winamp Plugin Client</a>&#160;.&#160;cWinampPlugin.cls</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 9 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/Using_WinAmp_Plugins/VB6_Winamp_Plugin_Client_zip_cWinampPlugin_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+</html>

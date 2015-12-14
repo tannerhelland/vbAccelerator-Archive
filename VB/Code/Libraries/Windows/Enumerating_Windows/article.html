@@ -1,0 +1,249 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Windows/Enumerating_Windows/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:45 GMT -->
+<head>
+
+<title>vbAccelerator - Enumerating Windows Using the API </title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Prior to VB5, it was impossible to use the enumeration methods provided in the Windows API without relying 
+on a proprietary custom control. This was a problem if you wanted to find out all the Windows showing 
+on the system, because the only reliable methods you can use to do this are through enumerations.
+
+The introduction of the AddressOf operator to VB allows the enumeration methods to be used, 
+although it is not as simple as it ought to be. This article provide a robust and reusable 
+code to access the Window list.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Windows</a>&#160;.&#160;Enumerating Windows Using the API </p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB_Window_Enumeration_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB Window Enumeration Sample</a> (13K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4577</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4577&amp;type=Article&amp;title=Enumerating%20Windows%20Using%20the%20API%20">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Oct 1998<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4591">GUI Resource Tracer</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Enumerating Windows Using the API </h1><p class="splash">Using VB's AddressOf keyword to hook into API enumerations - the only reliable way to find all windows.</p><img src="enumwin.gif" width="411" height="278" alt="Enumerating Windows Demonstration" /><p /><p>
+Prior to VB5, it was impossible to use the enumeration methods provided in the Windows API without relying 
+on a proprietary custom control. This was a problem if you wanted to find out all the Windows showing 
+on the system, because the only reliable methods you can use to do this are through enumerations.
+</p><p>
+The introduction of the AddressOf operator to VB allows the enumeration methods to be used, 
+although it is not as simple as it ought to be. This article provide a robust and reusable 
+code to access the Window list.
+</p><h2>How Enumeration Methods Work</h2><p>
+Windows API enumeration methods work by having an initiating function which is 
+given the address of a function in your program to call. The call to the 
+initiating function then starts a repeatedly calling the function you have provided with 
+another item until all items are exhausted or your function returns <i>False</i>, which indicates 
+you don't want any further items.
+</p><h2>Providing a Function Address</h2><p>
+You can provide an address to a function in a VB application by using the <i>AddressOf</i> operator. 
+This takes the function name as a parameter and returns a long pointer. Whilst I am most happy this 
+has been at last provided (I'm a bit sad that way), there is a unfortunately a strict limitation on 
+where you can put a function you want to use with <i>AddressOf</i>. The function has to reside 
+within a .Bas module - you cannot place it within an object (i.e. form, usercontrol or class). 
+So if you want your enumeration to return values to an instance of an object, you either 
+have to hack around with global variables and methods to get the information between the 
+module and your object (urgh!) or somehow tell the module about the object instance that
+is calling it.
+</p><h3>An Attempt to Code Around This Elegantly</h3><p>
+My code to work around this uses the <i>Implements</i> feature to specify a standard interface 
+your object will use to interface with the module. Here is a brief description of how it works, 
+using the <i>EnumWindows</i> call as an example.
+</p><p>
+The EnumWindows API call causes Windows to call your specied function for each 
+window in the system, providing the <i>hWnd</i> of the window. The declare for this 
+function is as follows: 
+</p><pre>
+Public Declare Function EnumWindows Lib "user32" ( _
+      ByVal lpEnumFunc As Long, _
+      ByVal lparam As Long _
+   ) As Long 
+</pre><p>
+The function passed via <i>lpEnumFunc</i> must have the same parameters as Windows expects, 
+otherwise when it calls it you will either get a crash or a stack fault. In this case,
+the parameters are the <i>hWnd</i> of the window, and the <i>lParam</i> value you passed in
+when <i>EnumWindows</i> was first called. In addition, the function should be declared as 
+a long so you can return the API version of <i>True</i> (1) or <i>False</i> (0) back to Windows 
+to tell it whether to continue enumeration or not:
+</p><pre>
+Private Function EnumWindowsProc( _
+    ByVal hwnd As Long, _
+    ByVal lparam As Long _
+    ) As Long
+
+   ...
+
+End Function
+</pre><p>
+Having set these up in a module, you then want to provide a method to initiate the 
+Windows enumeration, and to allow the calling object to get the items returned by the 
+enumeration. I do this by first setting up an interface class which specifies 
+what the calling object must do in order to respond to the enumeration. In this case, 
+the calling object should be notified with the <i>hWnd</i> whenever a new window is provided by 
+<i>EnumWindowsProc</i>, and should have the ability to stop the enumeration. I also allow 
+the object to specify its own Identifier number to pass into the <i>lParam</i> value of
+<i>EnumWindows</i> via an Identifier property get: 
+</p><pre>
+Public Sub EnumWindow(ByVal hwnd As Long, ByRef bStop As Boolean)
+
+End Sub
+Public Property Get Identifier() As Long
+
+End Property
+</pre><p>
+This class just specifies the interface to the EnumWindows method, so it 
+doesn't have any code in it. Any code you want to run in these methods or 
+Property Gets must be coded in the calling object itself. In my code, I call it
+<i>IEnumWindowsSink</i> because the object which is going to implement it is the 'sink' for 
+<i>EnumWindows</i> callbacks. 
+</p><p>
+The module to enumerate the windows can then be set up as follows: 
+</p><pre>
+Private m_cSink As IEnumWindowsSink
+
+Private Function EnumWindowsProc( _
+    ByVal hwnd As Long, _
+    ByVal lparam As Long _
+  ) As Long
+Dim bStop As Boolean
+
+    bStop = False
+    m_cSink.EnumWindow hwnd, bStop
+    If (bStop) Then
+        EnumWindowsProc = 0
+    Else
+        EnumWindowsProc = 1
+    End If
+End Function
+
+Public Function EnumerateWindows( _
+        ByRef cSink As IEnumWindowsSink _
+    ) As Boolean
+    If Not (m_cSink Is Nothing) Then 
+        Exit Function
+    End If
+
+    Set m_cSink = cSink
+    EnumWindows AddressOf EnumWindowsProc, cSink.Identifier
+    Set m_cSink = Nothing
+
+End Function
+</pre><p>
+You are now in a position to use this from any form or class. By telling the 
+form/class to implement the <i>IEnumWindowsSink</i> methods, VB will automatically put the 
+<i>EnumWindow</i> sub and <i>Identifier</i> Property Get into the code, requiring you to code them. 
+Here is a sample showing how to find all the Windows on the system from a form. 
+The items are placed into a ListView control called lvwWindows with 4 columns: 
+</p><pre>
+Implements IEnumWindowsSink
+
+Private Sub IEnumWindowsSink_EnumWindow( _
+    ByVal hwnd As Long, _
+    bStop As Boolean _
+    )
+Dim itmX As ListItem
+    Set itmX = lvwWindows.ListItems.Add(, , WindowTitle(hwnd))
+    itmX.SubItems(1) = ClassName(hwnd)
+    itmX.SubItems(2) = hwnd
+    itmX.SubItems(3) = IsWindowVisible(hwnd)
+
+End Sub
+
+Private Property Get IEnumWindowsSink_Identifier() As Long
+    IEnumWindowsSink_Identifier = Me.hwnd
+End Property
+</pre><p>
+The definitions of the functions to get a Window's title, class and visibility from a hWnd are as follows:
+</p><pre>
+Public Declare Function IsWindowVisible Lib "user32" ( _
+    ByVal hwnd As Long) As Long
+
+Public Declare Function GetWindowText Lib "user32" _
+    Alias "GetWindowTextA" ( _
+        ByVal hwnd As Long, _
+        ByVal lpString As String, _
+        ByVal cch As Long _
+    ) As Long
+
+Public Declare Function GetWindowTextLength Lib "user32" _
+    Alias "GetWindowTextLengthA" ( _
+        ByVal hwnd As Long _
+    ) As Long
+
+Public Declare Function GetClassName Lib "user32" _
+    Alias "GetClassNameA" ( _
+        ByVal hwnd As Long, _
+        ByVal lpClassName As String, _
+        ByVal nMaxCount As Long _
+    ) As Long
+
+Public Function WindowTitle(ByVal lHwnd As Long) As String
+Dim lLen As Long
+Dim sBuf As String
+
+    ' Get the Window Title:
+    lLen = GetWindowTextLength(lHwnd)
+    If (lLen &gt; 0) Then
+        sBuf = String$(lLen + 1, 0)
+        lLen = GetWindowText(lHwnd, sBuf, lLen + 1)
+        WindowTitle = Left$(sBuf, lLen)
+    End If
+    
+End Function
+
+Public Function ClassName(ByVal lHwnd As Long) As String
+Dim lLen As Long
+Dim sBuf As String
+    lLen = 260
+    sBuf = String$(lLen, 0)
+    lLen = GetClassName(lHwnd, sBuf, lLen)
+    If (lLen &lt;&gt; 0) Then
+        ClassName = Left$(sBuf, lLen)
+    End If
+End Function
+</pre><p>
+The windows enumeration sample shows the methods described above, and 
+additionally provides a class which you can use to find a window based on its 
+partial title or class name.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Windows</a>&#160;.&#160;Enumerating Windows Using the API </p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 10 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Windows/Enumerating_Windows/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:47 GMT -->
+</html>

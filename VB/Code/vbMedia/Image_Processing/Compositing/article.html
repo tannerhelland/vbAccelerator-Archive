@@ -1,0 +1,381 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Compositing/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:54 GMT -->
+<head>
+
+<title>vbAccelerator - Compositing Operations</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+There are various ways of
+combining two images together, particularly when either or both of the two
+images contain alpha channels.
+
+As the real-time video-effects industry has developed, twelve standard compositing 
+techniques, know as the Porter-Duff Compositing Operations, have emerged.  In 
+addition, many image processing application support other useful operations, such as 
+'Burn' and 'Hard-Light'.  
+
+GDI and GDI+ provide very limited support for compositing operations, so this article 
+demonstrates how to perform them using VB code.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;Compositing Operations</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Compositing_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Compositing Sample</a> (109K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:12683</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12683&amp;type=Article&amp;title=Compositing%20Operations">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:7 September 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />5 Sep 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Compositing Operations</h1><p class="splash">Create sophisticated blended displays using images with alpha.</p><img src="compositing.png" width="272" height="227" alt="Compositing Demonstration" /><p /><p>
+There are various ways of
+combining two images together, particularly when either or both of the two
+images contain alpha channels.
+
+As the real-time video-effects industry has developed, twelve standard compositing 
+techniques, know as the Porter-Duff Compositing Operations, have emerged.  In 
+addition, many image processing application support other useful operations, such as 
+"Burn" and "Hard-Light".  
+
+GDI and GDI+ provide very limited support for compositing operations, so this article 
+demonstrates how to perform them using VB code.
+</p><h2>About Compositing</h2><p>
+A compositing operation refers to the way in which the pixels from one
+image, known as the source, are combined with another, known as the
+destination to produce the final result.  Any compositing operation
+can be described in terms of the source and destination pixel colours and alpha values.
+</p><p>
+The following section
+describes the 24 operations which are demonstrated in the download
+code.  The following key is used:
+</p><pre>
+      Sc  - The source element color value.
+      Sa  - The source element alpha value.
+      Dc  - The canvas color value prior to compositing.
+      Da  - The canvas alpha value prior to compositing.
+      Dc' - The canvas color value post compositing.
+      Da' - The canvas alpha value post compositing.
+</pre><p>
+All colours must be pre-multiplied by their alpha value prior to performing
+the calculations, and the equations are shown with colour and alpha values 
+normalized between 0 and 1.  In reality, the values run from 0 to 255,
+and therefore (for example) <span class="code">(1 - Sa)</span> would actually be 
+<span class="code">((255 - Sa)/255)</span>.  Finally, although colour values are
+represented using a single symbol (<span class="code">Sc, Dc or Dc'</span>) each colour 
+actually consists of three independent R,G,B components and the calculation
+needs to be performed individually for each component.
+</p><p class="tip">
+Note: The source of this information was the <a href="http://www.w3.org/">W3C</a>
+SVG draft specification.
+</p><h3>Porter-Duff Compositing Operations</h3><ol><li><strong>clear</strong><p>Both the color and the alpha of the
+destination are cleared. Neither the source nor the destination are used as
+input.</p><pre>  Dc' = 0
+  Da' = 0</pre></li><li><strong>src</strong><p>The source is copied to the destination.
+The destination is not used as input. </p><pre>  Dc' = Sc.Da + Sc.(1 - Da)
+      = Sc
+  Da' = Sa.Da + Sa.(1 - Da)
+      = Sa</pre></li><li><strong>dst</strong><p>The destination is left untouched. </p><pre>  Dc' = Dc.Sa + Dc.(1 - Sa)
+      = Dc
+  Da' = Da.Sa + Da.(1 - Sa)
+      = Da</pre></li><li><strong>src_over</strong><p>The source is composited over the
+destination. </p><pre>  Dc' = Sc.Da + Sc.(1 - Da) + Dc.(1 - Sa)
+      = Sc + Dc.(1 - Sa)
+  Da' = Sa.Da + Sa.(1 - Da) + Da.(1 - Sa)
+      = Sa + Da - Sa.Da</pre></li><li><strong>dst_over</strong><p>The destination is composited over the
+source and the result replaces the destination. </p><pre>  Dc' = Dc.Sa + Sc.(1 - Da) + Dc.(1 - Sa)
+      = Dc + Sc.(1 - Da)
+  Da' = Da.Sa + Sa.(1 - Da) + Da.(1 - Sa)
+      = Sa + Da - Sa.Da</pre></li><li><strong>src_in</strong><p>The part of the source lying inside of
+the destination replaces the destination. </p><pre>  Dc' = Sc.Da
+  Da' = Sa.Da</pre></li><li><strong>src_out</strong><p>The part of the source lying outside of
+the destination replaces the destination. </p><pre>  Dc' = Sc.(1 - Da)
+  Da' = Sa.(1 - Da)</pre></li><li><strong>dst_out</strong><p>The part of the destination lying outside
+of the source replaces the destination. </p><pre> Dc' = Dc.(1 - Sa)
+ Da' = Da.(1 - Sa)</pre></li><li><strong>src_atop</strong><p>The part of the source lying inside of
+the destination is composited onto the destination. </p><pre>  Dc' = Sc.Da + Dc(1 - Sa)
+  Da' = Sa.Da + Da(1 - Sa)
+      = Da</pre></li><li><strong>dst_atop</strong><p>The part of the destination lying inside
+of the source is composited over the source and replaces the destination. </p><pre>  Dc' = Dc.Sa + Sc.(1 - Da)
+  Da' = Da.Sa + Sa.(1 - Da)
+      = Sa </pre></li><li><strong>xor</strong><p>The part of the source that lies outside
+of the destination is combined with the part of the destination that lies
+outside of the source. </p><pre>  Dc' = Sc.(1 - Da) + Dc.(1 - Sa)
+  Da' = Sa.(1 - Da) + Da.(1 - Sa)
+      = Sa + Da - 2.Sa.Da</pre></li></ol><h3>Extended Compositing Operations</h3><p>
+Note that the colour and alpha values in the extended operations need
+to be clamped to ensure they don't exceed the 0-255 value range.
+</p><ol><li><strong>plus</strong><p>The source is added to the destination
+and replaces the destination. This operator is useful for animating a dissolve
+between two images. </p><pre>  Dc' = Sc.Da + Dc.Sa + Sc.(1 - Da) + Dc.(1 - Sa)
+      = Sc + Dc
+  Da' = Sa.Da + Da.Sa + Sa.(1 - Da) + Da.(1 - Sa)
+      = Sa + Da </pre></li><li><strong>multiply</strong><p>The source is multiplied by the
+destination and replaces the destination. The resultant color is always at
+least as dark as either of the two constituent colors. Multiplying any color
+with black produces black. Multiplying any color with white leaves the original
+color unchanged. </p><pre>  Dc' = Sc.Dc + Sc.(1 - Da) + Dc.(1 - Sa)
+  Da' = Sa.Da + Sa.(1 - Da) + Da.(1 - Sa)
+      = Sa + Da - Sa.Da</pre></li><li><strong>screen</strong><p>The source and destination are
+complemented and then multiplied and then replace the destination. The
+resultant color is always at least as light as either of the two constituent colors.
+Screening any color with white produces white. Screening any color with black
+leaves the original color unchanged. </p><pre>  Dc' = (Sa.Da - (Da - Dc).(Sa - Sc)) + Sc.(1 - Da) + Dc.(1 - Sa)
+      = (Sc.Da + Dc.Sa - Sc.Dc) + Sc.(1 - Da) + Dc.(1 - Sa)
+      = Sc + Dc - Sc.Dc
+  Da' = Sa + Da - Sa.Da</pre></li><li><strong>overlay</strong><p>Multiplies or screens the colors,
+dependent on the destination color. Source colors overlay the destination
+whilst preserving its highlights and shadows. The destination color is not
+replaced, but is mixed with the source color to reflect the lightness or
+darkness of the destination. </p><pre>  if 2.Dc &lt; Da
+    Dc' = 2.Sc.Dc + Sc.(1 - Da) + Dc.(1 - Sa)
+  otherwise
+    Dc' = Sa.Da - 2.(Da - Dc).(Sa - Sc) + Sc.(1 - Da) + Dc.(1 - Sa)
+
+  Da' = Sa + Da - Sa.Da</pre></li><li><strong>darken</strong><p>Selects the darker of the destination and
+source colors. The destination is replaced with the source when the source is
+darker, otherwise it is left unchanged. </p><pre>  Dc' = min(Sc.Da, Dc.Sa) + Sc.(1 - Da) + Dc.(1 - Sa)
+  Da' = Sa + Da - Sa.Da
+
+  or
+
+  if Sc.Da &lt; Dc.Sa
+    src_over()
+  otherwise
+    dst_over()</pre></li><li><strong>lighten</strong><p>Selects the lighter of the destination
+and source colors. The destination is replaced with the source when the source
+is lighter, otherwise it is left unchanged. </p><pre>  Dc' = max(Sc.Da, Dc.Sa) + Sc.(1 - Da) + Dc.(1 - Sa)
+  Da' = Sa + Da - Sa.Da
+
+  or
+
+  if Sc.Da &gt; Dc.Sa
+    src_over()
+  otherwise
+    dst_over()</pre></li><li><strong>color_dodge</strong><p>Brightens the destination color to
+reflect the source color. Painting with black produces no change. </p><pre>  if Sc.Da + Dc.Sa &gt;= Sa.Da
+    Dc' = Sa.Da + Sc.(1 - Da) + Dc.(1 - Sa)
+  otherwise
+    Dc' = Dc.Sa/(1-Sc/Sa) + Sc.(1 - Da) + Dc.(1 - Sa)
+
+  Da' = Sa + Da - Sa.Da </pre></li><li><strong>color_burn</strong><p>Darkens the destination color to reflect
+the source color. Painting with white produces no change. </p><pre>  if Sc.Da + Dc.Sa &lt;= Sa.Da
+    Dc' = Sc.(1 - Da) + Dc.(1 - Sa)
+  otherwise
+    Dc' = Sa.(Sc.Da + Dc.Sa - Sa.Da)/Sc + Sc.(1 - Da) + Dc.(1 - Sa)
+
+  Da' = Sa + Da - Sa.Da
+</pre></li><li><strong>hard_light</strong><p>Multiplies or screens the colors,
+dependent on the source color value. If the source color is lighter than 0.5,
+the destination is lightened as if it were screened. If the source color is
+darker than 0.5, the destination is darkened, as if it were multiplied. The
+degree of lightening or darkening is proportional to the difference between the
+source color and 0.5. If it is equal to 0.5 the destination is unchanged. Painting
+with pure black or white produces black or white. </p><pre>  if 2.Sc &lt; Sa
+     Dc' = 2.Sc.Dc + Sc.(1 - Da) + Dc.(1 - Sa)
+  otherwise
+     Dc' = Sa.Da - 2.(Da - Dc).(Sa - Sc) + Sc.(1 - Da) + Dc.(1 - Sa)
+
+  Da' = Sa + Da - Sa.Da
+</pre></li><li><strong>soft_light</strong><p>Darkens or lightens the colors, dependent
+on the source color value. If the source color is lighter than 0.5, the
+destination is lightened. If the source color is darker than 0.5, the
+destination is darkened, as if it were burned in. The degree of darkening or
+lightening is proportional to the difference between the source color and 0.5.
+If it is equal to 0.5, the destination is unchanged. Painting with pure black
+or white produces a distinctly darker or lighter area, but does not result in
+pure black or white. </p><pre>  if 2.Sc &lt; Sa
+     Dc' = Dc.(Sa - (1 - Dc/Da).(2.Sc - Sa)) + Sc.(1 - Da) + Dc.(1 - Sa)
+  otherwise if Dc.8 &lt;= Da
+     Dc' = Dc.(Sa - (1 - Dc/Da).(2.Sc - Sa).(3 - 8.Dc/Da)) + Sc.(1 - Da) + Dc.(1 - Sa)
+  otherwise
+     Dc' = (Dc.Sa + ((Dc/Da)^(0.5).Da - Dc).(2.Sc - Sa)) + Sc.(1 - Da) + Dc.(1 - Sa)
+
+  Da' = Sa + Da - Sa.Da</pre></li><li><strong>difference</strong><p>Subtracts the darker of the two
+constituent colors from the lighter. Painting with white inverts the
+destination color. Painting with black produces no change. </p><pre>  Dc' = abs(Dc.Sa - Sc.Da) + Sc.(1 - Da) + Dc.(1 - Sa)
+      = Sc + Dc - 2.min(Sc.Da, Dc.Sa)
+  Da' = Sa + Da - Sa.Da
+</pre></li><li><strong>exclusion</strong><p>Produces an effect similar to that of
+'difference', but appears as lower contrast. Painting with white inverts the
+destination color. Painting with black produces no change. </p><pre>  Dc' = (Sc.Da + Dc.Sa - 2.Sc.Dc) + Sc.(1 - Da) + Dc.(1 - Sa)
+  Da' = Sa + Da - Sa.Da</pre></li></ol><h2>Compositing Support in GDI and GDI+</h2><p>
+The only support for compositing which takes into account the alpha channel
+in GDI is the <span class="code">AlphaBlend</span> function. Provided the 
+source image is 32 bits/pixel, then setting the 
+<span class="code">BLENDFUNCTION</span> parameter <span class="code">AlphaFormat</span>
+member set to <span class="code">AC_SRC_ALPHA</span> performs the 
+<span class="i">src_over</span> compositing method.
+</p><p>
+GDI+ provides a <span class="code">CompositingMode</span> setting which determines how
+two images are combined.  The available compositing options are <span class="code">CompositingModeSourceCopy</span> 
+and <span class="code">CompositingModeSourceOver</span>.
+</p><h2>Implementing the Compositing Operations</h2><p>
+In order to implement these algorithms, two things are needed:
+</p><ol><li>An image source which holds per-alpha pixel.</li><li>The pixel colour and alpha values need to be read/write.</li></ol><p>
+An <a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a> meets both of these requirements
+and is used for this sample. To see how a typical operation is implemented, consider the
+<span class="i">src_atop</span> Porter-Duff operation.  In this operation, pixels inside
+the destination are composited onto the destination.  (The concept of "inside" here
+is based on what happens on the screen. Pixels which are transparent are regarded as 
+"outside" whilst those that are opaque or translucent are "inside").
+</p><p>
+The equation for this operation is as follows:
+</p><pre>
+  Dc' = Sc.Da + Dc(1 - Sa)
+  Da' = Sa.Da + Da(1 - Sa)
+      = Da
+</pre><p>
+So to implement we need two DIBSections: a source, and a destination.  
+Then each pixel is considered in the source and destination and the calculation performed.  If
+the two DIBSections are not identically sized, then only the area that is overlapped between
+the two can be considered.
+</p><p>
+As noted in the <a href="http://www.vbaccelerator.com/article.asp?id=3017">True Colour DIBSection</a> article, COM provides
+a technique whereby any buffer of memory can be made to look like a Visual Basic array.  This
+allows the pixel values to be read very quickly at the expense of some slightly more complex
+code to create the array:
+</p><pre>
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Type SAFEARRAYBOUND
+    cElements As Long
+    lLbound As Long
+End Type
+Private Type SAFEARRAY2D
+    cDims As Integer
+    fFeatures As Integer
+    cbElements As Long
+    cLocks As Long
+    pvData As Long
+    Bounds(0 To 1) As SAFEARRAYBOUND
+End Type
+Private Declare Function VarPtrArray Lib "msvbvm60.dll" Alias "VarPtr" _
+   (Ptr() As Any) As Long
+
+...
+
+   Dim bDib() as Byte
+   Dim tSA As SAFEARRAY2D
+   With tSA
+      .cbElements = 1
+      .cDims = 2
+      .Bounds(0).lLbound = 0
+      .Bounds(0).cElements = Height
+      .Bounds(1).lLbound = 0
+      .Bounds(1).cElements = BytesPerScanLine
+      .pvData = Ptr ' Pointer to DIB section memory
+   End With
+   CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+</pre><p class="caption">Casting a buffer of memory to a 2D array</p><p>
+The code below shows how the calculation is performed on the individual
+bytes.  Note that whenever two values are multiplied together, it is
+necessary to divide by 255 to ensure the result is still in range, and
+the use of long values to prevent overflows during the intermediate 
+calculations.
+</p><pre>
+   ' Loop through each value in x, 4 bytes at a time.
+   ' 4 bytes = B,G,R,A
+   For x = srcX To xEnd Step 4
+      ' Loop through each value in y.  Note that a DIB
+      ' is usually upside down, so y = 0 is the last row
+      ' and y = height - 1 is the first.
+      For y = srcY To yEnd
+        
+         '  Dc' = Sc.Da + Dc(1 - Sa)        
+         
+         ' Calculate the new red value:
+         lR = (bDib(x + 2, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp; + _
+            bDibDst(x + 2, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+         ' Set the new red value:
+         bDibDst(x + 2, y) = lR
+         
+         ' Calculate the new green value:
+         lG = (bDib(x + 1, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp; + _
+            bDibDst(x + 1, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+         bDibDst(x + 1, y) = lG
+         
+         ' Calculate the new blue value:
+         lB = (bDib(x, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp; + _
+            bDibDst(x, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+         bDibDst(x, y) = lB
+        
+         '  Da ' = Sa.Da + Da(1 - Sa)
+         '      = Da
+         ' no change in alpha
+        
+        Next y
+    Next x
+</pre><h2>The cCompositing Class</h2><p>
+The <span class="code">cCompositing</span> class provided with the download
+provides implementations for all of the compositing operations described above
+and a simple interface to access them.
+</p><p>
+To use the class, create an instance of it, and then perform these steps:
+</p><ol><li>Configure the source and
+destination <span class="code">AlphaDIBSection</span> objects to composite.<br />
+This is done by setting the <span class="code">Src</span> and <span class="code">Dst</span>
+properties to a <span class="code">AlphaDIBSection</span> instances. Remember that the 
+destination will normally be modified by the operation.
+</li><li>(Optional) Configure the area of the source you want to consider<br />
+By default the class will perform compositing on the area starting at (0,0) up to 
+the largest shared width and height of the source and destination images.
+However, you can configure the source start coordinate using <span class="code">SrcX</span>
+and <span class="code">SrcY</span> and the desired size to use with <span class="code">SrcWidth</span>
+and <span class="code">SrcHeight</span>.
+</li><li>Set the Operation to perform<br />
+The <span class="code">Operation</span> property takes one of the 24 compositing operations
+specified in the <span class="code">CompositingOperations</span> enumeration.
+</li><li>Combine the images using the <span class="code">Composite</span> method.</li></ol><p>
+The demonstration application provided with the download provides a simple UI
+which demonstrates each of the compositing operations.
+</p><p>
+All of these operations can be further enhanced by providing a parameterised alpha
+adjustment to the operation that's being performed.  To do this, you just need to adjust
+all alpha values in the source and/or destination by a constant percentage.  This
+technique is used (for example) in Paint Shop Pro to allow different layers in an
+Image to be combined in different creative ways.
+</p><h2>Conclusion</h2><p>
+This article has described a rich set of compositing techniques 
+and demonstrates how to perform each of them with reusable VB code.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;Compositing Operations</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 7 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Compositing/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:55 GMT -->
+</html>

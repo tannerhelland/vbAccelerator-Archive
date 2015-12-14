@@ -1,0 +1,280 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Generating_MouseLeave_Events_for_a_Window/VB5_MouseLeave_Demonstration_zip_frmMouseTrack_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:41 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmMouseTrack.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmMouseTrack.frm" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;<a href="article.html">Generating MouseLeave Events for a Window</a>&#160;.&#160;<a href="VB5_MouseLeave_Demonstration.html">VB5 MouseLeave Demonstration</a>&#160;.&#160;frmMouseTrack.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_MouseLeave_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 MouseLeave Demonstration</a> (22K)</p><p /><p class="nav"><a href="VB6_MouseLeave_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 MouseLeave Demonstration</a> (22K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2227</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2227&amp;type=Zip&amp;title=VB5%20MouseLeave%20Demonstration%2Ezip%5FfrmMouseTrack">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />17 Feb 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmMouseTrack.frm</h1><pre>VERSION 5.00
+Begin VB.Form frmMouseTrack 
+   Caption         =   "Mouse Leave Demonstration"
+   ClientHeight    =   2925
+   ClientLeft      =   4200
+   ClientTop       =   2145
+   ClientWidth     =   4035
+   BeginProperty Font 
+      Name            =   "Tahoma"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "frmMouseTrack.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   2925
+   ScaleWidth      =   4035
+   Begin VB.Frame fraType 
+      Caption         =   "&amp;Tracking Method:"
+      Height          =   1095
+      Left            =   60
+      TabIndex        =   6
+      Top             =   1740
+      Width           =   3915
+      Begin VB.OptionButton optMethod 
+         Appearance      =   0  'Flat
+         Caption         =   "SetCapture/ReleaseCapture Workaround"
+         ForeColor       =   &amp;H80000008&amp;
+         Height          =   255
+         Index           =   2
+         Left            =   60
+         TabIndex        =   9
+         Top             =   720
+         Width           =   3735
+      End
+      Begin VB.OptionButton optMethod 
+         Appearance      =   0  'Flat
+         Caption         =   "COMCTL32 emulation TrackMouseSelect"
+         ForeColor       =   &amp;H80000008&amp;
+         Height          =   255
+         Index           =   1
+         Left            =   60
+         TabIndex        =   8
+         Top             =   480
+         Width           =   3735
+      End
+      Begin VB.OptionButton optMethod 
+         Appearance      =   0  'Flat
+         Caption         =   "USER32 TrackMouseSelect"
+         ForeColor       =   &amp;H80000008&amp;
+         Height          =   255
+         Index           =   0
+         Left            =   60
+         TabIndex        =   7
+         Top             =   240
+         Width           =   3675
+      End
+   End
+   Begin VB.PictureBox picTrack2 
+      Height          =   1155
+      Left            =   1380
+      ScaleHeight     =   1095
+      ScaleWidth      =   1155
+      TabIndex        =   4
+      Top             =   60
+      Width           =   1215
+   End
+   Begin VB.PictureBox picVB 
+      Height          =   1155
+      Left            =   2700
+      ScaleHeight     =   1095
+      ScaleWidth      =   1215
+      TabIndex        =   2
+      Top             =   60
+      Width           =   1275
+   End
+   Begin VB.PictureBox picTrack 
+      Height          =   1155
+      Left            =   60
+      ScaleHeight     =   1095
+      ScaleWidth      =   1155
+      TabIndex        =   0
+      Top             =   60
+      Width           =   1215
+   End
+   Begin VB.Image imgPic2 
+      Height          =   480
+      Left            =   3960
+      Picture         =   "frmMouseTrack.frx":1272
+      Top             =   4260
+      Visible         =   0   'False
+      Width           =   480
+   End
+   Begin VB.Label lblMouse2 
+      Caption         =   "Not over"
+      Height          =   735
+      Left            =   1380
+      TabIndex        =   5
+      Top             =   1260
+      Width           =   1275
+   End
+   Begin VB.Image imgPic 
+      Height          =   480
+      Left            =   3300
+      Picture         =   "frmMouseTrack.frx":1B3C
+      Top             =   4260
+      Visible         =   0   'False
+      Width           =   480
+   End
+   Begin VB.Label lblVB 
+      Caption         =   "-"
+      Height          =   435
+      Left            =   2700
+      TabIndex        =   3
+      Top             =   1320
+      Width           =   1275
+   End
+   Begin VB.Label lblMouse 
+      Caption         =   "Not over"
+      Height          =   735
+      Left            =   60
+      TabIndex        =   1
+      Top             =   1260
+      Width           =   1275
+   End
+End
+Attribute VB_Name = "frmMouseTrack"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private WithEvents m_cPTM As cMouseTrack
+Attribute m_cPTM.VB_VarHelpID = -1
+Private WithEvents m_cP2TM As cMouseTrack
+Attribute m_cP2TM.VB_VarHelpID = -1
+
+Private Sub Form_Load()
+   
+   Set imgPic.Container = picTrack
+   imgPic.Move (picTrack.ScaleWidth - imgPic.Width) \ 2, (picTrack.ScaleHeight
+    - imgPic.Height) \ 2
+   Set imgPic2.Container = picTrack2
+   imgPic2.Move (picTrack.ScaleWidth - imgPic2.Width) \ 2,
+    (picTrack.ScaleHeight - imgPic2.Height) \ 2
+   Set m_cPTM = New cMouseTrack
+   m_cPTM.AttachMouseTracking picTrack
+   Set m_cP2TM = New cMouseTrack
+   m_cP2TM.AttachMouseTracking picTrack2, m_cPTM.Method
+   
+   optMethod(m_cPTM.Method).Tag = "CODE"
+   optMethod(m_cPTM.Method).Value = True
+   
+End Sub
+
+
+Private Sub m_cP2TM_MouseHover(Button As MouseButtonConstants, Shift As
+ ShiftConstants, x As Single, y As Single)
+   ' Hover event, support for user32 and comctl32 methods:
+   lblMouse2.Caption = "Mouse Hover!"
+   m_cP2TM.StartMouseTracking
+End Sub
+
+Private Sub m_cP2TM_MouseLeave()
+   ' End tracking:
+   Debug.Print "2:Mouse Left"
+   lblMouse2.Caption = "Mouse Has Left Control"
+   imgPic2.Visible = False
+   picTrack2.BackColor = Me.BackColor
+End Sub
+
+Private Sub m_cPTM_MouseHover(Button As MouseButtonConstants, Shift As
+ ShiftConstants, x As Single, y As Single)
+   ' Hover event, support for user32 and comctl32 methods:
+   lblMouse.Caption = "Mouse Hover!"
+   m_cPTM.StartMouseTracking
+End Sub
+
+Private Sub m_cPTM_MouseLeave()
+   ' End tracking:
+   lblMouse.Caption = "Mouse Has Left Control"
+   imgPic.Visible = False
+   picTrack.BackColor = Me.BackColor
+End Sub
+
+Private Sub optMethod_Click(Index As Integer)
+   If optMethod(Index).Tag = "" Then
+      m_cPTM.AttachMouseTracking picTrack, Index
+      m_cP2TM.AttachMouseTracking picTrack2, Index
+   Else
+      optMethod(Index).Tag = ""
+   End If
+End Sub
+
+Private Sub picTrack_MouseMove(Button As Integer, Shift As Integer, x As
+ Single, y As Single)
+   ' Tracking is initialised by entering the control:
+   If Not (m_cPTM.Tracking) Then
+      picTrack.BackColor = vbHighlight
+      lblMouse.Caption = "Mouse over control"
+      m_cPTM.StartMouseTracking
+      imgPic.Visible = True
+   End If
+End Sub
+
+Private Sub picTrack2_MouseMove(Button As Integer, Shift As Integer, x As
+ Single, y As Single)
+   ' Tracking is initialised by entering the control:
+   If Not (m_cP2TM.Tracking) Then
+      picTrack2.BackColor = vbHighlight
+      lblMouse2.Caption = "Mouse over control"
+      m_cP2TM.StartMouseTracking
+      imgPic2.Visible = True
+   End If
+End Sub
+
+Private Sub picVB_MouseMove(Button As Integer, Shift As Integer, x As Single, y
+ As Single)
+   lblVB.Caption = "Mouse at " &amp; x &amp; "," &amp; y
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;<a href="article.html">Generating MouseLeave Events for a Window</a>&#160;.&#160;<a href="VB5_MouseLeave_Demonstration.html">VB5 MouseLeave Demonstration</a>&#160;.&#160;frmMouseTrack.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Generating_MouseLeave_Events_for_a_Window/VB5_MouseLeave_Demonstration_zip_frmMouseTrack_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:41 GMT -->
+</html>

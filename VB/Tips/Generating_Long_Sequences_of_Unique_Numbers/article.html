@@ -1,0 +1,247 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Generating_Long_Sequences_of_Unique_Numbers/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:05 GMT -->
+<head>
+
+<title>vbAccelerator - Generating Long Sequences of Unique Numbers</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Sometimes it is very useful to be able to generate a long sequence of unique numbers.
+ This tip provides a method to generate long sequences which are not consecutive by using a 
+shift register approach." /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Generating Long Sequences of Unique Numbers</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2957</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2957&amp;type=Article&amp;title=Generating%20Long%20Sequences%20of%20Unique%20Numbers">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />18 Aug 1999<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2960">Implementing Unsigned Right and Left Shift Operators</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Generating Long Sequences of Unique Numbers</h1><p /><p>Sometimes it is very useful to be able to generate a long sequence of unique numbers.
+ This tip provides a method to generate long sequences which are not consecutive by using a 
+shift register approach.</p><p>As well as providing a sequence of widely spaced unique numbers, the code also 
+generates a bit stream which can be used as a random bit generator, yielding an 
+equally probable but suitably "random" stream of 0s and 1s.</p><p>To try it out, start a new project. Then add a module and copy the following code into it:</p><pre>
+Public Power2(0 To 31) As Long
+Private m_lPoly(0 To 31) As Long
+Private m_lMask(0 To 31) As Long
+
+Private m_lNum As Long
+Private m_lLength As Long
+
+Public Property Get Number() As Long
+   Number = m_lNum
+End Property
+
+Public Property Let Number(ByVal lNumber As Long)
+   ' Equivalent to seed in random numbers
+   m_lNum = lNumber
+End Property
+
+Public Property Get SequenceLength() As Long
+   SequenceLength = m_lLength
+End Property
+
+Public Property Let SequenceLength(ByVal lLength As Long)
+   m_lLength = lLength
+End Property
+
+Public Function NextNumber() As Long
+   If m_lNum And Power2(m_lLength - 1) Then
+     m_lNum = m_lNum Xor (m_lPoly(m_lLength))
+     ' Shift and put 1 into lowest order bit:
+     m_lNum = RShift(m_lNum, 1) Or 1
+     ' Return lowest order bit:
+     NextNumber = 1
+   Else
+     ' Shift and put 0 into lowest order bit:
+     m_lNum = RShift(m_lNum, 1)
+     ' Return lowest order bit:
+     NextNumber = 0
+   End If
+   ' Mask out &gt; bits
+   m_lNum = m_lNum And m_lMask(m_lLength)
+End Function
+
+Public Function RShift(ByVal lThis As Long, ByVal lBits As Long) As Long
+   If (lBits &lt;= 0) Then
+     RShift = lThis
+   ElseIf (lBits &gt; 63) Then
+     ' .. error ...
+   ElseIf (lBits &gt; 31) Then
+     RShift = 0
+   Else
+     If (lThis And Power2(31 - lBits)) = Power2(31 - lBits) Then
+       RShift = (lThis And (Power2(31 - lBits) - 1)) * Power2(lBits) Or Power2(31)
+     Else
+       RShift = (lThis And (Power2(31 - lBits) - 1)) * Power2(lBits)
+     End If
+   End If
+End Function
+
+Public Sub Init()
+   Power2(0) = &amp;H1&amp;
+   Power2(1) = &amp;H2&amp;
+   Power2(2) = &amp;H4&amp;
+   Power2(3) = &amp;H8&amp;
+   Power2(4) = &amp;H10&amp;
+   Power2(5) = &amp;H20&amp;
+   Power2(6) = &amp;H40&amp;
+   Power2(7) = &amp;H80&amp;
+   Power2(8) = &amp;H100&amp;
+   Power2(9) = &amp;H200&amp;
+   Power2(10) = &amp;H400&amp;
+   Power2(11) = &amp;H800&amp;
+   Power2(12) = &amp;H1000&amp;
+   Power2(13) = &amp;H2000&amp;
+   Power2(14) = &amp;H4000&amp;
+   Power2(15) = &amp;H8000&amp;
+   Power2(16) = &amp;H10000
+   Power2(17) = &amp;H20000
+   Power2(18) = &amp;H40000
+   Power2(19) = &amp;H80000
+   Power2(20) = &amp;H100000
+   Power2(21) = &amp;H200000
+   Power2(22) = &amp;H400000
+   Power2(23) = &amp;H800000
+   Power2(24) = &amp;H1000000
+   Power2(25) = &amp;H2000000
+   Power2(26) = &amp;H4000000
+   Power2(27) = &amp;H8000000
+   Power2(28) = &amp;H10000000
+   Power2(29) = &amp;H20000000
+   Power2(30) = &amp;H40000000
+   Power2(31) = &amp;H80000000
+
+   ' Mod2 Polynomials for maximal length sequences:
+   m_lPoly(1) = 0
+   m_lPoly(2) = Power2(0)
+   m_lPoly(3) = Power2(0)
+   m_lPoly(4) = Power2(0)
+   m_lPoly(5) = Power2(1)
+   m_lPoly(6) = Power2(0)
+   m_lPoly(7) = Power2(0)
+   m_lPoly(8) = Power2(3) Or Power2(2) Or Power2(1)
+   m_lPoly(9) = Power2(3)
+   m_lPoly(10) = Power2(2)
+   m_lPoly(11) = Power2(1)
+   m_lPoly(12) = Power2(5) Or Power2(3) Or Power2(0)
+   m_lPoly(13) = Power2(3) Or Power2(2) Or Power2(0)
+   m_lPoly(14) = Power2(4) Or Power2(2) Or Power2(0)
+   m_lPoly(15) = Power2(0)
+   m_lPoly(16) = Power2(4) Or Power2(2) Or Power2(1)
+   m_lPoly(17) = Power2(2)
+   m_lPoly(18) = Power2(4) Or Power2(1) Or Power2(0)
+   m_lPoly(19) = Power2(4) Or Power2(1) Or Power2(0)
+   m_lPoly(20) = Power2(2)
+   m_lPoly(22) = Power2(0)
+   m_lPoly(23) = Power2(4)
+   m_lPoly(24) = Power2(3) Or Power2(2) Or Power2(0)
+   m_lPoly(25) = Power2(2)
+   m_lPoly(26) = Power2(5) Or Power2(1) Or Power2(0)
+   m_lPoly(27) = Power2(4) Or Power2(1) Or Power2(0)
+   m_lPoly(28) = Power2(2)
+   m_lPoly(29) = Power2(1)
+   m_lPoly(30) = Power2(5) Or Power2(3) Or Power2(0)
+   m_lPoly(31) = Power2(2)
+   'm_lPoly(32) = Power2(6) Or Power2(4) Or Power2(2) Or Power2(1) Or Power2(0)
+
+   ' Masks:
+   Dim i As Long
+   For i = 0 To 30
+     m_lMask(i) = Power2(i) - 1
+   Next i
+   m_lMask(31) = &amp;H7FFFFFFF
+
+   m_lNum = 1
+
+End Sub
+</pre><p>To test this function out, add a CommandButton and a ListBox to the project's form. 
+Set the <i>Sorted</i> property of the ListBox to True. Then add the following code: </p><pre>
+Private Sub TestSequence(ByVal lLength As Long)
+Dim i As Long
+
+   ' Seed at 1:
+   Number = 1
+   ' Set a sequence length:
+   SequenceLength = lLength
+   
+   ' Show that the algorithm generates
+   ' unique digits 2^Length-1:
+   lstTest.Clear
+   lstTest.AddItem Number
+   For i = 1 To Power2(lLength) - 2      NextNumber
+     lstTest.AddItem Number
+   Next i
+
+   For i = 0 To lstTest.ListCount - 2
+     If lstTest.List(i) = lstTest.List(i + 1) Then
+       ' Does not occur!
+       lstTest.ListIndex = i
+       MsgBox "Duplicate: " &amp; lstTest.List(i)
+     End If
+   Next i
+
+End Sub
+
+Private Sub Command1_Click()
+   ' Test a 255 number sequence (2^8-1):
+   TestSequence 8
+End Sub
+
+Private Sub Form_Load()
+   ' Must initialise to set up the precompiled Powers of 2
+   ' and polynomials:
+   Init
+End Sub
+</pre><p>Run the project. When you click the button, the list box will be filled with the 
+sequence of 255 numbers. Because the ListBox is sorted, the numbers will appear in order - this is 
+just to make the duplicate test simple.</p><p>To see the numbers in the sequence they are generated, change the ListBox's 
+<i>Sorted</i> property to False and re-run the project.</p><p>To check out the random bits generated by the routine, modify the line</p><pre>
+     NextNumber
+</pre><p>To read:</p><pre>
+   If NextNumber = 0 Then
+      Debug.Print "Tails"
+   Else
+      Debug.Print "Heads"
+   End If
+</pre><p>This will then display a random sequence of Heads and Tails.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Generating Long Sequences of Unique Numbers</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Generating_Long_Sequences_of_Unique_Numbers/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:05 GMT -->
+</html>

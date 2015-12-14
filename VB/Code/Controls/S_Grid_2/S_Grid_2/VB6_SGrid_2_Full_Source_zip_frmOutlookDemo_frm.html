@@ -1,0 +1,1090 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/S_Grid_2/VB6_SGrid_2_Full_Source_zip_frmOutlookDemo_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:06 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmOutlookDemo.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmOutlookDemo.frm" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;<a href="article.html">SGrid 2.0</a>&#160;.&#160;<a href="VB6_SGrid_2_Full_Source.html">VB6 SGrid 2 Full Source</a>&#160;.&#160;frmOutlookDemo.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_SGrid_2_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 SGrid 2 Demonstration</a> (144K)</p><p class="nav"><a href="VB5_SGrid_2_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 SGrid 2 Full Source</a> (446K)</p><p class="nav"><a href="VB5_SGrid_2_0_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 SGrid 2.0 Binary</a> (194K)</p><p /><p class="nav"><a href="VB6_SGrid_2_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 SGrid 2 Binary</a> (173K)</p><p class="nav"><a href="VB6_SGrid_2_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 SGrid 2 Demonstration</a> (138K)</p><p class="nav"><a href="VB6_SGrid_2_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 SGrid 2 Full Source</a> (419K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:14213</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14213&amp;type=Zip&amp;title=VB6%20SGrid%202%20Full%20Source%2Ezip%5FfrmOutlookDemo">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 4 / 5</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 8 / 8</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:9 February 2004</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />10 Feb 2004<br /><p class="update">The VB6 Downloads for the Grid contained incorrect files. The versions
+posted now have the correct files.  Please ensure your version of vbalSGrid6.OCX has the file
+version 2.0.0.40 and accept my apologies for this stupid error.</p><p class="update">TaskList demo had a missing line in the mnuColumns event handler which
+caused a 'Subscript out of Range' error when showing or hiding columns (it was trying
+to hide/show column 0).  Fixed.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11">vbAccelerator S-Grid Control</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmOutlookDemo.frm</h1><pre>VERSION 5.00
+Object = "{DE8CE233-DD83-481D-844C-C07B96589D3A}#1.1#0"; "vbalSGrid6.ocx"
+Object = "{396F7AC0-A0DD-11D3-93EC-00C0DFE7442A}#1.0#0"; "vbalIml6.ocx"
+Begin VB.Form frmOutlookDemo 
+   Caption         =   "SGrid Mailbox Style Demonstration"
+   ClientHeight    =   5655
+   ClientLeft      =   4650
+   ClientTop       =   5625
+   ClientWidth     =   7335
+   Icon            =   "frmOutlookDemo.frx":0000
+   LinkTopic       =   "Form2"
+   ScaleHeight     =   5655
+   ScaleWidth      =   7335
+   Begin vbAcceleratorSGrid6.vbalGrid grdOutlook 
+      Height          =   5175
+      Left            =   60
+      TabIndex        =   0
+      Top             =   420
+      Width           =   6375
+      _ExtentX        =   11245
+      _ExtentY        =   9128
+      BackgroundPictureHeight=   0
+      BackgroundPictureWidth=   0
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      DisableIcons    =   -1  'True
+   End
+   Begin vbalIml6.vbalImageList ilsIcons 
+      Left            =   6480
+      Top             =   420
+      _ExtentX        =   953
+      _ExtentY        =   953
+      Size            =   21812
+      Images          =   "frmOutlookDemo.frx":014A
+      Version         =   131072
+      KeyCount        =   19
+      Keys            =   ""
+   End
+   Begin VB.Label lblInfo 
+      Caption         =   "Mail box demonstration. Right click on the header
+       for sorting and grouping options."
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   315
+      Left            =   60
+      TabIndex        =   1
+      Top             =   60
+      Width           =   7215
+   End
+   Begin VB.Menu mnuFileTOP 
+      Caption         =   "&amp;File"
+      Begin VB.Menu mnuFile 
+         Caption         =   "&amp;Close"
+         Index           =   0
+      End
+   End
+   Begin VB.Menu mnuViewTOP 
+      Caption         =   "&amp;View"
+      Begin VB.Menu mnuView 
+         Caption         =   "&amp;Columns"
+         Index           =   0
+         Begin VB.Menu mnuColumns 
+            Caption         =   ""
+            Index           =   0
+         End
+      End
+      Begin VB.Menu mnuView 
+         Caption         =   "&amp;Auto-Preview"
+         Index           =   1
+         Begin VB.Menu mnuPreview 
+            Caption         =   "&amp;None"
+            Index           =   0
+         End
+         Begin VB.Menu mnuPreview 
+            Caption         =   "&amp;Unread Messages"
+            Checked         =   -1  'True
+            Index           =   1
+         End
+         Begin VB.Menu mnuPreview 
+            Caption         =   "&amp;All Messages"
+            Index           =   2
+         End
+      End
+      Begin VB.Menu mnuView 
+         Caption         =   "-"
+         Index           =   2
+      End
+      Begin VB.Menu mnuView 
+         Caption         =   "&amp;Group Box"
+         Index           =   3
+      End
+   End
+   Begin VB.Menu mnuContextTOP 
+      Caption         =   ""
+      Visible         =   0   'False
+      Begin VB.Menu mnuContext 
+         Caption         =   "Sort &amp;Ascending"
+         Index           =   0
+      End
+      Begin VB.Menu mnuContext 
+         Caption         =   "Sort &amp;Descending"
+         Index           =   1
+      End
+      Begin VB.Menu mnuContext 
+         Caption         =   "-"
+         Index           =   2
+      End
+      Begin VB.Menu mnuContext 
+         Caption         =   "Group by this &amp;Field"
+         Index           =   3
+      End
+      Begin VB.Menu mnuContext 
+         Caption         =   "&amp;Group Box"
+         Index           =   4
+      End
+      Begin VB.Menu mnuContext 
+         Caption         =   "-"
+         Index           =   5
+      End
+      Begin VB.Menu mnuContext 
+         Caption         =   "&amp;Remove this Column"
+         Index           =   6
+      End
+   End
+   Begin VB.Menu mnuMailContextTOP 
+      Caption         =   ""
+      Visible         =   0   'False
+      Begin VB.Menu mnuMailContext 
+         Caption         =   "&amp;Open..."
+         Index           =   0
+      End
+      Begin VB.Menu mnuMailContext 
+         Caption         =   "&amp;Print..."
+         Index           =   1
+      End
+      Begin VB.Menu mnuMailContext 
+         Caption         =   "-"
+         Index           =   2
+      End
+      Begin VB.Menu mnuMailContext 
+         Caption         =   "&amp;Reply"
+         Index           =   3
+      End
+      Begin VB.Menu mnuMailContext 
+         Caption         =   "Reply to &amp;All"
+         Index           =   4
+      End
+      Begin VB.Menu mnuMailContext 
+         Caption         =   "-"
+         Index           =   5
+      End
+      Begin VB.Menu mnuMailContext 
+         Caption         =   "&amp;Follow Up..."
+         Index           =   6
+      End
+      Begin VB.Menu mnuMailContext 
+         Caption         =   "Mark as Rea&amp;d"
+         Index           =   7
+      End
+      Begin VB.Menu mnuMailContext 
+         Caption         =   "Mark as &amp;Unread"
+         Index           =   8
+      End
+      Begin VB.Menu mnuMailContext 
+         Caption         =   "&amp;Categories..."
+         Index           =   9
+      End
+      Begin VB.Menu mnuMailContext 
+         Caption         =   "-"
+         Index           =   10
+      End
+      Begin VB.Menu mnuMailContext 
+         Caption         =   "&amp;Delete"
+         Index           =   11
+      End
+      Begin VB.Menu mnuMailContext 
+         Caption         =   "&amp;Move To Folder..."
+         Index           =   12
+      End
+      Begin VB.Menu mnuMailContext 
+         Caption         =   "-"
+         Index           =   13
+      End
+      Begin VB.Menu mnuMailContext 
+         Caption         =   "&amp;Options..."
+         Index           =   14
+      End
+   End
+End
+Attribute VB_Name = "frmOutlookDemo"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Function decodeHex(ByVal sText As String) As String
+Dim i As Long
+Dim b() As Byte
+Dim lCurrent As Long
+Dim lByte As Long
+Dim sHex As String
+Dim iPos As Long
+   
+   ReDim b(0 To Len(sText) * 2) As Byte
+   For i = 1 To Len(sText)
+      sHex = Mid(sText, i, 1)
+      If IsNumeric(sHex) Then
+         lByte = CInt(sHex)
+      Else
+         lByte = AscW(sHex) - 55
+         If (lByte &lt; 10) Or (lByte &gt; 15) Then
+            MsgBox "Error in Hex.", vbExclamation
+            Exit Function
+         End If
+      End If
+      If (i Mod 2) = 1 Then
+         lCurrent = (lByte * &amp;H10&amp;)
+      Else
+         b(iPos) = lCurrent Or lByte
+         iPos = iPos + 1
+      End If
+   Next i
+   decodeHex = b
+   
+End Function
+
+Private Sub Form_Load()
+Dim iRow As Long
+Dim iIconUrgent As Long
+Dim iIconAttach As Long
+Dim iIconFlag As Long
+Dim iIconType As Long
+Dim iIdx As Long
+Dim dDate As Date
+Dim lColour As Long
+Dim iCol As Long
+Dim lHeight As Long
+Dim cS As cGridCell
+Dim cSUnread As cGridCell
+Dim iMenu As Long
+
+   With grdOutlook
+      ' Turn redraw off for speed:
+      .Redraw = False
+   
+      ' Set up the grid:
+      
+      ' Source of icons.  This can be vbAccelerator ImageList control, class or
+      ' a VB ImageList
+      .ImageList = ilsIcons
+      ' Row mode - select the entire row:
+      .RowMode = True
+      ' Allow more than one row to be selected:
+      .MultiSelect = True
+      ' Set the default row height:
+      .DefaultRowHeight = 18
+      ' Outlook style for the header control:
+      .HeaderFlat = True
+      ' As it says
+      .StretchLastColumnToFit = True
+      
+      ' Add the columns:
+      .AddColumn "urgency", , , 9, 28, , , , False, , , CCLSortIcon
+      .AddColumn "type", , , 10, 28, , , , False, , , CCLSortIcon
+      .AddColumn "attach", , , 12, 28, , , , False, , , CCLSortIcon
+      .AddColumn "flag", , , 11, 28, , , , False, , , CCLSortIcon
+      .AddColumn "from", "From", , , 96
+      .AddColumn "subject", "Subject", , , 256
+      .AddColumn "received", "Received", , , 96, , , , , "dd/mm/yy hh:mm", ,
+       CCLSortDate
+      .AddColumn "to", "To", , , 96
+      .AddColumn "size", "Size", , , 56, , , , , "#,##0", , CCLSortNumeric
+      ' Add two invisible columns to cache status information:
+      .AddColumn "read", , , , , False
+      .AddColumn "ID", , , , , False
+      ' The special "rowcolumntext" column must be added to the end
+      ' of the available columns.  This never appears as a column
+      ' header, but the text in it is drawn underneath the row (assuming
+      ' the row is high enough for it, starting at the column
+      ' specified by .RowTextStartColumn:
+      .AddColumn "body", , , , 96 + 256 + 96 + 96, , , , , , True
+      
+      ' When the user types a key, this determines which column
+      ' the control will search in
+      .KeySearchColumn = .ColumnIndex("subject")
+      
+      ' You can specify specifically at which column the text will start
+      ' like this:
+      '   .RowTextStartColumn = .ColumnIndex("from")
+      ' If you do this you need to track the ColumnOrderChanged event to
+      ' ensure you are at the right column if the user moves this column
+      ' to the end of the grid.  If you don't specify this setting, the
+      ' grid will automatically start drawing rowtext at the position
+      ' of the first column included in the select (bIncludeInSelect
+      ' parameter of AddColumn)
+         
+      
+      ' Once we have added the columns, we can set the headers up
+      ' (if we are using headers)
+      .SetHeaders
+      
+      ' Add some demonstration rows:
+      
+      ' Set up a bold font:
+      Dim sFntUnread As New StdFont
+      sFntUnread.Name = "Tahoma"
+      sFntUnread.Size = 8
+      sFntUnread.Bold = True
+      
+      Set cS = .NewCellFormatObject
+      Set cSUnread = .NewCellFormatObject
+      Set cSUnread.Font = sFntUnread
+      
+      ' Create some pretend text for From, Subject and Body
+      Dim sFrom(1 To 10) As String
+      sFrom(1) = "Carl Ridenhour"
+      sFrom(2) = "Kevin Shields"
+      sFrom(3) = "Richard D James"
+      sFrom(4) = "Luke Slater"
+      sFrom(5) = "Mark Bell"
+      sFrom(6) = "Frank Black"
+      sFrom(7) = "Richard Clayderman"
+      sFrom(8) = "James Last"
+      sFrom(9) = "Thurston Moore"
+      sFrom(10) = "Beth Gibbons"
+      
+      Dim sSubject(1 To 10) As String
+      sSubject(1) = "Check out this demo"
+      sSubject(2) = "RE: Sonic Bubblebath Remix"
+      sSubject(3) = "FW: The secret world of plants"
+      sSubject(4) = """Make like Ghandi"""
+      sSubject(5) = "RE: FW: Feast your eyes on those 'Spirit of 1997' animated
+       GIFs!"
+      sSubject(6) = "viz New York Trip"
+      sSubject(7) = "Belated Happy Birthday"
+      sSubject(8) = "RE: What's the score?"
+      sSubject(9) = "vbAccelerator: Excellent site!"
+      sSubject(10) = "Pass the peas..."
+      
+      Dim sBody(1 To 11) As String
+      sBody(1) = "Impress passing airline passengers by painting a large " &amp; _
+         "blue rectangle in your back garden.  They will think that you " &amp; _
+         "have a swimming pool."
+      sBody(2) = "Bus drivers: pretend to be an airline pilot by wedging " &amp; _
+         "the accelerator pedal down with a brick, tying the steering wheel " &amp;
+          _
+         "to your seat with a rope and then walking up and down the aisle " &amp; _
+         "asking passengers if they are having a nice trip."
+      sBody(3) = "A man walks into a butchers'.  He says ""I bet you 100 that "
+       &amp; _
+         "you can't get that meat down from the top shelf"".  " &amp; _
+         "The butcher looks up, thinks for a moment, then says ""Sorry mate, "
+          &amp; _
+         "can't do it, the steaks are too high""."
+      sBody(4) = "A skeleton walks into a bar.  He goes up to the barman and "
+       &amp; _
+         "asks for a pint of beer and a mop."
+      sBody(5) = "Q: What's the best way to catch a rabbit? A: Hide somewhere "
+       &amp; _
+         "and make a noise like a carrot."
+      sBody(6) = "Forget the others, this is the real deal - increase the size
+       " &amp; _
+         "of your elbows by up to 2 inches, possibly guaranteed in just
+          'weeks'!  " &amp; _
+         "No painful work-outs, no hard to take pills, just a simple injection
+          into " &amp; _
+         "your left ear once every three days - and you'll soon have the elbows
+          of " &amp; _
+         "your dreams!" &amp; vbCrLf &amp; "So don't delay, write back today and add "
+          &amp; _
+         "something special to your arms."
+      sBody(7) = "Earn money in your spare time!  Easily earn up to $10,000 a
+       week " &amp; _
+         "whilst working from home." &amp; vbCrLf &amp; "This offer may sound too good
+          " &amp; _
+         "to be true, but read on, otherwise you might be missing out!!  Join "
+          &amp; _
+         "1,000's of others who are earning easy money with our lobster and " &amp;
+          _
+         "beaver packaging scheme."
+      sBody(8) = "A duck walks into a bar.  The barman says ""I'm sorry, we " &amp;
+       _
+         "don't serve ducks in here"".  ""That's ok"", replies the duck, " &amp; _
+         """I don't really like duck anyway, it tastes a bit like chicken.  " &amp;
+          _
+         "And if we're on the subject, I don't really like oranges either. But
+          a " &amp; _
+         "nice steak... that would go down like a dream""."
+      sBody(9) = "A man and his giraffe walk into a bar.  He orders two beers,
+       " &amp; _
+         "and they both drink up (although the giraffe has some difficulties "
+          &amp; _
+         "reaching it's beer).  As they're about to finish the man pulls " &amp; _
+         "out a shotgun and shoots the giraffe dead.  It drops to the ground, "
+          &amp; _
+         "and suddenly he's walking out the bar.  ""Hey!"", shouts the barman,
+          " &amp; _
+         """You can't just leave that lyin' here"".  ""Sorry mate, you must be
+          " &amp; _
+         "confused"", says the man.  ""The lion's in the last bar, that was my
+          giraffe..."""
+      sBody(10) = "Say goodbye to Y2.038K Fears with the Trouser Press 2038." &amp;
+       _
+         vbCrLf &amp; "Top scientists have been working around the clock " &amp; _
+         "to find a solution to the most worrying problem post Millenial
+          problem " &amp; _
+         "- what happens if your trousers are trapped in their press on " &amp; _
+         "Monday, January 18th 2038?" &amp; vbCrLf &amp; "Rest assured that thanks " &amp; _
+         "to this miracle of bug-free microchip technology you will be wearing
+          " &amp; _
+         "a crisply-creased pair of your favourite trousers to greet the " &amp; _
+         "Monday morning.  If you live that long. (Batteries extra)."
+      sBody(11) = "A man goes to see an optometrist. The doctor says, " &amp; _
+         """You have to stop masturbating"". The guy says, ""Why? Am I going "
+          &amp; _
+         "blind?"" The doctor says, ""No, you're upsetting the other patients "
+          &amp; _
+         "in the waiting room."""
+                           
+      ' Now add the rows:
+      For iRow = 1 To 200
+         
+         ' set the urgency:
+         iIconUrgent = Rnd * 3
+         Select Case iIconUrgent
+         Case 1
+            iIconUrgent = 7
+         Case 2
+            iIconUrgent = 8
+         Case Else
+            iIconUrgent = -1
+         End Select
+         .CellDetails iRow, 1, , , iIconUrgent
+         
+         ' set the type:
+         If (iRow &lt; 16) Then
+            iIconType = 1
+         Else
+            iIconType = Rnd * 2 + 2
+         End If
+         .CellIcon(iRow, 2) = iIconType
+         
+         ' set the attachment:
+         If Rnd * 20 &gt; 17 Then
+            iIconAttach = 14
+         Else
+            iIconAttach = -1
+         End If
+         .CellIcon(iRow, 3) = iIconAttach
+         
+         ' set the Flag:
+         If Rnd * 20 &gt; 18 Then
+            iIconFlag = 13
+         Else
+            iIconFlag = -1
+         End If
+         .CellIcon(iRow, 4) = iIconFlag
+         
+         ' mark as irrelevant ("junk mail"):
+         iIdx = CInt(Rnd * 9) + 1
+         If iIdx = 7 Or iIdx = 8 Then
+            lColour = vbGrayText
+         Else
+            lColour = -1
+         End If
+         
+         ' from:
+         If (iRow &lt; 16) Then
+            .CellDetails iRow, 5, sFrom(iIdx), , , , lColour, sFntUnread
+         Else
+            .CellDetails iRow, 5, sFrom(iIdx), , , , lColour
+         End If
+         
+         ' subject:
+         iIdx = CInt(Rnd * 9) + 1
+         If (iRow &lt; 16) Then
+            .CellDetails iRow, 6, sSubject(iIdx), , , , lColour, sFntUnread
+         Else
+            .CellDetails iRow, 6, sSubject(iIdx), , , , lColour
+         End If
+         
+         ' date:
+         dDate = Now
+         If (iRow &lt; 16) Then
+            dDate = DateAdd("d", -Rnd * 3, dDate)
+            dDate = dDate + TimeSerial(Rnd * 24, Rnd * 60, Rnd * 60)
+            .CellDetails iRow, 7, dDate, , , , lColour, sFntUnread
+         Else
+            dDate = DateAdd("m", -Rnd * 12, dDate)
+            dDate = DateAdd("d", -Rnd * 31, dDate)
+            dDate = dDate + TimeSerial(Rnd * 24, Rnd * 60, Rnd * 60)
+            .CellDetails iRow, 7, dDate, , , , lColour
+         End If
+         
+         ' to:
+         If (iRow &lt; 16) Then
+            .CellDetails iRow, 8, "Steve McMahon", , , , lColour, sFntUnread
+         Else
+            .CellDetails iRow, 8, "Steve McMahon", , , , lColour
+         End If
+         
+         ' size:
+         If (iIconAttach = -1) Then
+            .CellDetails iRow, 9, Rnd * 4096, DT_END_ELLIPSIS Or DT_RIGHT Or
+             DT_SINGLELINE
+         Else
+            .CellDetails iRow, 9, Rnd * 1024 * 1024 + 4096, DT_END_ELLIPSIS Or
+             DT_RIGHT Or DT_SINGLELINE
+         End If
+         
+         iIdx = CInt(Rnd * 9) + 1
+         .CellDetails iRow, 12, sBody(iIdx), DT_WORDBREAK, , , RGB(0, 0, &amp;HBF)
+         lHeight = .EvaluateTextHeight(iRow, 12) + .DefaultRowHeight + 4
+
+         ' Read/unread marker:
+         If (iRow &lt; 16) Then
+            .CellDetails iRow, 10, "NOTREAD"
+            .RowHeight(iRow) = lHeight
+         Else
+            .CellDetails iRow, 10, "READ"
+         End If
+         
+         ' ID marker:
+         .CellDetails iRow, 11, iRow
+                  
+         
+      Next iRow
+      
+      
+      ' Add the columns to the menu:
+      For iCol = 1 To .Columns
+         If (.ColumnVisible(iCol)) And (iCol &lt;&gt; 12) Then
+            If (iMenu &gt; 0) Then
+               Load mnuColumns(iMenu)
+               mnuColumns(iMenu).Visible = True
+            End If
+            If (.ColumnHeader(iCol) = "") Then
+               mnuColumns(iMenu).Caption = StrConv(.ColumnKey(iCol),
+                vbProperCase)
+            Else
+               mnuColumns(iMenu).Caption = .ColumnHeader(iCol)
+            End If
+            mnuColumns(iMenu).Tag = .ColumnKey(iCol)
+            mnuColumns(iMenu).Checked = True
+            iMenu = iMenu + 1
+         End If
+      Next iCol
+      
+      .Redraw = True
+   End With
+   
+End Sub
+
+Private Sub Form_Resize()
+On Error Resume Next
+   lblInfo.Width = Me.ScaleWidth - lblInfo.left * 2
+   grdOutlook.Move 2 * Screen.TwipsPerPixelX, grdOutlook.top, Me.ScaleWidth - 4
+    * Screen.TwipsPerPixelX, Me.ScaleHeight - grdOutlook.top - 4 *
+    Screen.TwipsPerPixelY
+End Sub
+
+Private Sub grdOutlook_ColumnClick(ByVal lCol As Long)
+Dim iCol As Long
+Dim iSortCol As Long
+Dim sJunk() As String, eJunk() As ECGSortOrderConstants
+
+   With grdOutlook.SortObject
+      .ClearNongrouped
+      iSortCol = .IndexOf(lCol)
+      If (iSortCol &lt;= 0) Then
+         iSortCol = .Count + 1
+      End If
+      
+      .SortColumn(iSortCol) = lCol
+      If (grdOutlook.ColumnSortOrder(lCol) = CCLOrderNone) Or
+       (grdOutlook.ColumnSortOrder(lCol) = CCLOrderDescending) Then
+         .SortOrder(iSortCol) = CCLOrderAscending
+      Else
+         .SortOrder(iSortCol) = CCLOrderDescending
+      End If
+      grdOutlook.ColumnSortOrder(lCol) = .SortOrder(iSortCol)
+      .SortType(iSortCol) = grdOutlook.ColumnSortType(lCol)
+      
+      ' Place ascending/descending icon:
+      For iCol = 1 To grdOutlook.Columns
+         If (iCol &lt;&gt; lCol) Then
+            If Not (grdOutlook.ColumnIsGrouped(iCol)) Then
+               If grdOutlook.ColumnImage(iCol) &gt; 16 Then
+                  grdOutlook.ColumnImage(iCol) = 0
+               End If
+            End If
+         ElseIf grdOutlook.ColumnHeader(iCol) &lt;&gt; "" Then
+            grdOutlook.ColumnImageOnRight(iCol) = True
+            If (.SortOrder(iSortCol) = CCLOrderAscending) Then
+               grdOutlook.ColumnImage(iCol) = 17
+            Else
+               grdOutlook.ColumnImage(iCol) = 18
+            End If
+         End If
+      Next iCol
+      
+   End With
+   
+   Screen.MousePointer = vbHourglass
+   grdOutlook.Sort
+   Screen.MousePointer = vbDefault
+   
+End Sub
+
+Private Sub grdOutlook_ColumnOrderChanged()
+   '
+End Sub
+
+Private Sub grdOutlook_ColumnWidthChanging(ByVal lCol As Long, lWidth As Long,
+ bCancel As Boolean)
+   If (lWidth &lt; 26) Then
+      lWidth = 26
+   End If
+End Sub
+
+Private Sub grdOutlook_DblClick(ByVal lRow As Long, ByVal lCol As Long)
+   '
+   '
+End Sub
+
+Private Sub grdOutlook_HeaderRightClick(ByVal x As Single, ByVal y As Single)
+Dim lCol As Long
+   
+   lCol = grdOutlook.ColumnHeaderFromPoint(x, y)
+   
+   If (lCol &gt; 0) Then
+      mnuContext(0).Enabled = True
+      mnuContext(1).Enabled = True
+      mnuContext(3).Enabled = True
+      'Debug.Print grdOutlook.ColumnHeader(lCol),
+       grdOutlook.ColumnIsGrouped(lCol)
+      mnuContext(3).Caption = IIf(grdOutlook.ColumnIsGrouped(lCol), "Don't
+       Group By This Field", "Group By This Field")
+      mnuContext(6).Enabled = True
+            
+      mnuContext(0).Checked = (grdOutlook.ColumnSortOrder(lCol) =
+       CCLOrderAscending)
+      mnuContext(1).Checked = (grdOutlook.ColumnSortOrder(lCol) =
+       CCLOrderDescending)
+      
+   Else
+      mnuContext(0).Enabled = False
+      mnuContext(1).Enabled = False
+      mnuContext(3).Enabled = False
+      mnuContext(6).Enabled = False
+   
+      mnuContext(0).Checked = False
+      mnuContext(1).Checked = False
+   
+   End If
+      
+   x = (x + grdOutlook.ScrollOffsetX) * Screen.TwipsPerPixelX + grdOutlook.left
+   y = y * Screen.TwipsPerPixelY + grdOutlook.top
+   mnuContextTOP.Tag = lCol
+   Me.PopupMenu mnuContextTOP, , x, y
+   
+   
+End Sub
+
+Private Sub grdOutlook_MouseUp(Button As Integer, Shift As Integer, x As
+ Single, y As Single)
+   If (Button = vbRightButton) Then
+      Dim lRow As Long
+      Dim lCol As Long
+      grdOutlook.CellFromPoint x \ Screen.TwipsPerPixelX, y \
+       Screen.TwipsPerPixelY, lRow, lCol
+      If (lRow &gt; 0) And (lCol &gt; 0) Then
+         
+         ' Note here I'm not showing a menu for groups.
+         ' In Outlook, the behaviour is to perform the action on all
+         ' subitems of the group, unless the user has selected individual
+         ' items within the group.  This is do-able.
+         If Not (grdOutlook.RowIsGroup(lRow)) Then
+         
+            Dim iSelCount As Long
+            iSelCount = grdOutlook.SelectionCount
+            If (iSelCount &gt; 0) Then
+               ' Show appropriate options depending on the number
+               ' of selected mails:
+               mnuMailContext(3).Visible = (iSelCount = 1)
+               mnuMailContext(4).Visible = (iSelCount = 1)
+               mnuMailContext(5).Visible = (iSelCount = 1)
+               mnuMailContext(6).Visible = (iSelCount = 1)
+               mnuMailContext(13).Visible = (iSelCount = 1)
+               mnuMailContext(14).Visible = (iSelCount = 1)
+               mnuMailContextTOP.Tag = iSelCount
+               x = x + grdOutlook.left
+               y = y + grdOutlook.top
+               
+               ' Show the menu
+               Me.PopupMenu mnuMailContextTOP, , x, y
+               
+            End If
+            
+         End If
+      End If
+   End If
+End Sub
+
+Private Sub grdOutlook_RequestEdit(ByVal lRow As Long, ByVal lCol As Long,
+ ByVal iKeyAscii As Integer, bCancel As Boolean)
+Static sSearch As String
+   'Debug.Print "RequestEdit"
+   If (iKeyAscii &lt;&gt; 0) Then
+      'Debug.Print iKeyAscii
+      ' Search for the match:
+      If (iKeyAscii &lt;&gt; 8) Then
+         sSearch = sSearch &amp; Chr$(iKeyAscii)
+      Else
+         If (Len(sSearch) &gt; 0) Then
+            sSearch = left$(sSearch, Len(sSearch) - 1)
+         End If
+      End If
+      'Debug.Print sSearch
+   End If
+   bCancel = True
+End Sub
+
+Private Sub mnuColumns_Click(Index As Integer)
+Dim bS As Long
+Dim lCol As Long
+   bS = Not (mnuColumns(Index).Checked)
+   mnuColumns(Index).Checked = bS
+   grdOutlook.ColumnVisible(mnuColumns(Index).Tag) = bS
+End Sub
+
+Private Sub mnuContext_Click(Index As Integer)
+Dim lCol As Long
+   Select Case Index
+   Case 0
+      lCol = CLng(mnuContextTOP.Tag)
+      If (mnuContext(0).Checked) Then
+         mnuContext(0).Checked = False
+         grdOutlook.ColumnSortOrder(lCol) = CCLOrderNone
+      Else
+         mnuContext(0).Checked = True
+         grdOutlook.ColumnSortOrder(lCol) = CCLOrderNone
+         grdOutlook_ColumnClick lCol
+      End If
+   
+   Case 1
+      lCol = CLng(mnuContextTOP.Tag)
+      If (mnuContext(1).Checked) Then
+         mnuContext(1).Checked = False
+         grdOutlook.ColumnSortOrder(lCol) = CCLOrderNone
+      Else
+         mnuContext(1).Checked = True
+         grdOutlook.ColumnSortOrder(lCol) = CCLOrderAscending
+         grdOutlook_ColumnClick lCol
+      End If
+   
+   Case 3
+      lCol = CLng(mnuContextTOP.Tag)
+      If (grdOutlook.ColumnIsGrouped(lCol)) Then
+         ' Ungroup
+         grdOutlook.ColumnIsGrouped(lCol) = False
+      Else
+         ' Group
+         grdOutlook.ColumnIsGrouped(lCol) = True
+      End If
+   Case 4
+      ' Group box:
+      grdOutlook.AllowGrouping = Not (grdOutlook.AllowGrouping)
+      mnuContext(Index).Checked = grdOutlook.AllowGrouping
+      mnuView(3).Checked = grdOutlook.AllowGrouping
+   Case 6
+      lCol = CLng(mnuContextTOP.Tag)
+      grdOutlook.ColumnVisible(lCol) = False
+      mnuColumns(mnuContextTOP.Tag - 1).Checked = False
+   End Select
+   
+End Sub
+
+Private Sub mnuContextTOP_Click()
+   mnuContext(4).Checked = grdOutlook.AllowGrouping
+End Sub
+
+Private Sub mnuFile_Click(Index As Integer)
+   Unload Me
+End Sub
+
+Private Sub mnuMailContext_Click(Index As Integer)
+   Select Case Index
+   Case 0
+      MsgBox "Open selected for " &amp; vbCrLf &amp; getSelectedMailTitles,
+       vbInformation
+   Case 1
+      MsgBox "Print selected for " &amp; vbCrLf &amp; getSelectedMailTitles,
+       vbInformation
+   Case 3
+      If (grdOutlook.SelectionCount = 1) Then
+         ' Some people can read this without worrying about decode hex.
+         Dim sTitle As String
+         sTitle = "50006F00730074006300610072006400200063006F006D00700065" &amp; _
+                        "0074006900740069006F006E002100"
+         Dim sDescription As String
+         sDescription =
+          "44006F00200079006F00750020006C0069006B0065002000740068" &amp; _
+                        "0069007300200063006F00640065003F0020002000490027006400"
+                         &amp; _
+                        "20006C0069006B006500200074006F002000680065006100720020"
+                         &amp; _
+                        "00660072006F006D00200079006F0075002E002000200053006500"
+                         &amp; _
+                        "6E00640020006D00650020006100200070006F0073007400630061"
+                         &amp; _
+                        "00720064003A000D000A0020002000530074006500760065002000"
+                         &amp; _
+                        "4D0063004D00610068006F006E000D000A00200020003200200043"
+                         &amp; _
+                        "00610072007900730066006F0072007400200052006F0061006400"
+                         &amp; _
+                        "0D000A0020002000430072006F00750063006800200045006E0064"
+                         &amp; _
+                        "000D000A00200020004C006F006E0064006F006E000D000A002000"
+                         &amp; _
+                        "20004E00380020003800520042000D000A002000200055006E0069"
+                         &amp; _
+                        "0074006500640020004B0069006E00670064006F006D000D000A00"
+                         &amp; _
+                        "0D000A004200650073007400200070006F00730074006300610072"
+                         &amp; _
+                        "00640073002000770069006E0020007000720069007A0065007300"
+                         &amp; _
+                        "21000D000A00"
+         MsgBox decodeHex(sDescription), vbInformation, decodeHex(sTitle)
+      Else
+         MsgBox "Reply selected for " &amp; vbCrLf &amp; getSelectedMailTitles,
+          vbInformation
+      End If
+   Case 4
+      MsgBox "Reply to All selected for " &amp; vbCrLf &amp; getSelectedMailTitles,
+       vbInformation
+   Case 6
+      ' Follow up
+      followUp
+   Case 7
+      ' Mark as read
+      markAsRead True
+   Case 8
+      ' Mark as unread
+      markAsRead False
+   Case 9
+      MsgBox "Categories selected for " &amp; vbCrLf &amp; getSelectedMailTitles,
+       vbInformation
+   Case 11
+      ' Delete
+      deleteMail
+   Case 12
+      MsgBox "Move to Folder selected for " &amp; vbCrLf &amp; getSelectedMailTitles,
+       vbInformation
+   Case 14
+      MsgBox "Show Options dialog here", vbInformation
+   End Select
+End Sub
+
+Private Function getSelectedMailTitles() As String
+Dim i As Long
+Dim lRow As Long
+Dim sRet As String
+   For i = 1 To grdOutlook.SelectionCount
+      lRow = grdOutlook.SelectedRowByIndex(i)
+      If (Len(sRet) &gt; 0) Then
+         sRet = sRet &amp; ", "
+      End If
+      sRet = sRet &amp; grdOutlook.CellText(lRow, 6)
+   Next i
+   getSelectedMailTitles = sRet
+End Function
+
+Private Sub markAsRead(ByVal bState As Boolean)
+Dim i As Long
+Dim lRow As Long
+Dim iCol As Long
+Dim lIcon As Long
+Dim sFnt As New StdFont
+Dim lHeight As Long
+
+   grdOutlook.Redraw = False
+
+   sFnt.Name = "Tahoma"
+   sFnt.Size = 8
+   
+   ' In real life, you'd actually check the reply state
+   ' before setting the icon like this (currently, the
+   ' reply "state" is cleared when you mark as read
+   ' or unread.
+   If (bState) Then
+      lIcon = 4
+   Else
+      sFnt.Bold = True
+      lIcon = 1
+   End If
+
+   For i = 1 To grdOutlook.SelectionCount
+      lRow = grdOutlook.SelectedRowByIndex(i)
+      If (grdOutlook.RowIsGroup(lRow)) Then
+         '
+      Else
+         grdOutlook.CellIcon(lRow, 2) = lIcon
+         For iCol = 1 To grdOutlook.Columns - 1 ' miss out the preview text
+            grdOutlook.CellFont(lRow, iCol) = sFnt
+         Next iCol
+         grdOutlook.CellText(lRow, 10) = IIf(bState, "READ", "NOTREAD")
+         If Not (bState) Then
+            lHeight = grdOutlook.EvaluateTextHeight(lRow, 12) +
+             grdOutlook.DefaultRowHeight + 4
+            grdOutlook.RowHeight(lRow) = lHeight
+         Else
+            grdOutlook.RowHeight(lRow) = grdOutlook.DefaultRowHeight
+         End If
+      End If
+   Next i
+   
+   grdOutlook.Redraw = True
+   
+End Sub
+Private Sub followUp()
+Dim i As Long
+Dim lRow As Long
+   grdOutlook.Redraw = False
+   For i = 1 To grdOutlook.SelectionCount
+      lRow = grdOutlook.SelectedRowByIndex(i)
+      If (grdOutlook.RowIsGroup(lRow)) Then
+      Else
+         grdOutlook.CellIcon(lRow, 4) = 13
+      End If
+   Next i
+   grdOutlook.Redraw = True
+End Sub
+
+Private Sub deleteMail()
+Dim i As Long
+Dim lRow As Long
+   grdOutlook.Redraw = False
+   
+   For i = grdOutlook.SelectionCount To 1 Step -1
+      lRow = grdOutlook.SelectedRowByIndex(i)
+      If (grdOutlook.RowIsGroup(lRow)) Then
+         If (grdOutlook.RowGroupingState(lRow) = ecgCollapsed) Then
+            ' All of the subitems will have been selected already, so just
+            ' delete the group
+            grdOutlook.RemoveRow lRow
+         End If
+      Else
+         ' Delete this row
+         grdOutlook.RemoveRow lRow
+      End If
+   Next i
+   
+   
+   grdOutlook.Redraw = True
+End Sub
+
+
+Private Sub mnuViewTOP_Click()
+   mnuView(3).Checked = grdOutlook.AllowGrouping
+End Sub
+
+Private Sub mnuPreview_Click(Index As Integer)
+Dim i As Long
+Dim lHeight As Long
+
+   For i = 0 To 2
+      mnuPreview(i).Checked = (i = Index)
+   Next i
+   
+   grdOutlook.Redraw = False
+   If (Index = 0) Then
+      ' No preview:
+      For i = 1 To grdOutlook.Rows
+         If Not grdOutlook.RowIsGroup(i) Then
+            grdOutlook.RowHeight(i) = grdOutlook.DefaultRowHeight
+         End If
+      Next i
+   ElseIf (Index = 1) Then
+      ' Preview unread only:
+      For i = 1 To grdOutlook.Rows
+         If Not grdOutlook.RowIsGroup(i) Then
+            If (grdOutlook.CellText(i, 10) = "NOTREAD") Then
+               lHeight = grdOutlook.EvaluateTextHeight(i, 12) +
+                grdOutlook.DefaultRowHeight
+               grdOutlook.RowHeight(i) = lHeight
+            Else
+               grdOutlook.RowHeight(i) = grdOutlook.DefaultRowHeight
+            End If
+         End If
+      Next i
+   Else
+      ' All preview:
+      For i = 1 To grdOutlook.Rows
+         If Not grdOutlook.RowIsGroup(i) Then
+            lHeight = grdOutlook.EvaluateTextHeight(i, 12) +
+             grdOutlook.DefaultRowHeight
+            grdOutlook.RowHeight(i) = lHeight
+         End If
+      Next i
+   End If
+   grdOutlook.Redraw = True
+End Sub
+
+Private Sub mnuView_Click(Index As Integer)
+   Select Case Index
+   Case 3
+      mnuContext_Click 4
+   End Select
+End Sub
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;<a href="article.html">SGrid 2.0</a>&#160;.&#160;<a href="VB6_SGrid_2_Full_Source.html">VB6 SGrid 2 Full Source</a>&#160;.&#160;frmOutlookDemo.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 11 February 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/S_Grid_2/VB6_SGrid_2_Full_Source_zip_frmOutlookDemo_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:06 GMT -->
+</html>

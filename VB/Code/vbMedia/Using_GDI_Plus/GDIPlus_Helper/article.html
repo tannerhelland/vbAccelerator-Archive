@@ -1,0 +1,417 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Using_GDI_Plus/GDIPlus_Helper/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:46 GMT -->
+<head>
+
+<title>vbAccelerator - GDI+ Wrapper</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+The GDI+ Wrapper project is a DLL that works on top of Dana Seaman's 
+excellent GDI+ Type Library and aims to provide COM applications with a 
+wrapper providing equivalent functionality to the C++ and .NET GDI+ classes.
+
+The current version provides support for Images and Bitmaps.  Further 
+contributions to the library are encouraged!
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Using GDI Plus</a>&#160;.&#160;GDI+ Wrapper</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="GDIPlus_Wrapper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />GDIPlus Wrapper</a> (57K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4579</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4579&amp;type=Article&amp;title=GDI%2B%20Wrapper">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><p class="nav">&#160;&#160;<a href="mailto:dseaman@cyberactivex.com">Dana Seaman</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:8 September 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />28 Mar 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4588">GDI+ Type Library (GDIPlus.TLB)</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>GDI+ Wrapper</h1><p class="splash">An ongoing project to provide GDI+ functions to COM applications</p><img src="gdiPlus.png" width="320" height="240" alt="GDI+ Wrapper" /><p /><p>
+The GDI+ Wrapper project is a DLL that works on top of Dana Seaman's 
+excellent GDI+ Type Library and aims to provide COM applications with a 
+wrapper providing equivalent functionality to the C++ and .NET GDI+ classes.
+</p><p>
+The current version provides support for Images and Bitmaps.  Further 
+contributions to the library are encouraged!
+</p><h2>About GDI+</h2><p>
+GDI+ is Microsoft's new graphics programming API for Windows that
+offers enhanced functionality over the existing GDI functions.
+In particular, you get built in support for many more graphics
+file formats, colour-management functions, alpha and gamma functions for
+drawing, extremely powerful transformation functions and much more.
+</p><p>
+GDI+ can be used in all Windows-based applications. GDI+ is included 
+with Microsoft Windows XP and Windows .NET Server operating systems. 
+However, it can also be installed from the freely available
+<a href="http://www.microsoft.com/downloads/release.asp?releaseid=32738">Microsoft redistributable</a>
+for applications that run on Windows NT 4.0 SP6, Windows 2000, 
+Windows 98, and Windows Millennium Edition operating systems:
+</p><h2>Using GDI+ From VB</h2><p>
+Whilst the GDI+ library distributed with the Platform SDK is packaged in
+a form usable by C/C++ developers, this doesn't preclude using it in
+other languages.  For example, the <i>System.Drawing</i> namespace in .NET provides
+a thin Managed-code wrapper around the GDI+ functions.
+</p><p>
+Using it from VB though is more difficult.  The next section describes these
+in more detail and how they are overcome in the library.  However, the 
+excellent starting point for this code is 
+Dana Seaman's <a href="mailto:dseaman@cyberactivex.com">dseaman@cyberactivex.com</a>
+GDI+ Type Library, which includes all but a tiny portion of the structures,
+enumerations and declares you need to call GDI+ functions.  You can download
+his Type Library, and his example project which demonstrates a highly 
+sophisticated Unicode-based drawing using alpha, texture brushes and much more
+from <a href="http://www.vbaccelerator.com/article.asp?id=3355">Planet Source Code</a> here:
+</p><p class="indent"><a href="http://www.planet-source-code.com/vb/scripts/ShowCode.asp?txtCodeId=42861&amp;lngWId=1">http://www.Planet-Source-Code.com/vb/scripts/ShowCode.asp?txtCodeId=42861&amp;lngWId=1</a></p><p>
+Please go there and give him your vote, and voice some nice opinions since 
+this is a fantastic effort.
+</p><p>
+However, whilst the Type Library gives you direct access to the native functions,
+it doesn't allow you to use GDI+ in the same way that most of the articles 
+demonstrate since the actual GDI+ class library is not included.  In addition,
+some of the GDI+ functions (like Property Id tags and Image Encoder Parameters) 
+are declared in an unfriendly way, which means you need additional code beyond
+the Type Library declares to call them safely.
+</p><p>
+This article presents a Visual Basic COM wrapper that emulates (and in some
+cases needs to provide enhancements to make the functions easier to use) the GDI+ 
+class library.  As noted, this version only implements Image and Bitmap related
+functionality.  Please read the contribution details below to find out how
+you can help to add more functions to the library (text, brushes and
+pens are the next on the list).
+</p><h2>Building A GDI+ Wrapper</h2><p>
+This section of the article details some of the issues 
+that occurred as I built this library and how I worked around them.
+</p><p>
+There are some difficulties with direct translation of the GDI+ class
+library, some related to COM and some related to Visual Basic.  I'll
+cover these in turn.
+</p><h3>1. COM Translation Problems</h3><ol><li><strong>Implementation Inheritance</strong><br />
+In GDI+, for example, the <i>Bitmap</i> class extends <i>Image</i>.  By
+appropriate casting, you can therefore access all of the <i>Image</i>'s 
+functions from a <i>Bitmap</i>.  COM only supports Interface Inheritance, 
+so whilst you could emulate the GDI+ version using interfaces, this means
+the same code would have to be written multiple times in concrete instances of 
+the interface.
+</li><li><strong>Method Overloading</strong><br />
+The class library makes extensive use of method overloading to provide
+multiple versions of the same method with different parameters.  For
+example, there are some 20 or so different versions of the <i>DrawImage</i>
+function within the <i>Graphics</i> class.  In COM each method requires
+its own name.
+</li><li><strong>Parameterised Constructors</strong><br />
+COM does not support initialising a class with parameters.  So whilst 
+the library offers ways to construct, for example, an instance of
+the <i>Bitmap</i> class with the specified pixel format and size,
+a COM call can only construct a default instance.
+</li></ol><p>
+All of these problems can be resolved by the use of programming
+conventions in the converted wrapper object.
+</p><ol><li><strong>Implementation Inheritance.</strong><p>
+I have chosen to make the base class(es) available through a property
+get call on the subclass.  So for example, my <i>Bitmap</i> class
+offers and <i>Image</i> Property Get, which returns an Image class
+for the bitmap.  This is slightly more awkward to use but ensures
+complete consistency of functionality without code duplication.
+</p><p>
+For example, in GDI+ you can access the <i>Width</i> property
+of a <i>Bitmap</i> directly:
+</p><pre>
+   Bitmap* bm = new Bitmap(L"Spiral.png");
+   printf("\nBitmap width:%d\n", bm.GetWidth());
+</pre><p>
+In my class library you need to get the <i>Image</i> object of the
+<i>Bitmap</i> first:
+</p><pre><font color="#58596C"></font><font color="#3D4187">Dim </font><font color="#58596C">bm </font><font color="#3D4187">as New </font><font color="#58596C">GDIPBitmap
+   bm.FromFile(</font><font color="#800000">"Spiral.png"</font><font color="#58596C">)
+   Debug.</font><font color="#3D4187">Print </font><font color="#800000">"Bitmap Width:"</font><font color="#58596C">; bm.Image.</font><font color="#3D4187">Width
+</font></pre></li><li><strong>Method Overloading</strong><br /><p>
+Here I chose to add to the method name to indicate
+which function is supported.  So for example, the <i>Graphics</i> class
+supports four different ways of drawing a bitmap into a rectangular 
+area: two take integer parameters and two use real parameters, and 
+there is a version which takes a rectangle structure and a version
+which takes individual parameters in each case.  In the resulting
+library, I add the word Rect and then a couple of prefixes to 
+indicate which is which:
+</p><ul><li><b>DrawImageRectL</b> - The <i>L</i> indicates long parameters.</li><li><b>DrawImageRectLv</b> - The <i>v</i> indicates the method takes the values
+directly, rather than the structure containing the values.</li><li><b>DrawImageRectF</b> - The <i>F</i> indicates real parameters.</li><li><b>DrawImageRectFv</b> - The <i>v</i> indicates values rather than a structure again.</li></ul></li><li><strong>Parameterised Constructors</strong><br /><p>
+Here I either use existing methods of the class which are
+equivalent to the constructor (for example, <i>Bitmap</i>
+has a <i>FromFile</i> method which is equivalent to
+constructing a Bitmap with a file name parameter) or
+add a new Create[xxx] method, where [xxx] describes the
+type of creation required.
+</p></li></ol><h3>2. VB Translation Problems</h3><ul><li><strong>Unicode Strings</strong><br /><p>
+The entire GDI+ library is Unicode based (although obviously if you're 
+working on Windows 98 or ME you're still restricted to displaying characters
+available on the installed character set).  Therefore when declaring 
+functions you cannot use VB's <i>As String</i> construct, because
+VB automatically converts all such string parameters to ANSI before
+making the declared call.  Using a Type Library to call the declarations
+greatly assists with this since function declarations can include
+Unicode string parameters.
+</p><p class="tipHeader">Tip: Working With Pointers and Unicode Strings</p><div class="tip"><p>
+If you can't use a direct Type Library declaration to resolve a Unicode
+problem, as for example when a string is a member of a structure passed
+in and out of a function, then you can usually work around the problem
+quite easily using arrays of bytes, <i>CopyMemory</i> and <i>lstrlenw</i>.
+</p><p>
+For example, to create a pointer to a Unicode string to pass into a
+function, just convert the string to an array of bytes and then use
+the pointer to the first byte:
+</p><pre>
+   ' Convert string into a byte array:
+   Dim b() As Byte
+   b = "This is the String"
+
+   ' Add null termination:
+   Redim Preserve b(0 To Ubound(b) + 2) As Byte
+
+   ' Get the pointer to the string:
+   Dim lPtrString As Long
+   lPtrString = VarPtr(b(0))
+</pre><p>
+If the function doesn't modify the pointer during execution, then
+the byte array will contain the new string when the function completes.
+If the function does modify the pointer, or returns you a new
+one, then you can use <i>lstrlenw</i> and <i>CopyMemory</i>:
+</p><pre>
+   ' Find the length of the string:
+   Dim lSize As Long
+   lSize = lstrlenw(ByVal lPtrString)
+   
+   ' Create a buffer large enough to hold it:
+   ReDim b(0 To lSize * 2 - 1) As Byte
+
+   ' Copy the string into the buffer:
+   CopyMemory ByVal VarPtr(b(0)), ByVal lPtrString, lSize * 2
+
+   ' Convert back into a string:
+   Dim theString As String
+   theString = b
+</pre><p>
+Finally, remember that any buffers that you do set up must be
+valid within the scope of the function call you're going to
+make.  For example, although it may be convenient to provide
+a function to return a pointer to the
+appropriate bytes, this will only work if the bytes you
+allocate are still in memory when the function returns:
+</p><p><small>Bad</small></p><pre>
+Public Function EvalVisibleSize(ByVal sText As String) As Long
+Dim lBuf As Long
+   lBuf = getStringPtr(sText)
+   ' This will crash as lBuf doesn't point to anything!
+   DrawTextW m_hDc, lBuf, -1, m_TextR, _
+      DT_MODIFYSTRING Or DT_END_ELLIPSIS or DT_SINGLELINE
+   EvalVisibleSize = lstrlenw(lBuf)
+End Function
+
+Private Function getStringPtr(ByVal sText As String) As Long
+   Dim b() As Byte
+   b = sText
+   ReDim Preserve b(0 to Ubound(b) + 2) As Byte
+   getStringPtr = VarPtr(b(0))
+   ' No good!  b(0) goes out of scope here
+End Function
+</pre><p>
+You either need to move the <i>getStringPtr</i> function into
+the <i>DrawText</i> function or make <i>getStringPtr</i> work
+on an array of bytes within a scope that includes anything
+that calls it: which of course might destroy any generic purpose of such
+a function...
+</p></div></li><li><strong>Pointers, Buffers, Other Problems</strong><br /><p>
+Many of the GDI+ functions take pointers to structures as input.  Often,
+these have variable length input, and structures include pointers to 
+structures or even just buffers in memory.
+</p><p>
+Such things are not impossible to use in VB, they just tend to make
+life more difficult. For example, consider setting up the parameters
+to the JPEG GDI+ Image Codec prior to saving a file to JPEG.
+The Platform SDK definitions for this function are as follows:
+</p><pre>
+class EncoderParameters
+{
+public:
+    // Number of parameters in this structure
+    UINT Count;                   
+    // Parameter values    
+    EncoderParameter Parameter[1];
+};
+
+class EncoderParameter
+{
+public:
+    // GUID of the parameter
+    GUID    Guid;
+    // Number of the parameter values 
+    ULONG   NumberOfValues;
+    // Value type, like ValueTypeLONG  etc.
+    ULONG   Type;
+    // A pointer to the parameter values
+    VOID*   Value;
+};
+
+GpStatus WINGDIPAPI
+GdipSaveImageToFile(GpImage *image, GDIPCONST WCHAR* filename,
+                    GDIPCONST CLSID* clsidEncoder,
+                    GDIPCONST EncoderParameters* encoderParams);
+
+</pre><p>
+The pointer that gets passed as the encoderParams needs to be
+a structure in memory containing first a long variable
+containing count, followed by an array of <i>EncoderParameter</i>
+structures (which, despite the misleading <i>[1]</i> count in the declare, can
+be of any length you want).  The next issue is that the
+data type of the information contained by an <i>EncoderParameter</i> 
+structure is arbitrary depending on the particular encoder you're
+using - it could be an array of long values, a single float value
+and so on.  In memory, this must be laid out as a pointer to the
+memory.  This leads to a thorny coding problem in VB and in the
+Type Library: how do you declare the parameters you're going to
+pass if you don't know how may of them there are or anything about
+how their data is laid out in memory?  You can't take advantage of
+anything that helps you do it in VB, such as Variants, since the C
+library was not written using these structures.
+</p><p>
+There are no standard answers to these kinds of questions.  The only
+real way around them is to work out what would be expected in
+memory and build it up as best you can, using a combination of 
+structures and memory allocations as required.  In the case
+of the function above, you can find the resulting code in 
+the GDIPlusWrapper library in the <i>GDIPImage</i> class <i>Save</i> 
+function.  It takes advantage of two functions provided by GDI+ to
+make it easier to allocate and free memory buffers for use with GDI+:
+</p><pre>
+Private Declare Function GdipAlloc Lib "gdiplus.dll" ( _
+   ByVal size As Long) As Long
+Private Declare Function GdipFree Lib "gdiplus.dll" ( _
+   ByVal ptr As Long) As Long
+</pre></li></ul><h2>Sample Usage</h2><p>
+This sample demonstrates how to load a PNG file and then draw it,
+scaled to half size onto a PictureBox.  To run it, start a new VB project,
+reference the GDI+ Type Library and the GDIPlusWrapper.DLL, add a PictureBox
+to the form and set the <i>AutoRedraw</i> property to True.  Then add this
+code to a Command Button, and modify the "C:\TestImage.png" to 
+point to some actual graphics file on your system.
+</p><pre><font color="#9596A8">' Must call this before using any GDI+ call:
+</font><font color="#3D4187">If </font><font color="#58596C">(GDIPlusCreate()) </font><font color="#3D4187">Then
+
+   </font><font color="#9596A8">' Create the Image and load the file:
+   </font><font color="#3D4187">Dim </font><font color="#58596C">im </font><font color="#3D4187">As New </font><font color="#58596C">GDIPImage   
+   im.FromFile </font><font color="#800000">"C:\TestImage.png"
+   
+   </font><font color="#9596A8">' Create a Graphics object:
+   </font><font color="#3D4187">Dim </font><font color="#58596C">gfx </font><font color="#3D4187">As New </font><font color="#58596C">GDIPGraphics
+
+   </font><font color="#9596A8">' Initialise it to work on the PictureBox HDC:
+   </font><font color="#58596C">gfx.FromHDC(Picture1.hDC)
+   </font><font color="#9596A8">' Set the stretching mode to highest quality:
+   </font><font color="#58596C">gfx.InterpolationMode = InterpolationModeHighQualityBicubic
+   </font><font color="#9596A8">' Draw the image, stretching it to half size:
+   </font><font color="#58596C">gfx.DrawImageStretchL _
+      im, 
+      </font><font color="#864F46">0</font><font color="#58596C">, </font><font color="#864F46">0</font><font color="#58596C">, 
+      </font><font color="#864F46">0</font><font color="#58596C">, </font><font color="#864F46">0</font><font color="#58596C">, im.</font><font color="#3D4187">Width </font><font color="#58596C">\ </font><font color="#864F46">2</font><font color="#58596C">, im.Height \ </font><font color="#864F46">2</font><font color="#58596C">, _
+      UnitPixel
+   </font><font color="#9596A8">' Clear up the Graphics object (also can
+   ' use 'Set gfx = Nothing'):
+   </font><font color="#58596C">gfx.Dispose   
+
+   </font><font color="#9596A8">' Clear up the Image object (also can use
+   ' 'Set gfx = Nothing'):
+   </font><font color="#58596C">im.Dispose
+
+   </font><font color="#58596C">Picture1.Refresh
+
+   </font><font color="#9596A8">' Must call this before ending the program, 
+   ' and after all GDI+ objects are disposed.
+   </font><font color="#58596C">GDIPlusDispose
+</font><font color="#3D4187">End If
+
+</font></pre><p>
+If you look at the GDI+ and .NET System.Drawing documentation,
+you will see this code is not far away at all from using
+the classes directly!
+</p><h2>Contribute</h2><p>
+If you'd like to contribute towards this library then that would be
+excellent.  To adopt an area to contribute towards, please send an email
+to <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>
+with the bit you'd like to try.  Contributions must be written in VB6
+and come with a sample or samples demonstrating the functionality, and 
+should as far as possible adhere to the coding conventions of the
+existing classes.
+</p><p>
+The following wrapper functions are open for coders:
+</p><ul><li><strong>Brushes</strong><br /><p>Status: OPEN</p><p>
+Classes required: <i>GDIPBrush</i>, <i>GDIPBrushes</i>, <i>GDIPSolidBrush</i>,
+<i>GDIPSystemBrushes</i>, <i>GDIPTextureBrush</i>, <i>GDIPHatchBrush</i>,
+<i>GDIPLinearGradientBrush</i>, <i>GDIPPathGradientBrush</i>.
+</p><p>
+GDIPGraphics functionality: <i>FillClosedCurve</i>, <i>FillEllipse</i>,
+<i>FillPath</i>, <i>FillPie</i>, <i>FillPolygon</i>, <i>FillRectangle(s)</i>,
+<i>FillRegion</i>.
+</p></li><li><strong>Pens</strong><br /><p>Status: OPEN</p><p>
+Classes required: <i>GDIPPen</i>, <i>GDIPens</i>, <i>GDIPSystemPens</i>,
+<i>GDIPAdjustableArrowCap</i>, <i>GDIPCustomLineCap</i>.
+</p><p>
+GDIPGraphics functionality: <i>DrawArc</i>, <i>DrawBezier(s)</i>,
+<i>Draw(Closed)Curve</i>, <i>DrawEllipse</i>, <i>DrawRectangle(s)</i>,
+<i>DrawPath</i>, <i>DrawPie</i>, <i>DrawPolygon</i>.
+</p></li><li><strong>Text</strong><br /><p>Status: Adopted by Steve (
+<a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>)</p><p>
+Classes required: <i>GDIPFont</i>, <i>GDIPFontConverter</i>, <i>StringFormat</i>,
+<i>GDIPInstalledFontCollection</i>, <i>GDIPFontCollection</i>,
+<i>GDIPPrivateFontCollection</i>.
+</p><p>
+GDIPGraphics functionality: <i>DrawString</i>.
+</p></li><li><strong>IStream Support</strong><br /><p>Status: OPEN</p><p>
+Currently the <i>Image</i> class does not support loading or saving to/from
+an <i>IStream</i>.  There is an attempt in the GDIPlusWrapper.DLL to
+implement this functionality for loading but it fails with GDI+ error 2
+(invalid type). I'm guessing that this is because I'm passing in the wrong
+class pointer - can anyone figure out how to solve this?
+</p></li><li><strong>Printing</strong><br /><p>Status: OPEN</p><p>
+Refer to the Microsoft.NET <i>System.Drawing.Printing</i> online documentation
+for details.
+</p></li><li><strong>Documentation</strong><br /><p>Status: OPEN</p><p>
+Any documentation for the library.
+</p></li><li><strong>Other</strong><br /><p>Status: OPEN</p><p>
+Matrices, Paths, Enumerable Metafile support, plus anything else I've
+forgotten!
+</p></li></ul><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Using GDI Plus</a>&#160;.&#160;GDI+ Wrapper</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 11 May 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Using_GDI_Plus/GDIPlus_Helper/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:47 GMT -->
+</html>

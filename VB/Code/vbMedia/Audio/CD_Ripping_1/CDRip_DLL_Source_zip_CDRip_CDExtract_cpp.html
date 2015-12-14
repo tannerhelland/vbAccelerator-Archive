@@ -1,0 +1,971 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_1/CDRip_DLL_Source_zip_CDRip_CDExtract_cpp.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: CDRip_CDExtract.cpp</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: CDRip_CDExtract.cpp" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" /><link rel="contents" href="CDRip_DLL_Source.html" /><link rel="meta" type="application/rdf+xml" href="CDRip%20DLL%20Source.html" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">CD Ripping in VB Part 1</a>&#160;.&#160;<a href="CDRip_DLL_Source.html">CDRip DLL Source</a>&#160;.&#160;CDRip_CDExtract.cpp</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="CDRip_DLL_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />CDRip DLL Source</a> (87K)</p><p class="nav"><a href="CDRip_DLL.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />CDRip DLL</a> (84K)</p><p /><p class="nav"><a href="VB5_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 CD Ripper</a> (103K)</p><p /><p class="nav"><a href="VB6_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 CD Ripper</a> (99K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:15102</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=15102&amp;type=Zip&amp;title=CDRip%20DLL%20Source%2Ezip%5FCDRip%5FCDExtract">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />6 May 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14896">CDEx</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3489">CD Track Listing Using freedb.org</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: CDRip_CDExtract.cpp</h1><p>This file is part of the download <a href="CDRip_DLL_Source.html">CDRip DLL Source</a>, which is described in the article <a href="article.html">CD Ripping in VB Part 1</a>.</p><pre>/*
+** Copyright (C) 1999 Albert L. Faber
+**  
+** This program is free software; you can redistribute it and/or modify
+** it under the terms of the GNU General Public License as published by
+** the Free Software Foundation; either version 2 of the License, or
+** (at your option) any later version.
+** 
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+** 
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software 
+** Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+*/
+
+#include "StdAfx.h"
+#include &lt;Stdio.h&gt;
+#include &lt;Stdlib.h&gt;
+#include "vector"
+#include "CDRip.h"
+
+using namespace std ;
+
+#include "CDExtract.h"
+#include "AspiDebug.h"
+#include &lt;math.h&gt;
+
+static BOOL g_bParanoiaJitterErrors = FALSE;
+
+
+
+SENSEKEY   g_SenseKey;
+
+
+// CONSTRUCTOR
+CCDExtract::CCDExtract()
+:CAspiCD()
+{
+   m_nPeakValue         = 0;
+   m_pbtReadBuffer         = NULL;
+   m_pbtOverlapBuffer      = NULL;
+   m_pbtReadBufferCompare   = NULL;
+   m_nBeginSector         = 0;
+   m_nEndSector         = 0;
+   m_nJitterPos         = 50;
+   m_nJitterErrors         = 0;
+   m_lSector            = 0;
+   m_dwBytesToDo         = 0;
+
+   m_pParanoia            = NULL;
+   m_pParanoiaDrive      = NULL;
+
+   m_nCurrentSpeed         = 0;
+   m_nLastSpeedAdjust      = -1;
+
+   m_pbAbort            = NULL;
+}
+
+
+// DESRUCTOR
+CCDExtract::~CCDExtract()
+{
+   // de-allocate memory buffers
+   delete [] m_pbtReadBuffer; m_pbtReadBuffer=NULL;
+
+   // de-allocate Multiple read memory buffers
+   delete [] m_pbtReadBufferCompare;m_pbtReadBufferCompare=NULL;
+
+   // de-allocate memory buffers
+   delete [] m_pbtOverlapBuffer; m_pbtOverlapBuffer=NULL;
+
+   delete m_pParanoiaDrive;
+   if ( m_pParanoia  ) paranoia_free( m_pParanoia );
+
+   m_pParanoia = NULL;
+   m_pParanoiaDrive = NULL;
+
+}
+
+BOOL CCDExtract::SetupTrackExtract(int nBeginSector,int nEndSector)
+{
+   DebugPrintf("Entering CCDExtract::SetupTrackExtract");
+
+   // Reset current sector
+   m_lSector=0;
+
+
+   m_nCurrentSpeed         = GetSpeed();
+   m_nLastSpeedAdjust      = -1;
+
+   // Allocate memory for a read buffers
+   m_pbtReadBuffer=new BYTE[GetNumReadSectors() * CB_CDDASECTOR];
+
+   // Allocate memory for multi read buffers 
+   m_pbtReadBufferCompare=new BYTE[GetNumReadSectors() * CB_CDDASECTOR];
+
+   // Allocate memory for the two read buffers
+   if (GetNumCompareSectors()&gt;0)
+      m_pbtOverlapBuffer=new BYTE[GetNumCompareSectors() * CB_CDDASECTOR];
+   else
+      m_pbtOverlapBuffer=NULL;
+
+   // Rip at leat 10 sectors
+   if (nBeginSector+10&gt;nEndSector)
+      nEndSector=nBeginSector+10;
+
+   // Set starting point
+   m_nBeginSector=max((long)nBeginSector+(long)GetOffsetStart(),0);
+
+   // Set end point
+   m_nEndSector=(long)nEndSector+(long)GetOffsetEnd();
+
+
+   // Call to enable CDDA (needed for certain drives)
+   EnableCdda(TRUE);
+
+   // Don't allow a CD change while recording
+   PreventMediaRemoval (TRUE);
+
+   SetScsiTimeOut(10);
+   int   nTimeout=GetScsiTimeOut();
+
+   DebugPrintf("Timeout is set to %d",nTimeout);
+
+
+   // Clear number of jitter errors
+   m_nJitterErrors=0;
+
+   // Clear peak value
+   m_nPeakValue=0;
+
+   // Set First Read = TRUE
+   m_bFirstRead=TRUE;
+   
+
+   m_dwBytesToDo=CB_CDDASECTOR*(m_nEndSector-m_nBeginSector);
+
+   DebugPrintf("Leaving CCDExtract::SetupTrackExtract");
+
+   return TRUE;
+}
+
+
+BOOL CCDExtract::SetupTrackExtractParanoia( int nBeginSector,int nEndSector )
+{
+   DebugPrintf("Entering CCDExtract::SetupTrackExtractParanoia");
+
+   if (m_pParanoia == NULL) {
+      // first time -&gt; allocate paranoia structure 
+      m_pParanoiaDrive = new cdrom_drive;
+      m_pParanoiaDrive-&gt;cdr = this;
+      m_pParanoiaDrive-&gt;nsectors = GetNumReadSectors();
+      m_pParanoia = paranoia_init( m_pParanoiaDrive );
+
+   }
+
+   int   nParanoiaMode = PARANOIA_MODE_FULL ^ PARANOIA_MODE_NEVERSKIP;
+
+
+   switch ( GetParanoiaMode() )
+   {
+      case 0:
+          nParanoiaMode = PARANOIA_MODE_OVERLAP;
+      break;
+      case 1:
+          nParanoiaMode &amp;= ~PARANOIA_MODE_VERIFY;
+      break;
+      case 2:
+          nParanoiaMode &amp;= ~( PARANOIA_MODE_SCRATCH | PARANOIA_MODE_REPAIR );
+      break;
+      case 3:
+         // use default setting
+      break;
+      default:
+         ASSERT( FALSE );
+      break;
+   }   
+
+   paranoia_modeset( m_pParanoia, nParanoiaMode );
+
+
+   // Reset current sector
+   m_lSector=0;
+
+   // Allocate memory for a read buffers
+   m_pbtReadBuffer=new BYTE[ GetNumReadSectors() * CB_CDDASECTOR ];
+
+   // Allocate memory for multi read buffers 
+   m_pbtReadBufferCompare=new BYTE[ GetNumReadSectors() * CB_CDDASECTOR ];
+
+   // Allocate memory for the two read buffers
+   if ( GetNumCompareSectors()&gt;0 )
+   {
+      m_pbtOverlapBuffer=new BYTE[ GetNumCompareSectors() * CB_CDDASECTOR ];
+   }
+   else
+   {
+      m_pbtOverlapBuffer=NULL;
+   }
+
+   // Rip at leat 10 sectors
+   if ( nBeginSector + 10 &gt; nEndSector )
+   {
+      nEndSector = nBeginSector+10;
+   }
+
+   // Set starting point
+   m_nBeginSector = max((long)nBeginSector+(long)GetOffsetStart(),0);
+
+   // Set end point
+   m_nEndSector = (long)nEndSector + (long)GetOffsetEnd();
+
+   m_lSector = m_nBeginSector;
+
+   paranoia_set_range( m_pParanoia, m_nBeginSector, m_nEndSector - 1  );
+
+
+   // Call to enable CDDA (needed for certain drives
+   EnableCdda(TRUE);
+
+   // Don't allow a CD change while recording
+   PreventMediaRemoval (TRUE);
+
+   SetScsiTimeOut(10);
+   int   nTimeout=GetScsiTimeOut();
+
+   DebugPrintf("Timeout is set to %d",nTimeout);
+
+
+   // Clear number of jitter errors
+   m_nJitterErrors=0;
+
+   // Clear peak value
+   m_nPeakValue=0;
+
+   // Set First Read = TRUE
+   m_bFirstRead=TRUE;
+   
+
+   m_dwBytesToDo = CB_CDDASECTOR * ( m_nEndSector - m_nBeginSector );
+
+   DebugPrintf("Leaving CCDExtract::SetupTrackExtractParanoia");
+
+   return TRUE;
+}
+
+
+BOOL CCDExtract::EndTrackExtract()
+{
+   DebugPrintf("Entering CCDExtract::EndTrackExtract");
+
+   // de-allocate memory buffers
+   delete [] m_pbtReadBuffer; m_pbtReadBuffer=NULL;
+   delete [] m_pbtReadBufferCompare; m_pbtReadBufferCompare = NULL;
+
+   // de-allocate memory buffers
+   delete [] m_pbtOverlapBuffer; m_pbtOverlapBuffer=NULL;
+
+   delete m_pParanoiaDrive;
+   if ( m_pParanoia  )
+   {
+      paranoia_free( m_pParanoia );
+      m_pParanoia = NULL;
+   }
+
+   m_pParanoia = NULL;
+   m_pParanoiaDrive = NULL;
+
+   // Disable CDDA (needed for certain drives)
+   EnableCdda( FALSE );
+
+   // Allow a CD removal again
+   PreventMediaRemoval( FALSE );
+
+
+   m_pbAbort = NULL;
+
+   DebugPrintf("Leaving CCDExtract::EndTrackExtract");
+   return FALSE;
+}
+
+
+
+// now, figure out how many blocks to keep (jitter control) 
+//  |-------- previous --------|                            
+//                         |----------- buffer --------|    
+//  we need to match the end of previous and start of buffer
+//  so we do a match, and compute how many bytes of overlap 
+//  to skip (bytes_to_skip)                                 
+
+DWORD CCDExtract::CorrectJitter(BYTE* pbtOverlapPtr,BYTE* pbtReadPtr,DWORD
+ dwBytesRead,BOOL&amp; bJitterError)
+{
+   DebugPrintf("Entering CCDExtract::CorrectJitter");
+
+   BOOL   bFound = FALSE;
+   int      nOffset=0;
+   int    nCompareBytes=(int)GetNumCompareSectors()*(int)CB_CDDASECTOR;
+   int     
+    nMaxByteCompare=min(2*(int)GetNumOverlapSectors()*(int)CB_CDDASECTOR,dwBytes
+   Read)-(int)nCompareBytes;
+   int      nStartCompare=nMaxByteCompare/2;
+   int    nSkipBytes=nStartCompare;
+
+   BYTE*   pbtLCmp=pbtReadPtr+nStartCompare;
+   BYTE*   pbtHCmp=pbtReadPtr+nStartCompare;
+
+   bJitterError=FALSE;
+
+   if (pbtOverlapPtr==NULL)
+   {
+      DebugPrintf("Leaving CCDExtract::CorrectJitter, pbtOverlapPtr=NULL");
+      return 0;
+   }
+   if (pbtReadPtr==NULL)
+   {
+      DebugPrintf("Leaving CCDExtract::CorrectJitter, pbtReadPtr==NULL");
+      return 0;
+   }
+   if (dwBytesRead==0)
+   {
+      DebugPrintf("Leaving CCDExtract::CorrectJitter, dwBytesRead==0");
+      return 0;
+   }
+   if (nMaxByteCompare&lt;=0)
+   {
+      DebugPrintf("Leaving CCDExtract::CorrectJitter, nMaxByteCompare&lt;=0");
+      return 0;
+   }
+
+   for (nOffset = 0; nOffset&lt;nStartCompare; nOffset+=4,pbtLCmp-=4,pbtHCmp+=4) 
+   {
+      if (memcmp( pbtOverlapPtr, pbtLCmp,nCompareBytes) == 0) 
+      {
+         nSkipBytes= nStartCompare-nOffset+nCompareBytes;
+         bFound = TRUE;
+         break;
+      }
+      if (memcmp( pbtOverlapPtr, pbtHCmp,nCompareBytes) == 0) 
+      {
+         nSkipBytes= nStartCompare+nOffset+nCompareBytes;
+         bFound = TRUE;
+         break;
+      }
+
+   }
+
+   if (!bFound &amp;&amp; dwBytesRead&gt;nCompareBytes) 
+   {
+      bJitterError=TRUE;
+      m_nJitterErrors++;
+      DebugPrintf("Detected a jitter error in CCDExtract");
+   }
+
+   if (nMaxByteCompare)
+      m_nJitterPos=(nSkipBytes-nCompareBytes)*100/nMaxByteCompare;
+   else
+      m_nJitterPos=50;
+
+   ASSERT( nSkipBytes&lt;dwBytesRead);
+   ASSERT( nSkipBytes&gt;=0);
+   
+   if (nSkipBytes&lt;0)
+      nSkipBytes=0;
+   if (nSkipBytes&gt;=dwBytesRead)
+      nSkipBytes=dwBytesRead-1;
+
+   DebugPrintf("Entering CCDExtract::CorrectJitter with nSkipBytes=%5d
+    JitterPos=%5d",nSkipBytes,m_nJitterPos);
+   return nSkipBytes;
+
+/*
+   if (!bFound) 
+   {
+      // Try using a more advanced jitter correction!!
+      // Find max correlation
+      nOffset=CB_CDDASECTOR*((nORD)GetNumOverlapSectors()-(nORD)GetNumCompareSec
+      tors());
+      pbtLCmp=m_pbtReadBuffer+nOffset;
+      pbtHCmp=m_pbtReadBuffer+nOffset;
+
+      nORD   nMaxCorrPos=0;
+      double   dMinDiff=1.0E99;
+
+      // Look backwards
+      for (i = 0; i &lt; nOffset; i+=4) 
+      {
+         double dDiff=0.0;
+         int j;
+
+         for (j=0;j&lt;CB_CDDASECTOR * GetNumCompareSectors();j++)
+         {
+            dDiff+=fabs(m_pbtOverlapBuffer[j]-pbtLCmp[j]);
+         }
+
+         if (dDiff&lt;dMinDiff)
+         {
+            dMinDiff=dDiff;
+            nBytesToSkip=nOffset-i + CB_CDDASECTOR * GetNumCompareSectors();
+         }
+
+
+         dDiff=0.0;
+
+         for (j=0;j&lt;CB_CDDASECTOR * GetNumCompareSectors();j++)
+         {
+            dDiff+=fabs(m_pbtOverlapBuffer[j]-pbtHCmp[j]);
+         }
+         if (dDiff&lt;dMinDiff)
+         {
+            dMinDiff=dDiff;
+            nBytesToSkip=nOffset+i + CB_CDDASECTOR * GetNumCompareSectors();
+         }
+
+         pbtLCmp-=4;
+         pbtHCmp+=4;
+      }
+
+      bJitterError=TRUE;
+      nBytesToSkip=nOffset;
+      //AfxMessageBox(" Jitter correction failed, increase the Read Overlap
+       value in the configure dialog box");
+   }
+*/
+/*
+#ifdef DEBUG_VERBOSE
+   CString strTmp;
+   strTmp.Format("Jitter Control: matched overlap %d , nominal value %d bytes
+    \n ",nBytesToSkip-CB_CDDASECTOR * GetNumCompareSectors(), CB_CDDASECTOR *
+    (GetNumOverlapSectors()-GetNumCompareSectors()));
+   DebugPrintf(strTmp);
+#endif
+   return nBytesToSkip ;
+*/
+}
+
+
+
+static char *callback_strings[15]={
+   "wrote",
+    "finished",
+   "read",
+   "verify",
+   "jitter",
+   "correction",
+   "scratch",
+   "scratch repair",
+   "skip",
+   "drift",
+   "backoff",
+   "overlap",
+   "dropped",
+   "duped",
+   "transport error"
+};
+
+
+void CCDExtract::paranoiaCallback( long inpos , int function )
+{
+   DebugPrintf("Callback sector %08d code %d string %s \n", inpos/2352 ,
+    function, (function&gt;=-2&amp;&amp;function&lt;=13?callback_strings[function+2]:"") );
+   
+   switch ( function )
+   {
+      case PARANOIA_CB_SKIP:
+         g_bParanoiaJitterErrors = TRUE;
+      break;
+   }
+
+}
+
+
+CDEX_ERR CCDExtract::RipChunkParanoia( BYTE* pbtStream, LONG* pNumBytes, BOOL&amp;
+ bAbort )
+{
+   *pNumBytes = 0;
+
+   m_pbAbort = &amp;bAbort;
+   g_bParanoiaJitterErrors = FALSE;
+
+
+   if ( 0 == m_dwBytesToDo  )
+   {
+      SetPercentCompleted( 100 );
+      return CDEX_RIPPING_DONE;
+   }
+
+   if (m_bFirstRead)
+   {
+      // Get starting sector which has to be copied
+      m_lSector = m_nBeginSector;
+
+      SetCDSpeed();
+
+      // Spin up the CD Rom if necessary
+      DWORD dwStart=::GetTickCount();
+      while ( (::GetTickCount()-dwStart)&lt;(DWORD)GetSpinUpTime()*1000)
+      {
+         // Read cd rom sector to Spin up the CD-ROM
+         DebugPrintf("Reading Paranoia sector %d", m_lSector );
+
+         ReadCdRomSector( m_pbtReadBuffer, m_lSector,1, FALSE );
+      }
+
+      m_bFirstRead = FALSE;
+   }
+
+
+   if ( m_pParanoia )
+   {
+      int nBlock = 0;
+
+      DebugPrintf("Current, %8d Start %8d End %8d dwByteToDo %8d \n",
+            m_lSector,
+            m_nBeginSector,
+            m_nEndSector,
+            m_dwBytesToDo );
+
+      for ( nBlock = 0; nBlock &lt; GetNumReadSectors(); nBlock++ )
+      {
+         // function return only one sector
+         short* buf = paranoia_read( m_pParanoia,
+          &amp;CCDExtract::paranoiaCallback, &amp;bAbort );
+
+         if ( NULL == buf )
+            return CDEX_ERROR;
+
+         *pNumBytes+= 2352;
+         memcpy( pbtStream + nBlock * 2352, buf, 2352 );
+
+
+         m_dwBytesToDo -= min( m_dwBytesToDo, 2352 );
+
+         if ( 0 == m_dwBytesToDo  )
+         {
+            SetPercentCompleted( 100 );
+            return CDEX_OK;
+         }
+      }
+
+      if ( g_bParanoiaJitterErrors )
+      {
+         m_nJitterErrors++;
+      }
+
+      m_lSector+= GetNumReadSectors();
+      int nSectorsToDo = (m_nEndSector - m_lSector);
+
+      SetPercentCompleted((int)( 100.0- (DOUBLE)nSectorsToDo * 100.0/ (
+       m_nEndSector - m_nBeginSector ) ) );
+
+      // Calculate Peak Value
+      short* psValue=(short*)(pbtStream);
+
+      // Determine peak value
+      for ( DWORD dwSample=0;dwSample&lt; *pNumBytes/2; dwSample++ )
+      {
+         m_nPeakValue=max( abs( psValue[dwSample] ),m_nPeakValue );
+      }
+
+      if ( g_bParanoiaJitterErrors )
+         return CDEX_JITTER_ERROR;
+
+      return CDEX_OK;
+   }
+
+   return CDEX_ERROR;
+}
+
+
+CDEX_ERR CCDExtract::RipChunk( BYTE* pbtStream, LONG* pNumBytes, BOOL&amp; bAbort )
+{
+   static LONG      lSectorEnd;
+   static LONG      nSectorsToDo;
+   static DWORD   dwSkipBytes=0;
+   static DWORD   dwSkipBytesCompare=0;
+   static DWORD   dwBytes=0;
+   BOOL         bJitterCorr=FALSE;
+   LONG         lOverlapSamples=GetNumOverlapSectors();
+
+
+   DebugPrintf( "Entering CCDExtract::RipChunk" );
+
+   if ( GetJitterCorrection() &amp;&amp; ( GetNumOverlapSectors()&gt;0 ) )
+   {
+      bJitterCorr=TRUE;
+   }
+   else
+   {
+      lOverlapSamples=0;
+   }
+
+
+   if ( NULL == pNumBytes )
+   {
+      ASSERT( FALSE );
+      return CDEX_ERROR;
+   }
+   else
+   {
+      *pNumBytes=0;
+   }
+
+
+   if ( NULL == pbtStream || NULL == m_pbtReadBuffer )
+   {
+      ASSERT( FALSE );
+      return CDEX_ERROR;
+   }
+
+   if ( m_bFirstRead )
+   {
+      // Get starting sector which has to be copied
+      m_lSector = m_nBeginSector;
+
+      // Get last sector which has to be copied
+      lSectorEnd = m_nEndSector;
+
+      // calculate # of sectors to read
+      nSectorsToDo = (m_nEndSector - m_lSector);
+
+      // Set the CD ripping speed
+      SetCDSpeed();
+
+      // Spin up the CD Rom if necessary
+      DWORD dwStart=::GetTickCount();
+      while ( (::GetTickCount()-dwStart)&lt;(DWORD)GetSpinUpTime()*1000)
+      {
+         // Read cd rom sector to Spin up the CD-ROM
+         ReadCdRomSector( m_pbtReadBuffer, m_lSector, 1, FALSE );
+      }
+
+   }
+
+   // Loop through all the tracks, maybe something for a user thread in the
+    near future
+   // if (nSectorsToDo &lt;=GetNumOverlapSectors()) 
+   if ( 0 == m_dwBytesToDo )
+   {
+      SetPercentCompleted( 100 );
+      return CDEX_RIPPING_DONE;
+   }
+
+   // Set recording percentage complete
+   if ( (m_nEndSector - m_nBeginSector) != 0 )
+   {
+      SetPercentCompleted( (int)( 100.0 -(DOUBLE)nSectorsToDo * 100.0 / (
+       m_nEndSector - m_nBeginSector ) ) );
+   }
+   else
+   {
+      SetPercentCompleted( 0 );
+   }
+
+   BYTE* pbtWritePtr=NULL;
+   DWORD dwBufferOffset = GetNumCompareSectors() * CB_CDDASECTOR;
+   BOOL   bJitterError=FALSE;
+
+   LONG nSectorsToRead= min( nSectorsToDo, GetNumReadSectors() );
+
+   // Handle last sectors correctly
+   // FIXME, CAN ALL DRIVERS HANDLE READING BEYOND THE LEAD LOCATION ?
+   if ( nSectorsToRead &lt;= GetNumOverlapSectors() )
+   {
+      // In this situation, we have to read the overlap area + the amount of
+       sectors
+      // that still have to be done.
+      nSectorsToRead= min( GetNumOverlapSectors() +nSectorsToDo,
+       GetNumReadSectors() );
+   }
+
+   DebugPrintf( "nSectorsToDo=%d nSectorsToRead=%d
+    m_lSector=%d",nSectorsToDo,nSectorsToRead,m_lSector );
+
+   // We are reading only m_nReadSector*CB_CDDASECTOR bytes
+   DWORD dwBytesRead= nSectorsToRead * CB_CDDASECTOR;
+
+   // Should we do the multiple reads
+   BOOL bJitterErrorCompare = FALSE; 
+   BOOL bReadMatch = FALSE;
+
+   BOOL doMultiReads = FALSE;
+
+#if 0
+   BOOL doMultiReads = TRUE;
+
+   if ((GetMultiReadEnable() == FALSE) ||
+      (GetMultiRead() &lt;= 0) ||
+      ((GetMultiReadFirstOnly() == TRUE) &amp;&amp; (!m_bFirstRead)))
+   {
+      doMultiReads = FALSE;
+   }
+#endif
+
+   // Read Multiple times and continue when match
+   while ( FALSE == bReadMatch ) 
+   {      
+      // Default is to pass, will mark fail if found
+      bReadMatch = TRUE;
+
+      // Normal Read
+      ReadChunk(nSectorsToRead, lOverlapSamples, bJitterCorr, dwBytesRead,
+       bJitterError, dwSkipBytes, m_pbtReadBuffer);
+      
+      // Read the compare blocks
+      for (int rereads = 0; (bReadMatch) &amp;&amp; (doMultiReads) &amp;&amp; (rereads &lt;
+       GetMultiRead()) ; rereads++) 
+      {
+
+         // Read the block
+         ReadChunk(nSectorsToRead, lOverlapSamples, bJitterCorr, dwBytesRead,
+          bJitterErrorCompare, dwSkipBytesCompare, m_pbtReadBufferCompare);
+
+         // Compare
+         for (int compareIndex = 0; (compareIndex +
+          max(dwSkipBytes,dwSkipBytesCompare))  &lt; dwBytesRead; compareIndex++)
+         {            
+            if (
+               m_pbtReadBuffer[dwSkipBytes + compareIndex] != 
+               m_pbtReadBufferCompare[dwSkipBytesCompare + compareIndex]
+               )
+            {
+            bReadMatch = FALSE;
+            continue;
+            }
+         }
+      }
+
+   }
+
+   // If we did the multi read we need to copy the last block so the parameters
+    that were
+   // set in the read, like m_nJitterPos and m_nJitterErrors, will apply to the
+    current
+   // data
+   if ( doMultiReads == TRUE )
+   {
+      memcpy(m_pbtReadBuffer,m_pbtReadBufferCompare,dwBytesRead);   
+   }
+
+   // Calculate Peak Value
+   short* psValue=(short*)(m_pbtReadBuffer);
+
+   // Determine peak value
+   for ( DWORD dwSample=0; dwSample&lt;dwBytesRead/2; dwSample++ )
+   {
+      m_nPeakValue=max( abs( psValue[ dwSample ] ),m_nPeakValue );
+   }
+
+   // Set beginning of 
+   pbtWritePtr = m_pbtReadBuffer + dwSkipBytes;
+
+
+   // Copy the compare region upfront 
+   if ( GetNumCompareSectors() &gt; 0 &amp;&amp; m_pbtOverlapBuffer )
+   {
+      int nBytesToCopy=GetNumCompareSectors() * CB_CDDASECTOR;
+      int nCopyOffset=dwBytesRead-nBytesToCopy;
+
+      if (nCopyOffset&lt;0)
+      {
+         nCopyOffset=0;
+         nBytesToCopy=dwBytesRead;
+      }
+
+      // Some debug logging, error prone code in CDex 1.20 beta 7!
+      DebugPrintf("Copy overlap buffer, nCopyOffset=%d
+       nBytesToCopy=%d",nCopyOffset,nBytesToCopy);
+
+      memcpy(m_pbtOverlapBuffer,m_pbtReadBuffer+nCopyOffset,nBytesToCopy);
+   }
+
+   // Set number of output bytes
+   *pNumBytes=min( dwBytesRead - dwSkipBytes, m_dwBytesToDo );
+
+   // Clip in case of last sector
+
+
+   // Debug information
+   DebugPrintf("copy data dwBytesRead=%d pNumBytes=%d
+    dwSkipBytes=%d",dwBytesRead,*pNumBytes,dwSkipBytes);
+
+   // Copy byte stream
+   memcpy( pbtStream, pbtWritePtr, *pNumBytes );
+
+   // Increase the sector offset
+   m_lSector+=(nSectorsToRead-lOverlapSamples );
+
+
+   // Lower the number of sectors still to do
+   nSectorsToDo-= ( nSectorsToRead - lOverlapSamples );
+
+   // Lower number of bytes todo
+   m_dwBytesToDo-= *pNumBytes;
+
+   DebugPrintf("Leaving CCDExtract::RipChunk");
+
+   if ( bJitterError )
+      return CDEX_JITTER_ERROR;
+
+   // And close CD device
+   return CDEX_OK;
+}
+
+void CCDExtract::GetLastJitterErrorPosition(DWORD&amp; dwStartSector,DWORD&amp;
+ dwEndSector)
+{
+   dwStartSector=m_lSector-(GetNumReadSectors()-GetNumOverlapSectors());
+   dwEndSector=m_lSector;
+}
+
+
+void CCDExtract::ReadChunk(const long nSectorsToRead, const long
+ lOverlapSamples, const BOOL bJitterCorr, const DWORD dwBytesRead, BOOL
+ &amp;bJitterError, DWORD &amp;dwSkipBytes, PBYTE readBuffer)
+{
+   // Read Chunk from CD-ROM
+   if (((ReadCdRomSector(readBuffer,m_lSector,nSectorsToRead, FALSE ) )==FALSE)
+    &amp;&amp;
+      (GetAspiRetries()&gt;0)
+      )
+   {
+      // If there was an error slow down the CDROM and try again
+      ::Sleep(1000);
+      SetCDSpeed( 1 );
+      DebugPrintf("Switch to lower Read Speed\n");
+      
+      // Read previous tracks first to sync up again
+      for (int nRetro=0;nRetro&lt;GetAspiRetries();nRetro++)
+      {
+         // Reduce READ speed to 1
+         SetCDSpeed( 1 );
+         if ( FALSE == ReadCdRomSector(readBuffer,150+nRetro*10,10, FALSE ) )
+         {
+            DebugPrintf("ReadCdRomSector not OK in retry: %d\n",nRetro);
+            ::Sleep(GetAspiTimeOut());
+         }
+
+      }
+
+      // Try it again
+      ReadCdRomSector( readBuffer, m_lSector, nSectorsToRead, FALSE );
+   }
+
+   if ( !m_bFirstRead &amp;&amp; bJitterCorr)
+   {
+      // Perform Jitter Correction
+      dwSkipBytes = CorrectJitter( m_pbtOverlapBuffer, readBuffer, dwBytesRead,
+       bJitterError );
+   }
+   else
+   {
+      dwSkipBytes=0;
+      m_bFirstRead=FALSE; 
+   }
+
+   return;
+
+}
+
+// Interface for Monty's paranoia library:
+// return the number of sectors?
+
+long cdda_read(cdrom_drive *d, void *buffer, long beginsector, long sectors)
+{
+   int nRetries = 0;
+
+   CCDExtract *cdr = (CCDExtract*)d-&gt;cdr;
+
+   // when 100 sectors have be read without a problem, revert to default speed
+   if (  ( ( beginsector - cdr-&gt;GetLastSectorSpeedAdjusted() ) &gt; 500  ) &amp;&amp;
+         (-1 != cdr-&gt;GetLastSectorSpeedAdjusted() ) )
+   {
+      if ( cdr-&gt;GetCurrentSpeed() != cdr-&gt;GetSpeed()  )
+      {
+         cdr-&gt;SetCDSpeed(  );
+         cdr-&gt;GetLastSectorSpeedAdjusted( -1 );
+      }
+
+   }
+
+   if ( ( FALSE == cdr-&gt;ReadCdRomSector( (BYTE*)buffer, beginsector, sectors,
+    FALSE ) ) 
+         &amp;&amp; ( nRetries&lt; 10 ) )
+   {
+      // read error, reduce spead if possible
+      int nSpeed = cdr-&gt;GetCurrentSpeed();
+
+      if ( nSpeed &gt; 1)
+      {
+         ::Sleep(1000);
+         cdr-&gt;GetLastSectorSpeedAdjusted( beginsector );
+         cdr-&gt;SetCDSpeed( 1 );
+
+      }
+
+      // do a dummy read at the begin sector to flush cache buffer
+      cdr-&gt;ReadCdRomSector( (BYTE*)buffer, cdr-&gt;GetBeginSector(), sectors,
+       FALSE );
+
+//      nRetries++;
+      sectors = -1;
+   }
+
+   /* return -999 incase the abort button has been pressed */
+   if ( cdr-&gt;GetAbort() )
+   {
+      sectors = -999;
+   }
+   
+  return sectors;
+}
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">CD Ripping in VB Part 1</a>&#160;.&#160;<a href="CDRip_DLL_Source.html">CDRip DLL Source</a>&#160;.&#160;CDRip_CDExtract.cpp</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 12 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_1/CDRip_DLL_Source_zip_CDRip_CDExtract_cpp.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+</html>

@@ -1,0 +1,282 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Change_The_Width_of_Items_in_a_Listbox/ListBoxHScroll_zip_ListBoxHScroll_ListBoxHScrollDemo_CListBoxHScroll_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:19 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: ListBoxHScroll_ListBoxHScrollDemo_CListBoxHScroll.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: ListBoxHScroll_ListBoxHScrollDemo_CListBoxHScroll.cls" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;<a href="article.html">Change The Width of Items in a Listbox</a>&#160;.&#160;<a href="ListBoxHScroll.html">ListBoxHScroll</a>&#160;.&#160;ListBoxHScroll_ListBoxHScrollDemo_CListBoxHScroll.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="ListBoxHScroll.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />ListBoxHScroll</a> (38K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:12855</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12855&amp;type=Zip&amp;title=ListBoxHScroll%2Ezip%5FListBoxHScroll%5FListBoxHScrollDemo%5FCListBoxHScroll">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />5 Sep 2003<br /><p class="update">Added a code example provided by 
+<a href="http://www.10tec.com/">10Tec</a> which automatically
+calculates the required width for items in the ListBox. This
+code can be used to either size the ListBox so the items fit
+without a scroll bar, or to set the ListBox item width precisely
+so the Horizontal scroll bar just covers the longest item.
+Very neat!</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: ListBoxHScroll_ListBoxHScrollDemo_CListBoxHScroll.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "CListBoxHScroll"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Const ITEM_MARGIN = 4
+Private Const CHECKBOX_WIDTH = 14
+
+' --- required API declarations ---
+
+Private Declare Function SendMessageByLong Lib "user32" Alias "SendMessageA" _
+   (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam
+    As Long) As Long
+
+Private Const LB_SETHORIZONTALEXTENT = &amp;H194
+Private Const WM_VSCROLL = &amp;H115
+Private Const SB_BOTTOM = 7
+
+Private Declare Function GetDC Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function ReleaseDC Lib "user32" (ByVal hwnd As Long, ByVal hdc
+ As Long) As Long
+
+Private Declare Function DrawText Lib "user32" Alias "DrawTextA" _
+   (ByVal hdc As Long, ByVal lpStr As String, ByVal nCount As Long, _
+   lpRect As RECT, ByVal wFormat As Long) As Long
+Private Const DT_SINGLELINE = &amp;H20
+Private Const DT_CALCRECT = &amp;H400
+
+Private Type RECT
+   Left As Long
+   Top As Long
+   Right As Long
+   Bottom As Long
+End Type
+
+Private Declare Function SelectObject Lib "gdi32" _
+   (ByVal hdc As Long, ByVal hObject As Long) As Long
+
+Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA" _
+   (ByVal hwnd As Long, ByVal nIndex As Long) As Long
+Private Const GWL_STYLE = (-16)
+Private Const WS_VSCROLL = &amp;H200000
+
+Private Declare Function GetSystemMetrics Lib "user32" (ByVal nIndex As Long)
+ As Long
+Private Const SM_CXVSCROLL = 2
+
+' --- private class variables ---
+Private mvarListBox As ListBox
+Private m_lMaxItemWidth As Long
+Private m_hItemFont As Long
+Private m_ListBoxHwnd As Long
+
+' Call this sub before you will use other methods of this class
+Public Sub Attach(ByRef pListBox As ListBox)
+   Dim FontInt As IFont
+
+   Set mvarListBox = pListBox
+   m_ListBoxHwnd = mvarListBox.hwnd
+   
+   ' Determining the handle of the font used in the specified listbox.
+   ' Using the IFont interface we can retreive the handle of the font
+   ' used in the specified listbox.
+   ' We'll use this handle further when we'll calculate the width of
+   ' listbox items
+   Set FontInt = pListBox.Font
+   m_hItemFont = FontInt.hFont
+End Sub
+
+' The following routine adds a string to a specified list box
+' and displays the horizontal scroll bar in it if required
+Public Sub AddItem(ByRef psItemText As String, Optional ByVal pbScrollBottom As
+ Boolean = True)
+   Dim lItemWidth As Long
+   
+   mvarListBox.AddItem psItemText
+   
+   ' --- calculating the width of the currently added item ---
+   lItemWidth = flGetItemWidth(psItemText)
+   
+   ' --- determining whether we need to display the horizontal scroll bar ---
+   If lItemWidth &gt; m_lMaxItemWidth Then
+      m_lMaxItemWidth = lItemWidth
+      pSetHorExtent
+   End If
+   
+   ' --- scrolling the listbox to be sure that the user see the last item ---
+   If pbScrollBottom Then
+      SendMessageByLong m_ListBoxHwnd, WM_VSCROLL, SB_BOTTOM, 0
+   End If
+End Sub
+
+Public Sub Clear()
+   mvarListBox.Clear
+   m_lMaxItemWidth = 0
+   SendMessageByLong m_ListBoxHwnd, LB_SETHORIZONTALEXTENT, 0, 0
+End Sub
+
+' Use this write-only property to change the caption of a list box item
+Public Property Let List(ByVal piIndex As Integer, psItemText As String)
+   Dim lPrevItemWidth As Long
+   Dim lNewItemWidth As Long
+   
+   lPrevItemWidth = flGetItemWidth(mvarListBox.List(piIndex))
+   mvarListBox.List(piIndex) = psItemText
+   lNewItemWidth = flGetItemWidth(psItemText)
+   
+   If lPrevItemWidth = m_lMaxItemWidth Then
+      If lNewItemWidth &gt; lPrevItemWidth Then
+         m_lMaxItemWidth = lNewItemWidth
+         pSetHorExtent
+      Else
+         RefreshHScroll
+      End If
+   Else
+      If lNewItemWidth &gt; m_lMaxItemWidth Then
+         m_lMaxItemWidth = lNewItemWidth
+         pSetHorExtent
+      End If
+   End If
+End Property
+
+Public Sub pSetHorExtent()
+   SendMessageByLong m_ListBoxHwnd, LB_SETHORIZONTALEXTENT, _
+      m_lMaxItemWidth + ITEM_MARGIN + IIf(mvarListBox.Style =
+       vbListBoxCheckbox, CHECKBOX_WIDTH, 0), 0
+End Sub
+
+Public Sub RemoveItem(ByVal piIndex As Integer)
+   Dim lItemWidth As Long
+   
+   lItemWidth = flGetItemWidth(mvarListBox.List(piIndex))
+   
+   mvarListBox.RemoveItem piIndex
+   
+   If mvarListBox.ListCount = 0 Then
+      m_lMaxItemWidth = 0
+      SendMessageByLong m_ListBoxHwnd, LB_SETHORIZONTALEXTENT, 0, 0
+      Exit Sub
+   End If
+   
+   If lItemWidth = m_lMaxItemWidth Then
+      ' we remove the item with the maximum width
+      ' and must recalculate the maximum width and the
+      ' horizontal extent of our list box
+      RefreshHScroll
+   End If
+End Sub
+
+' recalculates the maximum width for all items and
+' displays the horizontal scroll bar if required
+Public Sub RefreshHScroll()
+   Dim hdc As Long
+   Dim rc As RECT
+   Dim hOldFont As Long
+   Dim i As Integer
+   Dim lItemWidth As Long
+   
+   ' We use the same technique like in the flGetItemWidth function,
+   ' but sligtly optimize it: we don't need to select/deselect the
+   ' required font for each item - we can do it at once outside the cycle
+   hdc = GetDC(m_ListBoxHwnd) ' retrieving HDC for the listbox
+   hOldFont = SelectObject(hdc, m_hItemFont) ' selecting the required font
+   
+   m_lMaxItemWidth = 0
+   For i = 0 To mvarListBox.ListCount - 1
+      DrawText hdc, mvarListBox.List(i), -1, rc, DT_SINGLELINE + DT_CALCRECT
+      lItemWidth = rc.Right - rc.Left
+      If lItemWidth &gt; m_lMaxItemWidth Then
+         m_lMaxItemWidth = lItemWidth
+      End If
+   Next
+   
+   ' restoring the previous font
+   Call SelectObject(hdc, hOldFont)
+   ReleaseDC m_ListBoxHwnd, hdc
+   
+   pSetHorExtent
+End Sub
+
+Private Function flGetItemWidth(psItemText As String)
+   Dim hdc As Long
+   Dim rc As RECT
+   Dim hOldFont As Long
+   
+   hdc = GetDC(m_ListBoxHwnd) ' retrieving HDC for the listbox
+   hOldFont = SelectObject(hdc, m_hItemFont) ' selecting the required font
+   ' if you specify the DT_CALCRECT flag,
+   ' DrawText only Determines the width and height of the rectangle
+   ' required to display the text:
+   DrawText hdc, psItemText, -1, rc, DT_SINGLELINE + DT_CALCRECT
+   flGetItemWidth = rc.Right - rc.Left
+   ' restoring the previous state
+   Call SelectObject(hdc, hOldFont)
+   ReleaseDC m_ListBoxHwnd, hdc
+End Function
+
+' Returns the minimum width of the list box
+' when the horizontal scroll bar disappears
+' NOTE: the return value in pixels
+Public Property Get MinWidthNoHScroll() As Long
+   Dim bHasVScrBar As Boolean
+   
+   bHasVScrBar = GetWindowLong(m_ListBoxHwnd, GWL_STYLE) And WS_VSCROLL
+   
+   MinWidthNoHScroll = m_lMaxItemWidth + IIf(bHasVScrBar,
+    GetSystemMetrics(SM_CXVSCROLL), 0) + _
+      IIf(mvarListBox.Style = vbListBoxCheckbox, CHECKBOX_WIDTH, 0) + _
+      ITEM_MARGIN + 4
+End Property
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;<a href="article.html">Change The Width of Items in a Listbox</a>&#160;.&#160;<a href="ListBoxHScroll.html">ListBoxHScroll</a>&#160;.&#160;ListBoxHScroll_ListBoxHScrollDemo_CListBoxHScroll.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 8 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Change_The_Width_of_Items_in_a_Listbox/ListBoxHScroll_zip_ListBoxHScroll_ListBoxHScrollDemo_CListBoxHScroll_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:19 GMT -->
+</html>

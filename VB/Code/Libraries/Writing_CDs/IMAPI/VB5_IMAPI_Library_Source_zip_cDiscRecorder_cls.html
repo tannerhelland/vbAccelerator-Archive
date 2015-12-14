@@ -1,0 +1,313 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Writing_CDs/IMAPI/VB5_IMAPI_Library_Source_zip_cDiscRecorder_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:41 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cDiscRecorder.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cDiscRecorder.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" /><link rel="contents" href="VB5_IMAPI_Library_Source.html" /><link rel="meta" type="application/rdf+xml" href="VB5%20IMAPI%20Library%20Source.html" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Writing CDs</a>&#160;.&#160;<a href="article.html">Image Mastering API (IMAPI) Library for VB</a>&#160;.&#160;<a href="VB5_IMAPI_Library_Source.html">VB5 IMAPI Library Source</a>&#160;.&#160;cDiscRecorder.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_IMAPI_Library_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IMAPI Library Binary</a> (26K)</p><p class="nav"><a href="VB5_IMAPI_Library_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IMAPI Library Source</a> (74K)</p><p class="nav"><a href="VB5_IMAPI_Properties_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IMAPI Properties Demonstration</a> (31K)</p><p /><p class="nav"><a href="VB6_IMAPI_Library_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IMAPI Library Binary</a> (27K)</p><p class="nav"><a href="VB6_IMAPI_Library_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IMAPI Library Source</a> (74K)</p><p class="nav"><a href="VB6_IMAPI_Properties_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IMAPI Properties Demonstration</a> (30K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:15001</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=15001&amp;type=Zip&amp;title=VB5%20IMAPI%20Library%20Source%2Ezip%5FcDiscRecorder">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />2 Jun 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13463">vbAccelerator TreeView Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14969">Simple Data CD Creation Using ICDBurn</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14976">VB IMAPI (CD Burning) Interfaces (IVBIMAPI.tlb)</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14974">Mapping NT Device Names to Drive Letters and vice-versa</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cDiscRecorder.cls</h1><p>This file is part of the download <a href="VB5_IMAPI_Library_Source.html">VB5 IMAPI Library Source</a>, which is described in the article <a href="article.html">Image Mastering API (IMAPI) Library for VB</a>.</p><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cDiscRecorder"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+Private Const IID_RedbookDiscMaster As String =
+ "E3BC42CD-4E5C-11D3-9144-00104BA11C5E"
+Private Const IID_JolietDiscMaster As String =
+ "E3BC42CE-4E5C-11D3-9144-00104BA11C5E"
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" (lpvDest As
+ Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private m_cRecorder As IVBDiscRecorder
+Private m_cDiscMaster As IVBDiscMaster
+Private m_bSupportsJoliet As Boolean
+Private m_bSupportsRedbook As Boolean
+
+Friend Sub fMarkDead()
+   ClearUp
+End Sub
+
+Friend Sub fInit(cDM As IVBDiscMaster, cDR As IVBDiscRecorder)
+   
+   Set m_cDiscMaster = cDM
+   Set m_cRecorder = cDR
+   
+   ' TODO: Here I'm assuming that this recorder is set as active
+   Dim activeFormatIID As UUID
+   m_cDiscMaster.GetActiveDiscMasterFormat activeFormatIID
+   'Debug.Print UUIDAsString(activeFormatIID)
+
+   Dim formatEnum As IVBEnumDiscMasterFormats
+   m_cDiscMaster.EnumDiscMasterFormats formatEnum
+   formatEnum.AddRef
+
+   Dim hR As Long
+   Dim enumFormatIID As UUID
+   Dim fetched As Long
+   Do
+      hR = formatEnum.Next(1, enumFormatIID, fetched)
+      If Not FAILED(hR) And (fetched &gt; 0) Then
+         If (UUIDAsString(enumFormatIID) = IID_RedbookDiscMaster) Then
+            m_bSupportsJoliet = True
+         ElseIf (UUIDAsString(enumFormatIID) = IID_JolietDiscMaster) Then
+            m_bSupportsRedbook = True
+         End If
+      End If
+   Loop While (fetched &gt; 0) And Not FAILED(hR)
+   formatEnum.Release
+   CopyMemory formatEnum, 0&amp;, 4
+   
+   
+End Sub
+
+Public Property Get VendorId() As String
+Attribute VendorId.VB_Description = "Gets the vendor id for this recorder."
+Dim sVendorId As String
+   getDisplayNames sVendorId
+   VendorId = sVendorId
+End Property
+Public Property Get ProductId() As String
+Attribute ProductId.VB_Description = "Gets the product identifier for this
+ recorder."
+Dim sProductId As String
+   getDisplayNames , sProductId
+   ProductId = sProductId
+End Property
+Public Property Get RevisionId() As String
+Attribute RevisionId.VB_Description = "Gets the revision id of this recorder."
+Dim sRevisionId As String
+   getDisplayNames , , sRevisionId
+   RevisionId = sRevisionId
+End Property
+Public Property Get RecorderType() As RECORDER_TYPES
+Attribute RecorderType.VB_Description = "Gets the type (CDR or CDRW) of this
+ recorder."
+Dim eType As RECORDER_TYPES
+   RecorderType = -1
+   If Not (m_cRecorder Is Nothing) Then
+      m_cRecorder.GetRecorderType eType
+   End If
+   RecorderType = eType
+End Property
+Public Property Get Path() As String
+Attribute Path.VB_Description = "Gets the system path for this drive (typically
+ a SCSI type path)."
+Dim sPath As String
+   If Not (m_cRecorder Is Nothing) Then
+      m_cRecorder.GetPath sPath
+      Path = sPath
+      Exit Property
+   End If
+End Property
+Public Property Get PnPID() As String
+Attribute PnPID.VB_Description = "Gets the Plug and Play ID of this drive."
+Dim sPnpId As String
+   If Not (m_cRecorder Is Nothing) Then
+      m_cRecorder.GetBasePnPID sPnpId
+      PnPID = sPnpId
+      Exit Property
+   End If
+End Property
+Public Property Get RecorderState() As RECORDER_STATE
+Attribute RecorderState.VB_Description = "Gets the state of this recorder."
+Dim eState As RECORDER_STATE
+   RecorderState = -1
+   If Not (m_cRecorder Is Nothing) Then
+      m_cRecorder.GetRecorderState eState
+      RecorderState = eState
+      Exit Property
+   End If
+   '
+   
+End Property
+
+Public Sub EraseCDRW(ByVal bFullErase As Boolean)
+Attribute EraseCDRW.VB_Description = "Erases a CDRW disc on this recorder."
+   If Not (m_cRecorder Is Nothing) Then
+      m_cRecorder.Erase Abs(CLng(bFullErase))
+   End If
+End Sub
+Public Sub Eject()
+Attribute Eject.VB_Description = "Ejects the CD tray for this recorder."
+   If Not (m_cRecorder Is Nothing) Then
+      m_cRecorder.Eject
+   End If
+End Sub
+Public Sub OpenExclusive()
+Attribute OpenExclusive.VB_Description = "Opens the drive for exclusive access.
+  This is needed to query the media within the drive.  Whilst a drive is
+ exclusively open data cannot be burnt to it."
+   If Not (m_cRecorder Is Nothing) Then
+      m_cRecorder.OpenExclusive
+   End If
+End Sub
+   
+
+Public Property Get IsActive() As Boolean
+Attribute IsActive.VB_Description = "Gets whether this disc is active. See also
+ SetAsActive."
+   
+   If Not (m_cDiscMaster Is Nothing) Then
+      If Not (m_cRecorder Is Nothing) Then
+         Dim cRecorder As IVBDiscRecorder
+         m_cDiscMaster.GetActiveDiscRecorder cRecorder
+         cRecorder.AddRef
+         IsActive = (cRecorder Is m_cRecorder)
+         cRecorder.Release
+         CopyMemory cRecorder, 0&amp;, 4
+         Exit Property
+      End If
+   End If
+   
+End Property
+
+Public Sub SetAsActive()
+Attribute SetAsActive.VB_Description = "Sets this recorder as the active
+ recorder on the system."
+   
+   If Not (m_cDiscMaster Is Nothing) Then
+      If Not (m_cRecorder Is Nothing) Then
+         m_cDiscMaster.SetActiveDiscRecorder m_cRecorder
+         Exit Sub
+      End If
+   End If
+   
+End Sub
+
+Public Sub CloseExclusive()
+Attribute CloseExclusive.VB_Description = "Closes the recorder if it was
+ previously opened with OpenExclusive."
+   If Not (m_cRecorder Is Nothing) Then
+      m_cRecorder.Close
+      Exit Sub
+   End If
+End Sub
+
+Public Property Get MediaInfo() As cMediaInfo
+Attribute MediaInfo.VB_Description = "Gets information about the media in the
+ drive (if any).  The disc must be opened using OpenExclusive to call this
+ method."
+   If Not (m_cRecorder Is Nothing) Then
+      Dim cM As New cMediaInfo
+      cM.fInit m_cRecorder
+      Set MediaInfo = cM
+   End If
+End Property
+
+Public Property Get Properties() As cDiscRecorderProperties
+Attribute Properties.VB_Description = "Gets properties associated with this
+ recorder.  The properties will vary depending on which media is present in the
+ drive."
+   If Not (m_cRecorder Is Nothing) Then
+      Dim cP As New cDiscRecorderProperties
+      cP.fInit m_cRecorder
+      Set Properties = cP
+   End If
+End Property
+
+Public Sub SetProperties(cProps As cDiscRecorderProperties)
+   If Not (m_cRecorder Is Nothing) Then
+      Dim cP As cPropertyStorage
+      Set cP = cProps.fPropertyStore
+      cP.fUpdate
+      m_cRecorder.SetRecorderProperties cP.PropertyStorage
+   Else
+   End If
+End Sub
+
+
+Public Property Get SupportsRedbook() As Boolean
+Attribute SupportsRedbook.VB_Description = "Gets whether this recorder supports
+ Redbook (audio) recording."
+   SupportsRedbook = m_bSupportsRedbook
+End Property
+
+Public Property Get SupportsJoliet() As Boolean
+Attribute SupportsJoliet.VB_Description = "Gets whether this recorder supports
+ Joliet (data) recording."
+   SupportsJoliet = m_bSupportsJoliet
+End Property
+
+
+Private Sub getDisplayNames( _
+   Optional ByRef sVendorId As String, _
+   Optional ByRef sProductId As String, _
+   Optional ByRef sRevisionId As String _
+   )
+   If Not (m_cRecorder Is Nothing) Then
+      m_cRecorder.getDisplayNames sVendorId, sProductId, sRevisionId
+   Else
+      '
+   End If
+End Sub
+
+Private Sub ClearUp()
+   If Not m_cRecorder Is Nothing Then
+      On Error Resume Next
+      m_cRecorder.Close
+      On Error GoTo 0
+      Set m_cRecorder = Nothing
+   End If
+   If Not m_cDiscMaster Is Nothing Then
+      Set m_cDiscMaster = Nothing
+   End If
+End Sub
+
+Private Sub Class_Terminate()
+   ClearUp
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Writing CDs</a>&#160;.&#160;<a href="article.html">Image Mastering API (IMAPI) Library for VB</a>&#160;.&#160;<a href="VB5_IMAPI_Library_Source.html">VB5 IMAPI Library Source</a>&#160;.&#160;cDiscRecorder.cls</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 9 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Writing_CDs/IMAPI/VB5_IMAPI_Library_Source_zip_cDiscRecorder_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:41 GMT -->
+</html>

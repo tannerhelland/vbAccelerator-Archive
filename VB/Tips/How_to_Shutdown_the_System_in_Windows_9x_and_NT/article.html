@@ -1,0 +1,335 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/How_to_Shutdown_the_System_in_Windows_9x_and_NT/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:12 GMT -->
+<head>
+
+<title>vbAccelerator - How to Shutdown the System in Windows 9x and NT</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This tip demonstrates how to shutdown, logoff and/or reboot a system. Shutting down a Windows 9x system is very straightforward - just one API call to ExitWindowsEx is all that is required. However, under NT it is a little more tricky. By default, no application processes under Windows NT have the privilege to shut the system down, and the call to ExitWindowsEx simply fails on calling it. The trick to make it work is to call the API AdjustTokenPrivileges function to enable the calling process to shut the system down." /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;How to Shutdown the System in Windows 9x and NT</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:1385</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1385&amp;type=Article&amp;title=How%20to%20Shutdown%20the%20System%20in%20Windows%209x%20and%20NT">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />9 Aug 1998<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>How to Shutdown the System in Windows 9x and NT</h1><p /><p>This tip demonstrates how to shutdown, logoff and/or reboot a system. Shutting down a Windows 9x system is very straightforward - just one API call to <i>ExitWindowsEx</i> is all that is required. However, under NT it is a little more tricky. By default, no application processes under Windows NT have the privilege to shut the system down, and the call to <i>ExitWindowsEx</i> simply fails on calling it. The trick to make it work is to call the API <i>AdjustTokenPrivileges</i> function to enable the calling process to shut the system down.</p><p>Start a new project in VB. Add a new module, then add the following code to it:</p><pre>
+' To Shutdown Windows: 
+Private Declare Function ExitWindowsEx Lib "user32" _
+   (ByVal uFlags As Long, ByVal dwReserved As Long) As Long 
+Private Const ENDSESSION_LOGOFF = &amp;H80000000 
+
+Public Enum EShutDownTypes 
+    [_First] = 0 
+    EWX_LOGOFF = 0 
+    EWX_SHUTDOWN = 1&amp; 
+    EWX_REBOOT = 2&amp; 
+    EWX_FORCE = 4&amp; 
+    EWX_POWEROFF = 8&amp; 
+        EWX_FORCEIFHUNG = 10&amp; ' NT5 only 
+    
+    EWX_RESET = EWX_LOGOFF Or EWX_FORCE Or EWX_REBOOT 
+    [_Last] = &amp;H20&amp; - 1 
+End Enum 
+Public Enum EShutDownErrorBaseConstant 
+    eeSSDErrorBase = vbObjectError Or (1048 + &amp;H210) 
+End Enum 
+
+' To Determine if we are running NT or not: 
+Private Type OSVERSIONINFO 
+    dwOSVersionInfoSize As Long 
+    dwMajorVersion As Long 
+    dwMinorVersion As Long 
+    dwBuildNumber As Long 
+    dwPlatformId As Long 
+    szCSDVersion As String * 128 ' Maintenance string for PSS usage 
+End Type 
+Private Declare Function GetVersionEx Lib "kernel32" _
+    Alias "GetVersionExA" (lpVersionInformation As OSVERSIONINFO) As Long 
+Private Const VER_PLATFORM_WIN32_NT = 2 
+Private Const VER_PLATFORM_WIN32_WINDOWS = 1 
+Private Const VER_PLATFORM_WIN32s = 0 
+
+' To Report API errors: 
+Private Const FORMAT_MESSAGE_ALLOCATE_BUFFER = &amp;H100 
+Private Const FORMAT_MESSAGE_ARGUMENT_ARRAY = &amp;H2000 
+Private Const FORMAT_MESSAGE_FROM_HMODULE = &amp;H800 
+Private Const FORMAT_MESSAGE_FROM_STRING = &amp;H400 
+Private Const FORMAT_MESSAGE_FROM_SYSTEM = &amp;H1000 
+Private Const FORMAT_MESSAGE_IGNORE_INSERTS = &amp;H200 
+Private Const FORMAT_MESSAGE_MAX_WIDTH_MASK = &amp;HFF 
+Private Declare Function FormatMessage Lib "kernel32" _
+    Alias "FormatMessageA" _
+    (ByVal dwFlags As Long, lpSource As Any, _
+    ByVal dwMessageId As Long, ByVal dwLanguageId As Long, _
+    ByVal lpBuffer As String, ByVal nSize As Long, _
+    Arguments As Long) As Long 
+
+
+' ===========================================================
+' NT Only 
+Private Type LARGE_INTEGER 
+    LowPart As Long 
+    HighPart As Long 
+End Type 
+Private Type LUID 
+    LowPart As Long 
+    HighPart As Long 
+End Type 
+Private Type LUID_AND_ATTRIBUTES 
+    pLuid As LUID 
+    Attributes As Long 
+End Type 
+Private Type TOKEN_PRIVILEGES 
+    PrivilegeCount As Long 
+    Privileges(0 To 0) As LUID_AND_ATTRIBUTES 
+End Type 
+Private Declare Function GetCurrentProcess Lib "kernel32" () As Long 
+Private Declare Function OpenProcessToken Lib "advapi32.dll" _
+    (ByVal ProcessHandle As Long, ByVal DesiredAccess As Long, _
+    TokenHandle As Long) As Long 
+Private Declare Function CloseHandle Lib "kernel32" _
+    (ByVal hObject As Long) As Long 
+Private Declare Function GetTokenInformation Lib "advapi32.dll" _
+    (ByVal TokenHandle As Long, TokenInformationClass As Integer, _
+    TokenInformation As Any, ByVal TokenInformationLength As Long, _
+    ReturnLength As Long) As Long 
+Private Declare Function AdjustTokenPrivileges Lib "advapi32.dll" _
+     (ByVal TokenHandle As Long, ByVal DisableAllPrivileges As Long, _
+     NewState As TOKEN_PRIVILEGES, ByVal BufferLength As Long, _
+     PreviousState As TOKEN_PRIVILEGES, ReturnLength As Long) As Long 
+Private Declare Function LookupPrivilegeValue Lib "advapi32.dll" _
+     Alias "LookupPrivilegeValueA" _
+    (ByVal lpSystemName As String, ByVal lpName As String, _
+    lpLuid As LUID) As Long 
+Private Const SE_SHUTDOWN_NAME = "SeShutdownPrivilege" 
+Private Const SE_PRIVILEGE_ENABLED = &amp;H2 
+
+Private Const READ_CONTROL = &amp;H20000 
+Private Const STANDARD_RIGHTS_ALL = &amp;H1F0000 
+Private Const STANDARD_RIGHTS_EXECUTE = (READ_CONTROL) 
+Private Const STANDARD_RIGHTS_READ = (READ_CONTROL) 
+Private Const STANDARD_RIGHTS_REQUIRED = &amp;HF0000 
+Private Const STANDARD_RIGHTS_WRITE = (READ_CONTROL) 
+
+Private Const TOKEN_ASSIGN_PRIMARY = &amp;H1 
+Private Const TOKEN_DUPLICATE = (&amp;H2) 
+Private Const TOKEN_IMPERSONATE = (&amp;H4) 
+Private Const TOKEN_QUERY = (&amp;H8) 
+Private Const TOKEN_QUERY_SOURCE = (&amp;H10) 
+Private Const TOKEN_ADJUST_PRIVILEGES = (&amp;H20) 
+Private Const TOKEN_ADJUST_GROUPS = (&amp;H40) 
+Private Const TOKEN_ADJUST_DEFAULT = (&amp;H80) 
+Private Const TOKEN_ALL_ACCESS = (STANDARD_RIGHTS_REQUIRED Or _ 
+                        TOKEN_ASSIGN_PRIMARY Or _ 
+                        TOKEN_DUPLICATE Or _ 
+                        TOKEN_IMPERSONATE Or _ 
+                        TOKEN_QUERY Or _ 
+                        TOKEN_QUERY_SOURCE Or _ 
+                        TOKEN_ADJUST_PRIVILEGES Or _ 
+                        TOKEN_ADJUST_GROUPS Or _ 
+                        TOKEN_ADJUST_DEFAULT) 
+Private Const TOKEN_READ = (STANDARD_RIGHTS_READ Or _ 
+                        TOKEN_QUERY) 
+Private Const TOKEN_WRITE = (STANDARD_RIGHTS_WRITE Or _ 
+                        TOKEN_ADJUST_PRIVILEGES Or _ 
+                        TOKEN_ADJUST_GROUPS Or _ 
+                        TOKEN_ADJUST_DEFAULT) 
+Private Const TOKEN_EXECUTE = (STANDARD_RIGHTS_EXECUTE) 
+
+Private Const TokenDefaultDacl = 6 
+Private Const TokenGroups = 2 
+Private Const TokenImpersonationLevel = 9 
+Private Const TokenOwner = 4 
+Private Const TokenPrimaryGroup = 5 
+Private Const TokenPrivileges = 3 
+Private Const TokenSource = 7 
+Private Const TokenStatistics = 10 
+Private Const TokenType = 8 
+Private Const TokenUser = 1 
+' ============================================================
+
+Public Function WinError(ByVal lLastDLLError As Long) As String 
+Dim sBuff As String 
+Dim lCount As Long 
+    
+    ' Return the error message associated with LastDLLError: 
+    sBuff = String$(256, 0) 
+    lCount = FormatMessage( _ 
+       FORMAT_MESSAGE_FROM_SYSTEM Or FORMAT_MESSAGE_IGNORE_INSERTS, _ 
+       0, lLastDLLError, 0&amp;, sBuff, Len(sBuff), ByVal 0) 
+    If lCount Then 
+       WinError = Left$(sBuff, lCount) 
+    End If 
+    
+End Function 
+
+Public Function IsNT() As Boolean 
+Static bOnce As Boolean 
+Static bValue As Boolean 
+
+    ' Return whether the system is running NT or not: 
+    If Not (bOnce) Then 
+       Dim tVI As OSVERSIONINFO 
+       tVI.dwOSVersionInfoSize = Len(tVI) 
+       If (GetVersionEx(tVI) &lt;&gt; 0) Then 
+          bValue = (tVI.dwPlatformId = VER_PLATFORM_WIN32_NT) 
+          bOnce = True 
+       End If 
+    End If 
+    IsNT = bValue 
+    
+End Function 
+
+Private Function NTEnableShutDown(ByRef sMsg As String) As Boolean 
+Dim tLUID As LUID 
+Dim hProcess As Long 
+Dim hToken As Long 
+Dim tTP As TOKEN_PRIVILEGES, tTPOld As TOKEN_PRIVILEGES 
+Dim lTpOld As Long 
+Dim lR As Long 
+
+    ' Under NT we must enable the SE_SHUTDOWN_NAME privilege in the 
+    ' process we're trying to shutdown from, otherwise a call to 
+    ' try to shutdown has no effect! 
+
+    ' Find the LUID of the Shutdown privilege token: 
+    lR = LookupPrivilegeValue(vbNullString, SE_SHUTDOWN_NAME, tLUID) 
+    
+    ' If we get it: 
+    If (lR &lt;&gt; 0) Then 
+                
+       ' Get the current process handle: 
+       hProcess = GetCurrentProcess() 
+       If (hProcess &lt;&gt; 0) Then 
+           ' Open the token for adjusting and querying 
+           ' (if we can - user may not have rights): 
+           lR = OpenProcessToken(hProcess, _
+                   TOKEN_ADJUST_PRIVILEGES Or TOKEN_QUERY, hToken) 
+           If (lR &lt;&gt; 0) Then 
+                       
+               ' Ok we can now adjust the shutdown priviledges: 
+               With tTP 
+                   .PrivilegeCount = 1 
+                   With .Privileges(0) 
+                      .Attributes = SE_PRIVILEGE_ENABLED 
+                      .pLuid.HighPart = tLUID.HighPart 
+                      .pLuid.LowPart = tLUID.LowPart 
+                   End With 
+               End With 
+            
+               ' Now allow this process to shutdown the system: 
+               lR = AdjustTokenPrivileges(hToken, 0, tTP, Len(tTP), tTPOld, lTpOld) 
+            
+               If (lR &lt;&gt; 0) Then 
+                  NTEnableShutDown = True 
+               Else 
+                  Err.Raise eeSSDErrorBase + 6, App.EXEName &amp; ".mShutDown", _
+                    "Can't enable shutdown: You do not have the privileges " &amp; _
+                    "to shutdown this system. [" &amp; WinError(Err.LastDllError) &amp; "]" 
+               End If 
+            
+               ' Remember to close the handle when finished with it: 
+               CloseHandle hToken 
+           Else 
+               Err.Raise eeSSDErrorBase + 6, App.EXEName &amp; ".mShutDown", _
+                 "Can't enable shutdown: You do not have the privileges" &amp; _
+                 " to shutdown this system. [" &amp; WinError(Err.LastDllError) &amp; "]" 
+           End If 
+       Else 
+           Err.Raise eeSSDErrorBase + 5, App.EXEName &amp; ".mShutDown", _
+              "Can't enable shutdown: Can't determine the current process. " &amp; _
+              "[" &amp; WinError(Err.LastDllError) &amp; "]" 
+       End If 
+    Else 
+       Err.Raise eeSSDErrorBase + 4, App.EXEName &amp; ".mShutDown", _
+            "Can't enable shutdown: Can't find the SE_SHUTDOWN_NAME privilege value." &amp; _
+            "[" &amp; WinError(Err.LastDllError) &amp; "]" 
+    End If 
+
+End Function 
+
+Public Function ShutdownSystem( _ 
+    Optional ByVal eType As EShutDownTypes = EWX_RESET _ 
+    ) As Boolean 
+Dim lR As Long 
+Dim sMsg As String 
+
+    ' Validate shutdown type: 
+    If (eType &lt; EShutDownTypes.[_First] And eType &gt; EShutDownTypes.[_Last]) Then 
+       Err.Raise eeSSDErrorBase + 7, App.EXEName &amp; ".mShutDown", _
+          "Invalid parameter to ShutdownSystem: " &amp; eType, vbInformation 
+       Exit Function 
+    End If 
+
+    ' Make sure we have enabled the privilege to shutdown 
+    ' for this process if we're running NT: 
+    If (IsNT) Then 
+       If Not (NTEnableShutDown(sMsg)) Then 
+          Exit Function 
+       End If 
+    End If 
+
+    ' This is the code to shut down 
+    lR = ExitWindowsEx(eType, &amp;HFFFFFFFF) 
+    If (lR = 0) Then 
+       Err.Raise eeSSDErrorBase + 3, App.EXEName &amp; ".mShutDown", _
+           "ShutdownSystem failed: " &amp; WinError(Err.LastDllError) 
+    Else 
+       ' Remember that shutdown will proceed on another 
+       ' thread to this one, so code may continue to 
+       ' execute after this. 
+      ShutdownSystem = True 
+   End If 
+
+End Function 
+</pre><p>To try out a shutdown, add a Command button to the project's form and then paste in the following code. Note you should save your work before running it, because the shutdown will kill VB without asking you to save any changes! Clicking on the Command button will cause the system to shutdown and reboot.</p><pre>
+Private Sub Command1_Click() 
+    ' Don't do this unless you've saved the code! 
+    If (MsgBox("Are you sure you want to shutdown?", _
+        vbYesNo Or vbQuestion) = vbYes) Then 
+       ShutdownSystem 
+    End If 
+End Sub
+</pre><p>Note that under NT the user may not have sufficient system privileges to shut down anyway.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;How to Shutdown the System in Windows 9x and NT</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 1998-2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 28 November 2002</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/How_to_Shutdown_the_System_in_Windows_9x_and_NT/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:13 GMT -->
+</html>

@@ -1,0 +1,184 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/DIB_Sections/Alpha_Image_Creator/Alpha_Image_Creator_zip_cAlphaImageCreator_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:47 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cAlphaImageCreator.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cAlphaImageCreator.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">DIB Sections</a>&#160;.&#160;<a href="article.html">Alpha Image Creator</a>&#160;.&#160;<a href="Alpha_Image_Creator.html">Alpha Image Creator</a>&#160;.&#160;cAlphaImageCreator.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Alpha_Image_Creator.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Alpha Image Creator</a> (55K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:12800</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12800&amp;type=Zip&amp;title=Alpha%20Image%20Creator%2Ezip%5FcAlphaImageCreator">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />5 Sep 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2185">Adding Scroll Bars to Forms, PictureBoxes and User Controls</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cAlphaImageCreator.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "cAlphaImageCreator"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Type SAFEARRAYBOUND
+    cElements As Long
+    lLbound As Long
+End Type
+Private Type SAFEARRAY2D
+    cDims As Integer
+    fFeatures As Integer
+    cbElements As Long
+    cLocks As Long
+    pvData As Long
+    Bounds(0 To 1) As SAFEARRAYBOUND
+End Type
+Private Declare Function VarPtrArray Lib "msvbvm60.dll" Alias "VarPtr" (Ptr()
+ As Any) As Long
+
+Private m_cMask As New cAlphaDibSection
+Private m_cImage As New cAlphaDibSection
+Private m_cAlphaImage As New cAlphaDibSection
+
+Public Property Get AlphaChannel() As cAlphaDibSection
+   Set AlphaChannel = m_cMask
+End Property
+
+Public Property Get Image() As cAlphaDibSection
+   Set Image = m_cImage
+End Property
+
+Public Property Get AlphaImage() As cAlphaDibSection
+   Set AlphaImage = m_cAlphaImage
+End Property
+
+Public Sub CreateAlphaImage()
+
+   Dim lWidth As Long
+   Dim lHeight As Long
+   
+   lWidth = IIf(m_cImage.Width &gt; m_cMask.Width, m_cMask.Width, m_cImage.Width)
+   lHeight = IIf(m_cImage.Height &gt; m_cMask.Height, m_cMask.Height,
+    m_cImage.Height)
+   
+   If (lWidth &lt;= 0) Or (lHeight &lt;= 0) Then
+      Exit Sub
+   End If
+      
+   ' Create a new image, which is just a copy of the picture
+   ' in m_cImage to build the alpha version in.  Note if
+   ' we didn't want to display the image without alpha later,
+   ' we could just work on m_cImage directly instead.
+   m_cAlphaImage.Create lWidth, lHeight
+   m_cImage.PaintPicture m_cAlphaImage.hdc, , , lWidth, lHeight
+   
+   ' Point byte arrays at the image bits for ease of
+   ' manipulation of the data:
+   Dim tMask As SAFEARRAY2D
+   Dim bMask() As Byte
+   Dim tImage As SAFEARRAY2D
+   Dim bImage() As Byte
+    
+    With tMask
+        .cbElements = 1
+        .cDims = 2
+        .Bounds(0).lLbound = 0
+        .Bounds(0).cElements = m_cMask.Height
+        .Bounds(1).lLbound = 0
+        .Bounds(1).cElements = m_cMask.BytesPerScanLine()
+        .pvData = m_cMask.DIBSectionBitsPtr
+    End With
+    CopyMemory ByVal VarPtrArray(bMask()), VarPtr(tMask), 4
+    
+    With tImage
+        .cbElements = 1
+        .cDims = 2
+        .Bounds(0).lLbound = 0
+        .Bounds(0).cElements = m_cAlphaImage.Height
+        .Bounds(1).lLbound = 0
+        .Bounds(1).cElements = m_cAlphaImage.BytesPerScanLine()
+        .pvData = m_cAlphaImage.DIBSectionBitsPtr
+    End With
+    CopyMemory ByVal VarPtrArray(bImage()), VarPtr(tImage), 4
+   
+   Dim x As Long, y As Long
+   Dim bAlpha As Long
+   Dim lScanEnd As Long
+   lScanEnd = (lWidth - 1) * 4
+   
+   For y = 0 To lHeight - 1
+      For x = 0 To lScanEnd Step 4 ' each item has 4 bytes: B,G,R,A
+         ' Get the red value from the mask to use as the alpha
+         ' value:
+         bAlpha = bMask(x, y)
+         ' Set the alpha in the alpha image..
+         bImage(x + 3, y) = bAlpha
+         ' Now premultiply the b/g/r values by the alpha divided
+         ' by 255.  This is required for the AlphaBlend GDI function,
+         ' see MSDN/Platform SDK/GDI/BLENDFUNCTION for more
+         ' details:
+         bImage(x, y) = bImage(x, y) * bAlpha \ 255
+         bImage(x + 1, y) = bImage(x + 1, y) * bAlpha \ 255
+         bImage(x + 2, y) = bImage(x + 2, y) * bAlpha \ 255
+      Next x
+   Next y
+   
+   ' Clear up the temporary array descriptors.  You
+   ' only need to do this on NT but best to be safe.
+   CopyMemory ByVal VarPtrArray(bMask), 0&amp;, 4
+   CopyMemory ByVal VarPtrArray(bImage), 0&amp;, 4
+   
+End Sub
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">DIB Sections</a>&#160;.&#160;<a href="article.html">Alpha Image Creator</a>&#160;.&#160;<a href="Alpha_Image_Creator.html">Alpha Image Creator</a>&#160;.&#160;cAlphaImageCreator.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 8 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/DIB_Sections/Alpha_Image_Creator/Alpha_Image_Creator_zip_cAlphaImageCreator_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:47 GMT -->
+</html>

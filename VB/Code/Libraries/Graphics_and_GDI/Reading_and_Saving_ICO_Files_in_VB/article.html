@@ -1,0 +1,164 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Reading_and_Saving_ICO_Files_in_VB/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:36 GMT -->
+<head>
+
+<title>vbAccelerator - Reading and Saving .ICO files and resources in VB</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+VB allows you to load an save .ICO files through the LoadPicture and SavePicture methods, 
+which are implemented in the StdPicture object. Unfortunately, this object was really 
+written for 16 bit Windows and doesn't understand Win32 icons at all. A .ICO resource 
+can contain many different images, at different colour depths.	
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;Reading and Saving .ICO files and resources in VB</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="cFileIcon_Class_and_Demonstration_Project.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />cFileIcon Class and Demonstration Project</a> (36K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:14</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14&amp;type=Article&amp;title=Reading%20and%20Saving%20%2EICO%20files%20and%20resources%20in%20VB">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />8 Mar 1999<br />First Posting</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3017">True Colour DIBSection</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1430">Icon Extractor Utility </a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Reading and Saving .ICO files and resources in VB</h1><p class="splash">This code demonstrates how to read an icon and all the constituent image types, not just the ones the standard APIs or VB allow you to.</p><img src="fileicon.gif" width="135" height="113" alt="Icon Graphic" /><p /><p>
+VB allows you to load an save .ICO files through the <i>LoadPicture</i> and <i>SavePicture</i> methods, 
+which are implemented in the <i>StdPicture</i> object. Unfortunately, this object was really 
+written for 16 bit Windows and doesn't understand Win32 icons at all. A .ICO resource 
+can contain many different images, at different colour depths.	
+</p><img src="ie5icon.gif" width="207" height="151" alt="Internet Explorer 5 Icon" /><p>Windows uses the different sizes and colours as required in the system. There is no 
+need to stick to the standard sizes and colour depths as shown in the image either. 
+Icons can be defined at any size (up to a maximum of 128x128 pixels) and at any colour depth.</p><p>When you load an icon using the <i>StdPicture</i> object, you only ever get one size: 32x32. 
+It doesn't matter whether there isn't actually a 32x32 image in the .ICO resource, 
+it stretches it as required (usually with horrible consequences). The loaded colour depth is 
+also the always the default system icon colour depth.</p><p>There are workarounds for the <i>StdPicture</i> object problem - see my tip 
+"Create a VB Picture from an API Icon Handle" and the article 
+"Get Icons for any File Type" for examples. However, all API methods 
+for loading icons are restricted to only loading icon resources at the system default 
+icon colour depth. On a system with "Show Icons Using All Available Colours" set, you can never 
+load a 16 colour icon if a higher colour depth is available using the API methods.</p><p>You can do this if you load the icon natively, though. This article briefly describes 
+the .ICO file format and provides a class which reads icons from .ICO files and Executables and 
+also writes to standard .ICO files. This class is also used in the Icon Explorer project.</p><h2>The .ICO File Format</h2><p>ICON files have a defined file format which is described for C programmers in an 
+MSDN article by John Hornick. (Download <a href="iconpro.ico">this icon</a> - there is a picture 
+of him, or at least someone, stored in it at the 118x128 version!).</p><p>A .ICO file contains the following information:</p><ol><li>A header indicating the type of resource and the number of icons within it.</li><li>A series of directory entries providing information about the size and colour depth of 
+the icon, and a pointer to where the icon data starts below it within the file.</li><li>A series of icon data structures, containing a <i>BITMAPINFOHEADER</i> structure defining 
+the DIB section used for the icon's image, the palette table (if one is required for the image) 
+and then two byte arrays. The first contains the raw icon image bits in the appropriate 
+DIB format and the second contains the image bits for the mask as a monochrome DIB.</li></ol><p>If you are interested in why there are two images in an icon, check out the 
+Transparent Sprite Library article code, which describes the theory of using a mask and an 
+image to implement graphics with transparent areas.</p><p>In more detail, the structures to implement the above look like this:</p><ol><li>The icon header:<br /><pre>
+Private Type ICONDIR
+   idReserved As Integer '// Reserved
+   idType As Integer '// resource type ( = IMAGE_ICON = 1 for icons)
+   idCount As Integer '// how many images?
+   ' idEntries() as ICONDIRENTRY array follows.
+   ' After that, the icon bits.
+End Type
+</pre></li><li>The icon directory entry:<br /><pre>
+Private Type ICONDIRENTRY
+   bWidth As Byte '// Width of the image
+   bHeight As Byte '// Height of the image (times 2)
+   bColorCount As Byte '// Number of colors in image (0 if &gt;=8bpp)
+   bReserved As Byte '// Reserved
+   wPlanes As Integer '// Color Planes
+   wBitCount As Integer '// Bits per pixel
+   dwBytesInRes As Long '// how many bytes in this resource?
+   dwImageOffset As Long '// where in the file is this image
+End Type
+</pre></li><li>The icon data structures. These cannot be represented as a straightforward 
+type in VB because the members of the type depend on how many colours are in the image 
+and the size of the icon bitmaps. If you were to write this as a real VB structure, 
+you would have to create at least four different types to accomodate the different number 
+of colour entries. I have worked around this in my icon class by storing this type as 
+a raw byte array and interpreting it as required. However, in pseudo-VB code, 
+the type looks like this:
+<pre>
+Private Type ICONIMAGE
+   ' The DIB Header:
+   icHeader As BITMAPINFOHEADER
+
+   ' The Colour Table If Required:
+   If (NumberOfColours&lt;=256 Colours) Then
+      icColors(1 to NumberOfColours) as RGBQUAD
+   End If
+
+   ' The Image Bytes:
+   icXOR(0 to (Width * Bits Per Pixel,aligned to a Long Boundary) * Height) As Byte
+
+   ' The Mask Bytes
+   icAND(0 to (Width/8 aligned to a Long Boundary) * Height) As Byte
+
+End Type
+</pre></li></ol><h2>Icons In Executable Files</h2><p>In an executable file, icons are stored in a similar structure, but there are two differences. 
+Firstly, the structures are packed on 2 byte boundaries rather than the normal 4 bytes, 
+and secondly the <i>dwImageOffset</i> member of the <i>ICONDIRENTRY</i> type is replaced 
+with an integer icon ID number. Because the icons are packed on 2 bytes, you cannot write 
+a VB structure which can be directly used to read the format, because VB automatically 
+aligns all its structures on 4 byte boundaries. Instead you have to read all the data 
+in bytes and then copy it into the appropriate structure. </p><h2>Translating it to VB</h2><p>To say this wasn't particular easy to translate to VB would be understating the case a bit. 
+I'd describe it here, but it would go on for ever! Instead, download the demonstration project 
+and pick through that. If you'd like to know more about the DIB bitmap format used to store the images, 
+there are two resources here:</p><ul><li><a href="http://www.vbaccelerator.com/article.asp?id=3017">Using DIB Sections and the cDIBSection wrapper</a>. This describes a type of DIB where the bitmap bits 
+are stored in user memory and can be modified by a Win32 application, but otherwise it is applicable.</li><li><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator Image List Control and Class</a>. This class uses DIBSections 
+to save and load icons.</li></ul><p>The end result is a <i>cFileIcon</i> class. The interface to this class is as follows:</p><h3>Public Function AddImage(ByVal nWidth As Long, ByVal nHeight As Long, ByVal nColourCount As Long) As Long</h3><p>Adds a icon to the class with specified width,height and number of colours and returns the 
+index of the new icon. The newly added icon is initialised to be completely black. To modify 
+the icon, you need to add something to the class to set the DIB bits of the XOR (Image) 
+and AND (Mask) DIBs.</p><h3>Public Sub CloneTo(ByRef cThis As cFileIcon)</h3><p>Makes a copy of one cFileIcon class to another. The cloned class (cThis) is a 
+completely independent copy.</p><h3>Public Sub DrawIconImage( 
+    ByVal lHDC As Long, 
+    ByVal nIndex As Long, 
+    Optional ByVal eType As ECFIImageConstants = ecfiImage, 
+    Optional ByVal X As Long = 0, Optional ByVal Y As Long = 0, 
+    Optional ByVal lWidth As Long = 0, Optional ByVal lHeight As Long = 0, 
+    Optional ByVal eRasterOp As RasterOpConstants = vbSrcCopy
+)</h3><p>Draws either the Image or the Mask portion of the image to the specified DC, optionally 
+at a specified X,Y position, stretching to a given width and height and drawn 
+using one of the RasterOpConstants.</p><h3>Public Property Get Filename() As String </h3><p>Returns the filename of the .ICO file or the Executable from which the icon was loaded.</p><h3>Public Property Get ImageColourCount(ByVal nIndex As Long) As Long</h3><p>Returns the number of colours in the icon at 1 based index nIndex.</p><h3>Public Property Get ImageCount() As Long</h3><p>Returns the number of icon resources within the currently loaded icon.</p><h3>Public Property Get ImageHeight(ByVal nIndex As Long) As Long</h3><p>Returns the height in pixels of the icon at the 1 based index nIndex.</p><h3>Public Property Get ImageSize(ByVal nIndex As Long) As Long</h3><p>Returns the number of bytes of the icon at the 1 based index nIndex.</p><h3>Public Property Get ImageWidth(ByVal nIndex As Long) As Long</h3><p>Returns the width in pixels of the icon at the 1 based index nIndex.</p><h3>Public Function LoadIcon(ByVal sFile As String) As Boolean</h3><p>Loads an icon from a .ICO file. Returns True if it succeeded, or False otherwise. 
+An error will be raised if there is a problem loading the icon.</p><h3>Public Function LoadIconFromEXE(
+   ByVal sFile As String,
+   Optional ByVal lpID As Long = 0,
+   Optional ByVal lpName As String = ""
+) As Boolean </h3><p>Loads an icon from an executable file (e.g. EXE, OCX, DLL). Specify lpID if the resource 
+has an integer ID, otherwise specify lpName. Returns True if it succeeded, or False otherwise. 
+An error will be raised if there is a problem loading the icon.</p><h3>Public Function RemoveImage(ByVal nIndex As Long) As Long</h3><p>Removes the icon resource ID at the 1 based index nIndex.</p><h3>Public Property Get ResourceID() As Variant</h3><p>Returns the resource ID that the current icon was extracted from, or Empty if the icon 
+was loaded from a file.</p><h3>Public Function SaveIcon(Optional ByVal sFileName As String = "") As Boolean </h3><p>Saves the current icon resources to a .ICO file. If sFileName is not specified, the file 
+that the icon was loaded from will be used. Returns True if successful, or False otherwise. 
+An error will be raised if there is any problem saving the icon.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;Reading and Saving .ICO files and resources in VB</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 11 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Reading_and_Saving_ICO_Files_in_VB/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:39 GMT -->
+</html>

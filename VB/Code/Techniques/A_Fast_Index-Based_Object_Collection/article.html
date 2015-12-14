@@ -1,0 +1,259 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/A_Fast_Index-Based_Object_Collection/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:00 GMT -->
+<head>
+
+<title>vbAccelerator - A Fast Index-Based Collection</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="VB provides a simple Collection for storing objects. However, this object is internally implemented
+as a hashed linked list, and as such provides good performance for access either by an item's key or
+through enumeration.  If you want to access an object by its index, however, you need to enumerate through
+all the items until you reach the correct one, which is slow.  This article presents an alternative collection
+which is optimised for access by index, and, for large numbers of items, runs over 100x quicker than the VB
+equivalent." /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;A Fast Index-Based Collection</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB_Index_Collection_Techniques.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB Index Collection Techniques</a> (19K)</p><p class="nav"><a href="VB_Object_Index_Collection.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB Object Index Collection</a> (22K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2312</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2312&amp;type=Article&amp;title=A%20Fast%20Index%2DBased%20Collection">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />2 Jan 2003<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3307">Counting Colours in an Image</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2192">Storing Objects Against ItemData and Tag properties</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>A Fast Index-Based Collection</h1><p class="splash">Building a fast new Visual Basic Collection for access by Index</p><img src="indexCollection.png" width="306" height="271" alt="Index Collection Performance Tester" /><p /><p>VB provides a simple <i>Collection</i> for storing objects. However, this object is internally implemented
+as a hashed linked list, and as such provides good performance for access either by an item's key or
+through enumeration.  If you want to access an object by its index, however, you need to enumerate through
+all the items until you reach the correct one, which is slow.  This article presents an alternative collection
+which is optimised for access by index, and, for large numbers of items, runs over 100x quicker than the VB
+equivalent.</p><h2>About VB Collections</h2><p>Let's say you create a VB collection called myCollection with 10,000 items in it, 
+and say the item at position 7000 has a key "BCW456007". 
+Why is it quick to access the item using <i>c.Item("BCW456007")</i> but
+slower to get the item using <i>c.Item(7000)</i>?</p><p>The reason for this is the internal implementation of the VB Collection itself.
+A VB collection consists of two structures in memory: a linked list to store
+the actual values in the collection and an internal structure known as a Hashtable
+which allows quick lookup of any key to the items in the list.  We'll cover the
+workings of these in turn.</p><h3>Linked Lists</h3><p>The linked list method is a classic algorithm for storing data when you want to
+allocate the memory in small blocks. In a linked list, each item in the list
+has an additional space allocated to store the next item in the list, as shown
+below:</p><img src="linkedList.png" width="485" height="110" alt="Linked List Structure" /><p>The advantage of a linked list is it is very easy to insert or remove items.
+All you need to do is allocate the new item and then change the pointer of the
+item prior to the one you're inserting, and set the pointer to the next item
+along:</p><img src="linkedListInsert.png" width="481" height="232" alt="Inserting into a Linked List" /><p>Likewise removal is very efficient: an you simply find the next pointer associated with
+the item to remove, remove the item and then change the pointer for the previous item in the
+list to the pointer for the item you just removed.</p><p>Many linked-list implementations store both a forward and a backward pointer to make it
+easier to find the previous item in the list as well as the next one.  Lists constructed this
+way are called "Double Linked Lists" and it is likely that internally the VB
+collection is implemented this way.</p><p>However, the high efficiency for adding, removing and inserting items is offset against
+the increased difficulty in finding the item at a particular index in the linked list.  
+If you are interested in the 10,000th item in the list, you have to start at the beginning and
+follow 10,000 pointers until you get there (or, if the list is doubly-linked you
+could choose to start from the beginning or the end depending on how far the item you're 
+looking for is from the count of the collection).</p><h3>Hashtables</h3><p>A Hashtable is a lookup structure which aims to make finding a particular item more
+efficient.  The idea is to reduce the number of data items which are accessed before you
+get the pointer to the data you're interested in, and the way it works is related to the
+way indexes in databases work (although it is less sophisticated).</p><p>A simple hashtable is implemented as follows: firstly, a hashing function is defined.
+This is a function which converts a key of arbitrary size to a number within a fixed
+range.  The idea is that the hash function will produce a nicely even distribution
+of hash values for a given key.  Then, an array for each of the possible hash values.  Each
+element in this array then stores a linked list of the actual keys and then a pointer to 
+the data itself within the main list.</p><p>So to find a particular item by its key, you do the following:</p><ol><li>Determine the Hash of the key using the Hash function</li><li>Find the linked list from the array containing all of the hash tables. If there isn't
+anything there, then the key doesn't exist, otherwise...</li><li>Enumerate the values in the linked list until you find one with a matching key 
+(remember that you are reducing a key of arbitrary size to a shorter, fixed range list, 
+so different keys may have the same Hash code).  When found, you have the item.</li></ol><p>This may sound like it all takes a long time to do, but for long lists in fact turns out 
+many times quicker than searching through the entire list because so much less searching is
+involved (assuming that the Hash function is any good!).</p><p>An example of a class which implements a string hash function in VB is as follows:</p><pre>
+' Size of HashTable
+Private m_lHashTableSize As Long          
+
+' Pseudorandom cryptographic array used to mix up
+' the input data and create a hash function with
+' good chance of preventing clashes:
+Private rand8(0 To 255) As Long
+
+Private Sub Class_Initialize()
+Dim i As Long, j As Long
+Dim s As Byte, k As Long
+   
+   ' Create a pseudorandom array using the
+   ' alleged RC4 algorithm.
+   ' See:
+   ' http://burtleburtle.net/bob/hash/pearson.html
+   ' This initialisation is to prevent a low repeat count:
+   For i = 0 To 255
+      rand8(i) = i
+   Next i
+   ' Here we go:
+   k = 7
+   For j = 0 To 3
+      For i = 0 To 255
+         s = rand8(i)
+         k = (k + s) Mod 256
+         rand8(i) = rand8(k)
+         rand8(k) = s
+      Next i
+   Next j
+   ' Hash table is 65k in size.  This should remain
+   ' very efficient for &gt; 200,000 items.
+   m_lHashTableSize = &amp;HFFFF&amp;
+   
+End Sub
+
+Private Function Hash(ByVal sKey As String) As Long
+Dim b() As Byte
+Dim i As Long
+Dim lKeyVal As Long
+Dim h1 As Long, h2 As Long
+   
+   ' using hashing algorithm "Variable String Exclusive-Or
+   ' method (tablesize up to 65,536)".  See
+   ' Dictionaries -&gt;Hash Tables section at
+   ' http://members.xoom.com/thomasn/s_man.htm
+   b = sKey
+   h1 = b(0): h2 = h1 + 1
+   For i = 1 To UBound(b)
+      h1 = rand8(h1 Xor b(i))
+      h2 = rand8(h2 Xor b(i))
+   Next
+   lKeyVal = h1 * &amp;HFF&amp; + h2
+   Hash = lKeyVal Mod m_lHashTableSize
+   
+End Function
+</pre><p>Thus you should be able to see that a VB collection is very efficient for
+adding, inserting and removing items, and is also quick for finding items
+by their Key.  But it will always be slow if you want to access the item
+by index.  So what if you want to access by index?</p><h2>Arrays as Collections</h2><p>The most efficient way of storing data so it is easily accessible by 
+index is in an array with fixed length members.  In an array, data is
+stored as a contiguous block of memory (although this means that it is more
+likely you'll run out of memory using arrays than linked lists, that doesn't
+happen so frequently these days).  To find any item within
+the array, you simply need to know the size of each member and the
+pointer to the top of the array; then you can directly derive the 
+pointer to the item.</p><p>On the other hand, insert and remove performance is generally much
+worse because if you need to shift all the items below the item you're
+inserting or removing.  However, you can make these operations almost
+as quick as a VB Collection by taking advantage of the Win32 API block
+memory copy function.  That's what I've built in this article and as
+you'll see later the performance can be extremely good.</p><p>First, we'll look at implementing an index collection using VB arrays.
+In the download "VB Index Collection Techniques" this is 
+implemented as <i>cIndexCollection</i>. In my implementation I
+store a larger array than is necessary, increasing the size by 
+a chunk each time more memory is needed (the <i>AllocationSize</i>).
+This reduces the number of times you need to reallocate the array
+and hence hopefully improves performance.</p><ul><li>Adding an Item<br />
+Adding an item is straightforward: just ensure the array is of sufficient
+size and then set the element:
+<pre>
+   m_lCount = m_lCount + 1
+   If m_lCount &gt; m_lArraySize Then
+      m_lArraySize = m_lArraySize + m_lAllocationSize
+      ReDim Preserve m_lItem(1 To m_lArraySize) As Long
+   End If
+   m_lItem(m_lCount) = Value
+</pre></li><li>Inserting an Item<br />
+When inserting an item, you need to shift everything after the index up
+one prior to inserting:
+<pre>
+   m_lCount = m_lCount + 1
+   If m_lCount &gt; m_lArraySize Then
+      m_lArraySize = m_lArraySize + m_lAllocationSize
+      ReDim Preserve m_lItem(1 To m_lArraySize) As Long
+   End If
+
+   ' Shift up from Index to m_lCount-1
+   For j = m_lCount - 1 To Index Step -1
+      m_lItem(j + 1) = m_lItem(j)
+   Next j
+   ' Set item at Index
+   m_lItem(Index) = Value
+</pre></li><li>Removing an Item<br />
+Likewise if you're removing an item, you need to shift everything above
+the item which is being removed unless the item being removed is at
+the end:
+<pre>
+   ' shift down from Index to m_lCount-1
+   For j = Index + 1 To m_lCount
+      m_lItem(j - 1) = m_lItem(j)
+   Next j
+   m_lCount = m_lCount - 1
+</pre></li></ul><p>Testing the performance of this approach demonstrates that although you
+can read through the items in the array many times quicker (over 100x if
+the list is large) than a collection, inserting and removing are very slow.</p><p>To improve matters, we can use the Win32 API <i>RtlMoveMemory</i> block copy
+function  to shift a large number of elements at the same time.  Here's the
+function to insert an item modified to use this approach.  First we note
+that an item within an array of longs, if passed by reference to the API
+function, provides the pointer to its location in memory.  This avoids any
+pointer arithmetic to work out where an item is within the array.  Then remembering
+that the array is a contiguous block of memory and a long has 4 bytes can work out
+what size to copy:</p><pre>
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+...
+
+      lTemp = m_lItem(m_lCount)
+      ' Increase array size as required:
+      m_lCount = m_lCount + 1
+      If m_lCount &gt; m_lArraySize Then
+         m_lArraySize = m_lArraySize + m_lAllocationSize
+         ReDim Preserve m_lItem(1 To m_lArraySize) As Long
+      End If
+      ' Shift up from Index to m_lCount-1
+      CopyMemory m_lItem(Index + 1), m_lItem(Index), (m_lCount - Index) * 4
+      ' Increase array size:
+      ' Set item at Index
+      m_lItem(Index) = Value
+      ' Set last item:
+      m_lItem(m_lCount) = lTemp
+</pre><p>Using this method, the Insert and Remove performance is now on a par with the VB
+collection - just slightly slower.  Try the sample code with 10,000 items: here's 
+the results from my AMD XP2200 box.  Note that when removing, the code uses the
+worst case by removing the first item. All times given in ms:</p><table><tr><td>Collection</td><td>Add 10,000</td><td>Insert 10,000</td><td>Read 10,000</td><td>Remove 10,000</td></tr><tr><td>VB Collection</td><td>49</td><td>94</td><td>2866</td><td>74</td></tr><tr><td>Index Collection (VB code)</td><td>63</td><td>893</td><td>41</td><td>931</td></tr><tr><td>Index Collection (Optimised)</td><td>73</td><td>266</td><td>41</td><td>145</td></tr></table><h2>Using the Code to Store Something Useful</h2><p>Although this demonstrates that a faster index collection is possible, the code
+above only stores Long values. To make it more useful, there is also a version which
+allows you to store Objects.  This is provided in the "VB Object Index Collection"
+download.  This extends the implementation above to use the techniques described in the
+article <a href="http://www.vbaccelerator.com/article.asp?id=2192">Storing Objects Against ItemData and Tag Properties</a>
+in order to store objects against the long values in the array. Performance results for
+10,000 items again are as follows (note in this case the <i>Remove</i> was set to remove
+from the end of the array, which VB's Collection isn't so good at):</p><table><tr><td>Collection</td><td>Add 10,000</td><td>Insert 10,000</td><td>Read 10,000</td><td>Remove 10,000</td></tr><tr><td>VB Collection</td><td>116</td><td>163</td><td>7581</td><td>8277</td></tr><tr><td>ArrayList</td><td>146</td><td>409</td><td>52</td><td>106</td></tr></table><h2>Conclusion</h2><p>VB's Collection offers good performance for adding and inserting items, and accessing and
+removing them by their Keys.  However, performance is poor if items are to be accessed by
+index.  If you want a collection to access objects by index, the <i>cArrayList</i>
+implementation provided here can improve performance by over 100x.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;A Fast Index-Based Collection</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 30 June 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/A_Fast_Index-Based_Object_Collection/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:02 GMT -->
+</html>

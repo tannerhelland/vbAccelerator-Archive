@@ -1,0 +1,403 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/S_Grid_2/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:49:50 GMT -->
+<head>
+
+<title>vbAccelerator - SGrid 2.0</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+SGrid 2.0 is an updated version of the popular SGrid control 
+which adds drag-drop hierarchical grouping, owner-draw cells and many other features.  It has 
+the same highly-optimised display code but is now further enhanced by much better
+sort, row insert and delete performance.  It remains a great alternative to the ListView
+in report mode and can now be used to create TaskLists and TreeView-style grouped displays.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;SGrid 2.0</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_SGrid_2_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 SGrid 2 Demonstration</a> (144K)</p><p class="nav"><a href="VB5_SGrid_2_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 SGrid 2 Full Source</a> (446K)</p><p class="nav"><a href="VB5_SGrid_2_0_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 SGrid 2.0 Binary</a> (194K)</p><p /><p class="nav"><a href="VB6_SGrid_2_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 SGrid 2 Binary</a> (173K)</p><p class="nav"><a href="VB6_SGrid_2_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 SGrid 2 Demonstration</a> (138K)</p><p class="nav"><a href="VB6_SGrid_2_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 SGrid 2 Full Source</a> (419K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:13703</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13703&amp;type=Article&amp;title=SGrid%202%2E0">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 4 / 5</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 8 / 8</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:9 February 2004</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />10 Feb 2004<br /><p class="update">The VB6 Downloads for the Grid contained incorrect files. The versions
+posted now have the correct files.  Please ensure your version of vbalSGrid6.OCX has the file
+version 2.0.0.40 and accept my apologies for this stupid error.</p><p class="update">TaskList demo had a missing line in the mnuColumns event handler which
+caused a 'Subscript out of Range' error when showing or hiding columns (it was trying
+to hide/show column 0).  Fixed.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11">vbAccelerator S-Grid Control</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>SGrid 2.0</h1><p class="splash">A flexible, feature rich VB Grid with smooth displays and grouping</p><img src="sgrid2.png" width="313" height="182" alt="Outlook Mailbox Style Demonstration" /><p /><p>
+SGrid 2.0 is an updated version of the popular <a href="http://www.vbaccelerator.com/article.asp?id=11">SGrid control</a> 
+which adds drag-drop hierarchical grouping, owner-draw cells and many other features.  It has 
+the same highly-optimised display code but is now further enhanced by much better
+sort, row insert and delete performance.  It remains a great alternative to the ListView
+in report mode and can now be used to create TaskLists and TreeView-style grouped displays.
+</p><h2>About the SGrid 2 Control</h2><p>
+SGrid 2 has been released as a new control (filename vbalSGrid.ocx/vbalSGrid6.ocx) 
+because the edit mechanism has changed internally to allow validation and the control
+no longer acts as a control container.  However, most of the internal methods 
+and properties carried forward from the previous version have the same names, meaning 
+applications will normally be able to switch from SGrid 1 to SGrid 2
+with minimal alteration.  The main change will be to switch instances of the control
+in your project from the old control to the new one.  A tip on achieving this is 
+provided at the end of the article.
+</p><h2>About the Demonstrations</h2><p>
+There are five demonstration forms provided in the download:
+</p><table class="article"><tr><td><img src="frmDemo.png" width="148" height="85" alt="frmDemo" /></td><td width="100%" valign="top"><strong>frmDemo</strong><br />Provides an overview of many of 
+the grid's features and allows you to configure the features at run-time.</td></tr><tr><td><img src="frmOutlookDemo.png" width="147" height="85" alt="frmOutlookDemo" /></td><td width="100%" valign="top"><strong>frmOutlookDemo</strong><br />Demonstrates creating
+an Outlook (pre-2003) style interface with configurable columns, sorting, grouping 
+and multi-select.</td></tr><tr><td><img src="frmTaskList.png" width="147" height="83" alt="frmTaskList" /></td><td width="100%" valign="top"><strong>frmTaskList</strong><br />Creates an Outlook or
+VS.NET style TaskList which you can add tasks to, again with configurable columns, sorting,
+grouping and multi-select.</td></tr><tr><td><img src="frmMatrix.png" width="148" height="85" alt="frmMatrix" /></td><td width="100%" valign="top"><strong>frmMatrix</strong><br />Demonstrates how to 
+create a customised grouped view in code without using SGrid's own grouping 
+features.</td></tr><tr><td><img src="frmOnDemand.png" width="148" height="85" alt="frmOnDemand" /></td><td width="100%" valign="top"><strong>frmOnDemand</strong><br />Shows how to use
+the <span class="code">AddRowsOnDemand</span> feature of the grid.</td></tr></table><p>
+For more information on the display features of SGrid, and the differences between SGrid 1
+and SGrid 2.0, see the <a href="http://www.vbaccelerator.com/article.asp?id=13697">SGrid 2.0 Features</a> article.
+   </p><h2>SGrid 2.0 Categorised Documentation</h2><p>
+This section briefly describes each of the properties, methods and events of the control
+grouping into categories.
+Refer also to the demonstration project and the other articles in this section
+for further description and samples of using these techniques.
+</p><p>The following categories are described:</p><ol><li><a href="#cols">Columns</a></li><li><a href="#rows">Rows</a></li><li><a href="#cells">Cells</a></li><ol><li><a href="#cellprops">Individual Properties and Methods</a></li><li>The <a href="#cgridcell"><span class="code">cGridCell</span></a> object</li></ol><li><a href="#state">State: Edit Cell, Hot Cell and Selections</a></li><li><a href="#sort">Sorting</a></li><li><a href="#settings">Grid Settings and Options</a></li><ol><li><a href="#ils">Image Lists</a></li><li><a href="#groups">Hierarchical Grouping</a></li><li><a href="#appearance">Appearance</a></li><li><a href="#behaviour">Behaviour</a></li><li><a href="#general">General</a></li></ol><li><a href="#events">Events</a></li><li><a href="#persist">Persistence</a></li></ol><a name="cols" /><h3>1. Columns</h3><p>
+SGrid is designed to operate with a fixed number of columns.  For performance
+it is always better to add columns prior to adding any rows, making columns
+invisible if you want to.  There are two types of columns:
+</p><ol><li><strong>Standard Columns</strong><p>
+Standard columns appear in the header of the control and render from left to 
+right.  These columns may be made invisible, re-ordered and grouped hierarchically.
+</p></li><li><strong>Optional Row-Text Column</strong><p>
+The row-text column is used to display text and/or icons which stretch
+across multiple columns in the grid.  The Row-Text column renders 
+below the standard columns.  If you are using one, the row-text column 
+must always be the last column in the grid.  Whether the Row-Text column's
+text appears will depend upon the height of the row that it appears in.
+</p><p><span class="color: #FF0000">Note</span> when you use the 
+hierarchical grouping option SGrid internally uses
+a row-text column to render the group.  The Grid will automatically add
+this if it doesn't exist, but for performance you may want to add one
+up-front.
+</p></li></ol><p>
+Manipulating columns is achieved through the following properties and methods:
+</p><ul><li><span class="code">AddColumn</span> - 
+Adds or inserts a new column. For performance, it is best to set up columns before adding any data.
+</li><li><span class="code">RemoveColumn</span> -
+Permanently removes a column from the grid. If all columns are removed, the grid will be cleared. If you want to temporarily remove a column, use the <span class="code">ColumnVisible</span>
+property.</li><li><span class="code">Columns</span> -
+Gets the number of columns in the grid, including hidden and RowText columns.</li><li><span class="code">ColumnIndex</span> -
+Gets the index of the column with the specified key.</li><li><span class="code">ColumnOrder</span> - 
+Gets/sets the order of a column in the control.</li><li><span class="code">ColumnImage</span> -
+Gets/sets the image index to show in a column's header. Image indexes are 0 based indexes of the images in an ImageList.</li><li><span class="code">ColumnImageOnRight</span> -
+Gets/sets whether images (if any) will be shown on the right or not in a column header.</li><li><span class="code">ColumnImageOnRight</span> - 
+Gets/sets whether images (if any) will be shown on the right or not in a column header.</li><li><span class="code">ColumnAlign</span> - 
+Gets/sets the alignment used to draw the column header for a column.</li><li><span class="code">ColumnIsGrouped</span> - 
+Gets/sets whether the specified column is grouped in the control.  Setting to <span class="code">True</span> causes the column to be added to the end of any existing groups.</li><li><span class="code">ColumnGroupOrder</span> - 
+Gets the order the column appears at in the column grouping. If the column is not grouped, then returns 0.</li><li><span class="code">ColumnFormatString</span> - 
+Gets/sets a format string used to format all of the text in the column (remember that
+cell text is stored as a variant). Format strings are the same as those used in the 
+VB <span class="code">Format$</span> function.</li><li><span class="code">ColumnFixedWidth</span> - 
+Gets/sets whether the specified column has fixed width or not.</li><li><span class="code">ColumnHeader</span> - 
+Gets/sets the text to appear in a column header.</li><li><span class="code">ColumnKey</span> -
+Gets/sets the key for column.</li><li><span class="code">ColumnTag</span> - Gets/sets an optional string value to associate
+with the column.</li><li><span class="code">ColumnSortType</span> - 
+A convenience property to use to maintain the the current column sort type.</li><li><span class="code">ColumnSortOrder</span> - 
+A convenience property to use to maintain the the current column sort order.</li><li><span class="code">ColumnWidth</span> - 
+Gets/sets the width of a column in the grid.</li><li><span class="code">ColumnIsRowTextColumn</span> - 
+Gets whether this column is the row text column for the grid. The row text column 
+must be the last column in the grid.</li><li><span class="code">AutoWidthColumn</span> -
+Automatically resizes a column to accommodate the largest item.</li></ul><a name="rows" /><h3>2. Rows</h3><p>
+Rows can be added, inserted to the grid, or removed or made invisible.  If you can 
+add rows in order, you can choose to have SGrid pre-allocate a number of rows for you, 
+rather than adding each one individually, which can improve performance. To do this,
+set the <span class="code">Rows</span> property to the number of rows that you want.
+</p><p>
+There are two types of rows: standard rows and group rows.  Group rows appear when
+you create a hierarchical grouping in the grid, and have the <span class="code">RowIsGroup</span>
+property set to <span class="code">True</span>.  Note you cannot insert grouping rows
+directly without setting up a grouping using one of the hierarchical grouping methods.
+Note also that although you can change the properties of grouping rows using things like
+the <span class="code">RowVisible</span> property, this will in general prevent 
+correct operation of expand and collapse of groups.  You should also only add rows to the 
+end of the grid and use the <span class="code">ShiftLastRowToSortLocation</span> 
+method to ensure the correct position of the new row.
+</p><ul><li><span class="code">AddRow</span> - 
+Adds or inserts a new row into the grid.</li><li><span class="code">RemoveRow</span> - 
+Deletes a row from the grid.</li><li><span class="code">Clear</span> - 
+Clears all rows from the grid, optionally removing the columns too.</li><li><span class="code">Rows</span> - 
+Gets/sets the number of rows in the grid.</li><li><span class="code">DefaultRowHeight</span> -
+Gets/sets the height which will be used as a default for rows in the grid.
+</li><li><span class="code">RowIsGroup</span> -
+Gets whether a row is a hierarchical grouping row.</li><li><span class="code">RowGroupingState</span> - 
+Gets/sets the state (expanded or collapsed) for a grouping row.</li><li><span class="code">RowGroupingLevel</span> -
+Gets the grouping level of the specified row if the row is a group row. The grouping level specifies how far this group row is indented, with level 1 being the first group, 2 being the second and so on.</li><li><span class="code">RowItemData</span> -
+Gets/sets a long value associated with a row.</li><li><span class="code">RowVisible</span> -
+Gets/sets whether a row is visible in the grid or not.  Do not use when groupings are
+in place.</li><li><span class="code">AutoHeightRow</span> -
+Automatically sets the height of a row based on the contents of the cells.</li><li><span class="code">ShiftLastRowToSortLocation</span> - 
+Moves the last row in the grid to the correct position given the current grouping and/or sorting options.</li></ul><a name="cells" /><h3>3. Cells</h3><p>
+Cells may either be changed using individual properties or by using a <span class="code">cGridCell</span> object.
+</p><a name="cellprops" /><h4>3.1 Individual Properties</h4><ul><li><span class="code">CellFormattedText</span> - 
+Gets the text of a cell with any formatting string applicable to the cell's column applied.</li><li><span class="code">CellText</span> - 
+Gets/sets the text associated with a cell. This property is a variant allowing you to store 
+Numbers and Dates as well. In columns which are not visible, it could also be used 
+to store objects.</li><li><span class="code">CellTextAlign</span> - 
+Gets/sets the alignment and formatting properties used to draw cell text.  The format
+used is the same as that used by the GDI API call <span class="code">DrawText</span> and
+hence allows you to specify horizontal and vertical alignment as well as whether the
+text is single line or wrapped and/or whether the text is truncated.</li><li><span class="code">CellIndent</span> - 
+Gets/sets the horizontal indentation of a cell from the cell's border.</li><li><span class="code">CellExtraIcon</span> -
+Gets/sets the 0-based index of the extra icon for a cell in the ImageList. This icon 
+will always appear in the left-most position for the cell. Set 
+<span class="code">CellExtraIcon</span> to -1 to remove an icon.</li><li><span class="code">CellItemData</span> - 
+Gets/sets a long value associated with the cell.</li><li><span class="code">CellSelected</span> - 
+Gets/sets whether a cell is selected or not.</li><li><span class="code">CellIcon</span> - 
+Gets/sets the 0-based index of the icon for a cell in the ImageList. If the cell has an icon set via the 
+<span class="code">CellExtraIcon</span> property, this icon will appear after it. Set to -1 to remove an icon.</li><li><span class="code">CellBackColor</span> - 
+Gets/sets the background colour for a cell. Set to -1 to make the cell transparent.</li><li><span class="code">CellForeColor</span> - 
+Gets/sets the foreground colour to draw a cell in. Set to -1 to use the default foreground colour.
+</li><li><span class="code">CellFont</span> -
+Gets/sets the font to use to draw a cell.  Set to <span class="code">Nothing</span> to use
+the default font.</li><li><span class="code">CellDetails</span> - 
+Sets multiple format details for a cell at the same time. Quicker than calling the properties individually.</li></ul><a name="cgridcell" /><h4>3.2 The <span class="code">cGridCell</span> object</h4><p>
+The grid cell object is a disconnected object that represents a single cell.  You can
+either obtain a new cell object to assign to the grid using the <span class="code">NewGridCellFormatObject</span> or obtain one pre-populated with existing cell
+details using the <span class="code">Cell</span> property.  To assign any changes
+back to the grid, use the <span class="code">Cell</span> property to set it back
+again.  The object itself contains all of the information in the individual cell 
+properties.
+</p><a name="state" /><h3>4. State: Edit Cell, Hot Cell and Selections</h3><p>
+SGrid 2.0 can be editable, track cells with the mouse and select either individual
+cells or entire rows.  These properties and methods allow you to configure these modes and
+determine information about the current state.
+</p><ul><li><span class="code">Editable</span> - 
+Gets/sets whether the grid will be editable (i.e. raise <span class="code">RequestEdit</span> events).</li><li><span class="code">SingleClickEdit</span> -
+Gets/sets whether the control immediately goes into edit mode on selection of a cell when in Edit Mode. The default is two-click edit.</li><li><span class="code">InEditMode</span> -
+Gets whether the control is currently in Edit Mode.</li><li><span class="code">EditRow</span> - 
+Returns the index of the row currently being edited, if any.</li><li><span class="code">EditCol</span> - 
+Returns the index of the column currently being edited, if any.</li><li><span class="code">StartEdit</span> -
+Starts editing on the specified cell.</li><li><span class="code">EndEdit</span> -
+Request the normal end of an edit operation, if any. This will fire the 
+<span class="code">PreCancelEdit</span> event prior to the <span class="code">CancelEdit</span>
+event which provides a way to validate the 
+edited data prior to the editing operation being completed.</li><li><span class="code">CancelEdit</span> -
+End edit mode without calling the <span class="code">PreCancelEdit</span> event.  This
+will raise the <span class="code">CancelEdit</span> event.</li><li><span class="code">HotTrack</span> - 
+Gets/sets whether the grid cells are hot tracked with the mouse.</li><li><span class="code">HotCol</span> - 
+Gets the current Hot column (or 0 if no hot column) when <span class="code">HotTrack = True</span>.
+</li><li><span class="code">HotRow</span> - 
+Gets the current hot row (or 0 if no hot row) when <span class="code">HotTrack = True</span>.</li><li><span class="code">MultiSelect</span> -
+Gets/sets whether multiple grid cells or rows can be selected or not.</li><li><span class="code">RowMode</span> - 
+Gets/sets whether whole rows are selected rathert than individual cells.</li><li><span class="code">SelectionCount</span> -
+In row mode; gets the number of selected rows in the grid, otherwise gets the number of selected cells in the grid.  Useful when the grid has <span class="code">MultiSelect</span> set.</li><li><span class="code">SelectedRowByIndex</span> - 
+Gets the row of the selected cell or row with the specified 1-based index. See also 
+<span class="code">SelectionCount</span>.</li><li><span class="code">SelectedColByIndex</span> - 
+Gets the column of the selected cell with the specified 1-based index. See also 
+<span class="code">SelectionCount</span>.</li><li><span class="code">ClearSelection</span> -
+Clears the current selection in the control.</li></ul><a name="sort" /><h3>5. Sorting</h3><p>
+Sorting is configured using SGrid's <span class="code">SortObject</span>.  This object
+maintains details of both the currently hierarchical grouping state and non-grouped
+sort for any row.  You can have any number of columns in the sort, and each one can
+be configured for the type of data and order you want to sort in.  These methods are
+exposed by the grid for sorting:
+</p><ul><li><span class="code">SortObject</span> -
+Returns a reference to the sort object where grid sorting options can be specified.</li><li><span class="code">Sort</span> -
+Sorts the grid data according to the options set up in the <span class="code">SortObject</span>.</li></ul><p>
+The <span class="code">cGridSortObject</span> allows you to configure the sort you wish to
+apply.  For each sort column, you specify the <span class="code">SortColumn</span>, 
+<span class="code">SortOrder</span> and <span class="code">SortType</span> properties. To
+add a new column to the sort, set the index of the sort item to one greater than the
+current sort count.
+</p><ul><li><span class="code">Clear</span> -
+Clears all columns from the sort object.</li><li><span class="code">Count</span> -
+Gets the number of sorting columns.</li><li><span class="code">IndexOf</span> - 
+Gets the index of the sort data for the specified column, or zero if no sorting 
+should be applied to the column.</li><li><span class="code">Remove</span> - 
+Removes the sort data for the specified index.
+</li><li><span class="code">ClearNongrouped</span> -
+Clears only non-grouping sort rows from the sort object.</li><li><span class="code">SortColumn</span> -
+Gets/sets the column to sort by for the specified index.</li><li><span class="code">SortOrder</span> -
+Gets/sets the order to sort in for the specified index.</li><li><span class="code">SortType</span> -
+Gets/sets the sorting type to use for the specified index. Sorting types include
+numeric, string (case sensitive and insensitive), date (with various accuracy levels), 
+icon, colour, item data, selection and indentation.
+</li><li><span class="code">GroupBy</span> -
+Gets/sets whether the grid data should be grouped by the specified sorting column.</li></ul><a name="settings" /><h3>6. Grid Settings and Options</h3><p></p><a name="ils" /><h4>6.1. Image Lists</h4><p>
+Up to two image lists can be associated with the control; one for the main grid and one for the
+header.  If you do not define a separate ImageList for the header then the control will assume
+that the main ImageList should be used.
+</p><ul><li><span class="code">ImageList</span> -
+Sets an ImageList as the source of icons for the control. The ImageList can be either a VB ImageList, a vbAccelerator ImageList or an API hIml handle. If it is a VB Image List, the Image List must have had at least one icon in it before using this property.</li><li><span class="code">HeaderImageList</span> -
+Gets/sets an ImageList to associate with the Header control. By default, the ImageList associated with the control is used.  Only ComCtl32 compatible ImageLists may be used with the header
+control (i.e. not MSCOMCTL.OCX).</li></ul><a name="groups" /><h4>6.2. Hierarchical Grouping</h4><ul><li><span class="code">AllowGrouping</span> - 
+Gets/sets whether the header shows a grouping box to drag header items into.
+</li><li><span class="code">HideGroupingBox</span> - When <span class="code">AllowGrouping</span> is True, Gets/sets whether the drag-drop area for grouping rows is hidden.
+</li><li><span class="code">GroupBoxHintText</span> - 
+Gets/sets the hint text shown in the column header grouping box when no column headers are grouped.
+</li></ul><a name="appearance" /><h4>6.3. Appearance</h4><ul><li><span class="code">BorderStyle</span> -
+Gets/sets the border style for the control.</li><li><span class="code">BackgroundPicture</span> -
+Gets/sets a picture to be used as the grid's background.</li><li><span class="code">AlternateRowBackColor</span> -
+Gets/sets the background colour to use when rendering alternate rows. Set to -1 to use the standard back colour.</li><li><span class="code">BackColor</span> -
+Gets/sets the background color of the grid.</li><li><span class="code">HighlightBackColor</span> -
+Gets/sets the background colour of highlighted cells. Set to -1 to use the default.</li><li><span class="code">HighlightForeColor</span> -
+Gets/sets the foreground colour of highlighted cells. Set to -1 to use the default.</li><li><span class="code">NoFocusHighlightBackColor</span> -
+Gets/sets the highlight background colour for cells when the grid is out of focus. 
+Use -1 for the default colour.</li><li><span class="code">NoFocusHighlightForeColor</span> -
+Gets/sets the highlight foreground colour for cells when the grid is out of focus. Use -1 for the default colour.</li><li><span class="code">GroupingAreaBackColor</span> -
+Gets/sets the colour of the column grouping area.</li><li><span class="code">GroupingGutterBackColor</span> -
+Not implemented in this release.</li><li><span class="code">GroupRowBackColor</span> -
+Gets/sets the background colour for grouping rows.</li><li><span class="code">GroupRowForeColor</span> -
+Gets/sets the foreground colour of the text in grouping rows.</li><li><span class="code">ForeColor</span> -
+Gets/sets the foreground color used to draw the control.</li><li><span class="code">GridLineColor</span> -
+Gets/sets the colour used to draw grid lines.</li><li><span class="code">GridFillLineColor</span> -
+Gets the colour used to draw fill grid lines. Set to -1 to use the default grid line colour.</li><li><span class="code">Font</span> -
+Gets/sets the font used by the control.</li><li><span class="code">GridLines</span> -
+Gets/sets whether grid-lines are drawn or not.</li><li><span class="code">NoVerticalGridLines</span> -
+Gets/sets whether vertical grid lines should be supressed when grid lines are on.</li><li><span class="code">NoHorizontalGridLines</span> -
+Gets/sets whether horizontal grid lines should be supressed when grid lines are on.</li><li><span class="code">GridLineMode</span> -
+Gets/sets the grid line mode. The mode can either be standard, in which grid lines 
+are only drawn around cells, or fill, in which case the grid lines fill the control.</li><li><span class="code">DrawFocusRectangle</span> -
+Gets/sets whether a focus rectangle (dotted line around the selection) will be shown.
+</li><li><span class="code">SelectionAlphaBlend</span> -
+Gets/sets whether the selection colour is alpha-blended with the background colour or not.</li><li><span class="code">SelectionOutline</span> -
+Gets/sets whether the selection is outlined or not. <span class="code">DrawFocusRectangle</span>
+ must be <span class="code">False</span> for this to work.</li><li><span class="code">HighlightSelectedIcons</span> - 
+Gets/sets whether icons in selected cells will be highlighted using the selection colour.
+</li><li><span class="code">DisableIcons</span> - 
+Gets/sets whether icons are drawn disabled when the control is disabled.
+</li><li><span class="code">ScrollBarStyle</span> - 
+Gets/sets the style in which scroll bars are drawn. Flat or Encarta style scroll bars are only supported in systems with COMCTL32.DLL version 4.72 or higher.  This setting is ignored when
+running XP or above.</li><li><span class="code">Header</span> - Gets/sets whether the grid's header is
+visible or not.</li><li><span class="code">HeaderFlat</span> -
+Gets/sets whether the header is rendered with a flat style or not.  Not recommended when using
+XP Visual Styles.</li><li><span class="code">HeaderHeight</span> - 
+Gets/sets the height of the header.</li></ul><a name="behaviour" /><h4>6.4. Behaviour</h4><ul><li><span class="code">SplitRow</span> -
+Gets/sets the index of the row to split the grid at. Set to 0 for no split.</li><li><span class="code">SplitSeparatorSize</span> -
+Gets/sets the height of the separator between rows before SplitRow and rows after.</li><li><span class="code">StretchLastColumnToFit</span> - 
+Gets/sets whether the last column is stretched to fit when the control is wider than all of the visible columns.</li><li><span class="code">Redraw</span> - 
+Gets/sets whether the grid is redrawn in response to changes. Set to False whilst setting many properties to increase speed. Setting to True after it has been False forces a re-draw of the control.</li><li><span class="code">OwnerDrawImpl</span> - Gets/sets the object which implements the <span class="code">IGridCellOwnerDraw</span> interface for this grid, or <span class="code">Nothing</span> if there is no owner draw implementation.
+</li><li><span class="code">AddRowsOnDemand</span> -
+Gets/sets whether the grid is in Virtual Mode (i.e. rows are added as required via the 
+<span class="code">RequestRow</span> and <span class="code">RequestRowData</span> events).</li><li><span class="code">HeaderDragReOrderColumns</span> -
+Gets/sets whether the grid's header columns can be dragged around to reorder them.</li><li><span class="code">HeaderButtons</span> - 
+Gets/sets whether the grid's header has clickable buttons or not.</li><li><span class="code">HeaderHotTrack</span> -
+Gets/sets whether the grid's header tracks mouse movements and highlights the header column the mouse is over or not.</li></ul><a name="general" /><h4>6.5. General</h4><ul><li><span class="code">Draw</span> - Draws the control.</li><li><span class="code">GetVisibleCellRange</span> - 
+Gets the visible cell range in the grid. Cells that are partially displayed are included in the range.</li><li><span class="code">ColumnHeaderFromPoint</span> - Determines which column header is under the specified mouse point in pixels relative to the control.</li><li><span class="code">CellFromPoint</span> - 
+Gets the cell which contains the given X,Y coordinates (relative to the grid) in pixels.</li><li><span class="code">ScrollOffsetX</span> -
+Gets the current horizontal scroll offset in pixels.</li><li><span class="code">ScrollOffsetY</span> -
+Gets the current vertical scroll offset in pixels.</li><li><span class="code">CellBoundary</span> - Gets the 
+co-ordinates of the bounding rectangle for a cell in the grid, in twips.</li><li><span class="code">EnsureVisible</span> -
+Ensures that the specified grid cell is made visible in the control.</li><li><span class="code">FindSearchMatchRow</span>
+Finds the first matching row for a given search string.</li><li><span class="code">EvaluateTextHeight</span> - 
+Determines the ideal height required to display all the cell's text in a cell. This property is only of any use if the Cell's <span class="code">CellTextAlign</span> property allows multiple lines.</li><li><span class="code">EvaluateTextWidth</span>
+Determines the ideal width required to fully display text in a cell.</li></ul><a name="events" /><h3>7. Events</h3><ul><li><span class="code"> ColumnClick</span> -
+Raised when the user clicks a column.</li><li><span class="code"> ColumnWidthStartChange</span> -
+Raised before a column's width is about to be changed.</li><li><span class="code"> ColumnWidthChanging</span> -
+Raised as a column's width is being changed.</li><li><span class="code"> ColumnWidthChanged</span> -
+Raised when a column's width has been changed.</li><li><span class="code"> ColumnDividerDblClick</span> -
+Raised when the divider between two columns is double clicked.</li><li><span class="code"> ColumnOrderChanged</span> -
+Raised when the order of the columns is changed following a drag-drop operation.</li><li><span class="code"> HeaderRightClick</span> -
+Raised when the user right clicks on the grid's header.</li><li><span class="code"> SelectionChange</span> -
+Raised when the user changes the selected cell.</li><li><span class="code"> HotItemChange</span> -
+Raised when the hot cell or row changes. Only raised when <span class="code">HotTrack</span> is True.</li><li><span class="code"> RequestEdit</span> -
+Raised when the grid has the <span class="code">Editable</span> property set to True and the user's actions or a call to <span class="code">StartEdit</span> is used to request editingof the current cell.</li><li><span class="code"> PreCancelEdit</span> -
+Raised when the user has taken an action that will cancel an edit operation or the 
+<span class="code">EndEdit</span> method is called. Allows the edit contents to be validated prior to exiting edit mode.</li><li><span class="code"> CancelEdit</span> -
+Raised when edit mode is exited.</li><li><span class="code"> KeyDown</span> -
+Raised when a key is pressed in the control.</li><li><span class="code"> KeyPress</span> -
+Raised after the KeyDown event when the key press has been converted to an ASCII code.</li><li><span class="code"> KeyUp</span> -
+Raised when a key is released on the grid.</li><li><span class="code"> MouseDown</span> -
+Raised when the a mouse button is pressed over the control.</li><li><span class="code"> MouseMove</span> -
+Raised when the mouse moves over the control, or when the mouse moves anywhere and a mouse button has been pressed over the control.</li><li><span class="code"> MouseUp</span> -
+Raised when a mouse button is released after having been pressed over the control.</li><li><span class="code"> DblClick</span> -
+Raised when the user double clicks on the grid.</li><li><span class="code"> ScrollChange</span> -
+Raised when the grid is scrolled.</li><li><span class="code"> RowGroupingStateChange</span> -
+Raised when the state of a grouping row is about to change (between collapsed and expanded).
+Can be used to cancel the state change.</li><li><span class="code"> RequestRow</span> -
+Raised when a new row is needed and the <span class="code">AddRowsOnDemand</span> property is set to True.</li><li><span class="code"> RequestRowData</span> -
+Raised after a new row has been added in response to <span class="code">RequestRow</span> when <span class="code">AddRowsOnDemand</span> is set True. Respond by filling in the cells for that row.</li></ul><a name="general" /><h3>8. Persistence</h3><p>
+Grid data can be persisted and reloaded very quickly using 
+the <span class="code">SaveGridData</span>
+and <span class="code">LoadGridData</span> methods.  These methods only persist the cell
+data and row information, so the data must be subsequently re-loaded into a grid with 
+the exact same column structure.
+</p><h2>Tip: Upgrading from SGrid 1 to SGrid 2</h2><p>
+You can do this in VB as normal by adding the new grid to the Toolbox and then
+copying the properties of the existing control across. However, you should also
+find you can do it by editing your project's .VBP and .FRM files in Notepad.
+For example, in VB5 the old SGrid appears in the .VBP file like this:
+</p><pre><span class="color: #FF0000">Object={017E002E-D7CC-11D2-8E21-44B10AC10000}#15.2#0; vbalGrid.ocx</span></pre><p>
+And in the .FRM file like this:
+</p><pre><span class="color: #FF0000">Object = "{017E002E-D7CC-11D2-8E21-44B10AC10000}#15.2#0"; "vbalGrid.ocx"</span>
+Begin VB.Form frmXXXX
+   Begin <span class="color: #FF0000">vbAcceleratorGrid.vbalGrid grd</span>
+      Height          =   3255
+      Left            =   60
+      TabIndex        =   0
+      Top             =   60
+      Width           =   4875
+      _ExtentX        =   8599
+      _ExtentY        =   5741
+
+     <span class="color: #C0C0C0">.. etc</span>
+
+   End
+End 
+</pre><p>
+To move to the new grid, you just need to change the items shown in red.  For the VB5
+SGrid, the new entries will be:
+</p><pre><span class="color: #FF0000">Object={3D811CB0-6F63-4CA8-BD1E-7858AC6C9A00}#5.6#0; vbalSGrid.ocx</span></pre><pre>
+Object = "<span class="color: #FF0000">{3D811CB0-6F63-4CA8-BD1E-7858AC6C9A00}#5.6#0</span>"; "<span class="color: #FF0000">vbalSGrid.ocx</span>"
+Begin VB.Form frmXXXX
+   Begin vbAcceleratorGrid<span class="color: #FF0000">6</span>.vbalGrid grd
+      Height          =   3255
+      Left            =   60
+      TabIndex        =   0
+      Top             =   60
+      Width           =   4875
+      _ExtentX        =   8599
+      _ExtentY        =   5741
+
+     <span class="color: #C0C0C0">.. etc</span>
+
+   End
+End 
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;SGrid 2.0</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 11 February 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/S_Grid_2/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:49:55 GMT -->
+</html>

@@ -1,0 +1,144 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Counting_Colours/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:55:42 GMT -->
+<head>
+
+<title>vbAccelerator - Counting Colours in an Image</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Counting the number of distinct colours in an image doesn't sound like a particularly hard
+thing to do until you try it on a large 24-bit image.  This article demonstrates one technique
+for counting the colours quickly.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;Counting Colours in an Image</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Count_Colours_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Count Colours Sample</a> (96K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3307</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3307&amp;type=Article&amp;title=Counting%20Colours%20in%20an%20Image">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />13 Jan 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3017">True Colour DIBSection</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2312">A Fast Index-Based Collection</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Counting Colours in an Image</h1><img src="clrCount.png" width="207" height="182" alt="Counting Colours Sample" /><p /><p>Counting the number of distinct colours in an image doesn't sound like a particularly hard
+thing to do until you try it on a large 24-bit image.  This article demonstrates one technique
+for counting the colours quickly.
+</p><h2>Counting Colours</h2><p>One basic technique for counting the colours in an image would be to create an array or collection to hold
+the colours and then start counting from the start of the image.  However, consider what happens then if you
+load a 1280 x 1024 pixel image.  Firstly, you have 1.3 million pixels to check, and secondly for every single
+one you need to check whether that colour has been counted before.  With an array, that would potentially mean
+you could have to perform somewhere around 400 billion checks, and with a collection you'll probably find it
+dies if there are more than 10,000 unique colours.</p><p>Clearly you need a quicker method.  One method is to use indexes to divide the problem down and some 
+basic algorithmic techniques. For this sample I do the following:</p><ul><li>Use a sorted list with insert optimisation and binary search to find the item.</li><li>Create distinct counters for each green component in the image.</li></ul><h3>Sorted Lists and Binary Search</h3><p>If a list is sorted, you can find an item in it much more quickly that you can in an unsorted one.
+This technique is called "Binary Search" and works as follows:</p><ol><li>Start in the middle of the list.  Compare the middle item to the item you're trying to find.  In the
+(unlikely) event it matches then the search is complete. Otherwise:</li><li>If the item is less than the middle item, then since the list is sorted it must reside somewhere
+between the start and the middle.  Likewise, if the item is greater than the middle item, it must reside
+between the middle and the end.  Go back to step 1 and repeat with the appropriate shorter list.</li></ol><p>Obviously to use this technique you need the list to be sorted in the first place.  You can perform
+sorting as you add items to a list using the same Binary Search technique to work out where the
+insertion point is; the only thing that prevents this normally in VB is that it is slow to insert
+an item into an array.  Luckily if you're creating an array of Longs, you can make inserting
+quicker by using <i>CopyMemory</i>.  This technique is described in the article 
+<a href="http://www.vbaccelerator.com/article.asp?id=2312">A Fast Index-Based Collection</a>.</p><p>Enhancing the code in that article to provide a binary search method is straightforward.  Here's the
+code you need:</p><pre>
+Public Function BinarySearch( _
+      ByVal lFor As Long, _
+      ByRef lInsertIndex As Long _
+   ) As Long
+   lInsertIndex = 0
+   BinarySearch = plBinSearch(lFor, lInsertIndex, 1, m_lCount)
+End Function
+
+Private Function plBinSearch( _
+      ByVal lFor As Long, _
+      ByRef lInsertIndex As Long, _
+      ByVal lStart As Long, _
+      ByVal lEnd As Long _
+   ) As Long
+   If lEnd - lStart &gt; 1 Then
+      Dim iP As Long
+      iP = lStart + (lEnd - lStart) \ 2
+      If m_lItem(iP) = lFor Then
+         ' Success:
+         plBinSearch = iP
+      ElseIf m_lItem(iP) &gt; lFor Then
+         ' the centre element is greater than the
+         ' item we're searching for.  Set the end
+         ' to the centre element &amp; repeat:
+         lEnd = iP - 1
+         plBinSearch = plBinSearch(lFor, lInsertIndex, lStart, lEnd)
+      ElseIf m_lItem(iP) &lt; lFor Then
+         ' the centre element is less than the
+         ' item we're searching for.  Set the start
+         ' to the centre element &amp; repeat:
+         lStart = iP + 1
+         plBinSearch = plBinSearch(lFor, lInsertIndex, lStart, lEnd)
+      End If
+   Else
+      ' 1 or 2 items left.  Check if either
+      ' match the search item.
+      If (lEnd &lt; lStart) Then
+         lInsertIndex = lStart
+      Else
+         If m_lItem(lEnd) = lFor Then
+            plBinSearch = lEnd
+         ElseIf m_lItem(lStart) = lFor Then
+            plBinSearch = lStart
+         ElseIf lFor &gt; m_lItem(lEnd) Then
+            lInsertIndex = lEnd + 1
+         ElseIf lFor &gt; m_lItem(lStart) Then
+            lInsertIndex = lEnd
+         Else
+            lInsertIndex = lStart
+         End If
+      End If
+   End If
+End Function
+</pre><p>The function returns the index of the item if found, otherwise it returns 0 (the collection
+is implemented with 1-based indexes).  Adding the second <i>lInsertIndex</i> parameter lets you know where you should insert
+an item in the array if it isn't found.</p><p>So with this in place, counting colours can be implemented more quickly.</p><h3>Counting by sub-division</h3><p>Even using this technique, using a single array to store all possible colours results in too slow a count.  
+To speed it up, you can subdivide the colour set, in effect adding an index to the colours.  In the sample I've 
+chosen the green component of the colour as the basis for the index, because the green component of any image
+is the brightest of the RGB components in an image.  Creating 255 sorted sub arrays using a class 
+may sound like madness but as you will see if you try modifying the code to use a single array for an image
+with a large number of colours its much, much quicker.</p><h2>Performance</h2><p>This technique is much better than any of the naive implementations.  A 1280x1024 image with 264,000 distinct
+colours can be counted in just over a second on my current Athlon XP 2200 machine (which is at the time of
+writing having a number of performance difficulties all of its own).  However, I note with envy
+that Paint Shop Pro can do the same task more quickly (less than 0.3s).  How do they do it?  If you know,
+or have an ideas then I'd love to know!</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;Counting Colours in an Image</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Counting_Colours/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:55:43 GMT -->
+</html>

@@ -1,0 +1,228 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Keep_Form_Titlebars_in_Focus_when_ToolWindows_are_Shown/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:32 GMT -->
+<head>
+
+<title>vbAccelerator - Keep Form Titlebars in Focus when ToolWindows are Shown</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+The ToolWindow style, introduced with VB4, allowing you to easily create 
+pop-up tool windows with small captions. However, there is (and has always been) 
+a problem with them: whenever the form or a control on it gets the focus, 
+it appears that the main form of your application looses focus. Whilst 
+maybe this isn't the worst user-interface crime in the world, it is 
+annoying and makes your application look unprofessional compared to the 
+smoother behaviour in Word, Excel, DevStudio etc.
+
+This subclassing sample demonstrates how to fix the title bar problem with 
+a working but, erm, rather slimy hack.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;Keep Form Titlebars in Focus when ToolWindows are Shown</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Title_Bar_Focus_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Title Bar Focus Sample</a> (19K)</p><p /><p class="nav"><a href="VB6_TitleBar_Focus_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TitleBar Focus Sample</a> (19K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4574</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4574&amp;type=Article&amp;title=Keep%20Form%20Titlebars%20in%20Focus%20when%20ToolWindows%20are%20Shown">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Aug 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1272">vbAccelerator Toolbar and CoolMenu Control v3.5</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1070">vbAccelerator Drop-Down and Popup Form Control</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Keep Form Titlebars in Focus when ToolWindows are Shown</h1><p class="splash">Allow your VB app to behave like Office Applications when
+    ToolWindows and Find/Replace Dialogs are in view.</p><img src="tbrfocus.gif" width="200" height="141" alt="Title&#xD;&#xA;            Bar Focus Demonstration Application" /><p /><p>
+The ToolWindow style, introduced with VB4, allowing you to easily create 
+pop-up tool windows with small captions. However, there is (and has always been) 
+a problem with them: whenever the form or a control on it gets the focus, 
+it appears that the main form of your application looses focus. Whilst 
+maybe this isn't the worst user-interface crime in the world, it is 
+annoying and makes your application look unprofessional compared to the 
+smoother behaviour in Word, Excel, DevStudio etc.
+</p><p>
+This subclassing sample demonstrates how to fix the title bar problem with 
+a working but, erm, rather slimy hack.
+</p><p>The code here is the basis for the code used in the 
+<a href="http://www.vbaccelerator.com/article.asp?id=1070">vbAccelerator Drop-Down Form Control</a> and
+is also incorporated directly into the <a href="http://www.vbaccelerator.com/article.asp?id=1272">vbAccelerator
+Toolbar, Rebar and CoolMenu control</a>.
+</p><p><strong>Note:</strong> As is, this code is not suitable if your
+application can have multiple main form windows.  You can enhance the code
+to support this however by creating a module to track which is the active 
+main form.
+</p><h2>How It Works</h2><p>
+Changing the appearance of a VB form's title bar is one of the things
+VB makes it very difficult to do. Whenever a Window's title bar needs
+to change state from active to inactive, Windows sends a <i>WM_NCACTIVATE</i>
+message to the window. In a simple C Windows application you could simply
+intercept this message and consume it rather than sending it to the
+<i>DefWindowProc</i>.
+</p><p>
+In VB, it isn't so easy. VB appears to use the <i>WM_NCACTIVATE</i> message
+for its own purposes. If you eat this message, your VB form either stops 
+responding to the mouse or keyboard, or the program goes into a 
+continous loop and can only be stopped with Ctrl-Alt-Del.
+</p><p>
+Another possible alternative is intercepting the <i>WM_NCPAINT</i> message. 
+Windows sends this whenever any part of the non-client area needs 
+to be repainted (including the form border, the titlebar, the menu bar 
+and so on). If you consume this message you can write all the 
+non-client area drawing code yourself - and that means you can paint the 
+titlebar focused when it would normally be non-focused. Whilst I 
+played with this solution for quite a while, my experiences with indicate
+that Windows does not play fair with the <i>WM_NCPAINT</i> message, and
+it is a pretty tricky thing to do.  My current state-of-the art work on
+hacking around this is the <a href="http://www.vbaccelerator.com/article.asp?id=755">NeoCaption</a> sample.
+</p><p>
+Another solution is required. It turns out there is a simple one, but
+it is a bit of a slimy hack, as you're going to see..
+</p><h2>The Code</h2><p>This technique involves subclassing for three messages:</p><ol><li><i>WM_NCACTIVATE</i></li><li><i>WM_ACTIVATEAPP</i></li><li><i>WM_ACTIVATE</i></li></ol><p>
+When <i>WM_NCACTIVATE</i> is received, the code first calls
+<i>LockWindowUpdate</i> to prevent any changes being shown to the user.
+</p><p class="tipHeader">Tip: Successful LockWindowUpdate</p><p class="tip"><i>LockWindowUpdate</i> is an excellent call in that it completely stops 
+window repainting and thereby speeds things up and stops distracting flicker. But you have 
+to be careful when using it. If you cover or expose any area of another window whilst 
+<i>LockWindowUpdate</i> is on, as soon as you turn it off again the entire desktop repaints,
+this is very slow, and causes probably worse flickering than if it wasn't turned on in the
+first place! So when using <i>LockWindowUpdate</i>, ensure you apply it to a window that
+does not change size or move. Often the parent window is a better choice than the window
+being updated.
+</p><p>
+With window updating locked, it then calls the VB window
+procedure with the as received <i>WM_NCACTIVATE</i> parameters. Normally
+this would redraw the title bar inactive, but because updates are
+switched off, the display is not updated. The code then calls
+<i>WM_NCACTIVATE</i> again, but with the parameters set to indicate
+that the window should be active. This sets the title bar back to the
+right display but enables the form to keep working correctly. Finally
+we turn <i>LockWindowUpdate</i> back off again to make the display correct.
+</p><p>
+That ensures that the titlebar keeps an active appearance when a non-modal 
+form is displayed, but we need to make a few more modifications to 
+hold that appearance when you display a modal form. Showing a modal
+form can be detected because Windows will repeatedly try to call
+<i>WM_NCACTIVATE</i> until the title bar state is changed correctly. 
+Normally directly after the <i>WM_NCACTIVATE</i> message there is a 
+<i>WM_ACTIVATE</i> message. So to detect a modal form being shown, and 
+to allow the title bar to update, we can use a static variable to 
+count the number of times the <i>WM_NCACTIVATE</i> message has been sent 
+between <i>WM_ACTIVATE</i> messages. If this exceeds 2 we assume a 
+modal form is being displayed and allow the default processing to occur.
+</p><p>
+The final processing is to detect the <i>WM_ACTIVATEAPP</i> message. This 
+tells the code whether the entire app (all forms) has gained or lost 
+the focus, and since it fires after the <i>WM_NCACTIVATE</i> message we 
+can update the titlebar in response.
+</p><pre>
+Private Property Get ISubclass_MsgResponse() As EMsgResponse
+   Select Case CurrentMessage
+   Case WM_NCACTIVATE
+      ISubclass_MsgResponse = emrConsume
+   Case Else
+      ISubclass_MsgResponse = emrPostProcess
+   End Select
+End Property
+
+Private Function ISubclass_WindowProc( _
+       ByVal hWnd As Long, _
+       ByVal iMsg As Long, _
+       ByVal wParam As Long, _
+       ByVal lParam As Long _
+   ) As Long
+   Static iRefCount As Long
+
+   Select Case iMsg
+   Case WM_NCACTIVATE
+      If wParam = 0 Then
+         iRefCount = iRefCount + 1
+         If iRefCount &lt; 3 Then
+            LockWindowUpdate hWnd
+            ISubclass_WindowProc = CallOldWindowProc( _
+                hWnd, iMsg, wParam, lParam)
+            CallOldWindowProc m_hWnd, WM_NCACTIVATE, 1, 0
+            LockWindowUpdate 0
+         Else
+            ISubclass_WindowProc = CallOldWindowProc( _
+                hWnd, iMsg, wParam, lParam)
+         End If
+      Else
+         ISubclass_WindowProc = CallOldWindowProc( _
+             hWnd, iMsg, wParam, lParam)
+      End If
+
+   Case WM_ACTIVATEAPP
+      If (wParam = 0) Then
+         iRefCount = 0
+         ' app being deactivated
+         CallOldWindowProc m_hWnd, WM_NCACTIVATE, 0, 0
+      Else
+         ' app being activated
+         ' if not the active form then we should repaint
+         ' the title bar
+         CallOldWindowProc m_hWnd, WM_NCACTIVATE, 1, 0
+      End If
+
+   Case WM_ACTIVATE
+      If wParam = 0 Then
+         iRefCount = 0
+         ' deactivating the window, lParam is 
+         ' the window that is being activated.
+      End If
+
+   Case WM_DESTROY
+      ' In case the user does not set the class
+      ' to nothing before the owning form is
+      ' closed:
+      Detach
+   End Select
+
+End Function
+</pre><p>
+As usual, using this code is somewhat more simple that writing it.
+Just reference SSubTmr.DLL (or SSubTmr6.DLL for the VB version), include the 
+<i>cActiveTitleBar</i> class and call it like this:
+</p><pre>
+Option Explicit
+Private m_cATBar As cActiveTitleBar
+
+Private Sub Form_Load()
+   m_cATBar.Attach Me.hWnd
+End Sub
+</pre><p>
+That's it! Just add the code to all non-modal forms and you are done.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;Keep Form Titlebars in Focus when ToolWindows are Shown</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 29 March 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Keep_Form_Titlebars_in_Focus_when_ToolWindows_are_Shown/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:33 GMT -->
+</html>

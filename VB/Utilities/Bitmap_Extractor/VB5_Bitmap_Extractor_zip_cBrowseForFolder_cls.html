@@ -1,0 +1,480 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/Bitmap_Extractor/VB5_Bitmap_Extractor_zip_cBrowseForFolder_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:39 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cBrowseForFolder.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cBrowseForFolder.cls" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Bitmap Extractor Utility</a>&#160;.&#160;<a href="VB5_Bitmap_Extractor.html">VB5 Bitmap Extractor</a>&#160;.&#160;cBrowseForFolder.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Bitmap_Extractor.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Bitmap Extractor</a> (87K)</p><p /><p class="nav"><a href="VB6_Bitmap_Extractor.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Bitmap Extractor</a> (80K)</p><p /><p class="nav"><a href="XP_Explorer_Toolbar_Bitmaps.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />XP Explorer Toolbar Bitmaps</a> (128K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:5160</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=5160&amp;type=Zip&amp;title=VB5%20Bitmap%20Extractor%2Ezip%5FcBrowseForFolder">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />15 May 2003<br /><p class="update">
+On some systems the alpha channel was discarded before loading into the
+alpha-DIB section. This is fixed by using the <i>LR_CREATEDIBSECTION</i>
+option in the <i>LoadImage</i> call when reading the bitmap.
+</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1418">Two code only solutions for displaying Common/Dialogs</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11957">ThemeXP</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11956">Resource Hacker</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1420">Browsing For Folders</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2522">Reading Data from Local or External Library Resources</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1430">Icon Extractor Utility </a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3912">Splitting the Easy Way</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cBrowseForFolder.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cBrowseForFolder"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+
+Private Const S_OK = 0           ' indicates success
+Private Const S_FALSE = 1&amp;   ' special HRESULT value
+Private Type BROWSEINFO
+    hwndOwner As Long
+    pidlRoot As Long
+    pszDisplayName As Long ';// Return display name of item selected.
+    lpszTitle As Long ';      // text to go in the banner over the tree.
+    ulFlags As Long ';       // Flags that control the return stuff
+    lpfn As Long
+    lParam As Long         '// extra info that's passed back in callbacks
+    iImage As Long ';      // output var: where to return the Image index.
+End Type
+Private Declare Function SHBrowseForFolder Lib "shell32.dll" Alias
+ "SHBrowseForFolderA" _
+   (lpbi As BROWSEINFO) As Long
+Private Declare Function SHGetSpecialFolderLocation Lib "shell32.dll" _
+   (ByVal hwndOwner As Long, _
+    ByVal nFolder As Long, _
+    pidl As Long) As Long
+Private Declare Function SHGetDesktopFolder Lib "shell32.dll" _
+   (ppshf As IShellFolder) As Long
+
+Private Declare Function GetFullPathName Lib "kernel32" Alias
+ "GetFullPathNameA" (ByVal lpFilename As String, ByVal nBufferLength As Long,
+ ByVal lpBuffer As String, ByVal lpFilePart As String) As Long
+Private Declare Function FormatMessage Lib "kernel32" Alias "FormatMessageA"
+ (ByVal dwFlags As Long, lpSource As Any, ByVal dwMessageId As Long, ByVal
+ dwLanguageId As Long, ByVal lpBuffer As String, ByVal nSize As Long, Arguments
+ As Long) As Long
+Private Const FORMAT_MESSAGE_FROM_SYSTEM = &amp;H1000
+Private Const FORMAT_MESSAGE_IGNORE_INSERTS = &amp;H200
+Private Declare Function SendMessageLong Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Declare Function SendMessageStr Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ String) As Long
+Private Declare Function SetFocusAPI Lib "user32" Alias "SetFocus" (ByVal hwnd
+ As Long) As Long
+
+'BROWSEINFO.ulFlags values:
+Private Const BIF_RETURNONLYFSDIRS = &amp;H1      'Only returns file system
+ directories
+Private Const BIF_DONTGOBELOWDOMAIN = &amp;H2     'Does not include network folders
+ below domain level
+Private Const BIF_STATUSTEXT = &amp;H4            'Includes status area in the
+ dialog for use with callback
+Private Const BIF_RETURNFSANCESTORS = &amp;H8     'Only returns file system
+ ancestors.
+Private Const BIF_EDITBOX = &amp;H10              'allows user to rename selection
+Private Const BIF_VALIDATE = &amp;H20             'insist on valid editbox result
+ (or CANCEL)
+Private Const BIF_USENEWUI = &amp;H40             'Version 5.0. Use the new
+ user-interface. Setting
+                                             'this flag provides the user with
+                                         a larger dialog box
+                                             'that can be resized. It has
+                                         several new capabilities
+                                             'including: drag and drop
+                                         capability within the
+                                             'dialog box, reordering, context
+                                         menus, new folders,
+                                             'delete, and other context menu
+                                         commands. To use
+                                             'this flag, you must call
+                                         OleInitialize or
+                                             'CoInitialize before calling
+                                         SHBrowseForFolder.
+Private Const BIF_BROWSEFORCOMPUTER = &amp;H1000  'Only returns computers.
+Private Const BIF_BROWSEFORPRINTER = &amp;H2000   'Only returns printers.
+Private Const BIF_BROWSEINCLUDEFILES = &amp;H4000 'Browse for everything
+
+Private Const WM_USER = &amp;H400
+Private Const BFFM_SETSTATUSTEXTA = (WM_USER + 100)
+Private Const BFFM_ENABLEOK = (WM_USER + 101)
+Private Const BFFM_SETSELECTIONA = (WM_USER + 102)
+Private Const BFFM_SETSELECTIONW = (WM_USER + 103)
+Private Const BFFM_SETSTATUSTEXTW = (WM_USER + 104)
+
+Public Enum efbrCSIDLConstants
+   CSIDL_DESKTOP = &amp;H0                   '(desktop)
+   CSIDL_INTERNET = &amp;H1                  'Internet Explorer (icon on desktop)
+   CSIDL_PROGRAMS = &amp;H2                  'Start Menu\Programs
+   CSIDL_CONTROLS = &amp;H3                  'My Computer\Control Panel
+   CSIDL_PRINTERS = &amp;H4                  'My Computer\Printers
+   CSIDL_PERSONAL = &amp;H5                  'My Documents
+   CSIDL_FAVORITES = &amp;H6                 '(user name)\Favorites
+   CSIDL_STARTUP = &amp;H7                   'Start Menu\Programs\Startup
+   CSIDL_RECENT = &amp;H8                    '(user name)\Recent
+   CSIDL_SENDTO = &amp;H9                    '(user name)\SendTo
+   CSIDL_BITBUCKET = &amp;HA                 '(desktop)\Recycle Bin
+   CSIDL_STARTMENU = &amp;HB                 '(user name)\Start Menu
+   CSIDL_DESKTOPDIRECTORY = &amp;H10         '(user name)\Desktop
+   CSIDL_DRIVES = &amp;H11                   'My Computer
+   CSIDL_NETWORK = &amp;H12                  'Network Neighborhood
+   CSIDL_NETHOOD = &amp;H13                  '(user name)\nethood
+   CSIDL_FONTS = &amp;H14                    'windows\fonts
+   CSIDL_TEMPLATES = &amp;H15
+   CSIDL_COMMON_STARTMENU = &amp;H16         'All Users\Start Menu
+   CSIDL_COMMON_PROGRAMS = &amp;H17          'All Users\Programs
+   CSIDL_COMMON_STARTUP = &amp;H18           'All Users\Startup
+   CSIDL_COMMON_DESKTOPDIRECTORY = &amp;H19  'All Users\Desktop
+   CSIDL_APPDATA = &amp;H1A                  '(user name)\Application Data
+   CSIDL_PRINTHOOD = &amp;H1B                '(user name)\PrintHood
+   CSIDL_LOCAL_APPDATA = &amp;H1C            '(user name)\Local
+    Settings\Applicaiton Data (non roaming)
+   CSIDL_ALTSTARTUP = &amp;H1D               'non localized startup
+   CSIDL_COMMON_ALTSTARTUP = &amp;H1E        'non localized common startup
+   CSIDL_COMMON_FAVORITES = &amp;H1F
+   CSIDL_INTERNET_CACHE = &amp;H20
+   CSIDL_COOKIES = &amp;H21
+   CSIDL_HISTORY = &amp;H22
+   CSIDL_COMMON_APPDATA = &amp;H23           'All Users\Application Data
+   CSIDL_WINDOWS = &amp;H24                  'GetWindowsDirectory()
+   CSIDL_SYSTEM = &amp;H25                   'GetSystemDirectory()
+   CSIDL_PROGRAM_FILES = &amp;H26            'C:\Program Files
+   CSIDL_MYPICTURES = &amp;H27               'C:\Program Files\My Pictures
+   CSIDL_PROFILE = &amp;H28                  'USERPROFILE
+   CSIDL_PROGRAM_FILES_COMMON = &amp;H2B     'C:\Program Files\Common
+   CSIDL_COMMON_TEMPLATES = &amp;H2D         'All Users\Templates
+   CSIDL_COMMON_DOCUMENTS = &amp;H2E         'All Users\Documents
+   CSIDL_COMMON_ADMINTOOLS = &amp;H2F        'All Users\Start
+    Menu\Programs\Administrative Tools
+   CSIDL_ADMINTOOLS = &amp;H30               '(user name)\Start
+    Menu\Programs\Administrative Tools
+
+   CSIDL_FLAG_CREATE = &amp;H8000            'combine with CSIDL_ value to force
+    create on SHGetSpecialFolderLocation()
+   CSIDL_FLAG_DONT_VERIFY = &amp;H4000       'combine with CSIDL_ value to force
+    create on SHGetSpecialFolderLocation()
+   CSIDL_FLAG_MASK = &amp;HFF00              'mask for all possible flag values
+End Enum
+
+Private m_hWndOwner As Long
+Private m_sTitle As String
+Private m_sInitialDir As String
+Private m_sRootDir As String
+Private m_bEditBox As Boolean
+Private m_bStatusText As Boolean
+Private m_bFileSystemOnly As Boolean
+Private m_bValidateText As Boolean
+Private m_bUseNewUI As Boolean
+Private m_sDisplayName As String
+Private m_pidlInitial As Long
+Private m_bShown As Boolean
+Private m_hWNdDialog As Long
+
+Public Event Initialized()
+Public Event SelectionChanged(ByVal sPath As String, ByRef bAllowOk As Boolean)
+Public Event ValidationFailed(ByVal sPath As String, ByRef bKeepOpen As Boolean)
+
+Public Property Get SpecialFolderLocation(ByVal eFolder As efbrCSIDLConstants)
+ As String
+Dim pidl As Long
+On Error Resume Next
+   ' Get pidl of special folder:
+   SHGetSpecialFolderLocation m_hWndOwner, eFolder, pidl
+   If Err = 0 Then
+      ' Convert it to a path:
+      SpecialFolderLocation = PathFromPidl(pidl)
+      ' Free the pidl:
+      Allocator.Free ByVal pidl
+      pidl = 0
+   End If
+End Property
+Private Function GetDesktopFolder() As IShellFolder
+Dim lR As Long
+    lR = SHGetDesktopFolder(GetDesktopFolder)
+End Function
+Public Property Get EditBox() As Boolean
+   EditBox = m_bEditBox
+End Property
+Public Property Let EditBox(ByVal bState As Boolean)
+   m_bEditBox = bState
+End Property
+Public Property Get StatusText() As Boolean
+   StatusText = m_bStatusText
+End Property
+Public Property Let StatusText(ByVal bState As Boolean)
+   m_bStatusText = bState
+End Property
+Public Property Get FileSystemOnly() As Boolean
+   FileSystemOnly = m_bFileSystemOnly
+End Property
+Public Property Let FileSystemOnly(ByVal bState As Boolean)
+   m_bFileSystemOnly = bState
+End Property
+Public Property Get ValidateEditBox() As Boolean
+   ValidateEditBox = m_bValidateText
+End Property
+Public Property Let ValidateEditBox(ByVal bState As Boolean)
+   m_bValidateText = bState
+End Property
+Public Property Get UseNewUI() As Boolean
+   UseNewUI = m_bUseNewUI
+End Property
+Public Property Let UseNewUI(ByVal bState As Boolean)
+   m_bUseNewUI = bState
+End Property
+Public Property Get Title() As String
+   Title = m_sTitle
+End Property
+Public Property Let Title(ByVal sTitle As String)
+   m_sTitle = sTitle
+End Property
+Public Property Get hwndOwner() As Long
+   hwndOwner = m_hWndOwner
+End Property
+Public Property Let hwndOwner(ByVal lhWnd As Long)
+   m_hWndOwner = lhWnd
+End Property
+Public Property Get InitialDir() As String
+   InitialDir = m_sInitialDir
+End Property
+Public Property Let InitialDir(ByVal sDir As String)
+   m_sInitialDir = sDir
+End Property
+Public Property Get RootDir() As String
+   RootDir = m_sRootDir
+End Property
+Public Property Let RootDir(ByVal sDir As String)
+   m_sRootDir = sDir
+End Property
+
+Private Function plGetOptions() As Long
+Dim lOpt As Long
+   If m_bEditBox Then
+      lOpt = BIF_EDITBOX
+   End If
+   If m_bStatusText Then
+      lOpt = lOpt Or BIF_STATUSTEXT
+   End If
+   If m_bFileSystemOnly Then
+      lOpt = lOpt Or BIF_RETURNONLYFSDIRS Or BIF_RETURNFSANCESTORS
+   End If
+   If m_bValidateText Then
+      lOpt = lOpt Or BIF_VALIDATE
+   End If
+   If m_bUseNewUI Then
+      lOpt = lOpt Or BIF_USENEWUI
+   End If
+   plGetOptions = lOpt
+   'Private Const BIF_BROWSEFORCOMPUTER = &amp;H1000  'Only returns computers.
+   'Private Const BIF_BROWSEFORPRINTER = &amp;H2000   'Only returns printers.
+   'Private Const BIF_BROWSEINCLUDEFILES = &amp;H4000 'Browse for everything
+End Function
+
+Public Function BrowseForFolder() As String
+Dim tBI As BROWSEINFO
+Dim sOut As String
+Dim sTitle As String
+Dim pidlRoot As Long
+Dim pidlInitial As Long
+Dim pidlOut As Long
+Dim sPath As String
+
+   tBI.hwndOwner = m_hWndOwner
+   sOut = String$(MAX_PATH, 0)
+   tBI.pszDisplayName = StrPtr(sOut)
+   sTitle = StrConv(m_sTitle, vbFromUnicode)
+   tBI.lpszTitle = StrPtr(sTitle)
+   tBI.ulFlags = plGetOptions()
+   tBI.iImage = 0
+    
+   If Len(m_sRootDir) &lt;&gt; 0 Then
+      ' Get a PIDL for the selected path:
+      pidlRoot = PathToPidl(m_sRootDir)
+   End If
+   tBI.pidlRoot = pidlRoot
+   If Len(m_sInitialDir) &lt;&gt; 0 Then
+      m_pidlInitial = PathToPidl(m_sInitialDir)
+   End If
+   tBI.lParam = ObjPtr(Me)
+   tBI.lpfn = plAddressOf(AddressOf BrowseCallbackProc)
+   
+   m_bShown = True
+   pidlOut = SHBrowseForFolder(tBI)
+   m_hWNdDialog = 0
+   m_bShown = False
+   m_sDisplayName = PointerToString(tBI.pszDisplayName)
+   BrowseForFolder = PathFromPidl(pidlOut)
+   
+   ' Free the pidls we create
+   If pidlRoot &lt;&gt; 0 Then
+      Allocator.Free ByVal pidlRoot
+      pidlRoot = 0
+   End If
+   If m_pidlInitial &lt;&gt; 0 Then
+      Allocator.Free ByVal m_pidlInitial
+   End If
+   m_pidlInitial = 0
+   
+End Function
+Friend Property Get pidlInitial() As Long
+   pidlInitial = m_pidlInitial
+End Property
+Friend Sub SelectionChange(ByVal hwnd As Long, ByVal sPath As String, ByVal
+ lParam As Long)
+Dim bAllowOk As Boolean
+   bAllowOk = True
+   RaiseEvent SelectionChanged(sPath, bAllowOk)
+   If Not bAllowOk Then
+      SendMessageLong hwnd, BFFM_ENABLEOK, 0, 0
+   End If
+End Sub
+Friend Function ValidateFailed(ByVal hwnd As Long, ByVal sPath As String) As
+ Long
+Dim bKeepOpen As Boolean
+   RaiseEvent ValidationFailed(sPath, bKeepOpen)
+   If bKeepOpen Then
+      ValidateFailed = 1
+   End If
+End Function
+Friend Function Initialized(ByVal hwnd As Long)
+   m_hWNdDialog = hwnd
+   RaiseEvent Initialized
+End Function
+Public Property Get DisplayName()
+   DisplayName = m_sDisplayName
+End Property
+Public Sub SetFolder(ByVal sPath As String)
+Dim pidl As Long
+   If m_bShown Then
+      pidl = PathToPidl(sPath)
+      SendMessageLong m_hWNdDialog, BFFM_SETSELECTIONA, 0, pidl
+      Allocator.Free pidl
+      SetFocusAPI m_hWNdDialog
+   Else
+      pError 2
+   End If
+End Sub
+Public Sub SetStatus(ByVal sText As String)
+Dim lR As Long
+   If m_bShown Then
+      lR = SendMessageStr(m_hWNdDialog, BFFM_SETSTATUSTEXTA, 0&amp;, sText)
+   Else
+      pError 2
+   End If
+End Sub
+Friend Property Get DialoghWnd() As Long
+   If m_bShown Then
+      DialoghWnd = m_hWNdDialog
+   Else
+      pError 2
+   End If
+End Property
+Private Sub pError(ByVal lErr As Long)
+   Err.Raise 26000 + lErr, App.EXEName &amp; ".cBrowseForFolder", "Operation
+    invalid unless dialog is displayed."
+End Sub
+Private Function plAddressOf(ByVal lPtr As Long) As Long
+   plAddressOf = lPtr
+End Function
+
+Private Function PathToPidl(sPath As String) As Long
+Dim Folder As IShellFolder
+Dim pidlMain As Long
+Dim cParsed As Long
+Dim afItem As Long
+Dim lFilePos As Long
+Dim lR As Long
+Dim sRet As String
+
+   ' Make sure the file name is fully qualified
+   sRet = String$(MAX_PATH, 0)
+   lR = GetFullPathName(sPath, MAX_PATH, sRet, lFilePos)
+   If lR = 0 Then
+      ApiRaise Err.LastDllError
+   Else
+      ' debug.Assert c &lt;= cMaxPath
+      sPath = left$(sRet, lR)
+   
+      ' Convert the path name into a pointer to an item ID list (pidl)
+      Set Folder = GetDesktopFolder
+      ' Will raise an error if path cannpt be found:
+      If S_OK &gt;= (Folder.ParseDisplayName(0&amp;, 0&amp;, StrConv(sPath, vbUnicode),
+       cParsed, pidlMain, afItem)) Then
+         PathToPidl = pidlMain
+      End If
+   End If
+    
+End Function
+Private Sub ApiRaise(ByVal e As Long)
+   Err.Raise vbObjectError + 29000 + e, _
+              App.EXEName &amp; ".cBrowseForFolder", ApiError(e)
+End Sub
+Private Function ApiError(ByVal e As Long) As String
+Dim s As String, c As Long
+   s = String(256, 0)
+   c = FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM Or _
+                     FORMAT_MESSAGE_IGNORE_INSERTS, _
+                     0&amp;, e, 0&amp;, s, Len(s), ByVal 0&amp;)
+   If c Then ApiError = left$(s, c)
+End Function
+
+
+Private Sub Class_Initialize()
+   'DebugMsg "cBrowseForFolder:Initialize"
+   m_sTitle = "Choose Folder"
+End Sub
+
+Private Sub Class_Terminate()
+   'DebugMsg "cBrowseForFolder:Terminate"
+End Sub
+
+
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Bitmap Extractor Utility</a>&#160;.&#160;<a href="VB5_Bitmap_Extractor.html">VB5 Bitmap Extractor</a>&#160;.&#160;cBrowseForFolder.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 13 June 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/Bitmap_Extractor/VB5_Bitmap_Extractor_zip_cBrowseForFolder_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:39 GMT -->
+</html>

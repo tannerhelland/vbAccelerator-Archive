@@ -1,0 +1,122 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/Streaming_WAV_File_Player/article.asp?id=17 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:23:26 GMT -->
+<head>
+
+<title>vbAccelerator - Streaming .WAV File Player </title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Playing digital audio can be achieved at a number of different levels under windows. At the simplest level, 
+there is the Multimedia Control Interface (MCI) control provided with VB. This is turn is a very 
+thin wrapper around the MCI API provided with Win32, which offers about the same level of control for playing waves 
+as the API  PlaySound and sndPlaySound functions.At a deeper level, your application can take charge of reading chunks of audio from disk and streaming it 
+directly to the sound card. The advantage of these methods is you get more control over how the audio is played, and
+you can play audio files of arbitrary length without using all your memory." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;Streaming .WAV File Player </p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="WaveStream_Sample_Application_and_Class.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />WaveStream Sample Application and Class</a> (47K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3432</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3432&amp;type=Article&amp;title=Streaming%20%2EWAV%20File%20Player%20">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />21 Jan 2003<br /><p class="update">The original code failed under later versions of Windows.  This was because the way
+the <i>WAVEHDR</i> structure is used was changed: in earlier versions, the <i>lpNext</i> reserved
+member could be copied using <i>CopyMemory</i>, but in later versions it could not.  (It would have
+been safer not to mess with this anyway as the Platform SDK clearly states it is reserved, but
+hindsight is a simple thing).  The new version fixes this problem by only copying the non-reserved
+members of the structure.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Streaming .WAV File Player </h1><p class="splash">Play .WAV files of any length using the Multimedia API without problems </p><img src="streamingWave.png" width="390" height="350" alt="Streaming .WAV Player Sample Application" /><p /><p>Playing digital audio can be achieved at a number of different levels under windows. At the simplest level, 
+there is the Multimedia Control Interface (MCI) control provided with VB. This is turn is a very 
+thin wrapper around the MCI API provided with Win32, which offers about the same level of control for playing waves 
+as the API  <i>PlaySound</i> and <i>sndPlaySound</i> functions.</p><p>At a deeper level, your application can take charge of reading chunks of audio from disk and streaming it 
+directly to the sound card. The advantage of these methods is you get more control over how the audio is played, and
+you can play audio files of arbitrary length without using all your memory.</p><h2>Playing Waves</h2><p>The main advantage of the deeper level methods is that with the MCI and PlaySound methods, the 
+system has to allocate memory for the entire sound before it starts. With a streaming approach, 
+you can read the sound in in small chunks (say 0.1s of audio) allowing you to play audio 
+samples of any length (and remember that a CD quality stereo WAV file occupies around 10Mb/minute!). 
+As demonstrated in the picture above, the streaming player works just fine on a 185Mb CD Quality 
+wave file (some 18 minutes of 16 bit stereo at 44.1kHz).</p><p>Another advantage of using the multimedia methods is you can modify the sound before you play it. 
+You could filter it by averaging the bytes before putting them into the sound card's buffer. 
+Or you could create an echo effect by preparing an additional audio buffer which you save attenuated samples 
+of the main sound to as it plays.  You can even create an audio synthesizer this way by creating
+the waveform on the fly, although remember that the ear can discern timing to about 15ms accuracy, so 
+you have to be careful with how large your buffers are.</p><h2>An Uncontrollable Lust for Power</h2><p>Using the multimedia API at this level gives you more control, but the downside is additional 
+complexity. This sample demonstrates how you can play back standard .WAV files, however, if you 
+need to be able to play back sounds which have are not directly compatible with your soundcard 
+(for example, .WAV files with ADPCM compression or .MP3 files) then this sample alone will 
+not work because it would need to invoke the Audio Compression Manager (ACM) functions to do that 
+(which may or may not be the subject of a future article, depending on whether I can figure 
+it out!).</p><h2>The cWavPlayer Class</h2><p>The <i>cWavPlayer</i> class supplied with the download wraps up access to stream digital audio to 
+the sound card. Fundamentally, it works like this:</p><ul><li>OpenFile<br />
+Opens a Multimedia IO device handle, reads the header of the WAV file to check the format 
+of the WAV file and then creates a number of buffers to hold 0.1s each of the wave data read in from the file.</li><li>Play<br />
+Creates a <i>WaveOut</i> handle for passing data to the soundcard from the WAV file and specifies 
+that when data is needed by the soundcard it should post a message to the window. It then prepares 
+each of the buffers to send data to the wave out handle and initiates the play callback loop by posting 
+the message to the window.</li><li>Play callback loop<br />
+Reads data from the file into the wave buffer pointed to by the wave header, and then writes it out 
+to the sound card's driver. When the data is exhausted, the buffer is unprepared and finally once 
+all the buffers have been unprepared the <i>WaveOut</i> handle is closed.</li></ul><p>Using the class as provided is straightforward. Add the class to your project, 
+and ensure the project references <a href="article190a.html?id=17">SSubTmr.DLL</a>.  If you're using VB6, then note
+that you should reference SSubTmr6.DLL and modify the code by replacing "SSubTimer." with
+"SSubTimer6." (without the quotes).</p><p>Next open a .WAV file with the <i>OpenFile</i> method. At this stage you can read various information 
+about the wave file, such as the sampling frequency (<i>SamplesPerSecond</i>), the bit depth (<i>BitsPerSample</i>), 
+whether the file is stereo or mono (<i>Channels</i>).</p><p>To play the file, use the <i>Play</i> method. You can pause it at any time by choosing the 
+<i>Stop</i> method, and change the position in the file using the <i>FileSeek</i> method.</p><p>You can get the position of the playback at any time using the <i>Position</i> method. 
+Remember that with this class the audio is buffered.  There are five (<i>NUM_BUFFERS</i>) independent buffers
+set up and each has a length of approximately 0.1s (<i>BUFFER_SECONDS</i>) of Audio.  This affects the 
+position.</p><p>To reduce the latency associated
+with the position and starting and stopping playback, you can modify the number of buffers and the length by changing
+the constants in the class.  The amount they can be reduced 
+really depends on the performance of the machine you're using, so in a real application you'd probably want these
+to be configurable.  On an Athlon 2200XP with a stock soundcard, it is 
+possible to operate with just two buffers and a 0.05s resolution, which really isn't bad at all.  
+Note that latency is only really an issue if you're trying to accurately sync two sounds.  If both 
+sounds are delayed by exactly the same latency, then there won't be any problem.</p><h2>Coincidentally</h2><p>The DJ Set playing in the picture above was part of a one-off DJ event on 14 Oct 2002 
+inspired by the exceptional  <a href="http://www.2manydjs.org/">2 Many DJs</a> album "As Heard On 
+Radio Soulwax Pt 2" played to a crowd of fashionable yet mainly middle-aged 
+listeners at the BugBar in Brixton, London. 
+Full track listing, betraying my own advanced years and subliminally mixed courtesy 
+of <a href="http://www.sonicfoundry.com/">Acid</a> was
+as follows:</p><ul><li>James Last and His Orchestra - Fanfare</li><li>Jesse James - Shake It (Like A White Girl)</li><li>Young MC - Know How</li><li>Tone-Loc - Funky Cold Medina</li><li>Michael Poliakarof - Lipstick vs Tone-Loc - Funky Cold Medina</li><li>Blondie - Heart of Glass</li><li>Survivor - The Eye of The Tiger</li><li>Paul Hardcastle - 19</li><li>Dynamix II - Give the DJ A Break vs Murray Head - Bangkok</li><li>Julian Cope - World Shut Your Mouth</li><li>NWA - Express Yourself vs The Monkees - Stepping Stone</li><li>S'Express - Theme From S'Express</li><li>Trio - Da Da Da</li><li>M/A/R/R/S - Pump Up The Volume</li><li>The Residents - Kaw Liga vs Michael Jackson - Billie Jean</li><li>Skee Lo - I Wish</li><li>Royksopp - Epie</li><li>The Orb - Little Fluffy Cloud vs Dolly Parton - 9 to 5</li><li>En Vogue - Never Gonna Get It (Acappella)</li><li>Maceo And The Macks - Cross The Tracks</li><li>Cameo - Word Up</li><li>Visage - Fade To Grey vs Superlover Cee &amp; Casanova Rud - Super Casanova</li><li>Yazoo - Don't Go</li><li>KLF - What Time Is Love vs Tiffany - I Think We're Alone Now</li><li>Donna Summer - I Feel Love</li><li>New Order - Blue Monday</li><li>Tiga &amp; Zintherius - Sunglasses At Night</li><li>Chaka Khan - I Feel For You</li><li>Run DMC - Walk This Way</li><li>Michael Jackson - Don't Stop Until You Get Enough</li><li>Sub Sub - Ain't No Love, Ain't No Use</li><li>Deee-Lite - Groove Is In The Heart</li><li>David Carrera - Vicious Game vs Harold Faltermeyer - Axel F</li><li>Adult - Hand To Phone</li><li>Irene Cara - Fame</li><li>Kim Wilde - Kids of America</li></ul><p>I hate to say it, but the sequence from "Don't Go" onwards was
+heartbreakingly good, and the mix from New Order into Tiga &amp; Zintherius...
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;Streaming .WAV File Player </p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 18 April 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/Streaming_WAV_File_Player/article.asp?id=17 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:23:26 GMT -->
+</html>

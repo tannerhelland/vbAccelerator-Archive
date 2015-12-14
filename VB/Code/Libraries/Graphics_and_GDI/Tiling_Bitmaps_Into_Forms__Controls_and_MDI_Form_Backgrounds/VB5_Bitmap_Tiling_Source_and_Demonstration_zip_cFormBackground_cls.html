@@ -1,0 +1,250 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Tiling_Bitmaps_Into_Forms__Controls_and_MDI_Form_Backgrounds/VB5_Bitmap_Tiling_Source_and_Demonstration_zip_cFormBackground_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:47 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cFormBackground.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cFormBackground.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;<a href="article.html">Tiling Bitmaps into Controls, Forms and MDI Form backgrounds </a>&#160;.&#160;<a href="VB5_Bitmap_Tiling_Source_and_Demonstration.html">VB5 Bitmap Tiling Source and Demonstration</a>&#160;.&#160;cFormBackground.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Bitmap_Tiling_Component_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Bitmap Tiling Component Binary</a> (14K)</p><p class="nav"><a href="VB5_Bitmap_Tiling_Source_and_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Bitmap Tiling Source and Demonstration</a> (47K)</p><p /><p class="nav"><a href="VB6_Bitmap_Tiling_Component_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Bitmap Tiling Component Binary</a> (14K)</p><p class="nav"><a href="VB6_Bitmap_Tiling_Source_and_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Bitmap Tiling Source and Demonstration</a> (46K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2904</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2904&amp;type=Zip&amp;title=VB5%20Bitmap%20Tiling%20Source%20and%20Demonstration%2Ezip%5FcFormBackground">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />7 Jan 2003<br /><p class="update">Posted VB6 version of the component, and updated to use <i>FindWindowsEx</i> to obtain the MDI client.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1272">vbAccelerator Toolbar and CoolMenu Control v3.5</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=7">PopupMenu DLL - Create Unlimited Popup Menus</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1419">CommonDialog/Direct</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11">vbAccelerator S-Grid Control</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cFormBackground.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cFormBackground"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+Implements ISubclass
+Private m_emr As EMsgResponse
+
+Private m_hWnd As Long
+Private m_oBackColor As OLE_COLOR
+Private m_cT As cTile
+
+Private Const GW_CHILD = 5
+
+Private Const WM_PAINT = &amp;HF
+Private Const WM_SIZE = &amp;H5
+Private Const WM_ERASEBKGND = &amp;H14
+
+Private Type PAINTSTRUCT
+    hdc As Long
+    fErase As Long
+    rcPaint As RECT
+    fRestore As Long
+    fIncUpdate As Long
+    rgbReserved As Byte
+End Type
+Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function GetWindow Lib "user32" (ByVal hwnd As Long, ByVal wCmd
+ As Long) As Long
+Private Declare Function BeginPaint Lib "user32" (ByVal hwnd As Long, lpPaint
+ As PAINTSTRUCT) As Long
+Private Declare Function EndPaint Lib "user32" (ByVal hwnd As Long, lpPaint As
+ PAINTSTRUCT) As Long
+Private Declare Function IsIconic Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function FindWindowEx Lib "user32" Alias "FindWindowExA" (ByVal
+ hWnd1 As Long, ByVal hWnd2 As Long, ByVal lpsz1 As String, lpsz2 As Any) As
+ Long
+
+Private Declare Function OleTranslateColor Lib "olepro32.dll" (ByVal OLE_COLOR
+ As Long, ByVal HPALETTE As Long, pccolorref As Long) As Long
+Private Const CLR_INVALID = -1
+
+Public Property Get BackColor() As OLE_COLOR
+Attribute BackColor.VB_Description = "Gets/sets the back colour to draw in a
+ form when no bitmap has been set to tile into the backdrop."
+    BackColor = m_oBackColor
+End Property
+Public Property Let BackColor(ByVal oColor As OLE_COLOR)
+    m_oBackColor = oColor
+End Property
+
+' Convert Automation color to Windows color
+Private Function TranslateColor(ByVal clr As OLE_COLOR, _
+                        Optional hPal As Long = 0) As Long
+    If OleTranslateColor(clr, hPal, TranslateColor) Then
+        TranslateColor = CLR_INVALID
+    End If
+End Function
+Private Sub PaintBackground(ByVal hParent As Long, ByVal oColor As OLE_COLOR,
+ ByVal nPenStyle As Long)
+
+Dim tPS As PAINTSTRUCT  ' PaintStruct used in painting
+Dim hNewBrush As Long   ' handle to new brush
+Dim nRectangle As RECT  ' rectangle structure
+Dim lColor As Long      ' GDI version of OLE_COLOR to draw in
+
+    
+    ' Don't draw when we are iconised:
+    If Not (IsIconic(m_hWnd)) Then
+
+        ' We do this after any other messages have done their stuff
+        m_emr = emrPostProcess
+                
+        ' Begin painting:
+        BeginPaint m_hWnd, tPS
+        
+        'Retrieve the rectangle size that describes the client area of the
+         'window
+        GetClientRect m_hWnd, nRectangle
+        
+        ' Are we using a bitmap?
+        If (m_cT.Filename = "") Then
+            ' If not, just colour in with the selected backcolour:
+            lColor = TranslateColor(m_oBackColor)
+            'Create a solid color brush; return handle
+            hNewBrush = CreateSolidBrush(lColor)
+            ' Fill the client area
+            FillRect tPS.hdc, nRectangle, hNewBrush
+            'Delete brush
+            DeleteObject hNewBrush
+        Else
+            ' Tile the bitmap into the background:
+            m_cT.TileArea tPS.hdc, nRectangle.Left, nRectangle.TOp,
+             nRectangle.Right - nRectangle.Left, nRectangle.Bottom -
+             nRectangle.TOp
+        End If
+            
+        ' End Painting:
+        EndPaint m_hWnd, tPS
+    End If
+    
+End Sub
+Property Get Tile() As cTile
+Attribute Tile.VB_Description = "Returns a reference to the bitmap tiling
+ object used to draw the tiled bitmap into the object."
+    ' Provide access to the MDI back tiling object:
+    Set Tile = m_cT
+End Property
+Public Sub Refresh()
+Attribute Refresh.VB_Description = "Refreshes the bitmap background.  Call this
+ if you change the background whilst the form is visible."
+Dim tR As RECT
+Dim tP As POINTAPI
+    If (m_hWnd &lt;&gt; 0) Then
+        GetWindowRect m_hWnd, tR
+        tP.x = tR.Left
+        tP.y = tR.TOp
+        ScreenToClient m_hWnd, tP
+        tR.Left = tP.x
+        tR.TOp = tP.y
+        tP.x = tR.Right
+        tP.y = tR.Bottom
+        ScreenToClient m_hWnd, tP
+        tR.Right = tP.x
+        tR.Bottom = tP.y
+        InvalidateRect m_hWnd, tR, 1
+    End If
+End Sub
+
+Private Sub Class_Initialize()
+    Set m_cT = New cTile
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As EMsgResponse)
+    m_emr = RHS
+End Property
+
+Private Property Get ISubclass_MsgResponse() As EMsgResponse
+    ISubclass_MsgResponse = m_emr
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+    If (iMsg = WM_PAINT) Then
+        PaintBackground m_hWnd, m_oBackColor, PS_SOLID
+    End If
+End Function
+Public Sub Init(ByRef frmThis As Object)
+Attribute Init.VB_Description = "Sets the object that the will be tiled with a
+ bitmap and commences drawing the background."
+    
+    ' Ensure we don't have an existing link:
+    Destroy
+    
+    ' Store the window used to draw the background of the MDI form:
+    If TypeOf frmThis Is MDIForm Then
+        m_hWnd = FindWindowEx(frmThis.hwnd, 0, "MDIClient", ByVal 0&amp;)
+    Else
+        m_hWnd = frmThis.hwnd
+    End If
+    ' Store the current back colour:
+    m_oBackColor = frmThis.BackColor
+    
+    ' Start subclassing
+    AttachMessage Me, m_hWnd, WM_PAINT
+    
+End Sub
+Public Sub Destroy()
+Attribute Destroy.VB_Description = "Clears up any resources associated with
+ applying a bitmap to a form.  Call this before your application terminates."
+    
+    ' If we have a hWnd, then remove the subclassed messages:
+    If (m_hWnd &lt;&gt; 0) Then
+        DetachMessage Me, m_hWnd, WM_PAINT
+        m_hWnd = 0
+    End If
+    
+End Sub
+Private Sub Class_Terminate()
+    ' Clear up:
+    Set m_cT = Nothing
+    Destroy
+End Sub
+
+
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;<a href="article.html">Tiling Bitmaps into Controls, Forms and MDI Form backgrounds </a>&#160;.&#160;<a href="VB5_Bitmap_Tiling_Source_and_Demonstration.html">VB5 Bitmap Tiling Source and Demonstration</a>&#160;.&#160;cFormBackground.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Tiling_Bitmaps_Into_Forms__Controls_and_MDI_Form_Backgrounds/VB5_Bitmap_Tiling_Source_and_Demonstration_zip_cFormBackground_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:47 GMT -->
+</html>

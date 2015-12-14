@@ -1,0 +1,859 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/TreeView/TreeView_Control/VB5_TreeView_Full_Source_zip_cTreeViewNode_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:14 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cTreeViewNode.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cTreeViewNode.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">TreeView</a>&#160;.&#160;<a href="article.html">vbAccelerator TreeView Control</a>&#160;.&#160;<a href="VB5_TreeView_Full_Source.html">VB5 TreeView Full Source</a>&#160;.&#160;cTreeViewNode.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_TreeView_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 TreeView Control</a> (83K)</p><p class="nav"><a href="VB5_TreeView_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 TreeView Demonstration</a> (51K)</p><p class="nav"><a href="VB5_TreeView_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 TreeView Full Source</a> (176K)</p><p /><p class="nav"><a href="VB6_TreeView_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TreeView Control</a> (82K)</p><p class="nav"><a href="VB6_TreeView_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TreeView Demonstration</a> (45K)</p><p class="nav"><a href="VB6_TreeView_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TreeView Full Source</a> (170K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:13500</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13500&amp;type=Zip&amp;title=VB5%20TreeView%20Full%20Source%2Ezip%5FcTreeViewNode">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><p class="nav">&#160;&#160;<a href="mailto:litwin@gottliebaza.org">Dan Litwin</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 5 / 19</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 1 / 4</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 1 / 1</a></p><p class="nav">Updated:27 February 2004</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />16 Apr 2004<br /><p class="update">Drag enhancements and bug fixes.  See
+BugTrak for full details.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=931">Using the System Image List with (and without) vbAccelerator Controls</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cTreeViewNode.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cTreeViewNode"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+Private m_lID As Long
+Private m_ptrCtl As Long
+Private m_hWndCtl As Long
+
+Private Function pbVerify(ByRef ctlThis As vbalTreeView) As Boolean
+Dim lPtr As Long
+Dim lIdx As Long
+   If IsWindow(m_hWndCtl) Then
+      lPtr = GetProp(m_hWndCtl, gcOBJECT_PROP)
+      If Not (lPtr = 0) Then
+         If (lPtr = 1) Then
+            Debug.Print "NOOOOOO"
+         End If
+         Set ctlThis = ObjectFromPtr(lPtr)
+         If (ctlThis.fhItemForID(m_lID)) Then
+            pbVerify = True
+         End If
+      Else
+         gErr 1, "cListItems"
+      End If
+   Else
+      gErr 1, "cListItems"
+   End If
+End Function
+
+Friend Sub fInit(ctl As vbalTreeView, ByVal lID As Long)
+   m_lID = lID
+   m_ptrCtl = ObjPtr(ctl)
+   m_hWndCtl = ctl.hwnd
+End Sub
+Friend Property Get fID() As Long
+   fID = m_lID
+End Property
+
+Public Function IsParentOf(nodeCheck As cTreeViewNode) As Boolean
+Attribute IsParentOf.VB_Description = "Returns True if the specified node is a
+ parent of this node, otherwise False."
+Dim ctl As vbalTreeView
+Dim lIDCheck As Long
+Dim bIsParent As Boolean
+   If (pbVerify(ctl)) Then
+      If Not (nodeCheck Is Nothing) Then
+         lIDCheck = nodeCheck.fID
+         Do While Not (lIDCheck = 0)
+            If (lIDCheck = m_lID) Then
+               bIsParent = True
+               Exit Do
+            End If
+            lIDCheck = ctl.fItemParent(lIDCheck)
+         Loop
+      End If
+      IsParentOf = bIsParent
+   End If
+End Function
+
+Public Sub MoveNode( _
+      nodeRelative As cTreeViewNode, _
+      Optional ByVal eRelationship As ETreeViewRelationshipContants = etvwNext _
+   )
+Attribute MoveNode.VB_Description = "Moves this node to another location in the
+ TreeView."
+Dim lIDNew As Long
+Dim ctl As vbalTreeView
+   If (pbVerify(ctl)) Then
+      lIDNew = ctl.fMoveNode(m_lID, nodeRelative, eRelationship)
+      m_lID = lIDNew
+   End If
+End Sub
+
+Public Function InsertNodeBefore( _
+      Optional ByVal Key As String = "", _
+      Optional ByVal Text As String = "", _
+      Optional ByVal Image As Long = -1, _
+      Optional ByVal SelectedImage As Long = -1 _
+   ) As cTreeViewNode
+Attribute InsertNodeBefore.VB_Description = "Inserts a new node before this
+ node."
+Dim ctl As vbalTreeView
+   If (pbVerify(ctl)) Then
+      Dim lIDNew As Long
+      lIDNew = ctl.fAdd(m_lID, etvwPrevious, Key, Text, Image, SelectedImage)
+      If Not (lIDNew = 0) Then
+         Dim nodRet As New cTreeViewNode
+         nodRet.fInit ctl, lIDNew
+         Set AddChildNode = nodRet
+      End If
+   End If
+End Function
+Public Function InsertNodeAfter( _
+      Optional ByVal Key As String = "", _
+      Optional ByVal Text As String = "", _
+      Optional ByVal Image As Long = -1, _
+      Optional ByVal SelectedImage As Long = -1 _
+   ) As cTreeViewNode
+Attribute InsertNodeAfter.VB_Description = "Inserts a new node after this node."
+Dim ctl As vbalTreeView
+   If (pbVerify(ctl)) Then
+      Dim lIDNew As Long
+      lIDNew = ctl.fAdd(m_lID, etvwNext, Key, Text, Image, SelectedImage)
+      If Not (lIDNew = 0) Then
+         Dim nodRet As New cTreeViewNode
+         nodRet.fInit ctl, lIDNew
+         Set AddChildNode = nodRet
+      End If
+   End If
+End Function
+Public Function AddChildNode( _
+      Optional ByVal Key As String = "", _
+      Optional ByVal Text As String = "", _
+      Optional ByVal Image As Long = -1, _
+      Optional ByVal SelectedImage As Long = -1 _
+   ) As cTreeViewNode
+Attribute AddChildNode.VB_Description = "Adds a child node to this node."
+Dim ctl As vbalTreeView
+   If (pbVerify(ctl)) Then
+      Dim lIDNew As Long
+      lIDNew = ctl.fAdd(m_lID, etvwChild, Key, Text, Image, SelectedImage)
+      If Not (lIDNew = 0) Then
+         Dim nodRet As New cTreeViewNode
+         nodRet.fInit ctl, lIDNew
+         Set AddChildNode = nodRet
+      End If
+   End If
+End Function
+
+Public Property Get Owner() As vbalTreeView
+Attribute Owner.VB_Description = "Gets the owning control for this item.  Note
+ that this returns the control itself, not the control's extender."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      Set Owner = ctl
+   End If
+End Property
+
+Public Property Get hItem() As Long
+Attribute hItem.VB_Description = "Gets the API handle of this item within the
+ TreeView."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      hItem = ctl.fhItemForID(m_lID)
+   End If
+End Property
+
+Friend Property Get ID() As Long
+   ID = m_lID
+End Property
+
+Public Property Get BackColor() As OLE_COLOR
+Attribute BackColor.VB_Description = "Gets/sets the background colour of this
+ node. Only applied if the control's NoCustomDraw property is False."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      BackColor = ctl.fItemBackColor(m_lID)
+   End If
+End Property
+Public Property Let BackColor(ByVal value As OLE_COLOR)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemBackColor(m_lID) = value
+   End If
+End Property
+
+Public Property Get SelectedBackColor() As OLE_COLOR
+Attribute SelectedBackColor.VB_Description = "Gets/sets the selected background
+ colour of this node. Only applied if the control's NoCustomDraw property is
+ False."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      SelectedBackColor = ctl.fItemSelectedBackColor(m_lID)
+   End If
+End Property
+Public Property Let SelectedBackColor(ByVal value As OLE_COLOR)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemSelectedBackColor(m_lID) = value
+   End If
+End Property
+
+Public Property Get SelectedNoFocusBackColor() As OLE_COLOR
+Attribute SelectedNoFocusBackColor.VB_Description = "Gets/sets the selected
+ background colour of this node when the mouse is over it and the control is
+ out of focus. Only applied if the control's NoCustomDraw property is False."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      SelectedBackColor = ctl.fItemSelectedNoFocusBackColor(m_lID)
+   End If
+End Property
+Public Property Let SelectedNoFocusBackColor(ByVal value As OLE_COLOR)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemSelectedNoFocusBackColor(m_lID) = value
+   End If
+End Property
+
+Public Property Get SelectedMouseOverBackColor() As OLE_COLOR
+Attribute SelectedMouseOverBackColor.VB_Description = "Gets/sets the selected
+ background colour of this node when the mouse is over it. Only applied if the
+ control's NoCustomDraw property is False."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      SelectedBackColor = ctl.fItemSelectedMouseOverBackColor(m_lID)
+   End If
+End Property
+Public Property Let SelectedMouseOverBackColor(ByVal value As OLE_COLOR)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemSelectedMouseOverBackColor(m_lID) = value
+   End If
+End Property
+
+Public Property Get MouseOverBackColor() As OLE_COLOR
+Attribute MouseOverBackColor.VB_Description = "Gets/sets the background colour
+ of this node when the mouse is over it. Only applied if the control's
+ NoCustomDraw property is False."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      MouseOverBackColor = ctl.fItemMouseOverBackColor(m_lID)
+   End If
+End Property
+Public Property Let MouseOverBackColor(ByVal value As OLE_COLOR)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemMouseOverBackColor(m_lID) = value
+   End If
+End Property
+
+
+Public Property Get Bold() As Boolean
+Attribute Bold.VB_Description = "Gets/sets whether this node is rendered with a
+ bold font."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      Bold = ctl.fItemBold(m_lID)
+   End If
+End Property
+Public Property Let Bold(ByVal value As Boolean)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemBold(m_lID) = value
+   End If
+End Property
+
+Public Property Get NoCheckBox() As Boolean
+Attribute NoCheckBox.VB_Description = "Gets/sets whether this item should hide
+ the check box when the TreeView has the CheckBoxes property set."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      NoCheckBox = ctl.fItemNoCheckBox(m_lID)
+   End If
+End Property
+
+Public Property Let NoCheckBox(ByVal value As Boolean)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemNoCheckBox(m_lID) = value
+   End If
+End Property
+
+Public Property Get Checked() As Boolean
+Attribute Checked.VB_Description = "Gets/sets whether this node is checked or
+ not."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      Checked = ctl.fItemChecked(m_lID)
+   End If
+End Property
+Public Property Let Checked(ByVal value As Boolean)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemChecked(m_lID) = value
+   End If
+End Property
+
+Public Property Get FirstChild() As cTreeViewNode
+Attribute FirstChild.VB_Description = "Gets the first child node of this node,
+ if any, otherwise returns Nothing."
+Dim ctl As vbalTreeView
+Dim lIDChild As Long
+   If pbVerify(ctl) Then
+      lIDChild = ctl.fItemChild(m_lID)
+      If Not (lIDChild = 0) Then
+         Dim cNode As New cTreeViewNode
+         cNode.fInit ctl, lIDChild
+         Set FirstChild = cNode
+      End If
+   End If
+End Property
+
+Public Property Get Children() As cTreeViewNodes
+Attribute Children.VB_Description = "Gets the collection of children associated
+ with this node."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      Dim cNodes As New cTreeViewNodes
+      cNodes.fInit ctl, m_lID
+      Set Children = cNodes
+   End If
+End Property
+
+Public Property Get DropHighlighted() As Boolean
+Attribute DropHighlighted.VB_Description = "Gets/sets whether this node is
+ drop-highlighted or not."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      DropHighlighted = ctl.fItemDropHighlight(m_lID)
+   End If
+End Property
+Public Property Let DropHighlighted(ByVal value As Boolean)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemDropHighlight(m_lID) = value
+   End If
+End Property
+
+Public Sub EnsureVisible()
+Attribute EnsureVisible.VB_Description = "Brings this node into view if it is
+ not currently visible."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemEnsureVisible m_lID
+   End If
+End Sub
+
+Public Property Get Expanded() As Boolean
+Attribute Expanded.VB_Description = "Gets/sets whether this node is expanded or
+ not."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      Expanded = ctl.fItemExpanded(m_lID)
+   End If
+End Property
+Public Property Let Expanded(ByVal value As Boolean)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemExpanded(m_lID) = value
+   End If
+End Property
+
+Public Property Get FirstSibling() As cTreeViewNode
+Attribute FirstSibling.VB_Description = "Gets the first sibling of this node."
+Dim ctl As vbalTreeView
+Dim lIDParent As Long
+Dim lIDChild As Long
+   If pbVerify(ctl) Then
+      lIDParent = ctl.fItemParent(m_lID)
+      Dim cNod As New cTreeViewNode
+      If Not (lIDParent = 0) Then
+         lIDChild = ctl.fItemChild(lIDParent)
+         If Not (lIDChild = 0) Then
+            cNod.fInit ctl, m_lID
+            Set FirstSibling = cNod
+         End If
+      Else
+         ' I am my own first sibling:
+         cNod.fInit ctl, m_lID
+         Set FirstSibling = cNod
+      End If
+   End If
+End Property
+
+Public Property Get ForeColor() As OLE_COLOR
+Attribute ForeColor.VB_Description = "Gets/sets the foreground colour of this
+ node. Only applied if the control's NoCustomDraw property is False."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ForeColor = ctl.fItemForeColor(m_lID)
+   End If
+End Property
+Public Property Let ForeColor(ByVal value As OLE_COLOR)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemForeColor(m_lID) = value
+   End If
+End Property
+
+Public Property Get SelectedForeColor() As OLE_COLOR
+Attribute SelectedForeColor.VB_Description = "Gets/sets the selected foreground
+ colour of this node. Only applied if the control's NoCustomDraw property is
+ False."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      SelectedForeColor = ctl.fItemSelectedColor(m_lID)
+   End If
+End Property
+Public Property Let SelectedForeColor(ByVal value As OLE_COLOR)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemSelectedColor(m_lID) = value
+   End If
+End Property
+
+Public Property Get SelectedNoFocusForeColor() As OLE_COLOR
+Attribute SelectedNoFocusForeColor.VB_Description = "Gets/sets the selected
+ foreground colour of this node when the mouse is over it and the control is
+ out of focus. Only applied if the control's NoCustomDraw property is False."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      SelectedForeColor = ctl.fItemSelectedNoFocusColor(m_lID)
+   End If
+End Property
+Public Property Let SelectedNoFocusForeColor(ByVal value As OLE_COLOR)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemSelectedNoFocusColor(m_lID) = value
+   End If
+End Property
+
+Public Property Get MouseOverForeColor() As OLE_COLOR
+Attribute MouseOverForeColor.VB_Description = "Gets/sets the foreground colour
+ of this node when the mouse is over it. Only applied if the control's
+ NoCustomDraw property is False."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      MouseOverForeColor = ctl.fItemMouseOverColor(m_lID)
+   End If
+End Property
+Public Property Let MouseOverForeColor(ByVal value As OLE_COLOR)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemMouseOverColor(m_lID) = value
+   End If
+End Property
+
+Public Property Get SelectedMouseOverForeColor() As OLE_COLOR
+Attribute SelectedMouseOverForeColor.VB_Description = "Gets/sets the selected
+ foreground colour of this node when the mouse is over it. Only applied if the
+ control's NoCustomDraw property is False."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      SelectedForeColor = ctl.fItemSelectedMouseOverColor(m_lID)
+   End If
+End Property
+Public Property Let SelectedMouseOverForeColor(ByVal value As OLE_COLOR)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemSelectedMouseOverColor(m_lID) = value
+   End If
+End Property
+
+
+Public Property Get Font() As IFont
+Attribute Font.VB_Description = "Gets/sets the Font used to render this node. 
+ Only applied when the control's NoCustomDraw property is False."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      Set Font = ctl.fItemFont(m_lID)
+   End If
+End Property
+Public Property Let Font(iFnt As IFont)
+   pSetFont iFnt
+End Property
+Public Property Set Font(iFnt As IFontDisp)
+   pSetFont iFnt
+End Property
+Private Sub pSetFont(iFnt As IFontDisp)
+   Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      Set ctl.fItemFont(m_lID) = iFnt
+   End If
+End Sub
+
+Public Property Get FullPath() As String
+Attribute FullPath.VB_Description = "Gets the Full Path of this item in the
+ tree."
+   Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      FullPath = ctl.fItemPath(m_lID)
+   End If
+End Property
+
+Public Property Get Image() As Long
+Attribute Image.VB_Description = "Gets/sets the 0-based index of the image in
+ the TreeView's image list to use."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      Image = ctl.fItemImage(m_lID)
+   End If
+End Property
+Public Property Let Image(ByVal value As Long)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemImage(m_lID) = value
+   End If
+End Property
+
+Public Property Get ItemData() As Long
+Attribute ItemData.VB_Description = "Gets/sets a long value associated with
+ this node."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ItemData = ctl.fItemData(m_lID)
+   End If
+End Property
+Public Property Let ItemData(ByVal value As Long)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemData(m_lID) = value
+   End If
+End Property
+
+Public Property Get ItemNumber() As Long
+Attribute ItemNumber.VB_Description = "Gets/sets a number which is displayed
+ next to this node when the TreeView has the ShowNumbers property set.  Set to
+ -1 for no number."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ItemNumber = ctl.fItemNumber(m_lID)
+   End If
+End Property
+Public Property Let ItemNumber(ByVal value As Long)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemNumber(m_lID) = value
+   End If
+End Property
+
+Public Property Get Index() As Long
+Attribute Index.VB_Description = "Gets the index of this item within its tree."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      Index = ctl.fNumericIndexInSubTree(m_lID)
+   End If
+End Property
+
+Public Property Get Key() As String
+Attribute Key.VB_Description = "Gets/sets the string key used to refer to this
+ item. Must be unique."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      Key = ctl.fItemKey(m_lID)
+   End If
+End Property
+Public Property Let Key(ByVal value As String)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemKey(m_lID) = value
+   End If
+End Property
+
+Public Property Get LastSibling() As cTreeViewNode
+Attribute LastSibling.VB_Description = "Gets the last sibling node of this
+ item."
+Dim ctl As vbalTreeView
+Dim lID As Long
+   If pbVerify(ctl) Then
+      lID = ctl.fItemLastSibling(m_lID)
+      If Not (lID = 0) Then
+         Dim cNod As New cTreeViewNode
+         cNod.fInit ctl, lID
+         Set LastSibling = cNod
+      End If
+   End If
+End Property
+
+Public Property Get NextSibling() As cTreeViewNode
+Attribute NextSibling.VB_Description = "Gets the next sibling of this item, if
+ any, otherwise returns Nothing."
+Dim ctl As vbalTreeView
+Dim lIDNext As Long
+
+   If pbVerify(ctl) Then
+      lIDNext = ctl.fItemNextSibling(m_lID)
+      If Not (lIDNext = 0) Then
+         Dim cNod As New cTreeViewNode
+         cNod.fInit ctl, lIDNext
+         Set NextSibling = cNod
+      End If
+   End If
+End Property
+
+Public Property Get Parent() As cTreeViewNode
+Attribute Parent.VB_Description = "Gets the parent node of this node, if any,
+ otherwise returns Nothing."
+Dim ctl As vbalTreeView
+Dim lIDParent As Long
+   If pbVerify(ctl) Then
+      lIDParent = ctl.fItemParent(m_lID)
+      If Not lIDParent = 0 Then
+      Dim cNod As New cTreeViewNode
+         cNod.fInit ctl, lIDParent
+         Set Parent = cNod
+      End If
+   End If
+End Property
+
+Public Property Get PreviousSibling() As cTreeViewNode
+Attribute PreviousSibling.VB_Description = "Gets the previous sibling of this
+ item, if any, otherwise returns Nothing."
+Dim ctl As vbalTreeView
+Dim lIDNext As Long
+
+   If pbVerify(ctl) Then
+      lIDNext = ctl.fItemPreviousSibling(m_lID)
+      If Not (lIDNext = 0) Then
+         Dim cNod As New cTreeViewNode
+         cNod.fInit ctl, lIDNext
+         Set NextSibling = cNod
+      End If
+   End If
+End Property
+
+Public Property Get Root() As cTreeViewNode
+Attribute Root.VB_Description = "Gets the root node for this node."
+Dim ctl As vbalTreeView
+Dim lIDRoot As Long
+   If pbVerify(ctl) Then
+      lIDRoot = ctl.fRootItem()
+      Dim cNod As New cTreeViewNode
+      cNod.fInit ctl, lIDRoot
+      Set Parent = cNod
+   End If
+End Property
+
+Public Property Get Selected() As Boolean
+Attribute Selected.VB_Description = "Gets/sets whether this item is selected or
+ not."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      Selected = (ctl.fSelected() = m_lID)
+   End If
+End Property
+Public Property Let Selected(ByVal value As Boolean)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fSelectItem m_lID, value
+   End If
+End Property
+
+Public Property Get SelectedImage() As Long
+Attribute SelectedImage.VB_Description = "Gets/sets the 0-based index of the
+ image in the TreeView's image list to use when the item is selected."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      SelectedImage = ctl.fItemSelectedImage(m_lID)
+   End If
+End Property
+Public Property Let SelectedImage(ByVal value As Long)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemSelectedImage(m_lID) = value
+   End If
+End Property
+
+Public Property Get ShowPlusMinus() As Boolean
+Attribute ShowPlusMinus.VB_Description = "Gets/sets whether the Plus/Minus
+ bitmap should be shown for this item."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ShowPlusMinus = ctl.fItemPlusMinus(m_lID)
+   End If
+End Property
+Public Property Let ShowPlusMinus(ByVal value As Boolean)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemPlusMinus(m_lID) = value
+   End If
+End Property
+
+Public Property Get Sorted() As Boolean
+Attribute Sorted.VB_Description = "Deprecated; has no effect.  Use
+ ChildSortMode or Sort."
+   ' TODO
+End Property
+Public Property Let Sorted(ByVal value As Boolean)
+   ' TODO
+End Property
+
+Public Sub StartEdit()
+Attribute StartEdit.VB_Description = "Programmatically starts editing this
+ node."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemStartEdit m_lID
+   End If
+End Sub
+Public Sub EndEdit(ByVal saveChanges As Boolean)
+Attribute EndEdit.VB_Description = "Programmatically ends editing of this node."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemEndEdit m_lID, saveChanges
+   End If
+End Sub
+
+Public Property Get Tag() As String
+Attribute Tag.VB_Description = "Gets/sets a string value associated with this
+ node."
+Dim ctl As vbalTreeView
+   If (pbVerify(ctl)) Then
+      Tag = ctl.fItemTag(m_lID)
+   End If
+End Property
+Public Property Let Tag(ByVal value As String)
+Dim ctl As vbalTreeView
+   If (pbVerify(ctl)) Then
+      ctl.fItemTag(m_lID) = value
+   End If
+End Property
+
+Public Property Get Text() As String
+Attribute Text.VB_Description = "Gets/sets the text for this node."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      Text = ctl.fItemText(m_lID)
+   End If
+End Property
+Public Property Let Text(ByVal value As String)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fItemText(m_lID) = value
+   End If
+End Property
+
+Public Property Get Visible() As Boolean
+Attribute Visible.VB_Description = "Gets whether this item is visible in the
+ Tree or not."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      Visible = ctl.fItemVisible(m_lID)
+   End If
+End Property
+
+Public Property Get top() As Long
+Attribute top.VB_Description = "Gets the vertical position of this node within
+ the Tree."
+Dim ctl As vbalTreeView
+Dim tR As RECT
+   If pbVerify(ctl) Then
+      ctl.fItemRect m_lID, tR.left, tR.top, tR.right, tR.bottom
+      top = tR.top
+   End If
+End Property
+Public Property Get left() As Long
+Attribute left.VB_Description = "Gets the horizontal start position of this
+ node."
+Dim ctl As vbalTreeView
+Dim tR As RECT
+   If pbVerify(ctl) Then
+      ctl.fItemRect m_lID, tR.left, tR.top, tR.right, tR.bottom
+      left = tR.left
+   End If
+End Property
+Public Property Get Width() As Long
+Attribute Width.VB_Description = "Gets the width of this node."
+Dim ctl As vbalTreeView
+Dim tR As RECT
+   If pbVerify(ctl) Then
+      ctl.fItemRect m_lID, tR.left, tR.top, tR.right, tR.bottom
+      Width = (tR.right - tR.left)
+   End If
+End Property
+Public Property Get Height() As Long
+Attribute Height.VB_Description = "Gets/sets the height of this item."
+Dim ctl As vbalTreeView
+Dim tR As RECT
+   If pbVerify(ctl) Then
+      ctl.fItemRect m_lID, tR.left, tR.top, tR.right, tR.bottom
+      Height = (tR.bottom - tR.top)
+   End If
+End Property
+
+Public Sub Delete()
+Attribute Delete.VB_Description = "Deletes this node from the tree."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fRemove m_lID
+   End If
+End Sub
+
+Public Property Get ChildSortMode() As ETreeViewChildrenSortMode
+Attribute ChildSortMode.VB_Description = "Gets/sets the sort mode which should
+ be applied to any children added to this node."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ChildSortMode = ctl.fChildSortMode(m_lID)
+   End If
+End Property
+Public Property Let ChildSortMode(ByVal eMode As ETreeViewChildrenSortMode)
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fChildSortMode(m_lID) = eMode
+   End If
+End Property
+Public Sub Sort(ByVal eMode As ETreeViewChildrenSortMode)
+Attribute Sort.VB_Description = "Sorts the child items of this node in the
+ specified style."
+Dim ctl As vbalTreeView
+   If pbVerify(ctl) Then
+      ctl.fSortChildren m_lID, eMode
+   End If
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">TreeView</a>&#160;.&#160;<a href="article.html">vbAccelerator TreeView Control</a>&#160;.&#160;<a href="VB5_TreeView_Full_Source.html">VB5 TreeView Full Source</a>&#160;.&#160;cTreeViewNode.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 18 April 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/TreeView/TreeView_Control/VB5_TreeView_Full_Source_zip_cTreeViewNode_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:14 GMT -->
+</html>

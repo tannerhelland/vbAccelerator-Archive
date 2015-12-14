@@ -1,0 +1,431 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Toolbar/vbAccelerator_Office_Docking_Bar/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:50:22 GMT -->
+<head>
+
+<title>vbAccelerator - vbAccelerator Office Docking Bar Control</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This control provides a new container for the vbAccelerator Toolbar and CoolMenu
+control which allows controls to be docked and undocked to the side of any form.  It emulates the style of the
+Office XP toolbars and provides full support for saving and restoring the layout of the toolbars.  It can
+also be used as a more flexible alternative to the Rebar control.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Toolbar</a>&#160;.&#160;vbAccelerator Office Docking Bar Control</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_OfficeBar_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 OfficeBar Binary</a> (35K)</p><p class="nav"><a href="VB5_OfficeBar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 OfficeBar Demonstration</a> (68K)</p><p class="nav"><a href="VB5_OfficeBar_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 OfficeBar Full Source</a> (138K)</p><p /><p class="nav"><a href="VB6_OfficeBar_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 OfficeBar Binary</a> (35K)</p><p class="nav"><a href="VB6_OfficeBar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 OfficeBar Demonstration</a> (65K)</p><p class="nav"><a href="VB6_OfficeBar_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 OfficeBar Full Source</a> (134K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:11826</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=11826&amp;type=Article&amp;title=vbAccelerator%20Office%20Docking%20Bar%20Control">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 5 / 6</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:6 February 2004</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />5 Jul 2003<br /><p class="update">Corrected Demonstration projects</p><p class="update">Added note about IDE error when undocking</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1272">vbAccelerator Toolbar and CoolMenu Control v3.5</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=7">PopupMenu DLL - Create Unlimited Popup Menus</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2310">vbAccelerator MDITabs Control</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator Office Docking Bar Control</h1><p class="splash">Office XP style docking support for toolbars and controls</p><img src="officeBar.png" width="308" height="273" alt="Office Bar Demonstration Project" /><p /><p>
+This control provides a new container for the <a href="http://www.vbaccelerator.com/article.asp?id=1272">vbAccelerator Toolbar and CoolMenu</a>
+control which allows controls to be docked and undocked to the side of any form.  It emulates the style of the
+Office XP toolbars and provides full support for saving and restoring the layout of the toolbars.  It can
+also be used as a more flexible alternative to the Rebar control.
+</p><h2>Before You Start</h2><p>
+The demonstration project requires that you have the following controls installed and registered
+on your computer.  The Toolbar and Popup Menu must be the versions posted 23rd April 2003 or
+later:
+</p><ul><li><a href="http://www.vbaccelerator.com/article.asp?id=1272">vbAccelerator Toolbar and CoolMenu control</a></li><li><a href="http://www.vbaccelerator.com/article.asp?id=7">vbAccelerator Popup Menu ActiveX DLL</a></li><li><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing and Timer Assistant</a></li></ul><h2>About the Office Docking Bar Control</h2><p>
+The docking bar control is an alignable control which can be sited on any edge of a
+form.  Once sited, you can specify if the control has a non-docking area (which 
+can be used, for example, to hold a status bar at the bottom of a form) and then
+you can start adding bars to the control.  Each bar can contain as single captured
+child-window, which would normally be a toolbar (although any control with a hWnd
+property can be added).
+</p><p>
+The docking bar can be locked so that none of the child windows can be rearranged
+or undocked by the user.  This is the same as the "Lock Toolbars" mode
+offered by Explorer under Windows XP.  It can also be set so bars cannot be undocked,
+in which case it operates in a similar way to a Rebar control.
+</p><p>
+For each bar that's added, you specify its correct size when docked horizontally
+and vertically and a key to identify the bar.  Optionally, you can determine
+whether the bar should be added to an existing row or whether it should be inserted
+at the beginning or the end.  You can also configure whether the bar should always
+fill an entire row, whether it can be closed when undocked, and whether it cannot
+be docked horizontally or vertically.
+</p><p>
+Once the initial configuration of bars has been created, you can Save the current 
+layout and restore it back again at any time.  This allows you to persist the
+state of the bars when your application shuts down and to restore them to exactly
+the same positions when the application is restarted.
+</p><h2>The Control and The IDE</h2><p>
+For reasons which I do not understand, you can only perform undocking once your
+application has been compiled into an executable.  If you try to undock a
+toolbar whilst you are running in the IDE, you will get this error followed
+by a nasty crash:
+    </p><img src="ideError.png" width="501" height="133" alt="Run-time error 373" /><p class="caption">The mysterious run-time error 373</p><p>
+There is no workaround for this at the moment.  Just don't undock any toolbars in
+the IDE!
+    </p><h2>Using the Office Docking Bar Control</h2><p>
+Using the docking bar control is fairly simple as you'll see from the demonstration,
+however, this article provides a detailed view of what's going on to provide a fuller
+understanding of how to configure your own application with the control.
+</p><p>
+There are six areas to cover:
+</p><ol><li>Configuring the Docking Controls</li><li>Adding Bars</li><li>Specifying the cXAHorz, cYAHorz, cYAVert and cYAHorz Parameters for Toolbars</li><li>Saving and Restoring Layouts</li><li>Other Methods and Properties</li><li>MDI and SDI Considerations</li></ol><h3>1. Configuring the Docking Controls</h3><p>
+The first thing to do to use the control is to add a docking container to each
+side of the form you want to allow docking on.  Note that if you don't set
+the <i>Align</i> property of the control, it will not work properly - this
+is only an issue for SDI forms, since on an MDI form the control will automatically
+align itself.
+</p><p>
+Once you have a docking control at each edge you want to allow docking, 
+consider whether you want to have a non-docking area in each.  The non-docking
+area is a space closest to the edge of the window into which you can place
+other controls.  An example of using the non-docking area is for a status bar
+at the bottom of a form.  Obviously you can align a normal status bar to the bottom
+of the form separately, but it is difficult in VB to determine which order
+controls aligned to the edges of a form appear in.  To set the non-docking area,
+set the <i>NonDockingArea</i> property of the  control to <i>True</i> and then 
+specify the <i>NonDockingAreaSize</i> in pixels.  Once you've set this, you
+can drop any control onto the docking control to show in the non-docking area.
+</p><p>
+You can now determine if you want the control to draw in the Office XP style (the default) or using the
+older border style by setting the <i>OfficeXpStyle</i> property.
+</p><p>
+Now you are ready to add some bars to the docking container.
+</p><h3>2. Adding Bars</h3><p>
+Adding bars is achieved using the <i>Add</i> and <i>Capture</i> methods.  The <i>Add</i> method 
+creates a new bar, whilst the <i>Capture</i> method associates a child window with the bar.
+The <i>Add</i> method has a number of parameters so these will be covered here.
+</p><ol><li><strong>key</strong><br />
+Mandatory.  A unique string which identifies the bar.  This string must be unique across
+all docking containers.
+</li><li><strong>cXAHorz</strong><br />
+Mandatory.  The width of the control when docked horizontally or undocked.  If the bar is smaller than
+this when the item is docked then the chevron will indicate that some of the bar is hidden.
+</li><li><strong>cYAHorz</strong><br />
+Mandatory.  The height of the control when docked horizontally or undocked.  This is the minimum height
+of any row containing this control in the docked bar, and the height of the client area
+when the row is undocked.
+</li><li><strong>cYAHorz</strong><br />
+Mandatory.  The height of the control when docked vertically.  If the bar is smaller than this
+when the item is docked then the chevron will indicate that some of the bar is hidden.
+</li><li><strong>cXAVert</strong><br />
+Mandatory.  The width of the control when docked vertically.  This is the minimum width of any row
+which contains this control.
+</li><li><strong>sTitle</strong><br />
+Optional.  The title to display when this bar is undocked.
+</li><li><strong>lRow</strong><br />
+Optional.  The row to dock this bar to.  Specify -1 to add the bar to the end, 0 to insert at the beginning
+or a row number of add to an existing row.  The default is to add the bar to the end.
+</li><li><strong>lX</strong><br />
+Optional.  The suggested position from the top or left of the docking container to position this bar at.  If
+not supplied the bar will be shown as close to the top or left as possible.
+</li><li><strong>cx</strong><br />
+Optional.  The suggested width (height when docked vertically) for this bar.  If not provided, <i>cXAHorz</i>
+or <i>cYAHorz</i> will be used.
+</li><li><strong>bFillRow</strong><br />
+Optional.  If set to <i>True</i>, the bar will occupy an entire row when docked and 
+no other bars can share it's row.  The default is <i>False</i></li><li><strong>bCanDockHorizontal</strong><br />
+Optional. Specifies whether this bar can be docked horizontally.  Defaults to <i>True</i></li><li><strong>bCanDockVertical</strong><br />
+Optional. Specifies whether this bar can be docked vertically.  Defaults to <i>True</i></li><li><strong>bCanClose</strong><br />
+Optional.  Specifies whether the bar can be closed when undocked. Defaults to <i>True</i></li></ol><p>
+Once you've added a bar, you can specify the control to be added to it.  The <i>Capture</i>
+method takes the <i>Key</i> to a bar and the window handle (<i>hWnd</i>) of the control to
+be captured into the bar.
+</p><h3>3. Specifying the cXAHorz, cYAHorz, cYAVert and cYAHorz Parameters for Toolbars</h3><p>
+When adding toolbars to the control, there are two ways to specify these parameters, 
+depending on whether the toolbar contains a control that can be stretched (such as a 
+combo box) or not. If the toolbar can't be stretched, then this code is used:
+</p><pre>
+   ctlDock.Add _
+      "MYTOOLBAR", _
+      tbrStandard.ToolbarWidth, tbrStandard.ToolbarHeight, _
+      getVerticalHeight(tbrStandard), getVerticalWidth(tbrStandard)
+</pre><p>
+Where the <i>getVerticalHeight</i> and <i>getVerticalWidth</i> functions are the ones
+provided in the demonstration:
+</p><pre>
+Private Function getVerticalHeight(tbrThis As cToolbar) As Long
+Dim l As Long
+Dim lHeight As Long
+Dim lMaxWidth As Long
+Dim lRowHeight As Long
+Dim lRowWidth As Long
+
+   lMaxWidth = getVerticalWidth(tbrThis)
+   
+   For l = 0 To tbrThis.ButtonCount - 1
+      If tbrThis.ButtonVisible(l) Then
+         If tbrThis.ButtonControl(l) = 0 Then
+            
+            If tbrThis.ButtonStyle(l) = CTBSeparator Then
+               ' we'll start a new row for the next one
+               lHeight = lHeight + lRowHeight
+               lRowHeight = 0
+               lRowWidth = 0
+            Else
+               If (lRowWidth + tbrThis.ButtonWidth(l) &gt; lMaxWidth) Then
+                  ' This button needs to go on a new row:
+                  lHeight = lHeight + lRowHeight
+                  lRowHeight = 0
+                  lRowWidth = lRowWidth + tbrThis.ButtonWidth(l)
+                  If (tbrThis.ButtonHeight(l) &gt; lRowHeight) Then
+                     lRowHeight = tbrThis.ButtonHeight(l)
+                  End If
+               Else
+                  ' This button goes on this row:
+                  If (tbrThis.ButtonHeight(l) &gt; lRowHeight) Then
+                     lRowHeight = tbrThis.ButtonHeight(l)
+                  End If
+                  lRowWidth = lRowWidth + tbrThis.ButtonWidth(l)
+               End If
+            End If
+         End If
+      End If
+   Next l
+   lHeight = lHeight + lRowHeight
+   getVerticalHeight = lHeight
+End Function
+
+Private Function getVerticalWidth(tbrThis As cToolbar) As Long
+Dim l As Long
+Dim lMaxWidth As Long
+   For l = 0 To tbrThis.ButtonCount - 1
+      If tbrThis.ButtonVisible(l) Then
+         If tbrThis.ButtonControl(l) = 0 Then
+            If (tbrThis.ButtonWidth(l) &gt; lMaxWidth) Then
+               lMaxWidth = tbrThis.ButtonWidth(l)
+            End If
+         End If
+      End If
+   Next l
+   getVerticalWidth = lMaxWidth
+   
+End Function
+</pre><p>
+Note that toolbar buttons containing controls such as Combo Boxes are hidden 
+when the toolbar is docked vertically, like the Office XP docking toolbars.
+</p><h3>3. Responding to Events from the Docking Container</h3><p>
+Once you've added the bars, you can start responding to events from the dock
+container.  There are five events; the <i>ChevronPress</i> event is the one
+you are most likely to want to respond to.
+</p><ol><li><strong>ChevronPress(ByVal key As String, ByVal x As Long, ByVal y As Long)</strong><br /><p>
+This event is raised whenever a chevron is pressed, regardless of whether the control is 
+docked or undocked.  The <i>key</i> parameter tells you which chevron has been pressed,
+and the <i>x</i> and <i>y</i> properties provide the coordinates at which to show the
+chevron drop-down, relative to the screen in pixels.
+</p><p>
+If the bar contains a toolbar which has been created from a menu, then responding to this
+event is just a matter of forwarding the <i>ChevronPress</i> to the toolbar:
+</p><pre>
+      ' Forward the ChevronPress:
+      tbrMenu.chevronPress lX, lY
+
+      ' The toolbar size may have been changed by making buttons
+      ' invisible.  Tell the docking container the new size:
+      ctlDock.BandSizeChange _
+         "MENU", _
+         tbrMenu.ToolbarWidth, tbrMenu.ToolbarHeight, _
+         getVerticalHeight(tbrMenu), getVerticalWidth(tbrMenu)
+</pre></li><li><strong>SizeChanged()</strong><br /><p>
+This event is raised whenever the size of a docking container has just changed, either
+because a bar has been added or the bars have been rearranged.  You don't need to do
+anything unless:
+</p><ul><li>You're using the controls in a SDI form, in which case the client area changes
+and you should resize the form.</li><li>If you have a non-dockable area containing a control, and your docking container
+is docked right or bottom.  In this case you need to adjust the top or left of the
+docked control so it is closest to the window edge of the control.</li></ul></li><li><strong>Docked(ByVal key As String)</strong><br /><p>
+This event is raised whenever a bar is docked.
+</p></li><li><strong>Undocked(ByVal key As String)</strong><br /><p>
+This event is raised whenever a bar is undocked.
+</p></li><li><strong>BarClose(ByVal sKey As String, ByRef bCancel As Boolean)</strong><br /><p>
+This event is raised when the close button in an undocked bar is clicked.  If you
+set the <i>bCancel</i> parameter to <i>True</i> the bar will not be closed.
+</p></li></ol><h3>4. Saving and Restoring Layouts</h3><p>
+Saving and restoring a layout associated with any docking bar is achieved using XML.
+The Microsoft MSXML 3 parser (supplied with IE5.5 and above, downloadable otherwise)
+is used for XML serialisation and deserialisation.
+</p><p>
+To persist a layout to XML, you use the <i>SaveLayout</i> function of the docking bar
+control.  This returns an XML string containing all the information needed to restore
+the layout of a bar.  (Note: you should not modify the contents of this XML stream in any
+way since it represents the entire internal state of the control.  Making changes to 
+any of the data may have unpredictable results). If you have more than one docking
+bar control, you can place the results of more than <i>SaveLayout</i> call into the 
+same XML document.  Here is a code snippet from the demonstration which shows how
+to save the state of all the docking bars in the form and persist it to a file:
+</p><pre>
+Dim sMsg As String
+Dim ctl As Control
+Dim ctlDock As vbalDockContainer
+
+   ' Get the XML:
+   sMsg = "&lt;Layout&gt;"
+   For Each ctl In Me.Controls
+      If TypeName(ctl) = "vbalDockContainer" Then
+         Set ctlDock = ctl
+         sMsg = sMsg &amp; vbCrLf &amp; ctlDock.SaveLayout()
+      End If
+   Next
+   sMsg = sMsg &amp; vbCrLf &amp; "&lt;/Layout&gt;"
+   
+   ' Persist to a file
+   Dim sFile As String
+   sFile = App.Path &amp; "\layout.xml"
+   On Error Resume Next
+   Kill sFile
+
+   On Error GoTo errorHandler   
+   Dim iFile As Integer
+   iFile = FreeFile
+   Open sFile For Binary Access Write As #iFile
+   Put #iFile, , sMsg
+   Close #iFile
+</pre><p>
+To restore a layout, you essentially reverse the process by reading 
+a previously stored XML layout and asking each dock control to 
+restore itself using the <i>RestoreLayout</i> method.  This method
+will take any XML string and search for the correct sub-tag to restore
+from.
+</p><p>
+The main
+difference is that you must also tell the docking controls about the 
+toolbars and controls which should be captured into the new layout.
+To do this you pass in two arrays.  The first array contains the
+keys which identify the bars, and the second contains the window
+handles to the toolbar or control you want to capture into the bar for
+each key.  The two arrays must have exactly the same dimensions.
+</p><p>
+Here's a snippet of code from the demonstration project for restoring
+the layout from a previously saved file:
+</p><pre>
+   ' Read the saved XML Layout:
+   Dim sFile As String
+   sFile = App.Path &amp; "\layout.xml"   
+   Dim iFile As Integer
+   iFile = FreeFile
+   Open sFile For Binary Access Read As #iFile
+   Dim sXml As String
+   sXml = String(LOF(iFile), " ")
+   Get #iFile, , sXml
+   Close #iFile
+   
+   
+   ' Set up an array of Keys and their associated
+   ' window handles:
+   ReDim sKey(1 To 6) As String
+   Dim hwnd(1 To 6) As Long
+   sKey(1) = "MENU": hwnd(1) = tbrMenu.hwnd
+   sKey(2) = "STANDARD": hwnd(2) = tbrStandard.hwnd
+   sKey(3) = "UTILITY": hwnd(3) = tbrAddress.hwnd
+   sKey(4) = "DRAWING": hwnd(4) = 0
+   sKey(5) = "TABLES": hwnd(5) = 0
+   sKey(6) = "HELP": hwnd(6) = 0
+   
+   ' Restore the layout on every docking container
+   ' on the form:
+   Dim ctl As Control
+   Dim ctlDock As vbalDockContainer
+   For Each ctl In Me.Controls
+      If TypeName(ctl) = "vbalDockContainer" Then
+         Set ctlDock = ctl
+         ctlDock.RestoreLayout sXml, sKey(), hwnd()
+      End If
+   Next
+</pre><h3>5. Other Properties and Methods</h3><p>
+There are a number of methods to adjust bars and their positions as well as properties 
+you can use to examine the state of the docking controls.
+</p><ul><li><strong>Remove</strong><br />
+Removes the bar with the specified key from a docking container
+</li><li><strong>AutoSize</strong><br />
+Adjusts the current layout for optimal positioning.
+</li><li><strong>AllowUndock</strong><br />
+Gets/sets whether bars can be docked or undocked to this container.
+</li><li><strong>LockToolBars</strong><br />
+Gets/sets whether this container is locked in its current state.  When a docking control
+is locked the bars cannot be moved and bars cannot be docked to it.
+</li><li><strong>ContainerForKey</strong><br />
+Returns a reference to the docking control which contains the specified key.
+</li><li><strong>OwnsKey</strong><br />
+Returns <i>True</i> if the specified key is owned by this dock (either docked or undocked).
+</li><li><strong>IsDocked</strong><br />
+Gets/sets whether the bar with the specified key is docked or not.  The bar must be owned
+by this docking container.
+</li><li><strong>BarCount</strong><br />
+Returns the total number of bars associated with this docking container, both docked
+and undocked.
+</li><li><strong>BarKey</strong><br />
+Returns the key of the bar with the specified index for this docking control.
+</li><li><strong>RowCount</strong><br />
+Returns the current number of rows displayed by this docking control.
+</li><li><strong>BandSizeChange</strong><br />
+Allows you to update the size of a particular bar.
+</li></ul><h3>6. MDI and SDI Considerations</h3><p>
+The control can be used in either MDI or SDI applications.  However, note the following:
+</p><ol><li>When using SDI mode, you need to write resizing code.<br /><p>
+The client area is not automatically set in an SDI form.  However, its very easy to do.
+Place all your client controls in a PictureBox called picClient.  Then add this code:
+</p><pre>
+Private Sub setClientArea()
+   picClient.Move _
+      dckLeft.Width, _
+      dckTop.Height, 
+      Me.ScaleWidth - dckLeft.Width - dckRight.Width, _
+      Me.ScaleHeight - dckTop.Height - dckBottom.Height
+End Sub
+</pre><p>
+Then have your code call this whenever the <i>SizeChanged</i> event is fired for any of
+the dock containers.  Finally, the client resizing should be done in response to the
+picClient <i>Resize</i> event rather than the Form's <i>Resize</i> event.
+</p></li><li>In MDI mode, the MDI child control buttons are not shown.<br />
+The Office bar is aimed at creating applications like Outlook, Word and Visual Studio.NET.
+These do not have MDI child control buttons. Alternatives to MDI child buttons are to use
+<a href="http://www.vbaccelerator.com/article.asp?id=2310">MDI Tabs</a> like Visual Studio.NET or to use a ListBar
+control to pick the current view.
+</li></ol><h2>Current Issues/Omissions</h2><p>
+There are a few things missing from this version of the control which are under research
+for the next release.  These do not prevent the control from being usable in its current
+state.  A .NET version is also under preparation.
+</p><ul><li>The Menu Bar does not wrap like the Office XP one when the menu space is too small.</li><li>Focus lost on main container window when an undocked bar is clicked.</li><li>Undocked bars cannot be resized.</li><li>Undocked bars do not auto-hide when the app is out of focus.</li><li>Cannot tell the control not to display a chevron.</li><li>Shadows are not displayed for drop-down windows.</li><li>Cursor does not always change when over the gripper of a bar.</li></ul><h2>Conclusion</h2><p>
+The Office Docking Bar control provides you with a way to create an Office XP/Visual Studio.NET
+style interface using the existing Toolbar and CoolMenu controls.  The interface is similar
+to the Office XP one with only some minor omissions.  I've been using this control in a 
+reasonably large project for two or three months without problems.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Toolbar</a>&#160;.&#160;vbAccelerator Office Docking Bar Control</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 6 July 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Toolbar/vbAccelerator_Office_Docking_Bar/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:50:25 GMT -->
+</html>

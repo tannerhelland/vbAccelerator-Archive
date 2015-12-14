@@ -1,0 +1,163 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Flicker_Free_API_Drawing/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:56:33 GMT -->
+<head>
+
+<title>vbAccelerator - Flicker Free API Drawing</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="VB offers a way to reduce flicker when drawing a control through its AutoRedraw property.  When AutoRedraw
+is set, VB creates an Off-Screen buffer to draw into, and only transfers this to the drawing surface when the Refresh
+method is called.  Whilst this works well (ish), it doesn't help if you need to draw graphics into some other drawing surface,
+particularly ones passed to you by the Windows API.  This article provides a simple class which allows you to create an
+Off-Screen buffer you can use for any drawing purposes." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;Flicker Free API Drawing</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Flicker_Free_API_Drawing_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Flicker Free API Drawing Sample</a> (6K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2965</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2965&amp;type=Article&amp;title=Flicker%20Free%20API%20Drawing">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />8 Jan 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Flicker Free API Drawing</h1><p class="splash">Improve the quality of controls using GDI drawing commands with this easy to use class.</p><img src="flickerFree.png" width="384" height="327" alt="Flicker Free Drawing Demonstration" /><p /><p>VB offers a way to reduce flicker when drawing a control through its <i>AutoRedraw</i> property.  When <i>AutoRedraw</i>
+is set, VB creates an Off-Screen buffer to draw into, and only transfers this to the drawing surface when the <i>Refresh</i>
+method is called.  Whilst this works well (ish), it doesn't help if you need to draw graphics into some other drawing surface,
+particularly ones passed to you by the Windows API.  This article provides a simple class which allows you to create an
+Off-Screen buffer you can use for any drawing purposes.</p><h2>About Flicker Free Drawing and Off-Screen Buffers</h2><p>The concept of an off-screen buffer is simple: whenever something gets drawn to the screen in
+Windows it gets there by virtue of being drawn into a <i>Device Context</i> which contains some sort
+of bitmap to hold the data.  Everything that you draw onto a device context that is part of the 
+display is immediately visible on screen: whilst that's good for immediacy it can very easily result
+in flicker depending on how you draw to it.  For example, generally its a whole lot easier to clear the 
+background of a complex graphic display and then redraw everything than it is to work out what all the
+changes are and then only redraw the changes. If you do this directly onto a device context that's 
+visible to the screen, flicker occurs because you see the background of all the items being
+cleared prior to them being refreshed. You will see this happen if you try the sample project
+from the download with the "Use Mem DC" CheckBox unchecked: it flickers a lot.  If you
+check the box, then the drawing suddenly becomes smooth, because all of the disruptive drawing
+(such as clearing the background) is done offscreen and only transferred at the last moment.</p><p>To prevent this flickering, what you'd like to do is to do all of the drawing somewhere off-screen
+and then transfer the whole lot to the screen more quickly than the screen refreshes.  Windows allows
+you to do both of these things: you can create a device context which isn't part of the screen to 
+draw on and you can use the <i>BitBlt</i> GDI API call to transfer the contents of one device context
+to another extremely quickly.</p><p>This is how the VB <i>AutoRedraw</i> property operates behind the scenes for Forms, PictureBoxes
+and UserControls.  However, as is usually the way with VB the implementation of <i>AutoRedraw</i> is
+hidden and can't be reused for your own purposes.  So if you want to implement this feature for
+anything that isn't a VB Form, PictureBox or UserControl then you need to write some custom code.</p><h2>Techno City</h2><p>So on to writing an equivalent off-screen buffer. The basic requirements are:</p><ul><li>Ability to create a suitable Device Context.</li><li>Ability to create a bitmap of the right width and height to draw onto.</li><li>Ability to draw to the buffer.</li><li>Ability to copy the contents of the buffer to the screen DC quickly.</li></ul><p>The download provides a class which provides all of these facilities in an easy-to-use 
+object called <i>pcMemDC</i>.  Before we look at how it works, first we'll look at the handful
+of methods and properties required to use it.</p><h2>Ingredients: Water-Malt-Hops-Yeast</h2><ul><li><strong>Width</strong><br />
+Gets or Sets the width of the offscreen buffer.</li><li><strong>Height</strong><br />
+Gets or Sets the height of the offscreen buffer.</li><li><strong>hDC</strong><br />
+Gets the device context of the offscreen buffer to draw onto using GDI methods.</li><li><strong>Draw</strong><br />
+Transfers the contents of the offscreen buffer to another device context using <i>BitBlt</i></li><li><strong>CreateFromPicture</strong><br />
+Helper method: if you have a VB <i>StdPicture</i> object then an offscreen buffer of the same
+dimensions is created containing the same image.</li></ul><h2>Sex In The City</h2><p>The class itself is simple enough, so into how it works.  There are various ways to create 
+an offscreen DC, but the simplest is to use the Desktop as a basis, since otherwise you need
+to work out what the colour depth of the display is.  By this method, we get a handle to the
+desktop device context and then create a Compatible device context:</p><pre>
+Private Declare Function CreateDC Lib "gdi32" _
+   Alias "CreateDCA" _
+   (ByVal lpDriverName As String, ByVal lpDeviceName As String, _
+   ByVal lpOutput As String, lpInitData As Any) As Long
+Private Declare Function CreateCompatibleDC Lib "gdi32" _
+   (ByVal hdc As Long) As Long
+
+   ...
+
+   lhDCC = CreateDC("DISPLAY", "", "", ByVal 0&amp;)
+   If Not (lhDCC = 0) Then
+      m_hDC = CreateCompatibleDC(lhDCC)
+      If Not (m_hDC = 0) Then
+	.. 
+      End If
+   End If
+</pre><p>Once you have a DC, then you need a bitmap selected into the device context to actually
+draw into. Again, we can create an object which is compatible with the desktop and simplify
+the calls:</p><pre>
+Private Declare Function CreateCompatibleBitmap Lib "gdi32" ( _
+       ByVal hdc As Long, ByVal nWidth As Long, ByVal nHeight As Long _
+    ) As Long
+
+    ...
+         m_hBmp = CreateCompatibleBitmap(lhDCC, Width, Height)
+         If Not (m_hBmp = 0) Then
+            m_hBmpOld = SelectObject(m_hDC, m_hBmp)
+            If Not (m_hBmpOld = 0) Then
+               m_lWidth = Width
+               m_lHeight = Height
+               DeleteDC lhDCC
+               Exit Sub
+            End If
+         Else
+            DeleteDC lhDCC
+         End If
+</pre><p>That is about it for creating the offscreen DC, but you may have noticed the calls
+to <i>DeleteDC</i>.  One of the things that's most important to using GDI successfully
+is that whenever you get a handle to an object from the API, you must always delete it
+again.  So wherever a GDI object is created, the class always has a corresponding call 
+to delete it.  Here's the destroy call which is performed whenever you change the size
+of the offscreen buffer, or the object terminates:</p><pre>
+   If Not m_hBmpOld = 0 Then
+      SelectObject m_hDC, m_hBmpOld
+      m_hBmpOld = 0
+   End If
+   If Not m_hBmp = 0 Then
+      DeleteObject m_hBmp
+      m_hBmp = 0
+   End If
+   If Not m_hDC = 0 Then
+      DeleteDC m_hDC
+      m_hDC = 0
+   End If
+   m_lWidth = 0
+   m_lHeight = 0
+</pre><p>For performance, the class is set up to only recreate the internal bitmap when you
+make the offscreen buffer larger than it was previously.  This also makes it a lot easier
+to use the class, since you simply set the <i>Width</i> and <i>Height</i> properties 
+regardless of whether they have been set before.</p><h2>Sheep In The City</h2><p>The sample application provided with the download aims to show how you can easily prevent
+the most basic GDI code from flickering when drawing.  The code itself creates a number
+of Rectangular objects which move around the screen in response to a timer in an old-school 
+BreakOut fashion (I admit it is fairly unlikely that a real control will draw this way, but anyway).
+Since as usual it is difficult to determine the overlaps between the objects and which areas
+of the background will be revealed by moving any object, the drawing is accomplished by first
+clearing the background and then drawing each of the rectangles in turn.  When this is done
+without using the <i>pcMemDC</i> class, the drawing flickers a lot, both from the background
+being repainted and from the overlap between the object rectangles.  Once the class is turned
+on however, you should see that the flicker is completely eliminated.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;Flicker Free API Drawing</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 9 January 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Flicker_Free_API_Drawing/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:56:33 GMT -->
+</html>

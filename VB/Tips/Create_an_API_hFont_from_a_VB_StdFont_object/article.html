@@ -1,0 +1,187 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Create_an_API_hFont_from_a_VB_StdFont_object/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:06 GMT -->
+<head>
+
+<title>vbAccelerator - Create an API hFont from a VB StdFont object</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="If you are working with API based controls you will find that to set fonts you need a GDI 
+hFont handle to the font. The StdFont object does not directly supply you with this handle. 
+Although it is possible to cast the StdFont object as an IFont object, which does have 
+a hFont handle property, you still don't get full control over the
+setting of the font properties, and note that since you cannot call the AddRefhFont method from VB there may be instances in which the handle unexpectedly
+becomes invalid." /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Create an API hFont from a VB StdFont object</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2952</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2952&amp;type=Article&amp;title=Create%20an%20API%20hFont%20from%20a%20VB%20StdFont%20object">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />17 Aug 1999<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=974">Text At Any Angle</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Create an API hFont from a VB StdFont object</h1><p /><p>If you are working with API based controls you will find that to set fonts you need a GDI 
+<span class="code">hFont</span> handle to the font. The <span class="code">StdFont</span> object does not directly supply you with this handle. 
+Although it is possible to cast the <span class="code">StdFont</span> object as an <span class="code">IFont</span> object, which does have 
+a <span class="code">hFont</span> handle property, you still don't get full control over the
+setting of the font properties, and note that since you cannot call the <span class="code">AddRefhFont</span> method from VB there may be instances in which the handle unexpectedly
+becomes invalid.</p><p>The alternative to this is to create a GDI font from first principles using the API call 
+<span class="code">CreateFontIndirect</span>. This takes a <span class="code">LOGFONT</span> structure which specifies the font to be created. 
+The <span class="code">LOGFONT</span> structure's members are quite closely related to the <span class="code">StdFont</span> object's properties - 
+but you need to be careful when specifying the font name and size. This tip contains a reliable 
+function to transform a <span class="code">StdFont</span> object into a <span class="code">LOGFONT</span> and briefly demonstrates using 
+a GDI font created by this method.</p><p>The demonstration is a bit pointless - it only does what could be done more simply 
+using the <span class="code">StdFont</span> object and the <span class="code">Print</span> method. However, this code is 
+really useful if you are building a control using the API or you need to draw on a GDI device context.</p><p>Start a new project in VB, and add a standard module. Then add the following code to the module:</p><pre>
+' Font:
+Private Const LF_FACESIZE = 32
+Private Type LOGFONT
+   lfHeight As Long
+   lfWidth As Long
+   lfEscapement As Long
+   lfOrientation As Long
+   lfWeight As Long
+   lfItalic As Byte
+   lfUnderline As Byte
+   lfStrikeOut As Byte
+   lfCharSet As Byte
+   lfOutPrecision As Byte
+   lfClipPrecision As Byte
+   lfQuality As Byte
+   lfPitchAndFamily As Byte
+   lfFaceName(LF_FACESIZE) As Byte
+End Type
+Private Const FW_NORMAL = 400
+Private Const FW_BOLD = 700
+Private Const FF_DONTCARE = 0
+Private Const DEFAULT_QUALITY = 0
+Private Const DEFAULT_PITCH = 0
+Private Const DEFAULT_CHARSET = 1
+Private Declare Function CreateFontIndirect Lib "gdi32" Alias "CreateFontIndirectA" ( _
+   lpLogFont As LOGFONT) As Long
+Private Declare Function MulDiv Lib "kernel32" ( _
+   ByVal nNumber As Long, ByVal nNumerator As Long, ByVal nDenominator As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As Long
+Private Declare Function GetDeviceCaps Lib "gdi32" ( _
+   ByVal hdc As Long, ByVal nIndex As Long) As Long
+Private Const LOGPIXELSY = 90
+
+' Testing the font:
+Private Type RECT
+   Left As Long
+   Top As Long
+   Right As Long
+   Bottom As Long
+End Type
+Private Declare Function DrawText Lib "user32" Alias "DrawTextA" ( _
+   ByVal hdc As Long, ByVal lpStr As String, ByVal nCount As Long, _
+   lpRect As RECT, ByVal wFormat As Long) As Long
+Private Const DT_CALCRECT = &amp;H400
+Private Declare Function SelectObject Lib "gdi32" ( _
+   ByVal hdc As Long, ByVal hObject As Long) As Long
+Private Declare Function OffsetRect Lib "user32" ( _
+   lpRect As RECT, ByVal x As Long, ByVal y As Long) As Long
+
+Public Sub Test(ByVal hdc As Long, fntThis As StdFont)
+Dim tLF As LOGFONT
+Dim hFnt As Long
+Dim hFntOld As Long
+Dim tR As RECT
+
+   ' Create a LOGFONT structure equivalent to the
+   ' StdFont font:
+   pOLEFontToLogFont fntThis, hdc, tLF
+
+   ' Convert the LOGFONT into a font handle:
+   hFnt = CreateFontIndirect(tLF)
+
+   ' Test the font out:
+   hFntOld = SelectObject(hdc, hFnt)
+   DrawText hdc, "This is a test", -1, tR, DT_CALCRECT
+   OffsetRect tR, 32, 32
+   DrawText hdc, "This is a test", -1, tR, 0&amp;
+   SelectObject hdc, hFntOld
+
+   ' Always remember to delete the font when finished
+   ' with it:
+   DeleteObject hFnt
+
+End Sub
+
+Private Sub pOLEFontToLogFont(fntThis As StdFont, ByVal hdc As Long, tLF As LOGFONT)
+Dim sFont As String
+Dim iChar As Integer
+Dim b() As Byte
+
+   ' Convert an OLE StdFont to a LOGFONT structure:
+   With tLF
+     sFont = fntThis.Name
+     b = StrConv(sFont, vbFromUnicode)
+     For iChar = 1 To Len(sFont)
+       .lfFaceName(iChar - 1) = b(iChar - 1)
+     Next iChar
+     ' Based on the Win32SDK documentation:
+     .lfHeight = -MulDiv((fntThis.Size), (GetDeviceCaps(hdc, LOGPIXELSY)), 72)
+     .lfItalic = fntThis.Italic
+     If (fntThis.Bold) Then
+       .lfWeight = FW_BOLD
+     Else
+       .lfWeight = FW_NORMAL
+     End If
+     .lfUnderline = fntThis.Underline
+     .lfStrikeOut = fntThis.Strikethrough
+     .lfCharSet = fntThis.Charset
+   End With
+
+End Sub
+</pre><p>To try out the code, add a Command Button to your test project's main form. Then add this code to the 
+Button's Click event: </p><pre>
+Private Sub Command1_Click()
+
+   Dim sFnt As New StdFont
+   sFnt.Name = "Arial"
+   sFnt.Size = 48
+   Test Me.hdc, sFnt
+
+End Sub
+</pre><p>Run the project. It will draw the text "This is a Test" in 
+48-point Arial by selecting a GDI font into the form's device context.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Create an API hFont from a VB StdFont object</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 19 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Create_an_API_hFont_from_a_VB_StdFont_object/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:07 GMT -->
+</html>

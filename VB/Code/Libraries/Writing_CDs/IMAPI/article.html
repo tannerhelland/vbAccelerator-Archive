@@ -1,0 +1,575 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Writing_CDs/IMAPI/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:36 GMT -->
+<head>
+<title>vbAccelerator - Image Mastering API (IMAPI) Library for VB</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+IMAPI is provided with Windows XP and above to provide full control over the creation
+of audio and data discs.  This sample provides a wrapper around the API allowing it to be 
+used from VB.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" />
+<link rel="contents" href="../index.html" /><link rel="meta" type="application/rdf+xml" href="article.rdf" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Writing CDs</a>&#160;.&#160;Image Mastering API (IMAPI) Library for VB</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_IMAPI_Library_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IMAPI Library Binary</a> (26K)</p><p class="nav"><a href="VB5_IMAPI_Library_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IMAPI Library Source</a> (74K)</p><p class="nav"><a href="VB5_IMAPI_Properties_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IMAPI Properties Demonstration</a> (31K)</p><p /><p class="nav"><a href="VB6_IMAPI_Library_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IMAPI Library Binary</a> (27K)</p><p class="nav"><a href="VB6_IMAPI_Library_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IMAPI Library Source</a> (74K)</p><p class="nav"><a href="VB6_IMAPI_Properties_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IMAPI Properties Demonstration</a> (30K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:14968</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14968&amp;type=Article&amp;title=Image%20Mastering%20API%20%28IMAPI%29%20Library%20for%20VB">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />12 Jun 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13463">vbAccelerator TreeView Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14969">Simple Data CD Creation Using ICDBurn</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14976">VB IMAPI (CD Burning) Interfaces (IVBIMAPI.tlb)</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14974">Mapping NT Device Names to Drive Letters and vice-versa</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Image Mastering API (IMAPI) Library for VB</h1><img src="imapiProperties.png" width="305" height="419" alt="IMAPI Properties Sample" /><p /><p>
+IMAPI is provided with Windows XP and above to provide full control over the creation
+of audio and data discs.  This sample provides a wrapper around the API allowing it to be 
+used from VB.
+</p><h2>About IMAPI</h2><p>
+The Image Mastering API allows an application to stage and burn a simple audio or data image to CD-R
+and CD-RW devices.  All XP and above systems come with the Adaptec implementation of IMAPI, which 
+is controlled through the <span class="code">MSDiscMasterObj</span> COM object.
+In theory other implementations of the API could be made available by vendors but I have
+not seen any details of any other implementations.   The API interfaces are briefly described
+in the diagram and table below:
+</p><img src="msDiscMasterObj.png" width="270" height="152" alt="The MS Disc Master Object" /><p class="caption">MS Disc Master Object</p><table class="article"><tr class="header"><td><strong>Interface</strong></td><td><strong>System</strong></td><td><strong>Description</strong></td></tr><tr><td valign="top"><span class="code">ICDBurn</span></td><td valign="top"><span class="code">Shell</span></td><td valign="top"><p>Simple interface for writing files to CD.  <span class="code">Burn</span> method copies 
+staging area to CD.</p></td></tr><tr class="body"><td valign="top"><span class="code">IDiscMaster</span></td><td valign="top"><span class="code">IMAPI</span></td><td valign="top"><p>Controls an IMAPI session.  Opens, closes, enumerates and selects recorders, and allows
+burning of data or audio discs.</p></td></tr><tr><td valign="top"><span class="code">IDiscRecorder</span></td><td valign="top"><span class="code">IMAPI</span></td><td valign="top"><p>Provides access to a single recorder connected to the system.</p></td></tr><tr class="body"><td valign="top"><span class="code">IRedbookDiscMaster</span></td><td valign="top"><span class="code">IMAPI</span></td><td valign="top"><p>Contains functions to create a Redbook (audio) disc on the active recorder.</p></td></tr><tr><td valign="top"><span class="code">IJolietDiscMaster</span></td><td valign="top"><span class="code">IMAPI</span></td><td valign="top"><p>Contains functions to create a Joliet (data) disc on the active recorder.</p></td></tr><tr class="body"><td valign="top"><span class="code">IDiscMasterProgressEvents</span></td><td valign="top"><span class="code">IMAPI</span></td><td valign="top"><p>Interface you can implement to receive feedback about progress during a burn and 
+notification of Plug'n'Play events affecting the available recorders.</p></td></tr></table><p class="caption">CD Burning and IMAPI Interfaces</p><p>
+Although <span class="code">IMAPI</span> is implemented using COM, it is not implemented in a VB-friendly 
+way.  The DLLs containing the implementations do not have type libraries, so you cannot add a reference
+to them in Visual Basic; and even if they did they use some interfaces which cause a lot of problems
+to VB apps, not least <span class="code">IPropertyStorage</span> and the use of enumerations with 
+structures as return values.   Not just that, but the interface is not even defined using IDL or ODL;
+it is instead provided in a nasty MIDL generated file making it usable (just) from C and C++ 
+applications.
+</p><p>
+The first step in making this usable from VB is to define a Type Library for the interfaces.  I'll
+cover this in the next section.
+</p><h2>Implementing an IMAPI Type Library for VB</h2><p>
+There's a fair amount of code involved in implementing a type library like this.  To explain how
+it works we'll take the example of the <span class="code">IDiscMaster</span> interface.  First,
+here's an excerpt of what you get from the Platform SDK, which includes the declares in 
+<span class="code">imapi.h</span>:
+</p><pre>
+EXTERN_C const IID IID_IDiscMaster;
+
+#if defined(__cplusplus) &amp;&amp; !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("520CCA62-51A5-11D3-9144-00104BA11C5E")
+    IDiscMaster : public IUnknown
+    {
+    public:
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE 
+            Open( void) = 0;
+        
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE 
+            EnumDiscMasterFormats( 
+            /* [out] */ IEnumDiscMasterFormats **ppEnum) = 0;
+        
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE 
+            GetActiveDiscMasterFormat( 
+            /* [out] */ LPIID lpiid) = 0;
+        
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE 
+            SetActiveDiscMasterFormat( 
+            /* [in] */ REFIID riid,
+            /* [iid_is][out] */ void **ppUnk) = 0;
+        
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE 
+            EnumDiscRecorders( 
+            /* [out] */ IEnumDiscRecorders **ppEnum) = 0;
+        
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE 
+            GetActiveDiscRecorder( 
+            /* [out] */ IDiscRecorder **ppRecorder) = 0;
+        
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE 
+            SetActiveDiscRecorder( 
+            /* [in] */ IDiscRecorder *pRecorder) = 0;
+        
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE 
+            ClearFormatContent( void) = 0;
+        
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE 
+            ProgressAdvise( 
+            /* [in] */ IDiscMasterProgressEvents *pEvents,
+            /* [retval][out] */ UINT_PTR *pvCookie) = 0;
+        
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE 
+            ProgressUnadvise( 
+            /* [in] */ UINT_PTR vCookie) = 0;
+        
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE 
+            RecordDisc( 
+            /* [in] */ boolean bSimulate,
+            /* [in] */ boolean bEjectAfterBurn) = 0;
+        
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE 
+            Close( void) = 0;
+        
+    };
+</pre><p>
+Converting this into a type library which you can use from VB requires a few steps:
+</p><ol><li>Converting the C++ style definitions into IDL/ODL.</li><li>Ensuring the type library includes all of the interfaces needed.</li><li>Converting types which VB does not support into standard VB types.</li></ol><p>
+Performing the first step can be done by looking at the source code for another
+type library, or using the OLE/COM Object Viewer (OLEView.exe, provided with
+the Platform SDK) to generate a type library
+from a DLL you create in Visual Basic with similar method declarations.
+</p><p>
+The second step means you need to also implement the <span class="code">IEnumDiscMasterFormats</span>,
+<span class="code">IEnumDiscRecorders</span>, <span class="code">IDiscRecorder</span> and
+<span class="code">IDiscMasterProgressEvents</span> interfaces, as well as providing a <span class="code">UUID</span>
+type for use in the <span class="code">REFIID</span> and <span class="code">LPIID</span> parameters.
+Note that some of the interfaces have an out parameter using an interface with the <span class="code">**pp[Type]</span>
+parameter description.  This means that the parameter will be set to a new instance of a COM object.  In these
+cases you need to be able to call <span class="code">AddRef</span> and <span class="code">Release</span> on the
+object, and so you also need an <span class="code">IUnknown</span> implementation.
+</p><p>
+The last step is the most tricky and needs some experience with VB Type Libraries, or some
+judicious copying of other samples.  Downloading the type library source code from the site
+as well as from <a href="http://www.vbaccelerator.com/article.asp?id=3347">Edanmo's VB Page</a> should help when
+doing this.  In this case the changes are:
+</p><ul><li><span class="code">void **</span> represents a pointer to a new COM object
+allocated by the class.  Since all COM objects must implement <span class="code">IUnknown</span>
+this can be replaced with <span class="code">IUnknown **</span>, which is equivalent to 
+<span class="code">As Object</span> in VB.</li><li>The <span class="code">void</span> instance in the <span class="code">Open</span> method just indicates no
+parameters and so can be missed out.</li><li><span class="code">UINT_PTR</span> is a specialisation of <span class="code">long</span>.</li><li><span class="code">boolean</span> is also specialisiation of <span class="code">long</span>
+which takes the 0 for <span class="code">False</span> and 1 for <span class="code">True</span>.</li><li><span class="code">REFIID</span> and <span class="code">LPIID</span> both represent a 
+<span class="code">UUID</span> structure passed by reference, so become <span class="code">UUID *</span>.</li><li>Note that the <span class="code">HRESULT</span> signature affects the way code is generated.  A 
+<span class="code">HRESULT</span> is either a success code or an error code, and in VB failure gets mapped
+to throwing an error (success codes are ignored).  If you need to find out the return value you can change
+any method returning a <span class="code">HRESULT</span> to a <span class="code">long</span>.  For example:
+<pre>
+HRESULT _stdcall Open();
+</pre><p>
+results in the VB version having the signature <span class="code">Sub Open()</span>, which will throw
+an error if the <span class="code">HRESULT</span> is an error.
+</p><pre>
+long _stdcall Open();
+</pre><p>
+Would result in a VB version <span class="code">Function Open() As Long</span>, which allows you to 
+get the result code from the return value.
+</p></li></ul><p>
+The final ODL for this interface then becomes:
+</p><pre>
+   // --------------------------------------------------------
+   // IDiscMaster
+   // --------------------------------------------------------
+   [
+      odl,
+      uuid(520CCA62-51A5-11D3-9144-00104BA11C5E),
+      helpstring("Visual Basic version of IDiscMaster interface")
+   ]
+   interface IVBDiscMaster : IUnknown
+   {
+      [helpstring("Opens an IMAPI object")]
+      HRESULT _stdcall Open();
+
+      [helpstring("Retrieves a format enumerator")]
+      HRESULT _stdcall EnumDiscMasterFormats(
+         [out] IVBEnumDiscMasterFormats **ppEnum);
+
+      [helpstring("Retrieves the currently selected recorder format")]
+      HRESULT _stdcall GetActiveDiscMasterFormat(
+         [out] UUID *lpiid);
+
+      [helpstring("Sets a new active recorder format")]
+      HRESULT _stdcall SetActiveDiscMasterFormat(
+         [in] UUID *riid,
+         [out] stdole.IUnknown **ppUnk);
+
+      [helpstring("Retrieves a recorder enumerator")]
+      HRESULT _stdcall EnumDiscRecorders(
+         [out] IVBEnumDiscRecorders **ppEnum);
+
+      [helpstring("Gets the active disc recorder")]
+      HRESULT _stdcall GetActiveDiscRecorder(
+         [out] IVBDiscRecorder **ppRecorder);
+
+      [helpstring("Sets the active disc recorder")]
+      HRESULT _stdcall SetActiveDiscRecorder(
+         [in] IVBDiscRecorder *pRecorder);
+
+      [helpstring("Clears the contents of an unburnt image")]
+      HRESULT _stdcall ClearFormatContent();
+
+      [helpstring("Registers for progress notifications")]
+      HRESULT _stdcall ProgressAdvise(
+         [in] IVBDiscMasterProgressEvents *pEvents,
+         [out] long *pvCookie);
+
+      [helpstring("Cancels progress notifications")]
+      HRESULT _stdcall ProgressUnadvise(
+         [in] long vCookie);
+
+      [helpstring("Burns the staged image to the active recorder")]
+      HRESULT _stdcall RecordDisc(
+         [in] long bSimulate,
+         [in] long bEjectAfterBurn);
+
+      [helpstring("Closes the interface")]
+      HRESULT _stdcall Close();
+
+   }
+</pre><p>
+Note that I didn't understand the <span class="code">[reval]</span> attribute when I started doing this, but
+in the case of <span class="code">ProgressAdvise</span> method making the last parameter 
+<span class="code">[out, retval]</span> would have meant the method would return the cookie, rather 
+than requiring a <span class="code">ByRef As Long</span> parameter to be passed in.
+</p><p>
+Once this process has been completed for all the required interfaces, then the Type Library can be 
+built using the <span class="i">MkTypLib.exe</span> command line utility provided with the Platform
+SDK.
+</p><h2>Wrapping the Type Library</h2><p>
+In theory, the type library can be used directly in an application.  However, in practice that turns
+out to be somewhat awkward.  A case in point is reading the list of properties associated with
+a recorder (which include things like the drive speed).  Here's the code needed to enumerate all
+the properties for an <span class="code">IPropertyStorage</span> instance:
+</p><pre>
+Private m_props As IPropertyStorage
+Private m_colProps As Collection
+
+Sub GetProperties(props As IPropertyStorage)
+
+   Set m_colProps = New Collection   
+   Set m_props = props
+
+   ' Nasty IPropertyStorage
+   Dim hR As Long
+   Dim fetched As Long
+   Dim enumProps As IEnumSTATPROPSTG
+   Dim propStg As STATPROPSTG
+   Dim propSpecifier As PROPSPEC
+   Dim sName As String
+   Dim lSize As Long
+   Dim Value As Variant
+   Dim cProp As cProperty
+   Dim lErr As Long
+   
+   ' Get the property enumerator:
+   Set enumProps = m_props.Enum
+   ' Add a reference to it:
+   enumProps.AddRef
+   Do
+      ' Get a property from the enumerator:
+      hR = enumProps.Next(1, propStg, fetched)
+      If Not (FAILED(hR)) And (fetched &gt; 0) Then
+         
+         ' Get the value of the property
+         propSpecifier.ID_or_LPWSTR = propStg.propid
+         propSpecifier.ulKind = PRSPEC_PROPID        
+         props.ReadMultiple 1, propSpecifier, Value
+
+         ' Place the id, name and value of the property into 
+         ' a VB class (note Value may be of unsupported type,
+         ' in which case trying to access it throws an error):
+         Set cProp = New cProperty
+         On Error Resume Next
+         cProp.fInit propStg.propid, lpwstrPtrToString(propStg.lpwstrName), Value
+         lErr = err.Number
+         On Error GoTo 0
+         If (lErr = 0) Then
+            m_colProps.Add cProp
+         End If
+
+         ' Free string returned by the property read (part of
+         ' the IEnumSTATPROPSTG contract):                  
+         CoTaskMemFree propStg.lpwstrName
+         
+      End If
+   Loop While Not (FAILED(hR)) And fetched &gt; 0
+
+   ' Release the reference to the property enumerator
+   ' and ensure VB does not try to release it again
+   enumProps.Release
+   CopyMemory enumProps, 0&amp;, 4
+
+End Sub
+
+Private Function lpwstrPtrToString(ByVal lpwstrPtr As Long) As String
+Dim lSize As Long
+   If Not (lpwstrPtr = 0) Then
+      lSize = lstrlenW(ByVal lpwstrPtr)
+      If (lSize &gt; 0) Then
+         ReDim b(0 To (lSize * 2) - 1) As Byte
+         CopyMemory b(0), ByVal lpwstrPtr, lSize * 2
+         lpwstrPtrToString = b
+      End If
+   End If
+End Function
+</pre><p>
+As you see, the use of VB-hostile COM structures means that the code becomes 
+fairly difficult to read and use; the code is basically low-level C++ but
+without the useful bits like smart pointers! For this reason, the <span class="i">vbalIMAPI</span> 
+Library was created as a wrapper around the API.  This allows you to use the IMAPI 
+functions without quite so much pain.
+</p><h2>Using the vbalIMAPI DLL</h2><p>
+To use the vbalIMAPI library you will need a reference both to <span class="i">vbalIMAPI.DLL</span> and to
+the VB CD Mastering API Type Library (<span class="i">IVBIMAPI.tlb</span>).  Note the Type Library is only
+required at design-time.  The main objects provided by this library are shown in the diagram below:
+</p><img src="vbImapiApi.png" width="271" height="491" alt="Main VBIMAPI Library Objects" /><p class="caption">Main VBIMAPI Library Objects.</p><p>The next five sections describe the main parts of the API.  The property collections are not
+covered here, but should be fairly self explanatory as they are simply a collection of
+<span class="code">cProperty</span> objects; these objects have an <span class="code">ID</span>
+and an associated <span class="code">Name</span> and a variant <span class="code">Value</span>.
+</p><ol><li><a href="#discMaster"><span class="code">cDiscMaster</span></a></li><li><a href="#discRecorders"><span class="code">cDiscRecorders</span></a></li><li><a href="#discRecorder"><span class="code">cDiscRecorder</span></a></li><li><a href="#redbook"><span class="code">cRedbookDiscMaster</span></a></li><li><a href="#joliet"><span class="code">cJolietDiscMaster</span></a></li></ol><a name="discMaster" /><h3>1. cDiscMaster</h3><p>
+The <span class="code">cDiscMaster</span> class is the only directly instantiable class in the library
+and controls access to all of the other functions.  The methods are as follows:
+</p><ul><li><span class="code">Initialise</span><br />
+Instantiates the underlying ICDBurn implementation and MSDiscMasterObj objects.  Must be called before
+any other function is used.
+</li><li><span class="code">ClearUp</span><br />
+Terminates access to the MSDiscMasterObj and clears up all objects associated with the library.  Note this
+can take a few seconds as the object clears up the stash allocated for your session.  It is best to
+call this method explicitly before your application ends and set the <span class="code">cDiscMaster</span>
+instance to <span class="code">Nothing</span>.
+</li><li><span class="code">Recorders</span><br />
+Gets the collection of recorders on the system.  See the <span class="code">cDiscRecorders</span> object
+for more information on this collection.</li><li><span class="code">RefreshRecorders</span><br />
+Refreshes the list of recorders.  The library caches recorder instances when the <span class="code">Recorders</span>
+method is called for the first time; this allows the list to be updated.</li><li><span class="code">RedbookDiscMaster</span><br />
+Gets a <span class="code">cRedbookDiscMaster</span> object which is used to build up an audio CD image
+for the active recorder.</li><li><span class="code">JolietDiscMaster</span><br />
+Gets a <span class="code">cJolietDiscMaster</span> object which is used to build up a data CD image for
+the active recorder.</li><li><span class="code">RecordDisc</span><br />
+Records (or simulates recording) all of the data placed into either the Redbook or Joliet disc image.
+</li><li><span class="code">ClearFormatContent</span><br />
+Clears any content added to the Redbook or Joliet disc image.</li><li><span class="code">SimpleRecorder</span><br />
+Gets a <span class="code">cSimpleDiscRecorder</span> object which can burn a CD using the <span class="code">ICDBurn</span>
+interface (see article <a href="http://www.vbaccelerator.com/article.asp?id=14969">Simple Data CD Creation Using ICDBurn</a> for details).</li></ul><p>
+The class also raises these events:
+</p><ul><li><span class="code">AddProgress</span><br />
+Raised as data is added to either a Redbook or Joliet disc image.</li><li><span class="code">QueryCancel</span><br />
+Raised during a burn process to request whether to cancel or not.</li><li><span class="code">PreparingBurn</span><br />
+Raised when a disc burn is started but before any data is written to disc.</li><li><span class="code">BlockProgress</span><br />
+Raised during CD buring as blocks are written to the disc.</li><li><span class="code">TrackProgress</span><br />
+Raised as tracks are burnt to an audio CD.</li><li><span class="code">ClosingDisc</span><br />
+Raised when the CD burn has completed and the disc is being closed.</li><li><span class="code">BurnComplete</span><br />
+Raised when a burn operation has completed.</li><li><span class="code">EraseComplete</span><br />
+Raised when a CDRW Erase has completed.</li><li><span class="code">PnPActivity</span><br />
+Raised when a Plug and Play drive is added to or removed from the system.</li></ul><a name="discRecorders" /><h3>2. cDiscRecorders</h3><p>
+This class provides access to the collection of recorders connected to the system.
+</p><ul><li><span class="code">Count</span><br />
+Returns the number of recorders attached to the system.</li><li><span class="code">Recorder</span> (default)<br />
+Returns a <span class="code">cDiscRecorder</span> for the specified 1-based index.</li><li><span class="code">ActiveRecorder</span><br />
+Returns the currently <span class="code">cDiscRecorder</span>.</li></ul><a name="discRecorder" /><h3>3. cDiscRecorder</h3><p>
+This class provides information about a recorder attached to the system and allows a recorder
+to be made the active recorder for disc mastering.  It also provides functions to query
+the disc media in the drive and to erase CD-RW media.
+</p><ul><li><span class="code">VendorId</span>, <span class="code">ProductId</span>, <span class="code">RevisionId</span><br />
+Returns strings suitable for identifying the recorder on the system.</li><li><span class="code">PnPID</span><br />
+Returns the Plug and Play ID of the recorder (typically the <span class="code">VendorId</span>, <span class="code">ProductId</span>
+and <span class="code">RevisionId</span> combined.</li><li><span class="code">Path</span><br />
+Gets the path to the recorder. On my system, this is the NT device name, such as \Device0\CdRom0, rather than the
+actual drive letter.  You can use the code in the tip <a href="http://www.vbaccelerator.com/article.asp?id=14974">Mapping Drive names
+to NT Device names</a> to get the drive letter.</li><li><span class="code">RecorderState</span><br />
+Returns the current state of the recorder: one of :
+<ol><li><span class="code">RECORDER_DOING_NOTHING</span></li><li><span class="code">RECORDER_OPENED</span></li><li><span class="code">RECORDER_BURNING</span></li></ol></li><li><span class="code">MediaInfo</span><br />
+Gets a <span class="code">cMediaInfo</span> object with more details of the
+current media. The recorder must have been opened for exclusive access
+using <span class="code">OpenExclusive</span> before querying this method. 
+<span class="code">cMediaInfo</span> contains these fields:
+<ul><li><span class="code">MediaPresent</span><br />
+Returns <span class="code">true</span> if media is detected in the recorder.
+</li><li><span class="code">MediaType</span><br />
+Gets the media type in the recorder.  The recorder must have been opened for exclusive access
+using <span class="code">OpenExclusive</span> before querying this method.  The media type
+returned is one of:
+<ul><li><span class="code">MEDIA_CD_OTHER</span></li><li><span class="code">MEDIA_CD_I</span></li><li><span class="code">MEDIA_CD_EXTRA</span></li><li><span class="code">MEDIA_CD_ROM_XA</span></li><li><span class="code">MEDIA_CDDA_CDROM</span></li><li><span class="code">MEDIA_SPECIAL</span></li></ul></li><li><span class="code">MediaFlags</span><br />
+Gets information about the state of the media in the recorder.  
+The recorder must have been opened for exclusive access
+using <span class="code">OpenExclusive</span> before querying this method. 
+The return value is a bitwise-OR combination
+of one or more of these flags:
+<ul><li><span class="code">MEDIA_BLANK</span></li><li><span class="code">MEDIA_RW</span></li><li><span class="code">MEDIA_WRITABLE</span></li><li><span class="code">MEDIA_FORMAT_UNUSABLE_BY_IMAPI</span></li></ul></li><li><span class="code">Sessions</span> - number of sessions on the disc.</li><li><span class="code">LastTrack</span> - track number of the last track of the previous session.</li><li><span class="code">StartAddress</span> - start address of the last track of the previous session.</li><li><span class="code">LastWritable</span> - address to begin writing.</li><li><span class="code">FreeBlocks</span> - number of blocks available for writing.</li></ul></li><li><span class="code">OpenExclusive</span><br />
+Opens the recorder for exclusive access.  This is needed to read the media info.  Note that you
+cannot burn an image to disc if you have the recorder opened in exclusive mode.</li><li><span class="code">CloseExclusive</span><br />
+Closes the recorder if previously opened using <span class="code">OpenExclusive</span>.</li><li><span class="code">EraseCDRW</span><br />
+Erases CD-RW media in the drive.  The recorder must be the active recorder.</li><li><span class="code">IsActive</span><br />
+Returns <span class="code">true</span> if this is the active recorder on the system.</li><li><span class="code">SetAsActive</span><br />
+Sets this recorder to be the active recorder on the system.</li><li><span class="code">SupportsRedbook</span><br />
+Returns <span class="code">true</span> if this recorder supports recording Redbook (audio) discs.</li><li><span class="code">SupportsJoliet</span><br />
+Returns <span class="code">true</span> if this recorder supports recording Joliet (data) discs.</li><li><span class="code">Properties</span><br />
+Returns a <span class="code">cDiscRecorderProperties</span> collection containing the properties of the
+recorder.  Properties are dependent on the currently active mastering format for the CD as well
+as the Media that is in the drive.  Properties include things like WriteSpeed and AudioGapSize.</li><li><span class="code">SetProperties</span><br />
+Updates the properties associated with the recorder.  Attempts to update read-only properties are
+ignored.</li></ul><a name="redbook" /><h3>4. cRedbookDiscMaster</h3><p>
+This class is allows a Redbook (audio) CD image to be constructed in the stash, which can be subsequently
+burnt using the <span class="code">BurnCD</span> method of the <span class="code">cDiscMaster</span>
+object.  The class expects audio data to be presented as raw Wave data in the CD audio format, which 
+is 16-bit stereo with 44,100 samples/second.  The data should be arranged as alternate left/right
+signed 16-bit sample pairs.
+</p><ul><li><span class="code">AudioBlockSize</span><br />
+Gets the size of a single block on the CD in bytes.  This value is always 2352, which is 1/75 of a second
+of audio, also known as a "Frame".</li><li><span class="code">AvailableTrackBlocks</span><br />
+Returns the number of track blocks available on the disc.</li><li><span class="code">TotalAudioBlocks</span><br />
+Returns the total number of track blocks on the disc.</li><li><span class="code">UsedAudioBlocks</span><br />
+Returns the number of used track blocks on the disc.</li><li><span class="code">TotalAudioTracks</span><br />
+Returns the total number of tracks on the disc. Audio CDs may have up to 99 tracks.</li><li><span class="code">CreateAudioTrack</span><br />
+Creates a new audio track to which data can be added using the <span class="code">AddAudioTrackBlocks</span>
+method.  The size of the track in blocks needs to be specified when creating the track.</li><li><span class="code">AddAudioTrackBlocks</span><br />
+Adds a chunk of audio data to the current track opened with <span class="code">CreateAudioTrack</span>.
+The first parameter is a pointer to a block of memory containing the raw wave data, and the second
+is the number of bytes.  Any data added to the CD must be added in chunks of the <span class="code">AudioBlockSize</span>,
+otherwise an error will occur.</li><li><span class="code">CloseAudioTrack</span><br />
+Closes a track once all of the data has been added.</li></ul><a name="joliet" /><h3>5. cJolietDiscMaster</h3><p>
+This class is allows a Joliet (data) CD image to be constructed in the stash, which can be subsequently
+burnt using the <span class="code">BurnCD</span> method of the <span class="code">cDiscMaster</span>
+object.  The class requires that all files to be added are added using COM
+<span class="code">IStorage</span> objects, which makes this class particularly hard to use from VB.
+</p><ul><li><span class="code">DataBlockSize</span><br />
+Gets the size of a single data block on the CD in bytes.  This value is always 2048.</li><li><span class="code">TotalDataBlocks</span><br />
+Returns the total number of data blocks on the disc.</li><li><span class="code">UsedDataBlocks</span><br />
+Returns the number of used data blocks on the disc.</li><li><span class="code">Properties</span><br />
+Gets a <span class="code">cJolietDiscMasterProperties</span> object containing the properties associated 
+with this data image.  Joliet properties include such things as the Volume Name.</li><li><span class="code">SetProperties</span><br />
+Updates the Joliet properties with new values.  Attempts to update read-only properties are
+ignored.</li><li><span class="code">AddData</span><br />
+Adds data to the data CD image from an <span class="code">IStorage</span> implementation.</li></ul><h2>Sample Application</h2><p>
+The sample application provided with the downloads enumerates recorders on the system and 
+displays information about the recorder, media and supported buring formats.  This
+exercises most of the classes in the sample other than the Redbook and Joliet stash classes.
+To run the sample, you will need the following registered on your system:
+</p><ul><li><span class="code">VBIMAPI.TLB</span> type library.</li><li><span class="code">vbalImapi6.DLL</span> library.</li><li><span class="code">vbalTreeView6.OCX</span>, which is the TreeView control used to display the results.</li><li><span class="code">SSubTmr6.OCX</span>, which is supports the TreeView control.</li></ul><p>
+Any application which wants to use the library requires an instance of the
+<span class="code">cDiscMaster</span> interface.  The code to set up
+and clear up this object is shown below.  Note that the <span class="code">ClearUp</span>
+method tends to take a little while, so you might want to provide the user with some
+feedback whilst it's happening:
+</p><pre>
+Private m_cDiscMaster As cDiscMaster
+
+Private Sub Form_Load()
+   
+   Set m_cDiscMaster = New cDiscMaster
+   m_cDiscMaster.Initialise
+
+End Sub
+
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+
+   Screen.MousePointer = vbHourglass
+   m_cDiscMaster.ClearUp
+   Screen.MousePointer = vbDefault
+
+End Sub
+</pre><p>
+The next thing is to enumerate through the recorders on the system and 
+show the basic recorder information:
+</p><pre>
+Private Sub ShowRecorders()
+
+Dim cRecorders As cDiscRecorders
+Dim cRecorder As cDiscRecorder
+Dim iRecorder As Long
+
+   Set cRecorders = m_cDiscMaster.Recorders
+
+   For iRecorder = 1 To cRecorders.Count
+      Set cRecorder = cRecorders(iRecorder)
+      With cRecorder
+         Debug.Print "PnPID=" &amp; .PnPID
+         Debug.Print "VendorID=" &amp; .VendorID
+         Debug.Print "ProductID=" &amp; .ProductID
+         Debug.Print "RevisionID=" &amp; .RevisionID
+
+         ' ... More to be added here         
+
+      End With
+   Next iRecorder
+End Sub
+</pre><p>
+If the recorder has a disc in it, then we can show the media information.  In
+order to gain access to the media information, you must open the recorder
+exclusively; as far as I know this is the only time you should do this
+and it is wise to close the recorder again as soon as possible:
+</p><pre>
+Dim cMedia As cMediaInfo
+
+       .OpenExclusive
+       Set cMedia = cRecorder.MediaInfo
+       Debug.Print "Media:"
+       If cMedia.MediaPresent Then
+          Debug.Print "  Media Type=" &amp; cMedia.MediaType
+          Debug.Print "  Media Flags=" &amp; cMedia.MediaFlags
+         
+          Debug.Print "  Sessions=" &amp; cMedia.Sessions
+          Debug.Print "  LastTrack=" &amp; cMedia.LastTrack
+          Debug.Print "  Start=" &amp; cMedia.StartAddress
+          Debug.Print "  Next=" &amp; cMedia.LastWritable
+          Debug.Print "  Free=" &amp; cMedia.FreeBlocks
+       Else
+          Debug.Print "  No Media in drive"
+       End If
+       .CloseExclusive
+
+</pre><p>
+Finally, we can display the recorder properties and supported
+burning formats (although it is very unlikely you'll have a recorder that
+<span class="i">doesn't</span> support audio and data):
+</p><pre>
+Dim iProperty As Long
+
+       Debug.Print "Properties:"
+       With .Properties
+          For iProperty = 1 To .Count
+              With .Property(iProperty)
+                 Debug.Print "  " &amp; .Name &amp; " = " &amp; .Value
+              End With
+          Next iProperty
+       End With
+
+       Debug.Print "Recording Formats:"
+       If (.SupportsRedbook) Then
+           Debug.Print "  Redbook (audio)"
+       End If
+       If (.SupportsJoliet) Then
+           Debug.Print "  Joliet (data)"
+       End If
+</pre><p>
+That's pretty much it for this demo.  Other articles in this section show more 
+sophisticated uses of the library to actually burn CDs.
+</p><h2>Conclusion</h2><p>
+This article provides a wrapper allowing the Image Mastering API to be used from VB.  The
+wrapper is provided because although
+IMAPI is a COM interface, it is pretty hostile to use directly from VB and requires a 
+fairly low-level approach to COM programming to make it work.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Writing CDs</a>&#160;.&#160;Image Mastering API (IMAPI) Library for VB</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 13 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Writing_CDs/IMAPI/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:40 GMT -->
+</html>

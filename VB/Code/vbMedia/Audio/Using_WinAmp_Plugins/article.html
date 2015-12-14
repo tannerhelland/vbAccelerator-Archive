@@ -1,0 +1,259 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/Using_WinAmp_Plugins/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:03 GMT -->
+<head>
+<title>vbAccelerator - Using WinAmp In Plugins From VB</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Winamp is one of the better music player applications out there, and one of the neat
+features is its extensive support for plugins, most of which are developed and made
+available independently from Winamp.  This article provides a small DLL and source
+which allows you to use these plugins to play and convert audio files relatively easily from VB.  
+It has been tested with the MP3, MP4/AAC, APE (Monkey's Audio) and Ogg Vorbis plugins; it should
+work fine with the other plugins for more esoteric tracker and console formats out there 
+too.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" />
+<link rel="contents" href="../index.html" /><link rel="meta" type="application/rdf+xml" href="article.rdf" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;Using WinAmp In Plugins From VB</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Winamp_Plugin_Client.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Winamp Plugin Client</a> (65K)</p><p /><p class="nav"><a href="VB6_Winamp_Plugin_Client.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Winamp Plugin Client</a> (62K)</p><p /><p class="nav"><a href="Winamp_Plugin_Wrapper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Winamp Plugin Wrapper</a> (40K)</p><p class="nav"><a href="Winamp_Plugins.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Winamp Plugins</a> (344K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:14973</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14973&amp;type=Article&amp;title=Using%20WinAmp%20In%20Plugins%20From%20VB">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />12 Jun 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14896">CDEx</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3432">Streaming .WAV File Player </a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Using WinAmp In Plugins From VB</h1><p class="splash">Play and Decode MP3, MP4/AAC, Ogg Vorbis and many more music file formats</p><img src="winAmpPlugins.png" width="438" height="386" alt="Demonstration Application" /><p /><p>
+Winamp is one of the better music player applications out there, and one of the neat
+features is its extensive support for plugins, most of which are developed and made
+available independently from Winamp.  This article provides a small DLL and source
+which allows you to use these plugins to play and convert audio files relatively easily from VB.  
+It has been tested with the MP3, MP4/AAC, APE (Monkey's Audio) and Ogg Vorbis plugins; it should
+work fine with the other plugins for more esoteric tracker and console formats out there 
+too.
+</p><h2>About The Sample</h2><p>
+The sample includes a wave writer and a rudimentary player.  To use it, first choose whether you
+want the VB5 or VB6 compile and download that.  Then, unzip the DLLs in the <span class="i">Winamp Plugins</span>
+so they are in a subdirectory from the demonstration executable called "Plugins" (this zip
+includes the MP3, MP4 and Monkey's Audio plugins; if you already have Winamp then you can just copy it's 
+plugin directory, or you can get them elsewhere on the Internet as described later on in the article).
+Finally, extract <span class="i">WinAmpPluginWrapper.DLL</span> from the <span class="i">Winamp Plugin Wrapper</span> 
+download and put this into the executable or (if you want to run in the IDE) Windows\System directory.  As
+with other VB samples on the site, you'll need the <a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing and Timer Assistant</a>
+for the playing functions.
+</p><h2>The Winamp Plugin Wrapper</h2><p>
+I had the idea of writing a wrapper for Winamp plugins approximately two years ago, when
+I was idling around with the XAudio and Winamp SDKs.  However, I can't say I got that far.
+Winamp's In plugins run on a separate thread, and the fifteen-thousand member structure which
+contains *everything* the plugin can do is documented (unsurprisingly) 
+from the perspective of a plugin author rather than a from someone who wishes to call the plugin.  For example:
+</p><pre>
+	// call after opening audio device with max latency in ms and samplerate
+	void (*SAVSADeInit)();	// call in Stop()
+
+	// simple vis supplying mode
+	void (*SAAddPCMData)(void *PCMData, int nch, int bps, int timestamp); 
+</pre><p class="caption">Excerpt of IN2.H from Winamp SDK</p><p>
+So I put the project on hold and drank beer for a while, until I noticed that
+<a href="http://www.vbaccelerator.com/article.asp?id=14896">CDEx</a> included some code for using the plugins.
+Aha...  After a particularly painful day at work debugging a piece
+of code that I'd written which was supposed to settle a trade but instead mainly
+threw an exception and refused, I thought something a bit more relaxing was in order.  To say
+I was astounded when after only the second attempt I managed to create a DLL which
+compiled, and could even be called from VB, would be an understatement.  Perhaps the 
+fundamental laws of the universe have subtly changed, I am not sure.
+</p><p>
+Anyway, the <span class="i">WinAmpPluginWrapper.DLL</span> is the result. It
+draws heavily 
+from CDEx's <span class="code">ISndWinAmpStream</span> and associated classes, 
+although it includes some changes to ensure completion events are raised
+when playing VBR encoded MP3 files.  
+<span class="code">ISndWinAmpStream</span> provides functionality for loading plugins and buffering the encoded data in a FIFO buffer, from where it can be used from
+non-threaded applications.
+If you're interested in the source code, the download include a VS.NET solution which you
+should be able to compile without problems; otherwise just take the DLL from the <span class="i">Release</span>
+directory and put it into your <span class="i">Windows\System</span> directory before running.
+</p><p>
+The main methods of the Wrapper DLL are:
+</p><ul><li><span class="code">Initialise(ByVal hWnd As Long, ByVal strPath As String) As Long</span><p>
+This method must be called before any other methods in the DLL are called.  It reads all of the
+Winamp in plugins from the specified path (this works by virtue of all WinAmp plugins having a filename of the form "in_*.dll")
+and returns a count of the plugins found.
+</p></li><li><span class="code">CleanUp</span><p>Allows all plugins to be unloaded cleanly.  It is not necessary to call this method but it can be 
+called prior to ending an application.</p></li><li><span class="code">OpenStream(ByVal strPath As String) As Long</span><p>Opens a decoding stream for the specified file.  The wrapper DLL will locate an 
+appropriate plugin for the file and return non-zero if successful.</p></li><li><span class="code">GetBufferSize() As Long</span><p>The user of the DLL is responsible for allocating a memory buffer for the data which
+is read.  This function returns the buffer size to use.  Note that this size is an 
+upper bound of the size which is required; normally not all of the buffer size is 
+needed. Typically, a Winamp plugin decodes in chunks of 4608 bytes and the DLL will
+request a buffer size of 9000 bytes.</p></li><li><span class="code">Read(pbData As Any, ByVal dwNumBytes As Long) As Long</span><p>Decodes a chunk of data from the stream and puts
+the result into the memory buffer <span class="code">pbData</span>.  The size of the
+chunk is returned and <span class="code">dwNumBytes</span> parameter specifies the 
+size of the buffer.  Note that the number of bytes read may (and normally will) be less than the size of the buffer, which must be set to the size returned by <span class="code">GetBufferSize</span>.
+</p></li><li><span class="code">GetTrackTotalTime() As Long</span><p>Provides the total length of the track in milliseconds.  This can be used in combination
+with <span class="code">GetSampleRate</span>, <span class="code">GetChannels</span> to
+determine the total length of the track in bytes (assuming playback at 16 bit):
+</p><pre>
+   m_lTotalBytes = ((GetTrackTotalTime() * 1#) * _
+      (GetSampleRate() * 1#) * GetChannels() * 2) / 1000#
+</pre><p>
+You can use this along with the number of bytes read from the <span class="code">Read</span> method 
+to provide a progress report (there is also a <span class="code">GetTrackCurrentTime</span> method,
+but in practice this doesn't always return a reliable answer with all plugins).
+</p></li><li><span class="code">SeekStream(ByVal lOff As long, ByVal nFrom As Long) As Long</span><p>
+Seeks to the specified offset in the stream, from the starting point specified in nFrom.
+</p></li><li><span class="code">CloseStream() As Long</span><p>
+Closes a stream previously opened using <span class="code">OpenStream</span>.
+</p></li></ul><h2>Using From VB</h2><p>
+These exports are wrapped in the sample in a VB class, <span class="code">cWinAmpAudioConverter</span>,
+which is a thin wrapper around the DLL with the primary function of managing the buffers used for reading
+chunks of audio data.  The methods of the DLL are as follows:
+</p><ul><li><span class="code">Init</span><p>Initialises the class for use and reads the Winamp plugins from the specified path.  No other methods
+will work until this method has been called.</p></li><li><span class="code">OpenFile</span><p>Opens a file for decoding.  Returns <span class="code">True</span> if successful, <span class="code">False</span>
+otherwise.</p></li><li><span class="code">FileIsOpen</span><p>Gets whether a file is currently open or not.</p></li><li><span class="code">CloseFile</span><p>Closes a file previously opened using <span class="code">OpenFile</span>. Called automatically if another
+file is opened or the class is terminated.</p></li><li><span class="code">ConvertChunk</span><p>Converts a chunk of data from the currently open file.  Returns the size of the data read; this will be
+zero if no file is open or there is no data remaining.  The class maintains multiple internal buffers
+so you can also specify which buffer to read the data into, and also by default reads multiple chunks
+in one read (configured through the <span class="code">CHUNKS_PER_READ</span> constant).</p></li><li><span class="code">ReadBufferPtr</span><p>Gets the pointer to a memory buffer.</p></li><li><span class="code">BufferCount</span><p>Returns the number of buffers available to read data into, configured through the <span class="code">BUFFER_COUNT</span>
+constant.</p></li><li><span class="code">TrackSeek</span><p>Seeks to the specified time in milliseconds from the start of the file.</p></li><li><span class="code">TrackCurrentTime</span>, <span class="code">TrackTotalTime</span><p>Gets the current and total time of the currently opened track in milliseconds.</p></li><li><span class="code">SampleRate</span>, <span class="code">Channels</span><p>Gets the sample rate and number of audio channels for the current track.</p></li></ul><h2>About The Wave File Converter</h2><p>
+The wave file converter class, implemented in <span class="code">cConverterWaveWriter</span>, allows
+decoded audio from the <span class="code">cWinAmpAudioConverter</span> class to be written to
+a Wave File.  This code is just a converter between the Winamp converter and the <span class="code">cWavFileDataWriter</span>
+class provided in the <a href="http://www.vbaccelerator.com/article.asp?id=14971">CD Ripper</a> sample.  It contains two methods and one event:
+</p><ul><li><span class="code">Filename</span><p>Gets/sets the filename of the Wave File to write to.</p></li><li><span class="code">Decode</span><p>Takes a <span class="code">cWinAmpAudioConverter</span> and converts the entire file to
+a Wave file.  Whilst the conversion is occurring, the class fires <span class="code">Progress</span>
+events which indicate the percentage complete and provide an opportunity to cancel the conversion
+using the <span class="code">bCancel</span> property.</p></li></ul><p>
+Using the converter is therefore pretty simple.  You just need an instance of the 
+<span class="code">cWinAmpAudioConverter</span> and a <span class="code">WithEvents</span>
+instance of the converter, as follows:
+</p><pre>
+Private m_cConverter As cWinAmpAudioConverter
+Private WithEvents m_cWaveConverter As cConverterWaveWriter
+
+Private Sub Form_Load()
+
+   Me.Show
+   Me.Refresh   
+
+   Set m_cConverter = New cWinAmpAudioConverter
+   m_cConverter.Init PluginDir, Me.hWnd
+   If (m_cConverter.PluginCount = 0) Then
+      MsgBox "No plugins could be loaded from the directory " _
+         &amp; PluginDir, vbExclamation
+   End If
+   
+   Set m_cWaveConverter = New cConverterWaveWriter
+
+End Sub
+
+Private Sub Convert(ByVal sFileIn As String, ByVal sFileOut As String)
+   If (m_cConverter.OpenFile(sFile)) Then
+      m_cWaveConverter.Filename = sFileOut
+      m_cWaveConverter.Decode m_cConverter      
+   End If
+End Sub
+
+Private Sub m_cWaveConverter_Progress( _
+    ByVal lPercentDone As Long, bCancel As Boolean)
+
+   ' Show progress and set cancel flag as required
+
+End Sub
+</pre><h2>About The Player</h2><p>
+The player provided in this sample is really only there to demonstrate
+that the technique works.  It uses the Windows Multimedia APIs to stream data to
+the soundcard using the method presented in the <a href="http://www.vbaccelerator.com/article.asp?id=3432">Streaming .WAV File 
+Player</a> article.  To do this properly you need to use DirectSound instead 
+(subject of a forthcoming sample); my sample uses posted messages to queue more music onto 
+the output buffer, and playback can be persuaded to break-up if you do something which fills the 
+message queue (for example, rapidly dragging another Window around over the top of the
+player's form).  Alternatively, you can exclusively play tracks by Kid606, in which case you'll
+probably never notice a problem.
+</p><p>
+As noted before, Winamp plugins typically decode data in chunks of 4608 bytes, which at
+CD quality (44.1kHz 16 bit stereo) equates to about 26ms.  That's good for
+playback latency but a bit too quick for the Windows message loop.  Hence for the sample
+I've chunked the reads into blocks of 104ms, which still seems pretty responsive, and
+ends up using less than 3% CPU on my Athlon 2000 (playing "99 Problems"
+from Dangermouse's ace "The Grey Album" at the moment, which you probably didn't need to know).  
+Mileage may vary on other machines, however.
+</p><p>
+The streaming audio player is implemented by the <span class="code">cConverterWavePlayer</span>
+adapter class.  This class takes a <span class="code">cWinAmpAudioConverter</span> as a
+parameter to the <span class="code">PlayFile</span> method.  Playback can be paused and 
+restarted using the <span class="code">Pause</span> method and stopped completely using
+the <span class="code">StopPlay</span> (should be "Stop" but VB won't let you) 
+method.  Currently seeking is not implemented but it shouldn't be hard to do.
+</p><p>
+Note that there is an issue with the Winamp plugin implementation for VBR encoded MP3 files.
+The length of the file is incorrectly reported at the start of playback; you can
+see this occurring in Winamp as well, which reports these tracks as being three or four
+times their actual length in the playlist, and the seek slider is inaccurate to start
+with.  As playback progresses, the track
+length becomes more accurate, but only ever approximates the actual length of the
+track.
+</p><h2>On Windows Media</h2><p>
+There are some other ways to get to the same result as this article.  For example,
+DirectMusic includes a way to play MP3 and WMx files with about two lines of code; it 
+may well work with MP4 files as well.  However, there's something about parts of DirectX 
+Audio and all Windows Media Player technologies which just gives me a bad feeling.
+Probably a combination of the licence agreement (the stuff on your hard disk is not yours),
+that it is *so* hard to find a Codec that you don't have, the fact that Media Player is
+*always* bitching about not having a suitable Codec and it needs to be online to find one (and usually
+it can't), that encoding to WMA sometimes incomprehensibly results in private licence keys being 
+embedded so you can't ever use the file again and the fact that all the Media Player skins are 
+so laughably rubbish...
+</p><img src="skin.png" width="85" height="79" alt="This was actually *shipped* with Windows XP.  Author: Microsoft Corporation." /><p>
+...may have something to do with it.  Not just that, but what happens when you want to use
+your Linux machine to play the stuff instead?  Where's the spec?  Is it free?  Where's the 
+cool open-source version that works better?
+</p><p>
+Anyway, each to their own.  Personally I find quite a few of Microsoft's technologies
+over-prescriptive about how they can be used, or by whom, and that means I can't
+be happy with them however good (or otherwise) the underlying technology may be.  Perhaps
+if I wasn't so retentive, particularly about music, I could get over it...
+</p><h2>Conclusion</h2><p>
+This article demonstrates how to use Winamp input plugins from VB to convert
+various audio formats (including MP4, MP3 and Monkey's Audio) to wave data.
+The resulting code is more than efficient enough to use for realtime playing (it decodes
+a 3 minute MP3 to a WAV file in about 4 seconds on my machine).
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;Using WinAmp In Plugins From VB</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 13 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/Using_WinAmp_Plugins/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:05 GMT -->
+</html>

@@ -1,0 +1,129 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/DrawState_Function/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:56:39 GMT -->
+<head>
+
+<title>vbAccelerator - Draw disabled, colourised and dithered icons with the DrawState GDI function</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This sample demonstrates how simple it is to draw disabled, colourised, selected and dithered icons from Image Lists. The VB Image List provides a method to draw an item selected, but doesn't give you very much flexibility from there." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;Draw disabled, colourised and dithered icons with the DrawState GDI function</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Icon_and_ImageList_Drawing_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Icon and ImageList Drawing Sample</a> (13K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:972</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=972&amp;type=Article&amp;title=Draw%20disabled%2C%20colourised%20and%20dithered%20icons%20with%20the%20DrawState%20GDI%20function">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Nov 2002<br />Updated to describe problems with VB6 ImageLists.</p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Draw disabled, colourised and dithered icons with the DrawState GDI function</h1><p class="splash">Simplifies drawing icons in the different states using VB.</p><img src="iconproc.gif" width="371" height="206" alt="Icon Drawing Demonstration" /><p /><p>This sample demonstrates how simple it is to draw disabled, colourised, selected and dithered icons from Image Lists. The VB Image List provides a method to draw an item selected, but doesn't give you very much flexibility from there.</p><p>The secret of quickly drawing disabled, colourised or dithered icons is the GDI <i>DrawState</i> function. 
+This function appears in VB's API viewer, but the parameters are named incorrectly and none of the constants 
+you need to get it to work are provided!</p><p>Here is the correct declaration of <i>DrawState</i> and the flag constants which go with it:</p><pre>
+    Private Declare Function DrawState Lib "user32" Alias "DrawStateA" _ 
+        (ByVal hdc As Long, _
+        ByVal hBrush As Long, _
+        ByVal lpDrawStateProc As Long, _
+        ByVal lParam As Long, _
+        ByVal wParam As Long, _
+        ByVal X As Long, _
+        ByVal Y As Long, _
+        ByVal cX As Long, _
+        ByVal cY As Long, _
+        ByVal fuFlags As Long) As Long
+
+    '/* Image type */
+    Private Const DST_COMPLEX = &amp;H0
+    Private Const DST_TEXT = &amp;H1
+    Private Const DST_PREFIXTEXT = &amp;H2
+    Private Const DST_ICON = &amp;H3
+    Private Const DST_BITMAP = &amp;H4
+
+    ' /* State type */
+    Private Const DSS_NORMAL = &amp;H0
+    Private Const DSS_UNION = &amp;H10 ' Dither
+    Private Const DSS_DISABLED = &amp;H20
+    Private Const DSS_MONO = &amp;H80 ' Draw in colour of brush specified in hBrush 
+    Private Const DSS_RIGHT = &amp;H8000
+</pre><p>With this function, you can draw text, icons or bitmaps in disabled, dithered or in a single colour with a 
+single call. To draw an icon from an image list in its disabled state, you first need to extract a copy 
+of the icon to work on using the <i>DrawState</i> function. In VB5, this can be achieved using the following 
+Image List API function:</p><pre>
+    Private Declare Function ImageList_GetIcon Lib "COMCTL32.DLL" ( _
+        ByVal himl As Long, _ ' Image List handle
+        ByVal i As Long, _ ' Zero-based index of the image to extract
+        ByVal diFlags As Long _ ' Draw flags
+    ) As Long
+</pre><p>In VB6, the ImageList does not respond to the <i>ImageList_</i> API calls in COMCTL32.DLL, but there is
+an <i>ExtractIcon</i> method of the ListImage object which gives you the same thing.</p><p>Having obtained a hIcon from either of these two methods, this is a new icon created which has been created
+from the item in the image list. Since it is a new GDI object, you need to remember to delete it once you have finished 
+with it with the DestroyIcon function.</p><p>Then, for example, to draw the a 16x16 icon on a form at position 32,32 pixels in its disabled state you do this:</p><pre>
+    Dim hIcon As Long
+    Dim hIml As Long
+
+        ' Get the image list handle (note we draw an item first to ensure it
+        ' has been initialised, otherwise the code can error):
+        ilsIcons.ListImages(1).Draw 0, 0, 0
+        himl = ilsIcons.hImageList
+
+        ' Get an icon from the Image List:
+        hIcon = ImageList_GetIcon(himl, 3, 0)
+        ' Draw it disabled at 32x32
+        DrawState Me.hdc, 0, 0, hIcon, 0, 32, 32, 16, 16, DST_ICON Or DSS_DISABLED)
+        ' Clear up the icon:
+        DestroyIcon hIcon
+</pre><p>That's it. The function also works with strings and bitmaps. Note to use it with strings you have to create a new declaration so the <i>lParam</i> member of <p>DrawState</p> expects a string, and the <i>wParam</i> parameter takes 
+the length of the string:</p><pre>
+    Private Declare Function DrawStateString Lib "user32" Alias "DrawStateA" _
+        (ByVal hdc As Long, _
+        ByVal hBrush As Long, _
+        ByVal lpDrawStateProc As Long, _
+        ByVal lpString As String, _
+        ByVal cbStringLen As Long, _
+        ByVal X As Long, _
+        ByVal Y As Long, _
+        ByVal cX As Long, _
+        ByVal cY As Long, _
+        ByVal fuFlags As Long) As Long
+</pre><p>The sample code also shows how to draw images in an image list directly using the Image List's API functions 
+(although this only works for VB5).  This can be very useful when creating your own controls which interface to Image Lists, since in the control you can maintain the API handle to the ImageList (<i>hImageList</i>) rather than an object pointer to an 
+ImageList. This gives you the flexibility to accept a full API level Image List as well as a VB ImageList control as 
+the icon source. To see this in action in my controls, check out the 
+Owner Draw Combo and List Box control and the Icon Menu control.</p><p>For VB6 applications, you have no choice but to use the ImageList as an object.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;Draw disabled, colourised and dithered icons with the DrawState GDI function</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 1998-2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 25 November 2002</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/DrawState_Function/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:56:40 GMT -->
+</html>

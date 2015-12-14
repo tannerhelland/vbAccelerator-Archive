@@ -1,0 +1,220 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Responding_to_AppCommands/VB6_AppCommand_Demonstration_zip_cAppCommand_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:19 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cAppCommand.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cAppCommand.cls" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;<a href="article.html">Responding to AppCommands</a>&#160;.&#160;<a href="VB6_AppCommand_Demonstration.html">VB6 AppCommand Demonstration</a>&#160;.&#160;cAppCommand.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_AppCommand_Demonstration.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 AppCommand Demonstration</a> (17K)</p><p /><p class="nav"><a href="VB6_AppCommand_Demonstration.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 AppCommand Demonstration</a> (15K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:12875</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12875&amp;type=Zip&amp;title=VB6%20AppCommand%20Demonstration%2Ezip%5FcAppCommand">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />5 Sep 2003<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12636">Detecting Mouse XButton Clicks</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12338">Win32 Hooks in VB - The vbAccelerator Hook Library</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cAppCommand.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "cAppCommand"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Public Enum AppCommandConstants
+   APPCOMMAND_BROWSER_BACKWARD = 1
+   APPCOMMAND_BROWSER_FORWARD = 2
+   APPCOMMAND_BROWSER_REFRESH = 3
+   APPCOMMAND_BROWSER_STOP = 4
+   APPCOMMAND_BROWSER_SEARCH = 5
+   APPCOMMAND_BROWSER_FAVORITES = 6
+   APPCOMMAND_BROWSER_HOME = 7
+   APPCOMMAND_VOLUME_MUTE = 8
+   APPCOMMAND_VOLUME_DOWN = 9
+   APPCOMMAND_VOLUME_UP = 10
+   APPCOMMAND_MEDIA_NEXTTRACK = 11
+   APPCOMMAND_MEDIA_PREVIOUSTRACK = 12
+   APPCOMMAND_MEDIA_STOP = 13
+   APPCOMMAND_MEDIA_PLAY_PAUSE = 14
+   APPCOMMAND_LAUNCH_MAIL = 15
+   APPCOMMAND_LAUNCH_MEDIA_SELECT = 16
+   APPCOMMAND_LAUNCH_APP1 = 17
+   APPCOMMAND_LAUNCH_APP2 = 18
+   APPCOMMAND_BASS_DOWN = 19
+   APPCOMMAND_BASS_BOOST = 20
+   APPCOMMAND_BASS_UP = 21
+   APPCOMMAND_TREBLE_DOWN = 22
+   APPCOMMAND_TREBLE_UP = 23
+   APPCOMMAND_MICROPHONE_VOLUME_MUTE = 24
+   APPCOMMAND_MICROPHONE_VOLUME_DOWN = 25
+   APPCOMMAND_MICROPHONE_VOLUME_UP = 26
+   APPCOMMAND_HELP = 27
+   APPCOMMAND_FIND = 28
+   APPCOMMAND_NEW = 29
+   APPCOMMAND_OPEN = 30
+   APPCOMMAND_CLOSE = 31
+   APPCOMMAND_SAVE = 32
+   APPCOMMAND_PRINT = 33
+   APPCOMMAND_UNDO = 34
+   APPCOMMAND_REDO = 35
+   APPCOMMAND_COPY = 36
+   APPCOMMAND_CUT = 37
+   APPCOMMAND_PASTE = 38
+   APPCOMMAND_REPLY_TO_MAIL = 39
+   APPCOMMAND_FORWARD_MAIL = 40
+   APPCOMMAND_SEND_MAIL = 41
+   APPCOMMAND_SPELL_CHECK = 42
+   APPCOMMAND_DICTATE_OR_COMMAND_CONTROL_TOGGLE = 43
+   APPCOMMAND_MIC_ON_OFF_TOGGLE = 44
+   APPCOMMAND_CORRECTION_LIST = 45
+End Enum
+
+Public Enum AppCommandDeviceConstants
+   FAPPCOMMAND_MOUSE = &amp;H8000&amp;
+   FAPPCOMMAND_KEY = 0
+   FAPPCOMMAND_OEM = &amp;H1000&amp;
+End Enum
+
+Public Enum AppCommandKeyStateConstants
+   MK_LBUTTON = &amp;H1
+   MK_RBUTTON = &amp;H2
+   MK_SHIFT = &amp;H4
+   MK_CONTROL = &amp;H8
+   MK_MBUTTON = &amp;H10
+   MK_XBUTTON1 = &amp;H20
+   MK_XBUTTON2 = &amp;H40
+End Enum
+
+Private Const FAPPCOMMAND_MASK As Long = &amp;HF000&amp;
+
+Private Const WM_APPCOMMAND As Long = &amp;H319&amp;
+
+Private m_hWnd As Long
+
+Public Event AppCommand( _
+      ByVal command As AppCommandConstants, _
+      ByVal fromDevice As AppCommandDeviceConstants, _
+      ByVal keyState As AppCommandKeyStateConstants, _
+      ByRef processed As Boolean _
+      )
+
+Implements ISubclass
+
+Public Sub Attach(ByVal hWnd As Long)
+   Detach
+   ' Start subclassing for the message.
+   ' Will throw error if hWnd is not valid.
+   AttachMessage Me, hWnd, WM_APPCOMMAND
+   m_hWnd = hWnd
+End Sub
+
+Public Sub Detach()
+   ' Stop subclassing if we are subclassing:
+   If Not (m_hWnd = 0) Then
+      DetachMessage Me, m_hWnd, WM_APPCOMMAND
+      m_hWnd = 0
+   End If
+End Sub
+
+Private Sub Class_Initialize()
+   ' intentionally blank
+End Sub
+
+Private Sub Class_Terminate()
+   '
+   Detach
+   '
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As EMsgResponse)
+   ' intentionally blank
+End Property
+
+Private Property Get ISubclass_MsgResponse() As EMsgResponse
+   ISubclass_MsgResponse = emrConsume
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hWnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+   
+   Select Case iMsg
+   Case WM_APPCOMMAND
+      
+      Dim cmd As Long
+      ' app command is the hiword of the message with the
+      ' device details in the highest 4 bits excluded:
+      cmd = (lParam And &amp;HFFF0000) / &amp;H10000
+      
+      Dim fromDevice As Long
+      ' the device is derived from the highest 4 bits:
+      fromDevice = (lParam And &amp;H70000000) / &amp;H10000
+      If (lParam And &amp;H80000000) = &amp;H80000000 Then
+         fromDevice = fromDevice Or &amp;H8000&amp;
+      End If
+            
+      Dim keys As Long
+      ' the key details are in the loword:
+      keys = lParam And &amp;HFFFF&amp;
+      
+      Dim processed As Boolean
+      RaiseEvent AppCommand(cmd, fromDevice, keys, processed)
+      
+      If (processed) Then
+         ' tell windows we've used it:
+         ISubclass_WindowProc = 1
+      Else
+         ' pass on to next handler:
+         ISubclass_WindowProc = CallOldWindowProc(hWnd, iMsg, wParam, lParam)
+      End If
+      
+   End Select
+   
+End Function
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;<a href="article.html">Responding to AppCommands</a>&#160;.&#160;<a href="VB6_AppCommand_Demonstration.html">VB6 AppCommand Demonstration</a>&#160;.&#160;cAppCommand.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 8 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Responding_to_AppCommands/VB6_AppCommand_Demonstration_zip_cAppCommand_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:19 GMT -->
+</html>

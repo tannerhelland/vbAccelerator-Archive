@@ -1,0 +1,426 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/Using_Editable_Mode/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:49:44 GMT -->
+<head>
+
+<title>vbAccelerator - Using Editable in SGrid 2</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This article describes how to use the Editable setting
+in SGrid 2.0, which has been made more flexible and reliable compared to the 
+previous version of the grid.  It also provides a couple of handy controls -
+a drop-down picker which allows you to pick one or more of a selection of items
+and a popup tip control that works under any OS.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;Using Editable in SGrid 2</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_SGrid_Edit_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 SGrid Edit Sample</a> (61K)</p><p /><p class="nav"><a href="VB6_SGrid_Edit_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 SGrid Edit Sample</a> (57K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:13704</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13704&amp;type=Article&amp;title=Using%20Editable%20in%20SGrid%202">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />24 Jan 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13703">SGrid 2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1411">vbAccelerator ComboBoxEx Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4587">Text Box Balloon tip support in XP</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Using Editable in SGrid 2</h1><img src="editing.png" width="339" height="243" alt="Editing Demonstration Application" /><p /><p>
+This article describes how to use the <span class="code">Editable</span> setting
+in SGrid 2.0, which has been made more flexible and reliable compared to the 
+previous version of the grid.  It also provides a couple of handy controls -
+a drop-down picker which allows you to pick one or more of a selection of items
+and a popup tip control that works under any OS.
+</p><h2>Editable Grids</h2><p>
+Unlike some other grids, SGrid 2.0 does not internally include any edit 
+controls for the cells.  This is done because there are great variety of
+editors you may want for a cell: some cells require a text box that can
+be validated, others require drop-down lists and others may require 
+something more sophisticated.  By not tying the grid to any specific 
+implementation you can have complete freedom to build any sort of edit
+mode you need for a particular cell.  However, the consequence there is a bit more
+work to be done when creating an editable cell.  This article describes
+how to use the edit mode and demonstrates how to use text boxes and combo boxes
+for editing, and finally describes implementing check boxes for cells.
+</p><h3>Edit Mode Basics</h3><p>
+To make SGrid editable, you set the <span class="code">Editable</span> property
+to <span class="code">True</span>.  By default, the grid assumes that it should
+go into edit mode when the user either clicks on a selected cell, double-clicks
+on a cell or when the F2 or Return keys are pressed.  You can change this so
+that the grid automatically enters edit mode on selection of a cell by setting the
+<span class="code">SingleClickEdit</span> property to <span class="code">True</span>.
+</p><p>
+The grid will then start firing three events:
+</p><ol><li><span class="code">RequestEdit</span><br />
+Fired when the grid detects it should
+enter edit mode.  In response to this event you should either show your edit
+control at the correct position or set the <span class="code">bCancel</span>
+property to <span class="code">False</span> to prevent the grid from entering
+edit mode.</li><li><span class="code">PreCancelEdit</span><br />
+Fired when the grid detects that it
+should leave edit mode for a cell but before it does.  This provides a way for
+you to validate the contents of the edited area prior to leaving edit mode, and
+to commit the edited value to the grid's cell.
+</li><li><span class="code">CancelEdit</span><br />
+Fired when the grid detects that edit mode must be cancelled.  At this point
+you should hide the edit control.
+</li></ol><p>
+The edit mode of the control can also be programmatically initiated and terminated
+using the <span class="code">StartEdit</span>, <span class="code">EndEdit</span>
+and <span class="code">CancelEdit</span> methods.  These methods raise events just
+as if the action had been performed by the user, and hence the same techniques
+are used to respond to the edit mode setting.
+</p><p>
+The following diagrams show the program flow for each of the edit modes:
+</p><h3>1. Initiating Edit Mode</h3><img src="initiatingEdit.png" width="455" height="662" alt="Program Flow when initiating edit" /><h3>2. Leaving Edit Mode</h3><img src="completingEdit.png" width="527" height="660" alt="Program Flow when leaving edit mode." /><p>
+Having seen the basics of edit mode, let's look at implementing edit mode using a Text Box, a Combo Box and a custom edit control implementation.
+</p><h3>1. Editing Using a TextBox</h3><img src="contextMenus.png" width="183" height="159" alt="Editing Demonstration" /><p class="caption">Text Box Editing in the Sample</p><p>
+In all edit modes, there are three events you will need to respond to:
+</p><ol><li><span class="code">RequestEdit</span>.  Respond by either displaying the control
+or setting the <span class="code">bCancel</span> parameter to <span class="code">True</span>.</li><li><span class="code">PreCancelEdit</span>.  Validate the information that has been entered
+(if necessary) and commit it to the grid if it's ok, otherwise set <span class="code">bStayInEditMode</span> to <span class="code">True</span>.</li><li><span class="code">CancelEdit</span>.  Hide any visible edit controls.</li></ol><p>
+Here's the code you need for a simple editor using a TextBox:
+</p><pre>
+Private Sub grdEdit_RequestEdit( _
+    ByVal lRow As Long, ByVal lCol As Long, _
+    ByVal iKeyAscii As Integer, bCancel As Boolean)
+Dim lLeft As Long
+Dim lTop As Long
+Dim lWidth As Long
+Dim lHeight As Long
+
+    grdEdit.CellBoundary lRow, lCol, lLeft, lTop, lWidth, lHeight
+    lLeft = lLeft + grdEdit.left
+    lTop = lTop + grdEdit.top + Screen.TwipsPerPixelY
+
+    Select Case grdEdit.ColumnKey(lCol)
+    Case "Name"
+         txtEdit.Text = grdEdit.CellText(lRow, lCol)
+         txtEdit.Move lLeft, lTop, lWidth, lHeight
+         txtEdit.Visible = True
+         txtEdit.SetFocus
+        
+    Case ' etc for other columns
+    End Select
+End Sub
+
+Private Sub grdEdit_PreCancelEdit( _
+    ByVal lRow As Long, ByVal lCol As Long, _
+    newValue As Variant, bStayInEditMode As Boolean)
+Dim sText As String
+
+   Select Case grdEdit.ColumnKey(lCol)
+   Case "Name"
+       grdEdit.CellText(lRow, lCol) = txtEdit.Text
+
+   ' etc for other columns
+
+   End Select
+
+End Sub
+
+Private Sub grdEdit_CancelEdit()
+    txtEdit.Visible = False
+End Sub
+</pre><p>
+Note that in the <span class="code">RequestEdit</span> event you get the Ascii code
+of the key that was pressed (if any) to commence editing.  Users sometimes expect
+that typing a letter into a cell will immediately cause that letter to appear in
+the edit box.  Code like this can be used to provide a natural edit:
+</p><pre>
+    If (KeyAscii = 0) Then
+       txtEdit.Text = grdEdit.CellText(lRow, lCol)
+       txtEdit.SelStart = 0
+       If (Len(txtEdit.Text) &gt; 0) Then
+          txtEdit.SelLength = Len(txtEdit.Text)
+       End If
+    Else
+       txtEdit.Text = Chr(iKeyAscii) &amp; grdEdit.CellText(lRow, lCol)
+       txtEdit.SelStart = 1
+       If (Len(grdEdit.CellText(lRow, lCol)) &gt; 0) Then
+          txtEdit.SelLength = Len(grdEdit.CellText(lRow, lCol))
+       End If
+    End If
+</pre><p>
+When the user is typing into the TextBox, they will expect certain key strokes
+to exit or commit the editing action.  Since your TextBox has the focus, you
+need to handle the key events in the TextBox and then make the correct call
+on the grid.  Typically the Tab and Return keys are used to commit an edit,
+whereas the Escape key is used to cancel an edit.  At the same time, note
+that the default Window procedure for a Windows Edit control is coded to beep
+whenever the user presses these keys. You can stop this by modifying the 
+KeyAscii sent to the control to 0:
+</p><pre>
+Private Sub txtEdit_KeyDown( _
+      KeyCode As Integer, _
+      Shift As Integer)
+   Select Case KeyCode
+   Case 9   ' tab
+      grdEdit.EndEdit
+      KeyCode = 0
+   Case 13  ' return
+      grdEdit.EndEdit
+      KeyCode = 0
+   Case 27  ' escape
+      grdEdit.CancelEdit
+      KeyCode = 0
+   End Select
+End Sub
+
+Private Sub txtEdit_KeyPress( _
+       KeyAscii As Integer)
+   ' Stop annoying beeping:
+   Select Case KeyAscii
+   Case 9
+      KeyAscii = 0
+   Case 13
+      KeyAscii = 0
+   Case 27
+      KeyAscii = 0
+   End Select
+End Sub
+</pre><p>
+You can also start validating the entered text before leaving edit mode.  The
+sample code demonstrates validating the birthday column to check it is either
+a valid date or blank, and uses a VB control to show a popup tip if the text
+isn't valid:
+</p><pre>
+Private Sub grdEdit_PreCancelEdit( _
+    ByVal lRow As Long, ByVal lCol As Long, _
+    newValue As Variant, bStayInEditMode As Boolean)
+Dim sText As String
+
+   Select Case grdEdit.ColumnKey(lCol)
+   ...
+   Case "Birthday"
+      Dim vVal As Variant
+      If (validEditDate(False, vVal)) Then
+         grdEdit.CellText(lRow, lCol) = vVal
+      Else
+         bStayInEditMode = True
+      End If
+   End Select
+End Sub   
+
+Private Function validEditDate( _
+     ByVal bHideOnly As Boolean, _
+     ByRef vValue As Variant) As Boolean
+Dim sText As String
+Dim bR As Boolean
+   sText = Trim(txtEdit.Text)
+   If (Len(sText) = 0) Then
+      vValue = Empty
+      bR = True
+   Else
+      If (IsDate(sText)) Then
+         vValue = CDate(sText)
+         bR = True
+      End If
+   End If
+   If Not (bR) Then
+      If Not (bHideOnly) Then
+         If Not (tipPopup1.Showing) Then
+            tipPopup1.Title = "Invalid Date Format"
+            tipPopup1.Text = "(Message Here)"
+            tipPopup1.Show Me.hWnd, _
+                txtEdit.left \ 15, _
+                (txtEdit.top + txtEdit.Height) \ 15 - 4
+         End If
+      End If
+   Else
+      If (tipPopup1.Showing) Then
+         tipPopup1.Hide
+      End If
+   End If
+   validEditDate = bR
+End Function
+</pre><p>
+The popup tip control uses the <span class="code">SetWindowRgn</span> API to
+set the region, <span class="code">SetParent</span> and <span class="code">SetWindowPos</span>
+to show the control floating over all other controls and so should work under any OS.
+This functionality is built into TextBoxes under Windows XP and above, see the 
+<a href="http://www.vbaccelerator.com/article.asp?id=4587">TextBox Balloon Tip Support</a> article for more
+details on implementing it.
+</p><p>
+Finally, you may want to control the grid's response to some keys before edit mode
+is entered.  For example, the user may expect that the Delete key will delete the 
+text in a cell.  Do this by responding to the Grid's <span class="code">KeyDown</span>
+event:
+</p><pre>
+Private Sub grdEdit_KeyDown( _
+       KeyCode As Integer, _
+       Shift As Integer, _
+       bDoDefault As Boolean _
+   )
+   If (KeyCode = vbKeyDelete) Then
+      Dim lCol As Long
+      Dim lRow As Long
+      lCol = grdEdit.SelectedCol
+      lRow = grdEdit.SelectedRow
+      If (lCol &gt; 0) And (lRow &gt; 0) Then
+          Select Case grdEdit.ColumnKey(lCol)
+          Case "Name"
+             grdEdit.CellText(lRow, lCol) = Empty
+
+          ' ... etc
+
+          End Select
+      End If
+   End If
+End Sub
+</pre><h3>2. Editing Using a ComboBox</h3><p>
+Editing using a ComboBox proceeds mostly in the same way as for a text box.  Note that
+combo boxes can be hard to deal with because of the difficulty in determining 
+whether a <span class="code">Click</span> event occurred during navigation of the 
+items in the drop down or due to a selection.
+</p><p>
+The easiest way to handle this is to ignore <span class="code">Click</span>
+events entirely and instead only commit the selected value when the grid's 
+<span class="code">PreCancelEdit</span> event fires, or the user presses 
+Return, Escape or Tab on the control.  Proceeding this way means that the
+code to handle a combo box is exactly the same as for a TextBox.
+</p><p>
+The only other thing you might want to do is to hide the Combo Box if the
+user clicks on an item in the drop-down causing it to close up.  Owing to
+the issues with the <span class="code">Click</span> event (which will also
+fire during keyboard navigation with the arrows) you will need to be careful
+to check how the click occurred.  To do this, you need to store the last
+drop-down state of the combo box and the last ListIndex.  When the Click
+event fires, if the combo box has switched from dropped to closed, and the
+ListIndex has changed, then the edit should be committed.
+Using a control like the <a href="http://www.vbaccelerator.com/article.asp?id=1411">vbAccelerator ComboBoxEx control</a>
+as used in the demo will help to do this as it includes events and properties 
+which allow you to determine the drop-down state at any time (although you can subclass
+VB ComboBoxes to obtain the same information).
+</p><h3>3. A Custom Edit Control - Selecting from a Checked List</h3><img src="checkPicker.png" width="183" height="204" alt="Check Picker Control" /><p class="caption">Check Picker Control in the Demonstration</p><p>
+In some cases you might want a cell to contain a selection of zero, one or more items from 
+a list.  Examples of this are assigning one or more categories to a contact, or the 
+data-field chooser in Excel Pivot tables.
+It may be possible to do this using a combo box but you will need to customise it to 
+display check boxes and also to modify the combo box's standard behaviour so it does not 
+close up when an item is selected, which is quite tricky.  Hence a custom control similar
+to the control used by Excel.
+</p><p>
+The <span class="code">ddnMultiSelect</span> control provided in the download is 
+implemented in two parts: one part to show the selection and another to show the
+drop-down section (in fact, they are implemented using the same control with a 
+state variable to control which part of the control is being displayed).  These 
+are then be linked together at run-time by the selection part firing the 
+<span class="code">RequestDropDownInstance</span>.  A single drop-down instance can be
+reused by many instances of the selection control.
+</p><p>
+The items in the control are configured using the <span class="code">Add</span> and 
+<span class="code">Remove</span> methods. There are then a series of 
+<span class="code">Itemxxx</span> properties which allow you to modify items and/or
+set the check state.
+</p><p>
+To allow the selected list to be stored and displayed in a grid cell, the 
+<span class="code">Selection</span> property gets or sets a delimited list
+of the text for the selected items, and the delimiter configurable using the 
+<span class="code">Delimiter</span> property.
+</p><p>
+Using the control as an editor is then accomplished as follows:
+</p><pre>
+
+Private Sub configureCategories()
+   ' Add some items to pick from in the Categories
+   ' box:
+   With selCategories
+      .Height = cboIcon.Height
+      .Delimiter = ","
+      .AddItem "", -1, ".NET", True
+      .AddItem "", -1, "Business", True
+      .AddItem "", -1, "Family", False
+      .AddItem "", -1, "Friends", False
+      .AddItem "", -1, "Hotels", False
+      .AddItem "", -1, "Restaurants", False
+      .AddItem "", -1, "Personal", False
+      .AddItem "", -1, "Web", False
+      .AddItem "", -1, "VB", True
+   End With
+End Sub
+
+Private Sub grdEdit_RequestEdit( _
+    ByVal lRow As Long, ByVal lCol As Long, _
+    ByVal iKeyAscii As Integer, bCancel As Boolean)
+Dim lLeft As Long
+Dim lTop As Long
+Dim lWidth As Long
+Dim lHeight As Long
+
+    grdEdit.CellBoundary lRow, lCol, lLeft, lTop, lWidth, lHeight
+    lLeft = lLeft + grdEdit.left
+    lTop = lTop + grdEdit.top + Screen.TwipsPerPixelY
+
+    Select Case grdEdit.ColumnKey(lCol)
+    Case "Categories"
+         ' Select the delimited list into the control:
+         selCategories.Selection = grdEdit.CellText(lRow, lCol)
+         selCategories.Move lLeft, lTop, lWidth, lHeight
+         selCategories.Visible = True
+         selCategories.SetFocus
+
+    ' etc for other columns
+    End Select
+End Sub
+
+Private Sub grdEdit_PreCancelEdit( _
+    ByVal lRow As Long, ByVal lCol As Long, _
+    newValue As Variant, bStayInEditMode As Boolean)
+Dim sText As String
+
+   Select Case grdEdit.ColumnKey(lCol)
+   Case "Categories"
+      ' Transfer the delimited list to the cell:
+      grdEdit.CellText(lRow, lCol) = selCategories.Selection
+
+   ' etc for other columns
+
+   End Select
+
+End Sub
+
+Private Sub grdEdit_CancelEdit()
+    selCategories.Visible = False
+End Sub
+</pre><h2>Conclusion</h2><p>
+This article has described how to use SGrid 2.0's Editable mode, with some
+examples for TextBox, ComboBox controls and a custom control for 
+selecting multiple items in a single cell.  It also provides a useful
+control for showing popup tips on any OS.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;Using Editable in SGrid 2</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 2 February 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/Using_Editable_Mode/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:49:50 GMT -->
+</html>

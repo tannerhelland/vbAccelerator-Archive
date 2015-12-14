@@ -1,0 +1,211 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Type_Libraries/API_Calls_Used_For_Threading/ThreadAPI_Type_Library_Source_Code_zip_ThreadAPI_odl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:55 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: ThreadAPI.odl</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: ThreadAPI.odl" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Type Libraries</a>&#160;.&#160;<a href="article.html">API Calls used for Threading (threadapi.tlb)</a>&#160;.&#160;<a href="ThreadAPI_Type_Library_Source_Code.html">ThreadAPI Type Library Source Code</a>&#160;.&#160;ThreadAPI.odl</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="ThreadAPI_Type_Library_Source_Code.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />ThreadAPI Type Library Source Code</a> (1K)</p><p class="nav"><a href="ThreadAPI_Type_Library.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />ThreadAPI Type Library</a> (4K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1028</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1028&amp;type=Zip&amp;title=ThreadAPI%20Type%20Library%20Source%20Code%2Ezip%5FThreadAPI">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Matt Currland</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />21 Mar 2000<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: ThreadAPI.odl</h1><pre>[
+    uuid(602E2CE0-53F7-11d2-A7F4-00A0C91110C3),
+    helpstring("API calls used for threading"),
+    lcid(0x0),
+    version(1.0)
+] 
+
+library ThreadingAPIs
+{  
+    importlib("stdole2.tlb");
+    typedef struct
+    {
+      long Data1;
+      short Data2;
+      short Data3;
+      unsigned char Data4[8];
+    } VBGUID;
+    typedef [public] VBGUID CLSID;
+    typedef [public] VBGUID IID;
+    typedef VBGUID* REFGUID;
+    typedef VBGUID* REFIID;
+    typedef VBGUID* REFCLSID;
+    typedef [public] long HWND;
+    typedef [public] long DWORD;
+    typedef [public] long UINT;
+    typedef [public] long WPARAM;
+    typedef [public] long LPARAM;
+    typedef [public] long HANDLE;
+    typedef enum 
+    {
+        BOOL_FALSE = 0,
+        BOOL_TRUE = 1
+    } BOOL;
+    typedef enum
+    {
+        PM_NOREMOVE = 0,
+        PM_REMOVE = 1,
+        PM_NOYIELD = 2
+    } PMOptions;
+    typedef enum 
+    {
+      CLSCTX_INPROC_SERVER   = 1, 
+      CLSCTX_INPROC_HANDLER  = 2,     
+      CLSCTX_LOCAL_SERVER    = 4, 
+      CLSCTX_REMOTE_SERVER   = 16
+    } CLSCTX;
+
+    typedef struct 
+    {
+      long DebugInfo;
+      long LockCount;
+      long RecursionCount;
+      long OwningThread;
+      long LockSemaphore;
+      long SpinCount;
+    } CRITICAL_SECTION;
+    typedef [public] long LPCRITICAL_SECTION;
+    typedef struct
+    {
+        HWND hWnd;
+        UINT Message;
+        WPARAM wParam;
+        LPARAM lParam;
+        DWORD dwTime;
+        long ptX;
+        long ptY;
+    } MSG;
+    [dllname("ole32.dll")]
+    module Ole32
+    {
+      [entry("CoMarshalInterThreadInterfaceInStream")] HRESULT
+       CoMarshalInterThreadInterfaceInStream([in] REFIID riid, [in]
+       stdole.IUnknown* pUnk, [out,retval] long* ppStm);
+      [entry("CoGetInterfaceAndReleaseStream")] HRESULT
+       CoGetInterfaceAndReleaseStream([in] long pStm, [in] REFIID riid,
+       [out,retval] stdole.IUnknown** ppUnk);
+      [entry("CLSIDFromProgID")] HRESULT CLSIDFromProgID([in] LPWSTR
+       lpszProgID, [out,retval] CLSID* lpclsid);
+      [entry("CoInitialize")] long CoInitialize ([in] long pvReserved);
+      [entry("CoUninitialize")] long CoUninitialize ();
+      [entry("IIDFromString")] HRESULT GUIDFromString([in] LPWSTR lpsz,
+       [out,retval] VBGUID* lpiid);
+      [entry("CoCreateInstance")] long CoCreateInstance([in] REFCLSID clsid,
+       [in] IUnknown* pUnkOuter, [in] CLSCTX dwClsContext, [in] REFIID riid,
+       [out] stdole.IUnknown** pvObj);
+    }
+    [dllname("kernel32")]
+    module Kernel32
+    {
+      const long CREATE_SUSPENDED = 0x00000004;
+      const long INFINITE = 0xFFFFFFFF;
+      const long DUPLICATE_SAME_ACCESS = 0x00000002;
+      const long STILL_ACTIVE = 0x00000103;
+      [entry("WaitForSingleObject")] long WaitForSingleObject ([in] HANDLE
+       hHandle, [in] long dwMilliseconds);
+      [entry("CreateEventA")] HANDLE CreateEvent ([in] long lpEventAttributes,
+       [in] long bManualReset, [in] long bInitialState, [in] LPSTR lpName);
+      [entry("CloseHandle")] long CloseHandle ([in] HANDLE hOjbect);
+      [entry("PulseEvent")] long PulseEvent ([in] HANDLE hEvent);
+      [entry("SetEvent")] long SetEvent ([in] HANDLE hEvent);
+      [entry("ResetEvent")] long ResetEvent ([in] HANDLE hEvent);
+      [entry("ResumeThread")] long ResumeThread ([in] HANDLE hThread);
+      [entry("SuspendThread")] long SuspendThread ([in] HANDLE hThread);
+      [entry("InterlockedIncrement")] long InterlockedIncrement([in] long
+       pLong);
+      [entry("InterlockedDecrement")] long InterlockedDecrement([in] long
+       pLong);
+      [entry("WaitForMultipleObjects")] long WaitForMultipleObjects ([in] long
+       nCount, [in,out] HANDLE* lpHandles, [in] BOOL bWaitAll, [in] long
+       dwMilliseconds);
+      [entry("GetCurrentThreadId")] long GetCurrentThreadId ();
+      [entry("GetCurrentProcessId")] long GetCurrentProcessId ();
+      [entry("GetCurrentProcess")] HANDLE GetCurrentProcess();
+      [entry("CreateThread")] HANDLE CreateThread ([in] long
+       lpSecurityAttributes, [in] long dwStackSize, [in] long lpStartAddress,
+       [in] long lpParameter, [in] long dwCreationFlags, [in,out] long*
+       lpThreadId);
+      [entry("RtlMoveMemory")] void CopyMemory([in] void* pDest, [in] void*
+       pSrc, [in] long ByteLen);
+      [entry("RtlZeroMemory")] void ZeroMemory([in] void* pDest, [in] long
+       ByteLen);
+      [entry("Sleep")] void Sleep([in] long dwMilliSeconds);
+      [entry("InitializeCriticalSection")] void InitializeCriticalSection([in]
+       LPCRITICAL_SECTION lpCriticalSection);
+      [entry("DeleteCriticalSection")] void DeleteCriticalSection([in]
+       LPCRITICAL_SECTION lpCriticalSection);
+      [entry("EnterCriticalSection")] void EnterCriticalSection([in]
+       LPCRITICAL_SECTION lpCriticalSection);
+      [entry("LeaveCriticalSection")] void LeaveCriticalSection([in]
+       LPCRITICAL_SECTION lpCriticalSection);
+      [entry("DuplicateHandle")] BOOL DuplicateHandle([in] HANDLE
+       hSourceProcessHandle, [in] HANDLE hSourceHandle, [in] HANDLE
+       hTargetProcessHandle, [out] HANDLE* lpTargetHandle, [in,defaultvalue(0)]
+       DWORD dwDesiredAccess, [in, defaultvalue(0)] BOOL bInheritHandle,
+       [in,defaultvalue(2)] DWORD dwOptions);
+      [entry("GetExitCodeThread")]BOOL GetExitCodeThread([in] HANDLE hThread,
+       [out] DWORD *lpExitCode);
+      //[entry("OutputDebugStringW")] void ODS([in] LPWSTR lpOutputString);
+    }
+    [dllname("user32")]
+    module User32
+   {
+        [entry("PeekMessageA")] BOOL PeekMessage([in] MSG* lpMsg, [in] HWND
+         hWnd, [in] UINT wMsgFilterMin, [in] UINT wMsgFilterMax, [in] PMOptions
+         wRemoveMsg);
+        [entry("TranslateMessage")] BOOL TranslateMessage([in] MSG* lpMsg);
+        [entry("DispatchMessageA")] long DispatchMessage([in] MSG* lpMsg);
+        [entry("EnumThreadWindows")] BOOL EnumThreadWindows([in] DWORD
+         dwThreadId, [in] long lpfn, [in] LPARAM lParam);
+        [entry("GetClassNameA")] long GetClassNameA([in] HWND hWnd, [in] LPSTR
+         lpClassName, [in]long nMaxCount);
+        [entry("GetClassNameW")] long GetClassNameW([in] HWND hWnd, [in] LPWSTR
+         lpClassName, [in]long nMaxCount);
+   };
+}
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Type Libraries</a>&#160;.&#160;<a href="article.html">API Calls used for Threading (threadapi.tlb)</a>&#160;.&#160;<a href="ThreadAPI_Type_Library_Source_Code.html">ThreadAPI Type Library Source Code</a>&#160;.&#160;ThreadAPI.odl</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Type_Libraries/API_Calls_Used_For_Threading/ThreadAPI_Type_Library_Source_Code_zip_ThreadAPI_odl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:55 GMT -->
+</html>

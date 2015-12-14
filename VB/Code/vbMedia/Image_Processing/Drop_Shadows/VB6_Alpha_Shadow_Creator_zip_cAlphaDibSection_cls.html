@@ -1,0 +1,1301 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Drop_Shadows/VB6_Alpha_Shadow_Creator_zip_cAlphaDibSection_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cAlphaDibSection.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cAlphaDibSection.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;<a href="article.html">Programmatic Creation of Drop-Shadows</a>&#160;.&#160;<a href="VB6_Alpha_Shadow_Creator.html">VB6 Alpha Shadow Creator</a>&#160;.&#160;cAlphaDibSection.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Alpha_Shadow_Creator.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Alpha Shadow Creator</a> (96K)</p><p /><p class="nav"><a href="VB6_Alpha_Shadow_Creator.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Alpha Shadow Creator</a> (89K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:14840</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14840&amp;type=Zip&amp;title=VB6%20Alpha%20Shadow%20Creator%2Ezip%5FcAlphaDibSection">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />16 Apr 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11998">Resampling with Alpha</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3304">Softening, Blurring, Sharpening and Embossing images</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cAlphaDibSection.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "cAlphaDibSection"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+'
+ ===============================================================================
+===
+' cAlphaDIBSection.cls
+' Copyright  1998-2003 Steve McMahon (steve@vbaccelerator.com)
+' Visit vbAccelerator at www.vbaccelerator.com
+'
+' Creates and manages an ARGB (32bit) GDI DibSection.
+' This is DIB in which the bitmap bits are stored in windows
+' memory so can be modified.
+' See the RandomiseBits and Resample methods for how to do it.
+'
+' For example, fading in an out a 256x256 true colour DIB by
+' directly modifying the bytes runs at 38fps on my machine
+' (PII 266Mhz, 32Mb RAM, 8Mb ATI Xpert@Work AGP card)
+'
+' Note: for best performance, when compiling an executable check
+' all the boxes on the Properties-Compile tab Advanced Optimisations
+' button.  This really makes a difference! (e.g. the fading example
+' ran at 22fps before I did this so &gt; 50%!).
+'
+ ===============================================================================
+===
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Type SAFEARRAYBOUND
+    cElements As Long
+    lLbound As Long
+End Type
+Private Type SAFEARRAY2D
+    cDims As Integer
+    fFeatures As Integer
+    cbElements As Long
+    cLocks As Long
+    pvData As Long
+    Bounds(0 To 1) As SAFEARRAYBOUND
+End Type
+Private Declare Function VarPtrArray Lib "msvbvm60.dll" Alias "VarPtr" (Ptr()
+ As Any) As Long
+
+Private Type RGBQUAD
+    rgbBlue As Byte
+    rgbGreen As Byte
+    rgbRed As Byte
+    rgbReserved As Byte
+End Type
+Private Type BITMAPINFOHEADER '40 bytes
+    biSize As Long
+    biWidth As Long
+    biHeight As Long
+    biPlanes As Integer
+    biBitCount As Integer
+    biCompression As Long
+    biSizeImage As Long
+    biXPelsPerMeter As Long
+    biYPelsPerMeter As Long
+    biClrUsed As Long
+    biClrImportant As Long
+End Type
+Private Type BITMAPINFO
+    bmiHeader As BITMAPINFOHEADER
+    bmiColors As RGBQUAD
+End Type
+Private Declare Function CreateCompatibleDC Lib "gdi32" (ByVal hdc As Long) As
+ Long
+Private Declare Function CreateCompatibleBitmap Lib "gdi32" (ByVal hdc As Long,
+ ByVal nWidth As Long, ByVal nHeight As Long) As Long
+Private Declare Function GetDC Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function ReleaseDC Lib "user32" (ByVal hwnd As Long, ByVal hdc
+ As Long) As Long
+Private Declare Function GetDesktopWindow Lib "user32" () As Long
+' Note - this is not the declare in the API viewer - modify lplpVoid to be
+' Byref so we get the pointer back:
+Private Declare Function CreateDIBSection Lib "gdi32" _
+    (ByVal hdc As Long, _
+    pBitmapInfo As BITMAPINFO, _
+    ByVal un As Long, _
+    lplpVoid As Long, _
+    ByVal handle As Long, _
+    ByVal dw As Long) As Long
+Private Declare Function BitBlt Lib "gdi32" (ByVal hDestDC As Long, _
+   ByVal x As Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As
+    Long, _
+   ByVal hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal dwRop As
+    Long _
+   ) As Long
+Private Type BLENDFUNCTION
+  BlendOp As Byte
+  BlendFlags As Byte
+  SourceConstantAlpha As Byte
+  AlphaFormat As Byte
+End Type
+' BlendOp:
+Private Const AC_SRC_OVER = &amp;H0
+' AlphaFormat:
+Private Const AC_SRC_ALPHA = &amp;H1
+
+Private Declare Function AlphaBlend Lib "MSIMG32.DLL" ( _
+  ByVal hdcDest As Long, _
+  ByVal nXOriginDest As Long, _
+  ByVal nYOriginDest As Long, _
+  ByVal nWidthDest As Long, _
+  ByVal nHeightDest As Long, _
+  ByVal hdcSrc As Long, _
+  ByVal nXOriginSrc As Long, _
+  ByVal nYOriginSrc As Long, _
+  ByVal nWidthSrc As Long, _
+  ByVal nHeightSrc As Long, _
+  ByVal lBlendFunction As Long _
+) As Long
+
+Private Declare Function SelectObject Lib "gdi32" ( _
+   ByVal hdc As Long, ByVal hObject As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" ( _
+   ByVal hObject As Long) As Long
+Private Declare Function DeleteDC Lib "gdi32" (ByVal hdc As Long) As Long
+Private Declare Function LoadImage Lib "user32" Alias "LoadImageA" ( _
+   ByVal hInst As Long, ByVal lpsz As String, ByVal un1 As Long, _
+   ByVal n1 As Long, ByVal n2 As Long, ByVal un2 As Long) As Long
+Private Const BI_RGB = 0&amp;
+Private Const BI_RLE4 = 2&amp;
+Private Const BI_RLE8 = 1&amp;
+Private Const DIB_RGB_COLORS = 0 '  color table in RGBs
+
+Private Type BITMAP
+    bmType As Long
+    bmWidth As Long
+    bmHeight As Long
+    bmWidthBytes As Long
+    bmPlanes As Integer
+    bmBitsPixel As Integer
+    bmBits As Long
+End Type
+Private Declare Function GetObjectAPI Lib "gdi32" Alias "GetObjectA" ( _
+   ByVal hObject As Long, ByVal nCount As Long, lpObject As Any) As Long
+
+' Start of structure:
+Private Const BITMAPTYPE As Integer = &amp;H4D42
+Private Type BITMAPFILEHEADER
+   bfType As Integer '- type  ="BM" i.e &amp;H4D42 - 2
+   bfSize As Long ' - size in bytes of file - 6
+   bfReserved1 As Integer ' - reserved, must be 0 - 8
+   bfReserved2 As Integer ' - reserved, must be 0 - 10
+   bfOffBits As Long ' offset from this structure to the bitmap bits - 14
+End Type
+Private Declare Function CreateFile Lib "kernel32" Alias "CreateFileA" ( _
+   ByVal lpFileName As String, ByVal dwDesiredAccess As Long, _
+   ByVal dwShareMode As Long, lpSecurityAttributes As Any, _
+   ByVal dwCreationDisposition As Long, _
+   ByVal dwFlagsAndAttributes As Long, ByVal hTemplateFile As Long) As Long
+Private Declare Function ReadFile Lib "kernel32" ( _
+   ByVal hFile As Long, lpBuffer As Any, _
+   ByVal nNumberOfBytesToRead As Long, lpNumberOfBytesRead As Long, _
+   lpOverlapped As Any) As Long
+Private Declare Function WriteFile Lib "kernel32" ( _
+   ByVal hFile As Long, _
+   lpBuffer As Any, ByVal nNumberOfBytesToWrite As Long, _
+   lpNumberOfBytesWritten As Long, lpOverlapped As Any) As Long
+Private Declare Function SetFilePointer Lib "kernel32" ( _
+   ByVal hFile As Long, _
+   ByVal lDistanceToMove As Long, lpDistanceToMoveHigh As Long, _
+   ByVal dwMoveMethod As Long) As Long
+Private Declare Function CloseHandle Lib "kernel32" ( _
+   ByVal hObject As Long) As Long
+Private Const INVALID_HANDLE_VALUE = -1
+Private Const CREATE_ALWAYS = 2
+Private Const GENERIC_READ = &amp;H80000000
+Private Const GENERIC_WRITE = &amp;H40000000
+Private Const FILE_ATTRIBUTE_ARCHIVE = &amp;H20
+Private Const FILE_ATTRIBUTE_COMPRESSED = &amp;H800
+Private Const FILE_ATTRIBUTE_DIRECTORY = &amp;H10
+Private Const FILE_ATTRIBUTE_HIDDEN = &amp;H2
+Private Const FILE_ATTRIBUTE_NORMAL = &amp;H80
+Private Const FILE_ATTRIBUTE_READONLY = &amp;H1
+Private Const FILE_ATTRIBUTE_SYSTEM = &amp;H4
+Private Const FILE_ATTRIBUTE_TEMPORARY = &amp;H100
+Private Const FILE_BEGIN = 0
+Private Declare Function GlobalLock Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function GlobalAlloc Lib "kernel32" ( _
+   ByVal wFlags As Long, _
+   ByVal dwBytes As Long) As Long
+Private Declare Function GlobalFree Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function GlobalUnlock Lib "kernel32" ( _
+   ByVal hMem As Long) As Long
+Private Const GMEM_FIXED = &amp;H0
+Private Const GMEM_ZEROINIT = &amp;H40
+Private Const GPTR = (GMEM_FIXED Or GMEM_ZEROINIT)
+
+Private Const FORMAT_MESSAGE_ALLOCATE_BUFFER = &amp;H100
+Private Const FORMAT_MESSAGE_ARGUMENT_ARRAY = &amp;H2000
+Private Const FORMAT_MESSAGE_FROM_HMODULE = &amp;H800
+Private Const FORMAT_MESSAGE_FROM_STRING = &amp;H400
+Private Const FORMAT_MESSAGE_FROM_SYSTEM = &amp;H1000
+Private Const FORMAT_MESSAGE_IGNORE_INSERTS = &amp;H200
+Private Const FORMAT_MESSAGE_MAX_WIDTH_MASK = &amp;HFF
+Private Declare Function FormatMessage Lib "kernel32" Alias "FormatMessageA" ( _
+ ByVal dwFlags As Long, lpSource As Any, _
+ ByVal dwMessageId As Long, ByVal dwLanguageId As Long, _
+ ByVal lpBuffer As String, ByVal nSize As Long, _
+ Arguments As Long) As Long
+
+Private Declare Function GetDIBits Lib "gdi32" (ByVal aHDC As Long, _
+   ByVal hBitmap As Long, ByVal nStartScan As Long, _
+   ByVal nNumScans As Long, _
+   lpBits As Long, _
+   lpBI As BITMAPINFO, ByVal wUsage As Long) As Long
+Private Declare Function CreateDIBitmap Lib "gdi32" ( _
+   ByVal hdc As Long, _
+   lpInfoHeader As BITMAPINFOHEADER, _
+   ByVal dwUsage As Long, lpInitBits As Any, _
+   lpInitInfo As BITMAPINFO, ByVal wUsage As Long) As Long
+
+' DrawDIB functions:
+Private Declare Function DrawDibOpen Lib "msvfw32.dll" () As Long
+Private Declare Function DrawDibClose Lib "msvfw32.dll" ( _
+   ByVal hDD As Long) As Long
+Private Declare Function DrawDibDraw Lib "msvfw32.dll" ( _
+   ByVal hDD As Long, _
+   ByVal hdc As Long, _
+   ByVal xDst As Long, ByVal yDst As Long, _
+   ByVal dxDst As Long, ByVal dyDst As Long, _
+   lpBI As Any, lpBits As Any, _
+   ByVal xSrc As Long, ByVal ySrc As Long, _
+   ByVal dxSrc As Long, ByVal dySrc As Long, _
+   ByVal wFlags As Long) As Long
+
+Private Declare Function OleTranslateColor Lib "OLEPRO32.DLL" (ByVal OLE_COLOR
+ As Long, ByVal HPALETTE As Long, pccolorref As Long) As Long
+Private Const CLR_INVALID = -1
+
+
+Private m_hDIb As Long
+Private m_hBmpOld As Long
+Private m_hDC As Long
+Private m_hDD As Long
+Private m_lPtr As Long
+Private m_tBI As BITMAPINFO
+
+Public Function ExtractHBmp() As Long
+Dim lhWndDesktop As Long
+Dim lhDCDesktop As Long
+Dim lhDCC As Long
+Dim lhBmpC As Long
+Dim lhBmpOld As Long
+
+   ' Clone the DIB:
+   lhWndDesktop = GetDesktopWindow()
+   lhDCDesktop = GetDC(lhWndDesktop)
+   lhDCC = CreateCompatibleDC(lhDCDesktop)
+   lhBmpC = CreateCompatibleBitmap(lhDCDesktop, Width, Height)
+   ReleaseDC lhWndDesktop, lhDCDesktop
+   lhBmpOld = SelectObject(lhDCC, lhBmpC)
+   PaintPicture lhDCC
+   SelectObject lhDCC, lhBmpOld
+   DeleteDC lhDCC
+   ExtractHBmp = lhBmpC
+   
+End Function
+
+Public Property Get UseDrawDib() As Boolean
+   UseDrawDib = Not (m_hDD = 0)
+End Property
+Public Property Let UseDrawDib(ByVal bState As Boolean)
+   If bState Then
+      If m_hDD = 0 Then
+         m_hDD = DrawDibOpen()
+      End If
+   Else
+      If Not (m_hDD = 0) Then
+         DrawDibClose m_hDD
+      End If
+   End If
+End Property
+
+
+Public Function CreateDIB( _
+        ByVal lhDC As Long, _
+        ByVal lWidth As Long, _
+        ByVal lHeight As Long, _
+        ByRef hDib As Long _
+    ) As Boolean
+    With m_tBI.bmiHeader
+        .biSize = Len(m_tBI.bmiHeader)
+        .biWidth = lWidth
+        .biHeight = lHeight
+        .biPlanes = 1
+        .biBitCount = 32
+        .biCompression = BI_RGB
+        .biSizeImage = BytesPerScanLine * .biHeight
+    End With
+    hDib = CreateDIBSection( _
+            lhDC, _
+            m_tBI, _
+            DIB_RGB_COLORS, _
+            m_lPtr, _
+            0, 0)
+    CreateDIB = (hDib &lt;&gt; 0)
+End Function
+Public Function CreateFromPicture( _
+        ByRef picThis As StdPicture _
+    )
+    CreateFromHBitmap picThis.handle
+End Function
+Public Function CreateFromHBitmap( _
+      ByVal hBmp As Long _
+   )
+Dim lhDC As Long
+Dim lhWndDesktop As Long
+Dim lhDCDesktop As Long
+Dim lhBmpOld As Long
+Dim tBMP As BITMAP
+   GetObjectAPI hBmp, Len(tBMP), tBMP
+   If (Create(tBMP.bmWidth, tBMP.bmHeight)) Then
+      lhWndDesktop = GetDesktopWindow()
+      lhDCDesktop = GetDC(lhWndDesktop)
+      If (lhDCDesktop &lt;&gt; 0) Then
+          lhDC = CreateCompatibleDC(lhDCDesktop)
+          ReleaseDC lhWndDesktop, lhDCDesktop
+          If (lhDC &lt;&gt; 0) Then
+              lhBmpOld = SelectObject(lhDC, hBmp)
+              LoadPictureBlt lhDC
+              SelectObject lhDC, lhBmpOld
+              DeleteObject lhDC
+          End If
+      End If
+   End If
+   
+End Function
+Public Function Create( _
+        ByVal lWidth As Long, _
+        ByVal lHeight As Long _
+    ) As Boolean
+Dim bDrawDib As Boolean
+   bDrawDib = UseDrawDib()
+    ClearUp
+    m_hDC = CreateCompatibleDC(0)
+    If (m_hDC &lt;&gt; 0) Then
+        If (CreateDIB(m_hDC, lWidth, lHeight, m_hDIb)) Then
+            m_hBmpOld = SelectObject(m_hDC, m_hDIb)
+            UseDrawDib = bDrawDib
+            Create = True
+        Else
+            DeleteObject m_hDC
+            m_hDC = 0
+        End If
+    End If
+End Function
+Public Property Get BytesPerScanLine() As Long
+    ' Scans must align on dword boundaries; easy with an alpha bitmap!
+    BytesPerScanLine = m_tBI.bmiHeader.biWidth * 4
+End Property
+
+Public Property Get Width() As Long
+    Width = m_tBI.bmiHeader.biWidth
+End Property
+Public Property Get Height() As Long
+    Height = m_tBI.bmiHeader.biHeight
+End Property
+
+Public Sub LoadPictureBlt( _
+        ByVal lhDC As Long, _
+        Optional ByVal lSrcLeft As Long = 0, _
+        Optional ByVal lSrcTop As Long = 0, _
+        Optional ByVal lSrcWidth As Long = -1, _
+        Optional ByVal lSrcHeight As Long = -1, _
+        Optional ByVal eRop As RasterOpConstants = vbSrcCopy _
+    )
+    If lSrcWidth &lt; 0 Then lSrcWidth = m_tBI.bmiHeader.biWidth
+    If lSrcHeight &lt; 0 Then lSrcHeight = m_tBI.bmiHeader.biHeight
+    BitBlt m_hDC, 0, 0, lSrcWidth, lSrcHeight, lhDC, lSrcLeft, lSrcTop, eRop
+End Sub
+Public Function SavePicture(ByVal sFileName As String) As Boolean
+Dim lC As Long, i As Long
+
+   ' Save to BMP:
+   SavePicture = SaveToBitmap(m_lPtr, sFileName)
+
+End Function
+Private Function SaveToBitmap(ByVal lPtrBits As Long, ByVal sFileName As String)
+Dim tBH As BITMAPFILEHEADER
+Dim tRGBQ As RGBQUAD
+Dim hFile As Long
+Dim lBytesWritten As Long
+Dim lSize As Long
+Dim lR As Long
+Dim bErr As Boolean
+Dim hMem As Long, lPtr As Long
+Dim lErr As Long
+
+   ' Prepare the BITMAPFILEHEADER
+   With tBH
+      .bfType = BITMAPTYPE
+      .bfOffBits = 14 + Len(m_tBI)
+      .bfSize = .bfOffBits + m_tBI.bmiHeader.biSizeImage
+   End With
+   hFile = CreateFile(sFileName, _
+                 GENERIC_READ Or GENERIC_WRITE, _
+                  ByVal 0&amp;, _
+                  ByVal 0&amp;, _
+                  CREATE_ALWAYS, _
+                  FILE_ATTRIBUTE_NORMAL, _
+                  0)
+   lErr = Err.LastDllError
+   If (hFile = INVALID_HANDLE_VALUE) Then
+      ' error
+      Err.Raise 17, App.EXEName &amp; ".cDIBSection", ApiError(lErr)
+   Else
+      
+      ' Writing the BITMAPFILEINFOHEADER is somewhat painful
+      ' due to non-byte alignment of structure...
+      hMem = GlobalAlloc(GPTR, 14)
+      lPtr = GlobalLock(hMem)
+      CopyMemory ByVal lPtr, tBH.bfType, 2
+      CopyMemory ByVal lPtr + 2, tBH.bfSize, 4
+      CopyMemory ByVal lPtr + 6, 0&amp;, 4
+      CopyMemory ByVal lPtr + 10, tBH.bfOffBits, 4
+      lSize = 14
+      lR = WriteFile(hFile, ByVal lPtr, lSize, lBytesWritten, ByVal 0&amp;)
+      GlobalUnlock hMem
+      GlobalFree hMem
+      
+      ' Add the BITMAPINFOHEADER and colour palette:
+      bErr = FileErrHandler(lR, lSize, lBytesWritten)
+      If Not bErr Then
+         lSize = Len(m_tBI)
+         lR = WriteFile(hFile, m_tBI, lSize, lBytesWritten, ByVal 0&amp;)
+         bErr = FileErrHandler(lR, lSize, lBytesWritten)
+      End If
+      
+      If Not bErr Then
+         ' Its easy to write the bitmap data, though...
+         lSize = m_tBI.bmiHeader.biSizeImage
+         lR = WriteFile(hFile, ByVal lPtrBits, lSize, lBytesWritten, ByVal 0&amp;)
+         bErr = FileErrHandler(lR, lSize, lBytesWritten)
+      End If
+      
+      
+      CloseHandle hFile
+      SaveToBitmap = Not (bErr)
+   End If
+
+End Function
+Private Function ApiError(ByVal e As Long) As String
+    Dim s As String, c As Long
+    s = String(256, 0)
+    c = FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM Or _
+                      FORMAT_MESSAGE_IGNORE_INSERTS, _
+                      0, e, 0&amp;, s, Len(s), ByVal 0)
+    If c Then ApiError = left$(s, c)
+End Function
+
+Private Function FileErrHandler( _
+   ByVal lR As Long, ByVal lSize As Long, _
+   ByVal lBytes As Long) As Boolean
+   If (lR = 0) Or Not (lSize = lBytes) Then
+      'Err.Raise
+      FileErrHandler = True
+   End If
+End Function
+
+
+Public Sub PaintPicture( _
+        ByVal lhDC As Long, _
+        Optional ByVal lDestLeft As Long = 0, _
+        Optional ByVal lDestTop As Long = 0, _
+        Optional ByVal lDestWidth As Long = -1, _
+        Optional ByVal lDestHeight As Long = -1, _
+        Optional ByVal lSrcLeft As Long = 0, _
+        Optional ByVal lSrcTop As Long = 0, _
+        Optional ByVal eRop As RasterOpConstants = vbSrcCopy _
+    )
+   If (lDestWidth &lt; 0) Then lDestWidth = m_tBI.bmiHeader.biWidth
+   If (lDestHeight &lt; 0) Then lDestHeight = m_tBI.bmiHeader.biHeight
+   If Not (m_hDD = 0) Then
+      ' DrawDib method:
+      DrawDibDraw m_hDD, lhDC, lDestLeft, lDestTop, _
+         lDestWidth, lDestHeight, _
+         m_tBI, ByVal m_lPtr, lSrcLeft, lSrcTop, lDestWidth, lDestHeight, 0
+   Else
+      BitBlt lhDC, lDestLeft, lDestTop, _
+         lDestWidth, lDestHeight, m_hDC, _
+         lSrcLeft, lSrcTop, eRop
+   End If
+End Sub
+Public Sub AlphaPaintPicture( _
+        ByVal lhDC As Long, _
+        Optional ByVal lDestLeft As Long = 0, _
+        Optional ByVal lDestTop As Long = 0, _
+        Optional ByVal lDestWidth As Long = -1, _
+        Optional ByVal lDestHeight As Long = -1, _
+        Optional ByVal lSrcLeft As Long = 0, _
+        Optional ByVal lSrcTop As Long = 0, _
+        Optional ByVal lConstantAlpha As Byte = 255 _
+    )
+   If (lDestWidth &lt; 0) Then lDestWidth = m_tBI.bmiHeader.biWidth
+   If (lDestHeight &lt; 0) Then lDestHeight = m_tBI.bmiHeader.biHeight
+   
+   Dim lBlend As Long
+   Dim bf As BLENDFUNCTION
+   bf.BlendOp = AC_SRC_OVER
+   bf.BlendFlags = 0
+   bf.SourceConstantAlpha = lConstantAlpha
+   bf.AlphaFormat = AC_SRC_ALPHA
+   CopyMemory lBlend, bf, 4
+   
+   Dim lR As Long
+   lR = AlphaBlend( _
+      lhDC, _
+      lDestLeft, lDestTop, lDestWidth, lDestHeight, _
+      m_hDC, _
+      lSrcLeft, lSrcTop, lDestWidth, lDestHeight, _
+      lBlend)
+   If (lR = 0) Then
+      Debug.Print ApiError(Err.LastDllError)
+   End If
+End Sub
+
+Public Property Get hdc() As Long
+    hdc = m_hDC
+End Property
+Public Property Get hDib() As Long
+    hDib = m_hDIb
+End Property
+Public Property Get DIBSectionBitsPtr() As Long
+    DIBSectionBitsPtr = m_lPtr
+End Property
+Public Sub RandomiseBits( _
+        Optional ByVal bGray As Boolean = False _
+    )
+Dim bDib() As Byte
+Dim x As Long, y As Long
+Dim lC As Long
+Dim tSA As SAFEARRAY2D
+    
+    ' Get the bits in the from DIB section:
+    With tSA
+        .cbElements = 1
+        .cDims = 2
+        .Bounds(0).lLbound = 0
+        .Bounds(0).cElements = m_tBI.bmiHeader.biHeight
+        .Bounds(1).lLbound = 0
+        .Bounds(1).cElements = BytesPerScanLine()
+        .pvData = m_lPtr
+    End With
+    CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+
+    ' random:
+    Randomize Timer
+    
+    If (bGray) Then
+        For y = 0 To m_tBI.bmiHeader.biHeight - 1
+            For x = 0 To BytesPerScanLine - 1 Step 4
+                lC = Rnd * 255
+                bDib(x + 3, y) = Rnd * 255 '255 * (y / m_tBI.bmiHeader.biHeight)
+                bDib(x, y) = lC * bDib(x + 3, y) / 255
+                bDib(x + 1, y) = lC * bDib(x + 3, y) / 255
+                bDib(x + 2, y) = lC * bDib(x + 3, y) / 255
+            Next x
+        Next y
+    Else
+         For y = 0 To m_tBI.bmiHeader.biHeight - 1
+            For x = 0 To BytesPerScanLine - 1 Step 4
+                bDib(x + 3, y) = Rnd * 255 '255 * (y / m_tBI.bmiHeader.biHeight)
+                bDib(x, y) = Rnd * 255 * bDib(x + 3, y) / 255
+                bDib(x + 1, y) = Rnd * 255 * bDib(x + 3, y) / 255
+                bDib(x + 2, y) = Rnd * 255 * bDib(x + 3, y) / 255
+            Next x
+        Next y
+    End If
+    
+    ' Clear the temporary array descriptor
+    ' (This does not appear to be necessary, but
+    ' for safety do it anyway)
+    CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+    
+End Sub
+
+Public Sub PreMultiplyAlpha()
+Dim bDib() As Byte
+Dim x As Long, y As Long
+Dim lC As Long
+Dim tSA As SAFEARRAY2D
+Dim bAlpha As Long
+    
+    ' Get the bits in the from DIB section:
+    With tSA
+        .cbElements = 1
+        .cDims = 2
+        .Bounds(0).lLbound = 0
+        .Bounds(0).cElements = m_tBI.bmiHeader.biHeight
+        .Bounds(1).lLbound = 0
+        .Bounds(1).cElements = BytesPerScanLine()
+        .pvData = m_lPtr
+    End With
+    CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   For x = 0 To Me.BytesPerScanLine - 4 Step 4 ' each item has 4 bytes:
+      For y = 0 To m_tBI.bmiHeader.biHeight - 1
+         ' Get the red value from the mask to use as the alpha
+         ' value:
+         bAlpha = bDib(x + 3, y)
+         ' Now premultiply the r/g/b values by the alpha divided
+         ' by 255.  This is required for the AlphaBlend GDI function,
+         ' see MSDN/Platform SDK/GDI/BLENDFUNCTION for more
+         ' details:
+         bDib(x, y) = (bDib(x, y) * bAlpha) \ 255
+         bDib(x + 1, y) = (bDib(x + 1, y) * bAlpha) \ 255
+         bDib(x + 2, y) = (bDib(x + 2, y) * bAlpha) \ 255
+         
+         'Debug.Print "A:"; bAlpha, "B:"; bDib(x, y), "G:"; bDib(x + 1, y),
+          "R:"; bDib(x + 2, y)
+      Next y
+   Next x
+
+    ' Clear the temporary array descriptor
+    ' (This does not appear to be necessary, but
+    ' for safety do it anyway)
+    CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+End Sub
+Public Function AreAllAlphaBytesZero() As Boolean
+Dim bDib() As Byte
+Dim x As Long, y As Long
+Dim lC As Long
+Dim tSA As SAFEARRAY2D
+Dim r As Boolean
+        
+   r = True
+    ' Get the bits in the from DIB section:
+    With tSA
+        .cbElements = 1
+        .cDims = 2
+        .Bounds(0).lLbound = 0
+        .Bounds(0).cElements = m_tBI.bmiHeader.biHeight
+        .Bounds(1).lLbound = 0
+        .Bounds(1).cElements = BytesPerScanLine()
+        .pvData = m_lPtr
+    End With
+    CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+    
+   For x = 0 To Me.BytesPerScanLine - 4 Step 4 ' each item has 4 bytes:
+      For y = 0 To m_tBI.bmiHeader.biHeight - 1
+         ' Get the red value from the mask to use as the alpha
+         ' value:
+         If Not (bDib(x + 3, y) = 0) Then
+            r = False
+            Exit For
+         End If
+      Next y
+      If Not (r) Then Exit For
+   Next x
+
+    ' Clear the temporary array descriptor
+    ' (This does not appear to be necessary, but
+    ' for safety do it anyway)
+    CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+    
+   AreAllAlphaBytesZero = r
+End Function
+
+Public Sub SetColourTransparent( _
+      ByVal oColor As OLE_COLOR, _
+      Optional ByVal lOtherColorAlpha As Long = -1, _
+      Optional ByVal bPreMult = False _
+   )
+Dim bDib() As Byte
+Dim x As Long, y As Long
+Dim lR As Long
+Dim lG As Long
+Dim lB As Long
+Dim lC As Long
+Dim tSA As SAFEARRAY2D
+Dim bAlpha As Long
+    
+    OleTranslateColor oColor, 0, lC
+    lR = (lC And &amp;HFF&amp;)
+    lG = (lC And &amp;HFF00&amp;) \ &amp;H100&amp;
+    lB = (lC And &amp;HFF0000) \ &amp;H10000
+    
+    ' Get the bits in the from DIB section:
+    With tSA
+        .cbElements = 1
+        .cDims = 2
+        .Bounds(0).lLbound = 0
+        .Bounds(0).cElements = m_tBI.bmiHeader.biHeight
+        .Bounds(1).lLbound = 0
+        .Bounds(1).cElements = BytesPerScanLine()
+        .pvData = m_lPtr
+    End With
+    CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   For x = 0 To Me.BytesPerScanLine - 4 Step 4 ' each item has 4 bytes:
+      For y = 0 To m_tBI.bmiHeader.biHeight - 1
+         If (bDib(x, y) = lB) And _
+            (bDib(x + 1, y) = lG) And _
+            (bDib(x + 2, y) = lR) Then
+            ' Set alpha to 0:
+            bDib(x + 3, y) = 0
+            If (bPreMult) Then
+               bDib(x, y) = 0
+               bDib(x + 1, y) = 0
+               bDib(x + 2, y) = 0
+            End If
+         ElseIf (lOtherColorAlpha &gt; 0) Then
+            bDib(x + 3, y) = lOtherColorAlpha
+            If (bPreMult) Then
+               bDib(x, y) = bDib(x, y) * lOtherColorAlpha / 255
+               bDib(x + 1, y) = bDib(x + 1, y) * lOtherColorAlpha / 255
+               bDib(x + 2, y) = bDib(x + 2, y) * lOtherColorAlpha / 255
+            End If
+         End If
+      Next y
+   Next x
+
+    ' Clear the temporary array descriptor
+    ' (This does not appear to be necessary, but
+    ' for safety do it anyway)
+    CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+End Sub
+
+Public Sub SetColourTransparentTolerance( _
+      ByVal oColor As OLE_COLOR, _
+      ByVal lTolerance As Long, _
+      Optional ByVal lOtherColorAlpha As Long = -1, _
+      Optional ByVal bPreMult = False _
+   )
+Dim bDib() As Byte
+Dim x As Long, y As Long
+Dim lR As Long
+Dim lRMin As Long
+Dim lRMax As Long
+Dim lG As Long
+Dim lGMin As Long
+Dim lGMax As Long
+Dim lB As Long
+Dim lBMin As Long
+Dim lBMax As Long
+Dim lC As Long
+Dim tSA As SAFEARRAY2D
+Dim bAlpha As Long
+    
+    OleTranslateColor oColor, 0, lC
+    lR = (lC And &amp;HFF&amp;)
+    lRMin = lR - lTolerance
+    lRMax = lR + lTolerance
+    lG = (lC And &amp;HFF00&amp;) \ &amp;H100&amp;
+    lGMin = lG - lTolerance
+    lGMax = lG + lTolerance
+    lB = (lC And &amp;HFF0000) \ &amp;H10000
+    lBMin = lB - lTolerance
+    lBMax = lB + lTolerance
+    
+    
+    ' Get the bits in the from DIB section:
+    With tSA
+        .cbElements = 1
+        .cDims = 2
+        .Bounds(0).lLbound = 0
+        .Bounds(0).cElements = m_tBI.bmiHeader.biHeight
+        .Bounds(1).lLbound = 0
+        .Bounds(1).cElements = BytesPerScanLine()
+        .pvData = m_lPtr
+    End With
+    CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   For x = 0 To Me.BytesPerScanLine - 4 Step 4 ' each item has 4 bytes:
+      For y = 0 To m_tBI.bmiHeader.biHeight - 1
+         If ((bDib(x, y) &gt;= lBMin And bDib(x, y) &lt;= lBMax) And _
+            (bDib(x + 1, y) &gt;= lGMin And bDib(x + 1, y) &lt;= lGMax) And _
+            (bDib(x + 2, y) &gt;= lRMin And bDib(x + 2, y) &lt;= lRMax)) Then
+            ' Set alpha to 0:
+            bDib(x + 3, y) = 0
+            If (bPreMult) Then
+               bDib(x, y) = 0
+               bDib(x + 1, y) = 0
+               bDib(x + 2, y) = 0
+            End If
+         ElseIf (lOtherColorAlpha &gt; 0) Then
+            bDib(x + 3, y) = lOtherColorAlpha
+            If (bPreMult) Then
+               bDib(x, y) = bDib(x, y) * lOtherColorAlpha / 255
+               bDib(x + 1, y) = bDib(x + 1, y) * lOtherColorAlpha / 255
+               bDib(x + 2, y) = bDib(x + 2, y) * lOtherColorAlpha / 255
+            End If
+         End If
+      Next y
+   Next x
+
+    ' Clear the temporary array descriptor
+    ' (This does not appear to be necessary, but
+    ' for safety do it anyway)
+    CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+End Sub
+
+Public Sub SetAlpha(ByVal bAlphaSet As Byte)
+Dim bDib() As Byte
+Dim x As Long, y As Long
+Dim lC As Long
+Dim tSA As SAFEARRAY2D
+Dim bAlpha As Long
+      
+   bAlpha = bAlphaSet
+    
+    ' Get the bits in the from DIB section:
+    With tSA
+        .cbElements = 1
+        .cDims = 2
+        .Bounds(0).lLbound = 0
+        .Bounds(0).cElements = m_tBI.bmiHeader.biHeight
+        .Bounds(1).lLbound = 0
+        .Bounds(1).cElements = BytesPerScanLine()
+        .pvData = m_lPtr
+    End With
+    CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   For x = 0 To Me.BytesPerScanLine - 4 Step 4 ' each item has 4 bytes:
+      For y = 0 To m_tBI.bmiHeader.biHeight - 1
+         ' Set alpha to the specified alpha &amp; premultiply:
+         bDib(x, y) = bDib(x, y) * bAlpha \ 255
+         bDib(x + 1, y) = bDib(x + 1, y) * bAlpha \ 255
+         bDib(x + 2, y) = bDib(x + 2, y) * bAlpha \ 255
+         bDib(x + 3, y) = bAlpha
+      Next y
+   Next x
+    
+    ' Clear the temporary array descriptor
+    ' (This does not appear to be necessary, but
+    ' for safety do it anyway)
+    CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+End Sub
+Public Sub ClearUp()
+    If (m_hDC &lt;&gt; 0) Then
+        If (m_hDIb &lt;&gt; 0) Then
+            SelectObject m_hDC, m_hBmpOld
+            DeleteObject m_hDIb
+        End If
+        DeleteObject m_hDC
+    End If
+    m_hDC = 0: m_hDIb = 0: m_hBmpOld = 0: m_lPtr = 0
+    If Not (m_hDD = 0) Then
+      DrawDibClose m_hDD
+      m_hDD = 0
+   End If
+End Sub
+Public Function Clone() As cAlphaDibSection
+Dim cDibTo As cAlphaDibSection
+Dim tSA As SAFEARRAY2D
+Dim tSATo As SAFEARRAY2D
+Dim lDib() As Long
+Dim lDibTo() As Long
+Dim x As Long
+Dim y As Long
+   
+   Set cDibTo = New cAlphaDibSection
+   cDibTo.Create Width, Height
+   
+   With tSA
+      .cbElements = 4
+      .cDims = 2
+      .Bounds(0).lLbound = 0
+      .Bounds(0).cElements = m_tBI.bmiHeader.biHeight
+      .Bounds(1).lLbound = 0
+      .Bounds(1).cElements = BytesPerScanLine() \ 4
+      .pvData = m_lPtr
+   End With
+   CopyMemory ByVal VarPtrArray(lDib()), VarPtr(tSA), 4
+    
+   With tSATo
+      .cbElements = 4
+      .cDims = 2
+      .Bounds(0).lLbound = 0
+      .Bounds(0).cElements = tSA.Bounds(0).cElements
+      .Bounds(1).lLbound = 0
+      .Bounds(1).cElements = tSA.Bounds(1).cElements
+      .pvData = cDibTo.DIBSectionBitsPtr
+   End With
+   CopyMemory ByVal VarPtrArray(lDibTo()), VarPtr(tSATo), 4
+   
+   For x = 0 To m_tBI.bmiHeader.biWidth - 1
+      For y = 0 To m_tBI.bmiHeader.biHeight - 1
+         lDibTo(x, y) = lDib(x, y)
+      Next y
+   Next x
+   
+   ' Clear the temporary array descriptors
+   ' (This does not appear to be necessary, but
+   ' for safety do it anyway)
+   CopyMemory ByVal VarPtrArray(lDib), 0&amp;, 4
+   CopyMemory ByVal VarPtrArray(lDibTo), 0&amp;, 4
+   
+   Set Clone = cDibTo
+   
+End Function
+Public Function AlphaResample( _
+      ByVal lNewWidth As Long _
+   ) As cAlphaDibSection
+Dim x As Long
+Dim y As Long
+Dim i As Long
+Dim j As Long
+Dim lBuf() As Long
+Dim lColorCount() As Long
+Dim bDib() As Byte
+Dim bDibTo() As Byte
+Dim tSA As SAFEARRAY2D
+Dim tSATo As SAFEARRAY2D
+Dim cDibTo As cAlphaDibSection
+Dim bIntegral As Boolean
+Dim scaleX As Long
+Dim scaleY As Long
+Dim xDest As Long
+Dim xDestWithScan As Long
+Dim yDest As Long
+Dim yDestWithScan As Long
+Dim xDestAlso As Long
+Dim xDestAlsoWithScan As Long
+Dim yDestAlso As Long
+Dim yDestAlsoWithScan As Long
+Dim xDestTmp As Long
+Dim yDestTmp As Long
+Dim lModX As Single
+Dim lModY As Single
+Dim lR As Long
+Dim lG As Long
+Dim lB As Long
+Dim lA As Long
+Dim lAMult As Long
+Dim lTotAlpha As Long
+Dim lTotColour As Long
+Dim xStep As Long
+Dim lNewHeight As Long
+   
+   ' Check if the new height will be an integral number of pixels:
+   If ((m_tBI.bmiHeader.biHeight * lNewWidth) Mod m_tBI.bmiHeader.biWidth) = 0
+    Then
+      bIntegral = True
+      lNewHeight = (Height * lNewWidth) \ Width
+   Else
+      lNewHeight = (Height * lNewWidth) \ Width + 1
+   End If
+   
+   Set cDibTo = New cAlphaDibSection
+   cDibTo.Create lNewWidth, lNewHeight
+   
+   With tSA
+      .cbElements = 1
+      .cDims = 2
+      .Bounds(0).lLbound = 0
+      .Bounds(0).cElements = m_tBI.bmiHeader.biHeight
+      .Bounds(1).lLbound = 0
+      .Bounds(1).cElements = BytesPerScanLine()
+      .pvData = m_lPtr
+   End With
+   CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+    
+   With tSATo
+      .cbElements = 1
+      .cDims = 2
+      .Bounds(0).lLbound = 0
+      .Bounds(0).cElements = cDibTo.Height
+      .Bounds(1).lLbound = 0
+      .Bounds(1).cElements = cDibTo.BytesPerScanLine()
+      .pvData = cDibTo.DIBSectionBitsPtr
+   End With
+   CopyMemory ByVal VarPtrArray(bDibTo()), VarPtr(tSATo), 4
+   
+   If ((m_tBI.bmiHeader.biWidth Mod cDibTo.Width) = 0) And _
+      ((m_tBI.bmiHeader.biHeight Mod cDibTo.Height) = 0) Then
+      
+      ' Integral scale.  This means every pixel of the
+      ' source image only needs to be used once for
+      ' each destination pixel
+      
+      scaleX = m_tBI.bmiHeader.biWidth \ cDibTo.Width
+      scaleY = m_tBI.bmiHeader.biHeight \ cDibTo.Height
+      lTotAlpha = scaleX * scaleY
+      xStep = (scaleX - 1) * 4
+      For x = 0 To BytesPerScanLine - 4 Step 4 * scaleX
+         yDest = 0
+         For y = 0 To m_tBI.bmiHeader.biHeight - 1 Step scaleY
+            lR = 0: lG = 0: lB = 0: lA = 0
+            lTotColour = 0
+            For i = 0 To xStep Step 4
+               For j = 0 To scaleY - 1
+                  lAMult = bDib(x + i + 3, y + j)
+                  If (lAMult &gt; 0) Then
+                     lB = lB + (bDib(x + i, y + j) * lAMult) \ 255
+                     lG = lG + (bDib(x + i + 1, y + j) * lAMult) \ 255
+                     lR = lR + (bDib(x + i + 2, y + j) * lAMult) \ 255
+                     lTotColour = lTotColour + 1
+                  End If
+                  lA = lA + lAMult
+               Next j
+            Next i
+            If (lTotColour &gt; 0) Then
+               bDibTo(xDest, yDest) = (lB \ lTotColour)
+               bDibTo(xDest + 1, yDest) = (lG \ lTotColour)
+               bDibTo(xDest + 2, yDest) = (lR \ lTotColour)
+            End If
+            bDibTo(xDest + 3, yDest) = (lA \ lTotAlpha)
+            'Debug.Print xDest, yDest, lA, lB, g, lR
+            yDest = yDest + 1
+         Next y
+         xDest = xDest + 4
+      Next x
+      
+   Else
+      ' Non-Integral scale.  This means a source pixel may
+      ' have a contribution to more than one destination
+      ' pixel.
+      ReDim lBuf(0 To cDibTo.BytesPerScanLine + 4, 0 To cDibTo.Height) As Long
+      ReDim lColorCount(0 To cDibTo.Width, 0 To cDibTo.Height) As Long
+      Dim xStart As Single
+      Dim yStart As Single
+      Dim size As Single
+      Dim xOut As Long
+      Dim fContrib As Single
+      Dim fContribX As Single
+      Dim fContribY As Single
+      
+      size = lNewWidth / m_tBI.bmiHeader.biWidth
+      
+      For x = 0 To BytesPerScanLine - 4 Step 4
+         
+         xStart = ((x \ 4) * lNewWidth) / m_tBI.bmiHeader.biWidth
+         xDest = Int(xStart)
+         xOut = xDest * 4
+         
+         For y = 0 To m_tBI.bmiHeader.biHeight - 1
+            
+            yStart = y * lNewWidth / m_tBI.bmiHeader.biWidth
+            yDest = Int(yStart)
+                        
+            ' Check whether we get all of this pixel or not:
+            If (xStart + size &gt; xDest + 1) Then
+               ' only a proportion in x:
+               If (yStart + size &gt; yDest + 1) Then
+                  ' proportion in x and a proportion in y:
+                  
+                  ' This pixel gets a contribution:
+                  fContribX = (1# - (xStart + size - (xDest + 1)) / size)
+                  fContribY = 1# - (yStart + size - (yDest + 1)) / size
+                  
+                  fContrib = fContribX * fContribY
+                  If (bDib(x + 3, y) &gt; 0) Then
+                     lBuf(xOut, yDest) = lBuf(xOut, yDest) + bDib(x, y) *
+                      fContrib
+                     lBuf(xOut + 1, yDest) = lBuf(xOut + 1, yDest) + bDib(x +
+                      1, y) * fContrib
+                     lBuf(xOut + 2, yDest) = lBuf(xOut + 2, yDest) + bDib(x +
+                      2, y) * fContrib
+                     lColorCount(xDest, yDest) = lColorCount(xDest, yDest) + 1
+                  End If
+                  lBuf(xOut + 3, yDest) = lBuf(xOut + 3, yDest) + bDib(x + 3,
+                   y) * fContrib
+                  
+                  ' The next one along in x gets a contribution:
+                  fContrib = (1# - fContribX) * fContribY
+                  If (bDib(x + 3, y) &gt; 0) Then
+                     lBuf(xOut + 4, yDest) = lBuf(xOut + 4, yDest) + bDib(x, y)
+                      * fContrib
+                     lBuf(xOut + 5, yDest) = lBuf(xOut + 5, yDest) + bDib(x +
+                      1, y) * fContrib
+                     lBuf(xOut + 6, yDest) = lBuf(xOut + 6, yDest) + bDib(x +
+                      2, y) * fContrib
+                     lColorCount(xDest + 1, yDest) = lColorCount(xDest + 1,
+                      yDest) + 1
+                  End If
+                  lBuf(xOut + 7, yDest) = lBuf(xOut + 7, yDest) + bDib(x + 3,
+                   y) * fContrib
+                  
+                  ' The next one along in y gets a contribution:
+                  fContrib = fContribX * (1# - fContribY)
+                  If (bDib(x + 3, y) &gt; 0) Then
+                     lBuf(xOut, yDest + 1) = lBuf(xOut, yDest + 1) + bDib(x, y)
+                      * fContrib
+                     lBuf(xOut + 1, yDest + 1) = lBuf(xOut + 1, yDest + 1) +
+                      bDib(x + 1, y) * fContrib
+                     lBuf(xOut + 2, yDest + 1) = lBuf(xOut + 2, yDest + 1) +
+                      bDib(x + 2, y) * fContrib
+                     lColorCount(xDest, yDest + 1) = lColorCount(xDest, yDest +
+                      1) + 1
+                  End If
+                  lBuf(xOut + 3, yDest + 1) = lBuf(xOut + 3, yDest + 1) +
+                   bDib(x + 3, y) * fContrib
+                  
+                  ' The next one along in x and y gets a contribution:
+                  fContrib = (1# - fContribX) * (1# - fContribY)
+                  If (bDib(x + 3, y) &gt; 0) Then
+                     lBuf(xOut + 4, yDest + 1) = lBuf(xOut + 4, yDest + 1) +
+                      bDib(x, y) * fContrib
+                     lBuf(xOut + 5, yDest + 1) = lBuf(xOut + 5, yDest + 1) +
+                      bDib(x + 1, y) * fContrib
+                     lBuf(xOut + 6, yDest + 1) = lBuf(xOut + 6, yDest + 1) +
+                      bDib(x + 2, y) * fContrib
+                     lColorCount(xDest, yDest + 1) = lColorCount(xDest, yDest +
+                      1) + 1
+                  End If
+                  lBuf(xOut + 7, yDest + 1) = lBuf(xOut + 7, yDest + 1) +
+                   bDib(x + 3, y) * fContrib
+                  
+                  
+               Else
+                  ' proportion in x, whole lot in y
+                  'Debug.Assert (bDib(x + 2, y) = 0)
+                  
+                  ' This pixel gets a contribution:
+                  fContrib = 1# - (xStart + size - (xDest + 1)) / size
+                  'fContrib = 1
+                  If (bDib(x + 3, y) &gt; 0) Then
+                     lBuf(xOut, yDest) = lBuf(xOut, yDest) + bDib(x, y) *
+                      fContrib
+                     lBuf(xOut + 1, yDest) = lBuf(xOut + 1, yDest) + bDib(x +
+                      1, y) * fContrib
+                     lBuf(xOut + 2, yDest) = lBuf(xOut + 2, yDest) + bDib(x +
+                      2, y) * fContrib
+                     lColorCount(xDest, yDest) = lColorCount(xDest, yDest) + 1
+                  End If
+                  lBuf(xOut + 3, yDest) = lBuf(xOut + 3, yDest) + bDib(x + 3,
+                   y) * fContrib
+                  
+                  ' And so does the next one along:
+                  fContrib = 1# - fContrib
+                  If (bDib(x + 3, y) &gt; 0) Then
+                     lBuf(xOut + 4, yDest) = lBuf(xOut + 4, yDest) + bDib(x, y)
+                      * fContrib
+                     lBuf(xOut + 5, yDest) = lBuf(xOut + 5, yDest) + bDib(x +
+                      1, y) * fContrib
+                     lBuf(xOut + 6, yDest) = lBuf(xOut + 6, yDest) + bDib(x +
+                      2, y) * fContrib
+                     lColorCount(xDest + 1, yDest) = lColorCount(xDest + 1,
+                      yDest) + 1
+                  End If
+                  lBuf(xOut + 7, yDest) = lBuf(xOut + 7, yDest) + bDib(x + 3,
+                   y) * fContrib
+               End If
+               
+            Else
+               If (yStart + size &gt; yDest + 1) Then
+                  ' All in x, only a proportion in y.
+                  
+                  ' This pixel gets a contribution:
+                  fContrib = 1# - (yStart + size - (yDest + 1)) / size
+                  If (bDib(x + 3, y) &gt; 0) Then
+                     lBuf(xOut, yDest) = lBuf(xOut, yDest) + bDib(x, y) *
+                      fContrib
+                     lBuf(xOut + 1, yDest) = lBuf(xOut + 1, yDest) + bDib(x +
+                      1, y) * fContrib
+                     lBuf(xOut + 2, yDest) = lBuf(xOut + 2, yDest) + bDib(x +
+                      2, y) * fContrib
+                     lColorCount(xDest, yDest) = lColorCount(xDest, yDest) + 1
+                  End If
+                  lBuf(xOut + 3, yDest) = lBuf(xOut + 3, yDest) + bDib(x + 3,
+                   y) * fContrib
+                  
+                  ' And so does the next one along:
+                  fContrib = (1# - fContrib)
+                  If (bDib(x + 3, y) &gt; 0) Then
+                     lBuf(xOut, yDest + 1) = lBuf(xOut, yDest + 1) + bDib(x, y)
+                      * fContrib
+                     lBuf(xOut + 1, yDest + 1) = lBuf(xOut + 1, yDest + 1) +
+                      bDib(x + 1, y) * fContrib
+                     lBuf(xOut + 2, yDest + 1) = lBuf(xOut + 2, yDest + 1) +
+                      bDib(x + 2, y) * fContrib
+                     lColorCount(xDest, yDest + 1) = lColorCount(xDest, yDest +
+                      1) + 1
+                  End If
+                  lBuf(xOut + 3, yDest + 1) = lBuf(xOut + 3, yDest + 1) +
+                   bDib(x + 3, y) * fContrib
+                  
+               Else
+                  ' All in x and y:
+                  If (bDib(x + 3, y) &gt; 0) Then
+                     lBuf(xOut, yDest) = lBuf(xOut, yDest) + bDib(x, y)
+                     lBuf(xOut + 1, yDest) = lBuf(xOut + 1, yDest) + bDib(x +
+                      1, y)
+                     lBuf(xOut + 2, yDest) = lBuf(xOut + 2, yDest) + bDib(x +
+                      2, y)
+                     lColorCount(xDest, yDest) = lColorCount(xDest, yDest) + 1
+                  End If
+                  lBuf(xOut + 3, yDest) = lBuf(xOut + 3, yDest) + bDib(x + 3, y)
+               End If
+            End If
+            
+         Next y
+      Next x
+      
+      ' Swap buffer into the dib:
+      'On Error Resume Next
+      For x = 0 To cDibTo.BytesPerScanLine - 4 Step 4
+         For y = 0 To cDibTo.Height - 1
+            lB = (((lBuf(x, y) * lNewWidth) \ m_tBI.bmiHeader.biWidth) *
+             lNewWidth) \ m_tBI.bmiHeader.biWidth
+            If (lB &gt; 255) Then lB = 255
+            bDibTo(x, y) = lB
+            lG = (((lBuf(x + 1, y) * lNewWidth) \ m_tBI.bmiHeader.biWidth) *
+             lNewWidth) \ m_tBI.bmiHeader.biWidth
+            If (lG &gt; 255) Then lG = 255
+            bDibTo(x + 1, y) = lG
+            lR = (((lBuf(x + 2, y) * lNewWidth) \ m_tBI.bmiHeader.biWidth) *
+             lNewWidth) \ m_tBI.bmiHeader.biWidth
+            If (lR &gt; 255) Then lR = 255
+            bDibTo(x + 2, y) = lR
+            lA = (((lBuf(x + 3, y) * lNewWidth) \ m_tBI.bmiHeader.biWidth) *
+             lNewWidth) \ m_tBI.bmiHeader.biWidth
+            If (lA &gt; 255) Then lA = 255
+            bDibTo(x + 3, y) = lA
+         Next y
+      Next x
+      
+   End If
+   
+   ' Clear the temporary array descriptor
+   ' (This does not appear to be necessary, but
+   ' for safety do it anyway)
+   CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+   CopyMemory ByVal VarPtrArray(bDibTo), 0&amp;, 4
+   
+   Set AlphaResample = cDibTo
+   
+End Function
+
+Private Sub Class_Terminate()
+    ClearUp
+End Sub
+
+
+
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;<a href="article.html">Programmatic Creation of Drop-Shadows</a>&#160;.&#160;<a href="VB6_Alpha_Shadow_Creator.html">VB6 Alpha Shadow Creator</a>&#160;.&#160;cAlphaDibSection.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 18 April 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Drop_Shadows/VB6_Alpha_Shadow_Creator_zip_cAlphaDibSection_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+</html>

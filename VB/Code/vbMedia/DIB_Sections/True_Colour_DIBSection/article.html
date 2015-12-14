@@ -1,0 +1,297 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/DIB_Sections/True_Colour_DIBSection/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:27 GMT -->
+<head>
+
+<title>vbAccelerator - True Colour DIBSection</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This article describes in detail the DIB Section techniques used in the 
+vbAccelerator Image Processor. It describes what DIB Sections are, how to use them 
+and provides True Colour DIBSection class I wrote to wrap up the DIB Section." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">DIB Sections</a>&#160;.&#160;True Colour DIBSection</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_DIBSection_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 DIBSection Demonstration</a> (110K)</p><p /><p class="nav"><a href="VB6_DIBSection_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 DIBSection Demonstration</a> (106K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3017</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3017&amp;type=Article&amp;title=True%20Colour%20DIBSection">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />13 Jan 2003<br /><p class="update">Cleaned up the sample and added a VB6 version, plus added a
+<i>SavePicture</i> method to natively save to a bitmap.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3015">256 Colour DIBSections </a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>True Colour DIBSection</h1><p class="splash">An Easy to Use Class for manipulating DIBSections plus a blindingly quick technique for updating the bits</p><img src="dibSectionDemo.png" width="420" height="100" alt="DIBSection Demonstration Project" /><p /><p>This article describes in detail the DIB Section techniques used in the 
+vbAccelerator Image Processor. It describes what DIB Sections are, how to use them 
+and provides True Colour DIBSection class I wrote to wrap up the DIB Section.</p><h2>What is a DIB Section?</h2><p>A DIB (Device Independent Bitmap) Section is a GDI object like a standard 
+DIB but which stores the actual bitmap data in memory which any Win32 application
+can access.  This memory is provided to the creator as a pointer, and it allows ultimate 
+flexibility if you want to modify the bits of a bitmap.</p><h2>Using DIB Sections</h2><p>A DIB section is created using the GDI <i>CreateDIBSection</i> call. You need to modify 
+the declare provided for this in the VB API guide because this declare assumes you 
+cannot use the pointer to the bitmap returned by the function and simply discards it. 
+Here are the declares you need:</p><pre>
+Private Type BITMAPINFOHEADER '40 bytes 
+    biSize As Long 
+    biWidth As Long 
+    biHeight As Long 
+    biPlanes As Integer 
+    biBitCount As Integer 
+    biCompression As Long 
+    biSizeImage As Long 
+    biXPelsPerMeter As Long 
+    biYPelsPerMeter As Long 
+    biClrUsed As Long 
+    biClrImportant As Long 
+End Type 
+Private Type BITMAPINFO 
+    bmiHeader As BITMAPINFOHEADER 
+    bmiColors As RGBQUAD 
+End Type 
+
+' Note - this is not the declare in the API viewer - modify lplpVoid to be 
+' Byref so we get the pointer back: 
+Private Declare Function CreateDIBSection Lib "gdi32" _ 
+    (ByVal hdc As Long, _ 
+    pBitmapInfo As BITMAPINFO, _ 
+    ByVal un As Long, _ 
+    lplpVoid As Long, _ 
+    ByVal handle As Long, _ 
+    ByVal dw As Long) As Long 
+</pre><p>To create the DIB Section, you initialise a <i>BITMAPINFO</i> structure with 
+the required fields, which are all in the <i>bmiHeader</i> sub-structure:</p><ul><li><strong>biSize</strong><br />
+Size of the BITMAPINFO structure</li><li><strong>biWidth</strong><br />
+Width of the DIBSection in pixels</li><li><strong>biHeight</strong><br />
+Height of the DIBSection in pixels</li><li><strong>biPlanes</strong><br />
+Number of colour planes. Set to 1</li><li><strong>biBitCount</strong><br />
+Bits per pixel. Set to 24 for true colour.</li><li><strong>biCompression</strong><br />
+Whether to use compression. If you want to work on the bits, 
+set this to <i>BI_RGB</i> so the image is uncompressed.</li><li><strong>biSizeImage</strong><br />
+The size of the image in bytes. This is worked out from the width, height, 
+number of bits per pixel. In a 24 bit image there are three bytes per pixel. 
+Additionally, GDI requires that every horizontal line in the image aligns on a 
+four-byte boundary. So for a 24 bit image the ImageSize is biWidth*biHeight*3 rounded up 
+to the nearest four bytes. You can round up to the width to the nearest four bytes as follows:
+<pre>
+    (.biWidth * 3 + 3) And &amp;HFFFFFFFC
+</pre></li></ul><p>This allows you to create a DIB Section. You call <i>CreateDIBSection</i> like this:</p><pre>
+    hDib = CreateDIBSection( _ 
+            lHDC, _ 
+            m_tBI, _ 
+            DIB_RGB_COLORS, _ 
+            m_lPtr, _ 
+            0, 0) 
+</pre><p>Where:</p><ul><li>hDib<br /> is a variable to receive the GDI handle to the DIB Section.</li><li>lHDC<br />is a valid DC, for example a Form's DC or the desktop DC.</li><li>m_tBI<br />is a the BITMAPINFO structure.</li><li>m_lPtr<br />is a variable to receive the pointer to the memory containing the bitmap bits.</li></ul><p>To actually display a DIB Section, you must select it into a DC.</p><pre>
+    m_hDC = CreateCompatibleDC(0) 
+    If (m_hDC &lt;&gt; 0) Then 
+        If (CreateDIB(m_hDC, lWidth, lHeight, m_hDIb)) Then 
+            m_hBmpOld = SelectObject(m_hDC, m_hDIb) 
+            Create = True 
+        Else 
+            DeleteObject m_hDC 
+            m_hDC = 0 
+        End If 
+    End If 
+</pre><p>Once it is in a DC you can then use <i>BitBlt</i> to paint it to another 
+device context or to transfer the contents of another device context into it. 
+Remember you must keep track of all the handles created in GDI so you can clear 
+them up again when the DIBSection is no longer needed. To clear up, you need to:</p><ul><li>Select the old bitmap (m_hBmpOld) back into the DC.</li><li>Delete the DIB section.</li><li>Delete the DC.</li></ul><p>So far this has created a DIB which you can load with a graphic 
+and display on the screen, but this achieves no more than you can do with a 
+standard bitmap. The good stuff starts when you start modifying the bitmap bits.</p><h2>Modifying the Bitmap Bits Directly</h2><p><i>CreateDIBSection</i> returns an address to the memory containing the bitmap. 
+You can manipulate this directly through VB using a cool technique to make the 
+memory look like a VB Byte array. This technique was originally presented in VBPJ article 
+(although the original article is no longer easily available). It uses a hidden 
+VB call exposed by the VB runtime (MSVBVM50.DLL for VB5 or MSVBVM60.DLL for VB6) and the 
+ubiquitous <i>CopyMemory</i> call. In my opinion, "CopyMemory" is the best 
+language feature in VB (except that it isn't VB at all!</p><p>Here are the declares you need:</p><pre>
+Private Type SAFEARRAYBOUND
+    cElements As Long
+    lLbound As Long
+End Type
+
+Private Type SAFEARRAY2D 
+    cDims As Integer 
+    fFeatures As Integer 
+    cbElements As Long 
+    cLocks As Long 
+    pvData As Long 
+    Bounds(0 To 1) As SAFEARRAYBOUND 
+End Type 
+
+' Note for VB6, change the lib name to "msvbvm60.dll"
+Private Declare Function VarPtrArray Lib "msvbvm50.dll" Alias "VarPtr" (Ptr() As Any) As Long 
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _ 
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long) 
+</pre><p>To make the byte array point to the memory, you have to fill in the 
+<i>SAFEARRAY2D</i> structure and then use <i>CopyMemory</i> as follows: </p><pre>
+Dim tSA As SAFEARRAY2D 
+Dim bDib() As Byte 
+
+    ' Get the bits in the from DIB section: 
+    With tSA 
+        .cbElements = 1 
+        .cDims = 2 
+        .Bounds(0).lLbound = 0 
+        ' Height of the bitmap 
+        .Bounds(0).cElements = m_tBI.bmiHeader.biHeight 
+        .Bounds(1).lLbound = 0 
+        ' Width of the bitmap in bits (see earlier): 
+        .Bounds(1).cElements = BytesPerScanLine() 
+        .pvData = m_lPtr 
+    End With 
+    ' Make the bDib() array point to the memory addresses: 
+    CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4 
+</pre><p>Remember that doing this doesn't cause any of the memory to actually be copied,
+it just ensures that what VB sees as an array (in this case bDib()) acccess the
+memory at that pointer. This means that doing this is a very quick operation!</p><p>In this case the bDib() array is a two dimensional array with the first dimension 
+being the x values and the second being the y values. A 24 bit DIB section 
+is arranged so the bytes run Blue, Green, Red and remember that since the array is padded 
+to a DWORD boundary there may be up to three unused bytes at the end of each row. So, 
+for example, to set the top left pixel to purple you would write this:</p><pre>
+        bDib(0,0) = 255 ' Blue 
+        bDib(1, 0) = 0 ' Green 
+        bDib(2, y) = 255 ' Red 
+</pre><p>Once you have finished with the bDib array, you need to be sure to clear up the 
+<i>SAFEARRAY</i> pointer you have created. If you fail to do this, your code will generally 
+work but will crash NT4.0:</p><pre>
+    CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+</pre><h2>Enough of That, I Want to Use It</h2><p>That covers the theory of using DIB Sections. To make it easy, I include a 
+self-contained class (<i>cDibSection</i>) which you can include. The methods and properties
+of this class are as follows:</p><ul><li><strong>BytesPerScanLine</strong><br /> Returns the number of bytes horizontally, taking into account the bits per pixel and 4 byte boundary padding.</li><li><strong>ClearUp</strong><br />  
+Frees up any GDI objects held by the class. Called automatically when the class terminates.</li><li><strong>CopyToClipboard</strong><br />  
+Does as it says!</li><li><strong>Create</strong><br />  
+Creates a DIB section of the specified width and height in pixels.</li><li><strong>CreateFromPicture</strong><br />  
+Creates a DIB section the same size as a VB picture object and copies the 
+bitmap in it into the DIB section.</li><li><strong>DIBSectionBitsPtr</strong><br />  
+Returns the address of the DIBSection's bits in memory.</li><li><strong>hdc </strong><br /> 
+Returns the memory device context used by the class to hold the DIB Section. You can use this in GDI operations, but do not call <i>DeleteObject</i> or <i>DeleteDC</i> on it.</li><li><strong>hDib</strong><br />  
+Returns a handle to the DIBSection held by the class. You can use this in GDI operations, 
+but do not call <i>DeleteObject</i> on it. </li><li><strong>Height</strong><br />  
+Returns the Height of the DIBSection in pixels.</li><li><strong>LoadPictureBlt</strong><br />  
+Copies all or a part of a picture from another Device Context into the DIB section.</li><li><strong>PaintPicture</strong><br />  
+Similar to the VB paint picture method, this copies all or part of the DIB section to 
+another device context using the specified Raster Operation.</li><li><strong>RandomiseBits</strong><br />  
+Randomises the pixels in the DIB Section, either to random colours or gray scaled.</li><li><strong>Resample</strong><br />  
+Resizes the DIB using linear interpolation to create a smoother resized version 
+than you would get if you used <i>StretchBlt</i>.</li><li><strong>SavePicture</strong><br />   
+Saves the picture to a Bitmap file using native methods.</li><li><strong>Width</strong><br />  
+Returns the width of the DIB in pixels.</li></ul><h2>A Simple Fade Example</h2><p>This demonstrates how to fade out a bitmap. It should run as a 
+real-time animation, provided the image size isn't too big. I've found that 
+images which are too large don't show as a smooth animation even when the fade 
+code runs quickly enough because <i>BitBlt</i> tends to "tear". 
+This occurs because <i>BitBlt</i> doesn't completely display the bitmap during a 
+single screen refresh and therefore the image is partially displayed before 
+the refresh occurs. To get round this problem you need to use DirectX.</p><p>This sample is simplified version of the static and fade example in the download.</p><p>To try this sample, create a new project and add the 
+<i>cDIBSection</i> class to it. Copy the declares for <i>CopyMemory</i>, <i>VarPtrArray</i>, 
+<i>SAFEARRAY2D</i> and <i>SAFEARRAYBOUND</i> into the project's form, then add this sub:</p><pre>
+Private Sub Fade( _ 
+    ByRef cTo As cDIBSection, _ 
+    ByVal lAmount As Long _ 
+    ) 
+Dim bDib() As Byte 
+Dim x As Long, y As Long 
+Dim xMax As Long, yMax As Long 
+Dim lB As Long, lG As Long, lR As Long 
+Dim lA As Long, lA2 As Long 
+Dim lTIme As Long 
+Dim tSA As SAFEARRAY2D 
+    
+    ' have the local matrix point to bitmap pixels 
+    With tSA 
+        .cbElements = 1 
+        .cDims = 2 
+        .Bounds(0).lLbound = 0 
+        .Bounds(0).cElements = cTo.Height 
+        .Bounds(1).lLbound = 0 
+        .Bounds(1).cElements = cTo.BytesPerScanLine 
+        .pvData = cTo.DIBSectionBitsPtr 
+    End With 
+    CopyMemory ByVal VarPtrArray(bDib), VarPtr(tSA), 4 
+        
+    yMax = cTo.Height - 1 
+    xMax = cTo.Width - 1 
+    
+    For x = 0 To (xMax * 3) Step 3 
+        For y = 0 To yMax 
+            lB = lAmount * bDib(x, y) \ 255 
+            lG = lAmount * bDib(x + 1, y) \ 255 
+            lR = lAmount * bDib(x + 2, y) \ 255 
+            bDib(x, y) = lB 
+            bDib(x + 1, y) = lG 
+            bDib(x + 2, y) = lR 
+        Next y 
+    Next x 
+
+    CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4 
+    
+End Sub 
+</pre><p>Add a Command Button to the Form, and put this code behind it:</p><pre>
+Private Sub Command1_Click() 
+
+Dim cDib As New cDibSection 
+Dim cDibBuffer as New cDibSection 
+Dim i As Long 
+
+    ' Load the picture to fade: 
+    Set sPic = LoadPicture("Put Your File Here!") 
+    cDib.CreateFromPicture sPic 
+
+    ' Create a copy of it: 
+    cDibBuffer.Create cDib.Width, cDib.Height 
+    cDib.PaintPicture cDibBuffer.HDC 
+
+    ' Fade Loop: 
+    For i = 0 To 255 Step 4 
+        ' Fade the dib by amount i: 
+        Fade cDib, i 
+        ' Draw it: 
+        cDib.PaintPicture Form1.hDC 
+        ' Breathe a little. You may have to put a slowdown here: 
+        DoEvents 
+        ' Reset for next fade: 
+        cDibBuffer.PaintPicture cDib.HDC 
+    Next i 
+
+End Sub 
+</pre><p>Now run the code. When you click the button, the image will be faded as 
+fast as your system allows. The code will run slowly in the IDE but will 
+go much much quicker if you compile it to native code. Also, checking all the 
+Advanced Optimisation settings will make it run about 60% faster again! 
+On my machine (PII 266 with 8Mb Xpert@Work card) it does 
+40fps when working on a 256x256 pixel image.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">DIB Sections</a>&#160;.&#160;True Colour DIBSection</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/DIB_Sections/True_Colour_DIBSection/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:28 GMT -->
+</html>

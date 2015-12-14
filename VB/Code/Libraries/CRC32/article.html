@@ -1,0 +1,139 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/CRC32/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:45:30 GMT -->
+<head>
+
+<title>vbAccelerator - Calculating CRC32 With VB</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+The CRC (Cyclic Redundancy Checksum) algorithm is a highly optimised and powerful way of checking whether a large number of bytes have been modified or not. The algorithm scans through all the bytes and generates a 32 bit number to represent the contents - small changes in the file contents result in large changes in the check sum, and there is a very low chance that two different streams of bytes will have the same CRC. This article provides a high performance class for generating a WinZip compatible CRC32 checksum in VB.
+" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Libraries</a>&#160;.&#160;Calculating CRC32 With VB</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB_CRC32.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB CRC32</a> (36K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:13008</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13008&amp;type=Article&amp;title=Calculating%20CRC32%20With%20VB">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><p class="nav">&#160;&#160;<a href="mailto:wpsjr1@succeed.net">Paul</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />23 Oct 2003<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=930">Calculating CRC32 (and MDA5 and SHA-1) From .NET</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Calculating CRC32 With VB</h1><p class="splash">Demonstrates how to calculate CRC32 checksums using the same method as WinZip.</p><img src="crc32.png" width="361" height="264" alt="CRC32 Demonstration Application" /><p /><p>
+The CRC (Cyclic Redundancy Checksum) algorithm is a highly optimised and powerful way of checking whether a large number of bytes have been modified or not. The algorithm scans through all the bytes and generates a 32 bit number to represent the contents - small changes in the file contents result in large changes in the check sum, and there is a very low chance that two different streams of bytes will have the same CRC. This article provides a high performance class for generating a WinZip compatible CRC32 checksum in VB.
+</p><h2>Calculating CRC32</h2><p>The CRC32 algorithm is a reliable way of checking whether an error has occurred in a sequence of bytes. There are various means of checking whether any bytes have been corrupted, for example, checksums and parity bits, but many simple schemes run a reasonably high chance of failing to detect an error depending on the type of corruption to the data that occurs. With CRC the chances of a corruption occurring which results in the same CRC are extremely remote.</p><p>An excellent description of the algorithm, and the various optimisations you can apply when implementing it (a fascinating and heavily mathematical process) is provided in Donald Knuth's classic programming series "The Art of Programming". You can find some online information here, although these do not cover the optimisation tricks in much detail (if at all):</p><ul><li><a href="http://www2.rad.com/networks/1994/err_con/crc_how.htm">How the CRC Algorithm Works</a></li><li><a href="http://www.relisoft.com/Science/index.htm">Reliable Software Science Corner</a></li></ul><p>
+The implementation here uses a pre-calculated lookup table to do a lot of the heavy work
+of generating the polynomial.  Once this has been calculated then the actual algorithm
+becomes relatively simple, although it still causes some problems in VB.  Here I must say
+thanks to Paul for providing the simple and fast version of the code that's now posted:
+</p><h3>Calculating The Lookup Table</h3><pre>
+Private crc32Table() As Long
+
+Private Sub Class_initialize()
+
+    ' This is the official polynomial used by CRC32 in PKZip.
+    ' Often the polynomial is shown reversed (04C11DB7).
+    Dim dwPolynomial As Long
+    dwPolynomial = &amp;HEDB88320
+    Dim i As Integer, j As Integer
+
+    ReDim crc32Table(256)
+    Dim dwCrc As Long
+
+    For i = 0 To 255
+        dwCrc = i
+        For j = 8 To 1 Step -1
+            If (dwCrc And 1) Then
+                dwCrc = ((dwCrc And &amp;HFFFFFFFE) \ 2&amp;) And &amp;H7FFFFFFF
+                dwCrc = dwCrc Xor dwPolynomial
+            Else
+                dwCrc = ((dwCrc And &amp;HFFFFFFFE) \ 2&amp;) And &amp;H7FFFFFFF
+            End If
+        Next j
+        crc32Table(i) = dwCrc
+    Next i
+
+End Sub
+</pre><h3>The CRC32 Calculation</h3><pre>
+Dim crc32Result As Long
+crc32Result = &amp;HFFFFFFFF
+      
+Dim i As Integer
+Dim iLookup As Integer
+
+[For Each [Byte] in [Buffer]]
+
+      iLookup = (crc32Result And &amp;HFF) Xor [Byte]
+      crc32Result = ((crc32Result And &amp;HFFFFFF00) \ &amp;H100) _
+          And 16777215 ' nasty shr 8 with vb :/
+      crc32Result = crc32Result Xor crc32Table(iLookup)
+
+[Next]
+
+Crc32 = Not (crc32Result)
+</pre><p>
+The result is a pretty quick algorithm: calculating CRC32 for a 70Mb file on an 
+Athlon XP2000 machine took just a little more than a second.  This compares favourably
+with around 0.65s for the C# version also available on the site.
+</p><h2>Using the Class</h2><p>
+The class provided wraps the details of determining CRC32 for a file or for
+an array of bytes.  If you want to calculate CRC32 for a file, then you must
+use the <span class="code">cBinaryFileStream</span> class which is provided
+as a source of the file data.  This wraps standard VB file reading techniques
+so that a binary file can be read in chunks, which simplifies the CRC32 algorithm
+whilst still providing good performance.  To use the <span class="code">cBinaryFileStream</span> 
+class simply create a new instance and set the <span class="code">File</span> property to the 
+file you want to read.  Then you pass it into the <span class="code">GetFileCRC32</span>
+method of the <span class="code">cCRC32</span> class:
+</p><pre>
+   Dim cStream As New cBinaryFileStream
+   cStream.File = txtFileName.Text
+   
+   Dim cCRC32 As New cCRC32
+   Dim lCRC32 As Long
+   
+   lCRC32 = cCRC32.GetFileCrc32(cStream)
+</pre><p>
+You can also calculate the CRC32 of a byte array using the <span class="code">GetByteArrayCRC32</span>
+method.
+</p><h2>Conclusion</h2><p>
+This article provides a high performance CRC32 implementation for VB which can calculate 
+a WinZip compatible CRC32 for files and data in VB memory.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Libraries</a>&#160;.&#160;Calculating CRC32 With VB</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 2 November 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/CRC32/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:45:31 GMT -->
+</html>

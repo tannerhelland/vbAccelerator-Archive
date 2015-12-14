@@ -1,0 +1,75 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/ListView/bugTrak4089-3.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:24 GMT -->
+<head>
+<title>vbAccelerator - ListItem Icon Property Sets Incorrect Icon</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This control provides an alternative to the VB ListView control and adds support for
+almost all of the new ComCtl32.DLL v6.0 features that are missing from the VB version: 
+ListView grouping, Tile view with configurable sub-items, Multiple Work Areas and more.
+" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator ListView Control</a>&#160;.&#160;<a href="bugTrak.html">BugTrak Summary</a>&#160;.&#160;ListItem Icon Property Sets Incorrect Icon</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_ListView_Control.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ListView Control</a> (84K)</p><p class="nav"><a href="VB5_ListView_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ListView Demonstration</a> (200K)</p><p class="nav"><a href="VB5_ListView_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ListView Full Source</a> (344K)</p><p /><p class="nav"><a href="VB6_ListView_Control.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ListView Control</a> (85K)</p><p class="nav"><a href="VB6_ListView_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ListView Demonstration</a> (196K)</p><p class="nav"><a href="VB6_ListView_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ListView Full Source</a> (341K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4089</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4089&amp;type=Article&amp;title=vbAccelerator%20ListView%20Control">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 8 / 16</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 8 / 11</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:8 February 2004</p>
+<br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />20 Jun 2003<br /><p class="update">Bug fixes and minor enhancements to the control:</p><p class="update">The <span class="code">Selected</span> property of
+a ListItem always returned false, meaning it was impossible to 
+determine which items were selected in a multi-select ListView.
+Corrected. Same problem with the <span class="code">ItemCut</span>
+property.</p><p class="update"><span class="code">Icon</span> property of ListItem set
+the icon of the next item along in the control.  Fixed.</p><p class="update"><span class="code">Position</span> property added to the 
+ColumnHeader object to allow the order of the column headers to be read
+and set programmatically.</p><p class="update">Insert before parameter to the <span class="code">Add</span> method
+of the ListItems collection was ignored.  Corrected.</p><p class="update">Setting a column alignment to right caused the column to be
+centred, and vice-versa. Fixed.</p><p class="update">Mouse Up events were only generated for double-clicks.  Now
+corrected.</p><p class="update">A <span class="code">KeyDown</span> event was generated when
+a <span class="code">KeyUp</span> should have been.  Fixed</p><p class="update">Option to place the background image at a specified location
+rather than tile it added.</p><p class="update"><span class="code">NoColumnHeaders</span> property added to
+allow column headers to be hidden in Detail view.</p><p class="update">Added a call to <span class="code">LoadLibrary</span> on 
+Shell32.DLL to prevent crashes when using a manifest.</p><p class="update">Thanks to Ben Andersen, Ian Goodwin, Vasanth Raj, Greg Thomson,
+Frank Peters for the bug reports and code.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3376">Making VB Apply XP Visual Styles at Design and Debug Time</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1427">Adding XP Visual Styles to Your Visual Basic Application</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>ListItem Icon Property Sets Incorrect Icon</h1><h2>Summary</h2><table class="article"><tr><td>Id:</td><td>4089.3</td></tr><tr><td>Type:</td><td><img src="../../../../res/btBugClosed.png" width="16" height="16" alt="Bug" />&#160;Bug</td></tr><tr><td>Current Status:</td><td>Resolved</td></tr></table><h2>Detail</h2><table class="article"><tr class="header"><td>23&#160;Apr&#160;2003</td><td>Open</td><td width="100%">FTFakes</td></tr><tr><td colspan="3"><p>Always when I try to change a icon of a listitem then the icon of the next item is changed instead.</p><codeChar>lvListView.ListItems(a).IconIndex = newicon</codeChar><p>behaves like: </p><codeChar>lvListView.ListItems(a + 1).IconIndex = newicon</codeChar><p>I took a look at the source of your control and changed:</p><codeChar>Friend Property Get fItemIconIndex(ByVal lIndex As Long) As Long</codeChar><codeChar>   pGetStyle lIndex , LVIF_IMAGE</codeChar><codeChar>   fItemIconIndex = m_tLV.iImage</codeChar><codeChar>End Property</codeChar><codeChar>Friend Property Let fItemIconIndex(ByVal lIndex As Long, ByVal lIconIndex As Long)</codeChar><codeChar>   pGetStyle lIndex , LVIF_IMAGE</codeChar><codeChar>   m_tLV.iImage = lIconIndex</codeChar><codeChar>   pSetIStyle lIndex , LVIF_IMAGE</codeChar><codeChar>End Property</codeChar><p>to: </p><codeChar>Friend Property Get fItemIconIndex(ByVal lIndex As Long) As Long</codeChar><codeChar>   pGetStyle lIndex - 1, LVIF_IMAGE</codeChar><codeChar>   fItemIconIndex = m_tLV.iImage</codeChar><codeChar>End Property</codeChar><codeChar>Friend Property Let fItemIconIndex(ByVal lIndex As Long, ByVal lIconIndex As Long)</codeChar><codeChar>   pGetStyle lIndex - 1, LVIF_IMAGE</codeChar><codeChar>   m_tLV.iImage = lIconIndex</codeChar><codeChar>   pSetIStyle lIndex - 1, LVIF_IMAGE</codeChar><codeChar>End Property</codeChar><p>Now it is working fine :-)</p></td></tr><tr class="header"><td>20&#160;Jun&#160;2003</td><td>Resolved</td><td width="100%">Steve McMahon</td></tr><tr><td colspan="3"><p>Fixed as suggested. </p></td></tr></table><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator ListView Control</a>&#160;.&#160;<a href="bugTrak.html">BugTrak Summary</a>&#160;.&#160;ListItem Icon Property Sets Incorrect Icon</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 20 June 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/ListView/bugTrak4089-3.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:24 GMT -->
+</html>

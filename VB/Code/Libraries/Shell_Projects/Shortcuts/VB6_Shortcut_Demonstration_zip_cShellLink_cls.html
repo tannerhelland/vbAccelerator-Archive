@@ -1,0 +1,353 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Shell_Projects/Shortcuts/VB6_Shortcut_Demonstration_zip_cShellLink_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:42 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cShellLink.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cShellLink.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Shell Projects</a>&#160;.&#160;<a href="article.html">Creating Shortcuts using VB</a>&#160;.&#160;<a href="VB6_Shortcut_Demonstration.html">VB6 Shortcut Demonstration</a>&#160;.&#160;cShellLink.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Shortcut_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Shortcut Demonstration</a> (49K)</p><p /><p class="nav"><a href="VB6_Shortcut_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Shortcut Demonstration</a> (47K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:4969</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4969&amp;type=Zip&amp;title=VB6%20Shortcut%20Demonstration%2Ezip%5FcShellLink">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />28 Mar 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4013">VB IShellLink Interface (ShellLink.tlb)</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4012">Adding, Deleting and Viewing Recent Documents</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1420">Browsing For Folders</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=5291">vbAccelerator Icon Selector Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4302">Getting File Icons Using The Shell</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1419">CommonDialog/Direct</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cShellLink.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cShellLink"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+
+' Icon from picture:
+Private Type PICTDESC
+   cbSizeOfStruct As Long
+   hGdiObj As Long
+   hPalOrXYExt As Long
+   picType As Long
+End Type
+Private Type UUID
+   Data1 As Long
+   Data2 As Integer
+   Data3 As Integer
+   Data4(0 To 7) As Byte
+End Type
+Private Declare Sub OleCreatePictureIndirect Lib "olepro32.dll" ( _
+    lpPictDesc As PICTDESC, riid As UUID, _
+    ByVal fPictureOwnsHandle As Long, ipic As IPicture)
+Private Declare Function ExtractIcon Lib "shell32.dll" Alias "ExtractIconA"
+ (ByVal hInst As Long, ByVal lpszExeFileName As String, ByVal nIconIndex As
+ Long) As Long
+
+' IPersistFile:
+Private Const STGM_DIRECT = 0
+
+' ShowWindow constants:
+Private Const SW_NORMAL = 1
+Private Const SW_SHOWMINNOACTIVE = 7
+Private Const SW_MAXIMIZE = 3
+
+' File:
+Private Const MAX_PATH = 260
+Private Declare Function GetFullPathName Lib "kernel32" Alias
+ "GetFullPathNameA" (ByVal lpFileName As String, ByVal nBufferLength As Long,
+ ByVal lpBuffer As String, ByVal lpFilePart As String) As Long
+Private Declare Function lstrlen Lib "kernel32" Alias "lstrlenA" (ByVal
+ lpString As String) As Long
+' Win32 API Error Reporting:
+Private Declare Function FormatMessage Lib "kernel32" Alias "FormatMessageA"
+ (ByVal dwFlags As Long, lpSource As Any, ByVal dwMessageId As Long, ByVal
+ dwLanguageId As Long, ByVal lpBuffer As String, ByVal nSize As Long, Arguments
+ As Long) As Long
+Private Const FORMAT_MESSAGE_ALLOCATE_BUFFER = &amp;H100
+Private Const FORMAT_MESSAGE_ARGUMENT_ARRAY = &amp;H2000
+Private Const FORMAT_MESSAGE_FROM_HMODULE = &amp;H800
+Private Const FORMAT_MESSAGE_FROM_STRING = &amp;H400
+Private Const FORMAT_MESSAGE_FROM_SYSTEM = &amp;H1000
+Private Const FORMAT_MESSAGE_IGNORE_INSERTS = &amp;H200
+Private Const FORMAT_MESSAGE_MAX_WIDTH_MASK = &amp;HFF
+
+
+' Show command constants (a subset of constants for SetWindowPos API)
+Public Enum EDisplayMode
+    edmNormal = SW_NORMAL
+    edmMinimized = SW_SHOWMINNOACTIVE
+    edmMaximized = SW_MAXIMIZE
+End Enum
+
+Private link As New IShellLinkVB.cShellLink
+
+'' Properties
+
+'' Path of file represented by shortcut
+Public Property Get TargetFile() As String
+    Dim fd As WIN32_FIND_DATA, s As String
+    s = String$(MAX_PATH, 0)
+    link.GetPath s, MAX_PATH, fd, SLGP_UNCPRIORITY
+    TargetFile = StrZToStr(s)
+End Property
+
+Public Property Let TargetFile(sPathA As String)
+   ' Make sure file exists
+   If Not FileExists(sPathA) Then
+      Err.Raise 53
+   Else
+      link.SetPath sPathA
+   End If
+End Property
+
+'' Startup directory for shortcut target
+Public Property Get WorkingDirectory() As String
+    Dim s As String
+    s = String$(MAX_PATH, 0)
+    link.GetWorkingDirectory s, MAX_PATH
+    WorkingDirectory = StrZToStr(s)
+End Property
+
+Public Property Let WorkingDirectory(sWorkingA As String)
+    link.SetWorkingDirectory sWorkingA
+End Property
+
+' Shortcut dialog ignores description, but we can save and restore it
+Public Property Get Description() As String
+    Dim s As String
+    s = String$(MAX_PATH, 0)
+    link.GetDescription s, MAX_PATH
+    Description = StrZToStr(s)
+End Property
+
+Public Property Let Description(sDescription As String)
+    link.SetDescription sDescription
+End Property
+
+'' Arguments for shortcut target
+Public Property Get Arguments() As String
+    Dim s As String
+    s = String$(MAX_PATH, 0)
+    link.GetArguments s, MAX_PATH
+    Arguments = StrZToStr(s)
+End Property
+
+Public Property Let Arguments(sArgumentsA As String)
+    link.SetArguments sArgumentsA
+End Property
+
+'' Display command can be Normal, Minimized, or Maximized
+Public Property Get DisplayMode() As EDisplayMode
+    DisplayMode = link.ShowCmd
+End Property
+
+Public Property Let DisplayMode(edm As EDisplayMode)
+    Select Case edm
+    Case SW_NORMAL
+        ' Convert all these to normal: 0, 1, 4, 5, 8, 9, 10
+        edm = edmNormal
+    Case SW_SHOWMINNOACTIVE
+        ' Convert all these to minimized: 2, 6, 7
+        edm = edmMinimized
+    Case SW_MAXIMIZE
+        ' Pass maximize through: 3
+        edm = edmMaximized
+    Case Else
+        ' Convert anything else to normal
+        edm = edmNormal
+    End Select
+    link.ShowCmd = edm
+End Property
+
+Public Property Get HotKey() As KeyCodeConstants
+   HotKey = link.HotKey
+End Property
+
+Public Property Let HotKey(kcc As KeyCodeConstants)
+    link.HotKey = kcc
+End Property
+
+Public Property Get Icon() As IPicture
+    Dim s As String, i As Long, hIcon As Long
+    s = String$(MAX_PATH, 0)
+    link.GetIconLocation s, MAX_PATH, i
+    hIcon = ExtractIcon(App.hInstance, s, i)
+    Set Icon = IconToPicture(hIcon)
+End Property
+
+Public Property Get IconFile() As String
+   Dim s As String, i As Long, hIcon As Long
+   s = String$(MAX_PATH, 0)
+   link.GetIconLocation s, MAX_PATH, i
+   s = StrZToStr(s)
+   IconFile = s
+End Property
+Public Property Let IconFile(ByVal sFile As String)
+Dim iIcon As Long
+Dim s As String
+   s = String$(MAX_PATH, 0)
+   link.GetIconLocation s, MAX_PATH, iIcon
+   link.SetIconLocation sFile, iIcon
+End Property
+Public Property Get IconIndex() As Long
+Dim iIcon As Long
+Dim s As String
+   s = String$(MAX_PATH, 0)
+   link.GetIconLocation s, MAX_PATH, iIcon
+   IconIndex = iIcon
+End Property
+Public Property Let IconIndex(ByVal lIconIndex As Long)
+Dim iIcon As Long
+Dim s As String
+   s = String$(MAX_PATH, 0)
+   link.GetIconLocation s, MAX_PATH, iIcon
+   link.SetIconLocation s, lIconIndex
+End Property
+
+Public Function Save(sLinkFile As String) As String
+   Dim sLink As String
+
+   
+   ' Save the object to disk
+   IPF(link).Save sLinkFile, 1
+   Save = sLink
+   
+End Function
+
+' Flags control behavior if LNK file reference can't be resolved:
+'    SLR_ANY_MATCH - Display a dialog (with hWnd parameter as parent
+'                    window) asking user whether to search for reference
+'    SLR_NO_UI     - Search the disk for the time period specified by
+'                    TimeOut parameter
+Public Sub Resolve(sFileA As String, _
+            Optional flags As EShellLinkResolveFlags = SLR_ANY_MATCH, _
+            Optional hwnd As Long = 0, _
+            Optional TimeOut As Integer = 0)
+   ' Load from LNK file and resolve
+   IPF(link).Load sFileA, STGM_DIRECT
+   If flags = SLR_NO_UI And TimeOut &gt; 0 Then
+      Dim lDW As Long
+      lDW = lDW * &amp;H10000
+      If (lDW And &amp;H80000000) Then
+         lDW = CLng(lDW And &amp;H7FFFFFFF) Or &amp;H80000000
+      End If
+      flags = flags Or lDW
+   End If
+   link.Resolve hwnd, flags
+End Sub
+
+
+Private Property Get IPF(link As IShellLinkVB.cShellLink) As IPersistFileVB
+   Set IPF = link
+End Property
+
+
+Private Function StrZToStr(s As String) As String
+    StrZToStr = Left$(s, lstrlen(s))
+End Function
+
+Private Function FileExists(sSpec As String) As Boolean
+    On Error Resume Next
+    Call FileLen(sSpec)
+    FileExists = (Err = 0)
+End Function
+
+Private Function IconToPicture(ByVal hIcon As Long) As IPicture
+   If hIcon = 0 Then
+      Exit Function
+   Else
+      Dim ipic As IPicture
+      Dim picdes As PICTDESC
+      Dim iGuid As UUID
+      
+      ' Fill picture description
+      picdes.cbSizeOfStruct = Len(picdes)
+      picdes.picType = vbPicTypeIcon
+      picdes.hGdiObj = hIcon
+    
+      ' Fill in magic IPicture GUID {7BF80980-BF32-101A-8BBB-00AA00300CAB}
+      With iGuid
+        .Data1 = &amp;H7BF80980
+        .Data2 = &amp;HBF32
+        .Data3 = &amp;H101A
+        .Data4(0) = &amp;H8B
+        .Data4(1) = &amp;HBB
+        .Data4(2) = &amp;H0
+        .Data4(3) = &amp;HAA
+        .Data4(4) = &amp;H0
+        .Data4(5) = &amp;H30
+        .Data4(6) = &amp;HC
+        .Data4(7) = &amp;HAB
+      End With
+    
+      ' Create picture from icon handle
+      OleCreatePictureIndirect picdes, iGuid, True, ipic
+      ' Result will be valid Picture or Nothing--either way set it
+      Set IconToPicture = ipic
+   End If
+End Function
+
+
+Private Function GetFullPath( _
+      sFileName As String _
+   ) As String
+
+Dim c As Long, p As Long, sRet As String
+    
+   ' Get the path size, then create string of that size
+   sRet = String(MAX_PATH, 0)
+   c = GetFullPathName(sFileName, MAX_PATH, sRet, p)
+   If c = 0 Then
+      Err.Raise WinApiError(Err.LastDllError)
+   Else
+      sRet = Left$(sRet, c)
+      GetFullPath = sRet
+   End If
+    
+End Function
+
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Shell Projects</a>&#160;.&#160;<a href="article.html">Creating Shortcuts using VB</a>&#160;.&#160;<a href="VB6_Shortcut_Demonstration.html">VB6 Shortcut Demonstration</a>&#160;.&#160;cShellLink.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Shell_Projects/Shortcuts/VB6_Shortcut_Demonstration_zip_cShellLink_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:42 GMT -->
+</html>

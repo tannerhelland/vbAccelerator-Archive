@@ -1,0 +1,293 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Detecting_Windows_Settings_Changes/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:05 GMT -->
+<head>
+
+<title>vbAccelerator - Detecting Windows Settings Changes</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This tip demonstrates how to detect windows settings changes in your application. 
+You will need to have installed and registered the Subclassing and Timer Assistant (SSubTmr.DLL for VB5
+and SSubTmr6.DLL for VB6), available from this site at Subclassing without 
+the crashes to run this sample." /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Detecting Windows Settings Changes</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2955</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2955&amp;type=Article&amp;title=Detecting%20Windows%20Settings%20Changes">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />18 Aug 1999<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Detecting Windows Settings Changes</h1><p /><p>This tip demonstrates how to detect windows settings changes in your application. 
+You will need to have installed and registered the Subclassing and Timer Assistant (SSubTmr.DLL for VB5
+and SSubTmr6.DLL for VB6), available from this site at <a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing without 
+the crashes</a> to run this sample.</p><p>Changes which can be detected using this code include system colour changes, 
+non-client metric sizes and a whole host of other changes (as you will see from the 
+enum of possible changes in the source code below!). The code is invaluable if you 
+are creating your own graphics or controls and want to ensure they display correctly through 
+system settings changes (which is part of the Windows logo requirements.)</p><p>Start a new project and choose Project-&gt;References. Look for "Subclassing and Timer Assistant (with multiple control support and timer bug fix)" if you're using VB5 or "VB6 Subclassing and Timer Assistant" if
+you're using VB6 in the references list. If it is there, select it and click ok. 
+If it isn't, choose Browse, locate SSubTmr.DLL for VB5 or SSubTmr6.DLL for VB6 on your disk, then select that.</p><p>Once that is done, add a Class module. Rename the Class module to <i>cSettingsChange</i> and 
+then add the following code:</p><pre>
+Private Const WM_WININICHANGE = &amp;H1A&amp;
+' Constant name changed only for 9x/NT4/2000 apps!
+Private Const WM_SETTINGCHANGE = WM_WININICHANGE
+Private Const WM_DESTROY = &amp;H2
+
+Implements ISubclass
+
+Private m_hWnd As Long
+
+Public Enum ESPISystemParamtersInfoConstants
+   SPI__NONSYSTEMPARAMETERSINFOCHANGE = 0
+
+   SPI_GETBEEP = 1
+   SPI_SETBEEP = 2
+   SPI_GETMOUSE = 3
+   SPI_SETMOUSE = 4
+   SPI_GETBORDER = 5
+   SPI_SETBORDER = 6
+   SPI_GETKEYBOARDSPEED = 10
+   SPI_SETKEYBOARDSPEED = 11
+   SPI_LANGDRIVER = 12
+   SPI_ICONHORIZONTALSPACING = 13
+   SPI_GETSCREENSAVETIMEOUT = 14
+   SPI_SETSCREENSAVETIMEOUT = 15
+   SPI_GETSCREENSAVEACTIVE = 16
+   SPI_SETSCREENSAVEACTIVE = 17
+   SPI_GETGRIDGRANULARITY = 18
+   SPI_SETGRIDGRANULARITY = 19
+   SPI_SETDESKWALLPAPER = 20
+   SPI_SETDESKPATTERN = 21
+   SPI_GETKEYBOARDDELAY = 22
+   SPI_SETKEYBOARDDELAY = 23
+   SPI_ICONVERTICALSPACING = 24
+   SPI_GETICONTITLEWRAP = 25
+   SPI_SETICONTITLEWRAP = 26
+   SPI_GETMENUDROPALIGNMENT = 27
+   SPI_SETMENUDROPALIGNMENT = 28
+   SPI_SETDOUBLECLKWIDTH = 29
+   SPI_SETDOUBLECLKHEIGHT = 30
+   SPI_GETICONTITLELOGFONT = 31
+   SPI_SETDOUBLECLICKTIME = 32
+   SPI_SETMOUSEBUTTONSWAP = 33
+   SPI_SETICONTITLELOGFONT = 34
+   SPI_GETFASTTASKSWITCH = 35
+   SPI_SETFASTTASKSWITCH = 36
+   SPI_SETDRAGFULLWINDOWS = 37
+   SPI_GETDRAGFULLWINDOWS = 38
+   SPI_GETNONCLIENTMETRICS = 41
+   SPI_SETNONCLIENTMETRICS = 42
+   SPI_GETMINIMIZEDMETRICS = 43
+   SPI_SETMINIMIZEDMETRICS = 44
+   SPI_GETICONMETRICS = 45
+   SPI_SETICONMETRICS = 46
+   SPI_SETWORKAREA = 47
+   SPI_GETWORKAREA = 48
+   SPI_SETPENWINDOWS = 49
+
+   SPI_GETHIGHCONTRAST = 66
+   SPI_SETHIGHCONTRAST = 67
+   SPI_GETKEYBOARDPREF = 68
+   SPI_SETKEYBOARDPREF = 69
+   SPI_GETSCREENREADER = 70
+   SPI_SETSCREENREADER = 71
+   SPI_GETANIMATION = 72
+   SPI_SETANIMATION = 73
+   SPI_GETFONTSMOOTHING = 74
+   SPI_SETFONTSMOOTHING = 75
+   SPI_SETDRAGWIDTH = 76
+   SPI_SETDRAGHEIGHT = 77
+   SPI_SETHANDHELD = 78
+   SPI_GETLOWPOWERTIMEOUT = 79
+   SPI_GETPOWEROFFTIMEOUT = 80
+   SPI_SETLOWPOWERTIMEOUT = 81
+   SPI_SETPOWEROFFTIMEOUT = 82
+   SPI_GETLOWPOWERACTIVE = 83
+   SPI_GETPOWEROFFACTIVE = 84
+   SPI_SETLOWPOWERACTIVE = 85
+   SPI_SETPOWEROFFACTIVE = 86
+   SPI_SETCURSORS = 87
+   SPI_SETICONS = 88
+   SPI_GETDEFAULTINPUTLANG = 89
+   SPI_SETDEFAULTINPUTLANG = 90
+   SPI_SETLANGTOGGLE = 91
+   SPI_GETWINDOWSEXTENSION = 92
+   SPI_SETMOUSETRAILS = 93
+   SPI_GETMOUSETRAILS = 94
+   SPI_SETSCREENSAVERRUNNING = 97
+   SPI_SCREENSAVERRUNNING = SPI_SETSCREENSAVERRUNNING
+   SPI_GETFILTERKEYS = 50
+   SPI_SETFILTERKEYS = 51
+   SPI_GETTOGGLEKEYS = 52
+   SPI_SETTOGGLEKEYS = 53
+   SPI_GETMOUSEKEYS = 54
+   SPI_SETMOUSEKEYS = 55
+   SPI_GETSHOWSOUNDS = 56
+   SPI_SETSHOWSOUNDS = 57
+   SPI_GETSTICKYKEYS = 58
+   SPI_SETSTICKYKEYS = 59
+   SPI_GETACCESSTIMEOUT = 60
+   SPI_SETACCESSTIMEOUT = 61
+   SPI_GETSERIALKEYS = 62
+   SPI_SETSERIALKEYS = 63
+   SPI_GETSOUNDSENTRY = 64
+   SPI_SETSOUNDSENTRY = 65
+   SPI_GETSNAPTODEFBUTTON = 95
+   SPI_SETSNAPTODEFBUTTON = 96
+   SPI_GETMOUSEHOVERWIDTH = 98
+   SPI_SETMOUSEHOVERWIDTH = 99
+   SPI_GETMOUSEHOVERHEIGHT = 100
+   SPI_SETMOUSEHOVERHEIGHT = 101
+   SPI_GETMOUSEHOVERTIME = 102
+   SPI_SETMOUSEHOVERTIME = 103
+   SPI_GETWHEELSCROLLLINES = 104
+   SPI_SETWHEELSCROLLLINES = 105
+   SPI_GETMENUSHOWDELAY = 106
+   SPI_SETMENUSHOWDELAY = 107
+   SPI_GETSHOWIMEUI = 110
+   SPI_SETSHOWIMEUI = 111
+
+   ' Win98/2000 only:
+   SPI_GETMOUSESPEED = 112
+   SPI_SETMOUSESPEED = 113
+   SPI_GETSCREENSAVERRUNNING = 114
+
+   SPI_GETACTIVEWINDOWTRACKING = &amp;H1000&amp;
+   SPI_SETACTIVEWINDOWTRACKING = &amp;H1001&amp;
+   SPI_GETMENUANIMATION = &amp;H1002&amp;
+   SPI_SETMENUANIMATION = &amp;H1003&amp;
+   SPI_GETCOMBOBOXANIMATION = &amp;H1004&amp;
+   SPI_SETCOMBOBOXANIMATION = &amp;H1005&amp;
+   SPI_GETLISTBOXSMOOTHSCROLLING = &amp;H1006&amp;
+   SPI_SETLISTBOXSMOOTHSCROLLING = &amp;H1007&amp;
+   SPI_GETGRADIENTCAPTIONS = &amp;H1008&amp;
+   SPI_SETGRADIENTCAPTIONS = &amp;H1009&amp;
+   SPI_GETKEYBOARDCUES = &amp;H100A&amp;
+   SPI_SETKEYBOARDCUES = &amp;H100B&amp;
+   SPI_GETMENUUNDERLINES = SPI_GETKEYBOARDCUES
+   SPI_SETMENUUNDERLINES = SPI_SETKEYBOARDCUES
+   SPI_GETACTIVEWNDTRKZORDER = &amp;H100C&amp;
+   SPI_SETACTIVEWNDTRKZORDER = &amp;H100D&amp;
+   SPI_GETHOTTRACKING = &amp;H100E&amp;
+   SPI_SETHOTTRACKING = &amp;H100F&amp;
+   SPI_GETMENUFADE = &amp;H1012&amp;
+   SPI_SETMENUFADE = &amp;H1013&amp;
+   SPI_GETSELECTIONFADE = &amp;H1014&amp;
+   SPI_SETSELECTIONFADE = &amp;H1015&amp;
+   SPI_GETTOOLTIPANIMATION = &amp;H1016&amp;
+   SPI_SETTOOLTIPANIMATION = &amp;H1017&amp;
+   SPI_GETTOOLTIPFADE = &amp;H1018&amp;
+   SPI_SETTOOLTIPFADE = &amp;H1019&amp;
+   SPI_GETCURSORSHADOW = &amp;H101A&amp;
+   SPI_SETCURSORSHADOW = &amp;H101B&amp;
+
+   SPI_GETUIEFFECTS = &amp;H103E&amp;
+   SPI_SETUIEFFECTS = &amp;H103F&amp;
+
+   SPI_GETFOREGROUNDLOCKTIMEOUT = &amp;H2000&amp;
+   SPI_SETFOREGROUNDLOCKTIMEOUT = &amp;H2001&amp;
+   SPI_GETACTIVEWNDTRKTIMEOUT = &amp;H2002&amp;
+   SPI_SETACTIVEWNDTRKTIMEOUT = &amp;H2003&amp;
+   SPI_GETFOREGROUNDFLASHCOUNT = &amp;H2004&amp;
+   SPI_SETFOREGROUNDFLASHCOUNT = &amp;H2005&amp;
+   SPI_GETCARETWIDTH = &amp;H2006&amp;
+   SPI_SETCARETWIDTH = &amp;H2007&amp;
+End Enum
+Public Event SettingsChange(ByVal wParam As ESPISystemParamtersInfoConstants)
+
+
+Public Sub Attach(ByVal hWndA As Long)
+   Detach
+   m_hWnd = hWndA
+   AttachMessage Me, m_hWnd, WM_SETTINGCHANGE
+   AttachMessage Me, m_hWnd, WM_DESTROY
+End Sub
+Public Sub Detach()
+   If Not m_hWnd = 0 Then
+      DetachMessage Me, m_hWnd, WM_SETTINGCHANGE
+      DetachMessage Me, m_hWnd, WM_DESTROY
+      m_hWnd = 0
+   End If
+End Sub
+
+Private Sub Class_Terminate()
+   Detach
+End Sub
+
+Private Property Let ISubClass_MsgResponse(ByVal RHS As EMsgResponse)
+   '
+End Property
+
+Private Property Get ISubClass_MsgResponse() As EMsgResponse
+   ISubClass_MsgResponse = emrPreprocess
+End Property
+
+Private Function ISubClass_WindowProc( _
+      ByVal hwnd As Long, ByVal iMsg As Long, _
+      ByVal wParam As Long, ByVal lParam As Long) As Long
+   Select Case iMsg
+   Case WM_SETTINGCHANGE
+      RaiseEvent SettingsChange(wParam)
+   Case WM_DESTROY
+      Detach
+   End Select
+End Function
+</pre><p>To test the class, add a ListBox control to your project's form and then add the following code to the form:</p><pre>
+Option Explicit
+
+Private WithEvents m_c As cSettingsChange
+
+Private Sub Form_Load()
+   Set m_c = New cSettingsChange
+   m_c.Attach Me.hwnd
+End Sub
+
+Private Sub m_c_SettingsChange(ByVal wParam As ESPISystemParamtersInfoConstants)
+   If wParam &gt; SPI__NONSYSTEMPARAMETERSINFOCHANGE Then
+      List1.AddItem "SystemParametersInfo Change: " &amp; wParam
+   Else
+      List1.AddItem "Settings Change"
+   End If
+End Sub
+</pre><p>Run the project. Bring up the system display settings and change some of the colours on the appearance tab. 
+When you choose Apply or OK, an event will be generated and displayed in the ListBox.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Detecting Windows Settings Changes</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 8 January 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Detecting_Windows_Settings_Changes/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:06 GMT -->
+</html>

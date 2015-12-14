@@ -1,0 +1,444 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/SendKeys_using_the_API/SendKeys_Demonstration_zip_cSendKeys_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:19 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cSendKeys.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cSendKeys.cls" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;<a href="article.html">SendKeys using the API</a>&#160;.&#160;<a href="SendKeys_Demonstration.html">SendKeys Demonstration</a>&#160;.&#160;cSendKeys.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="SendKeys_Demonstration.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />SendKeys Demonstration</a> (16K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:12881</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12881&amp;type=Zip&amp;title=SendKeys%20Demonstration%2Ezip%5FcSendKeys">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:11 September 2003</p>
+<br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />5 Sep 2003<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12635">Convert a Character Code to a string describing the Keyboard Keys which must be pressed</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2964">Moving, Clicking and Tracking the MousePointer in Code</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1015">Get the state of a key at any time</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cSendKeys.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cSendKeys"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Public Enum MoreKeyConstants
+   VK_LWIN = &amp;H5B 'Left Windows key (Microsoft Natural keyboard)
+   VK_RWIN = &amp;H5C 'Right Windows key (Natural keyboard)
+   VK_APPS = &amp;H5D 'Applications key (Natural keyboard)
+   VK_SLEEP = &amp;H5F 'Computer Sleep key
+   
+   VK_RMENU = &amp;HA5 ' Right MENU key
+   VK_BROWSER_BACK = &amp;HA6 'Windows 2000/XP: Browser Back key
+   VK_BROWSER_FORWARD = &amp;HA7 'Windows 2000/XP: Browser Forward key
+   VK_BROWSER_REFRESH = &amp;HA8 'Windows 2000/XP: Browser Refresh key
+   VK_BROWSER_STOP = &amp;HA9 'Windows 2000/XP: Browser Stop key
+   VK_BROWSER_SEARCH = &amp;HAA 'Windows 2000/XP: Browser Search key
+   VK_BROWSER_FAVORITES = &amp;HAB 'Windows 2000/XP: Browser Favorites key
+   VK_BROWSER_HOME = &amp;HAC 'Windows 2000/XP: Browser Start and Home key
+   VK_VOLUME_MUTE = &amp;HAD 'Windows 2000/XP: Volume Mute key
+   VK_VOLUME_DOWN = &amp;HAE  'Windows 2000/XP: Volume Down key
+   VK_VOLUME_UP = &amp;HAF  'Windows 2000/XP: Volume Up key
+   VK_MEDIA_NEXT_TRACK = &amp;HB0  'Windows 2000/XP: Next Track key
+   VK_MEDIA_PREV_TRACK = &amp;HB1  'Windows 2000/XP: Previous Track key
+   VK_MEDIA_STOP = &amp;HB2  'Windows 2000/XP: Stop Media key
+   VK_MEDIA_PLAY_PAUSE = &amp;HB3  'Windows 2000/XP: Play/Pause Media key
+   VK_LAUNCH_MAIL = &amp;HB4  'Windows 2000/XP: Start Mail key
+   VK_LAUNCH_MEDIA_SELECT = &amp;HB5  'Windows 2000/XP: Select Media key
+   VK_LAUNCH_APP1 = &amp;HB6  'Windows 2000/XP: Start Application 1 key
+   VK_LAUNCH_APP2 = &amp;HB7  'Windows 2000/XP: Start Application 2 key
+   VK_OEM_1 = &amp;HBA 'Used for miscellaneous characters; it can vary by keyboard.
+    Windows 2000/XP: For the US standard keyboard, the ';:' key
+ 
+   VK_OEM_PLUS = &amp;HBB 'Windows 2000/XP: For any country/region, the '+' key
+   VK_OEM_COMMA = &amp;HBC 'Windows 2000/XP: For any country/region, the ',' key
+   VK_OEM_MINUS = &amp;HBD 'Windows 2000/XP: For any country/region, the '-' key
+   VK_OEM_PERIOD = &amp;HBE 'Windows 2000/XP: For any country/region, the '.' key
+   VK_OEM_2 = &amp;HBF 'Used for miscellaneous characters; it can vary by keyboard.
+    Windows 2000/XP: For the US standard keyboard, the '/?' key
+   VK_OEM_3 = &amp;HC0 'Used for miscellaneous characters; it can vary by keyboard.
+    Windows 2000/XP: For the US standard keyboard, the '`~' key
+
+'  C1D7 Reserved
+'  D8DA Unassigned
+   VK_OEM_4 = &amp;HDB 'Used for miscellaneous characters; it can vary by keyboard.
+    Windows 2000/XP: For the US standard keyboard, the '[{' key
+   VK_OEM_5 = &amp;HDC 'Used for miscellaneous characters; it can vary by keyboard.
+    Windows 2000/XP: For the US standard keyboard, the '\|' key
+   VK_OEM_6 = &amp;HDD 'Used for miscellaneous characters; it can vary by keyboard
+    Windows 2000/XP: For the US standard keyboard, the ']}' key
+   VK_OEM_7 = &amp;HDE ' Used for miscellaneous characters; it can vary by
+    keyboard. Windows 2000/XP: For the US standard keyboard, the
+    'single-quote/double-quote' key
+   VK_OEM_8 = &amp;HDF 'Used for miscellaneous characters; it can vary by keyboard.
+      E0 Reserved
+'- E1 OEM specific
+   VK_OEM_102 = &amp;HE2 'Windows 2000/XP: Either the angle bracket key or the
+    backslash key on the RT 102-key keyboard
+' E3E4 OEM specific
+   VK_PROCESSKEY = &amp;HE5 'Windows 95/98/Me, Windows NT 4.0, Windows 2000/XP: IME
+    PROCESS key
+' E6 OEM specific
+   VK_PACKET = &amp;HE7 'Windows 2000/XP: Used to pass Unicode characters as if
+    they were keystrokes. The VK_PACKET key is the low word of a 32-bit Virtual
+    Key value used for non-keyboard input methods. For more information, see
+    Remark in KEYBDINPUT, SendInput, WM_KEYDOWN, and WM_KEYUP
+'  E8 Unassigned
+' E9F5 OEM specific
+   VK_ATTN = &amp;HF6 'Attn key
+   VK_CRSEL = &amp;HF7 'CrSel key
+   VK_EXSEL = &amp;HF8 'ExSel key
+   VK_EREOF = &amp;HF9 'Erase EOF key
+   VK_PLAY = &amp;HFA 'Play key
+   VK_ZOOM = &amp;HFB 'Zoom key
+   VK_NONAME = &amp;HFC 'Reserved for future use
+   VK_PA1 = &amp;HFD 'PA1 key
+   VK_OEM_CLEAR = &amp;HFE 'Clear key
+End Enum
+
+Private m_colKeyMap As New Collection
+
+Private Declare Sub keybd_event Lib "user32" ( _
+   ByVal bVk As Byte, ByVal bScan As Byte, _
+   ByVal dwFlags As Long, ByVal dwExtraInfo As Long)
+Private Const KEYEVENTF_EXTENDEDKEY = &amp;H1
+Private Const KEYEVENTF_KEYUP = &amp;H2
+
+Private Declare Function GetVersion Lib "kernel32" () As Long
+Private Declare Function VkKeyScan Lib "user32" Alias "VkKeyScanA" ( _
+   ByVal cChar As Byte) As Integer
+Private Declare Function VkKeyScanW Lib "user32" ( _
+   ByVal cChar As Integer) As Integer
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Function nextChar(ByRef sString As String, ByVal iPos As Long, Optional
+ ByVal lLen As Long = 0) As String
+   If (lLen = 0) Then lLen = Len(sString)
+   If (iPos + 1 &lt;= lLen) Then
+      nextChar = Mid$(sString, iPos + 1, 1)
+   End If
+End Function
+
+Public Sub SendKeys(ByVal sKeys As String, Optional ByVal Wait As Boolean)
+
+   ' The plus sign (+), caret (^), percent sign (%),
+   ' tilde (~), and parentheses ( ) have special
+   ' meanings to SendKeys
+   ' Brackets ([ ]) have no special meaning to SendKeys,
+   ' but you must enclose them in braces.
+   ' To specify brace characters, use {{} and {}}.
+   ' Repeating keys: {LEFT 42} do left 42 times.
+   
+   ' + = Shift
+   ' ^ = Ctrl
+   ' % = Alt
+   ' ~ = enter
+   ' ( = start sub expression. +(EC) = Shift then E then C
+      
+On Error GoTo errorHandler
+
+   Dim sMsg As String
+   Dim lErr As Long
+   Dim iPos As Long
+   Dim iNextPos As Long
+   Dim iLen As Long
+   Dim sChar As String
+   Dim colBrace As New Collection
+   Dim sContent As String
+   Dim sKey As String
+   Dim sCount As String
+   Dim lCount As Long
+
+   iPos = 1
+   iLen = Len(sKeys)
+   Do While iPos &lt;= iLen
+   
+      sChar = Mid$(sKeys, iPos, 1)
+      Select Case sChar
+      Case "+", "~", "%"
+         If nextChar(sKeys, iPos, iLen) = "(" Then
+            ' Add to brace stack:
+            colBrace.Add sChar
+            ' send key down
+            Select Case sChar
+            Case "+"
+               KeyDown vbKeyShift
+            Case "~"
+               KeyDown vbKeyControl
+            Case "%"
+               KeyDown vbKeyMenu
+            End Select
+            iPos = iPos + 2
+         Else
+            ' Key press the key (probably not what you wanted)
+            Select Case sChar
+            Case "+"
+               KeyDown vbKeyShift
+               KeyUp vbKeyShift
+            Case "~"
+               KeyDown vbKeyControl
+               KeyUp vbKeyControl
+            Case "%"
+               KeyDown vbKeyMenu
+               KeyUp vbKeyMenu
+            End Select
+            iPos = iPos + 1
+         End If
+      
+      Case "~"
+         ' Enter key:
+         KeyDown vbKeyReturn
+         KeyUp vbKeyReturn
+         iPos = iPos + 1
+         
+      Case ")"
+         If (colBrace.Count &gt; 0) Then
+            sChar = colBrace(colBrace.Count)
+            ' send key up
+            Select Case sChar
+            Case "+"
+               KeyUp vbKeyShift
+            Case "~"
+               KeyUp vbKeyControl
+            Case "%"
+               KeyUp vbKeyMenu
+            End Select
+            colBrace.Remove colBrace.Count
+            iPos = iPos + 1
+         Else
+            ' Invalid sendkeys command:
+            sMsg = "Invalid sendkeys command: unmatched ) at position " &amp; iPos
+            GoTo errorHandler
+         End If
+      
+      Case "{"
+         ' special key
+         If (iPos + 2 &gt; iLen) Then
+            sMsg = "Invalid sendkeys command; opening { without content or
+             closing } at position " &amp; iPos
+            GoTo errorHandler
+         Else
+            iNextPos = InStr(iPos + 2, sKeys, "}")
+            If (iNextPos = 0) Then
+               sMsg = "Invalid sendkeys command; opening { without closing } at
+                position " &amp; iPos
+               GoTo errorHandler
+            Else
+               sContent = Mid$(sKeys, iPos + 1, iNextPos - iPos - 1)
+               iPos = iNextPos + 1
+               ' is this a key/presses pair?
+               iNextPos = InStr(sContent, " ")
+               If (iNextPos &gt; 0) Then
+                  sKey = Left$(sContent, iNextPos - 1)
+                  sCount = Mid$(sContent, iNextPos + 1)
+                  If Not (IsNumeric(sCount)) Then
+                     sMsg = "Invalid sendkeys command; key repetitions '" &amp;
+                      sCount &amp; "' is invalid near position " &amp; iPos
+                     lCount = CLng(sCount)
+                  End If
+               Else
+                  sKey = sContent
+                  lCount = 1
+               End If
+               KeyPress sKey, lCount
+               
+            End If
+         End If
+         
+      Case Else
+         ' send the key as is
+         KeyPress sChar, 1
+         iPos = iPos + 1
+         
+      End Select
+   
+   Loop
+   
+   If (colBrace.Count &gt; 0) Then
+      sMsg = "Invalid sendkeys command: more open brackets than close brackets."
+      GoTo errorHandler
+   End If
+   
+   Exit Sub
+   
+errorHandler:
+   If Len(sMsg) = 0 Then
+      sMsg = Err.Description
+      lErr = Err.Number
+   End If
+   
+   ' If we don't clear up the shift/control/alt keys,
+   ' then you might find other apps on the system are hard to
+   ' use.
+   ' Make sure you have Break on Unhandled Errors switched
+   ' on.
+   Do While colBrace.Count &gt; 0
+      sChar = colBrace(colBrace.Count)
+      ' send key up
+      Select Case sChar
+      Case "+"
+         KeyUp vbKeyShift
+      Case "~"
+         KeyUp vbKeyControl
+      Case "%"
+         KeyUp vbKeyMenu
+      End Select
+      colBrace.Remove colBrace.Count
+   Loop
+   
+   On Error GoTo 0
+   Err.Raise lErr, App.EXEName &amp; ".cSendKeys", sMsg
+   
+   Exit Sub
+
+End Sub
+
+Public Sub KeyPress(ByVal sKey As String, Optional ByVal lCount = 1)
+Dim vKey As KeyCodeConstants
+Dim l As Long
+
+   On Error Resume Next
+   vKey = m_colKeyMap(sKey)
+   On Error GoTo 0
+   
+   If (vKey = 0) Then
+      ' translate string into v key code
+      vKey = KeyCode(sKey)
+   End If
+   
+   If (vKey &lt;&gt; 0) Then
+      For l = 1 To lCount
+         KeyDown vKey
+         KeyUp vKey
+      Next l
+   Else
+      Err.Raise 9, , "Key " &amp; sKey &amp; " could not be interpreted."
+   End If
+   
+End Sub
+
+Public Sub KeyDown(ByVal vKey As KeyCodeConstants)
+   keybd_event vKey, 0, KEYEVENTF_EXTENDEDKEY, 0
+End Sub
+
+Public Sub KeyUp(ByVal vKey As KeyCodeConstants)
+   keybd_event vKey, 0, KEYEVENTF_EXTENDEDKEY Or KEYEVENTF_KEYUP, 0
+End Sub
+
+Public Function KeyCode(ByVal sChar As String) As KeyCodeConstants
+Dim bNt As Boolean
+Dim iKeyCode As Integer
+Dim b() As Byte
+Dim iKey As Integer
+Dim vKey As KeyCodeConstants
+Dim iShift As ShiftConstants
+
+   ' Determine if we have Unicode support or not:
+   bNt = ((GetVersion() And &amp;H80000000) = 0)
+   
+   ' Get the keyboard scan code for the character:
+   If (bNt) Then
+      b = sChar
+      CopyMemory iKey, b(0), 2
+      iKeyCode = VkKeyScanW(iKey)
+   Else
+      b = StrConv(sChar, vbFromUnicode)
+      iKeyCode = VkKeyScan(b(0))
+   End If
+   
+   KeyCode = (iKeyCode And &amp;HFF&amp;)
+
+End Function
+
+
+Private Sub Class_Initialize()
+
+   m_colKeyMap.Add vbKeyBack, "BACKSPACE"
+   m_colKeyMap.Add vbKeyBack, "BS"
+   m_colKeyMap.Add vbKeyBack, "BKSP"
+   m_colKeyMap.Add vbKeyPause, "BREAK"
+   m_colKeyMap.Add vbKeyCapital, "CAPSLOCK"
+   m_colKeyMap.Add vbKeyDelete, "DELETE"
+   m_colKeyMap.Add vbKeyDelete, "DEL"
+   m_colKeyMap.Add vbKeyDown, "DOWN"
+   m_colKeyMap.Add vbKeyEnd, "END"
+   m_colKeyMap.Add vbKeyReturn, "ENTER"
+   m_colKeyMap.Add vbKeyReturn, "~"
+   m_colKeyMap.Add vbKeyEscape, "ESC"
+   m_colKeyMap.Add vbKeyHelp, "HELP"
+   m_colKeyMap.Add vbKeyHome, "HOME"
+   m_colKeyMap.Add vbKeyInsert, "INS"
+   m_colKeyMap.Add vbKeyInsert, "INSERT"
+   m_colKeyMap.Add vbKeyLeft, "LEFT"
+   m_colKeyMap.Add vbKeyNumlock, "NUMLOCK"
+   m_colKeyMap.Add vbKeyPageDown, "PGDN"
+   m_colKeyMap.Add vbKeyPageUp, "PGUP"
+   m_colKeyMap.Add vbKeyPrint, "PRTSC"
+   m_colKeyMap.Add vbKeyRight, "RIGHT"
+   m_colKeyMap.Add vbKeyScrollLock, "SCROLLLOCK"
+   m_colKeyMap.Add vbKeyTab, "TAB"
+   m_colKeyMap.Add vbKeyUp, "UP"
+   m_colKeyMap.Add vbKeyF1, "F1"
+   m_colKeyMap.Add vbKeyF2, "F2"
+   m_colKeyMap.Add vbKeyF3, "F3"
+   m_colKeyMap.Add vbKeyF4, "F4"
+   m_colKeyMap.Add vbKeyF5, "F5"
+   m_colKeyMap.Add vbKeyF6, "F6"
+   m_colKeyMap.Add vbKeyF7, "F7"
+   m_colKeyMap.Add vbKeyF8, "F8"
+   m_colKeyMap.Add vbKeyF9, "F9"
+   m_colKeyMap.Add vbKeyF10, "F10"
+   m_colKeyMap.Add vbKeyF11, "F11"
+   m_colKeyMap.Add vbKeyF12, "F12"
+   m_colKeyMap.Add vbKeyF13, "F13"
+   m_colKeyMap.Add vbKeyF14, "F14"
+   m_colKeyMap.Add vbKeyF15, "F15"
+   m_colKeyMap.Add vbKeyF16, "F16"
+
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;<a href="article.html">SendKeys using the API</a>&#160;.&#160;<a href="SendKeys_Demonstration.html">SendKeys Demonstration</a>&#160;.&#160;cSendKeys.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 8 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/SendKeys_using_the_API/SendKeys_Demonstration_zip_cSendKeys_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:19 GMT -->
+</html>

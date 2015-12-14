@@ -1,0 +1,2247 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Tab_Controls/vbAccelerator_ComCtl32_Tab_Control/VB6_TabStrip_Control_Full_Source_zip_cTabCtrl_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:53 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cTabCtrl.ctl</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cTabCtrl.ctl" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Tab Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator TabStrip Control</a>&#160;.&#160;<a href="VB6_TabStrip_Control_Full_Source.html">VB6 TabStrip Control Full Source</a>&#160;.&#160;cTabCtrl.ctl</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_TabStrip_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 TabStrip Control Binary</a> (19K)</p><p class="nav"><a href="VB5_TabStrip_Control_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 TabStrip Control Demonstration</a> (18K)</p><p class="nav"><a href="VB5_TabStrip_Control_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 TabStrip Control Full Source</a> (57K)</p><p /><p class="nav"><a href="VB6_TabStrip_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TabStrip Control Binary</a> (20K)</p><p class="nav"><a href="VB6_TabStrip_Control_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TabStrip Control Demonstration</a> (16K)</p><p class="nav"><a href="VB6_TabStrip_Control_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TabStrip Control Full Source</a> (57K)</p><p /><p class="nav"><a href="vbalTabStrip_Interface_Definition.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />vbalTabStrip Interface Definition</a> (2K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2809</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2809&amp;type=Zip&amp;title=VB6%20TabStrip%20Control%20Full%20Source%2Ezip%5FcTabCtrl">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 2 / 2</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:23 October 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />7 Jan 2003<br /><p class="updated">Added XP Visual Styles Manifest</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1427">Adding XP Visual Styles to Your Visual Basic Application</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cTabCtrl.ctl</h1><pre>VERSION 5.00
+Begin VB.UserControl TabControl 
+   ClientHeight    =   495
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   2685
+   ControlContainer=   -1  'True
+   ScaleHeight     =   495
+   ScaleWidth      =   2685
+   ToolboxBitmap   =   "cTabCtrl.ctx":0000
+   Begin VB.Label lblInfo 
+      Caption         =   "vbAccelerator TabStrip Control"
+      Height          =   195
+      Left            =   60
+      TabIndex        =   0
+      Top             =   60
+      Width           =   2595
+   End
+End
+Attribute VB_Name = "TabControl"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+' ======================================================================
+' Declares and types:
+' ======================================================================
+' Windows general:
+Private Const WM_DESTROY = &amp;H2
+Private Const WM_SETFOCUS = &amp;H7
+Private Const WM_PAINT = &amp;HF
+Private Const WM_ERASEBKGND = &amp;H14
+Private Const WM_MOUSEACTIVATE = &amp;H21
+Private Const WM_DRAWITEM = &amp;H2B
+Private Const WM_MEASUREITEM = &amp;H2C
+Private Const WM_NOTIFY = &amp;H4E
+Private Const WM_NCPAINT = &amp;H85
+Private Const WM_KEYDOWN = &amp;H100
+Private Const WM_USER = &amp;H400
+
+Private Const MA_NOACTIVATE = 3
+Private Declare Function SetFocusAPI Lib "user32" Alias "SetFocus" (ByVal hwnd
+ As Long) As Long
+Private Declare Function SendMessageLong Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Declare Function SendMessageStr Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ String) As Long
+Private Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+Private Declare Function CreateWindowEx Lib "user32" Alias "CreateWindowExA"
+ (ByVal dwExStyle As Long, ByVal lpClassName As String, ByVal lpWindowName As
+ String, ByVal dwStyle As Long, ByVal x As Long, ByVal y As Long, ByVal nWidth
+ As Long, ByVal nHeight As Long, ByVal hWndParent As Long, ByVal hMenu As Long,
+ ByVal hInstance As Long, lpParam As Any) As Long
+Private Declare Function GetWindowRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function OffsetRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function ScreenToClient Lib "user32" (ByVal hwnd As Long,
+ lpPoint As POINTAPI) As Long
+Private Declare Function ShowWindow Lib "user32" (ByVal hwnd As Long, ByVal
+ nCmdShow As Long) As Long
+Private Declare Function MoveWindow Lib "user32" (ByVal hwnd As Long, ByVal x
+ As Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ bRepaint As Long) As Long
+Private Declare Function SetWindowPos Lib "user32" (ByVal hwnd As Long, ByVal
+ hWndInsertAfter As Long, ByVal x As Long, ByVal y As Long, ByVal cx As Long,
+ ByVal cy As Long, ByVal wFlags As Long) As Long
+Private Declare Function DestroyWindow Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function SetParent Lib "user32" (ByVal hWndChild As Long, ByVal
+ hWndNewParent As Long) As Long
+Private Declare Function GetParent Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function FindWindowEx Lib "user32" Alias "FindWindowExA" (ByVal
+ hWnd1 As Long, ByVal hWnd2 As Long, ByVal lpsz1 As String, ByVal lpsz2 As
+ String) As Long
+Private Declare Function GetDC Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function ReleaseDC Lib "user32" (ByVal hwnd As Long, ByVal hdc
+ As Long) As Long
+Private Declare Function IsWindowVisible Lib "user32" (ByVal hwnd As Long) As
+ Long
+Private Declare Function IsWindowEnabled Lib "user32" (ByVal hwnd As Long) As
+ Long
+Private Declare Function SetFocus Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function GetFocus Lib "user32" () As Long
+Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long) As Long
+Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long
+Private Declare Function InvalidateRectAsNull Lib "user32" Alias
+ "InvalidateRect" (ByVal hwnd As Long, lpRect As Any, ByVal bErase As Long) As
+ Long
+Private Declare Function UpdateWindow Lib "user32" (ByVal hwnd As Long) As Long
+Private Const SW_HIDE = 0
+Private Const SWP_FRAMECHANGED = &amp;H20        '  The frame changed: send
+ WM_NCCALCSIZE
+Private Const SWP_NOACTIVATE = &amp;H10
+Private Const SWP_NOMOVE = &amp;H2
+Private Const SWP_NOOWNERZORDER = &amp;H200      '  Don't do owner Z ordering
+Private Const SWP_NOZORDER = &amp;H4
+Private Const WS_CHILD = &amp;H40000000
+Private Const WS_VISIBLE = &amp;H10000000
+Private Const WS_CLIPCHILDREN = &amp;H2000000
+Private Const WS_CLIPSIBLINGS = &amp;H4000000
+Private Const WS_BORDER = &amp;H800000
+Private Const WM_SETFONT = &amp;H30
+Private Const GWL_STYLE = (-16)
+' Font
+Private Const LF_FACESIZE = 32
+Private Type LOGFONT
+    lfHeight As Long
+    lfWidth As Long
+    lfEscapement As Long
+    lfOrientation As Long
+    lfWeight As Long
+    lfItalic As Byte
+    lfUnderline As Byte
+    lfStrikeOut As Byte
+    lfCharSet As Byte
+    lfOutPrecision As Byte
+    lfClipPrecision As Byte
+    lfQuality As Byte
+    lfPitchAndFamily As Byte
+    lfFaceName(LF_FACESIZE) As Byte
+End Type
+Private Const FW_NORMAL = 400
+Private Const FW_BOLD = 700
+Private Const FF_DONTCARE = 0
+Private Const DEFAULT_QUALITY = 0
+Private Const DEFAULT_PITCH = 0
+Private Const DEFAULT_CHARSET = 1
+Private Declare Function CreateFontIndirect&amp; Lib "gdi32" Alias
+ "CreateFontIndirectA" (lpLogFont As LOGFONT)
+Private Declare Function MulDiv Lib "kernel32" (ByVal nNumber As Long, ByVal
+ nNumerator As Long, ByVal nDenominator As Long) As Long
+Private Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal
+ hObject As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+Private Declare Function GetDeviceCaps Lib "gdi32" (ByVal hdc As Long, ByVal
+ nIndex As Long) As Long
+    Private Const BITSPIXEL = 12
+    Private Const LOGPIXELSX = 88    '  Logical pixels/inch in X
+    Private Const LOGPIXELSY = 90    '  Logical pixels/inch in Y
+Private Type POINTAPI
+    x As Long
+    y As Long
+End Type
+Private Type RECT
+    Left As Long
+    Top As Long
+    Right As Long
+    Bottom As Long
+End Type
+' Owner draw item measure:
+Private Type MEASUREITEMSTRUCT
+    CtlType As Long
+    CtlID As Long
+    ItemId As Long
+    itemWidth As Long
+    itemHeight As Long
+    itemData As Long
+End Type
+' Owner draw item draw:
+Private Type DRAWITEMSTRUCT
+    CtlType As Long
+    CtlID As Long
+    ItemId As Long
+    ItemAction As Long
+    ItemState As Long
+    hwndItem As Long
+    hdc As Long
+    rcItem As RECT
+    itemData As Long
+End Type
+Private Const ODS_SELECTED = &amp;H1
+Private Const ODT_HEADER = 100
+Private Const ODT_TAB = 101
+Private Const ODT_LISTVIEW = 102
+Private Declare Function MoveToEx Lib "gdi32" (ByVal hdc As Long, ByVal x As
+ Long, ByVal y As Long, lpPoint As POINTAPI) As Long
+Private Declare Function LineTo Lib "gdi32" (ByVal hdc As Long, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function GetSysColor Lib "user32" (ByVal nIndex As Long) As Long
+Private Declare Function CreatePen Lib "gdi32" (ByVal nPenStyle As Long, ByVal
+ nWidth As Long, ByVal crColor As Long) As Long
+Private Declare Function Rectangle Lib "gdi32" (ByVal hdc As Long, ByVal X1 As
+ Long, ByVal Y1 As Long, ByVal X2 As Long, ByVal Y2 As Long) As Long
+Private Declare Function SetPixel Lib "gdi32" (ByVal hdc As Long, ByVal x As
+ Long, ByVal y As Long, ByVal crColor As Long) As Long
+Private Declare Function FillRect Lib "user32" (ByVal hdc As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+Private Declare Function SetBkColor Lib "gdi32" (ByVal hdc As Long, ByVal
+ crColor As Long) As Long
+Private Declare Function SetBkMode Lib "gdi32" (ByVal hdc As Long, ByVal
+ nBkMode As Long) As Long
+Private Const TRANSPARENT = 1
+Private Declare Function CreateSolidBrush Lib "gdi32" (ByVal crColor As Long)
+ As Long
+Private Declare Function GetSysColorBrush Lib "user32" (ByVal nIndex As Long)
+ As Long
+Private Declare Function SetTextColor Lib "gdi32" (ByVal hdc As Long, ByVal
+ crColor As Long) As Long
+Private Const PS_DASH = 1
+Private Const PS_DASHDOT = 3
+Private Const PS_DASHDOTDOT = 4
+Private Const PS_DOT = 2
+Private Const PS_SOLID = 0
+Private Const PS_NULL = 5
+
+Private Declare Function DrawText Lib "user32" Alias "DrawTextA" (ByVal hdc As
+ Long, ByVal lpStr As String, ByVal nCount As Long, lpRect As RECT, ByVal
+ wFormat As Long) As Long
+Private Const DT_CENTER = &amp;H1
+Private Const DT_VCENTER = &amp;H4
+Private Const DT_SINGLELINE = &amp;H20
+
+Private Declare Function ImageList_GetIconSize Lib "COMCTL32" (ByVal hImageList
+ As Long, cx As Long, cy As Long) As Long
+' Draw:
+Private Declare Function ImageList_Draw Lib "COMCTL32.DLL" ( _
+        ByVal hIml As Long, _
+        ByVal i As Long, _
+        ByVal hdcDst As Long, _
+        ByVal x As Long, _
+        ByVal y As Long, _
+        ByVal fStyle As Long _
+    ) As Long
+Private Const ILD_NORMAL = 0&amp;
+Private Const ILD_TRANSPARENT = 1&amp;
+Private Const ILD_BLEND25 = 2&amp;
+Private Const ILD_SELECTED = 4&amp;
+Private Const ILD_FOCUS = 4&amp;
+Private Const ILD_MASK = &amp;H10&amp;
+Private Const ILD_IMAGE = &amp;H20&amp;
+Private Const ILD_ROP = &amp;H40&amp;
+Private Const ILD_OVERLAYMASK = 3840&amp;
+
+Private Type PAINTSTRUCT
+   hdc As Long
+   fErase As Long
+   rcPaint As RECT
+   fRestore As Long
+   fIncUpdate As Long
+   rgbReserved(0 To 31) As Byte
+End Type
+Private Declare Function BeginPaint Lib "user32" (ByVal hwnd As Long, lpPaint
+ As PAINTSTRUCT) As Long
+Private Declare Function EndPaint Lib "user32" (ByVal hwnd As Long, lpPaint As
+ PAINTSTRUCT) As Long
+
+' Common controls general:
+Private Declare Sub InitCommonControls Lib "COMCTL32.DLL" ()
+Private Type NMHDR
+    hwndFrom As Long
+    idfrom As Long
+    code As Long
+End Type
+Private Const TCM_FIRST = &amp;H1300                   '// Tab control messages
+Private Const CCM_FIRST = &amp;H2000                   '// Common control shared
+ messages
+Private Const CCM_SETUNICODEFORMAT = (CCM_FIRST + 5)
+Private Const CCM_GETUNICODEFORMAT = (CCM_FIRST + 6)
+Private Const H_MAX As Long = &amp;HFFFF + 1
+Private Const TCN_FIRST = H_MAX - 550                  '// tab control
+Private Const NM_FIRST = H_MAX
+Private Const NM_RCLICK = (NM_FIRST - 5)               '// uses NMCLICK struct
+
+Private Const CCM_SETBKCOLOR = (CCM_FIRST + 1)         '// lParam is bkColor
+Private Type COLORSCHEME
+   dwSize As Long
+   clrBtnHighlight As Long '       // highlight color
+   clrBtnShadow As Long          '// shadow color
+End Type
+Private Const CCM_SETCOLORSCHEME = (CCM_FIRST + 2)     '// lParam is color
+ scheme
+Private Const CCM_GETCOLORSCHEME = (CCM_FIRST + 3)     '// fills in COLORSCHEME
+ pointed to by lParam
+
+'ToolTip Notification
+Private Type NMTTDISPINFO
+    hdr As NMHDR
+    lpszText As Long
+    szText(0 To 79) As Byte
+    hinst As Long
+    uFlags As Long
+    lParam As Long
+End Type
+Private Const TTN_FIRST = (H_MAX - 520&amp;)
+Private Const TTN_NEEDTEXTA = (TTN_FIRST - 0&amp;)
+Private Const TTN_NEEDTEXT = TTN_NEEDTEXTA
+Private Const TTM_ACTIVATE = (WM_USER + 1)
+
+
+' //====== TAB CONTROL
+ ==========================================================
+
+' #ifndef NOTABCONTROL
+
+' #ifdef _WIN32
+
+Private Const WC_TABCONTROLA = "SysTabControl32"
+'private const WC_TABCONTROLW          L"SysTabControl32"
+' #ifdef UNICODE
+'private const  WC_TABCONTROL          WC_TABCONTROLW
+' #Else
+Private Const WC_TABCONTROL = WC_TABCONTROLA
+' #End If
+
+' #Else
+'private const WC_TABCONTROL           "SysTabControl"
+' #End If
+
+' // begin_r_commctrl
+
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+Private Const TCS_SCROLLOPPOSITE = &amp;H1          ' // assumes multiline tab
+Private Const TCS_BOTTOM = &amp;H2
+Private Const TCS_RIGHT = &amp;H2
+Private Const TCS_MULTISELECT = &amp;H4            ' // allow multi-select in
+ button mode
+' #End If
+' #if (_WIN32_IE &gt;= =&amp;H0400)
+Private Const TCS_FLATBUTTONS = &amp;H8
+' #End If
+Private Const TCS_FORCEICONLEFT = &amp;H10
+Private Const TCS_FORCELABELLEFT = &amp;H20
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+Private Const TCS_HOTTRACK = &amp;H40
+Private Const TCS_VERTICAL = &amp;H80
+' #End If
+Private Const TCS_TABS = &amp;H0
+Private Const TCS_BUTTONS = &amp;H100
+Private Const TCS_SINGLELINE = &amp;H0
+Private Const TCS_MULTILINE = &amp;H200
+Private Const TCS_RIGHTJUSTIFY = &amp;H0
+Private Const TCS_FIXEDWIDTH = &amp;H400
+Private Const TCS_RAGGEDRIGHT = &amp;H800
+Private Const TCS_FOCUSONBUTTONDOWN = &amp;H1000
+Private Const TCS_OWNERDRAWFIXED = &amp;H2000
+Private Const TCS_TOOLTIPS = &amp;H4000
+Private Const TCS_FOCUSNEVER = &amp;H8000
+
+' #if (_WIN32_IE &gt;= =&amp;H0400)
+' // EX styles for use with TCM_SETEXTENDEDSTYLE
+Private Const TCS_EX_FLATSEPARATORS = &amp;H1
+Private Const TCS_EX_REGISTERDROP = &amp;H2
+' #End If
+
+' // end_r_commctrl
+
+
+Private Const TCM_GETIMAGELIST = (TCM_FIRST + 2)
+'private const TabCtrl_GetImageList(hwnd) \
+'    (HIMAGELIST)SNDMSG((hwnd), TCM_GETIMAGELIST, 0, 0L)
+
+
+Private Const TCM_SETIMAGELIST = (TCM_FIRST + 3)
+    'private const TabCtrl_SetImageList(hwnd, himl) \
+    '    (HIMAGELIST)SNDMSG((hwnd), TCM_SETIMAGELIST, 0,
+     (LPARAM)(UINT)(HIMAGELIST)(himl))
+
+
+Private Const TCM_GETITEMCOUNT = (TCM_FIRST + 4)
+    'private const TabCtrl_GetItemCount(hwnd) \
+    '    (int)SNDMSG((hwnd), TCM_GETITEMCOUNT, 0, 0L)
+
+Private Const TCIF_TEXT = &amp;H1
+Private Const TCIF_IMAGE = &amp;H2
+Private Const TCIF_RTLREADING = &amp;H4
+Private Const TCIF_PARAM = &amp;H8
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+Private Const TCIF_STATE = &amp;H10
+
+
+Private Const TCIS_BUTTONPRESSED = &amp;H1
+' #End If
+' #if (_WIN32_IE &gt;= =&amp;H0400)
+Private Const TCIS_HIGHLIGHTED = &amp;H2
+' #End If
+
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+'Private Const TC_ITEMHEADERA = TCITEMHEADERA
+'private const TC_ITEMHEADERW         TCITEMHEADERW
+' #Else
+'private const tagTCITEMHEADERA       _TC_ITEMHEADERA
+'private const    TCITEMHEADERA        TC_ITEMHEADERA
+'private const tagTCITEMHEADERW       _TC_ITEMHEADERW
+'private const    TCITEMHEADERW        TC_ITEMHEADERW
+' #End If
+'private const TC_ITEMHEADER          TCITEMHEADER
+
+Private Type TCITEMHEADER
+    mask As Long
+    lpReserved1 As Long
+    lpReserved2 As Long
+    pszText As String
+    cchTextMax As Long
+    iImage As Long
+End Type
+Private Type TCITEMHEADER_NOTEXT
+    mask As Long
+    lpReserved1 As Long
+    lpReserved2 As Long
+    pszText As Long
+    cchTextMax As Long
+    iImage As Long
+End Type
+
+'typedef struct tagTCITEMHEADERW
+'{
+'    UINT mask;
+'    UINT lpReserved1;
+'    UINT lpReserved2;
+'    LPWSTR pszText;
+'    int cchTextMax;
+'    int iImage;
+'} TCITEMHEADERW, FAR *LPTCITEMHEADERW;
+
+' #ifdef UNICODE
+'private const  TCITEMHEADER          TCITEMHEADERW
+'private const  LPTCITEMHEADER        LPTCITEMHEADERW
+'' #Else
+'private const  TCITEMHEADER          TCITEMHEADERA
+'private const  LPTCITEMHEADER        LPTCITEMHEADERA
+' #End If
+
+
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+'private const TC_ITEMA                TCITEMA
+'private const TC_ITEMW                TCITEMW
+' #Else
+'private const tagTCITEMA              _TC_ITEMA
+'private const    TCITEMA               TC_ITEMA
+'private const tagTCITEMW              _TC_ITEMW
+'private const    TCITEMW               TC_ITEMW
+' #End If
+'private const TC_ITEM                 TCITEM
+
+Private Type TCITEM
+    mask As Long
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+    dwState As Long
+    dwStateMask As Long
+' #Else
+'    UINT lpReserved1;
+'    UINT lpReserved2;
+' #End If
+    pszText As String
+    cchTextMax As Long
+    iImage As Long
+
+    lParam As Long
+End Type
+
+'typedef struct tagTCITEMW
+'{
+'    UINT mask;
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+'    DWORD dwState;
+'    DWORD dwStateMask;
+' #Else
+'    UINT lpReserved1;
+'    UINT lpReserved2;
+' #End If
+'    LPWSTR pszText;
+'    int cchTextMax;
+'    int iImage;
+
+'    LPARAM lParam;
+'} TCITEMW, FAR *LPTCITEMW;
+'
+' #ifdef UNICODE
+'private const  TCITEM                 TCITEMW
+'private const  LPTCITEM               LPTCITEMW
+' #Else
+'private const  TCITEM                 TCITEMA
+'private const  LPTCITEM               LPTCITEMA
+' #End If
+
+
+Private Const TCM_GETITEMA = (TCM_FIRST + 5)
+Private Const TCM_GETITEMW = (TCM_FIRST + 60)
+
+' #ifdef UNICODE
+'private const TCM_GETITEM             TCM_GETITEMW
+' #Else
+Private Const TCM_GETITEM = TCM_GETITEMA
+' #End If
+
+'private const TabCtrl_GetItem(hwnd, iItem, pitem) \
+'    (BOOL)SNDMSG((hwnd), TCM_GETITEM, (WPARAM)(int)iItem, (LPARAM)=(TC_ITEM
+ FAR*)(pitem))
+
+
+Private Const TCM_SETITEMA = (TCM_FIRST + 6)
+Private Const TCM_SETITEMW = (TCM_FIRST + 61)
+
+' #ifdef UNICODE
+'private const TCM_SETITEM             TCM_SETITEMW
+' #Else
+Private Const TCM_SETITEM = TCM_SETITEMA
+' #End If
+
+'private const TabCtrl_SetItem(hwnd, iItem, pitem) \
+'    (BOOL)SNDMSG((hwnd), TCM_SETITEM, (WPARAM)(int)iItem, (LPARAM)=(TC_ITEM
+ FAR*)(pitem))
+
+
+Private Const TCM_INSERTITEMA = (TCM_FIRST + 7)
+Private Const TCM_INSERTITEMW = (TCM_FIRST + 62)
+
+' #ifdef UNICODE
+'private const TCM_INSERTITEM          TCM_INSERTITEMW
+' #Else
+Private Const TCM_INSERTITEM = TCM_INSERTITEMA
+' #End If
+
+'private const TabCtrl_InsertItem(hwnd, iItem, pitem)   \
+'    (int)SNDMSG((hwnd), TCM_INSERTITEM, (WPARAM)(int)iItem, (LPARAM)(const
+ TC_ITEM FAR*)(pitem))
+
+
+Private Const TCM_DELETEITEM = (TCM_FIRST + 8)
+'private const TabCtrl_DeleteItem(hwnd, i) \
+'    (BOOL)SNDMSG((hwnd), TCM_DELETEITEM, (WPARAM)(int)(i), 0L)
+
+
+Private Const TCM_DELETEALLITEMS = (TCM_FIRST + 9)
+'private const TabCtrl_DeleteAllItems(hwnd) \
+'    (BOOL)SNDMSG((hwnd), TCM_DELETEALLITEMS, 0, 0L)
+
+
+Private Const TCM_GETITEMRECT = (TCM_FIRST + 10)
+'private const TabCtrl_GetItemRect(hwnd, i, prc) \
+'    (BOOL)SNDMSG((hwnd), TCM_GETITEMRECT, (WPARAM)(int)(i), (LPARAM)(RECT
+ FAR*)(prc))
+
+
+Private Const TCM_GETCURSEL = (TCM_FIRST + 11)
+'private const TabCtrl_GetCurSel(hwnd) \
+'    (int)SNDMSG((hwnd), TCM_GETCURSEL, 0, 0)
+
+
+Private Const TCM_SETCURSEL = (TCM_FIRST + 12)
+'private const TabCtrl_SetCurSel(hwnd, i) \
+'    (int)SNDMSG((hwnd), TCM_SETCURSEL, (WPARAM)i, 0)
+
+
+Private Const TCHT_NOWHERE = &amp;H1
+Private Const TCHT_ONITEMICON = &amp;H2
+Private Const TCHT_ONITEMLABEL = &amp;H4
+Private Const TCHT_ONITEM = (TCHT_ONITEMICON Or TCHT_ONITEMLABEL)
+
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+'private const LPTC_HITTESTINFO        LPTCHITTESTINFO
+'private const TC_HITTESTINFO          TCHITTESTINFO
+' #Else
+'private const tagTCHITTESTINFO        _TC_HITTESTINFO
+'private const    TCHITTESTINFO         TC_HITTESTINFO
+'private const  LPTCHITTESTINFO       LPTC_HITTESTINFO
+' #End If
+
+Private Type TCHITTESTINFO
+    pt As POINTAPI
+    flags As Long
+End Type
+
+Private Const TCM_HITTEST = (TCM_FIRST + 13)
+'private const TabCtrl_HitTest(hwndTC, pinfo) \
+'    (int)SNDMSG((hwndTC), TCM_HITTEST, 0, (LPARAM)=(TC_HITTESTINFO
+ FAR*)(pinfo))
+
+
+Private Const TCM_SETITEMEXTRA = (TCM_FIRST + 14)
+'private const TabCtrl_SetItemExtra(hwndTC, cb) \
+'    (BOOL)SNDMSG((hwndTC), TCM_SETITEMEXTRA, (WPARAM)(cb), 0L)
+
+
+Private Const TCM_ADJUSTRECT = (TCM_FIRST + 40)
+'private const TabCtrl_AdjustRect(hwnd, bLarger, prc) \
+'    (int)SNDMSG(hwnd, TCM_ADJUSTRECT, (WPARAM)(BOOL)bLarger, (LPARAM)(RECT FAR
+ *)prc)
+
+
+Private Const TCM_SETITEMSIZE = (TCM_FIRST + 41)
+'private const TabCtrl_SetItemSize(hwnd, x, y) \
+'    (DWORD)SNDMSG((hwnd), TCM_SETITEMSIZE, 0, MAKELPARAM(x,y))
+
+
+Private Const TCM_REMOVEIMAGE = (TCM_FIRST + 42)
+'private const TabCtrl_RemoveImage(hwnd, i) \
+'        (void)SNDMSG((hwnd), TCM_REMOVEIMAGE, i, 0L)
+
+
+Private Const TCM_SETPADDING = (TCM_FIRST + 43)
+'private const TabCtrl_SetPadding(hwnd,  cx, cy) \
+'        (void)SNDMSG((hwnd), TCM_SETPADDING, 0, MAKELPARAM(cx, cy))
+
+
+Private Const TCM_GETROWCOUNT = (TCM_FIRST + 44)
+'private const TabCtrl_GetRowCount(hwnd) \
+'        (int)SNDMSG((hwnd), TCM_GETROWCOUNT, 0, 0L)
+
+
+Private Const TCM_GETTOOLTIPS = (TCM_FIRST + 45)
+'private const TabCtrl_GetToolTips(hwnd) \
+'        (HWND)SNDMSG((hwnd), TCM_GETTOOLTIPS, 0, 0L)
+
+
+Private Const TCM_SETTOOLTIPS = (TCM_FIRST + 46)
+'private const TabCtrl_SetToolTips(hwnd, hwndTT) \
+'        (void)SNDMSG((hwnd), TCM_SETTOOLTIPS, (WPARAM)hwndTT, 0L)
+
+
+Private Const TCM_GETCURFOCUS = (TCM_FIRST + 47)
+'private const TabCtrl_GetCurFocus(hwnd) \
+'    (int)SNDMSG((hwnd), TCM_GETCURFOCUS, 0, 0)
+
+Private Const TCM_SETCURFOCUS = (TCM_FIRST + 48)
+'private const TabCtrl_SetCurFocus(hwnd, i) \
+'    SNDMSG((hwnd),TCM_SETCURFOCUS, i, 0)
+
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+Private Const TCM_SETMINTABWIDTH = (TCM_FIRST + 49)
+'private const TabCtrl_SetMinTabWidth(hwnd, x) \
+'        (int)SNDMSG((hwnd), TCM_SETMINTABWIDTH, 0, x)
+
+
+Private Const TCM_DESELECTALL = (TCM_FIRST + 50)
+'private const TabCtrl_DeselectAll(hwnd, fExcludeFocus)\
+'        (void)SNDMSG((hwnd), TCM_DESELECTALL, fExcludeFocus, 0)
+' #End If
+
+' #if (_WIN32_IE &gt;= =&amp;H0400)
+
+Private Const TCM_HIGHLIGHTITEM = (TCM_FIRST + 51)
+'private const TabCtrl_HighlightItem(hwnd, i, fHighlight) \
+'    (BOOL)SNDMSG((hwnd), TCM_HIGHLIGHTITEM, (WPARAM)i, (LPARAM)MAKELONG
+ (fHighlight, 0))
+
+Private Const TCM_SETEXTENDEDSTYLE = (TCM_FIRST + 52)    ' // optional wParam
+ == mask
+'private const TabCtrl_SetExtendedStyle(hwnd, dw)\
+'        (DWORD)SNDMSG((hwnd), TCM_SETEXTENDEDSTYLE, 0, dw)
+
+Private Const TCM_GETEXTENDEDSTYLE = (TCM_FIRST + 53)
+'private const TabCtrl_GetExtendedStyle(hwnd)\
+'        (DWORD)SNDMSG((hwnd), TCM_GETEXTENDEDSTYLE, 0, 0)
+
+Private Const TCM_SETUNICODEFORMAT = CCM_SETUNICODEFORMAT
+'private const TabCtrl_SetUnicodeFormat(hwnd, fUnicode)  \
+'    (BOOL)SNDMSG((hwnd), TCM_SETUNICODEFORMAT, (WPARAM)(fUnicode), 0)
+
+Private Const TCM_GETUNICODEFORMAT = CCM_GETUNICODEFORMAT
+'private const TabCtrl_GetUnicodeFormat(hwnd)  \
+'    (BOOL)SNDMSG((hwnd), TCM_GETUNICODEFORMAT, 0, 0)
+
+' #End If     ' // _WIN32_IE &gt;= =&amp;H0400
+
+Private Const TCN_KEYDOWN = (TCN_FIRST - 0)
+
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+'private const TC_KEYDOWN              NMTCKEYDOWN
+' #Else
+'private const tagTCKEYDOWN            _TC_KEYDOWN
+'private const  NMTCKEYDOWN             TC_KEYDOWN
+' #End If
+
+Private Type TCKEYDOWN
+    hdr As NMHDR
+    b(0 To 5) As Byte
+    'wVKey As Long
+    'flags As Long
+End Type
+
+Private Const TCN_SELCHANGE = (TCN_FIRST - 1)
+Private Const TCN_SELCHANGING = (TCN_FIRST - 2)
+' #if (_WIN32_IE &gt;= =&amp;H0400)
+Private Const TCN_GETOBJECT = (TCN_FIRST - 3)
+' #End If     ' // _WIN32_IE &gt;= =&amp;H0400
+
+' #End If     ' // NOTABCONTROL
+
+
+' ======================================================================
+' Interface:
+' ======================================================================
+
+' ======================================================================
+' Private Implementation:
+' ======================================================================
+Implements ISubclass
+Private m_bSubClassing As Boolean
+Private m_bAttachedCoolTabs As Boolean
+
+' Over-riding VB UserControl's default IOLEInPlaceActivate:
+Private m_IPAOHookStruct As IPAOHookStruct
+
+Private m_hWnd As Long
+Private m_hWndCtl As Long
+Private m_hIml As Long
+Private m_sKey() As String
+Private m_tULF As LOGFONT
+Private m_hFnt As Long
+
+Private m_bHotTrack As Boolean
+Private m_bButtons As Boolean
+Private m_bMultiLine As Boolean
+Private m_bRightJustify As Boolean
+Private m_bFlatSeparators As Boolean
+Private m_bFlatButtons As Boolean
+Private m_bOwnerDraw As Boolean
+
+Public Event BeforeClick(ByVal lTab As Long, ByRef bCancel As Boolean)
+Attribute BeforeClick.VB_Description = "Raised when a tab has been clicked but
+ before the tab has changed."
+Public Event DrawItem(ByVal lTab As Long, ByVal hdc As Long, ByVal bSelected As
+ Boolean, ByVal bHot As Boolean, LeftPixels As Long, TopPixels As Long,
+ RightPixels As Long, BottomPixels As Long, ByRef bDoDefault As Boolean)
+Public Event MeasureItem(ByVal lTab As Long, ByRef WidthPixels As Long, ByRef
+ HeightPixels As Long, ByRef bDoDefault As Boolean)
+Public Event TabClick(ByVal lTab As Long)
+Attribute TabClick.VB_Description = "Raised when a tab is clicked."
+Public Event TabRightClick()
+Attribute TabRightClick.VB_Description = "Raised when the user right clicks on
+ the tab control."
+
+Public Enum ETabAlignConstants
+   etaTop
+   etaLeft
+   etaBottom
+   etaRight
+End Enum
+Private m_eAlign As ETabAlignConstants
+
+Public Enum ETabCoolTabStyle
+   etaNone
+   etaThinBlockEdge
+   etaDevStudio
+End Enum
+Private m_eCoolTabs As ETabCoolTabStyle
+
+Public Property Get TabAlign() As ETabAlignConstants
+Attribute TabAlign.VB_Description = "Gets/sets the alignment of the tabs in the
+ control (left, top, right or bottom). If changed at run-time, call the Rebuild
+ method to make the alignment change take effect."
+   TabAlign = m_eAlign
+End Property
+Public Property Let TabAlign(ByVal eAlign As ETabAlignConstants)
+   m_eAlign = eAlign
+   PropertyChanged "TabAlign"
+End Property
+
+Public Property Get FlatSeparators() As Boolean
+Attribute FlatSeparators.VB_Description = "If the tab control has the Buttons
+ and FlatButtons styles set, gets/sets whether a flat toolbar-style separator
+ is displayed between the buttons. If set at run-time, call the Rebuild method
+ to recreate the control with the new style."
+   FlatSeparators = m_bFlatSeparators
+End Property
+Public Property Let FlatSeparators(ByVal bState As Boolean)
+   m_bFlatSeparators = bState
+   If (m_hWnd &lt;&gt; 0) Then
+      SendMessageLong m_hWnd, TCM_SETEXTENDEDSTYLE, TCS_EX_FLATSEPARATORS,
+       Abs(bState)
+   End If
+   PropertyChanged "FlatSeparators"
+End Property
+Public Property Get HotTrack() As Boolean
+Attribute HotTrack.VB_Description = "Gets/sets whether tab control tracks the
+ mouse and highlights tabs pointed to by the cursor or not. If set at run-time,
+ call the Rebuild method to recreate the control with the new style."
+   HotTrack = m_bHotTrack
+End Property
+Public Property Let HotTrack(ByVal bState As Boolean)
+   m_bHotTrack = bState
+   pChangeStyle
+   PropertyChanged "HotTrack"
+End Property
+Public Property Get Buttons() As Boolean
+Attribute Buttons.VB_Description = "Gets/sets whether the tabs appear as
+ buttons instead of tabs. If set at run-time, call the Rebuild method to
+ recreate the control with the new style."
+   Buttons = m_bButtons
+End Property
+Public Property Let Buttons(ByVal bState As Boolean)
+   m_bButtons = bState
+   pChangeStyle
+   PropertyChanged "Buttons"
+End Property
+Public Property Get FlatButtons() As Boolean
+Attribute FlatButtons.VB_Description = "If the tab control has the Buttons
+ style set, gets/sets whether the buttons are flat. If set at run-time, call
+ the Rebuild method to recreate the control with the new style."
+   FlatButtons = m_bFlatButtons
+End Property
+Public Property Let FlatButtons(ByVal bState As Boolean)
+   m_bFlatButtons = bState
+   pChangeStyle
+   PropertyChanged "FlatButtons"
+End Property
+Public Property Get OwnerDraw() As Boolean
+   OwnerDraw = m_bOwnerDraw
+End Property
+Public Property Let OwnerDraw(ByVal bState As Boolean)
+   m_bOwnerDraw = bState
+   pChangeStyle
+   PropertyChanged "OwnerDraw"
+End Property
+Public Property Get CoolTabs() As ETabCoolTabStyle
+   CoolTabs = m_eCoolTabs
+End Property
+Public Property Let CoolTabs(ByVal eState As ETabCoolTabStyle)
+   m_eCoolTabs = eState
+   If Not (eState = etaNone) Then
+      pAttachCoolTabs
+   Else
+      pDetachCoolTabs
+   End If
+   If Not m_hWnd = 0 Then
+      InvalidateRectAsNull m_hWnd, ByVal 0&amp;, 1
+      UpdateWindow m_hWnd
+   End If
+   PropertyChanged "CoolTabs"
+End Property
+Public Property Get MultiLine() As Boolean
+Attribute MultiLine.VB_Description = "Gets/sets whether tabs appear on more
+ than one line or not. If changed at run-time, call the Rebuild method to
+ recreate the control with the new style."
+   MultiLine = m_bMultiLine
+End Property
+Public Property Let MultiLine(ByVal bState As Boolean)
+   m_bMultiLine = bState
+   pChangeStyle
+   PropertyChanged "MultiLine"
+End Property
+Public Property Get RightJustify() As Boolean
+Attribute RightJustify.VB_Description = "Gets/sets whether text in the tabs in
+ the control is right aligned. If set at run-time, call the Rebuild method to
+ recreate the control with the new style."
+   RightJustify = m_bRightJustify
+End Property
+Public Property Let RightJustify(ByVal bState As Boolean)
+   m_bRightJustify = bState
+   pChangeStyle
+   PropertyChanged "RightJustify"
+End Property
+Public Sub SetPadding(ByVal xPixels As Long, ByVal yPixels As Long)
+Dim lXY As Long
+   lXY = xPixels Or ((yPixels And &amp;H7FFF) * &amp;H10000)
+   SendMessageLong m_hWnd, TCM_SETPADDING, 0, lXY
+End Sub
+Public Property Get Font() As StdFont
+Attribute Font.VB_Description = "Gets/sets the font used by the tab control."
+    Set Font = UserControl.Font
+End Property
+Public Property Set Font(sFont As StdFont)
+   If Not (UserControl.Font Is sFont) Then
+      Set UserControl.Font = sFont
+      pSetFont sFont
+      PropertyChanged "Font"
+   End If
+End Property
+Private Sub pSetFont(ByRef sFont As StdFont)
+Dim hFnt As Long
+   ' Store a log font structure for this font:
+   pOLEFontToLogFont sFont, UserControl.hdc, m_tULF
+   ' Store old font handle:
+   hFnt = m_hFnt
+   ' Create a new version of the font:
+   m_hFnt = CreateFontIndirect(m_tULF)
+   ' Ensure the edit portion has the correct font:
+   If (m_hWnd &lt;&gt; 0) Then
+       SendMessage m_hWnd, WM_SETFONT, m_hFnt, 1
+   End If
+   ' Delete previous version, if we had one:
+   If (hFnt &lt;&gt; 0) Then
+       DeleteObject hFnt
+   End If
+End Sub
+Private Sub pOLEFontToLogFont(fntThis As StdFont, hdc As Long, tLF As LOGFONT)
+Dim sFont As String
+Dim iChar As Integer
+
+    ' Convert an OLE StdFont to a LOGFONT structure:
+    With tLF
+        sFont = fntThis.Name
+        ' There is a quicker way involving StrConv and CopyMemory, but
+        ' this is simpler!:
+        For iChar = 1 To Len(sFont)
+            .lfFaceName(iChar - 1) = CByte(Asc(Mid$(sFont, iChar, 1)))
+        Next iChar
+        ' Based on the Win32SDK documentation:
+        .lfHeight = -MulDiv((fntThis.Size), (GetDeviceCaps(hdc, LOGPIXELSY)),
+         72)
+        .lfItalic = fntThis.Italic
+        If (fntThis.Bold) Then
+            .lfWeight = FW_BOLD
+        Else
+            .lfWeight = FW_NORMAL
+        End If
+        .lfUnderline = fntThis.Underline
+        .lfStrikeOut = fntThis.Strikethrough
+    End With
+
+End Sub
+
+Public Property Let ImageList( _
+        ByRef vImageList As Variant _
+    )
+Attribute ImageList.VB_Description = "Associates an Image List with the
+ control.  Use either a COMCTL32.OCX Image List, a vbAccelerator Image List or
+ COMCTL32.DLL hImageList handle as the parameter."
+    If TypeName(vImageList) = "ImageList" Then
+        ' VB ImageList control.  Note that unless
+        ' some call has been made to an object within a
+        ' VB ImageList the image list itself is not
+        ' created.  Therefore hImageList returns error. So
+        ' ensure that the ImageList has been initialised by
+        ' drawing into nowhere:
+        On Error Resume Next
+        ' Get the image list initialised..
+        vImageList.ListImages(1).Draw 0, 0, 0, 1
+        m_hIml = vImageList.hImageList
+        If (Err.Number &lt;&gt; 0) Then
+            m_hIml = 0
+            pError 4, "Invalid Image List."
+            On Error GoTo 0
+        Else
+            On Error GoTo 0
+            pSetImageList
+        End If
+    ElseIf VarType(vImageList) = vbLong Then
+        m_hIml = vImageList
+        pSetImageList
+    Else
+        pError 4, "Invalid Image List."
+    End If
+End Property
+Private Sub pSetImageList()
+    SendMessageLong m_hWnd, TCM_SETIMAGELIST, 0, m_hIml
+End Sub
+
+Public Sub AddTab( _
+        ByVal sText As String, _
+        Optional ByVal iIconIndex As Long = -1, _
+        Optional ByVal vKeyBefore As Variant = -1, _
+        Optional ByVal sKey As String, _
+        Optional ByVal lItemData As Long _
+    )
+Attribute AddTab.VB_Description = "Adds or inserts a tab."
+Dim tTCI As TCITEM
+Dim lTabCount As Long
+Dim lKey As Long
+Dim lIndex As Long
+
+   ' Set up the tab to add:
+   lTabCount = TabCount
+    With tTCI
+      .lParam = lTabCount
+      .mask = TCIF_TEXT Or TCIF_IMAGE Or TCIF_PARAM
+      .iImage = iIconIndex
+      .cchTextMax = Len(sText)
+      .pszText = sText
+      .lParam = lItemData
+    End With
+    ReDim Preserve m_sKey(0 To lTabCount) As String
+   
+   If Not (IsNumeric(vKeyBefore)) Then
+      lIndex = APITabIndex(vKeyBefore)
+   ElseIf (vKeyBefore &gt; -1) Then
+      lIndex = vKeyBefore - 1
+   Else
+      lIndex = lTabCount
+   End If
+        
+   ' Add the tab:
+   If (SendMessage(m_hWnd, TCM_INSERTITEM, lIndex, tTCI) &lt;&gt; lIndex) Then
+       Debug.Print "Failed to insert tab"
+   Else
+       ' Add the key:
+       For lKey = lTabCount To lIndex + 1 Step -1
+           m_sKey(lKey) = m_sKey(lKey - 1)
+       Next lKey
+       m_sKey(lIndex) = sKey
+   End If
+
+End Sub
+Public Sub RemoveTab(ByVal vKey As Variant)
+Attribute RemoveTab.VB_Description = "Removes a tab from the control."
+Dim lIndex As Long
+Dim lR As Long
+Dim i As Long
+Dim bSelected As Boolean
+
+   lIndex = APITabIndex(vKey)
+   bSelected = (SelectedTab - 1 = lIndex)
+   lR = SendMessageLong(m_hWnd, TCM_DELETEITEM, lIndex, 0)
+   If (lR = 0) Then
+      Debug.Print "Error removing tab."
+   Else
+      If TabCount &gt; 0 Then
+         For i = lIndex To UBound(m_sKey) - 1
+            m_sKey(i) = m_sKey(i + 1)
+         Next i
+         ReDim Preserve m_sKey(0 To TabCount - 1) As String
+         If (bSelected) Then
+            If (lIndex + 1 &lt;= TabCount) Then
+               SelectTab lIndex + 1
+            Else
+               SelectTab TabCount
+            End If
+         End If
+      Else
+         Erase m_sKey
+      End If
+   End If
+End Sub
+Public Sub RemoveAllTabs()
+Attribute RemoveAllTabs.VB_Description = "Removes all tabs from the control."
+Dim lR As Long
+   lR = SendMessageLong(m_hWnd, TCM_DELETEALLITEMS, 0, 0)
+   If (lR = 0) Then
+      Debug.Print "Error removing all tabs."
+   End If
+   If (TabCount = 0) Then
+      Erase m_sKey
+   End If
+End Sub
+Public Property Get SelectedTab() As Long
+Attribute SelectedTab.VB_Description = "Gets the index of the selected tab."
+Dim lTab As Long
+    SelectedTab = SendMessageLong(m_hWnd, TCM_GETCURSEL, 0, 0) + 1
+End Property
+Public Sub SelectTab(ByVal vKey As Variant, Optional ByVal bNoEvents As Boolean
+ = False)
+Attribute SelectTab.VB_Description = "Selects a tab in the control."
+Dim lR As Long
+Dim bCancel As Boolean
+Dim lIndex As Long
+
+   lIndex = APITabIndex(vKey)
+   If (lIndex &gt; -1) Then
+      If (Not (bNoEvents)) Then
+         If (SelectedTab &gt; 0) Then
+            RaiseEvent BeforeClick(SelectedTab, bCancel)
+         End If
+      End If
+      If Not (bCancel) Then
+         lR = SendMessageLong(m_hWnd, TCM_SETCURSEL, lIndex, 0)
+         If (lR = 0) Then
+            ' Failed..
+         Else
+            If Not (bNoEvents) Then
+               RaiseEvent TabClick(lIndex + 1)
+            End If
+         End If
+      End If
+   End If
+End Sub
+Public Sub Rebuild()
+Attribute Rebuild.VB_Description = "Rebuilds the tab control.  Use this if you
+ change any of the style properties at run-time to allow the style change to
+ take effect."
+Dim i As Long
+Dim tTI() As TCITEM
+Dim iICount As Long
+Dim tR As RECT
+Dim lTab As Long
+
+   iICount = TabCount
+   If (iICount &gt; 0) Then
+      ReDim tTI(0 To iICount - 1) As TCITEM
+      For i = 0 To iICount - 1
+         With tTI(i)
+            .mask = TCIF_IMAGE Or TCIF_TEXT Or TCIF_PARAM Or TCIF_STATE Or
+             TCIF_RTLREADING
+            .cchTextMax = 255
+            .pszText = String$(255, 0)
+            .dwStateMask = TCIS_BUTTONPRESSED
+         End With
+         SendMessage m_hWnd, TCM_GETITEMA, i, tTI(i)
+      Next i
+      ' v2.0: remember tab
+      lTab = SelectedTab
+   End If
+   
+   pTerminate
+   
+   pInitialise
+   FlatSeparators = m_bFlatSeparators
+   
+   If (iICount &gt; 0) Then
+      For i = 0 To iICount - 1
+         SendMessage m_hWnd, TCM_INSERTITEM, i + 1, tTI(i)
+      Next i
+   End If
+   pSetFont UserControl.Font
+   pSetImageList
+   GetWindowRect m_hWnd, tR
+   SetWindowPos m_hWnd, 0, 0, 0, tR.Right - tR.Left, tR.Bottom - tR.Top,
+    SWP_NOMOVE Or SWP_FRAMECHANGED Or SWP_NOACTIVATE Or SWP_NOZORDER Or
+    SWP_NOOWNERZORDER
+   ' v2.0: remember tab
+   SelectTab lTab, True
+      
+End Sub
+Public Property Get ClientLeft() As Long
+Attribute ClientLeft.VB_Description = "Gets the left position of the client
+ area of the tab control."
+Dim rc As RECT
+    pGetClientRect rc
+    ClientLeft = rc.Left * Screen.TwipsPerPixelX
+End Property
+Public Property Get ClientTop() As Long
+Attribute ClientTop.VB_Description = "Gets the top position of the client area
+ of the tab control."
+Dim rc As RECT
+    pGetClientRect rc
+    ClientTop = rc.Top * Screen.TwipsPerPixelY
+End Property
+Public Property Get ClientWidth() As Long
+Attribute ClientWidth.VB_Description = "Gets the width of the client area of
+ the tab control."
+Dim rc As RECT
+    pGetClientRect rc
+    ClientWidth = (rc.Right - rc.Left) * Screen.TwipsPerPixelX
+End Property
+Public Property Get ClientHeight() As Long
+Attribute ClientHeight.VB_Description = "Gets the height of the client area of
+ the tab control."
+Dim rc As RECT
+    pGetClientRect rc
+    ClientHeight = (rc.Bottom - rc.Top) * Screen.TwipsPerPixelY
+End Property
+Private Sub pGetClientRect(rc As RECT)
+Dim tP As POINTAPI
+    ' Get window rect of the user control:
+    GetWindowRect m_hWndCtl, rc
+    tP.x = rc.Left
+    tP.y = rc.Top
+    ' Adjust to coordinates of user control's container:
+    ScreenToClient GetParent(m_hWndCtl), tP
+    rc.Right = rc.Right + (tP.x - rc.Left)
+    rc.Bottom = rc.Bottom + (tP.y - rc.Top)
+    rc.Left = tP.x
+    rc.Top = tP.y
+    ' Calculate the useable area of the tab:
+    SendMessage m_hWnd, TCM_ADJUSTRECT, 0, rc
+End Sub
+Public Property Get TabText(ByVal vKey As Variant) As String
+Attribute TabText.VB_Description = "Gets/sets the text which appears in a tab."
+Dim lIndex As Long
+Dim tTI As TCITEM
+Dim lR As Long
+Dim sText As String
+   lIndex = APITabIndex(vKey)
+   tTI.cchTextMax = 255
+   tTI.pszText = String$(255, 0)
+   tTI.mask = TCIF_TEXT
+   lR = SendMessage(m_hWnd, TCM_GETITEMA, lIndex, tTI)
+   If (lR &lt;&gt; 0) Then
+      sText = tTI.pszText
+      lR = InStr(sText, Chr$(0))
+      If (lR &lt;&gt; 0) Then
+         TabText = Left$(sText, lR - 1)
+      Else
+         TabText = sText
+      End If
+   Else
+      pError 3, "TabIndex " &amp; vKey &amp; " does not exist"
+   End If
+End Property
+Public Property Get TabImage(ByVal vKey As Variant) As Long
+Attribute TabImage.VB_Description = "Gets/sets the 0 based index of the image
+ list image to display for a tab."
+Dim lIndex As Long
+Dim tTI As TCITEM
+Dim lR As Long
+   lIndex = APITabIndex(vKey)
+   If (lIndex &gt; -1) Then
+      tTI.mask = TCIF_IMAGE
+      lR = SendMessage(m_hWnd, TCM_GETITEMA, lIndex, tTI)
+      If (lR &lt;&gt; 0) Then
+         TabImage = tTI.iImage
+      Else
+         pError 2, "Failed to get image for tab " &amp; vKey
+      End If
+   End If
+End Property
+Public Property Let TabImage(ByVal vKey As Variant, ByVal lImageIndex As Long)
+Dim lIndex As Long
+Dim tTI As TCITEM
+Dim lR As Long
+   lIndex = APITabIndex(vKey)
+   If (lIndex &gt; -1) Then
+      tTI.mask = TCIF_IMAGE
+      tTI.iImage = lImageIndex
+      lR = SendMessage(m_hWnd, TCM_SETITEMA, lIndex, tTI)
+      If (lR = 0) Then
+         pError 7, "Failed to set image for tab " &amp; vKey
+      End If
+   End If
+
+End Property
+Public Property Get TabItemData(ByVal vKey As Variant) As Long
+Attribute TabItemData.VB_Description = "Gets/sets a long value to associate
+ with a tab."
+Dim lIndex As Long
+Dim tTI As TCITEM
+Dim lR As Long
+   lIndex = APITabIndex(vKey)
+   If (lIndex &gt; -1) Then
+      tTI.mask = TCIF_PARAM
+      lR = SendMessage(m_hWnd, TCM_GETITEMA, lIndex, tTI)
+      If (lR &lt;&gt; 0) Then
+         TabItemData = tTI.lParam
+      Else
+         pError 5, "Failed to get item data for tab " &amp; vKey
+      End If
+   End If
+End Property
+Public Property Let TabItemData(ByVal vKey As Variant, ByVal lItemData As Long)
+Dim lIndex As Long
+Dim tTI As TCITEM
+Dim lR As Long
+   lIndex = APITabIndex(vKey)
+   If (lIndex &gt; -1) Then
+      tTI.mask = TCIF_PARAM
+      tTI.lParam = lItemData
+      lR = SendMessage(m_hWnd, TCM_SETITEMA, lIndex, tTI)
+      If (lR = 0) Then
+         pError 6, "Failed to set item data for tab " &amp; vKey
+      End If
+   End If
+End Property
+Public Property Get TabHot(ByVal vKey As Variant) As Boolean
+Dim lIndex As Long
+Dim tTI As TCITEM
+Dim lR As Long
+   lIndex = APITabIndex(vKey)
+   If (lIndex &gt; -1) Then
+      tTI.mask = TCIF_STATE
+      lR = SendMessage(m_hWnd, TCM_GETITEMA, lIndex, tTI)
+      If lR &lt;&gt; 0 Then
+         TabHot = ((tTI.dwState And TCIS_HIGHLIGHTED) = TCIS_HIGHLIGHTED)
+      Else
+         pError 5, "Failed to get hot state for tab " &amp; vKey
+      End If
+   End If
+End Property
+
+Public Property Get TabKey(ByVal lIndex As Long)
+Attribute TabKey.VB_Description = "Gets/sets the key to associate with a tab."
+   If (lIndex &gt; 0) And (lIndex &lt;= TabCount) Then
+      TabKey = m_sKey(lIndex - 1)
+   Else
+      pError 1, "TabIndex " &amp; lIndex &amp; " does not exist"
+   End If
+End Property
+
+Private Property Get APITabIndex(ByVal vKey As Variant) As Long
+   APITabIndex = IndexForTab(vKey) - 1
+End Property
+
+Public Property Get IndexForTab(ByVal vKey As Variant) As Long
+Attribute IndexForTab.VB_Description = "Gets the numeric index of a tab given
+ the key."
+Dim lS As Long
+Dim lKey As Long
+    lKey = -1
+    If IsNumeric(vKey) Then
+        lKey = CLng(vKey) - 1
+    Else
+        For lS = 0 To TabCount - 1
+            If (m_sKey(lS) = vKey) Then
+                lKey = lS
+                Exit For
+            End If
+        Next lS
+    End If
+    
+    If (lKey &gt;= 0) And (lKey &lt; TabCount) Then
+        IndexForTab = lKey + 1
+    Else
+        pError 1, "TabIndex " &amp; vKey &amp; " does not exist"
+        IndexForTab = 0
+    End If
+
+End Property
+Public Property Get TabCount() As Long
+Attribute TabCount.VB_Description = "Gets the number of tabs in the control."
+    TabCount = SendMessageLong(m_hWnd, TCM_GETITEMCOUNT, 0, 0)
+End Property
+
+Public Property Get hwnd() As Long
+Attribute hwnd.VB_Description = "Gets the Window handle of the control.  Use
+ TabCtrlhWnd if you want the hWnd of the tab itself."
+    hwnd = m_hWndCtl
+End Property
+Public Property Get TabCtrlhWnd() As Long
+Attribute TabCtrlhWnd.VB_Description = "Gets the hWnd of the Tab Control."
+   TabCtrlhWnd = m_hWnd
+End Property
+Private Sub pChangeStyle()
+Dim dwStyle As Long
+   
+   If m_hWnd &lt;&gt; 0 Then
+      If (m_bHotTrack) Then
+         dwStyle = TCS_HOTTRACK
+      End If
+      If (m_bButtons) Then
+         dwStyle = dwStyle Or TCS_BUTTONS
+         If (m_bFlatButtons) Then
+            dwStyle = dwStyle Or TCS_FLATBUTTONS
+         End If
+      End If
+      If (m_bMultiLine) Then
+         dwStyle = dwStyle Or TCS_MULTILINE
+      Else
+         dwStyle = dwStyle Or TCS_SINGLELINE
+      End If
+      If (m_bRightJustify) Then
+         dwStyle = dwStyle Or TCS_RIGHTJUSTIFY
+      End If
+      If (m_bOwnerDraw) Then
+         dwStyle = dwStyle Or TCS_OWNERDRAWFIXED
+      End If
+      Select Case m_eAlign
+      Case etaBottom
+         dwStyle = dwStyle Or TCS_BOTTOM
+      Case etaRight
+         dwStyle = dwStyle Or TCS_VERTICAL Or TCS_RIGHT
+      Case etaLeft
+         dwStyle = dwStyle Or TCS_VERTICAL
+      End Select
+       
+       ' Create the control:
+       dwStyle = dwStyle Or WS_VISIBLE Or WS_CHILD Or WS_CLIPSIBLINGS ' Or
+        TCS_TOOLTIPS (tooltips don't work in this version)
+      
+      SetWindowLong m_hWnd, GWL_STYLE, dwStyle
+      
+   End If
+End Sub
+Private Sub pInitialise()
+Dim dwStyle As Long
+Dim tR As RECT
+        
+    ' Ensure we don't already have Tab control:
+    pTerminate
+    
+    ' Ensure common controls:
+    InitCommonControls
+    
+   If (m_bHotTrack) Then
+      dwStyle = TCS_HOTTRACK
+   End If
+   If (m_bButtons) Then
+      dwStyle = dwStyle Or TCS_BUTTONS
+      If (m_bFlatButtons) Then
+         dwStyle = dwStyle Or TCS_FLATBUTTONS
+      End If
+   End If
+   If (m_bMultiLine) Then
+      dwStyle = dwStyle Or TCS_MULTILINE
+   Else
+      dwStyle = dwStyle Or TCS_SINGLELINE
+   End If
+   If (m_bRightJustify) Then
+      dwStyle = dwStyle Or TCS_RIGHTJUSTIFY
+   End If
+   If (m_bOwnerDraw) Then
+      dwStyle = dwStyle Or TCS_OWNERDRAWFIXED
+   End If
+   Select Case m_eAlign
+   Case etaBottom
+      dwStyle = dwStyle Or TCS_BOTTOM
+   Case etaRight
+      dwStyle = dwStyle Or TCS_VERTICAL Or TCS_RIGHT
+   Case etaLeft
+      dwStyle = dwStyle Or TCS_VERTICAL
+   End Select
+    
+    ' Create the control:
+    dwStyle = dwStyle Or WS_VISIBLE Or WS_CHILD Or WS_CLIPSIBLINGS ' Or
+     TCS_TOOLTIPS (tooltips don't work in this version)
+    
+    m_hWndCtl = UserControl.hwnd
+    GetClientRect m_hWndCtl, tR
+    m_hWnd = CreateWindowEx( _
+        0, WC_TABCONTROL, "", _
+        dwStyle, _
+        0, 0, tR.Right - tR.Left, tR.Bottom - tR.Top, _
+        m_hWndCtl, 0, _
+        App.hInstance, 0)
+        
+    Debug.Assert m_hWnd &lt;&gt; 0
+    If (m_hWnd &lt;&gt; 0) Then
+        If (UserControl.Ambient.UserMode) Then
+            ' Attach messages to the control:
+            pAttachMessages
+            UserControl.BorderStyle() = 0
+            lblInfo.Visible = False
+        Else
+            AddTab "Tab Control"
+        End If
+    End If
+    
+End Sub
+Private Sub pAttachMessages()
+   AttachMessage Me, m_hWndCtl, WM_NOTIFY
+   AttachMessage Me, m_hWndCtl, WM_DRAWITEM
+   AttachMessage Me, m_hWndCtl, WM_MEASUREITEM
+   AttachMessage Me, m_hWndCtl, WM_SETFOCUS
+   AttachMessage Me, m_hWnd, WM_SETFOCUS
+   AttachMessage Me, m_hWnd, WM_MOUSEACTIVATE
+   AttachMessage Me, m_hWnd, WM_DESTROY
+   AttachMessage Me, m_hWnd, WM_ERASEBKGND
+   m_bSubClassing = True
+   pAttachCoolTabs
+End Sub
+Private Sub pDetachMessages()
+   If (m_bSubClassing) Then
+      DetachMessage Me, m_hWndCtl, WM_NOTIFY
+      DetachMessage Me, m_hWndCtl, WM_DRAWITEM
+      DetachMessage Me, m_hWndCtl, WM_MEASUREITEM
+      DetachMessage Me, m_hWndCtl, WM_SETFOCUS
+      DetachMessage Me, m_hWnd, WM_SETFOCUS
+      DetachMessage Me, m_hWnd, WM_MOUSEACTIVATE
+      DetachMessage Me, m_hWnd, WM_DESTROY
+      DetachMessage Me, m_hWnd, WM_ERASEBKGND
+      pDetachCoolTabs
+      m_bSubClassing = False
+   End If
+End Sub
+Private Sub pAttachCoolTabs()
+   If m_bSubClassing Then
+      If m_eCoolTabs &gt; etaNone Then
+         pDetachCoolTabs
+         AttachMessage Me, m_hWnd, WM_PAINT
+         AttachMessage Me, m_hWnd, WM_NCPAINT
+         m_bAttachedCoolTabs = True
+      End If
+   End If
+End Sub
+Private Sub pDetachCoolTabs()
+   If m_bSubClassing Then
+      If m_bAttachedCoolTabs Then
+         DetachMessage Me, m_hWnd, WM_PAINT
+         DetachMessage Me, m_hWnd, WM_NCPAINT
+         m_bAttachedCoolTabs = False
+      End If
+   End If
+End Sub
+Private Sub pError(ByVal lErr As Long, ByVal sMsg As String)
+   Err.Raise lErr + vbObjectError + 1048, App.EXEName &amp; ".cTabCtrl", sMsg
+End Sub
+Private Sub pTerminate()
+   
+   If (m_hWnd &lt;&gt; 0) Then
+       ' Stop subclassing:
+       pDetachMessages
+       ' Destroy the window:
+       ShowWindow m_hWnd, SW_HIDE
+       SetParent m_hWnd, 0
+       DestroyWindow m_hWnd
+       ' store that we haven't a window:
+       m_hWnd = 0
+   End If
+   ' Clear up font:
+   If (m_hFnt &lt;&gt; 0) Then
+      DeleteObject m_hFnt
+      m_hFnt = 0
+   End If
+   
+End Sub
+Friend Function TranslateAccelerator(lpMsg As VBOleGuids.MSG) As Long
+    
+   TranslateAccelerator = S_FALSE
+   ' Here you can modify the response to the key down
+   ' accelerator command using the values in lpMsg.  This
+   ' can be used to capture Tabs, Returns, Arrows etc.
+   ' Just process the message as required and return S_OK.
+   If lpMsg.message = WM_KEYDOWN Then
+      Select Case lpMsg.wParam And &amp;HFFFF&amp;
+      Case vbKeyUp, vbKeyDown, vbKeyLeft, vbKeyRight, vbKeyPageDown,
+       vbKeyPageUp, vbKeyHome, vbKeyEnd, vbKeyReturn
+         SendMessageLong m_hWnd, lpMsg.message, lpMsg.wParam, lpMsg.lParam
+         TranslateAccelerator = S_OK
+      End Select
+   End If
+   
+End Function
+Private Function plMeasureItem(ByVal wParam As Long, ByVal lParam As Long) As
+ Long
+Dim tMis As MEASUREITEMSTRUCT
+Dim bDoDefault As Boolean
+   CopyMemory tMis, ByVal lParam, Len(tMis)
+   bDoDefault = True
+   RaiseEvent MeasureItem(tMis.ItemId, tMis.itemWidth, tMis.itemHeight,
+    bDoDefault)
+   If bDoDefault Then
+      plMeasureItem = 0
+   Else
+      CopyMemory ByVal lParam, tMis, Len(tMis)
+      plMeasureItem = 1
+   End If
+End Function
+Private Function plDrawItem(ByVal wParam As Long, ByVal lParam As Long) As Long
+Dim tDis As DRAWITEMSTRUCT
+Dim bDoDefault As Boolean
+Dim bSelected As Boolean
+Dim bHot As Boolean
+Dim lTab As Long
+Dim lBottom As Long
+
+   CopyMemory tDis, ByVal lParam, Len(tDis)
+   If tDis.CtlType = ODT_TAB Then
+      'Debug.Print tDis.CtlID, tDis.CtlType, tDis.ItemId, tDis.itemData,
+       tDis.ItemAction, tDis.ItemState
+      lTab = tDis.ItemId
+      bSelected = ((tDis.ItemState And ODS_SELECTED) = ODS_SELECTED)
+      lBottom = tDis.rcItem.Bottom
+      If Not bSelected Then
+         lBottom = lBottom + 1
+      End If
+      bHot = TabHot(lTab + 1)
+      Debug.Print "Hot:", bHot
+      RaiseEvent DrawItem(lTab, tDis.hdc, bSelected, bHot, tDis.rcItem.Left,
+       tDis.rcItem.Top, tDis.rcItem.Right, lBottom, bDoDefault)
+      If bDoDefault Then
+         pDefaultDrawItem lTab, tDis.hdc, bSelected, bHot, tDis.rcItem
+      End If
+   End If
+End Function
+Private Sub pDefaultDrawItem( _
+      ByVal lTab As Long, _
+      ByVal lhDC As Long, _
+      ByVal bSelected As Boolean, _
+      ByVal bHot As Boolean, _
+      ByRef tR As RECT _
+   )
+Dim hBr As Long
+Dim cx As Long, cy As Long
+Dim lX As Long, lY As Long
+Dim lImage As Long
+      
+   ' Fill back colour:
+   If m_eCoolTabs = etaDevStudio Then
+      If bSelected Then
+         hBr = GetSysColorBrush(vbButtonFace And &amp;H1F&amp;)
+         SetTextColor lhDC, (vbWindowText And &amp;H1F&amp;)
+      Else
+         hBr = GetSysColorBrush(vbButtonShadow And &amp;H1F&amp;)
+         ' Why does this have no effect?
+         SetTextColor lhDC, (vbButtonFace And &amp;H1F&amp;)
+      End If
+   Else
+      hBr = GetSysColorBrush(vbButtonFace And &amp;H1F&amp;)
+      SetTextColor lhDC, (vbWindowText And &amp;H1F&amp;)
+   End If
+   FillRect lhDC, tR, hBr
+   DeleteObject hBr
+   
+   ' Icon?
+   lImage = TabImage(lTab + 1)
+   If lImage &gt; -1 Then
+      ' draw the icon:
+      If Not m_hIml = 0 Then
+         ImageList_GetIconSize m_hIml, cx, cy
+         If bSelected Then
+            lX = tR.Left + 6
+         Else
+            lX = tR.Left + 2
+         End If
+         lY = tR.Top + (tR.Bottom - tR.Top - cy) \ 2
+         ImageList_Draw m_hIml, lImage, lhDC, lX, lY, ILD_TRANSPARENT
+         tR.Left = lX + cx + 1
+      End If
+   End If
+   
+   ' Text?
+   SetBkMode lhDC, TRANSPARENT
+   DrawText lhDC, TabText(lTab + 1), -1, tR, DT_SINGLELINE Or DT_VCENTER Or
+    DT_CENTER
+   
+End Sub
+Private Sub pCoolTabControl()
+Dim tR As RECT, tTR As RECT, tUR As RECT, tIR As RECT, tIR2 As RECT
+Dim lhDC As Long
+Dim hPenOld As Long
+Dim hPen As Long, hPenDark As Long, hPenMid As Long, hPenLight As Long,
+ hPenUseMid As Long
+Dim hBr As Long
+Dim lDarkColor As Long, lLightColor As Long, lMidColor As Long
+Dim tJUNK As POINTAPI
+Dim i As Long
+Dim lSelTab As Long
+Dim lhWnd As Long
+Dim bNoRight As Boolean, bNoLeft As Boolean, bComplete As Boolean
+Dim lMaxX As Long, lB As Long
+   
+   If TabAlign = etaLeft Or TabAlign = etaRight Then
+      Exit Sub
+   End If
+   
+   GetWindowRect m_hWnd, tR
+   lhWnd = FindWindowEx(m_hWnd, 0, "msctls_updown32", "")
+   If IsWindowVisible(lhWnd) &lt;&gt; 0 Then
+      GetWindowRect lhWnd, tUR
+      OffsetRect tUR, -tR.Left, -tR.Top
+   Else
+      lhWnd = 0
+   End If
+   OffsetRect tR, -tR.Left, -tR.Top
+   lMaxX = tR.Right - 1
+      
+   lhDC = GetDC(m_hWnd)
+   ' Draw!
+   lMidColor = GetSysColor(vbButtonFace And &amp;H1F&amp;)
+   hPenMid = CreatePen(PS_SOLID, 1, lMidColor)
+   lDarkColor = GetSysColor(vbButtonShadow And &amp;H1F&amp;)
+   hPenDark = CreatePen(PS_SOLID, 1, lDarkColor)
+   lLightColor = GetSysColor(vb3DHighlight And &amp;H1F&amp;)
+   hPenLight = CreatePen(PS_SOLID, 1, lLightColor)
+   
+   If m_bButtons Then
+      If Not m_bFlatButtons Then
+         For i = 0 To TabCount - 1
+            SendMessage m_hWnd, TCM_GETITEMRECT, i, tTR
+            bNoRight = False
+            If Not (lhWnd = 0) Then
+               If tTR.Left &gt; tUR.Left Then
+                  Exit For
+               End If
+               If tTR.Right &gt; tUR.Left Then
+                  tTR.Right = tUR.Left
+                  bNoRight = True
+               End If
+            End If
+            If i = SelectedTab - 1 Then
+               hPenOld = SelectObject(lhDC, hPenDark)
+               MoveToEx lhDC, tTR.Left, tTR.Bottom - 2, tJUNK
+               LineTo lhDC, tTR.Left, tTR.Top
+               LineTo lhDC, tTR.Right - 1, tTR.Top
+               SelectObject lhDC, hPenOld
+               hPenOld = SelectObject(lhDC, hPenMid)
+               MoveToEx lhDC, tTR.Left + 1, tTR.Bottom - 3, tJUNK
+               LineTo lhDC, tTR.Left + 1, tTR.Top + 1
+               LineTo lhDC, tTR.Right - 2, tTR.Top + 1
+               SelectObject lhDC, hPenOld
+            Else
+               hPenOld = SelectObject(lhDC, hPenDark)
+               MoveToEx lhDC, tTR.Left, tTR.Bottom - 1, tJUNK
+               LineTo lhDC, tTR.Right - 1, tTR.Bottom - 1
+               If Not bNoRight Then
+                  LineTo lhDC, tTR.Right - 1, tTR.Top
+               End If
+               SelectObject lhDC, hPenOld
+               hPenOld = SelectObject(lhDC, hPenMid)
+               MoveToEx lhDC, tTR.Left + 1, tTR.Bottom - 2, tJUNK
+               LineTo lhDC, tTR.Right - 2, tTR.Bottom - 2
+               If Not bNoRight Then
+                  LineTo lhDC, tTR.Right - 2, tTR.Top + 1
+               End If
+            End If
+         Next i
+      End If
+   Else
+      
+      lSelTab = SelectedTab - 1
+      
+      If m_eCoolTabs = etaDevStudio Then
+         ' Left hand edge rect:
+         SendMessage m_hWnd, TCM_GETITEMRECT, lSelTab, tTR
+         
+         hBr = CreateSolidBrush(lDarkColor)
+
+         If TabAlign = etaBottom Then
+            tIR.Top = tTR.Top
+            tIR.Bottom = tTR.Bottom + 2
+            tIR2.Top = tIR.Top
+            tIR2.Bottom = tIR2.Top + 2
+         Else
+            tIR.Top = tR.Top
+            tIR.Bottom = tTR.Bottom
+            tIR2.Top = tIR.Bottom - 2
+            tIR2.Bottom = tIR.Bottom
+         End If
+         
+         ' Cover left hand edge:
+         If Not (tTR.Left &lt;= 4 And tTR.Right &gt;= 0) Then
+            tIR.Left = 0
+            tIR.Right = 4
+            FillRect lhDC, tIR, hBr
+         End If
+                     
+         If TabAlign = etaTop Then
+            tIR.Bottom = tIR.Top + 4
+         Else
+            tIR.Top = tIR.Bottom - 4
+         End If
+         
+         ' Fill space above/below tabs
+         If tTR.Left &gt; 4 Then
+            tIR.Left = 4
+            tIR.Right = tTR.Left - 2
+            FillRect lhDC, tIR, hBr
+            tIR2.Left = tIR.Left
+            tIR2.Right = tIR.Right
+            FillRect lhDC, tIR2, hBr
+         End If
+         
+         tIR.Left = tTR.Right
+         If Not (lhWnd = 0) Then
+            tIR.Right = tUR.Left
+         Else
+            tIR.Right = tR.Right
+         End If
+         
+         If tIR.Left &lt; tR.Right Then
+            FillRect lhDC, tIR, hBr
+            tIR2.Left = tIR.Left
+            tIR2.Right = tIR.Right
+            FillRect lhDC, tIR2, hBr
+         End If
+         
+         SendMessage m_hWnd, TCM_GETITEMRECT, TabCount - 1, tTR
+         LSet tIR = tTR
+         tIR.Left = tIR.Right
+         tIR.Right = tR.Right
+         If Not lhWnd = 0 Then
+            If tIR.Left &gt; tUR.Left Then
+               bNoRight = True
+            Else
+               If tIR.Right &gt; tUR.Left Then
+                  tIR.Right = tUR.Left
+               End If
+            End If
+         ElseIf tIR.Left &gt; tR.Right Then
+            bNoRight = True
+         End If
+         If Not bNoRight Then
+            FillRect lhDC, tIR, hBr
+            tIR2.Left = tIR.Left
+            tIR2.Right = tIR.Right
+            FillRect lhDC, tIR2, hBr
+         End If
+         
+         If Not lhWnd = 0 Then
+            LSet tIR = tUR
+            tIR.Top = tUR.Top - 2
+            tIR.Bottom = tIR.Top + 2
+            FillRect lhDC, tIR, hBr
+            tIR.Top = tUR.Bottom + 1
+            tIR.Bottom = tIR.Top + 1
+            FillRect lhDC, tIR, hBr
+         End If
+         
+         DeleteObject hBr
+         
+         If TabCount &gt; 0 Then
+            pCoolDrawTab _
+               lhDC, lhWnd, tUR, lSelTab, lSelTab, _
+               hPenLight, hPenMid, hPenDark, _
+               lLightColor, lMidColor, lDarkColor
+         End If
+                  
+      Else
+      
+         ' Outside border:
+         If TabAlign = etaTop Then
+            hPenOld = SelectObject(lhDC, hPenMid)
+            If Not lhWnd = 0 Then
+               tR.Top = tUR.Bottom
+            End If
+            MoveToEx lhDC, tR.Right - 1, tR.Top, tJUNK
+            LineTo lhDC, tR.Right - 1, tR.Bottom - 1
+            LineTo lhDC, tR.Left - 1, tR.Bottom - 1
+            SelectObject lhDC, hPenOld
+         Else
+            SendMessage m_hWnd, TCM_GETITEMRECT, lSelTab, tTR
+            lB = tTR.Top - 2
+            hPenOld = SelectObject(lhDC, hPenMid)
+            MoveToEx lhDC, tR.Right - 2, tR.Top, tJUNK
+            LineTo lhDC, tR.Right - 2, lB
+            LineTo lhDC, tR.Left, lB
+            SelectObject lhDC, hPenOld
+            hPenOld = SelectObject(lhDC, hPenDark)
+            MoveToEx lhDC, tR.Right - 1, tR.Top, tJUNK
+            LineTo lhDC, tR.Right - 1, lB + 1
+            If TabCount &gt; 0 Then
+               If tTR.Right &lt; tR.Right Then
+                  LineTo lhDC, tTR.Right, lB + 1
+               End If
+               MoveToEx lhDC, tTR.Left - 2, lB + 1, tJUNK
+               LineTo lhDC, tR.Left - 1, lB + 1
+            Else
+               LineTo lhDC, tTR.Left - 1, lB + 1
+            End If
+            SelectObject lhDC, hPenOld
+         End If
+      
+         ' Tabs:
+         lSelTab = SelectedTab - 1
+         For i = 0 To TabCount - 1
+            pCoolDrawTab _
+               lhDC, lhWnd, tUR, i, lSelTab, _
+               hPenLight, hPenMid, hPenDark, _
+               lLightColor, lMidColor, lDarkColor
+         Next i
+      End If
+      
+   End If
+   
+   DeleteObject hPenLight
+   DeleteObject hPenMid
+   DeleteObject hPenDark
+   ReleaseDC lhDC, m_hWnd
+   
+End Sub
+Private Sub pCoolDrawTab( _
+      ByVal lhDC As Long, ByVal lhWndLR As Long, ByRef tUR As RECT, ByVal i As
+       Long, ByVal lSelTab As Long, _
+      ByVal hPenLight As Long, ByVal hPenMid As Long, ByVal hPenDark As Long, _
+      ByVal lLightColor As Long, ByVal lMidColor As Long, ByVal lDarkColor As
+       Long _
+   )
+Dim tTR As RECT
+Dim bNoLeft As Long, bNoRight As Long
+Dim hPenUseMid As Long
+Dim hPenOld As Long
+Dim tJUNK As POINTAPI
+
+   SendMessage m_hWnd, TCM_GETITEMRECT, i, tTR
+   bNoLeft = False
+   bNoRight = False
+   If i + 1 = lSelTab Then
+      tTR.Right = tTR.Right - 2
+      bNoRight = True
+      
+   ElseIf i - 1 = lSelTab Then
+      tTR.Left = tTR.Left + 2
+      bNoLeft = True
+      
+   ElseIf i = lSelTab Then
+      tTR.Left = tTR.Left - 2
+      tTR.Right = tTR.Right + 2
+      If TabAlign = etaBottom Then
+         tTR.Bottom = tTR.Bottom + 2
+      Else
+         tTR.Top = tTR.Top - 2
+      End If
+      hPenUseMid = hPenMid
+   End If
+   
+   hPenUseMid = hPenMid
+   
+   If Not (lhWndLR = 0) Then
+      If tTR.Right &gt; tUR.Left Then
+         bNoRight = True
+         tTR.Right = tUR.Left
+      End If
+   End If
+   
+   If Not bNoLeft Then
+      '
+      If TabAlign = etaTop Then
+         SetPixel lhDC, tTR.Left, tTR.Top + 1, lLightColor
+         SetPixel lhDC, tTR.Left, tTR.Top, lLightColor
+         SetPixel lhDC, tTR.Left + 1, tTR.Top, lLightColor
+         SetPixel lhDC, tTR.Left + 1, tTR.Top + 1, lMidColor
+      Else
+         SetPixel lhDC, tTR.Left, tTR.Bottom - 2, lLightColor
+      End If
+   End If
+   
+   If TabAlign = etaBottom Then
+      hPenOld = SelectObject(lhDC, hPenUseMid)
+      MoveToEx lhDC, tTR.Left + 1, tTR.Bottom - 2, tJUNK
+      LineTo lhDC, tTR.Right, tTR.Bottom - 2
+      SelectObject lhDC, hPenOld
+      hPenOld = SelectObject(lhDC, hPenDark)
+      MoveToEx lhDC, tTR.Left, tTR.Bottom - 1, tJUNK
+      LineTo lhDC, tTR.Right, tTR.Bottom - 1
+      SelectObject lhDC, hPenOld
+   End If
+   
+   If Not bNoRight Then
+      '
+      If TabAlign = etaTop Then
+         SetPixel lhDC, tTR.Right - 2, tTR.Top, lLightColor
+         hPenOld = SelectObject(lhDC, hPenUseMid)
+         MoveToEx lhDC, tTR.Right - 2, tTR.Top + 1, tJUNK
+         LineTo lhDC, tTR.Right - 2, tTR.Bottom
+         SelectObject lhDC, hPenOld
+         hPenOld = SelectObject(lhDC, hPenDark)
+         MoveToEx lhDC, tTR.Right - 1, tTR.Top, tJUNK
+         LineTo lhDC, tTR.Right - 1, tTR.Bottom
+         SelectObject lhDC, hPenOld
+         If i = lSelTab Then
+            SetPixel lhDC, tTR.Right - 2, tTR.Bottom, lMidColor
+            SetPixel lhDC, tTR.Right - 1, tTR.Bottom, lDarkColor
+         End If
+      Else
+         hPenOld = SelectObject(lhDC, hPenUseMid)
+         MoveToEx lhDC, tTR.Right - 2, tTR.Top, tJUNK
+         LineTo lhDC, tTR.Right - 2, tTR.Bottom - 1
+         SelectObject lhDC, hPenOld
+         hPenOld = SelectObject(lhDC, hPenDark)
+         MoveToEx lhDC, tTR.Right - 1, tTR.Top, tJUNK
+         LineTo lhDC, tTR.Right - 1, tTR.Bottom - 1
+         SelectObject lhDC, hPenOld
+         If i = lSelTab Then
+            SetPixel lhDC, tTR.Right - 2, tTR.Top - 1, lMidColor
+         End If
+      End If
+      
+   End If
+   
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As SSubTimer6.EMsgResponse)
+   '
+End Property
+
+Private Property Get ISubclass_MsgResponse() As SSubTimer6.EMsgResponse
+   Select Case CurrentMessage
+   Case WM_DRAWITEM
+      ISubclass_MsgResponse = emrConsume
+   Case WM_ERASEBKGND
+      If m_eCoolTabs = etaDevStudio Then
+         ISubclass_MsgResponse = emrConsume
+      Else
+         ISubclass_MsgResponse = emrPreprocess
+      End If
+   Case Else
+      ISubclass_MsgResponse = emrPreprocess
+   End Select
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+Dim tNM As NMHDR
+Dim tTKD As TCKEYDOWN
+Dim lTab As Long
+Dim bCancel As Boolean
+Dim tT As NMTTDISPINFO
+Dim sToolTipBuffer As String
+Dim b() As Byte
+Dim wKey As Long
+Dim lFlags As Long
+Dim lhDC As Long
+Dim tR As RECT
+Dim hBr As Long
+
+   Select Case iMsg
+   Case WM_NOTIFY
+      CopyMemory tNM, ByVal lParam, Len(tNM)
+'      If (tNM.code = TTN_NEEDTEXT) Then
+'          ' Tool tip doesn't seem to show....
+'          Debug.Print "Need text", tNM.idfrom
+'          sToolTipBuffer = "Test Tool Tip"
+'           If (Len(sToolTipBuffer) &gt; 0) Then
+'                CopyMemory tT, ByVal lParam, Len(tT)
+'                b = StrConv(sToolTipBuffer, vbFromUnicode)
+'                ReDim b(0 To UBound(b) + 1) As Byte
+'                b(UBound(b)) = 0
+'                CopyMemory ByVal tT.lpszText, b(0), UBound(b) + 1
+'                CopyMemory tT.szText(0), b(0), UBound(b) + 1
+'                tT.hinst = 0
+'                CopyMemory ByVal lParam, tT, Len(tT)
+'           End If
+'      Else
+      If (tNM.hwndFrom = m_hWnd) Then
+         Select Case tNM.code
+         Case TCN_KEYDOWN
+            CopyMemory tTKD, ByVal lParam, Len(tTKD)
+            wKey = tTKD.b(1) * &amp;H100&amp; Or tTKD.b(0)
+            CopyMemory lFlags, tTKD.b(2), 4
+            Debug.Print wKey, lFlags
+            
+         Case TCN_SELCHANGING
+            lTab = SelectedTab
+            If (lTab &lt;&gt; 0) Then
+               RaiseEvent BeforeClick(lTab, bCancel)
+               If (bCancel) Then
+                  ISubclass_WindowProc = 1
+               End If
+            End If
+         Case TCN_SELCHANGE
+            lTab = SelectedTab
+            RaiseEvent TabClick(lTab)
+         Case NM_RCLICK
+            RaiseEvent TabRightClick
+         End Select
+      End If
+      
+   Case WM_DRAWITEM
+      ISubclass_WindowProc = plDrawItem(wParam, lParam)
+      
+   Case WM_MEASUREITEM
+      ISubclass_WindowProc = plMeasureItem(wParam, lParam)
+      
+   Case WM_PAINT, WM_NCPAINT
+      pCoolTabControl
+
+   Case WM_ERASEBKGND
+      If m_eCoolTabs = etaDevStudio Then
+         pGetClientRect tR
+         tR.Left = tR.Left - 6
+         tR.Right = tR.Right - 2
+         If TabAlign = etaTop Then
+            tR.Top = tR.Top - 4
+            tR.Bottom = tR.Bottom - 2
+         Else
+            tR.Top = tR.Top - 6
+            tR.Bottom = tR.Bottom - 4
+         End If
+         'If m_eCoolTabs = etaDevStudio Then
+         '   'hBr = GetSysColorBrush(vbButtonShadow And &amp;H1F&amp;)
+         'Else
+            hBr = GetSysColorBrush(vbButtonFace And &amp;H1F&amp;)
+         'End If
+         lhDC = GetDC(hwnd)
+         FillRect lhDC, tR, hBr
+         ReleaseDC hwnd, lhDC
+         DeleteObject hBr
+      End If
+   Case WM_DESTROY
+      pDetachMessages
+   
+   '
+    ----------------------------------------------------------------------------
+   --
+   ' Implement focus.  Many many thanks to Mike Gainer for showing me this
+   ' code.
+   On Error Resume Next
+   
+   Case WM_SETFOCUS
+      If (m_hWnd = hwnd) Then
+         ' The combo box itself
+         Dim pOleObject                  As IOleObject
+         Dim pOleInPlaceSite             As IOleInPlaceSite
+         Dim pOleInPlaceFrame            As IOleInPlaceFrame
+         Dim pOleInPlaceUIWindow         As IOleInPlaceUIWindow
+         Dim pOleInPlaceActiveObject     As IOleInPlaceActiveObject
+         Dim PosRect                     As RECT
+         Dim ClipRect                    As RECT
+         Dim FrameInfo                   As OLEINPLACEFRAMEINFO
+         Dim grfModifiers                As Long
+         Dim AcceleratorMsg              As MSG
+         'Get in-place frame and make sure it is set to our in-between
+         'implementation of IOleInPlaceActiveObject in order to catch
+         'TranslateAccelerator calls
+         Set pOleObject = Me
+         Set pOleInPlaceSite = pOleObject.GetClientSite
+         If Not pOleInPlaceSite Is Nothing Then
+            pOleInPlaceSite.GetWindowContext pOleInPlaceFrame,
+             pOleInPlaceUIWindow, VarPtr(PosRect), VarPtr(ClipRect),
+             VarPtr(FrameInfo)
+            If m_IPAOHookStruct.ThisPointer &lt;&gt; 0 Then
+               CopyMemory pOleInPlaceActiveObject,
+                m_IPAOHookStruct.ThisPointer, 4
+               If Not pOleInPlaceActiveObject Is Nothing Then
+                  If Not pOleInPlaceFrame Is Nothing Then
+                     pOleInPlaceFrame.SetActiveObject pOleInPlaceActiveObject,
+                      vbNullString
+                     If Not pOleInPlaceUIWindow Is Nothing Then
+                        pOleInPlaceUIWindow.SetActiveObject
+                         pOleInPlaceActiveObject, vbNullString
+                     End If
+                  End If
+               End If
+               CopyMemory pOleInPlaceActiveObject, 0&amp;, 4
+            End If
+         End If
+      Else
+         ' The user control:
+         SetFocusAPI m_hWnd
+      End If
+            
+   Case WM_MOUSEACTIVATE
+      If GetFocus() &lt;&gt; m_hWnd Then
+         Debug.Print "MouseActivate"
+         SetFocusAPI m_hWndCtl
+         ISubclass_WindowProc = MA_NOACTIVATE
+      Else
+         ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lParam)
+      End If
+      Err.Clear
+   ' End Implement focus.
+   '
+    ----------------------------------------------------------------------------
+   --
+      
+   End Select
+   
+   Err.Clear
+   
+End Function
+
+Private Sub UserControl_Initialize()
+    Debug.Print "cTabCtrl:Initialize"
+   ' Attach custom IOleInPlaceActiveObject interface
+   Dim IPAO As IOleInPlaceActiveObject
+
+   With m_IPAOHookStruct
+      Set IPAO = Me
+      CopyMemory .IPAOReal, IPAO, 4
+      CopyMemory .TBEx, Me, 4
+      .lpVTable = IPAOVTable
+      .ThisPointer = VarPtr(m_IPAOHookStruct)
+   End With
+End Sub
+
+Private Sub UserControl_InitProperties()
+   Debug.Print "InitProps"
+    pInitialise
+    Set Font = UserControl.Ambient.Font
+End Sub
+
+Private Sub UserControl_ReadProperties(PropBag As PropertyBag)
+    Debug.Print "ReadProps"
+    m_bHotTrack = PropBag.ReadProperty("HotTrack", False)
+    m_bButtons = PropBag.ReadProperty("Buttons", False)
+    m_bMultiLine = PropBag.ReadProperty("MultiLine", False)
+    m_bRightJustify = PropBag.ReadProperty("RightJustify", False)
+    m_eAlign = PropBag.ReadProperty("TabAlign", etaTop)
+    FlatSeparators = PropBag.ReadProperty("FlatSeparators", False)
+    FlatButtons = PropBag.ReadProperty("FlatButtons", False)
+    m_bOwnerDraw = PropBag.ReadProperty("OwnerDraw", False)
+    m_eCoolTabs = PropBag.ReadProperty("CoolTabs", etaNone)
+    
+    pInitialise
+    
+    FlatSeparators = m_bFlatSeparators
+    
+    Dim sFnt As New StdFont
+    sFnt.Name = "MS Sans Serif"
+    sFnt.Size = 8
+    Set Font = PropBag.ReadProperty("Font", sFnt)
+    
+End Sub
+
+Private Sub UserControl_Resize()
+Dim tR As RECT
+   If (m_hWnd &lt;&gt; 0) Then
+      GetClientRect m_hWndCtl, tR
+      MoveWindow m_hWnd, 0, 0, tR.Right - tR.Left, tR.Bottom - tR.Top, 1
+   End If
+End Sub
+
+Private Sub UserControl_Terminate()
+    pTerminate
+    Debug.Print "cTabCtrl:Terminate"
+   ' Detach the custom IOleInPlaceActiveObject interface
+   ' pointers.
+   With m_IPAOHookStruct
+      CopyMemory .IPAOReal, 0&amp;, 4
+      CopyMemory .TBEx, 0&amp;, 4
+   End With
+   Debug.Print "cTabCtrl:Terminate"
+End Sub
+
+Private Sub UserControl_WriteProperties(PropBag As PropertyBag)
+    pTerminate
+    
+    Dim sFnt As New StdFont
+    sFnt.Name = "MS Sans Serif"
+    sFnt.Size = 8
+    PropBag.WriteProperty "Font", Font, sFnt
+    PropBag.WriteProperty "TabAlign", TabAlign, etaTop
+    PropBag.WriteProperty "HotTrack", m_bHotTrack, False
+    PropBag.WriteProperty "Buttons", m_bButtons, False
+    PropBag.WriteProperty "MultiLine", m_bMultiLine, False
+    PropBag.WriteProperty "RightJustify", m_bRightJustify, False
+    PropBag.WriteProperty "FlatSeparators", FlatSeparators, False
+    PropBag.WriteProperty "FlatButtons", FlatButtons, False
+    PropBag.WriteProperty "OwnerDraw", OwnerDraw, False
+    PropBag.WriteProperty "CoolTabs", CoolTabs, False
+End Sub
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Tab Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator TabStrip Control</a>&#160;.&#160;<a href="VB6_TabStrip_Control_Full_Source.html">VB6 TabStrip Control Full Source</a>&#160;.&#160;cTabCtrl.ctl</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Tab_Controls/vbAccelerator_ComCtl32_Tab_Control/VB6_TabStrip_Control_Full_Source_zip_cTabCtrl_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:53 GMT -->
+</html>

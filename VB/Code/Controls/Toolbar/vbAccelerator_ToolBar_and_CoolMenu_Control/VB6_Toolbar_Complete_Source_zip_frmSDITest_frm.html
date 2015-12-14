@@ -1,0 +1,1228 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Toolbar/vbAccelerator_ToolBar_and_CoolMenu_Control/VB6_Toolbar_Complete_Source_zip_frmSDITest_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:08 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmSDITest.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmSDITest.frm" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Toolbar</a>&#160;.&#160;<a href="article.html">vbAccelerator Toolbar and CoolMenu Control v3.5</a>&#160;.&#160;<a href="VB6_Toolbar_Complete_Source.html">VB6 Toolbar Complete Source</a>&#160;.&#160;frmSDITest.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="CoolMenu_Toolbar_Control_Documentation.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />CoolMenu Toolbar Control Documentation</a> (5K)</p><p /><p class="nav"><a href="VB5_Toolbar_Complete_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Toolbar Complete Source</a> (263K)</p><p class="nav"><a href="VB5_Toolbar_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Toolbar Control Binary</a> (78K)</p><p class="nav"><a href="VB5_Toolbar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Toolbar Demonstration</a> (97K)</p><p /><p class="nav"><a href="VB6_Toolbar_Complete_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Toolbar Complete Source</a> (261K)</p><p class="nav"><a href="VB6_Toolbar_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Toolbar Control Binary</a> (80K)</p><p class="nav"><a href="VB6_Toolbar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Toolbar Demonstration</a> (93K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1317</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1317&amp;type=Zip&amp;title=VB6%20Toolbar%20Complete%20Source%2Ezip%5FfrmSDITest">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 2 / 2</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:4 November 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />11 May 2003<br /><p class="update">Bug fix release to fix accelerator and chevron problems.</p><p class="update">Coolmenu accelerators caused problems - sometimes the menus
+triggered without the Alt- key being pressed, othertimes they did not trigger
+when they should.  The logic has been rewritten to correct this.</p><p class="update">Chevrons created by the toolbar did not trigger when clicked with 
+the mouse.  Fixed.  The chevron now also uses a Menu window class as a base so it
+draws in the same way as menus on the system.</p><p class="update">Some non-English keys did not work as accelerators. Fixed with code
+provided by Sergey Pitutin.</p><p class="update">The Toolbar, Rebar and ToolbarHost controls could not be hosted
+on a UserControl.  They now can. Thanks to Alexander Stetsenko for the information.</p><p class="update">The MDI buttons in the toolbar host control now render using XP
+Visual Style if appropriate.  Thanks to Nguyen Tuan Anh for the suggestion.</p><p class="update"><i>SaveLayout</i> and <i>RestoreLayout</i> (beta) methods have been
+added to the Rebar based on a method suggested by Ralph Brugger at LinkPool.  Feedback
+please!</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=7">PopupMenu DLL - Create Unlimited Popup Menus</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmSDITest.frm</h1><pre>VERSION 5.00
+Object = "{E142732F-A852-11D4-B06C-00500427A693}#1.13#0"; "vbalTbar6.ocx"
+Begin VB.Form frmSDITest 
+   Caption         =   "vbAccelerator Toolbar/Rebar Demonstration"
+   ClientHeight    =   5490
+   ClientLeft      =   1545
+   ClientTop       =   1275
+   ClientWidth     =   8115
+   BeginProperty Font 
+      Name            =   "Tahoma"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "frmSDITest.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   5490
+   ScaleWidth      =   8115
+   Begin VB.CommandButton cmdSaveLayout 
+      Caption         =   "&amp;Save Layout"
+      Height          =   315
+      Left            =   6060
+      TabIndex        =   5
+      Top             =   4200
+      Width           =   1335
+   End
+   Begin VB.CommandButton cmdRestoreLayout 
+      Caption         =   "&amp;Restore Layout"
+      Height          =   315
+      Left            =   6060
+      TabIndex        =   4
+      Top             =   4560
+      Width           =   1335
+   End
+   Begin vbalTBar6.cToolbar cToolbar1 
+      Height          =   1125
+      Left            =   60
+      Top             =   1200
+      Width           =   3000
+      _ExtentX        =   5424
+      _ExtentY        =   661
+   End
+   Begin vbalTBar6.cToolbar tbrMenu 
+      Height          =   1125
+      Left            =   60
+      Top             =   720
+      Width           =   3000
+      _ExtentX        =   5424
+      _ExtentY        =   661
+   End
+   Begin vbalTBar6.cReBar cReBar1 
+      Left            =   60
+      Top             =   60
+      _ExtentX        =   13785
+      _ExtentY        =   979
+   End
+   Begin VB.PictureBox picTest 
+      BackColor       =   &amp;H00000000&amp;
+      Height          =   315
+      Left            =   7380
+      ScaleHeight     =   255
+      ScaleWidth      =   255
+      TabIndex        =   2
+      Top             =   1560
+      Width           =   315
+      Begin VB.Image imgIcon 
+         Height          =   240
+         Left            =   0
+         Picture         =   "frmSDITest.frx":27A2
+         Top             =   0
+         Width           =   240
+      End
+   End
+   Begin VB.ListBox lstNotes 
+      Height          =   1815
+      IntegralHeight  =   0   'False
+      Left            =   120
+      TabIndex        =   1
+      Top             =   3120
+      Width           =   7335
+   End
+   Begin VB.ComboBox cboStyle 
+      Height          =   315
+      Left            =   4860
+      TabIndex        =   0
+      Text            =   "Combo1"
+      Top             =   1560
+      Width           =   2475
+   End
+   Begin vbalTBar6.cToolbar cToolbar2 
+      Height          =   1125
+      Left            =   60
+      Top             =   1680
+      Width           =   3000
+      _ExtentX        =   5424
+      _ExtentY        =   661
+   End
+   Begin vbalTBar6.cToolbar cToolbar3 
+      Height          =   1125
+      Left            =   60
+      Top             =   2100
+      Width           =   3000
+      _ExtentX        =   5424
+      _ExtentY        =   661
+   End
+   Begin VB.TextBox txtNotes 
+      Height          =   1875
+      Left            =   300
+      MultiLine       =   -1  'True
+      ScrollBars      =   2  'Vertical
+      TabIndex        =   3
+      Text            =   "frmSDITest.frx":28EC
+      Top             =   3360
+      Width           =   7335
+   End
+End
+Attribute VB_Name = "frmSDITest"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+' =========================================================================
+' vbAccelerator Toolbar/Rebar control tester
+' Copyright  1998 - 2003 Steve McMahon (steve@vbaccelerator.com)
+'
+' Demonstrates the vbAccelerator Toolbar and Rebar control.
+' Note that some of the features of this demonstration will
+' not work correctly unless you have the correct version of
+' COMCTRL32.DLL installed (4.71 or higher required).
+'
+' Visit vbAccelerator at http://vbaccelerator.com/
+' =========================================================================
+
+Private Declare Function LockWindowUpdate Lib "user32" (ByVal hwndLock As Long)
+ As Long
+Private Declare Function PostMessage Lib "user32" Alias "PostMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As Long)
+ As Long
+Private Const WM_SYSCOMMAND = &amp;H112
+Private Const SC_CLOSE = &amp;HF060&amp;
+
+Private WithEvents m_cMenu As cPopupMenu
+Attribute m_cMenu.VB_VarHelpID = -1
+Private m_cIls As cVBALImageList
+Private m_cSysIls As cVBALSysImageList
+
+Private Sub TestSaveLayout()
+Dim iFile As Integer
+Dim sFile As String
+Dim sXml As String
+   
+   sXml = cReBar1.SaveLayout()
+   
+   sFile = App.Path &amp; "\restore.xml"
+   
+   On Error Resume Next
+   Kill sFile
+   
+   On Error GoTo errorHandler
+   iFile = FreeFile
+   Open sFile For Binary Access Write As #iFile
+   Put #iFile, , sXml
+   Close #iFile
+   Exit Sub
+   
+errorHandler:
+   MsgBox "An error occurred trying to save the layout:" &amp; vbCrLf &amp;
+    Err.Description, vbExclamation
+   Exit Sub
+   
+End Sub
+
+Private Sub TestLoadLayout()
+
+   ' Read the XML:
+   Dim iFile As Integer
+   Dim sXml As String
+
+   iFile = FreeFile
+   Open App.Path &amp; "\restore.xml" For Binary Access Read As #iFile
+   sXml = Space$(LOF(iFile))
+   Get #iFile, , sXml
+   Close #iFile
+   
+   ' Set up an array of window handles against band data:
+   ReDim sData(1 To 6) As String
+   ReDim lhWnd(1 To 6) As Long
+   sData(1) = "MenuBar": lhWnd(1) = tbrMenu.hwnd
+   sData(2) = "Logo": lhWnd(2) = picTest.hwnd
+   sData(3) = "Toolbar1": lhWnd(3) = cToolbar1.hwnd
+   sData(4) = "Toolbar2": lhWnd(4) = cToolbar2.hwnd
+   sData(5) = "Stylebar": lhWnd(5) = cboStyle.hwnd
+   sData(6) = "Toolbar3": lhWnd(6) = cToolbar3.hwnd
+
+   ' Recreate the rebar:
+   cReBar1.DestroyRebarDontDestroyChildren
+   cReBar1.CreateRebar Me.hwnd
+   
+   ' Restore the saved layout:
+   cReBar1.RestoreLayout sXml, sData(), lhWnd()
+
+End Sub
+
+Private Sub pCreateMenu()
+Dim iPTop As Long
+Dim iP As Long
+Dim iP2 As Long
+Dim iP3 As Long
+   
+   Set m_cMenu = New cPopupMenu
+
+   ' Creating a Menu:
+   With m_cMenu
+      ' Initial set up:
+      .hWndOwner = Me.hwnd
+      .OfficeXpStyle = True
+      
+      ' 1) Add the File menu:
+      iP = .AddItem("&amp;File", , , iPTop, , , , "mnuFileTOP")
+      .AddItem "&amp;New Instance" &amp; vbTab &amp; "Ctrl+N", , , iP, , , , "mnuFile(0)"
+      .AddItem "Show &amp;MDI!", , , iP, , , , "mnuFile(1)"
+      .AddItem "-", , , iP, , , , "mnuFile(2)"
+      .AddItem "&amp;Close", , , iP, , , , "mnuFile(3)"
+      
+      ' 2) Add the Button menu, demonstrating infrequently used items:
+      iP = .AddItem("&amp;Button", , , iPTop, , , , "mnuButtonTOP")
+      .AddItem "Button 2 &amp;Visible", , , iP, , True, , "mnuButton(0)"
+      .AddItem "Button 2 &amp;Enabled", , , iP, , False, , "mnuButton(1)"
+      .AddItem "-", , , iP, , , , "mnuButton(2)"
+      iP2 = .AddItem("Change Button 2 &amp;Caption", , , iP, , , , "mnuButton(3)")
+      .ItemInfrequentlyUsed(iP2) = True
+      iP2 = .AddItem("Change Button 1 Captio&amp;n", , , iP, , , , "mnuButton(4)")
+      .ItemInfrequentlyUsed(iP2) = True
+      .AddItem "-", , , iP, , , , "mnuButton(5)"
+      iP2 = .AddItem("Change Button 2 &amp;Image", , , iP, , , , "mnuButton(6)")
+      .ItemInfrequentlyUsed(iP2) = True
+      iP2 = .AddItem("Chec&amp;k Last Button", , , iP, , , , "mnuButton(7)")
+      .ItemInfrequentlyUsed(iP2) = True
+      .AddItem "-", , , iP, , , , "mnuButton(8)"
+      .AddItem "In&amp;sert Button...", , , iP, , , , "mnuButton(9)"
+      .AddItem "-", , , iP, , , , "mnuButton(10)"
+      .AddItem "&amp;Show Captions", , , iP, , True, , "mnuButton(11)"
+      
+      ' 3) Add the View menu:
+      iP = .AddItem("&amp;View", , , iPTop, , , , "mnuViewTOP")
+      .AddItem "&amp;Large Toolbar", , , iP, , True, , "mnuView(0)"
+      .AddItem "&amp;Small Toolbar", , , iP, , True, , "mnuView(1)"
+      .AddItem "Lin&amp;ks Toolbar", , , iP, , True, , "mnuView(2)"
+      .AddItem "St&amp;yle Bar", , , iP, , True, , "mnuView(3)"
+      .AddItem "-", , , iP, , , , "mnuView(4)"
+      .AddItem "Background &amp;Bitmap", , , iP, , , , "mnuView(5)"
+      .AddItem "Office &amp;XP Style", , , iP, , True, , "mnuView(6)"
+      
+      ' 4) Add the Position menu:
+      iP = .AddItem("&amp;Position", , , iPTop, , , , "mnuPositionTOP")
+      iP2 = .AddItem("&amp;Top", , , iP, , , , "mnuPosition(0)")
+      .RadioCheck(iP2) = True
+      .AddItem "&amp;Left", , , iP, , , , "mnuPosition(1)"
+      .AddItem "&amp;Right", , , iP, , , , "mnuPosition(2)"
+      .AddItem "&amp;Bottom", , , iP, , , , "mnuPosition(3)"
+      
+      ' 5) Add the Help menu:
+      iP = .AddItem("&amp;Help", , , iPTop, , , , "mnuHelpTOP")
+      .AddItem "&amp;Contents" &amp; vbTab &amp; "F1", , , iP, , , , "mnuHelp(0)"
+      iP2 = .AddItem("&amp;Index", , , iP, , , , "mnuHelp(1)")
+      .ItemInfrequentlyUsed(iP2) = True
+      iP2 = .AddItem("&amp;Search", , , iP, , , , "mnuHelp(2)")
+      .ItemInfrequentlyUsed(iP2) = True
+      .AddItem "-", , , iP
+      iP2 = .AddItem("&amp;vbAccelerator on the Web", , , iP, , , , "mnuHelp(1)")
+      ' Add some sub menus:
+      iP3 = .AddItem("&amp;Free Stuff", , , iP2)
+      iP3 = .AddItem("&amp;Product News", , , iP2)
+      iP3 = .AddItem("Frequently Asked &amp;Questions", , , iP2)
+      iP3 = .AddItem("-", , , iP2)
+      iP3 = .AddItem("For &amp;Developers Only", , , iP2)
+      .ItemInfrequentlyUsed(iP3) = True
+      iP3 = .AddItem("Send Feed&amp;back", , , iP2)
+      .ItemInfrequentlyUsed(iP3) = True
+      iP3 = .AddItem("&amp;Best of the Web", , , iP2)
+      .ItemInfrequentlyUsed(iP3) = True
+      iP3 = .AddItem("Search the &amp;Web", , , iP2)
+      .ItemInfrequentlyUsed(iP3) = True
+      iP3 = .AddItem("Web &amp;Tutorial", , , iP2)
+      .ItemInfrequentlyUsed(iP3) = True
+      .AddItem "-", , , iP
+      .AddItem "&amp;About...", , , iP, , , , "mnuHelp(3)"
+      
+      ' Make infrequently used items invisible in the toolbar
+      .HideInfrequentlyUsed = True
+   End With
+   
+End Sub
+
+Private Sub pCreateImageList()
+   
+   ' Create the image list for the toolbars w/image list
+   ' demonstrations:
+   Set m_cIls = New cVBALImageList
+   m_cIls.ColourDepth = ILC_COLOR4
+   m_cIls.IconSizeX = 16
+   m_cIls.IconSizeY = 16
+   m_cIls.Create
+   m_cIls.AddFromFile App.Path &amp; "\explorer 16 colour hot 753x16.bmp",
+    IMAGE_BITMAP
+   
+   ' Create the sys image list for the list style links
+   ' toolbar:
+   Set m_cSysIls = New cVBALSysImageList
+   m_cSysIls.IconSizeX = 16
+   m_cSysIls.IconSizeY = 16
+   m_cSysIls.Create
+   
+End Sub
+
+Private Sub pFileMenu(ByVal lIndex As Long, ByVal sKey As String)
+   ' Respond to File Menu item clicks
+   
+Dim lItemIndex As Long
+
+   lItemIndex = CLng(Mid$(sKey, 9, 1))
+   Select Case lItemIndex
+   Case 0
+      Dim f As New frmSDITest
+      f.Show
+   Case 1
+      mfrmTest.Show
+      mfrmTest.ZOrder
+   Case 3
+      PostMessage Me.hwnd, WM_SYSCOMMAND, SC_CLOSE, 0
+   End Select
+
+End Sub
+Private Sub pViewMenu(ByVal lIndex As Long, ByVal sKey As String)
+   
+   ' Respond to View Menu item clicks
+   
+Dim bS As Boolean
+Dim l As Long
+Dim lMajor As Long, lMinor As Long
+Dim lItemIndex As Long
+   
+   ' None of these options are possible for COMMCTRL versions below 4.71:
+   cToolbar1.GetComCtrlVersionInfo lMajor, lMinor
+   If (lMajor = 4) And (lMinor &lt; 71) Then
+      MsgBox "Rebar Band Modification is not possible for COMMCTRL.DLL version
+       4.70.", vbInformation
+      Exit Sub
+   End If
+   
+   ' Demonstrates hiding/showing rebar bands, and also
+   ' changing the background bitmap of the rebar:
+   
+   bS = Not (m_cMenu.Checked(lIndex))
+   m_cMenu.Checked(lIndex) = bS
+   If IsNumeric(Mid$(sKey, 9, 1)) Then
+   lItemIndex = CLng(Mid$(sKey, 9, 1))
+   Select Case lItemIndex
+   Case 0
+      l = cReBar1.BandIndexForData("Toolbar1")
+      cReBar1.BandVisible(l) = bS
+   Case 1
+      l = cReBar1.BandIndexForData("Toolbar2")
+      cReBar1.BandVisible(l) = bS
+   Case 2
+      l = cReBar1.BandIndexForData("Toolbar3")
+      cReBar1.BandVisible(l) = bS
+   Case 3
+      l = cReBar1.BandIndexForData("Stylebar")
+      cReBar1.BandVisible(l) = bS
+      
+   Case 5
+   
+      ' To change the background bitmap, we remove all bands
+      ' and add them in again.
+      ' In order to prevent flickering whilst the rebar builds,
+      ' use LockWindowUpdate.  See Tips on vbAccelerator for
+      ' more info.
+      LockWindowUpdate Me.hwnd
+      With cReBar1
+         .ImageSource = CRBLoadFromFile
+         If (bS) Then
+            .DestroyRebarDontDestroyChildren
+            .ImageFile = App.Path &amp; "\iebar2.bmp"
+            .CreateRebar Me.hwnd
+            .AddBandByHwnd tbrMenu.hwnd, , , , "MenuBar"
+            .BandChildMinWidth(.BandCount - 1) = 24
+            .AddBandByHwnd cToolbar1.hwnd, , , , "Toolbar1"
+            .BandChildMinWidth(.BandCount - 1) = 24
+            If (lMajor &gt; 4) Or (lMinor &gt; 70) Then
+               .AddBandByHwnd picTest.hwnd, , , True, "Logo"
+            End If
+            .AddBandByHwnd cToolbar2.hwnd, , , , "Toolbar2"
+            .AddBandByHwnd cboStyle.hwnd, "Style", False, , "Stylebar"
+            ' Fixed toolbars are not allowed with COMMCTRL before 4.71:
+            .AddBandByHwnd cToolbar3.hwnd, "Links", , , "Toolbar3"
+            .BandChildMinWidth(.BandCount - 1) = 24
+            Set m_cMenu.BackgroundPicture = LoadPicture(App.Path &amp;
+             "\iebar2.bmp")
+         Else
+            .DestroyRebarDontDestroyChildren
+            .ImageFile = ""
+            .CreateRebar Me.hwnd
+            .AddBandByHwnd tbrMenu.hwnd, , , , "MenuBar"
+            .BandChildMinWidth(.BandCount - 1) = 24
+            .AddBandByHwnd cToolbar1.hwnd, , , , "Toolbar1"
+            .BandChildMinWidth(.BandCount - 1) = 24
+            If (lMajor &gt; 4) Or (lMinor &gt; 70) Then
+               .AddBandByHwnd picTest.hwnd, , , True, "Logo"
+            End If
+            .AddBandByHwnd cToolbar2.hwnd, , , , "Toolbar2"
+            .BandChildMinWidth(.BandCount - 1) = 24
+            .AddBandByHwnd cboStyle.hwnd, "Style", False, , "Stylebar"
+            ' Fixed toolbars are not allowed with COMMCTRL before 4.71:
+            .AddBandByHwnd cToolbar3.hwnd, "Links", , , "Toolbar3"
+            .BandChildMinWidth(.BandCount - 1) = 24
+            m_cMenu.ClearBackgroundPicture
+         End If
+      End With
+      LockWindowUpdate 0
+      
+   Case 6
+      Dim ctl As Control
+      For Each ctl In Me.Controls
+         If (TypeName(ctl) = "cToolbar") Then
+            Dim cTbar As cToolbar
+            Set cTbar = ctl
+            If (bS) Then
+               cTbar.DrawStyle = CTBDrawOfficeXPStyle
+            Else
+               cTbar.DrawStyle = CTBDrawStandard
+            End If
+         End If
+      Next
+   End Select
+   End If
+   
+End Sub
+
+Private Sub Indicate(sItem As String)
+   ' Show a message
+   lstNotes.AddItem sItem
+   lstNotes.ListIndex = lstNotes.NewIndex
+End Sub
+
+Private Sub cboStyle_Click()
+   Indicate "cboStyle Click: " &amp; cboStyle.ListIndex
+End Sub
+
+
+Private Sub cmdRestoreLayout_Click()
+   TestLoadLayout
+End Sub
+
+Private Sub cmdSaveLayout_Click()
+   TestSaveLayout
+End Sub
+
+Private Sub cReBar1_BandChildResize(ByVal wID As Long, ByVal lBandLeft As Long,
+ ByVal lBandTop As Long, ByVal lBandRight As Long, ByVal lBandBottom As Long,
+ lChildLeft As Long, lChildTop As Long, lChildRight As Long, lChildBottom As
+ Long)
+   'Debug.Print cReBar1.BandIndexForId(wID)
+End Sub
+
+Private Sub cReBar1_BeginBandDrag(ByVal wID As Long, bCancel As Boolean)
+Dim s As String
+Dim v As Variant
+   v = cReBar1.BandData(wID)
+   If IsMissing(v) Then
+      s = wID
+   Else
+      s = v
+   End If
+   'Indicate "Rebar BandBeginDrag:" &amp; s
+End Sub
+
+Private Sub cReBar1_ChevronPushed(ByVal wID As Long, ByVal lLeft As Long, ByVal
+ lTop As Long, ByVal lRight As Long, ByVal lBottom As Long)
+Dim lIndex As Long
+Dim v As Variant
+   Indicate "ChevronPushed:" &amp; wID
+   v = cReBar1.BandData(wID)
+   If Not IsMissing(v) Then
+      Select Case v
+      Case "MenuBar"
+         tbrMenu.ChevronPress lRight \ Screen.TwipsPerPixelX + 1, lTop \
+          Screen.TwipsPerPixelY
+      Case "Toolbar1"
+         cToolbar1.ChevronPress lRight \ Screen.TwipsPerPixelX + 1, lTop \
+          Screen.TwipsPerPixelY
+      Case "Toolbar1"
+         cToolbar1.ChevronPress lRight \ Screen.TwipsPerPixelX + 1, lTop \
+          Screen.TwipsPerPixelY
+      Case "Toolbar2"
+         cToolbar2.ChevronPress lRight \ Screen.TwipsPerPixelX + 1, lTop \
+          Screen.TwipsPerPixelY
+      Case "Toolbar3"
+         cToolbar3.ChevronPress lRight \ Screen.TwipsPerPixelX + 1, lTop \
+          Screen.TwipsPerPixelY
+      End Select
+   End If
+End Sub
+
+Private Sub cReBar1_EndBandDrag(ByVal wID As Long)
+Dim s As String
+Dim v As Variant
+   v = cReBar1.BandData(wID)
+   If IsMissing(v) Then
+      s = wID
+   Else
+      s = v
+   End If
+   'Indicate "Rebar BandEndDrag:" &amp; s
+End Sub
+
+Private Sub cReBar1_HeightChanged(lHeight As Long)
+   Indicate "Rebar HeightChanged" &amp; lHeight
+   pResize
+End Sub
+
+Private Sub cReBar1_LayoutChanged()
+   Indicate "Rebar LayoutChanged"
+End Sub
+
+Private Sub cToolbar1_ButtonClick(ByVal lButton As Long)
+   Indicate "Toolbar1 ButtonClick:" &amp; vbTab &amp; CStr(lButton) &amp; ",Key=" &amp;
+    cToolbar1.ButtonKey(lButton) &amp; ",Checked=" &amp;
+    cToolbar1.ButtonChecked(lButton)
+   If (cToolbar1.ButtonKey(lButton) = "Properties") Then
+      If (cToolbar1.ButtonChecked(lButton)) Then
+         txtNotes.Visible = True
+         lstNotes.Visible = False
+      Else
+         lstNotes.Visible = True
+         txtNotes.Visible = False
+      End If
+   End If
+End Sub
+
+Private Sub cToolbar1_CustomiseBegin()
+   Indicate "CustomiseBegin"
+End Sub
+
+Private Sub cToolbar1_CustomiseCanDelete(ByVal lButton As Long, bCanDelete As
+ Boolean)
+   Indicate "CustomiseCanDelete:" &amp; vbTab &amp; CStr(lButton) &amp; ",Key=" &amp;
+    cToolbar1.ButtonKey(lButton) &amp; ",Value=" &amp; bCanDelete
+End Sub
+
+Private Sub cToolbar1_CustomiseCanInsertBefore(ByVal lButton As Long,
+ bCanInsert As Boolean)
+   Indicate "CustomiseCanInsertBefore:" &amp; vbTab &amp; CStr(lButton) &amp; ",Key=" &amp;
+    cToolbar1.ButtonKey(lButton) &amp; ",Value=" &amp; bCanInsert
+End Sub
+
+Private Sub cToolbar1_DropDownPress(ByVal lButton As Long)
+' If the toolbar hasn't created from a menu, you can show your own
+' drop down item in response to a drop down press.
+Dim x As Long, y As Long
+Dim lIndex As Long
+   Indicate "Toolbar1 DropDownPress:" &amp; vbTab &amp; CStr(lButton)
+   cToolbar1.GetDropDownPosition lButton, x, y
+   lIndex = m_cMenu.IndexForKey("mnuHelp(0)")
+   m_cMenu.ShowPopupMenuAtIndex x, y, lIndex:=lIndex
+End Sub
+
+Private Sub cToolbar2_ButtonClick(ByVal lButton As Long)
+   Indicate "Toolbar2 ButtonClick:" &amp; vbTab &amp; CStr(lButton) &amp; ",Key=" &amp;
+    cToolbar2.ButtonKey(lButton) &amp; ",Checked=" &amp;
+    cToolbar2.ButtonChecked(lButton)
+End Sub
+
+Private Sub cToolbar2_DropDownPress(ByVal lButton As Long)
+' If the toolbar hasn't created from a menu, you can show your own
+' drop down item in response to a drop down press.
+Dim x As Long, y As Long
+Dim lIndex As Long
+   Indicate "Toolbar2 DropDownPress:" &amp; vbTab &amp; CStr(lButton)
+   cToolbar2.GetDropDownPosition lButton, x, y
+   lIndex = m_cMenu.IndexForKey("mnuFile(0)")
+   m_cMenu.ShowPopupMenuAtIndex x, y, lIndex:=lIndex
+End Sub
+
+Private Sub cToolbar3_ButtonClick(ByVal lButton As Long)
+   Indicate "Toolbar3 ButtonClick:" &amp; vbTab &amp; CStr(lButton) &amp; ",Key=" &amp;
+    cToolbar3.ButtonKey(lButton) &amp; ",Checked=" &amp;
+    cToolbar3.ButtonChecked(lButton)
+End Sub
+
+Private Sub Form_Load()
+Dim lMajor As Long, lMinor As Long, lBuild As Long
+Dim i As Long
+
+    cToolbar1.GetComCtrlVersionInfo lMajor, lMinor, lBuild
+   
+   '
+    ----------------------------------------------------------------------------
+   --------
+   ' Create the Image List and Menu object used in this demonstration
+   pCreateImageList
+   pCreateMenu
+   '
+    ----------------------------------------------------------------------------
+   --------
+
+   
+   '
+    ----------------------------------------------------------------------------
+   --------
+   ' Show some information about this project:
+    Indicate "Welcome to the vbAccelerator Rebar/Toolbar CoolMenu control
+     Demonstration"
+    Indicate ""
+    Indicate "This sample demonstrates:"
+    Indicate "1) A CoolMenu"
+    Indicate "2) A 256 colour 24x24 icon IE style bar"
+    Indicate "3) A 16x16 bar with no text"
+    Indicate "4) A 16x16 list-style bar with text and autosizing"
+    Indicate "5) A Fixed item showing a logo"
+    Indicate ""
+    Indicate "All toolbars and an address ComboBox have been added to the Rebar"
+    Indicate ""
+    Indicate "You are running Common Controls version: " &amp; lMajor &amp; "." &amp;
+     lMinor &amp; ", Build: " &amp; lBuild
+    If (lMajor &lt; 4) Or ((lMajor = 4) And (lMinor &lt; 71)) Then
+      Indicate "This version does not support:"
+      Indicate "a) Fixed rebar bands."
+      Indicate "b) Standard button image resources."
+      Indicate "c) Hiding/modification of rebar bands."
+      Indicate "d) Auto-sized toolbar buttons."
+      Indicate "e) Drop-down arrows for drop-down buttons"
+      Indicate "You are highly recommended to upgrade to a newer version of IE"
+    End If
+   '
+    ----------------------------------------------------------------------------
+   --------
+
+   '
+    ----------------------------------------------------------------------------
+   --------
+   ' Prepare the toolbars:
+   ' 1) This toolbar uses 256 colour 24x24 buttons with text copied from IE5.
+   ' The buttons demonstrate automatic sizing and drop-downs.
+   ' Note: a) Auto sizing is not supported for COMMCTRL v4.70
+   '       b) Drop down buttons do not appear for COMMCTRL v4.70, and pressing
+   '          a drop down button always raises a drop-down notification.
+   With cToolbar1
+      
+      .ImageSource = CTBLoadFromFile
+      .ImageFile = App.Path &amp; "\256-1.bmp"
+      .CreateToolbar 24, , True, True
+      .DrawStyle = CTBDrawOfficeXPStyle
+      
+      .AddButton "Back", 0, , , "Back", CTBDropDown Or CTBAutoSize, "Back"
+      .AddButton "Next", 1, , , "Next", CTBDropDown Or CTBAutoSize, "Next"
+         .ButtonEnabled("Next") = False
+      .AddButton "", -1, , , , CTBSeparator
+      .AddButton "Cut", 2, , , "Cut", CTBNormal Or CTBAutoSize, "Cut"
+      .AddButton "Copy", 3, , , "Copy", CTBNormal Or CTBAutoSize, "Copy"
+      .AddButton "Paste", 4, , , "Paste", CTBNormal Or CTBAutoSize, "Paste"
+      .AddButton "", -1, , , , CTBSeparator
+      .AddButton "Undo the Last Operation", 5, , , "Undo", CTBNormal Or
+       CTBAutoSize, "Undo"
+      .AddButton "Redo the Last Operation", 6, , , "Redo", CTBNormal Or
+       CTBAutoSize, "Redo"
+      .AddButton "", -1, , , , CTBSeparator
+      .AddButton "Properties", 8, , , "Properties", CTBCheck Or CTBAutoSize,
+       "Properties"
+      .AddButton "", -1, , , , CTBSeparator
+      .AddButton "Print", 13, , , "Print", CTBDropDownArrow Or CTBAutoSize,
+       "Print"
+      .AddButton "", -1, , , , CTBSeparator
+      .AddButton "Toggle New", 14, , , "New", CTBCheckGroup Or CTBAutoSize,
+       "New"
+      .AddButton "Toggle Stop", 15, , , "Stop", CTBCheckGroup Or CTBAutoSize,
+       "Stop"
+   
+   End With
+   '
+    ----------------------------------------------------------------------------
+   --------
+   
+   '
+    ----------------------------------------------------------------------------
+   --------
+   ' 2) This toolbar uses an image list with 16x16 buttons and no text
+   With cToolbar2
+      
+      .ImageSource = CTBExternalImageList
+      .DrawStyle = CTBDrawOfficeXPStyle
+      
+      .CreateToolbar 16, , , True
+      
+      .SetImageList m_cIls.hIml
+      
+      .AddButton "New", 11, , , "", CTBDropDown
+      .AddButton "Open", 12, , , "", CTBNormal
+      .AddButton "Save", 13, , , ""
+      .AddButton "", -1, , , , CTBSeparator
+      .AddButton "Cut", 5, , , ""
+      .AddButton "Copy", 6, , , ""
+      .AddButton "Paste", 7, , , ""
+      .AddButton "", -1, , , , CTBSeparator
+      .AddButton "CheckBox", 15, , , "", CTBCheck
+      .AddButton "", -1, , , , CTBSeparator
+      .AddButton "Print", 20, , , "", CTBDropDown
+      .AddButton "", -1, , , , CTBSeparator
+      .AddButton "Help", 16, , , "", CTBCheckGroup
+      .AddButton "Find", 17, , , "", CTBCheckGroup
+   
+   End With
+   '
+    ----------------------------------------------------------------------------
+   --------
+   
+   '
+    ----------------------------------------------------------------------------
+   --------
+   ' 3) This toolbar is a 16x16 icon list style toolbar with
+   ' automatically sized buttons.  The image used is the standard Favourites
+   ' folder image, but can be easily switched to a better icon.
+   ' Note: Standard bitmap resources do not appear in v4.70
+   With cToolbar3
+      
+      .ImageSource = CTBExternalImageList
+      .SetImageList m_cSysIls.hIml
+      .ImageStandardBitmapType = CTBHistorySmallColor
+      .DrawStyle = CTBDrawOfficeXPStyle
+      
+      .CreateToolbar 16, True, True, True
+      
+      .AddButton "Go to the vbAccelerator site", m_cSysIls.ItemIndex("*.htm"),
+       , , "vbAccelerator", CTBNormal Or CTBAutoSize, "vbAccelerator"
+      .AddButton "Visit MSDN", m_cSysIls.ItemIndex("*.htm"), , , "MSDN Online",
+       CTBNormal Or CTBAutoSize, "MSDN"
+      .AddButton "Go to MS Site Builder Network", m_cSysIls.ItemIndex("*.htm"),
+       , , "Site Builder Network", CTBNormal Or CTBAutoSize, "SBN"
+      .AddButton "Check out VBNet", m_cSysIls.ItemIndex("*.htm"), , , "VBNet",
+       CTBNormal Or CTBAutoSize, "VBNet"
+      .AddButton "Visit the Common Controls Replacement Project",
+       m_cSysIls.ItemIndex("*.htm"), , , "CCRP", CTBNormal Or CTBAutoSize,
+       "CCRP"
+   
+   End With
+   '
+    ----------------------------------------------------------------------------
+   --------
+
+
+   ' Add some test items to the style combo box:
+   For i = 1 To cToolbar1.ButtonCount
+      cboStyle.AddItem cToolbar1.ButtonCaption(i - 1)
+   Next i
+   cboStyle.Text = ""
+         
+   '
+    ----------------------------------------------------------------------------
+   --------
+   ' Create the Menu for the form:
+   tbrMenu.DrawStyle = CTBDrawOfficeXPStyle
+   ' Note that there is also a CreateFromMenu2 option
+   ' which allows you to create menus from a specified sub-menu
+   ' within a cPopupMenu object.
+   tbrMenu.CreateFromMenu m_cMenu
+   
+   '
+    ----------------------------------------------------------------------------
+   --------
+    
+   
+   '
+    ----------------------------------------------------------------------------
+   --------
+   ' Now add the combo box, the toolbars and the menu bar to the rebar,
+   ' setting a background bitmap for the rebar:
+    With cReBar1
+      
+      ' a) Create the rebar:
+      .ImageSource = CRBLoadFromFile
+      .CreateRebar Me.hwnd
+      
+      ' b) Add the toolbar &amp; combo boxes.
+      ' When you add a band, the rebar automatically sets the IdealWidth
+      ' to the size of the object you've added, and makes the Minimum
+      ' size the same.  By allowing a smaller minimum size, the rebar
+      ' will show a chevron when the band is reduced.
+      
+      ' i) Add the menu:
+      .AddBandByHwnd tbrMenu.hwnd, , , , "MenuBar"
+      .BandChildMinWidth(.BandCount - 1) = 24
+      
+      ' i) Add the 24x24 toolbar with text:
+      .AddBandByHwnd cToolbar1.hwnd, , , , "Toolbar1"
+      .BandChildMinWidth(.BandCount - 1) = 24
+      
+      ' iii) Add the logo:
+      If (lMajor &gt; 4) Or (lMinor &gt; 70) Then          ' Fixed toolbars are not
+       allowed with COMMCTRL before 4.71
+         .AddBandByHwnd picTest.hwnd, , False, True, "Logo"
+      End If
+      
+      ' iv) Add the 16x16 toolbar with no text:
+      .AddBandByHwnd cToolbar2.hwnd, , , , "Toolbar2"
+      .BandChildMinWidth(.BandCount - 1) = 24
+      
+      ' v) Add the combo box.  In this case we tell the rebar not
+      '    to show a chevron at all. The rebar will stretch the
+      '    combo between the minimum size and the current size of
+      '    the bar
+      .AddBandByHwnd cboStyle.hwnd, "Style", False, , "Stylebar"
+      .BandChildMinWidth(.BandCount - 1) = 64
+      .BandChevron(.BandCount - 1) = False
+      
+      ' vi) Add the list style toolbar:
+      .AddBandByHwnd cToolbar3.hwnd, "Links", , , "Toolbar3"
+      .BandChildMinWidth(.BandCount - 1) = 24
+      
+    End With
+   '
+    ----------------------------------------------------------------------------
+   --------
+    
+End Sub
+
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+   ' For safety, ensure that the Rebar doesn't have any
+   ' child windows before terminating.  This shouldn't be
+   ' necessary:
+   'cReBar1.RemoveAllRebarBands
+End Sub
+Private Sub pResize()
+Dim lH As Long
+On Error Resume Next
+   ' Resize the form based on the Rebar height:
+   lH = (cReBar1.RebarHeight * Screen.TwipsPerPixelY)
+   
+   Select Case cReBar1.Position
+   Case erbPositionTop
+      lstNotes.Move _
+         Screen.TwipsPerPixelX * 2, _
+         lH + 3 * Screen.TwipsPerPixelY, _
+         Me.ScaleWidth - 4 * Screen.TwipsPerPixelX, _
+         Me.ScaleHeight - lH - 5 * Screen.TwipsPerPixelY
+   Case erbPositionRight
+      lstNotes.Move _
+         Screen.TwipsPerPixelX * 2, _
+         Screen.TwipsPerPixelY * 2, _
+         Me.ScaleWidth - lH - 4 * Screen.TwipsPerPixelX, _
+         Me.ScaleHeight - 4 * Screen.TwipsPerPixelY
+   Case erbPositionLeft
+      lstNotes.Move _
+         lH + 2 * Screen.TwipsPerPixelX, _
+         2 * Screen.TwipsPerPixelY, _
+         Me.ScaleWidth - lH - 4 * Screen.TwipsPerPixelX, _
+         Me.ScaleHeight - 4 * Screen.TwipsPerPixelY
+   Case erbPositionBottom
+      lstNotes.Move _
+         Screen.TwipsPerPixelX * 2, _
+         Screen.TwipsPerPixelY * 2, _
+         Me.ScaleWidth - 2 * Screen.TwipsPerPixelX, _
+         Me.ScaleHeight - lH - 5 * Screen.TwipsPerPixelY
+   End Select
+   txtNotes.Move lstNotes.left, lstNotes.tOp, lstNotes.Width, lstNotes.Height
+End Sub
+Private Sub Form_Resize()
+   ' Make sure the rebar is the correct width:
+   cReBar1.RebarSize
+   ' Resize the other items on the form:
+   pResize
+End Sub
+
+Private Sub Form_Terminate()
+   If (Forms.Count = 0) Then
+      UnloadApp
+   End If
+End Sub
+
+Private Sub m_cMenu_Click(ItemNumber As Long)
+Dim sKey As String
+   
+   sKey = m_cMenu.ItemKey(ItemNumber)
+   'Debug.Print "Click:", sKey
+   
+   Select Case True
+   Case left$(sKey, 7) = "mnuFile"
+      pFileMenu ItemNumber, sKey
+   Case left$(sKey, 7) = "mnuView"
+      pViewMenu ItemNumber, sKey
+   Case left$(sKey, 7) = "mnuTest"
+      Indicate "Click:" &amp; sKey
+   Case left$(sKey, 9) = "mnuButton"
+      pButtonMenu ItemNumber, sKey
+   Case left$(sKey, 11) = "mnuPosition"
+      pPositionMenu ItemNumber, sKey
+   Case sKey = "mnuHelp(3)"
+      Dim fA As frmAbout
+      Set fA = New frmAbout
+      fA.Show vbModal, Me
+   End Select
+   
+End Sub
+Private Function plGetIndexFromKey(ByVal sKey As String) As Long
+Dim iPos As Long
+Dim iNextPos As Long
+   iPos = InStr(sKey, "(")
+   If iPos &gt; 0 Then
+      iNextPos = InStr(iPos, sKey, ")")
+      If iNextPos &gt; 0 Then
+         plGetIndexFromKey = Mid$(sKey, iPos + 1, iNextPos - iPos - 1)
+      End If
+   End If
+End Function
+
+Private Sub pButtonMenu(ByVal lIndex As Long, ByVal sKey As String)
+Dim bState As Boolean
+Dim sCap As String
+Dim l As Long, lW As Long
+Dim lItemIndex As Long
+   
+   lItemIndex = plGetIndexFromKey(sKey)
+   
+   Select Case lItemIndex
+   Case 0
+      ' Hiding buttons.  This is much smoother than the VB
+      ' toolbar version where you can't do this without
+      ' removing the button!
+      bState = Not (m_cMenu.Checked(lIndex))
+      m_cMenu.Checked(lIndex) = bState
+      cToolbar1.ButtonVisible(1) = bState
+      
+      ' Tell the rebar the new size of the band:
+      lW = cToolbar1.ToolbarWidth
+      l = cReBar1.BandIndexForData("Toolbar1")
+      cReBar1.BandChildIdealWidth(l) = lW
+      cReBar1.RebarSize
+   Case 1
+      ' Enable a button.  Better than the VB toolbar because
+      ' it doesn't cause all the buttons to be removed and
+      ' then added again:
+      bState = Not (m_cMenu.Checked(lIndex))
+      m_cMenu.Checked(lIndex) = bState
+      cToolbar1.ButtonEnabled(1) = bState
+   Case 3
+      ' Reset the caption of a button.  Demonstrates the button
+      ' Autosizing feature which you can't get in the VB version.
+      ' Also, only one button is removed to achieve this effect,
+      ' rather than the whole toolbar being recreated as in the
+      ' VB toolbar:
+      If (cToolbar1.ButtonCaption(1) = "&amp;This is a long caption") Then
+         cToolbar1.ButtonCaption(1) = "Open"
+      Else
+         cToolbar1.ButtonCaption(1) = "&amp;This is a long caption"
+      End If
+   Case 4
+      If (cToolbar1.ButtonCaption(0) = "&amp;Test Change Button 1") Then
+         cToolbar1.ButtonCaption(0) = "New"
+      Else
+         cToolbar1.ButtonCaption(0) = "&amp;Test Change Button 1"
+      End If
+      
+   Case 6
+      ' Change the button image.  Better than the VB toolbar because
+      ' it doesn't cause all the buttons to be removed and
+      ' then added again:
+      cToolbar1.ButtonImage(1) = Rnd * 8
+   Case 7
+      ' Check a button.  Better than the VB toolbar because
+      ' it doesn't cause all the buttons to be removed and
+      ' then added again:
+      bState = Not (m_cMenu.Checked(lIndex))
+      m_cMenu.Checked(lIndex) = bState
+      cToolbar1.ButtonChecked(15) = bState
+      
+   Case 9
+      ' Insert a new button
+      sCap = "Test" &amp; cToolbar1.ButtonCount
+      cToolbar1.AddButton sCap, 1, 3, , sCap, CTBNormal Or CTBAutoSize,
+       "NewButton" &amp; cToolbar1.ButtonCount
+      
+      ' Tell the rebar the new size of the band:
+      lW = cToolbar1.ToolbarWidth
+      l = cReBar1.BandIndexForData("Toolbar1")
+      cReBar1.BandChildIdealWidth(l) = lW
+      cReBar1.RebarSize
+      
+   Case 11
+      ' Show button captions.  In a list style toolbar you can individually
+      ' set caption visibility, but in a standard style bar setting visibility
+      ' for *any* button automatically affects all the others (it would look
+      ' stupid otherwise!)
+      bState = Not (m_cMenu.Checked(lIndex))
+      m_cMenu.Checked(lIndex) = bState
+      cToolbar1.ButtonTextVisible(0) = bState
+      
+      ' Now we want to tell the rebar that the item has changed in size:
+      ' Find the index of the bar within the rebar:
+      lIndex = cReBar1.BandIndexForData("Toolbar1")
+      cReBar1.BandChildResized lIndex, cToolbar1.ToolbarWidth,
+       cToolbar1.ToolbarHeight
+      cReBar1.BandChildMinWidth(lIndex) = 24
+      cReBar1.RebarSize
+   End Select
+
+End Sub
+
+Private Function calcToolbarHeight(ByRef cT As cToolbar) As Long
+Dim i As Long
+   i = cT.ButtonCount - 1
+   calcToolbarHeight = cT.ButtonTop(i) + cT.ButtonHeight(i)
+End Function
+
+Private Sub pPositionMenu(ByVal lIndex As Long, ByVal sKey As String)
+Dim i As Long
+Dim lItemIndex As Long
+
+   ' Stop flickering during the update:
+   LockWindowUpdate Me.hwnd
+   
+   '
+    ----------------------------------------------------------------------------
+   ---------------
+   ' Get the particular position menu item which has been clicked:
+   lItemIndex = CLng(Mid$(sKey, 13, 1))
+   '
+    ----------------------------------------------------------------------------
+   ---------------
+   
+   '
+    ----------------------------------------------------------------------------
+   ---------------
+   ' Move the rebar, at the same time hide bands which are not relevant to the
+    position:
+   Select Case lItemIndex
+   Case 0 ' top
+      cReBar1.BandVisible(cReBar1.BandIndexForData("Stylebar")) = True
+      cReBar1.BandVisible(cReBar1.BandIndexForData("picBar")) = True
+      cReBar1.BandChildMinHeight(cReBar1.BandIndexForData("MenuBar")) =
+       tbrMenu.ToolbarHeight
+      cReBar1.Position = erbPositionTop
+   Case 1 ' left
+      cReBar1.BandVisible(cReBar1.BandIndexForData("Stylebar")) = False
+      cReBar1.BandVisible(cReBar1.BandIndexForData("picBar")) = False
+      cReBar1.BandChildMinHeight(cReBar1.BandIndexForData("MenuBar")) =
+       tbrMenu.MaxButtonWidth
+      cReBar1.Position = erbPositionLeft
+   Case 2 ' right
+      cReBar1.BandVisible(cReBar1.BandIndexForData("Stylebar")) = False
+      cReBar1.BandVisible(cReBar1.BandIndexForData("picBar")) = False
+      cReBar1.BandChildMinHeight(cReBar1.BandIndexForData("MenuBar")) =
+       tbrMenu.MaxButtonWidth
+      cReBar1.Position = erbPositionRight
+   Case 3 ' bottom
+      cReBar1.BandVisible(cReBar1.BandIndexForData("Stylebar")) = True
+      cReBar1.BandVisible(cReBar1.BandIndexForData("picBar")) = True
+      cReBar1.BandChildMinHeight(cReBar1.BandIndexForData("MenuBar")) =
+       tbrMenu.ToolbarHeight
+      cReBar1.Position = erbPositionBottom
+   End Select
+   '
+    ----------------------------------------------------------------------------
+   ---------------
+   
+   '
+    ----------------------------------------------------------------------------
+   ---------------
+   ' Now set all the display properties so we can see the
+   If lItemIndex = 1 Or lItemIndex = 2 Then
+      
+      ' left/right.  Note that the meanings of "Width" &amp; "Height" are swapped
+      ' when a rebar is aligned to the left or right.
+      
+      ' a) Turn off text in list style bar:
+      For i = 0 To cToolbar3.ButtonCount - 1
+         cToolbar3.ButtonTextVisible(i) = False
+      Next i
+      ' b) Set minimum width of bands:
+      cReBar1.BandChildMinHeight(cReBar1.BandIndexForData("Toolbar1")) =
+       cToolbar1.ButtonWidth(4)
+      cReBar1.BandChildMinHeight(cReBar1.BandIndexForData("Toolbar2")) =
+       cToolbar2.ButtonWidth(4)
+      cReBar1.BandChildMinHeight(cReBar1.BandIndexForData("Toolbar3")) =
+       cToolbar3.ButtonWidth(4)
+      ' c) Set new ideal size of bands:
+      cReBar1.BandChildIdealWidth(cReBar1.BandIndexForData("MenuBar")) =
+       calcToolbarHeight(tbrMenu)
+      cReBar1.BandChildIdealWidth(cReBar1.BandIndexForData("Toolbar1")) =
+       calcToolbarHeight(cToolbar1)
+      cReBar1.BandChildIdealWidth(cReBar1.BandIndexForData("Toolbar2")) =
+       calcToolbarHeight(cToolbar2)
+      cReBar1.BandChildIdealWidth(cReBar1.BandIndexForData("Toolbar3")) =
+       calcToolbarHeight(cToolbar3)
+      ' d) Make menus show to side
+      tbrMenu.DropDownAlign = CTBDropDownAlignLeft
+      cToolbar1.DropDownAlign = CTBDropDownAlignLeft
+   
+   Else
+      ' top/bottom
+      
+      ' a) Turn on text in list style bar:
+      For i = 0 To cToolbar3.ButtonCount - 1
+         cToolbar3.ButtonTextVisible(i) = True
+      Next i
+      ' b) Set minimum Height of bands:
+      cReBar1.BandChildMinHeight(cReBar1.BandIndexForData("Toolbar1")) =
+       cToolbar1.MaxButtonHeight
+      cReBar1.BandChildMinHeight(cReBar1.BandIndexForData("Toolbar2")) =
+       cToolbar2.MaxButtonHeight
+      cReBar1.BandChildMinHeight(cReBar1.BandIndexForData("Toolbar3")) =
+       cToolbar3.MaxButtonHeight
+      ' c) Set ideal size of bands:
+      cReBar1.BandChildIdealWidth(cReBar1.BandIndexForData("MenuBar")) =
+       tbrMenu.ToolbarWidth
+      cReBar1.BandChildIdealWidth(cReBar1.BandIndexForData("Toolbar1")) =
+       cToolbar1.ToolbarWidth
+      cReBar1.BandChildIdealWidth(cReBar1.BandIndexForData("Toolbar2")) =
+       cToolbar2.ToolbarWidth
+      cReBar1.BandChildIdealWidth(cReBar1.BandIndexForData("Toolbar3")) =
+       cToolbar3.ToolbarWidth
+      ' d) Make menus show to bottom
+      tbrMenu.DropDownAlign = CTBDropDownAlignBottom
+      cToolbar1.DropDownAlign = CTBDropDownAlignBottom
+      
+   End If
+   '
+    ----------------------------------------------------------------------------
+   ---------------
+   
+   '
+    ----------------------------------------------------------------------------
+   ---------------
+   ' set the appropriate position option
+   m_cMenu.GroupToggle m_cMenu.IndexForKey("mnuPosition(" &amp; lItemIndex &amp; ")")
+   '
+    ----------------------------------------------------------------------------
+   ---------------
+   
+   ' reset update lock
+   LockWindowUpdate 0
+   
+End Sub
+
+Private Sub m_cMenu_InitPopupMenu(ParentItemNumber As Long)
+   Indicate "InitPopupMenu with parent " &amp; m_cMenu.ItemKey(ParentItemNumber)
+End Sub
+
+Private Sub m_cMenu_UnInitPopupMenu(ParentItemNumber As Long)
+   Indicate "UninitPopupMenu with parent " &amp; m_cMenu.ItemKey(ParentItemNumber)
+End Sub
+
+Private Sub tbrMenu_ButtonClick(ByVal lButton As Long)
+   m_cMenu.Checked(m_cMenu.IndexForKey("mnuButton(4)")) =
+    cToolbar1.ButtonChecked(15)
+End Sub
+
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Toolbar</a>&#160;.&#160;<a href="article.html">vbAccelerator Toolbar and CoolMenu Control v3.5</a>&#160;.&#160;<a href="VB6_Toolbar_Complete_Source.html">VB6 Toolbar Complete Source</a>&#160;.&#160;frmSDITest.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 May 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Toolbar/vbAccelerator_ToolBar_and_CoolMenu_Control/VB6_Toolbar_Complete_Source_zip_frmSDITest_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:08 GMT -->
+</html>

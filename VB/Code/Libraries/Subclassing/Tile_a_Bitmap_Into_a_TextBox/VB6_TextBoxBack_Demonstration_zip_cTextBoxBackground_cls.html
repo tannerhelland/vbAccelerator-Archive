@@ -1,0 +1,372 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Tile_a_Bitmap_Into_a_TextBox/VB6_TextBoxBack_Demonstration_zip_cTextBoxBackground_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:41 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cTextBoxBackground.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cTextBoxBackground.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;<a href="article.html">Tile a Bitmap Into a TextBox Background</a>&#160;.&#160;<a href="VB6_TextBoxBack_Demonstration.html">VB6 TextBoxBack Demonstration</a>&#160;.&#160;cTextBoxBackground.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_TextBoxBack_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 TextBoxBack Demonstration</a> (126K)</p><p /><p class="nav"><a href="VB6_TextBoxBack_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TextBoxBack Demonstration</a> (122K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1220</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1220&amp;type=Zip&amp;title=VB6%20TextBoxBack%20Demonstration%2Ezip%5FcTextBoxBackground">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Nov 2002<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cTextBoxBackground.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "cTextBoxBackground"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Type RECT
+   left As Long
+   tOp As Long
+   Right As Long
+   Bottom As Long
+End Type
+
+Private Declare Function SetBkMode Lib "gdi32" (ByVal hDC As Long, ByVal
+ nBkMode As Long) As Long
+    Private Const OPAQUE = 2
+    Private Const TRANSPARENT = 1
+
+Private Declare Function SendMessageLong Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Declare Function BitBlt Lib "gdi32" (ByVal hDestDC As Long, ByVal x As
+ Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal dwRop As Long)
+ As Long
+Private Declare Function GetDC Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function DeleteDC Lib "gdi32" (ByVal hDC As Long) As Long
+Private Declare Function ReleaseDC Lib "user32" (ByVal hwnd As Long, ByVal hDC
+ As Long) As Long
+Private Declare Function GetParent Lib "user32" (ByVal hwnd As Long) As Long
+
+Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function GetUpdateRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT, ByVal bErase As Long) As Long
+
+Private Const WM_DESTROY = &amp;H2
+Private Const WM_PAINT = &amp;HF
+Private Const WM_COMMAND = &amp;H111
+Private Const WM_CTLCOLOREDIT = &amp;H133
+Private Const WM_PRINT = &amp;H317
+Private Const WM_PRINTCLIENT = &amp;H318
+Private Const WM_ERASEBKGND = &amp;H14
+
+Private Const EN_CHANGE = &amp;H300
+Private Const EN_HSCROLL = &amp;H601
+Private Const EN_VSCROLL = &amp;H602
+
+Private Const PRF_CHECKVISIBLE = &amp;H1&amp;
+Private Const PRF_NONCLIENT = &amp;H2&amp;
+Private Const PRF_CLIENT = &amp;H4&amp;
+Private Const PRF_ERASEBKGND = &amp;H8&amp;
+Private Const PRF_CHILDREN = &amp;H10&amp;
+Private Const PRF_OWNED = &amp;H20&amp;
+
+Implements ISubclass
+Private m_hWnd As Long
+Private m_hWndParent As Long
+Private m_bCE As Boolean
+Private m_bMouseDown As Boolean
+Private m_iScroll As Long
+Private m_tR As RECT
+Private m_bFixBackground As Boolean
+Private m_xTileOffset As Long
+Private m_yTileOffset As Long
+
+Private m_cWorkDC As New cMemDC
+Private m_cBackDC As New cMemDC
+
+Public Sub SetBackdrop(pic As IPicture)
+   Dim cTempDC As New cMemDC
+   ' Create DC and put bmp into it:
+   cTempDC.InjectBitmap pic.Handle
+   ' Set up BackDC:
+   m_cBackDC.Width = cTempDC.Width
+   m_cBackDC.Height = cTempDC.Height
+   BitBlt m_cBackDC.hDC, 0, 0, m_cBackDC.Width, m_cBackDC.Height, cTempDC.hDC,
+    0, 0, vbSrcCopy
+   ' Return bitmap
+   cTempDC.ExtractBitmap
+End Sub
+
+Public Property Get TileOffsetX() As Long
+   TileOffsetX = m_xTileOffset
+End Property
+Public Property Let TileOffsetX(ByVal xOffset As Long)
+   m_xTileOffset = xOffset
+End Property
+Public Property Get TileOffsetY() As Long
+   TileOffsetY = m_yTileOffset
+End Property
+Public Property Let TileOffsetY(ByVal yOffset As Long)
+   m_yTileOffset = yOffset
+End Property
+
+Public Sub TileArea( _
+        ByVal hdcTo As Long, _
+        ByVal x As Long, _
+        ByVal y As Long, _
+        ByVal Width As Long, _
+        ByVal Height As Long _
+      )
+Dim SrcWidth As Long
+Dim SrcHeight As Long
+Dim lSrcX As Long
+Dim lSrcY As Long
+Dim lSrcStartX As Long
+Dim lSrcStartY As Long
+Dim lSrcStartWidth As Long
+Dim lSrcStartHeight As Long
+Dim lDstX As Long
+Dim lDstY As Long
+Dim lDstWidth As Long
+Dim lDstHeight As Long
+      
+   SrcWidth = m_cBackDC.Width
+   SrcHeight = m_cBackDC.Height
+   
+    lSrcStartX = ((x + m_xTileOffset) Mod SrcWidth)
+    lSrcStartY = ((y + m_yTileOffset) Mod SrcHeight)
+    lSrcStartWidth = (SrcWidth - lSrcStartX)
+    lSrcStartHeight = (SrcHeight - lSrcStartY)
+    lSrcX = lSrcStartX
+    lSrcY = lSrcStartY
+    
+    lDstY = y
+    lDstHeight = lSrcStartHeight
+    
+    Do While lDstY &lt; (y + Height)
+        If (lDstY + lDstHeight) &gt; (y + Height) Then
+            lDstHeight = y + Height - lDstY
+        End If
+        lDstWidth = lSrcStartWidth
+        lDstX = x
+        lSrcX = lSrcStartX
+        Do While lDstX &lt; (x + Width)
+            If (lDstX + lDstWidth) &gt; (x + Width) Then
+                lDstWidth = x + Width - lDstX
+                If (lDstWidth = 0) Then
+                    lDstWidth = 4
+                End If
+            End If
+            'If (lDstWidth &gt; Width) Then lDstWidth = Width
+            'If (lDstHeight &gt; Height) Then lDstHeight = Height
+            BitBlt hdcTo, lDstX, lDstY, lDstWidth, lDstHeight, _
+               m_cBackDC.hDC, lSrcX, lSrcY, vbSrcCopy
+            lDstX = lDstX + lDstWidth
+            lSrcX = 0
+            lDstWidth = SrcWidth
+        Loop
+        lDstY = lDstY + lDstHeight
+        lSrcY = 0
+        lDstHeight = SrcHeight
+    Loop
+End Sub
+
+Private Sub PostPaint(Optional ByVal bUseArea As Boolean = False)
+Dim lHDC As Long
+Dim tR As RECT
+
+   'Debug.Print "PostPaint", Hex$(m_hWnd), bUseArea
+
+   If m_bFixBackground Then
+      bUseArea = False
+   End If
+   
+   ' Get size of textbox:
+   GetClientRect m_hWnd, tR
+   
+   ' Set work DC to right size:
+   m_cWorkDC.Width = tR.Right - tR.left + 1
+   m_cWorkDC.Height = tR.Bottom - tR.tOp + 1
+   
+   ' Copy background into workdc:
+   If Not m_bFixBackground Then
+      TileArea m_cWorkDC.hDC, _
+         m_tR.left, m_tR.tOp, _
+         m_tR.Right - m_tR.left + 1, m_tR.Bottom - m_tR.tOp + 1
+   Else
+      TileArea m_cWorkDC.hDC, _
+         0, 0, m_cWorkDC.Width, m_cWorkDC.Height
+   End If
+   
+   ' Ask text box to draw itself into the workdc:
+   If bUseArea Then
+   Else
+      SendMessageLong m_hWnd, WM_PRINT, m_cWorkDC.hDC, PRF_CLIENT Or
+       PRF_CHECKVISIBLE
+   End If
+   
+   ' Draw the results into the textbox:
+   lHDC = GetDC(m_hWnd)
+   If Not m_bFixBackground Then
+      BitBlt lHDC, m_tR.left, m_tR.tOp, m_tR.Right - m_tR.left + 1, m_tR.Bottom
+       - m_tR.tOp + 1, m_cWorkDC.hDC, m_tR.left, m_tR.tOp, vbSrcCopy
+   Else
+      BitBlt lHDC, 0, 0, tR.Right - tR.left + 1, tR.Bottom - tR.tOp + 1,
+       m_cWorkDC.hDC, 0, 0, vbSrcCopy
+   End If
+   ReleaseDC m_hWnd, lHDC
+   
+End Sub
+Public Sub Attach(ByVal hWndA As Long)
+   Detach
+   m_hWnd = hWndA
+   AttachMessage Me, m_hWnd, WM_PAINT
+   m_hWndParent = GetParent(m_hWnd)
+   AttachMessage Me, m_hWndParent, WM_CTLCOLOREDIT
+   AttachMessage Me, m_hWndParent, WM_COMMAND
+   AttachMessage Me, m_hWnd, WM_ERASEBKGND
+   AttachMessage Me, m_hWnd, WM_DESTROY
+End Sub
+Public Sub Detach()
+   If Not (m_hWnd = 0) Then
+      DetachMessage Me, m_hWnd, WM_PAINT
+      If Not m_hWndParent = 0 Then
+         DetachMessage Me, m_hWndParent, WM_CTLCOLOREDIT
+         DetachMessage Me, m_hWndParent, WM_COMMAND
+      End If
+      m_hWndParent = 0
+      DetachMessage Me, m_hWnd, WM_ERASEBKGND
+      DetachMessage Me, m_hWnd, WM_DESTROY
+      m_hWnd = 0
+   End If
+End Sub
+
+Private Sub Class_Initialize()
+   m_bFixBackground = True
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As SSubTimer6.EMsgResponse)
+   '
+End Property
+
+Private Property Get ISubclass_MsgResponse() As SSubTimer6.EMsgResponse
+   Select Case CurrentMessage
+   Case WM_DESTROY
+      ISubclass_MsgResponse = emrPreprocess
+   Case Else
+      ISubclass_MsgResponse = emrConsume
+   End Select
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+Dim wCode As Long
+   '
+   Select Case iMsg
+   Case WM_DESTROY
+      Detach
+   Case WM_PAINT
+      ' Debug.Print "Paint", Hex$(hwnd)
+      GetUpdateRect hwnd, m_tR, 0
+      ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lParam)
+      If m_iScroll = 0 Then
+         PostPaint
+      Else
+         Select Case m_iScroll
+         Case 1
+            m_iScroll = 1
+         Case 2
+            m_iScroll = 0
+         End Select
+      End If
+   Case WM_CTLCOLOREDIT
+      If m_hWnd = lParam Then
+         'Debug.Print "CtlColorEdit", Hex$(m_hWnd), wParam, dc
+         SetBkMode wParam, TRANSPARENT
+         ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lParam)
+         If m_iScroll = 0 Then
+            If Not m_bCE Then
+               m_bCE = True
+               PostPaint
+               m_bCE = False
+            End If
+         Else
+            Select Case m_iScroll
+            Case 1
+               m_iScroll = 2
+               If Not m_bCE Then
+                  m_bCE = True
+'                  Debug.Print "Scroll", m_tR.left, m_tR.top, m_tR.right,
+ m_tR.bottom
+                  PostPaint True
+                  m_bCE = False
+               End If
+            Case 2
+               'Debug.Print "CtlColorEdit;Scroll=2"
+               m_iScroll = 0
+            End Select
+         End If
+      Else
+         ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lParam)
+      End If
+   Case WM_COMMAND
+      If m_hWnd = lParam Then
+         wCode = wParam \ &amp;H10000
+         If wCode = EN_HSCROLL Or wCode = EN_VSCROLL Then
+            'Debug.Print "SCROLL"
+            m_iScroll = 1
+         End If
+      End If
+      ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lParam)
+   Case WM_ERASEBKGND
+      ISubclass_WindowProc = 1
+   End Select
+End Function
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;<a href="article.html">Tile a Bitmap Into a TextBox Background</a>&#160;.&#160;<a href="VB6_TextBoxBack_Demonstration.html">VB6 TextBoxBack Demonstration</a>&#160;.&#160;cTextBoxBackground.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Tile_a_Bitmap_Into_a_TextBox/VB6_TextBoxBack_Demonstration_zip_cTextBoxBackground_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:41 GMT -->
+</html>

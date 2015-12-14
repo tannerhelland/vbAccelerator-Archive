@@ -1,0 +1,694 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Command_Bar/vbAccelerator_CommandBar_Control/VB5_CommandBar_Full_Source_zip_cMenuDropShadow_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:07 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cMenuDropShadow.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cMenuDropShadow.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Command Bar</a>&#160;.&#160;<a href="article.html">vbAccelerator CommandBar Control</a>&#160;.&#160;<a href="VB5_CommandBar_Full_Source.html">VB5 CommandBar Full Source</a>&#160;.&#160;cMenuDropShadow.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_CommandBar_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 CommandBar Binary</a> (144K)</p><p class="nav"><a href="VB5_CommandBar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 CommandBar Demonstration</a> (31K)</p><p class="nav"><a href="VB5_CommandBar_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 CommandBar Full Source</a> (256K)</p><p /><p class="nav"><a href="VB6_CommandBar_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 CommandBar Binary</a> (144K)</p><p class="nav"><a href="VB6_CommandBar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 CommandBar Demonstration</a> (30K)</p><p class="nav"><a href="VB6_CommandBar_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 CommandBar Full Source</a> (255K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:13828</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13828&amp;type=Zip&amp;title=VB5%20CommandBar%20Full%20Source%2Ezip%5FcMenuDropShadow">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 8 / 8</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 5 / 5</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:11 February 2004</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Jan 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cMenuDropShadow.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cMenuDropShadow"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Type SAFEARRAYBOUND
+    cElements As Long
+    lLbound As Long
+End Type
+Private Type SAFEARRAY2D
+    cDims As Integer
+    fFeatures As Integer
+    cbElements As Long
+    cLocks As Long
+    pvData As Long
+    Bounds(0 To 1) As SAFEARRAYBOUND
+End Type
+Private Declare Function VarPtrArray Lib "msvbvm50.dll" Alias "VarPtr" (Ptr()
+ As Any) As Long
+
+Private Type RGBQUAD
+    rgbBlue As Byte
+    rgbGreen As Byte
+    rgbRed As Byte
+    rgbReserved As Byte
+End Type
+Private Type BITMAPINFOHEADER '40 bytes
+    biSize As Long
+    biWidth As Long
+    biHeight As Long
+    biPlanes As Integer
+    biBitCount As Integer
+    biCompression As Long
+    biSizeImage As Long
+    biXPelsPerMeter As Long
+    biYPelsPerMeter As Long
+    biClrUsed As Long
+    biClrImportant As Long
+End Type
+Private Type BITMAPINFO
+    bmiHeader As BITMAPINFOHEADER
+    bmiColors As RGBQUAD
+End Type
+Private Declare Function CreateCompatibleDC Lib "gdi32" (ByVal hDC As Long) As
+ Long
+Private Declare Function GetDC Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function GetDesktopWindow Lib "user32" () As Long
+Private Declare Function ReleaseDC Lib "user32" (ByVal hwnd As Long, ByVal hDC
+ As Long) As Long
+Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+
+' Note - this is not the declare in the API viewer - modify lplpVoid to be
+' Byref so we get the pointer back:
+Private Declare Function CreateDIBSection Lib "gdi32" _
+    (ByVal hDC As Long, _
+    pBitmapInfo As BITMAPINFO, _
+    ByVal un As Long, _
+    lplpVoid As Long, _
+    ByVal handle As Long, _
+    ByVal dw As Long) As Long
+
+Private Const BI_RGB = 0&amp;
+Private Const BI_RLE4 = 2&amp;
+Private Const BI_RLE8 = 1&amp;
+Private Const DIB_RGB_COLORS = 0 '  color table in RGBs
+
+Private Type POINTAPI
+   x As Long
+   y As Long
+End Type
+
+Private Type SIZEAPI
+   cx As Long
+   cy As Long
+End Type
+
+Private Type RECT
+   left As Long
+   top As Long
+   right As Long
+   bottom As Long
+End Type
+
+Private Type BLENDFUNCTION
+   BlendOp As Byte
+   BlendFlags As Byte
+   SourceConstantAlpha As Byte
+   AlphaFormat As Byte
+End Type
+
+Private Const AC_SRC_OVER As Long = &amp;H0&amp;
+Private Const ULW_COLORKEY As Long = &amp;H1&amp;
+Private Const ULW_ALPHA As Long = &amp;H2&amp;
+Private Const ULW_OPAQUE As Long = &amp;H4&amp;
+Private Const AC_SRC_ALPHA = &amp;H1
+
+
+Private Const WS_EX_TOPMOST As Long = &amp;H8&amp;
+Private Const WS_EX_TRANSPARENT  As Long = &amp;H20&amp;
+Private Const WS_EX_TOOLWINDOW As Long = &amp;H80&amp;
+Private Const WS_EX_LAYERED As Long = &amp;H80000
+Private Const WS_POPUP = &amp;H80000000
+Private Const WS_VISIBLE = &amp;H10000000
+Private Const SPI_GETDROPSHADOW  As Long = &amp;H1024&amp;
+
+Private Declare Function CreateWindowEX Lib "user32" Alias "CreateWindowExA"
+ (ByVal dwExStyle As Long, ByVal lpClassName As String, ByVal lpWindowName As
+ String, ByVal dwStyle As Long, ByVal x As Long, ByVal y As Long, ByVal nWidth
+ As Long, ByVal nHeight As Long, ByVal hWndParent As Long, ByVal hMenu As Long,
+ ByVal hInstance As Long, lpParam As Any) As Long
+Private Declare Function DestroyWindow Lib "user32" (ByVal hwnd As Long) As Long
+
+Private Declare Function SystemParametersInfo Lib "user32" Alias
+ "SystemParametersInfoA" (ByVal uAction As Long, ByVal uParam As Long, ByRef
+ lpvParam As Any, ByVal fuWinIni As Long) As Long
+Private Declare Function UpdateLayeredWindow Lib "user32" ( _
+    ByVal hwnd As Long, _
+    ByVal hdcDst As Long, _
+    pptDst As Any, _
+    psize As Any, _
+    ByVal hdcSrc As Long, _
+    pptSrc As Any, _
+    ByVal crKey As Long, _
+    pblend As BLENDFUNCTION, _
+    ByVal dwFlags As Long) As Long
+Private Const GWL_STYLE = (-16)
+Private Const GWL_EXSTYLE = (-20)
+Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long
+
+Private Declare Function IsWindowVisible Lib "user32" (ByVal hwnd As Long) As
+ Long
+Private Declare Function GetWindowRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+
+Private Declare Function SelectObject Lib "gdi32" (ByVal hDC As Long, ByVal
+ hObject As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+
+Private Declare Function SetWindowPos Lib "user32" (ByVal hwnd As Long, ByVal
+ hWndInsertAfter As Long, ByVal x As Long, ByVal y As Long, ByVal cx As Long,
+ ByVal cy As Long, ByVal wFlags As Long) As Long
+   Private Const SWP_FRAMECHANGED = &amp;H20        '  The frame changed: send
+    WM_NCCALCSIZE
+   Private Const SWP_NOACTIVATE = &amp;H10
+   Private Const SWP_NOMOVE = &amp;H2
+   Private Const SWP_NOOWNERZORDER = &amp;H200      '  Don't do owner Z ordering
+   Private Const SWP_NOREDRAW = &amp;H8
+   Private Const SWP_NOSIZE = &amp;H1
+   Private Const SWP_NOZORDER = &amp;H4
+   Private Const SWP_SHOWWINDOW = &amp;H40
+   Private Const HWND_DESKTOP = 0
+   Private Const HWND_NOTOPMOST = -2
+   Private Const HWND_TOP = 0
+   Private Const HWND_TOPMOST = -1
+   Private Const HWND_BOTTOM = 1
+
+Private Declare Function BitBlt Lib "gdi32" (ByVal hDestDC As Long, ByVal x As
+ Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal dwRop As Long)
+ As Long
+
+Private Const SS_OWNERDRAW = &amp;HD&amp;
+Private Const WM_PAINT = &amp;HF&amp;
+
+Private Type DRAWITEMSTRUCT
+   ctlType As Long
+   ctlID As Long
+   itemID As Long
+   itemAction As Long
+   itemState As Long
+   hWndItem As Long
+   hDC As Long
+   rcItem As RECT
+   itemData As Long
+End Type
+
+Public Enum EStaticShadowType
+   ERightShadow
+   EBottomShadow
+End Enum
+
+Private m_eShadowType As EStaticShadowType
+Private m_lShadowSize As Long
+Private m_x As Long
+Private m_y As Long
+Private m_lWidth As Long
+Private m_lHeight As Long
+Private m_hWnd As Long
+Private m_hWndOwner As Long
+
+Private m_tBI As BITMAPINFO
+Private m_lPtr As Long
+Private m_hDC As Long
+Private m_hDib As Long
+Private m_hBmpOld As Long
+Private m_lShadowColor As Long
+
+Implements ISubclass
+
+Public Sub Initialise( _
+      ByVal x As Long, ByVal y As Long, _
+      ByVal lWidth As Long, ByVal lHeight As Long, _
+      ByVal hWndOwner As Long _
+   )
+   m_x = x
+   m_y = y
+   m_lWidth = lWidth
+   m_lHeight = lHeight
+   m_hWndOwner = hWndOwner
+End Sub
+
+Public Property Get ShadowSize() As Long
+   ShadowSize = m_lShadowSize
+End Property
+Public Property Let ShadowSize(ByVal lSize As Long)
+   m_lShadowSize = lSize
+End Property
+
+Public Property Get ShadowColor() As Long
+   ShadowColor = m_lShadowColor
+End Property
+Public Property Let ShadowColor(ByVal lColor As Long)
+   m_lShadowColor = lColor
+End Property
+
+Public Property Get ShadowType() As EStaticShadowType
+   ShadowType = m_eShadowType
+End Property
+
+Public Property Let ShadowType(ByVal value As EStaticShadowType)
+   m_eShadowType = value
+End Property
+
+Public Property Get hwnd() As Long
+   hwnd = m_hWnd
+End Property
+
+Private Function CreateDIB( _
+      ByVal lhDC As Long, _
+      ByVal lWidth As Long, _
+      ByVal lHeight As Long, _
+      ByRef hDib As Long _
+   ) As Boolean
+    
+   With m_tBI.bmiHeader
+      .biSize = Len(m_tBI.bmiHeader)
+      .biWidth = lWidth
+      .biHeight = lHeight
+      .biPlanes = 1
+      .biBitCount = 32
+      .biCompression = BI_RGB
+      .biSizeImage = BytesPerScanLine * .biHeight
+   End With
+   hDib = CreateDIBSection( _
+           lhDC, _
+           m_tBI, _
+           DIB_RGB_COLORS, _
+           m_lPtr, _
+           0, 0)
+   CreateDIB = (hDib &lt;&gt; 0)
+End Function
+
+Private Function CreateDisplay( _
+        ByVal lWidth As Long, _
+        ByVal lHeight As Long _
+    ) As Boolean
+   ClearUpDisplay
+   m_hDC = CreateCompatibleDC(0)
+   If (m_hDC &lt;&gt; 0) Then
+       If (CreateDIB(m_hDC, lWidth, lHeight, m_hDib)) Then
+           m_hBmpOld = SelectObject(m_hDC, m_hDib)
+           CreateDisplay = True
+       Else
+           DeleteObject m_hDC
+           m_hDC = 0
+       End If
+   End If
+End Function
+Private Sub ClearUpDisplay()
+    If (m_hDC &lt;&gt; 0) Then
+        If (m_hDib &lt;&gt; 0) Then
+            SelectObject m_hDC, m_hBmpOld
+            DeleteObject m_hDib
+        End If
+        DeleteObject m_hDC
+    End If
+    m_hDC = 0: m_hDib = 0: m_hBmpOld = 0: m_lPtr = 0
+End Sub
+
+Private Property Get BytesPerScanLine() As Long
+    ' Scans must align on dword boundaries; easy with an alpha bitmap!
+    BytesPerScanLine = m_tBI.bmiHeader.biWidth * 4
+End Property
+
+Private Property Get DibWidth() As Long
+    DibWidth = m_tBI.bmiHeader.biWidth
+End Property
+Private Property Get DibHeight() As Long
+    DibHeight = m_tBI.bmiHeader.biHeight
+End Property
+
+Private Sub CreateDropShadow( _
+      ByVal bHorizontal As Boolean, _
+      ByVal bLeftTop As Boolean _
+   )
+Dim bDib() As Byte
+Dim x As Long, y As Long
+Dim lC As Long, lInitC As Long, lSize As Long
+Dim lR As Long, lG As Long, lB As Long
+Dim lNewR As Long, lNewG As Long, lNewB As Long
+Dim tSA As SAFEARRAY2D
+    
+   ' Get the bits in the from DIB section:
+   With tSA
+      .cbElements = 1
+      .cDims = 2
+      .Bounds(0).lLbound = 0
+      .Bounds(0).cElements = m_tBI.bmiHeader.biHeight
+      .Bounds(1).lLbound = 0
+      .Bounds(1).cElements = BytesPerScanLine()
+      .pvData = m_lPtr
+   End With
+   CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+   lR = m_lShadowColor And &amp;HFF&amp;
+   lG = (m_lShadowColor And &amp;HFF00&amp;) \ &amp;H100&amp;
+   lB = (m_lShadowColor And &amp;HFF0000) \ &amp;H10000
+    
+   If (Is2000OrAbove) Then
+   
+      If (bHorizontal) Then
+         ' horizontal:
+         lSize = DibHeight
+         If (bLeftTop) Then
+         
+         Else
+            ' at bottom:
+            For x = 0 To BytesPerScanLine - 1 Step 4
+               ' if x is within lSize of the start or end, then
+               ' it contributes to alpha:
+               
+               If (x &lt; lSize * 4) Then
+                  lInitC = (255 * x) \ (lSize * 4)
+               ElseIf (x &gt;= (BytesPerScanLine - lSize * 4)) Then
+                  lInitC = (((BytesPerScanLine - x) * 255) \ (4 * lSize))
+               Else
+                  lInitC = 255
+               End If
+               
+               For y = 0 To DibHeight - 1
+                  lC = (lInitC * y) \ DibHeight
+                  bDib(x + 3, y) = lC
+                  bDib(x + 2, y) = lR * lC / &amp;HFF&amp;
+                  bDib(x + 1, y) = lG * lC / &amp;HFF&amp;
+                  bDib(x, y) = lB * lC / &amp;HFF&amp;
+               Next y
+               
+            Next x
+         End If
+      Else
+         ' vertical:
+         lSize = BytesPerScanLine \ 4
+         If (bLeftTop) Then
+         Else
+            ' at right:
+            For y = 0 To DibHeight - 1
+               ' if y is within lSize of the start or end, then
+               ' it contributes to the alpha:
+               
+               'If (y &lt; lSize) Then
+               '   lInitC = (255 * y) \ lSize
+               If (y &gt;= (DibHeight - lSize)) Then
+                  lInitC = (255 * (DibHeight - y)) \ lSize
+               Else
+                  lInitC = 255
+               End If
+               
+               For x = 0 To BytesPerScanLine - 1 Step 4
+                  ' the amount of alpha depends on how far we are from the left:
+                  lC = (lInitC * (BytesPerScanLine - x)) \ BytesPerScanLine
+                  bDib(x + 3, y) = lC
+                  bDib(x + 2, y) = lR * lC / &amp;HFF&amp;
+                  bDib(x + 1, y) = lG * lC / &amp;HFF&amp;
+                  bDib(x, y) = lB * lC / &amp;HFF&amp;
+               Next x
+            Next y
+         End If
+      End If
+      
+   Else
+      
+      If (bHorizontal) Then
+         ' horizontal:
+         lSize = DibHeight
+         If (bLeftTop) Then
+         
+         Else
+            ' at bottom:
+            For x = 0 To BytesPerScanLine - 1 Step 4
+               ' if x is within lSize of the start or end, then
+               ' it contributes to alpha:
+               If (x &lt; lSize * 4) Then
+                  lInitC = (255 * x) \ (lSize * 4)
+               ElseIf (x &gt;= (BytesPerScanLine - lSize * 4)) Then
+                  lInitC = (((BytesPerScanLine - x) * 255) \ (4 * lSize))
+               Else
+                  lInitC = 255
+               End If
+               
+               For y = 0 To DibHeight - 1
+                  lC = (lInitC * y) \ DibHeight
+                  lC = lC * 3 / 8
+                  bDib(x + 3, y) = 0 'lC
+                  bDib(x + 2, y) = ((lR * lC) / &amp;HFF&amp;) + ((bDib(x + 2, y) *
+                   (&amp;HFF&amp; - lC)) / &amp;HFF&amp;)
+                  bDib(x + 1, y) = ((lG * lC) / &amp;HFF&amp;) + ((bDib(x + 1, y) *
+                   (&amp;HFF&amp; - lC)) / &amp;HFF&amp;)
+                  bDib(x, y) = ((lB * lC) / &amp;HFF&amp;) + ((bDib(x, y) * (&amp;HFF&amp; -
+                   lC)) / &amp;HFF&amp;)
+               Next y
+               
+            Next x
+         End If
+      Else
+         ' vertical:
+         lSize = BytesPerScanLine \ 4
+         If (bLeftTop) Then
+         Else
+            ' at right:
+            For y = 0 To DibHeight - 1
+               ' if y is within lSize of the start or end, then
+               ' it contributes to the alpha:
+               
+               'If (y &lt; lSize) Then
+               '   lInitC = (255 * y) \ lSize
+               If (y &gt;= (DibHeight - lSize)) Then
+                  lInitC = (255 * (DibHeight - y)) \ lSize
+               Else
+                  lInitC = 255
+               End If
+               
+               For x = 0 To BytesPerScanLine - 1 Step 4
+                  ' the amount of alpha depends on how far we are from the left:
+                  lC = (lInitC * (BytesPerScanLine - x)) \ BytesPerScanLine
+                  lC = lC * 3 / 8
+                  bDib(x + 3, y) = 0 'lC
+                  bDib(x + 2, y) = ((lR * lC) / &amp;HFF&amp;) + ((bDib(x + 2, y) *
+                   (&amp;HFF&amp; - lC)) / &amp;HFF&amp;)
+                  bDib(x + 1, y) = ((lG * lC) / &amp;HFF&amp;) + ((bDib(x + 1, y) *
+                   (&amp;HFF&amp; - lC)) / &amp;HFF&amp;)
+                  bDib(x, y) = ((lB * lC) / &amp;HFF&amp;) + ((bDib(x, y) * (&amp;HFF&amp; -
+                   lC)) / &amp;HFF&amp;)
+               Next x
+            Next y
+         End If
+      End If
+   
+   
+   End If
+    
+   ' Clear the temporary array descriptor
+   ' (This does not appear to be necessary, but
+   ' for safety do it anyway)
+   CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+    
+End Sub
+
+Public Sub Create()
+   
+   Destroy
+   
+   ' set as shadow form:
+   Dim lExStyle As Long
+   Dim lStyle As Long
+   
+   lExStyle = WS_EX_TOPMOST Or WS_EX_TOOLWINDOW
+   If (Is2000OrAbove) Then
+      lExStyle = lExStyle Or WS_EX_LAYERED Or WS_EX_TRANSPARENT
+   End If
+   lStyle = WS_POPUP Or SS_OWNERDRAW
+   
+   Dim tR As RECT
+   If (m_eShadowType = EBottomShadow) Then
+      tR.left = m_x + m_lShadowSize
+      tR.top = m_y
+      tR.right = tR.left + m_lWidth
+      tR.bottom = m_y + m_lShadowSize + 1
+   Else
+      tR.left = m_x
+      tR.top = m_y + m_lShadowSize
+      tR.right = m_x + m_lShadowSize
+      tR.bottom = tR.top + m_lHeight
+   End If
+      
+   If Not (Is2000OrAbove) Then
+      renderShadow tR, True
+   End If
+      
+   m_hWnd = CreateWindowEX( _
+      lExStyle, "Static", "", lStyle, _
+      tR.left, tR.top, tR.right - tR.left, tR.bottom - tR.top, _
+      m_hWndOwner, 0, App.hInstance, ByVal 0&amp;)
+   
+   If Not (m_hWnd = 0) Then
+      If (Is2000OrAbove) Then
+         renderShadow tR, True
+      Else
+         AttachMessage Me, m_hWnd, WM_PAINT
+      End If
+      
+      If (m_eShadowType = ERightShadow) Then
+         SetWindowPos m_hWnd, HWND_TOPMOST, tR.left, tR.top, m_lWidth,
+          m_lHeight, _
+            SWP_SHOWWINDOW Or SWP_NOACTIVATE Or SWP_NOOWNERZORDER Or
+             SWP_NOZORDER
+      Else
+         SetWindowPos m_hWnd, HWND_TOPMOST, tR.left, tR.top, m_lWidth,
+          m_lHeight, _
+            SWP_SHOWWINDOW Or SWP_NOACTIVATE Or SWP_NOOWNERZORDER Or
+             SWP_NOZORDER
+      End If
+   End If
+   
+End Sub
+
+Public Sub Destroy()
+   If Not (m_hWnd = 0) Then
+      DetachMessage Me, m_hWnd, WM_PAINT
+      DestroyWindow m_hWnd
+      m_hWnd = 0
+   End If
+   ClearUpDisplay
+End Sub
+
+
+Private Sub renderShadow(tR As RECT, ByVal bChange As Boolean)
+   
+   If bChange Then
+      Dim tSize As SIZEAPI
+      If (m_eShadowType = EBottomShadow) Then
+         tSize.cx = (tR.right - tR.left)
+         tSize.cy = m_lShadowSize
+      Else
+         tSize.cx = m_lShadowSize
+         tSize.cy = (tR.bottom - tR.top) - m_lShadowSize
+      End If
+      CreateDisplay tSize.cx, tSize.cy
+   End If
+   
+   If (Is2000OrAbove) Then
+      
+      If (bChange) Then
+         If (m_eShadowType = EBottomShadow) Then
+            CreateDropShadow True, False
+         Else
+            CreateDropShadow False, False
+         End If
+         
+         ' Draw:
+         Dim tBlend As BLENDFUNCTION
+         tBlend.BlendOp = AC_SRC_OVER
+         tBlend.BlendFlags = 0
+         tBlend.AlphaFormat = AC_SRC_ALPHA
+         tBlend.SourceConstantAlpha = 96
+         Dim tPtSrc As POINTAPI
+         tPtSrc.x = 0
+         tPtSrc.y = 0
+         
+         UpdateLayeredWindow m_hWnd, ByVal 0&amp;, ByVal 0&amp;, tSize, m_hDC, tPtSrc,
+          0, _
+                  tBlend, ULW_ALPHA
+      End If
+      
+   Else
+   
+      Dim lhWndD As Long
+      Dim lhDC As Long
+      
+      lhWndD = GetDesktopWindow()
+      lhDC = GetDC(lhWndD)
+      BitBlt m_hDC, 0, 0, tSize.cx, tSize.cy, lhDC, tR.left, tR.top, vbSrcCopy
+      ReleaseDC 0, lhDC
+
+      If (m_eShadowType = EBottomShadow) Then
+         CreateDropShadow True, False
+      Else
+         CreateDropShadow False, False
+      End If
+         
+   End If
+   
+End Sub
+
+Private Sub Class_Initialize()
+   m_lShadowSize = 5
+   m_lShadowColor = RGB(0, 0, 192)
+End Sub
+
+Private Sub Class_Terminate()
+   Destroy
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As EMsgResponse)
+   '
+End Property
+
+Private Property Get ISubclass_MsgResponse() As EMsgResponse
+   ISubclass_MsgResponse = emrPostProcess
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+   If (hwnd = m_hWnd) And (iMsg = WM_PAINT) Then
+      Dim lhDC As Long
+      Dim tR As RECT
+      lhDC = GetDC(m_hWnd)
+      GetClientRect m_hWnd, tR
+      BitBlt lhDC, tR.left, tR.top, tR.right - tR.left, tR.bottom - tR.top,
+       m_hDC, 0, 0, vbSrcCopy
+      ReleaseDC m_hWnd, lhDC
+   End If
+End Function
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Command Bar</a>&#160;.&#160;<a href="article.html">vbAccelerator CommandBar Control</a>&#160;.&#160;<a href="VB5_CommandBar_Full_Source.html">VB5 CommandBar Full Source</a>&#160;.&#160;cMenuDropShadow.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 February 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Command_Bar/vbAccelerator_CommandBar_Control/VB5_CommandBar_Full_Source_zip_cMenuDropShadow_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:07 GMT -->
+</html>

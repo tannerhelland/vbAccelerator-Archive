@@ -1,0 +1,192 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Using_GDI_Plus/Reading_and_Writing_JPG__PNG__TIF_and_GIF_Files/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:34 GMT -->
+<head>
+
+<title>vbAccelerator - Reading and Writing JPG, PNG, TIF and GIF Files</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This article demonstrates using GDI+ to read and write files in multiple
+formats (JPEG, PNG, TIF, GIF and BMP files are all supported for reading and writing;
+you can also read EMG, WMF and ICO files).  
+
+Using GDI+ is a great alternative to using the Intel 
+JPEG Library that is now no longer distributed or supported by Intel, since 
+GDI+ is freely redistributable.  Not just that but you gain PNG, GIF and TIF support
+too!
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Using GDI Plus</a>&#160;.&#160;Reading and Writing JPG, PNG, TIF and GIF Files</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="GDIPlus_Codecs.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />GDIPlus Codecs</a> (37K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4580</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4580&amp;type=Article&amp;title=Reading%20and%20Writing%20JPG%2C%20PNG%2C%20TIF%20and%20GIF%20Files">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 0 / 1</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:8 June 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />28 Mar 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3310">Saving Pictures to JPG Files Using the Intel JPEG Library</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1418">Two code only solutions for displaying Common/Dialogs</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4579">GDI+ Wrapper</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4588">GDI+ Type Library (GDIPlus.TLB)</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Reading and Writing JPG, PNG, TIF and GIF Files</h1><img src="encoderSample.png" width="250" height="190" alt="Encoder Demonstration Application" /><p /><p>
+This article demonstrates using GDI+ to read and write files in multiple
+formats (JPEG, PNG, TIF, GIF and BMP files are all supported for reading and writing;
+you can also read EMG, WMF and ICO files).  
+</p><p>
+Using GDI+ is a great alternative to using the <a href="http://www.vbaccelerator.com/article.asp?id=3310">Intel 
+JPEG Library</a> that is now no longer distributed or supported by Intel, since 
+GDI+ is freely redistributable.  Not just that but you gain PNG, GIF and TIF support
+too!
+</p><h2>Getting Started</h2><p>
+As with the other GDI+ samples at the site, you'll need the <a href="http://www.vbaccelerator.com/article.asp?id=4579">GDIPlusWrapper</a>
+and the <a href="http://www.vbaccelerator.com/article.asp?id=4588">GDI+ Type Library</a> to run this sample.  The code also requires VB6.
+</p><h2>Loading And Drawing an Image</h2><p>
+Loading an Image is very simple - just instantiate a <i>GDIPImage</i> and
+then call the <i>FromFile</i> method to load the data in:
+</p><pre><font color="#3D4187">Private </font><font color="#58596C">m_image </font><font color="#3D4187">As </font><font color="#58596C">GDIPBitmap
+
+...
+
+   </font><font color="#3D4187">Set </font><font color="#58596C">m_image = </font><font color="#3D4187">New </font><font color="#58596C">GDIPBitmap
+   m_image.Image.FromFile sFile
+</font></pre><p>
+Note that the GDI+ Wrapper throws an error whenever a method call fails, so
+you'll probably want  to include an error handler.
+</p><p>
+Drawing an image is also straightforward.  You first need to create
+a <i>GDIPGraphics</i> object to draw onto, and then one of the <i>DrawImage</i>
+functions to draw the bitmap.  There are various <i>DrawImage</i> versions
+depending on whether you want to trim, stretch or rotate the image whilst
+drawing, and also versions for multiple input parameter types.  In this
+case the image is drawn unstretched and untrimmed at a point on screen
+so I use a <i>DrawImagePoint</i> method.  To draw it at a pixel position
+I used the L (integer long) v (parameters as values rather than structures) 
+version of the call:
+</p><pre><font color="#3D4187">Private Sub </font><font color="#58596C">Form_Paint()
+   </font><font color="#3D4187">Dim </font><font color="#58596C">gfx </font><font color="#3D4187">As New </font><font color="#58596C">GDIPGraphics
+   gfx.FromHDC </font><font color="#3D4187">Me</font><font color="#58596C">.hdc
+
+   gfx.DrawImagePointLv m_image.Image, lLeft, lTop
+
+   gfx.Dispose
+</font><font color="#3D4187">End Sub
+
+</font></pre><h2>Saving an Image</h2><p>
+Saving an image is slightly more complex if you want to use
+a specific encoder (such as the PNG or JPEG encoder) for saving.
+</p><p>
+The first step is to identify which Encoders are available on
+the system.  This is done using the GDIPlusWrapper 
+<i>GDIPImageEncoderList</i> class.  When you instantiate this
+class, it determines all of the available encoders on the 
+system and loads them into the collection.  You can then
+enumerate through them using the <i>Count</i> and <i>Item</i>
+methods, or use the helper methods <i>EncoderForExtension</i>
+and <i>EncoderForMimeType</i> to get an instance of a
+particular encoder.  For example, here is how to get hold
+of the JPEG encoder instance:
+</p><pre><font color="#3D4187">Dim </font><font color="#58596C">cEncoders </font><font color="#3D4187">As </font><font color="#58596C">GDIPImageEncoderList
+</font><font color="#3D4187">Dim </font><font color="#58596C">cCodec </font><font color="#3D4187">as </font><font color="#58596C">GDIPImageCodec
+
+   </font><font color="#3D4187">Set </font><font color="#58596C">cCodec = g_cEncoders.EncoderForMimeType(</font><font color="#800000">"image/jpeg"</font><font color="#58596C">)
+
+</font></pre><p>
+Once that's done, you can then set options for the encoder, if it supports any
+as described in the next section, and then Save the image to a file
+using the specified encoder:
+</p><pre><font color="#58596C"></font><font color="#9596A8">' Save the image using the specified codec:
+   </font><font color="#58596C">m_image.Image.Save sFile, cCodec.CodecCLSID
+
+</font></pre><p>
+You can also use the <i>GDIPImageEncoderList</i> object to automatically populate 
+the filter of a Common Dialog box with available types to save as.  See the code
+in the download under the <i>cmdSave</i> click event for an example of how to
+do this.
+</p><h2>Encoding Options</h2><p>
+Only the JPEG and TIFF encoders support any encoder parameters, as shown
+in the options dialog for the sample application:
+</p><img src="saveOptionsDialog.png" width="406" height="319" alt="Save Encoding Options Dialog" /><p><small><strong>Demonstration Save Encoding Options Dialog</strong></small></p><ul><li><strong>Setting JPEG Options</strong><br /><p>
+The effect of the <strong>JPEG Quality</strong> option is shown in the next
+section.
+</p><p>
+The <strong>Transformation</strong> drop down allows you to modify orientation and reflect JPEG
+images.  To use this, the source image must be a JPEG image.  If the image is a multiple of 16
+pixels in width or height, the transformation is lossless - the JPEG quality is unaffected
+by the change.  Otherwise, the image is converted from JPEG, rotated and reflected as specified
+and then re-encoded to JPEG with the attendant quality loss of the new JPEG encoding.
+</p></li><li><strong>Setting TIFF Options</strong><br /><p>
+The <strong>Compression</strong> drop down allows you to change the compression method
+used to save the TIFF file.  On my machine, only LZW and no compression are supported.
+</p><p>
+The <strong>Bit Depth</strong> drop down allows you to choose the colour depth to
+save to.  Only colour depths greater than or equal to the loaded image's colour depth
+are allowed.
+</p></li></ul><p>
+To work with encoding options, you use the <i>EncoderParameterList</i> property of
+the <i>GDIPImage</i> object. The following code demonstrates how to set the JPEG
+Quality and Transformation parameters (assuming <i>cCodec</i> is set up using
+the code before):
+</p><pre><font color="#58596C"></font><font color="#3D4187">Dim </font><font color="#58596C">cParamList </font><font color="#3D4187">As </font><font color="#58596C">GDIPEncoderParameterList
+   </font><font color="#3D4187">Dim </font><font color="#58596C">cParam </font><font color="#3D4187">As </font><font color="#58596C">GDIPEncoderParameter
+   </font><font color="#3D4187">If </font><font color="#58596C">(cCodec.MimeType = </font><font color="#800000">"image/jpeg"</font><font color="#58596C">) </font><font color="#3D4187">Then
+      Set </font><font color="#58596C">cParamList = m_image.Image.EncoderParameterList(cCodec.CodecCLSID)
+      </font><font color="#3D4187">Set </font><font color="#58596C">cParam = cParamList.ParameterForGuid(EncoderQuality)
+      cParam.valueCount = </font><font color="#864F46">1
+      </font><font color="#58596C">cParam.value(</font><font color="#864F46">1</font><font color="#58596C">) = g_cSaveOptions.JpgQuality
+
+      </font><font color="#3D4187">Set </font><font color="#58596C">cParam = cParamList.ParameterForGuid(EncoderTransformation)
+      </font><font color="#3D4187">If Not </font><font color="#58596C">(g_cSaveOptions.JpgTransformation = </font><font color="#864F46">0</font><font color="#58596C">) </font><font color="#3D4187">Then
+         </font><font color="#58596C">cParam.valueCount = </font><font color="#864F46">1
+         </font><font color="#58596C">cParam.value(</font><font color="#864F46">1</font><font color="#58596C">) = g_cSaveOptions.JpgTransformation
+      </font><font color="#3D4187">Else
+         </font><font color="#58596C">cParam.valueCount = </font><font color="#864F46">0
+      </font><font color="#3D4187">End If
+   End If
+</font></pre><h2>Effect of JPEG Quality on Output</h2><p>
+The following images demonstrate how the JPEG quality setting affects the
+JPEG file written out:
+</p><img src="qOriginal.png" width="169" height="223" alt="Original Image" /><p><small><strong>Original Image</strong></small></p><img src="q1.html" width="169" height="223" alt="Quality 1%" /><p><small><strong>Encoded with Quality 1%</strong></small></p><img src="q2.html" width="169" height="223" alt="Quality 50%" /><p><small><strong>Encoded with Quality 50%</strong></small></p><img src="qOriginal.png" width="169" height="223" alt="Quality 100%" /><p><small><strong>Encoded with Quality 100%</strong></small></p><h2>To Do List</h2><p>
+Currently you can't load or save images to and
+from memory rather than a file, which can be very useful.
+Doing this requires an implementation of the <i>IStream</i>
+interface.  The GDI+ Wrapper code includes a <i>MemoryStream</i> object
+that attempts to do this, but so far GDI+ fails to understand the
+<i>IStream</i> being passed in.  This issue is being researched; any
+assistance would be most helpful!
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Using GDI Plus</a>&#160;.&#160;Reading and Writing JPG, PNG, TIF and GIF Files</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 11 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Using_GDI_Plus/Reading_and_Writing_JPG__PNG__TIF_and_GIF_Files/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:36 GMT -->
+</html>

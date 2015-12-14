@@ -1,0 +1,219 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/TreeView/TreeView_Shell_Sample/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:51:02 GMT -->
+<head>
+
+<title>vbAccelerator - Displaying Shell Elements in a TreeView</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This article demonstrates a very simple way to populate a TreeView with files and or folders
+using the Shell Automation Object provided in Shell32.DLL.  
+Using this object in combination with a System Image List
+allows you to easily provide a browsable view of the file system with correct icons for
+each element.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">TreeView</a>&#160;.&#160;Displaying Shell Elements in a TreeView</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_TreeView_Shell_Samples.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 TreeView Shell Samples</a> (41K)</p><p /><p class="nav"><a href="VB6_TreeView_Shell_Samples.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TreeView Shell Samples</a> (39K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:14445</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14445&amp;type=Article&amp;title=Displaying%20Shell%20Elements%20in%20a%20TreeView">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />16 Apr 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13463">vbAccelerator TreeView Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=931">Using the System Image List with (and without) vbAccelerator Controls</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Displaying Shell Elements in a TreeView</h1><img src="shellTreeView.png" width="384" height="375" alt="Shell TreeView Demonstration" /><p /><p>
+This article demonstrates a very simple way to populate a TreeView with files and or folders
+using the <span class="i">Shell Automation Object</span> provided in Shell32.DLL.  
+Using this object in combination with a <a href="http://www.vbaccelerator.com/article.asp?id=931">System Image List</a>
+allows you to easily provide a browsable view of the file system with correct icons for
+each element.
+</p><h2>About the Shell Automation Object</h2><p>
+With version 4.71 of Shell32.DLL, released with IE 4.0 and included in Windows 98/2000 and above
+Microsoft finally included some methods to make the wilfully obscure Shell API a bit easier
+to use from higher-level languages.  The methods are exposed from a TypeLibrary embedded within
+Shell32.DLL called  "Microsoft Shell Controls and Automation", and include methods for browsing
+the Shell's namespace as well as performing some common Shell tasks such as launching Control Panel
+Items, opening the Find dialogs and so on. 
+</p><p>
+To give an example of using the API, here is how you can get a list of all items in My Computer:
+</p><pre>
+   Dim shl As New Shell
+   Dim drives As Folder
+   Dim driveItem As FolderItem
+
+   Set drives = shl.NameSpace(ssfDRIVES)
+   For Each driveItem In drives.items
+      Debug.Print driveItem.Name, driveItem.Path
+      If (driveItem.IsFolder) Then
+         ' You can get the sub items using driveItem.Folder
+      End If
+   Next 
+</pre><p>
+One thing that is unfortunately missing from this however is a 
+method to get hold of the icon for a given item in the shell.
+</p><p>
+When using the low-level Shell32 API, the icon for an item in the Shell namespace can always be obtained
+from it's <span class="code">PIDL</span>, a foolishly named structure that describes a "pointer to an ID 
+List"; an ID list being a structure which effectively represents the path to a folder 
+regardless of whether it is implemented as a physical directory on the file system or whether it is
+a virtual construct such as "My Computer".  In the higher level API the <span class="code">PIDL</span>
+is not accessible so another route is needed to find the icon.  Luckily, for file-system related 
+items this is quite easy to achieve using a <a href="http://www.vbaccelerator.com/article.asp?id=931">System Image List</a>.
+</p><p>
+Getting the icon for an actual file system item with a normal path is described in the System
+Image List article, so I won't cover it again here.  For items like the Desktop and My Computer,
+however, you can still retrieve the icon using a path fromt the Shell Automation object
+because even though these items are virtual, they have another form of path addressing which
+uses GUIDs to identify an item.  This system does not appear to be much documented at MSDN, but
+here a handful of commonly occuring objects:
+</p><table class="article"><tr class="header"><td>Object</td><td>'Path'</td></tr><tr><td>My Computer</td><td>::{20D04FE0-3AEA-1069-A2D8-08002B30309D}</td></tr><tr><td>My Network Places</td><td>::{208D2C60-3AEA-1069-A2D7-08002B30309D}</td></tr><tr><td>Internet Explorer</td><td>::{871C5380-42A0-1069-A2EA-08002B30309D}</td></tr><tr><td>Recycle Bin</td><td>::{645FF040-5081-101B-9F08-00AA002F954E}</td></tr></table><p>
+These GUID based paths are accepted as if they were filenames by the System Image List, and
+so you can obtain the correct icons.   This means you can create a fairly comprehensive
+shell object browser using hardly any code.
+</p><h2>Populating a Tree With Shell Objects</h2><p>
+There are three things you need to be able to do to create a TreeView showing shell
+objects:
+</p><ol><li>Associate a System ImageList with the TreeView</li><li>Be able to sort items in a consistent way.  If you just show folders
+then they should be sorted alphabetically, otherwise the items should be
+sorted alphabetically with folders appearing before files.</li><li>Be able to uniquely identify the file system object that any item in the tree 
+represents.  Note that the Shell namespace can include the same folder 
+in more than one place (for example, the Documents folders typically appear
+under both My Computer and in the Document and Settings folder of the installation
+drive).</li></ol><p>
+I'll cover these in turn.
+</p><h3>Associating a System Image List With the Tree</h3><p>
+The easiest way to achieve this is to use the code in the vbAccelerator
+System Image List class.  Here's the code used to set up the ImageList:
+</p><pre>
+Private m_cIml As cVBALSysImageList
+
+   ...
+ 
+   Set m_cIml = New cVBALSysImageList
+   m_cIml.IconSizeX = 16
+   m_cIml.IconSizeY = 16
+   m_cIml.Create
+   tvwDirs.ImageList = m_cIml.hIml
+</pre><p>
+With this in place, the icon index for a Tree Node can be obtained from its
+path using the following code.  Note the use of use of the <span class="code">bForceLoadFromDisk</span>
+to ensure the correct icon is loaded; if you do not specify this then the code assumes
+the object is of type file and will not work for folders, regardless of whether they
+are file system or not.
+</p><pre>
+    lIconIndex = m_cIml.ItemIndex(item.Path, True)
+</pre><h3>Sorting Items</h3><p>
+There are two potential approaches that could be taken to sorting items: either
+you could collate all of the items into a temporary array and sort that, or, 
+and more simply use the features of the vbAccelerator TreeView control to do 
+the sorting for you.  The latest release of the control offers a range of sorting
+methods, including an event-driven callback method in which you can code any
+sorting scheme.  In this case, however, items are sorted alphabetically and
+may need to be sorted into folder/item groups.  The easiest way to support this is to
+use the TreeView node <span class="code">ItemData</span> to encode whether the
+item is a folder or an item and then use the <span class="code">etvwItemDataThenAlphabetic</span>
+sorting mode built into the control.
+</p><p>
+The TreeView allows you to configure sorting so it is automatically applied, or it can be
+manually applied.  Automatic sorting is convenient but for large numbers of items does
+not perform very well because it resorts every time an item is added.  If you include files
+then the Windows\System directory can frequently contain in excess of 3,000 objects, and hence 
+the more performant manual sort is a better option.
+</p><p>
+Here is a code outline of adding folders and items to a TreeView node and then 
+sorting them:
+</p><pre>
+   Set nodes = parentNode.Children
+
+   For Each itm In items.items
+      If (itm.IsFolder) Then
+         Set nod = nodes.Add(, , , itm.Name, _
+            m_cIml.ItemIndex(itm.Path, True))
+         nod.ItemData = 0
+         nod.Children.Add , , , "Unexpanded"
+      Else
+         Set nod = nodes.Add(, , sKey, itm.Name, _
+            m_cIml.ItemIndex(itm.Path, True))
+         nod.ItemData = 1
+      End If
+   Next
+
+   parentNode.Sort etvwItemDataThenAlphabetic
+</pre><h3>Uniquely Identifying the File System Object</h3><p>
+The vbAccelerator TreeView uses a key to identify each node.  This is a
+good place to store the path of the object that's being added to the tree;
+however, the key must be unique and the same path may appear more than once in the tree
+something needs to be done.
+</p><p>
+The solution adopted in the same is to prepend a unique ID number to the path
+and then use that as the key.  By using a colon as a separator between the prepended ID and 
+the path it is easy to extract again by finding the first occurrence of a colon in the 
+key using <span class="code">Instr</span>.
+</p><h2>Wrapping it up: The Demonstrations</h2><p>
+The demonstrations bring these techniques together into two samples: one which shows
+directories only and another which shows all Shell objects in the same view in a
+similar manner to the Browse for Folder dialog with files showing. The basic technique
+is to seed the tree with an inital namespace (in the case of the samples, 
+<span class="code">ssfDRIVES</span> is used, but this could be changed to any other
+folder or the Desktop using <span class="code">ssfDESKTOP</span> if desired.
+</p><p>Whenever
+a folder is created, a dummy item is added as a child.  Then code in the
+<span class="code">BeforeExpand</span> event is added to check for the dummy item:
+if it finds it then the dummy is removed and the contents of the sub folder populated
+in exactly the same way as for the initial load.  Note that the 
+<span class="code">BeforeCollapse</span> or <span class="code">Collapse</span>
+event could also be coded to remove any non-dummy items if you wanted to reduce
+the memory needed to show the Tree.
+</p><p>
+Although not coded here, you can also use the <span class="code">Verbs</span> 
+collection of the <span class="code">FolderItem</span> object to get a list of
+all the actions that can be performed in a right-click menu for any of the 
+items in the view.
+</p><h2>Conclusion</h2><p>
+This article demonstrates how to populate a TreeView with Shell namespace objects complete
+with icons with very little code.  Performance is pretty much equal to Explorer, 
+although for very large directories
+will feel a little slower because the application is single threaded (Explorer populates some
+directories on a background thread which can appear more responsive).
+The demonstrations should prove useful for any application which wants a customised folder 
+picker or a Folder view.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">TreeView</a>&#160;.&#160;Displaying Shell Elements in a TreeView</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 17 April 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/TreeView/TreeView_Shell_Sample/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:51:03 GMT -->
+</html>

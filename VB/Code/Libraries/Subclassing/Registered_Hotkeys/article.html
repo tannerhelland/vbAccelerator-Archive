@@ -1,0 +1,180 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Registered_Hotkeys/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:55:27 GMT -->
+<head>
+
+<title>vbAccelerator - Creating and Responding to System-Wide Hotkeys</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Win32 allows you to set up combinations of key-presses which can be 
+associated with an application on a system-wide scope, called Hotkeys. 
+When a user presses a registered HotKey it doesn't matter which 
+application is active when they pressed it, the hot-key message will 
+get routed to your application.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;Creating and Responding to System-Wide Hotkeys</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB_HotKey_Configuration_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB HotKey Configuration Sample</a> (35K)</p><p /><p class="nav"><a href="VB5_Hot_Key_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Hot Key Sample</a> (21K)</p><p /><p class="nav"><a href="VB6_Hot_Key_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Hot Key Sample</a> (20K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4576</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4576&amp;type=Article&amp;title=Creating%20and%20Responding%20to%20System%2DWide%20Hotkeys">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 2 / 2</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:29 August 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />27 Jan 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Creating and Responding to System-Wide Hotkeys</h1><img src="hotkeyr.gif" width="168" height="150" alt="HotKeys!" /><p /><p>
+Win32 allows you to set up combinations of key-presses which can be 
+associated with an application on a system-wide scope, called Hotkeys. 
+When a user presses a registered HotKey it doesn't matter which 
+application is active when they pressed it, the hot-key message will 
+get routed to your application.
+</p><h2>About HotKeys</h2><p>There are two types of HotKeys:</p><ol><li><strong>Application activation HotKeys</strong><br />
+These are the simplest type. When the HotKey is selected your application is 
+activated. They are very simple to set up but they only activate 
+your application - you can't determine if this was caused by the 
+HotKey being pressed rather than some other event, nor decide on any 
+specific action to take.
+</li><li><strong>Registered HotKeys</strong><br />
+This type of HotKey sends a <i>WM_HOTKEY</i> message to your application 
+when the HotKey is pressed, so you can choose how to respond to the key. 
+Setting up this type is slightly more complex and you have to subclass 
+your application's form to intercept the HotKey messages.
+</li></ol><p>
+This article describes how to create and respond to the second type, 
+Registered HotKeys. If you want to create a simple activation HotKey, 
+this information is described in the HotKey Control sample. This 
+also provides an implementation of the Common Controls HotKey control 
+which you can use in an application to make it easier for a user to set-up 
+HotKeys. 
+</p><h2>Registering a HotKey</h2><p>
+Registering a system-wide HotKey is achieved in two steps:
+</p><ol><li>Creating a globally unique identifier for the HotKey. 
+You do this using the Win32 Global Atom database. 
+</li><li>Registering the HotKey itself.</li></ol><h3>1. The Win32 Atom Databases</h3><p>Win32 Atom databases store a list of unique strings which are internally 
+identified by an 16 bit integer ID. The Global Atom database creates string 
+lists which are accessible to all processes. In addition to this each process 
+on the system can have its own Local Atom database. These functions could 
+be quite useful for other VB purposes - if you need to store a list of 
+unique strings and IDs in an application, you could take advantage of the 
+Atom database to do it. However, as there is only one atom database per 
+process you do have to be careful! Note that an applications process 
+includes both the executable and any OCXs or DLLs being used in that executable. 
+</p><p>
+The Global Atom database functions in Win32 are <i>GlobalAddAtom</i>, 
+<i>GlobalDeleteAtom</i>, <i>GlobalFindAtom</i> and <i>GlobalGetAtomName</i>. The 
+first step of registering a HotKey is to create a string that is 
+unlikely to be in use by any other application on the system and 
+then get an ID for it by calling <i>GlobalAddAtom</i> for that string. In 
+the class supplied with the demonstration project the string is created by 
+specifying a local key string to which the executable name and the current 
+<i>GetTickCount</i> value are appended.
+</p><h3>2. Registering the HotKey</h3><p>
+Registering the key itself is achieved using Win32's unusually sensibly-named <i>RegisterHotKey</i> function. This takes the window handle you want to send 
+the messages to, the globally unique identifier you created using the 
+Global Atom database, a bit flag containing the Shift, Ctrl, Alt or Windows Key 
+keys which have to be pressed for the HotKey and the Virtual Key Code of the 
+key you want to register. Note that in VB the VBRUN library enumeration <i>KeyCodeConstants</i> corresponds directly to the Win32 Virtual Key Code 
+constants. These are the key values that are passed to you in the 
+KeyUp and KeyDown events.
+</p><h2>Responding to HotKeys</h2><p>
+Once you've set up a HotKey, you can respond to it by subclassing the 
+<i>WM_HOTKEY</i> message sent to the window. The <i>wParam</i> of the <i>WM_HOTKEY</i> 
+message contains the globally unique identifier you assigned to the HotKey, and 
+the <i>lParam</i> contains the virtual key code in the HiWord and the key 
+modifiers in the LoWord.
+</p><p class="tipHeader">Tip: Extract HiWords and LoWords from a Long value</p><div class="tip"><p>      
+This is easy to do using the <i>And</i> operator and emulating a Right Shift 
+by dividing:
+</p><pre>
+  LoWord = (Value And &amp;HFFFF&amp;) 
+  HiWord = (Value \ &amp;H10000) And &amp;HFFFF&amp;
+</pre><p>
+There is a problem with this techique you have to be aware of if the 
+HiWord of the Value has its highest bit set. In VB, there is no way of 
+defining a Long variable as "Unsigned", so the high bit of a Long 
+is used to identify whether the number is positive or negative. If the 
+Value has the high bit set, then the result of the HiWord comparison above 
+will be wrong (for example, if Value was &amp;HFFFFFFFF, which VB 
+interprets as -1, then the HiWord method above will yield 0!). To work 
+around this problem, rewrite HiWord like this:
+</p><pre>
+  ' Check for high bit (sign flag):
+  If (Value And &amp;H80000000) = &amp;H80000000 Then
+    ' Strip it out whilst shifting then add it back in again afterwards:
+    HiWord = (((Value And &amp;H7FFFFFFF) \ &amp;H10000) Or &amp;H8000) _
+       And &amp;HFFFF&amp;
+  Else
+    ' Standard shift method:
+    HiWord = (Value \ &amp;H10000) And &amp;HFFFF&amp;
+  End If
+</pre></div><h2>In Use</h2><p>
+The <i>cRegHotKey</i> class supplied in the download wraps up all of 
+this functionality into a simple class which you can drop into a project. 
+Using the class you do this: 
+</p><ol><li>Declare a WithEvents instance of the class in your project:
+<pre>
+   Private WithEvents m_cHK As cRegHotKey
+</pre></li><li>Create an instance of the class and tell it your form's window handle:
+<pre>
+   Set m_cHK = New cRegHotKey&gt;
+   m_cHK.Attach Me.hwnd
+</pre></li><li>Add a HotKey (or as many as you like!):
+<pre>
+   ' This registers CTRL-ALT-C as "MyHotKey" 
+   m_cHK.RegisterKey "MyHotKey", vbKeyC, MOD_CONTROL Or MOD_ALT
+</pre></li><li>Respond to the keypress throught HotKeyPress event
+<pre>
+   Private Sub m_cHK_HotKeyPress(ByVal sName As String, _
+      ByVal eModifiers As EHKModifiers, _
+      ByVal eKey As KeyCodeConstants _
+   )
+      If (sName = "MyHotKey") Then
+            ' Do your processing here!
+      End If
+
+   End Sub
+</pre></li></ol><p>The alternative download implements an entirely pointless use of the class:
+CTRL-ALT-C starts and stops a small earthquake on your system. 
+CTRL-ALT-X used to attempt to kill any instances of the supremely smug Microsoft Assistant thingy it finds on the screen but only works on old versions of Office.
+More usefully, it also demonstrates using the HotKey control to set up the keys 
+on the screen (this control is included compiled into the source code).
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;Creating and Responding to System-Wide Hotkeys</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Registered_Hotkeys/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:55:28 GMT -->
+</html>

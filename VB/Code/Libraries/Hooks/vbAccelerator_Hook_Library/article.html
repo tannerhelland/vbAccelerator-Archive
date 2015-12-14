@@ -1,0 +1,271 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Hooks/vbAccelerator_Hook_Library/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:03 GMT -->
+<head>
+
+<title>vbAccelerator - Win32 Hooks in VB - The vbAccelerator Hook Library</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+When a subclass isn't tough enough for the job, its time to move to an even lower-level 
+and more disruptive technique. Win32 Hooks are a method by which you can tap into the 
+Windows message stream for every single message directed to every window in your application. 
+You can modify or even discard messages before they even reach the target window. This technique gives 
+you a lot of control! 
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Hooks</a>&#160;.&#160;Win32 Hooks in VB - The vbAccelerator Hook Library</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Windows_Hook_Library_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Windows Hook Library Binary</a> (17K)</p><p class="nav"><a href="VB5_Windows_Hook_Library_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Windows Hook Library Full Source</a> (61K)</p><p /><p class="nav"><a href="VB6_Windows_Hook_Library_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Windows Hook Library Binary</a> (17K)</p><p class="nav"><a href="VB6_Windows_Hook_Library_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Windows Hook Library Full Source</a> (60K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:12338</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12338&amp;type=Article&amp;title=Win32%20Hooks%20in%20VB%20%2D%20The%20vbAccelerator%20Hook%20Library">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />27 Jun 2003<br /><p class="update">Added support for Journal Record and Playback hooks</p><p class="update">Added <span class="code">MsgFilterlParam</span> method
+for working with the <span class="code">WH_GETMESSAGE</span> Hook.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12335">vbAccelerator Accelerator Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12334">(Incomplete) Docking Forms In VB</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Win32 Hooks in VB - The vbAccelerator Hook Library</h1><p class="splash">The ultimate low-level control over Windows</p><img src="vbalhook.gif" width="302" height="83" alt="vbAccelerator Hook Library" /><p /><p>
+When a subclass isn't tough enough for the job, its time to move to an even lower-level 
+and more disruptive technique. Win32 Hooks are a method by which you can tap into the 
+Windows message stream for every single message directed to every window in your application. 
+You can modify or even discard messages before they even reach the target window. This technique gives 
+you a lot of control! 
+</p><p>
+Windows Hooks are defined in the Win32 SDK as follows: 
+</p><ul><li>
+"A Windows hook is a point in the system message-handling mechanism where an 
+application can install a subroutine to monitor the message traffic in the system 
+and process certain types of messages before they reach the target window procedure." 
+</li><li>
+"Hooks tend to slow down the system because they increase the amount of processing 
+the system must perform for each message. You should install a hook only when necessary, 
+and remove it as soon as possible." 
+</li></ul><h2>About Hooks</h2><p>
+This section provides a detailed look into what hooks consist of, why you use them
+and the various types available:
+</p><ol><li>Hooks Compared to Sub-Classing</li><li>An Example</li><li>Hook Scope: System Wide or Local Thread Hooks</li><li>Types Of Windows Hooks</li><li>Hook Chains</li></ol><h3>1. Hooks Compared to Sub-Classing</h3><p>
+Essentially a Windows Hook is like a subclass except it applies at the 
+next point up in the message chain. In Win32, messages are queued and sent to 
+the appropriate window via the <span class="code">WindowProc</span> function. A 
+subclass can intercept messages by replacing the existing <span class="code">WindowProc</span> 
+function with a new one. 
+</p><p>
+With a Hook, you get to see all messages <span class="i">before</span> Windows has decided which 
+<span class="code">WindowProc</span> procedure to direct the message to. You can modify 
+or discard most messages at this point too. So using the Hook technique you not only get to 
+act on messages at the highest point; you can also get at messages regardless of 
+which window the message is intended for. This is very useful if you want to process
+Keyboard or Mouse messages on a global basis in your application, because these 
+messages are normally directed to the window with the focus.  If you tried to do the 
+same thing using Subclassing then you would have to subclass every single window handle in 
+your application to follow the mouse events. Using a Hook, the process is simple!
+</p><h3>2. An Example</h3><img src="hooksamp.gif" width="251" height="180" alt="MDI Form with a 'Toolbar' button" /><p class="caption">MDI Form with a 'Toolbar' button</p><p>
+If you create a VB application like the one shown above, you'll find that it doesn't behave
+like you would expect a normal Windows application to.  Since the <strong>N</strong> mnemonic
+is visible on screen, it should be accessible at any time by pressing <span class="i">Alt+N</span>.
+However, this is isn't the case in VB - in fact <span class="i">Alt+N</span> only does anything
+when the MDI form has the focus, which is clearly a bug.
+</p><p>
+This is actually a fundamental problem in VB for MDI forms - there is no way 
+for an accelerator on another form to be active when there is a child 
+form active. We could solve this problem by duplicating the New button onto the 
+child form, but in order for it to respond to accelerator keys it must be visible and 
+part of the tab order - not what you want. 
+</p><p>
+Solving the problem with a Windows Hook on the other hand is quite simple. We install 
+a hook of type <span class="code">WH_KEYBOARD</span>. Then the app receives all 
+keyboard events for the entire application. When the keyboard events indicate that 
+<span class="i">Alt+N</span> has been pressed, the code just needs to check whether the 
+MDIForm is the same as the window returned by <span class="code">GetActiveWindow</span>; 
+if it is it then the code fires the <span class="code">cmdNew_Click</span> event and 
+eats the keyboard message. 
+</p><h3>3. Hook Scope: System Wide or Local Thread Hooks</h3><p>
+One of the features of the Win32 Hook functions is that they allow you to specify 
+whether the scope of your hook is local to the current thread or whether it applies 
+to all windows in the entire system. System Wide hooks are always a topic of interest 
+because they let you read data intended for or otherwise modify windows owned by other 
+applications; for example the <a href="http://www.stardock.com/">Window Blinds</a> application 
+uses this method to apply a skin when drawing all windows on your system (well, it tries to, anyway!)
+</p><p>
+Before you get excited, though, VB on its own cannot be used to create a 
+system-wide hook. This is because the hook procedure <strong>must</strong> reside within 
+a Windows DLL, and VB cannot create these beasts (because you cannot specify to 
+export the HookProc function). Also I should point out that system-wide hooks aren't much 
+fun to write: you can't debug them very easily, and if anything goes wrong it 
+takes your whole system down!  If you have some C/C++ knowledge, however, there are various
+samples of creating system-wide hooks at MSDN and CodeGuru.
+</p><h3>4. Types Of Windows Hooks</h3><p>
+There are 14 different types of Windows Hooks defined in Win32, however, some of these 
+are not implemented and some cannot be used in Visual Basic or are of very limited value 
+when not used System Wide. 
+</p><p>
+That leaves the following: 
+</p><ul><li><span class="code"><strong>WH_KEYBOARD</strong></span><p>
+Intercepts all keyboard messages and allows you to modify or discard any message (except 
+<span class="i">Ctrl+Alt+Del</span>). For example, the 
+<a href="http://www.vbaccelerator.com/article.asp?id=1272">vbAccelerator Toolbar, Rebar and CoolMenu</a> 
+uses this hook to check for accelerators. 
+</p></li><li><span class="code"><strong>WH_MOUSE</strong></span><p>
+Intercepts all mouse messages and allows you to modify or discard any message. 
+</p></li><li><span class="code"><strong>WH_CALLWNDPROC</strong></span><p>
+Before Windows is about to call any window procedure within the scope of the Hook, it fires this 
+hook with the details of the parameters it will use to call the window procedure. 
+It allows you to modify any of the parameters of the message sent and hence provides considerable
+opportunity to radically change (or break) the way Windows works.
+</p></li><li><span class="code"><strong>WH_CALLWNDPROCRET</strong></span><p>
+Similar to <span class="code">WH_CALLWNDPROC</span> except it is called whenever a 
+window procedure within the scope of the Hook returns. It allows you to modify the return value 
+or parameters for the message. For example, the <a href="http://www.vbaccelerator.com/article.asp?id=12">Animated Cursors 
+in VB</a> sample uses this to capture the <span class="code">WM_SETCURSOR</span> message 
+for every window to emulate the <span class="code">Screen.MousePointer</span> property. 
+</p></li><li><span class="code"><strong>WH_MSGFILTER</strong></span><p>
+This Hook allows you to process or modify all messages meant for all the dialog boxes, 
+message boxes, scroll bars or menus in an application. For example, the 
+<a href="http://www.vbaccelerator.com/article.asp?id=1272">vbAccelerator Toolbar, Rebar and CoolMenu</a> control uses 
+this hook to find out what messages are being sent when menus are dropped down, so 
+it can close Popup Menus depending on where the mouse is.
+</p></li><li><span class="code"><strong>WH_GETMESSAGE</strong></span><p>
+This Hook is called whenever a window within the Hook scope calls the 
+<span class="code">GetMessage</span> or <span class="code">PeekMessage</span> functions. 
+</p></li><li><span class="code"><strong>WH_CBT</strong></span><p>
+Computer-based training hook. Fired when windows are created, destroyed, moved 
+and activated etc. This Hook is intended for use to capture a sequence of messages 
+which can be replayed for CBT apps, however, better uses for it include detecting 
+the window handle of API windows like Menus, Common Dialogs and Message Boxes
+and the one MFC puts it to - automatically detect creation of all windows within an 
+application and applying a subclass procedure to each one. 
+</p></li><li><strong><span class="code">WH_JOURNALRECORD</span> and <span class="code">WH_JOURNALPLAYBACK</span></strong><p>
+These hooks enables you to monitor and record input events for later playback.
+The interesting thing about these hooks is that even though they only work when 
+installed on a system-wide scope, they can send and receive input messages on
+a system-wide basis from within a local process.
+</p></li></ul><h3>5. Hook Chains</h3><p>
+When you install a Hook, Win32 actually adds it to what is termed the "Hook Chain". 
+This allows you to install multiple Hooks of the same type in an application. 
+When the first Hook is added, Windows places it at the start of the chain and begins 
+passing messages to the Hook and receiving them from it. If another hook of the 
+same type is added on the same thread, windows then directs output from the first 
+hook to the second one before receiving the output for its own use. 
+</p><p>
+This means that you must be careful when using a Hook to modify or remove messages. 
+If there are two Hooks on the same thread, and one removes messages, behaviour may 
+differ depending on the order the Hooks are installed. In VB there is very little control over 
+the order that controls are created so you should attempt to ensure the same hook procedure
+is used for all objects that install a hook.
+</p><h2>The vbAccelerator Windows Hooks Library</h2><p>
+The vbAccelerator Windows Hooks Library is designed to simplify the process of
+working with hooks in your application.  It provides a series of functions for
+installing and removing hooks and ensures multiple clients use the same
+hook function rather than installing multiple chained hooks.  It is designed
+to be used either as a DLL or compiled directly into your application. An example 
+of compiling the library directly into code is provided in the 
+<a href="http://www.vbaccelerator.com/article.asp?id=12335">vbAccelerator Accelerator control</a>, so this 
+section will cover using the DLL version.
+</p><p>
+The Hooks Library consists of two parts: 
+</p><ol><li><span class="code"><strong>IWindowsHook</strong></span><p>
+You must implement this interface to use the Hook library. Once your object 
+implements this interface, then whenever the Hook(s) you connect to fire, the 
+<span class="code">IWindowsHook_HookProc</span> method will be called with the Hook 
+information. 
+</p></li><li><span class="code"><strong>GHook</strong></span><p>
+This interface allows you to attach and detach a Hook, as well as providing 
+some helper functions for translating the <span class="code">lParam</span> member of the hook 
+function, which contains the details about the message being intercepted by the Hook. 
+</p></li></ol><h2>Quick Start</h2><p>
+This sample will give you a quick introduction to the Hooks library. 
+Start a new project, and add a reference to the 
+<span class="i">vbAccelerator Window Hooks Library</span> by choosing 
+Project-&gt;References and selecting the "vbAccelerator Windows Hook Helper DLL". 
+If it isn't there, click Browse and search for <span class="i">vbalHook.DLL</span> (VB5) or
+<span class="i">vbalHook6.DLL</span> (VB6) on your disk. Once you have a reference, add 
+various controls to your form including a TextBox control. Then add the following code: 
+</p><pre>
+Implements IWindowsHook
+
+Private Sub Form_Load()
+   InstallHook Me, WH_KEYBOARD
+End Sub
+
+Private Sub Form_QueryUnload( _
+      Cancel As Integer, UnloadMode As Integer)
+   RemoveHook Me, WH_KEYBOARD
+End Sub
+
+Private Function IWindowsHook_HookProc( _
+      ByVal eType As EHTHookTypeConstants, _
+      ByVal nCode As Long, _
+      ByVal wParam As Long, _
+      ByVal lParam As Long, _
+      bConsume As Boolean _
+   ) As Long
+
+   If KeyBoardlParam(lParam).KeyDown Then
+      If Me.ActiveControl is Text1 Then
+         txtTest.SelText = " "
+         bConsume = True
+      End If
+   End If
+End Function
+</pre><p>
+Now run the project. Whenever the TextBox control Text1 is in focus, pressing 
+the tab key will cause the tab characters to be entered into the text box 
+rather than moving to the next control in the tab index. This works because all 
+key presses in the project are sent through the <span class="code">IWindowsHook_HookProc</span>
+ function before being sent to any control or form. So you can consume any key press 
+you want and stop it ever reaching the control! Now that's control... 
+</p><h2>The Sample Code</h2><p>
+There are two samples provided with the download: 
+</p><ol><li><strong>HookKeyEvents</strong><p>This sample shows how to hook key events using a <span class="code">WH_KEYBOARD</span> hook, 
+similar to the Quick Start sample above. It demonstrates tab key handling in a 
+TextBox, ListBox and ComboBox and also how to make a form unload in response to the 
+Escape key regardless of whether there is a CommandButton or Control with the 
+<span class="code">Cancel</span> property set. 
+</p></li><li><strong>MouseHook</strong><p>This sample demonstrates hooking mouse events. It uses a <span class="code">WH_MOUSE</span>
+ hook to intercept all mouse events before they reach the form or control. This allows the 
+sample to provide: 
+</p><ul><li>A status bar indication of which control the mouse is over.</li><li>A "select controls" mode which works similarly to the selection of controls in the VB IDE.</li></ul><p>
+Both pieces of code are completely independent of which specific controls are 
+on the form - you can add as many new controls as you like to the form in any 
+relationship to each other and the code will continue to work. 
+</p><p>
+With a little more design work it should be possible to create a form designer which 
+works exactly the same as the VB IDE from this sample! 
+</p></li></ol><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Hooks</a>&#160;.&#160;Win32 Hooks in VB - The vbAccelerator Hook Library</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Hooks/vbAccelerator_Hook_Library/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:05 GMT -->
+</html>

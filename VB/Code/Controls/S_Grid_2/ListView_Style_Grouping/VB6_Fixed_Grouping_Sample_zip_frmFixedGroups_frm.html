@@ -1,0 +1,318 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/ListView_Style_Grouping/VB6_Fixed_Grouping_Sample_zip_frmFixedGroups_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:06 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmFixedGroups.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmFixedGroups.frm" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;<a href="article.html">Creating ListView Style Groups with SGrid 2</a>&#160;.&#160;<a href="VB6_Fixed_Grouping_Sample.html">VB6 Fixed Grouping Sample</a>&#160;.&#160;frmFixedGroups.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Fixed_Grouping_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Fixed Grouping Sample</a> (64K)</p><p /><p class="nav"><a href="VB6_Fixed_Grouping_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Fixed Grouping Sample</a> (62K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:13952</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13952&amp;type=Zip&amp;title=VB6%20Fixed%20Grouping%20Sample%2Ezip%5FfrmFixedGroups">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />24 Jan 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13703">SGrid 2.0</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmFixedGroups.frm</h1><pre>VERSION 5.00
+Object = "{DE8CE233-DD83-481D-844C-C07B96589D3A}#1.1#0"; "vbalSGrid6.ocx"
+Begin VB.Form frmFixedGroups 
+   Caption         =   "vbAccelerator SGrid Fixed Groups Sample"
+   ClientHeight    =   4395
+   ClientLeft      =   4275
+   ClientTop       =   3825
+   ClientWidth     =   9000
+   Icon            =   "frmFixedGroups.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   4395
+   ScaleWidth      =   9000
+   Begin vbAcceleratorSGrid6.vbalGrid grdFixedGroups 
+      Height          =   3975
+      Left            =   120
+      TabIndex        =   0
+      Top             =   120
+      Width           =   8715
+      _ExtentX        =   15372
+      _ExtentY        =   7011
+      BackgroundPictureHeight=   0
+      BackgroundPictureWidth=   0
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      BorderStyle     =   2
+      DisableIcons    =   -1  'True
+   End
+   Begin VB.Menu mnuFileTOP 
+      Caption         =   "&amp;File"
+      Begin VB.Menu mnuFile 
+         Caption         =   "&amp;New..."
+         Index           =   0
+         Shortcut        =   ^N
+      End
+      Begin VB.Menu mnuFile 
+         Caption         =   "&amp;Open..."
+         Index           =   1
+         Shortcut        =   ^O
+      End
+      Begin VB.Menu mnuFile 
+         Caption         =   "-"
+         Index           =   2
+      End
+      Begin VB.Menu mnuFile 
+         Caption         =   "&amp;Save"
+         Index           =   3
+         Shortcut        =   ^S
+      End
+      Begin VB.Menu mnuFile 
+         Caption         =   "&amp;Save As..."
+         Index           =   4
+      End
+      Begin VB.Menu mnuFile 
+         Caption         =   "-"
+         Index           =   5
+      End
+      Begin VB.Menu mnuFile 
+         Caption         =   "E&amp;xit"
+         Index           =   6
+      End
+   End
+   Begin VB.Menu mnuEditTOP 
+      Caption         =   "&amp;Edit"
+      Begin VB.Menu mnuEdit 
+         Caption         =   "&amp;Add New..."
+         Index           =   0
+         Shortcut        =   ^A
+      End
+      Begin VB.Menu mnuEdit 
+         Caption         =   "-"
+         Index           =   1
+      End
+      Begin VB.Menu mnuEdit 
+         Caption         =   "&amp;Resolve..."
+         Index           =   2
+         Shortcut        =   ^R
+      End
+      Begin VB.Menu mnuEdit 
+         Caption         =   "&amp;Unresolve..."
+         Index           =   3
+         Shortcut        =   ^U
+      End
+      Begin VB.Menu mnuEdit 
+         Caption         =   "&amp;Identify Resolution..."
+         Index           =   4
+         Shortcut        =   ^I
+      End
+      Begin VB.Menu mnuEdit 
+         Caption         =   "-"
+         Index           =   5
+      End
+      Begin VB.Menu mnuEdit 
+         Caption         =   "&amp;Change Type..."
+         Index           =   6
+         Shortcut        =   ^T
+      End
+      Begin VB.Menu mnuEdit 
+         Caption         =   "-"
+         Index           =   7
+      End
+      Begin VB.Menu mnuEdit 
+         Caption         =   "&amp;Delete..."
+         Index           =   8
+         Shortcut        =   ^D
+      End
+   End
+   Begin VB.Menu mnuHelpTOP 
+      Caption         =   "&amp;Help"
+      Begin VB.Menu mnuHelp 
+         Caption         =   "&amp;vbAccelerator.com..."
+         Index           =   0
+         Shortcut        =   {F1}
+      End
+      Begin VB.Menu mnuHelp 
+         Caption         =   "-"
+         Index           =   1
+      End
+      Begin VB.Menu mnuHelp 
+         Caption         =   "&amp;About..."
+         Index           =   2
+      End
+   End
+End
+Attribute VB_Name = "frmFixedGroups"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA"
+ (ByVal hWnd As Long, ByVal lpOperation As String, ByVal lpFile As String,
+ ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As
+ Long) As Long
+Private Const SW_SHOWNORMAL = 1
+
+Private m_cDoc As cBugList
+
+Private Sub AddNewBug()
+Dim lSelCol As Long
+Dim lSelRow As Long
+Dim fNew As New frmAddNew
+      
+   lSelCol = grdFixedGroups.SelectedCol
+   lSelRow = grdFixedGroups.SelectedRow
+   
+   Select Case grdFixedGroups.RowGroupingLevel(lSelRow)
+   Case 0
+      ' a bug is selected
+      fNew.BugType = grdFixedGroups.CellText(lSelRow, 2)
+   Case 1, 2
+      ' bug + status is selected
+      fNew.BugType = grdFixedGroups.CellText(lSelRow, 2)
+      fNew.BugStatus = grdFixedGroups.CellText(lSelRow, 6)
+   End Select
+   
+   fNew.Show vbModal, Me
+   
+   If Not (fNew.Cancelled) Then
+      m_cDoc.AddNewBug fNew.BugType, fNew.BugStatus, fNew.Headline, fNew.Author
+   End If
+
+End Sub
+
+Private Sub Form_Load()
+Dim sDemoFile As String
+   
+   sDemoFile = App.Path
+   If (right(sDemoFile, 1) &lt;&gt; "\") Then
+      sDemoFile = sDemoFile &amp; "\"
+   End If
+   sDemoFile = sDemoFile &amp; "12138.xml"
+   
+   Set m_cDoc = New cBugList
+   m_cDoc.Initialise grdFixedGroups
+   m_cDoc.File = sDemoFile
+   
+End Sub
+
+Private Sub Form_Resize()
+   On Error Resume Next
+   grdFixedGroups.Move grdFixedGroups.left, grdFixedGroups.top, _
+   Me.ScaleWidth - grdFixedGroups.left * 2, _
+   Me.ScaleHeight - grdFixedGroups.top - grdFixedGroups.left
+End Sub
+
+Private Sub grdFixedGroups_MouseUp(Button As Integer, Shift As Integer, x As
+ Single, y As Single)
+Dim lSelCol As Long
+Dim lSelRow As Long
+   If (Button = vbRightButton) Then
+      lSelCol = grdFixedGroups.SelectedCol
+      lSelRow = grdFixedGroups.SelectedRow
+      If (lSelCol &gt; 0) And (lSelRow &gt; 0) Then
+         Me.PopupMenu mnuEditTOP, , x + grdFixedGroups.left +
+          Screen.TwipsPerPixelX, y + grdFixedGroups.top + Screen.TwipsPerPixelY
+      End If
+   End If
+End Sub
+
+Private Sub grdFixedGroups_RowGroupingStateChange(ByVal lRow As Long, ByVal
+ eNewState As ECGGroupRowState, bCancel As Boolean)
+   If (eNewState = ecgCollapsed) Then
+      bCancel = True
+   End If
+End Sub
+
+Private Sub grdFixedGroups_SelectionChange(ByVal lRow As Long, ByVal lCol As
+ Long)
+Dim lSelCol As Long
+Dim lSelRow As Long
+Dim bStateChange As Boolean
+   lSelCol = grdFixedGroups.SelectedCol
+   lSelRow = grdFixedGroups.SelectedRow
+   If (lSelCol &gt; 0) And (lSelRow &gt; 0) Then
+      bStateChange = Not (grdFixedGroups.RowIsGroup(lSelRow))
+   Else
+      bStateChange = False
+      mnuEdit(1).Enabled = False
+   End If
+   mnuEdit(2).Enabled = bStateChange
+   mnuEdit(3).Enabled = bStateChange
+   mnuEdit(4).Enabled = bStateChange
+   mnuEdit(6).Enabled = bStateChange
+   mnuEdit(8).Enabled = bStateChange
+End Sub
+
+Private Sub mnuEdit_Click(Index As Integer)
+   Select Case Index
+   Case 0
+      ' Add new
+      AddNewBug
+   Case Else
+      MsgBox "Not implemented in this demonstration.", vbInformation
+   End Select
+End Sub
+
+Private Sub mnuFile_Click(Index As Integer)
+   Select Case Index
+   Case 7
+      Unload Me
+   Case Else
+      MsgBox "Not implemented in this demonstration", vbInformation
+   End Select
+End Sub
+
+Private Sub mnuHelp_Click(Index As Integer)
+   Select Case Index
+   Case 0
+      ShellExecute Me.hWnd, "open", "http://vbaccelerator.com/", "", "",
+       SW_SHOWNORMAL
+   Case 2
+      frmAbout.Show vbModal, Me
+   End Select
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;<a href="article.html">Creating ListView Style Groups with SGrid 2</a>&#160;.&#160;<a href="VB6_Fixed_Grouping_Sample.html">VB6 Fixed Grouping Sample</a>&#160;.&#160;frmFixedGroups.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 February 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/ListView_Style_Grouping/VB6_Fixed_Grouping_Sample_zip_frmFixedGroups_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:06 GMT -->
+</html>

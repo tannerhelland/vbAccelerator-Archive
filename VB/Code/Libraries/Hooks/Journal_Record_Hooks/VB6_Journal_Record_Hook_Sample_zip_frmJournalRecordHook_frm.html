@@ -1,0 +1,460 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Hooks/Journal_Record_Hooks/VB6_Journal_Record_Hook_Sample_zip_frmJournalRecordHook_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:43 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmJournalRecordHook.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmJournalRecordHook.frm" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Hooks</a>&#160;.&#160;<a href="article.html">Using a Journal Record Hook to Capture Mouse and Key Events from any System Window</a>&#160;.&#160;<a href="VB6_Journal_Record_Hook_Sample.html">VB6 Journal Record Hook Sample</a>&#160;.&#160;frmJournalRecordHook.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Journal_Record_Hook_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Journal Record Hook Sample</a> (13K)</p><p /><p class="nav"><a href="VB6_Journal_Record_Hook_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Journal Record Hook Sample</a> (12K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:12548</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12548&amp;type=Zip&amp;title=VB6%20Journal%20Record%20Hook%20Sample%2Ezip%5FfrmJournalRecordHook">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;Mr Yummys</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />27 Jun 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12338">Win32 Hooks in VB - The vbAccelerator Hook Library</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmJournalRecordHook.frm</h1><pre>VERSION 5.00
+Begin VB.Form frmJournalRecordHook 
+   Caption         =   "Journal Record Hook Demonstration"
+   ClientHeight    =   6015
+   ClientLeft      =   5730
+   ClientTop       =   3015
+   ClientWidth     =   6585
+   BeginProperty Font 
+      Name            =   "Tahoma"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "frmJournalRecordHook.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   6015
+   ScaleWidth      =   6585
+   Begin VB.PictureBox picInfo 
+      BorderStyle     =   0  'None
+      Height          =   1035
+      Left            =   120
+      ScaleHeight     =   1035
+      ScaleWidth      =   6375
+      TabIndex        =   2
+      Top             =   4860
+      Width           =   6375
+      Begin VB.Label lblIdle 
+         ForeColor       =   &amp;H80000011&amp;
+         Height          =   255
+         Left            =   1380
+         TabIndex        =   8
+         Top             =   0
+         Width           =   4995
+      End
+      Begin VB.Label lblPixelsMoved 
+         ForeColor       =   &amp;H80000011&amp;
+         Height          =   255
+         Left            =   1380
+         TabIndex        =   7
+         Top             =   360
+         Width           =   4995
+      End
+      Begin VB.Label lblKeysPressed 
+         ForeColor       =   &amp;H80000011&amp;
+         Height          =   255
+         Left            =   1380
+         TabIndex        =   6
+         Top             =   720
+         Width           =   4995
+      End
+      Begin VB.Label lblInfo 
+         Caption         =   "UI Idle for:"
+         Height          =   255
+         Index           =   0
+         Left            =   0
+         TabIndex        =   5
+         Top             =   0
+         Width           =   1275
+      End
+      Begin VB.Label lblInfo 
+         Caption         =   "Pixels travelled:"
+         Height          =   255
+         Index           =   1
+         Left            =   0
+         TabIndex        =   4
+         Top             =   360
+         Width           =   1275
+      End
+      Begin VB.Label lblInfo 
+         Caption         =   "Keys pressed:"
+         Height          =   255
+         Index           =   2
+         Left            =   0
+         TabIndex        =   3
+         Top             =   720
+         Width           =   1275
+      End
+   End
+   Begin VB.Timer tmrIdleUI 
+      Enabled         =   0   'False
+      Interval        =   100
+      Left            =   6000
+      Top             =   0
+   End
+   Begin VB.ListBox lstEvents 
+      Height          =   4350
+      Left            =   120
+      TabIndex        =   1
+      Top             =   480
+      Width           =   6375
+   End
+   Begin VB.CheckBox chkHook 
+      Caption         =   "&amp;Hook"
+      Height          =   315
+      Left            =   120
+      TabIndex        =   0
+      Top             =   120
+      Width           =   2655
+   End
+End
+Attribute VB_Name = "frmJournalRecordHook"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Type POINTAPI
+   x As Long
+   y As Long
+End Type
+
+Private Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Long) As
+ Long
+Private Declare Function GetCursorPos Lib "user32" (lpPoint As POINTAPI) As Long
+Private Declare Function WindowFromPoint Lib "user32" (ByVal xPoint As Long,
+ ByVal yPoint As Long) As Long
+Private Declare Function GetClassName Lib "user32" Alias "GetClassNameA" (ByVal
+ hWnd As Long, ByVal lpClassName As String, ByVal nMaxCount As Long) As Long
+
+Private Const WM_KEYDOWN = &amp;H100
+Private Const WM_KEYUP = &amp;H101
+Private Const WM_CHAR = &amp;H102
+Private Const WM_MOUSEMOVE = &amp;H200
+Private Const WM_LBUTTONDOWN = &amp;H201
+Private Const WM_LBUTTONUP = &amp;H202
+Private Const WM_LBUTTONDBLCLK = &amp;H203
+Private Const WM_RBUTTONDOWN = &amp;H204
+Private Const WM_RBUTTONUP = &amp;H205
+Private Const WM_RBUTTONDBLCLK = &amp;H206
+Private Const WM_MBUTTONDOWN = &amp;H207
+Private Const WM_MBUTTONUP = &amp;H208
+Private Const WM_MBUTTONDBLCLK = &amp;H209
+Private Const WM_MOUSEWHEEL = &amp;H20A
+Private Const WM_SYSTEMKEYDOWN = &amp;H104
+Private Const WM_SYSTEMKEYUP = &amp;H105
+
+Private Declare Function timeBeginPeriod Lib "winmm.dll" (ByVal uPeriod As
+ Long) As Long
+Private Declare Function timeEndPeriod Lib "winmm.dll" (ByVal uPeriod As Long)
+ As Long
+Private Declare Function timeGetTime Lib "winmm.dll" () As Long
+Private m_lLastTime As Long
+Private m_tP As POINTAPI
+Private m_lPixels As Long
+Private m_lKeys As Long
+
+Implements IWindowsHook
+
+Private Sub updateIdleUI()
+   lblIdle.Caption = timeGetTime() - m_lLastTime &amp; "ms"
+   lblPixelsMoved.Caption = m_lPixels
+   lblKeysPressed.Caption = m_lKeys
+End Sub
+
+Private Sub enableUIControls(ByVal bState As Boolean)
+Dim lColor As OLE_COLOR
+Dim i As Long
+   lColor = IIf(bState, vbWindowText, vbGrayText)
+   lblIdle.ForeColor = lColor
+   lblPixelsMoved.ForeColor = lColor
+   lblKeysPressed.ForeColor = lColor
+   For i = lblInfo.LBound To lblInfo.UBound
+      lblInfo(i).ForeColor = lColor
+   Next i
+End Sub
+
+Private Function ClassName(ByVal hWnd As Long) As String
+Dim sBuf As String
+Dim iPos As Long
+   sBuf = String$(256, 0)
+   GetClassName hWnd, sBuf, 255
+   iPos = InStr(sBuf, vbNullChar)
+   If (iPos &gt; 0) Then
+      ClassName = Left(sBuf, iPos - 1)
+   Else
+      ClassName = sBuf
+   End If
+End Function
+
+Private Function shiftState() As String
+Dim sRet As String
+   sRet = "  "
+   If Not (GetAsyncKeyState(vbKeyControl) = 0) Then
+      sRet = sRet &amp; "Ctrl"
+   End If
+   If Not (GetAsyncKeyState(vbKeyMenu) = 0) Then
+      If Len(sRet) &gt; 0 Then
+         sRet = sRet &amp; "+"
+      End If
+      sRet = sRet &amp; "Alt"
+   End If
+   If Not (GetAsyncKeyState(vbKeyShift) = 0) Then
+      If Len(sRet) &gt; 0 Then
+         sRet = sRet &amp; "+"
+      End If
+      sRet = sRet &amp; "Shift"
+   End If
+   shiftState = sRet
+End Function
+
+Private Sub LogEvent(ByVal sMsg As String)
+   m_lLastTime = timeGetTime()
+   updateIdleUI
+   lstEvents.AddItem sMsg
+   lstEvents.ListIndex = lstEvents.ListCount - 1
+End Sub
+
+Private Sub chkHook_Click()
+   If (chkHook.Value = Checked) Then
+      InstallHook Me, WH_JOURNALRECORD
+      InstallHook Me, WH_GETMESSAGE
+      timeBeginPeriod 1
+      m_lLastTime = timeGetTime()
+      tmrIdleUI.Enabled = True
+      enableUIControls True
+   Else
+      enableUIControls False
+      tmrIdleUI.Enabled = False
+      timeEndPeriod 1
+      RemoveHook Me, WH_GETMESSAGE
+      RemoveHook Me, WH_JOURNALRECORD
+   End If
+End Sub
+
+Private Sub Form_Load()
+   enableUIControls False
+End Sub
+
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+   If (chkHook.Value = Checked) Then
+      chkHook.Value = Unchecked
+   End If
+End Sub
+
+Private Sub Form_Resize()
+   On Error Resume Next
+   picInfo.Move picInfo.Left, Me.ScaleHeight - picInfo.Height - picInfo.Left, _
+      Me.ScaleWidth - picInfo.Left * 2
+   lstEvents.Move picInfo.Left, lstEvents.Top, _
+      Me.ScaleWidth - picInfo.Left * 2, Me.ScaleHeight - lstEvents.Top -
+       picInfo.Height - picInfo.Left
+End Sub
+
+Private Function IWindowsHook_HookProc( _
+      ByVal eType As vbalWinHook6.EHTHookTypeConstants, _
+      ByVal nCode As Long, _
+      ByVal wParam As Long, _
+      ByVal lParam As Long, _
+      bConsume As Boolean _
+   ) As Long
+
+   If (eType = WH_GETMESSAGE) Then
+      Dim cMsg As cGetMsglParam
+      On Error Resume Next
+      Set cMsg = GetMsglParam(lParam)
+      If (Err.Number) Then
+         Debug.Print Err.Description
+      End If
+      
+      If (cMsg.Message = WM_CANCELJOURNAL) Then
+         LogEvent "Journalling cancelled by Ctrl+Esc or Ctrl+Alt+Del; Removing
+          Hook"
+         If (chkHook.Value = Checked) Then
+            chkHook.Value = Unchecked
+         End If
+      End If
+      
+   
+   ElseIf (eType = WH_JOURNALRECORD) Then
+   
+      Dim keyCode As Integer
+      Dim keyAscii As Integer
+      Dim sMsg As String
+      Dim sMsgBit As String
+      Dim lhWnd As Long
+      Dim tP As POINTAPI
+      
+      Dim cEvent As cJournallParam
+      Set cEvent = JournalRecordlParam(lParam)
+      
+      lhWnd = cEvent.hWnd
+      If Not (lhWnd = 0) Then
+         sMsgBit = "  over Window " &amp; _
+            Hex$(lhWnd) &amp; _
+            " (" &amp; ClassName(lhWnd) &amp; ")"
+      End If
+            
+      Select Case cEvent.Msg
+      
+      Case WM_KEYDOWN
+         m_lLastTime = timeGetTime()
+         m_lKeys = m_lKeys + 1
+         updateIdleUI
+         
+         keyCode = (cEvent.lParamLow And &amp;HFF&amp;)
+         LogEvent "KeyDown " &amp; keyCode &amp; shiftState &amp; sMsgBit
+         
+      Case WM_SYSTEMKEYDOWN
+         m_lLastTime = timeGetTime()
+         m_lKeys = m_lKeys + 1
+         updateIdleUI
+      
+         keyCode = (cEvent.lParamLow And &amp;HFF&amp;)
+         If Not (keyCode = vbKeyMenu) Then
+            LogEvent "SystemKeyDown " &amp; keyCode &amp; shiftState &amp; sMsgBit
+         End If
+      
+      Case WM_KEYUP
+         m_lLastTime = timeGetTime()
+         updateIdleUI
+      
+         keyCode = (cEvent.lParamLow And &amp;HFF&amp;)
+         If Not (keyCode = vbKeyMenu) Then
+            LogEvent "KeyUp " &amp; keyCode &amp; shiftState &amp; sMsgBit
+         End If
+      
+      Case WM_SYSTEMKEYUP
+         m_lLastTime = timeGetTime()
+         updateIdleUI
+         
+         keyCode = (cEvent.lParamLow And &amp;HFF&amp;)
+         LogEvent "SystemKeyUp " &amp; keyCode &amp; shiftState &amp; sMsgBit
+      
+      
+      Case WM_MOUSEMOVE
+         GetCursorPos tP
+         If Not (((m_tP.x - tP.x) = 0) And ((m_tP.y - tP.y) = 0)) Then
+            m_lPixels = m_lPixels + Sqr((m_tP.x - tP.x) ^ 2 + (m_tP.y - tP.y) ^
+             2)
+            m_lLastTime = timeGetTime()
+            updateIdleUI
+            LSet m_tP = tP
+         End If
+               
+      Case WM_LBUTTONDOWN, WM_RBUTTONDOWN, WM_MBUTTONDOWN
+         m_lLastTime = timeGetTime()
+         updateIdleUI
+         
+         sMsg = "Mouse Down: "
+         Select Case cEvent.Msg
+         Case WM_LBUTTONDOWN
+            sMsg = sMsg &amp; "Left Button"
+         Case WM_RBUTTONDOWN
+            sMsg = sMsg &amp; "Right Button"
+         Case WM_MBUTTONDOWN
+            sMsg = sMsg &amp; "Middle Button"
+         End Select
+         LogEvent sMsg &amp; ", x=" &amp; cEvent.lParamLow &amp; ",y=" &amp; cEvent.lParamHigh
+          &amp; shiftState &amp; sMsgBit
+         
+      
+      Case WM_LBUTTONUP, WM_RBUTTONUP, WM_MBUTTONUP
+         m_lLastTime = timeGetTime()
+         updateIdleUI
+         
+         sMsg = "Mouse Up: "
+         Select Case cEvent.Msg
+         Case WM_LBUTTONUP
+            sMsg = sMsg &amp; "Left Button"
+         Case WM_RBUTTONUP
+            sMsg = sMsg &amp; "Right Button"
+         Case WM_MBUTTONUP
+            sMsg = sMsg &amp; "Middle Button"
+         End Select
+         LogEvent sMsg &amp; ", x=" &amp; cEvent.lParamLow &amp; ",y=" &amp; cEvent.lParamHigh
+          &amp; shiftState &amp; sMsgBit
+         
+      Case WM_MOUSEWHEEL
+         m_lLastTime = timeGetTime()
+         updateIdleUI
+                  
+         ' it does not seem to be possible to determine what mouse wheel action
+          was being taken
+         LogEvent "MouseWheel" &amp; ", x=" &amp; cEvent.lParamLow &amp; ",y=" &amp;
+          cEvent.lParamHigh &amp; shiftState &amp; sMsgBit
+      
+      Case WM_LBUTTONDBLCLK, WM_RBUTTONDBLCLK, WM_MBUTTONDBLCLK
+         m_lLastTime = timeGetTime()
+         updateIdleUI
+         
+         sMsg = "Double Click: "
+         Select Case cEvent.Msg
+         Case WM_LBUTTONDBLCLK
+            sMsg = sMsg &amp; "Left Button"
+         Case WM_RBUTTONDBLCLK
+            sMsg = sMsg &amp; "Right Button"
+         Case WM_MBUTTONDBLCLK
+            sMsg = sMsg &amp; "Middle Button"
+         End Select
+         LogEvent sMsg &amp; ", x=" &amp; cEvent.lParamLow &amp; ",y=" &amp; cEvent.lParamHigh
+          &amp; shiftState &amp; sMsgBit
+               
+      End Select
+               
+   End If
+End Function
+
+Private Sub tmrIdleUI_Timer()
+   updateIdleUI
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Hooks</a>&#160;.&#160;<a href="article.html">Using a Journal Record Hook to Capture Mouse and Key Events from any System Window</a>&#160;.&#160;<a href="VB6_Journal_Record_Hook_Sample.html">VB6 Journal Record Hook Sample</a>&#160;.&#160;frmJournalRecordHook.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 July 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Hooks/Journal_Record_Hooks/VB6_Journal_Record_Hook_Sample_zip_frmJournalRecordHook_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:43 GMT -->
+</html>

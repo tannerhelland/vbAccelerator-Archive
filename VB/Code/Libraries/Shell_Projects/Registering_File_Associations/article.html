@@ -1,0 +1,408 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Shell_Projects/Registering_File_Associations/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:56 GMT -->
+<head>
+
+<title>vbAccelerator - Registering File Associations and Passing Command Line Parameters to an Existing App Instance</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Many windows applications register file associations. When you double click on an associated file, 
+it is nice to have the flexibility to decide what happens. Without code, VB applications work
+like the Notepad SDI model - if you double click on a .TXT file you get a new instance. 
+But other apps, for example Microsoft Word and WinZip, detect if a window is already open to 
+handle the file, and if it is that window is used to open the file. 
+
+This article demonstrates how to register associations and an easy-to-use module which can
+pass any parameters to an existing instance of your application.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Shell Projects</a>&#160;.&#160;Registering File Associations and Passing Command Line Parameters to an Existing App Instance</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Startup_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Startup Demonstration</a> (43K)</p><p /><p class="nav"><a href="VB6_Startup_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Startup Demonstration</a> (41K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:11997</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=11997&amp;type=Article&amp;title=Registering%20File%20Associations%20and%20Passing%20Command%20Line%20Parameters%20to%20an%20Existing%20App%20Instance">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />15 Feb 2004<br /><p class="update">Fixed missing downloads.</p><p class="update">The code now correctly restoring and activates Windows on
+all systems, and the bug with restoring iconic Windows (incorrect constant)
+has been fixed.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2518">Complete Registry control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4585">Create New GUIDs</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1429">Goldfish</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4577">Enumerating Windows Using the API </a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Registering File Associations and Passing Command Line Parameters to an Existing App Instance</h1><p class="splash">A robust method for integrating your application with the Shell</p><img src="startup.gif" width="330" height="177" alt="Associated File Example" /><p /><p>
+Many windows applications register file associations. When you double click on an associated file, 
+it is nice to have the flexibility to decide what happens. Without code, VB applications work
+like the Notepad SDI model - if you double click on a .TXT file you get a new instance. 
+But other apps, for example Microsoft Word and WinZip, detect if a window is already open to 
+handle the file, and if it is that window is used to open the file. 
+</p><p>
+This article demonstrates how to register associations and an easy-to-use module which can
+pass any parameters to an existing instance of your application.
+</p><h2>Associating Files and Using the Same Instance to Handle Them</h2><p>
+To achieve this effect you need to be able to do three things:
+</p><ol><li>Register a file association.</li><li>Detect whether an instance of your app is running or not.</li><li>Send the command line of one instance of your app cross-instance to the existing one.</li></ol><p>
+These are covered in turn.
+</p><h3>1. Registering a File Association</h3><p>
+Associating a file type is achieved through the registry. For example, 
+say you want to associate files of type <i>*.GCF</i> with your app, calling them 
+"<i>Goldfish Clipboard Files</i>". Then you need to set up the following 
+in the registry: 
+</p><img src="fileAssociation.png" width="405" height="113" alt="File association set up" /><p><small><strong>File association set up in the registry</strong></small></p><p>
+The simplest way to do this is to use the <i>CreateEXEAssociation</i> method of the 
+vbAccelerator <a href="http://www.vbaccelerator.com/article.asp?id=2518">cRegistry</a> class.  Once you have done this, 
+then when a user double clicks on the file with the extension specified Windows will 
+shell your application, passing the filename on the command line. You can get this from VB's 
+<i>Command</i> function.
+</p><p>
+The above registry structure creates a default Open association. You can also 
+add other associations so when a user right clicks on a file or selects it and 
+chooses the File menu in explorer additional menu items apply. For example, 
+VB5 creates the following structure to provide the Open, Make and Run commands 
+for .VBP files:
+</p><img src="fileVerbs.png" width="514" height="169" alt="VB File Verb Associations" /><p><small><strong>VB File Associations, showing additional verbs for Make and Run</strong></small></p><p>
+This functionality is available through the cRegistry class <i>CreateAdditionalEXEAssociations</i>
+ function. Check the demo project code to see how it works.
+</p><p>
+The final thing you can do for a fully professional effect is to associate a particular icon with 
+documents associated with your application. This is achieved by setting a registry key like this: 
+</p><img src="fileIcon.png" width="519" height="56" alt="Icon to display for a file" /><p><small><strong>Setting the Icon to display for a file</strong></small></p><p>
+The [0 Based Index of Resource Icon] should be an index to an icon resource within your project. 
+Resource identifier 0 is automatically created for VB EXEs and is the executable's icon. 
+However, you can add further icon resources to your application through a resource file. 
+Note: you cannot use the Resource Editor VB Add-in 
+(provided with VB6, and available for VB5 from the MS VB Programmer's area) to do this because 
+all resources it creates are private and not exposed to the outside applications. 
+You must instead use the external resource compiler RC.EXE to do this instead. 
+</p><p>
+The default icon setting can also be set through cRegistry's <i>CreateEXEAssociation</i> method. 
+The demonstration provides a resource script and the code used to do this. 
+</p><p>
+If you only want to create an SDI app which has multiple instances, that is all you need to do. 
+But if you want to control what happens next, then read on... 
+</p><h3>2. Detect whether an instance of your app is running or not</h3><p>This could be the easy bit, but I decided to make it harder. vbAccelerator 
+isn't about advanced source code for nothing you know!
+</p><p>
+The easy way of checking whether your app is running is to use the <i>PrevInstance</i> property of 
+VB's <i>App</i> object. For 99% of cases this will work perfectly well. However, if your app 
+has a long start-up time, it is possible for <i>App.PrevInstance</i> to return <i>False</i> even 
+when there is an existing instance running. If you relied on <i>App.PrevInstance</i> there is small 
+but problematic possibility that you get two instances of your app.
+</p><p>
+To be sure only one instance runs, you can take advantage of the <i>Mutex</i> functions provided 
+in Win32, which are normally used for thread synchronisation. You can create a 
+virtually unlimited number of <i>Mutex</i> handles in Win32. Each one has it's own name 
+and handle value. The only disadvantage of this method occurs in the VB IDE. A 
+<i>Mutex</i> applies to an entire process, and when you are debugging an application in the 
+VB IDE it runs in the VB IDE's process. So if you create a <i>Mutex</i> in the IDE, but fail to 
+destroy it for some reason (say for example you do a nasty and press the stop button) then 
+the <i>Mutex</i> continues to exist until the IDE is closed. Clearly this makes things difficult 
+to debug, so my code works around this by using <i>App.PrevInstance</i> unless the app is 
+running as compiled code. To detect whether you are in the VB IDE or not is easy but a hack... 
+check it out! 
+</p><pre>
+Private Declare Function CreateMutex Lib "kernel32" Alias "CreateMutexA" _
+   (ByVal lpMutexAttributes As Long, ByVal bInitialOwner As Long, ByVal lpName As String) As Long
+Private Declare Function CloseHandle Lib "kernel32" (ByVal hObject As Long) As Long
+Private Const ERROR_ALREADY_EXISTS = 183&amp;
+Private m_hMutex As Long
+Private m_bInDevelopment As Boolean
+' Change this line to match your app:
+Private Const mcTHISAPPID = "vbAcceleratorGOLDFISH"
+
+Public Sub Main()
+
+   ' Check if this is the first instance:
+   If (WeAreAlone(mcTHISAPPID &amp; "_APPLICATION_MUTEX")) Then
+      ' Do startup code here:
+   Else
+      ' Pass command line if not empty, or
+      ' activate existing app:
+   Endif
+End Sub
+
+Private Function WeAreAlone(ByVal sMutex As String) As Boolean
+   ' Don't call Mutex when in VBIDE because it will apply
+   ' for the entire VB IDE session, not just the app's
+   ' session.
+   If InDevelopment Then
+      WeAreAlone = Not (App.PrevInstance)
+   Else
+      ' Ensures we don't run a second instance even
+      ' if the first instance is in the start-up phase
+      m_hMutex = CreateMutex(ByVal 0&amp;, 1, sMutex)
+      If (Err.LastDllError = ERROR_ALREADY_EXISTS) Then
+         CloseHandle m_hMutex
+      Else
+         WeAreAlone = True
+      End If
+   End If
+End Function
+
+Public Function InDevelopment() As Boolean
+   ' Debug.Assert code not run in an EXE. Therefore
+   ' m_bInDevelopment variable is never set.
+   Debug.Assert InDevelopmentHack() = True
+   InDevelopment = m_bInDevelopment
+End Function
+
+Private Function InDevelopmentHack() As Boolean
+   ' .... '
+   m_bInDevelopment = True
+   InDevelopmentHack = m_bInDevelopment
+End Function
+
+Public Function EndApp()
+   ' Call this to remove the Mutex. It will be cleared
+   ' anyway by windows, but this ensures it works.
+   If (m_hMutex &lt;&gt; 0) Then
+      CloseHandle m_hMutex
+   End If
+   m_hMutex = 0
+End Function
+</pre><p>
+The <i>CreateMutex</i> calls probably have many other uses I haven't thought of yet..
+</p><h3>3. Send the command line of one instance of your app cross-instance to the existing one.</h3><p>The code so far has been fairly trivial. Now we get on to why you need 
+subclassing to achieve this task and also delve into the Windows API a bit more. 
+</p><p>
+Sending a command line to another instance can be broken down into two parts: 
+</p><ol><li>Firstly, how do you find a window?</li><li>Secondly, how do you pass data across instances?</li></ol><p>
+So, how do you find a window? There are various techniques to achieve this. 
+But I warn you that a large number of the published versions are based on Win16 
+code which can't really be guaranteed to work under Win32. Without exception all the 
+rest I have seen rely on some part of the window's caption or class name to find a window. 
+Now I don't know about you but I find the whole idea of finding a window given that 
+the caption is something like "My Cool App -*" and that its class 
+is "ThunderWindowClass" somewhat less than desirable. 
+</p><p>
+The worst thing these dubious methods is that you can do it properly with very few lines 
+of code. For further reference to the methods I describe here, see my articles 
+<a href="http://www.vbaccelerator.com/article.asp?id=4577">Enumerating Windows using the API</a> and the methods in 
+<a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing without the Crashes - Use Window's built-in 
+database to store information against hWnds</a>.
+</p><p>
+The first thing you should do if you want to locate a window is to give it a 
+property that guarantees you can find it again. To make sure you can find it, 
+just choose a string value for the property that no-one else is going to use. 
+(BTW: If you're really serious about this, use the appropriate OLE function to 
+<a href="http://www.vbaccelerator.com/article.asp?id=4585">create a new GUID</a>!) Once you have a string, use 
+the <i>SetProp</i> method to associate the string and a long value with the window. 
+</p><p>
+Having done, this you need to loop through all top-level windows to find the one which 
+has the unique string value you set. To loop through top-level windows in Win32, you must 
+use the <i>EnumWindows</i> function (using any other method could result in continuous loops 
+or a failure to identify all top-level windows because Win32's pre-emptive Multi-Threading 
+could modify the window list before you get them. Particularly in multi-processor NT systems). 
+Here is the code I use to set the properties and get the top-level windows: 
+</p><pre>
+Private Declare Function EnumWindows Lib "user32" _
+   (ByVal lpEnumFunc As Long, ByVal lparam As Long) As Long
+Private Declare Function GetProp Lib "user32" Alias "GetPropA" _
+   (ByVal hWnd As Long, ByVal lpString As String) As Long
+Private Declare Function SetProp Lib "user32" Alias "SetPropA" _
+   (ByVal hWnd As Long, ByVal lpString As String, ByVal hData As Long) As Long
+Private m_hWndPrevious As Long
+' Change this line:
+Private Const mcTHISAPPID = "vbAcceleratorGOLDFISH"
+
+
+'... Sub Main frament:
+
+' We have an existing instance.
+' First try to find it:
+EnumerateWindows
+
+' If we get it:
+If (m_hWndPrevious &lt;&gt; 0) Then
+   ' Send information:
+End If
+
+' ... End
+
+Public Sub TagWindow(ByVal hWnd As Long)
+   ' Applies a window property to allow the window to
+   ' be clearly identified.
+   SetProp hWnd, mcTHISAPPID &amp; "_APPLICATION", 1
+End Sub
+
+Private Function IsThisApp(ByVal hWnd As Long) As Boolean
+   ' Check if the windows property is set for this
+   ' window handle:
+   If GetProp(hWnd, mcTHISAPPID &amp; "_APPLICATION") = 1 Then
+      IsThisApp = True
+   End If
+End Function
+
+Public Function EnumWindowsProc( _
+         ByVal hWnd As Long, _
+         ByVal lparam As Long _
+         ) As Long
+   Dim bStop As Boolean
+   ' Customised windows enumeration procedure. Stops
+   ' when it finds another application with the Window
+   ' property set, or when all windows are exhausted.
+   bStop = False
+   If IsThisApp(hWnd) Then
+      EnumWindowsProc = 0
+      m_hWndPrevious = hWnd
+   Else
+      EnumWindowsProc = 1
+   End If
+End Function
+
+Public Function EnumerateWindows() As Boolean
+   ' Enumerate top-level windows:
+   EnumWindows AddressOf EnumWindowsProc, 0
+End Function
+</pre><p>
+The final stage is how to send information across processes. 
+Sending information can be achieved in many ways, but one of the easiest is to use Window's 
+<i>WM_COPYDATA</i> message. This message is used with the <i>SendMessage</i> function and is 
+a wrapper around the more complicated File Mapping interprocess communication method. It is ideal 
+when you are sending a small amount of information, say less than 4Kb.
+</p><p>
+You call the <i>WM_COPYDATA</i> message with <i>SendMessage</i> like this: 
+</p><pre>
+Public Const WM_COPYDATA = &amp;H4A
+Public Type COPYDATASTRUCT
+   dwData As Long ' A long value to pass to other application
+   cbData As Long ' The size of the data pointed to by lpData
+   lpData As Long ' A pointer to data
+End Type
+Private Declare Function SendMessage Lib "user32" Alias "SendMessageA" _
+    (ByVal hWnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+
+Public Sub SendData(ByVal hWndTo As Long, ByVal sString As String, ByVal lData As Long)
+   Dim b() As Byte
+   Dim tCDS As COPYDATASTRUCT
+
+   If (sString &lt;&gt; "") Then
+      b = StrConv(Command, vbFromUnicode)
+      tCDS.dwData = lData
+      ' Add Null Char:
+      tCDS.cbData = UBound(b) + 1
+      ' Set lpData to point to the byte array
+      tCDS.lpData = VarPtr(b(0))
+   Else
+      ReDim b(0 To 0) As Byte
+      tCDS.dwData = lData
+      tCDS.cbData = 1
+      ' Set lpData to point to byte array of Null Char:
+      tCDS.lpData = VarPtr(b(0))
+   End If
+
+   SendMessage hWndTo, WM_COPYDATA, 0, tCDS
+
+End Sub
+</pre><p>
+This sends the message to the window <i>hWndTo</i>. Now you need to receive it and 
+process it in the main window of the receiving application. This is achieved by subclassing 
+the window for the <i>WM_COPYDATA</i> message: 
+</p><pre>
+Option Explicit
+
+' Implement the subclassing interface:
+Implements ISubclass
+
+Private Sub Form_Load()
+   ' Start subclassing:
+   AttachMessage Me, Me.hWnd, WM_COPYDATA
+End Sub
+
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+   ' stop subclassing:
+   DetachMessage Me, Me.hWnd, WM_COPYDATA
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As SSubTimer.EMsgResponse)
+   ' Not needed.
+End Property
+
+Private Property Get ISubclass_MsgResponse() As SSubTimer.EMsgResponse
+   ' This will tell you which message you are responding to:
+   ' WM_COPYDATA, send response after we've done with it:
+   ISubclass_MsgResponse = emrPostProcess
+
+End Property
+
+Private Function ISubclass_WindowProc( _
+   ByVal hWnd As Long, ByVal iMsg As Long, _
+   ByVal wParam As Long, ByVal lParam As Long _
+   ) As Long
+   Dim tCDS As COPYDATASTRUCT
+   Dim b() As Byte
+   Dim sCommand As String
+
+   Select Case iMsg
+   Case WM_COPYDATA
+      ' Copy for processing:
+      CopyMemory tCDS, ByVal lParam, Len(tCDS)
+      If (tCDS.cbData &gt; 0) Then
+         ReDim b(0 To tCDS.cbData - 1) As Byte
+         CopyMemory b(0), ByVal tCDS.lpData, tCDS.cbData
+         sCommand = StrConv(b, vbUnicode)
+
+         ' We've got the info, now do it:
+         ParseCommand sCommand
+      End If
+
+   End Select
+
+End Function
+
+Public Sub ParseCommand(ByVal sCommand As String)
+   ' Here you do with the command line whatever
+   ' you need for the application.
+End Sub
+</pre><p>
+With this in place you can now fully achieve files associations and pass 
+information between instances. The only things remaining to consider are: 
+</p><ul><li>If the window you are passing the command to is iconized, you probably want to restore it. 
+Send a <i>WM_COMMAND</i> message with the wParam set to <i>SC_RESTORE</i> to the window handle. 
+</li><li>If the window is hidden (say the application resides in the SysTray) then you will want 
+to make it visible even when there is no command line. I do this by passing an 
+empty command line to the application. 
+</li></ul><p>
+The full source for the main module is provided in the demonstration download, and this is the 
+same source which is used in the <a href="http://www.vbaccelerator.com/article.asp?id=1429">Goldfish demonstration application</a>. 
+</p><h2>Conclusion</h2><p>
+Registering file associations and making sure only a single application responds
+to them is something which isn't built in to VB and there are a few wrinkles involved
+in performing it reliably.  This article provides a robust method and some easy to
+re-use code for doing it.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Shell Projects</a>&#160;.&#160;Registering File Associations and Passing Command Line Parameters to an Existing App Instance</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 14 February 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Shell_Projects/Registering_File_Associations/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:59 GMT -->
+</html>

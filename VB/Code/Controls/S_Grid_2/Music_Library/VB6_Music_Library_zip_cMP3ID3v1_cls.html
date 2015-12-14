@@ -1,0 +1,486 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/Music_Library/VB6_Music_Library_zip_cMP3ID3v1_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:06 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cMP3ID3v1.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cMP3ID3v1.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;<a href="article.html">MusicLibrary SGrid Sample</a>&#160;.&#160;<a href="VB6_Music_Library.html">VB6 Music Library</a>&#160;.&#160;cMP3ID3v1.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Music_Library.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Music Library</a> (108K)</p><p /><p class="nav"><a href="VB6_Music_Library.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Music Library</a> (104K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:13983</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13983&amp;type=Zip&amp;title=VB6%20Music%20Library%2Ezip%5FcMP3ID3v1">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />24 Jan 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1418">Two code only solutions for displaying Common/Dialogs</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13703">SGrid 2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3490">Reading and Writing MP3 ID3v1 and ID3v2 Tags</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2950">Compact a Long Path Name to fit a given space</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1420">Browsing For Folders</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cMP3ID3v1.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cMP3ID3v1"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+'
+' cMP3ID3v1.cls
+' Read and Write MP3 ID3 v1 tags.
+'
+' http://vbaccelerator.com/
+' S McMahon
+' 2003-01-26
+'
+' Updates
+' 2003/05/07: Added ID3 v1.1 support.
+' Thanks to Don Beal for providing the code!
+'
+' 2004/01/19: Added code to strip null characters
+' from the strings returned by the tag properties.
+
+
+Private Type MP3ID3V1Tag
+  Tag As String * 3           '-- 03
+  Title As String * 30     '-- 33
+  Artist As String * 30       '-- 63
+  Album As String * 30        '-- 93
+  Year As String * 4          '-- 97
+  Comment As String * 28      '-- 125
+  ' START: Mods for ID3 v1.1 support
+  Filler As Byte              '-- 126
+  Track As Byte               '-- 127
+  ' END: Mods for ID3 v1.1. support
+  Genre As Byte               '-- 128
+End Type
+
+Private m_sMp3File As String
+
+Private m_bHasID3v1Tag As Boolean
+
+Private m_sTag As String
+Private m_sTitle As String
+Private m_sArtist As String
+Private m_sAlbum As String
+Private m_sYear As String
+Private m_sComment As String
+Private m_sGenre As Byte
+' Added for ID3 v1.1 support:
+Private m_sTrack As Byte
+
+
+Public Property Get MP3File() As String
+   MP3File = m_sMp3File
+End Property
+
+Public Property Let MP3File(ByVal value As String)
+   m_sMp3File = value
+   pLoadTag
+End Property
+
+Public Sub Update()
+   pUpdateTag
+End Sub
+
+Public Property Get HasID3v1Tag() As Boolean
+   HasID3v1Tag = m_bHasID3v1Tag
+End Property
+
+Public Property Get Title() As String
+   Title = m_sTitle
+End Property
+Public Property Let Title(ByVal value As String)
+   m_sTitle = value
+End Property
+
+Public Property Get Artist() As String
+   Artist = m_sArtist
+End Property
+Public Property Let Artist(ByVal value As String)
+   m_sArtist = value
+End Property
+
+Public Property Get Album() As String
+   Album = m_sAlbum
+End Property
+Public Property Let Album(ByVal value As String)
+   m_sAlbum = value
+End Property
+
+Public Property Get Year() As String
+   Year = m_sYear
+End Property
+Public Property Let Year(ByVal value As String)
+   m_sYear = value
+End Property
+
+' START: Added for ID3 v1.1 support.
+Public Property Get Track() As Byte
+   Track = m_sTrack
+End Property
+Public Property Let Track(ByVal value As Byte)
+   m_sTrack = value
+End Property
+' END: Added for ID3 v1.1 support.
+
+Public Property Get Comment() As String
+   Comment = m_sComment
+End Property
+Public Property Let Comment(ByVal value As String)
+   m_sComment = value
+End Property
+
+Public Property Get Genre() As Byte
+   Genre = m_sGenre
+End Property
+Public Property Let Genre(ByVal value As Byte)
+   m_sGenre = value
+End Property
+
+Public Property Get GenreName(ByVal Genre As Byte) As String
+Dim sName As String
+   Select Case Genre
+   Case 34: sName = "Acid"
+   Case 74: sName = "Acid Jazz"
+   Case 73: sName = "Acid Punk"
+   Case 99: sName = "Acoustic"
+   Case 40: sName = "Alt.Rock"
+   Case 20: sName = "Alternative"
+   Case 26: sName = "Ambient"
+   Case 145: sName = "Anime"
+   Case 90: sName = "Avant Garde"
+   Case 116: sName = "Ballad"
+   Case 41: sName = "Bass"
+   Case 135: sName = "Beat"
+   Case 85: sName = "Bebob"
+   Case 96: sName = "Big Band"
+   Case 138: sName = "Black Metal"
+   Case 89: sName = "Blue Grass"
+   Case 0: sName = "Blues"
+   Case 107: sName = "Booty Bass"
+   Case 132: sName = "Brit Pop"
+   Case 65: sName = "Cabaret"
+   Case 88: sName = "Celtic"
+   Case 104: sName = "Chamber Music"
+   Case 102: sName = "Chanson"
+   Case 97: sName = "Chorus"
+   Case 136: sName = "Christian Gangsta Rap"
+   Case 61: sName = "Christian Rap"
+   Case 141: sName = "Christian Rock"
+   Case 1: sName = "Classic Rock"
+   Case 32: sName = "Classical"
+   Case 112: sName = "Club"
+   Case 128: sName = "Club - House"
+   Case 57: sName = "Comedy"
+   Case 140: sName = "Contemporary Christian"
+   Case 2: sName = "Country"
+   Case 139: sName = "Crossover"
+   Case 58: sName = "Cult"
+   Case 3: sName = "Dance"
+   Case 125: sName = "Dance Hall"
+   Case 50: sName = "Darkwave"
+   Case 22: sName = "Death Metal"
+   Case 4: sName = "Disco"
+   Case 55: sName = "Dream"
+   Case 127: sName = "Drum &amp; Bass"
+   Case 122: sName = "Drum Solo"
+   Case 120: sName = "Duet"
+   Case 98: sName = "Easy Listening"
+   Case 52: sName = "Electronic"
+   Case 48: sName = "Ethnic"
+   Case 54: sName = "Eurodance"
+   Case 124: sName = "Euro - House"
+   Case 25: sName = "Euro - Techno"
+   Case 84: sName = "Fast Fusion"
+   Case 80: sName = "Folk"
+   Case 81: sName = "Folk / Rock"
+   Case 115: sName = "Folklore"
+   Case 119: sName = "Freestyle"
+   Case 5: sName = "Funk"
+   Case 30: sName = "Fusion"
+   Case 36: sName = "Game"
+   Case 59: sName = "Gangsta Rap"
+   Case 126: sName = "Goa"
+   Case 38: sName = "Gospel"
+   Case 49: sName = "Gothic"
+   Case 91: sName = "Gothic Rock"
+   Case 6: sName = "Grunge"
+   Case 79: sName = "Hard Rock"
+   Case 129: sName = "Hardcore"
+   Case 137: sName = "Heavy Metal"
+   Case 7: sName = "Hip Hop"
+   Case 35: sName = "House"
+   Case 100: sName = "Humour"
+   Case 131: sName = "Indie"
+   Case 19: sName = "Industrial"
+   Case 33: sName = "Instrumental"
+   Case 46: sName = "Instrumental Pop"
+   Case 47: sName = "Instrumental Rock"
+   Case 8: sName = "Jazz"
+   Case 29: sName = "Jazz - Funk"
+   Case 146: sName = "JPop"
+   Case 63: sName = "Jungle"
+   Case 86: sName = "Latin"
+   Case 71: sName = "Lo - fi"
+
+   Case 45: sName = "Meditative"
+   Case 142: sName = "Merengue"
+   Case 9: sName = "Metal"
+   Case 77: sName = "Musical"
+   Case 82: sName = "National Folk"
+
+   Case 64: sName = "Native American"
+   Case 133: sName = "Negerpunk"
+   Case 10: sName = "New Age"
+   Case 66: sName = "New Wave"
+
+   Case 39: sName = "Noise"
+   Case 11: sName = "Oldies"
+
+   Case 103: sName = "Opera"
+   Case 12: sName = "Other"
+   Case 75: sName = "Polka"
+   Case 134: sName = "Polsk Punk"
+
+   Case 13: sName = "Pop"
+   Case 62: sName = "Pop / Funk"
+   Case 53: sName = "Pop / Folk"
+   Case 109: sName = "Pr0n Groove"
+
+   Case 117: sName = "Power Ballad"
+   Case 23: sName = "Pranks"
+   Case 108: sName = "Primus"
+   Case 92: sName = "Progressive Rock"
+   Case 67: sName = "Psychedelic"
+   Case 93: sName = "Psychedelic Rock"
+
+   Case 43: sName = "Punk"
+   Case 121: sName = "Punk Rock"
+   Case 14: sName = "R&amp;B"
+   Case 15: sName = "Rap"
+
+   Case 68: sName = "Rave"
+   Case 16: sName = "Reggae"
+   Case 76: sName = "Retro"
+   Case 87: sName = "Revival"
+   Case 118: sName = "Rhythmic Soul"
+
+   Case 17: sName = "Rock"
+   Case 78: sName = "Rock 'n'Roll"
+   Case 143: sName = "Salsa"
+   Case 114: sName = "Samba"
+   Case 110: sName = "Satire"
+   Case 69: sName = "Showtunes"
+   Case 21: sName = "Ska"
+   Case 111: sName = "Slow Jam"
+
+   Case 95: sName = "Slow Rock"
+   Case 105: sName = "Sonata"
+   Case 42: sName = "Soul"
+   Case 37: sName = "Sound Clip"
+   Case 24: sName = "Soundtrack"
+   Case 56: sName = "Southern Rock"
+   Case 44: sName = "Space"
+   Case 101: sName = "Speech"
+   Case 83: sName = "Swing"
+   Case 94: sName = "Symphonic Rock"
+   Case 106: sName = "Symphony"
+   Case 147: sName = "Synth Pop"
+
+   Case 113: sName = "Tango"
+   Case 18: sName = "Techno"
+   Case 51: sName = "Techno - Industrial"
+   Case 130: sName = "Terror"
+   Case 144: sName = "Thrash Metal"
+   Case 60: sName = "Top 40"
+   Case 70: sName = "Trailer"
+
+   Case 31: sName = "Trance"
+   Case 72: sName = "Tribal"
+
+   Case 27: sName = "Trip Hop"
+   Case 28: sName = "Vocal"
+   
+   End Select
+   GenreName = sName
+End Property
+
+Private Sub pLoadTag()
+Dim iFile As Integer
+Dim lErr As Long
+Dim sErr As String
+   
+   m_bHasID3v1Tag = False
+   m_sComment = ""
+   m_sArtist = ""
+   m_sAlbum = ""
+   m_sYear = ""
+   m_sGenre = 255
+   m_sTitle = ""
+   ' Added for ID3 v1.1 support:
+   m_sTrack = 0
+   
+   iFile = FreeFile
+   On Error Resume Next
+   Open m_sMp3File For Binary Access Read Lock Write As #iFile
+   If (Err.Number &lt;&gt; 0) Then
+      lErr = Err.Number
+      sErr = Err.Description
+      On Error GoTo 0
+      Err.Raise lErr, App.EXEName &amp; ".cMP3ID3v1", sErr
+   Else
+      On Error GoTo 0
+      If LOF(iFile) &gt; 128 Then
+         Dim Tag As MP3ID3V1Tag
+         Get #iFile, LOF(iFile) - 127, Tag.Tag
+         If Not (StrComp(Tag.Tag, "TAG") = 0) Then
+            '  no tag
+         Else
+            m_bHasID3v1Tag = True
+            Get #iFile, , Tag.Title
+            m_sTitle = psStripNulls(Tag.Title)
+            Get #iFile, , Tag.Artist
+            m_sArtist = psStripNulls(Tag.Artist)
+            Get #iFile, , Tag.Album
+            m_sAlbum = psStripNulls(Tag.Album)
+            Get #iFile, , Tag.Year
+            m_sYear = psStripNulls(Tag.Year)
+            Get #iFile, , Tag.Comment
+            m_sComment = psStripNulls(Tag.Comment)
+            ' START: Added for ID3 v1.1 support:
+            Get #iFile, , Tag.Filler
+            Get #iFile, , Tag.Track
+            m_sTrack = psStripNulls(Tag.Track)
+            ' END: added for ID3 v1.1 support
+            Get #iFile, , Tag.Genre
+            m_sGenre = psStripNulls(Tag.Genre)
+            
+         End If
+      End If
+   End If
+   On Error Resume Next
+   Close #iFile
+   On Error GoTo 0
+   Err.Clear
+   
+End Sub
+Private Function psStripNulls(ByVal sBuf As String) As String
+Dim i As Long
+Dim sTag As String
+   
+   sTag = ""
+   For i = 1 To Len(sBuf)
+      If Not (Asc(Mid(sBuf, i, 1)) = 0) Then
+         sTag = sTag &amp; Mid(sBuf, i, 1)
+      End If
+   Next i
+   psStripNulls = Trim(sTag)
+   
+End Function
+Private Sub pUpdateTag()
+Dim iFile As Integer
+Dim lErr As Long
+Dim sErr As String
+   iFile = FreeFile
+   On Error Resume Next
+   Open m_sMp3File For Binary Access Read Write Lock Write As #iFile
+   If (Err.Number &lt;&gt; 0) Then
+      lErr = Err.Number
+      sErr = Err.Description
+      On Error GoTo 0
+      Err.Raise lErr, App.EXEName &amp; ".cMP3ID3v1", sErr
+   Else
+      Dim Tag As MP3ID3V1Tag
+      If LOF(iFile) &gt; 0 Then
+         If LOF(iFile) &gt; 128 Then
+            Get #iFile, LOF(iFile) - 127, Tag.Tag
+            If Not (StrComp(Tag.Tag, "TAG") = 0) Then
+               ' no MP3 tag already, need to extend the file
+               ' to add it
+               Seek #iFile, LOF(iFile)
+               Tag.Tag = "TAG"
+               Put #iFile, , Tag.Tag
+            End If
+            LSet Tag.Title = m_sTitle
+            LSet Tag.Artist = m_sArtist
+            LSet Tag.Album = m_sAlbum
+            LSet Tag.Year = m_sYear
+            ' START: added for ID3 v1.1 support
+            Tag.Track = m_sTrack
+            ' END: added for ID3 v1.1 support
+            LSet Tag.Comment = m_sComment
+            Tag.Genre = m_sGenre
+            
+            Put #iFile, , Tag.Title
+            Put #iFile, , Tag.Artist
+            Put #iFile, , Tag.Album
+            Put #iFile, , Tag.Year
+            Put #iFile, , Tag.Comment
+            ' START: added for ID3 v1.1 support
+            Put #iFile, , Tag.Filler
+            Put #iFile, , Tag.Track
+            ' END: added for ID3 v1.1 support
+            Put #iFile, , Tag.Genre
+            
+         End If
+      Else
+         On Error Resume Next
+         Close #iFile
+         On Error GoTo 0
+         Err.Raise vbObjectError + 4097, App.EXEName &amp; ".cMP3ID3v1", m_sMp3File
+          &amp; " is not a valid MP3 file."
+      End If
+   End If
+   
+   On Error Resume Next
+   Close #iFile
+   On Error GoTo 0
+   Err.Clear
+   
+End Sub
+
+
+
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;<a href="article.html">MusicLibrary SGrid Sample</a>&#160;.&#160;<a href="VB6_Music_Library.html">VB6 Music Library</a>&#160;.&#160;cMP3ID3v1.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 February 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/Music_Library/VB6_Music_Library_zip_cMP3ID3v1_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:06 GMT -->
+</html>

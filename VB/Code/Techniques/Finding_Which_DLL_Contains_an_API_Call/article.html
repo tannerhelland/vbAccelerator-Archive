@@ -1,0 +1,144 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Finding_Which_DLL_Contains_an_API_Call/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:45:58 GMT -->
+<head>
+
+<title>vbAccelerator - Finding Which DLL Contains an API Call</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="The API Text Viewer provided with VB is a reasonable source of Win32 API call declares. 
+However, the Win32 API is continually expanding, and there aren't many (if any) updates to the 
+database of calls.  Whilst MSDN Online provides you with most of the documentation you need
+to implement a new call, there's normally one thing missing: which DLL will you find the
+call in?  For example, it isn't clear that the AlphaBlend function in the GDI section
+is actually implemented in MSIMG32.DLL.  This article describes how to find which DLL you
+need using the Platform SDK and provides a search toy for doing it." /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;Finding Which DLL Contains an API Call</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB6_Async_File_Find_Component.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Async File Find Component</a> (10K)</p><p class="nav"><a href="VB6_LibSearch_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 LibSearch Demonstration</a> (89K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3377</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3377&amp;type=Article&amp;title=Finding%20Which%20DLL%20Contains%20an%20API%20Call">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />14 Jan 2003<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2518">Complete Registry control</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1026">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Finding Which DLL Contains an API Call</h1><p class="splash">Use the Platform SDK files to help create new API declares using Visual Basic</p><img src="searchToy.png" width="241" height="181" alt="Search Toy" /><p /><p>The API Text Viewer provided with VB is a reasonable source of Win32 API call declares. 
+However, the Win32 API is continually expanding, and there aren't many (if any) updates to the 
+database of calls.  Whilst MSDN Online provides you with most of the documentation you need
+to implement a new call, there's normally one thing missing: which DLL will you find the
+call in?  For example, it isn't clear that the <i>AlphaBlend</i> function in the GDI section
+is actually implemented in MSIMG32.DLL.  This article describes how to find which DLL you
+need using the Platform SDK and provides a search toy for doing it.</p><h2>Platform SDK Include Files</h2><p>If you download the platform SDK, you'll find you get a few things to play with.
+The <i>Include</i> directory contains the C/C++ header files and IDL/ODL files for
+the API itself, and the <i>Lib</i> directory contains the C/C++ libraries to link to when
+using the them.  Between these and the MSDN libraries you get everything you need
+to create new API DLL calls in VB.</p><h2>Working Out What To Write in VB</h2><p>For the purposes of this sample, I'll use <i>AlphaBlend</i> as an example.  If you
+go to MSDN and look in the GDI documentation you'll see the declaration of the 
+<i>AlphaBlend</i> function, and the associated <i>BLENDFUNCTION</i> structure which
+is needed.  BLENDFUNCTION itself needs a constant value, <i>AC_SRC_ALPHA</i> for
+its use.</p><p>You will find most of the details you need to implement AlphaBlend, BLENDFUNCTION and 
+AC_SRC_ALPHA in the <i>Include</i> directory within WinGDI.h (although it has to be
+said that the parameters to the AlphaBlend function could be done nicer):</p><pre>
+typedef struct _BLENDFUNCTION
+{
+    BYTE   BlendOp;
+    BYTE   BlendFlags;
+    BYTE   SourceConstantAlpha;
+    BYTE   AlphaFormat;
+}BLENDFUNCTION,*PBLENDFUNCTION;
+
+
+//
+// currentlly [sic] defined blend function
+//
+
+#define AC_SRC_OVER                 0x00
+
+//
+// alpha format flags
+//
+
+#define AC_SRC_ALPHA                0x01
+
+WINGDIAPI BOOL  WINAPI AlphaBlend( 
+	IN HDC, 
+	IN int, 
+	IN int, 
+	IN int, 
+	IN int, 
+	IN HDC, 
+	IN int, 
+	IN int, 
+	IN int, 
+	IN int, 
+	IN BLENDFUNCTION);
+</pre><p>Finding it is easy, you can either just search the <i>Include</i> directory for all files which
+contain the text "AlphaBlend", or note that the MSDN documentation tells you
+the declare is to be found in WinGdi.h and have a look for it there.</p><p>If you're searching for something you may find the search toy comes in
+handy here: although the search for text function in Windows XP is very fast this 
+appears to come with the unfortunate side effect that it also
+returns no results.  I could actually write an even faster version which achieves the 
+same thing which would take literally no time at all, so perhaps its not as fast
+as it seems.  Anyway, until it gets fixed I can only regard it as hopelessly broken.</p><p>For the purposes of this article it is assumed that you know how to 
+convert the declares from C to VB; if not, Google will almost certainly provide you 
+with lots of articles from VB sites, one or two of which might even provide some 
+sort of useful text.  Otherwise, there are some good books on the subject, particularly
+from Daniel Appleman, and you can always compare the declare to something else 
+similar and try messing around until it works.</p><h2>Finding Which DLL</h2><p>To find the correct DLL, you need to have a look at the <i>Lib</i> directory.
+Although the <i>Lib</i> directory contains binary files, these files have enough 
+plain text within them to find which DLL.  To locate <i>AlphaBlend</i>, search all
+the .lib files for the text (again, XP's text search is brain dead so you'll need
+to use the sample here or another search toy to find it).  If you use an appropriate
+search function you should find you get a match on two files: a DirectX 
+version and the standard GDI version.  Here's the result from the Search tool:</p><img src="result.png" width="409" height="335" alt="MSImg32.DLL contains AlphaBlend" /><h2>Wrap Up</h2><p>That demonstrates how to find all the information you need to declare a new VB API 
+call.  In my frustration with the XP search function I built a new search utility
+which is available in the downloads.  This utility demonstrates how to use an out-of-process
+EXE to do the search in another thread (without question the easiest way to create a multi-threaded
+application) as well as some other UI goodies such as simple Owner-Draw List Box 
+and a nice directory picker which uses the Shell's autocompletion function.  Finally, settings
+are persisted to the registry making it easy to use over for searching those header and lib 
+files.</p><p>To set up the sample, you first need to download and register the Asynchronous Find In Files
+component.  This is an ActiveX EXE so to register it you just need to run it with the
+<i>/REGSERVER</i> command line switch.  So for example, if you've downloaded AsyncFindInFiles.exe
+to the folder "C:\vbAccelerator\AsyncFindInFiles.exe" then just choose Start-&gt;Run and
+type</p><pre>"C:\vbAccelerator\AsyncFindInFiles.exe" /REGSERVER</pre><p>to register it. Once that's done, you can run the search toy from <i>LibSearch.exe</i> in the 
+sample.  If you want to debug everything to see what's going on, its possible to set up two
+instances of VB, one running the ActiveX EXE and the other running the LibSearch project.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;Finding Which DLL Contains an API Call</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 16 January 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Finding_Which_DLL_Contains_an_API_Call/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:00 GMT -->
+</html>

@@ -1,0 +1,162 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/Performance/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:50:00 GMT -->
+<head>
+
+<title>vbAccelerator - SGrid 2.0 Performance</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This article provides some information on how the performance of S-Grid 2.0 is
+achieved and compares performance relative
+to the Microsoft Hierarchical FlexGrid and ListView controls.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;SGrid 2.0 Performance</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_SGrid_2_Performance_Test.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 SGrid 2 Performance Test</a> (24K)</p><p /><p class="nav"><a href="VB6_SGrid_2_Performance_Test.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 SGrid 2 Performance Test</a> (22K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:13702</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13702&amp;type=Article&amp;title=SGrid%202%2E0%20Performance">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Jan 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13703">SGrid 2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11">vbAccelerator S-Grid Control</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>SGrid 2.0 Performance</h1><img src="performance.png" width="287" height="257" alt="S-Grid 2 Performance Comparison Chart" /><p /><p>
+This article provides some information on how the performance of S-Grid 2.0 is
+achieved and compares performance relative
+to the Microsoft Hierarchical FlexGrid and ListView controls.
+</p><h2>Achieving Performance in SGrid 2.0</h2><h3>Introduction</h3><p>
+The main problem that occurred when trying to add drag and drop hierarchical grouping 
+to SGrid was around performance.  The design aim was for a grid that would cope
+with at least 5000 records and still return acceptable grouping performance.  In
+the SGrid hierarchical grouping implementation, adding a group means inserting a row
+into the grid.  Likewise removing a group means deleting the group row back out
+again.  Consequently, the grid's performance around inserting and deleting rows
+had to be good.
+</p><p>
+In SGrid 1, good performance was obtained when adding and deleting rows at the end
+of the grid.  However, insertion and deletion from the start could be very slow.  
+The reason for this was down to the way the grid maintained the data associated 
+with the cells.  If you wanted to insert a row, it was necessary to 
+shift all of the data below that row down one to fit the new data in.  
+Likewise to delete a row meant shifting all the grid data up.  Once grouping was
+added to SGrid, it started performing rather like the author; it was capable of
+a limited number of things quite quickly but others were clearly unreasonably sluggish.
+When grouping on a 10,000 row grid, there was pretty much enough time to get a
+game of <a href="solitaire.png">Solitaire</a> in.
+</p><p>
+SGrid 1 already had one trick to improve speed for column handling: indirection.
+When you refer to a column in SGrid, you refer to the physical index of the column
+within the data array.  Re-ordering the columns does not affect the actual data;
+instead there is an internal array of columns which contains a pointer to the correct
+index in the data array.  After many days of sluggish thought I 
+finally realised that the key to improving the grouping, insert and delete 
+performance was to apply the same strategy to the rows as well.
+</p><h3>Row Indirection - How It Works</h3><p>
+The following diagrams show how row indirection works within SGrid 2.0. 
+</p><h4>Initial State</h4><p>
+For the example, assume a grid has been set up with the <span class="code">Rows</span>
+property set to 1,000 (causing it to pre-allocate 1,000 grid cells) and three
+rows have been added to it.
+</p><img src="initial.png" width="545" height="311" alt="Initial State with 3 Rows" /><p class="caption">Initial State with 1,000 rows allocated and 3 Rows Added.</p><h4>Deleting Row 2</h4><p>
+When you delete row 2, SGrid does not update the internal array.  It simply 
+modifies the <span class="code">m_tRows</span> array to remove the item pointing
+to the grid cells with row 2, and adds row index 2 to the garbage collection.
+</p><img src="deleteRow2.png" width="546" height="311" alt="After Deleting Row 2" /><p class="caption">Internal state after deleting row 2.</p><h4>Inserting At Row 1</h4><p>
+If you now insert at Row 1, SGrid identifies that there is a free row by popping
+the top item off the garbage stack (if the garbage stack is empty, the next available
+row is used).  Therefore it chooses that as the location
+for the inserted data.  The existing two rows of the <span class="code">m_tRows</span>
+are shifted down and the new row pointer is inserted at index 1.
+</p><img src="insertRow1.png" width="546" height="311" alt="After Inserting at Row 1" /><p class="caption">Internal state after inserting at row 1.</p><p>
+Note that the <span class="code">m_tRows</span> array still has to be manipulated.
+The S-Grid 2 code uses <span class="code">CopyMemory</span> to shift multiple
+m_tRow data items in a single call, hence improving performance.  Shifting this
+array around is normally going to be quicker than shifting the cells array around
+as this is a 1-D array.  The only time it might not be is in a grid with a single
+column; in that case the performance would be pretty much the same.
+</p><p>Column indirection works in a similar way except 
+that the grid does not currently have a garbage stack for columns, because it is assumed
+that the number of columns will remain similar over time.  Adding a garbage
+stack for columns would make the grid operate a bit more like Excel.
+</p><h3>Some Consequences of Row Indirection</h3><p>
+One consequence of row indirection is that memory usage may be
+increased.  If you allocate 1,000 rows in the grid, and then delete ten, the 
+grid still holds memory for 1,000 rows, whereas previously the grid would hold
+990 rows.  This is almost always a good trade-off, and in fact the code takes advantage
+of the indirection feature to allocate cell memory in blocks of 100 rows which greatly
+improves allocation performance.  If you 
+desparately need to reclaim memory in the grid, the <span class="code">Clear</span>
+method is the only way to remove it (theoretically there could also be a 
+<span class="code">Compact</span> method which went through the array and compacted
+out any spaces, but this is not implemented).
+</p><p>
+The second consequence is that it is not longer necessary to move grid data around
+when sorting: all that needs to be changed is the pointer to the row in the 
+<span class="code">m_tRows</span> array.  This means that sorting can now be 
+performed many times quicker than with the previous grid which had to copy cell
+data around.
+</p><h3>Detailed Results</h3><p>
+The tests shown below were run on an Athlon XP 2.0 system with 512Mb RAM
+using the code in the download.  All times are given in milliseconds and timing 
+accuracy is of the order 1-2 ms.  As with all performance tests, you should
+verify these resuls with your own tests to be certain they are appropriate to
+your particular scenario.
+</p><p>
+The results demonstrate that SGrid 2.0 performs well.
+The only area where there is underperformance is for row insert
+compared to a ListView control.  However note that the control is quicker for 
+the other operations.
+</p><h4>Append Rows Performance Results</h4><p>
+In the Append Rows test, rows are added to the end of the grid.  Where possible
+(for SGrid and the Hierachical Flex Grid) the rows are preallocated before
+setting the data.
+</p><table class="article"><tr class="header"><td><strong>Rows</strong></td><td><strong>Flex Grid (MSHFLXGD.OCX)</strong></td><td><strong>ListView (MSCOMCTL.OCX)</strong></td><td><strong>SGrid 2.0 (vbalSGrid.OCX)</strong></td></tr><tr><td>1000</td><td align="right">68</td><td align="right">136</td><td align="right">69</td></tr><tr class="body"><td align="right">2000</td><td align="right">134</td><td align="right">291</td><td align="right">127</td></tr><tr><td align="right">3000</td><td align="right">204</td><td align="right">420</td><td align="right">189</td></tr><tr class="body"><td align="right">4000</td><td align="right">289</td><td align="right">574</td><td align="right">252</td></tr><tr><td align="right">5000</td><td align="right">383</td><td align="right">709</td><td align="right">324</td></tr><tr class="body"><td align="right">6000</td><td align="right">481</td><td align="right">841</td><td align="right">409</td></tr><tr><td align="right">7000</td><td align="right">547</td><td align="right">1004</td><td align="right">504</td></tr><tr class="body"><td align="right">8000</td><td align="right">632</td><td align="right">1176</td><td align="right">573</td></tr><tr><td align="right">9000</td><td align="right">691</td><td align="right">1300</td><td align="right">633</td></tr><tr class="body"><td align="right">10000</td><td align="right">765</td><td align="right">1428</td><td align="right">696</td></tr></table><h4>Insert Rows</h4><p>
+The insert rows test simulates inserting a number of rows at the first position
+in the grid.
+</p><table class="article"><tr class="header"><td><strong>Rows</strong></td><td><strong>Flex Grid (MSHFLXGD.OCX)</strong></td><td><strong>ListView (MSCOMCTL.OCX)</strong></td><td><strong>SGrid 2.0 (vbalSGrid.OCX)</strong></td></tr><tr><td>1000</td><td align="right">150</td><td align="right">140</td><td align="right">104</td></tr><tr class="body"><td align="right">2000</td><td align="right">447</td><td align="right">290</td><td align="right">259</td></tr><tr><td align="right">3000</td><td align="right">924</td><td align="right">432</td><td align="right">466</td></tr><tr class="body"><td align="right">4000</td><td align="right">1568</td><td align="right">580</td><td align="right">769</td></tr><tr><td align="right">5000</td><td align="right">2428</td><td align="right">710</td><td align="right">1165</td></tr><tr class="body"><td align="right">6000</td><td align="right">3390</td><td align="right">853</td><td align="right">1822</td></tr><tr><td align="right">7000</td><td align="right">4533</td><td align="right">1027</td><td align="right">2116</td></tr><tr class="body"><td align="right">8000</td><td align="right">5853</td><td align="right">1176</td><td align="right">2546</td></tr><tr><td align="right">9000</td><td align="right">7355</td><td align="right">1294</td><td align="right">3540</td></tr><tr class="body"><td align="right">10000</td><td align="right">9067</td><td align="right">1417</td><td align="right">4036</td></tr></table><h4>Delete All Rows Starting With Last</h4><p>
+This test deletes rows starting at the last row and working back
+to the first until there are no rows in the grid (except for the Hierchical
+Flex Grid, which does not allow the first row to be deleted).
+</p><table class="article"><tr class="header"><td><strong>Rows</strong></td><td><strong>Flex Grid (MSHFLXGD.OCX)</strong></td><td><strong>ListView (MSCOMCTL.OCX)</strong></td><td><strong>SGrid 2.0 (vbalSGrid.OCX)</strong></td></tr><tr><td>1000</td><td align="right">77</td><td align="right">22</td><td align="right">21</td></tr><tr class="body"><td align="right">2000</td><td align="right">294</td><td align="right">50</td><td align="right">47</td></tr><tr><td align="right">3000</td><td align="right">628</td><td align="right">85</td><td align="right">64</td></tr><tr class="body"><td align="right">4000</td><td align="right">1109</td><td align="right">125</td><td align="right">91</td></tr><tr><td align="right">5000</td><td align="right">1713</td><td align="right">188</td><td align="right">118</td></tr><tr class="body"><td align="right">6000</td><td align="right">2448</td><td align="right">234</td><td align="right">141</td></tr><tr><td align="right">7000</td><td align="right">3334</td><td align="right">294</td><td align="right">156</td></tr><tr class="body"><td align="right">8000</td><td align="right">4340</td><td align="right">373</td><td align="right">183</td></tr><tr><td align="right">9000</td><td align="right">5511</td><td align="right">453</td><td align="right">208</td></tr><tr class="body"><td align="right">10000</td><td align="right">6815</td><td align="right">522</td><td align="right">234</td></tr></table><h4>Delete All Rows Starting At First</h4><p>
+This test deletes the first row from the grid until there are no rows
+left (except in the Hierarchical Flex Grid, where one row must be left 
+in the grid).
+</p><table class="article"><tr class="header"><td><strong>Rows</strong></td><td><strong>Flex Grid (MSHFLXGD.OCX)</strong></td><td><strong>ListView (MSCOMCTL.OCX)</strong></td><td><strong>SGrid 2.0 (vbalSGrid.OCX)</strong></td></tr><tr><td>1000</td><td align="right">78</td><td align="right">47</td><td align="right">29</td></tr><tr class="body"><td align="right">2000</td><td align="right">296</td><td align="right">159</td><td align="right">76</td></tr><tr><td align="right">3000</td><td align="right">675</td><td align="right">577</td><td align="right">156</td></tr><tr class="body"><td align="right">4000</td><td align="right">1172</td><td align="right">1402</td><td align="right">278</td></tr><tr><td align="right">5000</td><td align="right">1824</td><td align="right">2538</td><td align="right">419</td></tr><tr class="body"><td align="right">6000</td><td align="right">2734</td><td align="right">3956</td><td align="right">607</td></tr><tr><td align="right">7000</td><td align="right">3557</td><td align="right">5571</td><td align="right">748</td></tr><tr class="body"><td align="right">8000</td><td align="right">4640</td><td align="right">7409</td><td align="right">962</td></tr><tr><td align="right">9000</td><td align="right">5896</td><td align="right">9539</td><td align="right">1239</td></tr><tr class="body"><td align="right">10000</td><td align="right">7353</td><td align="right">11894</td><td align="right">1784</td></tr></table><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;SGrid 2.0 Performance</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 February 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/Performance/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:50:03 GMT -->
+</html>

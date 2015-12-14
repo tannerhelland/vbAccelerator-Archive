@@ -1,0 +1,112 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Sophisticated_Control_Over_Window_Sizing_and_Moving/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:31 GMT -->
+<head>
+
+<title>vbAccelerator - Sophisticated Control Over Window Sizing and Moving </title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="VB's control over moving and sizing isn't much - basically you have the Resize event, as has 
+been the case since VB1. Windows gives you a lot more control over moving and sizing forms if you need it though. 
+For example, try resizing an undocked tool window in MS Office. You will see that the size snaps so groups 
+of buttons or controls are kept on the same line.This sample demonstrates how to get access to all the more sophisticated moving and sizing messages, 
+and how to use them to control your window's resize without the flickering and jumping to position you get 
+if you try to change size during VB's Resize event." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;Sophisticated Control Over Window Sizing and Moving </p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Sizing_and_Moving_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Sizing and Moving Sample</a> (15K)</p><p /><p class="nav"><a href="VB6_Sizing_and_Moving_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Sizing and Moving Sample</a> (15K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2188</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2188&amp;type=Article&amp;title=Sophisticated%20Control%20Over%20Window%20Sizing%20and%20Moving%20">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Aug 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Sophisticated Control Over Window Sizing and Moving </h1><p class="splash">Dynamically control the full-drag property, and take full control over sizing and moving.</p><img src="ctrlres.gif" width="363" height="170" alt="Resizing Demonstration Project" /><p /><p>VB's control over moving and sizing isn't much - basically you have the <i>Resize</i> event, as has 
+been the case since VB1. Windows gives you a lot more control over moving and sizing forms if you need it though. 
+For example, try resizing an undocked tool window in MS Office. You will see that the size snaps so groups 
+of buttons or controls are kept on the same line.</p><p>This sample demonstrates how to get access to all the more sophisticated moving and sizing messages, 
+and how to use them to control your window's resize without the flickering and jumping to position you get 
+if you try to change size during VB's Resize event.</p><h2>Return To Sender</h2><p>Windows sends the following messages associated with moving and sizing which VB ignores :</p><ul><li>WM_SIZING = &amp;H214<br />
+This message is fired whilst the window is being resized. The <i>lParam</i> of the message points to a 
+<i>RECT</i> structure containing the desired position of the window. Any modifications you make to this 
+rectangle are passed back to Windows, which moves or sizes the window directly to the size and position you specify.</li><li>WM_MOVING = &amp;H216<br />
+This message works the same way as <i>WM_SIZING</i> except it is fired whilst the window is being moved.</li><li>WM_ENTERSIZEMOVE = &amp;H231<br />
+This message is fired when your window is about to start moving or sizing.</li><li>WM_EXITSIZEMOVE = &amp;H232<br />
+This message is fired when a moving or sizing operation on your window has completed.</li><li>WM_SIZE = &amp;H5<br />
+This message is fired whenever your window has its size changed by the <i>SetWindowPos</i> function, 
+for example when windows minimizes, maximizes or restores your window, or when you call a VB function 
+which changes the size of the window.  Oh, ok then, VB does notice this one.</li></ul><p>The sample application shows how you can subclass these messages for a window and respond correctly to them, 
+providing the following new events for a window:</p><ul><li>Activate</li><li>Deactivate</li><li>EnterSizeMove</li><li>ExitSizeMove</li><li>Moving</li><li>Sizing</li></ul><h2>Controlling FullDrag State</h2><p>The Full Window drag setting is a nice option in Windows, but for highly animated or 
+dynamic windows it can cause moving and sizing to be slow. Luckily there is a way to control 
+it on a window by window basis. You achieve this by subclassing for the 
+<i>WM_ACTIVATE</i> message to determine when the window you want to change the state for is activate or not. 
+When the window is activated, you can then call the <i>SystemParametersInfo</i> function to turn off 
+full-drag if it is enabled. When the window is deactivated again, you simply reset the state 
+to its original value.</p><p>Here is the code for checking and setting the full drag state:</p><pre>
+Private Const SPI_GETDRAGFULLWINDOWS = 38
+Private Const SPI_SETDRAGFULLWINDOWS = 37
+Private Const SPIF_SENDWININICHANGE = &amp;H2
+Private Const SPIF_UPDATEINIFILE = &amp;H1
+Private Declare Function SystemParametersInfo Lib "user32" Alias "SystemParametersInfoA" _
+      (ByVal uAction As Long, ByVal uParam As Long, lpvParam As Any, ByVal fuWinIni As Long) As Long
+
+Private m_bSwitchOff As Boolean
+
+Private Sub pTurnOffFullDrag()
+   Dim lR As Long
+   ' Get the full-drag state:
+   If Not (SystemParametersInfo(SPI_GETDRAGFULLWINDOWS, 0&amp;, lR, 0) = 0) Then
+      If Not lR = 0 Then
+         ' Store the fact we are changing:
+         m_bSwitchOff = True
+         ' Set the full-drag state:
+         lR = SystemParametersInfo(SPI_SETDRAGFULLWINDOWS, 0&amp;, ByVal 0&amp;, SPIF_SENDWININICHANGE)
+      End If
+   End If
+End Sub
+
+Private Sub pResetFullDrag()
+   If m_bSwitchOff Then
+      SystemParametersInfo SPI_SETDRAGFULLWINDOWS, 1&amp;, ByVal 0&amp;, SPIF_SENDWININICHANGE
+      m_bSwitchOff = False
+   End If
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;Sophisticated Control Over Window Sizing and Moving </p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 1999-2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 23 December 2002</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Sophisticated_Control_Over_Window_Sizing_and_Moving/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:32 GMT -->
+</html>

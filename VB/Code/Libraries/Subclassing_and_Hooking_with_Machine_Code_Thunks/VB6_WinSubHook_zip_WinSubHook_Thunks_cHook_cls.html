@@ -1,0 +1,245 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing_and_Hooking_with_Machine_Code_Thunks/VB6_WinSubHook_zip_WinSubHook_Thunks_cHook_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:34 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: WinSubHook_Thunks_cHook.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: WinSubHook_Thunks_cHook.cls" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Libraries</a>&#160;.&#160;<a href="article.html">Subclassing and Hooking with Machine Code Thunks</a>&#160;.&#160;<a href="VB6_WinSubHook.html">VB6 WinSubHook</a>&#160;.&#160;WinSubHook_Thunks_cHook.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB6_WinSubHook.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 WinSubHook</a> (92K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:4242</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4242&amp;type=Zip&amp;title=VB6%20WinSubHook%2Ezip%5FWinSubHook%5FThunks%5FcHook">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:paul_caton@hotmail.com">Paul Caton</a></p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />20 Feb 2003<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3487">Creating Drop-Shadows</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: WinSubHook_Thunks_cHook.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "cHook"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+'-------------------------------------------------------------------------------
+-------------------
+'cHook - module-less, IDE safe, machine code windows hooking thunk
+'
+'v1.00 20030107 First
+ cut..........................................................................
+'
+
+Option Explicit
+
+Private Const OFFSET_P1 As Long = 8                       'Callback gate address
+Private Const OFFSET_P2 As Long = 32                      'Owner object address
+ for iHook_Before
+Private Const OFFSET_P3 As Long = 93                      'Current hook handle
+Private Const OFFSET_P4 As Long = 98                      'CallNextHookEx
+ address
+Private Const OFFSET_P5 As Long = 117                     'Owner object address
+ for iHook_After
+Private Const OFFSET_P6 As Long = 162                     'Current hook handle
+Private Const OFFSET_P7 As Long = 167                     'UnhookWindowsHookEx
+ address
+Private Const ARRAY_LB  As Long = 1                       'Low bound of arrays.
+
+Private Type tCode
+  Buf(ARRAY_LB To 178)  As Byte                           'Code buffer
+End Type
+
+Private Type tCodeBuf
+  Code                  As tCode                          'Hook thunk code
+End Type
+
+Private CodeBuf         As tCodeBuf                       'Hook thunk code
+ instance
+Private nBreakGate      As Long                           'Callback breakpoint
+ gate
+Private nCurrentHook    As Long                           'Current hook handle
+Private nHookThunk      As Long                           'The address of our
+ hook thunk
+
+'-----------------------------
+'Class creation/destruction
+
+'Called automatically when the class instance is created.
+Private Sub Class_Initialize()
+Const OPS As String =
+ "558BEC83C4F856BE_patch1_33C08945FC8945F8833E00753AC70601000000BA_patch2_8B0283
+F80074768D4510508D450C508D4508508D45FC508D45F8508B0252FF5020C706000000008B45F883
+F8007546FF7510FF750CFF750868_patch3_E8_patch4_8945FC833E00752BC70601000000BA_pat
+ch5_8B0283F8007421FF7510FF750CFF75088D45FC508B0252FF501CC706000000005E8B45FCC9C2
+0C0068_patch6_E8_patch7_33C08945FCEBE7"
+Dim i     As Long, _
+    j     As Long
+
+'Convert the string of opcodes from hex pairs to bytes and store in the code
+ buffer
+  With CodeBuf.Code
+    j = 1                                                 'Set the character
+     index to the start of the opcode string
+    For i = ARRAY_LB To UBound(.Buf)                      'For each byte of the
+     code buffer
+      .Buf(i) = Val("&amp;H" &amp; Mid$(OPS, j, 2))               'Pull a pair of hex
+       characters and convert to a byte
+      j = j + 2                                           'Bump to the next
+       pair of characters
+    Next i                                                'Next byte of the
+     code buffer
+    
+    nHookThunk = VarPtr(.Buf(ARRAY_LB))                   'Address of the hook
+     thunk entry point
+  End With
+
+'Patch the WndProc code with runtime values
+  Call PatchVal(OFFSET_P1, VarPtr(nBreakGate))            'Breakpoint gate
+   address
+  Call PatchRel(OFFSET_P4, AddrFunc("CallNextHookEx"))    'Address of the
+   CallNextHookEx api function
+  Call PatchRel(OFFSET_P7, _
+                        AddrFunc("UnhookWindowsHookEx"))  'Address of the
+                         UnhookWindowsHookEx api function
+End Sub
+
+'Called automatically when the class instance is destroyed.
+Private Sub Class_Terminate()
+  If nCurrentHook &lt;&gt; 0 Then
+    Call UnHook                                           'UnHook if the hook
+     thunk is active
+  End If
+End Sub
+
+'-----------------------------
+'Public interface
+
+'Call this method to hook app
+Public Sub Hook(HookType As WinSubHook.eHookType, Owner As WinSubHook.iHook)
+  Debug.Assert (nCurrentHook = 0)
+  Call PatchVal(OFFSET_P2, ObjPtr(Owner))                 'Owner object address
+   for iHook_Before
+  Call PatchVal(OFFSET_P5, ObjPtr(Owner))                 'Owner object address
+   for iHook_After
+  nCurrentHook = WinSubHook.SetWindowsHookEx(HookType, nHookThunk,
+   App.hInstance, App.ThreadID)
+  Debug.Assert nCurrentHook
+  Call PatchVal(OFFSET_P3, nCurrentHook)                  'Current hook
+  Call PatchVal(OFFSET_P6, nCurrentHook)                  'Current hook
+End Sub
+
+'Call this method to unhook
+Public Sub UnHook()
+  If nCurrentHook &lt;&gt; 0 Then
+    Call WinSubHook.UnhookWindowsHookEx(nCurrentHook)
+    nCurrentHook = 0                                      'Indicate the hook
+     thunk is inactive
+  End If
+End Sub
+
+'lParam cast helpers
+Public Property Get xCWPSTRUCT(ByVal lParam As Long) As WinSubHook.tCWPSTRUCT
+  Call WinSubHook.CopyMemory(xCWPSTRUCT, ByVal lParam, LenB(xCWPSTRUCT))
+End Property
+
+Public Property Get xCWPRETSTRUCT(ByVal lParam As Long) As
+ WinSubHook.tCWPRETSTRUCT
+  Call WinSubHook.CopyMemory(xCWPRETSTRUCT, ByVal lParam, LenB(xCWPRETSTRUCT))
+End Property
+
+Public Property Get xCBT_CREATEWND(ByVal lParam As Long) As
+ WinSubHook.tCBT_CREATEWND
+  Call WinSubHook.CopyMemory(xCBT_CREATEWND, ByVal lParam, LenB(xCBT_CREATEWND))
+End Property
+
+Public Property Get xCREATESTRUCT(ByVal lParam As Long) As
+ WinSubHook.tCREATESTRUCT
+  Call WinSubHook.CopyMemory(xCREATESTRUCT, ByVal lParam, LenB(xCREATESTRUCT))
+End Property
+
+Public Property Get xDEBUGSTRUCT(ByVal lParam As Long) As
+ WinSubHook.tDEBUGHOOKINFO
+  Call WinSubHook.CopyMemory(xDEBUGSTRUCT, ByVal lParam, LenB(xDEBUGSTRUCT))
+End Property
+
+Public Property Get xEVENTMSG(ByVal lParam As Long) As WinSubHook.tEVENTMSG
+  Call WinSubHook.CopyMemory(xEVENTMSG, ByVal lParam, LenB(xEVENTMSG))
+End Property
+
+Public Property Get xMSG(ByVal lParam As Long) As WinSubHook.tMSG
+  Call WinSubHook.CopyMemory(xMSG, ByVal lParam, LenB(xMSG))
+End Property
+
+Public Property Get xMOUSEHOOKSTRUCT(ByVal lParam As Long) As
+ WinSubHook.tMOUSEHOOKSTRUCT
+  Call WinSubHook.CopyMemory(xMOUSEHOOKSTRUCT, ByVal lParam,
+   LenB(xMOUSEHOOKSTRUCT))
+End Property
+
+Public Property Get xRECT(ByVal lParam As Long) As WinSubHook.tRECT
+  Call WinSubHook.CopyMemory(xRECT, ByVal lParam, LenB(xRECT))
+End Property
+
+'-----------------------------
+' Private subroutines
+
+'Return the address of the passed user32.dll api function
+Private Function AddrFunc(sProc As String) As Long
+  AddrFunc = WinSubHook.GetProcAddress(GetModuleHandle("user32"), sProc)
+End Function
+
+'Patch the code offset with the passed value
+Private Sub PatchVal(nOffset As Long, nValue As Long)
+  Call WinSubHook.CopyMemory(ByVal (nHookThunk + nOffset), nValue, 4)
+End Sub
+
+'Patch the code offset with the relative address to the target address
+Private Sub PatchRel(nOffset As Long, nTargetAddr As Long)
+  Call WinSubHook.CopyMemory(ByVal (nHookThunk + nOffset), nTargetAddr -
+   nHookThunk - nOffset - 4, 4)
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Libraries</a>&#160;.&#160;<a href="article.html">Subclassing and Hooking with Machine Code Thunks</a>&#160;.&#160;<a href="VB6_WinSubHook.html">VB6 WinSubHook</a>&#160;.&#160;WinSubHook_Thunks_cHook.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing_and_Hooking_with_Machine_Code_Thunks/VB6_WinSubHook_zip_WinSubHook_Thunks_cHook_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:34 GMT -->
+</html>

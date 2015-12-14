@@ -1,0 +1,161 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Drop_Shadows/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:56:28 GMT -->
+<head>
+
+<title>vbAccelerator - Creating Drop-Shadows</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Demonstrates how to create drop-shadows for windows and controls using the same technique used
+by Office XP/VS.NET CommandBars." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;Creating Drop-Shadows</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Drop_Shadow_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Drop Shadow Code</a> (52K)</p><p /><p class="nav"><a href="VB6_Drop_Shadow_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Drop Shadow Code</a> (49K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3487</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3487&amp;type=Article&amp;title=Creating%20Drop%2DShadows">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />3 Feb 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2188">Sophisticated Control Over Window Sizing and Moving </a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3488">Fading Out Selected Areas Using UpdatedLayeredWindow</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Creating Drop-Shadows</h1><p class="splash">Using the Office/VS.NET ComamndBar technique to draw drop-shadows for Windows and Controls</p><img src="dropShadow.png" width="270" height="257" alt="Drop Shadow Demonstration" /><p /><p>Demonstrates how to create drop-shadows for windows and controls using the same technique used
+by Office XP/VS.NET CommandBars.</p><h2>If It Wasn't For Those Meddling Kids...</h2><p>You can see how Office XP and VS.NET CommandBars implement drop-shadows by running the 
+<a href="http://www.vbaccelerator.com/article.asp?id=2315">Simple Windows Spy</a> utility whilst pointing at the menus.</p><img src="vsNetDropShadow.png" width="420" height="295" alt="VS.NET Menu shadows are created using separate windows" /><p><small><strong>VS.NET Menu Shadows are created using a separate window with class MsoCommandBarShadow</strong></small></p><p>Further investigation demonstrates that separate windows are used for the right and bottom borders.  The bottom
+border stretches the whole way along the menu, and has corners at either end, whilst the right border stretches from
+the top to the bottom corner and only has a top corner.</p><p>We can use the same technique in Visual Basic.  To do this we need to be able to:</p><ol><li>Create a window which can't be clicked.</li><li>Draw a shadow onto the window so it alpha-blends with the desktop.  Closest to the object, the shadow should
+be darkest (higher alpha) whilst further away from the object the shadow should fade out (low alpha).</li><li>Be able to move and size the shadow image in response to the object sizing or moving.</li></ol><p>Creating a window which can't be clicked, and also allows us to draw an image with variable alpha is 
+accomplished using the techniques described in <a href="http://www.vbaccelerator.com/article.asp?id=3488">Selection Fading</a>.  
+Once this window has been created, you can then draw an alpha image onto it in realtime using the
+code described in <a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIB Sections</a>. Finally, to move or size the
+shadows in response to the object moving, the code in <a href="http://www.vbaccelerator.com/article.asp?id=2188">Sophisticated Control
+over Window Sizing and Moving</a> is used.</p><h2>Wrapping It Up</h2><p>All of this functionality has been built into a reusable form <i>fDropShadow</i>.  Using this form
+is simple. Here's how:</p><ol><li>Declare an instance of the drop-shadow form:
+<pre>
+Private m_fRightShadow As fDropShadow
+</pre></li><li>Configure the shadow and display it:
+<pre>
+Private Sub Form_Load()
+   
+   set m_fRightShadow = New fDropShadow
+   With m_fRightShadow
+      .ShadowSize = 8 ' The default is 5, as per CommandBars
+      .ShadowType = RightShadow ' or BottomShadow
+      .Shadow = Me ' Object to shadow
+      .Show , Me
+   End With
+
+End Sub
+</pre></li><li>Finally, clear up when unloading the form (although this does
+happen automatically as when you showed the form you specified
+the owner):
+<pre>
+Private Sub Form_Unload()
+   Unload m_fRightShadow
+   Set m_fRightShadow = Nothing
+End Sub
+</pre></li></ol><h2>Drawing a Drop-Shadow</h2><p>This section describes how the drop-shadow itself is drawn within <i>fDropShadow</i>.</p><img src="enlargeShadow.png" width="90" height="200" alt="Enlarged Drop-Shadow portion" /><p><small><strong>The Drop Shadow fades out towards the edges in all dimensions</strong></small></p><p>To create a drop-shadow you need to be able to modify the alpha on a per-pixel basis, since you
+want to combine a variable amount of black with the actual background colour behind the sample.
+If you attempt to create the shadow with variable colours, and then apply it using a constant
+alpha, you'll find that on some backgrounds the lighter shades actually lighten the background,
+rather than darken it.  So the actual image itself should have all of the pixels set to black,
+and as noted before a large alpha (more opaque) closer to the edges and a small alpha 
+(more transparent) further away from the edges.  This can be achieved programmatically by
+modifying alpha bits directly: since the shadow itself is small to do this in realtime is
+within the capabilities of most modern systems.</p><p>Here is the code to create a bottom shadow using an alpha DIBSection:</p><pre>
+Dim bDib() As Byte
+Dim x As Long, y As Long
+Dim lC As Long, lInitC As Long, lSize As Long
+Dim tSA As SAFEARRAY2D
+    
+    ' Get the bits in the from DIB section:
+    With tSA
+        .cbElements = 1
+        .cDims = 2
+        .Bounds(0).lLbound = 0
+        .Bounds(0).cElements = m_tBI.bmiHeader.biHeight
+        .Bounds(1).lLbound = 0
+        .Bounds(1).cElements = BytesPerScanLine()
+        .pvData = m_lPtr
+    End With
+    CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+
+    lSize = m_tBI.bmiHeader.biHeight
+    For x = 0 To BytesPerScanLine - 1 Step 4
+
+       ' Check if near start or end; if so reduce the alpha
+       ' to create the corners:
+       If (x &lt; lSize * 4) Then
+           lInitC = (255 * x) \ (lSize * 4)
+       ElseIf (x &gt;= (BytesPerScanLine - lSize * 4)) Then
+           lInitC = (((BytesPerScanLine - x) * 255) \ (4 * lSize))
+       Else
+           lInitC = 255
+       End If
+
+       ' Set the alpha according to distance from the edge:            
+       For y = 0 To DibHeight - 1
+           lC = (lInitC * y) \ DibHeight
+           bDib(x + 3, y) = lC
+           bDib(x + 2, y) = 0
+           bDib(x + 1, y) = 0
+           bDib(x, y) = 0
+       Next y
+            
+    Next x
+
+    ' Clear the temporary array descriptor
+    CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+</pre><p>Note that whether drop-shadowing is enabled on a system or not is a System -&gt; Performance setting.  
+You can check whether a 
+system has this enabled by checking the <i>SPI_GETDROPSHADOW</i> system parameter:</p><pre>
+Private Declare Function SystemParametersInfo Lib "user32" _
+       Alias "SystemParametersInfoA" ( _
+       ByVal uAction As Long, ByVal uParam As Long, _
+       ByRef lpvParam As Any, ByVal fuWinIni As Long) As Long
+Private Const SPI_GETDROPSHADOW  As Long = &amp;H1024&amp;
+
+...
+
+Public Property Get DropShadowsEnabled() As Boolean
+Dim lDropShadow As Long
+   SystemParametersInfo SPI_GETDROPSHADOW, 0, lDropShadow, 0
+   DropShadowsEnabled = Not (lDropShadow = 0)
+End Property
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;Creating Drop-Shadows</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 5 February 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Drop_Shadows/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:56:33 GMT -->
+</html>

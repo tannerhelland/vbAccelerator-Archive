@@ -1,0 +1,758 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_1/CDRip_DLL_Source_zip_CDRip_CDRip_cpp.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: CDRip_CDRip.cpp</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: CDRip_CDRip.cpp" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" /><link rel="contents" href="CDRip_DLL_Source.html" /><link rel="meta" type="application/rdf+xml" href="CDRip%20DLL%20Source.html" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">CD Ripping in VB Part 1</a>&#160;.&#160;<a href="CDRip_DLL_Source.html">CDRip DLL Source</a>&#160;.&#160;CDRip_CDRip.cpp</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="CDRip_DLL_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />CDRip DLL Source</a> (87K)</p><p class="nav"><a href="CDRip_DLL.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />CDRip DLL</a> (84K)</p><p /><p class="nav"><a href="VB5_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 CD Ripper</a> (103K)</p><p /><p class="nav"><a href="VB6_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 CD Ripper</a> (99K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:15102</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=15102&amp;type=Zip&amp;title=CDRip%20DLL%20Source%2Ezip%5FCDRip%5FCDRip">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />6 May 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14896">CDEx</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3489">CD Track Listing Using freedb.org</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: CDRip_CDRip.cpp</h1><p>This file is part of the download <a href="CDRip_DLL_Source.html">CDRip DLL Source</a>, which is described in the article <a href="article.html">CD Ripping in VB Part 1</a>.</p><pre>/*
+** Copyright (C) 1999 Albert L. Faber
+**  
+** This program is free software; you can redistribute it and/or modify
+** it under the terms of the GNU General Public License as published by
+** the Free Software Foundation; either version 2 of the License, or
+** (at your option) any later version.
+** 
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+** 
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software 
+** Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+*/
+
+#include "StdAfx.h"
+#include &lt;math.h&gt;
+
+#include "CDRip.h"
+#include "CDExtract.h"
+#include "AspiDebug.h"
+
+CCDExtract* pExtract=NULL;
+
+
+// Get the DLL version number
+LONG CCONV CR_GetCDRipVersion()
+{
+   // Get CDex version
+//   CFileVersion myVersion;
+//   char lpszModuleFileName[MAX_PATH];
+//   GetModuleFileName(NULL,lpszModuleFileName,sizeof(lpszModuleFileName));
+//   myVersion.Open(lpszModuleFileName);
+//   CString strVersion=myVersion.GetProductVersion();
+//   return atoi(strVersion);
+   return 115;
+}
+
+CDEX_ERR CheckAspi()
+{
+   DebugPrintf("Entering CheckAspi");
+
+/*
+   CFileVersion   myVersion;
+   char         lpszModuleFileName[MAX_PATH];
+   CString         strVersion;
+   CString         strVersion1;
+   CString         strVersion2;
+   CString         strVersion3;
+
+   strcpy(lpszModuleFileName,"wnaspi32.dll");
+   myVersion.Open(lpszModuleFileName);
+   strVersion=myVersion.GetProductVersion();
+   OutputDebugString(strVersion);
+   myVersion.Close();
+
+   float fVersion=atof(strVersion);
+
+   if ( fVersion&lt;4.54)
+   {
+      MessageBox(NULL,"Incorrect ASPI Manager, version reported
+       "+strVersion,"ASPI Error",MB_OK);
+      return CDEX_ERROR;
+   }
+*/
+/*
+   strcpy(lpszModuleFileName,"winaspi.dll");
+   myVersion.Open(lpszModuleFileName);
+   strVersion1=myVersion.GetProductVersion();
+   OutputDebugString(strVersion1);
+   myVersion.Close();
+
+   strcpy(lpszModuleFileName,"apix.vxd");
+   myVersion.Open(lpszModuleFileName);
+   strVersion2=myVersion.GetProductVersion();
+   OutputDebugString(strVersion2);
+   myVersion.Close();
+
+   strcpy(lpszModuleFileName,"aspienum.vxd");
+   myVersion.Open(lpszModuleFileName);
+   strVersion3=myVersion.GetProductVersion();
+   OutputDebugString(strVersion3);
+   myVersion.Close();
+*/
+   DebugPrintf("Leaving CheckAspi");
+   return CDEX_OK;
+}
+
+
+DLLEXPORT CDEX_ERR CCONV CR_Init( LPCSTR strIniFname )
+{
+
+   ASSERT( strIniFname );
+
+   CDRomSettings::SetIniFileName( strIniFname );
+
+   SetDebugLevel( ::GetPrivateProfileInt( "Debug", "DebugCDRip", FALSE,
+    strIniFname ) );
+
+   DebugPrintf("Entering CR_Init, ini file name = %s", strIniFname);
+
+
+   if ( CheckAspi() == CDEX_OK )
+   {
+      DebugPrintf("Create new CCDExtract");
+      pExtract=new CCDExtract;
+   }
+
+   if ( pExtract == NULL )
+   {
+      DebugPrintf("CR_Init failed!");
+      return CDEX_ERROR;
+   }
+
+
+
+   // Check if low level CD-ROM drivers are intialized properly
+   if (pExtract-&gt;IsAvailable() )
+   {
+      // Obtain the specs of the SCSI devices and select the proper CD Device
+      pExtract-&gt;GetCDRomDevices();
+   }
+   else
+   {
+      pExtract-&gt;Clear();
+      delete pExtract;
+      pExtract=NULL;
+      return CDEX_ERROR;
+   }
+
+   if (CR_GetNumCDROM()&lt;1)
+   {
+      pExtract-&gt;Clear();
+      delete pExtract;
+      pExtract=NULL;
+      return CDEX_ERROR;
+   }
+
+   // Set drive zero as default
+   CR_SetActiveCDROM( 0 );
+
+   CR_LoadSettings();
+   CR_SaveSettings();
+
+   DebugPrintf("CR_Init, OK");
+
+   return CDEX_OK;
+}
+
+
+DLLEXPORT LONG CCONV CR_GetNumCDROM()
+{
+   if (!pExtract)
+      return CDEX_ERROR;
+
+   return pExtract-&gt;GetNumDrives();
+}
+
+//DLLFUNCTION void CR_SetActiveCDROM(LONG nActiveDrive)
+DLLEXPORT void CCONV CR_SetActiveCDROM(LONG nActiveDrive)
+{
+   DebugPrintf("CR_SetActiveDrive");
+   if (pExtract)
+      pExtract-&gt;SetActiveCDROM(nActiveDrive);
+}
+
+
+DLLEXPORT LONG CCONV CR_GetActiveCDROM()
+{
+   DebugPrintf("CR_GetActiveCDRom");
+   if (!pExtract)
+      return CDEX_ERROR;
+   return pExtract-&gt;GetActiveCDROM();
+}
+
+DLLEXPORT CDEX_ERR CCONV CR_SelectCDROMType( DRIVETYPE cdType )
+{
+   DebugPrintf("CR_SelectCDROMType");
+   if (!pExtract)
+      return CDEX_ERROR;
+
+   pExtract-&gt;SetDriveType(cdType);
+   pExtract-&gt;UpdateDriveSettings();
+   return CDEX_OK;
+}
+
+//DLLFUNCTION CDEX_ERR CR_GetCDROMParameters( CDROMPARAMS* pParam)
+DLLEXPORT CDEX_ERR CCONV CR_GetCDROMParameters( CDROMPARAMS* pParam)
+{
+   DebugPrintf("CR_GetCDROMParameters");
+   // Clear structure
+   memset(pParam,0x00,sizeof(CDROMPARAMS));
+
+   // Bail out if necessary
+   if (!pExtract)
+      return CDEX_ERROR;
+
+   // Set CDROM ID
+   strcpy(pParam-&gt;lpszCDROMID,pExtract-&gt;GetCDROMID()); 
+
+   pParam-&gt;nOffsetStart      = pExtract-&gt;GetOffsetStart();
+   pParam-&gt;nOffsetEnd         = pExtract-&gt;GetOffsetEnd();
+   pParam-&gt;nSpeed            = pExtract-&gt;GetSpeed();
+   pParam-&gt;nSpinUpTime         = pExtract-&gt;GetSpinUpTime();
+   pParam-&gt;bJitterCorrection   = pExtract-&gt;GetJitterCorrection();
+   pParam-&gt;bSwapLefRightChannel= pExtract-&gt;GetSwapLefRightChannel();
+   pParam-&gt;nNumOverlapSectors   = pExtract-&gt;GetNumOverlapSectors();
+   pParam-&gt;DriveTable         = pExtract-&gt;GetDriveTable();
+   pParam-&gt;nNumReadSectors      = pExtract-&gt;GetNumReadSectors();
+   pParam-&gt;nNumCompareSectors   = pExtract-&gt;GetNumCompareSectors();
+      
+   pParam-&gt;btTargetID         = pExtract-&gt;GetTargetID();
+   pParam-&gt;btAdapterID         = pExtract-&gt;GetAdapterID();
+   pParam-&gt;btLunID            = pExtract-&gt;GetLunID();
+
+   pParam-&gt;bAspiPosting      = pExtract-&gt;GetAspiPosting();
+   pParam-&gt;nAspiTimeOut      = pExtract-&gt;GetAspiTimeOut();
+   pParam-&gt;nAspiRetries      = pExtract-&gt;GetAspiRetries();
+
+   pParam-&gt;bEnableMultiRead    = pExtract-&gt;GetMultiReadEnable();
+   pParam-&gt;nMultiReadCount     = pExtract-&gt;GetMultiRead();
+   pParam-&gt;bMultiReadFirstOnly = pExtract-&gt;GetMultiReadFirstOnly();
+
+   pParam-&gt;bLockDuringRead      = pExtract-&gt;GetLockDuringRead();
+
+   pParam-&gt;nRippingMode      = pExtract-&gt;GetRippingMode();
+   pParam-&gt;nParanoiaMode      = pExtract-&gt;GetParanoiaMode();
+
+   return CDEX_OK;
+}
+
+
+DLLEXPORT CDEX_ERR CCONV CR_SetCDROMParameters( CDROMPARAMS* pParam)
+{
+   DebugPrintf("CR_SetCDROMParameters");
+   if (!pExtract)
+      return CDEX_ERROR;
+
+   CDEX_ERR nErr=CDEX_OK;
+
+   pExtract-&gt;SetOffsetStart(pParam-&gt;nOffsetStart);
+   pExtract-&gt;SetOffsetEnd(pParam-&gt;nOffsetEnd);
+   pExtract-&gt;SetSpeed(pParam-&gt;nSpeed);
+   pExtract-&gt;SetSpinUpTime(pParam-&gt;nSpinUpTime);
+   pExtract-&gt;SetJitterCorrection(pParam-&gt;bJitterCorrection);
+   pExtract-&gt;SetSwapLefRightChannel(pParam-&gt;bSwapLefRightChannel);
+   pExtract-&gt;SetNumOverlapSectors(pParam-&gt;nNumOverlapSectors);
+   pExtract-&gt;SetDriveTable(pParam-&gt;DriveTable);
+   pExtract-&gt;SetNumReadSectors(pParam-&gt;nNumReadSectors   );
+   pExtract-&gt;SetNumCompareSectors(pParam-&gt;nNumCompareSectors);
+
+   pExtract-&gt;SetTargetID(pParam-&gt;btTargetID);
+   pExtract-&gt;SetAdapterID(pParam-&gt;btAdapterID);
+   pExtract-&gt;SetLunID(pParam-&gt;btLunID);
+
+   pExtract-&gt;SetAspiPosting( pParam-&gt;bAspiPosting );
+
+   pExtract-&gt;SetAspiRetries(pParam-&gt;nAspiRetries);
+   pExtract-&gt;SetAspiTimeOut(pParam-&gt;nAspiTimeOut);
+
+   pExtract-&gt;SetMultiReadEnable(pParam-&gt;bEnableMultiRead);
+   pExtract-&gt;SetMultiRead(pParam-&gt;nMultiReadCount);
+   pExtract-&gt;SetMultiReadFirstOnly(pParam-&gt;bMultiReadFirstOnly);
+
+   pExtract-&gt;SetLockDuringRead(pParam-&gt;bLockDuringRead);
+
+   if (pParam-&gt;DriveTable.DriveType!=CUSTOMDRIVE)
+   {
+      nErr=CR_SelectCDROMType( pParam-&gt;DriveTable.DriveType );
+   }
+
+   pExtract-&gt;SetRippingMode( pParam-&gt;nRippingMode );
+
+   pExtract-&gt;SetParanoiaMode( pParam-&gt;nParanoiaMode );
+
+
+   return nErr;
+}
+
+
+
+
+DLLEXPORT CDEX_ERR CCONV CR_OpenRipper(   LONG* plBufferSize,
+                              LONG dwStartSector,
+                              LONG dwEndSector
+                              )
+{
+   DebugPrintf("Entering CR_OpenRipper");
+   if (!pExtract)
+      return CDEX_ERROR;
+
+   // Set Extract paramters, dwEndSector is inclusive !
+   // thus if startsector=0 and endsector 1649, 1650 sectors are extracted
+   switch ( pExtract-&gt;GetRippingMode() )
+   {
+      case CR_RIPPING_MODE_NORMAL:
+         pExtract-&gt;SetupTrackExtract( dwStartSector, dwEndSector + 1 );
+      break;
+      case CR_RIPPING_MODE_PARANOIA:
+         pExtract-&gt;SetupTrackExtractParanoia( dwStartSector, dwEndSector + 1 );
+      break;
+      default:
+         ASSERT( FALSE );
+         return CDEX_ERROR;
+   }
+
+
+   // Start Thread
+   //pExtract-&gt;StartThread(pExtract-&gt;ThreadFunc,pExtract);
+   *plBufferSize= pExtract-&gt;GetNumReadSectors() * CB_CDDASECTOR;
+
+   DebugPrintf("Leaving CR_OpenRipper");
+   return CDEX_OK;
+}
+
+
+DLLEXPORT CDEX_ERR CCONV CR_CloseRipper()
+{
+   DebugPrintf("Entering CR_CloseRipper");
+   if (pExtract)
+   {
+      // Set Extract paramters
+      pExtract-&gt;EndTrackExtract();
+
+   }
+
+   DebugPrintf("Leaving CR_CloseRipper");
+
+   // And return 
+   return CDEX_OK;
+}
+
+
+DLLEXPORT CDEX_ERR CCONV CR_RipChunk(BYTE* pbtStream,LONG* pNumBytes, BOOL&amp;
+ bAbort)
+{
+   CDEX_ERR ret = CDEX_OK;
+
+   DebugPrintf("Entering CR_RipChunk");
+
+   ASSERT( pNumBytes );
+   ASSERT( pbtStream );
+
+   *pNumBytes=0;
+
+   if (pExtract)
+   {
+      switch ( pExtract-&gt;GetRippingMode() )
+      {
+         case CR_RIPPING_MODE_NORMAL:
+            ret = pExtract-&gt;RipChunk( pbtStream, pNumBytes, bAbort );
+         break;
+         case CR_RIPPING_MODE_PARANOIA:
+            ret = pExtract-&gt;RipChunkParanoia( pbtStream, pNumBytes, bAbort );
+         break;
+         default:
+            ASSERT( FALSE );
+            ret = CDEX_ERROR;
+      }
+   }
+   else
+   {
+      ASSERT( FALSE );
+      ret = CDEX_ERROR;
+   }
+
+   DebugPrintf("Leaving CR_RipChunk with return %d", ret );
+
+   return ret;
+
+}
+
+
+DLLEXPORT LONG CCONV   CR_GetPeakValue()
+{
+   if (pExtract)
+   {
+      return pExtract-&gt;GetPeakValue();
+   }
+   return 0;
+}
+
+
+
+
+DLLEXPORT LONG CCONV CR_GetPercentCompleted()
+{
+   if (pExtract)
+   {
+      return min(pExtract-&gt;GetPercentCompleted(),99);
+   }
+   return 0;
+}
+
+
+DLLEXPORT LONG CCONV   CR_GetNumberOfJitterErrors()
+{
+   if (pExtract)
+   {
+      return pExtract-&gt;GetJitterErrors();
+   }
+   return 0;
+}
+
+
+DLLEXPORT CDEX_ERR CCONV CR_SaveSettings()
+{
+   DebugPrintf("CR_SaveSettings");
+   if (!pExtract)
+      return CDEX_ERROR;
+
+   pExtract-&gt;SaveSettings();
+   return CDEX_OK;
+}
+
+
+DLLEXPORT CDEX_ERR CCONV CR_LoadSettings()
+{
+   DebugPrintf("CR_LoadSettings");
+   if (!pExtract)
+      return CDEX_ERROR;
+
+   pExtract-&gt;LoadSettings();
+   return CDEX_OK;
+}
+
+
+DLLEXPORT CDEX_ERR CCONV CR_ReadToc()
+{
+   DebugPrintf("CR_ReadToc");
+   if (!pExtract)
+      return CDEX_ERROR;
+   return pExtract-&gt;ReadToc();
+}
+
+DLLEXPORT CDEX_ERR CCONV CR_ReadCDText(BYTE* pbtBuffer,int nBufferSize,LPINT
+ pnCDTextSize)
+{
+   DebugPrintf("CR_ReadCDText");
+   if (!pExtract)
+      return CDEX_ERROR;
+   return pExtract-&gt;ReadCDText(pbtBuffer,nBufferSize,pnCDTextSize);
+}
+
+
+DLLEXPORT LONG CCONV CR_GetNumTocEntries()
+{
+   DebugPrintf("CR_GetNumTocEntries");
+   if (!pExtract)
+      return 0;
+   return pExtract-&gt;GetToc().GetNumTracks();
+}
+
+DLLEXPORT TOCENTRY CCONV CR_GetTocEntry(LONG nTocEntry)
+{
+   TOCENTRY TocEntry;
+   DebugPrintf("CR_GetTocEntry");
+
+   memset(&amp;TocEntry,0x00,sizeof(TocEntry));
+
+   if (pExtract)
+   {
+      TocEntry.dwStartSector=pExtract-&gt;GetToc().GetStartSector(nTocEntry);
+      TocEntry.btFlag=pExtract-&gt;GetToc().GetFlags(nTocEntry);
+      TocEntry.btTrackNumber=pExtract-&gt;GetToc().GetTrackNumber(nTocEntry);
+   }
+
+   return TocEntry;
+}
+
+
+DLLEXPORT void CCONV CR_NormalizeChunk(SHORT* pbsStream,LONG nNumSamples,DOUBLE
+ dScaleFactor)
+{
+   int i;
+   DebugPrintf("CR_NormalizeChunk");
+   for (i=0;i&lt;nNumSamples;i++)
+   {
+      pbsStream[i]=(short)( (double)pbsStream[i]*dScaleFactor);
+   }
+}
+
+
+
+
+DLLEXPORT BOOL CCONV CR_IsUnitReady()
+{
+   if (!pExtract)
+      return CDEX_ERROR;
+
+   return pExtract-&gt;IsUnitReady();
+}
+
+
+DLLEXPORT BOOL CCONV CR_EjectCD(BOOL bEject)
+{
+   DebugPrintf("CR_EjectCD");
+   if (!pExtract)
+      return CDEX_ERROR;
+
+   pExtract-&gt;PreventMediaRemoval( FALSE );
+
+
+   return pExtract-&gt;EjectCD(bEject);
+}
+
+DLLEXPORT void CCONV CR_LockCD( BOOL bLock )
+{
+   DebugPrintf("CR_LockCD");
+   if (!pExtract)
+      return ;
+
+   pExtract-&gt;PreventMediaRemoval( bLock );
+}
+
+
+DLLEXPORT BOOL CCONV CR_IsAudioPlaying()
+{
+   if (!pExtract)
+      return CDEX_ERROR;
+   return pExtract-&gt;IsAudioPlaying();
+}
+
+DLLEXPORT CDEX_ERR CCONV CR_PlayTrack(int nTrack)
+{
+   if (!pExtract)
+      return CDEX_ERROR;
+
+   int nNumTocEntries=CR_GetNumTocEntries();
+   
+   for (int i=0;i&lt;nNumTocEntries;i++)
+   {
+      TOCENTRY myTocEntry=CR_GetTocEntry(i);
+      TOCENTRY myTocEntry1=CR_GetTocEntry(i+1);
+
+      if (pExtract &amp;&amp; myTocEntry.btTrackNumber==nTrack)
+      {
+         pExtract-&gt;PlayTrack(myTocEntry.dwStartSector,myTocEntry1.dwStartSector-
+         1);
+         return CDEX_OK;
+      }
+   }
+   return CDEX_ERROR;
+}
+
+
+DLLEXPORT CDEX_ERR CCONV CR_PlaySection(LONG lStartSector,LONG lEndSector)
+{
+   DebugPrintf("CR_PlaySection");
+   if (!pExtract)
+      return CDEX_ERROR;
+
+   pExtract-&gt;PlayTrack(lStartSector,lEndSector);
+   return CDEX_OK;
+}
+
+
+
+DLLEXPORT CDEX_ERR CCONV CR_StopPlayTrack()
+{
+   DebugPrintf("CR_StopPlayTrack");
+   if (!pExtract)
+      return CDEX_ERROR;
+
+   pExtract-&gt;StopPlayTrack();
+   return CDEX_OK;
+}
+
+DLLEXPORT CDEX_ERR CCONV CR_PauseCD(BOOL bPause)
+{
+   DebugPrintf("CR_Pause");
+   if (!pExtract)
+      return CDEX_ERROR;
+
+   pExtract-&gt;PauseCD(bPause);
+   return CDEX_OK;
+}
+
+
+DLLEXPORT SENSEKEY CCONV CR_GetSenseKey()
+{
+   return g_SenseKey;
+}
+
+
+DLLEXPORT CDEX_ERR CCONV CR_GetPlayPosition(DWORD&amp; dwRelPos,DWORD&amp; dwAbsPos)
+{
+   if (!pExtract)
+      return CDEX_ERROR;
+
+   pExtract-&gt;CurrentPosition(dwRelPos,dwAbsPos);
+   return CDEX_OK;
+}
+
+DLLEXPORT CDEX_ERR CCONV CR_SetPlayPosition(DWORD dwAbsPos)
+{
+   if (!pExtract)
+      return CDEX_ERROR;
+
+   pExtract-&gt;Seek(dwAbsPos);
+
+   return CDEX_OK;
+}
+
+
+DLLEXPORT DRIVETYPE CCONV CR_GetCDROMType()
+{
+   if (!pExtract)
+      return GENERIC;
+   return pExtract-&gt;GetDriveType();
+}
+
+
+DLLEXPORT LONG CCONV   CR_GetJitterPosition()
+{
+   if (pExtract)
+      return pExtract-&gt;GetJitterPosition();
+   return 50;
+}
+
+
+DLLEXPORT void CCONV CR_GetLastJitterErrorPosition(DWORD&amp; dwStartSector,DWORD&amp;
+ dwEndSector)
+{
+   dwStartSector=0;
+   dwEndSector=0;
+   if (pExtract)
+      pExtract-&gt;GetLastJitterErrorPosition(dwStartSector,dwEndSector);
+}
+
+
+
+DLLEXPORT void CCONV  CR_GetSubChannelTrackInfo(   
+                              int&amp;   nReadIndex,
+                              int&amp;   nReadTrack,
+                              DWORD&amp;   dwReadPos )
+{
+   if (pExtract)
+      pExtract-&gt;GetSubChannelTrackInfo( nReadIndex, nReadTrack, dwReadPos );
+}
+
+
+
+BOOL APIENTRY DllMain(HANDLE hModule, 
+                      DWORD  ul_reason_for_call, 
+                      LPVOID lpReserved)
+{
+    switch( ul_reason_for_call )
+   {
+      case DLL_PROCESS_ATTACH:
+      break;
+      case DLL_THREAD_ATTACH:
+      break;
+      case DLL_THREAD_DETACH:
+      break;
+      case DLL_PROCESS_DETACH:
+         DebugPrintf("DllMain DLL_PROCESS_DETACH");
+         if (pExtract)
+         {
+            pExtract-&gt;Clear();
+            delete pExtract;
+            pExtract=NULL;
+         }
+      break;
+    }
+    return TRUE;
+}
+
+
+
+DLLEXPORT VOID CCONV CR_SetTransportLayer( int nTransportLayer )
+{
+   CDRomSettings::SetTransportLayer( nTransportLayer );
+}
+
+DLLEXPORT INT CCONV CR_GetTransportLayer(  )
+{
+   return CDRomSettings::GetTransportLayer();
+}
+
+DLLEXPORT void CCONV CR_ScanForC2Errors(   
+   LONG   lStartSector,
+   LONG   lEndSector,
+   INT&amp;   nErrors,
+   INT*   pnErrorSectors,
+   INT      nMaxErrors,
+   BOOL&amp;   bAbort   )
+{
+   if (pExtract)
+   {
+      pExtract-&gt;ScanForC2Errors(   lStartSector, 
+                           lEndSector,
+                           nErrors,
+                           pnErrorSectors,
+                           nMaxErrors,
+                           bAbort );
+   }
+}
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">CD Ripping in VB Part 1</a>&#160;.&#160;<a href="CDRip_DLL_Source.html">CDRip DLL Source</a>&#160;.&#160;CDRip_CDRip.cpp</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 12 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_1/CDRip_DLL_Source_zip_CDRip_CDRip_cpp.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+</html>

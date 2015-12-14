@@ -1,0 +1,222 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Owner_Draw_Buttons/VB5_OwnerDraw_Buttons_zip_mCustomDrawButton_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:38 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: mCustomDrawButton.bas</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: mCustomDrawButton.bas" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;<a href="article.html">Drawing Buttons, Option Boxes and Check Boxes In Your Own Style </a>&#160;.&#160;<a href="VB5_OwnerDraw_Buttons.html">VB5 OwnerDraw Buttons</a>&#160;.&#160;mCustomDrawButton.bas</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_OwnerDraw_Buttons.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 OwnerDraw Buttons</a> (34K)</p><p /><p class="nav"><a href="VB6_OwnerDraw_Buttons.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 OwnerDraw Buttons</a> (32K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:5007</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=5007&amp;type=Zip&amp;title=VB5%20OwnerDraw%20Buttons%2Ezip%5FmCustomDrawButton">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />27 Jan 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: mCustomDrawButton.bas</h1><pre>Attribute VB_Name = "mCustomDrawButton"
+Option Explicit
+' rect
+Private Type RECT
+   left As Long
+   tOp As Long
+   Right As Long
+   Bottom As Long
+End Type
+Private Type POINTAPI
+   x As Long
+   y As Long
+End Type
+Private Declare Function InflateRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function OffsetRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function GetWindowRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function ScreenToClient Lib "user32" (ByVal hwnd As Long,
+ lpPoint As POINTAPI) As Long
+Private Declare Function GetParent Lib "user32" (ByVal hwnd As Long) As Long
+
+Private Declare Function ImageList_Draw Lib "COMCTL32.DLL" ( _
+        ByVal hIml As Long, _
+        ByVal i As Long, _
+        ByVal hdcDst As Long, _
+        ByVal x As Long, _
+        ByVal y As Long, _
+        ByVal fStyle As Long _
+    ) As Long
+Private Const ILD_NORMAL = 0
+Private Const ILD_TRANSPARENT = 1
+Private Const ILD_BLEND25 = 2
+Private Const ILD_SELECTED = 4
+Private Const ILD_FOCUS = 4
+Private Const ILD_MASK = &amp;H10&amp;
+Private Const ILD_IMAGE = &amp;H20&amp;
+Private Const ILD_ROP = &amp;H40&amp;
+Private Const ILD_OVERLAYMASK = 3840
+Private Declare Function BitBlt Lib "gdi32" (ByVal hDestDC As Long, ByVal x As
+ Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal dwRop As Long)
+ As Long
+' Text functions:
+Private Declare Function DrawText Lib "user32" Alias "DrawTextA" (ByVal hdc As
+ Long, ByVal lpStr As String, ByVal nCount As Long, lpRect As RECT, ByVal
+ wFormat As Long) As Long
+    Private Const DT_BOTTOM = &amp;H8
+    Private Const DT_CENTER = &amp;H1
+    Private Const DT_LEFT = &amp;H0
+    Private Const DT_CALCRECT = &amp;H400
+    Private Const DT_WORDBREAK = &amp;H10
+    Private Const DT_VCENTER = &amp;H4
+    Private Const DT_TOP = &amp;H0
+    Private Const DT_TABSTOP = &amp;H80
+    Private Const DT_SINGLELINE = &amp;H20
+    Private Const DT_RIGHT = &amp;H2
+    Private Const DT_NOCLIP = &amp;H100
+    Private Const DT_INTERNAL = &amp;H1000
+    Private Const DT_EXTERNALLEADING = &amp;H200
+    Private Const DT_EXPANDTABS = &amp;H40
+    Private Const DT_CHARSTREAM = 4
+    Private Const DT_NOPREFIX = &amp;H800
+    Private Const DT_WORD_ELLIPSIS = &amp;H40000
+
+Private Declare Function DrawEdge Lib "user32" (ByVal hdc As Long, qrc As RECT,
+ ByVal edge As Long, ByVal grfFlags As Long) As Long
+   Private Const BF_LEFT = 1
+   Private Const BF_TOP = 2
+   Private Const BF_RIGHT = 4
+   Private Const BF_BOTTOM = 8
+   Private Const BF_RECT = BF_LEFT Or BF_TOP Or BF_RIGHT Or BF_BOTTOM
+   Private Const BDR_RAISEDOUTER = 1
+   Private Const BDR_SUNKENOUTER = 2
+   Private Const BDR_RAISEDINNER = 4
+   Private Const BDR_SUNKENINNER = 8
+   Private Const BDR_BUTTONPRESSED = BDR_SUNKENOUTER Or BDR_SUNKENINNER
+   Private Const BDR_BUTTONNORMAL = BDR_RAISEDINNER Or BDR_RAISEDOUTER
+
+Private Declare Function DrawFocusRect Lib "user32" (ByVal hdc As Long, lpRect
+ As RECT) As Long
+
+Private Declare Function SetBkMode Lib "gdi32" (ByVal hdc As Long, ByVal
+ nBkMode As Long) As Long
+Private Const TRANSPARENT = 1
+
+Private m_hIml As Long
+Private m_lIconIndex As Long
+Private m_lHDC As Long
+Private m_sCaption As String
+
+Public Sub InitCustomDrawButton( _
+      ByVal hIml As Long, ByVal lIndex As Long, _
+      ByVal lBackHDC As Long, ByVal sCaption As String _
+   )
+   m_hIml = hIml
+   m_lIconIndex = lIndex
+   m_lHDC = lBackHDC
+   m_sCaption = sCaption
+   
+End Sub
+Public Sub DrawButton( _
+      ByVal lHWnd As Long, _
+      ByVal lHDC As Long, _
+      ByVal lLeft As Long, ByVal lTop As Long, _
+      ByVal lRight As Long, ByVal lBottom As Long, _
+      ByVal bPushed As Boolean, _
+      ByVal bEnabled As Boolean, ByVal bInFocus As Boolean _
+   )
+Dim tR As RECT
+Dim lY As Long
+Dim tTR As RECT
+Dim tWR As RECT
+Dim tP As POINTAPI
+
+   tR.left = lLeft: tR.tOp = lTop
+   tR.Right = lRight: tR.Bottom = lBottom
+   If (bPushed) Then
+      lLeft = lLeft + 1
+      lTop = lTop + 1
+   End If
+   ' Fill the background with a bitmap:
+   GetWindowRect lHWnd, tWR
+   tP.x = tWR.left: tP.y = tWR.tOp
+   ScreenToClient GetParent(lHWnd), tP
+   BitBlt lHDC, lLeft, lTop, lRight - lLeft, lBottom - lTop, m_lHDC, tP.x,
+    tP.y, vbSrcCopy
+   ' Draw the border:
+   If (bPushed) Then
+      DrawEdge lHDC, tR, BDR_SUNKENOUTER, BF_RECT
+   Else
+      DrawEdge lHDC, tR, BDR_RAISEDINNER, BF_RECT
+   End If
+   SetBkMode lHDC, TRANSPARENT
+   ' Draw focus rectangle:
+   If (bInFocus) Then
+      LSet tWR = tR
+      InflateRect tWR, -2, -2
+      If bPushed Then
+         OffsetRect tWR, 1, 1
+      End If
+      DrawFocusRect lHDC, tWR
+   End If
+   
+   ' Draw the icon:
+   If m_hIml &lt;&gt; 0 Then
+      ' Assume 16x16 ils here.
+      lY = (tR.Bottom - tR.tOp - 16) \ 2
+      ImageList_Draw m_hIml, m_lIconIndex, lHDC, tR.left + 4 + Abs(bPushed), lY
+       + Abs(bPushed), ILD_TRANSPARENT
+      tR.left = tR.left + 6 + 16
+   End If
+   ' Draw the text:
+   InflateRect tR, -1, -1
+   LSet tTR = tR
+   DrawText lHDC, m_sCaption, -1, tTR, DT_LEFT Or DT_WORDBREAK Or DT_CALCRECT
+   If (tTR.Bottom &lt; tR.Bottom) Then
+      tR.tOp = ((tR.Bottom - tR.tOp) - (tTR.Bottom - tTR.tOp)) \ 2
+   End If
+   OffsetRect tR, Abs(bPushed), Abs(bPushed)
+   DrawText lHDC, m_sCaption, -1, tR, DT_LEFT Or DT_WORDBREAK Or
+    DT_WORD_ELLIPSIS
+   
+End Sub
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;<a href="article.html">Drawing Buttons, Option Boxes and Check Boxes In Your Own Style </a>&#160;.&#160;<a href="VB5_OwnerDraw_Buttons.html">VB5 OwnerDraw Buttons</a>&#160;.&#160;mCustomDrawButton.bas</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Owner_Draw_Buttons/VB5_OwnerDraw_Buttons_zip_mCustomDrawButton_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:38 GMT -->
+</html>

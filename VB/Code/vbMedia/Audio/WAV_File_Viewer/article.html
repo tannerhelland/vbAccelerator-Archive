@@ -1,0 +1,262 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/WAV_File_Viewer/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:11 GMT -->
+<head>
+
+<title>vbAccelerator - Wav File Viewer Control</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This article demonstrates how to read and display a 16-bit Stereo WaveForm using a 
+memory buffer and Multimedia file I/O.  Good performance and ease of use is achieved by using 
+SAFEARRAYs to make a memory buffer look like an array in VB.
+The sample is currently limited to stereo 16-bit wave files, but the same techniques can 
+be applied easily to mono and/or 8-bit files, and, with a bit more effort, to 24-bit files.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;Wav File Viewer Control</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_WaveViewer.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 WaveViewer</a> (61K)</p><p /><p class="nav"><a href="VB6_WaveViewer.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 WaveViewer</a> (56K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:14451</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14451&amp;type=Article&amp;title=Wav%20File%20Viewer%20Control">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />16 Apr 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2185">Adding Scroll Bars to Forms, PictureBoxes and User Controls</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3017">True Colour DIBSection</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Wav File Viewer Control</h1><p class="splash">A buffered reader and control for reading and displaying 16bit WAV Stereo Files</p><img src="wavFileView.png" width="534" height="474" alt="Wave File Viewer Demonstration" /><p /><p>
+This article demonstrates how to read and display a 16-bit Stereo WaveForm using a 
+memory buffer and Multimedia file I/O.  Good performance and ease of use is achieved by using 
+<span class="code">SAFEARRAY</span>s to make a memory buffer look like an array in VB.
+The sample is currently limited to stereo 16-bit wave files, but the same techniques can 
+be applied easily to mono and/or 8-bit files, and, with a bit more effort, to 24-bit files.
+</p><h2>Reading WAV Files</h2><p>
+A WAV File consists of series of headers chunk which describes the data followed by the
+data itself.  Whilst the format probably isn't too complex there are a series of 
+multimedia I/O API calls you can use to interpret the information.  Another useful
+aspect of the multimedia I/O calls is that they also provide caching of the 
+data as it is read, which can greatly improve performance of the application.
+</p><p>
+Typically, you 
+need to first find the "WAVE" header and then the "fmt" sub-header chunk.  This
+then provides the format of the samples in the WAV file (i.e. whether the file has
+8, 16 or 24 bits per sample, the sampling frequency and the number of channels
+of audio).  Once that's been located, there is then a "data" chunk which describes
+the location and size of the audio data itself.  Here's a quick overview of
+the calls you need to make to do this (error handling removing for clarity):
+</p><pre>
+Private m_hMMioIn As Long
+Private m_tFormat As WAVEFORMATEX    ' waveformat structure
+
+Dim mmckinfoParentIn As MMCKINFO
+Dim mmckinfoSubchunkIn As MMCKINFO
+Dim mmioinf As MMIOINFO
+
+   ' Open the Audio File
+   m_hMMioIn = mmioOpen(sSoundFile, mmioinf, MMIO_READ)
+   
+   ' Find WAVE Header:
+   mmckinfoParentIn.fccType = mmioStringToFOURCC("WAVE", 0)
+   lR = mmioDescendParent(m_hMMioIn, mmckinfoParentIn, 0, MMIO_FINDRIFF)
+
+   ' Find "fmt" sub header
+   mmckinfoSubchunkIn.ckid = mmioStringToFOURCC("fmt", 0)
+   lR = mmioDescend(m_hMMioIn, mmckinfoSubchunkIn, mmckinfoParentIn, MMIO_FINDCHUNK)
+
+   ' Get format info
+   mmckinfoSubchunkIn.ckid = mmioStringToFOURCC("fmt", 0)
+   lR = mmioDescend(m_hMMioIn, mmckinfoSubchunkIn, mmckinfoParentIn, MMIO_FINDCHUNK)
+
+   sFormat = String$(50, 0)
+   lR = mmioReadString(m_hMMioIn, sFormat, mmckinfoSubchunkIn.ckSize)
+   lR = mmioAscend(m_hMMioIn, mmckinfoSubchunkIn, 0)
+   CopyMemoryFromString m_tFormat, sFormat, Len(m_tFormat)
+
+   ' Check format here in m_tFormat
+
+   ' Find the data chunk:
+   mmckinfoSubchunkIn.ckid = mmioStringToFOURCC("data", 0)
+   lR = mmioDescend(m_hMMioIn, mmckinfoSubchunkIn, mmckinfoParentIn, MMIO_FINDCHUNK)  
+
+   ' Get the location of the start of the data chunk 
+   m_lDataOffset = mmioSeek(m_hMMioIn, 0, SEEK_CUR)
+   ' mmckinfoSubchunkIn.ckSize is the size of the data chunk
+</pre><p>
+You can refer to the download for the API declares and the intermediate <span class="code">MMCKINFO</span>
+and <span class="code">MMIOINFO</span> structures, which you don't normally interact with much.
+The <span class="code">WAVEFORMATEX</span> structure is probably one that you will use:
+</p><pre>
+Private Type WAVEFORMATEX
+   wFormatTag As Integer
+   nChannels As Integer
+   nSamplesPerSec As Long
+   nAvgBytesPerSec As Long
+   nBlockAlign As Integer
+   wBitsPerSample As Integer
+   cbSize As Integer
+End Type
+</pre><p><span class="code">wFormatTag</span> specifies the type of audio.  Although in theory
+multiple formats are allowed (and some 133 formats are defined in the Windows headers), this
+article only considers non-compressed <span>WAVE_FORMAT_PCM</span> (I'm not sure why
+these formats are described as Pulse-Code Modulated, since PCM refers to the technique 
+of rendering audio using a 1-bit stream, whereas the files themselves always appear
+to be encoded as n-bit samples).
+</p><p><span class="code">nChannels</span> and <span class="code">wBitsPerSample</span> define
+the number of audio channels and the bits per sample respectively.  Finally,
+<span class="code">nSamplesPerSec</span> defines the sampling frequency, which is
+typically one of the commonly used sampling rates (8,000; 11,025; 22,050; 44,100; 48,000
+and 96,000).  The other fields are not normally required and can be derived for non-compressed
+WAV data: 
+</p><ol><li><span class="code">nBlockAlign</span> = <span class="code">nChannels</span> * 
+<span class="code">wBitsPerSample</span> / 8</li><li><span class="code">nAvgBytesPerSec</span> = <span class="code">nSamplesPerSec</span> * 
+<span class="code">nBlockAlign</span></li><li><span class="code">cbSize</span> - ignored.</li></ol><p>
+Once you've read the header, you can start using the WAV data.
+</p><h2>Using the Data in a WAV File</h2><p>
+16-bit stereo WAV files are particularly easy to work with because in VB the WAV
+format the buffer simply consists of a series of L-R 16 bit signed integer pairs.
+8-bit files are also easy to work with for the same reason.  
+</p><img src="16BitStereoSampleData.png" width="489" height="176" alt="16-bit stereo sample data" /><p class="caption">Organisation of sample data in a 16-bit Uncompressed Stereo WAV File</p><p>
+The more modern
+24-bit format will be more painful (at least in VB) because there is no natural way to 
+represent a signed 24-bit value.  I don't have any examples, but presumably the values
+are not written out as 32-bit values with a redundant 8 bits for file size reasons,
+so therefore each sample will represent three bytes. Presumably then you have to read
+the file using a byte array and somehow decode each three bytes into a signed long
+value, but this is a pain since &amp;H0 is 0, &amp;HFFF; is 2^12 but 
+&amp;H1000 is -2^12 and &amp;HFFFFFF is -1.
+</p><p>
+In order to make the data easy to use in VB, we can make it look like an array
+in VB.  An integer array with two dimensions, the first representing
+each stereo sample pair and the second representing left/right makes it easy
+to use the data.  Any data buffer in memory can be made to look like an array
+in VB using the COM <span class="code">SAFEARRAY</span> API (more details
+on this technique are provided in the article 
+<a href="http://www.vbaccelerator.com/article.asp?id=3017">True Colour DIBSections</a>).  This code
+demonstrates how this can be done using the supplied <span class="i">cWavReader</span>
+class to wrap up the I/O access to the Wave Data:
+</p><pre>
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Type SAFEARRAYBOUND
+    cElements As Long
+    lLbound As Long
+End Type
+Private Type SAFEARRAY2D
+    cDims As Integer
+    fFeatures As Integer
+    cbElements As Long
+    cLocks As Long
+    pvData As Long
+    Bounds(0 To 1) As SAFEARRAYBOUND
+End Type
+Private Declare Function VarPtrArray Lib "msvbvm60.dll" Alias "VarPtr" ( _
+   Ptr() As Any) As Long
+
+
+Public Sub Process(reader As cWavReader)
+Dim tSA As SAFEARRAY2D
+Dim bMoreData As Boolean
+Dim iSample As Long
+
+   ' Prepare SAFEARRAY which represents the WAV
+   ' data as 2D array of integers:
+   With tSA
+      .cbElements = 2
+      .cDims = 2
+      .Bounds(0).lLbound = 0
+      .Bounds(0).cElements = reader.ReadBufferSize
+      .Bounds(1).lLbound = 0
+      .Bounds(1).cElements = 2
+   End With
+
+   ' Loop through all of the data:
+   bMoreData = True
+   Do While bMoreData
+   
+      ' Read the next chunk, returns False if no
+      ' more data after this read:
+      bMoreData = reader.Read
+      
+      ' Point the integer array to the data:
+      tSA.pvData = m_cWAVRead.ReadBufferPtr
+      CopyMemory ByVal VarPtrArray(iWav()), VarPtr(tSA), 4
+
+      ' Loop through each sample in the buffer (note
+      ' that ReadSize may be less than ReadBufferSize)
+      For iSample = 0 To reader.ReadSize - 1 
+
+         ' Get next L/R sample pair:
+         iLeft = iWav(0, iSample)
+         iRight = iWav(1, iSample)     
+
+         ' Process left/right here:
+       
+      Next iSample
+
+   Loop
+
+   ' Clear up the 'array' so VB doesn't get confused
+   CopyMemory ByVal VarPtrArray(iWav()), 0&amp;, 4
+
+End Sub
+</pre><p>
+With an appropriate complementary "cWavWriter" class, 
+adding echo effects, finding periods of "silence", peak normalisation, compression,
+amplitude modulation, fades, reversing the waveform and so on are all things that are 
+easy to achieve here.  Mad mathematicians may also want to experiment with more interesting
+stuff such as parametric EQ, time-stretching, spectrum adjustment, convolved reverbs and
+granular synthesis...
+</p><h2>About the Control</h2><p>
+The control provided with the download provides a Wave form viewer which works
+in a similar way to the one found in SoundForge.  The zoom level on the waveform 
+can be configured from showing individual samples (with rectangles highlighting
+each sample point if the zoom-in is 8:1 or above) up to showing 16,384 samples per 
+pixel (for a 1280 pixel-wide control showing a CD-quality wave, this equates to 
+80Mb data or around 8 minutes of music).
+</p><p>
+The performance is generally fine, however, with long
+audio samples at high zoom-outs (generally more than 2048 samples per pixel) you'll find it
+gets a bit slow.  Most real-world applications solve this problem by buffering the
+waveform data for larger files.  Buffering isn't too difficult to add to the control.
+</p><h2>Conclusion</h2><p>
+This sample demonstrates how to read the Waveform of a stereo 16 bit WAV file in a performant
+way using VB.  Although the current implementation only works with stereo 16-bit files, it should
+be adaptable to mono and/or 8 bit files easily, and with some work to 24-bit files.  
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;Wav File Viewer Control</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 17 April 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/WAV_File_Viewer/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:12 GMT -->
+</html>

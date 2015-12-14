@@ -1,0 +1,536 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/Goldfish/Goldfish_Source_Code_zip_cCustomClipboard_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:23 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cCustomClipboard.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cCustomClipboard.cls" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Goldfish</a>&#160;.&#160;<a href="Goldfish_Source_Code.html">Goldfish Source Code</a>&#160;.&#160;cCustomClipboard.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Goldfish_Source_Code.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />Goldfish Source Code</a> (353K)</p><p /><p class="nav"><a href="VB5_Goldfish_Executable.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Goldfish Executable</a> (149K)</p><p /><p class="nav"><a href="VB6_Goldfish_Exectuable.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Goldfish Exectuable</a> (148K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2037</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2037&amp;type=Zip&amp;title=Goldfish%20Source%20Code%2Ezip%5FcCustomClipboard">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />19 Dec 2002<br /><p class="update">vbAccelerator CoolMenu Toolbar and Menu controls version 3 incorporated.</p><p class="update">XP Visual Styles implemented</p><p class="update">Stability updates.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=16">Add Your App to the Systray the Easy Way</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1418">Two code only solutions for displaying Common/Dialogs</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1416">vbAccelerator No Status Bar Control</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2518">Complete Registry control</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=7">PopupMenu DLL - Create Unlimited Popup Menus</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1272">vbAccelerator Toolbar and CoolMenu Control v3.5</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2188">Sophisticated Control Over Window Sizing and Moving </a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cCustomClipboard.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cCustomClipboard"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+' =================================================================
+' File:     cCustomClipboard
+' Author:   SP McMahon 9 March 1998
+' Requires: Self contained
+' Version:  2.0
+'
+' Allows complete access to the clipboard.
+'   1) Define custom clipboard formats
+'   2) Read binary or text data from formats other
+'      than those provided with VB as well as the VB
+'      ones.
+'   3) Enumerate types of data on the clipboard.
+'
+' Note when Copying to the Clipboard, using this class, you
+' muse follow this order:
+'
+'   ' Get access to the clipboard:
+'   .ClipboardOpen Me.hWnd
+'       ' Become the clipboard owner:
+'       .ClearClipboard
+'
+'       ' Do copying in all formats here:
+'
+'   ' Give clipboard control over allocated memory:
+'   .ClipboardClose
+'
+' If you do not follow this order, GPF may result, particularly
+' under NT4.
+'
+'
+' ---------------------------------------------------------------------------
+' vbAccelerator - free, advanced source code for VB programmers.
+'     http://vbaccelerator.com
+'
+' =================================================================
+
+' Clipboard functions:
+Private Declare Function OpenClipboard Lib "user32" _
+    (ByVal hWnd As Long) As Long
+Private Declare Function CloseClipboard Lib "user32" _
+    () As Long
+Private Declare Function GetClipboardData Lib "user32" _
+    (ByVal wFormat As Long) As Long
+Private Declare Function SetClipboardData Lib "user32" _
+    (ByVal wFormat As Long, ByVal hMem As Long) As Long
+Private Declare Function GetClipboardFormatName Lib "user32" Alias
+ "GetClipboardFormatNameA" _
+    (ByVal wFormat As Long, ByVal lpString As String, ByVal nMaxCount As Long)
+     As Long
+Private Declare Function GetClipboardOwner Lib "user32" _
+    () As Long
+Private Declare Function EmptyClipboard Lib "user32" _
+    () As Long
+Private Declare Function RegisterClipboardFormat Lib "user32" Alias
+ "RegisterClipboardFormatA" _
+    (ByVal lpString As String) As Long
+Private Declare Function EnumClipboardFormats Lib "user32" _
+    (ByVal wFormat As Long) As Long
+Private Declare Function IsClipboardFormatAvailable Lib "user32" _
+    (ByVal wFormat As Long) As Long
+Private Declare Function CountClipboardFormats Lib "user32" () As Long
+
+' Members:
+Private m_lID() As Long
+Private m_sName() As String
+Private m_iCount As Long
+Private m_bClipboardIsOpen As Boolean
+Private m_hWnd As Long
+
+'/*
+' * Predefined Clipboard Formats
+' */
+Public Enum EPredefinedClipboardFormatConstants
+     CF_TEXT = 1
+     CF_BITMAP = 2
+     CF_METAFILEPICT = 3
+     CF_SYLK = 4
+     CF_DIF = 5
+     CF_TIFF = 6
+     CF_OEMTEXT = 7
+     CF_DIB = 8
+     CF_PALETTE = 9
+     CF_PENDATA = 10
+     CF_RIFF = 11
+     CF_WAVE = 12
+     CF_UNICODETEXT = 13
+     CF_ENHMETAFILE = 14
+''#if(WINVER &gt;= 0x0400)
+     CF_HDROP = 15
+     CF_LOCALE = 16
+     CF_MAX = 17
+'#endif /* WINVER &gt;= 0x0400 */
+     CF_OWNERDISPLAY = &amp;H80
+     CF_DSPTEXT = &amp;H81
+     CF_DSPBITMAP = &amp;H82
+     CF_DSPMETAFILEPICT = &amp;H83
+     CF_DSPENHMETAFILE = &amp;H8E
+'/*
+' * "Private" formats don't get GlobalFree()'d
+' */
+     CF_PRIVATEFIRST = &amp;H200
+     CF_PRIVATELAST = &amp;H2FF
+'/*
+' * "GDIOBJ" formats do get DeleteObject()'d
+' */
+     CF_GDIOBJFIRST = &amp;H300
+     CF_GDIOBJLAST = &amp;H3FF
+
+End Enum
+
+Public Enum ECustomClipboardErrorConstant
+    eccErrorBase = vbObjectError + 1048 + 521
+    eccClipboardNotOpen
+    eccCantOpenClipboard
+End Enum
+
+Private Declare Function CopyMetaFile Lib "gdi32" Alias "CopyMetaFileA" (ByVal
+ hMF As Long, ByVal lpFileName As String) As Long
+Private Declare Function CopyEnhMetaFile Lib "gdi32" Alias "CopyEnhMetaFileA"
+ (ByVal hemfSrc As Long, ByVal lpszFile As String) As Long
+Private Type METAFILEPICT
+    mm As Long
+    xExt As Long
+    yExt As Long
+    hMF As Long
+End Type
+Private Type METAHEADER
+    mtType As Integer       ' 2
+    mtHeaderSize As Integer ' 4
+    mtVersion As Integer    ' 6
+    mtSize As Long          ' 10
+    mtNoObjects As Integer  ' 12
+    mtMaxRecord As Long     ' 16
+    mtNoParameters As Integer ' 18
+End Type
+
+Public Function AddFormat( _
+        ByVal sName As String _
+    ) As Long
+' Adds a custom clipboard format and returns its
+' ID if successful, otherwise returns 0.
+Dim wFormat As Long
+    wFormat = RegisterClipboardFormat(sName &amp; Chr$(0))
+    If (wFormat &gt; &amp;HC000&amp;) Then
+        AddFormat = wFormat
+    End If
+End Function
+Property Get FormatCount() As Integer
+' Returns the number of formats available on the
+' clipboard:
+    FormatCount = CountClipboardFormats()
+End Property
+Public Function GetCurrentFormats(ByVal hWndOwner As Long) As Long
+' Enumerates all the names and IDs of items currently
+' on the clipboard, and returns the number of items:
+Dim lR As Long
+
+    Erase m_lID
+    Erase m_sName
+    m_iCount = 0
+    If (ClipboardOpen(hWndOwner)) Then
+        lR = EnumClipboardFormats(0)
+        If (lR &lt;&gt; 0) Then
+            Do
+                m_iCount = m_iCount + 1
+                ReDim Preserve m_lID(1 To m_iCount) As Long
+                ReDim Preserve m_sName(1 To m_iCount) As String
+                m_lID(m_iCount) = lR
+                m_sName(m_iCount) = FormatName(lR)
+                lR = EnumClipboardFormats(m_lID(m_iCount))
+            Loop While lR &lt;&gt; 0
+        End If
+    End If
+    GetCurrentFormats = m_iCount
+    ClipboardClose
+End Function
+Public Property Get GetCurrentFormatID(ByVal lIndex As Long)
+' Returns the clipboard format id obtained by GetCurrentFormats
+' at 1 based position lIndex
+    GetCurrentFormatID = m_lID(lIndex)
+End Property
+Public Property Get GetCurrentFormatName(ByVal lIndex As Long)
+' Returns the clipboard format name obtained by GetCurrentFormats
+' at 1 based position lIndex
+    GetCurrentFormatName = m_sName(lIndex)
+End Property
+Public Property Get HasCurrentFormat(ByVal lFormatId As Long) As Boolean
+Dim iFormat As Long
+    For iFormat = 1 To m_iCount
+        If (m_lID(iFormat) = lFormatId) Then
+            HasCurrentFormat = True
+            Exit For
+        End If
+    Next iFormat
+End Property
+Public Property Get FormatName( _
+        ByVal lFormatId As Long _
+    ) As String
+' Returns the format name for a clipboard format id:
+Dim lSize As Long
+Dim sBuf As String
+Dim lR As Long
+    
+    If (lFormatId &gt;= 1 And lFormatId &lt;= 17) Then
+        ' For pre-defined formats, we have to make the text
+        ' up ourselves:
+        Select Case lFormatId
+        Case CF_TEXT
+            FormatName = "Text"
+        Case CF_BITMAP
+            FormatName = "Bitmap Picture"
+        Case CF_METAFILEPICT
+            FormatName = "Meta-File Picture"
+        Case CF_SYLK
+            FormatName = "Microsoft Symbolic Link (SYLK) data."
+        Case CF_DIF
+            FormatName = "Software Arts' Data Interchange information."
+        Case CF_TIFF = 6
+            FormatName = "Tagged Image File Format (TIFF) Picture"
+        Case CF_OEMTEXT
+            FormatName = "Text (OEM)"
+        Case CF_DIB
+            FormatName = "DIB Bitmap Picture"
+        Case CF_PALETTE
+            FormatName = "Colour Palette"
+        Case CF_PENDATA
+            FormatName = "Pen Data"
+        Case CF_RIFF
+            FormatName = "RIFF Audio data"
+        Case CF_WAVE
+            FormatName = "Wave File"
+        Case CF_UNICODETEXT
+            FormatName = "Text (Unicode)"
+        Case CF_ENHMETAFILE
+            FormatName = "Enhanced Meta-File Picture"
+''#if(WINVER &gt;= 0x0400)
+         Case CF_HDROP
+            FormatName = "File List"
+        Case CF_LOCALE = 16
+            FormatName = "Text Locale Identifier"
+        End Select
+    Else
+        ' For custom formats, we can ask the Clipboard for
+        ' the registered name:
+        lSize = 255
+        sBuf = String$(lSize, 0)
+        lR = GetClipboardFormatName(lFormatId, sBuf, lSize)
+        If (lR &lt;&gt; 0) Then
+            FormatName = Left$(sBuf, lR)
+        End If
+    End If
+End Property
+Public Property Get FormatIDForName( _
+        ByVal hWndOwner As Long, _
+        ByVal sName As String _
+    ) As Long
+' Searches for the Name sName on the Clipboard, and returns the
+' format ID for it (or 0 if the item cannot be found)
+Dim i As Integer
+Dim iIndex As Integer
+
+    GetCurrentFormats hWndOwner
+    For i = 1 To m_iCount
+        If (sName = m_sName(i)) Then
+            iIndex = i
+            Exit For
+        End If
+    Next i
+    FormatIDForName = i
+    
+End Property
+Property Get IsDataAvailableForFormatName( _
+        ByVal hWndOwner As Long, _
+        ByVal sFormatName As String _
+    ) As Boolean
+' Returns whether data is available for a given format name:
+Dim lID As Long
+Dim lR As Long
+    lID = FormatIDForName(hWndOwner, sFormatName)
+    If (lID &gt; 0) Then
+        lR = IsClipboardFormatAvailable(lID)
+        IsDataAvailableForFormatName = (lR &lt;&gt; 0)
+    End If
+End Property
+Property Get IsDataAvailableForFormat( _
+        ByVal lFormatId As Long _
+    )
+' Returns whether data is available for a given format id:
+Dim lR As Long
+    lR = IsClipboardFormatAvailable(lFormatId)
+    IsDataAvailableForFormat = (lR &lt;&gt; 0)
+End Property
+
+Public Function GetBinaryData( _
+        ByVal lFormatId As Long, _
+        ByRef bData() As Byte _
+    ) As Boolean
+' Returns a byte array containing binary data on the clipboard for
+' format lFormatID:
+Dim hMem As Long, lSize As Long, lPtr As Long
+    
+    ' Ensure the return array is clear:
+    Erase bData
+    
+    hMem = GetClipboardMemoryHandle(lFormatId)
+    ' If success:
+    If (hMem &lt;&gt; 0) Then
+        ' Get the size of this memory block:
+        lSize = GlobalSize(hMem)
+        ' Get a pointer to the memory:
+        lPtr = GlobalLock(hMem)
+        ' Resize the byte array to hold the data:
+        ReDim bData(0 To lSize - 1) As Byte
+        ' Copy from the pointer into the array:
+        CopyMemory bData(0), ByVal lPtr, lSize
+        ' Unlock the memory block:
+        GlobalUnlock hMem
+        ' Success:
+        GetBinaryData = True
+        ' Don't free the memory - it belongs to the clipboard.
+    End If
+End Function
+Public Function GetClipboardMemoryHandle( _
+        ByVal lFormatId As Long _
+    ) As Long
+    If pbNotReady() Then Exit Function
+    
+    ' If the format id is there:
+    If (IsDataAvailableForFormat(lFormatId)) Then
+        ' Get the global memory handle to the clipboard data:
+        GetClipboardMemoryHandle = GetClipboardData(lFormatId)
+    End If
+End Function
+Public Function SetBinaryData( _
+        ByVal lFormatId As Long, _
+        ByRef bData() As Byte _
+    ) As Boolean
+' Puts the binary data contained in bData() onto the clipboard under
+' format lFormatID:
+Dim lSize As Long
+Dim lPtr As Long
+Dim hMem As Long
+
+    If pbNotReady() Then Exit Function
+    
+    ' Determine the size of the binary data to write:
+    lSize = UBound(bData) - LBound(bData) + 1
+    ' Generate global memory to hold this:
+    hMem = GlobalAlloc(GMEM_DDESHARE, lSize)
+    If (hMem &lt;&gt; 0) Then
+        ' Get pointer to the memory block:
+        lPtr = GlobalLock(hMem)
+        ' Copy the data into the memory block:
+        CopyMemory ByVal lPtr, bData(LBound(bData)), lSize
+        ' Unlock the memory block.
+        GlobalUnlock hMem
+                
+        ' Now set the clipboard data:
+        If (SetClipboardData(lFormatId, hMem) &lt;&gt; 0) Then
+            ' Success:
+            SetBinaryData = True
+        End If
+    End If
+    ' We don't free the memory because the clipboard takes
+    ' care of that now.
+
+End Function
+Public Function SetClipboardMemoryHandle( _
+        ByVal lFormatId As Long, _
+        ByVal hMem As Long _
+    ) As Boolean
+    SetClipboardMemoryHandle = (SetClipboardData(lFormatId, hMem) &lt;&gt; 0)
+End Function
+Public Function GetTextData( _
+        ByVal lFormatId As Long, _
+        ByRef sTextOut As String _
+    ) As Boolean
+' Returns a string containing text on the clipboard for
+' format lFormatID:
+Dim lHwndCache As Long
+
+    If (lFormatId = CF_TEXT) Or (lFormatId = CF_UNICODETEXT) Then
+        ' Use VB method, temporarily we close the clipboard:
+        If (m_bClipboardIsOpen) Then
+            lHwndCache = m_hWnd
+            ClipboardClose
+        End If
+        sTextOut = Clipboard.GetText
+        If (lHwndCache &lt;&gt; 0) Then
+            ClipboardOpen lHwndCache
+        End If
+        GetTextData = True
+    Else
+        Dim bData() As Byte, sR As String
+        If (GetBinaryData(lFormatId, bData())) Then
+            sTextOut = StrConv(bData, vbUnicode)
+            GetTextData = True
+        End If
+    End If
+End Function
+Public Function SetTextData( _
+        ByVal lFormatId As Long, _
+        ByVal sText As String _
+    ) As Boolean
+Dim bData() As Byte
+Dim i As Long
+' Sets the text in sText onto the clipboard under format
+' lFormatID:
+    If (Len(sText) &gt; 0) Then
+        ReDim bData(0 To Len(sText)) As Byte
+        For i = 0 To Len(sText) - 1
+            bData(i) = Asc(Mid$(sText, i + 1, 1))
+        Next i
+        SetTextData = SetBinaryData(lFormatId, bData())
+    End If
+End Function
+Private Function pbNotReady() As Boolean
+' Determines whether a call to Get or Set Data on the
+' clipboard will work.
+    If Not (m_bClipboardIsOpen) Or (m_hWnd = 0) Then
+        Debug.Assert (1 = 0)
+        Err.Raise eccClipboardNotOpen, App.EXEName &amp; ".cCustomClipboard",
+         "Attempt to access the clipboard when clipboard not Open."
+        pbNotReady = True
+    End If
+End Function
+
+Public Sub ClearClipboard()
+' Clears all data in the clipboard, and also takes ownership
+' of the clipboard.  This method will fail
+' unless OpenClipboard has been called first.
+    If (pbNotReady()) Then Exit Sub
+    EmptyClipboard
+End Sub
+Public Sub ClipboardClose()
+' Closes the clipboard if this class has it open:
+    If (m_bClipboardIsOpen) Then
+        CloseClipboard
+        m_bClipboardIsOpen = False
+        m_hWnd = 0
+    End If
+End Sub
+Public Function ClipboardOpen( _
+        ByVal hWndOwner As Long _
+    ) As Boolean
+Dim lR As Long
+' Opens the clipboard:
+    lR = OpenClipboard(hWndOwner)
+    If (lR &gt; 0) Then
+        m_hWnd = hWndOwner
+        m_bClipboardIsOpen = True
+        ClipboardOpen = True
+    Else
+        m_hWnd = 0
+        m_bClipboardIsOpen = False
+        Err.Raise eccCantOpenClipboard, App.EXEName &amp; ".cCustomClipboard",
+         "Unable to Open Clipboard."
+    End If
+End Function
+
+Private Sub Class_Terminate()
+    ' We Shouldn't have the clipboard open here, but if it is,
+    ' and you manage to get this far(!) the clipboard will be
+    ' closed...
+    ClipboardClose
+
+End Sub
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Goldfish</a>&#160;.&#160;<a href="Goldfish_Source_Code.html">Goldfish Source Code</a>&#160;.&#160;cCustomClipboard.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/Goldfish/Goldfish_Source_Code_zip_cCustomClipboard_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:23 GMT -->
+</html>

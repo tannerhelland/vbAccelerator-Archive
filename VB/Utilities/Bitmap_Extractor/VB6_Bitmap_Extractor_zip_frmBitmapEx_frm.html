@@ -1,0 +1,521 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/Bitmap_Extractor/VB6_Bitmap_Extractor_zip_frmBitmapEx_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:39 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmBitmapEx.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmBitmapEx.frm" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Bitmap Extractor Utility</a>&#160;.&#160;<a href="VB6_Bitmap_Extractor.html">VB6 Bitmap Extractor</a>&#160;.&#160;frmBitmapEx.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Bitmap_Extractor.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Bitmap Extractor</a> (87K)</p><p /><p class="nav"><a href="VB6_Bitmap_Extractor.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Bitmap Extractor</a> (80K)</p><p /><p class="nav"><a href="XP_Explorer_Toolbar_Bitmaps.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />XP Explorer Toolbar Bitmaps</a> (128K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:5176</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=5176&amp;type=Zip&amp;title=VB6%20Bitmap%20Extractor%2Ezip%5FfrmBitmapEx">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />15 May 2003<br /><p class="update">
+On some systems the alpha channel was discarded before loading into the
+alpha-DIB section. This is fixed by using the <i>LR_CREATEDIBSECTION</i>
+option in the <i>LoadImage</i> call when reading the bitmap.
+</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1418">Two code only solutions for displaying Common/Dialogs</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11957">ThemeXP</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11956">Resource Hacker</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1420">Browsing For Folders</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2522">Reading Data from Local or External Library Resources</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1430">Icon Extractor Utility </a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3912">Splitting the Easy Way</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmBitmapEx.frm</h1><pre>VERSION 5.00
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Begin VB.Form frmBitmapEx 
+   Caption         =   "Resource Bitmap Extraction Utility"
+   ClientHeight    =   6300
+   ClientLeft      =   2130
+   ClientTop       =   3750
+   ClientWidth     =   6585
+   BeginProperty Font 
+      Name            =   "Tahoma"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "frmBitmapEx.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   6300
+   ScaleWidth      =   6585
+   Begin MSComctlLib.Toolbar tbrMain 
+      Align           =   1  'Align Top
+      Height          =   420
+      Left            =   0
+      TabIndex        =   2
+      Top             =   0
+      Width           =   6585
+      _ExtentX        =   11615
+      _ExtentY        =   741
+      ButtonWidth     =   609
+      ButtonHeight    =   582
+      AllowCustomize  =   0   'False
+      Wrappable       =   0   'False
+      Appearance      =   1
+      ImageList       =   "ilsIcons"
+      _Version        =   393216
+      BeginProperty Buttons {66833FE8-8583-11D1-B16A-00C0F0283628} 
+         NumButtons      =   2
+         BeginProperty Button1 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "OPEN"
+            Object.ToolTipText     =   "Opens a file"
+            ImageIndex      =   1
+         EndProperty
+         BeginProperty Button2 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "SAVE"
+            Object.ToolTipText     =   "Save selected resources"
+            ImageIndex      =   2
+         EndProperty
+      EndProperty
+   End
+   Begin MSComctlLib.StatusBar sbrMain 
+      Align           =   2  'Align Bottom
+      Height          =   375
+      Left            =   0
+      TabIndex        =   3
+      Top             =   5925
+      Width           =   6585
+      _ExtentX        =   11615
+      _ExtentY        =   661
+      _Version        =   393216
+      BeginProperty Panels {8E3867A5-8586-11D1-B16A-00C0F0283628} 
+         NumPanels       =   1
+         BeginProperty Panel1 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
+            AutoSize        =   1
+            Object.Width           =   11086
+         EndProperty
+      EndProperty
+   End
+   Begin VB.PictureBox picSplit 
+      Align           =   1  'Align Top
+      BorderStyle     =   0  'None
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   5235
+      Left            =   0
+      ScaleHeight     =   5235
+      ScaleWidth      =   6585
+      TabIndex        =   0
+      Top             =   420
+      Width           =   6585
+      Begin VB.PictureBox picBitmapArea 
+         Height          =   5115
+         Left            =   3660
+         ScaleHeight     =   5055
+         ScaleWidth      =   2835
+         TabIndex        =   4
+         Top             =   0
+         Width           =   2895
+         Begin VB.Frame fraBitmapInfo 
+            Caption         =   "Bitmap Information"
+            Height          =   1095
+            Left            =   60
+            TabIndex        =   6
+            Top             =   0
+            Width           =   2775
+            Begin VB.Label lblBitmapInfo 
+               Height          =   735
+               Left            =   120
+               TabIndex        =   7
+               Top             =   240
+               Width           =   2475
+            End
+         End
+         Begin VB.PictureBox picBitmap 
+            AutoRedraw      =   -1  'True
+            BorderStyle     =   0  'None
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   4035
+            Left            =   0
+            ScaleHeight     =   4035
+            ScaleWidth      =   2835
+            TabIndex        =   5
+            Top             =   1140
+            Width           =   2835
+         End
+      End
+      Begin MSComctlLib.TreeView tvwBitmaps 
+         Height          =   5115
+         Left            =   0
+         TabIndex        =   1
+         Top             =   0
+         Width           =   3555
+         _ExtentX        =   6271
+         _ExtentY        =   9022
+         _Version        =   393217
+         HideSelection   =   0   'False
+         Indentation     =   441
+         LabelEdit       =   1
+         LineStyle       =   1
+         Style           =   6
+         Appearance      =   1
+      End
+   End
+   Begin MSComctlLib.ImageList ilsIcons 
+      Left            =   2220
+      Top             =   5580
+      _ExtentX        =   1005
+      _ExtentY        =   1005
+      BackColor       =   -2147483643
+      ImageWidth      =   16
+      ImageHeight     =   16
+      MaskColor       =   12632256
+      _Version        =   393216
+      BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
+         NumListImages   =   2
+         BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmBitmapEx.frx":1272
+            Key             =   "OPEN"
+         EndProperty
+         BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmBitmapEx.frx":13CC
+            Key             =   "SAVE"
+         EndProperty
+      EndProperty
+   End
+   Begin VB.Menu mnuFileTOP 
+      Caption         =   "&amp;File"
+      Begin VB.Menu mnuFile 
+         Caption         =   "&amp;Open..."
+         Index           =   0
+         Shortcut        =   ^O
+      End
+      Begin VB.Menu mnuFile 
+         Caption         =   "&amp;Save..."
+         Index           =   1
+         Shortcut        =   ^S
+      End
+      Begin VB.Menu mnuFile 
+         Caption         =   "&amp;Save All..."
+         Index           =   2
+      End
+      Begin VB.Menu mnuFile 
+         Caption         =   "-"
+         Index           =   3
+      End
+      Begin VB.Menu mnuFile 
+         Caption         =   "E&amp;xit"
+         Index           =   4
+      End
+   End
+   Begin VB.Menu mnuOptionsTOP 
+      Caption         =   "&amp;Options"
+      Begin VB.Menu mnuOptions 
+         Caption         =   "Always Save Alpha &amp;Channel"
+         Index           =   0
+      End
+      Begin VB.Menu mnuOptions 
+         Caption         =   "&amp;Premultiply Alpha"
+         Index           =   1
+      End
+   End
+End
+Attribute VB_Name = "frmBitmapEx"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private m_cSplit As New cSplitter
+Private m_cRes As New cResources
+Private m_cLib As New cLibrary
+Private m_cDib As New cAlphaDibSection
+
+Private m_bPreMultiplyAlpha As Boolean
+Private m_bAlwaysSaveAlphaChannel As Boolean
+
+Private Sub pSelectNode()
+   picBitmap.Cls
+   lblBitmapInfo.Caption = ""
+   
+   If Not tvwBitmaps.SelectedItem Is Nothing Then
+      Dim nodX As Node
+      Set nodX = tvwBitmaps.SelectedItem
+      If (nodX.Key = "TOP") Then
+      Else
+         Dim lIndex As Long
+         Dim bColorDepth As Byte
+         lIndex = Mid(nodX.Key, 2)
+         Set m_cDib = DIBSectionFromResource(m_cLib.hModule, nodX.Text, True,
+          bColorDepth)
+         m_cDib.AlphaPaintPicture picBitmap.hdc, 2, 2
+         lblBitmapInfo.Caption = "Width = " &amp; m_cDib.Width &amp; vbCrLf &amp; "Height =
+          " &amp; m_cDib.Height &amp; vbCrLf &amp; "Colour Depth = " &amp; bColorDepth &amp; "
+          bits/pixel"
+      End If
+   End If
+   picBitmap.Refresh
+End Sub
+
+Private Sub pOpen()
+   Dim sFile As String
+   
+   If (VBGetOpenFileName(sFile, _
+      Filter:="Library Files (*.EXE;*.DLL)|*.EXE;*.DLL|Executables
+       (*.EXE)|*.EXE|Libraries (*.DLL)|*.DLL|All Files (*.*)|*.*", _
+      Owner:=Me.hwnd)) Then
+      
+      tvwBitmaps.Nodes.Clear
+      picBitmap.Cls
+      picBitmap.Refresh
+      lblBitmapInfo.Caption = ""
+      Set m_cDib = Nothing
+      
+      Dim nodTop As Node
+      Set nodTop = tvwBitmaps.Nodes.Add(, , "TOP", sFile)
+      
+      On Error GoTo errorHandler
+      m_cLib.Filename = sFile
+      m_cRes.hModule = m_cLib.hModule
+      m_cRes.GetResourceTypes
+      If (m_cRes.ResourceTypeCount &gt; 0) Then
+         
+         Dim i As Long
+         Dim j As Long
+         
+         i = m_cRes.IndexOfResourceType(crBitmap)
+         If (i &gt; 0) Then
+            m_cRes.GetResourceNames i
+            For j = 1 To m_cRes.ResourceNameCount(i)
+               tvwBitmaps.Nodes.Add nodTop, tvwChild, "C" &amp; j,
+                m_cRes.ResourceName(i, j)
+            Next j
+         End If
+                        
+      End If
+      
+      nodTop.Expanded = True
+      If (nodTop.Children &gt; 0) Then
+         nodTop.Child.Selected = True
+      End If
+      
+      pSelectNode
+            
+      sbrMain.Panels(1).Text = "Opened " &amp; sFile &amp; ". " &amp; _
+         IIf(tvwBitmaps.Nodes.Count &gt; 1, _
+            tvwBitmaps.Nodes.Count - 1 &amp; " bitmaps in file.", _
+            "No bitmaps in file.")
+
+   End If
+   Exit Sub
+   
+errorHandler:
+   MsgBox "An error occurred trying to access this resource: " &amp;
+    Err.Description, vbInformation
+   pSelectNode
+   Exit Sub
+
+End Sub
+
+Private Sub pSave()
+   If Not (tvwBitmaps.SelectedItem Is Nothing) Then
+      If (tvwBitmaps.SelectedItem.Key = "TOP") Then
+         pSaveAll
+      Else
+         Dim sFile As String
+         If (VBGetSaveFileName(sFile, _
+            Filter:="Bitmap Files (*.BMP)|*.BMP|All Files (*.*)|*.*", _
+            DefaultExt:="BMP", _
+            Owner:=Me.hwnd)) Then
+            pSaveNode tvwBitmaps.SelectedItem, sFile
+         End If
+      End If
+   Else
+      MsgBox "Please choose a bitmap.", vbInformation
+   End If
+End Sub
+Private Sub pSaveAll()
+   If tvwBitmaps.Nodes.Count &gt; 0 Then
+      If (tvwBitmaps.Nodes(1).Children &gt; 0) Then
+         Dim cF As New cBrowseForFolder
+         cF.hwndOwner = Me.hwnd
+         cF.UseNewUI = True
+         Dim sFolder As String
+         sFolder = cF.BrowseForFolder
+         If (Len(sFolder) &gt; 0) Then
+            If (Right$(sFolder, 1) &lt;&gt; "\") Then sFolder = sFolder &amp; "\"
+            Dim nod As Node
+            Dim sFile As String
+            Set nod = tvwBitmaps.Nodes(1).Child
+            Do
+               On Error Resume Next
+               sFile = sFolder &amp; nod.Text &amp; ".bmp"
+               pSaveNode nod, sFile
+               On Error GoTo 0
+               Set nod = nod.Next
+            Loop While Not (nod Is Nothing)
+         End If
+      Else
+         MsgBox "This resource contains no bitmaps.", vbInformation
+      End If
+   Else
+      MsgBox "Please choose a bitmap.", vbInformation
+   End If
+   sbrMain.Panels(1) = "Ready."
+   Exit Sub
+
+errorHandler:
+   MsgBox "An error occurred whilst extracting files: " &amp; Err.Description,
+    vbInformation
+   Exit Sub
+End Sub
+
+Private Sub pSaveNode(nod As Node, ByVal sFile As String)
+   Dim cDib As cAlphaDibSection
+   Dim bColorDepth As Byte
+   
+   sbrMain.Panels(1).Text = "Extracting " &amp; nod.Text &amp; "..."
+   Set cDib = DIBSectionFromResource(m_cLib.hModule, nod.Text,
+    m_bPreMultiplyAlpha, bColorDepth)
+   If Not cDib Is Nothing Then
+      sbrMain.Panels(1).Text = "Saving " &amp; nod.Text &amp; " to " &amp; sFile
+      If (m_bAlwaysSaveAlphaChannel) Or (bColorDepth = 32) Then
+         cDib.SavePicture sFile
+      ElseIf (bColorDepth &lt; 32) Then
+         Dim cDib24 As New cDIBSection
+         cDib24.Create cDib.Width, cDib.Height
+         cDib.PaintPicture cDib24.hdc
+         cDib24.SavePicture sFile
+      End If
+   End If
+   
+End Sub
+
+Private Sub Form_Load()
+   
+   m_bPreMultiplyAlpha = False
+   
+   m_cSplit.Container = picSplit
+   m_cSplit.Orientation = cSPLTOrientationVertical
+   m_cSplit.Bind tvwBitmaps, picBitmapArea
+   
+End Sub
+
+Private Sub Form_Resize()
+   On Error Resume Next
+   picSplit.Move 0, picSplit.Top, Me.ScaleWidth, Me.ScaleHeight - picSplit.Top
+    - sbrMain.Height
+End Sub
+
+Private Sub mnuFile_Click(Index As Integer)
+   Select Case Index
+   Case 0
+      pOpen
+   Case 1
+      pSave
+   Case 2
+      pSaveAll
+   Case 4
+      Unload Me
+   End Select
+End Sub
+
+Private Sub mnuOptions_Click(Index As Integer)
+   mnuOptions(Index).Checked = Not mnuOptions(Index).Checked
+   m_bAlwaysSaveAlphaChannel = mnuOptions(0).Checked
+   m_bPreMultiplyAlpha = mnuOptions(1).Checked
+End Sub
+
+Private Sub picBitmap_Resize()
+   If Not (m_cDib Is Nothing) Then
+      picBitmap.Cls
+      m_cDib.AlphaPaintPicture picBitmap.hdc, 2, 2
+      picBitmap.Refresh
+   End If
+End Sub
+
+Private Sub picBitmapArea_Resize()
+   On Error Resume Next
+   fraBitmapInfo.Width = picBitmapArea.ScaleWidth - fraBitmapInfo.Left * 2
+   picBitmap.Move 0, picBitmap.Top, picBitmapArea.ScaleWidth,
+    picBitmapArea.ScaleHeight - picBitmap.Top
+End Sub
+
+Private Sub picSplit_MouseDown(Button As Integer, Shift As Integer, X As
+ Single, Y As Single)
+   m_cSplit.MouseDown Button, Shift, X, Y
+End Sub
+
+Private Sub picSplit_MouseMove(Button As Integer, Shift As Integer, X As
+ Single, Y As Single)
+   m_cSplit.MouseMove Button, Shift, X, Y
+End Sub
+
+Private Sub picSplit_MouseUp(Button As Integer, Shift As Integer, X As Single,
+ Y As Single)
+   m_cSplit.MouseUp Button, Shift, X, Y
+End Sub
+
+Private Sub picSplit_Resize()
+   m_cSplit.ResizePanels
+End Sub
+
+Private Sub tbrMain_ButtonClick(ByVal Button As Button)
+   Select Case Button.Key
+   Case "OPEN"
+      pOpen
+   Case "SAVE"
+      pSave
+   End Select
+End Sub
+
+Private Sub tvwBitmaps_NodeClick(ByVal Node As Node)
+   pSelectNode
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Bitmap Extractor Utility</a>&#160;.&#160;<a href="VB6_Bitmap_Extractor.html">VB6 Bitmap Extractor</a>&#160;.&#160;frmBitmapEx.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 13 June 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/Bitmap_Extractor/VB6_Bitmap_Extractor_zip_frmBitmapEx_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:39 GMT -->
+</html>

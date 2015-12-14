@@ -1,0 +1,150 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Implementing_Unsigned_Right_and_Left_Shift_Operators/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:07 GMT -->
+<head>
+
+<title>vbAccelerator - Implementing Unsigned Right and Left Shift Operators</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="When translating C code to VB, often you come across the Right Shift 
+and Left Shift operators ( << and >> respectively ). There is 
+no inbuilt support for Right and Left Shift in VB, so you have to code your own. 
+One of the main problems with replacing these functions is that C code often uses 
+them in unsigned operations. VB doesn't support unsigned long integers either, 
+so code can often fail if the highest bit of the long value is involved.This tip demonstrates how to implement unsigned Right Shift and Left Shift operators 
+without overflow. " /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Implementing Unsigned Right and Left Shift Operators</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2960</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2960&amp;type=Article&amp;title=Implementing%20Unsigned%20Right%20and%20Left%20Shift%20Operators">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />21 Feb 1999<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2957">Generating Long Sequences of Unique Numbers</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Implementing Unsigned Right and Left Shift Operators</h1><p /><p>When translating C code to VB, often you come across the Right Shift 
+and Left Shift operators ( &lt;&lt; and &gt;&gt; respectively ). There is 
+no inbuilt support for Right and Left Shift in VB, so you have to code your own. 
+One of the main problems with replacing these functions is that C code often uses 
+them in unsigned operations. VB doesn't support unsigned long integers either, 
+so code can often fail if the highest bit of the long value is involved.</p><p>This tip demonstrates how to implement unsigned Right Shift and Left Shift operators 
+without overflow. </p><p>Start a new project then add a module. Add the following code to the module: </p><pre>
+Option Explicit
+
+Private m_lPower2(0 To 31) As Long
+
+Public Function RShift(ByVal lThis As Long, ByVal lBits As Long) As Long
+   If (lBits &lt;= 0) Then
+      RShift = lThis
+   ElseIf (lBits &gt; 63) Then
+      ' .. error ...
+   ElseIf (lBits &gt; 31) Then
+      RShift = 0
+   Else
+      If (lThis And m_lPower2(31 - lBits)) = m_lPower2(31 - lBits) Then
+         RShift = (lThis And (m_lPower2(31 - lBits) - 1)) * m_lPower2(lBits) Or m_lPower2(31)
+      Else
+         RShift = (lThis And (m_lPower2(31 - lBits) - 1)) * m_lPower2(lBits)
+      End If
+   End If
+End Function
+
+Public Function LShift(ByVal lThis As Long, ByVal lBits As Long) As Long
+   If (lBits &lt;= 0) Then
+      LShift = lThis
+   ElseIf (lBits &gt; 63) Then
+      ' ... error ...
+   ElseIf (lBits &gt; 31) Then
+      LShift = 0
+   Else
+      If (lThis And m_lPower2(31)) = m_lPower2(31) Then
+         LShift = (lThis And &amp;H7FFFFFFF) \ m_lPower2(lBits) Or m_lPower2(31 - lBits)
+      Else
+         LShift = lThis \ m_lPower2(lBits)
+      End If
+   End If
+End Function
+
+Public Sub Init()
+   m_lPower2(0) = &amp;H1&amp;
+   m_lPower2(1) = &amp;H2&amp;
+   m_lPower2(2) = &amp;H4&amp;
+   m_lPower2(3) = &amp;H8&amp;
+   m_lPower2(4) = &amp;H10&amp;
+   m_lPower2(5) = &amp;H20&amp;
+   m_lPower2(6) = &amp;H40&amp;
+   m_lPower2(7) = &amp;H80&amp;
+   m_lPower2(8) = &amp;H100&amp;
+   m_lPower2(9) = &amp;H200&amp;
+   m_lPower2(10) = &amp;H400&amp;
+   m_lPower2(11) = &amp;H800&amp;
+   m_lPower2(12) = &amp;H1000&amp;
+   m_lPower2(13) = &amp;H2000&amp;
+   m_lPower2(14) = &amp;H4000&amp;
+   m_lPower2(15) = &amp;H8000&amp;
+   m_lPower2(16) = &amp;H10000
+   m_lPower2(17) = &amp;H20000
+   m_lPower2(18) = &amp;H40000
+   m_lPower2(19) = &amp;H80000
+   m_lPower2(20) = &amp;H100000
+   m_lPower2(21) = &amp;H200000
+   m_lPower2(22) = &amp;H400000
+   m_lPower2(23) = &amp;H800000
+   m_lPower2(24) = &amp;H1000000
+   m_lPower2(25) = &amp;H2000000
+   m_lPower2(26) = &amp;H4000000
+   m_lPower2(27) = &amp;H8000000
+   m_lPower2(28) = &amp;H10000000
+   m_lPower2(29) = &amp;H20000000
+   m_lPower2(30) = &amp;H40000000
+   m_lPower2(31) = &amp;H80000000
+End Sub
+</pre><p>To use the code, you initially call Init to set up the precompiled 
+array of powers of 2. This is implemented to help speed the operation 
+of the RShift and LShift functions. Then you use the functions like this: 
+</p><pre>
+   Dim lValue As Long
+
+   lValue = &amp;HFFFFFFFF&amp;    ' VB thinks this is -1
+   Debug.Print RShift(lValue,4)    ' Shift value right by 4 bits
+
+   ' Answer is &amp;HFFFFFFF0. 
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Implementing Unsigned Right and Left Shift Operators</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Implementing_Unsigned_Right_and_Left_Shift_Operators/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:08 GMT -->
+</html>

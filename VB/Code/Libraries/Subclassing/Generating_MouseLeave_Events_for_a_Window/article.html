@@ -1,0 +1,156 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Generating_MouseLeave_Events_for_a_Window/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:35 GMT -->
+<head>
+
+<title>vbAccelerator - Generating MouseLeave Events for a Window</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Almost all of the more recent windows control support a feature known as 'Hot-Tracking' - that is, 
+when the control appears to highlight when the mouse moves over it, then returns to normal when the mouse leaves. 
+Common examples include the flat toolbar buttons provided with the Windows Commmon controls.This article demonstrates how to add this to your controls - properly." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;Generating MouseLeave Events for a Window</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_MouseLeave_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 MouseLeave Demonstration</a> (22K)</p><p /><p class="nav"><a href="VB6_MouseLeave_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 MouseLeave Demonstration</a> (22K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2187</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2187&amp;type=Article&amp;title=Generating%20MouseLeave%20Events%20for%20a%20Window">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />17 Feb 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Generating MouseLeave Events for a Window</h1><img src="mouselve.gif" width="277" height="222" alt="Mouse Leave Sample Application" /><p /><p>Almost all of the more recent windows control support a feature known as "Hot-Tracking" - that is, 
+when the control appears to highlight when the mouse moves over it, then returns to normal when the mouse leaves. 
+Common examples include the flat toolbar buttons provided with the Windows Commmon controls.</p><p>This article demonstrates how to add this to your controls - properly.</p><p>Getting a VB control to highlight when the mouse moves over it is very simple - you just detect the 
+<i>MouseMove</i> event. If you get one of these events, then the mouse is over the control. 
+However, how do you detect when the mouse leaves the control? You can't use <i>MouseMove</i>, because 
+it doesn't fire often when the mouse is leaving the control. And you can't (say) just detect mouse move 
+events over the form the control is on, because the next <i>MouseMove</i> event may occur over 
+another control even if the mouse passes over the form when it moves.</p><p>There are many possible solutions to this problem, from the simple (using a Timer, as suggested in 
+the VB5 Owners Area on the Microsoft site - simple, but...) to installing a Windows Hook procedure 
+to give your control a peek at all the Mouse Messages (surely overkill).  However, there are
+some propert ways to do it, and some of them are even part of the OS.</p><h2>Built-in Tracking Support... Sometimes</h2><p>The most irritating thing about doing a <i>MouseLeave</i> event properly is the fact that 
+MS have fully implemented this feature, but only in certain OS. NT4 implements this method, 
+as does Win98 and the (possibly) forthcoming Win2000. In Windows 95 you can get at an emulation 
+of the method which is coded in COMCTL32.DLL, but only if IE3.02 or higher is installed. 
+So... if your application needs to support Win95 without a newer COMCTL32.DLL installed, or if you need 
+to run on NT3.51, you can't get OS support to code this correctly.</p><p>Here is a summary of what you get:</p><table><tr><td>OS</td><td>MouseLeave Support?</td></tr><tr><td>NT4+, Win98+</td><td>Yes, using TrackMouseEvent in User32.DLL</td></tr><tr><td>Win95 with IE3.02 or higher.</td><td>Yes, using <i>_TrackMouseEvent</i> in COMCTL32.DLL. Note you can still call 
+<i>_TrackMouseEvent</i> in other OS which have the correct version of COMCTL32.DLL, in which case it 
+calls the OS method directly instead.</td></tr><tr><td>Win95 with no IE or old version, NT3.51</td><td>No support. In Win95 you can install the later version of COMCTL32.DLL without installing IE.</td></tr></table><p>To work around these problems, the code I provide here includes automatic detection of OS version and 
+(if required) COMCTL32.DLL version to determine which method to use, and includes a method which will 
+work regardless of OS version (provided the OS runs full Win32 or an emulation, at least!).</p><h2>TrackMouseEvent, whether with an underscore or not</h2><p>This method works by posting messages to your window when the mouse pointer leaves or 
+hovers over the window for a specified period of time. You first call <i>TrackMouseEvent</i> supplying the 
+window handle for Windows to start tracking mouse events. When Windows detects the Mouse Leaves the control, 
+it posts a <i>WM_MOUSELEAVE</i> message to the window and then stops tracking the mouse. The 
+<i>TrackMouseEvent</i> event call can then be made again.</p><p>This call can also be configured to post <i>WM_MOUSEHOVER</i> messsages too. Mouse Hover is defined as the 
+mouse staying within a specified rectangle for more than a certain length of time. The rectangle and time 
+to hover can be modified by a call to <i>SystemParametersInfo</i>. This works in exactly the same way as 
+<i>MouseLeave</i> does - when it posts an event it then stops tracking.</p><h2>How to Emulate TrackMouseEvent with SetCapture and ReleaseCapture</h2><p>If you don't have <i>TrackMouseEvent</i> support, you can emulate its working. using the <i>SetCapture</i>
+ method. This re-directs all mouse movement to a specified Window until it is either called again or 
+<i>ReleaseCapture</i> is called. This means that if you call <i>SetCapture</i> on a window, and then move 
+the mouse out of it, you will still receive a Mouse Move event when the cursor leaves the control, 
+and therefore you can detect that the mouse has left. There are two things to note about this method:</p><ol><li><i>SetCapture</i> is only applicable to the process that your application is working in 
+- if the user switches to another application, capture is automatically released and you 
+loose Mouse Move events. This can cause problems if the user alt-tabs whilst the mouse is over the control 
+- the control can then get stuck in a MouseOver state even though it isn't.</li><li>VB will also cause <i>SetCapture</i> to be released whenever the user clicks on a control, 
+because VB internally calls <i>SetCapture</i> itself when you click the control and releases 
+it again when the mouse is released. This is why VB can provide you with X,Y coordinates outside 
+the control during the <i>MouseMove</i> event when the mouse is held down but not at other times.</li></ol><p>To emulates the operation of <i>TrackMouseEvent</i> method the code subclasses for the following messages:</p><ul><li><i>WM_ACTIVATE</i> on the parent of the control. By subclassing this message we can 
+detect when the form is deactivated and therefore raise a <i>MouseLeave</i> event if the mouse 
+was over the control before it happened (e.g. it the user uses one of the key codes to switch 
+between applications, such as Alt-Tab, Alt-Esc.)</li><li><i>WM_LBUTTONUP</i>, <i>WM_RBUTTONUP</i> and <i>WM_MBUTTONUP</i>. When these events occur, 
+the mouse button has been released and VB will internally call <i>ReleaseCapture</i>. This allows 
+the code to start checking for <i>MouseLeave</i> events again (if the mouse is released over the control) 
+or to raise a <i>MouseLeave</i> event if the mouse is released outside the control.</li><li><i>WM_MOUSEMOVE</i>. This is used to detect the mouse leaving the control.</li></ul><h2>How to Use the cMouseTrack class</h2><p>The cMouseTrack exposes the following methods and properties:</p><ul><li>AttachMouseTracking (objTo as Object, Optional eForceMethod As EMouseTrackMethods)<br />
+Initialises an instance of the <i>cMouseTrack</i> class for MouseLeave detection of a given object (objTo). 
+The Object must have a <i>hWnd</i> property. You can optionally specify which <i>MouseTracking</i> method 
+you want the object to use by filling in the last parameter.</li><li>DetachMouseTracking<br />
+Clears up the object and stops checking for <i>MouseLeave</i> messages. Called automatically 
+when an instance of the class terminates.</li><li>Method<br />
+Returns the type of Mouse tracking method being used by the class.</li><li>StartMouseTracking<br />
+Starts checking for <i>MouseLeave</i> events. The class will continue checking until the 
+<i>MouseLeave</i> or <i>MouseHover</i> event is fired.</li><li>Tracking<br />
+Returns whether the class is tracking the mouse or not.</li></ul><p>The following code outline demonstrates how this class is used:</p><pre>
+' Declare an instance of the cMouseTrack object:
+Private WithEvents m_cPTM As cMouseTrack
+
+Private Sub Form_Load()
+
+   ' Initialise the object to detect the mouse 
+   ' leaving picTrack:
+   Set m_cPTM = New cMouseTrack
+   m_cPTM.AttachMouseTracking picTrack
+
+End Sub
+
+Private Sub picTrack_MouseMove( _
+       Button As Integer, Shift As Integer, _
+       x As Single, y As Single)
+   ' Tracking is initialised by entering the control:
+   If Not (m_cPTM.Tracking) Then
+      ' Mouse has entered the control; highlight it hot here.
+
+      ' And start checking for mouse leave:
+      m_cPTM.StartMouseTracking
+
+   End If
+
+End Sub
+
+' Respond to MouseHover and MouseLeave events
+Private Sub m_cPTM_MouseHover( _
+        Button As MouseButtonConstants, _
+        Shift As ShiftConstants, _
+        x As Single, y As Single)
+   ' Respond to Hover as required:
+
+   ' When the Hover event is fired, mouse tracking stops, so 
+   ' tell the class to start checking again: 
+   m_cPTM.StartMouseTracking
+
+End Sub
+
+Private Sub m_cPTM_MouseLeave()
+   ' Mouse has left the control, remove the highlight:
+
+End Sub
+</pre><h2>Conclusion</h2><p>The cMouseTrack class encapsulates all you need to easily add a MouseLeave event to 
+a UserControl or standard VB control on your form. Its just up to you to 
+use it to do something better than my pop-up Ren and Stimpy sample supplied with the download code...</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;Generating MouseLeave Events for a Window</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 1999-2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 24 December 2002</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Generating_MouseLeave_Events_for_a_Window/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:36 GMT -->
+</html>

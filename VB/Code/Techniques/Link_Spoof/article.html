@@ -1,0 +1,84 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Link_Spoof/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:06 GMT -->
+<head>
+
+<title>vbAccelerator - Link Spoof</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="LinkSpoof is a sample from Robert Heinig (rheinig@gmx.net) 
+demonstrating one technique to take over the VB6 compile process in order to compile 
+your own code into the finished executable." /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;Link Spoof</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="LinkSpoof.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />LinkSpoof</a> (45K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2191</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2191&amp;type=Article&amp;title=Link%20Spoof">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:rheinig@gmx.net">Robert Heinig</a></p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />15 Nov 1999<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Link Spoof</h1><p class="splash">Subvert VB's Compile Process to Inject Your Own Material Into an Executable</p><img src="squelch.gif" width="218" height="112" alt="Unrelated Mildly Technical Graphic" /><p /><p>LinkSpoof is a sample from Robert Heinig (<a href="mailto:rheinig@gmx.net">rheinig@gmx.net</a>) 
+demonstrating one technique to take over the VB6 compile process in order to compile 
+your own code into the finished executable.</p><h2>How To Get Going</h2><p>First download the LinkSpoof sample code. This contains two VB projects: firstly 
+the LinkSpoof source code and the compiled version LINK.EXE, and a test project.</p><p>Locate your VB installation directory. It should contain VB6.EXE and LINK.EXE. 
+Rename LINK.EXE to LINK0.EXE and copy LINK.EXE (the LinkSpoof tool) from this archive 
+into the directory. (Editor's note: I may be a good idea to create a folder to back-up the 
+original LINK.EXE before doing anything else). Installation is now complete, operation should 
+be 100% transparent unless you create a file named <i>LinkSpoof.inf</i> in any directory 
+that contains object or library files during a VB build.</p><p>In case you're worried, compile one of your existing projects to verify its build is 
+not affected.</p><p>Now unpack the Test project and look at the source. Notice that it has two 
+boring functions in <i>Helpers.bas</i>. Run it from the IDE - nothing special. Now take 
+a look at <i>LinkSpoof.inf</i>: It specifies that an EXE build should ignore 
+the output from <i>Helpers.bas</i> and use <i>HelpersC.obj</i> instead.</p><p>If you own VC++6, you can open the provided EXE, open <i>frmMain.frm</i>, open 
+<i>HelpersC.cpp</i>, set breakpoints and actually see that the inline code from 
+HelpersC is used. Switch to disassembly view to get that hardcode hacker feeling. You 
+can recompile this project; a linker log and a map file are generated for your 
+late-night reading pleasure. With C++, you can recompile HelpersC as well, just do not 
+use the Build Project functions, do only a single-file compile. HelpersC.obj is 
+all you want. Take another look at <i>LinkSpoof.inf</i> to see why the map file is 
+generated and why the Linker log is verbose. Lastly, read <i>LinkSpoofSample.inf</i> for 
+an explanation of the supported features of the control file. Set <i>ShowCmd</i> to 1 
+and recompile the test project. While the message box shows the command line VB 
+usually passes to the linker, make a dumpbin of <i>Helpers.OBJ</i> to learn how to 
+find out the names you need to give your replacement functions. Be creative... </p><h2>Disclaimer etc</h2><p>This software modifies VB in ways not intended by the designers. 
+Please ensure you have read and understood the disclaimer provided with the 
+package before trying any of the projects.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;Link Spoof</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 4 January 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Link_Spoof/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:07 GMT -->
+</html>

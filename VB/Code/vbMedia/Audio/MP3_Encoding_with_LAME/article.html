@@ -1,0 +1,346 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/MP3_Encoding_with_LAME/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:09 GMT -->
+<head>
+<title>vbAccelerator - MP3 Encoding with LAME</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+The unfortunately named LAME 
+(Lame Ain't an MP3 Encoder) open source project is a highly-regarded source for creating MP3 files, which is used in a number of projects such as CDEx.  This sample demonstrates using the encoding functions from VB 
+to create MP3 files from WAV files.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" />
+<link rel="contents" href="../index.html" /><link rel="meta" type="application/rdf+xml" href="article.rdf" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;MP3 Encoding with LAME</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Lame_DLLs.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Lame DLLs</a> (151K)</p><p class="nav"><a href="Lame_Encoder_Shim_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Lame Encoder Shim Source</a> (7K)</p><p /><p class="nav"><a href="VB5_Lame_MP3_Encoder.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Lame MP3 Encoder</a> (65K)</p><p /><p class="nav"><a href="VB6_Lame_MP3_Encoder.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Lame MP3 Encoder</a> (62K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:14898</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14898&amp;type=Article&amp;title=MP3%20Encoding%20with%20LAME">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Apr 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14451">Wav File Viewer Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14897">LAME - Lame Ain't an MP3 Encoder</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14896">CDEx</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>MP3 Encoding with LAME</h1><p class="splash">Create your own MP3 files using VB</p><img src="lameEncoder.png" width="442" height="387" alt="Demonstration Application" /><p /><p>
+The unfortunately named <a href="http://www.vbaccelerator.com/article.asp?id=14897">LAME 
+(Lame Ain't an MP3 Encoder)</a> open source project is a highly-regarded source for creating MP3 files, which is used in a number of projects such as <a href="http://www.vbaccelerator.com/article.asp?id=14896">CDEx</a>.  This sample demonstrates using the encoding functions from VB 
+to create MP3 files from WAV files.
+</p><h2>C Hell</h2><p>
+There are a couple of problems which make using LAME a little more tricky than
+you might hope for if you're from a VB background.  The first is that LAME is
+distributed as C source code only, although the code includes the source needed
+to build a DLL.  This is partly for legal reasons, as using any MP3 encoding
+technology in a piece of software may require a 
+<a href="http://lame.sourceforge.net/links.html#patents">patent licence</a> in
+some countries.  Assuming you have access to VC++, however, building the files is
+fairly straightforward.  However, there is another problem.
+</p><p>
+The <span class="i">lame_enc.dll</span> encoder which is produced is not directly usable 
+from Visual Basic. The reason for this is that all of the exported functions are
+exported with the <span class="i">_cdecl</span> calling convention rather than
+<span class="i">_stdcall</span> which is used by VB.  As described in the 
+article <a href="http://www.vbaccelerator.com/article.asp?id=3489">CD Tracklisting using freedb.org</a>, one
+way to get around this is to create a wrapper DLL in C which simply re-exports the
+same functions with the correct calling convention.
+</p><p>
+This is the approach I've taken here.  The <span class="i">Lame Encoder Shim Source</span> download includes the source code for the wrapper. If you wish to compile it
+yourself, then unzip the project into the <span class="i">lame-m.nn</span> directory that you have extracted LAME to, load the Example_vc6.dsw workspace from the Dll subdirectory into VC++ and then 
+add the <span class="i">LameEncShim</span> project to the workspace and hopefully all will be well.  Please don't ask me for any advice about using VC++ or trying to convert this
+to work in VC++7 as I am completely useless at both and only a combination of
+increasingly desperate hacking and several glasses of Makers Mark allowed me 
+to create the DLL at all.
+</p><p>
+Both LAME and the encoder shim are released under the LGPL.  Please check the 
+<span class="code">gnuLicence.txt</span> provided with the DLLs for details of
+your obligations if you use these files.
+</p><h2>Getting Started With VB</h2><p>
+With that nasty rubbish out of the way, we can get back to the somewhat easier world 
+of VB and start working.  To use the encoder, you need to put the two Windows DLLs
+in the <span class="i">Lame DLLs</span> download somewhere that you're VB application
+will find them.  If you're debugging, then the easiest place to put them is in the 
+Windows\System directory, however, for distribution they can be put into the same
+directory as your application. Note that these are standard Win32 DLLs, <strong>not</strong> ActiveX DLLs and so they do not need to be registered.
+</p><p>
+The <span class="i">lame_enc.dll</span> in the download is version 3.96 of LAME.  
+However, the LAME encoder is frequently updated, so you may wish to replace this
+with the latest and greatest version.  This can be done independently of 
+LameEncShim.DLL, which will work with any version of the Lame encoder DLL unless
+the DLLs API changes (which is pretty unlikely).  To get the latest version you
+will either need to build <span class="i">lame_enc.dll</span> yourself, or find one
+from another application which includes it, such as <a href="http://www.vbaccelerator.com/article.asp?id=14896">CDEx</a>.
+</p><h2>About the Demonstration Application</h2><p>
+The demonstration application provides a very simple front end to the VB functions
+which use these DLLs.  It displays the LAME encoder version information and allows
+you to select a source WAV file and an MP3 file destination.  The encoder is 
+configured using the preset encoding options which come with LAME, although the
+code will allow you to make more detailed configuration settings if you want
+to. Typically using the LAME presets will yield a better result as these presets
+have been optimised for the best quality.
+</p><p>
+Clicking Encode starts the encoding process.  The application shows a progress
+bar whilst encoding is underway, and allows the encoding to be cancelled.
+</p><h2>Using the Encoder Functions</h2><p>
+The LAME encoder DLL is based on the Blade Encoder API, and exposes a bare
+minimum of functions to initialise a new stream, encode a block of data, close
+the stream and get version information.  To make this API easier to use, there
+are VB classes which wrap the commonly used functionality.  There are four classes
+you need to encode Wave files to MP3:
+</p><ol><li><span class="code">cLameEncoder</span><br />
+This class provides the primary interface for working with encoding.  It allows
+you to configure the encoding options, set file names and perform an encoding.</li><li><span class="code">cLameEncoderVersion</span><br />
+Provides information about the version of the LAME encoder being used.  You should
+display this information to any user of the application.
+</li><li><span class="code">cWavReader</span><br />
+Used internally to read the WAV
+audio data. For more information about this class see the 
+<a href="http://www.vbaccelerator.com/article.asp?id=14451">Wave File Viewer Control</a> article.</li><li><span class="code">cMp3Writer</span><br />
+Used internally to write the MP3 data out.  This class is basically a very simplistic
+buffered file writer over a pointer to a block of memory.
+</li></ol><p>
+As demonstrated in the sample, using these wrappers allows you to perform an
+encoding with only a few lines of code.  Firstly, you set up a <span class="code">WithEvents</span> instance of the <span class="code">cLameEncoder</span> class.
+This allows you to receive the <span class="code">Progress</span> event which
+allows your application to display progress and cancel any encoding operation:
+</p><pre>
+Private WithEvents m_cEncoder As cLameEncoder
+
+Private Sub Form_Load()
+   Set m_cEncoder = New cLameEncoder
+End Sub
+
+Private Sub m_cEncoder_Progress( _
+    ByVal samplesDone As Long, _
+    ByVal totalSamples As Long, _
+    cancel As Boolean)
+
+    ' .. Handle Progress and cancellation here 
+
+End Sub
+</pre><p>
+Then you set the source WAV file, destination MP3 file and encoding options:
+</p><pre>
+Private Sub CreateMp3File( _
+      ByVal sourceWavFile As String, _
+      ByVal destinationMp3File As String, _
+      ByVal eOption As ELamePresetEncodingOption _
+   )
+   m_cEncoder.WavFile = sourceFile
+   m_cEncoder.Mp3File = destinationFile
+   m_cEncoder.EncodingPreset = eOption
+
+   m_cEncoder.Encode
+
+End Sub
+</pre><p>
+That's pretty much it.  If you want your application to stay responsive whilst
+encoding is underway, you should add a <span class="code">DoEvents</span> call
+during the <span class="code">Progress</span> event.  Remember that any keyboard
+or mouse input will be processed during the <span class="code">DoEvents</span> 
+so typically you will want to disable areas of the user interface that should
+not be modified whilst encoding is underway.  In particular, you should 
+<strong>not</strong> call <span class="code">Encode</span> again whilst encoding
+is underway.
+</p><h2>More Details</h2><p>
+This section may be of assistance to anyone who wants to customise the workings of the
+class to work with different input or output sources, or to understand how to
+configure the MP3 encoder through the more sophisticated customised configuration
+options.
+</p><p>
+There are only four calls to the Blade Encoder API you need to perform an encoding:
+</p><ol><li><span class="code">beInitStream</span><br />
+Creates a new encoding stream using the passed in parameters and returns the
+number of samples the encoding stream expects for each encoding call, the size
+of the buffer needed for the output of each encoding call and a handle to
+the stream which is used in subsequent calls.
+</li><li><span class="code">beEncodeChunk</span><br />
+Encodes a chunk of sample data and puts the result into a buffer, returning
+the actual size of the encoded data.
+</li><li><span class="code">beDeinitStream</span><br />
+Places any end-of-file data into a buffer.
+</li><li><span class="code">beCloseStream</span><br />
+Closes any resources associated with the encoding stream once encoding has been completed.</li></ol><p>
+Each function uses the characteristic C error handling style where the return
+value of the function is a success or error code, defined by the <span class="code">BE_ERR</span> constants:
+</p><pre>
+Public Enum ELameErrorCode
+   BE_ERR_SUCCESSFUL = &amp;H0
+   BE_ERR_INVALID_FORMAT = &amp;H1
+   BE_ERR_INVALID_FORMAT_PARAMETERS = &amp;H2
+   BE_ERR_NO_MORE_HANDLES = &amp;H3
+   BE_ERR_INVALID_HANDLE = &amp;H4
+   BE_ERR_BUFFER_TOO_SMALL = &amp;H5
+End Enum
+</pre><p>
+In the next four sections I'll look at these calls in more detail.
+</p><h3>1. beInitStream</h3><p>
+The <span class="code">beInitStream</span> declare is as follows:
+</p><pre>
+Private Declare Function beInitStream Lib "lameencshim.dll" ( _
+   beConfig As BE_CONFIG, _
+   pdwSamples As Long, _
+   pdwBufferSize As Long, _
+   phbeStream As Long) As Long
+</pre><ul><li><span class="code">beConfig</span> - a <span class="code">BE_CONFIG</span> type
+containing the configuration information for the MP3 encoding.</li><li><span class="code">pdwSamples</span> - a variable which receives the number
+of samples the encoder will process in each block.</li><li><span class="code">pdwBufferSize</span> - the size of the buffer to allocate
+to receive output from the encoder.</li><li><span class="code">phbeStream</span> - the handle to the newly opened stream, if
+successful.</li></ul><p>
+The main work in setting up a stream is setting up the configuration information.
+The <span class="code">BE_CONFIG</span> structure can have alternative forms 
+depending upon what use it is being put to, however, in the case of the LAME 
+engine you only need to consider the LHV1 form:
+</p><pre>
+Private Type BE_CONFIG_FORMAT_LHV1
+   dwStructVersion As Long
+   dwStructSize As Long
+   dwSampleRate As ELameSampleRate
+   dwReSampleRate As Long
+   nMode As ELameOutputModeOption
+   dwBitRate As ELameBitRate
+   dwMaxBitrate As Long
+   nPreset As ELamePresetEncodingOption
+   dwMpegVersion As ELameMP3Version
+   dwPsyModel As Long
+   dwEmphasis As Long
+   bPrivate As Long
+   bCRC As Long
+   bCopyright As Long
+   bOriginal As Long
+   bWriteVBRHeader As Long
+   bEnableVBR As Long
+   nVBRQuality As ELameVBRQualityOption
+   dwVbrAbr_bps As Long
+   nVBRMethod As ELameVBRMethodOption
+   bNoBitRes As Long
+   bStrictIso As Long
+   nQuality As Integer
+   bPadding(0 To 236) As Byte   
+End Type
+
+Private Type BE_CONFIG_FORMAT
+   lvh1 As BE_CONFIG_FORMAT_LHV1
+End Type
+
+Private Type BE_CONFIG  '331
+   dwConfig As Long ' EBeConfigFormat, 4
+   format As BE_CONFIG_FORMAT ' 327
+End Type
+</pre><p>
+The fields in the LVH1 structure are as follows:
+</p><ul><li><span class="code">dwStructVersion</span> - version of the structure, should be
+set to 1.</li><li><span class="code">dwStructSize</span> - size of the overall BE_CONFIG structure,
+in this case 331 bytes.</li><li><span class="code">dwSampleRate</span> - sample rate in Hz for the MP3 file.  This
+can be set to one of:
+<ul><li>32000, 44100 or 48000 for MPEG-I</li><li>16000, 22050 or 24000 for MPEG-I</li><li>8000, 11025 or 12000 for MPEG-II.5</li></ul></li><li><span class="code">dwReSampleRate</span> - specifes the resampling rate to
+use against the input stream.  Setting this to 0 causes the encoder to decide the rate.
+</li><li><span class="code">nMode</span> - the stereo mode of the Mp3 file.  This can be one of:
+<ul><li><span class="code">BE_MP3_MODE_STEREO</span></li><li><span class="code">BE_MP3_MODE_JSTEREO</span></li><li><span class="code">BE_MP3_MODE_DUALCHANNEL</span></li><li><span class="code">BE_MP3_MODE_MONO</span></li></ul></li><li><span class="code">dwBitRate</span> - specifies the bit rate to use.  For Constant Bit-Rate (CBR) encoding, this is the actual bit rate, whereas for Variable Bit-Rate
+(VBR) encoding it specifies the minimum.  Allowable values are:
+<ul><li>8 - MPEG-II only</li><li>16 - MPEG-II only</li><li>24 - MPEG-II only</li><li>32</li><li>40</li><li>48</li><li>56</li><li>64</li><li>80</li><li>96</li><li>112</li><li>128</li><li>144 - MPEG-II only</li><li>160</li><li>192 - MPEG-I only.</li><li>224 - MPEG-I only.</li><li>256  - MPEG-I only.</li><li>320 - MPEG-I only.</li></ul></li><li><span class="code">dwMaxBitrate</span> - When VBR mode is enabled, this specifies the maximum allowed bitrate.  The same values as <span class="code">dwBitRate</span>
+are used.For CBR mode this setting is ignored.</li><li><span class="code">nPreset</span> - one of the preset encoding options to
+use.  Note that presets can overwrite the other settings, since the call to
+apply the preset's setting is made just before the encoder is initialised. 
+<ul><li><span class="code">LQP_NOPRESET</span> - don't use any presets</li><li><span class="code">LQP_NORMAL_QUALITY</span> - quality is set to 5.</li><li><span class="code">LQP_LOW_QUALITY</span> - quality is set to 9.</li><li><span class="code">LQP_HIGH_QUALITY</span> - quality is set to 2.</li><li><span class="code">LQP_VOICE_QUALITY</span> - use for voice encoding.</li><li><span class="code">LQP_R3MIX</span>  - r3mix preset option</li><li><span class="code">LQP_VERYHIGH_QUALITY</span> - quality is set to 0</li><li><span class="code">LQP_STANDARD</span> - lame command line alt-preset standard</li><li><span class="code">LQP_FAST_STANDARD</span> - lame command line alt-preset fast standard</li><li><span class="code">LQP_EXTREME</span> - lame command line alt-preset extreme</li><li><span class="code">LQP_FAST_EXTREME</span> - lame command line alt-preset fast extreme.</li><li><span class="code">LQP_INSANE</span> - lame command line alt-preset insane.</li><li><span class="code">LQP_ABR</span> - lame command line alt-preset abr.</li><li><span class="code">LQP_CBR</span> - lame command line alt-preset cbr.</li></ul>
+Note that some
+presets configure all of the settings, whereas others only affect parts of the
+configuration. For example, <span class="code">LQP_HIGH_QUALITY</span> does not affect the bit-rate or sampling frequency, whereas <span class="code">LQP_STANDARD</span>
+will set VBR mode and the bit rate to 200-240kbps.
+</li><li><span class="code">dwMpegVersion</span> - the MPEG version  to use, one of
+<ul><li><span class="code">MPEG1</span> = 1</li><li><span class="code">MPEG2</span> = 0</li></ul></li><li><span class="code">dwPsyModel</span> - this parameter does not appear to be used
+currently. Assumption is that it would be for adjusting a parameter to the 
+Psycho-Acoustic model.</li><li><span class="code">dwEmphasis</span> - - this parameter does not appear to be used
+currently.  Assumption is to configure the emphasis amount.</li><li><span class="code">bPrivate</span> - If this is set to TRUE (1) the Private 
+bit in the MP3 stream will be set.</li><li><span class="code">bCRC</span>  - Set this to TRUE in order to enable CRC-checksum in the bitstream.</li><li><span class="code">bCopyright</span> - If this is set to TRUE the Copyright bit in the MP3 stream will be set.</li><li><span class="code">bOriginal</span> - If this is set to TRUE the Original bit in the MP3 stream will be set.</li><li><span class="code">bWriteVBRHeader</span> - Specifes if the XING VBR header should be written or not. When this option is enabled, you have to call the beWriteVBRHeader function when encoding has been completed. Keep in mind that the VBR info tag can also be written for CBR encoded files, the TAG info can be useful for additional info like encoder delay and the like.</li><li><span class="code">bEnableVBR</span> - Whether to enable VBR encoding.</li><li><span class="code">nVBRQuality</span> - VBR quality option, one of
+<ul><li><span class="code">VBR_QUALITY_0_HIGHEST</span> = 0</li><li><span class="code">VBR_QUALITY_1_HIGH</span>  = 1</li><li><span class="code">VBR_QUALITY_2_HIGH</span>  = 2</li><li><span class="code">VBR_QUALITY_3_MID</span>  = 3</li><li><span class="code">VBR_QUALITY_4_MID</span>  = 4</li><li><span class="code">VBR_QUALITY_5_MID</span>  = 5</li><li><span class="code">VBR_QUALITY_6_MID</span>  = 6</li><li><span class="code">VBR_QUALITY_7_LOW</span>  = 7</li><li><span class="code">VBR_QUALITY_8_LOW</span>  = 8</li><li><span class="code">VBR_QUALITY_9_LOWEST</span>  = 9</li></ul></li><li><span class="code">dwVbrAbr_bps</span> - specifies an Average Bit Rate (ABR) 
+encoding. If this is specified, the lame encoder ignores the 
+<span class="code">nVBRQuality</span> settings.   To use this, <span class="code">bEnableVBR</span> must be set to TRUE and 
+the <span class="code">nVbrMethod</span> parameter should be set to <span class="code">VBR_METHOD_ABR</span>). 
+The allowed range for the average bit rate is an integer value between:
+<ul><li>MPEG-I: 32000 .. 320000 bps</li><li>MPEG-II: 8000 .. 160000 bps</li></ul></li><li><span class="code">nVBRMethod</span> - the VBR method to use.  One of
+<ul><li><span class="code">VBR_METHOD_NONE</span> = -1</li><li><span class="code">VBR_METHOD_DEFAULT</span> = 0</li><li><span class="code">VBR_METHOD_OLD</span> = 1</li><li><span class="code">VBR_METHOD_NEW</span> = 2</li><li><span class="code">VBR_METHOD_ABR</span> = 4</li></ul></li><li><span class="code">bNoBitRes</span> - Disables the bit-resorvoir and disables the insertion of padded frames.</li><li><span class="code">bStrictIso</span> - Set strict ISO compatibility for the
+encoding.</li><li><span class="code">nQuality</span> - Set the quality, from 0 (highest) to 9 (lowest).
+For backward compatibility reasons, the quality value must have the high-byte set to
+<span class="code">Not</span> the low-byte.  So the values will be: &amp;HFF00 = 0, &amp;HFE01 = 1 ... &amp;HF609 = 9.</li><li><span class="code">bPadding</span> - Not used, provided for future expansion.</li></ul><h3>2. beEncodeChunk</h3><p>
+This function is called repeatedly on each chunk of waveform data to create
+the MP3 output file.  The declare is as follows:
+</p><pre>
+Private Declare Function beEncodeChunk Lib "lameencshim.dll" ( _
+   ByVal hbeStream As Long, _
+   ByVal nSamples As Long, _
+   pSamples As Any, _
+   pOutput As Any, _
+   pdwOutput As Long _
+   ) As Long
+</pre><ul><li><span class="code">hbeStream</span> - Handle to the encoding stream previously
+returned by <span class="code">beInitStream</span>.</li><li><span class="code">nSamples</span> - The number of samples to convert.  This
+must be equal or less than the <span class="code">dwSamples</span> number
+returned by <span class="code">beInitStream</span>.</li><li><span class="code">pSamples</span> - pointer to a buffer containing the samples.
+Each sample is assumed to be a 16-bit value.</li><li><span class="code">pOutput</span> - pointer to the buffer to write the MP3
+data to.  Data in this buffer is assumed to be an array of 8-bit values.</li><li><span class="code">pdwOutput</span> - variable which will receive the actual
+number of bytes written to the buffer for this encoding chunk.</li></ul><p>
+In the download code, the input buffer is a memory-mapped file view onto a source
+Wave file using the multimedia API functions, and the output buffer a block of
+memory allocated using the <span class="code">LocalAlloc</span> API.  However, since the
+encoding works on memory buffers, there is no need to have files as a source.  For
+example, the input buffer could be a pointer to a stream of data read from a 
+CD, or from the analogue input from the PC.
+</p><h3>3. beDeinitStream</h3><p>
+This function writes any terminating data out to the buffer, so it works very similarly
+to the <span class="code">beEncodeChunk</span> function, the only difference being
+that it does not require any input data and so the <span class="code">nSamples</span>
+and <span class="code">pSamples</span> parameters are not required.  The declare is:
+</p><pre>
+Private Declare Function beDeinitStream Lib "lameencshim.dll" ( _
+   ByVal hbeStream As Long, _
+   pOutput As Any, _
+   pdwOutput As Long) As Long
+</pre><h3>4. beCloseStream</h3><p>
+This function performs clean up of any resources allocated for the MP3 file, 
+and should be called as soon as the encoding has been completed.
+</p><pre>
+Private Declare Function beCloseStream Lib "lameencshim.dll" ( _
+   ByVal hbeStream As Long) As Long
+</pre><h2>Conclusion</h2><p>
+This article demonstrates how to use the LAME encoder to create MP3 files from
+WAV files using VB.  To do this, a very simple wrapper over the LAME encoder DLL
+is needed which provides direct wrappers around each of the LAME functions to 
+modify the calling convention so it can be used from VB.  The code should be easy
+to work with to create MP3s from WAV data sources other than files as well.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;MP3 Encoding with LAME</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 29 May 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/MP3_Encoding_with_LAME/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:11 GMT -->
+</html>

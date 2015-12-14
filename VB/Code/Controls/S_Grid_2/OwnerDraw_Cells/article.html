@@ -1,0 +1,338 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/OwnerDraw_Cells/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:49:55 GMT -->
+<head>
+<title>vbAccelerator - Owner-Draw Cells with SGrid 2.0</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This sample demonstrates implementing the IOwnerDrawGridCell
+interface for SGrid 2.0 to create customised cells within a grid.  Two easy to re-use
+examples are provided: a colour indicator and a progress bar.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" />
+<link rel="contents" href="../index.html" /><link rel="meta" type="application/rdf+xml" href="article.rdf" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;Owner-Draw Cells with SGrid 2.0</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_SGrid_2_Owner_Draw_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 SGrid 2 Owner Draw Demonstration</a> (60K)</p><p /><p class="nav"><a href="VB6_SGrid_2_Owner_Draw_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 SGrid 2 Owner Draw Demonstration</a> (56K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:13700</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13700&amp;type=Article&amp;title=Owner%2DDraw%20Cells%20with%20SGrid%202%2E0">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />24 Jan 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13703">SGrid 2.0</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Owner-Draw Cells with SGrid 2.0</h1><p class="splash">Create Progress Bars, Colour indicators and more...</p><img src="ownerDrawCells.png" width="421" height="287" alt="Owner-Draw Cells Demonstration" /><p /><p>
+This sample demonstrates implementing the <span class="code">IOwnerDrawGridCell</span>
+interface for SGrid 2.0 to create customised cells within a grid.  Two easy to re-use
+examples are provided: a colour indicator and a progress bar.
+</p><h2>Owner-Draw Cells in SGrid 2.0</h2><p>
+SGrid 2.0 allows any cell to be owner-drawn by implementing the 
+<span class="code">IOwnerDrawGridCell</span> interface and then hooking your implementation
+up to the grid.  Using an interface allows early-binding between your drawing implementation
+and the grid itself; this provides much better performance than using an event.
+The interface has only one method to implement, <span class="code">Draw</span>.  The
+signature is as follows:
+</p><pre>
+Private Sub IGridCellOwnerDraw_Draw( _
+      cell As cGridCell, _
+      ByVal lHDC As Long, _
+      ByVal eDrawStage As ECGDrawStage, _
+      ByVal lLeft As Long, ByVal lTop As Long, _
+      ByVal lRight As Long, ByVal lBottom As Long, _
+      bSkipDefault As Boolean _
+   )
+</pre><p>
+The parameters are as follows:
+</p><ul><li><span class="code">cell</span><br />
+A <span class="code">cGridCell</span> object populated with all the information needed
+about the cell to draw.</li><li><span class="code">lhDC</span><br />
+Handle to the device context to draw on to.  You can use any of the GDI API calls to 
+draw onto this DC.  Note that the DC is an offscreen DC and SGrid is responsible
+for shifting its contents onto the display.</li><li><span class="code">eDrawStage</span><br />
+The current drawing stage of the cell.  SGrid 2 calls this method up to three times
+for each cell with the following draw stages:
+<ol><li><span class="code">ecgBeforeAll</span> - before any drawing for the cell has been
+performed.</li><li><span class="code">ecgBeforeIconAndText</span> - after the grid's border and 
+highlighing have been drawn but before the contents of the cell.</li><li><span class="code">ecgAfter</span> - after the grid has completed drawing the
+cell.</li></ol>
+In each case the subsequent behaviour of the grid depends on whether the 
+<span class="code">bSkipDefault</span> parameter is set.</li><li><span class="code">lLeft</span>, <span class="code">lTop</span>,
+<span class="code">lRight</span>, <span class="code">lBottom</span><br />
+The coordinates of the bounding rectangle of the cell within the offscreen
+DC.</li><li><span class="code">bSkipDefault</span><br />
+Setting this parameter to <span class="code">True</span> instructs the grid
+that you do not want it to perform any more drawing for the cell (of course, when
+<span class="code">eDrawStage = ecgAfter</span> it has no effect, since
+there is no more drawing to be done).</li></ul><p>
+Note that implementing an Owner-Draw cell is relatively simple when you draw at the
+<span class="code">ecgBeforeIconAndText</span> or <span class="code">ecgAfter</span>
+drawing stages.  If you draw before this life will be significantly harder; but you
+will very rarely want to do it.
+</p><p>
+One of the nice things about implementing owner-draw in SGrid is that all of the 
+grid's existing features for cells, such as sorting, selection, hot-tracking, optimised 
+redraw and so on work just as before for an owner-draw cell.  Changing the text or icon properties
+of the cell causes the cell to redraw automatically, calling your implementation.
+And by storing the data in the cell's Text, ItemData or Icon properties you can 
+use the grid's inbuilt sorting mechanisms to sort the owner draw cells correctly.
+So all you need to worry about is drawing something suitably cool into the cell
+itself.
+</p><h2>And Owner-Draw Cell Implementation</h2><p>
+I'll briefly describe how the progress bar Owner-Draw cell is implemented in
+this section.  My progress bar cell is rendered with a gradient background
+which uses the GDI API call <span class="code">GradientFill</span>.  This is 
+a very flexible call with a somewhat hostile interface so before we begin
+here's the wrapper code I use to call it for a simple linear gradient:
+</p><pre>
+Private Type RECT
+   left As Long
+   top As Long
+   right As Long
+   bottom As Long
+End Type
+Private Type TRIVERTEX
+   x As Long
+   y As Long
+   Red As Integer
+   Green As Integer
+   Blue As Integer
+   Alpha As Integer
+End Type
+Private Type GRADIENT_RECT
+    UpperLeft As Long
+    LowerRight As Long
+End Type
+
+Private Declare Function GradientFill Lib "msimg32" ( _
+   ByVal hDC As Long, _
+   pVertex As TRIVERTEX, _
+   ByVal dwNumVertex As Long, _
+   pMesh As GRADIENT_RECT, _
+   ByVal dwNumMesh As Long, _
+   ByVal dwMode As Long) As Long
+Private Const GRADIENT_FILL_TRIANGLE = &amp;H2&amp;
+Private Declare Function CreateSolidBrush Lib "gdi32" ( _
+   ByVal crColor As Long) As Long
+Private Declare Function FillRect Lib "user32" ( _
+   ByVal hDC As Long, lpRect As RECT, _
+   ByVal hBrush As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" ( _
+   ByVal hObject As Long) As Long
+
+Private Declare Function OleTranslateColor Lib "OLEPRO32.DLL" ( _
+   ByVal OLE_COLOR As Long, _
+   ByVal HPALETTE As Long, _
+   pccolorref As Long) As Long
+Public Const CLR_INVALID = -1
+
+Public Enum GradientFillRectType
+   GRADIENT_FILL_RECT_H = 0
+   GRADIENT_FILL_RECT_V = 1
+End Enum
+
+Public Sub GradientFillRect( _
+      ByVal lHDC As Long, _
+      tR As RECT, _
+      ByVal oStartColor As OLE_COLOR, _
+      ByVal oEndColor As OLE_COLOR, _
+      ByVal eDir As GradientFillRectType _
+   )
+Dim hBrush As Long
+Dim lStartColor As Long
+Dim lEndColor As Long
+Dim lR As Long
+   
+   ' Use GradientFill:
+   lStartColor = TranslateColor(oStartColor)
+   lEndColor = TranslateColor(oEndColor)
+
+   Dim tTV(0 To 1) As TRIVERTEX
+   Dim tGR As GRADIENT_RECT
+   
+   setTriVertexColor tTV(0), lStartColor
+   tTV(0).x = tR.left
+   tTV(0).y = tR.top
+   setTriVertexColor tTV(1), lEndColor
+   tTV(1).x = tR.right
+   tTV(1).y = tR.bottom
+   
+   tGR.UpperLeft = 0
+   tGR.LowerRight = 1
+   
+   GradientFill lHDC, tTV(0), 2, tGR, 1, eDir
+      
+   If (Err.Number &lt;&gt; 0) Then
+      ' Fill with solid brush:
+      hBrush = CreateSolidBrush(TranslateColor(oEndColor))
+      FillRect lHDC, tR, hBrush
+      DeleteObject hBrush
+   End If
+   
+End Sub
+
+Private Sub setTriVertexColor(tTV As TRIVERTEX, lColor As Long)
+Dim lRed As Long
+Dim lGreen As Long
+Dim lBlue As Long
+   lRed = (lColor And &amp;HFF&amp;) * &amp;H100&amp;
+   lGreen = (lColor And &amp;HFF00&amp;)
+   lBlue = (lColor And &amp;HFF0000) \ &amp;H100&amp;
+   setTriVertexColorComponent tTV.Red, lRed
+   setTriVertexColorComponent tTV.Green, lGreen
+   setTriVertexColorComponent tTV.Blue, lBlue
+End Sub
+Private Sub setTriVertexColorComponent( _
+   ByRef iColor As Integer, _
+   ByVal lComponent As Long _
+   )
+   If (lComponent And &amp;H8000&amp;) = &amp;H8000&amp; Then
+      iColor = (lComponent And &amp;H7F00&amp;)
+      iColor = iColor Or &amp;H8000
+   Else
+      iColor = lComponent
+   End If
+End Sub
+
+Private Function TranslateColor( _
+    ByVal oClr As OLE_COLOR, _
+    Optional hPal As Long = 0 _
+    ) As Long
+    ' Convert Automation color to Windows color
+    If OleTranslateColor(oClr, hPal, TranslateColor) Then
+        TranslateColor = CLR_INVALID
+    End If
+End Function
+</pre><p>
+That out of the way, we can look at drawing the cell. The first
+thing to do is to implement the interface and wire it up to the
+grid.  In this case I'll implement it in the form that holds
+the grid, but you can implement it in a separate class if you prefer.
+</p><pre>
+Implements IGridCellOwnerDraw
+
+Private Sub Form_Load()
+
+   ' Connect the grid to the owner-draw
+   ' implementation:
+   grdOwnerDrawDemo.OwnerDrawImpl = Me
+
+End Sub
+
+Private Sub IGridCellOwnerDraw_Draw( _
+      cell As cGridCell, _
+      ByVal lHDC As Long, _
+      ByVal eDrawStage As ECGDrawStage, _
+      ByVal lLeft As Long, ByVal lTop As Long, _
+      ByVal lRight As Long, ByVal lBottom As Long, _
+      bSkipDefault As Boolean _
+   )
+   If (eDrawStage = ecgBeforeIconAndText) Then
+      If (cell.Column = 3) Then
+         drawProgressCell _
+             cell, lHDC, _
+             lLeft, lTop, lRight, lBottom
+         bSkipDefault = True
+      End If
+   End If
+End Sub
+</pre><p>
+This code checks if the drawing stage is <span class="code">ecgBeforeIconAndText</span>.
+If it is, it checks the column of the cell to draw; if it is column 3 then it calls
+the appropriate draw method and then sets <span class="code">bSkipDefault</span> to
+<span class="code">True</span> to tell the grid that the cell's drawing has been
+done.  The next step is to draw the progress bar.  This version simply draws the
+gradient background, draws the currently progress percentage which is stored as 
+as <span class="code">Single</span> value in the <span class="code">CellText</span>
+and then outlines the progress bar with a black border:
+</p><pre>
+Private Declare Function FrameRect Lib "user32" ( _
+    ByVal hDC As Long, _
+    lpRect As RECT, _
+    ByVal hBrush As Long _
+    ) As Long
+Private Declare Function DrawTextA Lib "user32" ( _
+    ByVal hDC As Long, _
+    ByVal lpStr As String, _
+    ByVal nCount As Long, _
+    lpRect As RECT, _
+    ByVal wFormat As Long) As Long
+
+...
+
+Private Sub drawProgressCell( _
+      cell As cGridCell, _
+      ByVal lHDC As Long, _
+      ByVal lLeft As Long, ByVal lTop As Long, _
+      ByVal lRight As Long, ByVal lBottom As Long _
+   )
+Dim hBr As Long
+Dim tR As RECT
+Dim tProgR As RECT
+
+   tR.left = lLeft + 2
+   tR.top = lTop + 2
+   tR.right = lRight - 2
+   tR.bottom = lBottom - 1
+
+   ' Draw the progress bar
+   LSet tProgR = tR
+   tProgR.right = tProgR.left + _
+       (tProgR.right - tProgR.left) * cell.Text
+   GradientFillRect _
+       lHDC, tProgR, _
+       RGB(234, 94, 45), RGB(238, 164, 36), _
+       GRADIENT_FILL_RECT_H
+   
+   ' Draw the text in front of the progress bar
+   DrawTextA lHDC, Format(cell.Text, "0%"), -1, tR, cell.TextAlign
+
+   ' Frame the progress bar:
+   hBr = CreateSolidBrush(&amp;H0&amp;)
+   FrameRect lHDC, tR, hBr
+   DeleteObject hBr
+   
+End Sub
+</pre><p>
+The downloads demonstrate this code in action, as well as a colour
+indicator box implementation.
+</p><h2>Conclusion</h2><p>
+The Owner-Draw mode of SGrid 2 makes it relatively straightforward 
+to customise the contents of cells in a controlled, high-performance way.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;Owner-Draw Cells with SGrid 2.0</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 9 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/OwnerDraw_Cells/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:49:57 GMT -->
+</html>

@@ -1,0 +1,215 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_1/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:07 GMT -->
+<head>
+<title>vbAccelerator - CD Ripping in VB Part 1</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This sample looks at ripping CDs from VB using the CD ripping library
+provided with CDEx.  In addition to providing
+a VB compatible wrapper around the CD ripping functions, it provides a buffered WAV file
+writer which can be reused for other applications such as audio recorders and processors.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" />
+<link rel="contents" href="../index.html" /><link rel="meta" type="application/rdf+xml" href="article.rdf" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;CD Ripping in VB Part 1</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="CDRip_DLL_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />CDRip DLL Source</a> (87K)</p><p class="nav"><a href="CDRip_DLL.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />CDRip DLL</a> (84K)</p><p /><p class="nav"><a href="VB5_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 CD Ripper</a> (103K)</p><p /><p class="nav"><a href="VB6_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 CD Ripper</a> (99K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:14971</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14971&amp;type=Article&amp;title=CD%20Ripping%20in%20VB%20Part%201">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />11 Jun 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14896">CDEx</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3489">CD Track Listing Using freedb.org</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>CD Ripping in VB Part 1</h1><p class="splash">Use the CDEx Ripping Library from within your own applications</p><img src="cdRipper.png" width="454" height="377" alt="CD Ripper Sample Application" /><p /><p>
+This sample looks at ripping CDs from VB using the CD ripping library
+provided with <a href="http://www.vbaccelerator.com/article.asp?id=14896">CDEx</a>.  In addition to providing
+a VB compatible wrapper around the CD ripping functions, it provides a buffered WAV file
+writer which can be reused for other applications such as audio recorders and processors.
+</p><h2>About the CDRip Library</h2><p>
+The CDRip.DLL library is a core component of <a href="http://www.vbaccelerator.com/article.asp?id=14896">CDEx</a>.
+CDEx is released under the GNU General Public Licence (GPL), which means that
+any component which uses this library must also be released under the GPL, unless
+you obtain agreement otherwise from the author.
+It goes without saying that if
+you want to use it, then you should be doing something more useful than simply
+duplicating part of/all of CDEx.  The rather lame (small l) UI in the sample provided 
+here is just a test harness to exercise the functions of the library.  
+I encourage you to download CDEx and try it; it's a neat application.
+</p><p>
+CDRip.DLL is a Win32 DLL which means you should put it somewhere VB will
+find it; when using the IDE it is easiest to use the Windows\System directory,
+but you can put it in the same directory as the executable once deployed.
+</p><h2>CDRip Functionality</h2><p>
+CDRip provides three main areas of functionality:
+</p><ol><li>Detecting CD Players on the System.</li><li>Providing Table Of Contents for CD Drives.</li><li>CD Playing.</li><li>CD Ripping (duh) and configuration.</li></ol><p>
+These functions are made available through a series of function calls from
+the DLL, but they're easier to use if wrapped into more specific classes.
+Therefore the implementation here provides the following VB wrapper code:
+</p><ul><li><span class="code">cCDRip</span><p>
+Top-level class which maintains the collection of drives and the loaded
+CDRip.DLL version.
+</p></li><li><span class="code">cDrive</span><p>
+A single CD drive on the system.  This class can be used to play the CD
+as well as configure the ripping options for the drive (although typically
+the defaults work fine and you will not need to look at them).
+</p></li><li><span class="code">cToc</span><p>
+Represents the Table Of Contents for a CD.  This class includes the <a href="http://www.vbaccelerator.com/article.asp?id=3489">code to
+calculate the FreeDb CDDB ID</a> which can in turn be used to obtain track listings from FreeDb.org.
+</p></li><li><span class="code">cTocEntry</span><p>
+A single track within a CD's Table Of Contents. 
+</p></li><li><span class="code">cCDRipper</span><p>
+A CD ripper.  This can be either be configured to rip a section of the CD or can be created from
+to rip a single <span class="code">cTocEntry</span>.
+</p></li></ul><p>
+I'll cover these in turn.
+</p><h3>1. cCDRip</h3><p>
+This class is needed before you use the other functions.  The <span class="code">Create</span>
+method is used to initialise the CDRip library.  The library persists settings into an INI
+file, and you can specify the location of this as a parameter.  The <span class="code">CDDriveCount</span>
+and <span class="code">CDDrive</span> properties can then be used to obtain information about
+drives on the system.
+</p><h3>2. cDrive</h3><p>
+This class provides the ability to configure how the ripper uses the drive, to play CDs and to obtain
+table of contents information.
+</p><p>
+In my experience, I've never needed to adjust the ripper parameters, but they can be adjusted 
+using these methods.  To be honest, I'm not certain what most of them do.
+</p><img src="cdRipConfiguration.png" width="391" height="282" alt="CD Ripper Configuration" /><p class="caption">CD Rip Configuration Options</p><ul><li><span class="code">Name</span> - gets the name of the CD Drive.</li><li><span class="code">ReadSectors</span> - gets/sets the number of read sectors on the drive.</li><li><span class="code">ReadOverlap</span> - gets/sets the read overlap used.</li><li><span class="code">StartOffset</span> - gets/sets start offset.</li><li><span class="code">EndOffset</span> - gets/sets end offset.</li><li><span class="code">Retries</span> - gets/sets the number of retries to use when reading.</li><li><span class="code">BlockCompare</span> - gets/sets the block compare parameter.</li><li><span class="code">CDSpeed</span> - gets/sets the drive speed multiplier.</li><li><span class="code">SpinUpTime</span> - gets/sets the spin-up time.</li><li><span class="code">DriveType</span> - gets/sets the type of CD Drive.</li></ul><p>
+Playing CDs is accomplished through a handful of functions:
+</p><ul><li><span class="code">PlayCDTrack</span> - plays the track with the specified 1-based track index.</li><li><span class="code">IsAudioPlaying</span> - gets whether the CD is playing or not.</li><li><span class="code">PauseCD</span> - pauses playback if the CD is playing.</li><li><span class="code">UnpauseCD</span> - unpauses playback previously paused with <span class="code">PauseCD</span>.</li><li><span class="code">StopCD</span> - stops CD playback.</li></ul><p>
+Other functions are as follows:
+</p><ul><li><span class="code">TOC</span> - gets a <span class="code">cToc</span> object describing the table
+of contents for the current CD (if there is one).</li><li><span class="code">IsUnitReady</span> - gets whether the CD is ready to play or rip data (i.e. contains
+a disc).</li><li><span class="code">Refresh</span> - refreshes information about the drive.</li><li><span class="code">EjectCD</span> - ejects the drive tray.</li><li><span class="code">CloseCD</span> - closes the drive tray.</li></ul><h3>3. cToc</h3><p>
+This class provides the table of contents for a drive, and also provides a convenient way to obtain
+the CDDB Id and CDDBQuery for the disc, which can be used with the code in the 
+<a href="http://www.vbaccelerator.com/article.asp?id=3489">CD Track Listings</a> to obtain album, artist and track name information.
+</p><ul><li><span class="code">CDDBId</span> - gets the CDDB Id for the current disc.</li><li><span class="code">CDDBQuery</span> - gets the CDDB query string for the current disc.</li><li><span class="code">Count</span> - gets the number of tracks for the current disc.</li><li><span class="code">Entry</span> - gets a <span class="code">cTocEntry</span> object for the specified track.</li><li><span class="code">Refresh</span> - refreshes the information held by this class.</li><li><span class="code">TotalLengthSeconds</span> - total length of the CD in seconds.</li><li><span class="code">TotalLengthSectors</span> - total length of the CD in sectors (1/75th of a second).</li></ul><h3>4. cTocEntry</h3><p>
+This class provides information about a single track on the CD.
+</p><ul><li><span class="code">TrackNumber</span> - gets the track number.</li><li><span class="code">TOCEntryType</span> - gets the type of track, which can either be a data track
+(<span class="code">CDROMDATAFLAG</span>) or an audio track (<span class="code">AUDIOTRKFLAG</span>).</li><li><span class="code">StartSector</span> - gets the starting sector for this track.</li><li><span class="code">Offset</span> - gets the start sector for the track including the CD audio offset.</li><li><span class="code">EndSector</span> - gets the ending sector for this track.</li><li><span class="code">SizeBytes</span> - gets the size of an audio track in bytes.</li></ul><p>
+There are also various other methods to obtain the start time and length in various units and formats,
+which should be self-explanatory.
+</p><h3>5. cCDTrackRipper</h3><p>
+There are two ways of using the track ripper: either to extract a particular track based on its
+<span class="code">cTocEntry</span> information (using <span class="code">CreateForTrack</span>) 
+or to extract a section of information from a <span class="code">cDrive</span> 
+(using <span class="code">CreateForSection</span>.  Note that the start and end sectors are specified
+in CD sectors, or 1/75 of a second.)  
+</p><p>
+Once the create method has been called, use <span class="code">OpenRipper</span> to initialise
+the ripper for reading.  Once this has succeeded, you call <span class="code">Read</span>
+repeatedly until it returns <span class="code">False</span>; each read will populate the ripped
+data into the buffer which can be accessed through <span class="code">ReadBufferPtr</span> and
+<span class="code">ReadBufferSize</span>.  Finally, when finished you call <span class="code">CloseRipper</span>.
+</p><h2>Writing a Wave File</h2><p>
+A .WAV File is a fairly straightforward file format which uses an extensible file format based
+around the concept of "chunks" to define the contents.  Chunks have headers which 
+describe the type of the content (using a scheme called FourCC, in which the unsigned 32 bit dword
+created from four ASCII bytes is used as the tag), the size of the raw content, and then the 
+raw content itself.  In a .WAV file, you need at least three chunks:
+</p><ol><li>A "RIFF" chunk, defining the type of media file.</li><li>A "fmt" chunk describing the format of the wave data.</li><li>A "data" chunk, containing the raw wave data in the specified format.</li></ol><p>
+The Windows multimedia IO functions make it easier to manage chunks, and will automatically
+keep track of the amount of content written to an individual chunk and append it to the header.  
+For a .WAV file, you need to do the following (error handling omitted for clarity):
+</p><ol><li>Open a file for writing using <span class="code">mmioOpen</span>:
+<pre>
+   m_hMmio = mmioOpen( _
+      sSoundFile, ByVal 0&amp;, MMIO_ALLOCBUF Or MMIO_READWRITE Or MMIO_CREATE)
+</pre></li><li>Write the header.  This divides into three stages:
+
+<ul><li>Write the RIFF header:
+<pre>
+Dim lR As Long
+
+   Dim mmckInfoParent As MMCKINFO
+   mmckInfoParent.fccType = mmioStringToFOURCC("WAVE", 0)   
+   lR = mmioCreateChunk(m_hMmio, mmckInfoParent, MMIO_CREATERIFF)
+</pre></li><li>Write the fmt chunk:
+<pre>
+
+   ' Create the "fmt" chunk:      
+   Dim mmckInfoChild As MMCKINFO
+   mmckInfoChild = m_ckBlank
+   mmckInfoChild.ckid = mmioStringToFOURCC("fmt", 0)
+   mmckInfoChild.ckSize = Len(wavEx)
+   lR = mmioCreateChunk(m_hMmio, mmckInfoChild, 0)
+
+   ' Write the format information:
+   Dim wavEx As WAVEFORMATEX
+   wavEx.cbSize = 0
+   wavEx.nAvgBytesPerSec = 176400
+   wavEx.nBlockAlign = 4
+   wavEx.nChannels = 2 ' Stereo
+   wavEx.nSamplesPerSec = 44100 ' 44.1kHz
+   wavEx.wBitsPerSample = 16 ' 16bits/sample
+   wavEx.wFormatTag = 1
+   lSize = mmioWrite(m_hMmio, wavEx, Len(wavEx))
+
+   ' Finish the chunk and go back to the RIFF chunk
+   lR = mmioAscend(m_hMmio, m_mmckInfoChild, 0)
+</pre></li><li>Create the data chunk:
+<pre>
+   Dim mmckInfoData As MMCKINFO
+   mmckInfoData.ckid = mmioStringToFOURCC("data", 0)
+   lR = mmioCreateChunk(m_hMmio, mmckInfoData, 0)
+</pre></li></ul></li><li>Append the raw wave data to the data chunk:
+<pre>
+    ' Assuming lPtrBuff is a pointer to some memory and 
+    ' lWriteSize is the amount of data to write.  This
+    ' can be repeated many times:
+   lSize = mmioWrite(m_hMmio, ByVal lPtrBuff, lWriteSize)
+</pre></li><li>Finish the data chunk and the RIFF chunks and close the file:
+<pre>
+   lR = mmioAscend(m_hMmio, mmckInfoData, 0)
+   lR = mmioAscend(m_hMmio, mmckInfoParent, 0)
+
+   mmioClose m_hMmio, 0
+</pre></li></ol><p>
+The code for this is wrapped up in the <span class="code">cWavWriter</span> class.
+This simply has a <span class="code">OpenFile</span>, <span class="code">WriteWavData</span>
+and <span class="code">CloseFile</span> methods.
+</p><h2>Conclusion</h2><p>
+This sample demonstrates how to use CDRip.DLL to copy tracks from CDs to WAV audio files.
+The next sample in this series looks at modularising the code and providing a plugin
+system which allows you to encode directly to other file formats; in particular MP3.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;CD Ripping in VB Part 1</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 13 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_1/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:09 GMT -->
+</html>

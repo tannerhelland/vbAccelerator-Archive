@@ -1,0 +1,144 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Create_a_VB_Picture_from_a_GDI_Icon_Handle/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:10 GMT -->
+<head>
+
+<title>vbAccelerator - Create a VB Picture from an API Icon Handle</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This tip shows you how create a VB Picture object from an GDI icon handle. This is useful if you are dealing with real GDI icons. " /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Create a VB Picture from an API Icon Handle</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:1382</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1382&amp;type=Article&amp;title=Create%20a%20VB%20Picture%20from%20an%20API%20Icon%20Handle">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />12 Oct 1998<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4584">Create a VB Picture from a GDI Picture Handle</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Create a VB Picture from an API Icon Handle</h1><p /><p>This tip shows you how create a VB Picture object from an GDI icon handle. This is useful if you are dealing with real GDI icons. </p><p>Start a new project and add a module. Then add the following code to the module:</p><pre>
+Option Explicit 
+
+Private Type PictDesc 
+    cbSizeofStruct As Long 
+    picType As Long 
+    hImage As Long 
+    xExt As Long 
+    yExt As Long 
+End Type 
+Private Type Guid 
+    Data1 As Long 
+    Data2 As Integer 
+    Data3 As Integer 
+    Data4(0 To 7) As Byte 
+End Type 
+Private Declare Function OleCreatePictureIndirect Lib "olepro32.dll" _
+    (lpPictDesc As PictDesc, riid As Guid, _
+    ByVal fPictureOwnsHandle As Long, ipic As IPicture) As Long 
+
+Public Function IconToPicture(ByVal hIcon As Long) As IPicture 
+    
+    If hIcon = 0 Then Exit Function 
+        
+    Dim oNewPic As Picture 
+    Dim tPicConv As PictDesc 
+    Dim IGuid As Guid 
+    
+    With tPicConv 
+       .cbSizeofStruct = Len(tPicConv) 
+       .picType = vbPicTypeIcon 
+       .hImage = hIcon 
+    End With 
+    
+    ' Fill in magic IPicture GUID {7BF80980-BF32-101A-8BBB-00AA00300CAB} 
+    With IGuid 
+        .Data1 = &amp;H7BF80980 
+        .Data2 = &amp;HBF32 
+        .Data3 = &amp;H101A 
+        .Data4(0) = &amp;H8B 
+        .Data4(1) = &amp;HBB 
+        .Data4(2) = &amp;H0 
+        .Data4(3) = &amp;HAA 
+        .Data4(4) = &amp;H0 
+        .Data4(5) = &amp;H30 
+        .Data4(6) = &amp;HC 
+        .Data4(7) = &amp;HAB 
+    End With 
+    OleCreatePictureIndirect tPicConv, IGuid, True, oNewPic 
+    
+    Set IconToPicture = oNewPic 
+    
+End Function 
+</pre><p>To try out a the function, add a Command Button and a Picture Box to your project's form. 
+Copy an icon to the project's directory, and rename it TEST.ICO.</p><p>Then add this code to the form:</p><pre>
+Option Explicit 
+
+Private Declare Function LoadImage Lib "user32" Alias "LoadImageA" _ 
+    (ByVal hInst As Long, ByVal lpsz As String, _ 
+    ByVal iType As Long, _ 
+    ByVal cx As Long, ByVal cy As Long, _ 
+    ByVal fOptions As Long) As Long 
+' iType options: 
+Private Const IMAGE_BITMAP = 0 
+Private Const IMAGE_ICON = 1 
+Private Const IMAGE_CURSOR = 2 
+' fOptions flags: 
+Private Const LR_LOADMAP3DCOLORS = &amp;H1000 
+Private Const LR_LOADFROMFILE = &amp;H10 
+Private Const LR_LOADTRANSPARENT = &amp;H20 
+
+
+Private Sub Command1_Click() 
+Dim hIcon As Long 
+    ' Load an icon called Test.Ico from the directory: 
+    
+    ' If the icon contains more than one size of image, 
+    ' set cx and cy to the width and height to load 
+    ' the appropriate image in: 
+    hIcon = LoadImage(App.hInstance, _
+        App.Path &amp; "\TEST.ICO", IMAGE_ICON, _
+        0, 0, _
+        LR_LOADFROMFILE Or LR_LOADMAP3DCOLORS) 
+    ' Set the picture to this icon: 
+    Set Picture1.Picture = IconToPicture(hIcon) 
+End Sub 
+</pre><p>Start the project. When you click the button, the icon will be loaded as an GDI icon handle, converted to a picture and then shown in the PictureBox. Whilst this simple example could be achieved more quickly using the <span class="code">LoadPicture</span> method, the method shown has several advantages:</p><ul><li>You are not restricted to 32x32 icons as you normally are with the Picture object. The <span class="code">LoadImage</span> function can load icons of any size.</li><li>Similarly, you are not restricted to 16 colour icons. The project will load icons with 256 and millions of colour depths. (Note if the icon file contains both a 16 colour and a higher colour icon of the same size, the icon that is loaded will be the one which matches your system settings for icon colour depth).</li><li>You can specify that Gray (RGB 192,192,192) and Dark Gray (128,128,128) are mapped to the appropriate system colours (<span class="code">vbButtonFace</span> and 
+<span class="code">vbButtonShadow</span> respectively).</li></ul><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Create a VB Picture from an API Icon Handle</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 7 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Create_a_VB_Picture_from_a_GDI_Icon_Handle/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:10 GMT -->
+</html>

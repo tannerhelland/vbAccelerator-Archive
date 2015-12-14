@@ -1,0 +1,182 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Mapping_NT_Device_Names/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:44:02 GMT -->
+<head>
+<title>vbAccelerator - Mapping NT Device Names to Drive Letters and vice-versa</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This tip demonstrates how you convert between MS-DOS style drive letters and NT-style device
+names.  This can be useful if you're working with an API that exposes an NT device name,
+such as IMAPI for CD Burning.
+   " /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" />
+<link rel="contents" href="../index.html" /><link rel="meta" type="application/rdf+xml" href="article.rdf" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Mapping NT Device Names to Drive Letters and vice-versa</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Device_Names_Sample.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />Device Names Sample</a> (9K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:14974</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14974&amp;type=Article&amp;title=Mapping%20NT%20Device%20Names%20to%20Drive%20Letters%20and%20vice%2Dversa">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />2 Jun 2004<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Mapping NT Device Names to Drive Letters and vice-versa</h1><img src="deviceNames.png" width="354" height="249" alt="Device Names and Drive Letters" /><p /><p>
+This tip demonstrates how you convert between MS-DOS style drive letters and NT-style device
+names.  This can be useful if you're working with an API that exposes an NT device name,
+such as IMAPI for CD Burning.
+   </p><h2>About Device Names</h2><p>
+Under Windows NT, devices like hard disks, serial ports have an internal Windows NT
+name typically of the form \Device\[Name][Number].  These can optionally be mapped by the
+Windows NT Object Mapper onto the legacy MS-DOS style drive letters like A:, C:, LPT1:  etc.
+Programs typically cannot use the device names directly, but you can map to and from
+the device name and mapped names using the code presented here.
+</p><h2>Device Name Functions</h2><p>
+There are two functions used in this sample: 
+</p><ul><li><span class="code">QueryDosDeviceW</span><br />
+Takes a DOS-style name and returns the NT device name.</li><li><span class="code">GetLogicalDriveStringsA</span><br />
+Returns the list of all drive strings present on the system.</li></ul><p><span class="code">QueryDosDevice</span> takes the DOS name, without 
+the trailing backslash, and puts the equivalent device name into a 
+buffer.  The buffer is terminated with two trailing nulls (the
+reason for this is that the <span class="code">lpDeviceName</span>
+parameter can be set to null, in which case all device names are
+returned in a null delimited list).  The following code
+demonstrates how to use the function in VB:
+</p><pre>
+Private Declare Function QueryDosDeviceW Lib "kernel32.dll" ( _
+    ByVal lpDeviceName As Long, _
+    ByVal lpTargetPath As Long, _
+    ByVal ucchMax As Long _
+    ) As Long
+Private Const MAX_PATH = 260
+
+Public Function GetNtDeviceNameForDrive( _
+   ByVal sDrive As String) As String
+Dim bDrive() As Byte
+Dim bResult() As Byte
+Dim lR As Long
+Dim sDeviceName As String
+
+   If Right(sDrive, 1) = "\" Then
+      If Len(sDrive) &gt; 1 Then
+         sDrive = Left(sDrive, Len(sDrive) - 1)
+      End If
+   End If
+   bDrive = sDrive
+   ReDim Preserve bDrive(0 To UBound(bDrive) + 2) As Byte
+   ReDim bResult(0 To MAX_PATH * 2 + 1) As Byte
+   lR = QueryDosDeviceW(VarPtr(bDrive(0)), VarPtr(bResult(0)), MAX_PATH)
+   If (lR &gt; 2) Then
+      sDeviceName = bResult
+      sDeviceName = Left(sDeviceName, lR - 2)
+      GetNtDeviceNameForDrive = sDeviceName
+   End If
+   
+End Function
+</pre><p>
+There is no direct function to perform a reverse mapping (i.e. determine 
+a DOS drive name from an NT device name).  However, you can do the same
+thing by looping through the attached drives and getting the device name
+for each one.  Strangely VB does not include a means of listing drives
+(although I suppose you could use the shell scripting object or even
+the DriveListBox control) but the list isn't hard to get with the
+<span class="code">GetLogicalDriveStrings</span> function.  This takes
+a buffer and fills it with a null-delimited list of drive names, completing
+the list with two terminating nulls.  Calling the function with a null
+buffer causes it to return the size of the buffer needed to hold the
+entire list:
+</p><pre>
+Private Declare Function GetLogicalDriveStringsA Lib "kernel32" ( _
+    ByVal nBufferLength As Long, lpBuffer As Any) As Long
+
+Public Function GetDrives() As Collection
+Dim colDrives As New Collection
+Dim lSize As Long
+Dim lR As Long
+Dim iLastPos As Long
+Dim iPos As Long
+Dim sDrive As String
+Dim sDriveStrings As String
+
+   lSize = GetLogicalDriveStringsA(0, ByVal 0&amp;)
+   sDriveStrings = String(lSize + 1, 0)
+   lR = GetLogicalDriveStringsA(lSize, ByVal sDriveStrings)
+   iLastPos = 1
+   Do
+      iPos = InStr(iLastPos, sDriveStrings, vbNullChar)
+      If Not (iPos = 0) Then
+         sDrive = Mid$(sDriveStrings, iLastPos, iPos - iLastPos)
+         iLastPos = iPos + 1
+      Else
+         sDrive = Mid$(sDriveStrings, iLastPos)
+      End If
+      If Len(sDrive) &gt; 0 Then
+         colDrives.Add sDrive
+      End If
+   Loop While Not (iPos = 0)
+   Set GetDrives = colDrives
+   
+End Function
+</pre><p>
+Using this list we can get the device name for a drive just by 
+looping through the drive list until there's a match:
+</p><pre>
+Public Function GetDriveForNtDeviceName( _
+   ByVal sDeviceName As String) As String
+Dim sFoundDrive As String
+Dim colDrives As Collection
+Dim vDrive As Variant
+
+   For Each vDrive In GetDrives()
+      If (GetNtDeviceNameForDrive(vDrive) = sDeviceName) Then
+         sFoundDrive = vDrive
+         Exit For
+      End If
+   Next
+   
+   GetDriveForNtDeviceName = sFoundDrive
+   
+End Function
+</pre><h2>Wrap Up</h2><p>
+This sample demonstrates how to map to and from NT Device names and 
+the equivalent drive letters under Windows NT. This function is normally
+not needed, but can be useful when working with an API that works at
+this level, for example the IMAPI.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Mapping NT Device Names to Drive Letters and vice-versa</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 12 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Mapping_NT_Device_Names/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:44:03 GMT -->
+</html>

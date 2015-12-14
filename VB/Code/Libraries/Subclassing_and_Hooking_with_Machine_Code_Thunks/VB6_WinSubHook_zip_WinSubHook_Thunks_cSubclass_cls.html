@@ -1,0 +1,402 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing_and_Hooking_with_Machine_Code_Thunks/VB6_WinSubHook_zip_WinSubHook_Thunks_cSubclass_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:34 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: WinSubHook_Thunks_cSubclass.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: WinSubHook_Thunks_cSubclass.cls" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Libraries</a>&#160;.&#160;<a href="article.html">Subclassing and Hooking with Machine Code Thunks</a>&#160;.&#160;<a href="VB6_WinSubHook.html">VB6 WinSubHook</a>&#160;.&#160;WinSubHook_Thunks_cSubclass.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB6_WinSubHook.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 WinSubHook</a> (92K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:4242</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4242&amp;type=Zip&amp;title=VB6%20WinSubHook%2Ezip%5FWinSubHook%5FThunks%5FcSubclass">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:paul_caton@hotmail.com">Paul Caton</a></p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />20 Feb 2003<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3487">Creating Drop-Shadows</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: WinSubHook_Thunks_cSubclass.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "cSubclass"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+'-------------------------------------------------------------------------------
+-------------------
+'cSubclass - module-less, IDE safe, machine code window subclasser
+'
+'v1.00 20030107 First
+ cut..........................................................................
+'
+
+Option Explicit
+
+Private Const OFFSET_P1   As Long = 9                     'Callback gate address
+Private Const OFFSET_P2   As Long = 22                    'Before table entry
+ count
+Private Const OFFSET_P3   As Long = 37                    'Before table address
+Private Const OFFSET_P4   As Long = 51                    'In IDE ?
+Private Const OFFSET_P5   As Long = 69                    'Owner object address
+ for iSubclass_Before
+Private Const OFFSET_P6   As Long = 141                   'Original WndProc
+ address
+Private Const OFFSET_P7   As Long = 146                   'CallWindowProc
+ address
+Private Const OFFSET_P8   As Long = 154                   'After table entry
+ count
+Private Const OFFSET_P9   As Long = 169                   'After table address
+Private Const OFFSET_PA   As Long = 183                   'In IDE?
+Private Const OFFSET_PB   As Long = 201                   'Owner object address
+ for iSubclass_After
+Private Const OFFSET_PC   As Long = 250                   'Original WndProc
+ address
+Private Const OFFSET_PD   As Long = 260                   'SetWindowLong address
+Private Const ARRAY_LB    As Long = 1                     'Low bound of arrays
+
+Private Type tCode
+  Buf(ARRAY_LB To 272)    As Byte                         'Code buffer
+End Type
+
+Private Type tCodeBuf
+  Code                    As tCode                        'Subclass WndProc code
+End Type
+
+Private CodeBuf           As tCodeBuf                     'Subclass WndProc
+ code instance
+Private nBreakGate        As Long                         'Callback breakpoint
+ gate
+Private nMsgCntB          As Long                         'Before msg table
+ entry count
+Private nMsgCntA          As Long                         'After msg table
+ entry count
+Private aMsgTblB()        As WinSubHook.eMsg              'Before msg table
+ array
+Private aMsgTblA()        As WinSubHook.eMsg              'After msg table array
+Private hWndSubclass      As Long                         'Handle of the window
+ being subclassed
+Private nWndProcSubclass  As Long                         'The address of our
+ WndProc
+Private nWndProcOriginal  As Long                         'The address of the
+ existing WndProc
+
+'-----------------------------
+'Class creation/destruction
+
+'Called automatically when the class instance is created.
+Private Sub Class_Initialize()
+Const OPS As String =
+ "558BEC83C4F85756BE_patch1_33C08945FC8945F8B90000000083F900746183F9FF740CBF0000
+00008B450CF2AF755033C03D_patch4_740B833E007542C70601000000BA_patch5_8B0283F8000F
+84A50000008D4514508D4510508D450C508D4508508D45FC508D45F8508B0252FF5020C706000000
+008B45F883F8007570FF7514FF7510FF750CFF750868_patch6_E8_patch7_8945FCB90000000083
+F900744D83F9FF740CBF000000008B450CF2AF753C33C03D_patchA_740B833E00752EC706010000
+00BA_patchB_8B0283F8007425FF7514FF7510FF750CFF75088D45FC508B0252FF501CC706000000
+005E5F8B45FCC9C2100068_patchC_6AFCFF7508E8_patchD_33C08945FCEBE190"
+Dim i     As Long, _
+    j     As Long, _
+    nIDE  As Long
+
+'Convert the string from hexadecimal pairs to bytes and store in the opcode
+ buffer
+  With CodeBuf.Code
+    j = 1                                                 'Set the character
+     index to the start of the opcode string
+    For i = ARRAY_LB To UBound(.Buf)                      'For each byte of the
+     code buffer
+      .Buf(i) = Val("&amp;H" &amp; Mid$(OPS, j, 2))               'Pull a pair of hex
+       characters and convert to a byte
+      j = j + 2                                           'Bump to the next
+       pair of characters
+    Next i                                                'Next byte of the
+     code buffer
+    nWndProcSubclass = VarPtr(.Buf(ARRAY_LB))             'Address of the
+     cSubclass WndProc entry point
+  End With
+  nIDE = InIDE                                            'Determine whether
+   we're running in the IDE or not
+
+'Patch the WndProc code with runtime values
+  Call PatchVal(OFFSET_P1, VarPtr(nBreakGate))            'Breakpoint gate
+   address
+  Call PatchVal(OFFSET_P4, nIDE)                          'Wether we need check
+   the breakpoint gate and the vtable
+  Call PatchRel(OFFSET_P7, AddrFunc("CallWindowProcA"))   'Address of the
+   CallWindowProc api function
+  Call PatchVal(OFFSET_PA, nIDE)                          'Whether we need
+   check the breakpoint gate and the vtable
+  Call PatchRel(OFFSET_PD, AddrFunc("SetWindowLongA"))    'Address of the
+   SetWindowLong api function
+End Sub
+
+'Called automatically when the class instance is destroyed.
+Private Sub Class_Terminate()
+  If hWndSubclass &lt;&gt; 0 Then                               'If the Subclass
+   thunk is active
+    Call UnSubclass                                       'UnSubclass
+  End If
+End Sub
+
+'-----------------------------
+'Public interface
+
+'Call this method to add a message to the msg callback table. NB This method
+ can be called at any time
+Public Sub AddMsg(uMsg As WinSubHook.eMsg, When As WinSubHook.eMsgWhen)
+  If When = WinSubHook.MSG_BEFORE Then                    'If before
+    Call AddMsgSub(uMsg, aMsgTblB, nMsgCntB, When)        'Add the message,
+     pass the before table and before table message count variables
+  Else                                                    'Else after
+    Call AddMsgSub(uMsg, aMsgTblA, nMsgCntA, When)        'Add the message,
+     pass the after table and after table message count variables
+  End If
+End Sub
+
+'Allow the user to arbitarily call the original WndProc
+Public Function CallOrigWndProc(ByVal uMsg As WinSubHook.eMsg, ByVal wParam As
+ Long, ByVal lParam As Long) As Long
+  If hWndSubclass &lt;&gt; 0 Then
+    CallOrigWndProc = WinSubHook.CallWindowProc( _
+    nWndProcOriginal, hWndSubclass, uMsg, wParam, lParam) 'Call the original
+     WndProc
+  Else
+    Debug.Assert False                                    'LOGIC ERROR: The
+     subclasser isn't active!
+  End If
+End Function
+
+'Call this method to delete a message from the msg table. NB This method can be
+ called at any time
+Public Sub DelMsg(uMsg As WinSubHook.eMsg, When As WinSubHook.eMsgWhen)
+  If When = WinSubHook.MSG_BEFORE Then                    'If before
+    Call DelMsgSub(uMsg, aMsgTblB, nMsgCntB, When)        'Delete the message,
+     pass the before table and before message count variables
+  Else                                                    'Else after
+    Call DelMsgSub(uMsg, aMsgTblA, nMsgCntA, When)        'Delete the message,
+     pass the after table and after message count variables
+  End If
+End Sub
+
+'Call this method to subclass the passed window handle
+Public Sub Subclass(hWnd As Long, Owner As WinSubHook.iSubclass)
+  Debug.Assert (hWndSubclass = 0)                         'LOGIC ERROR: The
+   subclasser is already active!
+  Debug.Assert hWnd                                       'LOGIC ERROR: Invalid
+   window handle
+  Debug.Assert IsWindow(hWnd)                             'LOGIC ERROR: Invalid
+   window handle
+  
+  hWndSubclass = hWnd                                     'Store the window
+   handle
+  nWndProcOriginal = WinSubHook.SetWindowLong( _
+                                  hWnd, _
+                                  WinSubHook.GWL_WNDPROC, _
+                                  nWndProcSubclass)       'Set our WndProc in
+                                   place of the original
+  Debug.Assert nWndProcOriginal                           '??? You can't
+   subclass a window outside of the current process
+  
+  Call PatchVal(OFFSET_P5, ObjPtr(Owner))                 'Owner object address
+   for iSubclass_Before
+  Call PatchVal(OFFSET_P6, nWndProcOriginal)              'Original WndProc
+   address for CallWindowProc
+  Call PatchVal(OFFSET_PB, ObjPtr(Owner))                 'Owner object address
+   for iSubclass_After
+  Call PatchVal(OFFSET_PC, nWndProcOriginal)              'Original WndProc
+   address for SetWindowLong
+End Sub
+
+'Call this method to stop subclassing the window
+Public Sub UnSubclass()
+  If hWndSubclass &lt;&gt; 0 Then
+    Call PatchVal(OFFSET_P2, 0)                           'Patch the code to
+     ensure no further iSubclass_Before callbacks
+    Call PatchVal(OFFSET_P8, 0)                           'Patch the code to
+     ensure no further iSubclass_After callbacks
+    Call WinSubHook.SetWindowLong(hWndSubclass, _
+                                  WinSubHook.GWL_WNDPROC, _
+                                  nWndProcOriginal)       'Restore the original
+                                   WndProc
+    hWndSubclass = 0                                      'Indicate the
+     subclasser is inactive
+    nMsgCntB = 0                                          'Message before count
+     equals zero
+    nMsgCntA = 0                                          'Message after count
+     equals zero
+  End If
+End Sub
+
+'-----------------------------
+' Private subroutines
+
+'Worker sub for AddMsg
+Private Sub AddMsgSub(uMsg As WinSubHook.eMsg, aMsgTbl() As WinSubHook.eMsg,
+ nMsgCnt As Long, When As WinSubHook.eMsgWhen)
+Dim nEntry  As Long, _
+    nOff1   As Long, _
+    nOff2   As Long
+  
+  If uMsg = WinSubHook.ALL_MESSAGES Then                  'If ALL_MESSAGES
+    nMsgCnt = -1                                          'Indicates that all
+     messages are to callback
+  Else                                                    'Else a specific
+   message number
+    For nEntry = ARRAY_LB To nMsgCnt                      'For each existing
+     entry. NB will skip if nMsgCnt = 0
+      Select Case aMsgTbl(nEntry)                         'Select on the
+       message number stored in this table entry
+      Case -1                                             'This msg table slot
+       is a deleted entry
+        aMsgTbl(nEntry) = uMsg                            'Re-use this entry
+        Exit Sub                                          'Bail
+      Case uMsg                                           'The msg is already
+       in the table!
+        Exit Sub                                          'Bail
+      End Select
+    Next nEntry                                           'Next entry
+
+'Make space for the new entry
+    ReDim Preserve aMsgTbl(ARRAY_LB To nEntry)            'Increase the size of
+     the table. NB nEntry = nMsgCnt + 1
+    nMsgCnt = nEntry                                      'Bump the entry count
+    aMsgTbl(nEntry) = uMsg                                'Store the message
+     number in the table
+  End If
+  
+  If When = WinSubHook.MSG_BEFORE Then                    'If before
+    nOff1 = OFFSET_P2                                     'Patch the Before
+     table entry count
+    nOff2 = OFFSET_P3                                     'Patch the Before
+     table address
+  Else                                                    'Else after
+    nOff1 = OFFSET_P8                                     'Patch the After
+     table entry count
+    nOff2 = OFFSET_P9                                     'Patch the After
+     table address
+  End If
+
+'Patch the appropriate table entries
+  Call PatchVal(nOff1, nMsgCnt)                           'Patch the
+   appropriate table entry count
+  Call PatchVal(nOff2, AddrMsgTbl(aMsgTbl))               'Patch the
+   appropriate table address. We need do this because there's no guarantee that
+   the table existed at SubClass time, the table only gets created if a
+   specific message number is added.
+End Sub
+
+'Worker sub for DelMsg
+Private Sub DelMsgSub(uMsg As WinSubHook.eMsg, aMsgTbl() As WinSubHook.eMsg,
+ nMsgCnt As Long, When As WinSubHook.eMsgWhen)
+Dim nEntry As Long
+  
+  If uMsg = WinSubHook.ALL_MESSAGES Then                  'If deleting all
+   messages (specific or ALL_MESSAGES)
+    nMsgCnt = 0                                           'Message count is now
+     zero
+    If When = WinSubHook.MSG_BEFORE Then                  'If before
+      nEntry = OFFSET_P2                                  'Patch the before
+       table message count location
+    Else                                                  'Else after
+      nEntry = OFFSET_P8                                  'Patch the after
+       table message count location
+    End If
+    Call PatchVal(nEntry, 0)                              'Patch the after
+     table message count
+  Else                                                    'Else deleteting a
+   specific message
+    For nEntry = ARRAY_LB To nMsgCnt                      'For each table entry
+      If aMsgTbl(nEntry) = uMsg Then                      'If this entry is the
+       message we wish to delete
+        aMsgTbl(nEntry) = -1                              'Mark the table slot
+         as available
+        Exit For                                          'Bail
+      End If
+    Next nEntry                                           'Next entry
+  End If
+End Sub
+
+'Return the address of the passed user32.dll api function
+Private Function AddrFunc(sProc As String) As Long
+  AddrFunc = WinSubHook.GetProcAddress(WinSubHook.GetModuleHandle("user32"),
+   sProc)
+End Function
+
+'Return the address of the low bound of the passed table array
+Private Function AddrMsgTbl(aMsgTbl() As WinSubHook.eMsg) As Long
+  On Error Resume Next                                    'The table may not be
+   dimensioned yet so we need protection
+    AddrMsgTbl = VarPtr(aMsgTbl(ARRAY_LB))                'Get the address of
+     the first element of the passed message table
+  On Error GoTo 0                                         'Switch off error
+   protection
+End Function
+
+'Patch the code offset with the passed value
+Private Sub PatchVal(nOffset As Long, nValue As Long)
+  Call WinSubHook.CopyMemory(ByVal (nWndProcSubclass + nOffset), nValue, 4)
+End Sub
+
+'Patch the code offset with the relative address to the target address
+Private Sub PatchRel(nOffset As Long, nTargetAddr As Long)
+  Call WinSubHook.CopyMemory(ByVal (nWndProcSubclass + nOffset), nTargetAddr -
+   nWndProcSubclass - nOffset - 4, 4)
+End Sub
+
+'Return -1 if we're running in the IDE or 0 if were running compiled.
+Private Function InIDE() As Long
+Static Value As Long
+  
+  If Value = 0 Then
+    Value = 1
+    Debug.Assert True Or InIDE()                          'This line won't
+     exist in the compiled app
+    InIDE = Value - 1
+  End If
+  
+  Value = 0
+End Function
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Libraries</a>&#160;.&#160;<a href="article.html">Subclassing and Hooking with Machine Code Thunks</a>&#160;.&#160;<a href="VB6_WinSubHook.html">VB6 WinSubHook</a>&#160;.&#160;WinSubHook_Thunks_cSubclass.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing_and_Hooking_with_Machine_Code_Thunks/VB6_WinSubHook_zip_WinSubHook_Thunks_cSubclass_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:34 GMT -->
+</html>

@@ -1,0 +1,3742 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Toolbar/vbAccelerator_Office_Docking_Bar/VB6_OfficeBar_Full_Source_zip_vbalDockContainer_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:08 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: vbalDockContainer.ctl</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: vbalDockContainer.ctl" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Toolbar</a>&#160;.&#160;<a href="article.html">vbAccelerator Office Docking Bar Control</a>&#160;.&#160;<a href="VB6_OfficeBar_Full_Source.html">VB6 OfficeBar Full Source</a>&#160;.&#160;vbalDockContainer.ctl</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_OfficeBar_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 OfficeBar Binary</a> (35K)</p><p class="nav"><a href="VB5_OfficeBar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 OfficeBar Demonstration</a> (68K)</p><p class="nav"><a href="VB5_OfficeBar_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 OfficeBar Full Source</a> (138K)</p><p /><p class="nav"><a href="VB6_OfficeBar_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 OfficeBar Binary</a> (35K)</p><p class="nav"><a href="VB6_OfficeBar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 OfficeBar Demonstration</a> (65K)</p><p class="nav"><a href="VB6_OfficeBar_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 OfficeBar Full Source</a> (134K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:11904</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=11904&amp;type=Zip&amp;title=VB6%20OfficeBar%20Full%20Source%2Ezip%5FvbalDockContainer">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 5 / 6</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:6 February 2004</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />5 Jul 2003<br /><p class="update">Corrected Demonstration projects</p><p class="update">Added note about IDE error when undocking</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1272">vbAccelerator Toolbar and CoolMenu Control v3.5</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=7">PopupMenu DLL - Create Unlimited Popup Menus</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2310">vbAccelerator MDITabs Control</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: vbalDockContainer.ctl</h1><pre>VERSION 5.00
+Begin VB.UserControl vbalDockContainer 
+   Alignable       =   -1  'True
+   AutoRedraw      =   -1  'True
+   ClientHeight    =   3600
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   4800
+   ControlContainer=   -1  'True
+   ScaleHeight     =   3600
+   ScaleWidth      =   4800
+   ToolboxBitmap   =   "vbalDockContainer.ctx":0000
+   Begin VB.PictureBox picBar 
+      AutoRedraw      =   -1  'True
+      BorderStyle     =   0  'None
+      Height          =   375
+      Index           =   0
+      Left            =   60
+      ScaleHeight     =   375
+      ScaleWidth      =   3075
+      TabIndex        =   0
+      Top             =   120
+      Visible         =   0   'False
+      Width           =   3075
+   End
+End
+Attribute VB_Name = "vbalDockContainer"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+Implements ISubclass
+
+Private Const WM_ERASEBKGND = &amp;H14
+Private Const WM_DESTROY = &amp;H2
+Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function MapWindowPoints Lib "user32" (ByVal hwndFrom As Long,
+ ByVal hWndTo As Long, lppt As Any, ByVal cPoints As Long) As Long
+Private Declare Function SetCapture Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function SetParent Lib "user32" (ByVal hWndChild As Long, ByVal
+ hWndNewParent As Long) As Long
+Private Declare Function MoveWindow Lib "user32" (ByVal hwnd As Long, ByVal x
+ As Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ bRepaint As Long) As Long
+Private Declare Function ShowWindow Lib "user32" (ByVal hwnd As Long, ByVal
+ nCmdShow As Long) As Long
+Private Declare Function IsWindow Lib "user32" (ByVal hwnd As Long) As Long
+Private Const SW_HIDE = 0
+Private Const SW_NORMAL = 1
+Private Declare Function GetWindow Lib "user32" (ByVal hwnd As Long, ByVal wCmd
+ As Long) As Long
+Private Const GW_OWNER = 4
+Private Const GW_HWNDNEXT = 2
+Private Const GW_CHILD = 5
+Private Declare Function GetParent Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function CreatePen Lib "gdi32" (ByVal nPenStyle As Long, ByVal
+ nWidth As Long, ByVal crColor As Long) As Long
+Private Declare Function LineTo Lib "gdi32" (ByVal hdc As Long, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function MoveToEx Lib "gdi32" (ByVal hdc As Long, ByVal x As
+ Long, ByVal y As Long, lpPoint As POINTAPI) As Long
+Private Declare Function DrawEdge Lib "user32" (ByVal hdc As Long, qrc As RECT,
+ ByVal edge As Long, ByVal grfFlags As Long) As Long
+Private Const BDR_RAISED = &amp;H5
+Private Const BDR_RAISEDINNER = &amp;H4
+Private Const BDR_RAISEDOUTER = &amp;H1
+Private Const BDR_SUNKENOUTER = 2
+Private Const BDR_SUNKENINNER = 8
+Private Const EDGE_RAISED = (BDR_RAISEDOUTER Or BDR_RAISEDINNER)
+Private Const BF_BOTTOM = &amp;H8
+Private Const BF_LEFT = &amp;H1
+Private Const BF_RIGHT = &amp;H4
+Private Const BF_SOFT = &amp;H1000     ' Use for softer buttons.
+Private Const BF_FLAT = &amp;H4000          '/* For flat rather than 3D borders */
+Private Const BF_MONO = &amp;H8000&amp;          '/* For monochrome borders */
+Private Const BF_TOP = &amp;H2
+Private Const BF_RECT = (BF_LEFT Or BF_TOP Or BF_RIGHT Or BF_BOTTOM)
+Private Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal
+ hObject As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+Private Declare Function GetSysColor Lib "user32" (ByVal nIndex As Long) As Long
+Private Declare Function GetSysColorBrush Lib "user32" (ByVal nIndex As Long)
+ As Long
+Private Declare Function CreateSolidBrush Lib "gdi32" (ByVal crColor As Long)
+ As Long
+Private Declare Function InflateRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function OffsetRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function UnionRect Lib "user32" (lpDestRect As RECT, lpSrc1Rect
+ As RECT, lpSrc2Rect As RECT) As Long
+Private Declare Function FillRect Lib "user32" (ByVal hdc As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+Private Const PS_SOLID = 0
+Private Const HWND_DESKTOP = 0
+Private Declare Function GetSystemMetrics Lib "user32" (ByVal nIndex As Long)
+ As Long
+Private Const SM_CXFRAME = 32
+Private Const SM_CYFRAME = 33
+Private Const SM_CYBORDER = 6
+Private Const SM_CXBORDER = 5
+Private Const SM_CYCAPTION = 4
+Private Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+Private Declare Function SendMessageLong Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Const WM_USER = &amp;H400
+Private Const TB_BUTTONCOUNT = (WM_USER + 24)
+Private Const TB_GETBUTTON = (WM_USER + 23)
+Private Const TB_GETRECT = (WM_USER + 51)             '// wParam is the Cmd
+ instead of index
+Private Type TBBUTTON
+   iBitmap As Long
+   idCommand As Long
+   fsState As Byte
+   fsStyle As Byte
+   bReserved1 As Byte
+   bReserved2 As Byte
+   dwData As Long
+   iString As Long
+End Type
+
+Private Enum eDTBCLastAction
+   eNewAction
+   eNewRowUp
+   eNewRowDown
+   eShareRowDown
+   eShareRowUp
+End Enum
+
+Private Type tDockedBar
+   
+   lX As Long
+   cx As Long
+   
+   cXA As Long
+   cYA As Long
+   
+   cXAHorz As Long
+   cYAHorz As Long
+   cXAVert As Long
+   cYAVert As Long
+   
+   lIdx As Long
+   sKey As String
+   sTitle As String
+   bFillRow As Boolean
+   
+   lThisX As Long
+   lThisY As Long
+   
+   lLastX As Long
+   lLastY As Long
+   
+   lOffsetX As Long
+   
+   bActiveBar As Boolean
+   eAction As Long
+   
+   bRowLastChosenBar As Boolean
+   lXSingleRow As Long
+   
+   bCanDockHorizontal As Boolean
+   bCanDockVertical As Boolean
+   bCanClose As Boolean
+   bShowChevron As Boolean
+   
+End Type
+
+Private Type tDockedRow
+   lCount As Long
+   lHeight As Long
+   tBar() As tDockedBar
+End Type
+
+Private Type tChevron
+   bShow As Boolean
+   bMouseOver As Boolean
+   bMouseDown As Boolean
+   tR As RECT
+End Type
+
+Private Type tVerticalHiddenButtons
+   hwnd As Long
+   cKeys As Collection
+End Type
+
+Private m_tHiddenItems() As tVerticalHiddenButtons
+Private m_iHiddenItemCount As Long
+
+Private m_lCount As Long
+Private m_pic() As Long
+Private m_lRows As Long
+Private m_tRow() As tDockedRow
+Private m_tChevron() As tChevron
+Private m_hWndCtl As Long
+Private m_bXPStyle As Boolean
+
+Private m_iActiveBar As Long
+Private m_lIndexActiveBar As Long
+
+Private m_lMinBarSize As Long
+Private m_lMinBestBarSize As Long
+
+Private m_bAllowDragOff As Boolean
+Private m_bLockToolbars As Boolean
+
+Private m_bResizeInterlock As Boolean
+
+Private m_bNonDockingArea As Boolean
+Private m_lNonDockingAreaSize As Long
+
+Private m_hWndParent As Long
+
+Private m_tPtDock As POINTAPI
+
+Private m_iDragOffCount As Long
+Private m_lDragOff() As Long
+Private m_sDragOff() As String
+
+Private WithEvents m_tmr As CTimer
+Attribute m_tmr.VB_VarHelpID = -1
+
+Public Event ChevronPress(ByVal key As String, ByVal x As Long, ByVal y As Long)
+Attribute ChevronPress.VB_Description = "Raised when the chevron at the end of
+ the bar is clicked."
+Public Event SizeChanged()
+Attribute SizeChanged.VB_Description = "Raised when the size of this dock
+ changes (e.g. due to rearrangement of bands or docking/undocking)."
+Public Event Docked(ByVal key As String)
+Attribute Docked.VB_Description = "Raised when the specified bar is docked."
+Public Event Undocked(ByVal key As String)
+Attribute Undocked.VB_Description = "Raised when the specified bar is undocked."
+Public Event BarClose(ByVal sKey As String, ByRef bCancel As Boolean)
+Attribute BarClose.VB_Description = "Raised when the user clicks the close
+ button on an undocked toolbar owned by this container."
+
+Public Property Get OfficeXpStyle() As Boolean
+Attribute OfficeXpStyle.VB_Description = "Gets/sets whether the control draws
+ using Office XP Style or not."
+   OfficeXpStyle = m_bXPStyle
+End Property
+Public Property Let OfficeXpStyle(ByVal bState As Boolean)
+Dim i As Long
+   m_bXPStyle = bState
+   On Error Resume Next
+   For i = picBar.LBound To picBar.UBound
+      If (m_bXPStyle) Then
+         picBar(i).BackColor = VSNetControlColor
+      Else
+         picBar(i).BackColor = vbButtonFace
+      End If
+   Next i
+   PropertyChanged "OfficeXpStyle"
+End Property
+
+Friend Function fJustDocked(ByVal sKey As String)
+   ' we have to make it look like there was a mouse down
+   ' on the bar added at sKey, then trap mouse events into
+   ' this control:
+Dim lIndex As Long
+Dim tP As POINTAPI
+   If getBarForKey(sKey, lIndex) Then
+      GetCursorPos tP
+      ScreenToClient picBar(lIndex).hwnd, tP
+      mouseDown lIndex, tP.x * Screen.TwipsPerPixelX, tP.y *
+       Screen.TwipsPerPixelY
+      UserControl.SetFocus
+   End If
+End Function
+
+Public Function SaveLayout() As String
+Attribute SaveLayout.VB_Description = "Saves the current layout to an XML
+ string for use later with the RestoreLayout method."
+   '
+   Dim i As Long
+   Dim j As Long
+   Dim attr As IXMLDOMAttribute
+   Dim nodWork As IXMLDOMNode
+   Dim lPtr As Long
+   
+   Dim dom As New DOMDocument
+   Dim nodTop As IXMLDOMNode
+   
+   Set nodTop = dom.createElement("Dock")
+   Set attr = dom.createAttribute("name")
+   attr.Value = UserControl.Extender.Name
+   nodTop.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("version")
+   attr.Value = "1.0"
+   nodTop.Attributes.setNamedItem attr
+   
+   ' Save the general configuration:
+   Set nodWork = dom.createElement("Configuration")
+   Set attr = dom.createAttribute("allowDragOff")
+   attr.Value = IIf(m_bAllowDragOff, "y", "n")
+   nodWork.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("lockToolbars")
+   attr.Value = IIf(m_bLockToolbars, "y", "n")
+   nodWork.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("officeXpStyle")
+   attr.Value = IIf(m_bXPStyle, "y", "n")
+   nodWork.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("nonDockingArea")
+   attr.Value = IIf(m_bNonDockingArea, "y", "n")
+   nodWork.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("nonDockingAreaSize")
+   attr.Value = m_lNonDockingAreaSize
+   nodWork.Attributes.setNamedItem attr
+   nodTop.appendChild nodWork
+   
+   ' Save the rows:
+   Dim nodRows As IXMLDOMNode
+   Set nodRows = dom.createElement("Rows")
+   Set attr = dom.createAttribute("count")
+   attr.Value = m_lRows
+   nodRows.Attributes.setNamedItem attr
+   For i = 1 To m_lRows
+      Set nodWork = dom.createElement("Row")
+      Set attr = dom.createAttribute("index")
+      attr.Value = i
+      nodWork.Attributes.setNamedItem attr
+      
+      Set attr = dom.createAttribute("barCount")
+      attr.Value = m_tRow(i).lCount
+      nodWork.Attributes.setNamedItem attr
+      Set attr = dom.createAttribute("height")
+      attr.Value = m_tRow(i).lHeight
+      nodWork.Attributes.setNamedItem attr
+      
+      Dim nodBars As IXMLDOMNode
+      Set nodBars = dom.createElement("Bars")
+      Dim nodBar As IXMLDOMNode
+      For j = 1 To m_tRow(i).lCount
+         Set nodBar = dom.createElement("Bar")
+         Set attr = dom.createAttribute("index")
+         attr.Value = j
+         nodBar.Attributes.setNamedItem attr
+         
+         saveBarLayout dom, nodBar, m_tRow(i).tBar(j)
+         
+         saveHiddenItems dom, nodBar, m_tRow(i).tBar(j)
+         
+         nodBars.appendChild nodBar
+      Next j
+      nodWork.appendChild nodBars
+      
+      nodRows.appendChild nodWork
+   Next i
+   nodTop.appendChild nodRows
+
+   ' Save the pic index data;
+   Dim nodPicIndexes As IXMLDOMNode
+   Set nodPicIndexes = dom.createElement("PicIndexes")
+   Set attr = dom.createAttribute("count")
+   attr.Value = m_lCount
+   nodPicIndexes.Attributes.setNamedItem attr
+   Dim nodPicIndex As IXMLDOMNode
+   For i = 1 To m_lCount
+      Set nodPicIndex = dom.createElement("PicIndex")
+      Set attr = dom.createAttribute("index")
+      attr.Value = i
+      nodPicIndex.Attributes.setNamedItem attr
+      Set attr = dom.createAttribute("value")
+      attr.Value = m_pic(i)
+      nodPicIndex.Attributes.setNamedItem attr
+      nodPicIndexes.appendChild nodPicIndex
+   Next i
+   nodTop.appendChild nodPicIndexes
+   
+   ' Save the undocked items:
+   Dim nodUndocked As IXMLDOMNode
+   Set nodUndocked = dom.createElement("UndockedBars")
+   Set attr = dom.createAttribute("count")
+   attr.Value = m_iDragOffCount
+   nodUndocked.Attributes.setNamedItem attr
+   Dim nodUndockedBar As IXMLDOMNode
+   For i = 1 To m_iDragOffCount
+      Set nodUndockedBar = dom.createElement("UndockedBar")
+      saveUndockedBarLayout dom, nodUndockedBar, i
+      nodUndocked.appendChild nodUndockedBar
+   Next i
+   nodTop.appendChild nodUndocked
+   
+   ' Add to the top node:
+   dom.appendChild nodTop
+   
+   ' Return the XML:
+   SaveLayout = dom.xml
+      
+End Function
+
+Private Sub saveHiddenItems(dom As DOMDocument, nodBar As IXMLDOMNode, tBar As
+ tDockedBar)
+Dim i As Long
+Dim key As Variant
+   For i = 1 To m_iHiddenItemCount
+      If (IsNumeric(picBar(m_pic(tBar.lIdx)).Tag)) Then
+         If (m_tHiddenItems(i).hwnd = CLng(picBar(m_pic(tBar.lIdx)).Tag)) Then
+            Dim nodHiddenItems As IXMLDOMNode
+            Set nodHiddenItems = dom.createElement("HiddenItems")
+            Dim nodHidden As IXMLDOMNode
+            Dim attr As IXMLDOMAttribute
+            For Each key In m_tHiddenItems(i).cKeys
+               Set nodHidden = dom.createElement("Hidden")
+               Set attr = dom.createAttribute("key")
+               attr.Value = key
+               nodHidden.Attributes.setNamedItem attr
+               nodHiddenItems.appendChild nodHidden
+            Next
+            nodBar.appendChild nodHiddenItems
+         End If
+      End If
+   Next i
+End Sub
+
+Private Sub saveUndockedBarLayout(dom As DOMDocument, nodBar As IXMLDOMNode,
+ lIndex As Long)
+Dim lPtr As Long
+Dim attr As IXMLDOMAttribute
+
+   lPtr = GetProp(m_lDragOff(lIndex), UNDOCKEDCONTAINERID)
+   If Not (lPtr = 0) Then
+      Dim tBar As tDockedBar
+      Dim x As Long
+      Dim y As Long
+      Dim width As Long
+      Dim height As Long
+      Dim f As frmToolbar
+      Set f = objectFromPtr(lPtr)
+      f.getDetails tBar.sKey, tBar.cXAHorz, tBar.cYAHorz, tBar.cXAVert,
+       tBar.cYAVert, _
+         tBar.bFillRow, tBar.sTitle, tBar.bCanDockHorizontal,
+          tBar.bCanDockVertical, _
+         tBar.bCanClose, x, y, width, height
+      saveBarLayout dom, nodBar, tBar
+      
+      Set attr = dom.createAttribute("xPos")
+      attr.Value = x
+      nodBar.Attributes.setNamedItem attr
+      Set attr = dom.createAttribute("yPos")
+      attr.Value = y
+      nodBar.Attributes.setNamedItem attr
+      Set attr = dom.createAttribute("width")
+      attr.Value = width
+      nodBar.Attributes.setNamedItem attr
+      Set attr = dom.createAttribute("height")
+      attr.Value = height
+      nodBar.Attributes.setNamedItem attr
+      
+   End If
+End Sub
+
+Private Sub saveBarLayout(dom As DOMDocument, nodBar As IXMLDOMNode, tBar As
+ tDockedBar)
+Dim attr As IXMLDOMAttribute
+
+   Set attr = dom.createAttribute("lx")
+   attr.Value = tBar.lX
+   nodBar.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("cx")
+   attr.Value = tBar.cx
+   nodBar.Attributes.setNamedItem attr
+   
+   Set attr = dom.createAttribute("cXA")
+   attr.Value = tBar.cXA
+   nodBar.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("cYA")
+   attr.Value = tBar.cYA
+   nodBar.Attributes.setNamedItem attr
+   
+   Set attr = dom.createAttribute("cXAHorz")
+   attr.Value = tBar.cXAHorz
+   nodBar.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("cYAHorz")
+   attr.Value = tBar.cYAHorz
+   nodBar.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("cXAVert")
+   attr.Value = tBar.cXAVert
+   nodBar.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("cYAVert")
+   attr.Value = tBar.cYAVert
+   nodBar.Attributes.setNamedItem attr
+   
+   Set attr = dom.createAttribute("lIdx")
+   attr.Value = tBar.lIdx
+   nodBar.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("sKey")
+   attr.Value = tBar.sKey
+   nodBar.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("sTitle")
+   attr.Value = tBar.sTitle
+   nodBar.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("bFillRow")
+   attr.Value = IIf(tBar.bFillRow, "y", "n")
+   nodBar.Attributes.setNamedItem attr
+   
+   Set attr = dom.createAttribute("lThisX")
+   attr.Value = tBar.lThisX
+   nodBar.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("lThisY")
+   attr.Value = tBar.lThisY
+   nodBar.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("lLastX")
+   attr.Value = tBar.lLastX
+   nodBar.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("lLastY")
+   attr.Value = tBar.lLastY
+   nodBar.Attributes.setNamedItem attr
+   
+   Set attr = dom.createAttribute("lOffsetX")
+   attr.Value = tBar.lOffsetX
+   nodBar.Attributes.setNamedItem attr
+   
+   Set attr = dom.createAttribute("bActiveBar")
+   attr.Value = IIf(tBar.bActiveBar, "y", "n")
+   nodBar.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("eAction")
+   attr.Value = tBar.eAction
+   nodBar.Attributes.setNamedItem attr
+   
+   Set attr = dom.createAttribute("bRowLastChosenBar")
+   attr.Value = IIf(tBar.bRowLastChosenBar, "y", "n")
+   nodBar.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("lXSingleRow")
+   attr.Value = tBar.lXSingleRow
+   nodBar.Attributes.setNamedItem attr
+   
+   Set attr = dom.createAttribute("bCanDockHorizontal")
+   attr.Value = IIf(tBar.bCanDockHorizontal, "y", "n")
+   nodBar.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("bCanDockVertical")
+   attr.Value = IIf(tBar.bCanDockVertical, "y", "n")
+   nodBar.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("bCanClose")
+   attr.Value = IIf(tBar.bCanClose, "y", "n")
+   nodBar.Attributes.setNamedItem attr
+   Set attr = dom.createAttribute("bShowChevron")
+   attr.Value = IIf(tBar.bShowChevron, "y", "n")
+   nodBar.Attributes.setNamedItem attr
+   
+End Sub
+
+Public Sub RestoreLayout(ByVal sLayoutXml As String, ByRef sKey() As String,
+ ByRef hwnd() As Long)
+Attribute RestoreLayout.VB_Description = "Restores a layout from XML previously
+ generated using the SaveLayout function."
+   '
+   
+   ' Clear everything internally:
+   Dim lPtr As Long
+   Dim i As Long
+   Dim f As frmToolbar
+   Dim lhWnd As Long
+   Dim key As Variant
+   
+   m_tmr.Interval = 0
+   For i = 1 To m_iHiddenItemCount
+      lPtr = GetProp(m_tHiddenItems(i).hwnd, "vbalTbar:ControlPtr")
+      If Not (lPtr = 0) Then
+         Dim ctl As Object
+         Set ctl = objectFromPtr(lPtr)
+         For Each key In m_tHiddenItems(i).cKeys
+            ctl.ButtonVisible(i) = True
+         Next
+      End If
+   Next i
+   m_iHiddenItemCount = 0
+   Erase m_tHiddenItems
+   m_lCount = 0
+   Erase m_pic
+   m_lRows = 0
+   Erase m_tRow
+   Erase m_tChevron
+   m_bXPStyle = True
+   m_iActiveBar = 0
+   m_lIndexActiveBar = 0
+   m_lMinBarSize = 0
+   m_lMinBestBarSize = 0
+   m_bAllowDragOff = True
+   m_bLockToolbars = False
+   m_bResizeInterlock = False
+   m_bNonDockingArea = False
+   m_lNonDockingAreaSize = 24
+   For i = 1 To m_iDragOffCount
+      lPtr = GetProp(m_lDragOff(i), UNDOCKEDCONTAINERID)
+      If Not (lPtr = 0) Then
+         Set f = objectFromPtr(lPtr)
+         lhWnd = f.DockedhWnd
+         If Not (lhWnd = 0) Then
+            ShowWindow lhWnd, SW_HIDE
+            SetParent lhWnd, m_hWndCtl
+         End If
+         Unload f
+         Set f = Nothing
+      End If
+   Next i
+   m_iDragOffCount = 0
+   Erase m_lDragOff
+   Erase m_sDragOff
+   If (picBar.UBound &gt; 0) Then
+      For i = 1 To picBar.UBound
+         On Error Resume Next
+         If IsNumeric(picBar(i).Tag) Then
+            DetachMessage Me, picBar(i).hwnd, WM_ERASEBKGND
+            DetachMessage Me, picBar(i).hwnd, WM_DESTROY
+            ShowWindow picBar(i).Tag, SW_HIDE
+            SetParent picBar(i).Tag, m_hWndCtl
+         End If
+         Unload picBar(i)
+         picBar(i).Tag = ""
+         On Error GoTo 0
+      Next i
+      If IsNumeric(picBar(0).Tag) Then
+         DetachMessage Me, picBar(0).hwnd, WM_ERASEBKGND
+         DetachMessage Me, picBar(0).hwnd, WM_DESTROY
+         ShowWindow picBar(0).Tag, SW_HIDE
+         SetParent picBar(0).Tag, m_hWndCtl
+         picBar(0).Tag = ""
+      End If
+   End If
+   
+   ' Now read the layout information:
+   Dim dom As New DOMDocument
+   dom.loadXML sLayoutXml
+   
+   Dim nodTop As IXMLDOMNode
+   Set nodTop = dom.selectSingleNode("//Dock[@name='" +
+    UserControl.Extender.Name + "']")
+   If Not nodTop Is Nothing Then
+      
+      Dim nodWork As IXMLDOMNode
+      For Each nodWork In nodTop.childNodes
+         Select Case nodWork.nodeName
+         Case "Configuration"
+            restoreConfiguration nodWork
+         Case "Rows"
+            restoreRows nodWork
+         Case "PicIndexes"
+            restorePicIndexes nodWork
+         Case "UndockedBars"
+            restoreUndockedBars nodWork, sKey(), hwnd()
+         End Select
+      Next
+      
+      ' Ensure we have enough chevrons:
+      ReDim m_tChevron(0 To picBar.UBound) As tChevron
+      
+      ' Fix up the docked items &amp; the picBars
+      ' using the passed in array of keys/hWnds:
+      Dim cXA As Long
+      Dim cYA As Long
+      Dim lIndex As Long
+      Dim lRow As Long
+      Dim lBar As Long
+      
+      For i = LBound(sKey) To UBound(sKey)
+         For lRow = 1 To m_lRows
+            For lBar = 1 To m_tRow(lRow).lCount
+               If (m_tRow(lRow).tBar(lBar).sKey = sKey(i)) Then
+                  lIndex = m_pic(m_tRow(lRow).tBar(lBar).lIdx)
+                  cXA = m_tRow(lRow).tBar(lBar).cXA
+                  cYA = m_tRow(lRow).tBar(lBar).cYA
+                  Debug.Print "Setting "; Hex(hwnd(i)); " into picBar(" &amp;
+                   lIndex &amp; ")", Hex(picBar(lIndex).hwnd), sKey(i)
+                  If Not (Horizontal) Then
+                     hideControlsInToolbar hwnd(i), True
+                  End If
+                  SetParent hwnd(i), picBar(lIndex).hwnd
+                  If UserControl.Extender.Align = vbAlignTop Or
+                   UserControl.Extender.Align = vbAlignBottom Then
+                     MoveWindow hwnd(i), 10, 1, cXA - 22, cYA - 2, 1
+                  Else
+                     MoveWindow hwnd(i), 1, 10, cYA - 2, cXA - 22, 1
+                  End If
+                  picBar(lIndex).Tag = hwnd(i)
+                  picBar(lIndex).Visible = True
+                  ShowWindow hwnd(i), 1
+                  On Error Resume Next
+                  AttachMessage Me, picBar(lIndex).hwnd, WM_ERASEBKGND
+                  AttachMessage Me, picBar(lIndex).hwnd, WM_DESTROY
+               End If
+            Next lBar
+         Next lRow
+      Next i
+      
+      Resize
+   End If
+   
+   '
+End Sub
+
+Private Sub restoreConfiguration(nodConfiguration As IXMLDOMNode)
+Dim attr As IXMLDOMAttribute
+   For Each attr In nodConfiguration.Attributes
+      Select Case attr.Name
+      Case "allowDragOff"
+         m_bAllowDragOff = IIf(attr.Value = "n", False, True)
+      Case "lockToolbars"
+         m_bLockToolbars = IIf(attr.Value = "y", True, False)
+      Case "officeXpStyle"
+         m_bXPStyle = IIf(attr.Value = "n", False, True)
+      Case "nonDockingArea"
+         m_bNonDockingArea = IIf(attr.Value = "y", True, False)
+      Case "nonDockingAreaSize"
+         m_lNonDockingAreaSize = CLng(attr.Value)
+      End Select
+   Next
+End Sub
+
+Private Sub restoreRows(nodRows As IXMLDOMNode)
+Dim attr As IXMLDOMAttribute
+Dim lRow As Long
+Dim lBar As Long
+Dim lTotalBarCount As Long
+
+   Set attr = nodRows.Attributes.getNamedItem("count")
+   m_lRows = CLng(attr.Value)
+   If (m_lRows &gt; 0) Then
+      ReDim m_tRow(1 To m_lRows) As tDockedRow
+      Dim nodRow As IXMLDOMNode
+      For Each nodRow In nodRows.childNodes
+         Set attr = nodRow.Attributes.getNamedItem("index")
+         lRow = CLng(attr.Value)
+         Set attr = nodRow.Attributes.getNamedItem("barCount")
+         m_tRow(lRow).lCount = CLng(attr.Value)
+         Set attr = nodRow.Attributes.getNamedItem("height")
+         m_tRow(lRow).lHeight = CLng(attr.Value)
+         If (m_tRow(lRow).lCount &gt; 0) Then
+            ReDim m_tRow(lRow).tBar(1 To m_tRow(lRow).lCount) As tDockedBar
+            Dim nodBars As IXMLDOMNode
+            Set nodBars = nodRow.firstChild
+            Dim nodBar As IXMLDOMNode
+            For Each nodBar In nodBars.childNodes
+               lTotalBarCount = lTotalBarCount + 1
+               Set attr = nodBar.Attributes.getNamedItem("index")
+               lBar = CLng(attr.Value)
+               For Each attr In nodBar.Attributes
+                  With m_tRow(lRow).tBar(lBar)
+                     Select Case attr.Name
+                     Case "lx"
+                        .lX = CLng(attr.Value)
+                     Case "cx"
+                        .cx = CLng(attr.Value)
+                     Case "cXA"
+                        .cXA = CLng(attr.Value)
+                     Case "cYA"
+                        .cYA = CLng(attr.Value)
+                     Case "cXAHorz"
+                        .cXAHorz = CLng(attr.Value)
+                     Case "cYAHorz"
+                        .cYAHorz = CLng(attr.Value)
+                     Case "cXAVert"
+                        .cXAVert = CLng(attr.Value)
+                     Case "cYAVert"
+                        .cYAVert = CLng(attr.Value)
+                     Case "lIdx"
+                        .lIdx = CLng(attr.Value)
+                     Case "sKey"
+                        .sKey = attr.Value
+                     Case "sTitle"
+                        .sTitle = attr.Value
+                     Case "bFillRow"
+                        .bFillRow = IIf(attr.Value = "y", True, False)
+                     Case "lThisX"
+                        .lThisX = CLng(attr.Value)
+                     Case "lThisY"
+                        .lThisY = CLng(attr.Value)
+                     Case "lLastX"
+                        .lLastX = CLng(attr.Value)
+                     Case "lLastY"
+                        .lLastY = CLng(attr.Value)
+                     Case "lOffsetX"
+                        .lOffsetX = CLng(attr.Value)
+                     Case "bActiveBar"
+                        .bActiveBar = IIf(attr.Value = "y", True, False)
+                     Case "eAction"
+                        .eAction = CLng(attr.Value)
+                     Case "bRowLastChosenBar"
+                        .bRowLastChosenBar = IIf(attr.Value = "y", True, False)
+                     Case "lXSingleRow"
+                        .lXSingleRow = CLng(attr.Value)
+                     Case "bCanDockHorizontal"
+                        .bCanDockHorizontal = IIf(attr.Value = "n", False, True)
+                     Case "bCanDockVertical"
+                        .bCanDockVertical = IIf(attr.Value = "n", False, True)
+                     Case "bCanClose"
+                        .bCanClose = IIf(attr.Value = "n", False, True)
+                     Case "bShowChevron"
+                        .bShowChevron = IIf(attr.Value = "n", False, True)
+                     End Select
+                  End With
+               Next
+            Next
+         End If
+      Next
+      ' Ensure we have enough rows available to accommodate all bars:
+      If (lTotalBarCount &gt; m_lRows) Then
+         ReDim Preserve m_tRow(1 To lTotalBarCount) As tDockedRow
+      End If
+      For lRow = 1 To lTotalBarCount
+         ReDim Preserve m_tRow(lRow).tBar(1 To lTotalBarCount) As tDockedBar
+      Next lRow
+   End If
+End Sub
+
+Private Sub restorePicIndexes(nodPicIndexes As IXMLDOMNode)
+Dim nodPicIndex As IXMLDOMNode
+Dim attr As IXMLDOMAttribute
+Dim lIndex As Long
+Dim lValue As Long
+Dim i As Long
+
+   Set attr = nodPicIndexes.Attributes.getNamedItem("count")
+   m_lCount = CLng(attr.Value)
+   If (m_lCount &gt; 0) Then
+      ReDim m_pic(1 To m_lCount) As Long
+      For Each nodPicIndex In nodPicIndexes.childNodes
+         Set attr = nodPicIndex.Attributes.getNamedItem("index")
+         lIndex = CLng(attr.Value)
+         Set attr = nodPicIndex.Attributes.getNamedItem("value")
+         lValue = CLng(attr.Value)
+         m_pic(lIndex) = lValue
+         If (lValue &gt; picBar.UBound) Then
+            For i = picBar.UBound + 1 To lValue
+               Load picBar(i)
+               picBar(i).Tag = ""
+            Next i
+         End If
+      Next
+   End If
+End Sub
+
+Private Sub restoreUndockedBars(nodUndockedBars As IXMLDOMNode, sKey() As
+ String, hwnd() As Long)
+Dim nodUndocked As IXMLDOMNode
+Dim attr As IXMLDOMAttribute
+Dim tBarBlank As tDockedBar
+Dim tBar As tDockedBar
+Dim x As Long
+Dim y As Long
+Dim width As Long
+Dim height As Long
+Dim i As Long
+Dim hWndA As Long
+
+   For Each nodUndocked In nodUndockedBars.childNodes
+      LSet tBar = tBarBlank
+      For Each attr In nodUndocked.Attributes
+         Select Case attr.Name
+         Case "cXAHorz"
+            tBar.cXAHorz = CLng(attr.Value)
+         Case "cYAHorz"
+            tBar.cYAHorz = CLng(attr.Value)
+         Case "cXAVert"
+            tBar.cXAVert = CLng(attr.Value)
+         Case "cYAVert"
+            tBar.cYAVert = CLng(attr.Value)
+         Case "sKey"
+            tBar.sKey = attr.Value
+         Case "sTitle"
+            tBar.sTitle = attr.Value
+         Case "bFillRow"
+            tBar.bFillRow = IIf(attr.Value = "y", True, False)
+         Case "bCanDockHorizontal"
+            tBar.bCanDockHorizontal = IIf(attr.Value = "n", False, True)
+         Case "bCanDockVertical"
+            tBar.bCanDockVertical = IIf(attr.Value = "n", False, True)
+         Case "bCanClose"
+            tBar.bCanClose = IIf(attr.Value = "n", False, True)
+         Case "bShowChevron"
+            tBar.bShowChevron = IIf(attr.Value = "n", False, True)
+         Case "xPos"
+            x = CLng(attr.Value)
+         Case "yPos"
+            y = CLng(attr.Value)
+         Case "width"
+            width = CLng(attr.Value)
+         Case "height"
+            height = CLng(attr.Value)
+         End Select
+      Next
+      
+      ' create new toolbar
+      Dim f As New frmToolbar
+      f.width = width * Screen.TwipsPerPixelX
+      f.height = height * Screen.TwipsPerPixelY
+   
+      ' eval position to show
+      f.Move x * Screen.TwipsPerPixelX, y * Screen.TwipsPerPixelY
+      With tBar
+         f.init .sKey, _
+            m_hWndCtl, _
+            m_hWndParent, _
+            .cXAHorz, .cYAHorz, .cXAVert, .cYAVert, _
+            .bFillRow, _
+            .sTitle, _
+            .bCanDockHorizontal, .bCanDockVertical, _
+            .bCanClose, _
+            m_bXPStyle, _
+            True
+      End With
+   
+      ' remove the bar from the control so it can be seen
+      ' floating instead:
+      For i = LBound(sKey) To UBound(sKey)
+         If (sKey(i) = tBar.sKey) Then
+            hWndA = hwnd(i)
+            Exit For
+         End If
+      Next i
+      If Not (hWndA = 0) Then
+         ShowWindow hWndA, 0
+         SetParent hWndA, 0
+      End If
+   
+      ' show in position &amp; redirect mouse messages
+      f.Show , UserControl.Parent
+   
+      ' ensure any captured window moves correctly:
+      f.Capture hWndA
+   
+      ' now store a reference that we've dragged this item off:
+      m_iDragOffCount = m_iDragOffCount + 1
+      ReDim Preserve m_lDragOff(1 To m_iDragOffCount) As Long
+      ReDim Preserve m_sDragOff(1 To m_iDragOffCount) As String
+      m_lDragOff(m_iDragOffCount) = f.hwnd
+      m_sDragOff(m_iDragOffCount) = tBar.sKey
+   Next
+End Sub
+
+Public Property Get NonDockingArea() As Boolean
+Attribute NonDockingArea.VB_Description = "Gets/sets whether a space is left at
+ the edge of this dock closed to the window.  This space can be used for status
+ bars or other non-dockable objects."
+   NonDockingArea = m_bNonDockingArea
+End Property
+Public Property Let NonDockingArea(ByVal bState As Boolean)
+   m_bNonDockingArea = bState
+   Resize
+   PropertyChanged "NonDockingArea"
+End Property
+
+Public Property Get NonDockingAreaSize() As Long
+Attribute NonDockingAreaSize.VB_Description = "Gets/sets the size of the
+ non-dockable area when the NonDockingArea flag is set."
+   NonDockingAreaSize = m_lNonDockingAreaSize
+End Property
+Public Property Let NonDockingAreaSize(ByVal lSize As Long)
+   m_lNonDockingAreaSize = lSize
+   Resize
+   PropertyChanged "NonDockingAreaSize"
+End Property
+
+Public Property Get AllowUndock() As Boolean
+Attribute AllowUndock.VB_Description = "Gets/sets whether items added to this
+ container can be undocked.  Defaults to True."
+   AllowUndock = m_bAllowDragOff
+End Property
+Public Property Let AllowUndock(ByVal bState As Boolean)
+   m_bAllowDragOff = bState
+   PropertyChanged "AllowUndock"
+End Property
+
+Public Property Get LockToolBars() As Boolean
+Attribute LockToolBars.VB_Description = "Prevents re-arrangement or resizing of
+ the toolbars within this dock."
+   LockToolBars = m_bLockToolbars
+End Property
+Public Property Let LockToolBars(ByVal bState As Boolean)
+   m_bLockToolbars = bState
+   Resize
+   PropertyChanged "LockToolbars"
+End Property
+
+Public Property Get ContainerForKey(ByVal sKey As String) As vbalDockContainer
+Attribute ContainerForKey.VB_Description = "Gets the control which owns the bar
+ with the specified key."
+Dim i As Long
+Dim ctl As vbalDockContainer
+Dim lPtr As Long
+   findDockTargets m_hWndParent
+   For i = 1 To DockTargetCount
+      lPtr = GetProp(DockTarget(i), DOCKCONTAINERID)
+      If Not (lPtr = 0) Then
+         Set ctl = objectFromPtr(lPtr)
+         If (ctl.OwnsKey(sKey)) Then
+            Set ContainerForKey = ctl
+            Exit Property
+         End If
+      End If
+   Next i
+End Property
+
+Public Property Get OwnsKey(ByVal sKey As String) As Boolean
+Attribute OwnsKey.VB_Description = "Gets whether this container owns the bar
+ with the specified key (docked or undocked)"
+Dim i As Long
+Dim j As Long
+   For i = 1 To m_lRows
+      For j = 1 To m_tRow(i).lCount
+         If (m_tRow(i).tBar(j).sKey = sKey) Then
+            OwnsKey = True
+            Exit Property
+         End If
+      Next j
+   Next i
+   For i = 1 To m_iDragOffCount
+      If (m_sDragOff(i) = sKey) Then
+         OwnsKey = True
+         Exit Property
+      End If
+   Next i
+End Property
+
+Public Property Get IsDocked(ByVal sKey As String) As Boolean
+Attribute IsDocked.VB_Description = "Gets/sets whether the bar with the
+ specified key is docked or not."
+Dim i As Long
+Dim j As Long
+   If (OwnsKey(sKey)) Then
+      For i = 1 To m_lRows
+         For j = 1 To m_tRow(i).lCount
+            If (m_tRow(i).tBar(j).sKey = sKey) Then
+               IsDocked = True
+               Exit Property
+            End If
+         Next j
+      Next i
+   End If
+End Property
+
+Public Property Let IsDocked(ByVal sKey As String, ByVal bState As Boolean)
+Dim i As Long
+Dim j As Long
+Dim lPtr As Long
+
+   If (OwnsKey(sKey)) Then
+      If (bState) Then
+         ' Check all of the owned items:
+         For i = 1 To m_iDragOffCount
+            If (m_sDragOff(i) = sKey) Then
+               ' dock the item
+               lPtr = GetProp(m_lDragOff(i), UNDOCKEDCONTAINERID)
+               If Not (lPtr = 0) Then
+                  Dim f As frmToolbar
+                  f.performDock m_hWndCtl, 0, -1, False
+               End If
+               Exit For
+            End If
+         Next i
+      Else
+         For i = 1 To m_lRows
+            For j = 1 To m_tRow(i).lCount
+               If (m_tRow(i).tBar(j).sKey = sKey) Then
+                  ' undock the item
+                  Dim x As Long
+                  Dim y As Long
+                  Dim tR As RECT
+                  GetWindowRect m_hWndParent, tR
+                  x = tR.Left + (tR.Right - tR.Left) \ 2
+                  y = tR.Top + (tR.Bottom - tR.Top) \ 2
+                  undock i, j, x, y
+                  Exit Property
+               End If
+            Next j
+         Next i
+      End If
+   Else
+      Err.Raise 9, App.EXEName, "This container does not own the item with the
+       key " &amp; sKey
+   End If
+
+End Property
+
+
+Friend Sub RemoveUndocked(ByVal sKey As String)
+Dim i As Long
+Dim lIndex As Long
+   For i = 1 To m_iDragOffCount
+      If (m_sDragOff(i) = sKey) Then
+         lIndex = i
+      End If
+   Next i
+   If (lIndex &gt; 0) Then
+      If (m_iDragOffCount &gt; 1) Then
+         For i = lIndex To m_iDragOffCount - 1
+            m_lDragOff(i + 1) = m_lDragOff(i)
+            m_sDragOff(i + 1) = m_sDragOff(i)
+         Next i
+         m_iDragOffCount = m_iDragOffCount - 1
+         ReDim Preserve m_lDragOff(1 To m_iDragOffCount) As Long
+         ReDim Preserve m_sDragOff(1 To m_iDragOffCount) As String
+      Else
+         m_iDragOffCount = 0
+         Erase m_lDragOff
+         Erase m_sDragOff
+      End If
+   End If
+End Sub
+
+Public Property Get BarCount() As Long
+Attribute BarCount.VB_Description = "Gets the number of bars docked in this
+ control."
+   BarCount = m_lCount + m_iDragOffCount
+End Property
+
+Public Property Get BarKey(ByVal index As Long) As String
+Attribute BarKey.VB_Description = "Gets the Key for the bar with the specified
+ index within the control."
+Dim i As Long
+Dim j As Long
+Dim lIdx As Long
+   lIdx = 0
+   For i = 1 To m_lRows
+      For j = 1 To m_tRow(i).lCount
+         lIdx = lIdx + 1
+         If (lIdx = index) Then
+            BarKey = m_tRow(i).tBar(j).sKey
+            Exit Property
+         End If
+      Next j
+   Next i
+   For i = 1 To m_iDragOffCount
+      lIdx = lIdx + 1
+      If (lIdx = index) Then
+         BarKey = m_sDragOff(i)
+         Exit For
+      End If
+   Next i
+End Property
+
+Public Property Get RowCount() As Long
+Attribute RowCount.VB_Description = "Gets the number of rows in this dock."
+   RowCount = m_lRows
+End Property
+
+Public Sub BandSizeChange( _
+      key As Variant, _
+      ByVal cXAHorz As Long, _
+      ByVal cYAHorz As Long, _
+      ByVal cXAVert As Long, _
+      ByVal cYAVert As Long _
+   )
+Attribute BandSizeChange.VB_Description = "Call when you change the size of an
+ object which is docked into the control."
+Dim lRow As Long, lBar As Long
+Dim lIndex As Long
+Dim bFound As Boolean
+Dim i As Long
+Dim lPtr As Long
+
+   If getBarForKey(key, lIndex) Then
+      For lRow = 1 To m_lRows
+         For lBar = 1 To m_tRow(lRow).lCount
+            If m_pic(m_tRow(lRow).tBar(lBar).lIdx) = lIndex Then
+               With m_tRow(lRow).tBar(lBar)
+                  .cXAHorz = cXAHorz + 10 + 12
+                  .cYAHorz = cYAHorz + 2
+                  .cXAVert = cXAVert + 10 + 12
+                  .cYAVert = cYAVert + 2
+                  If Horizontal Then
+                     .cXA = .cXAHorz
+                     .cYA = .cYAHorz
+                  Else
+                     .cXA = .cXAVert
+                     .cYA = .cYAVert
+                  End If
+                  rowSize lRow
+                  Resize
+               End With
+               Exit Sub
+            End If
+         Next lBar
+      Next lRow
+   Else
+      For i = 1 To m_iDragOffCount
+         If (m_sDragOff(i) = key) Then
+            lPtr = GetProp(m_lDragOff(i), UNDOCKEDCONTAINERID)
+            If Not (lPtr = 0) Then
+               Dim f As frmToolbar
+               Set f = objectFromPtr(lPtr)
+               f.BandSizeChange _
+                  cXAHorz, cYAHorz, _
+                  cXAVert, cYAVert
+            End If
+            bFound = True
+            Exit For
+         End If
+      Next i
+      
+      If Not bFound Then
+         ' is an error
+         Err.Raise 9, App.EXEName &amp; ".vbalDockContainer", "The key '" &amp; key &amp;
+          "' is not associated with this bar"
+      End If
+   End If
+End Sub
+
+Private Function getBarForKey( _
+      ByVal key As Variant, _
+      ByRef lIndex As Long _
+   ) As Boolean
+Dim lRow As Long
+Dim lBar As Long
+Dim i As Long
+Dim iJunk As Long
+Dim iCount As Long
+   
+   If IsNumeric(key) Then
+      On Error Resume Next
+      For i = picBar.LBound To picBar.UBound
+         Err.Clear
+         iJunk = picBar(i).index
+         If Err.Number = 0 Then
+            iCount = iCount + 1
+            If iCount = key Then
+               lIndex = i
+               getBarForKey = True
+               Exit Function
+            End If
+         End If
+      Next i
+   Else
+      For lRow = 1 To m_lRows
+         With m_tRow(lRow)
+            For lBar = 1 To .lCount
+               If .tBar(lBar).sKey = key Then
+                  lIndex = m_pic(.tBar(lBar).lIdx)
+                  getBarForKey = True
+                  Exit Function
+               End If
+            Next lBar
+         End With
+      Next lRow
+   End If
+   
+End Function
+
+Public Sub Remove( _
+      ByVal key As Variant _
+   )
+Attribute Remove.VB_Description = "Removes the specified bar from this dock."
+Dim lRow As Long, lBar As Long
+Dim lTheRow As Long, lTheBar As Long
+Dim lIdx As Long
+Dim lIndex As Long
+   
+   If getBarForKey(key, lIndex) Then
+
+      ' Remove the bar lPtr from the thing:
+      For lRow = 1 To m_lRows
+         With m_tRow(lRow)
+            For lBar = 1 To .lCount
+               If m_pic(.tBar(lBar).lIdx) = lIndex Then
+                  lIdx = .tBar(lBar).lIdx
+                  lTheRow = lRow
+                  lTheBar = lBar
+                  Exit For
+               End If
+            Next lBar
+         End With
+         If lTheBar &gt; 0 Then
+            Exit For
+         End If
+      Next lRow
+      
+      Dim lhWndCapture As Long
+      lhWndCapture = getCapturehWndForBar(lIndex)
+      If Not (lhWndCapture = 0) Then
+         hideControlsInToolbar lhWndCapture, False
+         
+         DetachMessage Me, picBar(lIndex).hwnd, WM_ERASEBKGND
+         DetachMessage Me, picBar(lIndex).hwnd, WM_DESTROY
+      End If
+      RemoveProp hwnd, DOCKCONTAINERBARINDEX
+      If lIndex &gt; 0 Then
+         Unload picBar(lIndex)
+      Else
+         picBar(0).Visible = False
+         picBar(0).Tag = ""
+      End If
+      If lTheBar &gt; 0 And lTheRow &gt; 0 Then
+         If m_lCount &lt;= 1 Then
+            ' no bars left
+            m_lCount = 0
+            'Erase m_tRow
+            Erase m_pic
+            m_lRows = 0
+         Else
+            ' Some bars left:
+            ' ? Only one bar on this row?
+            If m_tRow(lTheRow).lCount = 1 Then
+               ' all subsequent rows move up
+               For lRow = lTheRow To m_lRows - 1
+                  m_tRow(lRow).lCount = m_tRow(lRow + 1).lCount
+                  For lBar = 1 To m_tRow(lRow + 1).lCount
+                     LSet m_tRow(lRow).tBar(lBar) = m_tRow(lRow + 1).tBar(lBar)
+                  Next lBar
+               Next lRow
+               m_tRow(m_lRows).lCount = 0
+               ' One row less
+               m_lRows = m_lRows - 1
+            Else
+               ' We need to remove this bar &amp;
+               ' then AutoSize the row:
+               For lBar = lTheBar To m_tRow(lTheRow).lCount - 1
+                  LSet m_tRow(lTheRow).tBar(lBar) = m_tRow(lTheRow).tBar(lBar +
+                   1)
+               Next lBar
+               m_tRow(lTheRow).lCount = m_tRow(lTheRow).lCount - 1
+               rowSize lTheRow
+               Resize
+            End If
+                                    
+            ' Remove from m_pic:
+            For lRow = lIdx To m_lCount - 1
+               m_pic(lRow) = m_pic(lRow + 1)
+            Next lRow
+            ' One less item:
+            m_lCount = m_lCount - 1
+         
+            For lRow = 1 To m_lRows
+               For lBar = 1 To m_tRow(lRow).lCount
+                  If m_tRow(lRow).tBar(lBar).lIdx &gt;= lIdx Then
+                     m_tRow(lRow).tBar(lBar).lIdx =
+                      m_tRow(lRow).tBar(lBar).lIdx - 1
+                  End If
+               Next lBar
+            Next lRow
+         
+         End If
+         
+         ' Redraw:
+         Resize
+         
+      End If
+   
+   End If
+   
+End Sub
+
+Private Function findPictureBox() As Long
+
+Dim i As Long
+Dim j As Long
+Dim l As Long
+Dim bUsed As Boolean
+Dim bLowestSet As Boolean
+Dim iLowestIndex As Long
+
+   For i = picBar.LBound To picBar.UBound
+      On Error Resume Next
+      l = picBar(i).index
+      If Err.Number = 0 Then
+         ' this exists
+         bUsed = False
+         For j = 1 To m_lCount
+            If m_pic(j) = i Then
+               bUsed = True
+               Exit For
+            End If
+         Next j
+         If Not bUsed Then
+            findPictureBox = i
+            Exit Function
+         End If
+      Else
+         If Not bLowestSet Then
+            bLowestSet = True
+            iLowestIndex = i
+         End If
+      End If
+      Err.Clear
+   Next i
+   
+   If bLowestSet Then
+      On Error Resume Next
+      Load picBar(iLowestIndex)
+      picBar(iLowestIndex).Tag = ""
+      On Error GoTo 0
+      findPictureBox = iLowestIndex
+   Else
+      Load picBar(picBar.UBound + 1)
+      picBar(picBar.UBound).Tag = ""
+      findPictureBox = picBar.UBound
+      ReDim Preserve m_tChevron(0 To picBar.UBound) As tChevron
+   End If
+   
+End Function
+
+Public Sub Add( _
+      ByVal key As String, _
+      ByVal cXAHorz As Long, _
+      ByVal cYAHorz As Long, _
+      ByVal cXAVert As Long, _
+      ByVal cYAVert As Long, _
+      Optional ByVal sTitle As String = "", _
+      Optional ByVal lRow As Long = -1, _
+      Optional ByVal lX As Long = 0, _
+      Optional ByVal cx As Long = -1, _
+      Optional ByVal bFillRow As Boolean = False, _
+      Optional ByVal bCanDockHorizontal As Boolean = True, _
+      Optional ByVal bCanDockVertical As Boolean = True, _
+      Optional ByVal bCanClose As Boolean = True _
+   )
+Attribute Add.VB_Description = "Adds a new dockable bar to the control. 
+ cXAHorz and cYAHorz specify the size of the control when docked horizontally,
+ cXAVert and cYAVert when it is docked vertically.  Note the Key must be unique
+ across all docks if the control can be dragged to other "
+Dim o As Object
+Dim i As Long
+Dim lBarY As Long
+Dim lIndex As Long
+Dim lPicIndex As Long
+Dim lBar As Long
+Dim lXOffset As Long
+Dim lYOffset As Long
+
+   GetCursorPos m_tPtDock
+   
+   ' Find a picture box for this item:
+   lPicIndex = findPictureBox()
+   cXAHorz = cXAHorz + 10 + 12
+   cYAHorz = cYAHorz + 2
+   cXAVert = cXAVert + 10 + 12
+   cYAVert = cYAVert + 2
+   'Debug.Print Key, cXAHorz, cYAHorz, cXAVert, cYAVert
+   
+   If (m_bNonDockingArea) Then
+      If (UserControl.Extender.Align = vbAlignTop) Then
+         lYOffset = m_lNonDockingAreaSize
+      ElseIf (UserControl.Extender.Align = vbAlignLeft) Then
+         lXOffset = m_lNonDockingAreaSize
+      End If
+   End If
+   
+   If (UserControl.Extender.Align = vbAlignTop) Or (UserControl.Extender.Align
+    = vbAlignBottom) Then
+      picBar(lPicIndex).Move (lX + lXOffset) * Screen.TwipsPerPixelX, lYOffset
+       * Screen.TwipsPerPixelY, cXAHorz * Screen.TwipsPerPixelX, cYAHorz *
+       Screen.TwipsPerPixelX
+   Else
+      picBar(lPicIndex).Move lXOffset * Screen.TwipsPerPixelX, (lX + lYOffset)
+       * Screen.TwipsPerPixelY, cYAVert * Screen.TwipsPerPixelX, cXAVert *
+       Screen.TwipsPerPixelY
+   End If
+   If (m_bXPStyle) Then
+      picBar(lPicIndex).BackColor = VSNetControlColor
+   Else
+      picBar(lPicIndex).BackColor = vbButtonFace
+   End If
+   picBar(lPicIndex).Visible = True
+   SetProp picBar(lPicIndex).hwnd, DOCKCONTAINERBARINDEX, lPicIndex
+   
+   ' Resize the internal array which holds the information
+   m_lCount = m_lCount + 1
+   ReDim Preserve m_tRow(1 To m_lCount) As tDockedRow
+   For i = 1 To m_lCount
+      ReDim Preserve m_tRow(i).tBar(1 To m_lCount) As tDockedBar
+   Next i
+   ReDim Preserve m_pic(1 To m_lCount) As Long
+   m_pic(m_lCount) = lPicIndex
+   
+   If lRow = -1 Then
+      
+      ' Add a new bar &amp; row:
+      m_lRows = m_lRows + 1
+      lRow = m_lRows
+      With m_tRow(lRow)
+         .lCount = 1
+         With .tBar(1)
+            .lX = lX
+            .lXSingleRow = lX
+            If Horizontal Then
+               .cXA = cXAHorz
+               .cYA = cYAHorz
+            Else
+               .cXA = cXAVert
+               .cYA = cYAVert
+            End If
+            .cXAHorz = cXAHorz
+            .cYAHorz = cYAHorz
+            .cXAVert = cXAVert
+            .cYAVert = cYAVert
+            .cx = .cXA
+            .sKey = key
+            .sTitle = sTitle
+            .lIdx = m_lCount
+            .bFillRow = bFillRow
+            .lOffsetX = 0
+            .bCanDockHorizontal = bCanDockHorizontal
+            .bCanDockVertical = bCanDockVertical
+            .bCanClose = bCanClose
+         End With
+         If Horizontal Then
+            If cYAHorz &gt; .lHeight Then
+               .lHeight = cYAHorz
+            End If
+         Else
+            If cYAVert &gt; .lHeight Then
+               .lHeight = cYAVert
+            End If
+         End If
+      End With
+   
+   ElseIf lRow = 0 Then
+   
+      ' Insert before
+      For i = m_lRows To 1 Step -1
+         LSet m_tRow(i + 1) = m_tRow(i)
+         For lBar = 1 To m_tRow(i).lCount
+            LSet m_tRow(i + 1).tBar(lBar) = m_tRow(i).tBar(lBar)
+         Next lBar
+      Next i
+      m_lRows = m_lRows + 1
+      With m_tRow(1)
+         .lCount = 1
+         With .tBar(1)
+            .lX = lX
+            .lXSingleRow = lX
+            If Horizontal Then
+               .cXA = cXAHorz 'tR.right - tR.left
+               .cYA = cYAHorz 'tR.bottom - tR.top
+            Else
+               .cXA = cXAVert 'tR.bottom - tR.top
+               .cYA = cYAVert 'tR.right - tR.left
+            End If
+            .cXAHorz = cXAHorz
+            .cYAHorz = cYAHorz
+            .cXAVert = cXAVert
+            .cYAVert = cYAVert
+            .cx = .cXA
+            .sKey = key
+            .sTitle = sTitle
+            .lIdx = m_lCount
+            .bFillRow = bFillRow
+            .lOffsetX = 0
+            .bCanDockHorizontal = bCanDockHorizontal
+            .bCanDockVertical = bCanDockVertical
+            .bCanClose = bCanClose
+         End With
+         If Horizontal Then
+            If cYAHorz + 2 &gt; .lHeight Then
+               .lHeight = cYAHorz + 2
+            End If
+         Else
+            If cYAVert + 2 &gt; .lHeight Then
+               .lHeight = cYAVert + 2
+            End If
+         End If
+      End With
+   
+   Else
+      ' Adding to an existing row
+      ' Check if we've got a row with the fill setting here:
+      If (m_tRow(lRow).lCount &gt; 0) Then
+         If (m_tRow(lRow).tBar(1).bFillRow) Then
+            ' can't do it
+            Err.Raise 23067, App.EXEName &amp; ".vbalDockContainer", "Can't add to
+             a row which contains a bar with the bFillRow property"
+            Exit Sub
+         End If
+      End If
+      
+      With m_tRow(lRow)
+         .lCount = .lCount + 1
+         With .tBar(.lCount)
+            .lX = lX
+            If Horizontal Then
+               .cXA = cXAHorz 'tR.right - tR.left
+               .cYA = cYAHorz 'tR.bottom - tR.top
+            Else
+               .cXA = cXAVert 'tR.bottom - tR.top
+               .cYA = cYAVert 'tR.right - tR.left
+            End If
+            .cXAHorz = cXAHorz
+            .cYAHorz = cYAHorz
+            .cXAVert = cXAVert
+            .cYAVert = cYAVert
+            .cx = .cXA
+            .sKey = key
+            .sTitle = sTitle
+            .lIdx = m_lCount
+            .bFillRow = bFillRow
+            .lOffsetX = 0
+            .bCanDockHorizontal = bCanDockHorizontal
+            .bCanDockVertical = bCanDockVertical
+            .bCanClose = bCanClose
+         End With
+         If Horizontal Then
+            If cYAHorz + 2 &gt; .lHeight Then
+               .lHeight = cYAHorz + 2
+            End If
+         Else
+            If cYAVert + 2 &gt; .lHeight Then
+               .lHeight = cYAVert + 2
+            End If
+         End If
+      End With
+      AutoSize
+   End If
+   
+   Resize
+   drawBar lPicIndex
+   UserControl.Refresh
+   
+   ' Event
+   RaiseEvent Docked(key)
+
+End Sub
+
+Private Property Get Horizontal() As Boolean
+   If (UserControl.Extender.Align = vbAlignTop) Or (UserControl.Extender.Align
+    = vbAlignBottom) Then
+      Horizontal = True
+   End If
+End Property
+
+Private Sub hideControlsInToolbar(ByVal lhWnd As Long, ByVal bState As Boolean)
+Dim lPtr As Long
+Dim i As Long
+Dim iIndex As Long
+Dim bMustHide As Boolean
+Dim vKey As Variant
+
+   lPtr = GetProp(lhWnd, "vbalTbar:ControlPtr")
+   If Not (lPtr = 0) Then
+      Dim ctl As Object
+      Set ctl = objectFromPtr(lPtr)
+      If (bState) Then
+         For i = 0 To ctl.ButtonCount - 1
+            If Not (ctl.ButtonControl(i) = 0) Then
+               bMustHide = True
+               Exit For
+            End If
+         Next i
+         If (bMustHide) Then
+            m_iHiddenItemCount = m_iHiddenItemCount + 1
+            ReDim Preserve m_tHiddenItems(1 To m_iHiddenItemCount) As
+             tVerticalHiddenButtons
+            m_tHiddenItems(m_iHiddenItemCount).hwnd = lhWnd
+            Set m_tHiddenItems(m_iHiddenItemCount).cKeys = New Collection
+            For i = 0 To ctl.ButtonCount - 1
+               If Not (ctl.ButtonControl(i) = 0) Then
+                  m_tHiddenItems(m_iHiddenItemCount).cKeys.Add
+                   ctl.ButtonKey(i), ctl.ButtonKey(i)
+                  ctl.ButtonVisible(i) = False
+               End If
+            Next i
+         End If
+      Else
+         For i = 1 To m_iHiddenItemCount
+            If (m_tHiddenItems(i).hwnd = lhWnd) Then
+               iIndex = i
+               Exit For
+            End If
+         Next i
+         If (iIndex &gt; 0) Then
+            For Each vKey In m_tHiddenItems(iIndex).cKeys
+               ctl.ButtonVisible(vKey) = True
+            Next
+            If (m_iHiddenItemCount &gt; 1) Then
+               For i = iIndex To m_iHiddenItemCount + 1
+                  LSet m_tHiddenItems(i) = m_tHiddenItems(i + 1)
+               Next i
+               m_iHiddenItemCount = m_iHiddenItemCount - 1
+            Else
+               m_iHiddenItemCount = 0
+               Erase m_tHiddenItems
+            End If
+         End If
+      End If
+   End If
+End Sub
+
+Public Sub Capture( _
+      ByVal key As String, _
+      ByVal hWndA As Long _
+   )
+Attribute Capture.VB_Description = "Captures a window into the bar with the
+ specified key.  The bar must be docked."
+Dim lIndex As Long
+Dim lRow As Long
+Dim lBar As Long
+Dim lTheRow As Long
+Dim lTheBar As Long
+Dim tR As RECT
+Dim cXA As Long
+Dim cYA As Long
+   
+   If hWndA &lt;&gt; 0 Then
+      If getBarForKey(key, lIndex) Then
+         For lRow = 1 To m_lRows
+            For lBar = 1 To m_tRow(lRow).lCount
+               If m_tRow(lRow).tBar(lBar).sKey = key Then
+                  lTheRow = lRow
+                  lTheBar = lBar
+                  cXA = m_tRow(lRow).tBar(lBar).cXA
+                  cYA = m_tRow(lRow).tBar(lBar).cYA
+                  Exit For
+               End If
+            Next lBar
+         Next lRow
+         If Not (Horizontal) Then
+            hideControlsInToolbar hWndA, True
+         End If
+         SetParent hWndA, picBar(lIndex).hwnd
+         If UserControl.Extender.Align = vbAlignTop Or
+          UserControl.Extender.Align = vbAlignBottom Then
+            MoveWindow hWndA, 10, 1, cXA - 22, cYA - 2, 1
+         Else
+            MoveWindow hWndA, 1, 10, cYA - 2, cXA - 22, 1
+         End If
+         'Debug.Print "Capture:", hWndA
+         picBar(lIndex).Tag = hWndA
+         
+         ' It is possible but unlikely these messages are already attached:
+         On Error Resume Next
+         AttachMessage Me, picBar(lIndex).hwnd, WM_ERASEBKGND
+         AttachMessage Me, picBar(lIndex).hwnd, WM_DESTROY
+      Else
+         ' is an error
+         Err.Raise 9, App.EXEName &amp; ".vbalDockContainer", "The key '" &amp; key &amp;
+          "' is not associated with this bar"
+      End If
+   End If
+End Sub
+
+Private Sub Create( _
+      Optional ByVal lMinBarSize As Long = 48, _
+      Optional ByVal lMinBestBarSize As Long = 48 _
+   )
+      
+   m_hWndCtl = UserControl.hwnd
+   SetProp m_hWndCtl, DOCKCONTAINERID, ObjPtr(Me)
+   m_lMinBarSize = lMinBarSize
+   m_lMinBestBarSize = lMinBestBarSize
+   
+   On Error Resume Next
+   m_hWndParent = UserControl.Parent.hwnd
+   SetProp m_hWndCtl, DOCKCONTAINERPARENTHWND, m_hWndParent
+   SetProp m_hWndCtl, DOCKCONTAINERVERTICAL, Not (Horizontal)
+   On Error GoTo 0
+   'If mdiChildhWnd(m_hWndParent) &lt;&gt; 0 Then
+   '   ' check if we need to do anything:
+   '   If GetProp(m_hWndParent, MDITOOLBARMENUID) = 0 Then
+   '      Set m_cMDIToolbarMenu = New pcMDIToolbarMenu
+   '      m_cMDIToolbarMenu.Attach m_hWndParent
+   '      SetProp m_hWndParent, MDITOOLBARMENUID, ObjPtr(m_cMDIToolbarMenu)
+   '   End If
+   'End If
+   
+   
+End Sub
+Public Sub AutoSize()
+Attribute AutoSize.VB_Description = "Attempts to best size all the bars within
+ each current row of the dock control."
+Dim i As Long
+   For i = 1 To m_lRows
+      rowSize i
+   Next i
+   Resize
+End Sub
+Public Sub Resize()
+Attribute Resize.VB_Description = "Raised when this dock control is resized."
+Dim i As Long
+Dim j As Long
+Dim o As Object
+Dim ctlCont As Object
+Dim lY As Long
+Dim tR As RECT
+Dim tWR As RECT
+Dim lhWnd As Long
+Dim lSize As Long
+Dim lXOffset As Long
+Dim lYOffset As Long
+Dim lStart As Long
+
+   If m_lCount &gt; 0 Then
+      If (m_bNonDockingArea) Then
+         If (Horizontal) Then
+            lYOffset = m_lNonDockingAreaSize * Abs(UserControl.Extender.Align =
+             vbAlignTop)
+         Else
+            lXOffset = m_lNonDockingAreaSize * Abs(UserControl.Extender.Align =
+             vbAlignLeft)
+         End If
+      End If
+      
+      ' We have at least one bar
+      If (m_bLockToolbars) Then
+         lStart = 1
+      Else
+         lStart = 10
+      End If
+      lY = 0
+      For i = 1 To m_lRows
+         With m_tRow(i)
+            For j = 1 To .lCount
+               GetWindowRect picBar(m_pic(.tBar(j).lIdx)).hwnd, tR
+               If .tBar(j).bFillRow Then
+                  GetClientRect m_hWndCtl, tWR
+                  If Horizontal Then
+                     .tBar(j).lX = tWR.Left
+                     .tBar(j).cx = tWR.Right - tWR.Left
+                  Else
+                     .tBar(j).lX = tWR.Top
+                     .tBar(j).cx = tWR.Bottom - tWR.Top
+                  End If
+               End If
+               lhWnd = 0
+               If Horizontal Then
+                  On Error Resume Next
+                  picBar(m_pic(.tBar(j).lIdx)).Move (.tBar(j).lX + lXOffset) *
+                   Screen.TwipsPerPixelX, (lY + lYOffset) *
+                   Screen.TwipsPerPixelY, .tBar(j).cx * Screen.TwipsPerPixelX,
+                   .lHeight * Screen.TwipsPerPixelY
+                  lhWnd = getCapturehWndForBar(m_pic(.tBar(j).lIdx))
+                  If Not (lhWnd = 0) Then
+                     If .tBar(j).cx &lt; .tBar(j).cXA Then
+                        ' too small:
+                        MoveWindow lhWnd, lStart, 1 + (.lHeight - .tBar(j).cYA)
+                         / 2, .tBar(j).cx - 22, .tBar(j).cYA - 2, 1
+                     Else
+                        ' ok
+                        MoveWindow lhWnd, lStart, 1 + (.lHeight - .tBar(j).cYA)
+                         / 2, .tBar(j).cXA - 22, .tBar(j).cYA - 2, 1
+                     End If
+                  End If
+                  picBar(m_pic(.tBar(j).lIdx)).Refresh
+                  On Error GoTo 0
+               Else
+                  On Error Resume Next
+                  picBar(m_pic(.tBar(j).lIdx)).Move (lY + lXOffset) *
+                   Screen.TwipsPerPixelY, (.tBar(j).lX + lYOffset) *
+                   Screen.TwipsPerPixelX, .lHeight * Screen.TwipsPerPixelX,
+                   .tBar(j).cx * Screen.TwipsPerPixelY
+                  lhWnd = getCapturehWndForBar(m_pic(.tBar(j).lIdx))
+                  If lhWnd &lt;&gt; 0 Then
+                     If .tBar(j).cx &lt; .tBar(j).cXA Then
+                        ' too small:
+                        MoveWindow lhWnd, 1, lStart, .tBar(j).cYA - 2,
+                         .tBar(j).cx - 22, 1
+                     Else
+                        ' ok
+                        MoveWindow lhWnd, 1, lStart, .tBar(j).cYA - 2,
+                         .tBar(j).cXA - 22, 1
+                     End If
+                  End If
+                  picBar(m_pic(.tBar(j).lIdx)).Refresh
+                  On Error GoTo 0
+               End If
+               setChevron m_pic(.tBar(j).lIdx), (.tBar(j).cx &lt; .tBar(j).cXA)
+
+            Next j
+            lY = lY + .lHeight
+         End With
+      Next i
+      
+      GetWindowRect m_hWndCtl, tR
+      lhWnd = GetParent(m_hWndCtl)
+      MapWindowPoints HWND_DESKTOP, lhWnd, tR, 2
+      lSize = 0
+      If m_bNonDockingArea Then
+         lSize = lSize + m_lNonDockingAreaSize
+      End If
+      If Horizontal Then
+         'UserControl.Extender.Move tR.Left * Screen.TwipsPerPixelX, tR.Top *
+          Screen.TwipsPerPixelY, (tR.Right - tR.Left) * Screen.TwipsPerPixelX,
+          (lY + lSize) * Screen.TwipsPerPixelY
+         If Not (UserControl.Extender.height = (lY + lSize) *
+          Screen.TwipsPerPixelY) Then
+            UserControl.Extender.height = (lY + lSize) * Screen.TwipsPerPixelY
+         End If
+      Else
+         'UserControl.Extender.Move tR.Left * Screen.TwipsPerPixelX, tR.Top *
+          Screen.TwipsPerPixelY, (lY + lSize) * Screen.TwipsPerPixelX,
+          (tR.Bottom - tR.Top) * Screen.TwipsPerPixelY
+         If Not (UserControl.Extender.width = (lY + lSize) *
+          Screen.TwipsPerPixelX) Then
+            UserControl.Extender.width = (lY + lSize) * Screen.TwipsPerPixelX
+         End If
+      End If
+      If Not lY = (tR.Bottom - tR.Top) Then
+         RaiseEvent SizeChanged
+      End If
+      
+   Else
+      ' No Bars:
+      GetWindowRect m_hWndCtl, tR
+      lSize = 0
+      If m_bNonDockingArea Then
+         lSize = lSize + m_lNonDockingAreaSize
+      End If
+      If Horizontal Then
+         UserControl.Extender.Move tR.Left * Screen.TwipsPerPixelX, tR.Top *
+          Screen.TwipsPerPixelY, (tR.Right - tR.Left) * Screen.TwipsPerPixelX,
+          lSize * Screen.TwipsPerPixelY
+      Else
+         UserControl.Extender.Move tR.Left * Screen.TwipsPerPixelX, tR.Top *
+          Screen.TwipsPerPixelY, lSize * Screen.TwipsPerPixelY, (tR.Bottom -
+          tR.Top) * Screen.TwipsPerPixelY
+      End If
+      If Not lY = (tR.Bottom - tR.Top) Then
+         RaiseEvent SizeChanged
+      End If
+      
+   End If
+   
+   UserControl.Refresh
+   
+End Sub
+Private Function setChevron(ByVal lIndex As Long, ByVal bState As Boolean)
+   If Not (m_tChevron(lIndex).bShow = bState) Then
+      m_tChevron(lIndex).bShow = bState
+      drawBar lIndex
+   End If
+End Function
+Private Function performChevron(ByVal lIndex As Long) As Long
+Dim sKey As String
+Dim lX As Long
+Dim lY As Long
+Dim lRow As Long
+Dim lBar As Long
+Dim tP As POINTAPI
+   '
+   For lRow = 1 To m_lRows
+      With m_tRow(lRow)
+         For lBar = 1 To .lCount
+            If m_pic(.tBar(lBar).lIdx) = lIndex Then
+               sKey = .tBar(lBar).sKey
+               Exit For
+            End If
+         Next lBar
+      End With
+   Next lRow
+      
+   If (Horizontal) Then
+      tP.x = m_tChevron(lIndex).tR.Left
+      tP.y = m_tChevron(lIndex).tR.Bottom
+      MapWindowPoints picBar(lIndex).hwnd, 0, tP, 1
+      tP.y = tP.y - 1
+   Else
+      tP.x = m_tChevron(lIndex).tR.Right
+      tP.y = m_tChevron(lIndex).tR.Top
+      MapWindowPoints picBar(lIndex).hwnd, 0, tP, 1
+      tP.x = tP.x - 1
+   End If
+   OnChevronPress sKey, tP.x, tP.y
+   
+   Debug.Print "redraw chevron"
+   m_tChevron(lIndex).bMouseOver = False
+   m_tChevron(lIndex).bMouseDown = False
+   m_tmr.Item = ""
+   m_tmr.Interval = 0
+   drawBar lIndex
+   
+   '
+End Function
+Friend Sub OnChevronPress(ByVal sKey As String, x As Long, y As Long)
+   RaiseEvent ChevronPress(sKey, x, y)
+End Sub
+Friend Function OnCloseClick(ByVal sKey As String) As Boolean
+Dim bCancel As Boolean
+   RaiseEvent BarClose(sKey, bCancel)
+   OnCloseClick = Not (bCancel)
+End Function
+Private Function mouseDown( _
+      ByVal lIndex As Long, _
+      ByVal x As Single, _
+      ByVal y As Single _
+   ) As Boolean
+
+Dim lX As Long, lY As Long
+Dim i As Long, j As Long
+Dim lRow As Long, lBar As Long
+Dim tP As POINTAPI
+Dim o As Object
+Dim ctl As Object
+   
+   ' ---------------------------------------------------------------------------
+   ' In Chevron?
+   ' ---------------------------------------------------------------------------
+   lX = x \ Screen.TwipsPerPixelX
+   lY = y \ Screen.TwipsPerPixelY
+   With m_tChevron(lIndex)
+      If lX &gt;= .tR.Left And lX &lt;= .tR.Right Then
+         If lY &gt;= .tR.Top And lY &lt;= .tR.Bottom Then
+            .bMouseOver = True
+            .bMouseDown = True
+            drawBar lIndex
+            performChevron lIndex
+            Exit Function
+         End If
+      End If
+   End With
+
+   
+   ' ---------------------------------------------------------------------------
+   ' Dragging a docking bar?
+   ' ---------------------------------------------------------------------------
+   If Not m_bLockToolbars Then
+      m_iActiveBar = 0
+      
+      For i = 1 To m_lRows
+         With m_tRow(i)
+            For j = 1 To .lCount
+               .tBar(j).bActiveBar = (lIndex = m_pic(.tBar(j).lIdx))
+               
+               If (.tBar(j).bActiveBar) Then
+                  m_iActiveBar = .tBar(j).lIdx
+                  'Debug.Print "ActiveBar:", m_iActiveBar
+                  ' Store x,y:
+                  tP.x = x \ Screen.TwipsPerPixelX
+                  tP.y = y \ Screen.TwipsPerPixelY
+                  Set o = picBar(lIndex)
+                  MapWindowPoints o.hwnd, m_hWndCtl, tP, 1
+                  If Horizontal Then
+                     .tBar(j).lOffsetX = -x \ Screen.TwipsPerPixelX
+                     .tBar(j).lThisX = tP.x - .tBar(j).lOffsetX
+                     .tBar(j).lThisY = tP.y
+                  Else
+                     .tBar(j).lOffsetX = -y \ Screen.TwipsPerPixelY
+                     .tBar(j).lThisX = tP.y - .tBar(j).lOffsetX
+                     .tBar(j).lThisY = tP.x
+                  End If
+                  .tBar(j).lLastX = .tBar(j).lThisX
+                  .tBar(j).lLastY = .tBar(j).lThisY
+                  .tBar(j).eAction = eNewAction
+                  
+                  m_lIndexActiveBar = m_pic(.tBar(j).lIdx)
+                  
+                  ' redirect all mouse messages to the usercontrol:
+                  picBar(lIndex).MousePointer = vbSizeAll
+                  
+                  SetCapture m_hWndCtl
+                  mouseDown = True
+               End If
+            Next j
+         End With
+      Next i
+   End If
+   
+End Function
+
+Private Sub getActiveBarLocation( _
+      ByRef lRow As Long, _
+      ByRef lBar As Long _
+   )
+   'Debug.Assert (m_iActiveBar &lt;&gt; 0)
+   lRow = 0
+   lBar = 0
+   For lRow = 1 To m_lRows
+      'Debug.Print "(" &amp; m_iActiveBar; ") Row:"; lRow; "-";
+      With m_tRow(lRow)
+         For lBar = 1 To .lCount
+            'Debug.Print lBar; "="; .tBar(lBar).lIdx; ",";
+            If m_iActiveBar = .tBar(lBar).lIdx Then
+               ' Found it
+               'Debug.Print "Found"
+               Exit Sub
+            End If
+         Next lBar
+      End With
+   Next lRow
+   'Debug.Print "Not found"
+   'Debug.Print
+   lRow = 0
+   lBar = 0
+   
+End Sub
+Private Sub getLocationOfBar( _
+      ByRef lRow As Long, _
+      ByRef lBar As Long _
+   )
+   
+   lRow = 0
+   lBar = 0
+   For lRow = 1 To m_lRows
+      With m_tRow(lRow)
+         For lBar = 1 To .lCount
+            If m_iActiveBar = .tBar(lBar).lIdx Then
+               Exit Sub
+            End If
+         Next lBar
+      End With
+   Next lRow
+   lRow = 0
+   lBar = 0
+   
+End Sub
+
+Private Sub mouseMove( _
+      x As Single, y As Single _
+   )
+Dim lRow As Long, lBar As Long
+Dim lX As Long, lY As Long
+Dim cx As Long, cy As Long
+Dim pic As PictureBox
+Dim tR As RECT
+Dim tS As RECT
+Dim tP As POINTAPI
+Dim bNextIsRowDown As Boolean
+Dim bNextIsRowUp As Boolean
+
+   If m_iActiveBar &gt; 0 Then
+   
+      getActiveBarLocation lRow, lBar
+      
+      ' Bands on row: m_tRow(lRow).lCount
+      ' Rows &lt; Bars:
+   
+      With m_tRow(lRow).tBar(lBar)
+      
+         ' Get the control which is  being moved
+         Set pic = picBar(m_pic(.lIdx))
+         GetWindowRect pic.hwnd, tR
+         MapWindowPoints HWND_DESKTOP, m_hWndCtl, tR, 2
+         
+         If Horizontal Then
+            tP.x = x \ Screen.TwipsPerPixelX
+            tP.y = y \ Screen.TwipsPerPixelY
+         Else
+            ' Swap around x,y coords:
+            tP.x = y \ Screen.TwipsPerPixelY
+            tP.y = x \ Screen.TwipsPerPixelX
+            tS.Left = tR.Top
+            tS.Top = tR.Left
+            tS.Right = tR.Bottom
+            tS.Bottom = tR.Right
+            LSet tR = tS
+         End If
+         
+         '
+         lX = tP.x + .lOffsetX
+         lY = tP.y
+         .lThisX = lX
+         .lThisY = lY
+               
+      
+         ' ======================================================
+         ' START: Y DIRECTION
+         ' ======================================================
+         cy = .lThisY - .lLastY
+         If Abs(cy) &gt; 8 Then
+            ' We can make a move:
+            If Sgn(cy) = 1 Then
+               ' ------------------------------------------------
+               ' DOWN MOVEMENT
+               ' ------------------------------------------------
+               If lRow = m_lRows Then
+                  ' Last row
+                  If m_tRow(lRow).lCount = 1 Then
+                     If dragOff(lRow, lBar, False, 1) Then
+                        '
+                     End If
+                     Exit Sub
+                  End If
+               End If
+                                                         
+               If .eAction = eNewAction Then
+                  If (m_tRow(lRow).lCount &gt; 1) Or _
+                     (m_tRow(lRow).tBar(lBar).bFillRow) Then
+                     bNextIsRowDown = True
+                  Else
+                     If lRow &lt; m_lRows Then
+                        If m_tRow(lRow + 1).tBar(1).bFillRow Then
+                           bNextIsRowDown = True
+                        End If
+                     End If
+                  End If
+
+                  If bNextIsRowDown Then
+                     .eAction = eShareRowDown
+                  Else
+                     .eAction = eNewRowDown
+                  End If
+               End If
+               
+               Select Case .eAction
+               Case eShareRowUp
+                  ' Last action was share up, next action
+                  ' will be to new row down
+                  If .lThisY &gt; tR.Top + (tR.Bottom - tR.Top) \ 2 Then
+                     ' new down
+                     rearrangeNewRowDown
+                  End If
+                  
+               Case eShareRowDown
+                  ' Last action was share down, next action
+                  ' will be new row down:
+                  If .lThisY &gt; tR.Bottom Then
+                     ' New down
+                     rearrangeNewRowDown
+                  End If
+                  
+               Case eNewRowUp
+                  ' Last action was new row up, next action
+                  ' will be to share row down:
+                  If .lThisY &gt; tR.Top + (tR.Bottom - tR.Top) \ 2 Then
+                     rearrangeShareRowUp
+                  End If
+                  
+               Case eNewRowDown
+                  ' Last action was new row down, next action
+                  ' will be to share row down:
+                  If .lThisY &gt; tR.Bottom Then
+                     rearrangeShareRowDown
+                  End If
+                              
+               End Select
+                        
+            Else
+               
+               ' ------------------------------------------------
+               ' UP MOVEMENT
+               ' ------------------------------------------------
+               If lRow = 1 Then
+                  ' First row
+                  If m_tRow(lRow).lCount = 1 Then
+                     ' check for dragging off:
+                     If dragOff(lRow, lBar, False, -1) Then
+                        '
+                     End If
+                     Exit Sub
+                  End If
+               End If
+               
+               If .eAction = eNewAction Then
+                  If (m_tRow(lRow).lCount &gt; 1) Or
+                   (m_tRow(lRow).tBar(lBar).bFillRow) Then
+                     bNextIsRowUp = True
+                  Else
+                     If lRow &gt; 1 Then
+                        If m_tRow(lRow - 1).tBar(1).bFillRow Then
+                           bNextIsRowUp = True
+                        End If
+                     End If
+                  End If
+                  
+                  If bNextIsRowUp Then
+                     .eAction = eShareRowUp
+                  Else
+                     .eAction = eNewRowUp
+                  End If
+               End If
+               
+               Select Case .eAction
+               Case eShareRowUp
+                  ' Last action was share up, next action
+                  ' will be to new row down
+                  If .lThisY &lt; tR.Top + (tR.Bottom - tR.Top) \ 2 Then
+                     ' new up
+                     rearrangeNewRowUp
+                  End If
+                  
+               Case eShareRowDown
+                  ' Last action was share down, next action
+                  ' will be new row down:
+                  If .lThisY &lt; tR.Top Then
+                     ' New up
+                     rearrangeNewRowUp
+                  End If
+                  
+               Case eNewRowUp
+                  ' Last action was new row up, next action
+                  ' will be to share row down:
+                  If .lThisY &lt; tR.Top + (tR.Bottom - tR.Top) \ 2 Then
+                     rearrangeShareRowUp
+                  End If
+                  
+               Case eNewRowDown
+                  ' Last action was new row down, next action
+                  ' will be to share row down:
+                  If .lThisY &lt; tR.Top Then
+                     rearrangeShareRowUp
+                  End If
+                              
+               End Select
+               
+               
+            End If
+         
+         Else
+            ' insufficient movement to do anything
+         End If
+         ' ======================================================
+         ' END: Y DIRECTION
+         ' ======================================================
+         
+         
+         ' ======================================================
+         ' START: X DIRECTION
+         ' ======================================================
+         cx = .lThisX - .lLastX
+         If Abs(cx) &gt; 8 Then
+            ' Fundamentally here we check if the x coord is
+            ' moved outside the boundary of the item to the
+            ' sgn(cX) of the current bar.  If so then we
+            ' swap them.
+            
+            If Sgn(cx) = -1 Then
+               ' Moving left.
+               checkMoveLeft
+               
+            Else
+               ' Moving right
+               checkMoveRight
+               
+            End If
+         Else
+            ' insufficient movement to do anything
+         End If
+         ' ======================================================
+         ' END: X DIRECTION
+         ' ======================================================
+         
+      End With
+   End If
+End Sub
+
+Private Function getCapturehWndForBar(ByVal lIndex As Long) As Long
+   If IsNumeric(picBar(lIndex).Tag) Then
+      getCapturehWndForBar = picBar(lIndex).Tag
+   End If
+End Function
+
+
+Private Function dragOff(ByVal lRow As Long, ByVal lBar As Long, ByVal
+ bHorizontal As Boolean, ByVal iDir As Long) As Boolean
+Dim tP As POINTAPI
+Dim tR As RECT
+   
+   If m_bAllowDragOff Then
+   
+      GetCursorPos tP
+      If Abs(tP.x - m_tPtDock.x) &gt; 8 Or Abs(tP.y - m_tPtDock.y) &gt; 8 Then
+         m_tPtDock.x = -20000
+         m_tPtDock.y = -20000
+      Else
+         Exit Function
+      End If
+      
+      ' check for hysteresis (i.e. &gt; 6 pixels from control edge)
+      GetWindowRect m_hWndCtl, tR
+      If Not Horizontal Then
+         bHorizontal = Not (bHorizontal)
+      End If
+      If bHorizontal Then
+         If iDir &gt; 0 Then
+            If tP.x &lt; tR.Right + 12 Then
+               Exit Function
+            End If
+         Else
+            If tP.x &gt; tR.Left - 12 Then
+               Exit Function
+            End If
+         End If
+      Else
+         If iDir &gt; 0 Then
+            If tP.y &lt; tR.Bottom + 12 Then
+               Exit Function
+            End If
+         Else
+            If tP.y &gt; tR.Top - 12 Then
+               Exit Function
+            End If
+         End If
+      End If
+      GetCursorPos tP
+      tP.x = (tP.x - 4) * Screen.TwipsPerPixelX
+      tP.y = (tP.y - 4) * Screen.TwipsPerPixelY
+      If tP.x &lt; 0 Then tP.x = 0
+      If tP.y &lt; 0 Then tP.y = 0
+      
+      dragOff = undock(lRow, lBar, tP.x, tP.y)
+      
+   End If
+End Function
+
+Private Function undock( _
+      ByVal lRow As Long, ByVal lBar As Long, _
+      ByVal x As Long, ByVal y As Long _
+   ) As Boolean
+Dim hWndA As Long
+Dim sKey As String
+Dim lIndex As Long
+Dim cXAHorz As Long
+Dim cYAHorz As Long
+Dim cXAVert As Long
+Dim cYAVert As Long
+   
+   ' get any captured bar:
+   getBarForKey m_tRow(lRow).tBar(lBar).sKey, lIndex
+   'Debug.Print "Undock", lIndex, m_tRow(lRow).tBar(lBar).sKey
+   If (lIndex &gt; -1) Then
+      hWndA = getCapturehWndForBar(lIndex)
+   Else
+      'Debug.Print ""
+   End If
+   
+   ' work out size of undocked toolbar:
+   Dim f As New frmToolbar
+   f.width = (m_tRow(lRow).tBar(lBar).cXA + GetSystemMetrics(SM_CXFRAME) * 2 +
+    GetSystemMetrics(SM_CXBORDER) * 2) * Screen.TwipsPerPixelX
+   f.height = (m_tRow(lRow).tBar(lBar).cYA + GetSystemMetrics(SM_CYFRAME) * 2 +
+    GetSystemMetrics(SM_CYBORDER) * 2 + GetSystemMetrics(SM_CYCAPTION) - 4) *
+    Screen.TwipsPerPixelY
+   
+   ' eval position to show
+   f.Move x, y
+   With m_tRow(lRow).tBar(lBar)
+      f.init .sKey, _
+         m_hWndCtl, _
+         m_hWndParent, _
+         .cXAHorz, .cYAHorz, .cXAVert, .cYAVert, _
+         .bFillRow, _
+         .sTitle, _
+         .bCanDockHorizontal, .bCanDockVertical, _
+         .bCanClose, _
+         m_bXPStyle
+   End With
+   
+   ' remove the bar from the control so it can be seen
+   ' floating instead:
+   If Not (hWndA = 0) Then
+      ShowWindow hWndA, 0
+      SetParent hWndA, 0
+   End If
+   With m_tRow(lRow).tBar(lBar)
+      sKey = .sKey
+      cXAHorz = .cXAHorz - 22
+      cYAHorz = .cYAHorz - 2
+      cXAVert = .cXAVert - 22
+      cYAVert = .cYAVert - 2
+   End With
+   Remove sKey
+   
+   ' show in position &amp; redirect mouse messages
+   f.Show , UserControl.Parent
+   f.SetFocus
+   SetCapture f.hwnd
+   
+   ' ensure any captured window moves correctly:
+   f.Capture hWndA
+   
+   f.BandSizeChange _
+      cXAHorz, cYAHorz, _
+      cXAVert, cYAVert
+
+   ' now store a reference that we've dragged this item off:
+   m_iDragOffCount = m_iDragOffCount + 1
+   ReDim Preserve m_lDragOff(1 To m_iDragOffCount) As Long
+   ReDim Preserve m_sDragOff(1 To m_iDragOffCount) As String
+   m_lDragOff(m_iDragOffCount) = f.hwnd
+   m_sDragOff(m_iDragOffCount) = sKey
+   
+   undock = True
+   
+   ' Event:
+   RaiseEvent Undocked(sKey)
+   
+   m_iActiveBar = 0
+
+End Function
+
+Private Sub checkMoveLeft()
+Dim lRow As Long, lBar As Long
+Dim i As Long, j As Long
+Dim tB As tDockedBar
+Dim lX As Long
+Dim tR As RECT
+Dim lSize As Long
+Dim lWPrior As Long
+Dim lXPrior As Long
+Dim lW As Long, lAW As Long
+   
+   getActiveBarLocation lRow, lBar
+   
+   ' have we moved off?
+   If lBar = 1 Then
+      If m_tRow(lRow).tBar(1).lThisX - m_tRow(lRow).tBar(1).lOffsetX &lt; 0 Then
+         If dragOff(lRow, lBar, True, -1) Then
+            Exit Sub
+         End If
+      End If
+   End If
+   
+   If lRow &gt; 0 Then
+      If m_tRow(lRow).tBar(lBar).bFillRow Then
+         ' don't move
+         Exit Sub
+      End If
+   
+      
+      If m_tRow(lRow).lCount = 1 Then
+         
+         ' 1 item on row
+         
+         GetWindowRect m_hWndCtl, tR
+         If Horizontal Then
+            lSize = tR.Right - tR.Left
+         Else
+            lSize = tR.Bottom - tR.Top
+         End If
+         ' constrained by dimension:
+         lX = m_tRow(lRow).tBar(lBar).lThisX
+         If m_tRow(lRow).tBar(lBar).lThisX &lt; 0 Then
+            lX = 0
+         Else
+            If m_tRow(lRow).tBar(lBar).lThisX + m_tRow(lRow).tBar(lBar).cx &gt;
+             lSize Then
+               lX = lSize - m_tRow(lRow).tBar(lBar).cx
+            End If
+         End If
+         m_tRow(lRow).tBar(lBar).lX = lX
+         m_tRow(lRow).tBar(lBar).lXSingleRow = lX
+         Resize
+      
+      Else
+         
+         ' more than one item on row:
+      
+         If lBar &gt; 1 Then
+   
+            ' check against midpoint of prior bar:
+            lX = m_tRow(lRow).tBar(lBar - 1).lX + m_tRow(lRow).tBar(lBar -
+             1).cx \ 2
+            If m_tRow(lRow).tBar(lBar).lThisX -
+             m_tRow(lRow).tBar(lBar).lOffsetX &lt; lX Then
+               ' time to move. Swap lBar with lBar -1 and then autosize:
+               LSet tB = m_tRow(lRow).tBar(lBar - 1)
+               LSet m_tRow(lRow).tBar(lBar - 1) = m_tRow(lRow).tBar(lBar)
+               m_tRow(lRow).tBar(lBar - 1).lX = tB.lX
+               LSet m_tRow(lRow).tBar(lBar) = tB
+               m_tRow(lRow).tBar(lBar).lX = m_tRow(lRow).tBar(lBar - 1).lX +
+                m_tRow(lRow).tBar(lBar - 1).cx
+               
+               m_tRow(lRow).tBar(lBar).lLastX = m_tRow(lRow).tBar(lBar).lThisX
+               m_tRow(lRow).tBar(lBar).lLastY = m_tRow(lRow).tBar(lBar).lThisY
+               rowSize lRow
+               Resize
+            Else
+            
+               ' is there any movement possible in the bars?
+               For j = 1 To m_tRow(lRow).lCount
+                  lW = lW + m_tRow(lRow).tBar(j).cx
+                  lAW = lAW + m_tRow(lRow).tBar(j).cXA
+               Next j
+               
+               If lAW &gt; lW Then
+                  ' move the split point provided it won't make any bar smaller
+                  ' than min width:
+                  lWPrior = m_tRow(lRow).tBar(lBar - 1).cx
+                  lXPrior = m_tRow(lRow).tBar(lBar - 1).lX
+                  lX = m_tRow(lRow).tBar(lBar).lThisX
+                  
+                  If lX - lXPrior + 1 &gt; m_lMinBarSize Then
+                     ' First check whether our bar is maxwidth or not
+                     If m_tRow(lRow).tBar(lBar).cx =
+                      m_tRow(lRow).tBar(lBar).cXA Then
+                        'Debug.Print "isMaxWidth"
+                     Else
+                        'Debug.Print "notMaxWidth"
+                     End If
+                  End If
+               End If
+            End If
+         Else
+            ' At leftmost position already.  The code currently prevents
+            ' you from shifting the left most bar away from the 0 position
+            ' when there is more than one bar on the row
+            
+         End If
+      End If
+   End If
+End Sub
+
+Private Sub checkMoveRight()
+Dim lRow As Long, lBar As Long
+Dim i As Long, j As Long
+Dim tB As tDockedBar
+Dim lX As Long
+Dim tR As RECT
+Dim lSize As Long
+      
+   getActiveBarLocation lRow, lBar
+   
+   ' have we moved off?
+   If lBar = m_tRow(lRow).lCount Then
+      GetWindowRect m_hWndCtl, tR
+      If Horizontal Then
+         lSize = tR.Right - tR.Left
+      Else
+         lSize = tR.Bottom - tR.Top
+      End If
+      If m_tRow(lRow).tBar(lBar).lThisX - m_tRow(lRow).tBar(lBar).lOffsetX &gt;
+       lSize Then
+         If dragOff(lRow, lBar, True, 1) Then
+            Exit Sub
+         End If
+      End If
+   End If
+   
+   If m_tRow(lRow).tBar(lBar).bFillRow Then
+      ' don't move
+      Exit Sub
+   End If
+   
+   If m_tRow(lRow).lCount = 1 Then
+      GetWindowRect m_hWndCtl, tR
+      If Horizontal Then
+         lSize = tR.Right - tR.Left
+      Else
+         lSize = tR.Bottom - tR.Top
+      End If
+      ' constrained by dimension:
+      If m_tRow(lRow).tBar(lBar).lThisX &lt; 0 Then
+         lX = 0
+      ElseIf m_tRow(lRow).tBar(lBar).lThisX + m_tRow(lRow).tBar(lBar).cx &gt;
+       lSize Then
+         lX = lSize - m_tRow(lRow).tBar(lBar).cx
+      Else
+         lX = m_tRow(lRow).tBar(lBar).lThisX
+      End If
+      m_tRow(lRow).tBar(lBar).lX = lX
+      m_tRow(lRow).tBar(lBar).lXSingleRow = lX
+      
+      Resize
+   Else
+      If lBar &lt; m_tRow(lRow).lCount Then
+         ' left x of Leftmost subsequent bar:
+         lX = m_tRow(lRow).tBar(lBar + 1).lX
+         If m_tRow(lRow).tBar(lBar).lThisX + m_tRow(lRow).tBar(lBar).lOffsetX &gt;
+          lX Then
+            ' time to move. Swap lBar with lBar + 1 and then autosize:
+            LSet tB = m_tRow(lRow).tBar(lBar)
+            LSet m_tRow(lRow).tBar(lBar) = m_tRow(lRow).tBar(lBar + 1)
+            m_tRow(lRow).tBar(lBar).lX = tB.lX
+            LSet m_tRow(lRow).tBar(lBar + 1) = tB
+            m_tRow(lRow).tBar(lBar + 1).lX = m_tRow(lRow).tBar(lBar).lX +
+             m_tRow(lRow).tBar(lBar).cx
+   
+            m_tRow(lRow).tBar(lBar).lLastX = m_tRow(lRow).tBar(lBar).lThisX
+            m_tRow(lRow).tBar(lBar).lLastY = m_tRow(lRow).tBar(lBar).lThisY
+            
+            rowSize lRow
+            Resize
+         End If
+      Else
+         ' At rightmost position already
+      End If
+   End If
+   
+End Sub
+Private Function sanity(ByVal sProcName As String) As Boolean
+Dim lRow As Long
+Dim lR As Boolean
+   'Debug.Print sProcName
+   lR = True
+   For lRow = 1 To m_lRows
+      'Debug.Print lRow, m_tRow(lRow).lCount
+      If m_tRow(lRow).lCount = 0 Then
+         Debug.Assert "!!!!!!FAILED!!!!!!" = ""
+         lR = False
+      End If
+   Next lRow
+   sanity = lR
+End Function
+Private Sub rearrangeShareRowUp()
+Dim lRow As Long, lBar As Long
+Dim i As Long, j As Long
+Dim tB() As tDockedBar
+Dim tBS As tDockedBar
+Dim iC As Long
+
+   Debug.Assert sanity("rearrangeShareRowUp:START")
+   m_tPtDock.x = -20000
+   m_tPtDock.y = -20000
+
+
+   getActiveBarLocation lRow, lBar
+   
+   ' We shift the active bar onto the next row up, and shift
+   ' up everything on subsequent rows up on.
+   
+   m_tRow(lRow).tBar(lBar).lLastX = m_tRow(lRow).tBar(lBar).lThisX
+   m_tRow(lRow).tBar(lBar).lLastY = m_tRow(lRow).tBar(lBar).lThisY
+   m_tRow(lRow).tBar(lBar).eAction = eNewAction
+   
+   ' Can we share the row?
+   If m_tRow(lRow).tBar(lBar).bFillRow Then
+      ' NO
+      Exit Sub
+   End If
+   
+   For i = lRow - 1 To m_lRows - 1
+      If i = lRow - 1 Then
+         ' Shifting onto the row:
+         iC = m_tRow(i).lCount
+         ReDim tB(1 To iC) As tDockedBar
+         For j = 1 To iC
+            LSet tB(j) = m_tRow(i).tBar(j)
+         Next j
+         
+         m_tRow(i).lCount = iC + 1
+         
+         If m_tRow(lRow).tBar(lBar).lThisX - m_tRow(lRow).tBar(lBar).lOffsetX &gt;
+          m_lMinBarSize Then
+            LSet m_tRow(i).tBar(m_tRow(i).lCount) = m_tRow(lRow).tBar(lBar)
+            For j = 1 To iC
+               LSet m_tRow(i).tBar(j) = tB(j)
+            Next j
+         Else
+            LSet m_tRow(i).tBar(1) = m_tRow(lRow).tBar(lBar)
+            For j = 2 To iC + 1
+               LSet m_tRow(i).tBar(j) = tB(j - 1)
+            Next j
+         End If
+      Else
+         ' Moving up a row:
+         m_tRow(i).lCount = m_tRow(i + 1).lCount
+         For j = 1 To m_tRow(i + 1).lCount
+            LSet m_tRow(i).tBar(j) = m_tRow(i + 1).tBar(j)
+         Next j
+      End If
+   Next i
+   m_lRows = m_lRows - 1
+      
+   AutoSize
+   
+   Debug.Assert sanity("rearrangeShareRowUp:END")
+   
+End Sub
+
+Private Sub rearrangeShareRowDown()
+Dim lRow As Long, lBar As Long
+Dim i As Long, j As Long
+Dim tB() As tDockedBar
+Dim tBS As tDockedBar
+Dim iC As Long
+   
+   Debug.Assert (sanity("rearrangeShareRowDown:START"))
+   m_tPtDock.x = -20000
+   m_tPtDock.y = -20000
+      
+   getActiveBarLocation lRow, lBar
+   
+   ' this is needed because when the dock is aligned bottom or right,
+   ' the act of creating a new row in an up direction causes the
+   ' share row action to occur, leading to a flickery loop
+   If m_bResizeInterlock Then
+      m_tRow(lRow).tBar(lBar).lLastX = m_tRow(lRow).tBar(lBar).lThisX
+      m_tRow(lRow).tBar(lBar).lLastY = m_tRow(lRow).tBar(lBar).lThisY
+      m_bResizeInterlock = False
+      Exit Sub
+   End If
+   
+   ' In effect we shift all the rows below this
+   ' one up one, correspondingly adjusting the x
+   ' position on our own row across to the right
+   
+   m_tRow(lRow).tBar(lBar).lLastX = m_tRow(lRow).tBar(lBar).lThisX
+   m_tRow(lRow).tBar(lBar).lLastY = m_tRow(lRow).tBar(lBar).lThisY
+   m_tRow(lRow).tBar(lBar).eAction = eNewAction
+   
+   ' Can we share the row?
+   If m_tRow(lRow).tBar(lBar).bFillRow Then
+      ' NO
+      Exit Sub
+   End If
+   
+   For i = lRow To m_lRows - 1
+      If i = lRow Then
+         ' Shifting onto the row:
+         iC = m_tRow(i + 1).lCount
+         ReDim tB(1 To iC) As tDockedBar
+         For j = 1 To iC
+            LSet tB(j) = m_tRow(i + 1).tBar(j)
+         Next j
+         
+         m_tRow(i).lCount = iC + 1
+         
+         If m_tRow(lRow).tBar(lBar).lThisX - m_tRow(lRow).tBar(lBar).lOffsetX &gt;
+          m_lMinBarSize Then
+            LSet m_tRow(i).tBar(m_tRow(i).lCount) = m_tRow(lRow).tBar(lBar)
+            For j = 1 To iC
+               LSet m_tRow(i).tBar(j) = tB(j)
+            Next j
+         Else
+            LSet m_tRow(i).tBar(1) = m_tRow(lRow).tBar(lBar)
+            For j = 2 To iC + 1
+               LSet m_tRow(i).tBar(j) = tB(j - 1)
+            Next j
+         End If
+      Else
+         ' Moving up a row:
+         m_tRow(i).lCount = m_tRow(i + 1).lCount
+         For j = 1 To m_tRow(i + 1).lCount
+            LSet m_tRow(i).tBar(j) = m_tRow(i + 1).tBar(j)
+         Next j
+      End If
+   Next i
+   m_lRows = m_lRows - 1
+   
+   AutoSize
+   
+   Debug.Assert (sanity("rearrangeShareRowDown:END"))
+   
+End Sub
+
+Private Sub rearrangeNewRowUp()
+Dim lRow As Long, lBar As Long
+Dim i As Long, j As Long
+Dim tB As tDockedBar
+Dim iC As Long
+Dim tR As RECT
+Dim lSize As Long
+Dim lX As Long
+Dim lH As Long
+Dim lAlign As Long
+Dim bSwap As Boolean
+
+   Debug.Assert sanity("rearrangeNewRowUp:START")
+   m_tPtDock.x = -20000
+   m_tPtDock.y = -20000
+
+   ' Keep only me on the current row
+   ' and shift everything else down by one
+   getActiveBarLocation lRow, lBar
+   m_tRow(lRow).tBar(lBar).lLastX = m_tRow(lRow).tBar(lBar).lThisX
+   m_tRow(lRow).tBar(lBar).lLastY = m_tRow(lRow).tBar(lBar).lThisY
+   m_tRow(lRow).tBar(lBar).eAction = eNewAction
+   
+   LSet tB = m_tRow(lRow).tBar(lBar)
+   lH = m_tRow(lRow).lHeight
+   
+   If (m_tRow(lRow).tBar(lBar).bFillRow) Then
+      bSwap = True
+   ElseIf (lRow &gt; 1) Then
+      If (m_tRow(lRow - 1).tBar(1).bFillRow) And (m_tRow(lRow).lCount = 1) Then
+         bSwap = True
+      End If
+   End If
+   
+   ' Full row bar situation?
+   If m_lRows = m_lCount Then
+      If lRow &gt; 1 Then
+         LSet m_tRow(lRow).tBar(1) = m_tRow(lRow - 1).tBar(1)
+         m_tRow(lRow).lHeight = m_tRow(lRow - 1).lHeight
+         LSet m_tRow(lRow - 1).tBar(1) = tB
+         m_tRow(lRow - 1).lHeight = lH
+      End If
+   ElseIf bSwap Then
+      ' swp:
+      If lRow &gt; 1 Then
+         For j = 1 To m_tRow(lRow - 1).lCount
+            LSet m_tRow(lRow).tBar(j) = m_tRow(lRow - 1).tBar(j)
+         Next j
+         LSet m_tRow(lRow) = m_tRow(lRow - 1)
+         LSet m_tRow(lRow - 1).tBar(1) = tB
+         m_tRow(lRow - 1).lCount = 1
+         m_tRow(lRow - 1).lHeight = lH
+      End If
+   Else
+      ' First shift everything across on this row
+      ' now that the active bar has left:
+      For j = lBar + 1 To m_tRow(lRow).lCount
+         LSet m_tRow(lRow).tBar(j - 1) = m_tRow(lRow).tBar(j)
+      Next j
+      m_tRow(lRow).lCount = m_tRow(lRow).lCount - 1
+      
+      ' Now shift everything down by 1:
+      For i = m_lRows To lRow Step -1
+         m_tRow(i + 1).lCount = m_tRow(i).lCount
+         For j = 1 To m_tRow(i).lCount
+            LSet m_tRow(i + 1).tBar(j) = m_tRow(i).tBar(j)
+         Next j
+      Next i
+      m_lRows = m_lRows + 1
+      
+      ' Fix up the current row:
+      m_tRow(lRow).lCount = 1
+      LSet m_tRow(lRow).tBar(1) = tB
+      m_tRow(lRow).tBar(1).lX = 0
+      
+      For i = 1 To m_lRows
+         rowSize i
+      Next i
+      Resize
+      getActiveBarLocation lRow, lBar
+      GetWindowRect m_hWndCtl, tR
+      If Horizontal Then
+         lSize = tR.Right - tR.Left
+      Else
+         lSize = tR.Bottom - tR.Top
+      End If
+      If m_tRow(lRow).tBar(lBar).lThisX &lt; 0 Then
+         lX = 0
+      ElseIf m_tRow(lRow).tBar(lBar).lThisX + m_tRow(lRow).tBar(lBar).cx &gt;
+       lSize Then
+         lX = lSize - m_tRow(lRow).tBar(lBar).cx
+      Else
+         lX = m_tRow(lRow).tBar(lBar).lThisX
+      End If
+      m_tRow(lRow).tBar(lBar).lX = lX
+      m_tRow(lRow).tBar(lBar).lXSingleRow = lX
+   End If
+   
+   On Error Resume Next
+   lAlign = UserControl.Extender.Align
+   On Error GoTo 0
+   
+   If lAlign = 2 Or lAlign = 4 Then ' bottom, right
+      m_bResizeInterlock = True
+   End If
+   
+   Resize
+   
+   Debug.Assert sanity("rearrangeNewRowUp:END")
+   
+End Sub
+
+Private Sub rearrangeNewRowDown()
+Dim lRow As Long, lBar As Long
+Dim i As Long, j As Long
+Dim tB As tDockedBar
+Dim iC As Long
+Dim tR As RECT
+Dim lX As Long
+Dim lSize As Long
+Dim lH As Long
+Dim bSwap As Boolean
+
+   Debug.Assert sanity("rearrangeNewRowDown:START")
+   m_tPtDock.x = -20000
+   m_tPtDock.y = -20000
+
+   ' We make space for a new row on the next row, shift
+   ' everything else down and then put this in the new row
+   getActiveBarLocation lRow, lBar
+   m_tRow(lRow).tBar(lBar).lLastX = m_tRow(lRow).tBar(lBar).lThisX
+   m_tRow(lRow).tBar(lBar).lLastY = m_tRow(lRow).tBar(lBar).lThisY
+   m_tRow(lRow).tBar(lBar).eAction = eNewAction
+      
+   LSet tB = m_tRow(lRow).tBar(lBar)
+   lH = m_tRow(lRow).lHeight
+   
+   If (m_tRow(lRow).tBar(lBar).bFillRow) Then
+      bSwap = True
+   ElseIf (lRow &lt; m_lCount) Then
+      If (m_tRow(lRow + 1).tBar(1).bFillRow) And (m_tRow(lRow).lCount = 1) Then
+         bSwap = True
+      End If
+   End If
+   
+   ' Full row bar situation?
+   If (m_lRows = m_lCount) Then
+      LSet m_tRow(lRow).tBar(1) = m_tRow(lRow + 1).tBar(1)
+      m_tRow(lRow).lHeight = m_tRow(lRow + 1).lHeight
+      LSet m_tRow(lRow + 1).tBar(1) = tB
+      m_tRow(lRow + 1).lHeight = lH
+   ElseIf bSwap Then
+      ' must swap this with the next row:
+      For j = 1 To m_tRow(lRow + 1).lCount
+         LSet m_tRow(lRow).tBar(j) = m_tRow(lRow + 1).tBar(j)
+      Next j
+      LSet m_tRow(lRow) = m_tRow(lRow + 1)
+      m_tRow(lRow + 1).tBar(1) = tB
+      m_tRow(lRow + 1).lCount = 1
+      m_tRow(lRow + 1).lHeight = lH
+   Else
+      ' Shuffle up this row:
+      For j = lBar + 1 To m_tRow(lRow).lCount
+         LSet m_tRow(lRow).tBar(j - 1) = m_tRow(lRow).tBar(j)
+      Next j
+      m_tRow(lRow).lCount = m_tRow(lRow).lCount - 1
+      
+      If lRow = m_lRows Then
+         ' Moving onto the last row; simply
+         ' add the new bar onto the last row:
+         m_lRows = m_lRows + 1
+         m_tRow(m_lRows).lCount = 1
+         LSet m_tRow(m_lRows).tBar(1) = tB
+         m_tRow(m_lRows).tBar(1).lX = 0
+      Else
+         ' Now move all bars from bar lBar+1 to m_lROws down one:
+         For i = m_lRows To lRow + 1 Step -1
+            m_tRow(i + 1).lCount = m_tRow(i).lCount
+            For j = 1 To m_tRow(i).lCount
+               LSet m_tRow(i + 1).tBar(j) = m_tRow(i).tBar(j)
+            Next j
+         Next i
+         m_lRows = m_lRows + 1
+         
+         ' Finally, the new row will be set to contain the active
+         ' bar;
+         m_tRow(lRow + 1).lCount = 1
+         LSet m_tRow(lRow + 1).tBar(1) = tB
+         m_tRow(lRow + 1).tBar(1).lX = 0
+      End If
+      
+      For i = 1 To m_lRows
+         rowSize i
+      Next i
+      Resize
+      getActiveBarLocation lRow, lBar
+      GetWindowRect m_hWndCtl, tR
+      If Horizontal Then
+         lSize = tR.Right - tR.Left
+      Else
+         lSize = tR.Bottom - tR.Top
+      End If
+      If m_tRow(lRow).tBar(lBar).lThisX &lt; 0 Then
+         lX = 0
+      ElseIf m_tRow(lRow).tBar(lBar).lThisX + m_tRow(lRow).tBar(lBar).cx &gt;
+       lSize Then
+         lX = lSize - m_tRow(lRow).tBar(lBar).cx
+      Else
+         lX = m_tRow(lRow).tBar(lBar).lThisX
+      End If
+      m_tRow(lRow).tBar(lBar).lX = lX
+      m_tRow(lRow).tBar(lBar).lXSingleRow = lX
+      
+   End If
+   Resize
+   
+   Debug.Assert sanity("rearrangeNewRowDown:END")
+   
+End Sub
+
+Private Sub rowSize(ByVal lRow As Long)
+Dim lW As Long, lX As Long
+Dim tR As RECT
+Dim lBar As Long
+Dim lR2 As Long, lB2 As Long
+Dim lcxA As Long
+Dim i As Long, j As Long
+Dim lSize As Long
+      
+   getActiveBarLocation lR2, lB2
+   'Debug.Print "rowSize:ABR:", lR2, "ABB"; lB2
+   
+   GetWindowRect m_hWndCtl, tR
+   If Horizontal Then
+      lSize = tR.Right - tR.Left
+   Else
+      lSize = tR.Bottom - tR.Top
+   End If
+   
+   ' cYA evaluation:
+   With m_tRow(lRow)
+      .lHeight = 0
+      For lBar = 1 To .lCount
+         If .tBar(lBar).cYA &gt; .lHeight Then
+            .lHeight = .tBar(lBar).cYA
+         End If
+      Next lBar
+   End With
+   
+   ' cXA evaluation:
+   If m_tRow(lRow).lCount = 1 Then
+      
+      ' one item on this row:
+      lX = 0
+      If m_tRow(lRow).tBar(1).lXSingleRow &gt; 0 Then
+         If m_tRow(lRow).tBar(1).lXSingleRow + m_tRow(lRow).tBar(1).cXA &lt; lSize
+          Then
+            lX = m_tRow(lRow).tBar(1).lXSingleRow
+         Else
+            lX = lSize - m_tRow(lRow).tBar(1).cXA
+            If lX &lt; 0 Then lX = 0
+         End If
+      End If
+      m_tRow(lRow).tBar(1).lX = lX
+      m_tRow(lRow).tBar(1).cx = m_tRow(lRow).tBar(1).cXA
+      If m_tRow(lRow).tBar(1).lX + m_tRow(lRow).tBar(1).cx &gt; lSize Then
+         m_tRow(lRow).tBar(1).cx = lSize - m_tRow(lRow).tBar(1).lX
+      End If
+      
+   Else
+   
+      ' multiple items on this row:
+      For j = 1 To m_tRow(lRow).lCount
+         lW = lW + m_tRow(lRow).tBar(j).cXA
+      Next j
+      
+      If lW &lt; lSize Then
+         ' We can fit everything in:
+         lX = 0
+         For j = 1 To m_tRow(lRow).lCount
+            m_tRow(lRow).tBar(j).lX = lX
+            m_tRow(lRow).tBar(j).cx = m_tRow(lRow).tBar(j).cXA
+            lX = lX + m_tRow(lRow).tBar(j).cx
+         Next j
+      Else
+         
+         ' We can't fit everything in.  If the activebar is on this
+         ' row then give that full size and divide the rest by the
+         ' remaining count, unless that doesn't fit in which case
+         ' give the rest the minimum width &amp; the activebar the
+         ' remainder.
+         ' If the activebar isn't on the row, then check for the
+         ' last chosen bar and attempt to give that priority.
+         ' If there isn't a last chosen bar then just resize
+         ' equally
+            
+         If Not (lR2 = lRow) Then
+            For j = 1 To m_tRow(lRow).lCount
+               If m_tRow(lRow).tBar(j).bRowLastChosenBar Then
+                  lR2 = lRow
+                  lB2 = j
+               End If
+            Next j
+         End If
+         
+         If lR2 = lRow Then
+            lcxA = m_tRow(lRow).tBar(lB2).cXA
+            
+            If (lcxA + (m_tRow(lRow).lCount - 1) * m_lMinBarSize) &gt; lSize Then
+               lcxA = lSize - (m_tRow(lRow).lCount - 1) * m_lMinBarSize
+               If lcxA &lt; m_lMinBestBarSize Then
+                  lcxA = m_lMinBestBarSize
+               End If
+            End If
+            
+            lW = (lSize - lcxA) \ (m_tRow(lRow).lCount - 1)
+            
+            For j = 1 To m_tRow(lRow).lCount
+               If j = lB2 Then
+                  m_tRow(lRow).tBar(j).cx = lcxA
+               Else
+                  m_tRow(lRow).tBar(j).cx = lW
+               End If
+               m_tRow(lRow).tBar(j).lX = lX
+               lX = lX + m_tRow(lRow).tBar(j).cx
+            Next j
+            
+         Else
+            lW = lSize \ m_tRow(lRow).lCount
+            For j = 1 To m_tRow(lRow).lCount
+               m_tRow(lRow).tBar(j).lX = lX
+               m_tRow(lRow).tBar(j).cx = lW
+               lX = lX + lW
+            Next j
+         End If
+         
+      End If
+      
+   End If
+   
+   
+End Sub
+
+Private Sub mouseUp( _
+      x As Single, y As Single _
+   )
+Dim lRow As Long, lBar As Long
+Dim j As Long
+Dim ctl As Object
+   If m_iActiveBar &gt; 0 Then
+      ' set the row last chosen bar:
+      getActiveBarLocation lRow, lBar
+      For j = 1 To m_tRow(lRow).lCount
+         m_tRow(lRow).tBar(j).bRowLastChosenBar = (j = lBar)
+      Next j
+   End If
+   m_iActiveBar = 0
+End Sub
+
+Private Sub drawBar( _
+      ByVal lIndex As Long _
+   )
+Dim hBrBack As Long
+Dim hPen As Long
+Dim hPenOld As Long
+Dim tJunk As POINTAPI
+Dim tR As RECT
+Dim tTR As RECT
+Dim lHDC As Long
+   
+   lHDC = picBar(lIndex).hdc
+   
+   If (m_bXPStyle) Then
+      hBrBack = CreateSolidBrush(VSNetControlColor)
+   Else
+      If (picBar(lIndex).BackColor And &amp;H80000000) Then
+         hBrBack = GetSysColorBrush(picBar(lIndex).BackColor And &amp;H1F&amp;)
+      Else
+         hBrBack = CreateSolidBrush(picBar(lIndex).BackColor)
+      End If
+   End If
+   
+   ' -------------------------------------------------------------------
+   ' Background to client area:
+   GetClientRect picBar(lIndex).hwnd, tR
+   FillRect lHDC, tR, hBrBack
+   ' -------------------------------------------------------------------
+   
+   ' -------------------------------------------------------------------
+   ' Background to gripper:
+   If Not (LockToolBars) Then
+      LSet tTR = tR
+      If Horizontal Then
+         tTR.Right = tTR.Left + 10
+      Else
+         tTR.Bottom = tTR.Top + 10
+      End If
+      FillRect lHDC, tTR, hBrBack
+   End If
+   ' -------------------------------------------------------------------
+   ' Background to chevron:
+   LSet tTR = tR
+   If Horizontal Then
+      tTR.Left = tTR.Right - 12
+   Else
+      tTR.Top = tTR.Bottom - 12
+   End If
+   If (m_bXPStyle) Then
+      If (m_tChevron(lIndex).bMouseDown) Then
+         DeleteObject hBrBack
+         hBrBack = GetSysColorBrush(vbButtonFace)
+      ElseIf (m_tChevron(lIndex).bMouseOver) Then
+         DeleteObject hBrBack
+         hBrBack = CreateSolidBrush(VSNetSelectionColor)
+      End If
+   End If
+   FillRect lHDC, tTR, hBrBack
+   ' -------------------------------------------------------------------
+   
+   DeleteObject hBrBack
+         
+   ' -------------------------------------------------------------------
+   ' Chevron/Customiser
+   hPen = CreatePen(PS_SOLID, 1, GetSysColor(vbMenuText))
+   hPenOld = SelectObject(lHDC, hPen)
+   
+   LSet tTR = tR
+   If Horizontal Then
+      tTR.Left = tTR.Right - 12
+      tTR.Right = tTR.Right - 1
+      tTR.Top = tTR.Top + 1
+      tTR.Bottom = tTR.Bottom - 1
+   Else
+      tTR.Left = tTR.Left + 1
+      tTR.Right = tTR.Right - 1
+      tTR.Top = tTR.Bottom - 12
+      tTR.Bottom = tTR.Bottom - 1
+   End If
+   LSet m_tChevron(lIndex).tR = tTR
+      
+   ' The Chevron:
+   LSet tTR = tR
+   If m_tChevron(lIndex).bShow Then
+      If Horizontal Then
+         
+         tTR.Left = tTR.Right - 10
+         tTR.Top = tTR.Top + 3
+         MoveToEx lHDC, tTR.Left, tTR.Top, tJunk
+         LineTo lHDC, tTR.Left + 2, tTR.Top
+         MoveToEx lHDC, tTR.Left + 1, tTR.Top + 1, tJunk
+         LineTo lHDC, tTR.Left + 3, tTR.Top + 1
+         MoveToEx lHDC, tTR.Left + 2, tTR.Top + 2, tJunk
+         LineTo lHDC, tTR.Left + 4, tTR.Top + 2
+         MoveToEx lHDC, tTR.Left + 1, tTR.Top + 3, tJunk
+         LineTo lHDC, tTR.Left + 3, tTR.Top + 3
+         MoveToEx lHDC, tTR.Left, tTR.Top + 4, tJunk
+         LineTo lHDC, tTR.Left + 2, tTR.Top + 4
+         
+         tTR.Left = tTR.Right - 6
+         MoveToEx lHDC, tTR.Left, tTR.Top, tJunk
+         LineTo lHDC, tTR.Left + 2, tTR.Top
+         MoveToEx lHDC, tTR.Left + 1, tTR.Top + 1, tJunk
+         LineTo lHDC, tTR.Left + 3, tTR.Top + 1
+         MoveToEx lHDC, tTR.Left + 2, tTR.Top + 2, tJunk
+         LineTo lHDC, tTR.Left + 4, tTR.Top + 2
+         MoveToEx lHDC, tTR.Left + 1, tTR.Top + 3, tJunk
+         LineTo lHDC, tTR.Left + 3, tTR.Top + 3
+         MoveToEx lHDC, tTR.Left, tTR.Top + 4, tJunk
+         LineTo lHDC, tTR.Left + 2, tTR.Top + 4
+         
+      Else
+         
+         tTR.Left = tTR.Right - 8
+         tTR.Top = tTR.Bottom - 10
+         MoveToEx lHDC, tTR.Left, tTR.Top, tJunk
+         LineTo lHDC, tTR.Left, tTR.Top + 2
+         MoveToEx lHDC, tTR.Left + 1, tTR.Top + 1, tJunk
+         LineTo lHDC, tTR.Left + 1, tTR.Top + 3
+         MoveToEx lHDC, tTR.Left + 2, tTR.Top + 2, tJunk
+         LineTo lHDC, tTR.Left + 2, tTR.Top + 4
+         MoveToEx lHDC, tTR.Left + 3, tTR.Top + 1, tJunk
+         LineTo lHDC, tTR.Left + 3, tTR.Top + 3
+         MoveToEx lHDC, tTR.Left + 4, tTR.Top, tJunk
+         LineTo lHDC, tTR.Left + 4, tTR.Top + 2
+         
+         tTR.Top = tTR.Bottom - 6
+         MoveToEx lHDC, tTR.Left, tTR.Top, tJunk
+         LineTo lHDC, tTR.Left, tTR.Top + 2
+         MoveToEx lHDC, tTR.Left + 1, tTR.Top + 1, tJunk
+         LineTo lHDC, tTR.Left + 1, tTR.Top + 3
+         MoveToEx lHDC, tTR.Left + 2, tTR.Top + 2, tJunk
+         LineTo lHDC, tTR.Left + 2, tTR.Top + 4
+         MoveToEx lHDC, tTR.Left + 3, tTR.Top + 1, tJunk
+         LineTo lHDC, tTR.Left + 3, tTR.Top + 3
+         MoveToEx lHDC, tTR.Left + 4, tTR.Top, tJunk
+         LineTo lHDC, tTR.Left + 4, tTR.Top + 2
+      
+      End If
+      
+   End If
+   
+   ' The customiser:
+   LSet tTR = tR
+   If Horizontal Then
+      tTR.Left = tTR.Right - 8
+      tTR.Top = tTR.Bottom - 6
+      MoveToEx lHDC, tTR.Left, tTR.Top, tJunk
+      LineTo lHDC, tTR.Left + 5, tTR.Top
+      MoveToEx lHDC, tTR.Left + 1, tTR.Top + 1, tJunk
+      LineTo lHDC, tTR.Left + 4, tTR.Top + 1
+      MoveToEx lHDC, tTR.Left + 2, tTR.Top, tJunk
+      LineTo lHDC, tTR.Left + 2, tTR.Top + 3
+   Else
+      tTR.Left = tTR.Left + 6
+      tTR.Top = tTR.Bottom - 8
+      MoveToEx lHDC, tTR.Left, tTR.Top, tJunk
+      LineTo lHDC, tTR.Left, tTR.Top + 5
+      MoveToEx lHDC, tTR.Left - 1, tTR.Top + 1, tJunk
+      LineTo lHDC, tTR.Left - 1, tTR.Top + 4
+      MoveToEx lHDC, tTR.Left, tTR.Top + 2, tJunk
+      LineTo lHDC, tTR.Left - 3, tTR.Top + 2
+   End If
+   
+   SelectObject lHDC, hPenOld
+   DeleteObject hPen
+      
+   If m_tChevron(lIndex).bMouseOver Or m_tChevron(lIndex).bMouseDown Then
+      If m_tChevron(lIndex).bMouseDown Then
+         If (m_bXPStyle) Then
+            If Horizontal Then
+               DrawEdge lHDC, m_tChevron(lIndex).tR, BDR_RAISED, BF_RECT Or
+                BF_FLAT
+            Else
+               DrawEdge lHDC, m_tChevron(lIndex).tR, BDR_RAISED, BF_RECT Or
+                BF_FLAT
+            End If
+         Else
+            DrawEdge lHDC, m_tChevron(lIndex).tR, BDR_SUNKENOUTER, BF_RECT
+         End If
+      Else
+         If (m_bXPStyle) Then
+            hPen = CreatePen(PS_SOLID, 1, TranslateColor(vbHighlight))
+            hPenOld = SelectObject(lHDC, hPen)
+            MoveToEx lHDC, m_tChevron(lIndex).tR.Left,
+             m_tChevron(lIndex).tR.Top, tJunk
+            LineTo lHDC, m_tChevron(lIndex).tR.Right - 1,
+             m_tChevron(lIndex).tR.Top
+            LineTo lHDC, m_tChevron(lIndex).tR.Right - 1,
+             m_tChevron(lIndex).tR.Bottom - 1
+            LineTo lHDC, m_tChevron(lIndex).tR.Left,
+             m_tChevron(lIndex).tR.Bottom - 1
+            LineTo lHDC, m_tChevron(lIndex).tR.Left, m_tChevron(lIndex).tR.Top
+            SelectObject lHDC, hPen
+            DeleteObject hPen
+         Else
+            DrawEdge lHDC, m_tChevron(lIndex).tR, BDR_RAISEDINNER, BF_RECT
+         End If
+      End If
+   End If
+   
+   ' -------------------------------------------------------------------
+            
+   ' -------------------------------------------------------------------
+   ' The Gripper &amp; borders
+   If m_bXPStyle Then
+      ' Gripper:
+      hPen = CreatePen(PS_SOLID, 1, GetSysColor(vb3DShadow And &amp;H1F))
+      hPenOld = SelectObject(lHDC, hPen)
+      Dim i As Long
+      If Not (LockToolBars) Then
+         If Horizontal Then
+            For i = tR.Top + 4 To tR.Bottom - 4 Step 2
+               MoveToEx lHDC, tR.Left + 3, i, tJunk
+               LineTo lHDC, tR.Left + 6, i
+            Next i
+         Else
+            For i = tR.Left + 4 To tR.Right - 4 Step 2
+               MoveToEx lHDC, i, tR.Top + 3, tJunk
+               LineTo lHDC, i, tR.Top + 6
+            Next i
+         End If
+      End If
+      SelectObject lHDC, hPenOld
+      DeleteObject hPen
+            
+      ' Borders
+      hPen = CreatePen(PS_SOLID, 1, GetSysColor(vbButtonFace And &amp;H1F&amp;))
+      hPenOld = SelectObject(lHDC, hPen)
+      If Horizontal Then
+         MoveToEx lHDC, tR.Left, tR.Top, tJunk
+         LineTo lHDC, tR.Right - 1, tR.Top
+         MoveToEx lHDC, tR.Left, tR.Bottom - 1, tJunk
+         LineTo lHDC, tR.Right - 1, tR.Bottom - 1
+      Else
+         MoveToEx lHDC, tR.Left, tR.Top, tJunk
+         LineTo lHDC, tR.Left, tR.Bottom - 1
+         MoveToEx lHDC, tR.Right - 1, tR.Top, tJunk
+         LineTo lHDC, tR.Right - 1, tR.Bottom - 1
+      End If
+      SelectObject lHDC, hPenOld
+      DeleteObject hPen
+   
+   Else
+      hPen = CreatePen(PS_SOLID, 1, GetSysColor(vb3DHighlight And &amp;H1F&amp;))
+      hPenOld = SelectObject(lHDC, hPen)
+      ' Draw border left/top
+      MoveToEx lHDC, tR.Left, tR.Bottom, tJunk
+      LineTo lHDC, tR.Left, tR.Top
+      LineTo lHDC, tR.Right, tR.Top
+      
+      If Not (LockToolBars) Then
+         If Horizontal Then
+            MoveToEx lHDC, tR.Left + 4, tR.Bottom - 2 - 1, tJunk
+            LineTo lHDC, tR.Left + 4, tR.Top + 2
+            LineTo lHDC, tR.Left + 4 + 2, tR.Top + 2
+         Else
+            MoveToEx lHDC, tR.Right - 2 - 1, tR.Top + 4, tJunk
+            LineTo lHDC, tR.Left + 2, tR.Top + 4
+            LineTo lHDC, tR.Left + 2, tR.Top + 4 + 2
+         End If
+      End If
+      SelectObject lHDC, hPenOld
+      DeleteObject hPen
+      
+      hPen = CreatePen(PS_SOLID, 1, GetSysColor(vbButtonShadow And &amp;H1F&amp;))
+      hPenOld = SelectObject(lHDC, hPen)
+      ' Draw border right/bottom
+      MoveToEx lHDC, tR.Right - 1, tR.Top, tJunk
+      LineTo lHDC, tR.Right - 1, tR.Bottom - 1
+      LineTo lHDC, tR.Left - 1, tR.Bottom - 1
+   
+      If Not (LockToolBars) Then
+         If Horizontal Then
+            MoveToEx lHDC, tR.Left + 4 + 2, tR.Top + 2, tJunk
+            LineTo lHDC, tR.Left + 4 + 2, tR.Bottom - 2 - 1
+            LineTo lHDC, tR.Left + 4, tR.Bottom - 2 - 1
+         Else
+            MoveToEx lHDC, tR.Left + 2, tR.Top + 4 + 2, tJunk
+            LineTo lHDC, tR.Right - 2 - 1, tR.Top + 4 + 2
+            LineTo lHDC, tR.Right - 2 - 1, tR.Top + 4
+         End If
+      End If
+      SelectObject lHDC, hPenOld
+      DeleteObject hPen
+   End If
+   ' -------------------------------------------------------------------
+      
+   picBar(lIndex).Refresh
+      
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As EMsgResponse)
+   '
+End Property
+
+Private Property Get ISubclass_MsgResponse() As EMsgResponse
+   '
+   Select Case CurrentMessage
+   Case WM_ERASEBKGND
+      ISubclass_MsgResponse = emrConsume
+   Case WM_DESTROY
+      ISubclass_MsgResponse = emrPreprocess
+   End Select
+   '
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+Dim hBr As Long
+Dim lhWnd As Long
+Dim lBtns As Long
+Dim iBtn As Long
+Dim tB As TBBUTTON
+Dim tR As RECT
+Dim tP As POINTAPI
+Dim lIndex As Long
+
+   Select Case iMsg
+   Case WM_ERASEBKGND
+      lIndex = GetProp(hwnd, DOCKCONTAINERBARINDEX)
+      lhWnd = GetWindow(hwnd, GW_CHILD)
+      If lhWnd &lt;&gt; 0 Then
+         hBr = CreateSolidBrush(TranslateColor(picBar(lIndex).BackColor))
+         GetClientRect lhWnd, tR
+         MapWindowPoints lhWnd, hwnd, tR, 2
+         FillRect wParam, tR, hBr
+         DeleteObject hBr
+      End If
+      ISubclass_WindowProc = 1
+      
+   Case WM_DESTROY
+      DetachMessage Me, hwnd, WM_ERASEBKGND
+      DetachMessage Me, hwnd, WM_DESTROY
+      
+   End Select
+
+End Function
+
+Private Sub m_tmr_ThatTime()
+Dim tP As POINTAPI
+Dim lIndex As Long
+Dim bOk As Boolean
+   '
+   If IsNumeric(m_tmr.Item) Then
+      lIndex = m_tmr.Item
+      If m_tChevron(lIndex).bMouseOver Then
+         GetCursorPos tP
+         MapWindowPoints 0, picBar(lIndex).hwnd, tP, 1
+         With m_tChevron(lIndex)
+            If tP.x &gt;= .tR.Left And tP.x &lt;= .tR.Right Then
+               If tP.y &gt;= .tR.Top And tP.y &lt;= .tR.Bottom Then
+                  bOk = True
+               End If
+            End If
+            If Not bOk Then
+               .bMouseOver = False
+               drawBar lIndex
+               m_tmr.Item = ""
+               m_tmr.Interval = 0
+            End If
+         End With
+      Else
+         m_tmr.Interval = 0
+      End If
+   End If
+   '
+End Sub
+
+Private Sub picBar_MouseDown(index As Integer, Button As Integer, Shift As
+ Integer, x As Single, y As Single)
+   If (Button = vbLeftButton) Then
+      mouseDown index, x, y
+   End If
+End Sub
+
+Private Sub picBar_MouseMove(index As Integer, Button As Integer, Shift As
+ Integer, x As Single, y As Single)
+   '
+   Dim lX As Long, lY As Long
+   Dim lIndex As Long
+   
+   lX = x \ Screen.TwipsPerPixelX
+   lY = y \ Screen.TwipsPerPixelY
+   With m_tChevron(index)
+      If lX &gt;= .tR.Left And lX &lt;= .tR.Right Then
+         If lY &gt;= .tR.Top And lY &lt;= .tR.Bottom Then
+            If IsNumeric(m_tmr.Item) Then
+               lIndex = m_tmr.Item
+               If lIndex = index Then
+                  ' nothing to do
+               Else
+                  m_tmr.Interval = 0
+                  m_tmr_ThatTime
+               End If
+            End If
+            .bMouseOver = True
+            drawBar index
+            m_tmr.Item = index
+            m_tmr.Interval = 50
+         End If
+      End If
+   End With
+   '
+End Sub
+
+Private Sub picBar_MouseUp(index As Integer, Button As Integer, Shift As
+ Integer, x As Single, y As Single)
+   If (Button = vbLeftButton) Then
+      If (m_tChevron(index).bMouseDown Or m_tChevron(index).bMouseOver) Then
+         m_tChevron(index).bMouseDown = False
+         m_tChevron(index).bMouseOver = False
+         drawBar index
+      End If
+   End If
+   picBar(index).MousePointer = vbDefault
+End Sub
+
+Private Sub picBar_Resize(index As Integer)
+   drawBar index
+End Sub
+
+Private Sub UserControl_Initialize()
+   m_bXPStyle = True
+   m_bAllowDragOff = True
+   m_lNonDockingAreaSize = 24
+   ReDim m_tChevron(0 To 0) As tChevron
+   Set m_tmr = New CTimer
+End Sub
+
+Private Sub UserControl_InitProperties()
+   '
+   Create
+   '
+End Sub
+
+Private Sub UserControl_MouseMove(Button As Integer, Shift As Integer, x As
+ Single, y As Single)
+   '
+   If m_iActiveBar &gt; 0 Then
+      If (Button = 0) Then
+         mouseUp x, y
+      Else
+         mouseMove x, y
+      End If
+   End If
+   '
+End Sub
+
+Private Sub UserControl_MouseUp(Button As Integer, Shift As Integer, x As
+ Single, y As Single)
+   '
+   mouseUp x, y
+   On Error Resume Next
+   Dim i As Long
+   For i = picBar.LBound To picBar.UBound
+      picBar(i).MousePointer = vbDefault
+   Next i
+   '
+End Sub
+
+Private Sub UserControl_ReadProperties(PropBag As PropertyBag)
+   '
+   NonDockingArea = PropBag.ReadProperty("NonDockingArea", False)
+   NonDockingAreaSize = PropBag.ReadProperty("NonDockingAreaSize", 24)
+   AllowUndock = PropBag.ReadProperty("AllowUndock", True)
+   LockToolBars = PropBag.ReadProperty("LockToolbars", False)
+   OfficeXpStyle = PropBag.ReadProperty("OfficeXpStyle", True)
+   Create
+   '
+End Sub
+
+Private Sub UserControl_Resize()
+   '
+   AutoSize
+   UserControl.Refresh
+   '
+End Sub
+
+Private Sub UserControl_Show()
+   '
+   AutoSize
+   '
+End Sub
+
+Private Sub UserControl_Terminate()
+   '
+   RemoveProp m_hWndCtl, DOCKCONTAINERID
+   RemoveProp m_hWndCtl, DOCKCONTAINERVERTICAL
+   RemoveProp m_hWndCtl, DOCKCONTAINERPARENTHWND
+   m_hWndCtl = 0
+   'If Not m_cMDIToolbarMenu Is Nothing Then
+   '   m_cMDIToolbarMenu.Detach
+   '   m_hWndParent = 0
+   '   Set m_cMDIToolbarMenu = Nothing
+   '   RemoveProp m_hWndParent, MDITOOLBARMENUID
+   'End If
+   '
+End Sub
+
+Private Sub UserControl_WriteProperties(PropBag As PropertyBag)
+   '
+   PropBag.WriteProperty "NonDockingArea", NonDockingArea, False
+   PropBag.WriteProperty "NonDockingAreaSize", NonDockingAreaSize, 24
+   PropBag.WriteProperty "AllowUndock", AllowUndock, True
+   PropBag.WriteProperty "LockToolbars", LockToolBars, False
+   PropBag.WriteProperty "OfficeXpStyle", OfficeXpStyle, True
+   '
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Toolbar</a>&#160;.&#160;<a href="article.html">vbAccelerator Office Docking Bar Control</a>&#160;.&#160;<a href="VB6_OfficeBar_Full_Source.html">VB6 OfficeBar Full Source</a>&#160;.&#160;vbalDockContainer.ctl</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 24 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Toolbar/vbAccelerator_Office_Docking_Bar/VB6_OfficeBar_Full_Source_zip_vbalDockContainer_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:08 GMT -->
+</html>

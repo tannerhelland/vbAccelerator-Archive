@@ -1,0 +1,208 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Registry_and_Ini_Files/Complete_Registry_Control/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:10 GMT -->
+<head>
+
+<title>vbAccelerator - Complete Registry control</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="The cRegistry class is an easy, self-contained way to get complete access to the Windows registry. 
+Simple methods allow you to create, enumerate and delete keys and values in the registry, without restriction. 
+You can even read/write binary data to the registry. To see how powerful this library is, 
+download the demonstration Registry Editor, written entirely in VB. Its not far off RegEdit 
+shipped with Windows (although note in my version not all the features are finished!)" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Registry and Ini Files</a>&#160;.&#160;Complete Registry control</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="cRegistry_Class.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />cRegistry Class</a> (6K)</p><p /><p class="nav"><a href="VB5_Registry_Editor_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Registry Editor Demonstration</a> (59K)</p><p /><p class="nav"><a href="VB6_Registry_Editor_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Registry Editor Demonstration</a> (52K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2518</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2518&amp;type=Article&amp;title=Complete%20Registry%20control">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 0 / 1</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 1 / 2</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:24 January 2004</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />23 Jan 2004<br /><p class="update">Added remote registry connection through the <span class="code">Machine</span>.  
+Many thanks to Yaron Lavi for providing the code.</p><p class="update">Fixed problem with saving zero length strings.  Thanks to Shane Marsden for 
+providing the fix.</p><p class="update">Fixed problem with truncation of binary data.  Thanks to Morten Egelund Rasmussen
+(and many others!) for providing the fix.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Complete Registry control</h1><img src="cregedt.gif" width="401" height="232" alt="Registry Editor Sample Application" /><p /><p>The cRegistry class is an easy, self-contained way to get complete access to the Windows registry. 
+Simple methods allow you to create, enumerate and delete keys and values in the registry, without restriction. 
+You can even read/write binary data to the registry. To see how powerful this library is, 
+download the demonstration Registry Editor, written entirely in VB. Its not far off RegEdit 
+shipped with Windows (although note in my version not all the features are finished!)</p><h2>Usage</h2><p>Here is a brief summary of typical uses of the class:</p><h3>To get a String Value from the Registry</h3><pre>
+    Dim c As New cRegistry 
+    With c 
+        .ClassKey = HKEY_LOCAL_MACHINE 
+        .SectionKey = "Software\MyApp\Tips" 
+        .ValueKey = "Tip1" 
+        .ValueType = REG_SZ 
+        sTip = .Value 
+    End With 
+</pre><h3>To get a Numeric Value from the Registry</h3><pre>
+    Dim c As New cRegistry 
+    With c 
+        .ClassKey = HKEY_LOCAL_MACHINE 
+        .SectionKey = "Software\MyApp\Tips" 
+        .ValueKey = "TipCount" 
+        .ValueType = REG_DWORD 
+        lTipCount = .Value 
+    End With 
+</pre><h3>To Save a Form's position to the Registry</h3><pre>
+    Dim c As New cRegistry 
+    With c 
+        .ClassKey = HKEY_CURRENT_USER 
+        ' You don't need to check if this key already exists
+        ' - the class will create it for you
+        .SectionKey = "Software\" &amp; App.ExeName &amp; "\" &amp; frmThis.Name
+        .ValueKey = "Maximized" 
+        .ValueType = REG_DWORD 
+        .Value = (frmThis.WindowState = vbMaximized) 
+        If (frmThis.WindowState &lt;&gt; vbMaximized) 
+            .ValueKey = "Left" 
+            .Value = frmThis.Left 
+            .ValueKey = "Top" 
+            .Value = frmThis.Top 
+            .ValueKey = "Width" 
+            .Value = frmThis.Width 
+            .ValueKey = "Height" 
+            .Value = frmThis.Height 
+        End If 
+    End With 
+</pre><h3>To Get All The SubKeys of a Key</h3><p>Note you can also get all the values for a key in a similar way, except you 
+use <i>EnumerateValues</i> instead of <i>EnumerateSections</i>.</p><pre>
+    Dim c As New cRegistry 
+    Dim sKeys() As String, iKeyCount As Long 
+
+    With c 
+        .ClassKey = HKEY_LOCAL_MACHINE 
+        .SectionKey = "Software"
+        .EnumerateSections(sKeys(), iKeyCount)
+        For iKey = 1 To iKeyCount
+            Debug.Print sKeys(iKey)
+        Next iKey
+    End With 
+</pre><h3>To Delete a Key</h3><pre>
+    Dim c As New cRegistry 
+    With c 
+        .ClassKey = HKEY_LOCAL_MACHINE 
+        .SectionKey = "Software\MyApp\Tips" 
+        .DeleteKey 
+    End With 
+</pre><h3>To Delete a Value</h3><pre>
+    Dim c As New cRegistry 
+    With c 
+        .ClassKey = HKEY_LOCAL_MACHINE 
+        .SectionKey = "Software\MyApp\Tips" 
+        .ValueKey = "Tip1" 
+        .DeleteValue 
+    End With 
+</pre><h3>To Associate a File of type .CCD with your executable</h3><pre>
+    Dim c As New cRegistry 
+    With c 
+        .CreateEXEAssociation _
+            App.Path &amp; "\" &amp; App.ExeName, _
+            "CCarDesign.Project", _
+            "Custom Car Designer Project", _
+            "CCD"
+    End With 
+</pre><h3>To Read BINARY values from the registry</h3><p>Binary values are returned as a variant of type byte array. This code demonstrates 
+how to format the returned value into a string of hexadecimal values, similar to the 
+display provided in RegEdit:</p><pre>
+    Dim cR As New cRegistry
+    Dim iByte As Long
+    Dim vR as Variant
+
+    With cR
+        .ClassKey = HKEY_CURRENT_USER
+        .SectionKey = "Control Panel\Appearance"
+        .ValueKey = "CustomColors"
+        vR = .Value
+
+        If .ValueType = REG_BINARY Then
+        ' Read through the byte array and output it as a series of hex values:
+        For iByte = LBound(vR) To UBound(vR)
+            sOut = sOut &amp; "&amp;H"
+            If (iByte&lt;&amp;H10) Then
+                sOut = sOut &amp; "0"
+            End If
+            sOut = sOut &amp; Hex$(vR(iByte)) &amp; " " 
+            Next iByte
+        Else
+            sOut = vR
+        End If
+
+        Debug.Print sOut
+    End With
+</pre><h3>To Set BINARY values from the registry</h3><p>Similarly, to store binary values in the registry, cRegistry.cls expects a byte array of the binary 
+values you wish to store. This example (rather uselessly!) stores all the Red, Green, Blue values 
+of each of VB's <i>QBColors</i> into a binary array: </p><pre>
+    Dim cR As New cRegistry
+    Dim i As Long
+    Dim lC As Long
+    Dim bR As Byte
+    Dim bG As Byte
+    Dim bB As Byte
+    Dim bOut() As Byte
+
+    ' Create a binary array containing all the Red,Green,Blue values of the QBColors:
+    ReDim bOut(0 To 15 * 3 - 1) As Byte
+    For i = 1 To 15
+        ' Get the Red, Green, Blue for the QBColor at index i:
+        lC = QBColor(i)
+        bR = (lC And &amp;HFF&amp;)
+        bG = ((lC And &amp;HFF00&amp;) \ &amp;H100&amp;)
+        bB = ((lC And &amp;HFF0000) \ &amp;H10000)
+    
+        ' Add Red, Green, Blue to the byte array to store:
+        bOut((i - 1) * 3) = bR
+        bOut((i - 1) * 3 + 1) = bG
+        bOut((i - 1) * 3 + 2) = bB
+    Next i
+
+    ' Store it:
+    With cR
+        .ClassKey = HKEY_CURRENT_USER
+        .SectionKey = "software\vbaccelerator\cRegistry\Binary Test"
+        .ValueKey = "QBColors"
+        .ValueType = REG_BINARY
+        .Value = bOut()
+    End With
+</pre><p>Daniel Henry has written an article which provides a wrapper around this class to make things
+even simpler.  Have a look at <a href="http://www.hashpipe.org/display_article_asp?id=17">cRegistry Wrapper</a>.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Registry and Ini Files</a>&#160;.&#160;Complete Registry control</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 2 February 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Registry_and_Ini_Files/Complete_Registry_Control/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:12 GMT -->
+</html>

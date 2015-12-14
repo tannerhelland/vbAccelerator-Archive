@@ -1,0 +1,122 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Combo_and_List_Boxes/ComboBoxEx/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:54:58 GMT -->
+<head>
+
+<title>vbAccelerator - vbAccelerator ComboBoxEx Control</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This article presents an implementation of the Common Controls ComboBoxEx control from scratch in Visual
+Basic.  Although this control is available with some versions of VB, this version provides a number of
+enhancements including pre-built styles (drive picking, font picking, colour picking) and helper such as 
+auto-completion.  And you get the full source code to play around with!
+	" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Combo and List Boxes</a>&#160;.&#160;vbAccelerator ComboBoxEx Control</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_ComboBoxEx_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ComboBoxEx Control</a> (28K)</p><p class="nav"><a href="VB5_ComboBoxEx_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ComboBoxEx Demonstration</a> (38K)</p><p class="nav"><a href="VB5_ComboBoxEx_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ComboBoxEx Full Source</a> (94K)</p><p /><p class="nav"><a href="VB6_ComboBoxEx_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ComboBoxEx Control</a> (28K)</p><p class="nav"><a href="VB6_ComboBoxEx_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ComboBoxEx Demonstration</a> (34K)</p><p class="nav"><a href="VB6_ComboBoxEx_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ComboBoxEx Full Source</a> (91K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:1411</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1411&amp;type=Article&amp;title=vbAccelerator%20ComboBoxEx%20Control">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 2</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:12 January 2004</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />26 Jan 2003<br /><p class="update">Updated WM_CTLCOLOR.. processing so the control renders
+correctly with an XP Manifest.</p><p class="update">Added missing mnubar.bmp to download.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1412">Owner Draw Combo and List Boxes Version 2.1</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator ComboBoxEx Control</h1><p class="splash">A full implementation of the ComCtl32 ComboBoxEx Control directly from the API with Owner Draw Features</p><img src="comboBoxEx.png" width="206" height="156" alt="ComboBoxEx Drive Picker Mode" /><p />
+This article presents an implementation of the Common Controls ComboBoxEx control from scratch in Visual
+Basic.  Although this control is available with some versions of VB, this version provides a number of
+enhancements including pre-built styles (drive picking, font picking, colour picking) and helper such as 
+auto-completion.  And you get the full source code to play around with!
+	<h2>Basics</h2><p>The interface to the ComboBoxEx control is very similar to the VB ComboBox control. Standard methods
+such as <i>AddItem</i>, <i>Clear</i>, <i>ListCount</i>, <i>List</i>, <i>ItemData</i> and so on are
+all supported in exactly the same way as for the VB control.  The ComboBoxEx control also allows
+you to associated up to two icons with each ListItem from an ImageList, and this version also allows
+you complete control over drawing your own ListItems using Owner Draw styles.</p><h2>Adding Icons</h2><p>To add icons, first set the <i>ImageList</i> property.  The ImageList passed in must be a ComCtl32.DLL
+compatible image list, which means that you can either use a VB5 ComCtl32.OCX ImageList or any of the
+vbAccelerator ImageLists (such as the <a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control</a>, <a href="http://www.vbaccelerator.com/article.asp?id=2">ImageList Class</a> and <a href="http://www.vbaccelerator.com/article.asp?id=931">System ImageList
+class</a>).  Unfortunately the VB6 MSComCtl.OCX ImageList is not compatible with ComCtl32.DLL 
+and hence won't work.  There is a workaround for this, but it isn't pretty.  You basically need to copy
+all of the images from the MSComCtl.OCX image list into a vbAccelerator ImageList class.</p><p>Once you've configured an appropriate the ImageList, use the <i>ItemIcon</i> or <i>ItemIconSelected</i> 
+properties to associate the image with your control.  These properties accept and return a zero-based 
+index to the icon within the ImageList.  If you don't set the <i>ItemIconSelected</i> property, then
+the <i>ItemIcon</i> will still be used when the item is selected.</p><h2>Controlling Styles</h2><p>There are three properties for controlling the style of the control:</p><ol><li>Style</li><li>ExtendedStyle</li><li>DrawStyle</li></ol><p>The <i>Style</i> property is the same as the standard VB ComboBox one, so the other styles
+are covered next: 
+</p><h3>ExtendedStyle</h3><p>This property allows you to set or remove the three extended properties provided by the 
+ComboBoxEx control at design-time or run-time:</p><ol><li>CBES_EX_NOEDITIMAGE<br />
+Gets/sets whether the icon for the selected item appears in the edit box or not.</li><li>CBES_EX_NOEDITIMAGEINDENT<br />
+Gets/sets whether the text in the edit box is indented to provide space for the icon of the selected item.
+</li><li>CBES_EX_CASESENSITIVE<br />
+Gets/sets whether searches on the text in the edit box are case sensitive or not.</li></ol><h3>DrawStyle</h3><p>This property changes the style the control uses to draws, at design-time or
+at run-time.  There are 9 pre-built styles:</p><ol><li>eccxDrawDefault<br /></li><li>eccxDrawDefaultThenClient<br />
+Draws the ComboBoxEs using the default style, then raises a <i>DrawItem</i> event.  This allows you to add
+to the existing style by drawing on the device handle returned</li><li>eccxDrawODCboList<br /></li><li>eccxDrawODCboListThenClient<br />
+Same as eccxDrawODCboList but raises a <i>DrawItem</i> event once the control has finished drawing.</li><li>eccxOwnerDraw<br />
+The control performs no drawing, allowing you to draw your own custom items in the Combo Box.</li><li>eccxColourPickerWithNames<br />
+Draws a colour picker control with a small box showing a sample of the colour and the name
+of the colour to the left.  The colour to draw is specified in the <i>ItemData</i> property of the
+ListItem and the name of the colour is specified by the <i>Text</i> property.</li><li>eccxColourPickerNoNames<br />
+Same as <i>eccxColourPickerWithNames</i> except the colour sample extends the width of the Combo Box.</li><li>eccxSysColourPicker<br />
+Similar to <i>eccxColourPickerWithNames</i> except preloads the combo box with the System colours.</li><li>eccxFontPicker<br />
+Loads the system fonts into the control and displays them along with an icon indicating the type of the font
+(true-type, clear-type etc).</li><li>eccxDriveList<br />
+Loads the system drives into the control and sets the appropriate icons.
+</li></ol><h2>Other Properties and Methods</h2><ul><li>ComboIsDropped<br />
+Gets whether the combo list portion of the control is dropped down.
+</li><li>DoAutoComplete<br />
+Specifies whether text typed into the edit portion of the combo box is auto-matched against
+items in the control. When this flag is set, you can customise the behaviour of the auto-completion
+by setting the <i>AutoCompleteItemsAreSorted</i> and <i>AutoCompleteListItemsOnly</i> properties.
+<i>AutoCompleteItemsAreSorted</i> enables auto-complete to work faster if you know the list is
+sorted, whilst <i>AutoCompleteListItemsOnly</i> means an item will only be selected if the text
+is a match for an item in the box.</li><li>FindItemIndex<br />
+Finds the specified string, using exact matching if required.  The find can be case-sensitive or
+case-insensitive depending on the setting of the ExtendedStyle flag <i>CBES_EX_CASESENSITIVE</i>.
+</li><li>ShowDropDown<br />
+Allows you to programmatically drop-down the combo box.</li><li>Sorted<br />
+Same as the VB ComboBox sorted method, except it can be changed at run-time.</li></ul><h2>Wrap-Up</h2><p>The ComboBoxEx control is a simple way of adding icon ComboBoxes to your application, and makes
+life particularly easy if you want to implement a Drive, Font or Colour picker.  If you are 
+prepared to delve into the GDI world, you can also create your own completely customised ComboBox 
+controls, although note that you cannot modify the height of an item in the ComboBox.  To achieve
+combo box items with variable heights, you need to use a standard ComboBox control with Owner-Draw 
+mode set - see the <a href="http://www.vbaccelerator.com/article.asp?id=1412">vbAccelerator OwnerDraw Combo and ListBox Control</a>
+for details of how to achieve this.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Combo and List Boxes</a>&#160;.&#160;vbAccelerator ComboBoxEx Control</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 4 February 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Combo_and_List_Boxes/ComboBoxEx/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:55:00 GMT -->
+</html>

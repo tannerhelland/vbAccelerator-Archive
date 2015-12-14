@@ -1,0 +1,332 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/OwnerDraw_Cells/VB5_SGrid_2_Owner_Draw_Demonstration_zip_mHLS_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:06 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: mHLS.bas</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: mHLS.bas" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;<a href="article.html">Owner-Draw Cells with SGrid 2.0</a>&#160;.&#160;<a href="VB5_SGrid_2_Owner_Draw_Demonstration.html">VB5 SGrid 2 Owner Draw Demonstration</a>&#160;.&#160;mHLS.bas</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_SGrid_2_Owner_Draw_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 SGrid 2 Owner Draw Demonstration</a> (60K)</p><p /><p class="nav"><a href="VB6_SGrid_2_Owner_Draw_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 SGrid 2 Owner Draw Demonstration</a> (56K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:14001</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14001&amp;type=Zip&amp;title=VB5%20SGrid%202%20Owner%20Draw%20Demonstration%2Ezip%5FmHLS">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />24 Jan 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13703">SGrid 2.0</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: mHLS.bas</h1><pre>Attribute VB_Name = "mUtility"
+Option Explicit
+
+Public Type RECT
+   left As Long
+   top As Long
+   right As Long
+   bottom As Long
+End Type
+
+Private Type TRIVERTEX
+   x As Long
+   y As Long
+   Red As Integer
+   Green As Integer
+   Blue As Integer
+   Alpha As Integer
+End Type
+Private Type GRADIENT_RECT
+    UpperLeft As Long
+    LowerRight As Long
+End Type
+Private Type GRADIENT_TRIANGLE
+    Vertex1 As Long
+    Vertex2 As Long
+    Vertex3 As Long
+End Type
+Private Declare Function GradientFill Lib "msimg32" ( _
+   ByVal hdc As Long, _
+   pVertex As TRIVERTEX, _
+   ByVal dwNumVertex As Long, _
+   pMesh As GRADIENT_RECT, _
+   ByVal dwNumMesh As Long, _
+   ByVal dwMode As Long) As Long
+Private Declare Function GradientFillTriangle Lib "msimg32" Alias
+ "GradientFill" ( _
+   ByVal hdc As Long, _
+   pVertex As TRIVERTEX, _
+   ByVal dwNumVertex As Long, _
+   pMesh As GRADIENT_TRIANGLE, _
+   ByVal dwNumMesh As Long, _
+   ByVal dwMode As Long) As Long
+Private Const GRADIENT_FILL_TRIANGLE = &amp;H2&amp;
+Private Declare Function CreateSolidBrush Lib "gdi32" (ByVal crColor As Long)
+ As Long
+Private Declare Function FillRect Lib "user32" (ByVal hdc As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+
+Private Declare Function OleTranslateColor Lib "OLEPRO32.DLL" (ByVal OLE_COLOR
+ As Long, ByVal HPALETTE As Long, pccolorref As Long) As Long
+Public Const CLR_INVALID = -1
+
+Public Enum GradientFillRectType
+   GRADIENT_FILL_RECT_H = 0
+   GRADIENT_FILL_RECT_V = 1
+End Enum
+
+
+
+Public Sub RGBToHLS( _
+      ByVal r As Long, ByVal g As Long, ByVal b As Long, _
+      h As Single, s As Single, l As Single _
+   )
+Dim Max As Single
+Dim Min As Single
+Dim delta As Single
+Dim rR As Single, rG As Single, rB As Single
+
+   rR = r / 255: rG = g / 255: rB = b / 255
+
+'{Given: rgb each in [0,1].
+' Desired: h in [0,360] and s in [0,1], except if s=0, then h=UNDEFINED.}
+        Max = Maximum(rR, rG, rB)
+        Min = Minimum(rR, rG, rB)
+        l = (Max + Min) / 2    '{This is the lightness}
+        '{Next calculate saturation}
+        If Max = Min Then
+            'begin {Acrhomatic case}
+            s = 0
+            h = 0
+           'end {Acrhomatic case}
+        Else
+           'begin {Chromatic case}
+                '{First calculate the saturation.}
+           If l &lt;= 0.5 Then
+               s = (Max - Min) / (Max + Min)
+           Else
+               s = (Max - Min) / (2 - Max - Min)
+            End If
+            '{Next calculate the hue.}
+            delta = Max - Min
+           If rR = Max Then
+                h = (rG - rB) / delta    '{Resulting color is between yellow
+                 and magenta}
+           ElseIf rG = Max Then
+                h = 2 + (rB - rR) / delta '{Resulting color is between cyan and
+                 yellow}
+           ElseIf rB = Max Then
+                h = 4 + (rR - rG) / delta '{Resulting color is between magenta
+                 and cyan}
+            End If
+            'Debug.Print h
+            'h = h * 60
+           'If h &lt; 0# Then
+           '     h = h + 360            '{Make degrees be nonnegative}
+           'End If
+        'end {Chromatic Case}
+      End If
+'end {RGB_to_HLS}
+End Sub
+
+Public Sub HLSToRGB( _
+      ByVal h As Single, ByVal s As Single, ByVal l As Single, _
+      r As Long, g As Long, b As Long _
+   )
+Dim rR As Single, rG As Single, rB As Single
+Dim Min As Single, Max As Single
+
+   If s = 0 Then
+      ' Achromatic case:
+      rR = l: rG = l: rB = l
+   Else
+      ' Chromatic case:
+      ' delta = Max-Min
+      If l &lt;= 0.5 Then
+         's = (Max - Min) / (Max + Min)
+         ' Get Min value:
+         Min = l * (1 - s)
+      Else
+         's = (Max - Min) / (2 - Max - Min)
+         ' Get Min value:
+         Min = l - s * (1 - l)
+      End If
+      ' Get the Max value:
+      Max = 2 * l - Min
+      
+      ' Now depending on sector we can evaluate the h,l,s:
+      If (h &lt; 1) Then
+         rR = Max
+         If (h &lt; 0) Then
+            rG = Min
+            rB = rG - h * (Max - Min)
+         Else
+            rB = Min
+            rG = h * (Max - Min) + rB
+         End If
+      ElseIf (h &lt; 3) Then
+         rG = Max
+         If (h &lt; 2) Then
+            rB = Min
+            rR = rB - (h - 2) * (Max - Min)
+         Else
+            rR = Min
+            rB = (h - 2) * (Max - Min) + rR
+         End If
+      Else
+         rB = Max
+         If (h &lt; 4) Then
+            rR = Min
+            rG = rR - (h - 4) * (Max - Min)
+         Else
+            rG = Min
+            rR = (h - 4) * (Max - Min) + rG
+         End If
+         
+      End If
+            
+   End If
+   r = rR * 255: g = rG * 255: b = rB * 255
+End Sub
+Private Function Maximum(rR As Single, rG As Single, rB As Single) As Single
+   If (rR &gt; rG) Then
+      If (rR &gt; rB) Then
+         Maximum = rR
+      Else
+         Maximum = rB
+      End If
+   Else
+      If (rB &gt; rG) Then
+         Maximum = rB
+      Else
+         Maximum = rG
+      End If
+   End If
+End Function
+Private Function Minimum(rR As Single, rG As Single, rB As Single) As Single
+   If (rR &lt; rG) Then
+      If (rR &lt; rB) Then
+         Minimum = rR
+      Else
+         Minimum = rB
+      End If
+   Else
+      If (rB &lt; rG) Then
+         Minimum = rB
+      Else
+         Minimum = rG
+      End If
+   End If
+End Function
+
+
+Public Sub GradientFillRect( _
+      ByVal lHDC As Long, _
+      tR As RECT, _
+      ByVal oStartColor As OLE_COLOR, _
+      ByVal oEndColor As OLE_COLOR, _
+      ByVal eDir As GradientFillRectType _
+   )
+Dim hBrush As Long
+Dim lStartColor As Long
+Dim lEndColor As Long
+Dim lR As Long
+   
+   ' Use GradientFill:
+   lStartColor = TranslateColor(oStartColor)
+   lEndColor = TranslateColor(oEndColor)
+
+   Dim tTV(0 To 1) As TRIVERTEX
+   Dim tGR As GRADIENT_RECT
+   
+   setTriVertexColor tTV(0), lStartColor
+   tTV(0).x = tR.left
+   tTV(0).y = tR.top
+   setTriVertexColor tTV(1), lEndColor
+   tTV(1).x = tR.right
+   tTV(1).y = tR.bottom
+   
+   tGR.UpperLeft = 0
+   tGR.LowerRight = 1
+   
+   GradientFill lHDC, tTV(0), 2, tGR, 1, eDir
+      
+   If (Err.Number &lt;&gt; 0) Then
+      ' Fill with solid brush:
+      hBrush = CreateSolidBrush(TranslateColor(oEndColor))
+      FillRect lHDC, tR, hBrush
+      DeleteObject hBrush
+   End If
+   
+End Sub
+
+Private Sub setTriVertexColor(tTV As TRIVERTEX, lColor As Long)
+Dim lRed As Long
+Dim lGreen As Long
+Dim lBlue As Long
+   lRed = (lColor And &amp;HFF&amp;) * &amp;H100&amp;
+   lGreen = (lColor And &amp;HFF00&amp;)
+   lBlue = (lColor And &amp;HFF0000) \ &amp;H100&amp;
+   setTriVertexColorComponent tTV.Red, lRed
+   setTriVertexColorComponent tTV.Green, lGreen
+   setTriVertexColorComponent tTV.Blue, lBlue
+End Sub
+Private Sub setTriVertexColorComponent(ByRef iColor As Integer, ByVal
+ lComponent As Long)
+   If (lComponent And &amp;H8000&amp;) = &amp;H8000&amp; Then
+      iColor = (lComponent And &amp;H7F00&amp;)
+      iColor = iColor Or &amp;H8000
+   Else
+      iColor = lComponent
+   End If
+End Sub
+
+
+Private Function TranslateColor(ByVal oClr As OLE_COLOR, _
+                        Optional hPal As Long = 0) As Long
+    ' Convert Automation color to Windows color
+    If OleTranslateColor(oClr, hPal, TranslateColor) Then
+        TranslateColor = CLR_INVALID
+    End If
+End Function
+
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;<a href="article.html">Owner-Draw Cells with SGrid 2.0</a>&#160;.&#160;<a href="VB5_SGrid_2_Owner_Draw_Demonstration.html">VB5 SGrid 2 Owner Draw Demonstration</a>&#160;.&#160;mHLS.bas</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 February 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/OwnerDraw_Cells/VB5_SGrid_2_Owner_Draw_Demonstration_zip_mHLS_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:06 GMT -->
+</html>

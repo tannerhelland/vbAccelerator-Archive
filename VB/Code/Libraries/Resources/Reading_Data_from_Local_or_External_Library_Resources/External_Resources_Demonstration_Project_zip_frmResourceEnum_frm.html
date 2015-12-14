@@ -1,0 +1,558 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Resources/Reading_Data_from_Local_or_External_Library_Resources/External_Resources_Demonstration_Project_zip_frmResourceEnum_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:51 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmResourceEnum.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmResourceEnum.frm" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Resources</a>&#160;.&#160;<a href="article.html">Reading Data from Local or External Library Resources</a>&#160;.&#160;<a href="External_Resources_Demonstration_Project.html">External Resources Demonstration Project</a>&#160;.&#160;frmResourceEnum.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="External_Resources_Demonstration_Project.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />External Resources Demonstration Project</a> (52K)</p><p /><p class="nav"><a href="JPG_Resource_File_Sample_Project.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />JPG Resource File Sample Project</a> (43K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2676</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2676&amp;type=Zip&amp;title=External%20Resources%20Demonstration%20Project%2Ezip%5FfrmResourceEnum">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />1 Nov 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmResourceEnum.frm</h1><pre>VERSION 5.00
+Begin VB.Form frmResourceEnum 
+   Caption         =   "Resource Enumeration"
+   ClientHeight    =   5745
+   ClientLeft      =   5595
+   ClientTop       =   2160
+   ClientWidth     =   6240
+   BeginProperty Font 
+      Name            =   "Tahoma"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "frmResourceEnum.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   5745
+   ScaleWidth      =   6240
+   Begin VB.CommandButton cmdSave 
+      Height          =   375
+      Left            =   5820
+      Picture         =   "frmResourceEnum.frx":014A
+      Style           =   1  'Graphical
+      TabIndex        =   18
+      Top             =   3360
+      Width           =   375
+   End
+   Begin VB.ComboBox cboResources 
+      Height          =   315
+      Left            =   660
+      Style           =   2  'Dropdown List
+      TabIndex        =   17
+      Top             =   1080
+      Width           =   5115
+   End
+   Begin VB.TextBox txtData 
+      Height          =   1995
+      Left            =   660
+      MultiLine       =   -1  'True
+      ScrollBars      =   3  'Both
+      TabIndex        =   15
+      Text            =   "frmResourceEnum.frx":0294
+      Top             =   3360
+      Visible         =   0   'False
+      Width           =   5115
+   End
+   Begin VB.ListBox lstResources 
+      Height          =   1815
+      Left            =   660
+      TabIndex        =   14
+      Top             =   1440
+      Width           =   5115
+   End
+   Begin VB.CommandButton cmdPick 
+      Height          =   315
+      Left            =   5820
+      Picture         =   "frmResourceEnum.frx":029C
+      Style           =   1  'Graphical
+      TabIndex        =   12
+      Top             =   660
+      Width           =   375
+   End
+   Begin VB.TextBox txtFile 
+      Height          =   315
+      Left            =   660
+      TabIndex        =   11
+      Top             =   660
+      Width           =   5115
+   End
+   Begin VB.Label lblItem 
+      BorderStyle     =   1  'Fixed Single
+      Height          =   315
+      Left            =   4560
+      TabIndex        =   20
+      Top             =   5400
+      Width           =   1635
+   End
+   Begin VB.Label lblStatus 
+      BorderStyle     =   1  'Fixed Single
+      Height          =   315
+      Left            =   60
+      TabIndex        =   19
+      Top             =   5400
+      Width           =   4455
+   End
+   Begin VB.Label lblInfo 
+      Caption         =   "Please select a resource."
+      Height          =   675
+      Left            =   660
+      TabIndex        =   16
+      Top             =   3360
+      Width           =   5115
+   End
+   Begin VB.Image imgPic 
+      Height          =   1995
+      Left            =   660
+      Top             =   3360
+      Visible         =   0   'False
+      Width           =   5115
+   End
+   Begin VB.Label lblRes 
+      Caption         =   "Res:"
+      Height          =   255
+      Left            =   60
+      TabIndex        =   13
+      Top             =   1080
+      Width           =   495
+   End
+   Begin VB.Label lblFile 
+      Caption         =   "File:"
+      Height          =   255
+      Left            =   60
+      TabIndex        =   10
+      Top             =   720
+      Width           =   495
+   End
+   Begin VB.Label lblGfxCaption 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Resource Enum"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   15.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &amp;H00E0E0E0&amp;
+      Height          =   495
+      Left            =   3660
+      TabIndex        =   9
+      Top             =   120
+      Width           =   3195
+   End
+   Begin VB.Label lblGfxBlock 
+      BackColor       =   &amp;H000040C0&amp;
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   195
+      Index           =   7
+      Left            =   2340
+      TabIndex        =   8
+      Top             =   360
+      Width           =   195
+   End
+   Begin VB.Label lblGfxBlock 
+      BackColor       =   &amp;H000080FF&amp;
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   195
+      Index           =   6
+      Left            =   2100
+      TabIndex        =   7
+      Top             =   360
+      Width           =   195
+   End
+   Begin VB.Label lblGfxBlock 
+      BackColor       =   &amp;H0080C0FF&amp;
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   195
+      Index           =   5
+      Left            =   1860
+      TabIndex        =   6
+      Top             =   360
+      Width           =   195
+   End
+   Begin VB.Label lblGfxBlock 
+      BackColor       =   &amp;H00C0E0FF&amp;
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   195
+      Index           =   4
+      Left            =   1620
+      TabIndex        =   5
+      Top             =   360
+      Width           =   195
+   End
+   Begin VB.Label lblGfxBlock 
+      BackColor       =   &amp;H00C0C000&amp;
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   195
+      Index           =   3
+      Left            =   2340
+      TabIndex        =   4
+      Top             =   120
+      Width           =   195
+   End
+   Begin VB.Label lblGfxBlock 
+      BackColor       =   &amp;H00FFFF00&amp;
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   195
+      Index           =   2
+      Left            =   2100
+      TabIndex        =   3
+      Top             =   120
+      Width           =   195
+   End
+   Begin VB.Label lblGfxBlock 
+      BackColor       =   &amp;H00FFFF80&amp;
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   195
+      Index           =   1
+      Left            =   1860
+      TabIndex        =   2
+      Top             =   120
+      Width           =   195
+   End
+   Begin VB.Label lblGfxBlock 
+      BackColor       =   &amp;H00FFFFC0&amp;
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   195
+      Index           =   0
+      Left            =   1620
+      TabIndex        =   1
+      Top             =   120
+      Width           =   195
+   End
+   Begin VB.Image imgGraphic 
+      Height          =   375
+      Left            =   105
+      Picture         =   "frmResourceEnum.frx":03E6
+      Top             =   150
+      Width           =   1500
+   End
+   Begin VB.Label lblGfxBack 
+      BackColor       =   &amp;H00000000&amp;
+      BorderStyle     =   1  'Fixed Single
+      Caption         =   "Label1"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   555
+      Left            =   60
+      TabIndex        =   0
+      Top             =   60
+      Width           =   6135
+   End
+End
+Attribute VB_Name = "frmResourceEnum"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private m_cLib As New cLibrary
+
+Private Sub LoadResourceList(ByVal sFile As String)
+Dim i As Long
+Dim j As Long
+Dim lType As Long
+
+On Error GoTo ErrorHandler
+
+   ' Load up the library as a datafile:
+   m_cLib.Filename = sFile
+   
+   ' If we get it:
+   If Not m_cLib.hModule = 0 Then
+      
+      cboResources.Clear
+      lstResources.Clear
+      txtFile.Text = sFile
+      
+      ' Then enumerate through all the resources:
+      Dim cR As New cResources
+      cR.hModule = m_cLib.hModule
+      
+      ' First ask what types there are:
+      cR.GetResourceTypes
+      ' For each type present...
+      For i = 1 To cR.ResourceTypeCount
+         If IsNumeric(cR.ResourceType(i)) Then
+            lType = cR.ResourceType(i)
+            cboResources.AddItem cR.ResourceTypeName(lType)
+            cboResources.ItemData(cboResources.NewIndex) = lType
+         Else
+            lType = -1
+            cboResources.AddItem cR.ResourceType(i)
+         End If
+      Next i
+      
+      If cboResources.ListCount &gt; 0 Then
+         cboResources.ListIndex = 0
+      End If
+   End If
+   
+   ' When cL goes out of scope, the library will be freed.
+   
+   Exit Sub
+   
+ErrorHandler:
+   MsgBox "An error occurred: " &amp; Err.Description, vbInformation
+   Exit Sub
+   Resume 0
+End Sub
+
+Private Sub cboResources_Click()
+Dim i As Long
+Dim j As Long
+Dim cR As New cResources
+
+   If cboResources.ListIndex &gt; -1 Then
+      cR.hModule = m_cLib.hModule
+      cR.GetResourceTypes
+      lstResources.Clear
+      ' We ask for the individual resources underneath:
+      cR.GetResourceTypes
+      i = cboResources.ListIndex + 1
+      cR.GetResourceNames i
+      For j = 1 To cR.ResourceNameCount(i)
+         lstResources.AddItem cR.ResourceName(i, j)
+      Next j
+      If lstResources.ListCount &gt; 0 Then
+         lstResources.ListIndex = 0
+      End If
+   End If
+End Sub
+
+Private Sub cmdPick_Click()
+Dim sFile As String
+   If VBGetOpenFileName(sFile, , , , , , "Binary Files
+    (*.EXE;*.DLL;*.OCX)|*.EXE;*.DLL;*.OCX|Executables (*.EXE)|*.EXE|Libraries
+    (*.DLL)|*.DLL|ActiveX Controls (*.OCX)|*.OCX|All Files (*.*)|*.*", 1, ,
+    "Choose Binary to Load Resources From", "EXE", Me.hWnd) Then
+      LoadResourceList sFile
+   End If
+End Sub
+
+Private Sub cmdSave_Click()
+Dim sFile As String
+On Error GoTo ErrorHandler
+   sFile = lstResources.List(lstResources.ListIndex)
+   Select Case cboResources.ItemData(cboResources.ListIndex)
+   Case crGroupIcon
+      sFile = sFile &amp; ".ICO"
+   Case crBitmap
+      sFile = sFile &amp; ".BMP"
+   Case crGroupCursor
+      sFile = sFile &amp; ".CUR"
+   Case crHTML
+      sFile = sFile &amp; ".HTM"
+   Case crAniCursor, crAniIcon
+      sFile = sFile &amp; ".ANI"
+   Case Else
+      Select Case True
+      Case cboResources.List(cboResources.ListIndex) = "AVI"
+         sFile = sFile &amp; ".AVI"
+      Case cboResources.List(cboResources.ListIndex) = "ANI"
+         sFile = sFile &amp; ".ANI"
+      End Select
+   End Select
+   
+   If VBGetSaveFileName(sFile, , , , , , , , Me.hWnd) Then
+      If imgPic.Visible Then
+         SavePicture imgPic.Picture, sFile
+      Else
+         If cboResources.ItemData(cboResources.ListIndex) &gt; 0 Then
+            SaveResource m_cLib.hModule,
+             lstResources.List(lstResources.ListIndex),
+             cboResources.ItemData(cboResources.ListIndex), sFile
+         Else
+            SaveResource m_cLib.hModule,
+             lstResources.List(lstResources.ListIndex),
+             cboResources.List(cboResources.ListIndex), sFile
+         End If
+      End If
+   End If
+   Exit Sub
+ErrorHandler:
+   MsgBox "Error: " &amp; Err.Description, vbInformation
+End Sub
+
+Private Sub Form_Load()
+   LoadResourceList GetLocationFromAppPaths("WORDPAD.EXE")
+End Sub
+
+Private Function GetLocationFromAppPaths(ByVal sExeName As String) As String
+   Dim cR As New cRegistry
+   cR.ClassKey = HKEY_LOCAL_MACHINE
+   cR.SectionKey = "SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\" &amp;
+    sExeName
+   cR.ValueType = REG_SZ
+   GetLocationFromAppPaths = cR.Value
+End Function
+
+Private Sub lstResources_Click()
+Dim eType As CRStandardResourceTypeConstants
+Dim sId As String
+
+On Error GoTo ErrorHandler
+   
+   If lstResources.ListIndex &gt; -1 Then
+      lblItem.Caption = lstResources.ListIndex + 1 &amp; " of " &amp;
+       lstResources.ListCount
+      eType = cboResources.ItemData(cboResources.ListIndex)
+      sId = lstResources.List(lstResources.ListIndex)
+      Select Case eType
+      Case crBitmap
+         Set imgPic.Picture = PictureFromResource(m_cLib.hModule, sId, crBitmap)
+         imgPic.Visible = True
+         lblInfo.Visible = False
+         txtData.Visible = False
+      Case crGroupIcon
+         Set imgPic.Picture = PictureFromResource(m_cLib.hModule, sId,
+          crGroupIcon)
+         imgPic.Visible = True
+         lblInfo.Visible = False
+         txtData.Visible = False
+      Case crGroupCursor
+         Set imgPic.Picture = PictureFromResource(m_cLib.hModule, sId,
+          crGroupCursor)
+         imgPic.Visible = True
+         lblInfo.Visible = False
+         txtData.Visible = False
+      Case Else
+         imgPic.Visible = False
+         txtData.Visible = False
+         lblInfo.Visible = True
+         lblInfo.Caption = "This type of resource cannot be displayed by the
+          application, but it can be extracted and saved."
+      End Select
+   End If
+   Exit Sub
+
+ErrorHandler:
+   MsgBox "An error occurred: " &amp; Err.Description, vbInformation
+   imgPic.Visible = False
+   txtData.Visible = False
+   Exit Sub
+
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Resources</a>&#160;.&#160;<a href="article.html">Reading Data from Local or External Library Resources</a>&#160;.&#160;<a href="External_Resources_Demonstration_Project.html">External Resources Demonstration Project</a>&#160;.&#160;frmResourceEnum.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Resources/Reading_Data_from_Local_or_External_Library_Resources/External_Resources_Demonstration_Project_zip_frmResourceEnum_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:51 GMT -->
+</html>

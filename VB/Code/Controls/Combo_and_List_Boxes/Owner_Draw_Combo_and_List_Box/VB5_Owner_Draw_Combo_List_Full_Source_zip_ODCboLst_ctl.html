@@ -1,0 +1,3352 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Combo_and_List_Boxes/Owner_Draw_Combo_and_List_Box/VB5_Owner_Draw_Combo_List_Full_Source_zip_ODCboLst_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:24 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: ODCboLst.ctl</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: ODCboLst.ctl" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Combo and List Boxes</a>&#160;.&#160;<a href="article.html">Owner Draw Combo and List Boxes Version 2.1</a>&#160;.&#160;<a href="VB5_Owner_Draw_Combo_List_Full_Source.html">VB5 Owner Draw Combo List Full Source</a>&#160;.&#160;ODCboLst.ctl</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Owner_Draw_Combo_List_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Owner Draw Combo List Control</a> (40K)</p><p class="nav"><a href="VB5_Owner_Draw_Combo_List_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Owner Draw Combo List Full Source</a> (255K)</p><p /><p class="nav"><a href="VB6_Owner_Draw_Combo_List_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Owner Draw Combo List Control</a> (41K)</p><p class="nav"><a href="VB6_Owner_Draw_Combo_List_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Owner Draw Combo List Demonstration</a> (153K)</p><p class="nav"><a href="VB6_Owner_Draw_Combo_List_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Owner Draw Combo List Full Source</a> (239K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1551</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1551&amp;type=Zip&amp;title=VB5%20Owner%20Draw%20Combo%20List%20Full%20Source%2Ezip%5FODCboLst">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />19 Dec 2002<br />VB6 Version Added</p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=931">Using the System Image List with (and without) vbAccelerator Controls</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: ODCboLst.ctl</h1><pre>VERSION 5.00
+Begin VB.UserControl OwnerDrawComboList 
+   ClientHeight    =   645
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   2865
+   KeyPreview      =   -1  'True
+   ScaleHeight     =   645
+   ScaleWidth      =   2865
+   ToolboxBitmap   =   "ODCboLst.ctx":0000
+   Begin VB.PictureBox picRes 
+      AutoRedraw      =   -1  'True
+      AutoSize        =   -1  'True
+      BorderStyle     =   0  'None
+      Height          =   240
+      Left            =   120
+      Picture         =   "ODCboLst.ctx":00FA
+      ScaleHeight     =   240
+      ScaleWidth      =   1920
+      TabIndex        =   0
+      TabStop         =   0   'False
+      Top             =   60
+      Visible         =   0   'False
+      Width           =   1920
+   End
+End
+Attribute VB_Name = "OwnerDrawComboList"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Attribute VB_Description = "vbaccelerator Owner Draw Combo and List box
+ control."
+Option Explicit
+
+' ===========================================================================
+' Filename:    ODCboLst.ctl
+' Author:      Steve McMahon
+' Date:        05 March 1998
+'
+' Requires:    Declares.bas
+'              mIOleInPlaceActivate.bas
+'              OleGuids.tlb (in IDE only)
+'
+' Description:
+' Owner draw combo and list boxes are an excellent way to improve the
+' look and feel of your application. However, there is precious little
+' support for them in Visual Basic. The only owner-draw combo box supplied
+' is the Checked list box style, but this is a preset list box style with
+' no possibility for customisation. ODCbolst is  a new control, completely
+' written in Visual Basic 5, which does all the hard work of setting up
+' an owner draw combo or list box.
+'
+' It also provides some great looking preset implementations:
+' * Choosing colours
+' * Choosing system colours
+' * Choosing fonts
+' * Drawing combo or list boxes with icons, indentations and different font
+'   and fore/back colours for each item
+' * Selecting paragraph styles, similar to the paragraph picker in Word 97
+'
+' Revision
+' V2  9/1/99   SPM
+' Finally fixed the focus problem.  The control now gains focus correctly
+' and works as a real VB control (i.e. GetFocus and LostFocus events work,
+' and VB's ActiveControl method returns the right control).
+'
+' A big thankyou to Mike Gainer for showing me how to do this.
+'
+' ---------------------------------------------------------------------------
+' Visit vbAccelerator, advanced, free source for VB programmers
+'     http://vbaccelerator.com
+' ===========================================================================
+
+
+
+' Styles (simple combo is not provided by this control)
+Public Enum EODCLStyle
+    ' -- Combo box styles - bit 4 not set --
+    ecsDropDownCombo = 0
+    ecsSimpleCombo = 1
+    ecsDropDownList = 2
+    ' -- List box styles have bit 4 set --
+    ecsListBox = 4
+    ecsListBoxMultiSelectSimple = 5
+    ecsListBoxMultiSelectExtended = 6
+    ecsListBoxChecked = 7
+End Enum
+
+' Draw modes for combo
+Public Enum EODCLDrawMode
+    ' -- Owner draw styles --
+    ecdNoClientDraw = 0             ' Only use default draw method
+    ecdDefaultDrawThenClient = 1    ' Perform default draw, but then raise
+     client draw event
+    ecdClientDrawOnly = 2           ' Client does all drawing
+    ' -- Special styles --
+    ecdColourPickerWithNames = 3
+    ecdColourPickerNoNames = 4
+    ecdSysColourPicker = 5
+    ecdParagraphStyles = 6
+    ecdFontPicker = 7
+End Enum
+
+' Alignment enums
+Public Enum EODCLItemXAlign
+    eixLeft = DT_LEFT
+    eixCentre = DT_CENTER
+    eixRight = DT_RIGHT
+End Enum
+Private Const eixDT_VCENTRE = (DT_SINGLELINE Or DT_VCENTER)
+Private Const eixDT_BOTTOM = (DT_SINGLELINE Or DT_BOTTOM)
+Public Enum EODCLItemYAlign
+    eixTop = DT_TOP
+    eixVCentre = eixDT_VCENTRE
+    eixBottom = eixDT_BOTTOM
+End Enum
+
+' Column type enums
+Public Enum EODCLColType
+    ectTextString = 0       ' The default - draw as text, sort as text
+    ectTextNumber = 1       ' Convert to number during sort
+    ectTextDateTime = 2     ' Convert to date for sort
+    ectImageListIcon = 4    ' Convert to icon index in image list &amp; assume
+     numeric during sort
+End Enum
+
+' Whether to drop down on return or not:
+Private m_bExtendedUI As Boolean
+' Whether sorted or not:
+Private m_bSorted As Boolean
+' Border style (doesn't seem to be changable without heavy hacking):
+'Private m_eBorderStyle As EODCLBorderStyle
+' Style
+Private m_eStyle As EODCLStyle
+' Auto complete mode for drop-down combo boxes:
+Private m_bDoAutoComplete As Boolean
+Private m_bOnlyAutoCompleteItems As Boolean
+Private m_bDataIsSorted As Boolean
+
+' Drop down width
+Private m_lWidth As Long
+Private m_hWndDropDown As Long
+' Positioning drop down:
+Private m_bPositionDropDown As Boolean
+Private m_lPX As Long, m_lPY As Long
+Private m_lPW As Long, m_lPH As Long
+
+' Subclassing support:
+Implements ISubclass
+Private m_bSubClass As Boolean
+
+' Over-riding VB UserControl's default IOLEInPlaceActivate:
+Private m_IPAOHookStruct As IPAOHookStruct
+
+
+' Whether the user is going to draw the control, or if the default
+' drawing mechanism should be used:
+Private m_eClientDraw As EODCLDrawMode
+Private m_lBorderLeft As Long
+Private m_lBorderRight As Long
+
+' Handle of combo box:
+Private m_hWnd As Long
+' Handle of edit portion if type=DropDownCombo
+Private m_hWndEdit As Long
+' Parent of combo box:
+Private m_hWndparent As Long
+' Whether we're in design mode or not
+Private m_bDesignMode As Boolean
+' BackColour brush
+Private m_hBackBrush As Long
+' Max length of chars in edit box of DropDownCombo
+Private m_lMaxLength As Long
+' Whether we have created the font for an item:
+Private m_bFontNotCreated As Boolean
+' Last return code
+Private m_lR As Long
+' Last item added to combo box:
+Private m_lNewItem As Long
+' Fonts:
+Private m_hFnt As Long
+Private m_hFntOld As Long
+Private m_tlF As LOGFONT
+Private m_hUFnt As Long
+Private m_tULF As LOGFONT
+' Item height:
+Private m_lDefaultItemHeight As Long
+Private m_lMaxItemHeight As Long
+
+' ImageList:
+Private m_hIml As Long
+Private m_lIconWidth As Long
+Private m_lIconHeight As Long
+Private m_cIL As CImageList
+Private m_hImlCache As Long
+
+' Multiple column rendering:
+Private m_iColCount As Integer
+Private m_lColWidth() As Long
+Private m_eCoLType() As EODCLColType
+
+' Other appearance:
+Private m_bFullRowSelect As Boolean
+Private m_bNoGrayWhenDisabled As Boolean
+Private m_bNoDimSelectionWhenOutOfFocus As Boolean
+Private m_bLocked As Boolean
+
+' Events for this control:
+Public Event Click()
+Public Event Change()
+Public Event DblClick()
+Public Event CloseUp()
+Public Event DropDown()
+Public Event SelCancel()
+Public Event KeyDown(KeyCode As Integer, Shift As Integer)
+Public Event KeyUp(KeyCode As Integer, Shift As Integer)
+Public Event KeyPress(KeyAscii As Integer)
+Public Event MouseDown(Button As Integer, Shift As Integer, x As Single, y As
+ Single)
+Public Event MouseMove(Button As Integer, Shift As Integer, x As Single, y As
+ Single)
+Public Event MouseUp(Button As Integer, Shift As Integer, x As Single, y As
+ Single)
+Public Event MeasureItem(Index As Long, WidthPixels As Long, HeightPixels As
+ Long)
+Public Event DrawItem(Index As Long, hdc As Long, bSelected As Boolean,
+ bEnabled As Boolean, LeftPixels As Long, TopPixels As Long, RightPixels As
+ Long, BottomPixels As Long, hFntOld As Long)
+Public Event ODGotFocus()
+Public Event ODLostFocus()
+Public Event AutoCompleteSelection(ByVal sItem As String, ByVal lIndex As Long)
+
+Friend Function TranslateAccelerator(lpMsg As VBOleGuids.Msg) As Long
+    
+   TranslateAccelerator = S_FALSE
+   ' Here you can modify the response to the key down
+   ' accelerator command using the values in lpMsg.  This
+   ' can be used to capture Tabs, Returns, Arrows etc.
+   ' Just process the message as required and return S_OK.
+   If lpMsg.message = WM_KEYDOWN Then
+      Select Case lpMsg.wParam And &amp;HFFFF&amp;
+      Case vbKeyUp, vbKeyDown, vbKeyLeft, vbKeyRight, vbKeyPageDown,
+       vbKeyPageUp, vbKeyHome, vbKeyEnd, vbKeyReturn
+         SendMessageByLong m_hWnd, lpMsg.message, lpMsg.wParam, lpMsg.lParam
+         TranslateAccelerator = S_OK
+      End Select
+   End If
+   
+End Function
+
+Property Get NoDimWhenOutOfFocus() As Boolean
+   NoDimWhenOutOfFocus = m_bNoDimSelectionWhenOutOfFocus
+End Property
+Property Let NoDimWhenOutOfFocus(ByVal bState As Boolean)
+   m_bNoDimSelectionWhenOutOfFocus = bState
+End Property
+
+Property Get NoGrayWhenDisabled() As Boolean
+   NoGrayWhenDisabled = m_bNoGrayWhenDisabled
+End Property
+Property Let NoGrayWhenDisabled(ByVal bGray As Boolean)
+   m_bNoGrayWhenDisabled = bGray
+End Property
+
+Property Get ComboIsDropped() As Boolean
+Dim lR As Long
+   If (m_eStyle &lt; ecsListBox) Then
+      ComboIsDropped = (SendMessageByLong(m_hWnd, CB_GETDROPPEDSTATE, 0, 0) &lt;&gt;
+       0)
+   End If
+End Property
+Property Get DoAutoComplete() As Boolean
+   If (m_eStyle = ecsDropDownCombo) Then
+      DoAutoComplete = m_bDoAutoComplete
+   Else
+      DoAutoComplete = False
+   End If
+End Property
+Property Let DoAutoComplete(ByVal bState As Boolean)
+   m_bDoAutoComplete = bState
+   PropertyChanged "DoAutoComplete"
+End Property
+Public Property Get AutoCompleteListItemsOnly() As Boolean
+   AutoCompleteListItemsOnly = m_bOnlyAutoCompleteItems
+End Property
+Public Property Let AutoCompleteListItemsOnly(ByVal bState As Boolean)
+   m_bOnlyAutoCompleteItems = bState
+   ' typo!!! have to leave it like this now...
+   PropertyChanged "AutomCompleteListItemsOnly"
+End Property
+Public Property Get AutoCompleteItemsAreSorted() As Boolean
+   AutoCompleteItemsAreSorted = m_bDataIsSorted
+End Property
+Public Property Let AutoCompleteItemsAreSorted(ByVal bState As Boolean)
+   m_bDataIsSorted = bState
+   PropertyChanged "AutoCompleteItemsAreSorted"
+End Property
+Public Sub AutoCompleteKeyPress( _
+      ByRef iKeyAscii As Integer _
+   )
+Dim sTotal As String
+Dim sLTotal As String
+Dim sUnSel As String
+Dim sLUnSel As String
+Dim lLen As Long
+Dim iFound As Long
+Dim i As Long
+Dim lS As Long, lW As Long
+Dim iStart As Long, iSelStart As Long, iSelLength As Long
+Dim sText As String
+
+On Error GoTo ErrorHandler
+
+   If (iKeyAscii = vbKeyReturn) Then
+      If (ListIndex &gt; -1) Then
+        SelStart = 0
+        SelLength = Len(List(ListIndex))
+        RaiseEvent AutoCompleteSelection(List(ListIndex), ListIndex)
+        Exit Sub
+      End If
+   ElseIf (iKeyAscii = vbKeyEscape) Then
+      Exit Sub
+   End If
+   
+   lS = SelStart
+   lW = SelLength
+   
+   If (lS &gt; 0) Then
+      sUnSel = left$(Text, lS)
+   End If
+   If (iKeyAscii = 8) Then
+      If (Len(sUnSel) &gt; 1) Then
+         sTotal = left$(sUnSel, Len(sUnSel) - 1)
+      Else
+         sUnSel = ""
+         iKeyAscii = 0
+         Text = ""
+         Exit Sub
+      End If
+   Else
+      sTotal = sUnSel &amp; Chr$(iKeyAscii)
+   End If
+   
+   ' try to match the the string entered:
+   iFound = -1
+   sLTotal = LCase$(sTotal)
+   lLen = Len(sLTotal)
+   For i = 0 To ListCount - 1
+      If StrComp(LCase$(left$(List(i), lLen)), sLTotal) = 0 Then
+         iFound = i
+         Exit For
+      End If
+   Next i
+   
+   If (iFound &gt; -1) Then
+      ListIndex = iFound
+      iSelStart = Len(sTotal)
+      iSelLength = Len(List(iFound)) - iSelStart
+      'Debug.Print iSelStart, iSelLength
+      SelStart = iSelStart
+      SelLength = iSelLength
+      'Debug.Print SelStart, SelLength
+      iKeyAscii = 0
+   Else
+      If (m_bOnlyAutoCompleteItems) Then
+         ' is there anything we can choose which has the same unmatched letters?
+         iStart = ListIndex
+         sLUnSel = LCase$(sUnSel)
+         lLen = Len(sLUnSel)
+         If (lLen &gt; 0) Then
+            If (m_bDataIsSorted) Then
+               ' Its either the next one down or the first in the list:
+               i = iStart + 1
+               If StrComp(LCase$(left$(List(i), lLen)), sLUnSel) = 0 Then
+                  iFound = i
+               Else
+                  For i = 0 To iStart - 1
+                     If StrComp(LCase$(left$(List(i), lLen)), sLUnSel) = 0 Then
+                        iFound = i
+                        Exit For
+                     End If
+                  Next i
+               End If
+            Else
+               ' it could be anything following list index, or anything
+                preceeding it:
+               For i = iStart + 1 To ListCount - 1
+                  If StrComp(LCase$(left$(List(i), lLen)), sLUnSel) = 0 Then
+                     iFound = i
+                     Exit For
+                  End If
+               Next i
+               If (iFound &lt; 0) Then
+                  For i = 0 To iStart - 1
+                     If StrComp(LCase$(left$(List(i), lLen)), sLUnSel) = 0 Then
+                        iFound = i
+                        Exit For
+                     End If
+                  Next i
+               End If
+            End If
+            If (iFound &gt; -1) Then
+               ListIndex = iFound
+               SelStart = lLen
+               SelLength = Len(List(iFound)) - SelStart + 1
+            End If
+         Else
+             Beep
+         End If
+         iKeyAscii = 0
+      Else
+         'Debug.Print "Not found, still works?"
+      End If
+   End If
+   Exit Sub
+   
+ErrorHandler:
+   If (m_bOnlyAutoCompleteItems) Then
+      iKeyAscii = 0
+   End If
+   Exit Sub
+   
+End Sub
+
+Property Get FullRowSelect() As Boolean
+   FullRowSelect = m_bFullRowSelect
+End Property
+Property Let FullRowSelect(ByVal bState As Boolean)
+   m_bFullRowSelect = bState
+End Property
+Property Get Columns() As Integer
+   If (m_iColCount &lt; 1) Then
+      Columns = 1
+   Else
+      Columns = m_iColCount
+   End If
+End Property
+Property Let Columns(ByVal iColCount As Integer)
+   If (iColCount &lt;&gt; m_iColCount) Then
+      If (iColCount &lt; 1) Then
+         Erase m_lColWidth
+         Erase m_eCoLType
+         m_iColCount = 1
+      Else
+         m_iColCount = iColCount
+         ReDim Preserve m_lColWidth(1 To m_iColCount) As Long
+         ReDim Preserve m_eCoLType(1 To m_iColCount) As EODCLColType
+      End If
+      pRefreshControl
+   End If
+End Property
+Property Get ColWidth(ByVal iCol As Integer) As Long
+   ColWidth = m_lColWidth(iCol)
+End Property
+Property Let ColWidth(ByVal iCol As Integer, ByVal lWidthPixels As Long)
+Dim tR As RECT
+   If (lWidthPixels &lt;&gt; m_lColWidth(iCol)) Then
+      m_lColWidth(iCol) = lWidthPixels
+      pRefreshControl
+   End If
+End Property
+Property Get ColType(ByVal iCol As Integer) As EODCLColType
+   ColType = m_eCoLType(iCol)
+End Property
+Property Let ColType(ByVal iCol As Integer, ByVal eColType As EODCLColType)
+   If (m_eCoLType(iCol) &lt;&gt; eColType) Then
+      m_eCoLType(iCol) = eColType
+      pRefreshControl
+   End If
+End Property
+Property Get InternalImageList() As CImageList
+   ' If we haven't got an internal image list:
+   If m_cIL Is Nothing Then
+      ' Create one:
+      pCreateImageList
+   End If
+   ' Return the image list object
+   Set InternalImageList = m_cIL
+End Property
+Property Get Selected(ByVal Index As Long) As Boolean
+Dim lR As Long
+   ' Selected property is only valid for multi select
+   ' list boxes (always returns false otherwise):
+   If (m_eStyle &gt; ecsListBox) Then
+      If (m_hWnd &lt;&gt; 0) Then
+         lR = SendMessageByLong(m_hWnd, LB_GETSEL, Index, 0)
+         Selected = (lR &gt; 0)
+      End If
+   End If
+End Property
+Property Let Selected(ByVal Index As Long, ByVal bSelected As Boolean)
+Dim lS As Long
+   ' Selected property is only valid for multi select
+   ' list boxes (no effect otherwise):
+   If (m_eStyle &gt; ecsListBox) Then
+      If (m_hWnd &lt;&gt; 0) Then
+         lS = (bSelected * -1)
+         'Debug.Print "SetSelection"
+         m_lR = SendMessageByLong(m_hWnd, LB_SETSEL, lS, Index)
+      End If
+   End If
+End Property
+Public Sub SelectRange(ByVal IndexStart As Long, ByVal IndexEnd As Long, ByVal
+ bState As Boolean)
+Dim lS As Long, lParam As Long
+   ' Selecting a range is only possible for multi select
+   ' list boxes (no effect otherwise):
+   If (m_eStyle &gt; ecsListBox) Then
+      If (m_hWnd &lt;&gt; 0) Then
+         If (IndexStart = IndexEnd) Then
+            Selected(IndexStart) = bState
+         Else
+            If (IndexStart &gt; &amp;HFFFF&amp;) Then IndexStart = &amp;HFFFF&amp;
+            If (IndexEnd &gt; &amp;HFFFF&amp;) Then IndexEnd = &amp;HFFFF&amp;
+            If (IndexStart &gt; IndexEnd) Then
+               lS = IndexEnd
+               IndexEnd = IndexStart
+               IndexStart = lS
+            End If
+            If (IndexEnd &gt; ListCount - 1) Then IndexEnd = ListCount - 1
+            If (IndexStart &lt; 0) Then IndexStart = 0
+            lS = (bState * -1)
+            lParam = IndexStart + (IndexEnd * &amp;H10000)
+            m_lR = SendMessageByLong(m_hWnd, LB_SELITEMRANGE, lS, lParam)
+         End If
+      End If
+   End If
+End Sub
+Public Sub SetDefaultDrawBorder(ByVal LeftPixels As Long, ByVal RightPixels As
+ Long)
+   ' When in default draw mode, any drawing in the
+   ' list box portion of the control will be
+   ' offset from the borders by these amounts:
+   m_lBorderLeft = LeftPixels
+   m_lBorderRight = RightPixels
+End Sub
+Property Get Text() As String
+Dim lR As Long
+Dim sText As String
+   ' Returns either the text in the EditBox portion of a
+   ' drop down combo or the text of the (first) selected
+   ' list item:
+   If (m_hWnd &lt;&gt; 0) Then
+      If (m_eStyle = ecsDropDownCombo) Then
+         lR = SendMessageByLong(m_hWnd, WM_GETTEXTLENGTH, 0, 0)
+         If (lR &gt; 0) Then
+            sText = String$(lR + 1, Chr$(0))
+            lR = SendMessageByString(m_hWnd, WM_GETTEXT, (lR + 1), sText)
+            If (lR &gt; 0) Then
+               Text = left$(sText, lR)
+            End If
+         End If
+      Else
+         If (ListIndex &gt; -1) Then
+            Text = List(ListIndex)
+         End If
+      End If
+   End If
+End Property
+Property Let Text(ByVal sText As String)
+   ' Can only set the text in a drop down combo box:
+   If (m_eStyle = ecsDropDownCombo) Then
+      SendMessageByString m_hWnd, WM_SETTEXT, 0, sText &amp; Chr$(0)
+   Else
+      Err.Raise 383, "OwnerDrawCombo." &amp; App.EXEName
+   End If
+End Property
+Property Get MaxLength() As Long
+   ' Same as MaxLength property of a Text control.  Only
+   ' valid for drop down combo boxes:
+   If (m_eStyle = ecsDropDownCombo) Then
+      MaxLength = m_lMaxLength
+   End If
+End Property
+Property Let MaxLength(ByVal lLength As Long)
+   ' Same as MaxLength property of a Text control.  Only
+   ' valid for drop down combo boxes:
+   If (m_eStyle = ecsDropDownCombo) Then
+      ' Don't be silly:
+      If (lLength &gt; 30000&amp;) Or (lLength &lt;= 0) Then lLength = 30000&amp;
+      ' Set:
+      m_lMaxLength = lLength
+      SendMessageByLong m_hWnd, CB_LIMITTEXT, lLength, 0
+   End If
+End Property
+Private Sub pGetSelStartEnd(lStart As Long, lENd As Long)
+Dim lParam As Long
+   ' Get the start and end of the selection in the edit
+   ' box portion of a drop down combo box:
+   If (m_hWnd &lt;&gt; 0) Then
+      lParam = SendMessageByLong(m_hWnd, CB_GETEDITSEL, lStart, lENd)
+      gGetHiWordLoWord lParam, lENd, lStart
+   End If
+End Sub
+Private Sub pSetSelStartEnd(ByVal lStart As Long, ByVal lENd As Long)
+Dim lParam As Long
+   ' Set the start and end of the selection in the edit
+   ' box portion of a drop down combo box:
+   If (m_hWnd &lt;&gt; 0) Then
+      If (lStart &gt; &amp;HFFFF&amp;) Then lStart = &amp;HFFFF&amp;
+      If (lENd &gt; &amp;HFFFF&amp;) Then lENd = &amp;HFFFF&amp;
+      lParam = lStart + lENd * &amp;H10000
+      SendMessageByLong m_hWnd, CB_SETEDITSEL, 0, lParam
+   End If
+End Sub
+Property Get SelStart() As Long
+Attribute SelStart.VB_MemberFlags = "400"
+Dim lStart As Long, lENd As Long
+   ' Return the start of the selected text in the edit
+   ' box portion of a dropdown combo:
+   If (m_eStyle = ecsDropDownCombo) Then
+      pGetSelStartEnd lStart, lENd
+      SelStart = lStart
+   Else
+      Err.Raise 383, "OwnerDrawCombo." &amp; App.EXEName
+   End If
+End Property
+Property Let SelStart(ByVal lStart As Long)
+Dim lOStart As Long, lENd As Long
+   ' Set the start of the selected text in the edit
+   ' box portion of a dropdown combo:
+   If (m_eStyle = ecsDropDownCombo) Then
+      pGetSelStartEnd lOStart, lENd
+      If (lStart &lt;&gt; lOStart) Then
+         pSetSelStartEnd lStart, lENd
+      End If
+   Else
+      Err.Raise 383, "OwnerDrawCombo." &amp; App.EXEName
+   End If
+End Property
+Property Get SelLength() As Long
+Attribute SelLength.VB_MemberFlags = "400"
+Dim lStart As Long, lENd As Long
+   ' Return the length of the selected text in the edit
+   ' box portion of a dropdown combo:
+   If (m_eStyle = ecsDropDownCombo) Then
+      pGetSelStartEnd lStart, lENd
+      SelLength = lENd - lStart
+   Else
+      Err.Raise 383, "OwnerDrawCombo." &amp; App.EXEName
+   End If
+End Property
+Property Let SelLength(ByVal lLength As Long)
+Dim lStart As Long, lENd As Long
+   ' Set the length of the selected text in the edit
+   ' box portion of a dropdown combo:
+   If (m_eStyle = ecsDropDownCombo) Then
+      pGetSelStartEnd lStart, lENd
+      If (lENd - lStart &lt;&gt; lLength) Then
+         pSetSelStartEnd lStart, lStart + lLength
+      End If
+   Else
+      Err.Raise 383, "OwnerDrawCombo." &amp; App.EXEName
+   End If
+End Property
+Property Get SelText() As String
+   ' Return the selected text from the edit
+   ' box portion of a dropdown combo:
+   If (m_eStyle = ecsDropDownCombo) Then
+      Dim sText As String
+      Dim lStart As Long, lENd As Long
+      
+      pGetSelStartEnd lStart, lENd
+      sText = Text
+      If (lENd &gt; 0) And Len(sText) &gt; 0 Then
+         If (lStart &lt;= 0) Then
+            lStart = 1
+         End If
+         lENd = lENd + 1
+         If (lENd &gt; Len(sText)) Then lENd = Len(sText)
+         SelText = Mid$(sText, lStart, (lENd - lStart))
+      End If
+   Else
+      SelText = Text
+   End If
+End Property
+Property Get hWndControl() As Long
+   ' Return the hWnd of the User control:
+   hWndControl = UserControl.hwnd
+End Property
+Property Get hwnd() As Long
+   ' Return the hWnd of the Combo or List.
+   hwnd = m_hWnd
+End Property
+Property Get hWndEdit() As Long
+   hWndEdit = m_hWndEdit
+End Property
+
+Property Let ImageList(ByRef vThis As Variant)
+Dim tR As RECT
+   ' Set the ImageList handle property either from a VB
+   ' image list or directly:
+   m_hIml = 0
+   If VarType(vThis) = vbObject Then
+      ' Assume VB ImageList control.  Note that unless
+      ' some call has been made to an object within a
+      ' VB ImageList the image list itself is not
+      ' created.  Therefore hImageList returns error. So
+      ' ensure that the ImageList has been initialised by
+      ' drawing into nowhere:
+      On Error Resume Next
+      ' Get the image list initialised..
+      vThis.ListImages(1).draw 0, 0, 0, 1
+      m_hImlCache = vThis.hImageList
+      If (Err.Number &lt;&gt; 0) Then
+          m_hImlCache = 0
+      End If
+      On Error GoTo 0
+   ElseIf VarType(vThis) = vbLong Then
+      ' Assume ImageList handle:
+      m_hImlCache = vThis
+   Else
+      Err.Raise vbObjectError + 1049, "OwnerDrawCombo." &amp; App.EXEName,
+       "ImageList property expects ImageList object or long hImageList handle."
+   End If
+   
+   If (m_eClientDraw = ecdParagraphStyles) Or (m_eClientDraw = ecdFontPicker)
+    Then
+      ' Do not change m_hIml yet, wait until style changes away from
+      ' these styles.
+   Else
+      m_hIml = m_hImlCache
+   End If
+
+End Property
+
+Property Get ItemIcon( _
+        ByVal lListIndex As Long _
+    ) As Long
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   ' Returns the icon for a list item:
+   hMem = plGetItemData(lListIndex)
+   pGetItemInfo hMem, tLI
+   ItemIcon = tLI.lIconIndex
+    
+End Property
+Property Let ItemIcon( _
+        ByVal lListIndex As Long, _
+        ByVal lIconIndex As Long _
+    )
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   ' Sets the icon for a list item:
+   hMem = plGetItemData(lListIndex)
+   pGetItemInfo hMem, tLI
+   tLI.lIconIndex = lIconIndex
+   pWriteItemInfo hMem, tLI
+   pRedrawItem lListIndex
+   
+End Property
+Property Get ItemIndent( _
+        ByVal lIndex As Long _
+    ) As Long
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   ' Returns the indent for a list item:
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   ItemIndent = tLI.lIndentSize
+   
+End Property
+Property Let ItemIndent( _
+        ByVal lIndex As Long, _
+        ByVal lIndentSize As Long _
+    )
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   ' Sets the indent for a list item:
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   tLI.lIndentSize = lIndentSize
+   pWriteItemInfo hMem, tLI
+   pRedrawItem lIndex
+   
+End Property
+Property Get ItemBackColor( _
+        ByVal lIndex As Long _
+    ) As OLE_COLOR
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   ' Returns the back colour for an item:
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   If (tLI.lBackColour = -1) Then
+      ItemBackColor = UserControl.BackColor
+   Else
+      ItemBackColor = tLI.lBackColour
+   End If
+   
+End Property
+Property Let ItemBackColor( _
+        ByVal lIndex As Long, _
+        ByVal lBackColour As OLE_COLOR _
+    )
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   ' Sets the back colour for an item.  Set to -1 for default:
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   tLI.lBackColour = lBackColour
+   pWriteItemInfo hMem, tLI
+   pRedrawItem lIndex
+   
+End Property
+Property Get ItemXAlign( _
+        ByVal lIndex As Long _
+    ) As EODCLItemXAlign
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   ' Returns the horizontal text alignment for an item:
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   ItemXAlign = tLI.lTextAlignX
+   
+End Property
+Property Let ItemXAlign( _
+        ByVal lIndex As Long, _
+        ByVal eXAlign As EODCLItemXAlign _
+    )
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   ' Sets the horizontal text alignment for an item:
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   tLI.lTextAlignX = eXAlign
+   pWriteItemInfo hMem, tLI
+   pRedrawItem lIndex
+   
+End Property
+Property Get ItemYAlign( _
+        ByVal lIndex As Long _
+    ) As EODCLItemYAlign
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   ' Returns the vertical text alignment for an item:
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   ItemYAlign = tLI.lTextAlignY
+   
+End Property
+Property Let ItemYAlign( _
+        ByVal lIndex As Long, _
+        ByVal eYAlign As EODCLItemYAlign _
+    )
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   ' Sets the vertical text alignment for an item:
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   tLI.lTextAlignY = eYAlign
+   pWriteItemInfo hMem, tLI
+   pRedrawItem lIndex
+   
+End Property
+Property Get ItemExtraData( _
+        ByVal lIndex As Long _
+    ) As Long
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   ' Returns an extra long stored with an item:
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   ItemExtraData = tLI.lExtraData
+    
+End Property
+Property Let ItemExtraData( _
+        ByVal lIndex As Long, _
+        ByVal lExtraData As Long _
+    )
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   ' Sets an extra long stored with an item:
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   tLI.lExtraData = lExtraData
+   pWriteItemInfo hMem, tLI
+   
+End Property
+    
+Property Get ItemForeColor( _
+        ByVal lIndex As Long _
+    ) As OLE_COLOR
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   ' Returns the fore colour for an item:
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   If (tLI.lForeColour = -1) Then
+      ItemForeColor = UserControl.ForeColor
+   Else
+      ItemForeColor = tLI.lForeColour
+   End If
+   
+End Property
+Property Let ItemForeColor( _
+        ByVal lIndex As Long, _
+        ByVal lForeColour As OLE_COLOR _
+    )
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   ' Sets the fore colour for an item:
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   tLI.lForeColour = lForeColour
+   pWriteItemInfo hMem, tLI
+   pRedrawItem lIndex
+   
+End Property
+Public Sub AddItemAndData( _
+        ByVal sItem As String, _
+        Optional ByVal lIconIndex As Long = -1, _
+        Optional ByVal lIndent As Long = 0, _
+        Optional ByVal lForeColour As OLE_COLOR = -1, _
+        Optional ByVal lBackColour As OLE_COLOR = -1, _
+        Optional ByVal lItemData As Long = 0, _
+        Optional ByVal lExtraData As Long = 0, _
+        Optional ByVal lHeight As Long = -1, _
+        Optional ByVal eTextXAlign As EODCLItemXAlign = eixLeft, _
+        Optional ByVal eTextYAlign As EODCLItemYAlign = eixTop, _
+        Optional ByRef fntThis As StdFont = Nothing _
+    )
+Dim wMsg As Long
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+
+   ' Same as AddItem, but the extended properties can be
+   ' set at the same time.  Quicker!
+
+   ' Determine type of control:
+   If (m_eStyle And ecsListBox) = ecsListBox Then
+      wMsg = LB_ADDSTRING
+   Else
+      wMsg = CB_ADDSTRING
+   End If
+   
+   ' Add the text item:
+   m_lR = SendMessageByString(m_hWnd, wMsg, 0, sItem)
+   
+   ' If successful:
+   If (m_lR &lt;&gt; CB_ERR) Then
+      ' Store the index of the item just added for the
+      ' NewIndex property:
+      m_lNewItem = m_lR
+      
+      ' Allocate the global memory to store the extended
+      ' properties for this item:
+      hMem = GlobalAlloc(GPTR, Len(tLI))
+      
+      ' Store the extended properties:
+      tLI.lBackColour = lBackColour
+      tLI.lForeColour = lForeColour
+      tLI.lIndentSize = lIndent
+      tLI.lIconIndex = lIconIndex
+      tLI.lItemData = lItemData
+      tLI.lExtraData = lExtraData
+      tLI.lTextAlignX = eTextXAlign
+      tLI.lTextAlignY = eTextYAlign
+      
+      If (lHeight &lt; 0) Then
+         ' Use default
+         tLI.lItemHeight = -1
+      Else
+         tLI.lItemHeight = lHeight
+      End If
+              
+      ' If the item height is specified, we need to send
+      ' this message to ensure the height is actually set:
+      If (m_eStyle And ecsListBox) = ecsListBox Then
+         wMsg = LB_SETITEMHEIGHT
+      Else
+         wMsg = CB_SETITEMHEIGHT
+      End If
+      SendMessageByLong m_hWnd, wMsg, m_lR, plItemHeight(tLI.lItemHeight)
+
+      ' If a font specified, then store the LOGFONT structure
+      ' for it:
+      If Not (fntThis Is Nothing) Then
+         pOLEFontToLogFont fntThis, UserControl.hdc, tLI.tLF
+         tLI.dFontSize = fntThis.Size
+      End If
+      
+      ' Write this item into the global memory block:
+      pWriteItemInfo hMem, tLI
+      
+      ' Attach the memory block to the list item by setting
+      ' the item data to the memory block pointer:
+      If (m_eStyle And ecsListBox) = ecsListBox Then
+         wMsg = LB_SETITEMDATA
+      Else
+         wMsg = CB_SETITEMDATA
+      End If
+      m_lR = SendMessageByLong(m_hWnd, wMsg, m_lNewItem, hMem)
+               
+   End If
+    
+End Sub
+Private Function plItemHeight(ByVal lValue As Long) As Long
+   If (lValue &lt;= 0) Then
+      plItemHeight = m_lDefaultItemHeight
+   Else
+      plItemHeight = lValue
+   End If
+End Function
+
+Public Sub AddItem(ByVal sItem As String)
+   ' AddItem method same as VB AddItem for a ListBox
+   ' or ComboBox.
+   
+   ' Just call AddItemWithData with all the defaults set:
+   AddItemAndData sItem
+
+End Sub
+Property Get NewIndex() As Long
+   ' Returns the last index added to the control:
+   NewIndex = m_lNewItem
+   
+End Property
+
+Property Let ItemUnderLine( _
+        ByVal lIndex As Long, _
+        ByVal bUnderLineItem As Boolean _
+    )
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   tLI.bUnderLineItem = bUnderLineItem
+   pWriteItemInfo hMem, tLI
+   
+End Property
+Property Get ItemUnderLine( _
+        ByVal lIndex As Long _
+    ) As Boolean
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   ItemUnderLine = tLI.bUnderLineItem
+   
+End Property
+Property Let ItemFont( _
+        ByVal lIndex As Long, _
+        fntThis As StdFont _
+    )
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+Dim i As Long
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   If (fntThis Is Nothing) Then
+      ' Reset font to default:
+      For i = 0 To 32
+         tLI.tLF.lfFaceName(i) = 0
+      Next i
+   Else
+      ' Store the LOGFONT structure for this font:
+      pOLEFontToLogFont fntThis, UserControl.hdc, tLI.tLF
+   End If
+   tLI.dFontSize = fntThis.Size
+   pWriteItemInfo hMem, tLI
+   pRedrawItem lIndex
+   
+End Property
+Property Get ItemFont( _
+        ByVal lIndex As Long _
+    ) As StdFont
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+Dim fntThis As New StdFont
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   If (tLI.tLF.lfFaceName(0) = 0) Then
+      Set ItemFont = UserControl.Font
+   Else
+      fntThis.Name = StrConv(tLI.tLF.lfFaceName, vbUnicode)
+      fntThis.Size = tLI.dFontSize
+      fntThis.Bold = (tLI.tLF.lfWeight = FW_BOLD)
+      fntThis.Italic = (tLI.tLF.lfItalic &lt;&gt; 0)
+      fntThis.Underline = (tLI.tLF.lfUnderline &lt;&gt; 0)
+      fntThis.Strikethrough = (tLI.tLF.lfStrikeOut &lt;&gt; 0)
+      Set ItemFont = fntThis
+   End If
+End Property
+Property Let ItemOverLine( _
+        ByVal lIndex As Long, _
+        ByVal bOverLineItem As Boolean _
+    )
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   tLI.bOverLineItem = bOverLineItem
+   pWriteItemInfo hMem, tLI
+
+End Property
+Property Get ItemOverLine( _
+        ByVal lIndex As Long _
+    ) As Boolean
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+   hMem = plGetItemData(lIndex)
+   pGetItemInfo hMem, tLI
+   ItemOverLine = tLI.bOverLineItem
+
+End Property
+Property Get List(ByVal lIndex As Long) As String
+Dim sBuf As String
+Dim lLen As Long
+Dim wMsg As Long
+   If (m_eStyle And ecsListBox) = ecsListBox Then
+      wMsg = LB_GETTEXTLEN
+   Else
+      wMsg = CB_GETLBTEXTLEN
+   End If
+   m_lR = SendMessageByLong(m_hWnd, wMsg, lIndex, 0)
+   lLen = m_lR
+   If (lLen &lt;&gt; CB_ERR) Then
+      sBuf = String$((lLen), 0)
+      If (m_eStyle And ecsListBox) = ecsListBox Then
+         wMsg = LB_GETTEXT
+      Else
+         wMsg = CB_GETLBTEXT
+      End If
+      m_lR = SendMessageByString(m_hWnd, wMsg, lIndex, sBuf)
+      If (m_lR &lt;&gt; CB_ERR) Then
+         List = sBuf
+      End If
+   End If
+End Property
+Property Let List( _
+        ByVal lIndex As Long, _
+        ByVal sItem As String _
+    )
+Dim hMem As Long
+Dim wMsg As Long
+Dim tLI As ICONLISTBOXITEMINFO
+   If (lIndex &lt; ListCount And lIndex &gt; -1) Then
+      ' Remove the existing string at this index:
+      ' First get the memory block for the item
+      hMem = plGetItemData(lIndex)
+      pGetItemInfo hMem, tLI
+      RemoveItem lIndex
+      InsertItem sItem, lIndex
+      hMem = plGetItemData(lIndex)
+      pWriteItemInfo hMem, tLI
+      SendMessageByLong m_hWnd, wMsg, lIndex, plItemHeight(tLI.lItemHeight)
+   End If
+End Property
+Public Sub InsertItemAndData( _
+      ByVal sItem As String, _
+      ByVal lIndex As Long, _
+      Optional ByVal lIconIndex As Long = -1, _
+      Optional ByVal lIndent As Long = 0, _
+      Optional ByVal lForeColour As OLE_COLOR = -1, _
+      Optional ByVal lBackColour As OLE_COLOR = -1, _
+      Optional ByVal lItemData As Long = 0, _
+      Optional ByVal lExtraData As Long = 0, _
+      Optional ByVal lHeight As Long = 0, _
+      Optional ByVal eTextXAlign As EODCLItemXAlign = eixLeft, _
+      Optional ByVal eTextYAlign As EODCLItemYAlign = eixTop, _
+      Optional ByRef fntThis As StdFont = Nothing _
+    )
+Dim wMsg As Long
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+    
+   If (m_eStyle And ecsListBox) = ecsListBox Then
+      wMsg = LB_INSERTSTRING
+   Else
+      wMsg = CB_INSERTSTRING
+   End If
+   m_lR = SendMessageByString(m_hWnd, wMsg, lIndex, sItem)
+   If (m_lR &lt;&gt; CB_ERR) Then
+      m_lNewItem = m_lR
+      ' Allocate the global memory for this item:
+      hMem = GlobalAlloc(GPTR, Len(tLI))
+      tLI.lBackColour = lBackColour
+      tLI.lForeColour = lForeColour
+      tLI.lIndentSize = lIndent
+      tLI.lIconIndex = lIconIndex
+      tLI.lItemData = lItemData
+      tLI.lExtraData = lExtraData
+      tLI.lTextAlignX = eTextXAlign
+      tLI.lTextAlignY = eTextYAlign
+      If (lHeight &lt; 0) Then
+         ' Use default
+         tLI.lItemHeight = -1
+      Else
+         tLI.lItemHeight = lHeight
+      End If
+      If (m_eStyle And ecsListBox) = ecsListBox Then
+         wMsg = LB_SETITEMHEIGHT
+      Else
+         wMsg = CB_SETITEMHEIGHT
+      End If
+      SendMessageByLong m_hWnd, wMsg, m_lR, plItemHeight(tLI.lItemHeight)
+      If Not (fntThis Is Nothing) Then
+         pOLEFontToLogFont fntThis, UserControl.hdc, tLI.tLF
+         tLI.dFontSize = fntThis.Size
+      End If
+      
+      pWriteItemInfo hMem, tLI
+      ' Attach this item to the list item:
+      If (m_eStyle And ecsListBox) = ecsListBox Then
+         wMsg = LB_SETITEMDATA
+      Else
+         wMsg = CB_SETITEMDATA
+      End If
+      m_lR = SendMessageByLong(m_hWnd, wMsg, m_lNewItem, hMem)
+   End If
+        
+End Sub
+
+Public Sub InsertItem( _
+        ByVal sItem As String, _
+        ByVal lIndex As Long _
+    )
+Dim wMsg As Long
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+
+   If (m_eStyle And ecsListBox) = ecsListBox Then
+      wMsg = LB_INSERTSTRING
+   Else
+      wMsg = CB_INSERTSTRING
+   End If
+   m_lR = SendMessageByString(m_hWnd, wMsg, lIndex, sItem)
+   If (m_lR &lt;&gt; CB_ERR) Then
+      m_lNewItem = m_lR
+      ' Allocate the global memory for this item:
+      hMem = GlobalAlloc(GPTR, Len(tLI))
+      tLI.lBackColour = UserControl.BackColor
+      tLI.lForeColour = UserControl.ForeColor
+      tLI.lIconIndex = -1
+      pWriteItemInfo hMem, tLI
+      ' Attach this item to the list item:
+      If (m_eStyle And ecsListBox) = ecsListBox Then
+          wMsg = LB_SETITEMDATA
+      Else
+          wMsg = CB_SETITEMDATA
+      End If
+      m_lR = SendMessageByLong(m_hWnd, wMsg, m_lNewItem, hMem)
+   End If
+   
+End Sub
+Public Sub RemoveItem( _
+      ByVal lIndex As Long _
+    )
+Dim wMsg As Long
+Dim hMem As Long
+
+   If lIndex &lt; ListCount And lIndex &gt; -1 Then
+      ' Firstly remove the memory associated with this index:
+      hMem = plGetItemData(lIndex)
+      GlobalFree hMem
+      ' Now remove the string:
+      If (m_eStyle And ecsListBox) = ecsListBox Then
+          wMsg = LB_DELETESTRING
+      Else
+          wMsg = CB_DELETESTRING
+      End If
+      m_lR = SendMessageByLong(m_hWnd, wMsg, lIndex, 0)
+      If (m_lR = CB_ERR) Then
+         ' Raise error
+         Debug.Print "RemoveItem: Error!"
+      End If
+   Else
+      ' Raise error...
+      Debug.Print "RemoveItem: Error!"
+   End If
+   
+End Sub
+Property Get ListIndex() As Long
+Dim wMsg As Long
+   If (m_eStyle And ecsListBox) = ecsListBox Then
+      wMsg = LB_GETCURSEL
+   Else
+      wMsg = CB_GETCURSEL
+   End If
+   m_lR = SendMessageByLong(m_hWnd, wMsg, 0, 0)
+   ListIndex = m_lR
+   
+End Property
+Property Let ListIndex( _
+        ByVal lIndex As Long _
+    )
+Dim wMsg As Long
+   If (m_eStyle And ecsListBox) = ecsListBox Then
+      wMsg = LB_SETCURSEL
+   Else
+      wMsg = CB_SETCURSEL
+   End If
+   m_lR = SendMessageByLong(m_hWnd, wMsg, lIndex, 0)
+   If (m_lR = CB_ERR) And (lIndex &lt;&gt; -1) Then
+      Err.Raise 381, App.EXEName &amp; ".ODCboLst"
+   Else
+      RaiseEvent Click
+   End If
+
+   
+   If (m_eClientDraw = ecdFontPicker) Then
+      ' Here we cache the fonts
+   End If
+
+End Property
+Private Sub pGetItemInfo( _
+        ByVal hMem As Long, _
+        ByRef tLI As ICONLISTBOXITEMINFO _
+    )
+Dim lPtr As Long
+   If (hMem &lt;&gt; 0) And (hMem &lt;&gt; CB_ERR) Then
+      ' Get a pointer to the memory block
+      ' pointed to by hMem:
+      lPtr = GlobalLock(hMem)
+      ' Copy the memory into tLI
+      CopyMemory tLI, ByVal lPtr, Len(tLI)
+      ' Lock the memory again:
+      GlobalUnlock hMem
+   End If
+   
+End Sub
+Private Sub pWriteItemInfo( _
+        ByVal hMem As Long, _
+        ByRef tLI As ICONLISTBOXITEMINFO _
+    )
+Dim lPtr As Long
+   ' Get a pointer to the memory block
+   ' pointed to by hMem:
+   lPtr = GlobalLock(hMem)
+   ' Copy the memory into tLI
+   CopyMemory ByVal lPtr, tLI, Len(tLI)
+   ' Lock the memory again:
+   GlobalUnlock hMem
+        
+End Sub
+
+Property Get ListCount() As Long
+Dim wMsg As Long
+   If (m_eStyle And ecsListBox) = ecsListBox Then
+      wMsg = LB_GETCOUNT
+   Else
+      wMsg = CB_GETCOUNT
+   End If
+   ListCount = SendMessageByLong(m_hWnd, wMsg, 0, 0)
+End Property
+Property Let itemHeight( _
+        ByVal lIndex As Long, _
+        ByVal lItemHeight As Long _
+    )
+Dim wMsg As Long
+Dim tLI As ICONLISTBOXITEMINFO
+   m_lR = plGetItemData(lIndex)
+   If (m_lR &lt;&gt; CB_ERR) Then
+      pGetItemInfo m_lR, tLI
+      If (lItemHeight &gt; 0) Then
+         tLI.lItemHeight = lItemHeight
+      Else
+         tLI.lItemHeight = -1
+      End If
+      pWriteItemInfo m_lR, tLI
+      If (m_eStyle And ecsListBox) = ecsListBox Then
+         wMsg = LB_SETITEMHEIGHT
+      Else
+         wMsg = CB_SETITEMHEIGHT
+      End If
+      SendMessageByLong m_hWnd, wMsg, lIndex, plItemHeight(tLI.lItemHeight)
+      If (plItemHeight(tLI.lItemHeight) &gt; m_lMaxItemHeight) Then
+         m_lMaxItemHeight = plItemHeight(tLI.lItemHeight)
+         If (m_eStyle = ecsDropDownList) Then
+            ' Make sure the selection box is large enough...
+            ' ***TODO***
+            
+         End If
+      End If
+   End If
+    
+End Property
+Property Get itemHeight( _
+        ByVal lIndex As Long _
+    ) As Long
+Dim tLI As ICONLISTBOXITEMINFO
+   m_lR = plGetItemData(lIndex)
+   If (m_lR &lt;&gt; CB_ERR) Then
+      ' m_lR is a pointer to a memory block:
+      pGetItemInfo m_lR, tLI
+      itemHeight = plItemHeight(tLI.lItemHeight)
+   Else
+      itemHeight = 0
+   End If
+
+End Property
+
+Property Let itemData( _
+        ByVal lIndex As Long, _
+        ByVal lItemData As Long _
+    )
+Dim wMsg As Long
+Dim tLI As ICONLISTBOXITEMINFO
+   m_lR = plGetItemData(lIndex)
+   If (m_lR &lt;&gt; CB_ERR) Then
+      pGetItemInfo m_lR, tLI
+      tLI.lItemData = lItemData
+      pWriteItemInfo m_lR, tLI
+   End If
+   
+End Property
+
+Property Get itemData( _
+        ByVal lIndex As Long _
+    ) As Long
+Dim tLI As ICONLISTBOXITEMINFO
+   m_lR = plGetItemData(lIndex)
+   If (m_lR &lt;&gt; CB_ERR) Then
+      ' m_lR is a pointer to a memory block:
+      pGetItemInfo m_lR, tLI
+      itemData = tLI.lItemData
+   Else
+      itemData = 0
+   End If
+
+End Property
+Private Function plGetItemData( _
+        ByVal lIndex As Long _
+    ) As Long
+Dim wMsg As Long
+   If (m_eStyle And ecsListBox) = ecsListBox Then
+      wMsg = LB_GETITEMDATA
+   Else
+      wMsg = CB_GETITEMDATA
+   End If
+   m_lR = SendMessageByLong(m_hWnd, wMsg, lIndex, 0)
+   If (m_lR = CB_ERR) Then
+      Err.Raise 381, App.EXEName &amp; ".ODCboLst"
+   End If
+   plGetItemData = m_lR
+   
+End Function
+Public Sub Clear()
+Dim lR As Long
+Dim wMsg As Long
+Dim hMem As Long
+   ' For each item in the control, free the memory
+   ' associated with it holding the extended data:
+   For lR = 0 To ListCount - 1
+      hMem = plGetItemData(lR)
+      GlobalFree hMem
+   Next lR
+   ' Now we can clear the control as normal:
+   If (m_eStyle And ecsListBox) = ecsListBox Then
+      wMsg = LB_RESETCONTENT
+   Else
+      wMsg = CB_RESETCONTENT
+   End If
+   lR = SendMessageByLong(m_hWnd, wMsg, 0, 0)
+   
+   ' Set last added item to -1:
+   m_lNewItem = -1
+End Sub
+
+Public Function FindItemIndex( _
+        ByVal sToFind As String, _
+        Optional ByVal bExactMatch As Boolean = False _
+    ) As Long
+Dim lR As Long
+Dim lFlag As Long
+   ' Find the index of the item sToFind, optionally
+   ' exact matching.  Return -1 if the item is not
+   ' found.
+   If (m_hWnd &lt;&gt; 0) Then
+      ' Set the message to send to the control:
+      If (bExactMatch) Then
+         If (m_eStyle And ecsListBox) = ecsListBox Then
+            lFlag = LB_FINDSTRINGEXACT
+         Else
+            lFlag = CB_FINDSTRINGEXACT
+         End If
+      Else
+         If (m_eStyle And ecsListBox) = ecsListBox Then
+            lFlag = LB_FINDSTRING
+         Else
+            lFlag = CB_FINDSTRING
+         End If
+      End If
+      ' Find:
+      lR = -1
+      lR = SendMessageByString(m_hWnd, lFlag, 0, sToFind)
+      ' Return value:
+      FindItemIndex = lR
+   End If
+End Function
+Public Sub ShowDropDown(ByVal bState As Boolean)
+Dim wP As Long
+Dim lR As Long
+   ' In a combo box, show or hide the drop down portion:
+   If (m_eStyle &lt;&gt; ecsListBox) Then
+      If (m_hWnd &lt;&gt; 0) Then
+         wP = -1 * bState
+         lR = SendMessageByLong(m_hWnd, CB_SHOWDROPDOWN, wP, 0)
+      End If
+   End If
+End Sub
+Public Sub ShowDropDownAtPosition( _
+        ByVal xPixels As Long, _
+        ByVal yPixels As Long, _
+        Optional ByVal WidthPixels As Long = 0, _
+        Optional ByVal HeightPixels As Long = 0 _
+    )
+Dim tP As POINTAPI, lhWNd As Long
+   ' In a combo box, show or hide the drop down portion at
+   ' a specified location on screen.  Optionally, the width
+   ' and height of the drop down can be specified too.
+   '
+   ' Note that xPixels and yPixels should be specified
+   ' relative to the parent of the UserControl, i.e. if the
+   ' control is a child of a PictureBox, the coordinates
+   ' are relative to the top left of that PictureBox.
+   '
+   If (m_eStyle &lt;&gt; ecsListBox) Then
+      If (m_hWnd &lt;&gt; 0) Then
+         ' Store size to show
+         If (WidthPixels = 0) Then
+            m_lPW = m_lWidth
+         Else
+            m_lPW = WidthPixels
+         End If
+         m_lPH = HeightPixels
+         ' Get the parent on which the user control is placed
+         ' so we can evaluate where xPixels and yPixels are in
+         ' terms of screen coordinates (the drop down list portion
+         ' of a combo box is a child of the desktop)
+         lhWNd = GetParent(GetParent(m_hWnd))
+         ' Get position to show in screen coordinates:
+         tP.x = xPixels
+         tP.y = yPixels
+         ClientToScreen lhWNd, tP
+         m_lPX = tP.x
+         m_lPY = tP.y
+                 
+         ' Set flag indicating to move drop down on show:
+         m_bPositionDropDown = True
+         
+         ' Tell the combo box to drop down.  The sizing
+         ' and positioning of the list box portion is done
+         ' in response to the WM_CTLCOLORLISTBOX message,
+         ' which is the only message which provides the
+         ' hWnd of the listbox portion of a combo box:
+         SendMessageByLong m_hWnd, CB_SHOWDROPDOWN, 1, 0
+          
+      End If
+   End If
+End Sub
+Property Get Locked() As Boolean
+   ' Implement Enabled property locally so we
+   ' can set control window enabled
+   If m_eStyle = ecsDropDownCombo Then
+      Locked = m_bLocked
+   End If
+End Property
+Public Property Let Locked(ByVal bState As Boolean)
+   If m_eStyle = ecsDropDownCombo Then
+      m_bLocked = bState
+      If m_hWndEdit &lt;&gt; 0 Then
+         SendMessageByLong m_hWndEdit, EM_SETREADONLY, Abs(bState), 0
+      End If
+      PropertyChanged "Locked"
+   End If
+End Property
+
+Property Get Enabled() As Boolean
+   ' Implement Enabled property locally so we
+   ' can set control window enabled
+   Enabled = UserControl.Enabled
+End Property
+Property Let Enabled(bEnabled As Boolean)
+Dim lEnable As Long
+Dim lReadOnly As Long
+Dim rc As RECT
+   ' Implement Enabled property locally so we
+   ' can set control window enabled
+   If (UserControl.Enabled &lt;&gt; bEnabled) Then
+      ' Set the UserControl state
+      UserControl.Enabled = bEnabled
+      lEnable = Abs(bEnabled)
+      ' This works around a bug with VB;
+      EnableWindow UserControl.hwnd, lEnable
+      ' Ensure the control window has the same state also:
+      EnableWindow m_hWnd, lEnable
+      ' Set the condition of the edit portion if we have one
+      If (m_eStyle &lt; ecsDropDownList) Then
+         lReadOnly = Abs(Not (bEnabled))
+         If (NoGrayWhenDisabled) Then
+            EnableWindow m_hWndEdit, 1
+            SendMessageByLong m_hWndEdit, EM_SETREADONLY, lReadOnly, 0
+         Else
+            EnableWindow m_hWndEdit, lEnable
+            SendMessageByLong m_hWndEdit, EM_SETREADONLY, lReadOnly, 0
+         End If
+      End If
+      ' Ensure window is drawn correctly:
+      rc.Right = UserControl.ScaleWidth \ Screen.TwipsPerPixelX
+      rc.Bottom = UserControl.ScaleHeight \ Screen.TwipsPerPixelY
+      InvalidateRect m_hWnd, rc, 1
+
+      ' Notify propchange
+      PropertyChanged "Enabled"
+   End If
+End Property
+
+Property Get ClientDraw() As EODCLDrawMode
+   ' Return the current Client Draw mode:
+   ClientDraw = m_eClientDraw
+End Property
+Property Let ClientDraw(ByVal eClientDraw As EODCLDrawMode)
+   ' Set the Client Draw mode:
+   If (m_eClientDraw &lt;&gt; eClientDraw) Then
+      m_eClientDraw = eClientDraw
+      If (eClientDraw = ecdParagraphStyles) Or (eClientDraw = ecdFontPicker)
+       Then
+         If Not (m_cIL Is Nothing) Then
+            m_hIml = m_cIL.hIml
+            m_hImlCache = m_hIml
+         End If
+         m_lIconWidth = 16
+         m_lIconHeight = 16
+      Else
+         m_hIml = m_hImlCache
+      End If
+      pRefreshControl
+      PropertyChanged "ClientDraw"
+   End If
+End Property
+
+Property Get BackColor() As OLE_COLOR
+   ' Return the control's default back color:
+   BackColor = UserControl.BackColor
+End Property
+Property Let BackColor(ByVal oBackColor As OLE_COLOR)
+   ' Set the control's default back color:
+      
+   ' Cache the back color value using the UserControl:
+   UserControl.BackColor = oBackColor
+   
+   ' The list box or combo box window has its back colour
+   ' set by the WM_CTLCOLORLISTBOX message.  If the BackColor
+   ' is not the default for the control (Window Background
+   ' colour) we return a brush in response to this message,
+   ' which in turn Windows uses to draw the background:
+   
+   ' Clear background brush if we have one:
+   If (m_hBackBrush &lt;&gt; 0) Then
+       DeleteObject m_hBackBrush
+   End If
+   ' Create a background brush:
+   m_hBackBrush = CreateSolidBrush(gTranslateColor(oBackColor))
+    
+    PropertyChanged "BackColor"
+
+End Property
+Property Get ForeColor() As OLE_COLOR
+   ' Return the control's default fore color:
+   ForeColor = UserControl.ForeColor
+End Property
+Property Let ForeColor(ByVal oForeColor As OLE_COLOR)
+   ' Set the control's default fore color:
+   If (UserControl.ForeColor &lt;&gt; oForeColor) Then
+      UserControl.ForeColor = oForeColor
+      PropertyChanged "ForeColor"
+   End If
+End Property
+Property Get Font() As StdFont
+   ' Get the control's default font:
+   Set Font = UserControl.Font
+End Property
+Property Set Font(fntThis As StdFont)
+Dim hUFnt As Long
+Dim tR As RECT
+Dim iMsg As Long
+
+   ' Set the control's default font:
+   Set UserControl.Font = fntThis
+   ' Evaluate the default item height:
+   m_lDefaultItemHeight = plEvaluateDefaultItemHeight()
+   
+   ' Store a log font structure for this font:
+   pOLEFontToLogFont fntThis, UserControl.hdc, m_tULF
+   ' Store old font handle:
+   hUFnt = m_hUFnt
+   ' Create a new version of the font:
+   m_hUFnt = CreateFontIndirect(m_tULF)
+   If (m_hWnd &lt;&gt; 0) Then
+      ' Ensure the control has the correct font:
+      SendMessageByLong m_hWnd, WM_SETFONT, m_hUFnt, 1
+      If (m_hWndEdit &lt;&gt; 0) Then
+         ' Ensure the edit portion has the correct font:
+         SendMessageByLong m_hWndEdit, WM_SETFONT, m_hUFnt, 1
+      End If
+   End If
+   ' Delete previous version, if we had one:
+   If (hUFnt &lt;&gt; 0) Then
+      DeleteObject hUFnt
+   End If
+   
+   ' Ensure the size of the edit box is correct if we're a combo box:
+   If (m_eStyle &lt; ecsListBox) Then
+      If (m_hWnd &lt;&gt; 0) Then
+         SendMessageByLong m_hWnd, CB_SETITEMHEIGHT, -1, m_lDefaultItemHeight
+      End If
+      ' Make sure the User Control's height is correct:
+      UserControl.Height = (m_lDefaultItemHeight + 6) * Screen.TwipsPerPixelY
+      iMsg = CB_SETITEMHEIGHT
+   Else
+      iMsg = LB_SETITEMHEIGHT
+   End If
+   
+   ' Reset the height of default items:
+   Dim i As Long
+   Dim tLI As ICONLISTBOXITEMINFO
+   Dim lR As Long
+         
+   For i = 0 To ListCount - 1
+      lR = plGetItemData(i)
+      If (lR &lt;&gt; CB_ERR) Then
+         pGetItemInfo m_lR, tLI
+         If (tLI.lItemHeight &lt;= 0) Then
+            SendMessageByLong m_hWnd, iMsg, i, plItemHeight(-1)
+         End If
+      End If
+   Next i
+   
+   DeleteObject m_hFnt
+   m_bFontNotCreated = True
+   
+   PropertyChanged "Font"
+   
+End Property
+Private Function plEvaluateDefaultItemHeight() As Long
+Dim tR As RECT
+Dim lHeight As Long
+   DrawText UserControl.hdc, "Xg", -1, tR, DT_CALCRECT
+   lHeight = (tR.Bottom - tR.tOp) + 2
+   If (lHeight &lt; m_lIconHeight) Then
+      lHeight = m_lIconHeight
+   End If
+   plEvaluateDefaultItemHeight = lHeight
+End Function
+
+Property Get ExtendedUI() As Boolean
+   ' Whether a dropdownlist combo box drops down in
+   ' response to the down arrow as well as F4
+   ExtendedUI = m_bExtendedUI
+End Property
+Property Let ExtendedUI(ByVal bExtendedUI As Boolean)
+Dim lS As Long
+Dim lR As Long
+   ' Whether a dropdownlist combo box drops down in
+   ' response to the down arrow as well as F4
+   If m_bExtendedUI &lt;&gt; bExtendedUI Then
+      m_bExtendedUI = bExtendedUI
+      If (m_eStyle &lt;&gt; ecsListBox) Then
+         If (m_hWnd &lt;&gt; 0) Then
+            lR = SendMessageByLong(m_hWnd, CB_SETEXTENDEDUI,
+             Abs(m_bExtendedUI), 0)
+         End If
+      End If
+      PropertyChanged "ExtendedUI"
+   End If
+End Property
+Property Get Style() As EODCLStyle
+   ' Get the Style
+   Style = m_eStyle
+End Property
+Property Let Style(ByVal eStyle As EODCLStyle)
+   ' Set the Style.  Note changing this property during
+   ' run mode will have no effect...  Should raise an
+   ' error, really.  Alternatively this could actually
+   ' change the style of the box.  Since to get a new
+   ' style the original window has to be destroyed, you
+   ' would have to store all the items and their associated
+   ' extended properties, remove the subclass, call pInitialise
+   ' for the new style, make a new subclass and then add the
+   ' items again.
+   If (m_eStyle &lt;&gt; eStyle) Then
+      m_eStyle = eStyle
+      ' If in design mode (no items in the box) then
+      ' change
+      If Not (UserControl.Ambient.UserMode) Then
+         pInitialise
+      End If
+      UserControl.BorderStyle = ((m_eStyle And ecsListBox) = ecsListBox) * -1
+      If (m_eStyle = ecsListBoxChecked) Then
+         m_lIconWidth = 16
+         m_lIconHeight = 16
+      End If
+      PropertyChanged "Style"
+   End If
+End Property
+Property Get Sorted() As Boolean
+   ' Whether the control is sorted or not:
+   Sorted = m_bSorted
+End Property
+Property Let Sorted(ByVal bSorted As Boolean)
+   ' THis will have no effect at runtime:
+   If (bSorted &lt;&gt; m_bSorted) Then
+      m_bSorted = bSorted
+      PropertyChanged "Sorted"
+   End If
+End Property
+Property Get DropDownWidth() As Long
+   ' Get the width of the drop down portion of a combo box
+   ' in pixels:
+   DropDownWidth = m_lWidth
+End Property
+Property Let DropDownWidth(lWidth As Long)
+Dim lAWidth As Long
+   ' Set the width of the drop down portion of a combo box
+   ' in pixels:
+   If (m_lWidth &lt;&gt; lWidth) Then
+      m_lWidth = lWidth
+      If (m_eStyle &lt;&gt; ecsListBox) Then
+         If (m_hWnd &lt;&gt; 0) Then
+            ' The width of a combo box's drop down is set
+            ' in dialog units which are basically the size
+            ' of an average character in the system font:
+            lAWidth = lWidth \ glGetFontDialogUnits(m_hWnd)
+            m_lR = SendMessageByLong(m_hWnd, CB_SETDROPPEDWIDTH, lAWidth, 0)
+            If (m_eStyle = ecsDropDownCombo) Then
+                SelLength = 0
+            End If
+         End If
+      End If
+      PropertyChanged "DropDownWidth"
+   End If
+End Property
+
+Private Sub pAmbient()
+   ' set relevant ambient properties:
+   With UserControl.Ambient
+      Set Font = .Font
+      ForeColor = .ForeColor
+   End With
+End Sub
+Private Sub pCreateImageList()
+Dim i As Long
+   ' Create an internal ImageList based on the resources stored in
+   ' picRes.  Probably neater to use an actual resource file
+   ' with the control.
+   Set m_cIL = New CImageList
+   m_cIL.Create picRes.hdc, Size16
+   For i = 0 To 112 Step 16
+      m_cIL.AddFromPictureBox picRes.hdc, picRes, i, 0
+   Next i
+   ' During initialisation, we want to set the ImageList
+   ' to the correct version
+   If (m_eClientDraw = ecdParagraphStyles) Or (m_eClientDraw = ecdFontPicker)
+    Or (m_eStyle = ecsListBoxChecked) Then
+      m_hImlCache = m_hIml
+      m_hIml = m_cIL.hIml
+      m_lIconWidth = m_cIL.IconSize
+      m_lIconHeight = m_cIL.IconSize
+   End If
+
+End Sub
+Private Sub pInitialise()
+Dim hInst As Long
+Dim sStyle As String
+Dim wStyle As Long
+Dim lW As Long, lH As Long
+    
+    ' If we already have a window, then destroy it:
+    pTerminate
+    
+    ' Create the combo box:
+    hInst = App.hInstance
+    
+    ' Set up style bits to get the appropriate type of
+    ' window:
+    If (m_eStyle And ecsListBox) = ecsListBox Then
+        sStyle = "LISTBOX"
+        wStyle = WS_VISIBLE Or WS_CHILD Or WS_VSCROLL Or LBS_HASSTRINGS Or
+         LBS_OWNERDRAWVARIABLE Or LBS_NOTIFY
+        wStyle = wStyle Or WS_HSCROLL
+        If (m_bSorted) Then
+            wStyle = wStyle Or LBS_SORT
+        End If
+        If (m_eStyle = ecsListBoxMultiSelectExtended) Then
+            wStyle = wStyle Or LBS_EXTENDEDSEL
+        End If
+        If (m_eStyle = ecsListBoxChecked) Or (m_eStyle =
+         ecsListBoxMultiSelectSimple) Then
+            wStyle = wStyle Or LBS_MULTIPLESEL
+        End If
+        lH = 48
+    Else
+        sStyle = "COMBOBOX"
+        wStyle = WS_CHILD Or WS_VSCROLL Or CBS_HASSTRINGS Or
+         CBS_OWNERDRAWVARIABLE
+        ' SPM -
+        wStyle = wStyle Or WS_HSCROLL
+        If (m_bSorted) Then
+            wStyle = wStyle Or CBS_SORT
+        End If
+        If (m_eStyle = ecsDropDownCombo) Then
+            wStyle = wStyle Or CBS_DROPDOWN Or CBS_AUTOHSCROLL
+        ElseIf (m_eStyle = ecsSimpleCombo) Then
+            wStyle = wStyle Or CBS_SIMPLE
+        Else
+            wStyle = wStyle Or CBS_DROPDOWNLIST
+        End If
+        lH = 200
+    End If
+    ' Create the window:
+    lW = UserControl.Width \ Screen.TwipsPerPixelX
+    m_hWnd = CreateWindowEx( _
+        0, _
+        sStyle, _
+        "", _
+        wStyle, _
+        0, 0, lW, lH, _
+        m_hWndparent, _
+        0, _
+        hInst, _
+        ByVal 0 _
+        )
+        
+    ' If we succeed
+    If (m_hWnd &lt;&gt; 0) Then
+        ' Get the hWnd of the edit box if this is a drop
+        ' down combo:
+        If (m_eStyle = ecsDropDownCombo) Then
+            m_hWndEdit = GetWindow(m_hWnd, GW_CHILD)
+        End If
+         ' Ensure we have the correct font and item height:
+        Set Font = UserControl.Font
+        ' Show the window:
+        ShowWindow m_hWnd, SW_SHOW
+    Else
+        ' Debug.Assert (m_hWnd &lt;&gt; 0)
+    End If
+
+    
+End Sub
+Private Sub pSubClass()
+Dim i As Long
+   ' If we have a valid hWnd for the combo box, then add the subclassing
+   ' messages:
+   If Not (m_bDesignMode) Then
+      If (m_hWndparent &lt;&gt; 0) Then
+         AttachMessage Me, m_hWndparent, WM_SIZE
+         AttachMessage Me, m_hWndparent, WM_COMMAND
+         AttachMessage Me, m_hWndparent, WM_MEASUREITEM
+         AttachMessage Me, m_hWndparent, WM_DRAWITEM
+         AttachMessage Me, m_hWndparent, WM_CTLCOLORLISTBOX
+         AttachMessage Me, m_hWndparent, WM_SETFOCUS
+         AttachMessage Me, m_hWndparent, WM_GETFONT
+      End If
+      If (m_hWnd &lt;&gt; 0) Then
+         If (m_eStyle = ecsDropDownCombo) Then
+            AttachMessage Me, m_hWnd, WM_SETFOCUS
+            AttachMessage Me, m_hWnd, WM_MOUSEACTIVATE
+            AttachMessage Me, m_hWnd, WM_DESTROY
+            AttachMessage Me, m_hWndEdit, WM_KEYDOWN
+            AttachMessage Me, m_hWndEdit, WM_CHAR
+            AttachMessage Me, m_hWndEdit, WM_SETFOCUS
+            AttachMessage Me, m_hWndEdit, WM_MOUSEACTIVATE
+            AttachMessage Me, m_hWndEdit, WM_LBUTTONDOWN
+            AttachMessage Me, m_hWndEdit, WM_MBUTTONDOWN
+            AttachMessage Me, m_hWndEdit, WM_RBUTTONDOWN
+            AttachMessage Me, m_hWndEdit, WM_MOUSEMOVE
+            AttachMessage Me, m_hWndEdit, WM_LBUTTONUP
+            AttachMessage Me, m_hWndEdit, WM_MBUTTONUP
+            AttachMessage Me, m_hWndEdit, WM_RBUTTONUP
+            AttachMessage Me, m_hWndEdit, WM_DESTROY
+         Else
+            AttachMessage Me, m_hWnd, WM_KEYDOWN
+            AttachMessage Me, m_hWnd, WM_CHAR
+            AttachMessage Me, m_hWnd, WM_SETFOCUS
+            AttachMessage Me, m_hWnd, WM_MOUSEACTIVATE
+            AttachMessage Me, m_hWnd, WM_LBUTTONDOWN
+            AttachMessage Me, m_hWnd, WM_MBUTTONDOWN
+            AttachMessage Me, m_hWnd, WM_RBUTTONDOWN
+            AttachMessage Me, m_hWnd, WM_MOUSEMOVE
+            AttachMessage Me, m_hWnd, WM_LBUTTONUP
+            AttachMessage Me, m_hWnd, WM_MBUTTONUP
+            AttachMessage Me, m_hWnd, WM_RBUTTONUP
+            AttachMessage Me, m_hWnd, WM_DESTROY
+         End If
+      End If
+      m_bSubClass = True
+   End If
+End Sub
+Private Sub pUnSubClass()
+   ' Clear up subclassing messages:
+   If (m_bSubClass) Then
+      If (m_hWndparent &lt;&gt; 0) Then
+         DetachMessage Me, m_hWndparent, WM_SIZE
+         DetachMessage Me, m_hWndparent, WM_COMMAND
+         DetachMessage Me, m_hWndparent, WM_MEASUREITEM
+         DetachMessage Me, m_hWndparent, WM_DRAWITEM
+         DetachMessage Me, m_hWndparent, WM_CTLCOLORLISTBOX
+         DetachMessage Me, m_hWndparent, WM_SETFOCUS
+         DetachMessage Me, m_hWndparent, WM_GETFONT
+      End If
+      If Not (m_bDesignMode) Then
+         If (m_eStyle = ecsDropDownCombo) Then
+            If (m_hWnd &lt;&gt; 0) Then
+               DetachMessage Me, m_hWnd, WM_SETFOCUS
+               DetachMessage Me, m_hWnd, WM_MOUSEACTIVATE
+               DetachMessage Me, m_hWnd, WM_DESTROY
+            End If
+            If (m_hWndEdit &lt;&gt; 0) Then
+               DetachMessage Me, m_hWndEdit, WM_KEYDOWN
+               DetachMessage Me, m_hWndEdit, WM_CHAR
+               DetachMessage Me, m_hWndEdit, WM_SETFOCUS
+               DetachMessage Me, m_hWndEdit, WM_MOUSEACTIVATE
+               DetachMessage Me, m_hWndEdit, WM_LBUTTONDOWN
+               DetachMessage Me, m_hWndEdit, WM_MBUTTONDOWN
+               DetachMessage Me, m_hWndEdit, WM_RBUTTONDOWN
+               DetachMessage Me, m_hWndEdit, WM_MOUSEMOVE
+               DetachMessage Me, m_hWndEdit, WM_LBUTTONUP
+               DetachMessage Me, m_hWndEdit, WM_MBUTTONUP
+               DetachMessage Me, m_hWndEdit, WM_RBUTTONUP
+               DetachMessage Me, m_hWndEdit, WM_DESTROY
+            End If
+         Else
+            If (m_hWnd &lt;&gt; 0) Then
+               DetachMessage Me, m_hWnd, WM_KEYDOWN
+               DetachMessage Me, m_hWnd, WM_CHAR
+               DetachMessage Me, m_hWnd, WM_SETFOCUS
+               DetachMessage Me, m_hWnd, WM_MOUSEACTIVATE
+               DetachMessage Me, m_hWnd, WM_LBUTTONDOWN
+               DetachMessage Me, m_hWnd, WM_MBUTTONDOWN
+               DetachMessage Me, m_hWnd, WM_RBUTTONDOWN
+               DetachMessage Me, m_hWnd, WM_MOUSEMOVE
+               DetachMessage Me, m_hWnd, WM_LBUTTONUP
+               DetachMessage Me, m_hWnd, WM_MBUTTONUP
+               DetachMessage Me, m_hWnd, WM_RBUTTONUP
+               DetachMessage Me, m_hWnd, WM_DESTROY
+            End If
+         End If
+      End If
+   End If
+   m_bSubClass = False
+End Sub
+Private Sub pTerminate()
+   pUnSubClass
+   
+   ' Clear up image list if any:
+   Set m_cIL = Nothing
+    
+   ' Remove item font if we have one:
+   If (m_hFnt &lt;&gt; 0) Then
+       DeleteObject m_hFnt
+       m_bFontNotCreated = True
+   End If
+
+   ' Clear the combo box window:
+       ' If we have a combo box, hide it, set its parent
+   ' to the desktop and then destroy it:
+   If (m_hWnd &lt;&gt; 0) Then
+      ShowWindow m_hWnd, SW_HIDE
+      SetParent m_hWnd, 0
+      DestroyWindow m_hWnd
+   End If
+   m_hWnd = 0
+   m_hWndEdit = 0
+    
+   ' Remove control font if we have one:
+   If (m_hUFnt &lt;&gt; 0) Then
+      DeleteObject m_hUFnt
+   End If
+
+   ' Clear background brush if we have one:
+   If (m_hBackBrush &lt;&gt; 0) Then
+      DeleteObject m_hBackBrush
+   End If
+
+End Sub
+
+Private Sub pOLEFontToLogFont(fntThis As StdFont, hdc As Long, tLF As LOGFONT)
+Dim sFont As String
+Dim iChar As Integer
+
+    ' Convert an OLE StdFont to a LOGFONT structure:
+    With tLF
+        sFont = fntThis.Name
+        ' There is a quicker way involving StrConv and CopyMemory, but
+        ' this is simpler!:
+        For iChar = 1 To Len(sFont)
+            .lfFaceName(iChar - 1) = CByte(Asc(Mid$(sFont, iChar, 1)))
+        Next iChar
+        ' Based on the Win32SDK documentation:
+        .lfHeight = -MulDiv((fntThis.Size), (GetDeviceCaps(hdc, LOGPIXELSY)),
+         72)
+        .lfItalic = fntThis.Italic
+        If (fntThis.Bold) Then
+            .lfWeight = FW_BOLD
+        Else
+            .lfWeight = FW_NORMAL
+        End If
+        .lfUnderline = fntThis.Underline
+        .lfStrikeOut = fntThis.Strikethrough
+        .lfCharSet = fntThis.Charset
+    End With
+
+End Sub
+
+Private Sub pRefreshControl()
+Dim tR As RECT
+    ' Invalidate the control so it gets redrawn:
+    If (m_hWnd &lt;&gt; 0) Then
+        tR.Right = UserControl.ScaleWidth \ Screen.TwipsPerPixelX
+        tR.Bottom = UserControl.ScaleHeight \ Screen.TwipsPerPixelY
+        InvalidateRect m_hWnd, tR, 1
+    End If
+End Sub
+
+Private Sub pInitialiseSysColors()
+    
+    ' If SysColorPicker client draw style is chosen, add
+    ' all the colours to it:
+    Clear
+      'assign system color names
+     AddItemAndData "3DDKShadow", , , , vb3DDKShadow
+     AddItemAndData "3DFace", , , , vb3DFace
+     AddItemAndData "3DHighlight", , , , vb3DHighlight
+     AddItemAndData "3DLight", , , , vb3DLight
+     AddItemAndData "3DShadow", , , , vb3DShadow
+     AddItemAndData "ActiveBorder", , , , vbActiveBorder
+     AddItemAndData "ActiveTitleBar", , , , vbActiveTitleBar
+     AddItemAndData "ApplicationWorkspace", , , , vbApplicationWorkspace
+     AddItemAndData "ButtonFace", , , , vbButtonFace
+     AddItemAndData "ButtonShadow", , , , vbButtonShadow
+     AddItemAndData "ButtonText", , , , vbButtonText
+     AddItemAndData "Desktop", , , , vbDesktop
+     AddItemAndData "GrayText", , , , vbGrayText
+     AddItemAndData "Highlight", , , , vbHighlight
+     AddItemAndData "HighlightText", , , , vbHighlightText
+     AddItemAndData "InactiveBorder", , , , vbInactiveBorder
+     AddItemAndData "InactiveCaptionText", , , , vbInactiveCaptionText
+     AddItemAndData "InactiveTitleBar", , , , vbInactiveTitleBar
+     AddItemAndData "InfoBackground", , , , vbInfoBackground
+     AddItemAndData "InfoText", , , , vbInfoText
+     AddItemAndData "MenuBar", , , , vbMenuBar
+     AddItemAndData "MenuText", , , , vbMenuText
+     AddItemAndData "ScrollBars", , , , vbScrollBars
+     AddItemAndData "TitleBarText", , , , vbTitleBarText
+     AddItemAndData "WindowBackground", , , , vbWindowBackground
+     AddItemAndData "WindowFrame", , , , vbWindowFrame
+     AddItemAndData "WindowText", , , , vbWindowText
+     ListIndex = 0
+
+End Sub
+
+Public Sub LoadFonts( _
+        Optional ByVal bIncludeScreenFonts As Boolean = True, _
+        Optional ByVal bIncludePrinterFonts As Boolean = True _
+    )
+    ' Load up the control with fonts.  This will work best
+    ' if
+    Clear
+    If (bIncludeScreenFonts) Then
+        GetFonts UserControl.hdc, Me, False
+    End If
+    If (bIncludePrinterFonts) Then
+        GetFonts Printer.hdc, Me, True
+    End If
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As EMsgResponse)
+   ' Not required.
+End Property
+
+Private Property Get ISubclass_MsgResponse() As EMsgResponse
+   Select Case CurrentMessage
+   Case WM_CHAR, WM_KEYDOWN, WM_MOUSEACTIVATE, WM_MEASUREITEM
+      ISubclass_MsgResponse = emrConsume
+   Case Else
+      ISubclass_MsgResponse = emrPreprocess
+   End Select
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+Dim tR As RECT
+Dim lStyle As Long, bMoved As Boolean
+Dim lW As Long, lH As Long
+Dim iKeyCode As Integer, iShift As Integer, lhWNd As Long, bShift As Boolean
+Dim iButton As Integer, x As Single, y As Single
+
+    'If (hwnd = m_hWndparent) Or (hwnd = m_hWndEdit) Or (hwnd = m_hWnd) Then
+   Select Case iMsg
+   Case WM_CTLCOLORLISTBOX
+      
+      ' This is the only way to get the handle of the
+      ' list box portion of a combo box:
+      If m_eStyle &lt; ecsListBox Then
+         If (m_hWndDropDown = 0) Then
+            m_hWndDropDown = lParam
+            ' Now change the width if required:
+            If (m_lWidth &gt; 0) Or (m_bPositionDropDown) Then
+               If (IsWindow(m_hWndDropDown)) Then
+                  GetWindowRect m_hWndDropDown, tR
+                  If (m_bPositionDropDown) Then
+                     If (m_lPW &lt;= 0) Then
+                        lW = tR.Right - tR.left
+                     Else
+                        lW = m_lPW
+                     End If
+                     If (m_lPH &lt;= 0) Then
+                        lH = tR.Bottom - tR.tOp
+                     Else
+                        lH = m_lPH
+                     End If
+                     SetWindowPos m_hWndDropDown, 0, m_lPX, m_lPY, lW, lH,
+                      SWP_FRAMECHANGED Or SWP_NOACTIVATE Or SWP_NOZORDER Or
+                      SWP_NOOWNERZORDER
+                     bMoved = True
+                  Else
+                     SetWindowPos m_hWndDropDown, 0, tR.left, tR.tOp, m_lWidth,
+                      (tR.Bottom - tR.tOp), SWP_FRAMECHANGED Or SWP_NOACTIVATE
+                      Or SWP_NOZORDER Or SWP_NOOWNERZORDER
+                     bMoved = True
+                  End If
+               End If
+            End If
+            If Not bMoved Then
+               SetWindowPos m_hWndDropDown, 0, 0, 0, 0, 0, SWP_FRAMECHANGED Or
+                SWP_NOACTIVATE Or SWP_NOZORDER Or SWP_NOOWNERZORDER Or
+                SWP_NOMOVE Or SWP_NOSIZE
+            End If
+            If m_bPositionDropDown Then
+               'Debug.Print GetFocus(), m_hWndDropDown
+               SetFocusAPI m_hWndDropDown
+               'Debug.Print GetFocus(), m_hWndDropDown
+            End If
+         End If
+      End If
+      If (m_hBackBrush &lt;&gt; 0) Then
+         ISubclass_WindowProc = m_hBackBrush
+      End If
+      
+   Case WM_MEASUREITEM
+       ISubclass_WindowProc = plMeasureItem(wParam, lParam)
+       
+   Case WM_DRAWITEM
+       ISubclass_WindowProc = plDrawItem(wParam, lParam)
+       
+   Case WM_COMMAND
+      If (plNotificationEvent(iMsg, wParam, lParam) &lt;&gt; 0) Then
+         ISubclass_WindowProc = 1
+      End If
+      
+   Case WM_GETFONT
+      ISubclass_WindowProc = m_hUFnt
+      
+   Case WM_SIZE
+      UserControl_Paint
+      lW = (lParam And &amp;HFFFF&amp;)
+      lH = ((lParam \ &amp;H10000) And &amp;HFFFF&amp;)
+      pResize lW, lH
+      
+   Case WM_KEYDOWN
+      ' Debug.Print "sending to ", hwnd
+      iKeyCode = (wParam And &amp;HFF)
+      If m_bLocked Then
+         If iKeyCode = vbKeyLeft Or iKeyCode = vbKeyRight Or iKeyCode = vbKeyUp
+          Or iKeyCode = vbKeyDown Or iKeyCode = vbKeyHome Or iKeyCode =
+          vbKeyEnd Or iKeyCode = vbKeyPageUp Or iKeyCode = vbKeyPageDown Then
+         Else
+            iKeyCode = 0
+         End If
+      End If
+      If iKeyCode &lt;&gt; 0 Then
+         RaiseEvent KeyDown(iKeyCode, giGetShiftState())
+      End If
+      If (iKeyCode = 0) Then
+         ' consume
+      Else
+         wParam = wParam And Not &amp;HFF&amp;
+         wParam = wParam Or (iKeyCode And &amp;HFF&amp;)
+         ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lParam)
+      End If
+      
+   Case WM_CHAR
+      iKeyCode = (wParam And &amp;HFF)
+      ' Debug.Print "sending to ", hwnd
+      If m_bLocked Then
+         iKeyCode = 0
+      Else
+         RaiseEvent KeyPress(iKeyCode)
+      End If
+      If (iKeyCode = 0) Then
+         ' consume:
+      Else
+         If (m_eStyle = ecsDropDownCombo) Then
+            If (m_bDoAutoComplete) Then
+               AutoCompleteKeyPress iKeyCode
+               If (iKeyCode = vbKeyReturn) Or (iKeyCode = vbKeyEscape) Then
+                  ' consume:
+                  ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam,
+                   lParam)
+                  If ComboIsDropped Then
+                     ShowDropDown False
+                  End If
+                  RaiseEvent AutoCompleteSelection(List(ListIndex), ListIndex)
+               End If
+            End If
+         End If
+         wParam = wParam And Not &amp;HFF&amp;
+         wParam = wParam Or (iKeyCode And &amp;HFF&amp;)
+         If (iKeyCode &lt;&gt; 0) Then
+            ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lParam)
+         End If
+      End If
+      
+   Case WM_LBUTTONDOWN, WM_MBUTTONDOWN, WM_RBUTTONDOWN
+      iButton = (Abs(iMsg = WM_LBUTTONDOWN)) * vbLeftButton + (Abs(iMsg =
+       WM_RBUTTONDOWN)) * vbRightButton + (Abs(iMsg = WM_MBUTTONDOWN)) *
+       vbMiddleButton
+      iShift = wParam
+      If (lParam And &amp;H8000&amp;) = &amp;H8000&amp; Then
+         x = -(&amp;H8000&amp; - (lParam And &amp;H7FFF&amp;))
+      Else
+         x = (lParam And &amp;HFFFF&amp;)
+      End If
+      If (lParam And &amp;H80000000) = &amp;H80000000 Then
+         y = -(&amp;H8000&amp; - (lParam And &amp;H7FFF0000) \ &amp;H10000)
+      Else
+         y = (lParam \ &amp;H10000)
+      End If
+      RaiseEvent MouseDown(iButton, iShift, x, y)
+
+   Case WM_MOUSEMOVE
+      iButton = Abs(GetAsyncKeyState(vbKeyLButton) &lt;&gt; 0) * vbLeftButton +
+       Abs(GetAsyncKeyState(vbKeyRButton) &lt;&gt; 0) * vbRightButton +
+       Abs(GetAsyncKeyState(vbKeyMButton) &lt;&gt; 0) * vbMiddleButton
+      iShift = wParam
+      If (lParam And &amp;H8000&amp;) = &amp;H8000&amp; Then
+         x = -(&amp;H8000&amp; - (lParam And &amp;H7FFF&amp;))
+      Else
+         x = (lParam And &amp;HFFFF&amp;)
+      End If
+      If (lParam And &amp;H80000000) = &amp;H80000000 Then
+         y = -(&amp;H8000&amp; - (lParam And &amp;H7FFF0000) \ &amp;H10000)
+      Else
+         y = (lParam \ &amp;H10000)
+      End If
+      RaiseEvent MouseMove(iButton, iShift, x, y)
+      
+   Case WM_LBUTTONUP, WM_MBUTTONUP, WM_RBUTTONUP
+      iButton = (Abs(iMsg = WM_LBUTTONDOWN)) * vbLeftButton + (Abs(iMsg =
+       WM_RBUTTONDOWN)) * vbRightButton + (Abs(iMsg = WM_MBUTTONDOWN)) *
+       vbMiddleButton
+      iShift = wParam
+      If (lParam And &amp;H8000&amp;) = &amp;H8000&amp; Then
+         x = -(&amp;H8000&amp; - (lParam And &amp;H7FFF&amp;))
+      Else
+         x = (lParam And &amp;HFFFF&amp;)
+      End If
+      If (lParam And &amp;H80000000) = &amp;H80000000 Then
+         y = -(&amp;H8000&amp; - (lParam And &amp;H7FFF0000) \ &amp;H10000)
+      Else
+         y = (lParam \ &amp;H10000)
+      End If
+      RaiseEvent MouseUp(iButton, iShift, x, y)
+      
+   '
+    ----------------------------------------------------------------------------
+   --
+   ' Implement focus.  Many many thanks to Mike Gainer for showing me this
+   ' code.
+   Case WM_SETFOCUS
+      If (m_hWnd = hwnd) Or (m_hWndEdit = hwnd) Then
+         ' The combo box itself
+         Dim pOleObject                  As IOleObject
+         Dim pOleInPlaceSite             As IOleInPlaceSite
+         Dim pOleInPlaceFrame            As IOleInPlaceFrame
+         Dim pOleInPlaceUIWindow         As IOleInPlaceUIWindow
+         Dim pOleInPlaceActiveObject     As IOleInPlaceActiveObject
+         Dim PosRect                     As RECT
+         Dim ClipRect                    As RECT
+         Dim FrameInfo                   As OLEINPLACEFRAMEINFO
+         Dim grfModifiers                As Long
+         Dim AcceleratorMsg              As Msg
+         
+         'Get in-place frame and make sure it is set to our in-between
+         'implementation of IOleInPlaceActiveObject in order to catch
+         'TranslateAccelerator calls
+         Set pOleObject = Me
+         Set pOleInPlaceSite = pOleObject.GetClientSite
+         pOleInPlaceSite.GetWindowContext pOleInPlaceFrame,
+          pOleInPlaceUIWindow, VarPtr(PosRect), VarPtr(ClipRect),
+          VarPtr(FrameInfo)
+         CopyMemory pOleInPlaceActiveObject, m_IPAOHookStruct.ThisPointer, 4
+         pOleInPlaceFrame.SetActiveObject pOleInPlaceActiveObject, vbNullString
+         If Not pOleInPlaceUIWindow Is Nothing Then
+            pOleInPlaceUIWindow.SetActiveObject pOleInPlaceActiveObject,
+             vbNullString
+         End If
+         CopyMemory pOleInPlaceActiveObject, 0&amp;, 4
+      Else
+         ' The user control:
+         If (m_eStyle = ecsDropDownCombo) Then
+            SetFocusAPI m_hWndEdit
+         Else
+            SetFocusAPI m_hWnd
+         End If
+      End If
+      
+   Case WM_MOUSEACTIVATE
+      If GetFocus() &lt;&gt; m_hWnd And GetFocus() &lt;&gt; m_hWndEdit Then
+         SetFocusAPI UserControl.hwnd
+         ISubclass_WindowProc = MA_NOACTIVATE
+         Exit Function
+      Else
+         ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lParam)
+      End If
+   ' End Implement focus.
+   '
+    ----------------------------------------------------------------------------
+   --
+   
+   Case WM_DESTROY
+      pTerminate
+   
+   End Select
+    'End If
+End Function
+
+Private Function plNotificationEvent(ByVal iMsg As Integer, ByVal wParam As
+ Long, ByVal lParam As Long) As Long
+Dim lHiWord As Long, lLoWord As Long
+Dim tR As RECT
+
+   gGetHiWordLoWord wParam, lHiWord, lLoWord
+   Select Case lHiWord
+   Case CBN_DBLCLK, LBN_DBLCLK
+      RaiseEvent DblClick
+   Case CBN_SETFOCUS, LBN_SETFOCUS
+      ' Debug.Print "GetFocus"
+      If (m_eStyle = ecsListBoxMultiSelectExtended) Or (m_eStyle =
+       ecsListBoxMultiSelectSimple) And Not (m_bNoDimSelectionWhenOutOfFocus)
+       Then
+         GetClientRect m_hWnd, tR
+         InvalidateRect m_hWnd, tR, 1
+      End If
+   Case CBN_KILLFOCUS, LBN_KILLFOCUS
+      ' Debug.Print "KillFocus"
+      If (m_eStyle = ecsListBoxMultiSelectExtended) Or (m_eStyle =
+       ecsListBoxMultiSelectSimple) And Not (m_bNoDimSelectionWhenOutOfFocus)
+       Then
+         GetClientRect m_hWnd, tR
+         InvalidateRect m_hWnd, tR, 1
+      End If
+   Case CBN_SELCHANGE, LBN_SELCHANGE
+      ' Debug.Print "SelChange"
+      RaiseEvent Change
+      RaiseEvent Click
+   Case CBN_SELENDCANCEL, LBN_SELCANCEL
+      RaiseEvent SelCancel
+   Case CBN_CLOSEUP
+      If (m_hWndDropDown &lt;&gt; 0) Then
+         m_hWndDropDown = 0
+      End If
+      RaiseEvent CloseUp
+      m_bPositionDropDown = False
+   Case CBN_DROPDOWN
+   ' Debug.Print "DropDown"
+     RaiseEvent DropDown
+   Case CBN_EDITCHANGE, CBN_EDITUPDATE
+      RaiseEvent Change
+   End Select
+
+End Function
+Private Function plKeyEvent(ByVal lhWNd As Long, ByVal iMsg As Integer, ByVal
+ wParam As Long, ByVal lParam As Long) As Long
+Dim iKeyCode As Integer
+Dim iKeyAscii As Integer
+Dim iOrigKeyAscii As Integer
+Dim iShift As Integer
+
+    iKeyCode = (wParam And &amp;HFF)
+    ' Alt key pressed = Bit 29
+    If ((lParam And &amp;H20000000) = &amp;H20000000) Then
+        iShift = 1
+    End If
+    Select Case iMsg
+    Case WM_KEYDOWN
+        iShift = giGetShiftState()
+        RaiseEvent KeyDown(iKeyCode, iShift)
+    Case WM_KEYUP
+        iShift = giGetShiftState()
+        RaiseEvent KeyUp(iKeyCode, iShift)
+    Case WM_CHAR
+        iKeyAscii = (wParam And &amp;HFF)
+        iOrigKeyAscii = iKeyAscii
+        RaiseEvent KeyPress(iKeyAscii)
+        If (iKeyAscii = 0) Then
+            plKeyEvent = 1
+        ElseIf (iKeyAscii &lt;&gt; iOrigKeyAscii) Then
+            SendMessageByLong lhWNd, WM_CHAR, iKeyAscii, 0
+            plKeyEvent = 1
+        End If
+    End Select
+
+End Function
+Private Function plMeasureItem(ByVal wParam As Long, ByVal lParam As Long) As
+ Long
+Dim tMIs As MEASUREITEMSTRUCT
+    CopyMemory tMIs, ByVal lParam, Len(tMIs)
+    If m_eClientDraw &lt;&gt; ecdClientDrawOnly Then
+        pDefaultMeasureItem tMIs.ItemId, tMIs.itemWidth, tMIs.itemHeight
+    End If
+    If (m_eClientDraw &lt;&gt; ecdNoClientDraw) Then
+        RaiseEvent MeasureItem(tMIs.ItemId, tMIs.itemWidth, tMIs.itemHeight)
+    End If
+    CopyMemory ByVal lParam, tMIs, Len(tMIs)
+    plMeasureItem = 1
+End Function
+Private Function plDrawItem(ByVal wParam As Long, ByVal lParam As Long) As Long
+Dim tDis As DRAWITEMSTRUCT
+Dim bEnabled As Boolean
+Dim bSelected As Boolean
+Dim tLI As ICONLISTBOXITEMINFO
+Dim tLF As LOGFONT
+Dim hMem As Long
+
+    CopyMemory tDis, ByVal lParam, Len(tDis)
+    
+    ' Evaluate enabled/selected state of item:
+    bEnabled = Not ((tDis.ItemState And ODS_DISABLED) = ODS_DISABLED)
+    bSelected = ((tDis.ItemState And ODS_SELECTED) = ODS_SELECTED)
+    If (bSelected) Then
+        ' Only draw selected in the combo when the
+        ' focus is on the control:
+        If (tDis.ItemState And ODS_COMBOBOXEDIT) = ODS_COMBOBOXEDIT Then
+            If (tDis.ItemState And ODS_FOCUS) &lt;&gt; ODS_FOCUS Then
+                bSelected = False
+            End If
+        End If
+    End If
+
+    ' Ensure we have the correct font and colours selected:
+    If (m_bFontNotCreated) Then
+        pOLEFontToLogFont UserControl.Font, UserControl.hdc, m_tlF
+        m_hFnt = CreateFontIndirect(m_tlF)
+        m_bFontNotCreated = False
+    End If
+    ' Get the item data for this item:
+    
+    If (tDis.ItemState And ODS_COMBOBOXEDIT) = ODS_COMBOBOXEDIT Then
+        If Not (pbIsCurrentFont(m_tULF)) Then
+            DeleteObject m_hFnt
+            LSet m_tlF = m_tULF
+            m_hFnt = CreateFontIndirect(m_tlF)
+        End If
+    End If
+    If (tDis.ItemId &lt;&gt; -1) Then
+        hMem = plGetItemData(tDis.ItemId)
+        pGetItemInfo hMem, tLI
+        If (tDis.ItemState And ODS_COMBOBOXEDIT) &lt;&gt; ODS_COMBOBOXEDIT Then
+            If Not (pbIsCurrentFont(tLI.tLF)) Then
+                DeleteObject m_hFnt
+                LSet m_tlF = tLI.tLF
+                m_hFnt = CreateFontIndirect(m_tlF)
+            End If
+        End If
+    Else
+        If Not (pbIsCurrentFont(m_tULF)) Then
+            DeleteObject m_hFnt
+            LSet m_tlF = m_tULF
+            m_hFnt = CreateFontIndirect(m_tlF)
+        End If
+    End If
+    m_hFntOld = SelectObject(tDis.hdc, m_hFnt)
+
+    If m_eClientDraw &lt;&gt; ecdClientDrawOnly Then
+        ' Draw by default mechanism:
+        pDefaultDrawItem tDis.hdc, tDis.ItemId, tLI, tDis.ItemAction,
+         tDis.ItemState, _
+            tDis.rcItem.left, tDis.rcItem.tOp, tDis.rcItem.Right,
+             tDis.rcItem.Bottom
+    End If
+    If m_eClientDraw &lt;&gt; ecdNoClientDraw Then
+        ' Notify the client its time to draw:
+        RaiseEvent DrawItem(tDis.ItemId, tDis.hdc, _
+                            bSelected, bEnabled, _
+                            tDis.rcItem.left, tDis.rcItem.tOp,
+                             tDis.rcItem.Right, tDis.rcItem.Bottom, _
+                            m_hFntOld)
+    End If
+    
+    SelectObject tDis.hdc, m_hFntOld
+    
+    plDrawItem = 1
+    
+End Function
+Private Sub pRedrawItem(ByVal lIndex As Long)
+Dim rc As RECT
+   If (m_eStyle &lt;&gt; ecsDropDownCombo) Then
+      ' Get the rectangle for this item:
+      SendMessage m_hWnd, LB_GETITEMRECT, lIndex, rc
+      ' If visible, then force redraw:
+      InvalidateRect m_hWnd, rc, 1
+   End If
+End Sub
+Private Function pbIsCurrentFont(tLF As LOGFONT) As Boolean
+Dim sCurrentFace As String
+Dim sItemFace As String
+    If (tLF.lfFaceName(0) = 0) Then
+        ' Default
+        pbIsCurrentFont = True
+    Else
+        If (tLF.lfWeight = m_tlF.lfWeight) And (tLF.lfItalic = m_tlF.lfItalic)
+         And (tLF.lfHeight = m_tlF.lfHeight) Then
+            sCurrentFace = StrConv(tLF.lfFaceName, vbUnicode)
+            sItemFace = StrConv(m_tlF.lfFaceName, vbUnicode)
+            If (sCurrentFace = sItemFace) Then
+                pbIsCurrentFont = True
+            End If
+        End If
+    End If
+End Function
+Private Sub pDefaultMeasureItem( _
+        ByVal litemId As Long, _
+        ByRef lW As Long, ByRef lH As Long _
+    )
+Dim tLI As ICONLISTBOXITEMINFO
+Dim hMem As Long
+    lH = 32
+    If (litemId &lt;&gt; -1) Then
+        hMem = plGetItemData(litemId)
+        pGetItemInfo hMem, tLI
+        If (plItemHeight(tLI.lItemHeight) &gt; 0) Then
+            lH = plItemHeight(tLI.lItemHeight)
+        Else
+            lH = m_lDefaultItemHeight
+        End If
+    End If
+    If (m_lWidth &lt;= 0) Then
+        lW = UserControl.ScaleWidth \ Screen.TwipsPerPixelX
+    Else
+        lW = m_lWidth
+    End If
+End Sub
+Private Sub pDrawColorPicker( _
+        ByVal hdc As Long, _
+        ByVal Index As Long, _
+        tLI As ICONLISTBOXITEMINFO, _
+        ByVal ItemAction As Long, _
+        ByVal ItemState As Long, _
+        ByVal LeftPixels As Long, ByVal TopPixels As Long, ByVal RightPixels As
+         Long, ByVal BottomPixels As Long _
+    )
+Dim tR As RECT, hBrush As Long, tS As RECT
+Dim tJunk As POINTAPI
+Dim hPen As Long, hPenOld As Long
+Dim bSelected As Boolean
+    
+    If (Index &lt;&gt; -1) Then
+    
+        bSelected = ((ItemState And ODS_SELECTED) = ODS_SELECTED)
+
+        SetBkMode hdc, TRANSPARENT
+        
+        tR.tOp = TopPixels
+        tR.Bottom = BottomPixels
+        tR.left = LeftPixels
+        tR.Right = RightPixels
+        If (bSelected) Then
+            hBrush = CreateSolidBrush(gTranslateColor(vbHighlight))
+            FillRect hdc, tR, hBrush
+            DeleteObject hBrush
+        Else
+            If (ItemAction = ODA_SELECT) Then
+                hBrush = CreateSolidBrush(gTranslateColor(vbWindowBackground))
+                FillRect hdc, tR, hBrush
+                DeleteObject hBrush
+            End If
+        End If
+    
+        'Debug.Print Index, hDC, bSelected, bEnabled, LeftPixels, TopPixels,
+         RightPixels, BottomPixels
+    
+        tR.tOp = TopPixels + 1
+        tR.Bottom = BottomPixels - 1
+        tR.left = LeftPixels + 2
+        If (m_eClientDraw = ecdColourPickerNoNames) Then
+            tR.tOp = tR.tOp + 1
+            tR.Bottom = tR.Bottom - 1
+            tR.Right = RightPixels - 2
+        Else
+            tR.Right = tR.left + (tR.Bottom - tR.tOp)
+        End If
+        ' Draw border:
+        'DrawEdge hdc, tR, BDR_SUNKENOUTER Or BDR_SUNKENINNER, (BF_RECT Or
+         BF_MIDDLE)
+        MoveToEx hdc, tR.left, tR.tOp, tJunk
+        hPen = CreatePen(PS_SOLID, 1, &amp;H0)
+         hPenOld = SelectObject(hdc, hPen)
+        LineTo hdc, tR.Right - 1, tR.tOp
+        LineTo hdc, tR.Right - 1, tR.Bottom - 1
+        LineTo hdc, tR.left, tR.Bottom - 1
+        LineTo hdc, tR.left, tR.tOp
+         SelectObject hdc, hPenOld
+         DeleteObject hPen
+        
+        ' Draw the sample colour:
+        hBrush = CreateSolidBrush(gTranslateColor(ItemBackColor(Index)))
+        LSet tS = tR
+        InflateRect tS, -1, -1
+        FillRect hdc, tS, hBrush
+        DeleteObject hBrush
+        
+        If (m_eClientDraw &lt;&gt; ecdColourPickerNoNames) Then
+            ' Now write the caption
+            If (bSelected) Then
+                SetTextColor hdc, gTranslateColor(vbHighlightText)
+            Else
+                SetTextColor hdc, gTranslateColor(vbWindowText)
+            End If
+            tR.left = tR.Right + 2
+            tR.Right = RightPixels
+            DrawTextExAsNull hdc, List(Index), -1, tR, DT_LEFT Or DT_NOPREFIX, 0
+        End If
+    End If
+    
+End Sub
+Private Sub pDefaultDrawItem( _
+        ByVal hdc As Long, _
+        ByVal ItemId As Long, _
+        tLI As ICONLISTBOXITEMINFO, _
+        ByVal ItemAction As Long, _
+        ByVal ItemState As Long, _
+        ByVal left As Long, ByVal tOp As Long, ByVal Right As Long, ByVal
+         Bottom As Long _
+    )
+Dim tR As RECT, tIR As RECT, tTR As RECT
+Dim hPen As Long, hPenOld As Long
+Dim hBrush As Long
+Dim sItem As String
+Dim lCOl As Long
+Dim tP As POINTAPI
+Dim hMem As Long
+Dim bSelected As Boolean
+Dim iColCount As Integer
+Dim lLeft As Long
+Dim bFocus As Boolean
+Dim lFocus As Long
+
+   ' Image size:
+   ImageList_GetImageRect m_hIml, 0, tR
+   m_lIconWidth = tR.Right - tR.left
+   m_lIconHeight = tR.Bottom - tR.tOp
+
+   ' Debug.Print "DrawItem"
+   lFocus = GetFocus()
+   bFocus = ((lFocus = m_hWnd) Or (lFocus = m_hWndparent))
+   
+   ' Determine the default draw mechanism:
+   Select Case m_eClientDraw
+   Case ecdColourPickerWithNames, ecdSysColourPicker, ecdColourPickerNoNames
+       ' Do ColourPicker:
+       pDrawColorPicker hdc, ItemId, tLI, ItemAction, ItemState, left, tOp,
+        Right, Bottom
+   Case Else
+       
+      With tR
+          .left = left
+          .tOp = tOp
+          .Right = Right
+          .Bottom = Bottom
+      End With
+      ' Debug.Print ItemId
+      If (ItemId &lt;&gt; -1) Then
+          sItem = List(ItemId)
+      Else
+          sItem = ""
+          tLI.lBackColour = UserControl.BackColor
+          tLI.lForeColour = UserControl.ForeColor
+          tLI.lIconIndex = -1
+      End If
+      '' Debug.Print sItem, hdc, left, Right, tOp, Bottom
+      
+      If (ItemState And ODS_DISABLED) = ODS_DISABLED Then
+          'hBrush = CreateSolidBrush(GetSysColor(COLOR_BTNFACE))
+          'FillRect hdc, tR, hBrush
+          'DeleteObject hBrush
+          
+          If (m_eClientDraw = ecdParagraphStyles) Or (m_eClientDraw =
+           ecdFontPicker) Then
+              If (m_eClientDraw = ecdParagraphStyles) Then
+                  tR.Right = tR.Right - 28
+              End If
+          Else
+              tR.left = tR.left + m_lBorderLeft
+              tR.Right = tR.Right - m_lBorderRight
+          End If
+          lLeft = tR.left
+          If (ItemState And ODS_COMBOBOXEDIT) &lt;&gt; ODS_COMBOBOXEDIT Then
+              tR.left = tR.left + tLI.lIndentSize
+          End If
+          
+          If (tLI.lIconIndex &gt; -1) Then
+              If (ItemId &gt; -1) Then
+                  If (m_eClientDraw = ecdFontPicker) Or (m_eStyle =
+                   ecsListBoxChecked) Then
+                      If (m_eStyle = ecsListBoxChecked) Then
+                          If ((ItemState And ODS_SELECTED) = ODS_SELECTED) Then
+                             tLI.lIconIndex = 5
+                          Else
+                             tLI.lIconIndex = 6
+                          End If
+                      End If
+                      ' Use internal image list:
+                      InternalImageList.DrawImage tLI.lIconIndex, hdc, tR.left
+                       + 2, tR.tOp, , True
+                  Else
+                      ImageList_DrawEx m_hIml, tLI.lIconIndex, hdc, tR.left +
+                       2, tR.tOp, 0, 0, CLR_NONE, GetSysColor(COLOR_WINDOW),
+                       ILD_TRANSPARENT Or ILD_SELECTED
+                  End If
+                  tR.left = tR.left + m_lIconWidth + 4
+              End If
+          End If
+          If (ItemState And ODS_SELECTED) = ODS_SELECTED Then
+              lCOl = GetSysColor(COLOR_BTNFACE)
+              SetBkColor hdc, lCOl
+              lCOl = GetSysColor(COLOR_WINDOW)
+              SetBkMode hdc, OPAQUE
+          Else
+              lCOl = GetSysColor(COLOR_BTNSHADOW)
+              SetBkMode hdc, TRANSPARENT
+          End If
+          tR.tOp = tR.tOp + 1
+          SetTextColor hdc, lCOl
+          
+          pDrawText hdc, ItemState, sItem, lLeft, (tLI.lTextAlignX Or
+           tLI.lTextAlignY Or DT_SINGLELINE), tR
+          
+      Else
+          SetBkMode hdc, OPAQUE
+          ' Set the forecolour to use for this draw:
+          If (tLI.lForeColour = -1) Then
+              tLI.lForeColour = UserControl.ForeColor
+          End If
+          
+          ' Determine selection state:
+          bSelected = ((ItemState And ODS_SELECTED) = ODS_SELECTED)
+          If (bSelected) Then
+              ' For checked list box style we draw an icon depending
+              ' on the check state:
+              If (m_eStyle = ecsListBoxChecked) And (ItemId &gt; -1) Then
+                  tLI.lIconIndex = 5
+              End If
+              ' Only draw selected in the combo when the
+              ' focus is on the control:
+              If (ItemState And ODS_COMBOBOXEDIT) = ODS_COMBOBOXEDIT Then
+                  If (ItemState And ODS_FOCUS) &lt;&gt; ODS_FOCUS Then
+                      bSelected = False
+                  End If
+              End If
+          Else
+              ' For checked list box style we draw an icon depending
+              ' on the check state:
+              If (m_eStyle = ecsListBoxChecked) And (ItemId &gt; -1) Then
+                  tLI.lIconIndex = 6
+              End If
+          End If
+          
+          ' Set the Text Colour of the DC to according to
+          ' the selection state:
+          If bSelected And m_eStyle &lt;&gt; ecsListBoxChecked Then
+             ' Draw selected:
+             If m_eStyle = ecsDropDownCombo Or bFocus Then
+                lCOl = GetSysColor(COLOR_HIGHLIGHTTEXT)
+                SetTextColor hdc, lCOl
+             Else
+                lCOl = GetSysColor(COLOR_WINDOWTEXT)
+                SetTextColor hdc, lCOl
+             End If
+          Else
+              ' Draw normal:
+              lCOl = gTranslateColor(tLI.lForeColour)
+              SetTextColor hdc, lCOl
+          End If
+                      
+          ' Determine the back colour for this item:
+          If (tLI.lBackColour = -1) Then
+              lCOl = gTranslateColor(UserControl.BackColor)
+          Else
+              lCOl = gTranslateColor(tLI.lBackColour)
+          End If
+                      
+            If (m_bFullRowSelect) Then
+                If (bSelected) Then
+                    If m_eStyle = ecsDropDownCombo Or bFocus Then
+                        hBrush = GetSysColorBrush(COLOR_HIGHLIGHT)
+                    Else
+                        hBrush = GetSysColorBrush(COLOR_BTNFACE)
+                    End If
+                Else
+                    hBrush = CreateSolidBrush(lCOl)
+                End If
+            Else
+                hBrush = CreateSolidBrush(lCOl)
+            End If
+            LSet tTR = tR
+            FillRect hdc, tTR, hBrush
+            DeleteObject hBrush
+              
+          
+          SetBkColor hdc, lCOl
+          
+          ' Adjust the drawing boundary rectangle according
+          ' to the drawing style:
+          If (m_eClientDraw = ecdParagraphStyles) Or (m_eClientDraw =
+           ecdFontPicker) Then
+              If (m_eClientDraw = ecdParagraphStyles) Then
+                  tR.Right = tR.Right - 28
+              End If
+          Else
+              tR.left = tR.left + m_lBorderLeft
+              tR.Right = tR.Right - m_lBorderRight
+          End If
+          
+          lLeft = tR.left
+                      
+          ' Show the indent if this is not the edit box
+          ' portion of the combo box:
+          If (ItemState And ODS_COMBOBOXEDIT) &lt;&gt; ODS_COMBOBOXEDIT Then
+              tR.left = tR.left + tLI.lIndentSize
+          End If
+          
+          ' If we have an icon, then draw it:
+          If (tLI.lIconIndex &gt; -1) Then
+              If (m_eClientDraw = ecdFontPicker) Or (m_eStyle =
+               ecsListBoxChecked) Then
+                  ' Use internal image list:
+                  If (m_eStyle = ecsListBoxChecked) Then
+                      ' Ensure we have overdrawn the previous icon:
+                      hBrush = CreateSolidBrush(lCOl)
+                      SetBkColor hdc, lCOl
+                      tIR.left = tR.left + 2
+                      tIR.tOp = tR.tOp
+                      tIR.Right = tR.left + m_lIconWidth
+                      tIR.Bottom = tR.tOp + m_lIconWidth
+                      FillRect hdc, tIR, hBrush
+                      DeleteObject hBrush
+                  End If
+                  InternalImageList.DrawImage tLI.lIconIndex, hdc, tR.left + 2,
+                   tR.tOp
+              Else
+                  ' Use the image list handle specified via the
+                  ' ImageList property:
+                  ImageList_Draw m_hIml, tLI.lIconIndex, hdc, tR.left + 2,
+                   tR.tOp, ILD_TRANSPARENT
+              End If
+              ' Adjust draw position for the icon:
+              tR.left = tR.left + m_lIconWidth + 4
+          End If
+          
+          ' Ensure the back colour is correct:
+          If (bSelected) And (m_eStyle &lt;&gt; ecsListBoxChecked) Then
+             If m_eStyle = ecsDropDownCombo Or bFocus Then
+                 lCOl = GetSysColor(COLOR_HIGHLIGHT)
+              Else
+                 lCOl = GetSysColor(COLOR_BTNFACE)
+              End If
+              SetBkColor hdc, lCOl
+          End If
+          ' Adjust top by two pixels if no vertical alignment given
+          If (tLI.lTextAlignY = DT_TOP) Then
+              tR.tOp = tR.tOp + 1
+          End If
+          
+          ' Draw the text of the item:
+          pDrawText hdc, ItemState, sItem, lLeft, (tLI.lTextAlignX Or
+           tLI.lTextAlignY Or DT_SINGLELINE), tR
+          
+          ' If underlining or overlining is set, then draw
+          ' the item:
+          If (tLI.bUnderLineItem) Or (m_eClientDraw = ecdParagraphStyles) Then
+              If (ItemState And ODS_COMBOBOXEDIT) &lt;&gt; ODS_COMBOBOXEDIT Then
+                  hPen = CreatePen(PS_SOLID, 1, gTranslateColor(vbButtonShadow))
+                  hPenOld = SelectObject(hdc, hPen)
+                  MoveToEx hdc, left + 1, Bottom - 1, tP
+                  LineTo hdc, Right - 1, Bottom - 1
+                  SelectObject hdc, hPenOld
+                  DeleteObject hPen
+              End If
+          End If
+          If (tLI.bOverLineItem) Then
+              If (ItemState And ODS_COMBOBOXEDIT) &lt;&gt; ODS_COMBOBOXEDIT Then
+                  hPen = CreatePen(PS_SOLID, 1, gTranslateColor(vbButtonShadow))
+                  hPenOld = SelectObject(hdc, hPen)
+                  MoveToEx hdc, left + 1, tOp, tP
+                  LineTo hdc, Right - 1, tOp
+                  SelectObject hdc, hPenOld
+                  DeleteObject hPen
+              End If
+          End If
+          
+          ' If the style is set to paragraph styles, then show
+          ' pt size and paragraph alignment to right of
+          ' combo box:
+          If (m_eClientDraw = ecdParagraphStyles) Then
+              If (ItemId &gt;= 0) Then
+                  Dim lIcon As Long, tTULF As LOGFONT, hFnt As Long, hFntOld As
+                   Long
+                  ' Draw a grey box:
+                  tR.left = Right - 28
+                  tR.Right = Right
+                  tR.tOp = tOp
+                  tR.Bottom = Bottom - 1
+                  hBrush = GetSysColorBrush(vbButtonFace And &amp;H1F&amp;)
+                   'CreateSolidBrush(gTranslateColor(vbButtonShadow))
+                  FillRect hdc, tR, hBrush
+                  DeleteObject hBrush
+                  ' Draw info
+                  Select Case tLI.lTextAlignX
+                  Case eixLeft
+                      lIcon = 3
+                  Case eixCentre
+                      lIcon = 2
+                  Case eixRight
+                      lIcon = 4
+                  End Select
+                  InternalImageList.DrawImage lIcon, hdc, tR.left, tR.tOp
+                  
+                  ' Restore old font:
+                  SelectObject hdc, m_hFntOld
+                  ' Create a tiny 7 point font for rendering point
+                  ' size:
+                  LSet tTULF = m_tULF
+                  tTULF.lfHeight = -MulDiv(7, (GetDeviceCaps(hdc, LOGPIXELSY)),
+                   72)
+                  hFnt = CreateFontIndirect(tTULF)
+                  hFntOld = SelectObject(hdc, hFnt)
+                  
+                  tR.tOp = tR.tOp + 18
+                  SetBkColor hdc, &amp;HC0C0C0
+                  sItem = itemData(ItemId) &amp; " pt"
+                  SetBkMode hdc, TRANSPARENT
+                  SetTextColor hdc, GetSysColor(COLOR_WINDOWTEXT)
+                  DrawTextExAsNull hdc, sItem, -1, tR, DT_CENTER Or DT_NOPREFIX
+                   Or DT_VCENTER Or DT_SINGLELINE, 0
+                                
+                  ' Reset font to m_hFnt
+                  SelectObject hdc, hFntOld
+                  DeleteObject hFnt
+                  
+                  m_hFntOld = SelectObject(hdc, m_hFnt)
+              End If
+          End If
+      End If
+   End Select
+End Sub
+Private Sub pDrawText(ByVal hdc As Long, ByVal ItemState As Long, ByVal sItem
+ As String, ByVal lLeft As Long, ByVal lAlign As Long, ByRef tR As RECT)
+Dim tCR As RECT
+Dim iColCount As Integer
+Dim iCol As Integer
+Dim sColVals() As String
+    
+   ' We potentially have &gt; 1 column.  If this isn't the edit portion of a combo
+   ' box, and we have specified that there are &gt; 1 columns for the box,
+   ' then draw according to the specified column widths.  Otherwise, use default
+   ' drawing means.
+   If (m_iColCount &gt; 1) And (ItemState And ODS_COMBOBOXEDIT) &lt;&gt;
+    ODS_COMBOBOXEDIT Then
+      ' Split sItem according to vbTab:
+      gSplitDelimitedString sItem, vbTab, sColVals(), iColCount
+      ' Add attributes to truncate text and draw ellipsis (..) if too long
+      lAlign = lAlign Or DT_END_ELLIPSIS Or DT_MODIFYSTRING Or DT_NOPREFIX Or
+       DT_SINGLELINE
+      ' Set up rectangle for first column
+      LSet tCR = tR
+      tCR.Right = lLeft + m_lColWidth(1)
+      ' Always Draw the first item:
+      If (m_eCoLType(1) = ectImageListIcon) Then
+         ImageList_Draw m_hIml, glCStr(sColVals(1), -1), hdc, tCR.left, tCR.tOp
+          - 2, ILD_TRANSPARENT
+      Else
+         DrawTextExAsNull hdc, sColVals(1), -1, tCR, lAlign, 0
+      End If
+      For iCol = 2 To iColCount
+         If (iCol &gt; m_iColCount) Then
+            ' Don't attempt to draw columns that we don't have:
+            Exit For
+         End If
+         tCR.left = tCR.Right + 1
+         tCR.Right = tCR.left + m_lColWidth(iCol)
+         Select Case m_eCoLType(iCol)
+         Case ectImageListIcon
+            ImageList_Draw m_hIml, glCStr(sColVals(iCol), -1), hdc, tCR.left,
+             tCR.tOp - 2, ILD_TRANSPARENT
+         Case Else
+            DrawTextExAsNull hdc, sColVals(iCol), -1, tCR, lAlign, 0
+         End Select
+      Next iCol
+   Else
+      lAlign = lAlign Or DT_END_ELLIPSIS Or DT_MODIFYSTRING Or DT_NOPREFIX Or
+       DT_SINGLELINE
+      DrawTextExAsNull hdc, sItem, -1, tR, lAlign, 0
+   End If
+        
+End Sub
+Private Sub pResize(ByVal lWidth As Long, ByVal lHeight As Long)
+Dim lW As Long, lH As Long
+   ' If we have a child combo box control:
+   If (m_hWnd &lt;&gt; 0) Then
+      ' Resize it to fit the space:
+      If (m_eStyle And ecsListBox) = ecsListBox Then
+         lH = lHeight
+      Else
+         lH = 164
+      End If
+      lW = lWidth
+      MoveWindow m_hWnd, 0, 0, lW, lH, 1
+      
+      If (m_eStyle = ecsDropDownCombo) Then
+         SelLength = 0
+      End If
+   End If
+End Sub
+
+Private Sub UserControl_Initialize()
+   Debug.Print "OwnerDrawComboList:Initialise"
+   m_lMaxLength = 30000&amp;
+   m_lNewItem = -1
+   m_lDefaultItemHeight = 16
+   
+   ' Attach custom IOleInPlaceActiveObject interface
+   Dim IPAO As IOleInPlaceActiveObject
+
+   With m_IPAOHookStruct
+      Set IPAO = Me
+      CopyMemory .IPAOReal, IPAO, 4
+      CopyMemory .TBEx, Me, 4
+      .lpVTable = IPAOVTable
+      .ThisPointer = VarPtr(m_IPAOHookStruct)
+   End With
+   
+End Sub
+
+Private Sub UserControl_InitProperties()
+   pAmbient
+   
+   ' Set defaults:
+   m_bSorted = False
+   m_bExtendedUI = False
+   m_lWidth = 0
+   BackColor = &amp;H80000005
+   Style = ecsDropDownList
+   
+   ' Create the owner drawn control:
+   pInitialise
+   
+   ' InitProperties does not occur in runtime environment, therefore
+   ' no need to set up subclass etc.
+    
+End Sub
+
+Private Sub UserControl_Paint()
+Dim hBr As Long
+Dim tR As RECT
+   If (m_eStyle &lt; ecsListBox) Then
+      hBr = CreateSolidBrush(GetSysColor(COLOR_BTNFACE))
+      GetClientRect UserControl.hwnd, tR
+      FillRect UserControl.hdc, tR, hBr
+      DeleteObject hBr
+   End If
+End Sub
+
+Private Sub UserControl_ReadProperties(PropBag As PropertyBag)
+       
+   m_bFontNotCreated = True
+   
+   ' Window properties:
+   m_bSorted = PropBag.ReadProperty("Sorted", False)
+   Style = PropBag.ReadProperty("Style", ecsDropDownList)
+   
+   ' Whether the client is going to draw the control:
+   ClientDraw = PropBag.ReadProperty("ClientDraw", ecdNoClientDraw)
+   If (m_eClientDraw = ecdFontPicker) Then
+      m_bSorted = True
+   End If
+   Dim sFnt As New StdFont
+   sFnt.Name = "MS Sans Serif"
+   sFnt.Size = 8
+   Set Font = PropBag.ReadProperty("Font", sFnt)
+   
+   
+   m_hWndparent = UserControl.hwnd
+   m_bDesignMode = (UserControl.Ambient.UserMode = False)
+   ' Start subclassing now for design mode:
+   If m_bDesignMode Then
+      pSubClass
+   End If
+   
+   ' Create the owner drawn control:
+   pInitialise
+   
+   Select Case m_eClientDraw
+   Case ecdSysColourPicker
+      pInitialiseSysColors
+   Case ecdFontPicker
+      LoadFonts
+   End Select
+   
+   ' Appearance properties:
+   m_lWidth = PropBag.ReadProperty("DropDownWidth", 0)
+   ForeColor = PropBag.ReadProperty("ForeColor", &amp;H80000008)
+   BackColor = PropBag.ReadProperty("BackColor", &amp;H80000005)
+   Enabled = PropBag.ReadProperty("Enabled", True)
+   'BorderStyle = PropBag.ReadProperty("BorderStyle", ecbBorderStyle3d)
+   DoAutoComplete = PropBag.ReadProperty("AutoComplete", False)
+   AutoCompleteListItemsOnly =
+    PropBag.ReadProperty("AutomCompleteListItemsOnly", False)
+   AutoCompleteItemsAreSorted =
+    PropBag.ReadProperty("AutoCompleteItemsAreSorted", False)
+   Columns = PropBag.ReadProperty("Columns", 1)
+   FullRowSelect = PropBag.ReadProperty("FullRowSelect", False)
+   MaxLength = PropBag.ReadProperty("MaxLength", 30000)
+   NoGrayWhenDisabled = PropBag.ReadProperty("NoGrayWhenDisabled", False)
+   NoDimWhenOutOfFocus = PropBag.ReadProperty("NoDimWhenOutOfFocus", False)
+   
+   ' If we are in run time, then start subclassing now:
+   If Not m_bDesignMode Then
+      pSubClass
+   End If
+   
+   ' bug fix...
+   ExtendedUI = PropBag.ReadProperty("ExtendedUI", False)
+   Locked = PropBag.ReadProperty("Locked", False)
+   
+   ' Added as suggested by Dana Seaman
+   UserControl_Resize
+   
+End Sub
+
+Private Sub UserControl_Resize()
+Dim lWidth As Long, lHeight As Long
+   lWidth = UserControl.ScaleWidth \ Screen.TwipsPerPixelX
+   lHeight = UserControl.ScaleHeight \ Screen.TwipsPerPixelY
+   pResize lWidth, lHeight
+End Sub
+
+Private Sub UserControl_Terminate()
+   ' Detach the custom IOleInPlaceActiveObject interface
+   ' pointers.
+   With m_IPAOHookStruct
+      CopyMemory .IPAOReal, 0&amp;, 4
+      CopyMemory .TBEx, 0&amp;, 4
+   End With
+
+   pTerminate
+   
+   Debug.Print "OwnerDrawComboList:Terminate"
+   
+End Sub
+
+Private Sub UserControl_WriteProperties(PropBag As PropertyBag)
+   With PropBag
+      .WriteProperty "Sorted", Sorted, False
+      .WriteProperty "ExtendedUI", ExtendedUI, False
+      .WriteProperty "DropDownWidth", DropDownWidth, False
+      Dim sFnt As New StdFont
+      sFnt.Name = "MS Sans Serif"
+      sFnt.Size = 8
+      .WriteProperty "Font", Font, sFnt
+      .WriteProperty "ForeColor", ForeColor, &amp;H80000008
+      .WriteProperty "BackColor", BackColor, &amp;H80000005
+      .WriteProperty "ClientDraw", ClientDraw, ecdNoClientDraw
+      .WriteProperty "Style", Style, ecsDropDownList
+      .WriteProperty "Enabled", Enabled, True
+      '.WriteProperty "BorderStyle", BorderStyle, ecbBorderStyle3d
+      .WriteProperty "AutoComplete", DoAutoComplete, False
+      .WriteProperty "AutomCompleteListItemsOnly", AutoCompleteListItemsOnly,
+       False
+      .WriteProperty "AutoCompleteItemsAreSorted", AutoCompleteItemsAreSorted,
+       False
+      .WriteProperty "Columns", Columns, 1
+      .WriteProperty "FullRowSelect", FullRowSelect, False
+      .WriteProperty "MaxLength", MaxLength, 30000
+      .WriteProperty "NoGrayWhenDisabled", NoGrayWhenDisabled, False
+      .WriteProperty "NoDimWhenOutOfFocus", NoDimWhenOutOfFocus, False
+      .WriteProperty "Locked", Locked, False
+   End With
+End Sub
+
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Combo and List Boxes</a>&#160;.&#160;<a href="article.html">Owner Draw Combo and List Boxes Version 2.1</a>&#160;.&#160;<a href="VB5_Owner_Draw_Combo_List_Full_Source.html">VB5 Owner Draw Combo List Full Source</a>&#160;.&#160;ODCboLst.ctl</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 11 May 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Combo_and_List_Boxes/Owner_Draw_Combo_and_List_Box/VB5_Owner_Draw_Combo_List_Full_Source_zip_ODCboLst_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:24 GMT -->
+</html>

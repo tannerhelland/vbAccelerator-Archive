@@ -1,0 +1,407 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Common_Dialogs/Using_Templates_with_Common_Dialogs/VB5_Common_Dialog_Template_Sample_zip_mWinGeneral_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: mWinGeneral.bas</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: mWinGeneral.bas" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Common Dialogs</a>&#160;.&#160;<a href="article.html">Common Dialog Templates - Create a WinZip Style File Add Dialog</a>&#160;.&#160;<a href="VB5_Common_Dialog_Template_Sample.html">VB5 Common Dialog Template Sample</a>&#160;.&#160;mWinGeneral.bas</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Common_Dialog_Template_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Common Dialog Template Sample</a> (87K)</p><p /><p class="nav"><a href="VB6_Common_Dialog_Template_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Common Dialog Template Sample</a> (80K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1854</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1854&amp;type=Zip&amp;title=VB5%20Common%20Dialog%20Template%20Sample%2Ezip%5FmWinGeneral">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:cayce@fastlane.net">Cayce Cochran</a></p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />19 Dec 2002<br />VB6 Version Added</p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1419">CommonDialog/Direct</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: mWinGeneral.bas</h1><pre>Attribute VB_Name = "mWinGeneral"
+Option Explicit
+
+Public Const MAX_PATH = 260
+
+Public Const OF_READ = &amp;H0
+Public Const OF_CREATE = &amp;H1000
+Public Const OF_DELETE = &amp;H200
+Public Const OF_EXIST = &amp;H4000
+Public Const OF_PARSE = &amp;H100
+Public Const OF_PROMPT = &amp;H2000
+Public Const OF_READWRITE = &amp;H2
+Public Const OF_REOPEN = &amp;H8000
+Public Const OF_SHARE_COMPAT = &amp;H0
+Public Const OF_SHARE_DENY_NONE = &amp;H40
+Public Const OF_SHARE_DENY_READ = &amp;H30
+Public Const OF_SHARE_DENY_WRITE = &amp;H20
+Public Const OF_SHARE_EXCLUSIVE = &amp;H10
+Public Const OF_VERIFY = &amp;H400
+Public Const OF_WRITE = &amp;H1
+
+Public Const OFS_MAXPATHNAME = 128
+
+Type BROWSEINFO
+    hWndOwner As Long
+    pidlRoot As Long
+    pszDisplayName As String
+    lpszTitle As String
+    ulFlags As Long
+    lpfn As Long
+    lParam As Long
+    iImage As Integer
+End Type
+
+Type ItemList
+    cb  As Integer
+    abID As String
+End Type
+
+Type OFSTRUCT
+        cBytes As Byte
+        fFixedDisk As Byte
+        nErrCode As Integer
+        Reserved1 As Integer
+        Reserved2 As Integer
+        szPathName(OFS_MAXPATHNAME) As Byte
+End Type
+
+Type FILETIME
+    dwLowDateTime           As Long
+    dwHighDateTime          As Long
+End Type
+
+Type SYSTEMTIME
+    wYear As Integer
+    wMonth As Integer
+    wDayOfWeek As Integer
+    wDay As Integer
+    wHour As Integer
+    wMinute As Integer
+    wSecond As Integer
+    wMilliseconds As Integer
+End Type
+
+Public Type Size
+   cx As Long
+   cy As Long
+End Type
+
+Public Type RECT
+    Left As Long
+    Top As Long
+    Right As Long
+    Bottom As Long
+End Type
+
+Public Type POINTAPI
+    x As Long
+    y As Long
+End Type
+
+Public Type MINMAXINFO
+    ptReserved As POINTAPI
+    ptMaxSize As POINTAPI
+    ptMaxPosition As POINTAPI
+    ptMinTrackSize As POINTAPI
+    ptMaxTrackSize As POINTAPI
+End Type
+
+Type SECURITY_ATTRIBUTES
+    nLength                 As Long
+    lpSecurityDescriptor    As Long
+    bInheritHandle          As Long
+End Type
+
+Type OPENFILENAME
+    lStructSize As Long
+    hWndOwner As Long
+    hInstance As Long
+    lpstrFilter As String
+    lpstrCustomFilter As String
+    nMaxCustFilter As Long
+    nFilterIndex As Long
+    lpstrFile As String
+    nMaxFile As Long
+    lpstrFileTitle As String
+    nMaxFileTitle As Long
+    lpstrInitialDir As String
+    lpstrTitle As String
+    flags As Long
+    nFileOffset As Integer
+    nFileExtension As Integer
+    lpstrDefExt As String
+    lCustData As Long
+    lpfnHook As Long
+    lpTemplateName As String
+End Type
+
+Type WIN32_FIND_DATA
+    dwFileAttributes As Long
+    ftCreationTime As FILETIME
+    ftLastAccessTime As FILETIME
+    ftLastWriteTime As FILETIME
+    nFileSizeHigh As Long
+    nFileSizeLow As Long
+    dwReserved0 As Long
+    dwReserved1 As Long
+    cFileName As String * MAX_PATH
+    cAlternate As String * 14
+End Type
+
+'File attribute values
+Public Const FILE_ATTRIBUTE_ARCHIVE = &amp;H20
+Public Const FILE_ATTRIBUTE_COMPRESSED = &amp;H800
+Public Const FILE_ATTRIBUTE_DIRECTORY = &amp;H10
+Public Const FILE_ATTRIBUTE_HIDDEN = &amp;H2
+Public Const FILE_ATTRIBUTE_NORMAL = &amp;H80
+Public Const FILE_ATTRIBUTE_READONLY = &amp;H1
+Public Const FILE_ATTRIBUTE_SYSTEM = &amp;H4
+Public Const FILE_ATTRIBUTE_TEMPORARY = &amp;H100
+
+Public Declare Function CreateFile Lib "kernel32" Alias "CreateFileA" ( _
+    ByVal lpFileName As String, _
+    ByVal dwDesiredAccess As Long, _
+    ByVal dwShareMode As Long, _
+    lpSecurityAttributes As SECURITY_ATTRIBUTES, _
+    ByVal dwCreationDisposition As Long, _
+    ByVal dwFlagsAndAttributes As Long, _
+    ByVal hTemplateFile As Long) As Long
+Public Declare Function DosDateTimeToFileTime Lib "kernel32" ( _
+    ByVal wFatDate As Long, _
+    ByVal wFatTime As Long, _
+    lpFileTime As FILETIME) As Long
+Public Declare Function LocalFileTimeToFileTime Lib "kernel32" ( _
+    lpLocalFileTime As FILETIME, _
+    lpFileTime As FILETIME) As Long
+Public Declare Function SetFileTime Lib "kernel32" ( _
+    ByVal hFile As Long, _
+    lpCreationTime As FILETIME, _
+    lpLastAccessTime As FILETIME, _
+    lpLastWriteTime As FILETIME) As Long
+Public Declare Function GetFileTime Lib "kernel32" ( _
+    ByVal hFile As Long, _
+    lpCreationTime As FILETIME, _
+    lpLastAccessTime As FILETIME, _
+    lpLastWriteTime As FILETIME) As Long
+Public Declare Function OpenFile Lib "kernel32" ( _
+    ByVal lpFileName As String, _
+    lpReOpenBuff As OFSTRUCT, _
+    ByVal wStyle As Long) As Long
+Public Declare Function GetFileSize Lib "kernel32" ( _
+    ByVal hFile As Long, _
+    lpFileSizeHigh As Long) As Long
+Public Declare Function GetFileAttributes Lib "kernel32" Alias
+ "GetFileAttributesA" ( _
+    ByVal lpFileName As String) As Long
+Public Declare Function SetFileAttributes Lib "kernel32" Alias
+ "SetFileAttributesA" ( _
+    ByVal lpFileName As String, _
+    ByVal dwFileAttributes As Long) As Long
+Public Declare Function CloseHandle Lib "kernel32" (ByVal hObject As Long) As
+ Long
+Public Declare Function FindFirstFile Lib "kernel32" Alias "FindFirstFileA" ( _
+    ByVal lpFileName As String, _
+    lpFindFileData As WIN32_FIND_DATA) As Long
+Public Declare Function FindNextFile Lib "kernel32" Alias "FindNextFileA" ( _
+    ByVal hFindFile As Long, _
+    lpFindFileData As WIN32_FIND_DATA) As Long
+Public Declare Function FindClose Lib "kernel32" ( _
+    ByVal hFindFile As Long) As Long
+Public Declare Function FileTimeToSystemTime Lib "kernel32" ( _
+    lpFileTime As FILETIME, _
+    lpSystemTime As SYSTEMTIME) As Long
+Public Declare Function SystemTimeToFileTime Lib "kernel32" ( _
+    lpSystemTime As SYSTEMTIME, _
+    lpFileTime As FILETIME) As Long
+Public Declare Function FileTimeToLocalFileTime Lib "kernel32" ( _
+    lpFileTime As FILETIME, _
+    lpLocalFileTime As FILETIME) As Long
+Public Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+Public Declare Function SendMessageLong Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Public Declare Function SendMessageStr Lib "user32" Alias "SendMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ String) As Long
+Public Declare Function ShowWindow Lib "user32" (ByVal hwnd As Long, ByVal
+ nCmdShow As Long) As Long
+Public Declare Function MoveWindow Lib "user32" (ByVal hwnd As Long, ByVal x As
+ Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ bRepaint As Long) As Long
+Public Declare Function UpdateWindow Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function InvalidateRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT, ByVal bErase As Long) As Long
+Public Declare Function DestroyWindow Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function FindWindowEx Lib "user32" Alias "FindWindowExA" (ByVal
+ hWnd1 As Long, ByVal hWnd2 As Long, ByVal lpsz1 As String, ByVal lpsz2 As
+ String) As Long
+Public Declare Function SetParent Lib "user32" (ByVal hWndChild As Long, ByVal
+ hWndNewParent As Long) As Long
+Public Declare Function GetDlgItem Lib "user32" (ByVal hDlg As Long, ByVal
+ nIDDlgItem As Long) As Long
+Public Declare Function SetWindowText Lib "user32" Alias "SetWindowTextA"
+ (ByVal hwnd As Long, ByVal lpString As String) As Long
+Public Declare Function GetWindow Lib "user32" (ByVal hwnd As Long, ByVal wCmd
+ As Long) As Long
+Public Declare Function GetWindowRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Public Declare Function GetProp Lib "user32" Alias "GetPropA" (ByVal hwnd As
+ Long, ByVal lpString As String) As Long
+Public Declare Function SetProp Lib "user32" Alias "SetPropA" (ByVal hwnd As
+ Long, ByVal lpString As String, ByVal hData As Long) As Long
+Public Declare Function RemoveProp Lib "user32" Alias "RemovePropA" (ByVal hwnd
+ As Long, ByVal lpString As String) As Long
+Public Declare Function WindowFromPointXY Lib "user32" Alias "WindowFromPoint"
+ (ByVal xPoint As Long, ByVal yPoint As Long) As Long
+Public Declare Function ScreenToClient Lib "user32" (ByVal hwnd As Long,
+ lpPoint As POINTAPI) As Long
+Public Declare Function MapWindowPoints Lib "user32" (ByVal hwndFrom As Long,
+ ByVal hwndTo As Long, lppt As Any, ByVal cPoints As Long) As Long
+Public Declare Function GetParent Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Public Declare Function SetDlgItemText Lib "user32" Alias "SetDlgItemTextA"
+ (ByVal hDlg As Long, ByVal nIDDlgItem As Long, ByVal lpString As String) As
+ Long
+Public Declare Function EnableWindow Lib "user32" (ByVal hwnd As Long, ByVal
+ fEnable As Long) As Long
+Public Declare Function LockWindowUpdate Lib "user32" ( _
+    ByVal hwndLock As Long) As Long
+
+Public Declare Function SetCapture Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function ReleaseCapture Lib "user32" () As Long
+
+Public Declare Function GetCursorPos Lib "user32" (lpPoint As POINTAPI) As Long
+
+Public Declare Function GetSysColor Lib "user32" (ByVal nIndex As Long) As Long
+Public Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" (pDest As
+ Any, pSrc As Any, ByVal ByteLen As Long)
+Public Declare Function DrawEdge Lib "user32" (ByVal hdc As Long, qrc As RECT,
+ ByVal edge As Long, ByVal grfFlags As Long) As Long
+Public Declare Function OleTranslateColor Lib "oleaut32.dll" (ByVal lOleColor
+ As Long, ByVal lHPalette As Long, lColorRef As Long) As Long
+Public Declare Function LoadImage Lib "user32" Alias "LoadImageA" (ByVal hInst
+ As Long, ByVal lpsz As String, ByVal un1 As Long, ByVal n1 As Long, ByVal n2
+ As Long, ByVal un2 As Long) As Long
+Public Declare Function LoadImageLong Lib "user32" Alias "LoadImageA" (ByVal
+ hInst As Long, ByVal lpsz As Long, ByVal un1 As Long, ByVal n1 As Long, ByVal
+ n2 As Long, ByVal un2 As Long) As Long
+Public Const CF_BITMAP = 2
+Public Const LR_LOADMAP3DCOLORS = &amp;H1000
+Public Const LR_LOADFROMFILE = &amp;H10
+Public Const LR_LOADTRANSPARENT = &amp;H20
+Public Const IMAGE_BITMAP = 0
+Public Declare Function DeleteObject Lib "gdi32" (ByVal hObj As Long) As Long
+
+Public Declare Function CreateWindowEx Lib "user32" Alias "CreateWindowExA"
+ (ByVal dwExStyle As Long, ByVal lpClassName As String, ByVal lpWindowName As
+ String, ByVal dwStyle As Long, ByVal x As Long, ByVal y As Long, ByVal nWidth
+ As Long, ByVal nHeight As Long, ByVal hWndParent As Long, ByVal hMenu As Long,
+ ByVal hInstance As Long, lpParam As Any) As Long
+Public Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Any) As Long
+Public Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long) As Long
+Public Declare Function GetClassName Lib "user32" Alias "GetClassNameA" (ByVal
+ hwnd As Long, ByVal lpClassName As String, ByVal nMaxCount As Long) As Long
+
+Public Const SC_MOVE = &amp;HF012
+
+Public Const COLOR_WINDOWFRAME = 6
+Public Const COLOR_BTNFACE = 15
+Public Const COLOR_BTNTEXT = 18
+
+
+'Window Styles:
+Public Const WS_CHILD = &amp;H40000000
+Public Const WS_VISIBLE = &amp;H10000000
+Public Const WS_CLIPCHILDREN = &amp;H2000000
+Public Const WS_CLIPSIBLINGS = &amp;H4000000
+Public Const WS_BORDER = &amp;H800000
+Public Const WS_EX_TOPMOST = &amp;H8&amp;
+Public Const WS_EX_TOOLWINDOW = &amp;H80
+
+' Messages:
+Public Const WM_SETFOCUS = &amp;H7
+Public Const WM_CLOSE = &amp;H10
+Public Const WM_USER = &amp;H400
+Public Const WM_PAINT = &amp;HF
+Public Const WM_COMMAND = &amp;H111
+Public Const WM_EXITSIZEMOVE = &amp;H232
+Public Const WM_SYSCOMMAND = &amp;H112
+Public Const WM_NCHITTEST = &amp;H84
+Public Const WM_WINDOWPOSCHANGING = &amp;H46
+Public Const WM_KILLFOCUS = &amp;H8
+Public Const WM_ACTIVATE = &amp;H6
+Public Const WM_NOTIFY = &amp;H4E
+Public Const WM_PARENTNOTIFY = &amp;H210
+Public Const WM_MOUSEMOVE = &amp;H200
+Public Const WM_LBUTTONDOWN = &amp;H201
+Public Const WM_LBUTTONUP = &amp;H202
+Public Const WM_RBUTTONDOWN = &amp;H204
+Public Const WM_RBUTTONUP = &amp;H205
+Public Const WM_MBUTTONDOWN = &amp;H207
+Public Const WM_MBUTTONUP = &amp;H208
+Public Const WM_GETMINMAXINFO = &amp;H24
+
+
+Public Const GWL_STYLE = (-16)
+Public Const GWL_EXSTYLE = (-20)
+Public Const GWL_USERDATA = (-21)
+Public Const GWL_WNDPROC = -4
+Public Const GWL_HWNDPARENT = (-8)
+
+Public Const HWND_TOPMOST = -1
+Public Const SW_SHOW = 5
+Public Const SW_HIDE = 0
+Public Const SW_SHOWNORMAL = 1
+Public Const GW_CHILD = 5
+Public Const GW_HWNDNEXT = 2
+Public Const SWP_NOSIZE = &amp;H1
+Public Const SWP_NOMOVE = &amp;H2
+Public Const SWP_NOREDRAW = &amp;H8
+Public Const SWP_SHOWWINDOW = &amp;H40
+Public Const CW_USEDEFAULT  As Long = &amp;H80000000
+Public Const GDI_ERROR = &amp;HFFFF
+
+Public Const H_MAX As Long = &amp;HFFFF + 1
+
+ 
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Common Dialogs</a>&#160;.&#160;<a href="article.html">Common Dialog Templates - Create a WinZip Style File Add Dialog</a>&#160;.&#160;<a href="VB5_Common_Dialog_Template_Sample.html">VB5 Common Dialog Template Sample</a>&#160;.&#160;mWinGeneral.bas</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Common_Dialogs/Using_Templates_with_Common_Dialogs/VB5_Common_Dialog_Template_Sample_zip_mWinGeneral_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+</html>

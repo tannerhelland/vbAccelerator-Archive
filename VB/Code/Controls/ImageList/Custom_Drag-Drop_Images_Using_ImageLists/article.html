@@ -1,0 +1,190 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/ImageList/Custom_Drag-Drop_Images_Using_ImageLists/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:50:50 GMT -->
+<head>
+
+<title>vbAccelerator - Custom Drag-Drop Images Using ImageLists</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="The standard VB drag-drop functionality provides a cursor to indicate that a drag-drop function
+is in progress. This article demonstrates how to add an image of the object being dragged to the
+drag-drop control, in the same way that Explorer does using the ImageList APIs." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">ImageList</a>&#160;.&#160;Custom Drag-Drop Images Using ImageLists</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Image_List_Drag_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Image List Drag Sample</a> (124K)</p><p /><p class="nav"><a href="VB6_Image_List_Drag_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Image List Drag Sample</a> (122K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4088</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4088&amp;type=Article&amp;title=Custom%20Drag%2DDrop%20Images%20Using%20ImageLists">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />19 Feb 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1021">Get a Picture of the Desktop's Contents</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3406">Displaying Alpha (32bit) Icons with ImageLists</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2965">Flicker Free API Drawing</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Custom Drag-Drop Images Using ImageLists</h1><p class="splash">Add customisable Explorer-Style drag-drop images to VB applications</p><img src="dragDrop.png" width="447" height="259" alt="Drag-Drop Image Demonstration" /><p /><p>The standard VB drag-drop functionality provides a cursor to indicate that a drag-drop function
+is in progress. This article demonstrates how to add an image of the object being dragged to the
+drag-drop control, in the same way that Explorer does using the ImageList APIs.</p><h2>About ImageList Drag and Drop</h2><p>The ImageList control provides functions for dragging an image on the screen. 
+The dragging functions move an image smoothly, in color, and without any flashing of 
+the cursor.  In addition, when you use the functions under Windows 2000 or XP the
+drag image is also rendered translucently and preserves any alpha shadows which 
+greatly improves the visual appearance.</p><p>There are only 8 API declares for using ImageList drag and drop.  In this sample
+they're wrapped up into a class which makes it simple to use.</p><h2>Using the Sample Code</h2><p>The main class of the sample is <i>cImageListDrag</i>. To use the class you
+perform the following steps:</p><ol><li><strong>Create an instance of the class</strong><pre>
+Private m_cDrag As New cImageListDrag
+</pre></li><li><strong>Tell the class which ImageList to use</strong><br />
+You can use any ImageList which exposes a ComCtl32.DLL compatible ImageList handle to
+do this.  Note that excludes the MSCOMCTL.OCX (MS Common Controls 6) ImageList which
+doesn't work correctly with ComCtl32.DLL under 2000 or XP.
+<pre>
+   m_cDrag.hImageList = ilsIcons.hIml
+</pre></li><li><strong>Set the Owner Window for the drag image (optional)</strong><br />
+If you only want the drag image to appear within a particular object then you can
+specify the object using the <i>Owner</i> property.  Note that any of the children
+of the specified object are included.
+<pre>
+   m_cDrag.Owner = Me ' Only show Image on current Form
+</pre></li><li><strong>Respond to the <i>OLEStartDrag</i> event</strong><br />
+During the object's <i>OLEStartDrag</i> event you tell the class which image from
+the ImageList to draw and specify the offset of the cursor from the image's top-left
+corner in pixels:
+<pre>
+Private Sub Form1_OLEStartDrag( _
+    Data As DataObject, AllowedEffects As Long)
+
+   ' Show the first image in the image list at a position
+   ' 8 pixels below the cursor diagonally:
+   m_cDrag.StartDrag 0, -8, -8
+
+End Sub
+</pre></li><li><strong>Respond to the <i>OLEGiveFeedback</i> event</strong><br />
+The <i>OLEGiveFeedback</i> event allows you to update the position of the
+drag image as the cursor is moved (although see the Limitations below
+for more details):
+<pre>
+Private Sub Form1_OLEGiveFeedback( _
+   Effect As Long, DefaultCursors As Boolean)
+
+   m_cDrag.DragDrop
+
+End Sub
+</pre></li><li><strong>Clear the Drag Image when dragging is completed</strong><br />
+Call the <i>CompleteDrag</i> method in response to both the <i>OLEDragDrop</i>
+and <i>OLECompleteDrag</i> events:
+<pre>
+Private Sub picDragDrop_OLECompleteDrag(Effect As Long)
+   '
+   m_cDrag.CompleteDrag
+   '
+End Sub
+
+Private Sub picDragDrop_OLEDragDrop( _ 
+   Data As DataObject, Effect As Long, _
+   Button As Integer, Shift As Integer, _
+   X As Single, Y As Single)
+   '
+   m_cDrag.CompleteDrag
+   
+   ' .. other drop processing here:
+
+End Sub  
+</pre></li></ol><p>That's pretty much it for creating a standard drag image. If you want to update
+the contents of the window you're dragging over, then you should call 
+<i>HideDragImage True</i> prior to drawing and <i>HideDragImage False</i> once
+complete. This ensures you don't overdraw the drag cursor.</p><h2>Creating Custom Drag Images</h2><p>The quick demonstration above demonstrates how to use an existing icon in 
+an ImageList as a drag image, however, provided you can create any image you
+want to for dragging provided you can create the Image in a form you can add
+to an ImageList.  The demonstration project shows how to use a 
+<a href="http://www.vbaccelerator.com/article.asp?id=2965">Memory DC</a> object to draw selected text from
+a TextBox and drag that.  Note you could also <a href="http://www.vbaccelerator.com/article.asp?id=1021">capture 
+an area of the screen</a> directly and use that for your drag image.</p><h2>Limitations</h2><p>You might want to read through this section to get an idea of some of
+the issues and limitations that arise and their workarounds.</p><h3>Painting Issues</h3><p>The SDK notes that when drawing the drag image you can get issues with updates or screen 
+painting unless you use the <i>ImageList_DragLeave</i> function to hide the drag image
+whilst the painting occurs (which is what the <i>HideDragImage</i> method in the class does). 
+Unfortunately, if you don't own the control that's being painted doing this isn't really
+an option.  There are three things you can do to help avoid this being a problem.</p><ul><li><strong>Draw the Drag Image Underneath the Cursor</strong><br />
+If you draw the drag image below the cursor, then its unlikely that any painting in the 
+control will occur in the area of the drag image.  To do this, use negative values for
+the <i>xOffset</i> and <i>yOffset</i> parameters of the <i>StartDrag</i> message.</li><li><strong>Use <i>RedrawWindow</i> to clear any left over effects when dropping</strong><br />
+After a drop its likely the control's display will be affected.  For example, 
+dropping text on a text box causes the new text to be inserted, and some of that may occur
+under the drag image.  You can fix any artifacts by calling <i>RedrawWindow</i> as soon
+as you've ended the drag:
+<pre>
+Private Type RECT
+   left As Long
+   top As Long
+   right As Long
+   bottom As Long
+End Type
+
+Private Declare Function RedrawWindow Lib "user32" ( _
+    ByVal hwnd As Long, lprcUpdate As RECT, _
+    ByVal hrgnUpdate As Long, ByVal fuRedraw As Long) As Long
+Private Declare Function GetWindowRect Lib "user32" ( _
+   ByVal hwnd As Long, lpRect As RECT) As Long
+Private Declare Function OffsetRect Lib "user32" ( _
+   lpRect As RECT, ByVal x As Long, ByVal y As Long) As Long
+
+Private Const RDW_UPDATENOW = &amp;H100
+Private Const RDW_INVALIDATE = &amp;H1
+Private Const RDW_ALLCHILDREN = &amp;H80
+Private Const RDW_ERASE = &amp;H4
+
+..
+ 
+   ' Assuming the hWnd variable contains your Window's hWnd:
+   GetWindowRect hWnd, tR
+   OffsetRect tR, -tR.Left, -tR.Top
+   RedrawWindow hWnd, tR, 0&amp;, _
+      RDW_UPDATENOW Or RDW_INVALIDATE Or _
+      RDW_ALLCHILDREN Or RDW_ERASE
+</pre></li></ul><h3>VB and OLE Drag Drop</h3><p>In order to display the drag drop image, you need to get some sort of event as
+the mouse moves.  If the object that the mouse is over has the <i>OLEDropMode</i>
+set to Manual (1) or Automatic (2) then VB's <i>OLEGiveFeedback</i> event is fired 
+whenever the mouse moves.  However, if the object doesn't has <i>OLEDropMode</i>
+set to None (0) then you won't get any event.  This means that the drag image
+disappears as you move the mouse over that object.  There are two ways of 
+working around this:</p><ol><li>Set all objects on the form to Manual or Automatic <i>OLEDropMode</i> at design-time
+or run-time.  This ensures the drag image is always displayed, but note that unless
+you code the <i>OLEDragOver</i> method for every object to return a <i>vbDropEffectNone</i>
+drop effect, the user won't get a visual cue that they can't drop on that object.  This
+is tedious.</li><li>Use a Windows Mouse Hook to capture all mouse events during the duration of the 
+drag.  This solves the issue completely but can adds complexity to debugging the project.</li></ol><h3>Alpha Icons</h3><p>Note that the demonstration project uses <a href="http://www.vbaccelerator.com/article.asp?id=3406">32bit icons with
+alpha channels</a>.  Note that these only render correctly under Windows XP or above, otherwise 
+you'll see a dark shadow around the icons.  However, everything else will work ok 
+under any other OS.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">ImageList</a>&#160;.&#160;Custom Drag-Drop Images Using ImageLists</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 19 February 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/ImageList/Custom_Drag-Drop_Images_Using_ImageLists/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:50:50 GMT -->
+</html>

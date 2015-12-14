@@ -1,0 +1,196 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Persistance/XML_Property_Bag/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:56:55 GMT -->
+<head>
+
+<title>vbAccelerator - XML Property Bag</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This ActiveX DLL is derived from an excellent original XML PropertyBag sample by 
+Aaron Anderson (Aaron.Anderson@mail.farmcreditbank.com). 
+It allows you to persist and recreate your own objects directly to XML based-files using a 
+simple interface closely related to VB's PropertyBag object. By implementing one interface 
+in your class you will gain the ablility to save state and restore again for any 
+number of objects to and from a single XML file. Full support for binary data 
+means you can store blobs in your XML file too." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Persistance</a>&#160;.&#160;XML Property Bag</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_XML_Property_Bag_DLL_and_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 XML Property Bag DLL and Demonstration</a> (28K)</p><p /><p class="nav"><a href="VB6_XML_Property_Bag_DLL_and_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 XML Property Bag DLL and Demonstration</a> (28K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2966</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2966&amp;type=Article&amp;title=XML%20Property%20Bag">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><p class="nav">&#160;&#160;<a href="mailto:Aaron.Anderson@mail.farmcreditbank.com">Aaron Anderson</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />21 Mar 2000<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>XML Property Bag</h1><p class="splash">Persist and Restore your data in a manageable, reusable and extensible way with XML</p><img src="xml-msxml.jpg" width="165" height="133" alt="XML Property Bag" /><p /><p>This ActiveX DLL is derived from an excellent original XML PropertyBag sample by 
+Aaron Anderson (<a href="mailto:Aaron.Anderson@mail.farmcreditbank.com">Aaron.Anderson@mail.farmcreditbank.com</a>). 
+It allows you to persist and recreate your own objects directly to XML based-files using a 
+simple interface closely related to VB's PropertyBag object. By implementing one interface 
+in your class you will gain the ablility to save state and restore again for any 
+number of objects to and from a single XML file. Full support for binary data 
+means you can store blobs in your XML file too.</p><h2>About XML</h2><p>The advantages of using XML as a file format for storage in your application cannot 
+be understated (although they probably have by now). XML is plain text. You can read 
+and write XML files by hand (although you might find that a little tedious.) XML is 
+also self-describing. Just looking at an XML file gives you a good idea what it does 
+and it's generally easy to tell how to read the file. On top of that, XML parsers offer 
+three unique features not often seen before the success of the HTTP protocol: they're almost 
+always free, they have a standardised API and they're available for almost any useful 
+computer you can think of.</p><p>Anyway, I'm sure you don't need me to tell you that XML is a good idea. 
+Visit <a href="http://www.microsoft.com/xml/">Microsoft's XML site</a> for some more ideas 
+and examples!</p><h2>The XMLPropertyBag</h2><p>The XMLPropertyBag object provided with this article comes in two parts: an implementable 
+interface <i>IXMLPropertyBag</i> and a creatable class <i>XMLPropertyBag</i>. 
+To take advantage of the XML Property Bag features, your class should implement the 
+<i>IXMLPropertyBag</i> interface. Doing this effectively adds <i>ReadProperties</i> and 
+<i>WriteProperties</i> events to your object, passing an <i>XMLPropertyBag</i> in as a parameter. 
+The only difference between these events and ones in VB's <i>PropertyBag</i> implementations is 
+that they are prefixed with <i>IXMLPropertyBag_</i> rather than the base object type 
+name (e.g. UserControl_ ).</p><p>Once you have implemented this interface, to provide XML saving and restoring of 
+values can be done in two steps: firstly you write the code in the 
+<i>ReadProperties</i> and <i>WriteProperties</i> methods, and then you write code in the 
+object's owner to initialise reading and writing of values.</p><p>Reading and Writing properties is done in almost exactly the same way as with VB's 
+<i>PropertyBag</i> object. The <i>ReadProperty</i> method of the <i>XMLPropertyBag</i> allows 
+you to read the value of a named variant in the property bag and the <i>WriteProperty</i> method 
+does the opposite. The following types of variant can be read and written:</p><ul><li><strong>Date</strong><br />
+Dates are stored as strings, so you may wish to convert to a fixed string representation 
+if your XML file will be used across locales. For example, mm/dd/yyyy and dd/mm/yyyy are 
+the US and UK representations of the same date and cannot be interchanged.</li><li><strong>Number</strong><br />
+Numbers are stored as strings, so be careful with numbers containing decimal points 
+if you expect your XML file to travel between locales. For example, 
+the number 10,6 is valid on a machine with French locale settings but not on a UK machine.</li><li><strong>String</strong><br />
+note you can also store strings using byte arrays instead if you want to be sure 
+to save String data in a completely platform independent way. The 
+<i>XMLPropertyBag</i> will automatically mark up String sections as XML CDATA if it sees 
+any XML tokens in the string.</li><li><strong>Byte Array</strong><br />
+Byte arrays are stored as Base64 encoded data so are guaranteed to be 
+transferred unchanged across any system. The only disadvantage to this is that Base64 
+#encoding requires 4 bytes in the XML file for every 3 bytes passed in, rounded up 
+to the nearest 4 bytes.</li><li><strong>An object which Implements <i>IXMLPropertyBag</i></strong><br />
+To do this, you pass in the object as the <i>DefaultValue</i> member of the 
+<i>ReadProperties</i> method. There is no default ability for these objects.</li></ul><p>The <i>XMLPropertyBag</i> code will attempt to read/write all other types as a string, 
+but if there is no suitable format available you will get an "Invalid Variant Type"
+ error.</p><p>Having implemented these methods, you can then save and restore objects into XML. 
+In the object's owner, create a new instance of the <i>XMLPropertyBag</i> object. If you 
+are saving the object's state, then call the <i>SaveState</i> method on the object, 
+passing in the object to save as the first parameter. You can call <i>SaveState</i> on 
+as many objects as you wish - they will be added to the same XML Document. The optional 
+<i>sName</i> parameter allows you to distinguish between multiple objects of the same type 
+in the same XML file. When complete, you can then get the XML rendering of the objects 
+from the <i>Contents</i> property, which you can then save to whatever storage you 
+are persisting the content to.</p><p>To restore objects from the XML, set the <i>Contents</i> property to the saved XML. 
+Then you can call <i>RestoreState</i>, passing in each object you wish to restore 
+(and optionally the name, if you used that).</p><h2>Quick Start</h2><p>This discussion demonstrates how you can add persistance to a simple class called in 
+your application. First, assume the class is called <i>cName</i> and has the 
+following definition:</p><pre>
+   Option Explicit
+
+   Private m_sFirstName As String
+   Private m_sLastName As String
+
+   Public Property Get FirstName() As String
+      FirstName = m_sFirstName
+   End Property
+   Public Property Let FirstName(ByVal sName As String)
+      m_sFirstName = sName
+   End Property
+
+   Public Property Get LastName() As String
+      FirstName = m_sFirstName
+   End Property
+   Public Property Let LastName(ByVal sName As String)
+      m_sLastName = sName
+   End Property
+</pre><p>The first step is to implement the <i>IXMLPropertyBag</i> interface. Add this code to the class:</p><pre>
+   Implements IXMLPropertyBag
+
+      ...
+
+   Private Sub IXMLPropertyBag_ReadProperties(ByVal PropertyBag As vbalXMLPBag.XMLPropertyBag)
+   '
+   End Sub
+
+   Private Sub IXMLPropertyBag_WriteProperties(ByVal PropertyBag As vbalXMLPBag.XMLPropertyBag)
+   '
+   End Sub
+</pre><p>Now you can fill in your <i>ReadProperties</i> and <i>WriteProperties</i> implementations:</p><pre>
+   Private Sub IXMLPropertyBag_ReadProperties(ByVal PropertyBag As vbalXMLPBag.XMLPropertyBag)
+      '
+      FirstName = PropertyBag.ReadProperty("FirstName", "")
+      LastName = PropertyBag.ReadProperty("LastName", "")
+
+   End Sub
+
+   Private Sub IXMLPropertyBag_WriteProperties(ByVal PropertyBag As vbalXMLPBag.XMLPropertyBag)
+      '
+      PropertyBag.WriteProperty "FirstName", FirstName, ""
+      PropertyBag.WriteProperty "LastName", LastName, ""
+
+   End Sub
+</pre><p>Once that is done, you can now save and restore <i>cName</i> objects at will. 
+For example, this code:</p><pre>
+   Private m_cN As New cName
+
+   Public Function SaveName() As String
+
+      ' Create an instance of the XML Property bag object:
+      Dim oP As New XMLPropertyBag
+
+      ' Save cName into the property bag:
+      oP.SaveState m_cN
+
+      ' Now the content is saved in the return value:
+      SaveName = oP.Contents
+
+   End Sub
+
+   Public Sub RestoreName(ByVal sXML As String)
+
+      ' Create an instance of the XML Property bag object:
+      Dim oP As New XMLPropertyBag
+
+      ' Load the XML into it:
+      oP.Contents = sXML
+
+      ' Restore the object:
+      oP.RestoreState m_cN
+
+   End Sub
+</pre><p>The download code includes a sample demonstrating how to store a <i>Person</i> object which 
+in turn holds a collection of <i>Address</i> objects.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Persistance</a>&#160;.&#160;XML Property Bag</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 9 January 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Persistance/XML_Property_Bag/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:56:56 GMT -->
+</html>

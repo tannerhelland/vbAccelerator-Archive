@@ -1,0 +1,200 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Using_GDI_Plus/GDIPlus_Helper/GDIPlus_Wrapper_zip_MemoryStream_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:47 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: MemoryStream.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: MemoryStream.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Using GDI Plus</a>&#160;.&#160;<a href="article.html">GDI+ Wrapper</a>&#160;.&#160;<a href="GDIPlus_Wrapper.html">GDIPlus Wrapper</a>&#160;.&#160;MemoryStream.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="GDIPlus_Wrapper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />GDIPlus Wrapper</a> (57K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:5064</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=5064&amp;type=Zip&amp;title=GDIPlus%20Wrapper%2Ezip%5FMemoryStream">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><p class="nav">&#160;&#160;<a href="mailto:dseaman@cyberactivex.com">Dana Seaman</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:8 September 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />28 Mar 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4588">GDI+ Type Library (GDIPlus.TLB)</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: MemoryStream.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "MemoryStream"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+' Data
+Private m_lPtr As Long
+' Data size:
+Private m_lSize As Long
+' Current position
+Private m_lStreamPos As Long
+
+Implements IStream
+
+Public Sub Init(ByVal lPtr As Long, ByVal lSize As Long)
+   m_lPtr = lPtr
+   m_lSize = lSize
+End Sub
+
+Public Property Get IStreamOf() As VBStrm.IStream
+   Set IStream = Me
+End Property
+
+
+Private Function IStream_Clone() As VBStrm.IStream
+    '
+End Function
+
+Private Sub IStream_Commit(ByVal grfCommitFlags As VBStrm.STGC)
+   '
+End Sub
+
+
+Private Sub IStream_CopyTo(ByVal pstm As VBStrm.IStream, ByVal cb As Currency,
+ pcbRead As Currency, pcbWritten As Currency)
+   '
+End Sub
+
+
+Private Sub IStream_LockRegion(ByVal libOffset As Currency, ByVal cb As
+ Currency, ByVal dwLockType As Long)
+   '
+End Sub
+
+
+
+Private Sub IStream_Read(ByVal pv As Long, ByVal cb As Long, ByVal pcbRead As
+ Long)
+
+   ' Check if we are within bounds
+   If (m_lStreamPos + cb) &gt; m_lSize Then
+      cb = m_lSize - m_lStreamPos
+   End If
+    
+   ' Copy the data to the pv pointer
+   RtlMoveMemory ByVal pv, ByVal UnsignedAdd(m_lPtr, m_lStreamPos), cb
+    
+   ' Move the stream position
+   m_lStreamPos = m_lStreamPos + cb
+    
+   ' Check if pcbRead is not NULL
+   ' and copy the read byte count.
+   If Not (pcbRead = 0) Then
+      RtlMoveMemory ByVal pcbRead, cb, 4
+   End If
+
+End Sub
+
+Private Sub IStream_Revert()
+   '
+End Sub
+
+
+Private Sub IStream_Seek(ByVal dlibMove As Currency, ByVal dwOrigin As
+ STREAM_SEEK, ByVal plibNewPosition As Long)
+        
+    ' Check dwOrgin and set
+    ' the position according to it.
+   Select Case dwOrigin
+   Case STREAM_SEEK_SET
+      m_lStreamPos = dlibMove
+   Case STREAM_SEEK_CUR
+      m_lStreamPos = m_lStreamPos + dlibMove
+   Case STREAM_SEEK_END
+      m_lStreamPos = m_lSize - 1 - dlibMove
+   End Select
+    
+   ' Copy the new position if
+   ' plibNewPosition is not NULL
+   If plibNewPosition Then
+      RtlMoveMemory ByVal plibNewPosition, CCur(m_lStreamPos), 8
+   End If
+    
+End Sub
+
+Private Sub IStream_SetSize(ByVal libNewSize As Currency)
+   '
+End Sub
+
+
+Private Sub IStream_Stat(pstatstg As VBStrm.STATSTG, ByVal grfStatFlag As
+ VBStrm.STATFLAG)
+   ' Fill in the pstatstg structure:
+   pstatstg.Type = STGTY_LOCKBYTES
+   pstatstg.cbSize = m_lSize
+   'pstatstg.mtime
+   'pstatstg.ctime
+   'pstatstg.atime
+   pstatstg.grfMode = STGM_READ
+   pstatstg.grfLocksSupported = 0
+   ' not used: pstatstg.CLSID
+   
+   
+   
+   ' Say that this stream doesn't have a name
+   RtlMoveMemory ByVal grfStatFlag, STATFLAG_NONAME, 4
+   '
+End Sub
+
+
+Private Sub IStream_UnlockRegion(ByVal libOffset As Currency, ByVal cb As
+ Currency, ByVal dwLockType As Long)
+   '
+End Sub
+
+
+Private Sub IStream_Write(ByVal pv As Long, ByVal cb As Long, ByVal pcbWritten
+ As Long)
+   '
+End Sub
+
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Using GDI Plus</a>&#160;.&#160;<a href="article.html">GDI+ Wrapper</a>&#160;.&#160;<a href="GDIPlus_Wrapper.html">GDIPlus Wrapper</a>&#160;.&#160;MemoryStream.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Using_GDI_Plus/GDIPlus_Helper/GDIPlus_Wrapper_zip_MemoryStream_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:47 GMT -->
+</html>

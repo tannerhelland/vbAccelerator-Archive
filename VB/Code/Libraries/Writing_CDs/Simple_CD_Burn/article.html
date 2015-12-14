@@ -1,0 +1,274 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Writing_CDs/Simple_CD_Burn/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:40 GMT -->
+<head>
+<title>vbAccelerator - Simple Data CD Creation Using ICDBurn</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Windows XP and above include built-in support for burning CDs.  This sample demonstrates
+how to use the simple ICDBurn API included in the shell to create
+data CDs from within a Visual Basic application.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" />
+<link rel="contents" href="../index.html" /><link rel="meta" type="application/rdf+xml" href="article.rdf" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Writing CDs</a>&#160;.&#160;Simple Data CD Creation Using ICDBurn</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Simple_CD_Burner.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Simple CD Burner</a> (70K)</p><p /><p class="nav"><a href="VB6_Simple_CD_Burner.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Simple CD Burner</a> (67K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:14969</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14969&amp;type=Article&amp;title=Simple%20Data%20CD%20Creation%20Using%20ICDBurn">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />12 Jun 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13463">vbAccelerator TreeView Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14976">VB IMAPI (CD Burning) Interfaces (IVBIMAPI.tlb)</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Simple Data CD Creation Using ICDBurn</h1><img src="simpleBurner.png" width="443" height="380" alt="Simple CD Burner Demonstration Application." /><p /><p>
+Windows XP and above include built-in support for burning CDs.  This sample demonstrates
+how to use the simple <span class="code">ICDBurn</span> API included in the shell to create
+data CDs from within a Visual Basic application.
+</p><h2>About the ICDBurn API</h2><p>
+The <span class="code">ICDBurn</span> interface is a very simple API which provides
+access to the CD writing functionality you get in Explorer.  The API provides three
+functions:
+</p><ol><li>To determine whether there is hardware capable of writing to a CD on the system.</li><li>To get the drive letter of the CD writer device.</li><li>To programmatically initiate a CD writing session.</li></ol><p>
+Being such a simple API means that it's use is also rather limited.  The main limitations are: 
+you can only burn to the system's default recorder; you cannot write programs
+for unattended burning (because calling the Burn method will bring up the CD Burning
+Wizard that the user must interact with) and you cannot create audio CDs.  The other
+samples in this <a href="http://www.vbaccelerator.com/indexLookup.asp?id=70">section</a> describe the more sophisticated <span class="code">IMAPI</span>
+(Image Mastering API) interfaces which can be used to do all of these things.
+</p><h2>About ICDBurn</h2><p>
+The standard implementation of this interface is implemented by a shell folder extension interface within Shell32.DLL.  To
+use it you need to be able to do two things: firstly, get access to the <span class="code">ICDBurn</span>
+interface and secondly to create an instance of the shell folder extension object.  I'll cover
+these in turn.
+</p><h3>1. Getting Access to the <span class="code">ICDBurn</span> Interface</h3><p>
+To obtain access to a COM interface in VB, you generally need a type library which describes
+the methods of the interface. The <span class="code">ICDBurn</span> does not come with a
+Type Library, but you can get an IDL definition of it from the <span class="i">shobjidl.idl</span>
+provided with the Platform SDK.  This can then be turned into a Type Library using
+the <span class="i">MkTypLib</span> command line tool, which can be obtained
+by downloading the Platform SDK.   
+Note that whilst IDL files can always be turned into Type
+Libraries using <span class="i">MkTypLib</span> , the tlb that is generated 
+will not always be usable from VB unless you manipulate the declares a bit.  In
+the case of <span class="i">ICDBurn</span>, though, the IDL is pretty much 
+usable without modification.
+</p><p>
+Here's the resulting ODL needed to call the interface 
+(I'm not sure what the difference between "ODL" and "IDL" 
+actually is - they look the same to me - but apparently ODL is a more modern 
+version so it's what I always try for):
+</p><pre>
+   // ---------------------------------------------------------------------------------
+   // ICDBurn
+   // ---------------------------------------------------------------------------------
+   [
+        odl,
+        uuid(3d73a659-e5d0-4d42-afc0-5121ba425c8d),
+        helpstring("ICDBurn interface")
+   ]
+   interface ICDBurn : IUnknown 
+   {
+
+      [helpstring("Gets the drive letter of the default recorder")]
+      HRESULT _stdcall GetRecorderDriveLetter(
+                    [out] LPWSTR pszDrive, 
+                    [in] long cch );
+
+      [helpstring("Burns the files in the staging area to disc")]
+        HRESULT _stdcall Burn(
+                    [in] long hWnd );
+
+      [helpstring("Gets whether the system has a recordable drive")]
+      HRESULT _stdcall HasRecordableDrive(
+                    [out] long *pfHasRecorder);
+      
+   };
+</pre><p>
+This ODL has been included in my <a href="http://www.vbaccelerator.com/article.asp?id=14976">VB IMAPI Interfaces</a> Type Library.
+</p><h3>2. Creating an Instance of the Shell Folder Extension</h3><p>
+Normally in VB there are two ways to create a new object: 
+</p><ol><li>Using the <span class="code">New</span> operator to instantiate an local
+or referenced object.</li><li>Using <span class="code">CreateObject</span> to create an object from its <span class="i">ProgId</span>.</li></ol><p>
+However, the Shell Folder which implements <span class="code">ICDBurn</span> has
+neither a way to reference it by name nor by a ProgId.  It can only be created using its
+<span class="i">CLSID</span>, which is a problem for VB because there is no direct 
+support for doing this (even though under the covers VB ultimately has to convert 
+some <span class="code">New</span> and all <span class="i">ProgId</span> references 
+into CLSIDs).
+</p><p>
+The way around this is to use the <span class="code">CoCreateInstance</span> function
+exported by OLE32.  This typically opaque function has the following declare (in ODL):
+</p><pre>
+      LONG CoCreateInstance(
+         [in] UUID *CLSID,
+         [in] stdole.IUnknown *pUnkOuter,
+         [in] CLSCTX dwClsContext,
+         [in] UUID *IID,
+         [out] void *ppv);
+</pre><p>
+In practice it isn't that hard to use.  The parameter are set as follows:
+</p><ul><li><span class="code">CLSID</span> - a UUID structure containing
+the <span class="i">CLSID</span> of the class to instantiate.</li><li><span class="code">pUnkOuter</span> - used when aggregating the <span class="code">IUnknown</span>
+interfaces of multiple objects, but can typically be set to <span class="code">Nothing</span>.</li><li><span class="code">dwClsContext</span> - defines whether the component is created in the same process,
+in another process, or on a different machine.</li><li><span class="code">IID</span> - a UUID structure containing the <span class="i">IID</span>
+of the desired interface supported by the class to instantiate.</li><li><span class="code">ppv</span> - filled in with the newly created object, assuming all is
+successful.</li></ul><p>
+The function returns a <span class="code">HRESULT</span> to indicate success or failure of the
+object creation.  The idea of a <span class="code">HRESULT</span> is to encode three levels
+of information about the result: the severity, something known as the facility which categorises
+the result and the actual error code.  In most cases all you are interested in is whether the
+function succeeded or failed, which can be determined by checking the severity bit of the
+<span class="code">HRESULT</span>:
+</p><pre>
+Private Const FAIL_BIT As Long = &amp;H80000000
+
+Private Function FAILED(ByVal hResult As Long) As Boolean
+   FAILED = ((hResult And FAIL_BIT) = FAIL_BIT)
+End Function
+</pre><p>
+Knowing that we can now instantiate the object:
+</p><pre>
+Private m_cdBurn As ICDBurn
+
+Public Sub Initialise(ByVal hWndOwner As Long)
+
+   ' Set up the CLSID of the Shell Extension which
+   ' contains the ICDBurn implementation:
+   Dim clsidCDBurn As UUID
+   With clsidCDBurn
+      .Data1 = &amp;HFBEB8A05
+      .Data2 = &amp;HBEEE
+      .Data3 = &amp;H4442
+      .Data4(0) = &amp;H80
+      .Data4(1) = &amp;H4E
+      .Data4(2) = &amp;H40
+      .Data4(3) = &amp;H9D
+      .Data4(4) = &amp;H6C
+      .Data4(5) = &amp;H45
+      .Data4(6) = &amp;H15
+      .Data4(7) = &amp;HE9
+   End With
+
+   ' Set up the IID of the ICDBurn interface which
+   ' we want to obtain:
+   Dim iidCDBurn As UUID
+   With iidCDBurn
+      .Data1 = &amp;H3D73A659
+      .Data2 = &amp;HE5D0
+      .Data3 = &amp;H4D42
+      .Data4(0) = &amp;HAF
+      .Data4(1) = &amp;HC0
+      .Data4(2) = &amp;H51
+      .Data4(3) = &amp;H21
+      .Data4(4) = &amp;HBA
+      .Data4(5) = &amp;H42
+      .Data4(6) = &amp;H5C
+      .Data4(7) = &amp;H8D
+   End With
+   
+   ' Create the instance of the object:
+   Dim hr As Long
+   hr = CoCreateInstance( _
+      clsidCDBurn, Nothing, CLSCTX_INPROC_SERVER, _
+      iidCDBurn, m_cdBurn)
+   If (FAILED(hr)) Then
+      Err.Raise ERR_BASE + 1, App.EXEName &amp; ".cSimpleCDBurner", _
+         "Failed to instantiate CDBurn implementation"
+   End If
+   m_hWndOwner = hWndOwner
+
+End Sub
+</pre><p>
+The one nice thing about using this method is that you don't need to
+worry about <span class="code">AddRef</span> and <span class="code">Release</span>.
+When <span class="code">CoCreateInstance</span> returns the object, it automatically
+calls <span class="code">AddRef</span> on it.  When VB sets the object to 
+<span class="code">Nothing</span> later when it goes out of scope, VB will call
+<span class="code">Release</span>.  This means you have a paired AddRef/Release call,
+which is not the case with COM calls that return a pointer to a pointer to
+an object.
+</p><h2>Using ICDBurn</h2><p>
+As you will have seen from the interface spec above, there's not too much to <span class="code">ICDBurn</span>.
+The <span class="code">HasRecordableDrive</span> method tells you whether the system has a recordable
+drive; if so then the <span class="code">GetRecorderDriveLetter</span> will return the path to the
+drive (e.g. F:\).  If your system has more than one drive, this returns the default recording drive.
+Finally, the <span class="code">Burn</span> method starts the wizard for burning the content in
+the staging area to the disc:
+</p><img src="burning.png" width="503" height="393" alt="Windows XP Standard CD Writing Wizard" /><p>
+The location of the staging area is configured in the registry and can be obtained by using 
+the <span class="code">SHGetSpecialFolderLocation</span> Shell function using the 
+<span class="code">CSIDL_CDBURN_AREA</span> constant.  Using this function needs a little
+fiddling around with the <span class="code">IMalloc</span> object provided by the Shell, 
+so this is also included in the Type Library.
+</p><p>
+Note that when you change the contents of the staging area, Windows will probably pop up
+a Tray notification informing you of the change, and allowing you to view the files.  There
+may well be a way of turning this off, but I'm not sure:
+</p><img src="xpNotification.png" width="388" height="89" alt="XP Tray Notification" /><p>
+To wrap up <span class="code">ICDBurn</span> for ease of use from VB, the sample includes the 
+<span class="code">cSimpleCDBurner</span> class.  This should be self-explanatory in operation,
+but essentially to create a data CD you will do this:
+</p><pre>
+Private m_cBurn As New cSimpleCDBurner
+
+
+   Set m_cBurn = New cSimpleCDBurner
+
+   ' Note that the 
+   m_cBurn.Initialise Me.hWnd
+
+   ' Get the staging area:
+   Dim sStagingArea = m_cBurn.BurnStagingAreaFolder
+
+   ' Copy files and folders to the staging area here
+
+   ' Finally burn the CD 
+   m_cBurn.Burn
+
+</pre><p>
+The sample also includes a starting point for providing a tree view which you can use to configure
+the files, but note this isn't entirely complete yet and will need a little work before it is
+fully usable.
+</p><h2>Conclusion</h2><p>
+This sample demonstrates how to write files to CDs using the simple CD Burning API provided
+with Windows XP and above.  Although rather limited this API could well be perfectly adequate
+for many CD creation/backup purposes.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Writing CDs</a>&#160;.&#160;Simple Data CD Creation Using ICDBurn</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 13 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Writing_CDs/Simple_CD_Burn/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:42 GMT -->
+</html>

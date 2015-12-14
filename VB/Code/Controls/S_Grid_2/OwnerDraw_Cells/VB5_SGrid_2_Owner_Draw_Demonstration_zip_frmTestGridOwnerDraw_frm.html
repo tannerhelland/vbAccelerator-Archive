@@ -1,0 +1,424 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/OwnerDraw_Cells/VB5_SGrid_2_Owner_Draw_Demonstration_zip_frmTestGridOwnerDraw_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:06 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmTestGridOwnerDraw.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmTestGridOwnerDraw.frm" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;<a href="article.html">Owner-Draw Cells with SGrid 2.0</a>&#160;.&#160;<a href="VB5_SGrid_2_Owner_Draw_Demonstration.html">VB5 SGrid 2 Owner Draw Demonstration</a>&#160;.&#160;frmTestGridOwnerDraw.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_SGrid_2_Owner_Draw_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 SGrid 2 Owner Draw Demonstration</a> (60K)</p><p /><p class="nav"><a href="VB6_SGrid_2_Owner_Draw_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 SGrid 2 Owner Draw Demonstration</a> (56K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:14001</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14001&amp;type=Zip&amp;title=VB5%20SGrid%202%20Owner%20Draw%20Demonstration%2Ezip%5FfrmTestGridOwnerDraw">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />24 Jan 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13703">SGrid 2.0</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmTestGridOwnerDraw.frm</h1><pre>VERSION 5.00
+Object = "{3D811CB0-6F63-4CA8-BD1E-7858AC6C9A00}#5.6#0"; "vbalSGrid.ocx"
+Begin VB.Form frmTestGridOwnerDraw 
+   Caption         =   "vbAccelerator SGrid Owner-Draw Cell Demonstration"
+   ClientHeight    =   5640
+   ClientLeft      =   2490
+   ClientTop       =   2280
+   ClientWidth     =   7425
+   BeginProperty Font 
+      Name            =   "Tahoma"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "frmTestGridOwnerDraw.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   5640
+   ScaleWidth      =   7425
+   Begin VB.PictureBox picControls 
+      BorderStyle     =   0  'None
+      Height          =   4875
+      Left            =   5940
+      ScaleHeight     =   4875
+      ScaleWidth      =   1335
+      TabIndex        =   1
+      Top             =   600
+      Width           =   1335
+      Begin VB.CommandButton cmdAbout 
+         Caption         =   "&amp;About..."
+         Height          =   375
+         Left            =   0
+         TabIndex        =   5
+         Top             =   1440
+         Width           =   1335
+      End
+      Begin VB.Timer tmrProgress 
+         Enabled         =   0   'False
+         Interval        =   50
+         Left            =   0
+         Top             =   780
+      End
+      Begin VB.CommandButton cmdProgress 
+         Caption         =   "&amp;Progress"
+         Height          =   375
+         Left            =   0
+         TabIndex        =   3
+         Top             =   420
+         Width           =   1335
+      End
+      Begin VB.CommandButton cmdColours 
+         Caption         =   "&amp;Colours"
+         Height          =   375
+         Left            =   0
+         TabIndex        =   2
+         Top             =   0
+         Width           =   1335
+      End
+   End
+   Begin vbAcceleratorSGrid.vbalGrid grdOwnerDrawDemo 
+      Height          =   4815
+      Left            =   120
+      TabIndex        =   0
+      Top             =   660
+      Width           =   5715
+      _ExtentX        =   10081
+      _ExtentY        =   8493
+      BackgroundPictureHeight=   0
+      BackgroundPictureWidth=   0
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      BorderStyle     =   2
+      DisableIcons    =   -1  'True
+   End
+   Begin VB.Label lblInfo 
+      Caption         =   $"frmTestGridOwnerDraw.frx":1272
+      Height          =   435
+      Left            =   120
+      TabIndex        =   4
+      Top             =   120
+      Width           =   7155
+   End
+End
+Attribute VB_Name = "frmTestGridOwnerDraw"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Declare Function CreateSolidBrush Lib "gdi32" (ByVal crColor As Long)
+ As Long
+Private Declare Function FillRect Lib "user32" (ByVal hDC As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+Private Declare Function FrameRect Lib "user32" (ByVal hDC As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+Private Declare Function DrawTextA Lib "user32" (ByVal hDC As Long, ByVal lpStr
+ As String, ByVal nCount As Long, lpRect As RECT, ByVal wFormat As Long) As Long
+Private Declare Function DrawFocusRect Lib "user32" (ByVal hDC As Long, lpRect
+ As RECT) As Long
+
+Implements IGridCellOwnerDraw
+
+Private Function HexPad(ByVal lValue As Long, ByVal lMinChars As Long) As String
+Dim sRet As String
+   sRet = Hex(lValue)
+   If Len(sRet) &lt; lMinChars Then
+      sRet = String(lMinChars - Len(sRet), "0") &amp; sRet
+   End If
+   HexPad = sRet
+End Function
+
+
+Private Sub configureGrid()
+   With grdOwnerDrawDemo
+   
+      .AddColumn "Name", "Name"
+      .AddColumn "Colour", "Colour", eSortType:=CCLSortItemData
+      .AddColumn "Progress", "Progress", eSortType:=CCLSortNumeric
+      
+      .OwnerDrawImpl = Me
+      
+      .RowMode = True
+      .GridLines = True
+      
+      .SelectionAlphaBlend = True
+      .SelectionOutline = True
+      .DrawFocusRectangle = False
+      .HighlightForeColor = vbWindowText
+      .HotTrack = True
+      
+   End With
+End Sub
+
+Private Sub addGridData()
+Dim h As Single, s As Single, l As Single
+Dim r As Long, g As Long, b As Long
+Dim i As Long
+
+   RGBToHLS 171, 199, 245, h, s, l
+      
+   With grdOwnerDrawDemo
+      .Redraw = False
+      
+      For i = 1 To 64
+         .AddRow lItemData:=i
+         .CellText(i, 1) = "Row " &amp; i
+         HLSToRGB h, s, (i * 4 - 1) / 255#, r, g, b
+         .CellText(i, 2) = "&amp;H" &amp; HexPad(b, 2) &amp; HexPad(g, 2) &amp; HexPad(r, 2)
+         .CellItemData(i, 2) = RGB(r, g, b)
+         .CellTextAlign(i, 3) = DT_CENTER Or DT_SINGLELINE Or DT_END_ELLIPSIS
+         .CellText(i, 3) = ((65 - i) / 64#)
+      Next i
+      
+      .Redraw = True
+   End With
+End Sub
+
+
+Private Sub cmdAbout_Click()
+   Dim fA As New frmAbout
+   fA.Show vbModal, Me
+End Sub
+
+Private Sub cmdColours_Click()
+Dim h As Single, s As Single, l As Single
+Dim r As Long, g As Long, b As Long
+Dim i As Long
+
+   RGBToHLS Rnd * 255, Rnd * 255, Rnd * 255, h, s, l
+   For i = 1 To 64
+      HLSToRGB h, s, (i * 4 - 1) / 255#, r, g, b
+      grdOwnerDrawDemo.CellItemData(i, 2) = RGB(r, g, b)
+      grdOwnerDrawDemo.CellText(i, 2) = "&amp;H" &amp; HexPad(b, 2) &amp; HexPad(g, 2) &amp;
+       HexPad(r, 2)
+   Next i
+   
+End Sub
+
+Private Sub cmdProgress_Click()
+   If (tmrProgress.Tag = "") Then
+      tmrProgress.Tag = "1"
+   End If
+   tmrProgress.Enabled = Not (tmrProgress.Enabled)
+End Sub
+
+Private Sub Form_Load()
+   
+   configureGrid
+   addGridData
+   
+End Sub
+
+Private Sub Form_Resize()
+Dim lWidth As Long
+   On Error Resume Next
+   lWidth = Me.ScaleWidth - picControls.Width - 10 * Screen.TwipsPerPixelX
+   grdOwnerDrawDemo.Move 4 * Screen.TwipsPerPixelX, grdOwnerDrawDemo.top, _
+      lWidth, _
+      Me.ScaleHeight - grdOwnerDrawDemo.top - 4 * Screen.TwipsPerPixelY
+   picControls.Move lWidth + 6 * Screen.TwipsPerPixelX, grdOwnerDrawDemo.top, _
+      picControls.Width, _
+      grdOwnerDrawDemo.Height
+   lblInfo.Width = Me.ScaleWidth - lblInfo.left * 2
+End Sub
+
+Private Sub grdOwnerDrawDemo_ColumnClick(ByVal lCol As Long)
+   With grdOwnerDrawDemo
+      If (.ColumnSortOrder(lCol) = CCLOrderAscending) Then
+         .ColumnSortOrder(lCol) = CCLOrderDescending
+      Else
+         .ColumnSortOrder(lCol) = CCLOrderAscending
+      End If
+      With .SortObject
+         .Clear
+         .SortColumn(1) = lCol
+         .SortOrder(1) = grdOwnerDrawDemo.ColumnSortOrder(lCol)
+         .SortType(1) = grdOwnerDrawDemo.ColumnSortType(lCol)
+      End With
+      .Sort
+   End With
+End Sub
+
+Private Sub grdOwnerDrawDemo_ColumnDividerDblClick(ByVal lCol As Long, bCancel
+ As Boolean)
+   If (lCol = 2) Then
+      bCancel = True
+      ' could evaluate required width as
+      ' 6 + Min(13,RowHeight) + TextWidth("&amp;H000000 ")
+      grdOwnerDrawDemo.ColumnWidth(lCol) = 84
+   End If
+End Sub
+
+Private Sub IGridCellOwnerDraw_Draw( _
+      cell As cGridCell, _
+      ByVal lHDC As Long, _
+      ByVal eDrawStage As ECGDrawStage, _
+      ByVal lLeft As Long, ByVal lTop As Long, _
+      ByVal lRight As Long, ByVal lBottom As Long, _
+      bSkipDefault As Boolean _
+   )
+   If (eDrawStage = ecgBeforeIconAndText) Then
+      If (cell.Column = 2) Then
+         drawColourCell cell, lHDC, lLeft, lTop, lRight, lBottom
+         bSkipDefault = True
+      ElseIf (cell.Column = 3) Then
+         drawProgressCell cell, lHDC, lLeft, lTop, lRight, lBottom
+         bSkipDefault = True
+      End If
+   End If
+End Sub
+
+Private Sub drawColourCell( _
+      cell As cGridCell, _
+      ByVal lHDC As Long, _
+      ByVal lLeft As Long, ByVal lTop As Long, _
+      ByVal lRight As Long, ByVal lBottom As Long _
+   )
+Dim lCol As Long
+Dim hBr As Long
+Dim tR As RECT
+Dim lColourSize As Long
+
+   lColourSize = lBottom - lTop
+   If (lColourSize &gt; 13) Then
+      lColourSize = 13
+   End If
+   
+   tR.left = lLeft + 2
+   tR.right = tR.left + lColourSize
+   tR.top = lTop + (lBottom - lTop - lColourSize) \ 2 + 1
+   tR.bottom = tR.top + lColourSize
+   
+   ' Draw the colour box
+   lCol = cell.ItemData
+   hBr = CreateSolidBrush(lCol)
+   FillRect lHDC, tR, hBr
+   DeleteObject hBr
+   
+   ' Frame the colour Box
+   hBr = CreateSolidBrush(&amp;H0)
+   FrameRect lHDC, tR, hBr
+   DeleteObject hBr
+   
+   ' Draw the text for the colour number
+   tR.left = tR.right + 4
+   tR.right = lRight
+   DrawTextA lHDC, cell.Text, -1, tR, cell.TextAlign
+   
+End Sub
+Private Sub drawProgressCell( _
+      cell As cGridCell, _
+      ByVal lHDC As Long, _
+      ByVal lLeft As Long, ByVal lTop As Long, _
+      ByVal lRight As Long, ByVal lBottom As Long _
+   )
+Dim hBr As Long
+Dim tR As RECT
+Dim tProgR As RECT
+
+   tR.left = lLeft + 2
+   tR.top = lTop + 2
+   tR.right = lRight - 2
+   tR.bottom = lBottom - 1
+
+   ' Draw the progress bar
+   LSet tProgR = tR
+   tProgR.right = tProgR.left + (tProgR.right - tProgR.left) * cell.Text
+   GradientFillRect lHDC, tProgR, RGB(234, 94, 45), RGB(238, 164, 36),
+    GRADIENT_FILL_RECT_H
+   
+   ' Draw the text in front of the progress bar
+   DrawTextA lHDC, Format(cell.Text, "0%"), -1, tR, cell.TextAlign
+
+   ' Frame the progress bar:
+   hBr = CreateSolidBrush(&amp;H0&amp;)
+   FrameRect lHDC, tR, hBr
+   DeleteObject hBr
+   
+
+End Sub
+
+
+Private Function RowForItemData(ByVal sTag As String) As Long
+Dim i As Long
+Dim lID As Long
+   If (IsNumeric(sTag)) Then
+      lID = CLng(sTag)
+      For i = 1 To grdOwnerDrawDemo.Rows
+         If (grdOwnerDrawDemo.RowItemData(i) = lID) Then
+            RowForItemData = i
+            Exit Function
+         End If
+      Next i
+   End If
+End Function
+
+Private Sub tmrProgress_Timer()
+Dim iRow As Long
+Dim fProg As Single
+   
+   iRow = RowForItemData(tmrProgress.Tag)
+   If (iRow &gt; 0) Then
+      fProg = grdOwnerDrawDemo.CellText(iRow, 3)
+      fProg = fProg + 0.05
+      If (fProg &gt;= 1#) Then
+         fProg = 1#
+         tmrProgress.Tag = CLng(tmrProgress.Tag) + 1
+         If CLng(tmrProgress.Tag) &gt; grdOwnerDrawDemo.Rows Then
+            tmrProgress.Tag = ""
+         End If
+      End If
+      grdOwnerDrawDemo.CellText(iRow, 3) = fProg
+      grdOwnerDrawDemo.EnsureVisible iRow, 3
+   End If
+   
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;<a href="article.html">Owner-Draw Cells with SGrid 2.0</a>&#160;.&#160;<a href="VB5_SGrid_2_Owner_Draw_Demonstration.html">VB5 SGrid 2 Owner Draw Demonstration</a>&#160;.&#160;frmTestGridOwnerDraw.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 February 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/OwnerDraw_Cells/VB5_SGrid_2_Owner_Draw_Demonstration_zip_frmTestGridOwnerDraw_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:06 GMT -->
+</html>

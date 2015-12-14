@@ -1,0 +1,358 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Changing_Window_Shapes/Creating_Geometric_Window_Shapes/WinShap_Project_Files_zip_Clock_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:55 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: Clock.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: Clock.frm" /><link rel="stylesheet" href="../../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../../index.html">VB</a>&#160;.&#160;<a href="../../../../index.html">Code</a>&#160;.&#160;<a href="../../../index.html">Libraries</a>&#160;.&#160;<a href="../../index.html">Graphics and GDI</a>&#160;.&#160;<a href="../index.html">Changing Window Shapes</a>&#160;.&#160;<a href="article.html">A window that's star-shaped, circular or tank-shaped</a>&#160;.&#160;<a href="WinShap_Project_Files.html">WinShap Project Files</a>&#160;.&#160;Clock.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="WinShap_Project_Files.html"><img src="../../../../../../res/get.png" width="8" height="8" alt="Download Page" />WinShap Project Files</a> (28K)</p><br /><br /><img src="../../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2870</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2870&amp;type=Zip&amp;title=WinShap%20Project%20Files%2Ezip%5FClock">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../../res/update.png" width="8" height="8" alt="Update" />13 Aug 1999<br />First Posted</p><br /><br /><img src="../../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: Clock.frm</h1><pre>VERSION 5.00
+Begin VB.Form frmClock 
+   AutoRedraw      =   -1  'True
+   BackColor       =   &amp;H00FFFFFF&amp;
+   ClientHeight    =   2580
+   ClientLeft      =   5280
+   ClientTop       =   1710
+   ClientWidth     =   2985
+   ControlBox      =   0   'False
+   BeginProperty Font 
+      Name            =   "Arial"
+      Size            =   20.25
+      Charset         =   0
+      Weight          =   700
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "Clock.frx":0000
+   LinkTopic       =   "Form1"
+   PaletteMode     =   2  'Custom
+   ScaleHeight     =   2580
+   ScaleWidth      =   2985
+   Begin VB.Timer tmrClock 
+      Interval        =   500
+      Left            =   1740
+      Top             =   1080
+   End
+   Begin VB.PictureBox picRes 
+      AutoRedraw      =   -1  'True
+      AutoSize        =   -1  'True
+      BorderStyle     =   0  'None
+      Height          =   240
+      Left            =   -60
+      Picture         =   "Clock.frx":030A
+      ScaleHeight     =   240
+      ScaleWidth      =   3090
+      TabIndex        =   0
+      Top             =   2160
+      Visible         =   0   'False
+      Width           =   3090
+   End
+   Begin VB.Menu mnuTop 
+      Caption         =   " "
+      Begin VB.Menu mnuRight 
+         Caption         =   "&amp;Move"
+         Index           =   0
+      End
+      Begin VB.Menu mnuRight 
+         Caption         =   "-"
+         Index           =   1
+      End
+      Begin VB.Menu mnuRight 
+         Caption         =   "&amp;Title Bar"
+         Index           =   2
+      End
+      Begin VB.Menu mnuRight 
+         Caption         =   "-"
+         Index           =   4
+      End
+      Begin VB.Menu mnuRight 
+         Caption         =   "&amp;Close"
+         Index           =   5
+      End
+   End
+End
+Attribute VB_Name = "frmClock"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+' Clock bounds:
+Private m_lTL As Long
+Private m_lWH As Long
+Private m_hRgnCopy As Long
+
+' Move the windows with the keys:
+Private Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal
+ hWnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+    Private Const SC_MOVE = &amp;HF010&amp;
+    Private Const WM_SYSCOMMAND = &amp;H112
+
+' Move the window with the mouse:
+Private Declare Function SetCapture Lib "user32" (ByVal hWnd As Long) As Long
+Private Declare Function ReleaseCapture Lib "user32" () As Long
+Private Declare Function GetCursorPos Lib "user32" (lpPoint As POINTAPI) As Long
+Private m_bMoving As Boolean
+Private m_sXOffset As Single
+Private m_sYOffset As Single
+
+' Drawing the clock:
+Private Declare Function BitBlt Lib "gdi32" (ByVal hDestDC As Long, ByVal X As
+ Long, ByVal Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal dwRop As Long)
+ As Long
+Private Declare Function StretchBlt Lib "gdi32" (ByVal hdc As Long, ByVal X As
+ Long, ByVal Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal nSrcWidth As
+ Long, ByVal nSrcHeight As Long, ByVal dwRop As Long) As Long
+    ' Rops:
+    Private Const WHITENESS = &amp;HFF0062       ' (DWORD) dest = WHITE
+    Private Const BLACKNESS = &amp;H42 ' (DWORD) dest = BLACK
+    Private Const SRCAND = &amp;H8800C6  ' (DWORD) dest = source AND dest
+    Private Const SRCCOPY = &amp;HCC0020 ' (DWORD) dest = source
+    Private Const SRCERASE = &amp;H440328        ' (DWORD) dest = source AND (NOT
+     dest )
+    Private Const SRCINVERT = &amp;H660046       ' (DWORD) dest = source XOR dest
+    Private Const SRCPAINT = &amp;HEE0086        ' (DWORD) dest = source OR dest
+Private Declare Function SetStretchBltMode Lib "gdi32" (ByVal hdc As Long,
+ ByVal nStretchMode As Long) As Long
+Private Declare Function MoveToEx Lib "gdi32" (ByVal hdc As Long, ByVal X As
+ Long, ByVal Y As Long, lpPoint As POINTAPI) As Long
+Private Declare Function LineTo Lib "gdi32" (ByVal hdc As Long, ByVal X As
+ Long, ByVal Y As Long) As Long
+Private Declare Function FrameRgn Lib "gdi32" (ByVal hdc As Long, ByVal hRgn As
+ Long, ByVal hBrush As Long, ByVal nWidth As Long, ByVal nHeight As Long) As
+ Long
+Private Declare Function CreateSolidBrush Lib "gdi32" (ByVal crColor As Long)
+ As Long
+
+Private Const PI = 3.141592653
+
+Private Property Get TitleBar() As Boolean
+    TitleBar = (Me.Caption &lt;&gt; "")
+End Property
+Private Property Let TitleBar(ByVal bTitlebar As Boolean)
+    If (TitleBar &lt;&gt; bTitlebar) Then
+        If (bTitlebar) Then
+            Me.Caption = "Clock"
+            mnuTop.Caption = "&amp;File"
+            SetWindowRgn Me.hWnd, 0, 1
+        Else
+            Me.Caption = ""
+            mnuTop.Caption = " "
+            MakeClock
+        End If
+    End If
+End Property
+Private Sub MakeClock()
+Dim hRgn As Long
+Dim lW As Long
+Dim lH As Long
+Dim lT As Long
+Dim lU As Long
+
+    lW = Me.ScaleWidth \ Screen.TwipsPerPixelX
+    lH = Me.ScaleHeight \ Screen.TwipsPerPixelY
+    lT = (Me.Height - Me.ScaleHeight) \ Screen.TwipsPerPixelY
+    If (lH &gt; lW) Then lU = lW Else lU = lH
+    m_lTL = lT
+    m_lWH = lU - lT
+    hRgn = CreateEllipticRgn(m_lTL, m_lTL, m_lWH, m_lWH)
+    ' Change the region:
+    SetWindowRgn Me.hWnd, hRgn, 1
+    ' We don't need to manage the hRgn object -
+    ' Windows does this for us.
+    
+    ' Here we should be able to make a copy of hRgn and use this with
+    ' FrameRgn to draw an edge for the clock.  Must be careful about
+    ' coordinates, though...
+
+End Sub
+Private Sub DrawClock()
+Dim lM As Long
+Dim sH As Single, sM As Single
+Dim tPO As POINTAPI
+Dim sR As Single, sAR As Single, sY As Single, sX As Single
+Dim hBrush As Long
+
+    ' Code is a bit scrappy here with too much hardcoding...
+
+    ' Draw 12,3,6,9:
+    lM = (m_lWH - 26) \ 2
+    BitBlt Me.hdc, lM + 9, 9, 25, 25, picRes.hdc, 0, 0, SRCCOPY
+    BitBlt Me.hdc, lM + 9, m_lWH - 16 - 27, 25, 25, picRes.hdc, 53, 0, SRCCOPY
+    BitBlt Me.hdc, 20, lM - 2, 25, 25, picRes.hdc, 79, 0, SRCCOPY
+    BitBlt Me.hdc, m_lWH - 27, lM - 2, 25, 25, picRes.hdc, 27, 0, SRCCOPY
+    
+    ' Hands:
+    sM = Minute(Now) * 6 + Second(Now) / 10
+    sH = Hour(Now) * 30 + sM / 60
+    ' Draw Hour hand:
+    sR = (m_lWH - 27 - 20) / 3 - 5
+    sAR = CSng(sH) * PI / 180
+    sY = (lM + 10) - sR * Cos(sAR)
+    sX = (lM + 9 + 10) + sR * Sin(sAR)
+    Me.ForeColor = &amp;HC0C0C0
+    Me.DrawWidth = 3
+    MoveToEx Me.hdc, (lM + 9 + 11), lM + 9, tPO
+    LineTo Me.hdc, sX, sY
+    Me.ForeColor = &amp;H808080
+    Me.DrawWidth = 1
+    MoveToEx Me.hdc, (lM + 9 + 11), lM + 9, tPO
+    LineTo Me.hdc, sX, sY
+    
+    ' Draw Minute hand:
+    sR = (m_lWH - 27 - 20) / 2 - 11
+    sAR = CSng(sM) * PI / 180
+    sY = (lM + 10) - sR * Cos(sAR)
+    sX = (lM + 9 + 10) + sR * Sin(sAR)
+    Me.ForeColor = &amp;HC0C0C0
+    Me.DrawWidth = 3
+    MoveToEx Me.hdc, (lM + 9 + 11), lM + 9, tPO
+    LineTo Me.hdc, sX, sY
+    Me.ForeColor = &amp;H808080
+    Me.DrawWidth = 1
+    MoveToEx Me.hdc, (lM + 9 + 11), lM + 9, tPO
+    LineTo Me.hdc, sX, sY
+    
+    ' Clock Centre:
+    BitBlt Me.hdc, lM + 12, lM + 1, 14, 14, picRes.hdc, 186, 2, SRCCOPY
+    
+    ' Show changes:
+    Me.Refresh
+End Sub
+
+Private Sub Form_Load()
+    ' Default to circular:
+    MakeClock
+    ' Get palette right in case of 256 colour display:
+    Set Me.Palette = picRes.Picture
+End Sub
+
+Private Sub Form_LostFocus()
+    Form_MouseUp vbLeftButton, 0, 0, 0
+End Sub
+
+Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y
+ As Single)
+    Select Case True
+    Case (Button And vbLeftButton) = vbLeftButton
+        m_bMoving = True
+        m_sXOffset = X + (Me.Width - Me.ScaleWidth) \ 2
+        m_sYOffset = Y + (Me.Height - Me.ScaleHeight) - (Me.Width -
+         Me.ScaleWidth) \ 2
+        SetCapture Me.hWnd
+    Case (Button And vbRightButton) = vbRightButton
+        Me.PopupMenu mnuTop
+    End Select
+End Sub
+
+Private Sub Form_MouseMove(Button As Integer, Shift As Integer, X As Single, Y
+ As Single)
+Dim tP As POINTAPI
+    If (m_bMoving) Then
+        GetCursorPos tP
+        Me.Move tP.X * Screen.TwipsPerPixelX - m_sXOffset, tP.Y *
+         Screen.TwipsPerPixelY - m_sYOffset
+    End If
+End Sub
+
+Private Sub Form_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As
+ Single)
+    If (m_bMoving) Then
+        ReleaseCapture
+        m_bMoving = False
+    End If
+End Sub
+
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+    If (m_hRgnCopy &lt;&gt; 0) Then
+        DeleteObject m_hRgnCopy
+    End If
+End Sub
+
+Private Sub Form_Resize()
+Dim lW As Long, lH As Long, lT As Long, lU As Long
+
+    lW = Me.ScaleWidth \ Screen.TwipsPerPixelX
+    lH = Me.ScaleHeight \ Screen.TwipsPerPixelY
+    lT = (Me.Height - Me.ScaleHeight) \ Screen.TwipsPerPixelY
+    If (lH &gt; lW) Then lU = lW Else lU = lH
+    m_lTL = lT
+    m_lWH = lU - lT
+
+    Me.Cls
+    DrawClock
+End Sub
+
+Private Sub mnuRight_Click(Index As Integer)
+Dim lP As Long
+    Select Case Index
+    Case 0  ' Move
+        lP = ((Me.Left \ Screen.TwipsPerPixelX) And &amp;HFFFF&amp;)    ' horiz pos is
+         loword
+        lP = lP + (Me.Top \ Screen.TwipsPerPixelY \ &amp;H10000)    ' vert pos is
+         hiword
+        SendMessage Me.hWnd, WM_SYSCOMMAND, SC_MOVE, lP
+    Case 2  ' Title bar
+        mnuRight(2).Checked = Not (mnuRight(2).Checked)
+        TitleBar = mnuRight(2).Checked
+    Case 5  ' Exit
+        Unload Me
+    End Select
+End Sub
+
+Private Sub tmrClock_Timer()
+    Me.Cls
+    DrawClock
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../../index.html">VB</a>&#160;.&#160;<a href="../../../../index.html">Code</a>&#160;.&#160;<a href="../../../index.html">Libraries</a>&#160;.&#160;<a href="../../index.html">Graphics and GDI</a>&#160;.&#160;<a href="../index.html">Changing Window Shapes</a>&#160;.&#160;<a href="article.html">A window that's star-shaped, circular or tank-shaped</a>&#160;.&#160;<a href="WinShap_Project_Files.html">WinShap Project Files</a>&#160;.&#160;Clock.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Changing_Window_Shapes/Creating_Geometric_Window_Shapes/WinShap_Project_Files_zip_Clock_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:55 GMT -->
+</html>

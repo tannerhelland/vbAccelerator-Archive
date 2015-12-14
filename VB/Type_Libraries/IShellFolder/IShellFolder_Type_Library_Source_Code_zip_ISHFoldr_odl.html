@@ -1,0 +1,206 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Type_Libraries/IShellFolder/IShellFolder_Type_Library_Source_Code_zip_ISHFoldr_odl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:23 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: ISHFoldr.odl</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: ISHFoldr.odl" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Type Libraries</a>&#160;.&#160;<a href="article.html">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a>&#160;.&#160;<a href="IShellFolder_Type_Library_Source_Code.html">IShellFolder Type Library Source Code</a>&#160;.&#160;ISHFoldr.odl</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="IShellFolder_Type_Library_Source_Code.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />IShellFolder Type Library Source Code</a> (10K)</p><p class="nav"><a href="IShellFolder_Type_Library.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />IShellFolder Type Library</a> (7K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1033</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1033&amp;type=Zip&amp;title=IShellFolder%20Type%20Library%20Source%20Code%2Ezip%5FISHFoldr">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Brad Martinez</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />21 Mar 2000<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: ISHFoldr.odl</h1><pre>
+//=============================================================
+// IShellFolder::GetDisplayNameOf/SetNameOf uFlags
+
+typedef enum tagSHGDN
+{
+    SHGDN_NORMAL            = 0,        // default (display purpose)
+    SHGDN_INFOLDER          = 1,        // displayed under a folder (relative)
+    SHGDN_FORADDRESSBAR     = 0x4000,   // for displaying in the address
+     (drives dropdown) bar
+    SHGDN_FORPARSING        = 0x8000,   // for ParseDisplayName or path
+} ESHGNO;
+
+//=============================================================
+// IShellFolder::EnumObjects
+
+typedef enum tagSHCONTF
+{
+    SHCONTF_FOLDERS         = 32,       // for shell browser
+    SHCONTF_NONFOLDERS      = 64,       // for default view
+    SHCONTF_INCLUDEHIDDEN   = 128,      // for hidden/system objects
+} ESHCONTF;
+
+//=============================================================
+// IShellFolder::GetAttributesOf flags
+// (turned into enum so that the constants and their 
+//  values are accessable outside the typelib)
+
+typedef enum tagSFGAO
+{
+    SFGAO_CANCOPY         = 0x00000001,     // Objects can be copied, =
+     DROPEFFECT_COPY 
+    SFGAO_CANMOVE         = 0x00000002,     // Objects can be moved, =
+     DROPEFFECT_MOVE 
+    SFGAO_CANLINK         = 0x00000004,     // Objects can be linked, =
+     DROPEFFECT_LINK 
+    SFGAO_CANRENAME       = 0x00000010,     // Objects can be renamed
+    SFGAO_CANDELETE       = 0x00000020,     // Objects can be deleted
+    SFGAO_HASPROPSHEET    = 0x00000040,     // Objects have property sheets
+    SFGAO_DROPTARGET      = 0x00000100,     // Objects are drop target
+    SFGAO_CAPABILITYMASK  = 0x00000177,
+    SFGAO_LINK            = 0x00010000,     // Shortcut (link)
+    SFGAO_SHARE           = 0x00020000,     // shared
+    SFGAO_READONLY        = 0x00040000,     // read-only
+    SFGAO_GHOSTED         = 0x00080000,     // ghosted icon
+    SFGAO_DISPLAYATTRMASK = 0x000F0000,
+    SFGAO_FILESYSANCESTOR = 0x10000000,     // It contains file system folder
+    SFGAO_FOLDER          = 0x20000000,     // It's a folder.
+    SFGAO_FILESYSTEM      = 0x40000000,     // is a file system thing
+     (file/folder/root)
+    SFGAO_HASSUBFOLDER    = 0x80000000,     // Expandable in the map pane
+    SFGAO_CONTENTSMASK    = 0x80000000,
+    SFGAO_VALIDATE        = 0x01000000,     // invalidate cached information
+    SFGAO_REMOVABLE       = 0x02000000,     // is this removeable media?
+    SFGAO_COMPRESSED      = 0x04000000,     // Object is compressed (use alt
+     color)
+} ESFGAO;
+
+//=============================================================
+// IID_IShellFolder
+[
+    uuid(000214E6-0000-0000-C000-000000000046),
+    helpstring("IShellFolder Interface"),
+    odl
+]
+//=============================================================
+
+interface IShellFolder : IUnknown
+{
+    // *** IShellFolder methods ***
+    // all HRESULT rtn types have been replaced.
+    // since VB maps HRESULT error to RT errors,
+    // app must handle any errors specifically
+
+    [helpstring("ParseDisplayName")]
+    long    ParseDisplayName(
+                [in]     HWND          hwndOwner,        // Handle of owner
+                 window
+                [in]     long          pbcReserved,      // Reserved (LPBC)
+                [in]     LPOLESTR      lpszDisplayName,  // Pointer to diplay
+                 name 
+                [in,out] ULONG         *pchEaten,        // Pointer to value
+                 for parsed characters
+                [in,out] LPITEMIDLIST  *ppidl,           // Pointer to new item
+                 identifier list
+                [in,out] ULONG         *pdwAttributes);  // Address receiving
+                 attributes of file object
+
+    [helpstring("EnumObjects")]
+    long    EnumObjects( 
+                [in]     HWND          hwndOwner, 
+                [in]     DWORD         grfFlags, 
+                [in,out] LPENUMIDLIST  *ppenumIDList);
+
+    [helpstring("BindToObject")]
+    long    BindToObject(
+                [in]     LPCITEMIDLIST pidl, 
+                [in]     long          pbcReserved,
+                [in]     REFIID        riid, 
+                [in,out] LPVOID        ppvOut);
+
+    // VB handles E_NOTIMPL
+    [helpstring("BindToStorage")]
+    HRESULT BindToStorage(
+                [in]     LPCITEMIDLIST pidl, 
+                [in]     long          pbcReserved,  // (LPBC)
+                [in]     REFIID        riid, 
+                [in,out] LPVOID        ppvObj);      // * v1.2, was *ppvObj
+
+    [helpstring("CompareIDs")]
+    long    CompareIDs(
+                [in]     LPARAM        lParam, 
+                [in]     LPCITEMIDLIST pidl1, 
+                [in]     LPCITEMIDLIST pidl2);
+
+    [helpstring("CreateViewObject")]
+    long    CreateViewObject(
+                [in]     HWND          hwndOwner, 
+                [in]     REFIID        riid, 
+                [in,out] LPVOID        ppvOut);      // * v1.2, was *ppvOut
+
+    [helpstring("GetAttributesOf")]
+    long    GetAttributesOf(
+                [in]     UINT          cidl, 
+                [in]     LPCITEMIDLIST *apidl,
+                [in,out] ULONG         *rgfInOut);
+
+    [helpstring("GetUIObjectOf")]
+    long    GetUIObjectOf(
+                [in]     HWND          hwndOwner,
+                [in]     UINT          cidl,
+                [in]     LPCITEMIDLIST *apidl,
+                [in]     REFIID        riid,
+                [in]     UINT          *prgfInOut,
+                [in,out] LPVOID        ppvOut);   // *ppvOut
+
+    [helpstring("GetDisplayNameOf")]
+    long    GetDisplayNameOf(
+                [in]     LPCITEMIDLIST pidl,
+                [in]     DWORD         uFlags,
+                [in,out] LPSTRRET      lpName);
+
+    [helpstring("SetNameOf")]
+    long    SetNameOf(
+                [in]     HWND          hwndOwner,
+                [in]     LPCITEMIDLIST pidl,
+                [in]     LPCOLESTR     lpszName,
+                [in]     DWORD         uFlags,
+                [in,out] LPCITEMIDLIST *ppidlOut);
+}
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Type Libraries</a>&#160;.&#160;<a href="article.html">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a>&#160;.&#160;<a href="IShellFolder_Type_Library_Source_Code.html">IShellFolder Type Library Source Code</a>&#160;.&#160;ISHFoldr.odl</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Type_Libraries/IShellFolder/IShellFolder_Type_Library_Source_Code_zip_ISHFoldr_odl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:23 GMT -->
+</html>

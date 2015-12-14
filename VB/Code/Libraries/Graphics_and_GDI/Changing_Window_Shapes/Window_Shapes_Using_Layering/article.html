@@ -1,0 +1,145 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Changing_Window_Shapes/Window_Shapes_Using_Layering/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:23:00 GMT -->
+<head>
+
+<title>vbAccelerator - Window Shapes Using Layering</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This article provides an alternative, higher-performance way of creating a custom-shaped Windows region from
+a bitmap for Windows 2000 and XP systems.  Prior to Windows 2000, window shapes could only be customised using 
+the SetWindowsRgn API.  In Windows 2000 and above support the Layered Windows APIs, which allow for 
+considerably greater flexibility in drawing transparent or alpha-blended window parts." /><link rel="stylesheet" href="../../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../../index.html">VB</a>&#160;.&#160;<a href="../../../../index.html">Code</a>&#160;.&#160;<a href="../../../index.html">Libraries</a>&#160;.&#160;<a href="../../index.html">Graphics and GDI</a>&#160;.&#160;<a href="../index.html">Changing Window Shapes</a>&#160;.&#160;Window Shapes Using Layering</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Simple_Layered_Window_Sample.html"><img src="../../../../../../res/get.png" width="8" height="8" alt="Download Page" />Simple Layered Window Sample</a> (15K)</p><br /><br /><img src="../../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2946</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2946&amp;type=Article&amp;title=Window%20Shapes%20Using%20Layering">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../../res/update.png" width="8" height="8" alt="Update" />7 Jan 2003<br />First Posted</p><br /><br /><img src="../../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1384">Get an RGB Colour from an OLE_COLOR</a></p><p class="nav"><img src="../../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2769">Creating Window Shapes from Bitmaps</a></p><br /><br /><img src="../../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Window Shapes Using Layering</h1><p class="splash">Create uniquely shaped and partially transparent windows on Windows 2000 and XP systems.</p><img src="layered.png" width="163" height="157" alt="Layered Window Demonstration" /><p /><p>This article provides an alternative, higher-performance way of creating a custom-shaped Windows region from
+a bitmap for Windows 2000 and XP systems.  Prior to Windows 2000, window shapes could only be customised using 
+the <i>SetWindowsRgn</i> API.  In Windows 2000 and above support the Layered Windows APIs, which allow for 
+considerably greater flexibility in drawing transparent or alpha-blended window parts.</p><h2>Layered Windows API</h2><p>In Windows 95/98 and Windows NT 4.0 the only way for an application to create a window with 
+a complex shape, such as a rounded balloon or a cool transparent digital clock, was to specify the shape 
+by supplying the window region representing the shape via the <i>SetWindowRgn</i> API. Using this technique
+has a coupl of associated issues:</p><ol><li>If the regional window animates its shape frequently, or is dragged, Windows asks any windows beneath
+the regional window to repaint. That increases message traffic and also the calculations for invalid and
+visible regions are very expensive.</li><li>The region API only addresses transparency and not translucency.</li></ol><p>Layered Windows are the solution to these two issues. There are really two parts to this API: firstly, to 
+allow windows to exhibit sprite-like behavior by masking and blending colours; and secondly the system's ability to 
+use this technique on any window by redirecting the drawing into an off-screen buffer.  The redirection
+behaviour provides a particularly simple way to use this API: you just need to add a few lines of code
+and suddenly the form can be transparent and/or translucent!</p><h2>Using The API</h2><p>Before using any of the Layered Windows APIs, first note that it only applies to top-level windows.
+So you can't apply these techniques to a control on a form, you can only apply them to a form as a whole.
+Once you've picked a form to apply the technique to, then need to apply the new <i>WS_EX_LAYERED</i> Extended
+Windows Style bit to the window before they take effect.  To do this, use <i>GetWindowsLong</i> and <i>SetWindowsLong</i>:
+</p><pre>
+Private Declare Function GetWindowLong Lib "USER32" Alias "GetWindowLongA" _
+   (ByVal hWnd As Long, ByVal nIndex As Long) As Long
+Private Declare Function SetWindowLong Lib "USER32" Alias "SetWindowLongA" _
+   (ByVal hWnd As Long, ByVal nIndex As Long, _
+   ByVal dwNewLong As Long) As Long
+Private Const GWL_STYLE = (-16)
+Private Const GWL_EXSTYLE = (-20)
+
+'Requires Windows 2000 or later:
+Private Const WS_EX_LAYERED = &amp;H80000
+
+...
+
+Private Sub SetLayered(ByVal hWnd As Long, ByVal bState As Boolean)
+   Dim lStyle As Long
+   lStyle = GetWindowLong(lhWnd, GWL_EXSTYLE)
+   If bState Then
+      lStyle = lStyle Or WS_EX_LAYERED
+   Else
+      lStyle = lStyle And Not WS_EX_LAYERED
+   End If
+   SetWindowLong lhWnd, GWL_EXSTYLE, lStyle
+End Sub
+</pre><p>Once this style bit is set then you can use the API. There are two ways of working with it: the easiest is the
+redirection method.  To use this method, you use the <i>SetLayeredWindowAttributes</i> API.  This allows you
+to set either or both:</p><ul><li>Which colour should be considered to be Transparent on your form.</li><li>How Translucent the form should be.</li></ul><p>The more complex technique is to use the <i>UpdateLayeredWindow</i> API to draw the contents of a particular
+DC into a Layered Window.  This technique is more powerful since you can specify the alpha component of anything
+you display on screen, thus allowing you to create drop-shadows and the like.  This is not covered in this article,
+I will cover this later in a future article.</p><p>Using <i>SetLayeredWindowAttributes</i> is very simple.</p><pre>
+Private Declare Function SetLayeredWindowAttributes Lib "USER32" _
+   (ByVal hWnd As Long, ByVal crKey As Long, _
+   ByVal bAlpha As Byte, ByVal dwFlags As Long) As Long
+Private Const LWA_COLORKEY = &amp;H1
+Private Const LWA_ALPHA = &amp;H2
+
+...
+
+Private Function SetWindowEffects( _
+      ByVal lhWnd As Long, _
+      Optional ByVal transparentColor as Long = -1, _
+      Optional ByVal alpha As Byte = 255 _
+   )
+Dim crKey As Long
+Dim bAlpha As Byte
+Dim lFlags As Long
+
+   If (transparentColor = -1) Then
+      transparentColor = 0
+   Else
+      crKey = transparentColor
+      lFlags = lFlags Or LWA_COLOR_KEY
+   End If
+   If (alpha &lt; 255) Then
+      bAlpha = alpha
+      lFlags = lFlags Or LWA_ALPHA
+   End If
+   SetLayeredWindowAttributes lhWnd, _
+       transparentColor, bAlpha, lFlags
+
+End Function
+</pre><p>The <i>transparentColor</i> is just the value you get from VB's RGB function.  You can
+use <i>OleTranslateColor</i> if you want to use a system colour as a Transparent colour;
+see the tip <a href="http://www.vbaccelerator.com/article.asp?id=1384">Get an RGB Colour from an OLE_COLOR</a>
+for details.</p><p>That's basically it!  The sample application simply uses a picture from a picture box with
+the Transparent region set to a bright pink shade (&amp;H8000FF).  To apply the region,
+the code just sets the <i>WS_EX_LAYERED</i> bit and then calls <i>SetLayeredWindowAttributes</i>
+with a colour key of &amp;H8000FF.  For amusement the alpha value is set to 220, so the form
+is slightly translucent, although in the real world you probably wouldn't want to use 
+alpha unless you were fading something out that's been clicked or showing a drag image.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../../index.html">VB</a>&#160;.&#160;<a href="../../../../index.html">Code</a>&#160;.&#160;<a href="../../../index.html">Libraries</a>&#160;.&#160;<a href="../../index.html">Graphics and GDI</a>&#160;.&#160;<a href="../index.html">Changing Window Shapes</a>&#160;.&#160;Window Shapes Using Layering</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 8 January 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Changing_Window_Shapes/Window_Shapes_Using_Layering/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:23:01 GMT -->
+</html>

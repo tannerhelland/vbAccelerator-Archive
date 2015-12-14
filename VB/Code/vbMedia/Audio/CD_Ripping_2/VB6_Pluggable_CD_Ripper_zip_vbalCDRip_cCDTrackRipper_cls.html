@@ -1,0 +1,333 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_2/VB6_Pluggable_CD_Ripper_zip_vbalCDRip_cCDTrackRipper_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: vbalCDRip_cCDTrackRipper.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: vbalCDRip_cCDTrackRipper.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" /><link rel="contents" href="VB6_Pluggable_CD_Ripper.html" /><link rel="meta" type="application/rdf+xml" href="VB6%20Pluggable%20CD%20Ripper.html" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">CD Ripping in VB Part 2</a>&#160;.&#160;<a href="VB6_Pluggable_CD_Ripper.html">VB6 Pluggable CD Ripper</a>&#160;.&#160;vbalCDRip_cCDTrackRipper.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_CD_Ripper_Plugin_Interface.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 CD Ripper Plugin Interface</a> (9K)</p><p class="nav"><a href="VB5_Pluggable_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Pluggable CD Ripper</a> (191K)</p><p /><p class="nav"><a href="VB6_CD_Ripper_Plugin_Interface.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 CD Ripper Plugin Interface</a> (9K)</p><p class="nav"><a href="VB6_Pluggable_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Pluggable CD Ripper</a> (189K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:15346</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=15346&amp;type=Zip&amp;title=VB6%20Pluggable%20CD%20Ripper%2Ezip%5FvbalCDRip%5FcCDTrackRipper">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />27 May 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13703">SGrid 2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2767">vbAccelerator Visual Studio Style Tab Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14898">MP3 Encoding with LAME</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14971">CD Ripping in VB Part 1</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: vbalCDRip_cCDTrackRipper.cls</h1><p>This file is part of the download <a href="VB6_Pluggable_CD_Ripper.html">VB6 Pluggable CD Ripper</a>, which is described in the article <a href="article.html">CD Ripping in VB Part 2</a>.</p><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cCDTrackRipper"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+' ------------------------------------------------------------
+' Name:   cCDTrackRipper
+' Author: Steve McMahon (steve@vbaccelerator.com)
+' Date:   2004-05-06
+' Description:
+' Wrapper around the CDRip.DLL API for ripping tracks (or
+' parts of CDs)
+'
+' See http://vbaccelerator.com/
+' ------------------------------------------------------------
+
+Private Const GMEM_FIXED = &amp;H0
+Private Const GMEM_ZEROINIT = &amp;H40
+Private Const GPTR = (GMEM_FIXED Or GMEM_ZEROINIT)
+Private Declare Function LocalAlloc Lib "kernel32" (ByVal wFlags As Long, ByVal
+ wBytes As Long) As Long
+Private Declare Function LocalLock Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function LocalFree Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function LocalUnlock Lib "kernel32" (ByVal hMem As Long) As Long
+
+Private Declare Sub CR_SetActiveCDROM Lib "cdrip.dll" (ByVal nActiveDrive As
+ Long)
+
+'// Start ripping section, output is fetched to WriteBufferFunc
+'// Data is extracted from dwStartSector to dwEndSector
+Private Declare Function CR_OpenRipper Lib "cdrip.dll" ( _
+      ByRef plBufferSize As Long, _
+      ByVal dwStartSector As Long, _
+      ByVal dwEndSector As Long) As Long
+'// Close the ripper, has to be called when the ripping process is completed
+ (i.e 100%)
+'// Or it can be called to abort the current ripping section
+Private Declare Function CR_CloseRipper Lib "cdrip.dll" () As Long
+'// Indicates how far the ripping process is right now
+'// Returns 100% when the ripping is completed
+Private Declare Function CR_GetPercentCompleted Lib "cdrip.dll" () As Long
+'// Get number of Jitter Errors that have occured during the ripping
+'// This function must be called before CloseRipper is called !
+Private Declare Function CR_GetNumberOfJitterErrors Lib "cdrip.dll" () As Long
+'// Get the jitter position of the extracted track
+Private Declare Function CR_GetJitterPosition Lib "cdrip.dll" () As Long
+'// Returns the peak value of the ripped section (0..2^15)
+Private Declare Function CR_GetPeakValue Lib "cdrip.dll" () As Long
+'// Rip a chunk from the CD, pbtStream contains the ripped data, pNumBytes the
+'// number of bytes that have been ripped and corrected for jitter (if enabled)
+Private Declare Function CR_RipChunk Lib "cdrip.dll" ( _
+   pbtStream As Any, _
+   ByRef pNumBytes As Long, _
+   bAbort As Long) As Long
+'// Normalize the stream (i.e. multiply by dScaleFactor)
+Private Declare Sub CR_NormalizeChunk Lib "cdrip.dll" ( _
+   pbsStream As Any, _
+   ByVal nNumSamples As Long, _
+   ByVal dScaleFactor As Double _
+   )
+
+Private m_cdIndex As Long
+Private m_startSector As Long
+Private m_endSector As Long
+Private m_iJitterErrCount As Long
+Private m_bRipperOpen As Boolean
+Private m_lBufferSize As Long
+Private m_lReadSize As Long
+Private m_hMem As Long
+Private m_lPtrMem As Long
+Private m_lPercentComplete As Long
+
+Public Sub CreateForTrack(cTrack As cTocEntry)
+   If CloseRipper() Then
+      m_startSector = cTrack.StartSector
+      m_endSector = cTrack.EndSector
+      m_cdIndex = cTrack.fCDIndex
+   End If
+End Sub
+
+Public Sub CreateForSection(cD As cDrive, ByVal lStartSector As Long, ByVal
+ lEndSector As Long)
+   If CloseRipper() Then
+      m_startSector = 0
+      m_endSector = 0
+      If (lStartSector &gt;= 0) And (lStartSector &lt; cD.TOC.TotalLengthSectors) Then
+         CDRipErrHandler "CreateForSection", 3, False
+      Else
+         If (lEndSector &gt; lStartSector) And (lEndSector &lt;
+          cD.TOC.TotalLengthSectors) Then
+            CDRipErrHandler "CreateForSection", 3, False
+         Else
+            m_startSector = lStartSector
+            m_endSector = lEndSector
+            m_cdIndex = cD.fCDIndex
+         End If
+      End If
+   End If
+End Sub
+
+Public Property Get JitterErrorCount() As Long
+   JitterErrorCount = m_iJitterErrCount
+End Property
+
+Public Property Get PercentComplete() As Long
+   PercentComplete = m_lPercentComplete
+End Property
+
+
+Public Function CloseRipper()
+Dim eErr As ECDRipErrorCode
+   If (m_bRipperOpen) Then
+      m_bRipperOpen = False
+      m_iJitterErrCount = CR_GetNumberOfJitterErrors()
+      eErr = CR_CloseRipper()
+      CDRipErrHandler "cCDTrackRipper.CloseRipper", eErr, True
+      If (eErr = CDEX_OK) Then
+         CloseRipper = True
+      End If
+   Else
+      CloseRipper = True
+   End If
+End Function
+
+Private Function CreateBuffer(ByVal lSize As Long) As Boolean
+   
+   If (lSize &lt;= 1) Then
+      ' inappropriate
+      Debug.Print lSize
+      Debug.Assert "" = "Inappropriate buffer size"
+      Exit Function
+   End If
+   
+   If Not (lSize = m_lBufferSize) Then
+      DestroyBuffer
+   End If
+   
+   If (m_lPtrMem = 0) Then
+      m_hMem = LocalAlloc(GPTR, lSize)
+      If (m_hMem = 0) Then
+         ' failed
+      Else
+         m_lPtrMem = LocalLock(m_hMem)
+         If (m_lPtrMem = 0) Then
+            ' failed
+            DestroyBuffer
+         Else
+            ' success
+            m_lBufferSize = lSize
+            CreateBuffer = True
+         End If
+      End If
+   Else
+      ' success
+      CreateBuffer = True
+   End If
+   
+End Function
+
+Private Sub DestroyBuffer()
+   If Not (m_lPtrMem = 0) Then
+      LocalUnlock m_hMem
+      m_lPtrMem = 0
+   End If
+   If Not (m_hMem = 0) Then
+      LocalFree m_hMem
+      m_hMem = 0
+   End If
+   m_lReadSize = 0
+   m_lBufferSize = 0
+End Sub
+
+Public Function OpenRipper() As Boolean
+Dim eErr As ECDRipErrorCode
+Dim lStartSector As Long
+Dim lEndSector As Long
+Dim lBufferSize As Long
+
+   If CloseRipper() Then
+
+      CR_SetActiveCDROM m_cdIndex
+
+      m_lPercentComplete = 0
+      lStartSector = m_startSector
+      lEndSector = m_endSector
+   
+      eErr = CR_OpenRipper(lBufferSize, lStartSector, lEndSector)
+      CDRipErrHandler "cCDTrackRipper.OpenRipper", eErr, True
+      If (eErr = CDEX_OK) Then
+         If CreateBuffer(lBufferSize) Then
+            m_bRipperOpen = True
+   
+            m_iJitterErrCount = 0
+            OpenRipper = True
+         Else
+            CDRipErrHandler "cCDTrackRipper.CreateBuffer", 7, False
+         End If
+      End If
+      
+   End If
+   
+End Function
+
+Public Function Read() As Boolean
+Dim bAbort As Long
+Dim lNumBytes As Long
+Dim eErr As ECDRipErrorCode
+
+   If (m_bRipperOpen) Then
+   
+      ' Try and read the next chunk
+      eErr = CR_RipChunk(ByVal m_lPtrMem, lNumBytes, bAbort)
+      m_lReadSize = lNumBytes
+      m_lPercentComplete = CR_GetPercentCompleted()
+      
+      Select Case eErr
+      Case CDEX_RIPPING_INPROGRESS, CDEX_OK
+         Read = True
+      
+      Case CDEX_RIPPING_DONE
+         ' Complete
+         CloseRipper
+         Read = True ' will be false next time
+         
+      Case CDEX_JITTER_ERROR
+         ' TODO handle jitter error
+         Read = True
+         
+      Case CDEX_FILEOPEN_ERROR
+         ' Failed
+         CloseRipper
+         CDRipErrHandler "cCDTrackRipper.Read", eErr, True
+         Read = False
+         
+      Case CDEX_ERROR
+         ' Failed
+         CloseRipper
+         CDRipErrHandler "cCDTrackRipper.Read", eErr, True
+         Read = False
+                        
+      End Select
+   Else
+      m_lReadSize = 0
+      Read = False
+   End If
+   
+End Function
+
+Public Property Get ReadBufferPtr() As Long
+   ReadBufferPtr = m_lPtrMem
+End Property
+Public Property Get ReadBufferSize() As Long
+   ReadBufferSize = m_lReadSize
+End Property
+
+Private Sub Class_Terminate()
+Dim bWasOpen As Boolean
+   
+   bWasOpen = m_bRipperOpen
+   
+   On Error Resume Next ' don't throw in terminate
+   DestroyBuffer
+   CloseRipper
+   
+   If (bWasOpen) Then
+      Debug.Print "Warning: cCDTrackRipper instance terminated whilst ripper
+       open"
+      Debug.Assert Not (m_bRipperOpen)
+   End If
+   
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">CD Ripping in VB Part 2</a>&#160;.&#160;<a href="VB6_Pluggable_CD_Ripper.html">VB6 Pluggable CD Ripper</a>&#160;.&#160;vbalCDRip_cCDTrackRipper.cls</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 12 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_2/VB6_Pluggable_CD_Ripper_zip_vbalCDRip_cCDTrackRipper_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+</html>

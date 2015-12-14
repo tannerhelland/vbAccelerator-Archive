@@ -1,0 +1,202 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Tile_a_Bitmap_Into_a_TextBox/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:29 GMT -->
+<head>
+
+<title>vbAccelerator - Tile a Bitmap Into a TextBox Background</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This sample presents a small class that allows you to tile a bitmap into the background of a TextBox.
+Note that the technique only works on multi-line text boxes, as the drawing of single-line TextBoxes is done
+in a different way and cannot be easily overridden in code.
+    " /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;Tile a Bitmap Into a TextBox Background</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_TextBoxBack_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 TextBoxBack Demonstration</a> (126K)</p><p /><p class="nav"><a href="VB6_TextBoxBack_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TextBoxBack Demonstration</a> (122K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:1204</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1204&amp;type=Article&amp;title=Tile%20a%20Bitmap%20Into%20a%20TextBox%20Background">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Nov 2002<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Tile a Bitmap Into a TextBox Background</h1><p class="splash">An interesting hack which gives you a picture in the background of any multi-line text box.</p><img src="TextBoxBack.png" alt="TextBox Background sample" width="299" height="321" /><p /><p>
+This sample presents a small class that allows you to tile a bitmap into the background of a TextBox.
+Note that the technique only works on multi-line text boxes, as the drawing of single-line TextBoxes is done
+in a different way and cannot be easily overridden in code.
+    </p><h2>Drawing A TextBox Background</h2><p>The TextBox control in VB is basically a Windows TextBox control with a thin VB wrapper around it.  Although the
+Windows TextBox control hasn't been designed to allow a user to modify it's background, you can still do it by
+overriding some of the draw messages sent to the control.</p><p>The basic principle of overriding the drawing is to subclass the TextBox for the <i>WM_PAINT</i> message which
+is sent whenever a portion of the control needs to be repainted.  Unfortunately, the TextBox also draws portions of
+itself outside <i>WM_PAINT</i> messages so some other messages also need to be worked on as well, which I will 
+describe later.</p><p>When a <i>WM_PAINT</i> message is received, you can determine the portion of the control which needs to be 
+updated using the <i>GetUpdateRect</i> API call.  You can then take control of the drawing by drawing into the 
+update area after you've called the standard processing for this message.  To actually draw a rendition of a 
+multi-line TextBox control would be difficult if it wasn't for the fact that all Windows controls support a 
+method of drawing themselves into a DC to enable you to print a copy of the control surface.  This message is the
+<i>WM_PRINT</i> message, and takes the DC to draw into as the <i>wParam</i> parameter of the <i>SendMessage</i>
+call and flags controlling which parts of the control to draw in the <i>lParam</i> parameter.  Here is the code
+to cause the control to print itself into a DC:
+</p><pre>
+' declares: 
+Private Declare Function SendMessageLong Lib "user32" Alias "SendMessageA" ( _
+   ByVal hwnd As Long, ByVal wMsg As Long, _
+   ByVal wParam As Long, ByVal lParam As Long) As Long
+Private Const PRF_CHECKVISIBLE = &amp;H1&amp;
+Private Const PRF_NONCLIENT = &amp;H2&amp;
+Private Const PRF_CLIENT = &amp;H4&amp;
+Private Const PRF_ERASEBKGND = &amp;H8&amp;
+Private Const PRF_CHILDREN = &amp;H10&amp;
+Private Const PRF_OWNED = &amp;H20&amp;
+
+
+   SendMessageLong m_hWnd, WM_PRINT, m_cWorkDC.hDC, PRF_CLIENT Or PRF_CHECKVISIBLE
+</pre><p>Once you know this, it is fairly simple to create a version of the control with a different background:
+draw the background, then ask the control to draw itself (with a transparent background) onto it and then
+draw it in place.</p><p>Unfortunately as mentioned before, the control draws itself outside of the <i>WM_PAINT</i> message as well.
+To work around this, you also have to respond to <i>WM_CTLCOLOREDIT</i> messages by setting the background to
+transparent and then repainting and to <i>WM_ERASEBKGND</i> messages (which you eat).  Finally, during scrolling
+the control also needs to be updated.  This requires a bit of hacking as you will see if you look at the code,
+where I create a scroll state machine that ensures painting at the right time. Once this is done, though, you have
+a control which works exactly as before except with a bitmap in the background!</p><h2>The <i>cTextBoxBackground</i> class</h2><p>To make this easier to use, I've wrapped the code up in a simple class.  This class has the following methods:</p><ul><li><strong>Attach(ByVal hWndA As Long)</strong><br />
+Attaches the class to the multi-line text box with the specified <i>hWnd</i>.  Don't call this method until you've
+set up the background picture first.</li><li><strong>Detach()</strong><br />
+Detaches from the class so the text box painting goes back to normal. Called automatically when the TextBox is 
+destroyed.</li><li><strong>SetBackdrop(pic As IPicture)</strong><br />
+Sets the background bitmap from a standard VB picture object (for example, a <i>StdPicture</i> returned from
+ <i>LoadPicture</i> or the picture returned by a PictureBox's <i>Picture</i> property.</li><li><strong>TileArea(ByVal hdcTo As Long, ByVal x As Long, ByVal y As Long, ByVal Width As Long, ByVal Height As Long)</strong><br />
+The bitmap tiling function is exposed to allow you to tile the bitmap onto any other objects with a <i>hDC</i>
+property. This is used in the second sample form in the demo to tile the background of the form.</li><li><strong>TileOffsetX() As Long</strong><br />
+Gets or Sets the initial X offset in the bitmap to start tiling from.</li><li><strong>TileOffsetY() As Long</strong><br />
+Gets or Sets the initial Y offset in the bitmap to start tiling from.</li></ul><p>To use it, first add a TextBox to a form, set it to multi-line mode and then create a form level instance of the
+<i>cTextBoxBackground</i> class (here I'm assuming it's called m_cLargeTextBoxBack).  Then set the background picture
+and attach it to the text box as follows:</p><pre>
+   Set m_cLargeTextBoxBack = New cTextBoxBackground
+   m_cLargeTextBoxBack.SetBackdrop LoadPicture(App.Path &amp; "\back.bmp")
+   m_cLargeTextBoxBack.Attach txtTest.hwnd
+</pre><h2>Custom Bitmap Dialogs</h2><p>Just for fun, I tried using the class to create a dialog with a completely customised appearance, so 
+all of the UI elements are drawn using a bitmap.  The result is shown below:</p><img src="BitmapDialog.png" width="360" height="300" alt="Dialog with bitmap backgrounds for all controls" /><p>This dialog uses two bitmaps - one which is a gamma-lightened version of the other.  Note that if you incorporated
+the vbAccelerator DIBSection code into your project, you could automatically create lighter and darker bitmaps by
+image processing one of them - this technique is used in the PopupMenu object elsewhere on the site.  However, for
+the purposes of simplicity, I just created the two bitmaps in a drawing package.</p><p>The four text boxes on the form all use the <i>cTextBoxBackground</i> class as described before.  To fill
+the background of the form, and to draw the background of the buttons, I created two additional <i>cTextBoxBackground</i>
+objects so I could use the <i>TileArea</i> method.  The background is drawn during the Form_Paint method, like this:</p><pre>
+Private Sub Form_Paint()
+   ' Draw a dark background:
+   m_cBack(UBound(m_cBack) - 1).TileArea Me.hDC, 0, 0, _
+      Me.ScaleWidth \ Screen.TwipsPerPixelX, _
+      Me.ScaleHeight \ Screen.TwipsPerPixelY
+   ' Draw a separator line before the buttons:
+   m_cBack(UBound(m_cBack)).TileArea Me.hDC, _
+      0, cmdCancel.tOp \ Screen.TwipsPerPixelY - 4, _
+      Me.ScaleWidth \ Screen.TwipsPerPixelX, 1
+End Sub
+</pre><p>To draw the buttons, I used the "Owner Draw Button" code also in this area and used the same method to
+draw the background.  Here's the code for drawing a button:</p><pre>
+Private Sub IOwnerDrawButton_DrawItem( _
+      ByVal lhWnd As Long, ByVal lHDC As Long, _
+      lLeft As Long, lTop As Long, lRight As Long, lBottom As Long, _
+      ByVal bPushed As Boolean, ByVal bChecked As Boolean, _
+      ByVal bEnabled As Boolean, ByVal bInFocus As Boolean, _
+      bDoDefault As Boolean _
+   )
+   '
+   bDoDefault = False
+     
+   Dim xOffset As Long
+   Dim yOffset As Long
+   Dim tilerIndex As Long
+   
+   ' draw light button, up
+   tilerIndex = UBound(m_cBack)
+   If (bPushed) Then
+      ' draw dark button, down
+      tilerIndex = tilerIndex - 1
+   End If
+   
+   ' store original offsets:
+   xOffset = m_cBack(tilerIndex).TileOffsetX
+   yOffset = m_cBack(tilerIndex).TileOffsetX
+   
+   ' Find the control for this hWnd by enumerating the controls collection:
+   Dim cmd As Control
+   Set cmd = ControlForHwnd(lhWnd)
+   
+   ' create new offsets:
+   m_cBack(tilerIndex).TileOffsetX = cmd.left / Screen.TwipsPerPixelX
+   m_cBack(tilerIndex).TileOffsetY = cmd.tOp / Screen.TwipsPerPixelY
+   If (bPushed) Then
+      m_cBack(tilerIndex).TileOffsetX = m_cBack(tilerIndex).TileOffsetX - 1
+      m_cBack(tilerIndex).TileOffsetY = m_cBack(tilerIndex).TileOffsetY - 1
+   End If
+   
+   ' Fill background:
+   m_cBack(tilerIndex).TileArea lHDC, lLeft, lTop, lRight - lLeft, lBottom - lTop
+   
+   ' Draw Button edge:
+   SetBkMode lHDC, TRANSPARENT
+   Dim junk As POINTAPI
+   MoveToEx lHDC, lLeft, lTop, junk
+   LineTo lHDC, lRight - 1, lTop
+   LineTo lHDC, lRight - 1, lBottom - 1
+   LineTo lHDC, lLeft, lBottom - 1
+   LineTo lHDC, lLeft, lTop
+   
+   ' Draw Text:
+   Dim tR As RECT
+   tR.left = lLeft
+   tR.Right = lRight
+   tR.tOp = lTop
+   tR.Bottom = lBottom
+   If (bPushed) Then
+      tR.left = tR.left + 1
+      tR.tOp = tR.tOp + 1
+      tR.Right = tR.Right + 1
+      tR.Bottom = tR.Bottom + 1
+   End If
+   DrawText lHDC, cmd.Caption, -1, tR, DT_CENTER Or DT_VCENTER Or DT_SINGLELINE
+   
+   ' return offsets to their original values:
+   m_cBack(tilerIndex).TileOffsetX = xOffset
+   m_cBack(tilerIndex).TileOffsetX = yOffset
+   
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;Tile a Bitmap Into a TextBox Background</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2002 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 26 November 2002</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Tile_a_Bitmap_Into_a_TextBox/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:31 GMT -->
+</html>

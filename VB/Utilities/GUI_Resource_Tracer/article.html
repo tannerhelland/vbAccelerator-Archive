@@ -1,0 +1,209 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/GUI_Resource_Tracer/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:44:32 GMT -->
+<head>
+
+<title>vbAccelerator - GUI Resource Tracer</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Incorrect usage of GDI resources in an application can have a terrible effect on an application, 
+particularly if you introduce a leak into a painting routine.  This article presents a tracing
+tool you can use to test an application's GDI and User object allocation for Windows 2000 or XP
+systems.
+" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;GUI Resource Tracer</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_GuiResTracer.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 GuiResTracer</a> (76K)</p><p /><p class="nav"><a href="VB6_GuiResTracer.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 GuiResTracer</a> (72K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4591</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4591&amp;type=Article&amp;title=GUI%20Resource%20Tracer">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />28 Mar 2003<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4089">vbAccelerator ListView Control</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=931">Using the System Image List with (and without) vbAccelerator Controls</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2767">vbAccelerator Visual Studio Style Tab Control</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>GUI Resource Tracer</h1><p class="splash">Check if your application is misusing GDI or User resources</p><img src="guiResourceTracer.png" width="411" height="280" alt="GUI Resource Tracer Application" /><p /><p>
+Incorrect usage of GDI resources in an application can have a terrible effect on an application, 
+particularly if you introduce a leak into a painting routine.  This article presents a tracing
+tool you can use to test an application's GDI and User object allocation for Windows 2000 or XP
+systems.
+</p><h2>GDI Resources</h2><p>
+For a while I've been looking for a way of detecting leaks in GDI resources.  There 
+are commercial applications such as those from NuMega which can achieve that, but
+I've not always been in position to buy these.  The traditional technique of running
+the application and watching how much memory is used/whether it kills the system
+isn't particularly great!
+</p><p>
+In Windows 2000, Microsoft introduced
+a new API call, <i>GetGuiResources</i> which provides assistance.
+The call can only be used at a Process level, but nevertheless this is a great 
+step forward for testing.  You can actually get Task Manager to show this on
+the Processes tab if you're interested in doing a quick test or trying to 
+check something on a remote system:
+</p><img src="taskMgrGDIResources.png" width="150" height="178" alt="Configuring Columns&#xD;&#xA;in Task Manager's resources tab" /><br /><p><strong><small>Configuring Columns in Task Manager's resources tab</small></strong></p><img src="taskMgr.png" width="200" height="160" alt="Task Manager Showing GDI Objects" /><br /><p><strong><small>Task Manager Showing GDI Objects - VS.NET is winning again!</small></strong></p><p>
+Unfortunately, you can't chart the result of this value in Task Manager or the Performance 
+Monitor, so it can be a bit awkward to see exactly what's happening, which was the inspiration
+for this utility.
+</p><h2>The Resource Trace Utility</h2><p>
+The trace utility itself uses the <a href="http://www.vbaccelerator.com/article.asp?id=2767">Visual Studio
+Style Tab Control</a>, <a href="http://www.vbaccelerator.com/article.asp?id=4089">ListView Control</a> and
+<a href="http://www.vbaccelerator.com/article.asp?id=931">System Image List</a> from this site to provide
+a nice UI for selection and tracing of resources in use by any application.
+Simply select a window from the Windows tab docked to the left, and a
+new tab opens in the working area with a trace of resources.  You can have as
+many independent traces as you want open at once, and also save the result of 
+any trace to an XML file.
+</p><h2>Trying It - The Leaky App</h2><p>
+If you want to see how catastrophic a small GDI leak can be, try the LeakyApp sample included
+with the download.  This has an intentional flaw in the painting routine which leaks
+a single GDI pen object each time the display is redrawn:
+</p><img src="leakySample.png" width="358" height="255" alt="Leaky Demonstration Application" /><p>
+Start the Resource Tracer running, then start the leaky app sample as an executable (if
+you run it in the IDE, you can still trace the resources but you will need to trace the
+VB IDE instance that's running it, and any resources associated with the IDE will also
+be included).  Then double click on LeakyApp in the Windows tab of the Resource tracer.
+</p><p>
+When LeakyApp starts running, you will see initially it consumes something around 40 GDI
+resources and 20 User resources.  Now resize the form a bit and watch what happens -
+within a matter of moments the application can have over 1,000 GDI resources associated
+with it (more than even Visual Studio.NET, which consumes GDI at an alarming rate).
+</p><p>
+Now check the "Stop Leaking" box and continue resizing. This patches up the
+code to delete the last pen that's been created; as a consequence GDI usage will stay
+stable (give or take a few points).  Of course you can't ever free up any of the 
+resources you leaked earlier until the application ends (you have to take this as
+read because there's no way of checking overall GDI resource usage on NT systems without
+writing a device driver).
+</p><p>
+The consequence of a leak like this could be fatal to an application, particularly if
+the application was being used on a Windows 9x system.  On Windows 9x, all GDI
+resources are allocated in a global 16-bit heap - not only does that mean you only
+have some 65,000 items to play with, but application using everything up means
+that there's nothing left for any other application on the system either (you've probably
+seem the consequence of this - no applications can paint themselves at all and all the fonts
+go funny...)  On NT systems, things aren't so bad but ultimately
+you will either run out of memory or be unable to create any further GDI resources, 
+which means your app will stop painting.
+</p><h2>Getting TaskLists and Determining the EXE For a Window</h2><p>
+One of the elements of this sample is some code for retrieving the list of Windows in
+the tasks list, and then determining which process id the task is associated with and
+therefore the executable that created the Window.  This can come in handy for other
+applications so I'll describe how its done in more detail here.
+</p><h3>Getting the TaskList</h3><p>
+Getting a task list is done by first enumerating all of the top level windows
+and the system, and then filtering them according to some specific rules.
+These elements are described in the articles 
+<a href="http://www.vbaccelerator.com/article.asp?id=4577">Enumerating Windows</a> and 
+<a href="http://www.vbaccelerator.com/article.asp?id=4578">Forcing a Window To Show in the Taskbar</a>.
+A quick review of how you determine whether a window should appear in the task list
+or not is as follows:
+</p><ol><li>Check if the Window is visible:
+<pre>
+   If Not (IsWindowVisible(hWnd) = 0) Then
+      ...
+</pre></li><li>Get the Extended window style using <i>GetWindowLong</i>:
+<pre>
+      Dim lStyle As Long
+      lStyle = GetWindowLong(hWnd, GWL_EXSTYLE)
+</pre></li><li>Check if the <i>WS_EX_TOOLWINDOW</i> style is set.  If it
+is, the window does not appear in the list:
+<pre>
+      If (lStyle And WS_EX_TOOLWINDOW) = 0 Then
+         ...
+</pre></li><li>Check if the <i>WS_EX_APPWINDOW</i> style is set.  If it is,
+then the window should be included:
+<pre>
+         If (lStyle And WS_EX_APPWINDOW) = WS_EX_APPWINDOW Then
+            bAdd = True
+         Else
+            ...        
+</pre></li><li>Otherwise, check if the window is not owned by any other
+window.  If it isn't then it should be included:
+<pre>
+            If (GetWindow(hWnd, GW_OWNER) = 0) Then
+               bAdd = True
+            End If
+</pre></li></ol><p>
+Once you have a list of windows, you can find the Process Id for each using
+the <i>GetWindowThreadProcessId</i> API call - the return value is the
+Thread Id, which you can ignore, and the ByRef second parameter returns
+the process id.
+</p><h3>Determing the ExeName for a Process Id</h3><p>
+Once you have a process id, you are then in a position to find out the executable
+name of the Window and to start tracing the GUI resources.  Getting the executable
+name for a particular process id is achieved either using the easy way on 2000 and
+XP using the Process Status Helper DLL (PSAPI.DLL), or the slightly harder way, 
+by enumerating processes using the Tool Help functions.  Since this application
+can only run on Windows 2000 and above, the PSAPI.DLL function
+<i>GetModuleFileNameEx</i> is used:
+</p><pre>
+Private Declare Function GetModuleFileNameExW Lib "psapi.dll" ( _
+    ByVal hProcess As Long, _
+    ByVal hModule As Long, _
+    ByVal lpFilename As Long, _
+    ByVal nSize As Long _
+    ) As Long
+
+Public Function ExeNameForPid(ByVal lPid As Long) As String
+Dim hProcess As Long
+   hProcess = OpenProcess( _
+       PROCESS_QUERY_INFORMATION Or PROCESS_VM_READ, 0, lPid)
+   If Not (hProcess = 0) Then
+      m_sFileName = ExeNameForProcess(hProcess)
+      ExeNameForPid = m_sFileName
+      CloseHandle hProcess
+   End If
+End Function
+
+Private Function ExeNameForProcess(ByVal hProcess As Long) As String
+
+   ReDim b(0 To MAX_PATH) As Byte
+   Dim lPtrFileName As Long
+   lPtrFileName = VarPtr(b(0))
+   Dim lR As Long
+   lR = GetModuleFileNameExW(hProcess, 0, lPtrFileName, MAX_PATH)
+   If (lR &gt; 1) Then
+      ReDim bR(0 To lR * 2 - 1) As Byte
+      CopyMemory bR(0), b(0), lR * 2
+      ExeNameForProcess = bR
+   End If
+   
+End Function
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;GUI Resource Tracer</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 10 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/GUI_Resource_Tracer/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:44:38 GMT -->
+</html>

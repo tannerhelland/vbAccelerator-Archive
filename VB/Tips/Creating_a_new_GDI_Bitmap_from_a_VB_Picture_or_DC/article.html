@@ -1,0 +1,241 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Creating_a_new_GDI_Bitmap_from_a_VB_Picture_or_DC/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:44:03 GMT -->
+<head>
+
+<title>vbAccelerator - Creating a new GDI Bitmap from a VB Picture or DC</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+If you're creating some code which works with VB but draws with the more
+powerful GDI functions, it's often very handy to be able to create a new
+bitmap handle from a VB StdPicture object or from an area of
+a DC.  This article demonstrates how to do this with a few lines of GDI
+code.
+" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Creating a new GDI Bitmap from a VB Picture or DC</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4586</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4586&amp;type=Article&amp;title=Creating%20a%20new%20GDI%20Bitmap%20from%20a%20VB%20Picture%20or%20DC">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />15 Feb 2004<br /><p class="update">Corrected missing declares and typo in code.  Thanks to
+Paul Admiraal for noting the problem.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Creating a new GDI Bitmap from a VB Picture or DC</h1><p /><p>
+If you're creating some code which works with VB but draws with the more
+powerful GDI functions, it's often very handy to be able to create a new
+bitmap handle from a VB <i>StdPicture</i> object or from an area of
+a DC.  This article demonstrates how to do this with a few lines of GDI
+code.
+</p><p>
+Start a new project in VB, add a module to it and paste in the 
+following code:
+</p><pre>
+Private Type BITMAP
+    bmType As Long
+    bmWidth As Long
+    bmHeight As Long
+    bmWidthBytes As Long
+    bmPlanes As Integer
+    bmBitsPixel As Integer
+    bmBits As Long
+End Type
+
+Private Declare Function GetObjectAPI Lib "gdi32" Alias "GetObjectA" ( _
+      ByVal hObject As Long, _
+      ByVal nCount As Long, _
+      lpObject As Any _
+   ) As Long
+Private Declare Function CreateDCAsNull Lib "gdi32" Alias "CreateDCA" ( _
+      ByVal lpDriverName As String, _
+      lpDeviceName As Any, _
+      lpOutput As Any, _
+      lpInitData As Any _
+    ) As Long
+Private Declare Function DeleteDC Lib "gdi32" ( _
+       ByVal hdc As Long _
+    ) As Long
+Private Declare Function SelectObject Lib "gdi32" ( _
+       ByVal hdc As Long, ByVal hObj As Long _
+    ) As Long
+Private Declare Function DeleteObject Lib "gdi32" ( _
+       ByVal hObj As Long _
+    ) As Long
+Private Declare Function CreateCompatibleBitmap Lib "gdi32" ( _
+       ByVal hdc As Long, _
+       ByVal nWidth As Long, _
+       ByVal nHeight As Long _
+    ) As Long
+Private Declare Function CreateCompatibleDC Lib "gdi32" ( _
+       ByVal hdc As Long _
+    ) As Long
+Private Declare Function BitBlt Lib "gdi32" ( _
+       ByVal hDestDC As Long, _
+       ByVal x As Long, ByVal y As Long, _
+       ByVal nWidth As Long, ByVal nHeight As Long, _
+       ByVal hSrcDC As Long, _
+       ByVal xSrc As Long, ByVal ySrc As Long, _
+       ByVal dwRop As Long) As Long
+Public Declare Function DeleteObject Lib "gdi32" ( _
+       ByVal hObject As Long _
+    ) As Long
+
+Public Function HBitmapFromPicture(picThis As IPicture) As Long
+
+   ' Create a copy of the bitmap:
+   Dim lhDC As Long
+   Dim lhDCCopy As Long
+   Dim lhBmpCopy As Long
+   Dim lhBmpCopyOld As Long
+   Dim lhBmpOld As Long
+   Dim lhDCC As Long
+   Dim tBM As BITMAP
+
+   GetObjectAPI picThis.Handle, Len(tBM), tBM
+   lhDCC = CreateDCAsNull("DISPLAY", ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)
+   lhDC = CreateCompatibleDC(lhDCC)
+   lhBmpOld = SelectObject(lhDC, picThis.Handle)
+
+   lhDCCopy = CreateCompatibleDC(lhDCC)
+   lhBmpCopy = CreateCompatibleBitmap(lhDCC, tBM.bmWidth, tBM.bmHeight)
+   lhBmpCopyOld = SelectObject(lhDCCopy, lhBmpCopy)
+
+   BitBlt lhDCCopy, 0, 0, tBM.bmWidth, tBM.bmHeight, lhDC, 0, 0, vbSrcCopy
+
+   If Not (lhDCC = 0) Then
+      DeleteDC lhDCC
+   End If
+   If Not (lhBmpOld = 0) Then
+      SelectObject lhDC, lhBmpOld
+   End If
+   If Not (lhDC = 0) Then
+      DeleteDC lhDC
+   End If
+   If Not (lhBmpCopyOld = 0) Then
+      SelectObject lhDCCopy, lhBmpCopyOld
+   End If
+   If Not (lhDCCopy = 0) Then
+      DeleteDC lhDCCopy
+   End If
+
+   HBitmapFromPicture = lhBmpCopy
+
+End Sub
+
+Public Function HBitmapFromDC( _
+      ByVal lhDC As Long, _
+      ByVal lWidth As Long, _
+      ByVal lHeight As Long _
+   ) As Long
+
+   ' Copy the bitmap in lHDC:
+   Dim lhDCCopy As Long
+   Dim lhBmpCopy As Long
+   Dim lhBmpCopyOld As Long
+   Dim lhDCC As Long
+   Dim tBM As BITMAP
+   
+   lhDCC = CreateDCAsNull("DISPLAY", ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)
+   lhDCCopy = CreateCompatibleDC(lhDCC)
+   lhBmpCopy = CreateCompatibleBitmap(lhDCC, lWidth, lHeight)
+   lhBmpCopyOld = SelectObject(lhDCCopy, lhBmpCopy)
+
+   BitBlt lhDCCopy, 0, 0, lWidth, lHeight, lhDC, 0, 0, vbSrcCopy
+
+   If Not (lhDCC = 0) Then
+      DeleteDC lhDCC
+   End If
+   If Not (lhBmpCopyOld = 0) Then
+      SelectObject lhDCCopy, lhBmpCopyOld
+   End If
+   If Not (lhDCCopy = 0) Then
+      DeleteDC lhDCCopy
+   End If
+
+   HBitmapFromDC = lhBmpCopy
+
+End Sub
+    </pre><p>
+To test out the functions, add a PictureBox to the project's form, and load
+a picture into it.  Then add a CommandButton and the following code:
+</p><pre>
+Private Type RECT
+   left As Long
+   top As Long
+   right As Long
+   bottom As Long
+End Type
+
+Private Declare Function CreatePatternBrush Lib "gdi32" ( _
+       ByVal hBitmap As Long _
+    ) As Long
+Private Declare Function DeleteObject Lib "gdi32" ( _
+       ByVal hObj As Long _
+    ) As Long
+Private Declare Function FillRect Lib "user32" ( _
+       ByVal hdc As Long, _
+       lpRect As RECT, _
+       ByVal hBrush As Long _
+    ) As Long
+
+Private Sub Command1_Click()
+   Dim hBmp As Long
+   hBmp = HBitmapFromPicture(Picture1.Picture)
+   Dim bBr As Long
+   hBr = CreatePatternBrush(hBmp)
+   DeleteObject hBmp
+
+   Dim tR As RECT
+   tR.Left = Rnd * Me.ScaleWidth \ Screen.TwipsPerPixelX
+   tR.Top = Rnd * Me.ScaleHeight \ Screen.TwipsPerPixelY
+   tR.Right = tR.Left + Rnd * Me.ScaleWidth \ (Screen.TwipsPerPixelX * 2)
+   tR.Bottom = tR.Top + Rnd * Me.ScaleHeight \ (Screen.TwipsPerPixelY * 2)
+   FillRect Me.hDC, tR, hBr
+   DeleteObject hBr
+
+End Sub
+    </pre><p>
+Whenever you click the button, the picture's image will be copied and
+a new bitmap brush created and a random rectangle filled on the window 
+with the image.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Creating a new GDI Bitmap from a VB Picture or DC</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 14 February 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Creating_a_new_GDI_Bitmap_from_a_VB_Picture_or_DC/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:44:04 GMT -->
+</html>

@@ -1,0 +1,369 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Algorithmic_Images/SlowGrow/Slow_Grow_Algorithm_Demonstration_zip_cSlowGrow_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:48 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cSlowGrow.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cSlowGrow.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Algorithmic Images</a>&#160;.&#160;<a href="article.html">Slow Grow</a>&#160;.&#160;<a href="Slow_Grow_Algorithm_Demonstration.html">Slow Grow Algorithm Demonstration</a>&#160;.&#160;cSlowGrow.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Slow_Grow_Algorithm_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Slow Grow Algorithm Demonstration</a> (35K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:12790</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12790&amp;type=Zip&amp;title=Slow%20Grow%20Algorithm%20Demonstration%2Ezip%5FcSlowGrow">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />5 Sep 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cSlowGrow.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cSlowGrow"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+' 12:45 - Restate my assumptions.
+' 10:38 - Hit Return
+Private Const PI As Double = 3.14159265358979
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Type SAFEARRAYBOUND
+    cElements As Long
+    lLbound As Long
+End Type
+Private Type SAFEARRAY2D
+    cDims As Integer
+    fFeatures As Integer
+    cbElements As Long
+    cLocks As Long
+    pvData As Long
+    Bounds(0 To 1) As SAFEARRAYBOUND
+End Type
+Private Declare Function VarPtrArray Lib "msvbvm50.dll" Alias "VarPtr" (Ptr()
+ As Any) As Long
+
+Private Declare Function SetPixel Lib "gdi32" (ByVal hdc As Long, ByVal x As
+ Long, ByVal y As Long, ByVal crColor As Long) As Long
+
+Private Enum SlowGrowState
+   MakeNewPoint
+   MovePoint
+End Enum
+
+
+Private m_bAnimate As Boolean
+Private m_lState As SlowGrowState
+Private m_lPoints As Long
+Private m_lWidth As Long
+Private m_lHeight As Long
+Private m_lRadius As Long
+Private m_lMaxDist As Long
+Private m_lX() As Long
+Private m_lY() As Long
+Private m_lTrailSize As Long
+Private m_lMaxPoints As Long
+Private m_lColor As Long
+Private m_cDib As cDIBSection256
+
+Public Event PointAdded()
+
+Public Property Get Animate() As Boolean
+   Animate = m_bAnimate
+End Property
+Public Property Let Animate(ByVal bState As Boolean)
+   m_bAnimate = bState
+End Property
+
+Public Property Get Color() As OLE_COLOR
+   Color = m_lColor
+End Property
+Public Property Let Color(ByVal lColor As OLE_COLOR)
+   m_lColor = lColor
+   setColors
+End Property
+Public Property Get Width() As Long
+   Width = m_lWidth
+End Property
+Public Property Let Width(ByVal lWidth As Long)
+   m_lWidth = lWidth
+   Reset
+End Property
+Public Property Get Height() As Long
+   Height = m_lHeight
+End Property
+Public Property Let Height(ByVal lHeight As Long)
+   m_lHeight = lHeight
+   Reset
+End Property
+Public Property Get TrailSize() As Long
+   TrailSize = m_lTrailSize
+End Property
+Public Property Let TrailSize(ByVal lTrailSize As Long)
+   m_lTrailSize = lTrailSize
+   ReDim m_lX(0 To m_lTrailSize) As Long
+   ReDim m_lY(0 To m_lTrailSize) As Long
+End Property
+Public Property Get Points() As Long
+   Points = m_lPoints
+End Property
+Public Property Get MaxPoints() As Long
+   MaxPoints = m_lMaxPoints
+End Property
+Public Property Let MaxPoints(ByVal lMaxPoints As Long)
+   m_lMaxPoints = lMaxPoints
+End Property
+Public Sub Step()
+Dim newAngle As Double
+Dim actionRand As Double
+Dim x As Long
+Dim y As Long
+Dim xErase As Long
+Dim yErase As Long
+Dim distX As Long
+Dim distY As Long
+Dim i As Long
+Dim j As Long
+Dim bDib() As Byte
+Dim tSA As SAFEARRAY2D
+Dim bContact As Boolean
+
+   If (m_lState = MakeNewPoint) Then
+      newAngle = 2 * PI * Rnd()
+      x = m_lRadius * (1# + Cos(newAngle))
+      y = m_lRadius * (1# + Sin(newAngle))
+      m_lX(0) = x
+      m_lY(0) = y
+      m_lState = MovePoint
+   End If
+      
+   actionRand = Rnd()
+   x = m_lX(0)
+   y = m_lY(0)
+   If (actionRand &lt;= 0.25) Then
+      x = m_lX(0) + 1
+   ElseIf (actionRand &gt; 0.25 And actionRand &lt;= 0.5) Then
+      x = m_lX(0) - 1
+   ElseIf (actionRand &gt; 0.5 And actionRand &lt;= 0.75) Then
+      y = m_lY(0) + 1
+   Else
+      y = m_lY(0) - 1
+   End If
+
+   ' Check if we've escaped from the circle:
+   distX = x - m_lRadius
+   distY = y - m_lRadius
+   If (distX * distX + distY * distY &gt; m_lMaxDist) Then
+      newAngle = 2 * PI * Rnd()
+      x = m_lRadius * (1# + Cos(newAngle))
+      y = m_lRadius * (1# + Sin(newAngle))
+   End If
+   
+   ' Apply the motion:
+   xErase = m_lX(m_lTrailSize)
+   yErase = m_lY(m_lTrailSize)
+   For i = m_lTrailSize - 1 To 0 Step -1
+      m_lX(i + 1) = m_lX(i)
+      m_lY(i + 1) = m_lY(i)
+   Next i
+   m_lX(0) = x
+   m_lY(0) = y
+   
+   With tSA
+       .cbElements = 1
+       .cDims = 2
+       .Bounds(0).lLbound = 0
+       .Bounds(0).cElements = m_cDib.Height
+       .Bounds(1).lLbound = 0
+       .Bounds(1).cElements = m_cDib.BytesPerScanLine()
+       .pvData = m_cDib.DIBSectionBitsPtr
+   End With
+   CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+   ' Check if we've joined the crowd
+   If m_lState = MovePoint Then
+   
+      bContact = False
+      For i = -1 To 1
+         For j = -1 To 1
+            If Not (x + i = m_lX(1) And y + j = m_lY(1)) Then
+               If (bDib(x + 1 + i, y + 1 + j) = m_lTrailSize + 1) Then
+                  bContact = True
+                  Exit For
+               End If
+            End If
+         Next j
+         If (bContact) Then
+            Exit For
+         End If
+      Next i
+      
+      If (bContact) Then
+         ' set bDib(x,y) and then create a new point
+         m_lState = MakeNewPoint
+      End If
+   
+   End If
+   
+   ' Draw the points:
+   If m_bAnimate Then
+      bDib(xErase + 1, yErase + 1) = 0
+      For i = m_lTrailSize To 0 Step -1
+         bDib(m_lX(i) + 1, m_lY(i) + 1) = (m_lTrailSize + 1) - i
+      Next i
+   Else
+      If (bContact) Then
+         bDib(m_lX(0) + 1, m_lY(0) + 1) = (m_lTrailSize + 1)
+      End If
+   End If
+   
+   ' Clear the temporary array descriptor
+   CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+   
+   If bContact Then
+      m_lPoints = m_lPoints + 1
+      RaiseEvent PointAdded
+   End If
+   
+End Sub
+Public Sub Paint( _
+      ByVal lHDC As Long, _
+      Optional ByVal lLeft As Long = 0, _
+      Optional ByVal lTop As Long = 0 _
+   )
+   m_cDib.PaintPicture lHDC, lLeft, lTop, m_lWidth, m_lHeight
+End Sub
+Public Sub Reset()
+Dim bDib() As Byte
+Dim tSA As SAFEARRAY2D
+Dim lPoints() As Long
+Dim x As Long
+Dim y As Long
+   
+   If Not (m_lWidth = m_cDib.Width - 3) Or Not (m_lHeight = m_cDib.Height - 3)
+    Then
+      m_cDib.Create m_lWidth + 3, m_lHeight + 3
+   End If
+
+   m_lRadius = Min(m_lWidth \ 2, m_lHeight \ 2)
+   m_lMaxDist = m_lRadius * m_lRadius + 1
+
+   With tSA
+       .cbElements = 1
+       .cDims = 2
+       .Bounds(0).lLbound = 0
+       .Bounds(0).cElements = m_cDib.Height
+       .Bounds(1).lLbound = 0
+       .Bounds(1).cElements = m_cDib.BytesPerScanLine()
+       .pvData = m_cDib.DIBSectionBitsPtr
+   End With
+   CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+
+   For x = 0 To m_cDib.Width - 1
+      For y = 0 To m_cDib.Height - 1
+         bDib(x, y) = 0
+      Next y
+   Next x
+   bDib(m_lRadius + 1, m_lRadius + 1) = m_lTrailSize + 1
+   
+   ' Clear the temporary array descriptor
+   CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+   
+   m_lPoints = 0
+   ReDim m_lX(0 To m_lTrailSize) As Long
+   ReDim m_lY(0 To m_lTrailSize) As Long
+   setColors
+   
+   m_lState = MakeNewPoint
+   
+   '
+End Sub
+
+Private Sub setColors()
+Dim r As Long
+Dim g As Long
+Dim b As Long
+Dim i As Long
+Dim lColors() As Long
+   ReDim lColors(0 To m_lTrailSize + 1) As Long
+   r = m_lColor And &amp;HFF&amp;
+   g = (m_lColor And &amp;HFF00&amp;) \ &amp;H100&amp;
+   b = (m_lColor And &amp;HFF0000) \ &amp;H10000
+   For i = 1 To m_lTrailSize + 1
+      lColors(i) = RGB( _
+         (i * r) \ (m_lTrailSize + 1), _
+         (i * g) \ (m_lTrailSize + 1), _
+         (i * b) \ (m_lTrailSize + 1) _
+         )
+   Next i
+   m_cDib.SetPalette lColors
+End Sub
+
+Private Function Min(ParamArray v()) As Variant
+Dim i As Long
+Dim vRet As Variant
+   vRet = v(1)
+   For i = LBound(v) + 1 To UBound(v)
+      If (v(i) &lt; vRet) Then
+         vRet = v(i)
+      End If
+   Next i
+   Min = vRet
+End Function
+
+Private Sub Class_Initialize()
+   
+   m_bAnimate = True
+   m_lMaxPoints = 2000
+   m_lTrailSize = 254
+   m_lWidth = 256
+   m_lHeight = 256
+   m_lColor = RGB(96, 128, 255)
+   Set m_cDib = New cDIBSection256
+   Reset
+   
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Algorithmic Images</a>&#160;.&#160;<a href="article.html">Slow Grow</a>&#160;.&#160;<a href="Slow_Grow_Algorithm_Demonstration.html">Slow Grow Algorithm Demonstration</a>&#160;.&#160;cSlowGrow.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 8 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Algorithmic_Images/SlowGrow/Slow_Grow_Algorithm_Demonstration_zip_cSlowGrow_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:48 GMT -->
+</html>

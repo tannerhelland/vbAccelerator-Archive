@@ -1,0 +1,239 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Shell_Projects/Adding__Deleting_and_Viewing_Recent_Documents/Recent_Documents_Sample_zip_frmRecentDocuments_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:42 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmRecentDocuments.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmRecentDocuments.frm" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Shell Projects</a>&#160;.&#160;<a href="article.html">Adding, Deleting and Viewing Recent Documents</a>&#160;.&#160;<a href="Recent_Documents_Sample.html">Recent Documents Sample</a>&#160;.&#160;frmRecentDocuments.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Recent_Documents_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Recent Documents Sample</a> (49K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:4014</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4014&amp;type=Zip&amp;title=Recent%20Documents%20Sample%2Ezip%5FfrmRecentDocuments">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />12 Feb 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4013">VB IShellLink Interface (ShellLink.tlb)</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmRecentDocuments.frm</h1><pre>VERSION 5.00
+Begin VB.Form frmRecentDocuments 
+   Caption         =   "Recent Documents Sample"
+   ClientHeight    =   6045
+   ClientLeft      =   3150
+   ClientTop       =   2565
+   ClientWidth     =   6390
+   BeginProperty Font 
+      Name            =   "Tahoma"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "frmRecentDocuments.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   6045
+   ScaleWidth      =   6390
+   Begin VB.TextBox txtRecentDocsPath 
+      Height          =   375
+      Left            =   1200
+      Locked          =   -1  'True
+      TabIndex        =   8
+      Top             =   1740
+      Width           =   4995
+   End
+   Begin VB.ListBox lstRecent 
+      Height          =   2985
+      Left            =   1200
+      TabIndex        =   6
+      Top             =   2160
+      Width           =   4995
+   End
+   Begin VB.CommandButton cmdClear 
+      Caption         =   "&amp;Clear Recent Documents"
+      Height          =   555
+      Left            =   2880
+      TabIndex        =   5
+      Top             =   5220
+      Width           =   1575
+   End
+   Begin VB.CommandButton cmdList 
+      Caption         =   "&amp;List Recent Documents"
+      Height          =   555
+      Left            =   1200
+      TabIndex        =   4
+      Top             =   5220
+      Width           =   1575
+   End
+   Begin VB.CommandButton cmdAdd 
+      Caption         =   "A&amp;dd to Recent Documents"
+      Height          =   555
+      Left            =   1200
+      TabIndex        =   3
+      Top             =   540
+      Width           =   1575
+   End
+   Begin VB.CommandButton cmdPick 
+      Caption         =   "..."
+      Height          =   375
+      Left            =   5700
+      TabIndex        =   2
+      Top             =   120
+      Width           =   435
+   End
+   Begin VB.TextBox txtFile 
+      Height          =   375
+      Left            =   1200
+      TabIndex        =   1
+      Top             =   120
+      Width           =   4395
+   End
+   Begin VB.Label lblRecent 
+      Caption         =   "&amp;Recent Documents Path:"
+      Height          =   735
+      Left            =   120
+      TabIndex        =   7
+      Top             =   1800
+      Width           =   1035
+   End
+   Begin VB.Label lblFile 
+      Caption         =   "&amp;File:"
+      Height          =   255
+      Left            =   180
+      TabIndex        =   0
+      Top             =   180
+      Width           =   1035
+   End
+End
+Attribute VB_Name = "frmRecentDocuments"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+' SHAutoComplete:
+Private Enum SHAutoCompleteFlags
+   SHACF_DEFAULT = &amp;H0                           ' // Currently
+    (SHACF_FILESYSTEM | SHACF_URLALL)
+   SHACF_FILESYSTEM = &amp;H1                        ' // This includes the File
+    System as well as the rest of the shell (Desktop\My Computer\Control Panel\)
+   SHACF_URLHISTORY = &amp;H2                        ' // URLs in the User's History
+   SHACF_URLMRU = &amp;H4                            ' // URLs in the User's
+    Recently Used list.
+   SHACF_USETAB = &amp;H8                            ' // Use the tab to move thru
+    the autocomplete possibilities instead of to the next dialog/window control.
+   SHACF_URLALL = (SHACF_URLHISTORY Or SHACF_URLMRU)
+   SHACF_FILESYS_ONLY = &amp;H10                     ' // This includes the File
+    System
+   SHACF_FILESYS_DIRS = &amp;H20                     ' // Same as
+    SHACF_FILESYS_ONLY except it only includes directories, UNC servers, and
+    UNC server shares.
+   SHACF_AUTOSUGGEST_FORCE_ON = &amp;H10000000       ' // Ignore the registry
+    default and force the feature on.
+   SHACF_AUTOSUGGEST_FORCE_OFF = &amp;H20000000      ' // Ignore the registry
+    default and force the feature off.
+   SHACF_AUTOAPPEND_FORCE_ON = &amp;H40000000        ' // Ignore the registry
+    default and force the feature on. (Also know as AutoComplete)
+   SHACF_AUTOAPPEND_FORCE_OFF = &amp;H80000000       ' // Ignore the registry
+    default and force the feature off. (Also know as AutoComplete)
+End Enum
+Private Declare Function SHAutoComplete Lib "shlwapi.dll" ( _
+   ByVal hwndEdit As Long, ByVal dwFlags As Long) As Long
+
+
+Private m_cRecentDocuments As New cRecentDocuments
+
+
+Private Sub cmdAdd_Click()
+   On Error Resume Next
+   m_cRecentDocuments.AddToRecentDocs txtFile.Text
+   If Not (Err.Number = 0) Then
+      MsgBox "Failed to add " &amp; txtFile.Text &amp; ":" &amp; vbCrLf &amp; Err.Description,
+       vbExclamation
+   End If
+End Sub
+
+
+Private Sub cmdClear_Click()
+   If (vbYes = MsgBox("Are you sure you want to clear your recent documents?",
+    vbYesNo Or vbQuestion)) Then
+      m_cRecentDocuments.Clear
+   End If
+End Sub
+
+Private Sub cmdList_Click()
+   '
+   lstRecent.Clear
+   
+   ' Get the recent documents path:
+   txtRecentDocsPath.Text = m_cRecentDocuments.Path
+   
+   ' List the items:
+   Dim i As Long
+   For i = 1 To m_cRecentDocuments.Count
+      lstRecent.AddItem m_cRecentDocuments.Item(i).Path
+   Next i
+      
+   '
+End Sub
+
+Private Sub cmdPick_Click()
+   '
+   Dim c As New cCommonDialog
+   Dim sFile As String
+   If (c.VBGetOpenFileName(sFile, , , , , , "All Files (*.*)|*.*", , , , ,
+    Me.hwnd)) Then
+      txtFile.Text = sFile
+   End If
+   '
+End Sub
+
+Private Sub Form_Load()
+   ' Initialise:
+   txtFile.Text = App.Path &amp; "\RecentDocuments.exe"
+   ' Autocomplete text box:
+   SHAutoComplete txtFile.hwnd, SHACF_FILESYS_ONLY
+End Sub
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Shell Projects</a>&#160;.&#160;<a href="article.html">Adding, Deleting and Viewing Recent Documents</a>&#160;.&#160;<a href="Recent_Documents_Sample.html">Recent Documents Sample</a>&#160;.&#160;frmRecentDocuments.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Shell_Projects/Adding__Deleting_and_Viewing_Recent_Documents/Recent_Documents_Sample_zip_frmRecentDocuments_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:42 GMT -->
+</html>

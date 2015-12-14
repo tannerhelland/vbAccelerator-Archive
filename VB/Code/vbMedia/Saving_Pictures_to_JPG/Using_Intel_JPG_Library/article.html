@@ -1,0 +1,128 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Saving_Pictures_to_JPG/Using_Intel_JPG_Library/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:25 GMT -->
+<head>
+
+<title>vbAccelerator - Saving Pictures to JPG Files Using the Intel JPEG Library</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Whilst Visual Basic provides support for loading graphic files in various formats into a 
+StdPicture object, it sadly forgets about all of these when it comes to saving the file again. 
+You normally only have one choice of file format for writing: a BMP at the system colour depth.Whilst there are various third party controls available to save files in other formats, these are often 
+have unacceptable 'per seat' licensing policies and can be incredibly expensive. This article shows how to use 
+a free JPEG DLL library to save VB pictures." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Saving Pictures to JPG</a>&#160;.&#160;Saving Pictures to JPG Files Using the Intel JPEG Library</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="savejpeg.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />savejpeg</a> (150K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3310</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3310&amp;type=Article&amp;title=Saving%20Pictures%20to%20JPG%20Files%20Using%20the%20Intel%20JPEG%20Library">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />13 Jan 2002<br /><p class="update">Note that Intel are no longer supporting this library through their site.  I am not aware of any
+problems that will prevent you using it though.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3017">True Colour DIBSection</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2313">malloc in VB?</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Saving Pictures to JPG Files Using the Intel JPEG Library</h1><img src="accl11.jpg" width="296" height="66" alt="Sample JPG Image" /><p /><p>Whilst Visual Basic provides support for loading graphic files in various formats into a 
+<i>StdPicture</i> object, it sadly forgets about all of these when it comes to saving the file again. 
+You normally only have one choice of file format for writing: a BMP at the system colour depth.</p><p>Whilst there are various third party controls available to save files in other formats, these are often 
+have unacceptable 'per seat' licensing policies and can be incredibly expensive. This article shows how to use 
+a free JPEG DLL library to save VB pictures.</p><h2>JPEG File Format</h2><p>The JPEG file format is aimed at providing very high compression levels for photographic quality images. 
+Before deciding whether you want to use JPEG files in any application you write, there are points to 
+consider about how JPEG operates:</p><h3>Advantages</h3><ul><li>High compression ratio</li><li>Wide support - thanks to the free availability of source code to implement JPG read and write, 
+many applications support it. Windows 98 and 2000 even include native support for reading JPG files.</li><li>No license requirements, unlike GIF.</li></ul><h3>Disadvantages</h3><ul><li>The JPEG format is lossy: colour accuracy is affected when you save the file. 
+Images saved to JPEG many times loose quality in a similar way that multiple generations of 
+analogue recordings do.</li><li>It is difficult to encode - not a task you would like to perform in VB code!</li><li>Works on true colour (24 bit images); not suitable as a format for storing files 
+aimed at paletised systems.</li></ul><p>The <a href="http://www.ijg.org/">Independent JPEG Group</a> have done a great deal to 
+make the JPEG format much more accessible to developers by providing free, platform independent 
+C source code to implement JPEG load and save functions. Their library is used in 
+Internet Explorer *, Netscape * Navigator and countless other projects (some of which have even 
+have the audacity to charge for free code!), including a <a href="http://developer.intel.com/vtune/perflibst/ijl/">JPEG Library DLL, ijl11.dll</a>, available from the <a href="http://developer.intel.com/">Intel* Developer Site</a>.</p><h2>IJL11.DLL</h2><p>This DLL makes conversion to and from JPG simpler by working on a DIB byte format. By working on a DIB byte format
+it is easier for Windows programmers than the Independent JPEG Group's C code, since the input and output 
+format in memory does not need to be converted.  In VB terms, there is still some conversion from the native 
+<i>StdPicture</i> objects to a DIB.  This is achieved using the <a href="http://www.vbaccelerator.com/article.asp?id=3017">cDIBSection Class</a>.</p><h2>From VB</h2><p>Download the sample project. This contains all the files required. Firstly, 
+unzip Ijl11.zip and place ijl11.dll in your project's path (or in the Windows\System directory). 
+Read the licensing agreement included in the zip. If you are going to use this file for a distributed 
+or commercial project you must download a registered copy (free) from Intel at their JPEG Library page. 
+Then there are two VB files needed:</p><ul><li>mIJL.bas</li><li>cDIBSection.cls</li></ul><p>mIJL.bas contains the declares for ijl11.dll and four wrapper functions:</p><ol><li>LoadJPG</li><li>LoadJPGFromPtr</li><li>SaveJPG</li><li>SaveJPGToPtr</li></ol><p>All these function accept an instance of the <i>cDIBSection</i> Class. The standard versions of 
+the functions accept a file name as an argument, while the <i>Ptr</i> versions accept a long value pointing 
+to a memory buffer and a variable indicating the buffer size.</p><p>Although VB can already load a JPG, <i>LoadJPG</i> is provided as it gives a shortcut for 
+loading a JPG file directly into a <i>cDIBSection</i> class without requiring a <i>StdPicture</i> object. 
+<i>LoadJPGFromPtr</i> allows you to load a JPG directly from a byte array containing the JPG, a 
+function which can't be otherwise be achieved easily in VB.</p><p>To save a StdPicture object directly, you need to do this:</p><pre>
+Dim c As New cDibSection
+
+   ' Convert Picture object to DIBSection:
+   c.CreateFromPicture picThis.Picture
+   ' Save it:
+   SaveJPG c, sFileName
+</pre><h2>Saving and Loading From Memory Buffers</h2><p>To Load a JPG from a memory buffer, first you create a byte array containing 
+all the bytes in the JPG, or use the <a href="http://www.vbaccelerator.com/article.asp?id=2313">Shell's IMalloc implementation</a> to allocate memory 
+directly and have that contain the JPG bytes. Then you pass the pointer to the data and the size of the buffer into 
+the <i>LoadJPGFromPtr</i> method. If you use a byte array, the pointer is obtained using VB's VarPtr function:</p><pre>
+   ' Assuming the byte array is b():
+   lPtr = VarPtr(b(0))
+</pre><p>To save a JPG to a memory buffer directly, you need to create a byte array or allocate sufficient 
+memory to hold the resultant JPG. Normally this means creating a larger buffer than the resulting JPG. 
+Since JPG always compresses an image, the size is always going to be smaller than the size of an 
+equivalent DIB buffer to hold the bytes. In the sample code I chose 1/4 of the bytes in the DIBSection 
+(m_cDib.Height * m_cDib.BytesPerScanLine / 4). Then you pass a pointer to this buffer and its size to the 
+<i>SaveJPGFromPtr</i>. The method modifies the size variable passed in to reflect the actual size of the 
+JPG created which you can then use to trim down the buffer to size.</p><h2>Performance</h2><p>Interestingly, using <i>cDIBSection</i> with the Intel JPG library can be substantially faster 
+than than using VB's standard methods. The following code was used for benchmarking. In the VB case, 
+a new <i>StdPicture</i> object is created and loaded with a JPG file. For the IJL library, a new <i>cDIBSection</i> 
+object is created and the same JPG file is loaded:</p><pre>
+Private Sub cmdIJL_Click()
+   Dim fT As Double
+   Dim cD As New cDIBSection
+   fT = Timer
+   LoadJPG cD, App.Path &amp; "\earth.jpg"
+   Debug.Print "Time:", Timer - fT
+End Sub
+
+Private Sub cmdVB_Click()
+   Dim fT As Double
+   Dim picThis As New StdPicture
+   fT = Timer
+   Set picThis = LoadPicture(App.Path &amp; "\earth.jpg")
+   Debug.Print "Time:", Timer - fT
+End Sub
+</pre><p>The tested file, earth.jpg, was a 1022x747 pixel JPG, with a file size of 66kb. Performance on 
+the test machine (Pentium II 266 with 256Mb memory) showed the IJL library version to be more than twice as 
+quick as the VB version. Typically, VB turned in a load speed of around 1 second, whilst the IJL version achieved around 0.4s.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Saving Pictures to JPG</a>&#160;.&#160;Saving Pictures to JPG Files Using the Intel JPEG Library</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Saving_Pictures_to_JPG/Using_Intel_JPG_Library/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:26 GMT -->
+</html>

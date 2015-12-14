@@ -1,0 +1,93 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Get_an_RGB_Color_from_an_OLE_COLOR/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:13 GMT -->
+<head>
+
+<title>vbAccelerator - Get an RGB Colour from an OLE_COLOR</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Sometimes you need to know the Red, Green and Blue values of a Visual Basic/COM OLE_COLOR, particularly if you are going to use the colour in an API function. This tip shows you how to correctly convert an OLE_COLOR type to a RGB value using the OleTranslateColor API call exposed by OLEPRO32.DLL. It works for all colours, whether they are RGB colours, system colours of the type &H80000000F (vbButtonFace) or palette-matching colours such as &H2EECC99." /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Get an RGB Colour from an OLE_COLOR</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:1384</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1384&amp;type=Article&amp;title=Get%20an%20RGB%20Colour%20from%20an%20OLE%5FCOLOR">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />9 Aug 1998<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Get an RGB Colour from an OLE_COLOR</h1><p /><p>Sometimes you need to know the Red, Green and Blue values of a Visual Basic/COM <i>OLE_COLOR</i>, particularly if you are going to use the colour in an API function. This tip shows you how to correctly convert an <i>OLE_COLOR</i> type to a RGB value using the <i>OleTranslateColor</i> API call exposed by OLEPRO32.DLL. It works for all colours, whether they are RGB colours, system colours of the type &amp;H80000000F (vbButtonFace) or palette-matching colours such as &amp;H2EECC99.</p><p>Start a new project in VB. Add the following code to the project's form:</p><pre>
+Private Declare Function OleTranslateColor Lib "OLEPRO32.DLL" _
+    (ByVal OLE_COLOR As Long, ByVal HPALETTE As Long, _
+    pccolorref As Long) As Long 
+Private Const CLR_INVALID = -1 
+
+Private Function TranslateColor(ByVal oClr As OLE_COLOR, _ 
+                        Optional hPal As Long = 0) As Long 
+    ' Convert Automation color to Windows color 
+    If OleTranslateColor(oClr, hPal, TranslateColor) Then 
+        TranslateColor = CLR_INVALID 
+    End If 
+End Function 
+</pre><p>To test out the function, add a Combo box, a Label and a Text Box to the project's form. Set the style of the Combo box to 2 (Drop Down List) and then add the following code:</p><pre>
+Private Sub Combo1_Click() 
+Dim lRGB As Long 
+    
+    Label1.BackColor = Combo1.ItemData(Combo1.ListIndex) 
+    lRGB = TranslateColor(Combo1.ItemData(Combo1.ListIndex)) 
+    Text1.Text = "R=" &amp; (lRGB And &amp;HFF&amp;) &amp; _
+        ",G=" &amp; (lRGB And &amp;HFF00&amp;) \ &amp;H100 &amp; _
+        ",B=" &amp; (lRGB And &amp;HFF0000) \ &amp;H10000 
+
+End Sub 
+
+Private Sub Form_Load() 
+Dim i As Long 
+Dim sNum As String 
+    For i = 1 To &amp;H18&amp;
+        sNum = Hex$(i) 
+        If Len(sNum) = 1 Then sNum = "0" &amp; sNum 
+        Combo1.AddItem "&amp;H800000" &amp; sNum 
+        Combo1.ItemData(Combo1.NewIndex) = &amp;H80000000 + i 
+    Next i 
+    Combo1.ListIndex = 0 
+End Sub 
+</pre><p>When you change the selected item in the combo box, the text box will be set to the R,G,B components of the colour.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Get an RGB Colour from an OLE_COLOR</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 1998-2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 28 November 2002</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Get_an_RGB_Color_from_an_OLE_COLOR/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:13 GMT -->
+</html>

@@ -1,0 +1,130 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Algorithmic_Images/Perlin_Noise/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:49:22 GMT -->
+<head>
+
+<title>vbAccelerator - Perlin Noise</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Perlin Noise, named after its inventor Ken Perlin, is a widely used texturing primitive in
+two- and three- dimensional image creation.  The Perlin Noise function generates a smoothly
+interpolated space of pseudo-random values which can be used as the basis for the procedural generation of
+realistic natural textures, such as marble, clouds, grass and many others.  This article
+demonstrates the Perlin Noise function in VB. A future article will look at
+using the output to generate natural textures.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Algorithmic Images</a>&#160;.&#160;Perlin Noise</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB_Perlin_Noise.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB Perlin Noise</a> (32K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:13012</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13012&amp;type=Article&amp;title=Perlin%20Noise">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />1 Nov 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Perlin Noise</h1><img src="perlinNoise.png" width="298" height="269" alt="Perlin Noise Demonstration Application" /><p /><p>
+Perlin Noise, named after its inventor Ken Perlin, is a widely used texturing primitive in
+two- and three- dimensional image creation.  The Perlin Noise function generates a smoothly
+interpolated space of pseudo-random values which can be used as the basis for the procedural generation of
+realistic natural textures, such as marble, clouds, grass and many others.  This article
+demonstrates the Perlin Noise function in VB. A future article will look at
+using the output to generate natural textures.
+</p><h2>About Perlin Noise</h2><p>
+The best place to start to find out about the Perlin Noise function is this 
+<a href="http://www.noisemachine.com/talk1/">amusing presentation
+given by Ken Perlin</a>, which walks through the history and description of the noise function,
+its uses and along the way some stunning images including a very furry "tribble".
+</p><p>
+The fundamental algorithm is as follows:
+</p><ol><li>Given an input point</li><li>For each of its neighbouring points:
+<ul><li>Pick a pseudo-random gradient vector.  The vector is described as pseudo-random because 
+for the same point you must always have the same value, even if within the grid the values
+are randomly chosen. (This is the effect of the "Seed" function in computer
+random number generators).</li><li>Compute the inner product of the gradient between the neigbouring points.</li></ul></li><li>Interpolate between each of the inner products using a weighted cross-fade curve.</li></ol><p>
+A naive implementation of this algorithm has a high computational cost.  Luckily, the 
+algorithm has been investigated in terms of direct hardware implementation, which
+means many optimisations have been discovered.  The implementation provided in this
+sample is a direct translation of Ken Perlin's Java Reference Implementation, published at
+<a href="http://mrl.nyu.edu/~perlin/noise/">http://mrl.nyu.edu/~perlin/noise/</a>.
+If you take a look at it, you'll see that it includes the noise generation function
+and lookup tables to simplify each stage of the process.  I would attempt to 
+describe the function in detail, but find myself
+unworthy in the face of the leaps of imagination it must have taken to write this
+implementation, so I'll simply bow down and offer my respect!
+Note that one further optimisation which could be applied to this implementation is to 
+inline the <span class="code">lerp</span> and <span class="code">grad</span> functions
+(although it is likely the improvement you'll get by doing that won't warrant 
+the tedious difficulty of implementing it).
+</p><h2>Using Perlin Noise</h2><p>
+The demonstration application provides a class, <span class="code">cPerlin3D</span>
+which contains the VB version of the code.  The constructor
+for this class sets up the lookup table that is used to generate the noise
+function; then there is one function, <span class="code">Noise</span> which returns
+the output value of the noise function for a particular coordinate in 3D
+space.  The output value is a <span class="code">Double</span> between -1 and 1, and
+the coordinates can be set to any value you want, as the noise function is continuous in
+3D space.
+</p><p>
+To demonstrate the output of the function, the sample application maps it onto a
+a <a href="http://www.vbaccelerator.com/article.asp?id=3017">DIB Section</a> which is rendered onto screen.  With
+each drawing step, the Z coordinate in 3D space is advanced, so each image is a slice
+through the 3D space represented by the function. 
+</p><p>
+Three parameters are provided to control the image that is generated:
+</p><ol><li><strong>Scale</strong><br />
+This is used to control how the coordinates of the noise function space are mapped 
+onto the output.  You use this zoom in and out of the space.</li><li><strong>Octaves</strong><br />
+In nature a fractal relationship is often seen, so that as you look more closely
+into a pattern it often includes smaller versions of itself.  The <span class="code">Octaves</span> parameter
+simulates this effect by adding scaled down versions of the noise function to itself
+with progressively smaller amplitude.  For example, setting Octaves to two means you
+get the standard noise function plus the same function at half scale with half of the 
+amplitude.  Upping the number of Octaves means that the pattern is more complex
+and more natural looking but also takes longer to generate.</li><li><strong>Use Absolute Value</strong><br />
+Normally the Perlin Noise function outputs a value between -1 and 1.  By taking the absolute
+value of the output you can modify the look of the noise that's generated, particularly
+when adding Octaves together.</li></ol><h2>Conclusion</h2><p>
+This article provides an implementation of the Perlin Noise function in VB and
+demonstrates rendering the output to an image.  Stay tuned for future articles
+which will look at how to use this to generate sky, marble and wood
+textures.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Algorithmic Images</a>&#160;.&#160;Perlin Noise</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 14 November 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Algorithmic_Images/Perlin_Noise/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:49:22 GMT -->
+</html>

@@ -1,0 +1,178 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Mask_Images/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:15 GMT -->
+<head>
+
+<title>vbAccelerator - Create a mask image (all black for the transparent colour otherwise white) from a bitmap</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This tip shows you how to create a mask image from a picture. Mask images are useful for 
+emulating transparency, and for replacing colours in images. This comes about because they are 
+black where you want to leave an image unaffected, and white otherwise. Because they are either 
+on or off, you can use boolean operations while copying the mask image elsewhere." /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Create a mask image (all black for the transparent colour otherwise white) from a bitmap</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:1016</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1016&amp;type=Article&amp;title=Create%20a%20mask%20image%20%28all%20black%20for%20the%20transparent%20colour%20otherwise%20white%29%20from%20a%20bitmap">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />1 Aug 1998<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Create a mask image (all black for the transparent colour otherwise white) from a bitmap</h1><p /><p>This tip shows you how to create a mask image from a picture. Mask images are useful for 
+emulating transparency, and for replacing colours in images. This comes about because they are 
+black where you want to leave an image unaffected, and white otherwise. Because they are either 
+on or off, you can use boolean operations while copying the mask image elsewhere.</p><p>Start a new project in VB. Add a new module, then add the following code to it:</p><pre>
+' Creates a memory DC 
+Private Declare Function CreateCompatibleDC Lib "gdi32" ( _ 
+    ByVal hDC As Long _ 
+    ) As Long 
+' Creates a bitmap in memory: 
+Private Declare Function CreateCompatibleBitmap Lib "gdi32" ( _ 
+    ByVal hDC As Long, _ 
+    ByVal nWidth As Long, ByVal nHeight As Long _ 
+    ) As Long 
+' Places a GDI Object into DC, returning the previous one: 
+Private Declare Function SelectObject Lib "gdi32" _ 
+    (ByVal hDC As Long, ByVal hObject As Long _ 
+    ) As Long 
+' Deletes a GDI Object: 
+Private Declare Function DeleteObject Lib "gdi32" _ 
+    (ByVal hObject As Long _ 
+    ) As Long 
+' Copies Bitmaps from one DC to another, can also perform 
+' raster operations during the transfer: 
+Private Declare Function BitBlt Lib "gdi32" ( _ 
+    ByVal hDestDC As Long, _ 
+    ByVal X As Long, ByVal Y As Long, _ 
+    ByVal nWidth As Long, ByVal nHeight As Long, _ 
+    ByVal hSrcDC As Long, _ 
+    ByVal xSrc As Long, ByVal ySrc As Long, _ 
+    ByVal dwRop As Long _ 
+    ) As Long 
+Private Const SRCCOPY = &amp;HCC0020 
+' Sets the backcolour of a device context: 
+Private Declare Function SetBkColor Lib "gdi32" _
+    (ByVal hDC As Long, ByVal crColor As Long) As Long 
+
+Public Function CreateMaskImage( _ 
+        ByRef picFrom As PictureBox, _ 
+        ByRef picTo As PictureBox, _ 
+        Optional ByVal lTransparentColor As Long = -1 _ 
+    ) As Boolean 
+Dim lhDC As Long 
+Dim lhBmp As Long 
+Dim lhBmpOld As Long 
+
+    
+    ' Make picTo the same size as picFrom and clear it: 
+    With picTo 
+        .Width = picFrom.Width 
+        .Height = picFrom.Height 
+        .Cls 
+    End With 
+    
+    ' Create a monochrome DC &amp; Bitmap of the 
+    ' same size as the source picture: 
+    lhDC = CreateCompatibleDC(0) 
+    If (lhDC &lt;&gt; 0) Then 
+        lhBmp = CreateCompatibleBitmap(lhDC, _
+            picFrom.ScaleWidth \ Screen.TwipsPerPixelX, _
+            picFrom.ScaleHeight \ Screen.TwipsPerPixelY) 
+        If (lhBmp &lt;&gt; 0) Then 
+            lhBmpOld = SelectObject(lhDC, lhBmp) 
+            
+            ' Set the back 'colour' of the monochrome 
+            ' DC to the colour we wish to be transparent: 
+            If (lTransparentColor = -1) Then lTransparentColor = picFrom.BackColor 
+            SetBkColor lhDC, lTransparentColor 
+            
+            ' Copy from the from picture to the monochrome DC 
+            ' to create the mask: 
+            BitBlt lhDC, 0, 0, _
+                picFrom.ScaleWidth \ Screen.TwipsPerPixelX, 
+                picFrom.ScaleHeight \ Screen.TwipsPerPixelY, _
+                picFrom.hDC, 0, 0, SRCCOPY 
+            
+            ' Now put the mask into picTo: 
+            BitBlt picTo.hDC, 0, 0, _
+                picFrom.ScaleWidth \ Screen.TwipsPerPixelX, _
+                picFrom.ScaleHeight \ Screen.TwipsPerPixelY, _
+                lhDC, 0, 0, SRCCOPY 
+            picTo.Refresh 
+            
+            ' Clear up the bitmap we used to create 
+            ' the mask: 
+            SelectObject lhDC, lhBmpOld 
+            DeleteObject lhBmp 
+        End If 
+        ' Clear up the monochrome DC: 
+        DeleteObject lhDC 
+    End If 
+    
+    
+End Function 
+</pre><p>To test out the function, add a Command button and two Picture Boxes to the project's form. 
+Set the <i>Autoredraw</i> property on both Picture boxes to true.</p><p>The following code will create a mask image in the second Picture box (Picture2) from the image in 
+Picture1 when you click the Command button:</p><pre>
+Private Sub Command1_Click() 
+    CreateMaskImage Picture1, Picture2 
+End Sub 
+
+Private Sub Form_Load() 
+Dim i As Long 
+    ' Draw something in the from picture box. 
+    ' Alternatively, you could load a picture 
+    ' into it and set the BackColor to the 
+    ' colour you want to make transparent. 
+    Picture1.BackColor = &amp;HFFFF00 
+    With Picture1.Font 
+        .Name = "Arial" 
+        .Bold = True 
+        .Italic = True 
+        .Size = 12 
+    End With 
+    For i = 1 To 20 
+        Picture1.ForeColor = QBColor(i Mod 15) 
+        Picture1.Print "vbAccelerator Mask Demo" 
+    Next i 
+End Sub 
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Create a mask image (all black for the transparent colour otherwise white) from a bitmap</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 1998-2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 28 November 2002</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Mask_Images/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:15 GMT -->
+</html>

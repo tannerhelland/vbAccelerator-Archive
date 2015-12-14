@@ -1,0 +1,387 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/UserControl_OLE_Extensions/IPerPropertyBrowse/EX_Property_Browsing_in_VB_zip_Source_VB_modPerPropertyBrowsing_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:52 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: Source_VB_modPerPropertyBrowsing.bas</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: Source_VB_modPerPropertyBrowsing.bas" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">UserControl OLE Extensions</a>&#160;.&#160;<a href="article.html">Using IPerPropertyBrowse to Customise the Design Time Properties for a Control</a>&#160;.&#160;<a href="EX_Property_Browsing_in_VB.html">EX Property Browsing in VB</a>&#160;.&#160;Source_VB_modPerPropertyBrowsing.bas</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="EX_Property_Browsing_in_VB.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />EX Property Browsing in VB</a> (19K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:4874</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4874&amp;type=Zip&amp;title=EX%20Property%20Browsing%20in%20VB%2Ezip%5FSource%5FVB%5FmodPerPropertyBrowsing">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:prw.exponential@dial.pipex.com">Paul Wilde</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />23 Nov 1998<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: Source_VB_modPerPropertyBrowsing.bas</h1><pre>Attribute VB_Name = "modPerPropertyBrowsing"
+'////////////////////////////////////////////////////////////
+'// Name : modPerPropertyBrowsing.bas
+'// Author : Paul R. Wilde
+'// Created : 17th November 1998
+'/////////////////////////////////////////////////////////////
+'// Copyright  Paul R. Wilde 1998. All Rights Reserved.
+'/////////////////////////////////////////////////////////////
+'// Bug reports, suggestions &amp; comments should be emailed to :
+'// prw.exponential@dial.pipex.com
+'/////////////////////////////////////////////////////////////
+
+'/////////////////////////////////////////////////////////////
+'// Custom implementation to make the IPerPropertyBrowsing
+'// interface more 'VB Friendly'
+'// ReplaceVTableEntry function taken from the book 'Hardcore
+'// Visual Basic' by Bruce Mckinney (although I think it was
+'// originally written by Mathew Curland for his 'Black Belt
+'// Programming' articles in the VBPJ). This book is recommended
+'// reading for anyone attempting VTable function address
+'// subclassing.
+'/////////////////////////////////////////////////////////////
+
+Option Explicit
+
+'private members
+Public m_lngObjRefCount As Long
+Private m_lpfnOldGetDisplayString As Long
+Private m_lpfnOldGetPredefinedStrings As Long
+Private m_lpfnOldGetPredefinedValue As Long
+
+'arrays passed to calling interface must be module-level
+'to prevent corruption when strings are freed
+Private m_strStringsOut() As String
+Private m_lngCookiesOut() As Long
+
+'win32 forward declarations
+'constants
+Public Const S_OK = &amp;H0&amp;
+Public Const E_NOTIMPL = &amp;H80004001      '_HRESULT_TYPEDEF_(0x80004001L)
+Public Const E_OUTOFMEMORY = &amp;H8007000E  '_HRESULT_TYPEDEF_(0x8007000EL)
+Public Const E_INVALIDARG = &amp;H80070057   '_HRESULT_TYPEDEF_(0x80070057L)
+Public Const E_NOINTERFACE = &amp;H80004002  '_HRESULT_TYPEDEF_(0x80004002L)
+Public Const E_POINTER = &amp;H80004003      '_HRESULT_TYPEDEF_(0x80004003L)
+Public Const E_HANDLE = &amp;H80070006       '_HRESULT_TYPEDEF_(0x80070006L)
+Public Const E_ABORT = &amp;H80004004        '_HRESULT_TYPEDEF_(0x80004004L)
+Public Const E_FAIL = &amp;H80004005         '_HRESULT_TYPEDEF_(0x80004005L)
+Public Const E_ACCESSDENIED = &amp;H80070005 '_HRESULT_TYPEDEF_(0x80070005L)
+Public Const PAGE_EXECUTE_READWRITE&amp; = &amp;H40&amp;
+'function prototypes
+'OLE32
+Public Declare Function CoTaskMemAlloc Lib "OLE32" (ByVal cBytes As Long) As
+ Long
+'OLEAUT32
+Public Declare Function SysAllocString Lib "OLEAUT32" (ByVal lpString As Long)
+ As Long
+'KERNEL32
+Public Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" (lpDest As
+ Any, lpSource As Any, ByVal nCount As Long)
+Public Declare Function VirtualProtect Lib "kernel32" (ByVal lpAddress As Long,
+ ByVal dwSize As Long, ByVal flNewProtect As Long, lpflOldProtect As Long) As
+ Long
+
+Public Function IPerPropertyBrowsing_GetDisplayString(ByVal oThis As Object,
+ ByVal DispID As Long, ByVal lpDisplayName As Long) As Long
+'new vtable method for IPerPropertyBrowsing::GetDisplayString
+
+    Dim oSource As IPerPropertyBrowsingVB
+    Dim bNoDefault As Boolean
+    Dim strDisplayName As String
+    Dim lpString As Long
+    
+    'handle all errors so we don't crash caller
+    On Error GoTo CATCH_EXCEPTION
+    
+    'validate passed pointer
+    If VarPtr(lpDisplayName) = 0 Then
+        IPerPropertyBrowsing_GetDisplayString = E_POINTER
+        Exit Function
+        
+    End If
+    
+    'cast method to source interface
+    Set oSource = oThis
+    bNoDefault = oSource.GetDisplayString(DispID, strDisplayName)
+        
+    'if no param set by user
+    If Not bNoDefault Then
+        'return 'unimplemented' so container displays default
+        IPerPropertyBrowsing_GetDisplayString = E_NOTIMPL
+        
+    Else
+        'copy display string to passed ptr (caller should free the memory
+         allocated)
+        lpString = SysAllocString(StrPtr(strDisplayName))
+        CopyMemory ByVal lpDisplayName, lpString, 4
+        
+    End If
+    Exit Function
+    
+CATCH_EXCEPTION:
+    'return 'unimplemented' so container displays default
+    IPerPropertyBrowsing_GetDisplayString = E_NOTIMPL
+    
+End Function
+Public Function IPerPropertyBrowsing_GetPredefinedStrings(ByVal oThis As
+ Object, ByVal DispID As Long, pCaStringsOut As CALPOLESTR, pCaCookiesOut As
+ CADWORD) As Long
+'new vtable method for IPerPropertyBrowsing::GetPredefinedStrings
+
+    Dim oSource As IPerPropertyBrowsingVB
+    Dim bNoDefault As Boolean
+    
+    Dim cElems As Long
+    Dim pElems As Long
+    Dim nElemCount As Integer
+    Dim lpString As Long
+    
+    'handle all errors so we don't crash caller
+    On Error GoTo CATCH_EXCEPTION
+    
+    'validate passed pointers
+    If VarPtr(pCaStringsOut) = 0 Or VarPtr(pCaCookiesOut) = 0 Then
+        IPerPropertyBrowsing_GetPredefinedStrings = E_POINTER
+        Exit Function
+        
+    End If
+    
+    'init array to pass
+    ReDim m_strStringsOut(0) As String
+    ReDim m_lngCookiesOut(0) As Long
+    
+    'cast method to source interface
+    Set oSource = oThis
+    bNoDefault = oSource.GetPredefinedStrings(DispID, m_strStringsOut,
+     m_lngCookiesOut)
+    
+    'if no param set by user
+    If (Not bNoDefault) Or (UBound(m_strStringsOut) = 0) Then
+        'return 'unimplemented' so container displays default
+        IPerPropertyBrowsing_GetPredefinedStrings = E_NOTIMPL
+        
+    Else
+        'make sure arrays are even
+        cElems = UBound(m_strStringsOut)
+        If Not UBound(m_lngCookiesOut) = cElems Then
+            ReDim Preserve m_lngCookiesOut(cElems)
+            
+        End If
+        
+        'initialise CALPOLESTR struct
+        pElems = CoTaskMemAlloc(cElems * 4)
+        pCaStringsOut.cElems = cElems
+        pCaStringsOut.pElems = pElems
+        
+        'copy strings to CALPOLESTR struct
+        For nElemCount = 0 To cElems - 1
+            'allocate enough memory for the string &amp; a null terminator
+            '(the caller ie. VB, will release this memory)
+            lpString = CoTaskMemAlloc(Len(m_strStringsOut(nElemCount)) + 1)
+            'copy the string to the temp ptr
+            CopyMemory ByVal lpString, StrPtr(m_strStringsOut(nElemCount)), 4
+            'copy the temp ptr to the array
+            CopyMemory ByVal pElems, ByVal lpString, 4
+            'incr the element count
+            pElems = pElems + 4
+            
+        Next nElemCount
+        
+        'initialise CADWORD struct
+        pElems = CoTaskMemAlloc(cElems * 4)
+        pCaCookiesOut.cElems = cElems
+        pCaCookiesOut.pElems = pElems
+        
+        'copy dwords to CADWORD struct
+        For nElemCount = 0 To cElems - 1
+            CopyMemory ByVal pElems, m_lngCookiesOut(nElemCount), 4
+            pElems = pElems + 4
+            
+        Next nElemCount
+        
+    End If
+    Exit Function
+    
+CATCH_EXCEPTION:
+    'return 'unimplemented' so container displays default
+    IPerPropertyBrowsing_GetPredefinedStrings = E_NOTIMPL
+    
+End Function
+Public Function IPerPropertyBrowsing_GetPredefinedValue(ByVal oThis As Object,
+ ByVal DispID As Long, ByVal dwCookie As Long, pVarOut As Variant) As Long
+'new vtable method for IPerPropertyBrowsing::GetPredefinedValue
+
+    Dim oSource As IPerPropertyBrowsingVB
+    Dim bNoDefault As Boolean
+    
+    'handle all errors so we don't crash caller
+    On Error GoTo CATCH_EXCEPTION
+    
+    'validate passed pointers
+    If VarPtr(dwCookie) = 0 Or VarPtr(pVarOut) = 0 Then
+        IPerPropertyBrowsing_GetPredefinedValue = E_POINTER
+        Exit Function
+        
+    End If
+    
+    'cast method to source interface
+    Set oSource = oThis
+    bNoDefault = oSource.GetPredefinedValue(DispID, dwCookie, pVarOut)
+        
+    'if no param set by user
+    If Not bNoDefault Then
+        'return 'unimplemented' so container displays default
+        IPerPropertyBrowsing_GetPredefinedValue = E_NOTIMPL
+        
+    End If
+    Exit Function
+    
+CATCH_EXCEPTION:
+    'return 'unimplemented' so container displays default
+    IPerPropertyBrowsing_GetPredefinedValue = E_NOTIMPL
+    
+End Function
+Public Sub ReplaceIPerPropertyBrowsing(ByVal pObject As Object)
+'replace vtable for IPerPropertyBrowsing interface
+
+    Dim oIPerPropertyBrowsing As EXOLETypes.IExPerPropertyBrowsing
+
+    'if already done IPerPropertyBrowsing interface then done
+    If m_lngObjRefCount &gt; 0 Then
+        m_lngObjRefCount = m_lngObjRefCount + 1
+        Debug.Print m_lngObjRefCount
+        Exit Sub
+        
+    Else
+        m_lngObjRefCount = 1
+        
+    End If
+    
+    'get ref to OLE IPerPropertyBrowsing interface
+    Set oIPerPropertyBrowsing = pObject
+    
+    'replace vtable methods with our subclass procs
+    ' Ignore item 1: QueryInterface
+    ' Ignore item 2: AddRef
+    ' Ignore item 3: Release
+    m_lpfnOldGetDisplayString =
+     ReplaceVTableEntry(ObjPtr(oIPerPropertyBrowsing), 4, AddressOf
+     IPerPropertyBrowsing_GetDisplayString) 'GetDisplayString
+    ' Ignore item 5: MapPropertyToPage (the VB implementation works fine)
+    m_lpfnOldGetPredefinedStrings =
+     ReplaceVTableEntry(ObjPtr(oIPerPropertyBrowsing), 6, AddressOf
+     IPerPropertyBrowsing_GetPredefinedStrings) 'GetPredefinedStrings
+    m_lpfnOldGetPredefinedValue =
+     ReplaceVTableEntry(ObjPtr(oIPerPropertyBrowsing), 7, AddressOf
+     IPerPropertyBrowsing_GetPredefinedValue) 'GetPredefinedValue
+    
+    Debug.Print "Replaced vtable methods"
+End Sub
+Public Sub RestoreIPerPropertyBrowsing(ByVal lpObject As Long)
+'restore vtable for IPerPropertyBrowsing interface
+
+    Dim oObject As Object
+    Dim oIPerPropertyBrowsing As EXOLETypes.IExPerPropertyBrowsing
+
+    'if not last ref count then done
+    If m_lngObjRefCount &gt; 1 Then
+        m_lngObjRefCount = m_lngObjRefCount - 1
+        Debug.Print m_lngObjRefCount
+        Exit Sub
+        
+    Else
+        m_lngObjRefCount = 0
+        
+    End If
+    
+    'get ref to object from ptr (no AddRef so don't set to nothing !)
+    CopyMemory oObject, lpObject, 4
+    
+    'get ref to OLE IPerPropertyBrowsing interface
+    Set oIPerPropertyBrowsing = oObject
+    
+    'delete uncounted reference
+    CopyMemory oObject, 0&amp;, 4
+    
+    'restore vtable methods with original procs
+    ' Ignore item 1: QueryInterface
+    ' Ignore item 2: AddRef
+    ' Ignore item 3: Release
+    ReplaceVTableEntry ObjPtr(oIPerPropertyBrowsing), 4,
+     m_lpfnOldGetDisplayString 'GetDisplayString
+    ' Ignore item 5: MapPropertyToPage (the VB implementation works fine)
+    ReplaceVTableEntry ObjPtr(oIPerPropertyBrowsing), 6,
+     m_lpfnOldGetPredefinedStrings  'GetPredefinedStrings
+    ReplaceVTableEntry ObjPtr(oIPerPropertyBrowsing), 7,
+     m_lpfnOldGetPredefinedValue  'GetPredefinedValue
+    
+    Debug.Print "Restored vtable methods"
+End Sub
+Public Function ReplaceVTableEntry(ByVal oObject As Long, _
+                                   ByVal nEntry As Integer, _
+                                   ByVal pFunc As Long) As Long
+' Put the function address (callback) directly into the object v-table
+
+    ' oObject - Pointer to object whose v-table will be modified
+    ' nEntry - Index of v-table entry to be modified
+    ' pFunc - Function pointer of new v-table method
+                            
+    Dim pFuncOld As Long, pVTableHead As Long
+    Dim pFuncTmp As Long, lOldProtect As Long
+    
+    ' Object pointer contains a pointer to v-table--copy it to temporary
+    CopyMemory pVTableHead, ByVal oObject, 4       ' pVTableHead = *oObject;
+    ' Calculate pointer to specified entry
+    pFuncTmp = pVTableHead + (nEntry - 1) * 4
+    ' Save address of previous method for return
+    CopyMemory pFuncOld, ByVal pFuncTmp, 4      ' pFuncOld = *pFuncTmp;
+    ' Ignore if they're already the same
+    If pFuncOld &lt;&gt; pFunc Then
+        ' Need to change page protection to write to code
+        VirtualProtect pFuncTmp, 4, PAGE_EXECUTE_READWRITE, lOldProtect
+        ' Write the new function address into the v-table
+        CopyMemory ByVal pFuncTmp, pFunc, 4     ' *pFuncTmp = pfunc;
+        ' Restore the previous page protection
+        VirtualProtect pFuncTmp, 4, lOldProtect, lOldProtect 'Optional
+        
+    End If
+    
+    'return address of original proc
+    ReplaceVTableEntry = pFuncOld
+End Function
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">UserControl OLE Extensions</a>&#160;.&#160;<a href="article.html">Using IPerPropertyBrowse to Customise the Design Time Properties for a Control</a>&#160;.&#160;<a href="EX_Property_Browsing_in_VB.html">EX Property Browsing in VB</a>&#160;.&#160;Source_VB_modPerPropertyBrowsing.bas</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/UserControl_OLE_Extensions/IPerPropertyBrowse/EX_Property_Browsing_in_VB_zip_Source_VB_modPerPropertyBrowsing_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:52 GMT -->
+</html>

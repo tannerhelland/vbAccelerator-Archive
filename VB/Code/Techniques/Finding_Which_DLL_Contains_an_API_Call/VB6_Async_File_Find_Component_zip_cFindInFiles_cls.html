@@ -1,0 +1,298 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Finding_Which_DLL_Contains_an_API_Call/VB6_Async_File_Find_Component_zip_cFindInFiles_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:10 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cFindInFiles.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cFindInFiles.cls" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;<a href="article.html">Finding Which DLL Contains an API Call</a>&#160;.&#160;<a href="VB6_Async_File_Find_Component.html">VB6 Async File Find Component</a>&#160;.&#160;cFindInFiles.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB6_Async_File_Find_Component.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Async File Find Component</a> (10K)</p><p class="nav"><a href="VB6_LibSearch_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 LibSearch Demonstration</a> (89K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:3387</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3387&amp;type=Zip&amp;title=VB6%20Async%20File%20Find%20Component%2Ezip%5FcFindInFiles">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />14 Jan 2003<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2518">Complete Registry control</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1026">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cFindInFiles.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cFindInFiles"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+' ==============================================================
+' FileName:    cFindInFiles.cls
+' Author:      SP McMahon
+' Date:        14 January 2003
+'
+' Simple demo for mStart.bas.  See comments there
+' for more information.  Attempts to find matches
+' for the specified strings in a series of files
+'
+' ==============================================================
+
+Implements Runnable
+
+Private Declare Sub SleepAPI Lib "kernel32" Alias "Sleep" ( _
+    ByVal dwMilliseconds As Long)
+    
+Public Event Complete()
+Public Event Cancelled()
+Public Event Status(ByVal sMsg As String, ByRef bCancel As Boolean)
+Public Event Found(ByVal sFile As String, ByVal iPos As Long, ByRef bCancel As
+ Boolean)
+
+Private m_bRunning As Boolean
+Private m_sDir As String
+Private m_sFileSpec As String
+Private m_bStopAtFirstMatch As Boolean
+Private m_bRecurse As Boolean
+Private m_sFindWhat As String
+Private m_eCompare As VbCompareMethod
+
+Public Property Get StartDirectory() As String
+   StartDirectory = m_sDir
+End Property
+Public Property Let StartDirectory(ByVal value As String)
+   m_sDir = value
+End Property
+Public Property Get FileSpec() As String
+   FileSpec = m_sFileSpec
+End Property
+Public Property Let FileSpec(ByVal value As String)
+   m_sFileSpec = value
+End Property
+Public Property Get FindWhat() As String
+   FindWhat = m_sFindWhat
+End Property
+Public Property Let FindWhat(ByVal value As String)
+   m_sFindWhat = value
+End Property
+Public Property Get FindAllMatchesInFile() As Boolean
+   FindAllMatchesInFile = Not (m_bStopAtFirstMatch)
+End Property
+Public Property Let StopAtFirstMatch(ByVal value As Boolean)
+   m_bStopAtFirstMatch = Not (value)
+End Property
+Public Property Get Recurse() As Boolean
+   Recurse = m_bRecurse
+End Property
+Public Property Let Recurse(ByVal value As Boolean)
+   m_bRecurse = value
+End Property
+Public Property Get MatchCase() As Boolean
+   MatchCase = (m_eCompare = vbBinaryCompare)
+End Property
+Public Property Let MatchCase(ByVal value As Boolean)
+   If value Then
+      m_eCompare = vbBinaryCompare
+   Else
+      m_eCompare = vbTextCompare
+   End If
+End Property
+
+Public Sub Start(Optional ByVal bAsync = True)
+   
+   If Not m_bRunning Then
+      m_bRunning = True
+      ' Call the mStart module.  This uses a timer to
+      ' fire the Runnable_Start() implementation,
+      ' which ensures we yield control back to the
+      ' caller before the processing starts.  This
+      ' ensures that the processing runs asynchronously
+      ' to the client.  Easy!!!
+      If (bAsync) Then
+         mStart.Start Me
+      Else
+         Runnable_Start
+      End If
+   Else
+      ' Just checking....
+      Err.Raise 32540, App.EXEName &amp; ".cAsync", "Already running."
+   End If
+   
+End Sub
+
+Private Sub Runnable_Start()
+Dim i As Long
+Dim bCancel As Boolean
+   
+   processFiles m_sDir, bCancel
+   
+   If (bCancel) Then
+      RaiseEvent Cancelled
+   Else
+      RaiseEvent Complete
+   End If
+   
+   ' All done:
+   m_bRunning = False
+
+End Sub
+Private Function NormalizePath( _
+      ByVal sPath As String _
+   ) As String
+   If (Right$(sPath, 1) &lt;&gt; "\") Then
+      NormalizePath = sPath &amp; "\"
+   Else
+      NormalizePath = sPath
+   End If
+End Function
+Private Function processFiles( _
+      ByVal sStartDir As String, _
+      ByRef bCancel As Boolean _
+   )
+Dim sDirs() As String
+Dim iCount As Long
+Dim sFiles() As String
+Dim sItem As String
+Dim i As Long
+
+   If Not bCancel Then
+      
+      ' If recursing, then check subdirs:
+      If (m_bRecurse) Then
+         sItem = Dir(NormalizePath(sStartDir) &amp; "*.*", vbDirectory)
+         Do While Len(sItem) &gt; 0
+            If (sItem &lt;&gt; ".") And (sItem &lt;&gt; "..") Then
+               If (GetAttr(NormalizePath(sStartDir) &amp; sItem) And vbDirectory) =
+                vbDirectory Then
+                  iCount = iCount + 1
+                  ReDim Preserve sDirs(1 To iCount) As String
+                  sDirs(iCount) = sItem
+               End If
+            End If
+            sItem = Dir
+         Loop
+         For i = 1 To iCount
+            processFiles NormalizePath(sStartDir) &amp; sDirs(i), bCancel
+         Next i
+      End If
+      
+      ' Process the files:
+      If Not bCancel Then
+         sItem = Dir(NormalizePath(sStartDir) &amp; m_sFileSpec, vbNormal)
+         Do While (Len(sItem) &gt; 0) And Not (bCancel)
+            RaiseEvent Status("Checking: " &amp; sItem, bCancel)
+            findInFile NormalizePath(sStartDir) &amp; sItem, bCancel
+            sItem = Dir
+         Loop
+      End If
+      
+   End If
+   
+End Function
+
+Private Function findInFile( _
+      ByVal sFile As String, _
+      ByRef bCancel As Boolean _
+   )
+Dim iFile As Integer
+Dim iPos As Long
+Dim iChunkSize As Long
+Dim bComplete As Boolean
+Dim sBuf As String
+
+On Error GoTo ErrorHandler
+   iChunkSize = 4096
+   sBuf = Space$(iChunkSize)
+   Debug.Print sFile
+
+   iFile = FreeFile
+   Open sFile For Binary Access Read Lock Write As #iFile
+   Do While Not (bComplete) And Not (bCancel)
+      If (iPos + iChunkSize &gt;= LOF(iFile)) Then
+         bComplete = True
+         sBuf = Space$(LOF(iFile) - iPos)
+      End If
+      Get #iFile, , sBuf
+      If (performFind(sFile, sBuf, iPos, bCancel) And m_bStopAtFirstMatch) Then
+         bComplete = True
+      End If
+      If Not bComplete Then
+         iPos = iPos + iChunkSize - Len(m_sFindWhat)
+         Seek #iFile, iPos
+      End If
+   Loop
+
+ErrorHandler:
+   Close #iFile
+   iFile = 0
+   Exit Function
+   
+End Function
+Private Function performFind( _
+      ByVal sFile As String, _
+      ByRef sBuf As String, _
+      ByVal lOffset As Long, _
+      ByRef bCancel As Boolean _
+   ) As Boolean
+Dim iPos As Long
+Dim iLastPos As Long
+Dim bComplete As Boolean
+   iLastPos = 1
+   Do
+      iPos = InStr(iLastPos, sBuf, m_sFindWhat, m_eCompare)
+      If (iPos &gt; 0) Then
+         iLastPos = iPos + Len(m_sFindWhat)
+         RaiseEvent Found(sFile, lOffset + iPos, bCancel)
+         performFind = True
+         If (m_bStopAtFirstMatch) Then
+            bComplete = True
+         End If
+      Else
+         bComplete = True
+      End If
+   Loop While (Not bComplete And Not bCancel)
+   
+End Function
+
+
+
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;<a href="article.html">Finding Which DLL Contains an API Call</a>&#160;.&#160;<a href="VB6_Async_File_Find_Component.html">VB6 Async File Find Component</a>&#160;.&#160;cFindInFiles.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Finding_Which_DLL_Contains_an_API_Call/VB6_Async_File_Find_Component_zip_cFindInFiles_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:10 GMT -->
+</html>

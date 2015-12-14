@@ -1,0 +1,149 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Responding_to_AppCommands/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:44:08 GMT -->
+<head>
+
+<title>vbAccelerator - Responding to AppCommands</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+The WM_APPCOMMAND message was added to Windows 2000 and ME
+to provide a mechanism to send the events from extended keys on newer keyboards
+to applications on the system.  Extended keys are things like the back, forward and
+search button. This tip demonstrates how to intercept events from these keys in
+a VB application.
+" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Responding to AppCommands</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_AppCommand_Demonstration.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 AppCommand Demonstration</a> (17K)</p><p /><p class="nav"><a href="VB6_AppCommand_Demonstration.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 AppCommand Demonstration</a> (15K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:12686</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12686&amp;type=Article&amp;title=Responding%20to%20AppCommands">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />5 Sep 2003<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12636">Detecting Mouse XButton Clicks</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12338">Win32 Hooks in VB - The vbAccelerator Hook Library</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Responding to AppCommands</h1><p class="splash">Interact with remote controls and additional keys on the keyboard.</p><img src="appCommand.png" width="216" height="252" alt="AppCommand Sample Application" /><p /><p>
+The <span class="code">WM_APPCOMMAND</span> message was added to Windows 2000 and ME
+to provide a mechanism to send the events from extended keys on newer keyboards
+to applications on the system.  Extended keys are things like the back, forward and
+search button. This tip demonstrates how to intercept events from these keys in
+a VB application.
+</p><h2>Responding to AppCommands</h2><p>
+As with other mouse and keyboard messages, the <span class="code">WM_APPCOMMAND</span> 
+message is sent to the input window (which is the currently active control in the 
+foreground window).  However, unlike the other messages if the control doesn't explicitly
+respond to the message it is bubbled up through all parent windows of the active control
+until either it is processed.  Finally, if no processing has occurred the <span class="code">WH_SHELL</span> hook is fired with code <span class="code">HSHELL_APPCOMMAND</span>.  If
+no installed hook consumes this event then finally the system default action associated
+with the AppCommand (if any) is performed.
+</p><p>
+This means you can choose to intercept AppCommands in one of two ways: either by
+installing a <span class="code">WH_SHELL</span> hook or by installing a subclass on the
+top level window of your application.  This tip uses subclassing to intercept App
+Commands, using the <a href="http://www.vbaccelerator.com/article.asp?id=7">Subclassing and Timer Assistant</a>.
+For information on how to install a suitable shell hook, refer to the 
+<a href="http://www.vbaccelerator.com/article.asp?id=12338">vbAccelerator Hook Library</a> article.
+</p><p>
+An <span class="code">WM_APPCOMMAND</span> message provides three pieces of
+information encoded into the <span class="code">lParam</span> parameter of the
+message:
+</p><ol><li>The Device which sent the message.  This can be a key, a mouse button or an
+OEM event, allowing manufacturers to create custom AppCommands for new devices.</li><li>The state of various virtual keys, such as the mouse buttons, Control, Shift and 
+Alt.</li><li>The AppCommand code itself, identifying the command being issued.  See the
+<a href="#api">list of commands</a> for the currently defined set of AppComamnds.</li></ol><p>
+The code below shows how the <span class="code">WM_APPCOMMAND</span> message is
+processed.  Note that if the event is processed, the code must return true (1) to Windows
+and consume the message, otherwise it must call the <span class="code">DefWindowProc</span>
+to ensure the message bubbles up through the other windows and the Shell hook.
+
+</p><pre>
+Private Property Get ISubclass_MsgResponse() As EMsgResponse
+   ISubclass_MsgResponse = emrConsume
+End Property
+
+Private Function ISubclass_WindowProc( _
+   ByVal hWnd As Long, ByVal iMsg As Long, _
+   ByVal wParam As Long, ByVal lParam As Long) As Long
+   
+   Select Case iMsg
+   Case WM_APPCOMMAND
+      
+      Dim cmd As Long
+      ' app command is the hiword of the message with the
+      ' device details in the highest 4 bits excluded:
+      cmd = (lParam And &amp;HFFF0000) / &amp;H10000
+      
+      Dim fromDevice As Long
+      ' the device is derived from the highest 4 bits:
+      fromDevice = (lParam And &amp;H70000000) / &amp;H10000
+      If (lParam And &amp;H80000000) = &amp;H80000000 Then
+         fromDevice = fromDevice Or &amp;H8000&amp;
+      End If
+            
+      Dim keys As Long
+      ' the key details are in the loword:
+      keys = lParam And &amp;HFFFF&amp;
+      
+      Dim processed As Boolean
+      RaiseEvent AppCommand(cmd, fromDevice, keys, processed)
+      
+      If (processed) Then
+         ' tell windows we've used it:
+         ISubclass_WindowProc = 1
+      Else
+         ' pass on to next handler:
+         ISubclass_WindowProc = CallOldWindowProc(hWnd, iMsg, wParam, lParam)
+      End If
+      
+   End Select
+   
+End Function
+</pre><h2>Demonstration Project</h2><p>
+The download includes this code wrapped up in a reusable class called
+<span class="code">cAppCommand</span>.  To use this class in your project,
+create a <span class="code">WithEvents</span> instance and then call
+the <span class="code">Attach</span> method passing in the window
+handle of the top level window of the application. The class then
+raises <span class="code">AppCommand</span> events whenever one of the AppCommand
+keys is pressed.
+</p><a name="api" /><h2>Predefined AppCommands</h2><p>
+The predefined AppCommands are listed below:
+</p><ul><li><strong>APPCOMMAND_BASS_BOOST</strong><br />Toggle the bass boost on and off.</li><li><strong>APPCOMMAND_BASS_DOWN</strong><br />Decrease the bass. </li><li><strong>APPCOMMAND_BASS_UP</strong><br />Increase the bass. </li><li><strong>APPCOMMAND_BROWSER_BACKWARD</strong><br />Navigate backward. </li><li><strong>APPCOMMAND_BROWSER_FAVORITES</strong><br />Open favorites. </li><li><strong>APPCOMMAND_BROWSER_FORWARD</strong><br />Navigate forward. </li><li><strong>APPCOMMAND_BROWSER_HOME</strong><br />Navigate home. </li><li><strong>APPCOMMAND_BROWSER_REFRESH</strong><br />Refresh page. </li><li><strong>APPCOMMAND_BROWSER_SEARCH</strong><br />Open search. </li><li><strong>APPCOMMAND_BROWSER_STOP</strong><br />Stop download. </li><li><strong>APPCOMMAND_CLOSE</strong><br />(XP or above) Close the window (not the application). </li><li><strong>APPCOMMAND_COPY</strong><br />(XP or above) Copy the selection. </li><li><strong>APPCOMMAND_CORRECTION_LIST</strong><br />(XP or above) Brings up the correction list when a word is incorrectly identified during speech input.  </li><li><strong>APPCOMMAND_CUT</strong><br />(XP or above) Cut the selection. </li><li><strong>APPCOMMAND_DICTATE_OR_COMMAND_CONTROL_TOGGLE</strong><br />(XP or above) Toggles between two modes of speech input: dictation and command/control (giving commands to an application or accessing menus).  </li><li><strong>APPCOMMAND_FIND</strong><br />(XP or above) Open the Find dialog. </li><li><strong>APPCOMMAND_FORWARD_MAIL</strong><br />(XP or above) Forward a mail message. </li><li><strong>APPCOMMAND_HELP</strong><br />(XP or above) Open the Help dialog. </li><li><strong>APPCOMMAND_LAUNCH_APP1</strong><br />Start App1. </li><li><strong>APPCOMMAND_LAUNCH_APP2</strong><br />Start App2. </li><li><strong>APPCOMMAND_LAUNCH_MAIL</strong><br />Open mail. </li><li><strong>APPCOMMAND_LAUNCH_MEDIA_SELECT</strong><br />Go to Media Select mode. </li><li><strong>APPCOMMAND_MEDIA_NEXTTRACK</strong><br />Go to next track. </li><li><strong>APPCOMMAND_MEDIA_PLAY_PAUSE</strong><br />Play or pause playback. </li><li><strong>APPCOMMAND_MEDIA_PREVIOUSTRACK</strong><br />Go to previous track. </li><li><strong>APPCOMMAND_MEDIA_STOP</strong><br />Stop playback. </li><li><strong>APPCOMMAND_MIC_ON_OFF_TOGGLE</strong><br />(XP or above) Toggle the microphone. </li><li><strong>APPCOMMAND_MICROPHONE_VOLUME_DOWN</strong><br />(XP or above) Increase microphone volume. </li><li><strong>APPCOMMAND_MICROPHONE_VOLUME_MUTE</strong><br />(XP or above) Mute the microphone. </li><li><strong>APPCOMMAND_MICROPHONE_VOLUME_UP</strong><br />(XP or above) Decrease microphone volume. </li><li><strong>APPCOMMAND_NEW</strong><br />(XP or above) Create a new window. </li><li><strong>APPCOMMAND_OPEN</strong><br />(XP or above) Open a window. </li><li><strong>APPCOMMAND_PASTE</strong><br />(XP or above) Paste </li><li><strong>APPCOMMAND_PRINT</strong><br />(XP or above) Print current document. </li><li><strong>APPCOMMAND_REDO</strong><br />(XP or above) Redo last action. </li><li><strong>APPCOMMAND_REPLY_TO_MAIL</strong><br />(XP or above) Reply to a mail message. </li><li><strong>APPCOMMAND_SAVE</strong><br />(XP or above) Save current document. </li><li><strong>APPCOMMAND_SEND_MAIL</strong><br />(XP or above) Send a mail message. </li><li><strong>APPCOMMAND_SPELL_CHECK</strong><br />(XP or above) Initiate a spell check. </li><li><strong>APPCOMMAND_TREBLE_DOWN</strong><br />Decrease the treble. </li><li><strong>APPCOMMAND_TREBLE_UP</strong><br />Increase the treble. </li><li><strong>APPCOMMAND_UNDO</strong><br />(XP or above) Undo last action. </li><li><strong>APPCOMMAND_VOLUME_DOWN</strong><br />Lower the volume. </li><li><strong>APPCOMMAND_VOLUME_MUTE</strong><br />Mute the volume. </li><li><strong>APPCOMMAND_VOLUME_UP</strong><br />Raise the volume. </li></ul><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Responding to AppCommands</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 20 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Responding_to_AppCommands/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:44:09 GMT -->
+</html>

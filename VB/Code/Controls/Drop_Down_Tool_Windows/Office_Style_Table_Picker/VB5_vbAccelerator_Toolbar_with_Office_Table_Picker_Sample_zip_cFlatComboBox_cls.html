@@ -1,0 +1,501 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Drop_Down_Tool_Windows/Office_Style_Table_Picker/VB5_vbAccelerator_Toolbar_with_Office_Table_Picker_Sample_zip_cFlatComboBox_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:54 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cFlatComboBox.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cFlatComboBox.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Drop Down Tool Windows</a>&#160;.&#160;<a href="article.html">Creating drop-down tool windows</a>&#160;.&#160;<a href="VB5_vbAccelerator_Toolbar_with_Office_Table_Picker_Sample.html">VB5 vbAccelerator Toolbar with Office Table Picker Sample</a>&#160;.&#160;cFlatComboBox.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Office_Table_Picker_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Office Table Picker Sample</a> (21K)</p><p class="nav"><a href="VB5_vbAccelerator_Toolbar_with_Office_Table_Picker_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 vbAccelerator Toolbar with Office Table Picker Sample</a> (38K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1195</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1195&amp;type=Zip&amp;title=VB5%20vbAccelerator%20Toolbar%20with%20Office%20Table%20Picker%20Sample%2Ezip%5FcFlatComboBox">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />13 Aug 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2186">Detecting when another application is activated</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1272">vbAccelerator Toolbar and CoolMenu Control v3.5</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1070">vbAccelerator Drop-Down and Popup Form Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cFlatComboBox.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cFlatComboBox"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+' =================================================================
+' Filename: cFlatComboBox.cls
+' Author:   Steve McMahon (steve@dogma.demon.co.uk)
+' Date:     05 November 1998
+' Requires: SSUBMTMR.DLL
+'
+' Turns a standard combo box into a Office 97 style flat one.
+' Based on the MFC code by Kirk Stowell (see comment block below)
+'
+' Visit vbAccelerator - the vb Programmer's resource
+' www.dogma.demon.co.uk
+' =================================================================
+
+'
+'// Copyright  1998 Kirk Stowell
+'// All Rights Reserved.
+'//
+'// Email: kstowel@sprynet.com
+'// URL:   www.geocities.com/SiliconValley/Haven/8230
+'//
+'// This code may be used in compiled form in any way you desire. This
+'// file may be redistributed unmodified by any means PROVIDING it is
+'// not sold for profit without the authors written consent, and
+'// providing that this notice and the authors name and all copyright
+'// notices remains intact. If the source code in this file is used in
+'// any  commercial application then a statement along the lines of
+'// "Portions Copyright  1998 Kirk Stowell" must be included in
+'// the startup banner, "About" box or printed documentation. An email
+'// letting me know that you are using it would be nice as well. That's
+'// not much to ask considering the amount of work that went into this.
+'//
+'// This file is provided "as is" with no expressed or implied warranty.
+'// The author accepts no liability for any damage/loss of business that
+'// this product may cause.
+'//
+'/////////////////////////////////////////////////////////////////////////////
+
+Implements ISubclass
+
+Private m_hWnd As Long
+Private m_hWndEdit As Long
+Private m_bSubclass As Boolean
+
+Private Enum EDrawStyle
+   FC_DRAWNORMAL = &amp;H1
+   FC_DRAWRAISED = &amp;H2
+   FC_DRAWPRESSED = &amp;H4
+End Enum
+
+Private m_bLBtnDown As Boolean
+
+Private Const WM_COMMAND = &amp;H111
+Private Const WM_PAINT = &amp;HF
+Private Const WM_TIMER = &amp;H113
+Private Const WM_MOUSEMOVE = &amp;H200
+Private Const WM_LBUTTONDOWN = &amp;H201
+Private Const WM_LBUTTONUP = &amp;H202
+Private Const SM_CXHTHUMB = 10
+
+Private Type POINTAPI
+   x As Long
+   y As Long
+End Type
+Private Type RECT
+   Left As Long
+   Top As Long
+   Right As Long
+   Bottom As Long
+End Type
+Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function GetDC Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function DeleteDC Lib "gdi32" (ByVal hdc As Long) As Long
+Private Declare Function DrawEdge Lib "user32" (ByVal hdc As Long, qrc As RECT,
+ ByVal edge As Long, ByVal grfFlags As Long) As Long
+    Private Const BF_LEFT = 1
+    Private Const BF_TOP = 2
+    Private Const BF_RIGHT = 4
+    Private Const BF_BOTTOM = 8
+    Private Const BF_RECT = BF_LEFT Or BF_TOP Or BF_RIGHT Or BF_BOTTOM
+    Private Const BF_MIDDLE = 2048
+    Private Const BDR_SUNKENINNER = 8
+    Private Const BDR_SUNKENOUTER = 2
+Private Declare Function InflateRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function IsWindowEnabled Lib "user32" (ByVal hwnd As Long) As
+ Long
+Private Declare Function OffsetRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function GetSystemMetrics Lib "user32" (ByVal nIndex As Long)
+ As Long
+Private Declare Function InvalidateRect Lib "user32" (ByVal hwnd As Long,
+ lpRect As RECT, ByVal bErase As Long) As Long
+Private Declare Function SetTimer Lib "user32" (ByVal hwnd As Long, ByVal
+ nIDEvent As Long, ByVal uElapse As Long, ByVal lpTimerFunc As Long) As Long
+Private Declare Function KillTimer Lib "user32" (ByVal hwnd As Long, ByVal
+ nIDEvent As Long) As Long
+Private Declare Function GetCursorPos Lib "user32" (lpPoint As POINTAPI) As Long
+Private Declare Function GetWindowRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function PtInRect Lib "user32" (lpRect As RECT, pt As POINTAPI)
+ As Long
+Private Declare Function Rectangle Lib "gdi32" (ByVal hdc As Long, ByVal X1 As
+ Long, ByVal Y1 As Long, ByVal X2 As Long, ByVal Y2 As Long) As Long
+Private Declare Function CreatePen Lib "gdi32" (ByVal nPenStyle As Long, ByVal
+ nWidth As Long, ByVal crColor As Long) As Long
+Private Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal
+ hObject As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+   Private Const PS_SOLID = 0
+Private Declare Function MoveToEx Lib "gdi32" (ByVal hdc As Long, ByVal x As
+ Long, ByVal y As Long, lpPoint As POINTAPI) As Long
+Private Declare Function LineTo Lib "gdi32" (ByVal hdc As Long, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function OleTranslateColor Lib "olepro32.dll" (ByVal OLE_COLOR
+ As Long, ByVal HPALETTE As Long, pccolorref As Long) As Long
+Private Declare Function SendMessageLong Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Const CB_GETDROPPEDSTATE = &amp;H157
+Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long) As Long
+Private Const GWL_STYLE = (-16)
+Private Const CBS_DROPDOWN = &amp;H2&amp;
+Private Const CBN_DROPDOWN = 7
+Private Const CBN_CLOSEUP = 8
+Private Declare Function GetWindow Lib "user32" (ByVal hwnd As Long, ByVal wCmd
+ As Long) As Long
+Private Const GW_CHILD = 5
+Private Declare Function GetFocus Lib "user32" () As Long
+
+Public Sub Attach(ByRef cboThis As ComboBox)
+   pAttach cboThis
+End Sub
+Public Sub Destroy()
+   pRelease
+End Sub
+
+Private Sub DrawCombo( _
+      ByVal dwStyle As EDrawStyle, _
+      clrTopLeft As OLE_COLOR, _
+      clrBottomRight As OLE_COLOR _
+   )
+Dim rcItem As RECT
+Dim rcItem2 As RECT
+Dim pDC As Long
+Dim hWndFocus As Long
+Dim tP As POINTAPI
+   
+   
+   GetClientRect m_hWnd, rcItem
+   'CDC* pDC = GetDC();
+   pDC = GetDC(m_hWnd)
+   
+   '// Cover up dark 3D shadow.
+   'pDC-&gt;Draw3dRect(rcItem, clrTopLeft, clrBottomRight);
+   Draw3DRect pDC, rcItem, clrTopLeft, clrBottomRight
+   'rcItem.DeflateRect(1,1);
+   InflateRect rcItem, -1, -1
+      
+   'if (!IsWindowEnabled()) {
+   If (IsWindowEnabled(m_hWnd) = 0) Then
+      'pDC-&gt;Draw3dRect(rcItem, ::GetSysColor(COLOR_BTNHIGHLIGHT),
+      '   ::GetSysColor(COLOR_BTNHIGHLIGHT));
+      Draw3DRect pDC, rcItem, vb3DHighlight, vb3DHighlight
+   '}
+   Else
+   'else {
+      'pDC-&gt;Draw3dRect(rcItem, ::GetSysColor(COLOR_BTNFACE),
+      '   ::GetSysColor(COLOR_BTNFACE));
+      Draw3DRect pDC, rcItem, vbButtonFace, vbButtonFace
+   '}
+   End If
+
+   '// Cover up dark 3D shadow on drop arrow.
+   'rcItem.DeflateRect(1,1);
+   InflateRect rcItem, -1, -1
+   rcItem.Left = rcItem.Right - Offset()
+   'pDC-&gt;Draw3dRect(rcItem, ::GetSysColor(COLOR_BTNFACE),
+   '   ::GetSysColor(COLOR_BTNFACE));
+   Draw3DRect pDC, rcItem, vbButtonFace, vbButtonFace
+   
+   '// Cover up normal 3D shadow on drop arrow.
+   'rcItem.DeflateRect(1,1);
+   InflateRect rcItem, -1, -1
+   'pDC-&gt;Draw3dRect(rcItem, ::GetSysColor(COLOR_BTNFACE),
+   '   ::GetSysColor(COLOR_BTNFACE));
+   Draw3DRect pDC, rcItem, vbButtonFace, vbButtonFace
+   
+   'if (!IsWindowEnabled()) {
+   '   return;
+   '}
+   If (IsWindowEnabled(m_hWnd) = 0) Then
+      DeleteDC pDC
+      Exit Sub
+   End If
+
+   'Switch (dwStyle)
+   '{
+   Select Case dwStyle
+   Case FC_DRAWNORMAL
+      'rcItem.top -= 1;
+      'rcItem.bottom += 1;
+      'pDC-&gt;Draw3dRect(rcItem, ::GetSysColor(COLOR_BTNHIGHLIGHT),
+      '   ::GetSysColor(COLOR_BTNHIGHLIGHT));
+      'rcItem.left -= 1;
+      'pDC-&gt;Draw3dRect(rcItem, ::GetSysColor(COLOR_BTNHIGHLIGHT),
+      '   ::GetSysColor(COLOR_BTNHIGHLIGHT));
+      'break;
+      rcItem.Top = rcItem.Top - 1
+      rcItem.Bottom = rcItem.Bottom + 1
+      Draw3DRect pDC, rcItem, vb3DHighlight, vb3DHighlight
+      rcItem.Left = rcItem.Left - 1
+      rcItem.Right = rcItem.Left
+      Draw3DRect pDC, rcItem, vbWindowBackground, &amp;H0
+
+   Case FC_DRAWRAISED
+      'rcItem.top -= 1;
+      'rcItem.bottom += 1;
+      'pDC-&gt;Draw3dRect(rcItem, ::GetSysColor(COLOR_BTNHIGHLIGHT),
+      '   ::GetSysColor(COLOR_BTNSHADOW));
+      'break;
+      rcItem.Top = rcItem.Top - 1
+      rcItem.Bottom = rcItem.Bottom + 1
+      rcItem.Right = rcItem.Right + 1
+      Draw3DRect pDC, rcItem, vb3DHighlight, vbButtonShadow
+
+   Case FC_DRAWPRESSED
+      'rcItem.top -= 1;
+      'rcItem.bottom += 1;
+      'rcItem.OffsetRect(1,1);
+      'pDC-&gt;Draw3dRect(rcItem, ::GetSysColor(COLOR_BTNSHADOW),
+      '   ::GetSysColor(COLOR_BTNHIGHLIGHT));
+      'break;
+      rcItem.Top = rcItem.Top - 1
+      rcItem.Bottom = rcItem.Bottom + 1
+      OffsetRect rcItem, 1, 1
+      Draw3DRect pDC, rcItem, vbButtonShadow, vb3DHighlight
+   '}
+   End Select
+   'ReleaseDC(pDC);
+   DeleteDC pDC
+'}
+End Sub
+
+Private Function Offset() As Long
+'{
+'   // Thanks to Todd Brannam for this suggestion...
+'   return ::GetSystemMetrics(SM_CXHTHUMB);
+'}
+   Offset = GetSystemMetrics(SM_CXHTHUMB)
+
+End Function
+
+Private Function Draw3DRect( _
+      ByVal hdc As Long, _
+      ByRef rcItem As RECT, _
+      ByVal oTopLeftColor As OLE_COLOR, _
+      ByVal oBottomRightColor As OLE_COLOR _
+   )
+Dim hPen As Long
+Dim hPenOld As Long
+Dim tP As POINTAPI
+   hPen = CreatePen(PS_SOLID, 1, TranslateColor(oTopLeftColor))
+   hPenOld = SelectObject(hdc, hPen)
+   MoveToEx hdc, rcItem.Left, rcItem.Bottom - 1, tP
+   LineTo hdc, rcItem.Left, rcItem.Top
+   LineTo hdc, rcItem.Right - 1, rcItem.Top
+   SelectObject hdc, hPenOld
+   DeleteObject hPen
+   If (rcItem.Left &lt;&gt; rcItem.Right) Then
+      hPen = CreatePen(PS_SOLID, 1, TranslateColor(oBottomRightColor))
+      hPenOld = SelectObject(hdc, hPen)
+      LineTo hdc, rcItem.Right - 1, rcItem.Bottom - 1
+      LineTo hdc, rcItem.Left, rcItem.Bottom - 1
+      SelectObject hdc, hPenOld
+      DeleteObject hPen
+   End If
+End Function
+
+' Convert Automation color to Windows color
+Private Function TranslateColor(ByVal clr As OLE_COLOR, _
+                        Optional hPal As Long = 0) As Long
+    If OleTranslateColor(clr, hPal, TranslateColor) Then
+        TranslateColor = -1
+    End If
+End Function
+
+   
+Private Sub pAttach(ByRef cboThis As ComboBox)
+Dim hWndA As Long
+Dim lStyle As Long
+
+   pRelease
+   m_hWnd = 0: m_hWndEdit = 0
+   
+   hWndA = cboThis.hwnd
+   m_hWnd = hWndA
+   If (m_hWnd &lt;&gt; 0) Then
+      AttachMessage Me, m_hWnd, WM_PAINT
+      AttachMessage Me, m_hWnd, WM_MOUSEMOVE
+      AttachMessage Me, m_hWnd, WM_LBUTTONDOWN
+      AttachMessage Me, m_hWnd, WM_LBUTTONUP
+      AttachMessage Me, m_hWnd, WM_TIMER
+      lStyle = GetWindowLong(m_hWnd, GWL_STYLE)
+      If (lStyle And 1) = 0 Then
+         m_hWndEdit = GetWindow(m_hWnd, GW_CHILD)
+         If (m_hWndEdit &lt;&gt; 0) Then
+            AttachMessage Me, m_hWndEdit, WM_MOUSEMOVE
+         End If
+      End If
+      m_bSubclass = True
+   End If
+End Sub
+Private Sub pRelease()
+   If (m_bSubclass) Then
+      DetachMessage Me, m_hWnd, WM_PAINT
+      DetachMessage Me, m_hWnd, WM_MOUSEMOVE
+      DetachMessage Me, m_hWnd, WM_LBUTTONDOWN
+      DetachMessage Me, m_hWnd, WM_LBUTTONUP
+      DetachMessage Me, m_hWnd, WM_TIMER
+      If (m_hWndEdit &lt;&gt; 0) Then
+         DetachMessage Me, m_hWndEdit, WM_MOUSEMOVE
+      End If
+   End If
+End Sub
+
+Private Sub OnTimer()
+Dim pt As POINTAPI
+Dim rcItem As RECT
+Static bPainted As Boolean
+
+   GetCursorPos pt
+   GetWindowRect m_hWnd, rcItem
+
+   '// OnLButtonDown, show pressed.
+   If (m_bLBtnDown = True) Then
+      KillTimer m_hWnd, 1
+      If (bPainted) Then
+         DrawCombo FC_DRAWPRESSED, vbButtonShadow, vb3DHighlight
+         bPainted = False
+      End If
+      Exit Sub
+   End If
+   
+   '// If mouse leaves, show flat.
+   If (VBPtInRect(rcItem, pt) = 0) Then
+      KillTimer m_hWnd, 1
+      If (bPainted) Then
+         DrawCombo FC_DRAWNORMAL, vbButtonFace, vbButtonFace
+         bPainted = False
+      End If
+      Exit Sub
+   '// On mouse over, show raised.
+   Else
+      If (bPainted) Then
+         Exit Sub
+      Else
+         bPainted = True
+         DrawCombo FC_DRAWRAISED, vbButtonShadow, vb3DHighlight
+      End If
+   End If
+   
+   OnTimer
+
+End Sub
+Public Property Get DroppedDown() As Boolean
+   DroppedDown = (SendMessageLong(m_hWnd, CB_GETDROPPEDSTATE, 0, 0) &lt;&gt; 0)
+End Property
+
+Private Function VBPtInRect(ByRef rcItem As RECT, ByRef pt As POINTAPI) As
+ Boolean
+   ' I always get 'Bad DLL calling convention' when I call PtInRect.
+   ' why is this?
+   If (pt.x &gt;= rcItem.Left) And (pt.x &lt;= rcItem.Right) Then
+      If (pt.y &gt;= rcItem.Top) And (pt.y &lt;= rcItem.Bottom) Then
+         VBPtInRect = 1
+      End If
+   End If
+End Function
+
+Private Sub OnLButtonUp()
+Dim rcItem As RECT
+   m_bLBtnDown = False
+   GetClientRect m_hWnd, rcItem
+   InvalidateRect m_hWnd, rcItem, 1
+End Sub
+Private Sub OnLButtonDown()
+   m_bLBtnDown = True
+End Sub
+Private Sub OnMouseMove()
+   SetTimer m_hWnd, 1, 10, 0
+End Sub
+Public Sub OnPaint()
+   If (DroppedDown()) Then
+      DrawCombo FC_DRAWRAISED, vbButtonShadow, vb3DHighlight
+   Else
+      DrawCombo FC_DRAWNORMAL, vbButtonFace, vbButtonFace
+   End If
+End Sub
+
+Private Sub Class_Terminate()
+   pRelease
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As SSubTimer.EMsgResponse)
+   ' do not remove this comment
+End Property
+
+Private Property Get ISubclass_MsgResponse() As SSubTimer.EMsgResponse
+   If (CurrentMessage = WM_PAINT) Then
+      ISubclass_MsgResponse = emrPreprocess
+   Else
+      ISubclass_MsgResponse = emrPostProcess
+   End If
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+   Select Case iMsg
+   Case WM_LBUTTONUP
+      OnLButtonUp
+   Case WM_LBUTTONDOWN
+      OnLButtonDown
+   Case WM_MOUSEMOVE
+      OnMouseMove
+   Case WM_TIMER
+      OnTimer
+   Case WM_PAINT
+      OnPaint
+   End Select
+End Function
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Drop Down Tool Windows</a>&#160;.&#160;<a href="article.html">Creating drop-down tool windows</a>&#160;.&#160;<a href="VB5_vbAccelerator_Toolbar_with_Office_Table_Picker_Sample.html">VB5 vbAccelerator Toolbar with Office Table Picker Sample</a>&#160;.&#160;cFlatComboBox.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Drop_Down_Tool_Windows/Office_Style_Table_Picker/VB5_vbAccelerator_Toolbar_with_Office_Table_Picker_Sample_zip_cFlatComboBox_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:54 GMT -->
+</html>

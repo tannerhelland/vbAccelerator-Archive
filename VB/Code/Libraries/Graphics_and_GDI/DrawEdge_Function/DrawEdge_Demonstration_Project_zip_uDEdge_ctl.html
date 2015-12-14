@@ -1,0 +1,369 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/DrawEdge_Function/DrawEdge_Demonstration_Project_zip_uDEdge_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:55 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: uDEdge.ctl</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: uDEdge.ctl" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;<a href="article.html">Drawing Borders and Edges using the API DrawEdge Function</a>&#160;.&#160;<a href="DrawEdge_Demonstration_Project.html">DrawEdge Demonstration Project</a>&#160;.&#160;uDEdge.ctl</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="DrawEdge_Demonstration_Project.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />DrawEdge Demonstration Project</a> (19K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:975</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=975&amp;type=Zip&amp;title=DrawEdge%20Demonstration%20Project%2Ezip%5FuDEdge">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />21 Jun 1998<br />First Posted.</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=974">Text At Any Angle</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=5293">Hierarchy Selector Control </a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: uDEdge.ctl</h1><pre>VERSION 5.00
+Begin VB.UserControl DrawEdgeDemo 
+   AutoRedraw      =   -1  'True
+   ClientHeight    =   3600
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   4800
+   BeginProperty Font 
+      Name            =   "Arial"
+      Size            =   14.25
+      Charset         =   0
+      Weight          =   700
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   ScaleHeight     =   3600
+   ScaleWidth      =   4800
+End
+Attribute VB_Name = "DrawEdgeDemo"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+' ==================================================================
+' EDGE Drawing:
+' ==================================================================
+Public Enum EDEDBorderStyle
+    BDR_RAISEDOUTER = 1
+    BDR_SUNKENOUTER = 2
+    BDR_RAISEDINNER = 4
+    BDR_SUNKENINNER = 8
+    
+    BDR_BUTTON = BDR_RAISEDINNER Or BDR_RAISEDOUTER
+    BDR_CONTROL = BDR_SUNKENINNER Or BDR_SUNKENOUTER
+    BDR_THINBUTTON = BDR_RAISEDOUTER
+    BDR_THINCONTROL = BDR_SUNKENOUTER
+    
+    BDR_ETCHRAISE = BDR_RAISEDOUTER Or BDR_SUNKENINNER
+    BDR_ETCHINSET = BDR_SUNKENOUTER Or BDR_RAISEDINNER
+    
+    BDR_ALL = BDR_BUTTON Or BDR_CONTROL
+End Enum
+Public Enum EDEDBorderParts
+    Bf_left = 1
+    Bf_Top = 2
+    Bf_right = 4
+    Bf_bottom = 8
+    BF_TOPLEFT = Bf_left Or Bf_Top
+    Bf_BOTTOMRIGHT = Bf_right Or Bf_bottom
+    BF_RECT = Bf_left Or Bf_Top Or Bf_right Or Bf_bottom
+    BF_MIDDLE = &amp;H800
+    BF_SOFT = &amp;H1000
+    BF_ADJUST = &amp;H2000
+    BF_FLAT = &amp;H4000
+    BF_MONO = &amp;H8000
+    BF_ALL = BF_RECT Or BF_MIDDLE Or BF_SOFT Or BF_ADJUST Or BF_FLAT Or BF_MONO
+End Enum
+Private Type RECT
+    Left As Long
+    Top As Long
+    Right As Long
+    Bottom As Long
+End Type
+Private Declare Function DrawEdge Lib "user32" (ByVal hDC As Long, qrc As RECT,
+ ByVal edge As Long, ByVal grfFlags As Long) As Long
+
+' ==================================================================
+' Clipping functions:
+' ==================================================================
+Private Declare Function SelectClipRgn Lib "gdi32" (ByVal hDC As Long, ByVal
+ hRgn As Long) As Long
+Private Declare Function CreateRectRgn Lib "gdi32" (ByVal X1 As Long, ByVal y1
+ As Long, ByVal x2 As Long, ByVal y2 As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+
+' ==================================================================
+' Stuff for demonstrating drawing in the client area:
+' ==================================================================
+Private Declare Function TextOut Lib "gdi32" Alias "TextOutA" (ByVal hDC As
+ Long, ByVal x As Long, ByVal y As Long, ByVal lpString As String, ByVal nCount
+ As Long) As Long
+Private Declare Function GetDeviceCaps Lib "gdi32" (ByVal hDC As Long, ByVal
+ nIndex As Long) As Long
+Private Const LOGPIXELSX = 88    '  Logical pixels/inch in X
+Private Const LOGPIXELSY = 90    '  Logical pixels/inch in Y
+Private Declare Function MulDiv Lib "kernel32" (ByVal nNumber As Long, ByVal
+ nNumerator As Long, ByVal nDenominator As Long) As Long
+Private Const LF_FACESIZE = 32
+Private Type LOGFONT
+    lfHeight As Long
+    lfWidth As Long
+    lfEscapement As Long
+    lfOrientation As Long
+    lfWeight As Long
+    lfItalic As Byte
+    lfUnderline As Byte
+    lfStrikeOut As Byte
+    lfCharSet As Byte
+    lfOutPrecision As Byte
+    lfClipPrecision As Byte
+    lfQuality As Byte
+    lfPitchAndFamily As Byte
+    lfFaceName(LF_FACESIZE) As Byte
+End Type
+Private Declare Function CreateFontIndirect Lib "gdi32" Alias
+ "CreateFontIndirectA" (lpLogFont As LOGFONT) As Long
+Private Declare Function SelectObject Lib "gdi32" (ByVal hDC As Long, ByVal
+ hObject As Long) As Long
+Private Const FW_NORMAL = 400
+Private Const FW_BOLD = 700
+Private Const FF_DONTCARE = 0
+Private Const DEFAULT_QUALITY = 0
+Private Const DEFAULT_PITCH = 0
+Private Const DEFAULT_CHARSET = 1
+
+' ==================================================================
+' Client Region:
+' ==================================================================
+Private m_lLeft As Long
+Private m_lTop As Long
+Private m_lWidth As Long
+Private m_lHeight As Long
+Private m_hRgn As Long
+
+' ==================================================================
+' Border styles:
+' ==================================================================
+Private m_lBorderStyle As Long
+Private m_lFlags As Long
+
+Public Property Get BackColor() As OLE_COLOR
+    BackColor = UserControl.BackColor
+End Property
+Public Property Let BackColor(ByVal eColor As OLE_COLOR)
+    UserControl.BackColor = eColor
+    PropertyChanged "BackColor"
+    Draw
+End Property
+Public Property Let BorderPart(ByVal ePart As EDEDBorderParts, ByVal bState As
+ Boolean)
+    If (bState) Then
+        m_lFlags = m_lFlags Or ePart
+    Else
+        m_lFlags = m_lFlags And Not ePart
+    End If
+    Draw
+    PropertyChanged "BorderPart"
+End Property
+Public Property Get BorderPart(ByVal ePart As EDEDBorderParts) As Boolean
+    BorderPart = BitSet(m_lFlags, ePart)
+End Property
+Public Property Let BorderStyle(ByVal eStyle As EDEDBorderStyle, ByVal bState
+ As Boolean)
+    If (bState) Then
+        m_lBorderStyle = m_lBorderStyle Or eStyle
+    Else
+        m_lBorderStyle = m_lBorderStyle And Not eStyle
+    End If
+    Draw
+    PropertyChanged "BorderStyle"
+End Property
+Public Property Get BorderStyle(ByVal eStyle As EDEDBorderStyle) As Boolean
+    BorderStyle = BitSet(m_lBorderStyle, eStyle)
+End Property
+Private Function BitSet(ByVal lIn As Long, ByVal lBits As Long) As Boolean
+    BitSet = ((lIn And lBits) = lBits)
+End Function
+Private Sub EvaluateSize()
+Dim lBSize As Long
+    m_lWidth = UserControl.ScaleWidth \ Screen.TwipsPerPixelX
+    m_lHeight = UserControl.ScaleHeight \ Screen.TwipsPerPixelY
+    m_lLeft = 0
+    m_lTop = 0
+    If (m_lBorderStyle &gt;= 4) Then
+        lBSize = 2
+    ElseIf (m_lBorderStyle &gt;= 1) Then
+        lBSize = 1
+    End If
+    If (BitSet(m_lFlags, Bf_left)) Then
+        m_lLeft = lBSize
+        m_lWidth = m_lWidth - lBSize
+    End If
+    If (BitSet(m_lFlags, Bf_Top)) Then
+        m_lTop = lBSize
+        m_lHeight = m_lHeight - lBSize
+    End If
+    If (BitSet(m_lFlags, Bf_right)) Then
+        m_lWidth = m_lWidth - lBSize
+    End If
+    If (BitSet(m_lFlags, Bf_bottom)) Then
+        m_lHeight = m_lHeight - lBSize
+    End If
+    DeleteObject m_hRgn
+    m_hRgn = CreateRectRgn(m_lLeft, m_lTop, m_lWidth + m_lLeft, m_lHeight +
+     m_lTop)
+    SelectClipRgn UserControl.hDC, m_hRgn
+End Sub
+Public Sub Draw()
+Dim tR As RECT
+
+    ' Clear control:
+    If (m_hRgn &lt;&gt; 0) Then
+        SelectClipRgn UserControl.hDC, 0
+    End If
+    UserControl.Cls
+    
+    ' Draw the edge:
+    tR.Right = UserControl.ScaleWidth \ Screen.TwipsPerPixelX
+    tR.Bottom = UserControl.ScaleHeight \ Screen.TwipsPerPixelY
+    DrawEdge UserControl.hDC, tR, m_lBorderStyle, m_lFlags
+    
+    ' Draw in the 'client area'
+    EvaluateSize
+    
+    ' Draw some text at an angle to demonstrate:
+    DrawDemo
+    
+    UserControl.Refresh
+
+End Sub
+
+Private Sub DrawDemo()
+Dim hFnt As Long
+Dim hFntOld As Long
+Dim tLF As LOGFONT
+Dim lHDC As Long
+Dim sCap As String
+Dim lCapLen As Long
+Dim x As Long, y As Long
+
+    lHDC = UserControl.hDC
+
+    pOLEFontToLogFont UserControl.Font, lHDC, tLF
+    tLF.lfEscapement = 300
+    hFnt = CreateFontIndirect(tLF)
+    hFntOld = SelectObject(hDC, hFnt)
+    
+    sCap = "Draw Edge Demo"
+    lCapLen = Len(sCap)
+
+    For y = 0 To m_lHeight + 32 Step 32
+        For x = -12 To m_lWidth Step 78
+            TextOut lHDC, x, y, sCap, lCapLen
+        Next x
+    Next y
+    
+    SelectObject hDC, hFntOld
+    DeleteObject hFnt
+    
+End Sub
+Private Sub pOLEFontToLogFont(fntThis As StdFont, hDC As Long, tLF As LOGFONT)
+Dim sFont As String
+Dim iChar As Integer
+
+    ' Convert an OLE StdFont to a LOGFONT structure:
+    With tLF
+        sFont = fntThis.Name
+        ' There is a quicker way involving StrConv and CopyMemory, but
+        ' this is simpler!:
+        For iChar = 1 To Len(sFont)
+            .lfFaceName(iChar - 1) = CByte(Asc(Mid$(sFont, iChar, 1)))
+        Next iChar
+        ' Based on the Win32SDK documentation:
+        .lfHeight = -MulDiv((fntThis.Size), (GetDeviceCaps(hDC, LOGPIXELSY)),
+         72)
+        .lfItalic = fntThis.Italic
+        If (fntThis.Bold) Then
+            .lfWeight = FW_BOLD
+        Else
+            .lfWeight = FW_NORMAL
+        End If
+        .lfUnderline = fntThis.Underline
+        .lfStrikeOut = fntThis.Strikethrough
+        
+    End With
+
+End Sub
+Private Sub UserControl_Initialize()
+    m_lBorderStyle = BDR_CONTROL
+    m_lFlags = BF_RECT
+End Sub
+
+Private Sub UserControl_Paint()
+    Draw
+End Sub
+
+Private Sub UserControl_ReadProperties(PropBag As PropertyBag)
+    m_lBorderStyle = PropBag.ReadProperty("BorderStyle", BDR_CONTROL)
+    m_lFlags = PropBag.ReadProperty("BorderPart", BF_RECT)
+    BackColor = PropBag.ReadProperty("BackColor", vbButtonFace)
+End Sub
+
+Private Sub UserControl_Resize()
+    Draw
+End Sub
+
+Private Sub UserControl_Terminate()
+    If (m_hRgn &lt;&gt; 0) Then
+        SelectClipRgn UserControl.hDC, 0
+        DeleteObject m_hRgn
+    End If
+End Sub
+
+Private Sub UserControl_WriteProperties(PropBag As PropertyBag)
+    PropBag.WriteProperty "BorderStyle", m_lBorderStyle, BDR_CONTROL
+    PropBag.WriteProperty "BorderPart", m_lFlags, BF_RECT
+    PropBag.WriteProperty "BackColor", BackColor, vbButtonFace
+    
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;<a href="article.html">Drawing Borders and Edges using the API DrawEdge Function</a>&#160;.&#160;<a href="DrawEdge_Demonstration_Project.html">DrawEdge Demonstration Project</a>&#160;.&#160;uDEdge.ctl</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/DrawEdge_Function/DrawEdge_Demonstration_Project_zip_uDEdge_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:55 GMT -->
+</html>

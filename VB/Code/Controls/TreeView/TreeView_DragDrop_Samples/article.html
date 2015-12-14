@@ -1,0 +1,378 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/TreeView/TreeView_DragDrop_Samples/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:51:01 GMT -->
+<head>
+
+<title>vbAccelerator - Drag Drop and the vbAccelerator TreeView Control</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+One of the main design aims behind the vbAccelerator TreeView control was to enable
+more configurable and managable drag-drop operations to be performed.  This article
+describes how to use the drag-drop features in two simple sample projects.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">TreeView</a>&#160;.&#160;Drag Drop and the vbAccelerator TreeView Control</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_TreeView_Drag_Drop_Samples.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 TreeView Drag Drop Samples</a> (71K)</p><p /><p class="nav"><a href="VB6_TreeView_Drag_Drop_Samples.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TreeView Drag Drop Samples</a> (68K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:14444</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14444&amp;type=Article&amp;title=Drag%20Drop%20and%20the%20vbAccelerator%20TreeView%20Control">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />16 Apr 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13463">vbAccelerator TreeView Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Drag Drop and the vbAccelerator TreeView Control</h1><img src="dragDrop.png" width="414" height="396" alt="Multi-Control Drag-Drop Demonstration" /><p /><p>
+One of the main design aims behind the vbAccelerator TreeView control was to enable
+more configurable and managable drag-drop operations to be performed.  This article
+describes how to use the drag-drop features in two simple sample projects.
+</p><h2>Drag Drop Styles in the TreeView Control</h2><p>
+In the February 2004 release of the TreeView control, the style of drag-dropping
+has been made configurable.  This allows you to choose between two different styles:
+</p><ol><li><span class="code">etvwInsertMark</span><br />
+The default drag drop mode shows an insert mark at the point you are going to place
+the node you are dragging.  This lets you either re-order nodes within a tree or
+change their parent, and hence is useful in applications where the order of items
+is important.
+</li><li><span class="code">etvwDropHighlight</span><br />
+Drop-highlighting nodes is a more familiar drag-drop mode which is used in the
+Folder pane in Explorer.  This mode allows you to change the parent of an item
+but not to change the order of the items within a branch.  This makes more sense
+for applications in which the information has no natural order, or a particular
+order needs to be enforced.
+</li></ol><p>
+The download provides two samples which demonstrate how to use the drag-drop features.
+The first populates the a single Tree with folders and allows
+you to drag folders around (without actually affecting the disk).  The second is
+a more sophisticated sample demonstrating how you might use insert dragging to build 
+toolbars and menus which also shows dragging between controls.  The samples are
+run from a disgraceful "spirit of '97 MS Access" switchboard form, for which I 
+apologise.   In the rest of this article I'll first provide an overview of the things you
+need to do to perform drag-drop and then a quick look at the samples.
+</p><h2>Doing DragDrop</h2><h3>1. Getting Started</h3><p>
+Before any drag-drop operations will occur with the vbAccelerator TreeView control, there 
+are a handful of things you should configure (these can all be configured from the Properties
+Window of the control):
+</p><ol><li>Set the <span class="code">OLEDropMode</span> of the control to 1 
+(<span class="code">vbOLEDropManual</span>).  Also, note that whilst Automatic
+drag and drop modes appear to be supported, they aren't really.
+Why this is the case is a long but
+uncomplicated story involving vodka so please just accept that you need to 
+do it.</li><li>Set <span class="code">DragAutoExpand</span> to <span class="code">True</span> if
+you want collapsed nodes to automatically open as you drag over them.</li><li>Set the <span class="code">DragStyle</span> as described in the previous section.</li></ol><p>
+Once that's done the control will start offering drag-drop features. Well, almost. Before you
+can actually drag anything, you need to  give the control licence to start a dragging
+operation by responding to the <span class="code">OLEStartDrag</span> event and setting the
+<span class="code">AllowedEffects</span> parameter.  The following code example demonstrates
+how you can configure whether dragging is allowed or not on a node-by-node basis:
+</p><pre>
+Private Sub tvwDrag_OLEStartDrag(Data As DataObject, AllowedEffects As Long)
+   '
+   ' Check if this is a root node:
+   Dim nodDrag As cTreeViewNode
+   Set nodDrag = tvwDrag.NodeFromDragData(Data)
+   If (nodDrag.Parent Is Nothing) Then
+      ' Cannot drag parent items
+      AllowedEffects = vbDropEffectNone
+   Else
+      AllowedEffects = vbDropEffectMove
+   End If
+   '
+End Sub
+</pre><h3>2. Controlling Drag Drop</h3><p>
+There are three functions and two events you need to use to control a drag-drop operation.
+The first thing to understand is that during a drag-drop operation the control places
+two things into the OLE <span class="code">Data</span> object associated with the drag-drop:
+</p><ol><li>The Text of the node being dragged.</li><li>A private data format containing information allowing any TreeView control to 
+determine which node is being dragged, and which control it was sourced from.</li></ol><p>
+Whenever a node is being dragged, you can use the control's <span class="code">NodeFromDragData</span>
+function to get a <span class="code">cTreeViewNode</span> object.  This affords control based
+on the node being dragged.  To also determine where the target of the drag operation is, use the
+<span class="code">DragInsertNode</span> function to get the node, and then if you are using 
+the <span class="code">etvwInsertMark</span> drag style the <span class="code">DragInsertAbove</span>
+function to determine whether to insert above or below the selected node.
+</p><p>
+Now that you can determine what's being dragged and where the user proposes to drag it to, you
+can start building logic to control the drag operation.  
+</p><ol><li>To conditionally enable/disable a drop,
+use the <span class="code">OLEDragOver</span> event and set the <span class="code">AllowedEffects</span>
+to tell the control what can be done.  (<span class="code">AllowedEffects</span> can be set to one of
+the <span class="code">OLEDropEffectConstants</span> provided in VB). </li><li>When an item is actually dropped, the <span class="code">DragDropRequest</span> event is fired 
+(this is actually just an enhanced version of the <span class="code">OLEDragDrop</span> event which
+provides some more detail about the target node).  This event provides the <span class="code">Data</span>
+object containing the OLEDrag data, the target node, whether to drop above or below and extended information
+about the exact location of the target on the node.
+</li></ol><h2>Dragging and Dropping Folders</h2><p>
+The internal drag drop sample uses the code from the Shell samples also in this section
+to populate a TreeView with file system folders.  Adding drag capability involves three
+things:
+</p><ol><li>Preventing dragging of items which can't be moved (the root items in the folder tree).</li><li>Validating the drag location of the folder to prevent it from being made a child of itself
+or an illegal location.</li><li>Actually moving the item when it is dropped.</li></ol><p>
+The first point is covered during the <span class="code">OLEStartDrag</span> event, which
+simply checks whether the item is a root node using the <span class="code">Parent</span>
+property of the dragging node:
+</p><pre>
+Private Sub tvwDrag_OLEStartDrag(Data As DataObject, AllowedEffects As Long)
+   '
+   ' Check if this is a root node:
+   Dim nodDrag As cTreeViewNode
+   Set nodDrag = tvwDrag.NodeFromDragData(Data)
+   If (nodDrag.Parent Is Nothing) Then
+      ' Cannot drag parent items
+      AllowedEffects = vbDropEffectNone
+   Else
+      AllowedEffects = vbDropEffectMove
+   End If
+   '
+End Sub
+</pre><p>
+The second is handled by creating a drag location verification function and calling
+it during the <span class="code">OLEDragOver</span> event:
+</p><pre>
+Private Sub tvwDrag_OLEDragOver( _
+      Data As DataObject, _
+      Effect As Long, _
+      Button As Integer, _
+      Shift As Integer, _
+      x As Single, y As Single, _
+      State As Integer)
+   
+   ' Check if we're attempting to make something a child of
+   ' itself:
+   Dim nodDrag As cTreeViewNode
+   Dim bOk As Boolean
+   
+   bOk = False
+   
+   ' Get drag node:
+   Set nodDrag = tvwDrag.NodeFromDragData(Data)
+   If Not (nodDrag Is Nothing) Then ' It isn't a treeview node
+   
+      ' Get drag insert point
+      Dim nodInsert As cTreeViewNode
+      Set nodInsert = tvwDrag.DragInsertNode()
+      If Not (nodInsert Is Nothing) Then ' there is no current insert point
+      
+         bOk = validateDragLocation(nodDrag, nodInsert)
+         
+      End If
+      
+   End If
+   
+   Effect = IIf(bOk, vbDropEffectMove, vbDropEffectNone)
+   
+End Sub
+</pre><p>Since the shell TreeView stores the path of the item within the
+item's <span class="code">Key</span> this can be used to validate the
+drag location.  As noted in the shell samples, the same path can appear
+at more than one point in the tree, and hence to use it as a key it
+needs to have some additional information added to it to make it unique.
+In this case, I used a counter which is prepended to the path with a 
+colon, the path can then be extracted from the data after that:
+</p><pre>
+Private Function validateDragLocation( _
+       nodDrag As cTreeViewNode, _
+       nodInsert As cTreeViewNode _ 
+   ) As Boolean
+
+   ' only ok if nodDrag's path is not a wholly
+   ' contained child of nodInsert
+   Dim sPathDrag As String
+   Dim sPathInsert As String
+   Dim iPos As Long
+   Dim bOk As Boolean
+   
+   sPathDrag = nodDrag.Key
+   iPos = InStr(sPathDrag, ":")
+   sPathDrag = Mid(sPathDrag, iPos + 1)
+   sPathInsert = nodInsert.Key
+   iPos = InStr(sPathInsert, ":")
+   sPathInsert = Mid(sPathInsert, iPos + 1)
+   
+   bOk = Not (InStr(sPathInsert, sPathDrag) = 1)
+   validateDragLocation = bOk
+
+End Function
+</pre><p>
+The final aspect is handled in the <span class="code">DragDropRequest</span>
+event.  This performs an additional check for the validity of the drop location
+which could have changed since the last <span class="code">OLEDragOver</span>
+event.  If still ok, it asks for confirmation about the move, deletes the old
+item and then adds a new one as a child of the node dragged over.  Since the
+tree's children nodes are sorted, it automatically gets added in the right
+location:
+</p><pre>
+Private Sub tvwDrag_DragDropRequest( _
+      Data As DataObject, _
+      nodeOver As vbalTreeViewLib.cTreeViewNode, _
+      ByVal bAbove As Boolean, _
+      ByVal hitTest As Long)
+   '
+   ' Check if we're attempting to make something a child of
+   ' itself:
+   Dim nodDrag As cTreeViewNode
+   Dim nodParent As cTreeViewNode
+   
+   Set nodDrag = tvwDrag.NodeFromDragData(Data)
+   If Not (nodDrag Is Nothing) Then ' not a treeview node
+      If validateDragLocation(nodDrag, nodeOver) Then
+         
+         Dim sPathFrom As String
+         Dim sPathTo As String
+         Dim iPos As Long
+         Dim sText As String
+         Dim sNewKey As String
+         Dim sOldKey As String
+         Dim sOldPath As String
+         
+         sPathFrom = nodDrag.Key
+         iPos = InStr(sPathFrom, ":")
+         sPathFrom = Mid(sPathFrom, iPos + 1)
+         sPathTo = nodeOver.Key
+         iPos = InStr(sPathTo, ":")
+         sPathTo = Mid(sPathTo, iPos + 1)
+         If (Right(sPathTo, 1) &lt;&gt; "\") Then sPathTo = sPathTo &amp; "\"
+         sPathTo = sPathTo &amp; nodDrag.Text
+         Dim sQuestion As String
+         sQuestion = "Are you sure you want to move the folder " &amp; vbCrLf _
+            &amp; nodDrag.Text &amp; " (" &amp; sPathFrom &amp; ") " &amp; vbCrLf &amp; _
+            " to " &amp; vbCrLf &amp; _
+            nodeOver.Text &amp; " (" &amp; sPathTo &amp; ") ?" &amp; vbCrLf &amp; vbCrLf &amp; _
+            "Note: In this demo, NO changes to your folders on disk will be made"
+         
+         If (vbYes = MsgBox(sQuestion, vbQuestion Or vbYesNo)) Then
+                        
+            sText = nodDrag.Text
+            sOldKey = nodDrag.Key
+            sOldPath = sOldKey
+            iPos = InStr(sOldPath, ":")
+            sOldPath = Mid(sOldPath, iPos + 1)
+            
+            ' Delete the source drag node:
+            nodDrag.Delete
+            
+            m_lID = m_lID + 1
+            sNewKey = m_lID &amp; ":" &amp; sPathTo
+                                    
+            ' Move nodDrag to the right location:
+            
+            ' Put it in the new place:
+            nodeOver.Children.Add , , sOldKey, sText, _
+               m_cIml.ItemIndex(sOldPath, True), _
+               m_cIml.ItemIndex(sOldPath, True)
+               ' note we use the old key because we haven't
+               ' actually physically moved the directory.
+            
+         End If
+         
+      End If
+   End If
+   
+   '
+End Sub
+</pre><p>
+If you wanted to physically change the folders, rather than just the display
+in the demo, you could use the <span class="code">FileSystemObject</span> in the
+Scriping Runtime or the Shell's <span class="code">SHFileOperation</span> API. 
+Then rather than adding the node in the new place, just clear the children
+of the target node and ask the code to refresh it once the move operation
+has completed.
+</p><h2>Dragging Between Controls</h2><p>
+Moving and copying nodes between controls works pretty much the same way as it
+does for internally dragging within a control, because you can determine
+the node being dragged from the drag-drop data from any instance of the TreeView
+control.  The only difference is that you can will also now want to start checking 
+the source of the dragged node to see if it is appropriate to drop it at the target 
+location.
+</p><p>
+The <span class="code">Owner</span> property of a node can be used for this purpose.
+This returns the control that owns the node, although there is a slight hitch.
+ActiveX controls authored in VB have an automatic wrapper generated around them,
+called the <span class="code">Extender</span>.  It turns out that it is difficult
+to return this object to the caller and so the <span class="code">Owner</span> property 
+only returns the internal ActiveX control rather than the extender.  That means you
+can't use VB's object identity test <span class="code">is</span> for comparison with
+a control on a form, instead you need to use the owner's window handle instead.
+Otherwise it is easy enough:
+</p><pre>
+Private Sub tvwSource_OLEDragOver( _
+      Data As DataObject, _
+      Effect As Long, _
+      Button As Integer, _
+      Shift As Integer, _
+      x As Single, y As Single, _
+      State As Integer)
+Dim nodeDrag As cTreeViewNode
+      
+   Effect = vbDropEffectNone
+   
+   ' It does not matter which control instance
+   ' you use to ask for the drag node:
+   Set nodeDrag = tvwSource.NodeFromDragData(Data)
+
+   ' Check that the drag-data is from a TreeView:
+   If Not (nodeDrag Is Nothing) Then
+
+      ' If so, then see if it is coming from the
+      ' selected control.  If it is, then allow
+      ' the move, otherwise don't allow it:
+      If (nodeDrag.Owner.hwnd = tvwSelected.hwnd) Then
+         Effect = vbDropEffectMove
+      End If
+
+   End If
+   
+End Sub
+</pre><p>
+The multi-control drag drop sample provides a reasonably full-featured
+sample of using this functionality.  You can drag from the source TreeView
+to make copies in the selected TreeView, and also internally re-order
+items within the selected TreeView.  Dragging from selected back to 
+source allows items to be deleted.  
+
+Note one other useful feature demonstrated in the sample: when internally
+dragging nodes you should never allow a node to be dropped in a position where
+it would be made a child of itself.  You can easily check this in cases where
+the same item cannot appear more than once in the tree by using the 
+the <span class="code">IsParentOf</span> function of the drag
+Node on the target node before allowing a drop.
+</p><h2>Conclusion</h2><p>
+This article has described how to use the drag-drop features in the vbAccelerator
+TreeView control and provides samples showing drag-drop in use.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">TreeView</a>&#160;.&#160;Drag Drop and the vbAccelerator TreeView Control</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 17 April 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/TreeView/TreeView_DragDrop_Samples/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:51:02 GMT -->
+</html>

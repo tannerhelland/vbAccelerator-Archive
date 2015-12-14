@@ -1,0 +1,246 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Setting_the_App_Icon_Correctly/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:51:29 GMT -->
+<head>
+
+<title>vbAccelerator - Providing a proper VB Application Icon, Including Large Icons and 32-Bit Alpha Images</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+If you set your application's icon using the built-in facilities of VB, you will
+find there's a few things that go wrong.  48x48 icons are not supported; neither 
+are 32-bit colour depth icons.  In addition, you can't provide an application icon
+which includes multiple colour depths and sizes so it will render correctly 
+regardless of the capabilities of the system on which it is run.  
+This tip demonstrates how to fix the problem by using a resource and a few API calls.
+    " /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Providing a proper VB Application Icon, Including Large Icons and 32-Bit Alpha Images</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB_Proper_AppIcon_Sample.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB Proper AppIcon Sample</a> (39K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:12339</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12339&amp;type=Article&amp;title=Providing%20a%20proper%20VB%20Application%20Icon%2C%20Including%20Large%20Icons%20and%2032%2DBit%20Alpha%20Images">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />27 Jun 2003<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11996">Using RC.EXE</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2521">Icons without forms and document association icons in VB</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Providing a proper VB Application Icon, Including Large Icons and 32-Bit Alpha Images</h1><img src="appIcon.png" width="335" height="289" alt="Sample Application Running under XP" /><p /><p>
+If you set your application's icon using the built-in facilities of VB, you will
+find there's a few things that go wrong.  48x48 icons are not supported; neither 
+are 32-bit colour depth icons.  In addition, you can't provide an application icon
+which includes multiple colour depths and sizes so it will render correctly 
+regardless of the capabilities of the system on which it is run.  
+This tip demonstrates how to fix the problem by using a resource and a few API calls.
+    </p><h2>Setting Icons</h2><p>
+Windows uses an application's icon in four different places:
+</p><ol><li>Explorer windows</li><li>The Alt-Tab window</li><li>On the Taskbar</li><li>In the TitleBar of the application (if it has a control box).</li></ol><p>
+The icon displayed in an Explorer window is always the first icon 
+resource within the executable file.  In Windows executables, resources can either
+be numbered or named, and  the resource enumeration functions always return
+named resources before numbered ones.  When VB associates an icon with
+your application, it gives it a resource number (in fact it uses 1).  Therefore 
+if you include an icon with a named resource in your application, Explorer 
+will pick that in preference to the one VB adds in.
+    </p><p>
+The icon displayed in the Alt-Tab window and the Taskbar is the icon
+associated with an application's main window.  In VB applications, 
+the main window is a hidden window which is created by VB for you.
+You can find this window by using the <span class="code">GetWindow</span>
+call with the <span class="code">GW_OWNER</span> flag on any top level Window 
+in the VB application.  Once you have the window you can use the
+<span class="code">WM_SETICON</span> message to change the icon that is
+displayed.  This message can be used to individually set the large icon which
+is shown in the Alt-Tab list, or the small icon which is shown in the 
+taskbar.
+    </p><p>
+Finally, the icon displayed in the title of a Window is directly taken
+from the form itself, and can be set using <span class="code">WM_SETICON</span>.
+   </p><p>
+Armed with this knowledge we now have the ability to set all of the icons properly
+for a VB application, and we can therefore work around VB's useless <span class="code">Icon</span>
+property and compile-time App Icon settings.
+   </p><h2>Creating The Resource</h2><p>
+The first thing you need to be able to do is to create a resource file containing
+the icon you want to use. In this case its simply a matter of creating a resource
+compiler (.RC) script like this:
+</p><pre>
+// Icons for this application
+AAA      ICON    MOVEABLE        PRELOAD         244.ico
+</pre><p>
+The icon, <span class="i">244.ico</span> is compiled into the resulting resource
+file with the name <span class="i">AAA</span>.   As noted before, Windows finds
+resources with string names before those with numeric identifiers, so this ensures
+that the new icon takes precedence over any icon VB tries to create when you
+compile the application.  This resource will now appear in all Explorer windows
+when you use the application.
+</p><p>If you want more details on creating resources files, take a look
+at <a href="http://www.vbaccelerator.com/article.asp?id=11996">Using RC.EXE</a>.
+</p><p class="tip">To ensure your application works properly on all systems, you should
+ensure that your icon contains multiple colour depth icons.  Note that in particular
+only Windows XP supports &gt; 256 colour icons: if you have icons with alpha channels
+then you should also create 256 colour and 16 colour versions too.
+</p><h2>Setting the Taskbar, Form and Alt-Tab Icons</h2><p>
+To set the remainder of the icons, we just need a bit of code to allow the
+icons in the resource file to be loaded and assigned to the forms.  The
+<span class="code">SetIcon</span> method achieves this:
+</p><pre>
+
+Private Declare Function GetSystemMetrics Lib "user32" ( _
+      ByVal nIndex As Long _
+   ) As Long
+
+Private Const SM_CXICON = 11
+Private Const SM_CYICON = 12
+
+Private Const SM_CXSMICON = 49
+Private Const SM_CYSMICON = 50
+   
+Private Declare Function LoadImageAsString Lib "user32" Alias "LoadImageA" ( _
+      ByVal hInst As Long, _
+      ByVal lpsz As String, _
+      ByVal uType As Long, _
+      ByVal cxDesired As Long, _
+      ByVal cyDesired As Long, _
+      ByVal fuLoad As Long _
+   ) As Long
+   
+Private Const LR_DEFAULTCOLOR = &amp;H0
+Private Const LR_MONOCHROME = &amp;H1
+Private Const LR_COLOR = &amp;H2
+Private Const LR_COPYRETURNORG = &amp;H4
+Private Const LR_COPYDELETEORG = &amp;H8
+Private Const LR_LOADFROMFILE = &amp;H10
+Private Const LR_LOADTRANSPARENT = &amp;H20
+Private Const LR_DEFAULTSIZE = &amp;H40
+Private Const LR_VGACOLOR = &amp;H80
+Private Const LR_LOADMAP3DCOLORS = &amp;H1000
+Private Const LR_CREATEDIBSECTION = &amp;H2000
+Private Const LR_COPYFROMRESOURCE = &amp;H4000
+Private Const LR_SHARED = &amp;H8000&amp;
+
+Private Const IMAGE_ICON = 1
+
+Private Declare Function SendMessageLong Lib "user32" Alias "SendMessageA" ( _
+      ByVal hWnd As Long, ByVal wMsg As Long, _
+      ByVal wParam As Long, ByVal lParam As Long _
+   ) As Long
+
+Private Const WM_SETICON = &amp;H80
+
+Private Const ICON_SMALL = 0
+Private Const ICON_BIG = 1
+
+Private Declare Function GetWindow Lib "user32" ( _
+   ByVal hWnd As Long, ByVal wCmd As Long) As Long
+Private Const GW_OWNER = 4
+
+
+Public Sub SetIcon( _
+      ByVal hWnd As Long, _
+      ByVal sIconResName As String, _
+      Optional ByVal bSetAsAppIcon As Boolean = True _
+   )
+Dim lhWndTop As Long
+Dim lhWnd As Long
+Dim cx As Long
+Dim cy As Long
+Dim hIconLarge As Long
+Dim hIconSmall As Long
+      
+   If (bSetAsAppIcon) Then
+      ' Find VB's hidden parent window:
+      lhWnd = hWnd
+      lhWndTop = lhWnd
+      Do While Not (lhWnd = 0)
+         lhWnd = GetWindow(lhWnd, GW_OWNER)
+         If Not (lhWnd = 0) Then
+            lhWndTop = lhWnd
+         End If
+      Loop
+   End If
+   
+   cx = GetSystemMetrics(SM_CXICON)
+   cy = GetSystemMetrics(SM_CYICON)
+   hIconLarge = LoadImageAsString( _
+         App.hInstance, sIconResName, _
+         IMAGE_ICON, _
+         cx, cy, _
+         LR_SHARED)
+   If (bSetAsAppIcon) Then
+      SendMessageLong lhWndTop, WM_SETICON, ICON_BIG, hIconLarge
+   End If
+   SendMessageLong hWnd, WM_SETICON, ICON_BIG, hIconLarge
+   
+   cx = GetSystemMetrics(SM_CXSMICON)
+   cy = GetSystemMetrics(SM_CYSMICON)
+   hIconSmall = LoadImageAsString( _
+         App.hInstance, sIconResName, _
+         IMAGE_ICON, _
+         cx, cy, _
+         LR_SHARED)
+   If (bSetAsAppIcon) Then
+      SendMessageLong lhWndTop, WM_SETICON, ICON_SMALL, hIconSmall
+   End If
+   SendMessageLong hWnd, WM_SETICON, ICON_SMALL, hIconSmall
+   
+End Sub
+</pre><p>
+For example, if your resource contains a single icon with name <span class="i">AAA</span>, 
+and you want to set the application icon as well as the form's icon, the you would
+call:
+</p><pre>
+   SetIcon Me.hWnd, "AAA", True
+</pre><p>
+If you just want to set a form's icon without changing the application icon, then 
+set the last parameter to <span class="code">False</span>.
+</p><p class="tip">
+Note that resources <strong>do not</strong> work when you are running in 
+VB's IDE, unless you use VB's built in <span class="code">LoadRes...</span>
+methods.  
+However, there's no point using those methods here because
+you would end up with a VB <span class="code">StdPicture</span> representation
+of the icon again - which would put you back to the position you were in before
+you added the resource!  You just need to ignore the appearance of the icons at
+Design Time and make sure you check the compiled EXE.
+    </p><h2>Conclusion</h2><p>
+You can persuade your VB application to use icons properly (and hence
+meet the Windows user interface guidelines) by using resources
+and a little bit of API code.
+   </p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Providing a proper VB Application Icon, Including Large Icons and 32-Bit Alpha Images</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 6 July 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Setting_the_App_Icon_Correctly/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:51:30 GMT -->
+</html>

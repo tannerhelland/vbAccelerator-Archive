@@ -1,0 +1,93 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Blurring__Sharpening_and_Embossing/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:23:28 GMT -->
+<head>
+
+<title>vbAccelerator - Softening, Blurring, Sharpening and Embossing images</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Describes the fundamental concepts behind producing many of the standard image
+processing operations: softening, blurring, sharpening and embossing images." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;Softening, Blurring, Sharpening and Embossing images</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3304</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3304&amp;type=Article&amp;title=Softening%2C%20Blurring%2C%20Sharpening%20and%20Embossing%20images">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />24 Jun 1998<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3173">Image Processing Using DIB Sections </a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3017">True Colour DIBSection</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Softening, Blurring, Sharpening and Embossing images</h1><img src="lena.png" width="400" height="128" alt="Blurring, Sharpening, Embossing" /><p /><p>Describes the fundamental concepts behind producing many of the standard image
+processing operations: softening, blurring, sharpening and embossing images.</p><h2>Image Processing</h2><p>Its surprisingly easy to create most of the common image processing effects. The only
+things you need to be able to do are:</p><ol><li>Be able to read and write the Red, Green and Blue values of individual pixels.</li><li>Do it quickly enough so the user doesn't fall asleep or pass away before its finished.</li></ol><p>The second part criteria is probably the key for VB programmers (VB's <i>Point</i> and <i>PSet</i>
+or the GDI API <i>GetPixel</i> and <i>SetPixel</i> work, but they really don't cut it for performance) but 
+luckily there is a way to achieve this by using a marvellous series of hacks to give you high-performance
+access to bitmap data, described in the article <a href="http://www.vbaccelerator.com/article.asp?id=3017">True Colour DIBSections</a>.</p><p>Once you've got your head around accessing the pixels, you can move onto the easy stuff: applying
+simple Image processing filters to the pixels.  In all of the Image Processing operations described
+here, all you need to be able to do is to walk through all of the pixels in an image and then read
+its nearest neighbours.  But enough of the preamble, let's get on with how you do it.</p><h2>Blurring and Smoothing Filters</h2><p>Blurring or smoothing filers are known as low-pass filters.  (Incidentally, the same concept can be applied to audio files;
+a low-pass filter has the effect of removing the higher frequencies, to allow you to produce radio or telephone style
+effects).  To implement this type of filter, you add a contribution from the neighbouring pixels and 
+reduce the contribution from the pixel itself. Here is an example blurring filter:</p><table><tr><td>1/9</td><td>1/9</td><td>1/9</td></tr><tr><td>1/9</td><td><b>1/9</b></td><td>1/9</td></tr><tr><td>1/9</td><td>1/9</td><td>1/9</td></tr></table><p>To understand how this works in practice its easier to see what it does.  So, say we had a red pixel 
+(RGB 0,0,255) surrounded by blue pixels (RGB 255,0,0) in a bitmap:</p><table><tr><td>..</td><td>(0,0,255)</td><td>(0,0,255)</td><td>(0,0,255)</td><td>..</td></tr><tr><td>..</td><td>(0,0,255)</td><td>(255,0,0)</td><td>(0,0,255)</td><td>..</td></tr><tr><td>..</td><td>(0,0,255)</td><td>(0,0,255)</td><td>(0,0,255)</td><td>..</td></tr><tr><td>..</td><td /><td /><td /></tr></table><p>The result for the centre pixel will be the sum of 1/9 of each of the pixel's values, i.e.</p><pre>
+    (255/9),0,8x(255/9) = (31.9, 0, 216.7)
+</pre><p>This is a mostly blue purple colour, so the single red value has been blurred by its 
+blue neighbours to a bluer shade.</p><p>Normally, rather than expressing the filter in terms of floating point values 
+(i.e. 1/9), we use integers to express the filter values and then give the filter 
+an integer <i>weight</i>. The integer matrix is used for multiplication and the final values 
+are divided by the weight. So the 3x3 matrix above is written: </p><table><tr><td>1</td><td>1</td><td>1</td><td>Weight: 9</td></tr><tr><td>1</td><td>1</td><td>1</td><td /></tr><tr><td>1</td><td>1</td><td>1</td><td /></tr></table><p>You can modify the filter to blur more by increasing the number of pixels that are 
+sampled in the matrix (e.g. use a 5x5 or 7x7 matrix rather than a 3x3 one) and by increasing the 
+contribution for the pixels surrounding the central one.</p><p>To decrease the blurring effect and get a softening effect, increase the 
+weight of the contribution from the central pixel:</p><table><tr><td>1</td><td>1</td><td>1</td><td>Weight: 18</td></tr><tr><td>1</td><td><strong>10</strong></td><td>1</td><td /></tr><tr><td>1</td><td>1</td><td>1</td><td /></tr></table><h2>Sharpening Filters</h2><p>A sharpening filter, also called a high-pass filter, emphasizes discontinuities in the pixel 
+values by subtracting a contribution from the surrounding pixels from an increased central pixels. 
+This means that when the surrounding pixels are dark, the central pixel is increased in 
+brightness which enhances the edges of an image. A typical sharpening filter looks like this:</p><table><tr><td>0</td><td>-1</td><td>0</td><td> Weight: 2</td></tr><tr><td>-1</td><td>6</td><td>-1</td><td /></tr><tr><td>0</td><td>-1</td><td>0</td><td /></tr></table><h2>Other Filters</h2><p>An unsharp mask filter achieves a sharpening effect by subtracting a blurred 
+version of an image from a multiple of the original. In my sample unsharpening is 
+achieved by subtracting the image filtered using a 3x3 blur matrix from twice the original value.</p><p><strong>Embossing</strong> is achieved by setting pixels black except where there is a 
+change in intensity. Typical filter matrices for embossing look like this:</p><ul><li>Embossing filter which detects changes in the upper-left direction
+<table><tr><td>1</td><td>0</td><td>0</td><td>Weight: 1</td></tr><tr><td>0</td><td>0</td><td>0</td><td /></tr><tr><td>0</td><td>0</td><td>-1</td><td /></tr></table></li><li>Embossing filter which detects changes in the lower-right direction<br /><table><tr><td>-1</td><td>0</td><td>0</td><td>Weight: 1</td></tr><tr><td>0</td><td>0</td><td>0</td><td /></tr><tr><td>0</td><td>0</td><td>1</td><td /></tr></table></li></ul><p>In the Image Processing sample, 127 is added to all the pixel values output from 
+the embossing filter to colour the embossed image grey. This gives a better 3D visual embossing effect. 
+The effect can be made more attractive by colourising the result afterwards.</p><p>Further edge detection filters can be implemented using Prewitt 
+edge detection matrices. Examples of these are:</p><ul><li>Left-hand edge detection
+<table><tr><td>1</td><td>1</td><td>-1</td><td> Weight: 1</td></tr><tr><td>1</td><td>-2</td><td>-1</td><td /></tr><tr><td>1</td><td>1</td><td>-1</td><td /></tr></table></li><li>Upper-left hand edge detection 
+<table><tr><td>1</td><td>1</td><td>1</td><td> Weight: 1</td></tr><tr><td>1</td><td>-2</td><td>-1</td><td /></tr><tr><td>1</td><td>-1</td><td>-1</td><td /></tr></table></li></ul><h2>Wrap Up</h2><p>The standard image processing functions are really easy to implement, provided you have a way to get and
+set the pixels fast enough.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;Softening, Blurring, Sharpening and Embossing images</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 24 February 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Blurring__Sharpening_and_Embossing/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:23:30 GMT -->
+</html>

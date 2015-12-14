@@ -1,0 +1,738 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/ListBar/Outlook_ListBar/VB5_List_Bar_Full_Source_zip_frmTesLBar_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:51 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmTesLBar.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmTesLBar.frm" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">ListBar</a>&#160;.&#160;<a href="article.html">vbAccelerator ListBar Control</a>&#160;.&#160;<a href="VB5_List_Bar_Full_Source.html">VB5 List Bar Full Source</a>&#160;.&#160;frmTesLBar.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_List_Bar_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 List Bar Control Binary</a> (44K)</p><p class="nav"><a href="VB5_List_Bar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 List Bar Demonstration</a> (39K)</p><p class="nav"><a href="VB5_List_Bar_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 List Bar Full Source</a> (136K)</p><p /><p class="nav"><a href="VB6_List_Bar_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 List Bar Control Binary</a> (45K)</p><p class="nav"><a href="VB6_List_Bar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 List Bar Demonstration</a> (35K)</p><p class="nav"><a href="VB6_List_Bar_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 List Bar Full Source</a> (132K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:3780</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3780&amp;type=Zip&amp;title=VB5%20List%20Bar%20Full%20Source%2Ezip%5FfrmTesLBar">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 4 / 7</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 6 / 7</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:21 January 2004</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />17 Feb 2003<br /><p class="update">Added Office XP highlighting style.</p><p class="update">Fixed two bugs in the cListBar class: ForeColor and HelpText
+ 	properties did not work correctly - thanks to Simon Horton.</p><p class="update">Added a method to the <i>cListBarItems</i> class to 
+	remove all items from a bar, and fixed an intermittent problem with 
+	removing the last item from a bar (item still showed and caused a crash 
+	if you clicked on it - thanks to Daniel).
+	this.</p><p class="update">Prevented BarClick events from firing when the ListBar was
+	resized - thanks to Billy Propes.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3771">vbAccelerator Visual Studio Style ToolBox ListBar</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11">vbAccelerator S-Grid Control</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmTesLBar.frm</h1><pre>VERSION 5.00
+Object = "{8245A918-4CF7-11D2-8E21-10B404C10000}#8.1#0"; "vbalIml.ocx"
+Object = "{0B758C28-D3D0-4FC8-A4CF-15A0C217C687}#1.1#0"; "vbalLBar5.ocx"
+Begin VB.Form frmTestListBar 
+   Caption         =   "List Bar Control Tester"
+   ClientHeight    =   5130
+   ClientLeft      =   5235
+   ClientTop       =   2175
+   ClientWidth     =   5715
+   BeginProperty Font 
+      Name            =   "Tahoma"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "frmTesLBar.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   5130
+   ScaleWidth      =   5715
+   Begin vbalLBar5.vbalListBar vbalListBar1 
+      Height          =   4635
+      Left            =   120
+      TabIndex        =   18
+      Top             =   60
+      Width           =   1935
+      _ExtentX        =   3413
+      _ExtentY        =   8176
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin VB.PictureBox picStatus 
+      BorderStyle     =   0  'None
+      Height          =   315
+      Left            =   60
+      ScaleHeight     =   315
+      ScaleWidth      =   5475
+      TabIndex        =   4
+      Top             =   4800
+      Width           =   5475
+      Begin VB.Label lblStatus 
+         AutoSize        =   -1  'True
+         Caption         =   "vbAccelerator ListBar Control"
+         Height          =   195
+         Left            =   0
+         TabIndex        =   7
+         Top             =   0
+         Width           =   2100
+      End
+   End
+   Begin VB.PictureBox picMainFrame 
+      BackColor       =   &amp;H80000005&amp;
+      BorderStyle     =   0  'None
+      Height          =   3615
+      Left            =   3060
+      ScaleHeight     =   3615
+      ScaleWidth      =   2295
+      TabIndex        =   2
+      Top             =   720
+      Width           =   2295
+      Begin VB.CheckBox chkOfficeXPStyle 
+         Appearance      =   0  'Flat
+         BackColor       =   &amp;H80000005&amp;
+         Caption         =   "Office &amp;Xp Style"
+         ForeColor       =   &amp;H80000008&amp;
+         Height          =   315
+         Left            =   240
+         TabIndex        =   19
+         Top             =   1740
+         Width           =   1935
+      End
+      Begin VB.CommandButton cmdClearBar 
+         Caption         =   "&amp;Clear Bar..."
+         Height          =   315
+         Left            =   360
+         TabIndex        =   17
+         Top             =   3240
+         Width           =   1455
+      End
+      Begin VB.CommandButton cmdAdd 
+         Caption         =   "&amp;Add to Last Bar"
+         Height          =   315
+         Left            =   360
+         TabIndex        =   16
+         Top             =   2940
+         Width           =   1455
+      End
+      Begin VB.PictureBox picCont 
+         BackColor       =   &amp;H80000005&amp;
+         BorderStyle     =   0  'None
+         Height          =   795
+         Left            =   60
+         ScaleHeight     =   795
+         ScaleWidth      =   2055
+         TabIndex        =   12
+         Top             =   2160
+         Width           =   2055
+         Begin VB.OptionButton optIconSize 
+            Appearance      =   0  'Flat
+            BackColor       =   &amp;H80000005&amp;
+            Caption         =   "&amp;Small Icons"
+            ForeColor       =   &amp;H80000008&amp;
+            Height          =   255
+            Index           =   1
+            Left            =   180
+            TabIndex        =   15
+            Top             =   480
+            Width           =   1755
+         End
+         Begin VB.OptionButton optIconSize 
+            Appearance      =   0  'Flat
+            BackColor       =   &amp;H80000005&amp;
+            Caption         =   "&amp;Large Icons"
+            ForeColor       =   &amp;H80000008&amp;
+            Height          =   255
+            Index           =   0
+            Left            =   180
+            TabIndex        =   13
+            Top             =   240
+            Value           =   -1  'True
+            Width           =   1755
+         End
+         Begin VB.Label lblInfo 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Icon Size:"
+            Height          =   195
+            Index           =   2
+            Left            =   0
+            TabIndex        =   14
+            Top             =   0
+            Width           =   1815
+         End
+      End
+      Begin VB.PictureBox picWidth 
+         BackColor       =   &amp;H80000005&amp;
+         BorderStyle     =   0  'None
+         Height          =   735
+         Left            =   180
+         ScaleHeight     =   735
+         ScaleWidth      =   1935
+         TabIndex        =   8
+         Top             =   300
+         Width           =   1935
+         Begin VB.OptionButton optWidth 
+            Appearance      =   0  'Flat
+            BackColor       =   &amp;H80000005&amp;
+            Caption         =   "&amp;Regular"
+            ForeColor       =   &amp;H80000008&amp;
+            Height          =   255
+            Index           =   0
+            Left            =   0
+            TabIndex        =   11
+            Top             =   240
+            Value           =   -1  'True
+            Width           =   1815
+         End
+         Begin VB.OptionButton optWidth 
+            Appearance      =   0  'Flat
+            BackColor       =   &amp;H80000005&amp;
+            Caption         =   "&amp;Posh Spice"
+            ForeColor       =   &amp;H80000008&amp;
+            Height          =   255
+            Index           =   1
+            Left            =   0
+            TabIndex        =   10
+            Top             =   480
+            Width           =   1815
+         End
+         Begin VB.OptionButton optWidth 
+            Appearance      =   0  'Flat
+            BackColor       =   &amp;H80000005&amp;
+            Caption         =   "&amp;Who ate all the pies?"
+            ForeColor       =   &amp;H80000008&amp;
+            Height          =   255
+            Index           =   2
+            Left            =   0
+            TabIndex        =   9
+            Top             =   0
+            Width           =   1815
+         End
+      End
+      Begin VB.CheckBox chkBackground 
+         Appearance      =   0  'Flat
+         BackColor       =   &amp;H80000005&amp;
+         Caption         =   "&amp;Background Bitmap"
+         ForeColor       =   &amp;H80000008&amp;
+         Height          =   315
+         Left            =   240
+         TabIndex        =   6
+         Top             =   1440
+         Width           =   1935
+      End
+      Begin VB.Label lblInfo 
+         BackStyle       =   0  'Transparent
+         Caption         =   "Visual Settings:"
+         Height          =   195
+         Index           =   1
+         Left            =   60
+         TabIndex        =   5
+         Top             =   1260
+         Width           =   1815
+      End
+      Begin VB.Label lblInfo 
+         BackStyle       =   0  'Transparent
+         Caption         =   "ListBar Width:"
+         Height          =   195
+         Index           =   0
+         Left            =   60
+         TabIndex        =   3
+         Top             =   60
+         Width           =   1815
+      End
+   End
+   Begin vbalIml.vbalImageList ilsIcons32 
+      Left            =   2220
+      Top             =   2880
+      _ExtentX        =   953
+      _ExtentY        =   953
+      IconSizeX       =   32
+      IconSizeY       =   32
+      ColourDepth     =   24
+      Size            =   48532
+      Images          =   "frmTesLBar.frx":1272
+      Version         =   131072
+      KeyCount        =   11
+      Keys            =   "FindSystemExplorerFavouritesCalendarNetwork
+       NeighbourhoodChannelsInternet ExplorerMailHeadlinesChannel Bar"
+   End
+   Begin vbalIml.vbalImageList ilsIcons16 
+      Left            =   2220
+      Top             =   3480
+      _ExtentX        =   953
+      _ExtentY        =   953
+      ColourDepth     =   24
+      Size            =   12628
+      Images          =   "frmTesLBar.frx":D026
+      Version         =   131072
+      KeyCount        =   11
+      Keys            =   "SystemExplorerFavouritesCalendarNetwork
+       NeighbourhoodChannelsInternet ExplorerMailHeadlinesChannel Bar"
+   End
+   Begin VB.Label lblContextDetail 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "ListBar Today"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &amp;H80000005&amp;
+      Height          =   285
+      Left            =   3060
+      TabIndex        =   1
+      Top             =   180
+      Width           =   1605
+   End
+   Begin VB.Label lblContext 
+      BackColor       =   &amp;H80000010&amp;
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   3000
+      TabIndex        =   0
+      Top             =   120
+      Width           =   2655
+   End
+   Begin VB.Menu mnuFileTOP 
+      Caption         =   "&amp;File"
+      Begin VB.Menu mnuFile 
+         Caption         =   "&amp;New Window..."
+         Index           =   0
+         Shortcut        =   ^N
+      End
+      Begin VB.Menu mnuFile 
+         Caption         =   "-"
+         Index           =   1
+      End
+      Begin VB.Menu mnuFile 
+         Caption         =   "&amp;Close"
+         Index           =   2
+      End
+   End
+   Begin VB.Menu mnuPopupTOP 
+      Caption         =   ""
+      Visible         =   0   'False
+      Begin VB.Menu mnuPopup 
+         Caption         =   "&amp;Open &lt;i&gt;..."
+         Index           =   0
+      End
+      Begin VB.Menu mnuPopup 
+         Caption         =   "Open in New &amp;Window"
+         Index           =   1
+      End
+      Begin VB.Menu mnuPopup 
+         Caption         =   "Advanced &amp;Find..."
+         Index           =   2
+      End
+      Begin VB.Menu mnuPopup 
+         Caption         =   "-"
+         Index           =   3
+      End
+      Begin VB.Menu mnuPopup 
+         Caption         =   "Re&amp;move from &lt;b&gt;"
+         Index           =   4
+      End
+      Begin VB.Menu mnuPopup 
+         Caption         =   "&amp;Rename Shortcut"
+         Index           =   5
+      End
+      Begin VB.Menu mnuPopup 
+         Caption         =   "-"
+         Index           =   6
+      End
+      Begin VB.Menu mnuPopup 
+         Caption         =   "Propert&amp;ies"
+         Index           =   7
+      End
+   End
+End
+Attribute VB_Name = "frmTestListBar"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private m_bInhibitOptionClick As Boolean
+
+' -----------------------------------------------------------------------
+' For setting up a thin border on a picture box control:
+Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long
+Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long) As Long
+Private Declare Function SetWindowPos Lib "user32" (ByVal hwnd As Long, ByVal
+ hWndInsertAfter As Long, ByVal X As Long, ByVal Y As Long, ByVal cx As Long,
+ ByVal cY As Long, ByVal wFlags As Long) As Long
+Private Const GWL_EXSTYLE = (-20)
+Private Const WS_EX_CLIENTEDGE = &amp;H200
+Private Const WS_EX_STATICEDGE = &amp;H20000
+Private Const SWP_FRAMECHANGED = &amp;H20        '  The frame changed: send
+ WM_NCCALCSIZE
+Private Const SWP_NOACTIVATE = &amp;H10
+Private Const SWP_NOMOVE = &amp;H2
+Private Const SWP_NOOWNERZORDER = &amp;H200      '  Don't do owner Z ordering
+Private Const SWP_NOREDRAW = &amp;H8
+Private Const SWP_NOSIZE = &amp;H1
+Private Const SWP_NOZORDER = &amp;H4
+Private Const SWP_SHOWWINDOW = &amp;H40
+
+Private Function ThinBorder(ByVal lhWnd As Long, ByVal bState As Boolean)
+Dim lS As Long
+
+   lS = GetWindowLong(lhWnd, GWL_EXSTYLE)
+   If Not (bState) Then
+      lS = lS Or WS_EX_CLIENTEDGE And Not WS_EX_STATICEDGE
+   Else
+      lS = lS Or WS_EX_STATICEDGE And Not WS_EX_CLIENTEDGE
+   End If
+   SetWindowLong lhWnd, GWL_EXSTYLE, lS
+   SetWindowPos lhWnd, 0, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE Or
+    SWP_NOOWNERZORDER Or SWP_NOZORDER Or SWP_FRAMECHANGED
+
+End Function
+' -----------------------------------------------------------------------
+
+Public Sub TestCollections()
+Dim i As Long
+Dim j As Long
+   ' This function just enumerates through the various items
+   ' in the control to check they all work ok.
+   ' Note that For..Each is not support in this release.
+   With vbalListBar1
+      For i = 1 To .Bars.Count
+         With .Bars(i)
+            Debug.Print "Bar:"; i &amp; ";" &amp; .Caption
+            For j = 1 To .Items.Count
+               Debug.Print "   Item:" &amp; j &amp; ";" &amp; .Items(j).Caption
+            Next j
+         End With
+      Next i
+   End With
+End Sub
+
+
+Private Sub chkBackground_Click()
+Dim i As Long
+   If chkBackground.Value = vbChecked Then
+      vbalListBar1.BackgroundPicture = App.Path &amp; "\PARCHMTDL.JPG"
+      For i = 1 To vbalListBar1.Bars.Count
+         vbalListBar1.Bars(i).ForeColor = vbWindowText
+      Next i
+   Else
+      vbalListBar1.BackgroundPicture = ""
+      For i = 1 To vbalListBar1.Bars.Count
+         vbalListBar1.Bars(i).ForeColor = vbWindowBackground
+      Next i
+   End If
+End Sub
+
+Private Sub chkOfficeXPStyle_Click()
+Dim barX As cListBar
+   If Not (m_bInhibitOptionClick) Then
+      Set barX = vbalListBar1.SelectedBar
+      If Not (barX Is Nothing) Then
+         If (chkOfficeXPStyle.Value = vbChecked) Then
+            barX.BackColor = vbButtonFace
+            barX.ForeColor = vbWindowText
+            barX.OfficeXpStyle = True
+         Else
+            barX.BackColor = vbButtonShadow
+            barX.ForeColor = vb3DHighlight
+            barX.OfficeXpStyle = False
+         End If
+      End If
+   End If
+End Sub
+
+Private Sub cmdAdd_Click()
+Dim sRndCap As String
+Dim iRndIcon As Long
+Dim i As Long
+   For i = 1 To Rnd * 72 + 1
+      If Rnd &gt; 0.7 Then
+         sRndCap = sRndCap &amp; " "
+      Else
+         sRndCap = sRndCap &amp; Chr$(Rnd * 26 + 65)
+      End If
+   Next i
+   iRndIcon = (Rnd * ilsIcons32.ImageCount + 1) - 1
+   With vbalListBar1.Bars(vbalListBar1.Bars.Count)
+      .Items.Add "Test" &amp; .Items.Count, , sRndCap, iRndIcon
+   End With
+End Sub
+
+Private Sub cmdClearBar_Click()
+Dim barX As cListBar
+   Set barX = vbalListBar1.SelectedBar
+   If Not (barX Is Nothing) Then
+      If (vbYes = MsgBox("Are you sure you want to clear the bar " &amp;
+       barX.Caption &amp; "?", vbYesNo Or vbQuestion)) Then
+         vbalListBar1.SelectedBar.Items.Clear
+      End If
+   End If
+End Sub
+
+Private Sub Form_Load()
+Dim barX As cListBar
+Dim itmX As cListBarItem
+Dim i As Long
+
+   ' This is a good effect for 98/2000 style apps:
+   ThinBorder picMainFrame.hwnd, True
+   ThinBorder picStatus.hwnd, True
+   
+   ' Set up the ListBar:
+   With vbalListBar1
+      
+      ' vbAccelerator ImageLists (you can happily share these with other
+       controls
+      ' in your app):
+      .ImageList(evlbLargeIcon) = ilsIcons32
+      .ImageList(evlbSmallIcon) = ilsIcons16
+      
+      
+      ' Add a bar and add some items to it:
+      Set barX = .Bars.Add("OUTLOOK", , "Outlook Shortcuts")
+      For i = 1 To ilsIcons32.ImageCount
+         Set itmX = barX.Items.Add(.Bars.Count &amp; "Item" &amp; i, ,
+          ilsIcons32.ItemKey(i), i - 1)
+         If i = 2 Then
+            ' Demonstrate the InfoTips capabilities:
+            itmX.HelpText = "The System Tab Contains commands for working with
+             your computer's disk drives and interfaces"
+         End If
+      Next i
+      
+      ' Add a bar and add less items to it:
+      Set barX = .Bars.Add("CUSTOM", , "My Shortcuts")
+      For i = 2 To ilsIcons32.ImageCount Step 3
+         barX.Items.Add .Bars.Count &amp; "Item" &amp; i, , ilsIcons32.ItemKey(i), i - 1
+      Next i
+            
+      ' 1 item in this bar:
+      Set barX = .Bars.Add("OTHER", , "Other Shortcuts")
+      barX.Items.Add .Bars.Count &amp; "Item1", , ilsIcons32.ItemKey(5), 4
+      
+      ' Check no items in a bar:
+      .Bars.Add "USER1", , "Empty Bar"
+               
+   End With
+   
+   TestCollections
+   
+End Sub
+
+Private Sub Form_Resize()
+Dim lL As Long
+Dim lT As Long
+On Error Resume Next
+   vbalListBar1.Move 2 * Screen.TwipsPerPixelX, 2 * Screen.TwipsPerPixelY,
+    vbalListBar1.Width, Me.ScaleHeight - picStatus.Height - 6 *
+    Screen.TwipsPerPixelY
+   lL = vbalListBar1.Left + vbalListBar1.Width + 3 * Screen.TwipsPerPixelX
+   lblContext.Move lL, vbalListBar1.Top, Me.ScaleWidth - lL - 2 *
+    Screen.TwipsPerPixelX
+   lblContextDetail.Move lblContext.Left + 2 * Screen.TwipsPerPixelX,
+    lblContext.Top + (lblContext.Height - lblContextDetail.Height) \ 2
+   lT = lblContext.Top + lblContext.Height + 3 * Screen.TwipsPerPixelY
+   picMainFrame.Move lblContext.Left, lT, lblContext.Width, Me.ScaleHeight - lT
+    - 4 * Screen.TwipsPerPixelY - picStatus.Height
+   picStatus.Move 2 * Screen.TwipsPerPixelX, vbalListBar1.Top +
+    vbalListBar1.Height + 2 * Screen.TwipsPerPixelY, Me.ScaleWidth - 4 *
+    Screen.TwipsPerPixelX
+   lblStatus.Move 2 * Screen.TwipsPerPixelX, (picStatus.ScaleHeight -
+    lblStatus.Height) \ 2
+End Sub
+
+Private Sub mnuFile_Click(Index As Integer)
+Dim lL As Long, lT As Long
+   Select Case Index
+   Case 0
+      
+      ' Never forget to test what happens when multiple instances
+      ' of your control run from the same project!!!
+      Dim f As New frmTestListBar
+      f.Show
+      
+      
+      ' A sort of Cascade mechanism:
+      If f.Left = Me.Left And f.Top = Me.Top Then
+         lL = f.Left + (48 * Screen.TwipsPerPixelX)
+         ' Should really use SystemParametersInfo call to get desktop area
+         ' here
+         If lL + f.Width &lt; Screen.Width Then
+            lL = 48 * Screen.TwipsPerPixelY
+         End If
+         lT = f.Top + (48 * Screen.TwipsPerPixelY)
+         If lT + f.Height &lt; Screen.Height Then
+            lT = 48 * Screen.TwipsPerPixelX
+         End If
+         f.Move lL, lT
+      End If
+   
+   Case 2
+      ' Game Over
+      Unload Me
+      
+   End Select
+End Sub
+
+Private Sub mnuPopup_Click(Index As Integer)
+   Select Case Index
+   Case 0
+      vbalListBar1.SelectedBar.Items(mnuPopupTOP.Tag).SelectItem
+   Case 1
+      Dim f As New frmTestListBar
+      f.Show
+   Case 2
+      MsgBox "Show Advanced Find Dialog here.", vbInformation
+   Case 4
+      ' Remove
+      If MsgBox("Are you sure you want to remove the item " &amp;
+       vbalListBar1.SelectedBar.Items(mnuPopupTOP.Tag) &amp; "?", vbYesNo Or
+       vbQuestion) = vbYes Then
+         vbalListBar1.SelectedBar.Items.Remove mnuPopupTOP.Tag
+      End If
+   Case 5
+      ' Rename:
+      vbalListBar1.SelectedBar.Items(mnuPopupTOP.Tag).BeginEdit
+   Case 7
+      MsgBox "Show Properties Dialog here.", vbInformation
+   End Select
+End Sub
+
+Private Sub optIconSize_Click(Index As Integer)
+   If Not (m_bInhibitOptionClick) Then
+      If optIconSize(0).Value Then
+         vbalListBar1.Bars(vbalListBar1.SelectedBar.Key).IconSize =
+          evlbLargeIcon
+      Else
+         vbalListBar1.Bars(vbalListBar1.SelectedBar.Key).IconSize =
+          evlbSmallIcon
+      End If
+   End If
+End Sub
+
+Private Sub optWidth_Click(Index As Integer)
+   Select Case Index
+   Case 0
+      vbalListBar1.Width = 128 * Screen.TwipsPerPixelX
+   Case 1
+      vbalListBar1.Width = 32 * Screen.TwipsPerPixelX
+   Case 2
+      vbalListBar1.Width = 256 * Screen.TwipsPerPixelX
+   End Select
+   Form_Resize
+End Sub
+
+
+
+
+
+Private Sub vbalListBar1_BarClick(Bar As vbalLBar5.cListBar)
+   ' check for new bar icon setting:
+   m_bInhibitOptionClick = True
+      If Bar.IconSize = evlbLargeIcon Then
+         optIconSize(0).Value = True
+      Else
+         optIconSize(1).Value = True
+      End If
+      If Bar.OfficeXpStyle Then
+         chkOfficeXPStyle.Value = vbChecked
+      Else
+         chkOfficeXPStyle.Value = vbUnchecked
+      End If
+   m_bInhibitOptionClick = False
+End Sub
+
+Private Sub vbalListBar1_ItemClick(Item As vbalLBar5.cListBarItem, Bar As
+ vbalLBar5.cListBar)
+   MsgBox "Clicked Item " &amp; Item.Caption &amp; vbCrLf &amp; "In bar " &amp; Bar.Caption,
+    vbInformation
+End Sub
+
+Private Sub vbalListBar1_ItemEndEdit(Item As vbalLBar5.cListBarItem, sText As
+ String, bCancel As Boolean)
+Dim i As Long
+   If Len(sText) &lt; 2 Then
+      MsgBox "Please enter a caption more than 1 character long.", vbInformation
+      bCancel = True
+   Else
+      For i = 1 To vbalListBar1.SelectedBar.Items.Count
+         If vbalListBar1.SelectedBar.Items(i) &lt;&gt; Item Then
+            If sText = vbalListBar1.SelectedBar.Items(i).Caption Then
+               If vbYes = MsgBox("There is already an item named '" &amp; sText &amp;
+                "' in the ListBar." &amp; vbCrLf &amp; vbCrLf &amp; "Are you sure you want
+                to rename it?", vbYesNo Or vbQuestion) Then
+               Else
+                  bCancel = True
+               End If
+            End If
+         End If
+      Next i
+   End If
+End Sub
+
+Private Sub vbalListBar1_ItemRightClick(Item As vbalLBar5.cListBarItem, Bar As
+ vbalLBar5.cListBar, X As Single, Y As Single)
+   mnuPopup(0).Caption = "&amp;Open " &amp; Item.Caption &amp; "..."
+   mnuPopup(4).Caption = "Re&amp;move from " &amp; Bar.Caption &amp; "..."
+   mnuPopupTOP.Tag = Item.Key
+   Me.PopupMenu mnuPopupTOP, , X + vbalListBar1.Left, Y + vbalListBar1.Top
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">ListBar</a>&#160;.&#160;<a href="article.html">vbAccelerator ListBar Control</a>&#160;.&#160;<a href="VB5_List_Bar_Full_Source.html">VB5 List Bar Full Source</a>&#160;.&#160;frmTesLBar.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/ListBar/Outlook_ListBar/VB5_List_Bar_Full_Source_zip_frmTesLBar_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:51 GMT -->
+</html>

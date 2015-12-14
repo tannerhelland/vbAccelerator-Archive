@@ -1,0 +1,2658 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Compositing/VB5_Compositing_Sample_zip_cCompositing_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cCompositing.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cCompositing.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;<a href="article.html">Compositing Operations</a>&#160;.&#160;<a href="VB5_Compositing_Sample.html">VB5 Compositing Sample</a>&#160;.&#160;cCompositing.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Compositing_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Compositing Sample</a> (109K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:12834</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12834&amp;type=Zip&amp;title=VB5%20Compositing%20Sample%2Ezip%5FcCompositing">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:7 September 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />5 Sep 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cCompositing.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cCompositing"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Type SAFEARRAYBOUND
+    cElements As Long
+    lLbound As Long
+End Type
+Private Type SAFEARRAY2D
+    cDims As Integer
+    fFeatures As Integer
+    cbElements As Long
+    cLocks As Long
+    pvData As Long
+    Bounds(0 To 1) As SAFEARRAYBOUND
+End Type
+Private Declare Function VarPtrArray Lib "msvbvm50.dll" Alias "VarPtr" (Ptr()
+ As Any) As Long
+
+
+
+Public Enum CompositingOperations
+   
+   ' // Porter-Duff compositing operations
+   
+   ' // &lt;summary&gt;
+   ' // Both the color and the alpha of the destination are cleared. Neither
+    the source nor the destination are used as input.
+   ' //&lt;/summary&gt;
+   compositeClear = 0
+   
+   ' // &lt;summary&gt;
+   ' // The source is copied to the destination. The destination is not used as
+    input.
+   ' //&lt;/summary&gt;
+   compositeSrc = 1
+   
+   ' // &lt;summary&gt;
+   ' // The destination is left untouched.
+   ' // &lt;/summary&gt;
+   compositeDst = 2
+   
+   ' // &lt;summary&gt;
+   ' // The source is composited over the destination.
+   ' // &lt;/summary&gt;
+   compositeSrcOver = 3
+   
+   ' // &lt;summary&gt;
+   ' // The destination is composited over the source and the result replaces
+    the destination.
+   ' // &lt;/summary&gt;
+   compositeDstOver = 4
+   
+   ' // &lt;summary&gt;
+   ' // The part of the source lying inside of the destination replaces the
+    destination.
+   ' // &lt;/summary&gt;
+   compositeSrcIn = 5
+   
+   ' // &lt;summary&gt;
+   ' // The part of the destination lying inside of the source replaces the
+    destination.
+   ' // &lt;/summary&gt;
+   compositeDstIn = 6
+   
+   ' // &lt;summary&gt;
+   ' // The part of the source lying outside of the destination replaces the
+    destination.
+   ' // &lt;/summary&gt;
+   compositeSrcOut = 7
+   
+   ' // &lt;summary&gt;
+   ' // The part of the destination lying outside of the source replaces the
+    destination.
+   ' // &lt;/summary&gt;
+   compositeDstOut = 8
+   
+   ' // &lt;summary&gt;
+   ' // The part of the source lying inside of the destination is composited
+    onto the destination.
+   ' // &lt;/summary&gt;
+   compositeSrcAtop = 9
+   
+   ' // &lt;summary&gt;
+   ' // The part of the destination lying inside of the source is composited
+    over the source and replaces the destination.
+   ' // &lt;/summary&gt;
+   compositeDstAtop = 10
+   
+   ' // &lt;summary&gt;
+   ' // The part of the source that lies outside of the destination is combined
+    with the part of the destination that lies outside of the source.
+   ' // &lt;/summary&gt;
+   compositeXor = 11
+   
+   ' // Extended compositing operations
+   
+   ' // &lt;summary&gt;
+   ' // The source is added to the destination and replaces the destination.
+    This operator is useful for animating a dissolve between two images.
+   ' // &lt;/summary&gt;
+   compositePlus = 12
+   
+   ' // &lt;summary&gt;
+   ' // The source is multiplied by the destination and replaces the
+    destination. The resultant color is always at least as dark as either of
+    the two constituent colors. Multiplying any color with black produces
+    black. Multiplying any color with white leaves the original color unchanged.
+   ' // &lt;/summary&gt;
+   compositeMultiply = 13
+   
+   ' // &lt;summary&gt;
+   ' // The source and destination are complemented and then multiplied and
+    then replace the destination. The resultant color is always at least as
+    light as either of the two constituent colors. Screening any color with
+    white produces white. Screening any color with black leaves the original
+    color unchanged.
+   ' // &lt;/summary&gt;
+   compositeScreen = 14
+    
+   ' // &lt;summary&gt;
+   ' // Multiplies or screens the colors, dependent on the destination color.
+    Source colors overlay the destination whilst preserving its highlights and
+    shadows. The destination color is not replaced, but is mixed with the
+    source color to reflect the lightness or darkness of the destination.
+   ' // &lt;/summary&gt;
+   compositeOverlay = 15
+   
+   ' // &lt;summary&gt;
+   ' // Selects the darker of the destination and source colors. The
+    destination is replaced with the source when the source is darker,
+    otherwise it is left unchanged.
+   ' // &lt;/summary&gt;
+   compositeDarken = 16
+   
+   ' // &lt;summary&gt;
+   ' // Selects the lighter of the destination and source colors. The
+    destination is replaced with the source when the source is lighter,
+    otherwise it is left unchanged.
+   ' // &lt;/summary&gt;
+   compositeLighten = 17
+   
+   ' // &lt;summary&gt;
+   ' // Brightens the destination color to reflect the source color. Painting
+    with black produces no change.
+   ' // &lt;/summary&gt;
+   compositeColorDodge = 18
+   
+   ' // &lt;summary&gt;
+   ' // Darkens the destination color to reflect the source color. Painting
+    with white produces no change.
+   ' // &lt;/summary&gt;
+   compositeColorBurn = 19
+   
+   ' // &lt;summary&gt;
+   ' // Multiplies or screens the colors, dependent on the source color value.
+    If the source color is lighter than 0.5, the destination is lightened as if
+    it were screened. If the source color is darker than 0.5, the destination
+    is darkened, as if it were multiplied. The degree of lightening or
+    darkening is proportional to the difference between the source color and
+    0.5. If it is equal to 0.5 the destination is unchanged. Painting with pure
+    black or white produces black or white.
+   ' // &lt;/summary&gt;
+   compositeHardLight = 20
+   
+   ' // &lt;summary&gt;
+   ' // Darkens or lightens the colors, dependent on the source color value. If
+    the source color is lighter than 0.5, the destination is lightened. If the
+    source color is darker than 0.5, the destination is darkened, as if it were
+    burned in. The degree of darkening or lightening is proportional to the
+    difference between the source color and 0.5. If it is equal to 0.5, the
+    destination is unchanged. Painting with pure black or white produces a
+    distinctly darker or lighter area, but does not result in pure black or
+    white.
+   ' // &lt;/summary&gt;
+   compositeSoftLight = 21
+   
+   ' // &lt;summary&gt;
+   ' // Subtracts the darker of the two constituent colors from the lighter.
+    Painting with white inverts the destination color. Painting with black
+    produces no change.
+   ' // &lt;/summary&gt;
+   compositeDifference = 22
+   
+   ' // &lt;summary&gt;
+   ' // Produces an effect similar to that of 'difference', but appears as
+    lower contrast. Painting with white inverts the destination color. Painting
+    with black produces no change.
+   ' // &lt;/summary&gt;
+   compositeExclusion = 23
+   
+End Enum
+
+Private m_cDibDst As cAlphaDibSection
+Private m_cDibSrc As cAlphaDibSection
+Private m_srcX As Long
+Private m_srcY As Long
+Private m_srcWidth As Long
+Private m_srcHeight As Long
+Private m_dstX As Long
+Private m_dstY As Long
+Private m_dstWidth As Long
+Private m_dstHeight As Long
+Private m_resWidth As Long
+Private m_resHeight As Long
+
+Private m_eOperation As CompositingOperations
+
+Public Property Get Src() As cAlphaDibSection
+   Set Src = m_cDibSrc
+End Property
+Public Property Let Src(value As cAlphaDibSection)
+   Set m_cDibSrc = value
+End Property
+Public Property Set Src(value As cAlphaDibSection)
+   Set m_cDibSrc = value
+End Property
+
+Public Property Get srcX() As Long
+   srcX = m_srcX
+End Property
+Public Property Let srcX(ByVal value As Long)
+   m_srcX = value
+End Property
+Public Property Get srcY() As Long
+   srcY = m_srcY
+End Property
+Public Property Let srcY(ByVal value As Long)
+   m_srcY = value
+End Property
+Public Property Get srcWidth() As Long
+   srcWidth = m_srcWidth
+End Property
+Public Property Let srcWidth(ByVal value As Long)
+   m_srcWidth = value
+End Property
+Public Property Get srcHeight() As Long
+   srcHeight = m_srcHeight
+End Property
+Public Property Let srcHeight(ByVal value As Long)
+   m_srcHeight = value
+End Property
+
+Public Property Get Dst() As cAlphaDibSection
+   Set Dst = m_cDibDst
+End Property
+Public Property Let Dst(value As cAlphaDibSection)
+   Set m_cDibDst = value
+End Property
+Public Property Set Dst(value As cAlphaDibSection)
+   Set m_cDibDst = value
+End Property
+
+Public Property Get operation() As CompositingOperations
+   operation = m_eOperation
+End Property
+Public Property Let operation(ByVal eOperation As CompositingOperations)
+   m_eOperation = eOperation
+End Property
+
+Public Sub Composite()
+   
+   Select Case m_eOperation
+   Case compositeClear
+      PerformCompositeClear
+   Case compositeSrc
+      PerformCompositeSrc
+   Case compositeDst
+      PerformCompositeDst
+   Case compositeSrcOver
+      PerformCompositeSrcOver
+   Case compositeDstOver
+      PerformCompositeDstOver
+   Case compositeSrcIn
+      PerformCompositeSrcIn
+   Case compositeDstIn
+      PerformCompositeDstIn
+   Case compositeSrcOut
+      PerformCompositeSrcOut
+   Case compositeDstOut
+      PerformCompositeDstOut
+   Case compositeSrcAtop
+      PerformCompositeSrcAtop
+   Case compositeDstAtop
+      PerformCompositeDstAtop
+   Case compositeXor
+      PerformCompositeXor
+   Case compositePlus
+      PerformCompositePlus
+   Case compositeMultiply
+      PerformCompositeMultiply
+   Case compositeScreen
+      PerformCompositeScreen
+   Case compositeOverlay
+      PerformCompositeOverlay
+   Case compositeDarken
+      PerformCompositeDarken
+   Case compositeLighten
+      PerformCompositeLighten
+   Case compositeColorDodge
+      PerformCompositeColorDodge
+   Case compositeColorBurn
+      PerformCompositeColorBurn
+   Case compositeHardLight
+      PerformCompositeHardLight
+   Case compositeSoftLight
+      PerformCompositeSoftLight
+   Case compositeDifference
+      PerformCompositeDifference
+   Case compositeExclusion
+      PerformCompositeExclusion
+   End Select
+   
+End Sub
+
+Public Sub PerformCompositeClear()
+' Both the color and the alpha of the destination are cleared. Neither the
+ source nor the destination are used as input.
+'  Dc ' = 0
+'  Da ' = 0
+   
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+   
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+   
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+            bDibDst(x, y) = 0
+            bDibDst(x + 1, y) = 0
+            bDibDst(x + 2, y) = 0
+            bDibDst(x + 3, y) = 0
+         Next y
+      Next x
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+   
+   End If
+   
+End Sub
+Public Sub PerformCompositeSrc()
+'The source is copied to the destination. The destination is not used as input.
+'
+'  Dc ' = Sc.Da + Sc.(1 - Da)
+'      = Sc
+'  Da ' = Sa.Da + Sa.(1 - Da)
+'      = Sa
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+            '  Dc ' = Sc.Da + Sc.(1 - Da)
+            '      = Sc
+            bDibDst(x, y) = bDib(x, y)
+            bDibDst(x + 1, y) = bDib(x + 1, y)
+            bDibDst(x + 2, y) = bDib(x + 2, y)
+            
+            '  Da ' = Sa.Da + Sa.(1 - Da)
+            '      = Sa
+            bDibDst(x + 3, y) = bDib(x + 3, y)
+         Next y
+      Next x
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeDst()
+'The destination is left untouched.
+'
+'  Dc ' = Dc.Sa + Dc.(1 - Sa)
+'      = Dc
+'  Da ' = Da.Sa + Da.(1 - Sa)
+'      = Da
+
+   ' This compositing operation results in the destination
+   ' being unchanged.  It's rather easy to do, but also
+   ' hard to describe as a 'compositing' operation either...
+   
+   ' For a more tricky challenge, you may instead wish to
+   ' consider how to produce an O(log N) algorithm for
+   ' factoring a large composite into its two constituent
+   ' primes. If you find one then please send it to me for,
+   ' erm, independent verification.
+   
+End Sub
+Public Sub PerformCompositeSrcOver()
+'The source is composited over the destination.
+'
+'  Dc ' = Sc.Da + Sc.(1 - Da) + Dc.(1 - Sa)
+'      = Sc + Dc.(1 - Sa)
+'  Da ' = Sa.Da + Sa.(1 - Da) + Da.(1 - Sa)
+'      = Sa + Da - Sa.Da
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+            '  Dc ' = Sc.Da + Sc.(1 - Da) + Dc.(1 - Sa)
+            '      = Sc + Dc.(1 - Sa)
+            bDibDst(x, y) = bDib(x, y) + (bDibDst(x, y) * (255&amp; - bDib(x + 3,
+             y))) / 255&amp;
+            bDibDst(x + 1, y) = bDib(x + 1, y) + (bDibDst(x + 1, y) * (255&amp; -
+             bDib(x + 3, y))) / 255&amp;
+            bDibDst(x + 2, y) = bDib(x + 2, y) + (bDibDst(x + 2, y) * (255&amp; -
+             bDib(x + 3, y))) / 255&amp;
+            
+            '  Da ' = Sa.Da + Sa.(1 - Da) + Da.(1 - Sa)
+            '      = Sa + Da - Sa.Da
+            bDibDst(x + 3, y) = bDib(x + 3, y) * 1&amp; + bDibDst(x + 3, y) -
+             (bDib(x + 3, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+         Next y
+      Next x
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeDstOver()
+'The destination is composited over the source and the result replaces the
+ destination.
+'
+'  Dc ' = Dc.Sa + Sc.(1 - Da) + Dc.(1 - Sa)
+'      = Dc + Sc.(1 - Da)
+'  Da ' = Da.Sa + Sa.(1 - Da) + Da.(1 - Sa)
+'      = Sa + Da - Sa.Da
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+            
+            '  Dc ' = Dc.Sa + Sc.(1 - Da) + Dc.(1 - Sa)
+            '      = Dc + Sc.(1 - Da)
+            lR = bDibDst(x + 2, y) + (bDib(x + 2, y) * (255&amp; - bDibDst(x + 3,
+             y))) / 255&amp;
+            bDibDst(x + 2, y) = lR
+            lG = bDibDst(x + 1, y) + (bDib(x + 1, y) * (255&amp; - bDibDst(x + 3,
+             y))) / 255&amp;
+            bDibDst(x + 1, y) = lG
+            lB = bDibDst(x, y) + (bDib(x, y) * (255&amp; - bDibDst(x + 3, y))) /
+             255&amp;
+            bDibDst(x, y) = lB
+            
+            '  Da ' = Da.Sa + Sa.(1 - Da) + Da.(1 - Sa)
+            '      = Sa + Da - Sa.Da
+            lA = 1&amp; * bDib(x + 3, y) + bDibDst(x + 3, y)
+            lA = lA - ((bDibDst(x + 3, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;)
+            bDibDst(x + 3, y) = lA
+            
+         Next y
+      Next x
+      
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeSrcIn()
+'The part of the source lying inside of the destination replaces the
+ destination.
+'
+'  Dc ' = Sc.Da
+'  Da ' = Sa.Da
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+            
+            '  Dc ' = Sc.Da
+            lR = (bDib(x + 2, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+            bDibDst(x + 2, y) = lR
+            lG = (bDib(x + 1, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+            bDibDst(x + 1, y) = lG
+            lB = (bDib(x, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+            bDibDst(x, y) = lB
+            
+            '  Da ' = Sa.Da
+            lA = (bDibDst(x + 3, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+            bDibDst(x + 3, y) = lA
+            
+         Next y
+      Next x
+      
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeDstIn()
+'The part of the destination lying inside of the source replaces the
+ destination.
+'
+'  Dc ' = Dc.Sa
+'  Da ' = Da.Sa
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+            
+            '  Dc ' = Dc.Sa
+            lR = (bDibDst(x + 2, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+            bDibDst(x + 2, y) = lR
+            lG = (bDibDst(x + 1, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+            bDibDst(x + 1, y) = lG
+            lB = (bDibDst(x, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+            bDibDst(x, y) = lB
+            
+            '  Da ' = Sa.Da
+            lA = (bDibDst(x + 3, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+            bDibDst(x + 3, y) = lA
+            
+         Next y
+      Next x
+      
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+
+Public Sub PerformCompositeSrcOut()
+'The part of the source lying outside of the destination replaces the
+ destination.
+'
+'  Dc ' = Sc.(1 - Da)
+'  Da ' = Sa.(1 - Da)
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+            
+            '  Dc ' = Sc.(1 - Da)
+            lR = bDib(x + 2, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+            bDibDst(x + 2, y) = lR
+            lG = bDib(x + 1, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+            bDibDst(x + 1, y) = lG
+            lB = bDib(x, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+            bDibDst(x, y) = lB
+            
+            '  Da ' = Sa.(1 - Da)
+            lA = bDib(x + 3, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+            bDibDst(x + 3, y) = lA
+            
+         Next y
+      Next x
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeDstOut()
+'The part of the destination lying outside of the source replaces the
+ destination.
+'
+' Dc ' = Dc.(1 - Sa)
+' Da ' = Da.(1 - Sa)
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+            
+            ' Dc ' = Dc.(1 - Sa)
+            lR = (bDibDst(x + 2, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            bDibDst(x + 2, y) = lR
+            lG = (bDibDst(x + 1, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            bDibDst(x + 1, y) = lG
+            lB = (bDibDst(x, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            bDibDst(x, y) = lB
+            
+            ' Da ' = Da.(1 - Sa)
+            lA = (bDibDst(x + 3, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            bDibDst(x + 3, y) = lA
+            
+         Next y
+      Next x
+      
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeSrcAtop()
+'The part of the source lying inside of the destination is composited onto the
+ destination.
+'
+'  Dc ' = Sc.Da + Dc(1 - Sa)
+'  Da ' = Sa.Da + Da(1 - Sa)
+'      = Da
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+            
+            '  Dc ' = Sc.Da + Dc(1 - Sa)
+            lR = (bDib(x + 2, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp; + _
+               bDibDst(x + 2, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            bDibDst(x + 2, y) = lR
+            lG = (bDib(x + 1, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp; + _
+               bDibDst(x + 1, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            bDibDst(x + 1, y) = lG
+            lB = (bDib(x, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp; + _
+               bDibDst(x, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            bDibDst(x, y) = lB
+            
+            '  Da ' = Sa.Da + Da(1 - Sa)
+            '      = Da
+            ' no change
+            
+         Next y
+      Next x
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeDstAtop()
+'The part of the destination lying inside of the source is composited over the
+ source and replaces the destination.
+'
+'  Dc ' = Dc.Sa + Sc.(1 - Da)
+'  Da ' = Da.Sa + Sa.(1 - Da)
+'      = Sa
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+            
+            '  Dc ' = Dc.Sa + Sc.(1 - Da)
+            lR = (bDibDst(x + 2, y) * 1&amp; * bDib(x + 3, y)) / 255&amp; + _
+               bDib(x + 2, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+            bDibDst(x + 2, y) = lR
+            lG = (bDibDst(x + 1, y) * 1&amp; * bDib(x + 3, y)) / 255&amp; + _
+               bDib(x + 1, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+            bDibDst(x + 1, y) = lG
+            lB = (bDibDst(x, y) * 1&amp; * bDib(x + 3, y)) / 255&amp; + _
+               bDib(x, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+            bDibDst(x, y) = lB
+            
+            '  Da ' = Da.Sa + Sa.(1 - Da)
+            '      = Sa
+            bDibDst(x + 3, y) = bDib(x + 3, y)
+            
+         Next y
+      Next x
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeXor()
+'The part of the source that lies outside of the destination is combined with
+ the part of the destination that lies outside of the source.
+'
+'  Dc ' = Sc.(1 - Da) + Dc.(1 - Sa)
+'  Da ' = Sa.(1 - Da) + Da.(1 - Sa)
+'      = Sa + Da - 2.Sa.Da
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+            
+            '  Dc ' = Sc.(1 - Da) + Dc.(1 - Sa)
+            lR = bDib(x + 2, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp; + _
+               bDibDst(x + 2, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            bDibDst(x + 2, y) = lR
+            lG = bDib(x + 1, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp; + _
+               bDibDst(x + 1, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            bDibDst(x + 1, y) = lG
+            lB = bDib(x, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp; + _
+               bDibDst(x, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            bDibDst(x, y) = lB
+            
+            '  Da ' = Sa.(1 - Da) + Da.(1 - Sa)
+            '      = Sa + Da - 2.Sa.Da
+            bDibDst(x + 3, y) = (bDib(x + 3, y) * 1&amp; + bDibDst(x + 3, y)) - _
+               ((bDib(x + 3, y) * 2&amp; * bDibDst(x + 3, y))) / 255&amp;
+            
+         Next y
+      Next x
+            
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositePlus()
+'The source is added to the destination and replaces the destination. This
+ operator is useful for animating a dissolve between two images.
+' NB:Clamp results
+'  Dc ' = Sc.Da + Dc.Sa + Sc.(1 - Da) + Dc.(1 - Sa)
+'      = Sc + Dc
+'  Da ' = Sa.Da + Da.Sa + Sa.(1 - Da) + Da.(1 - Sa)
+'      = Sa + Da
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+         
+            '  Dc ' = Sc.Da + Dc.Sa + Sc.(1 - Da) + Dc.(1 - Sa)
+            '      = Sc + Dc
+            lB = bDib(x, y)
+            lB = lB + bDibDst(x, y)
+            If (lB &gt; 255) Then lB = 255
+            bDibDst(x, y) = lB
+            lG = bDib(x + 1, y)
+            lG = lG + bDibDst(x + 1, y)
+            If (lG &gt; 255) Then lG = 255
+            bDibDst(x + 1, y) = lG
+            lR = bDib(x + 2, y)
+            lR = lR + bDibDst(x + 2, y)
+            If (lR &gt; 255) Then lR = 255
+            bDibDst(x + 2, y) = lR
+      
+            '  Da ' = Sa.Da + Da.Sa + Sa.(1 - Da) + Da.(1 - Sa)
+            '      = Sa + Da
+            lA = bDib(x + 3, y)
+            lA = lA + bDibDst(x + 3, y)
+            If (lA &gt; 255) Then lA = 255
+            bDibDst(x + 3, y) = lA
+            
+         Next y
+      Next x
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeMultiply()
+'The source is multiplied by the destination and replaces the destination. The
+ resultant color is always at least as dark as either of the two constituent
+ colors. Multiplying any color with black produces black. Multiplying any color
+ with white leaves the original color unchanged.
+'  Dc ' = Sc.Dc + Sc.(1 - Da) + Dc.(1 - Sa)
+'  Da ' = Sa.Da + Sa.(1 - Da) + Da.(1 - Sa)
+'       = Sa + Da - Sa.Da
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+                              
+            '  Dc ' = Sc.Dc + Sc.(1 - Da) + Dc.(1 - Sa)
+            lB = bDib(x, y)
+            lB = (lB * bDibDst(x, y)) / 255&amp;
+            lB = lB + bDib(x, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+            lB = lB + bDibDst(x, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            'If (lB &gt; 255) Then lB = 255
+            bDibDst(x, y) = lB
+            
+            lG = bDib(x + 1, y)
+            lG = (lG * bDibDst(x + 1, y)) / 255&amp;
+            lG = lG + bDib(x + 1, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+            lG = lG + bDibDst(x + 1, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            'If (lG &gt; 255) Then lG = 255
+            bDibDst(x + 1, y) = lG
+            
+            lR = bDib(x + 2, y)
+            lR = (lR * bDibDst(x + 2, y)) / 255&amp;
+            lR = lR + bDib(x + 2, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+            lR = lR + bDibDst(x + 2, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            'If (lR &gt; 255) Then lR = 255
+            bDibDst(x + 2, y) = lR
+            
+            
+            '  Da ' = Sa.Da + Sa.(1 - Da) + Da.(1 - Sa)
+            '       = Sa + Da - Sa.Da
+            lA = bDib(x + 3, y)
+            lA = lA + bDibDst(x + 3, y)
+            lA = lA - (bDib(x + 3, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+            'If (lA &gt; 255) Then lA = 255
+            bDibDst(x + 3, y) = lA
+      
+         Next y
+      Next x
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeScreen()
+'The source and destination are complemented and then multiplied and then
+ replace the destination. The resultant color is always at least as light as
+ either of the two constituent colors. Screening any color with white produces
+ white. Screening any color with black leaves the original color unchanged.
+' NB:Clamp results
+'  Dc ' = (Sa.Da - (Da - Dc).(Sa - Sc)) + Sc.(1 - Da) + Dc.(1 - Sa)
+'       = (Sc.Da + Dc.Sa - Sc.Dc) + Sc.(1 - Da) + Dc.(1 - Sa)
+'       = Sc + Dc - Sc.Dc
+'  Da ' = Sa + Da - Sa.Da
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+      
+            ' Dc ' = Sc + Dc - Sc.Dc
+            lB = bDib(x, y)
+            lB = lB + bDibDst(x, y)
+            lB = lB - (bDib(x, y) * 1&amp; * bDibDst(x, y)) / 255&amp;
+            If (lB &gt; 255) Then lB = 255
+            bDibDst(x, y) = lB
+            
+            lG = bDib(x + 1, y)
+            lG = lG + bDibDst(x + 1, y)
+            lG = lG - (bDib(x + 1, y) * 1&amp; * bDibDst(x + 1, y)) / 255&amp;
+            If (lG &gt; 255) Then lG = 255
+            bDibDst(x + 1, y) = lG
+            
+            lR = bDib(x + 2, y)
+            lR = lR + bDibDst(x + 2, y)
+            lR = lR - (bDib(x + 2, y) * 1&amp; * bDibDst(x + 2, y)) / 255&amp;
+            If (lR &gt; 255) Then lR = 255
+            bDibDst(x + 2, y) = lR
+            
+            
+            '  Da ' = Sa + Da - Sa.Da
+            lA = bDib(x + 3, y)
+            lA = lA + bDibDst(x + 3, y)
+            lA = lA - (bDib(x + 3, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+            If (lA &gt; 255) Then lA = 255
+            bDibDst(x + 3, y) = lA
+            
+      
+         Next y
+      Next x
+      
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+   
+   End If
+   
+End Sub
+Public Sub PerformCompositeOverlay()
+'Multiplies or screens the colors, dependent on the destination color. Source
+ colors overlay the destination whilst preserving its highlights and shadows.
+ The destination color is not replaced, but is mixed with the source color to
+ reflect the lightness or darkness of the destination.
+' NB:Clamp results
+'  if 2.Dc &lt; Da
+'    Dc ' = 2.Sc.Dc + Sc.(1 - Da) + Dc.(1 - Sa)
+'  otherwise
+'    Dc ' = Sa.Da - 2.(Da - Dc).(Sa - Sc) + Sc.(1 - Da) + Dc.(1 - Sa)
+'
+'  Da ' = Sa + Da - Sa.Da
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+      
+            '  if 2.Dc &lt; Da
+            '    Dc ' = 2.Sc.Dc + Sc.(1 - Da) + Dc.(1 - Sa)
+            '  otherwise
+            '    Dc ' = Sa.Da - 2.(Da - Dc).(Sa - Sc) + Sc.(1 - Da) + Dc.(1 -
+             Sa)
+            If (2&amp; * bDibDst(x, y) &lt; bDibDst(x + 3, y)) Then
+               lB = (2&amp; * bDib(x, y) * bDibDst(x, y)) / 255&amp;
+               lB = lB + bDib(x, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+               lB = lB + bDibDst(x, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            Else
+               lB = (bDib(x + 3, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+               lB = lB - 2&amp; * (bDibDst(x + 3, y) - bDibDst(x, y)) * (bDib(x +
+                3, y) - bDib(x, y)) / 255&amp;
+               lB = lB + (bDib(x, y) * (255&amp; - bDibDst(x + 3, y))) / 255&amp;
+               lB = lB + (bDibDst(x, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            End If
+            If (lB &gt; 255) Then lB = 255
+            bDibDst(x, y) = lB
+
+            If (2&amp; * bDibDst(x + 1, y) &lt; bDibDst(x + 3, y)) Then
+               lG = (2&amp; * bDib(x + 1, y) * bDibDst(x + 1, y)) / 255&amp;
+               lG = lG + bDib(x + 1, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+               lG = lG + bDibDst(x + 1, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            Else
+               lG = (bDib(x + 3, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+               lG = lG - 2&amp; * (bDibDst(x + 3, y) - bDibDst(x + 1, y)) * (bDib(x
+                + 3, y) - bDib(x + 1, y)) / 255&amp;
+               lG = lG + (bDib(x + 1, y) * (255&amp; - bDibDst(x + 3, y))) / 255&amp;
+               lG = lG + (bDibDst(x + 1, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            End If
+            If (lG &gt; 255) Then lG = 255
+            bDibDst(x + 1, y) = lG
+
+            If (2&amp; * bDibDst(x + 2, y) &lt; bDibDst(x + 3, y)) Then
+               lR = (2&amp; * bDib(x + 2, y) * bDibDst(x + 2, y)) / 255&amp;
+               lR = lR + bDib(x + 2, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+               lR = lR + bDibDst(x + 2, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            Else
+               lR = (bDib(x + 3, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+               lR = lR - 2&amp; * (bDibDst(x + 3, y) - bDibDst(x + 2, y)) * (bDib(x
+                + 3, y) - bDib(x + 2, y)) / 255&amp;
+               lR = lR + (bDib(x + 2, y) * (255&amp; - bDibDst(x + 3, y))) / 255&amp;
+               lR = lR + (bDibDst(x + 2, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            End If
+            If (lR &gt; 255) Then lR = 255
+            bDibDst(x + 2, y) = lR
+            
+            '  Da ' = Sa + Da - Sa.Da
+            lA = bDib(x + 3, y)
+            lA = lA + bDibDst(x + 3, y)
+            lA = lA - (bDib(x + 3, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+            If (lA &gt; 255) Then lA = 255
+            bDibDst(x + 3, y) = lA
+      
+         Next y
+      Next x
+      
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeDarken()
+'Selects the darker of the destination and source colors. The destination is
+ replaced with the source when the source is darker, otherwise it is left
+ unchanged.
+' NB:Clamp results
+'  Dc ' = min(Sc.Da, Dc.Sa) + Sc.(1 - Da) + Dc.(1 - Sa)
+'  Da ' = Sa + Da - Sa.Da
+'
+'  or
+'
+'  if Sc.Da &lt; Dc.Sa
+'    src_over()
+'  otherwise
+'    dst_over()
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long, lC1 As Long, lC2 As
+       Long
+      Dim bUseSourceColour As Boolean
+           
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+                        
+            '  Dc ' = min(Sc.Da, Dc.Sa) + Sc.(1 - Da) + Dc.(1 - Sa)
+            
+            ' Use the ITU grayscale standard to determine the colour value:
+            lC1 = 71&amp; * bDib(x, y)
+            lC1 = lC1 + 707&amp; * bDib(x + 1, y)
+            lC1 = lC1 + 222&amp; * bDib(x + 2, y)
+            lC1 = lC1 * bDibDst(x + 3, y)
+            
+            lC2 = 71&amp; * bDibDst(x, y)
+            lC2 = lC2 + 707&amp; * bDibDst(x + 1, y)
+            lC2 = lC2 + 222&amp; * bDibDst(x + 2, y)
+            lC2 = lC2 * bDib(x + 3, y)
+            
+            If (lC1 &lt; lC2) Then
+               bUseSourceColour = True
+            Else
+               bUseSourceColour = False
+            End If
+            
+            If (bUseSourceColour) Then
+               lB = (bDib(x, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+            Else
+               lB = (bDibDst(x, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+            End If
+            lB = lB + bDib(x, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+            lB = lB + bDibDst(x, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            If (lB &gt; 255) Then lB = 255
+            bDibDst(x, y) = lB
+            
+            If (bUseSourceColour) Then
+               lG = (bDib(x + 1, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+            Else
+               lG = (bDibDst(x + 1, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+            End If
+            lG = lG + bDib(x + 1, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+            lG = lG + bDibDst(x + 1, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            If (lG &gt; 255) Then lG = 255
+            bDibDst(x + 1, y) = lG
+            
+            If (bUseSourceColour) Then
+               lR = (bDib(x + 2, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+            Else
+               lR = (bDibDst(x + 2, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+            End If
+            lR = lR + bDib(x + 2, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+            lR = lR + bDibDst(x + 2, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            If (lR &gt; 255) Then lR = 255
+            bDibDst(x + 2, y) = lR
+                        
+            
+            '  Da ' = Sa + Da - Sa.Da
+            lA = bDib(x + 3, y)
+            lA = lA + bDibDst(x + 3, y)
+            lA = lA - (bDib(x + 3, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+            If (lA &gt; 255) Then lA = 255
+            bDibDst(x + 3, y) = lA
+      
+      
+         Next y
+      Next x
+      
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeLighten()
+'Selects the lighter of the destination and source colors. The destination is
+ replaced with the source when the source is lighter, otherwise it is left
+ unchanged.
+' NB:Clamp results
+'  Dc ' = max(Sc.Da, Dc.Sa) + Sc.(1 - Da) + Dc.(1 - Sa)
+'  Da ' = Sa + Da - Sa.Da
+'
+'  or
+'
+'  if Sc.Da &gt; Dc.Sa
+'    src_over()
+'  otherwise
+'    dst_over()
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long, lC1 As Long, lC2 As
+       Long
+      Dim bUseSourceColour As Boolean
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+         
+            '  Dc ' = max(Sc.Da, Dc.Sa) + Sc.(1 - Da) + Dc.(1 - Sa)
+            
+            lC1 = 71&amp; * bDib(x, y)
+            lC1 = lC1 + 707&amp; * bDib(x + 1, y)
+            lC1 = lC1 + 222&amp; * bDib(x + 2, y)
+            lC1 = lC1 * bDibDst(x + 3, y)
+            
+            lC2 = 71&amp; * bDibDst(x, y)
+            lC2 = lC2 + 706&amp; * bDibDst(x + 1, y)
+            lC2 = lC2 + 222&amp; * bDibDst(x + 2, y)
+            lC2 = lC2 * bDib(x + 3, y)
+            
+            If (lC1 &gt; lC2) Then
+               bUseSourceColour = True
+            Else
+               bUseSourceColour = False
+            End If
+            
+            If (bUseSourceColour) Then
+               lB = (bDib(x, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+            Else
+               lB = (bDibDst(x, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+            End If
+            lB = lB + bDib(x, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+            lB = lB + bDibDst(x, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            If (lB &gt; 255) Then lB = 255
+            bDibDst(x, y) = lB
+            
+            If (bUseSourceColour) Then
+               lG = (bDib(x + 1, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+            Else
+               lG = (bDibDst(x + 1, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+            End If
+            lG = lG + bDib(x + 1, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+            lG = lG + bDibDst(x + 1, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            If (lG &gt; 255) Then lG = 255
+            bDibDst(x + 1, y) = lG
+            
+            If (bUseSourceColour) Then
+               lR = (bDib(x + 2, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+            Else
+               lR = (bDibDst(x + 2, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+            End If
+            lR = lR + bDib(x + 2, y) * (255&amp; - bDibDst(x + 3, y)) / 255&amp;
+            lR = lR + bDibDst(x + 2, y) * (255&amp; - bDib(x + 3, y)) / 255&amp;
+            If (lR &gt; 255) Then lR = 255
+            bDibDst(x + 2, y) = lR
+                        
+            
+            '  Da ' = Sa + Da - Sa.Da
+            lA = bDib(x + 3, y)
+            lA = lA + bDibDst(x + 3, y)
+            lA = lA - (bDib(x + 3, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+            If (lA &gt; 255) Then lA = 255
+            bDibDst(x + 3, y) = lA
+      
+      
+         Next y
+      Next x
+      
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeColorDodge()
+'Brightens the destination color to reflect the source color. Painting with
+ black produces no change.
+' NB:Clamp results
+'  if Sc.Da + Dc.Sa &gt;= Sa.Da
+'    Dc ' = Sa.Da + Sc.(1 - Da) + Dc.(1 - Sa)
+'  otherwise
+'    Dc ' = Dc.Sa/(1-Sc/Sa) + Sc.(1 - Da) + Dc.(1 - Sa)
+'
+'  Da ' = Sa + Da - Sa.Da
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      Dim lSaDa As Long, lC As Long, lSrcGrey As Long, lDstGrey As Long
+      
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+            
+            '  if Sc.Da + Dc.Sa &gt;= Sa.Da
+            '    Dc ' = Sa.Da + Sc.(1 - Da) + Dc.(1 - Sa)
+            '  otherwise
+            '    Dc ' = Dc.Sa/(1-Sc/Sa) + Sc.(1 - Da) + Dc.(1 - Sa)
+            
+            ' Note that the last two terms are the same in both cases.
+            
+            ' When doing the Sc.Da and Dc.Sa calculations, I'm using the ITU
+            ' greyscale standard to determine the colour:
+            lSaDa = bDib(x + 3, y)
+            lSaDa = (lSaDa * bDibDst(x + 3, y)) / 255&amp;
+            lSrcGrey = (71&amp; * bDib(x, y) + 707&amp; * bDib(x + 1, y) + 222&amp; *
+             bDib(x + 2, y)) / 1000&amp;
+            lDstGrey = (71&amp; * bDibDst(x, y) + 707&amp; * bDibDst(x + 1, y) + 222&amp; *
+             bDibDst(x + 2, y)) / 1000&amp;
+            lC = (lSrcGrey * bDibDst(x + 3, y)) / 255&amp; + (lDstGrey * bDib(x,
+             y)) / 255&amp;
+            
+            If (lC &gt;= lSaDa) Then
+               lB = ((lSaDa * bDib(x, y)) / 255&amp; * bDibDst(x, y)) / 255&amp;
+               lG = ((lSaDa * bDib(x + 1, y)) / 255&amp; * bDibDst(x + 1, y)) / 255&amp;
+               lR = ((lSaDa * bDib(x + 2, y)) / 255&amp; * bDibDst(x + 2, y)) / 255&amp;
+            Else
+               lB = ((lSaDa * bDib(x, y)) / 255&amp; * bDibDst(x, y)) / 255&amp;
+               lG = ((lSaDa * bDib(x + 1, y)) / 255&amp; * bDibDst(x + 1, y)) / 255&amp;
+               lR = ((lSaDa * bDib(x + 2, y)) / 255&amp; * bDibDst(x + 2, y)) / 255&amp;
+                              
+               ' TODO: what happens if Sa is 0, or if (1 - Sc/Sa) is 0?
+               
+               
+            End If
+                           
+            lB = lB + (bDib(x, y) * (255&amp; - bDibDst(x + 3, y))) / 255&amp;
+            lB = lB + (bDibDst(x, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            If (lB &gt; 255) Then
+               lB = 255
+            End If
+            bDibDst(x, y) = lB
+            
+            lG = lG + (bDib(x + 1, y) * (255&amp; - bDibDst(x + 3, y))) / 255&amp;
+            lG = lG + (bDibDst(x + 1, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            If (lG &gt; 255) Then
+               lG = 255
+            End If
+            bDibDst(x + 1, y) = lG
+            
+            lR = lR + (bDib(x + 2, y) * (255&amp; - bDibDst(x + 3, y))) / 255&amp;
+            lR = lR + (bDibDst(x + 2, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            If (lR &gt; 255) Then
+               lR = 255
+            End If
+            bDibDst(x + 2, y) = lR
+            
+            '  Da ' = Sa + Da - Sa.Da
+            lA = bDib(x + 3, y)
+            lA = lA + bDibDst(x + 3, y)
+            lA = lA - lSaDa
+            If (lA &gt; 255) Then lA = 255
+            bDibDst(x + 3, y) = lA
+
+
+         Next y
+      Next x
+      
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeColorBurn()
+'Darkens the destination color to reflect the source color. Painting with white
+ produces no change.
+' NB:Clamp results
+'  if Sc.Da + Dc.Sa &lt;= Sa.Da
+'    Dc ' = Sc.(1 - Da) + Dc.(1 - Sa)
+'  otherwise
+'    Dc ' = Sa.(Sc.Da + Dc.Sa - Sa.Da)/Sc + Sc.(1 - Da) + Dc.(1 - Sa)
+'
+'  Da ' = Sa + Da - Sa.Da
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      Dim lSaDa As Long, lSrcGrey As Long, lDstGrey As Long, lC As Long
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+      
+            '  if Sc.Da + Dc.Sa &lt;= Sa.Da
+            '    Dc ' = Sc.(1 - Da) + Dc.(1 - Sa)
+            '  otherwise
+            '    Dc ' = Sa.(Sc.Da + Dc.Sa - Sa.Da)/Sc + Sc.(1 - Da) + Dc.(1 -
+             Sa)
+            '
+            ' Note that the last two terms are the same in both cases.  Hence
+            ' when Sc.Da + Dc.Sa &gt; Sa.Da we do additional work
+            
+            ' When doing the Sc.Da and Dc.Sa calculations, I'm using the ITU
+            ' greyscale standard to determine the colour:
+            lSaDa = bDib(x + 3, y)
+            lSaDa = (lSaDa * bDibDst(x + 3, y)) / 255&amp;
+            lSrcGrey = (71&amp; * bDib(x, y) + 707&amp; * bDib(x + 1, y) + 222&amp; *
+             bDib(x + 2, y)) / 1000&amp;
+            lDstGrey = (71&amp; * bDibDst(x, y) + 707&amp; * bDibDst(x + 1, y) + 222&amp; *
+             bDibDst(x + 2, y)) / 1000&amp;
+            lC = (lSrcGrey * bDibDst(x + 3, y)) / 255&amp; + (lDstGrey * bDib(x,
+             y)) / 255&amp;
+            
+            If (lC &gt; lSaDa) Then
+               
+               ' TODO: What should happen when Sc = 0?
+               
+               If (bDib(x, y) &gt; 0) Then
+                  lB = (bDib(x, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp; +
+                   (bDibDst(x, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+                  lB = (lB * bDib(x + 3, y)) / 255&amp;
+                  lB = lB / bDib(x, y)
+               End If
+               
+               If (bDib(x + 1, y) &gt; 0) Then
+                  lG = (bDib(x + 1, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp; +
+                   (bDibDst(x + 1, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+                  lG = (lG * bDib(x + 3, y)) / 255&amp;
+                  lG = lG / bDib(x + 1, y)
+               End If
+               
+               If (bDib(x + 2, y) &gt; 0) Then
+                  lR = (bDib(x + 2, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp; +
+                   (bDibDst(x + 2, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+                  lR = (lR * bDib(x + 3, y)) / 255&amp;
+                  lR = lR / bDib(x + 2, y)
+               End If
+            Else
+               lB = 0
+               lG = 0
+               lR = 0
+            End If
+                           
+            lB = lB + (bDib(x, y) * (255&amp; - bDibDst(x + 3, y))) / 255&amp;
+            lB = lB + (bDibDst(x, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            If (lB &gt; 255) Then
+               lB = 255
+            End If
+            bDibDst(x, y) = lB
+            
+            lG = lG + (bDib(x + 1, y) * (255&amp; - bDibDst(x + 3, y))) / 255&amp;
+            lG = lG + (bDibDst(x + 1, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            If (lG &gt; 255) Then
+               lG = 255
+            End If
+            bDibDst(x + 1, y) = lG
+            
+            lR = lR + (bDib(x + 2, y) * (255&amp; - bDibDst(x + 3, y))) / 255&amp;
+            lR = lR + (bDibDst(x + 2, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            If (lR &gt; 255) Then
+               lR = 255
+            End If
+            bDibDst(x + 2, y) = lR
+      
+      
+            '  Da ' = Sa + Da - Sa.Da
+            lA = bDib(x + 3, y)
+            lA = lA + bDibDst(x + 3, y)
+            lA = lA - lSaDa
+            If (lA &gt; 255) Then lA = 255
+            bDibDst(x + 3, y) = lA
+      
+      
+         Next y
+      Next x
+      
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeHardLight()
+'Multiplies or screens the colors, dependent on the source color value. If the
+ source color is lighter than 0.5, the destination is lightened as if it were
+ screened. If the source color is darker than 0.5, the destination is darkened,
+ as if it were multiplied. The degree of lightening or darkening is
+ proportional to the difference between the source color and 0.5. If it is
+ equal to 0.5 the destination is unchanged. Painting with pure black or white
+ produces black or white.
+' NB:Clamp results
+'  if 2.Sc &lt; Sa
+'     Dc ' = 2.Sc.Dc + Sc.(1 - Da) + Dc.(1 - Sa)
+'  otherwise
+'     Dc ' = Sa.Da - 2.(Da - Dc).(Sa - Sc) + Sc.(1 - Da) + Dc.(1 - Sa)
+'
+'  Da ' = Sa + Da - Sa.Da
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+      
+      
+         Next y
+      Next x
+      
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeSoftLight()
+'Darkens or lightens the colors, dependent on the source color value. If the
+ source color is lighter than 0.5, the destination is lightened. If the source
+ color is darker than 0.5, the destination is darkened, as if it were burned
+ in. The degree of darkening or lightening is proportional to the difference
+ between the source color and 0.5. If it is equal to 0.5, the destination is
+ unchanged. Painting with pure black or white produces a distinctly darker or
+ lighter area, but does not result in pure black or white.
+' NB:Clamp results
+'  if 2.Sc &lt; Sa
+'     Dc ' = Dc.(Sa - (1 - Dc/Da).(2.Sc - Sa)) + Sc.(1 - Da) + Dc.(1 - Sa)
+'  otherwise if Dc.8 &lt;= Da
+'     Dc ' = Dc.(Sa - (1 - Dc/Da).(2.Sc - Sa).(3 - 8.Dc/Da)) + Sc.(1 - Da) +
+ Dc.(1 - Sa)
+'  otherwise
+'     Dc ' = (Dc.Sa + ((Dc/Da)^(0.5).Da - Dc).(2.Sc - Sa)) + Sc.(1 - Da) +
+ Dc.(1 - Sa)
+'
+'  Da ' = Sa + Da - Sa.Da
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+      
+      
+         Next y
+      Next x
+      
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeDifference()
+'Subtracts the darker of the two constituent colors from the lighter. Painting
+ with white inverts the destination color. Painting with black produces no
+ change.
+' NB:Clamp results
+'  Dc ' = abs(Dc.Sa - Sc.Da) + Sc.(1 - Da) + Dc.(1 - Sa)
+'      = Sc + Dc - 2.min(Sc.Da, Dc.Sa)
+'  Da ' = Sa + Da - Sa.Da
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+      
+            '  Dc ' = abs(Dc.Sa - Sc.Da) + Sc.(1 - Da) + Dc.(1 - Sa)
+            '      = Sc + Dc - 2.min(Sc.Da, Dc.Sa)
+            lB = Abs((bDibDst(x, y) * 1&amp; * bDib(x + 3, y)) / 255&amp; - _
+                  (bDib(x, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;)
+            lB = lB + (bDib(x, y) * (255&amp; - bDibDst(x + 3, y))) / 255&amp;
+            lB = lB + (bDibDst(x, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            If (lB &gt; 255) Then
+               lB = 255
+            End If
+            bDibDst(x, y) = lB
+
+            lG = Abs((bDibDst(x + 1, y) * 1&amp; * bDib(x + 3, y)) / 255&amp; - _
+                  (bDib(x + 1, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;)
+            lG = lG + (bDib(x + 1, y) * (255&amp; - bDibDst(x + 3, y))) / 255&amp;
+            lG = lG + (bDibDst(x + 1, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            If (lG &gt; 255) Then
+               lG = 255
+            End If
+            bDibDst(x + 1, y) = lG
+
+            lR = Abs((bDibDst(x + 2, y) * 1&amp; * bDib(x + 3, y)) / 255&amp; - _
+                  (bDib(x + 2, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;)
+            lR = lR + (bDib(x + 2, y) * (255&amp; - bDibDst(x + 3, y))) / 255&amp;
+            lR = lR + (bDibDst(x + 2, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            If (lR &gt; 255) Then
+               lR = 255
+            End If
+            bDibDst(x + 2, y) = lR
+
+
+            '  Da ' = Sa + Da - Sa.Da
+            lA = bDib(x + 3, y)
+            lA = lA + bDibDst(x + 3, y)
+            lA = lA - (bDibDst(x + 3, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+            If (lA &gt; 255) Then lA = 255
+            bDibDst(x + 3, y) = lA
+      
+      
+         Next y
+      Next x
+      
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+Public Sub PerformCompositeExclusion()
+'Produces an effect similar to that of 'difference', but appears as lower
+ contrast. Painting with white inverts the destination color. Painting with
+ black produces no change.
+' NB:Clamp results
+'  Dc ' = (Sc.Da + Dc.Sa - 2.Sc.Dc) + Sc.(1 - Da) + Dc.(1 - Sa)
+'  Da ' = Sa + Da - Sa.Da
+
+Dim srcX As Long
+Dim srcY As Long
+Dim srcWidth As Long
+Dim srcHeight As Long
+
+   If getSourceDimensions(srcX, srcY, srcWidth, srcHeight) Then
+
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibSrc.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibSrc.BytesPerScanLine
+          .pvData = m_cDibSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDibDst.height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDibDst.BytesPerScanLine()
+          .pvData = m_cDibDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+   
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+   
+      xEnd = srcX + srcWidth - 1
+      yEnd = srcY + srcHeight - 1
+      
+      Dim lR As Long, lG As Long, lB As Long, lA As Long
+      
+      For x = srcX To xEnd Step 4
+         For y = srcY To yEnd
+      
+            
+            '  Dc ' = (Sc.Da + Dc.Sa - 2.Sc.Dc) + Sc.(1 - Da) + Dc.(1 - Sa)
+            lB = (bDib(x, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+            lB = lB + (bDibDst(x, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+            lB = lB - 2&amp; * (bDib(x, y) * 1&amp; * bDibDst(x, y)) / 255&amp;
+            lB = lB + (bDib(x, y) * (255&amp; - bDibDst(x + 3, y))) / 255&amp;
+            lB = lB + (bDibDst(x, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            If (lB &gt; 255) Then
+               lB = 255
+            End If
+            bDibDst(x, y) = lB
+      
+            lG = (bDib(x + 1, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+            lG = lG + (bDibDst(x + 1, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+            lG = lG - 2&amp; * (bDib(x + 1, y) * 1&amp; * bDibDst(x + 1, y)) / 255&amp;
+            lG = lG + (bDib(x + 1, y) * (255&amp; - bDibDst(x + 3, y))) / 255&amp;
+            lG = lG + (bDibDst(x + 1, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            If (lG &gt; 255) Then
+               lG = 255
+            End If
+            bDibDst(x + 1, y) = lG
+      
+            lR = (bDib(x + 2, y) * 1&amp; * bDibDst(x + 3, y)) / 255&amp;
+            lR = lR + (bDibDst(x + 2, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+            lR = lR - 2&amp; * (bDib(x + 2, y) * 1&amp; * bDibDst(x + 2, y)) / 255&amp;
+            lR = lR + (bDib(x + 2, y) * (255&amp; - bDibDst(x + 3, y))) / 255&amp;
+            lR = lR + (bDibDst(x + 2, y) * (255&amp; - bDib(x + 3, y))) / 255&amp;
+            If (lR &gt; 255) Then
+               lR = 255
+            End If
+            bDibDst(x + 2, y) = lR
+      
+      
+            '  Da ' = Sa + Da - Sa.Da
+            lA = bDib(x + 3, y)
+            lA = lA + bDibDst(x + 3, y)
+            lA = lA - (bDibDst(x + 3, y) * 1&amp; * bDib(x + 3, y)) / 255&amp;
+            If (lA &gt; 255) Then lA = 255
+            bDibDst(x + 3, y) = lA
+      
+         Next y
+      Next x
+      
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   End If
+   
+End Sub
+
+Private Function getSourceDimensions( _
+      ByRef srcX As Long, _
+      ByRef srcY As Long, _
+      ByRef srcWidth As Long, _
+      ByRef srcHeight As Long _
+   ) As Boolean
+   
+   ' Return allowable dimensions for the source
+   ' depending on the size of the destination.
+   srcX = m_srcX
+   srcY = m_srcY
+   srcWidth = m_srcWidth
+   srcHeight = m_srcHeight
+   If (srcWidth &lt;= 0) Then
+      srcWidth = m_cDibSrc.width
+   End If
+   If (srcHeight &lt;= 0) Then
+      srcHeight = m_cDibSrc.height
+   End If
+   If (srcX &gt; m_cDibDst.width) Then
+      ' nothing to do
+      getSourceDimensions = False
+      Exit Function
+   End If
+   If (srcY &gt; m_cDibDst.height) Then
+      getSourceDimensions = False
+      Exit Function
+   End If
+   If (srcX &lt; 0) Then
+      srcX = 0
+   End If
+   If (srcY &lt; 0) Then
+      srcY = 0
+   End If
+   If (srcX + srcWidth &gt; m_cDibDst.width) Then
+      srcWidth = m_cDibDst.width - srcX
+   End If
+   If (srcY + srcHeight &gt; m_cDibDst.height) Then
+      srcHeight = m_cDibDst.height - srcY
+   End If
+   
+   ' Bytes per scan line:
+   srcX = srcX * 4
+   srcWidth = srcWidth * 4
+   
+   getSourceDimensions = True
+   
+End Function
+
+
+   
+Private Sub Class_Initialize()
+   '
+   m_srcWidth = -1
+   m_srcHeight = -1
+   '
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;<a href="article.html">Compositing Operations</a>&#160;.&#160;<a href="VB5_Compositing_Sample.html">VB5 Compositing Sample</a>&#160;.&#160;cCompositing.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 8 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Compositing/VB5_Compositing_Sample_zip_cCompositing_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+</html>

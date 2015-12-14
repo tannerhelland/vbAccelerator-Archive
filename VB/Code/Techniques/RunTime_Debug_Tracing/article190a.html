@@ -1,0 +1,123 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/RunTime_Debug_Tracing/article.asp?id=17 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:55:55 GMT -->
+<head>
+
+<title>vbAccelerator - RunTime Debug Tracing</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Sometimes you want to be able to view trace messages when running your application outside the
+VB IDE.  Perhaps something slightly different happens as an Executable; or you may be running
+something that's not so easy to debug, such as subclasses, callback procedures and custom COM
+implementations.  Whilst VB provides an App.LogEvent method which supposedly caters for this,
+it isn't very good.  This article provides an easy way to send debug messages to a remote 
+trace application for your viewing and logging pleasure.
+" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;RunTime Debug Tracing</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="mTrace_bas.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />mTrace.bas</a> (1K)</p><p /><p class="nav"><a href="Trace_Sample_Application.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Trace Sample Application</a> (14K)</p><p /><p class="nav"><a href="VB5_Tracer_Utility.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Tracer Utility</a> (92K)</p><p /><p class="nav"><a href="VB6_Tracer_Utility.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Tracer Utility</a> (84K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3547</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3547&amp;type=Article&amp;title=RunTime%20Debug%20Tracing">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:19 March 2003</p>
+<br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />3 Feb 2003<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2314">StringBuilder Class for VB</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>RunTime Debug Tracing</h1><p class="splash">Watch and log debug messages whilst running VB applications as executables.</p><img src="tracer.png" width="308" height="319" alt="VBTracer" /><p /><p>Sometimes you want to be able to view trace messages when running your application outside the
+VB IDE.  Perhaps something slightly different happens as an Executable; or you may be running
+something that's not so easy to debug, such as subclasses, callback procedures and custom COM
+implementations.  Whilst VB provides an <i>App.LogEvent</i> method which supposedly caters for this,
+it isn't very good.  This article provides an easy way to send debug messages to a remote 
+trace application for your viewing and logging pleasure.
+</p><h2>Getting Started</h2><p>This project consists of two parts:</p><ol><li>A Trace.bas module, which you incorporate into your project.  This module is 3k in size and
+provides alternatives to VB's <i>Debug.Print</i> and <i>Debug.Assert</i> which additionally 
+trace the information out to a trace tool.</li><li>The VBTracer utility, which receives messages from the Trace.bas module at debug time or
+runtime and displays them in a textbox, optionally allowing all messages to be logged out
+to a file.</li></ol><p>Using the tracing function is simple: fire up VBTracer (it can sit in your SysTray the 
+whole time if you want) and then whenever an application uses the Trace.bas module's
+methods, it will pick up the messages.</p><h2>Using mTrace.base</h2><p>To try it out in your project, do the following:</p><ol><li>Add mTrace.bas to the project.</li><li>Do a global search and replace on "Debug.Print" and replace it with "Trace"
+in the project.  Note that whilst Debug.Print allows the use of VB's weird print delimiters like the
+semi-colon, "Trace" only allows commas as delimiters.  So you may have to fix up one or
+two of the statements.</li><li>Do a global search and replace on "Debug.Assert" and replace it with "Assert".
+Note that the mTrace.bas Assert statement also lets you provide some print messages along with the
+assertion, which is very helpful in the Trace itself.</li><li>Go to the project's Properties and choose the Make tab. Under the Conditional Compilation Settings,
+add the text "TRACEMODE = 1.":<br /><img src="enablingTrace.png" width="418" height="379" alt="Setting the Conditional Compilation flags" /><br />
+This is required because mTrace.bas has been written to allow it to be compiled out if you so desire.</li><li>Run the project in VB and as an executable.  You will see all your Trace and Assert messages 
+written out to the VBTracer window.</li></ol><p>Once you've got it up and running, you can experiment with VBTracer's options.  The View-&gt;Configure menu
+option allows you to set which trace items are shown, how many lines are displayed in the Tracing window
+and whether the trace details are written to a file or not.</p><h2>Why Do I Have To Change My Nice Debug.Print Messages?</h2><p>It would be nice if you could simply replace VB's <i>Debug</i> object with your own version
+which overrides the <i>Print</i> and <i>Assert</i> methods.  However, unfortunately you can't
+do that because for the usual legacy reasons <i>Print</i> is a reserved word in Visual Basic. Also,
+the Debug object is slightly unusual, in that it isn't a normal COM object.  Even if you add a module
+named "Debug" to a Visual Basic project, and provide an <i>Assert</i> method you can't 
+call it using <i>Debug.Assert</i> as the standard one overrides it.</p><h2>How It Works</h2><p>If you take a look at mTrace.bas you will see the code is very simple.  The first time <i>Trace</i> 
+or <i>Assert</i> is called, it checks to see if VBTracer is running by checking all of top-level
+windows.  If it is, it caches the window handle and uses that to send a <i>WM_COPYDATA</i> message
+for each <i>Trace</i> or <i>Assert</i> message to the handle.  The <i>WM_COPYDATA</i> message in
+Windows is extremely useful as it allows you to send data safely across processes with very little
+overhead.</p><p>VBTrace pretty much does the reverse.  When it starts, it sets a Window property using the <i>SetProp</i>
+API to allow mTrace.bas modules to find it.  Then it starts checking for <i>WM_COPYDATA</i> messages
+using a Subclass (the subclassing code is from the <a href="article190a.html?id=17">Subclassing and Timer
+Assistant</a>, and is compiled into the application for ease of use).  Internally, the application uses
+ a few tricks to cache all the messages it gets and add them to the text box for display as quickly
+as possible.  A <a href="http://www.vbaccelerator.com/article.asp?id=2314">high-performance string buffer</a> allows all the 
+debug messages to be stored separately to the logging to screen, so it can continue independently
+of whether the window is ready to receive them.  Then messages are added to the TextBox using
+the TextBox control's <i>EM_REPLACESEL</i> message to ensure you don't have to continually allocate
+large strings just to append new text to the control.  Another thing that's useful is to use the
+<i>EM_GETSEL</i> and <i>EM_SETSEL</i> messages rather than VB's <i>SelStart</i> and <i>SelLength</i> 
+properties: in VB these are limited to integer values, which is only a limitation of the TextBox on
+Win9x systems.  Under NT/2000/XP the TextBox has effectively unlimited capacity and using the
+message interface allows you to take advantage of this. If you're interested in working with
+large capacity TextBoxes then the code is worth checking out.</p><h2>On The Subject of Stack Traces</h2><p>It is possible to generate stack traces from a VB runtime. However, you're probably not going to like
+it.  The technique is described in the May 2002 issue of Visual Studio Magazine in the
+article <a href="http://www.fawcette.com/vsm/2002_05/magazine/columns/blackbelt/default_pf.asp">Get Debug 
+Info From Production Apps</a> by Dan Fergus.  It uses a host of techniques from Matt Curland's excellent
+"Advanced Visual Basic 6" book to allow VB to determine the program's Instruction Pointer, 
+Stack Pointer and Base Pointer and then use dbghelp.dll to translate these into readable descriptions
+(assuming that you have generated a Symbolic Debug Info file (PDB) when compiling the application - which
+means it doesn't work for P-Code apps).</p><p>To use the code you need to include a class and 7 modules into the VB code you want stack tracking for,
+although they are all quite small.  Then provided you are running outside the IDE, the VB code is 
+compiled as Native Code and a PDB file has been created you can get a stack trace at any time by calling 
+<i>m_oSymbols.GetCallStack()</i>.  As far as I can tell it seems to work, but it is a shame it is 
+impossible to isolate the code out of your project (I tried, but without success).</p><p>The world would have been a much nicer place if VB provided an <i>App.StackTrace</i> method which worked
+at any time, but there you go.  Actually, the world would have been better if the <i>App</i> object did
+anything properly!</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;RunTime Debug Tracing</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 5 February 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/RunTime_Debug_Tracing/article.asp?id=17 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:55:55 GMT -->
+</html>

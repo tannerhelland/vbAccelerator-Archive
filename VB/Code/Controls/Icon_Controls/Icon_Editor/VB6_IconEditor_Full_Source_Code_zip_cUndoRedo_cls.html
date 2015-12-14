@@ -1,0 +1,193 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Icon_Controls/Icon_Editor/VB6_IconEditor_Full_Source_Code_zip_cUndoRedo_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:54 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cUndoRedo.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cUndoRedo.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Icon Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator Icon Editor Control</a>&#160;.&#160;<a href="VB6_IconEditor_Full_Source_Code.html">VB6 IconEditor Full Source Code</a>&#160;.&#160;cUndoRedo.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="IconEditor_Documentation.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />IconEditor Documentation</a> (1K)</p><p /><p class="nav"><a href="VB5_IconEditor_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IconEditor Demonstration</a> (126K)</p><p class="nav"><a href="VB5_IconEditor_Full_Source_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IconEditor Full Source Code</a> (211K)</p><p class="nav"><a href="VB5_IconEditor_OCX.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IconEditor OCX</a> (43K)</p><p /><p class="nav"><a href="VB6_IconEditor_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IconEditor Demonstration</a> (123K)</p><p class="nav"><a href="VB6_IconEditor_Full_Source_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IconEditor Full Source Code</a> (209K)</p><p class="nav"><a href="VB6_IconEditor_OCX.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IconEditor OCX</a> (43K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:11603</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=11603&amp;type=Zip&amp;title=VB6%20IconEditor%20Full%20Source%20Code%2Ezip%5FcUndoRedo">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />21 Mar 2000<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cUndoRedo.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "cUndoRedo"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private m_cUndoDC As cMemDC
+Private m_sNames() As String
+Private m_iCurrentIndex As Long
+Private m_iUndoCount As Long
+Private m_iRedoCount As Long
+Private m_lIconSizeX As Long
+Private m_lIconSizeY As Long
+Private m_lFrameCount As Long
+
+Public Sub Init(ByVal lIconSizeX As Long, ByVal lIconSizeY As Long, ByVal
+ lFrameCount As Long)
+Dim lhDC As Long
+   Set m_cUndoDC = New cMemDC
+   With m_cUndoDC
+      .Width = lIconSizeX * lFrameCount
+      .Height = lIconSizeY
+      lhDC = .hdc
+   End With
+   If Not (lhDC = 0) Then
+      m_lIconSizeX = lIconSizeX
+      m_lIconSizeY = lIconSizeY
+      m_lFrameCount = lFrameCount
+      ReDim m_sNames(1 To m_lFrameCount) As String
+   End If
+   m_iUndoCount = 0
+   m_iRedoCount = 0
+   m_iCurrentIndex = 0
+End Sub
+Public Sub Add(ByVal hDCOrig As Long, ByVal sName As String)
+   ' Increment the number of undo frames:
+   If m_iUndoCount &lt; m_lFrameCount Then
+      m_iUndoCount = m_iUndoCount + 1
+   End If
+   ' You cannot redo if you've just added an undo:
+   m_iRedoCount = 0
+   m_iCurrentIndex = m_iCurrentIndex + 1
+   If m_iCurrentIndex &gt; m_lFrameCount Then
+      m_iCurrentIndex = 1
+   End If
+   m_sNames(m_iCurrentIndex) = sName
+   BitBlt m_cUndoDC.hdc, (m_iCurrentIndex - 1) * m_lIconSizeX, 0, m_lIconSizeX,
+    m_lIconSizeY, hDCOrig, 0, 0, vbSrcCopy
+End Sub
+Public Sub Undo(ByVal hDCOrig As Long, ByVal lDepth As Long)
+Dim lFrame As Long
+Dim lNextFrame As Long
+   If m_iUndoCount &gt;= lDepth Then
+      If m_iRedoCount = 0 Then
+         ' must store current image in next frame so we can redo:
+         lNextFrame = WrapAdd(m_lFrameCount, m_iCurrentIndex, 1)
+         BitBlt m_cUndoDC.hdc, (lNextFrame - 1) * m_lIconSizeX, 0,
+          m_lIconSizeX, m_lIconSizeY, hDCOrig, 0, 0, vbSrcCopy
+      End If
+      lFrame = UndoIndex(lDepth - 1)
+      If lFrame &gt; 0 Then
+         BitBlt hDCOrig, 0, 0, m_lIconSizeX, m_lIconSizeY, m_cUndoDC.hdc,
+          (lFrame - 1) * m_lIconSizeX, 0, vbSrcCopy
+         m_iUndoCount = m_iUndoCount - lDepth
+         m_iRedoCount = m_iRedoCount + lDepth
+         m_iCurrentIndex = WrapSubtract(m_lFrameCount, m_iCurrentIndex, lDepth)
+      End If
+   End If
+End Sub
+Public Sub Redo(ByVal hDCOrig As Long, ByVal lDepth As Long)
+Dim lFrame As Long
+   If m_iRedoCount &gt;= lDepth Then
+      lFrame = RedoIndex(lDepth + 1)
+      If lFrame &gt; 0 Then
+         BitBlt hDCOrig, 0, 0, m_lIconSizeX, m_lIconSizeY, m_cUndoDC.hdc,
+          (lFrame - 1) * m_lIconSizeX, 0, vbSrcCopy
+         m_iUndoCount = m_iUndoCount + lDepth
+         m_iRedoCount = m_iRedoCount - lDepth
+         m_iCurrentIndex = WrapAdd(m_lFrameCount, m_iCurrentIndex, lDepth)
+      End If
+   End If
+End Sub
+Public Property Get UndoDepth() As Long
+   UndoDepth = m_iUndoCount
+End Property
+
+Public Property Get RedoDepth() As Long
+   RedoDepth = m_iRedoCount
+End Property
+Public Property Get UndoName(ByVal lDepth As Long) As String
+Dim lTheIndex As Long
+   lTheIndex = UndoIndex(lDepth)
+   If lTheIndex &gt; 0 Then
+      UndoName = m_sNames(lTheIndex)
+   End If
+End Property
+Private Property Get UndoIndex(ByVal lDepth As Long) As Long
+   UndoIndex = WrapSubtract(m_lFrameCount, m_iCurrentIndex, lDepth)
+End Property
+Public Property Get RedoName(ByVal lDepth As Long) As String
+Dim lTheIndex As Long
+   lTheIndex = RedoIndex(lDepth)
+   If lTheIndex &gt; 0 Then
+      RedoName = m_sNames(lTheIndex)
+   End If
+End Property
+Private Property Get RedoIndex(ByVal lDepth As Long) As Long
+   RedoIndex = WrapAdd(m_lFrameCount, m_iCurrentIndex, lDepth)
+End Property
+Private Function WrapAdd(ByVal lCount As Long, ByVal lIndex As Long, ByVal lAmt
+ As Long) As Long
+Dim lR As Long
+   lR = lIndex + lAmt
+   If lR &gt; lCount Then
+      lR = (lR - lCount)
+   End If
+   WrapAdd = lR
+End Function
+Private Function WrapSubtract(ByVal lCount As Long, ByVal lIndex As Long, ByVal
+ lAmt As Long) As Long
+Dim lR As Long
+   lR = lIndex - lAmt
+   If lR &lt; 1 Then
+      lR = (lCount + lR)
+   End If
+   WrapSubtract = lR
+End Function
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Icon Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator Icon Editor Control</a>&#160;.&#160;<a href="VB6_IconEditor_Full_Source_Code.html">VB6 IconEditor Full Source Code</a>&#160;.&#160;cUndoRedo.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Icon_Controls/Icon_Editor/VB6_IconEditor_Full_Source_Code_zip_cUndoRedo_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:54 GMT -->
+</html>

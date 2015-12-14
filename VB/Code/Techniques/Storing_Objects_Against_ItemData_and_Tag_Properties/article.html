@@ -1,0 +1,225 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Storing_Objects_Against_ItemData_and_Tag_Properties/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:09 GMT -->
+<head>
+
+<title>vbAccelerator - Storing Objects Against ItemData and Tag properties</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="ListBox and Combo boxes have an ItemData property to allow you to store an 
+additional long value against each ListItem. Similarly, ListView items and 
+TreeView nodes have a Tag property which can be used to store a string. But what if 
+you want to associate more data along with an item? Clearly you can make some use of 
+a long value to store a key, or use the bitfield technique to store multiple items. 
+With a string you can generate cunning schemes to store multiple strings and numbers 
+in the same string. But it would be a lot nicer if you could just store an object 
+against each item. Then data of any complexity can be stored against the item just by 
+setting the item data to point to the instance of the object.This article explores three methods you can use to store objects using only a 
+long value to store the object, and hence you can associate the long value with either the 
+ItemData property of a List or Combo box, or (by using CStr and CLng) with the 
+Tag property of Microsoft control.The uses don't stop there. You can replace VB's collection object with 
+an object that runs up to 100x faster. You could attach custom class data 
+to the items in an S-Grid control. Take advantage of the technique when building 
+controls directly from the API to store lots of data in the lParam member of the items... 
+this is great stuff!" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;Storing Objects Against ItemData and Tag properties</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="vbAccelerator_Object_Store_Sample.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />vbAccelerator Object Store Sample</a> (25K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2192</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2192&amp;type=Article&amp;title=Storing%20Objects%20Against%20ItemData%20and%20Tag%20properties">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />15 Aug 1999<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Storing Objects Against ItemData and Tag properties</h1><p class="splash">Build a Collection that runs 100 times faster than the VB version and enhance many controls with this code.</p><img src="objstore.gif" width="224" height="234" alt="Object Store Test Application" /><p /><p>ListBox and Combo boxes have an <i>ItemData</i> property to allow you to store an 
+additional long value against each <i>ListItem</i>. Similarly, ListView items and 
+TreeView nodes have a Tag property which can be used to store a string. But what if 
+you want to associate more data along with an item? Clearly you can make some use of 
+a long value to store a key, or use the bitfield technique to store multiple items. 
+With a string you can generate cunning schemes to store multiple strings and numbers 
+in the same string. But it would be a lot nicer if you could just store an object 
+against each item. Then data of any complexity can be stored against the item just by 
+setting the item data to point to the instance of the object.</p><p>This article explores three methods you can use to store objects using only a 
+long value to store the object, and hence you can associate the long value with either the 
+<i>ItemData</i> property of a List or Combo box, or (by using CStr and CLng) with the 
+<i>Tag</i> property of Microsoft control.</p><p>The uses don't stop there. You can replace VB's collection object with 
+an object that runs up to 100x faster. You could attach custom class data 
+to the items in an S-Grid control. Take advantage of the technique when building 
+controls directly from the API to store lots of data in the lParam member of the items... 
+this is great stuff!</p><h2>Three Ways To Store Objects</h2><p>Storing objects against ListBox items requires a pretty flexible way to allocate 
+and remove the objects. You can add items to a ListBox, but you can also insert 
+items at any position. Likewise you can delete items from any position. That really 
+rules out using arrays as your storage method without a lot of pain, because whilst 
+arrays are always the fastest way to work in VB if you add and remove to 
+the end of the list, they are difficult to manage and slow if you want to insert 
+or delete from the middle. (Although it is possible to do this; using either a
+Linked List type structure or using the exciting CopyMemory array hack elsewhere on the
+site!)</p><ul><li><i>Oh Dear: VB's Collection Object</i><br /><p>At first glance VB's collection object would seem to provide a good solution to 
+this problem. You can Add, Insert and Delete items in the collection at any point, 
+and you can store an object against each item in the collection. Also you can 
+give every item in the collection a unique key to identify it, and although 
+this must be a string there is no problem using a Long value (which you can use to 
+link the ListBox's ItemData to the item in the collection) as long as you ensure 
+VB thinks it is a string when you add the item. The sample code uses a counter to 
+generate unique keys, and hence is limited to only (ahem) adding and up to 
+4 billion items before it wraps and could then possibly generate a duplicate key. However 
+note that that limit is equivalent to 100 days of continuous running doing nothing else 
+except adding and removing objects in blocks of 100 (on my machine).</p><p>And basically this technique works... except for one thing: performance, at which 
+point it blows goats. 
+If the ListBox has a small number of items, everything is fine. But if the ListBox has 
+thousands of items then this technique is unsuitable. I would recommend this technique 
+for small numbers of items just because it is simple... except that there is 
+actually an even simpler method in coding terms!</p></li><li><i>Using IUnknown and ObjPtr</i><br /><p>A COM object is fundamentally the same as a C++ object: a "reference" to an 
+object is just a pointer to a structure in memory called the Virtual Table or vtable. 
+In COM terms, however, there is a difference between just knowing the pointer 
+to the vtable and having a workable object. This difference is enforced by the 
+COM contract and implemented through the <i>IUnknown</i> interface. All COM objects must 
+support this interface and all must work according to the contract in order to 
+work successfully.</p><p>The IUnknown object has just three methods:</p><ol><li><i>AddRef</i></li><li><i>Release</i></li><li><i>QueryInterface</i></li></ol><p>The <i>QueryInterface</i> is the method COM and Automation can use to determine 
+which facilities the object supports, and provides a directory to those objects. 
+The interesting methods (at least for the purposes of this article) are the <i>AddRef</i>
+ and <i>Release</i> methods.</p><p>All COM objects use an <i>AddRef</i> and <i>Release</i> scheme to determine when 
+they are being used. Whenever a COM object is created, or a program obtains a 
+reference to the object, the <i>AddRef</i> method of the object is called. Whenever 
+a reference to an object is set to nothing (including when it goes out of scope), the 
+<i>Release</i> method is called. The COM object is in charge of internally counting 
+the number of <i>AddRef</i> and <i>Release</i> calls, and when its internal counter of 
+references reaches 0 it terminates, freeing up any memory allocated to the object.</p><p>Since all VB objects implement the COM contract, we can take advantage of the 
+<i>IUnknown</i> interface to create valid COM references to objects but without using the 
+VB Object type or the native object type itself. It's easy! We just do what any 
+COM-conversant object must do to store an object, i.e. keep a copy of the pointer to the 
+object but also call the <i>IUnknown AddRef</i> method.</p><p>This technique would be fine, but unfortunately VB does not allow you to call either 
+<i>AddRef</i> or <i>Release</i>. You can create an object reference of type <i>IUnknown</i>,
+but any attempt to call the methods results in an unfriendly error message:</p><p>
+"Function or interface marked as restricted, or the function uses an Automation 
+type not supported in VB"
+</p><p>(Incidentally, if you try to include a public method called <i>Release</i> in a VB5 
+UserControl, something even worse happens! Try compiling one and see if you can interpret 
+<i>that</i> error message...)
+The only way to work around this is to use a version of <i>IUnknown</i> that you can 
+call yourself; and that means using a Type Library. For this sample I have used 
+Brad Martinez's IShellFolder Extended Type Library v1.2 (ISHF_Ex.TLB) (see the Type 
+Library section for download details) to get at 
+<i>IUnknown</i>; you can also find implementations in a number of other 
+Type Libraries, including Bruce McKinney's Win.TLB and WinU.TLB provided with 
+"Hardcore Visual Basic".</p><p>Once you have a reference to the Type Library you can then safely store classes using 
+just their object pointer, like this:</p><pre>
+   Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+       lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+
+   ' To Store An Object to a Long:
+   Public Sub Store(objThis As Object) As Long
+      Dim iU As IShellFolderEx_TLB.IUnknown
+
+      Set iU = objThis
+      iU.AddRef
+      Set iU = Nothing
+
+      Store = ObjPtr(objThis)
+      ' objThis cannot terminate until we call iU.Release on it
+
+   End Sub
+
+
+   ' To Retrieve the Object From the Long Value:
+   Private Property Get ObjectFromPtr(ByVal lPtr As Long) As Object
+   Dim objT As Object
+       ' Bruce McKinney's code for getting an Object from the
+       ' object pointer:
+       CopyMemory objT, lPtr, 4
+       Set ObjectFromPtr = objT
+       CopyMemory objT, 0&amp;, 4
+   End Property
+
+
+   ' To Delete The Object:
+   Public Sub Delete(ByVal lPtr As Long) As Long
+
+      Dim objThis As Object
+      Set objThis = ObjectFromPtr(lPtr)
+
+      Dim iU As IShellFolderEx_TLB.IUnknown
+      Set iU = objThis
+      iU.Release
+      Set iU = Nothing
+
+      Set objThis = Nothing
+      ' objThis now terminates if there are no other external 
+      ' references to it.
+
+   End Sub
+</pre></li><li><i>Using IMalloc</i><br /><p>The last method took advantage of COM support in VB objects to create an "object"
+ which lasts as long as the pointer to it does. Another way to create an object 
+that lasts is through Persistence.</p><p>In the persistence scheme, the object is coded so it is capable of storing 
+all the information required to create a completely new object that looks the same as 
+the one you started with. The persistent information can be stored in a format external 
+to the object itself, hence allowing a new version of the object to be stored at a later 
+date by creating a new object and loading the external data in. The most obvious example 
+of a persistent object in VB is the <i>UserControl</i> object, which includes a 
+<i>PropertyBag</i> implementation to allow details about the UserControl to be stored 
+and restored to the control's parent .FRM and .FRX files.</p><p>The only question about persistance is how to store the data. You can see some 
+sample techniques for persisting information in the article "malloc in VB?" 
+which demonstrates saving byte arrays, UDTs and strings. Storing longs, bytes and 
+integers is simple, and it is straightforward to aggregate these techniques together. 
+When I say straightforward, however, I should point out that another way of putting this is 
+tedious and error prone. You can do it, but it isn't easy.</p><p>A better way of persisting data is to have a class which controls reading and 
+writing data to a single memory chunk and have that provide a memory pointer for saving 
+purposes. The VB <i>PropertyBag</i> object is an example of such an object - this can 
+save properties in many different data types to a byte array in memory (which is 
+extremely simple to persist to memory or file). Unfortunately, this object is only 
+exposed in VB6 and then it is only available to public classes. A better method would be a 
+<i>PropertyBag</i> which was available regardless of type and VB version 
+(Hey!!! If any VB designers are reading, please mail me and tell me how come something 
+I can do with only a little trouble is not possible in VB?). An example of this type of 
+object at the site is the "XML Property Bag" object, which can be implemented 
+by any class you choose and is adept at turning complex combinations of variables 
+into a neat package. (Not just that; it has the by default benefit of delivering XML, the 
+ideal way of sending your data to another machine or process...)</p></li></ul><h2>Performance Comparison</h2><p>The following table shows the results from running the sample application provided with 
+the download for differing numbers of items. All the tests were performed on 
+a aged 266MHz Pentium II desktop with 256Mb RAM. Below 500 items the performance 
+differences are insignificant - you can use any technique you want. However, as 
+the number of items increases we begin to see that the VB Collection object is useless, 
+and performance worsens exponentially. Both the <i>IUnknown</i> and the <i>IMalloc</i>
+schemes however provide almost equal high performance which varies much more linearly 
+to the number of items. The <i>IMalloc</i> method is quickest at adding and removing items, 
+whilst the <i>IUnknown</i> method is quickest for accessing items:</p><table><tr><td></td><td colspan="4">Collection</td><td colspan="4">IUnknown</td><td colspan="4">IMalloc</td></tr><tr><td></td><td>Add</td><td>Enum</td><td>Clear</td><td>Total</td><td>Add</td><td>Enum</td><td>Clear</td><td>Total</td><td>Add</td><td>Enum</td><td>Clear</td><td>Total</td></tr><tr><td>100</td><td>54</td><td>7</td><td>9</td><td>70</td><td>41</td><td>1</td><td>10</td><td>52</td><td>25</td><td>34</td><td>9</td><td>68</td></tr><tr><td>500    </td><td>190   </td><td>39   </td><td>72   </td><td>301    </td><td>110   </td><td>8   </td><td>52   </td><td>170    </td><td>84   </td><td>41   </td><td>30   </td><td>155  </td></tr><tr><td>1000    </td><td>383  </td><td>91   </td><td>224   </td><td>698    </td><td>201   </td><td>15   </td><td>94   </td><td>310    </td><td>157   </td><td>83   </td><td>69   </td><td>309  </td></tr><tr><td>5 000    </td><td>2 184   </td><td>490   </td><td>4 510   </td><td>7 184    </td><td>1 008   </td><td>73   </td><td>436   </td><td>1 517    </td><td>843   </td><td>464   </td><td>298   </td><td>1 605  </td></tr><tr><td>10 000    </td><td>4 423   </td><td>1 068   </td><td>28 531   </td><td>34 022    </td><td>1 963   </td><td>168   </td><td>857   </td><td>2 988    </td><td>1 642   </td><td>935   </td><td>502   </td><td>3 079  </td></tr><tr><td>25 000    </td><td>12 352   </td><td>8 947   </td><td>241 672   </td><td>262 971    </td><td>5 601   </td><td>793   </td><td>2 400   </td><td>8 794    </td><td>4 458   </td><td>2 149   </td><td>1 559   </td><td>8 166  </td></tr></table><p>The IUnknown reference count control method has to be highly recommended. You get 
+very quick access to the objects you have created with hardly any new code to write.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;Storing Objects Against ItemData and Tag properties</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 2 January 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Storing_Objects_Against_ItemData_and_Tag_Properties/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:10 GMT -->
+</html>

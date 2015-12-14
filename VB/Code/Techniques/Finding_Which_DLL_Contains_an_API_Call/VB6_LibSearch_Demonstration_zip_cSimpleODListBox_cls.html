@@ -1,0 +1,794 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Finding_Which_DLL_Contains_an_API_Call/VB6_LibSearch_Demonstration_zip_cSimpleODListBox_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:10 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cSimpleODListBox.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cSimpleODListBox.cls" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;<a href="article.html">Finding Which DLL Contains an API Call</a>&#160;.&#160;<a href="VB6_LibSearch_Demonstration.html">VB6 LibSearch Demonstration</a>&#160;.&#160;cSimpleODListBox.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB6_Async_File_Find_Component.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Async File Find Component</a> (10K)</p><p class="nav"><a href="VB6_LibSearch_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 LibSearch Demonstration</a> (89K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:3391</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3391&amp;type=Zip&amp;title=VB6%20LibSearch%20Demonstration%2Ezip%5FcSimpleODListBox">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />14 Jan 2003<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2518">Complete Registry control</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1026">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cSimpleODListBox.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "cSimpleODListBox"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Implements ISubclass
+
+' Owner drawn control messages:
+Private Const WM_MEASUREITEM = &amp;H2C
+Private Const WM_DRAWITEM = &amp;H2B
+Private Const WM_DESTROY = &amp;H2
+Private Const WM_SETREDRAW = &amp;HB
+Private Const WM_COMMAND = &amp;H111
+
+' Owner draw style types:
+Private Const ODS_CHECKED = &amp;H8
+Private Const ODS_DISABLED = &amp;H4
+Private Const ODS_FOCUS = &amp;H10
+Private Const ODS_GRAYED = &amp;H2
+Private Const ODS_SELECTED = &amp;H1
+Private Const ODS_COMBOBOXEDIT = &amp;H1000
+' Owner draw action types:
+Private Const ODA_DRAWENTIRE = &amp;H1
+Private Const ODA_FOCUS = &amp;H4
+Private Const ODA_SELECT = &amp;H2
+
+Private Declare Function SendMessageByString Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ String) As Long
+Private Declare Function SendMessageByLong Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+
+Private Const LBN_SELCHANGE = 1
+
+Private Const LB_GETITEMDATA = &amp;H199
+Private Const LB_GETTEXT = &amp;H189
+Private Const LB_GETTEXTLEN = &amp;H18A
+Private Const LB_GETCURSEL = &amp;H188
+Private Const LB_GETITEMRECT = &amp;H198
+Private Const LB_GETSEL = &amp;H187
+
+' rect
+Private Type RECT
+   left As Long
+   tOp As Long
+   Right As Long
+   Bottom As Long
+End Type
+
+' Owner draw item measure:
+Private Type MEASUREITEMSTRUCT
+   CtlType As Long
+   CtlID As Long
+   ItemId As Long
+   itemWidth As Long
+   itemHeight As Long
+   itemData As Long
+End Type
+
+' Owner draw item draw:
+Private Type DRAWITEMSTRUCT
+   CtlType As Long
+   CtlID As Long
+   ItemId As Long
+   ItemAction As Long
+   ItemState As Long
+   hwndItem As Long
+   hdc As Long
+   rcItem As RECT
+   itemData As Long
+End Type
+
+' Memory functions:
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+' Text functions:
+Private Declare Function DrawText Lib "user32" Alias "DrawTextA" (ByVal hdc As
+ Long, ByVal lpStr As String, ByVal nCount As Long, lpRect As RECT, ByVal
+ wFormat As Long) As Long
+    Private Const DT_BOTTOM = &amp;H8
+    Private Const DT_CENTER = &amp;H1
+    Private Const DT_LEFT = &amp;H0
+    Private Const DT_CALCRECT = &amp;H400
+    Private Const DT_WORDBREAK = &amp;H10
+    Private Const DT_VCENTER = &amp;H4
+    Private Const DT_TOP = &amp;H0
+    Private Const DT_TABSTOP = &amp;H80
+    Private Const DT_SINGLELINE = &amp;H20
+    Private Const DT_RIGHT = &amp;H2
+    Private Const DT_NOCLIP = &amp;H100
+    Private Const DT_INTERNAL = &amp;H1000
+    Private Const DT_EXTERNALLEADING = &amp;H200
+    Private Const DT_EXPANDTABS = &amp;H40
+    Private Const DT_CHARSTREAM = 4
+    Private Const DT_NOPREFIX = &amp;H800
+    Private Const DT_EDITCONTROL = &amp;H2000&amp;
+    Private Const DT_PATH_ELLIPSIS = &amp;H4000&amp;
+    Private Const DT_END_ELLIPSIS = &amp;H8000&amp;
+    Private Const DT_MODIFYSTRING = &amp;H10000
+    Private Const DT_RTLREADING = &amp;H20000
+    Private Const DT_WORD_ELLIPSIS = &amp;H40000
+
+Private Declare Function SetTextColor Lib "gdi32" (ByVal hdc As Long, ByVal
+ crColor As Long) As Long
+Private Declare Function SetBkColor Lib "gdi32" (ByVal hdc As Long, ByVal
+ crColor As Long) As Long
+Private Declare Function SetBkMode Lib "gdi32" (ByVal hdc As Long, ByVal
+ nBkMode As Long) As Long
+    Private Const OPAQUE = 2
+    Private Const TRANSPARENT = 1
+Private Declare Function GetSysColor Lib "user32" (ByVal nIndex As Long) As Long
+
+Private Declare Function GetParent Lib "user32" (ByVal hwnd As Long) As Long
+
+Private Declare Function ImageList_Draw Lib "COMCTL32.DLL" ( _
+        ByVal hIml As Long, _
+        ByVal i As Long, _
+        ByVal hdcDst As Long, _
+        ByVal x As Long, _
+        ByVal y As Long, _
+        ByVal fStyle As Long _
+    ) As Long
+Private Declare Function ImageList_GetImageCount Lib "COMCTL32.DLL" ( _
+        ByVal hIml As Long _
+    ) As Long
+Private Declare Function ImageList_GetImageRect Lib "COMCTL32.DLL" ( _
+        ByVal hIml As Long, _
+        ByVal i As Long, _
+        prcImage As RECT _
+    ) As Long
+Private Declare Function ImageList_GetIconSize Lib "COMCTL32.DLL" ( _
+        ByVal hIml As Long, _
+        ByVal cX As Long, _
+        ByVal cY As Long _
+    ) As Long
+Private Const ILD_NORMAL = 0
+Private Const ILD_TRANSPARENT = 1
+Private Const ILD_BLEND25 = 2
+Private Const ILD_SELECTED = 4
+Private Const ILD_FOCUS = 4
+Private Const ILD_MASK = &amp;H10&amp;
+Private Const ILD_IMAGE = &amp;H20&amp;
+Private Const ILD_ROP = &amp;H40&amp;
+Private Const ILD_OVERLAYMASK = 3840
+
+Private Declare Function GetSysColorBrush Lib "user32" (ByVal nIndex As Long)
+ As Long
+Private Declare Function FillRect Lib "user32" (ByVal hdc As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+
+Private Declare Function GetFocus Lib "user32" () As Long
+Private Declare Function DrawFocusRect Lib "user32" (ByVal hdc As Long, lpRect
+ As RECT) As Long
+
+'/* flags for DrawFrameControl */
+Private Enum DFCFlags
+   DFC_CAPTION = 1
+   DFC_MENU = 2
+   DFC_SCROLL = 3
+   DFC_BUTTON = 4
+   'Win98/2000 only
+   DFC_POPUPMENU = 5
+End Enum
+
+Private Enum DFCCaptionTypeFlags
+   ' Caption types:
+   DFCS_CAPTIONCLOSE = &amp;H0&amp;
+   DFCS_CAPTIONMIN = &amp;H1&amp;
+   DFCS_CAPTIONMAX = &amp;H2&amp;
+   DFCS_CAPTIONRESTORE = &amp;H3&amp;
+   DFCS_CAPTIONHELP = &amp;H4&amp;
+End Enum
+Private Enum DFCMenuTypeFlags
+   ' Menu types:
+   DFCS_MENUARROW = &amp;H0&amp;
+   DFCS_MENUCHECK = &amp;H1&amp;
+   DFCS_MENUBULLET = &amp;H2&amp;
+   DFCS_MENUARROWRIGHT = &amp;H4&amp;
+End Enum
+Private Enum DFCScrollTypeFlags
+   ' Scroll types:
+   DFCS_SCROLLUP = &amp;H0&amp;
+   DFCS_SCROLLDOWN = &amp;H1&amp;
+   DFCS_SCROLLLEFT = &amp;H2&amp;
+   DFCS_SCROLLRIGHT = &amp;H3&amp;
+   DFCS_SCROLLCOMBOBOX = &amp;H5&amp;
+   DFCS_SCROLLSIZEGRIP = &amp;H8&amp;
+   DFCS_SCROLLSIZEGRIPRIGHT = &amp;H10&amp;
+End Enum
+Private Enum DFCButtonTypeFlags
+   ' Button types:
+   DFCS_BUTTONCHECK = &amp;H0&amp;
+   DFCS_BUTTONRADIOIMAGE = &amp;H1&amp;
+   DFCS_BUTTONRADIOMASK = &amp;H2&amp;
+   DFCS_BUTTONRADIO = &amp;H4&amp;
+   DFCS_BUTTON3STATE = &amp;H8&amp;
+   DFCS_BUTTONPUSH = &amp;H10&amp;
+End Enum
+Private Enum DFCStateTypeFlags
+   ' Styles:
+   DFCS_INACTIVE = &amp;H100&amp;
+   DFCS_PUSHED = &amp;H200&amp;
+   DFCS_CHECKED = &amp;H400&amp;
+   ' Win98/2000 only
+   DFCS_TRANSPARENT = &amp;H800&amp;
+   DFCS_HOT = &amp;H1000&amp;
+   'End Win98/2000 only
+   DFCS_ADJUSTRECT = &amp;H2000&amp;
+   DFCS_FLAT = &amp;H4000&amp;
+   DFCS_MONO = &amp;H8000&amp;
+End Enum
+
+Private Declare Function DrawFrameControl Lib "user32" (ByVal lHDC As Long, tR
+ As RECT, ByVal eFlag As DFCFlags, ByVal eStyle As Long) As Long
+Private Declare Function InflateRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function OffsetRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+
+Private Declare Function SaveDC Lib "gdi32" (ByVal hdc As Long) As Long
+Private Declare Function RestoreDC Lib "gdi32" (ByVal hdc As Long, ByVal
+ nSavedDC As Long) As Long
+
+Private Declare Function InvalidateRect Lib "user32" (ByVal hwnd As Long,
+ lpRect As RECT, ByVal bErase As Long) As Long
+Private Declare Function LockWindowUpdate Lib "user32" (ByVal hwndLock As Long)
+ As Long
+
+Private m_hWnd As Long
+Private m_hWndListBox As Long
+Private m_hIml As Long
+Private m_ptrVb6ImageList As Long
+Private m_lIconWidth As Long
+Private m_lIconHeight As Long
+Private m_bRedraw As Boolean
+Private m_bShowChecks As Boolean
+
+Public Property Get ShowChecks(lstThis As ListBox) As Boolean
+   ShowChecks = m_bShowChecks
+End Property
+Public Property Let ShowChecks(lstThis As ListBox, ByVal bState As Boolean)
+   lstThis.Visible = False
+   m_bShowChecks = bState
+   lstThis.Visible = True
+End Property
+
+Public Sub Redraw(lstThis As ListBox, ByVal bState As Boolean)
+   lstThis.Visible = bState
+   m_bRedraw = bState
+End Sub
+
+Private Sub pSubTreeSet(lstThis As ListBox, ByVal lIndex As Long, ByRef bSel As
+ Boolean, ByRef bNoSel As Boolean, ByRef lParent As Long)
+Dim i As Long
+Dim lIndent As Long
+Dim lThisIndent As Long
+
+   lIndent = Indent(lstThis, lIndex)
+
+   lParent = -1
+   bSel = False
+   bNoSel = False
+   
+   ' Check for state @ this level:
+   i = lIndex
+   Do
+      If i &gt;= 0 Then
+         lThisIndent = Indent(lstThis, i)
+         If lThisIndent &lt; lIndent Then
+            lParent = i
+            Exit Do
+         ElseIf lThisIndent = lIndent Then
+            If lstThis.Selected(i) Then
+               bSel = True
+            Else
+               bNoSel = True
+            End If
+         End If
+         If bSel And bNoSel Then
+            Exit Do
+         End If
+      Else
+         Exit Do
+      End If
+      i = i - 1
+   Loop
+   
+   If bNoSel And bSel Then
+      Exit Sub
+   End If
+   
+   i = lIndex
+   Do
+      i = i + 1
+      If i &lt; lstThis.ListCount Then
+         lThisIndent = Indent(lstThis, i)
+         If lThisIndent &lt; lIndent Then
+            Exit Do
+         ElseIf lThisIndent = lIndent Then
+            If lstThis.Selected(i) Then
+               bSel = True
+            Else
+               bNoSel = True
+            End If
+         End If
+         If bSel And bNoSel Then
+            Exit Do
+         End If
+      Else
+         Exit Do
+      End If
+   Loop
+   
+
+End Sub
+
+Public Sub Attach(ByVal hwnd As Long)
+   Detach
+   m_hWndListBox = hwnd
+   m_hWnd = GetParent(hwnd)
+   AttachMessage Me, m_hWnd, WM_DRAWITEM
+   AttachMessage Me, m_hWnd, WM_MEASUREITEM
+   AttachMessage Me, m_hWndListBox, WM_DESTROY
+End Sub
+Public Sub Detach()
+   If m_hWnd Then
+      DetachMessage Me, m_hWnd, WM_DRAWITEM
+      DetachMessage Me, m_hWnd, WM_MEASUREITEM
+      DetachMessage Me, m_hWndListBox, WM_DESTROY
+      m_hWnd = 0
+      m_hWndListBox = 0
+   End If
+End Sub
+Public Property Let ImageList( _
+      lstThis As ListBox, _
+      ByRef vImageList As Variant _
+   )
+   lstThis.Visible = False
+    m_hIml = 0
+    m_ptrVb6ImageList = 0
+    If (VarType(vImageList) = vbLong) Then
+        ' Assume a handle to an image list:
+        m_hIml = vImageList
+    ElseIf (VarType(vImageList) = vbObject) Then
+        ' Assume a VB image list:
+        On Error Resume Next
+        ' Get the image list initialised..
+        vImageList.ListImages(1).Draw 0, 0, 0, 1
+        m_hIml = vImageList.hImageList
+        If (Err.Number = 0) Then
+            ' Check for VB6 image list:
+            If (TypeName(vImageList) = "ImageList") Then
+                If (vImageList.ListImages.Count &lt;&gt;
+                 ImageList_GetImageCount(m_hIml)) Then
+                    Dim o As Object
+                    Set o = vImageList
+                    m_ptrVb6ImageList = ObjPtr(o)
+                End If
+            End If
+        Else
+            Debug.Print "Failed to Get Image list Handle", "cVGrid.ImageList"
+        End If
+        On Error GoTo 0
+    End If
+    If (m_hIml &lt;&gt; 0) Then
+        If (m_ptrVb6ImageList &lt;&gt; 0) Then
+            m_lIconWidth = vImageList.ImageWidth
+            m_lIconHeight = vImageList.ImageHeight
+        Else
+            Dim rc As RECT
+            ImageList_GetImageRect m_hIml, 0, rc
+            m_lIconWidth = rc.Right - rc.left
+            m_lIconHeight = rc.Bottom - rc.tOp
+        End If
+    End If
+    lstThis.Visible = True
+End Property
+Public Sub AddItem(lstThis As ListBox, ByVal sText As String, ByVal lIcon As
+ Long, ByVal lIndent As Long)
+Dim lItemData As Long
+   lItemData = (lIcon And &amp;HFFFF&amp;) Or ((lIndent And &amp;HFF&amp;) * &amp;H10000)
+   lstThis.AddItem sText
+   lstThis.itemData(lstThis.NewIndex) = lItemData
+   lstThis.Selected(lstThis.NewIndex) = True
+End Sub
+Public Property Get Indent(lstThis As ListBox, ByVal lIndex As Long) As Long
+Dim lItemData As Long
+   lItemData = lstThis.itemData(lIndex)
+   Indent = (lItemData And &amp;HFF0000) \ &amp;H10000
+End Property
+Public Property Let Indent(lstThis As ListBox, ByVal lIndex As Long, ByVal
+ lIndent As Long)
+Dim lItemData As Long
+   lItemData = lstThis.itemData(lIndex)
+   lItemData = lItemData And Not &amp;HFF0000
+   lItemData = lItemData Or (lIndent And &amp;HFF&amp;) * &amp;H10000
+   lstThis.itemData(lIndex) = lItemData
+End Property
+Public Property Get Icon(lstThis As ListBox, ByVal lIndex As Long) As Long
+Dim lItemData As Long
+   lItemData = lstThis.itemData(lIndex)
+   Icon = (lItemData And &amp;HFFFF&amp;)
+End Property
+Public Property Let Icon(lstThis As ListBox, ByVal lIndex As Long, ByVal lIcon
+ As Long)
+Dim lItemData As Long
+   lItemData = lstThis.itemData(lIndex)
+   lItemData = lItemData And Not &amp;HFFFF&amp;
+   lItemData = lItemData Or (lIcon And &amp;HFFFF&amp;)
+   lstThis.itemData(lIndex) = lItemData
+End Property
+
+Private Sub Class_Initialize()
+   m_bShowChecks = True
+   m_bRedraw = True
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As EMsgResponse)
+   '
+End Property
+
+Private Property Get ISubclass_MsgResponse() As EMsgResponse
+   ISubclass_MsgResponse = emrPreprocess
+   Select Case CurrentMessage
+   Case WM_DRAWITEM, WM_MEASUREITEM
+      ISubclass_MsgResponse = emrConsume
+   End Select
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+   Select Case iMsg
+   Case WM_DRAWITEM
+      Dim tDIS As DRAWITEMSTRUCT
+      CopyMemory tDIS, ByVal lParam, Len(tDIS)
+      If tDIS.hwndItem = m_hWndListBox Then
+         If Not m_bRedraw Then
+            ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lParam)
+         Else
+            DrawItem tDIS
+         End If
+      Else
+         ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lParam)
+      End If
+   Case WM_MEASUREITEM
+      Dim tMIS As MEASUREITEMSTRUCT
+      CopyMemory tMIS, ByVal lParam, Len(tMIS)
+      tMIS.itemHeight = 20
+      CopyMemory ByVal lParam, tMIS, Len(tMIS)
+   Case WM_DESTROY
+      Detach
+   End Select
+End Function
+
+Private Sub DrawItem(tDIS As DRAWITEMSTRUCT)
+Dim bEnabled As Boolean
+Dim bSelected As Boolean
+Dim lIndex As Long
+Dim lItemData As Long
+Dim lIcon As Long
+Dim lIndent As Long
+Dim lListIndex As Long
+Dim lLen As Long
+Dim sBuf As String
+Dim tR As RECT
+Dim lFlag As Long
+Dim lLeft As Long
+Dim hBr As Long
+Dim lBkMode As Long
+Dim lBkColor As Long
+Dim lSaveDC As Long
+Dim iPos As Long
+Static lLastDraw As Long
+
+   lSaveDC = SaveDC(tDIS.hdc)
+   
+   bEnabled = Not ((tDIS.ItemState And ODS_DISABLED) = ODS_DISABLED)
+   bSelected = ((tDIS.ItemState And ODS_SELECTED) = ODS_SELECTED)
+   lIndex = tDIS.ItemId
+   lItemData = SendMessageByLong(m_hWndListBox, LB_GETITEMDATA, lIndex, 0)
+   lIndent = (lItemData And &amp;H7FFF0000) \ &amp;H10000
+   lIcon = (lItemData And &amp;HFFFF&amp;)
+   lListIndex = SendMessageByLong(m_hWndListBox, LB_GETCURSEL, 0, 0)
+   
+   tDIS.rcItem.left = tDIS.rcItem.left + 20 * lIndent
+   If lListIndex = lIndex Then
+      If lLastDraw &gt; -1 And lLastDraw &lt;&gt; lListIndex Then
+         pRedrawItem tDIS.hdc, lLastDraw
+         lLastDraw = -1
+      End If
+      If (GetFocus() = tDIS.hwndItem) Then
+         hBr = GetSysColorBrush(vbHighlight And &amp;H1F&amp;)
+      Else
+         hBr = GetSysColorBrush(vbButtonFace And &amp;H1F&amp;)
+      End If
+      LSet tR = tDIS.rcItem
+      tR.Right = tR.Right - 2
+      FillRect tDIS.hdc, tR, hBr
+      DeleteObject hBr
+      lLastDraw = lListIndex
+      If GetFocus() = tDIS.hwndItem Then
+         DrawFocusRect tDIS.hdc, tR
+      End If
+   Else
+      hBr = GetSysColorBrush(vbWindowBackground And &amp;H1F&amp;)
+      FillRect tDIS.hdc, tR, hBr
+      DeleteObject hBr
+   End If
+   LSet tR = tDIS.rcItem
+   If (m_bShowChecks) Then
+      tR.Right = tR.left + 20
+      InflateRect tR, -1, -1
+      OffsetRect tR, 1, 1
+      lFlag = DFCS_BUTTONCHECK Or DFCS_FLAT
+      If bSelected Then
+         lFlag = lFlag Or DFCS_CHECKED
+      End If
+      DrawFrameControl tDIS.hdc, tR, DFC_BUTTON, lFlag
+      LSet tR = tDIS.rcItem
+   End If
+   lLen = SendMessageByLong(m_hWndListBox, LB_GETTEXTLEN, lIndex, 0)
+   If lLen &gt; 0 Then
+      sBuf = String$(lLen, 0)
+      SendMessageByString m_hWndListBox, LB_GETTEXT, lIndex, sBuf
+   End If
+   If (m_bShowChecks) Then
+      tR.left = tR.left + 20
+   Else
+      tR.left = tR.left + 2
+   End If
+   lLeft = tR.left
+   If Not (m_ptrVb6ImageList = 0) Or Not (m_hIml = 0) Then
+      ImageListDrawIcon m_ptrVb6ImageList, tDIS.hdc, m_hIml, lIcon, tR.left +
+       2, tR.tOp
+      lLeft = tR.left + 20
+   End If
+   LSet tR = tDIS.rcItem
+   tR.left = lLeft
+   
+   If Len(sBuf) &gt; 0 Then
+      If lListIndex = lIndex And (tDIS.hwndItem = GetFocus()) Then
+         SetTextColor tDIS.hdc, GetSysColor(vbHighlightText And &amp;H1F&amp;)
+      End If
+      lBkMode = SetBkMode(tDIS.hdc, TRANSPARENT)
+      
+      Dim sPath As String
+      iPos = InStr(sBuf, vbTab)
+      Dim tTextR As RECT
+      LSet tTextR = tR
+      
+      If (iPos &gt; 0) Then
+         sPath = left$(sBuf, iPos - 1)
+         ' Draw the path:
+         tTextR.Right = tTextR.Right - 48
+      Else
+         sPath = sBuf
+      End If
+      DrawText tDIS.hdc, sPath, -1, tTextR, DT_LEFT Or DT_VCENTER Or
+       DT_SINGLELINE Or DT_PATH_ELLIPSIS
+      
+      ' Draw the position:
+      If (iPos &gt; 0) Then
+         LSet tTextR = tR
+         tTextR.left = tTextR.Right - 40
+      
+         DrawText tDIS.hdc, Mid$(sBuf, iPos + 1), -1, tTextR, DT_LEFT Or
+          DT_VCENTER Or DT_SINGLELINE
+      End If
+      
+      SetBkMode tDIS.hdc, lBkMode
+   End If
+   
+   RestoreDC tDIS.hdc, lSaveDC
+   
+End Sub
+Private Sub ImageListDrawIcon( _
+        ByVal ptrVb6ImageList As Long, _
+        ByVal hdc As Long, _
+        ByVal hIml As Long, _
+        ByVal iIconIndex As Long, _
+        ByVal lX As Long, _
+        ByVal lY As Long, _
+        Optional ByVal bSelected As Boolean = False, _
+        Optional ByVal bBlend25 As Boolean = False _
+    )
+Dim lFlags As Long
+Dim lR As Long
+
+    lFlags = ILD_TRANSPARENT
+    If (bSelected) Then
+        lFlags = lFlags Or ILD_SELECTED
+    End If
+    If (bBlend25) Then
+        lFlags = lFlags Or ILD_BLEND25
+    End If
+    If (ptrVb6ImageList &lt;&gt; 0) Then
+        Dim o As Object
+        On Error Resume Next
+        Set o = ObjectFromPtr(ptrVb6ImageList)
+        If Not (o Is Nothing) Then
+            o.ListImages(iIconIndex + 1).Draw hdc, lX * Screen.TwipsPerPixelX,
+             lY * Screen.TwipsPerPixelY, lFlags
+        End If
+        On Error GoTo 0
+    Else
+        lR = ImageList_Draw( _
+                hIml, _
+                iIconIndex, _
+                hdc, _
+                lX, _
+                lY, _
+                lFlags)
+        If (lR = 0) Then
+            Debug.Print "Failed to draw Image: " &amp; iIconIndex &amp; " onto hDC " &amp;
+             hdc, "ImageListDrawIcon"
+        End If
+    End If
+End Sub
+Private Property Get ObjectFromPtr(ByVal lPtr As Long) As Object
+Dim oTemp As Object
+   ' Turn the pointer into an illegal, uncounted interface
+   CopyMemory oTemp, lPtr, 4
+   ' Do NOT hit the End button here! You will crash!
+   ' Assign to legal reference
+   Set ObjectFromPtr = oTemp
+   ' Still do NOT hit the End button here! You will still crash!
+   ' Destroy the illegal reference
+   CopyMemory oTemp, 0&amp;, 4
+   ' OK, hit the End button if you must--you'll probably still crash,
+   ' but it will be because of the subclass, not the uncounted reference
+End Property
+
+Private Sub pRedrawItem(ByVal lHDC As Long, ByVal lIndex As Long)
+Dim rc As RECT
+Dim hBr As Long
+Dim tR As RECT
+Dim lLeft As Long
+Dim lLen As Long
+Dim lFlag As Long
+Dim sBuf As String
+Dim lBkColor As Long
+Dim bSelected As Boolean
+Dim lItemData As Long
+Dim lListIndex As Long
+Dim lIcon As Long
+Dim lIndent As Long
+Dim lBkMode As Long
+Dim iPos As Long
+
+   ' Get the rectangle for this item:
+   SendMessage m_hWndListBox, LB_GETITEMRECT, lIndex, rc
+   lItemData = SendMessageByLong(m_hWndListBox, LB_GETITEMDATA, lIndex, 0)
+   lIndent = (lItemData And &amp;H7FFF0000) \ &amp;H10000
+   lIcon = (lItemData And &amp;HFFFF&amp;)
+   
+   hBr = GetSysColorBrush(vbWindowBackground And &amp;H1F&amp;)
+   FillRect lHDC, rc, hBr
+   DeleteObject hBr
+   
+   rc.left = rc.left + 20 * lIndent
+   LSet tR = rc
+   If (m_bShowChecks) Then
+      tR.Right = tR.left + 20
+      InflateRect tR, -1, -1
+      OffsetRect tR, 1, 1
+      lFlag = DFCS_BUTTONCHECK Or DFCS_FLAT
+      bSelected = SendMessageByLong(m_hWndListBox, LB_GETSEL, lIndex, 0)
+      If bSelected Then
+         lFlag = lFlag Or DFCS_CHECKED
+      End If
+      DrawFrameControl lHDC, tR, DFC_BUTTON, lFlag
+      LSet tR = rc
+   End If
+   lLen = SendMessageByLong(m_hWndListBox, LB_GETTEXTLEN, lIndex, 0)
+   If lLen &gt; 0 Then
+      sBuf = String$(lLen, 0)
+      SendMessageByString m_hWndListBox, LB_GETTEXT, lIndex, sBuf
+   End If
+   If (m_bShowChecks) Then
+      tR.left = tR.left + 20
+   Else
+      tR.left = tR.left + 2
+   End If
+   lLeft = tR.left
+   If Not (m_ptrVb6ImageList = 0) Or Not (m_hIml = 0) Then
+      ImageListDrawIcon m_ptrVb6ImageList, lHDC, m_hIml, lIcon, tR.left + 2,
+       tR.tOp
+      lLeft = tR.left + 20
+   End If
+   LSet tR = rc
+   tR.left = lLeft
+   
+   If Len(sBuf) &gt; 0 Then
+      
+      Dim sPath As String
+      iPos = InStr(sBuf, vbTab)
+      Dim tTextR As RECT
+      LSet tTextR = tR
+      
+      If (iPos &gt; 0) Then
+         sPath = left$(sBuf, iPos - 1)
+         ' Draw the path:
+         tTextR.Right = tTextR.Right - 48
+      Else
+         sPath = sBuf
+      End If
+      DrawText lHDC, sPath, -1, tTextR, DT_LEFT Or DT_VCENTER Or DT_SINGLELINE
+       Or DT_PATH_ELLIPSIS
+      
+      ' Draw the position:
+      If (iPos &gt; 0) Then
+         LSet tTextR = tR
+         tTextR.left = tTextR.Right - 40
+      
+         DrawText lHDC, Mid$(sBuf, iPos + 1), -1, tTextR, DT_LEFT Or DT_VCENTER
+          Or DT_SINGLELINE
+      End If
+      
+   End If
+
+End Sub
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;<a href="article.html">Finding Which DLL Contains an API Call</a>&#160;.&#160;<a href="VB6_LibSearch_Demonstration.html">VB6 LibSearch Demonstration</a>&#160;.&#160;cSimpleODListBox.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Finding_Which_DLL_Contains_an_API_Call/VB6_LibSearch_Demonstration_zip_cSimpleODListBox_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:10 GMT -->
+</html>

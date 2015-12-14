@@ -1,0 +1,233 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Hooks/Using_CBT_Hooks_to_Centre_API_Dialogs/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:02 GMT -->
+<head>
+
+<title>vbAccelerator - Using CBT Hooks to Centre API Dialogs</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Windows sometimes places Common Dialogs and Message Boxes at the 'wrong' position
+on the screen.  Whilst there are some ways of working around this for Common
+Dialogs, a more general solution which applies to any Windows dialog is to use
+a CBT (Computer-Based Training) Windows Hook.  These
+Hooks provide notification when any Window in your process is created, activated,
+focused, moved or destroyed.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Hooks</a>&#160;.&#160;Using CBT Hooks to Centre API Dialogs</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Dialog_Centre_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Dialog Centre Sample</a> (30K)</p><p /><p class="nav"><a href="VB6_Dialog_Centre_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Dialog Centre Sample</a> (29K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:12337</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12337&amp;type=Article&amp;title=Using%20CBT%20Hooks%20to%20Centre%20API%20Dialogs">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />27 Jun 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12338">Win32 Hooks in VB - The vbAccelerator Hook Library</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12334">(Incomplete) Docking Forms In VB</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Using CBT Hooks to Centre API Dialogs</h1><p class="splash">Ensure Common Dialogs and Message Boxes appear where you want them to.</p><img src="cbtDemo.png" width="270" height="206" alt="Dialog Centring Application Demonstration" /><p /><p>
+Windows sometimes places Common Dialogs and Message Boxes at the "wrong" position
+on the screen.  Whilst there are some ways of working around this for Common
+Dialogs, a more general solution which applies to any Windows dialog is to use
+a <span class="code">CBT</span> (Computer-Based Training) Windows Hook.  These
+Hooks provide notification when any Window in your process is created, activated,
+focused, moved or destroyed.
+</p><h2>Using a <span class="code">WH_CBT</span> Hook</h2><p><span class="code">WH_CBT</span> hooks are intended primarily for Computer-Based Training
+applications, but provide a significant amount of power in intercepting and modifying the
+way Windows works.  Once you install a <span class="code">WH_CBT</span> hook, you will
+start receiving these hook notifications for every window within the process you've
+installed the hook in:
+</p><ul><li><span class="code">HCBT_CREATEWND</span> = 3
+<p>A window is about to be created.  The system calls the hook procedure before sending 
+the <span class="code">WM_CREATE</span> or <span class="code">WM_NCCREATE</span> message to 
+the window.  Whilst the window has been created, at this point its size may not have
+been set, nor the parent window.  If the hook procedure returns a nonzero value, 
+the system destroys the window.
+</p><ul><li>
+The <span class="code">wParam</span> member of the hook notification contains the handle
+of the new window.
+</li><li>
+The <span class="code">lParam</span> member contains a pointer to a <span class="code">CBT_CREATEWND</span> 
+structure allowing you to modify the initial size and position of the window.
+</li></ul></li><li><span class="code">HCBT_DESTROYWND</span> = 4
+<p>
+A window is about to be destroyed.  Return 1 to prevent this from occurring.
+</p><ul><li>The <span class="code">wParam</span> member of the hook notification contains the handle
+of the window about to be destroyed.</li><li>The <span class="code">lParam</span> value is undefined and must be ignored.</li></ul></li><li><span class="code">HCBT_MOVESIZE</span> = 0
+<p>
+A window is about to be moved or sized.  Return 1 to prevent the window position from being changed.
+</p><ul><li>
+The <span class="code">wParam</span> member of the hook notification contains the handle
+of the window being moved or sized.
+</li><li>
+The <span class="code">lParam</span> member contains a pointer to a 
+<span class="code">RECT</span> containing the coordinates of the window. This
+can be modified to set the window's ultimate position and size.
+</li></ul></li><li><span class="code">HCBT_MINMAX</span> = 1
+<p>
+A window is about to be minimized or maximized.  
+Return 1 to prevent the window position from being changed.
+</p><ul><li>
+The <span class="code">wParam</span> member of the hook notification contains the handle
+of the window being minimized or maximized.
+</li><li>
+The low-word of the <span class="code">lParam</span> member contains the show-window
+(<span class="code">SW_*</span> constant) specifying the operation to be performed.
+</li></ul></li><li><span class="code">HCBT_ACTIVATE</span> = 5
+<p>
+The system is about to activate a window.  Return 1 to prevent the window from being activated.
+</p><ul><li>
+The <span class="code">wParam</span> member of the hook notification contains the handle
+of the window being activate.
+</li><li>
+The <span class="code">lParam</span> member contains a pointer to a
+<span class="code">CBTACTIVATESTRUCT</span> structure containing details about the activation
+operation.
+</li></ul></li><li><span class="code">HCBT_SETFOCUS</span> = 9
+<p>
+A window is about to receive the keyboard focus.  Return 1 to prevent the window from recieving focus.
+</p><ul><li>
+The <span class="code">wParam</span> member of the hook notification contains the handle
+of the window about to receive focus.
+</li><li>
+The <span class="code">lParam</span> member contains the handle of the window about to lose
+focus.
+</li></ul></li><li><span class="code">HCBT_SYSCOMMAND</span> = 8
+<p>
+A system command is about to be carried out.   Return 1 to prevent the System Command from 
+begin performed. 
+</p><ul><li>
+The <span class="code">wParam</span> member of the hook notification contains the system command code 
+(<span class="code">SC_*</span>) about to be performed.
+</li><li>
+The <span class="code">lParam</span> member contains <span class="code">lParam</span> which
+will be send along with this <span class="code">WM_SYSCOMMAND</span> message.
+</li></ul></li></ul><p>
+As you can see, you can use the hook to detect any window that is created or destroyed
+as well as to substantively alter how the user interface works.  In the case of centring
+dialogs, however, we only need to detect when the dialog is created.
+</p><p>
+Note there are also three other <span class="code">HCBT_</span> codes associated with CBT
+applications which aren't covered here; these are only used in conjunction with
+a <span class="code">WH_JOURNALPLAYBACK</span> hook.
+</p><h2>Centring Common Dialogs and Message Boxes</h2><p>
+To centre a Common Dialog or Message Box, you need to be able to do two things:
+</p><ol><li>Detect the Window handle of the dialog as it is created.</li><li>Intercept the <span class="code">WM_INITDIALOG</span> message as it is sent 
+by the dialog.</li></ol><p>
+In this sample the vbAccelerator Windows Hook library is used to detect the
+dialog handle as it is created, and the <a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing
+and Timer Assistant</a> to subclass the dialog and intercept the <span class="code">WM_INITDIALOG</span>
+message.
+</p><h3>1. Using the <span class="code">WH_CBT</span> hook</h3><p>
+The previous section described the many notifications supplied by this hook.  In
+this case detection of the dialog being created is needed; however, the hook will
+also provide all sorts of other notifications, including those for every child 
+control within the dialog and activation/sizing of any controls on the dialog or
+your application.  Therefore you want to filter the messages you receive to
+get the correct one.  Also, for best performance the hook should be installed for
+as short a time as possible. 
+</p><p>
+This is achieved in the demonstration by:
+</p><ol><li>Only installing the hook just before the dialog is about to be shown.</li><li>Checking only hook notifications with code <span class="code">HCBT_CREATEWND</span>.</li><li>Only responding to events for Windows with the class name "#32770" (which of course
+is exactly the class name any reasonable person would give to a dialog if they were asked
+to choose a name for one).</li></ol><p>
+The code looks like this:
+</p><pre>
+Private Function IWindowsHook_HookProc( _
+       ByVal eType As vbalWinHook.EHTHookTypeConstants, _
+       ByVal nCode As Long, _
+       ByVal wParam As Long, _
+       ByVal lParam As Long, _
+       bConsume As Boolean) As Long
+
+   If eType = WH_CBT Then
+      If nCode = HCBT_CREATEWND Then
+         InstallWinProc wParam
+      End If
+   End If
+
+End Function
+
+Private Function InstallWinProc(ByVal hwnd As Long)
+Dim lProcOld As Long
+Dim sClass As String
+Dim iPos As Long
+
+   If IsValidLocalWindow(hwnd) Then
+      If (InStr(ClassName(hwnd), "#32770")) Then
+         AttachMessage Me, hwnd, WM_INITDIALOG
+      End If
+   End If
+End Function
+
+Private Function IsValidLocalWindow(ByVal hwnd As Long) As Boolean
+   If IsWindow(hwnd) Then
+      Dim idWnd As Long
+      Call GetWindowThreadProcessId(hwnd, idWnd)
+      IsValidLocalWindow = (idWnd = GetCurrentProcessId())
+   End If
+End Function
+
+Private Property Get ClassName(ByVal hwnd As Long) As String
+Dim sBuf As String
+Dim iPos As Long
+   sBuf = String$(255, 0)
+   GetClassName hwnd, sBuf, 255
+   iPos = InStr(sBuf, Chr$(0))
+   If iPos &gt; 1 Then
+      ClassName = Left$(sBuf, iPos - 1)
+   End If
+End Property
+</pre><h3>Responding to the <span class="code">WM_INITDIALOG</span> message</h3><p>
+Once the window has been found and the subclass installed, its just a matter
+of waiting for it to finish initialising and then send the <span class="code">WM_INITDIALOG</span> 
+message.  When this message is sent, the dialog has been completely set up and sized, so the
+code can determine the dialog size, centre it, and then remove the subclass and hook.  The
+code in the demonstration will check for multiple monitors on your system whilst centring
+and attempt to place the dialog at the best position.  In more recent versions of Windows
+File and Folder selection dialogs are resizable which means you can also specify the ideal
+width and height you'd like for the dialog.
+</p><h2>Conclusion</h2><p>
+Using a <span class="code">WH_CBT</span> hook, you can easily intercept 
+the creation and destruction of any Window and obtain a handle to it even if 
+that Window is not being created directly from your code (which of course is usually the
+case for VB applications.)  Hooks of this type are particularly useful for
+modifying the behaviour of Windows which possibly weren't intended to be modified,
+particularly the Windows API dialogs.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Hooks</a>&#160;.&#160;Using CBT Hooks to Centre API Dialogs</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 July 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Hooks/Using_CBT_Hooks_to_Centre_API_Dialogs/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:03 GMT -->
+</html>

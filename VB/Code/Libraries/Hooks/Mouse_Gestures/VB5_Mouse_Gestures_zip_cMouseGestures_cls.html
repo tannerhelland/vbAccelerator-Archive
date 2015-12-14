@@ -1,0 +1,486 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Hooks/Mouse_Gestures/VB5_Mouse_Gestures_zip_cMouseGestures_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:43 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cMouseGestures.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cMouseGestures.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Hooks</a>&#160;.&#160;<a href="article.html">Enabling Mouse Gestures with a WH_MOUSE hook</a>&#160;.&#160;<a href="VB5_Mouse_Gestures.html">VB5 Mouse Gestures</a>&#160;.&#160;cMouseGestures.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Mouse_Gestures.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Mouse Gestures</a> (23K)</p><p /><p class="nav"><a href="VB6_Mouse_Gestures.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Mouse Gestures</a> (22K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:13223</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13223&amp;type=Zip&amp;title=VB5%20Mouse%20Gestures%2Ezip%5FcMouseGestures">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />23 Oct 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12636">Detecting Mouse XButton Clicks</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12338">Win32 Hooks in VB - The vbAccelerator Hook Library</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12334">(Incomplete) Docking Forms In VB</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cMouseGestures.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cMouseGestures"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Type POINTAPI
+   x As Long
+   y As Long
+End Type
+
+Private Declare Function PostMessage Lib "user32" Alias "PostMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As Long)
+ As Long
+Private Declare Function GetCursorPos Lib "user32" (lpPoint As POINTAPI) As Long
+Private Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Long) As
+ Integer
+Private Declare Function GetActiveWindow Lib "user32" () As Long
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" (pDest As
+ Any, pSrc As Any, ByVal ByteLen As Long)
+
+Private Const WM_ACTIVATE As Long = &amp;H6
+Private Const WM_RBUTTONDOWN As Long = &amp;H204
+Private Const WM_MOUSEMOVE As Long = &amp;H200
+Private Const WM_RBUTTONUP As Long = &amp;H205
+
+Implements IWindowsHook
+
+''' &lt;summary&gt;
+''' Enumerated flag values for the mouse gestures supported by
+''' the MouseGesture class.
+''' &lt;/summary&gt;
+Public Enum MouseGestureTypes
+    ''' &lt;summary&gt;
+    ''' No mouse gesture.
+    ''' &lt;/summary&gt;
+    NoGesture = &amp;H0
+    ''' &lt;summary&gt;
+    ''' Mouse Gesture move north
+    ''' &lt;/summary&gt;
+    NorthGesture = &amp;H1
+    ''' &lt;summary&gt;
+    ''' Mouse Gesture move south
+    ''' &lt;/summary&gt;
+    SouthGesture = &amp;H2
+    ''' &lt;summary&gt;
+    ''' Mouse Gesture move east
+    ''' &lt;/summary&gt;
+    EastGesture = &amp;H4
+    ''' &lt;summary&gt;
+    ''' Mouse Gesture move west
+    ''' &lt;/summary&gt;
+    WestGesture = &amp;H8
+    ''' &lt;summary&gt;
+    ''' Mouse Gesture move north-east
+    ''' &lt;/summary&gt;
+    NorthThenEastGesture = &amp;H10
+    ''' &lt;summary&gt;
+    ''' Mouse Gesture move south-east
+    ''' &lt;/summary&gt;
+    SouthThenEastGesture = &amp;H20
+    ''' &lt;summary&gt;
+    ''' Mouse Gesture move south-west
+    ''' &lt;/summary&gt;
+    SouthThenWestGesture = &amp;H40
+    ''' &lt;summary&gt;
+    ''' Mouse Gesture move north-west
+    ''' &lt;/summary&gt;
+    NorthThenWestGesture = &amp;H80
+    ''' &lt;summary&gt;
+    ''' Mouse Gesture move north-east
+    ''' &lt;/summary&gt;
+    EastThenNorthGesture = &amp;H100
+    ''' &lt;summary&gt;
+    ''' Mouse Gesture move south-east
+    ''' &lt;/summary&gt;
+    EastThenSouthGesture = &amp;H200
+    ''' &lt;summary&gt;
+    ''' Mouse Gesture move south-west
+    ''' &lt;/summary&gt;
+    WestThenSouthGesture = &amp;H400
+    ''' &lt;summary&gt;
+    ''' Mouse Gesture move north-west
+    ''' &lt;/summary&gt;
+    WestThenNorthGesture = &amp;H800
+    ''' &lt;summary&gt;
+    ''' All mouse gestures
+    ''' &lt;/summary&gt;
+    AllGestureTypes = &amp;HFFF
+End Enum
+
+''' &lt;summary&gt;
+''' The default absolute number of pixels the mouse must travel
+''' in any direction for the gesture to be acknowledged.
+''' &lt;/summary&gt;
+Private Const DEFAULT_HYSTERESIS_PIXELS As Integer = 8
+
+''' &lt;summary&gt;
+''' How far does the mouse have to move before it is
+''' interpreted as a gesture?
+''' &lt;/summary&gt;
+Private m_hysteresis As Long
+''' &lt;summary&gt;
+''' The configured mouse gesture types
+''' &lt;/summary&gt;
+Private m_gestureTypes As MouseGestureTypes
+''' &lt;summary&gt;
+''' Whether we are checking for a gesture or not.
+''' &lt;/summary&gt;
+Private m_checkingGesture As Boolean
+''' &lt;summary&gt;
+''' The recorded mouse gesture during gesture checking
+''' &lt;/summary&gt;
+Private m_recordedGesture As MouseGestureTypes
+''' &lt;summary&gt;
+''' Array of mouse points recorded during gesture.
+''' &lt;/summary&gt;
+Private m_gesture() As POINTAPI
+Private m_gestureCount As Long
+
+''' &lt;summary&gt;
+''' Whether mouse gesture checking is attached or not
+''' &lt;/summary&gt;
+Private m_bAttached As Boolean
+''' &lt;summary&gt;
+''' Whether right mouse button down on last hook event or not
+''' &lt;/summary&gt;
+Private m_bRightDown As Boolean
+Private m_iCancelRightUpHack As Long
+
+Public Event MouseGesture( _
+      ByVal gestureType As MouseGestureTypes, _
+      ByVal xGestureStart As Long, ByVal yGestureStart As Long, _
+      ByVal xGestureEnd As Long, ByVal yGestureEnd As Long, _
+      ByRef acceptGesture As Boolean _
+   )
+   
+Public Sub Attach()
+   If Not (m_bAttached) Then
+      InstallHook Me, WH_MOUSE
+      m_bAttached = True
+   End If
+End Sub
+Public Sub Detach()
+   If (m_bAttached) Then
+      RemoveHook Me, WH_MOUSE
+      m_bAttached = False
+   End If
+End Sub
+
+''' &lt;summary&gt;
+''' Gets/sets the mouse gesture types to look for.
+''' &lt;/summary&gt;
+Public Property Get GestureTypes() As MouseGestureTypes
+   GestureTypes = m_gestureTypes
+End Property
+Public Property Let GestureTypes(ByVal Value As MouseGestureTypes)
+   m_gestureTypes = Value
+End Property
+
+Private Sub Class_Initialize()
+   m_gestureTypes = AllGestureTypes
+End Sub
+
+Private Sub Class_Terminate()
+   Detach
+End Sub
+
+Private Function IWindowsHook_HookProc(ByVal eType As
+ vbalWinHook.EHTHookTypeConstants, ByVal nCode As Long, ByVal wParam As Long,
+ ByVal lParam As Long, bConsume As Boolean) As Long
+   '
+      
+   Dim ret As Boolean
+   
+   Dim bRightDown As Boolean
+   Dim iMsg As Long
+   bRightDown = Not (GetAsyncKeyState(vbKeyRButton) = 0)
+   If (bRightDown) Then
+      If Not (m_bRightDown) Then
+         m_bRightDown = True
+         iMsg = WM_RBUTTONDOWN
+      Else
+         iMsg = WM_MOUSEMOVE
+      End If
+   ElseIf (m_bRightDown) Then
+      m_bRightDown = False
+      m_iCancelRightUpHack = 0       ' apologies
+      iMsg = WM_RBUTTONUP
+   Else
+      ' eat next 10 mouse moves after right up
+      If (m_iCancelRightUpHack &lt; 10) Then
+         m_iCancelRightUpHack = m_iCancelRightUpHack + 1
+         ret = True
+      End If
+   End If
+   
+   If Not (ret) Then
+      ret = PreFilterMessage(iMsg)
+   End If
+   
+   If (ret) Then
+      bConsume = True
+      IWindowsHook_HookProc = 0
+   End If
+   
+End Function
+
+Private Function PreFilterMessage( _
+      ByVal iMsg As Long _
+   ) As Boolean
+   Dim retValue As Boolean
+
+   If (m_gestureTypes &gt; 0) Then
+      If (m_checkingGesture) Then
+         If (iMsg = WM_MOUSEMOVE) Then
+            Debug.Print "PreFilterMessage"
+            AddToMouseGesture
+         ElseIf (iMsg = WM_RBUTTONUP) Then
+            Debug.Print "PreFilterMessage"
+            retValue = EndMouseGesture()
+            If (retValue) Then
+               ' Windows will skip the next mouse down if we consume
+               ' a mouse up.  m cannot be modified, despite being byref,
+               ' so post a new one to a location which is offscreen:
+               Dim offScreen As Long
+               offScreen = &amp;H7FFF7FFF
+               PostMessage GetActiveWindow(), WM_RBUTTONUP, 0, offScreen
+            End If
+         ElseIf (iMsg = WM_ACTIVATE) Then
+            m_checkingGesture = False
+         End If
+
+      ElseIf (iMsg = WM_RBUTTONDOWN) Then
+         Debug.Print "PreFilterMessage"
+         BeginMouseGesture
+      End If
+   End If
+
+   PreFilterMessage = retValue
+   
+End Function
+        
+''' &lt;summary&gt;
+'''
+''' &lt;/summary&gt;
+Private Sub BeginMouseGesture()
+   m_gestureCount = 1
+   ReDim m_gesture(1 To m_gestureCount) As POINTAPI
+   Dim tP As POINTAPI
+   GetCursorPos tP
+   LSet m_gesture(m_gestureCount) = tP
+   m_checkingGesture = True
+End Sub
+
+''' &lt;summary&gt;
+'''
+''' &lt;/summary&gt;
+Private Sub AddToMouseGesture()
+   m_gestureCount = m_gestureCount + 1
+   ReDim Preserve m_gesture(1 To m_gestureCount) As POINTAPI
+   Dim tP As POINTAPI
+   GetCursorPos tP
+   LSet m_gesture(m_gestureCount) = tP
+End Sub
+
+''' &lt;summary&gt;
+'''
+''' &lt;/summary&gt;
+''' &lt;returns&gt;&lt;/returns&gt;
+Private Function EndMouseGesture() As Boolean
+
+    m_checkingGesture = False
+
+    Dim retValue As Boolean
+
+    '' add the end point:
+    AddToMouseGesture
+
+    '' get start and end:
+    Dim first As POINTAPI
+    LSet first = m_gesture(1)
+    Dim last As POINTAPI
+    LSet last = m_gesture(m_gestureCount)
+
+    '' check which directions we register a change in:
+    Dim xDiff As Long
+    xDiff = first.x - last.x
+    Dim yDiff As Integer
+    yDiff = first.y - last.y
+
+    Dim north As Boolean
+    Dim south As Boolean
+    Dim east As Boolean
+    Dim west As Boolean
+
+    If (Abs(yDiff) &gt; DEFAULT_HYSTERESIS_PIXELS) Then
+        north = (yDiff &gt; 0)
+        south = Not (north)
+    End If
+    If (Abs(xDiff) &gt; DEFAULT_HYSTERESIS_PIXELS) Then
+        west = (xDiff &gt; 0)
+        east = Not (west)
+    End If
+
+    '' check for very narrow angles as these are probably not compound gestures
+    If ((north Or south) And (east Or west)) Then
+        If (Abs(xDiff) &gt; Abs(yDiff)) Then
+            If ((Abs(xDiff) / (Abs(yDiff) * 1#)) &gt; 7) Then
+               Debug.Print "Cancelling north/south contribution"
+                north = False
+                south = False
+            End If
+        Else
+            If ((Abs(yDiff) / (Abs(xDiff) * 1#)) &gt; 7) Then
+               Debug.Print "Cancelling east/west contribution"
+                east = False
+                west = False
+            End If
+        End If
+    End If
+
+    m_recordedGesture = MouseGestureTypes.NoGesture
+
+    If (north Or south) Then
+        If (east Or west) Then
+            ' compound gesture
+            m_recordedGesture = interpretCompoundGesture(first, last, north,
+             south, east, west)
+        Else
+            ' vertical gesture:
+            If (north) Then
+                m_recordedGesture = MouseGestureTypes.NorthGesture
+            Else
+                m_recordedGesture = MouseGestureTypes.SouthGesture
+            End If
+        End If
+    ElseIf (east Or west) Then
+        ' horizontal gesture
+        If (east) Then
+            m_recordedGesture = MouseGestureTypes.EastGesture
+        Else
+            m_recordedGesture = MouseGestureTypes.WestGesture
+        End If
+    End If
+
+    If Not (m_recordedGesture = MouseGestureTypes.NoGesture) Then
+        If Not ((GestureTypes And m_recordedGesture) = 0) Then
+         Dim bAccept As Boolean
+         RaiseEvent MouseGesture(m_recordedGesture, first.x, first.y, last.x,
+          last.y, bAccept)
+         retValue = bAccept
+      End If
+    End If
+
+    EndMouseGesture = retValue
+End Function
+
+Private Function interpretCompoundGesture( _
+    first As POINTAPI, last As POINTAPI, _
+    ByVal north As Boolean, ByVal south As Boolean, ByVal east As Boolean,
+     ByVal west As Boolean _
+    ) As MouseGestureTypes
+
+   Dim retValue As MouseGestureTypes
+   retValue = MouseGestureTypes.NoGesture
+
+   ' draw a diagonal line between start &amp; end
+   ' and determine if most points are y above
+   ' the line or not:
+   Dim pointAbove As Long
+   pointAbove = 0
+   Dim pointBelow As Long
+   pointBelow = 0
+    
+   Dim i As Long
+   Dim point As POINTAPI
+   For i = 1 To m_gestureCount
+      LSet point = m_gesture(i)
+      Dim diagY As Long
+      diagY = ((point.x - first.x) * (first.y - last.y)) / (first.x - last.x) +
+       first.y
+      If (point.y &gt; diagY) Then
+         pointAbove = pointAbove + 1
+      Else
+         pointBelow = pointBelow + 1
+      End If
+   Next i
+
+    If (north) Then
+        If (east) Then
+            If (pointAbove &gt; pointBelow) Then
+                retValue = MouseGestureTypes.EastThenNorthGesture
+            Else
+                retValue = MouseGestureTypes.NorthThenEastGesture
+            End If
+        Else
+            If (pointAbove &gt; pointBelow) Then
+                retValue = MouseGestureTypes.WestThenNorthGesture
+            Else
+                retValue = MouseGestureTypes.NorthThenWestGesture
+            End If
+        End If
+    ElseIf (south) Then
+        If (east) Then
+            If (pointAbove &gt; pointBelow) Then
+                retValue = MouseGestureTypes.SouthThenEastGesture
+            Else
+                retValue = MouseGestureTypes.EastThenSouthGesture
+            End If
+        Else
+            If (pointAbove &gt; pointBelow) Then
+                retValue = MouseGestureTypes.SouthThenWestGesture
+            Else
+                retValue = MouseGestureTypes.WestThenSouthGesture
+            End If
+        End If
+    End If
+
+   interpretCompoundGesture = retValue
+
+End Function
+
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Hooks</a>&#160;.&#160;<a href="article.html">Enabling Mouse Gestures with a WH_MOUSE hook</a>&#160;.&#160;<a href="VB5_Mouse_Gestures.html">VB5 Mouse Gestures</a>&#160;.&#160;cMouseGestures.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 November 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Hooks/Mouse_Gestures/VB5_Mouse_Gestures_zip_cMouseGestures_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:43 GMT -->
+</html>

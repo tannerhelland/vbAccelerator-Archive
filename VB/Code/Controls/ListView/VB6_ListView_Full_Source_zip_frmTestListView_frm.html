@@ -1,0 +1,872 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/ListView/VB6_ListView_Full_Source_zip_frmTestListView_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:23 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmTestListView.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmTestListView.frm" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator ListView Control</a>&#160;.&#160;<a href="VB6_ListView_Full_Source.html">VB6 ListView Full Source</a>&#160;.&#160;frmTestListView.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_ListView_Control.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ListView Control</a> (84K)</p><p class="nav"><a href="VB5_ListView_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ListView Demonstration</a> (200K)</p><p class="nav"><a href="VB5_ListView_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ListView Full Source</a> (344K)</p><p /><p class="nav"><a href="VB6_ListView_Control.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ListView Control</a> (85K)</p><p class="nav"><a href="VB6_ListView_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ListView Demonstration</a> (196K)</p><p class="nav"><a href="VB6_ListView_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ListView Full Source</a> (341K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:4175</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4175&amp;type=Zip&amp;title=VB6%20ListView%20Full%20Source%2Ezip%5FfrmTestListView">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 8 / 16</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 8 / 11</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:8 February 2004</p>
+<br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />20 Jun 2003<br /><p class="update">Bug fixes and minor enhancements to the control:</p><p class="update">The <span class="code">Selected</span> property of
+a ListItem always returned false, meaning it was impossible to 
+determine which items were selected in a multi-select ListView.
+Corrected. Same problem with the <span class="code">ItemCut</span>
+property.</p><p class="update"><span class="code">Icon</span> property of ListItem set
+the icon of the next item along in the control.  Fixed.</p><p class="update"><span class="code">Position</span> property added to the 
+ColumnHeader object to allow the order of the column headers to be read
+and set programmatically.</p><p class="update">Insert before parameter to the <span class="code">Add</span> method
+of the ListItems collection was ignored.  Corrected.</p><p class="update">Setting a column alignment to right caused the column to be
+centred, and vice-versa. Fixed.</p><p class="update">Mouse Up events were only generated for double-clicks.  Now
+corrected.</p><p class="update">A <span class="code">KeyDown</span> event was generated when
+a <span class="code">KeyUp</span> should have been.  Fixed</p><p class="update">Option to place the background image at a specified location
+rather than tile it added.</p><p class="update"><span class="code">NoColumnHeaders</span> property added to
+allow column headers to be hidden in Detail view.</p><p class="update">Added a call to <span class="code">LoadLibrary</span> on 
+Shell32.DLL to prevent crashes when using a manifest.</p><p class="update">Thanks to Ben Andersen, Ian Goodwin, Vasanth Raj, Greg Thomson,
+Frank Peters for the bug reports and code.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3376">Making VB Apply XP Visual Styles at Design and Debug Time</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1427">Adding XP Visual Styles to Your Visual Basic Application</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmTestListView.frm</h1><pre>VERSION 5.00
+Object = "{396F7AC0-A0DD-11D3-93EC-00C0DFE7442A}#1.0#0"; "vbalIml6.ocx"
+Object = "{E910F8E1-8996-4EE9-90F1-3E7C64FA9829}#1.1#0"; "vbaListView6.ocx"
+Begin VB.Form frmTestListView 
+   Caption         =   "vbAccelerator ListView Control Tester"
+   ClientHeight    =   8055
+   ClientLeft      =   4110
+   ClientTop       =   3120
+   ClientWidth     =   9210
+   BeginProperty Font 
+      Name            =   "Tahoma"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "frmTestListView.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   8055
+   ScaleWidth      =   9210
+   Begin vbalListViewLib6.vbalListViewCtl lvwMain 
+      Height          =   4035
+      Left            =   60
+      TabIndex        =   32
+      Top             =   420
+      Width           =   5175
+      _ExtentX        =   9128
+      _ExtentY        =   7117
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      MultiSelect     =   -1  'True
+      LabelEdit       =   0   'False
+      AutoArrange     =   0   'False
+      HeaderButtons   =   0   'False
+      HeaderTrackSelect=   0   'False
+      HideSelection   =   0   'False
+      InfoTips        =   0   'False
+   End
+   Begin VB.PictureBox picStyle 
+      Align           =   1  'Align Top
+      BorderStyle     =   0  'None
+      Height          =   375
+      Left            =   0
+      ScaleHeight     =   375
+      ScaleWidth      =   9210
+      TabIndex        =   23
+      Top             =   0
+      Width           =   9210
+      Begin VB.CheckBox chkGroupView 
+         Caption         =   "&amp;Grouped View"
+         Height          =   255
+         Left            =   2940
+         TabIndex        =   28
+         Top             =   60
+         UseMaskColor    =   -1  'True
+         Width           =   2295
+      End
+      Begin VB.ComboBox cboView 
+         Height          =   315
+         ItemData        =   "frmTestListView.frx":1272
+         Left            =   600
+         List            =   "frmTestListView.frx":1274
+         Style           =   2  'Dropdown List
+         TabIndex        =   24
+         Top             =   60
+         Width           =   2235
+      End
+      Begin VB.Label lblInfo 
+         Caption         =   "View:"
+         Height          =   315
+         Index           =   1
+         Left            =   60
+         TabIndex        =   25
+         Top             =   120
+         Width           =   435
+      End
+   End
+   Begin VB.PictureBox picStatus 
+      Align           =   2  'Align Bottom
+      BorderStyle     =   0  'None
+      Height          =   315
+      Left            =   0
+      ScaleHeight     =   315
+      ScaleWidth      =   9210
+      TabIndex        =   22
+      Top             =   7740
+      Width           =   9210
+      Begin VB.Label lblStatus 
+         Caption         =   "vbAccelerator ListView"
+         Height          =   255
+         Left            =   60
+         TabIndex        =   26
+         Top             =   0
+         Width           =   3195
+      End
+   End
+   Begin VB.PictureBox picOptions 
+      Align           =   2  'Align Bottom
+      BorderStyle     =   0  'None
+      Height          =   2790
+      Left            =   0
+      ScaleHeight     =   2790
+      ScaleWidth      =   9210
+      TabIndex        =   5
+      Top             =   4950
+      Width           =   9210
+      Begin VB.CheckBox chkCustomDraw 
+         Caption         =   "Custom Draw"
+         Height          =   195
+         Left            =   2460
+         TabIndex        =   33
+         Top             =   2520
+         Value           =   1  'Checked
+         Width           =   2775
+      End
+      Begin VB.CheckBox chkBorderSelect 
+         Caption         =   "&amp;Border Select (Large Icons)"
+         Height          =   255
+         Left            =   60
+         TabIndex        =   30
+         Top             =   2040
+         Width           =   2295
+      End
+      Begin VB.CheckBox chkAutoArrange 
+         Caption         =   "Auto-Arran&amp;ge"
+         Height          =   255
+         Left            =   60
+         TabIndex        =   29
+         Top             =   300
+         Value           =   1  'Checked
+         Width           =   2295
+      End
+      Begin VB.CheckBox chkHeaderDragDrop 
+         Caption         =   "&amp;Header Drag-Drop (Report)"
+         Height          =   255
+         Left            =   60
+         TabIndex        =   27
+         Top             =   1800
+         UseMaskColor    =   -1  'True
+         Width           =   2295
+      End
+      Begin VB.CheckBox chkEnabled 
+         Caption         =   "&amp;Enabled"
+         Height          =   255
+         Left            =   60
+         TabIndex        =   19
+         Top             =   60
+         Value           =   1  'Checked
+         Width           =   2295
+      End
+      Begin VB.ComboBox cboBorder 
+         Height          =   315
+         Left            =   3360
+         Style           =   2  'Dropdown List
+         TabIndex        =   18
+         Top             =   60
+         Width           =   2235
+      End
+      Begin VB.ComboBox cboAppearance 
+         Height          =   315
+         Left            =   3360
+         Style           =   2  'Dropdown List
+         TabIndex        =   17
+         Top             =   420
+         Width           =   2235
+      End
+      Begin VB.CheckBox chkHideSelection 
+         Caption         =   "&amp;Hide Selection"
+         Height          =   255
+         Left            =   60
+         TabIndex        =   16
+         Top             =   840
+         Width           =   2295
+      End
+      Begin VB.CheckBox chkMultiSelect 
+         Caption         =   "&amp;Multi-Select"
+         Height          =   255
+         Left            =   60
+         TabIndex        =   15
+         Top             =   1080
+         Value           =   1  'Checked
+         Width           =   2295
+      End
+      Begin VB.CheckBox chkBackground 
+         Caption         =   "&amp;Background Picture"
+         Height          =   195
+         Left            =   2460
+         TabIndex        =   14
+         Top             =   840
+         Width           =   2235
+      End
+      Begin VB.CheckBox chkInfoTips 
+         Caption         =   "&amp;Info Tips"
+         Height          =   195
+         Left            =   2460
+         TabIndex        =   13
+         Top             =   1080
+         Value           =   1  'Checked
+         Width           =   2235
+      End
+      Begin VB.CheckBox chkLabelEdit 
+         Caption         =   "Label Edi&amp;t"
+         Height          =   255
+         Left            =   60
+         TabIndex        =   12
+         Top             =   1320
+         Width           =   2295
+      End
+      Begin VB.CheckBox chkGridLines 
+         Caption         =   "&amp;Gridlines (Report)"
+         Height          =   195
+         Left            =   2460
+         TabIndex        =   11
+         Top             =   1320
+         Width           =   2235
+      End
+      Begin VB.CheckBox chkHeaderButtons 
+         Caption         =   "&amp;Header Buttons (Report)"
+         Height          =   255
+         Left            =   60
+         TabIndex        =   10
+         Top             =   1560
+         Value           =   1  'Checked
+         Width           =   2295
+      End
+      Begin VB.CheckBox chkSubItemImages 
+         Caption         =   "&amp;Sub-Item Images (Report)"
+         Height          =   195
+         Left            =   2460
+         TabIndex        =   9
+         Top             =   1560
+         Width           =   2235
+      End
+      Begin VB.CheckBox chkCheckBoxes 
+         Caption         =   "&amp;Check Boxes"
+         Height          =   195
+         Left            =   2460
+         TabIndex        =   8
+         Top             =   1800
+         Width           =   2235
+      End
+      Begin VB.CheckBox chkFlatScrollBars 
+         Caption         =   "&amp;Flat Scroll Bars"
+         Height          =   195
+         Left            =   2460
+         TabIndex        =   7
+         Top             =   2040
+         Width           =   2235
+      End
+      Begin VB.CheckBox chkFullRowSelect 
+         Caption         =   "F&amp;ull Row Select (Report or Tile)"
+         Height          =   195
+         Left            =   2460
+         TabIndex        =   6
+         Top             =   2280
+         Width           =   2775
+      End
+      Begin VB.Label lblInfo 
+         Caption         =   "BorderStyle:"
+         Height          =   315
+         Index           =   0
+         Left            =   2400
+         TabIndex        =   21
+         Top             =   120
+         Width           =   915
+      End
+      Begin VB.Label lblInfo 
+         Caption         =   "Appearance:"
+         Height          =   315
+         Index           =   2
+         Left            =   2400
+         TabIndex        =   20
+         Top             =   480
+         Width           =   915
+      End
+   End
+   Begin VB.PictureBox picTest 
+      Align           =   4  'Align Right
+      BorderStyle     =   0  'None
+      Height          =   4575
+      Left            =   7995
+      ScaleHeight     =   4575
+      ScaleWidth      =   1215
+      TabIndex        =   0
+      Top             =   375
+      Width           =   1215
+      Begin VB.CommandButton cmdWorkAreas 
+         Caption         =   "&amp;Work Areas.."
+         Height          =   375
+         Left            =   0
+         TabIndex        =   31
+         Top             =   1680
+         Width           =   1155
+      End
+      Begin VB.CommandButton cmdAdd 
+         Caption         =   "&amp;Add..."
+         Height          =   375
+         Left            =   0
+         TabIndex        =   4
+         Top             =   0
+         Width           =   1155
+      End
+      Begin VB.CommandButton cmdRemove 
+         Caption         =   "&amp;Remove..."
+         Height          =   375
+         Left            =   0
+         TabIndex        =   3
+         Top             =   360
+         Width           =   1155
+      End
+      Begin VB.CommandButton cmdInfo 
+         Caption         =   "&amp;Info..."
+         Height          =   375
+         Left            =   0
+         TabIndex        =   2
+         Top             =   720
+         Width           =   1155
+      End
+      Begin VB.CommandButton cmdNew 
+         Caption         =   "&amp;New..."
+         Height          =   375
+         Left            =   0
+         TabIndex        =   1
+         Top             =   1260
+         Width           =   1155
+      End
+      Begin vbalIml6.vbalImageList ilsIcons32 
+         Left            =   300
+         Top             =   2640
+         _ExtentX        =   953
+         _ExtentY        =   953
+         IconSizeX       =   32
+         IconSizeY       =   32
+         ColourDepth     =   24
+         Size            =   158832
+         Images          =   "frmTestListView.frx":1276
+         Version         =   131072
+         KeyCount        =   36
+         Keys            =   ""
+      End
+      Begin vbalIml6.vbalImageList ilsIcons16 
+         Left            =   300
+         Top             =   2040
+         _ExtentX        =   953
+         _ExtentY        =   953
+         ColourDepth     =   24
+         Size            =   43624
+         Images          =   "frmTestListView.frx":27F06
+         Version         =   131072
+         KeyCount        =   38
+         Keys            =   ""
+      End
+      Begin vbalIml6.vbalImageList ilsIcons48 
+         Left            =   300
+         Top             =   3240
+         _ExtentX        =   953
+         _ExtentY        =   953
+         IconSizeX       =   48
+         IconSizeY       =   48
+         ColourDepth     =   24
+         Size            =   502320
+         Images          =   "frmTestListView.frx":3298E
+         Version         =   131072
+         KeyCount        =   52
+         Keys            =   ""
+      End
+   End
+End
+Attribute VB_Name = "frmTestListView"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub cboAppearance_Click()
+   lvwMain.Appearance = cboAppearance.ItemData(cboAppearance.ListIndex)
+End Sub
+
+Private Sub cboBorder_Click()
+   lvwMain.BorderStyle = cboBorder.ItemData(cboBorder.ListIndex)
+End Sub
+
+Private Sub cboView_Click()
+   If cboView.ListIndex &gt; -1 Then
+      lvwMain.View = cboView.ItemData(cboView.ListIndex)
+   End If
+End Sub
+
+Private Sub chkAutoArrange_Click()
+   lvwMain.AutoArrange = (chkAutoArrange.Value = vbChecked)
+End Sub
+
+Private Sub chkBackground_Click()
+   If chkBackground.Value = Checked Then
+      lvwMain.BackColor = -1
+      lvwMain.BackgroundPicture = App.Path &amp; "\back.jpg"
+   Else
+      lvwMain.BackColor = vbWindowBackground
+      lvwMain.BackgroundPicture = ""
+   End If
+End Sub
+
+Private Sub chkBorderSelect_Click()
+   lvwMain.ItemBorderSelect = (chkBorderSelect.Value = Checked)
+End Sub
+
+Private Sub chkCheckBoxes_Click()
+   lvwMain.CheckBoxes = (chkCheckBoxes.Value = Checked)
+End Sub
+
+Private Sub chkCustomDraw_Click()
+   lvwMain.CustomDraw = (chkCustomDraw.Value = Checked)
+End Sub
+
+Private Sub chkEnabled_Click()
+   lvwMain.Enabled = (chkEnabled.Value = Checked)
+End Sub
+
+Private Sub chkFlatScrollBars_Click()
+   lvwMain.FlatScrollBar = (chkFlatScrollBars.Value = Checked)
+End Sub
+
+Private Sub chkFullRowSelect_Click()
+   lvwMain.FullRowSelect = (chkFullRowSelect.Value = Checked)
+End Sub
+
+Private Sub chkGridLines_Click()
+   lvwMain.GridLines = (chkGridLines.Value = Checked)
+End Sub
+
+Private Sub chkGroupView_Click()
+   
+   ' very slow unless we do this
+   lvwMain.Visible = False
+   If (chkGroupView.Value = vbChecked) Then
+      Dim i As Long
+      
+      ' Create three groups and display them on screen:
+      lvwMain.ItemGroups.Enabled = True
+      
+      If (lvwMain.ItemGroups.Count = 0) Then
+         ' Create a group and add the first five items to it:
+         Dim cG As cItemGroup
+         Set cG = lvwMain.ItemGroups.Add(1, "GROUP1", "First Five Items")
+         Debug.Print cG.Header
+         For i = 1 To 5
+            lvwMain.ListItems(i).Group = cG
+         Next i
+         
+         ' Create a group and add the next ten items:
+         Set cG = lvwMain.ItemGroups.Add(5, "GROUP2", "Next Ten Items")
+         For i = 6 To 15
+            lvwMain.ListItems(i).Group = cG
+         Next i
+         
+         ' And the rest:
+         Set cG = lvwMain.ItemGroups.Add(15, "GROUP3", "The Remainder")
+         For i = 16 To lvwMain.ListItems.Count
+            lvwMain.ListItems(i).Group = cG
+         Next i
+      End If
+      
+   Else
+      ' Hide all the groups:
+      lvwMain.ItemGroups.Enabled = False
+      
+   End If
+   lvwMain.Visible = True
+   
+End Sub
+
+Private Sub chkHeaderButtons_Click()
+   lvwMain.HeaderButtons = (chkHeaderButtons.Value = Checked)
+End Sub
+
+Private Sub chkHeaderDragDrop_Click()
+   lvwMain.HeaderDragDrop = (chkHeaderDragDrop.Value = Checked)
+End Sub
+
+Private Sub chkHideSelection_Click()
+   lvwMain.HideSelection = (chkHideSelection.Value = Checked)
+End Sub
+
+Private Sub chkInfoTips_Click()
+   lvwMain.InfoTips = (chkInfoTips.Value = Checked)
+End Sub
+
+Private Sub chkLabelEdit_Click()
+   lvwMain.LabelEdit = (chkLabelEdit.Value = Checked)
+End Sub
+
+Private Sub chkMultiSelect_Click()
+   lvwMain.MultiSelect = (chkMultiSelect.Value = Checked)
+End Sub
+
+Private Sub chkSubItemImages_Click()
+Dim i As Long
+   lvwMain.SubItemImages = (chkSubItemImages.Value = Checked)
+   If chkSubItemImages.Value = Checked Then
+      With lvwMain.ListItems
+         For i = 1 To .Count
+            With .Item(i).SubItems(1)
+               .IconIndex = Rnd * ilsIcons16.ImageCount
+               Debug.Print .IconIndex
+            End With
+         Next i
+      End With
+   End If
+End Sub
+
+Private Sub cmdAdd_Click()
+Dim sText As String
+Dim sKey As String
+On Error GoTo ErrorHandler
+   sText = InputBox$("Please enter the caption of the item to add", , "Test
+    Item " &amp; lvwMain.ListItems.Count + 1)
+   If sText &lt;&gt; "" Then
+      sKey = InputBox$("Please enter the key for the item:", , "C" &amp;
+       lvwMain.ListItems.Count + 1)
+      If sKey &lt;&gt; "" Then
+         lvwMain.ListItems.Add , sKey, sText
+      End If
+   End If
+   Exit Sub
+ErrorHandler:
+   MsgBox "Error: " &amp; Err.Description &amp; " [" &amp; Err.Number &amp; "]", vbInformation
+   Exit Sub
+End Sub
+
+Private Sub cmdInfo_Click()
+On Error GoTo ErrorHandler
+Dim sInfo As String
+   If Not lvwMain.SelectedItem Is Nothing Then
+      With lvwMain.SelectedItem
+         sInfo = "Text = " &amp; .Text &amp; vbCrLf
+         sInfo = sInfo &amp; "BackColor = " &amp; .BackColor &amp; vbCrLf
+         sInfo = sInfo &amp; "ForeColor = " &amp; .ForeColor &amp; vbCrLf
+         sInfo = sInfo &amp; "Tag = " &amp; .Tag &amp; vbCrLf
+         sInfo = sInfo &amp; "ToolTipText = " &amp; .ToolTipText &amp; vbCrLf
+         sInfo = sInfo &amp; "Checked = " &amp; .Checked &amp; vbCrLf
+         sInfo = sInfo &amp; "Cut = " &amp; .Cut &amp; vbCrLf
+         sInfo = sInfo &amp; "Selected = " &amp; .Selected &amp; vbCrLf
+         sInfo = sInfo &amp; "Hot = " &amp; .Hot &amp; vbCrLf
+         sInfo = sInfo &amp; "Indent = " &amp; .Indent &amp; vbCrLf
+         sInfo = sInfo &amp; "ItemData = " &amp; .ItemData &amp; vbCrLf
+         sInfo = sInfo &amp; "Key = " &amp; .Key &amp; vbCrLf
+         sInfo = sInfo &amp; "Left =" &amp; .Left &amp; vbCrLf
+         sInfo = sInfo &amp; "Top = " &amp; .Top &amp; vbCrLf
+         MsgBox sInfo, vbInformation
+      End With
+   Else
+      MsgBox "No item is selected.", vbInformation
+   End If
+   Exit Sub
+ErrorHandler:
+   MsgBox "Error: " &amp; Err.Description &amp; " [" &amp; Err.Number &amp; "]", vbInformation
+   Exit Sub
+End Sub
+
+Private Sub cmdNew_Click()
+   Dim f As New frmTestListView
+   f.Show
+   f.Move Me.Left + 32 * Screen.TwipsPerPixelX, Me.Top + 32 *
+    Screen.TwipsPerPixelY
+End Sub
+
+Private Sub cmdRemove_Click()
+On Error GoTo ErrorHandler
+   If Not lvwMain.SelectedItem Is Nothing Then
+      lvwMain.ListItems.Remove lvwMain.SelectedItem.Key
+   Else
+      MsgBox "No item is selected.", vbInformation
+   End If
+   Exit Sub
+ErrorHandler:
+   MsgBox "Error: " &amp; Err.Description &amp; " [" &amp; Err.Number &amp; "]", vbInformation
+   Exit Sub
+End Sub
+
+
+Private Sub cmdWorkAreas_Click()
+   Dim fW As New frmTestWorkAreas
+   fW.Show
+End Sub
+
+Private Sub Form_Resize()
+   On Error Resume Next
+   lvwMain.Move _
+      lvwMain.Left, _
+      lvwMain.Top, _
+      Me.ScaleWidth - picTest.Width - Me.ScaleX(4, vbPixels, Me.ScaleMode), _
+      Me.ScaleHeight - lvwMain.Top - picOptions.Height - picStatus.Height -
+       Me.ScaleY(4, vbPixels, Me.ScaleMode)
+End Sub
+
+Private Sub lvwMain_AfterLabelEdit(Cancel As Boolean, NewString As String, Item
+ As cListItem)
+   Debug.Print "After Label Edit: ", NewString, Item.Text
+End Sub
+
+Private Sub lvwMain_BeforeLabelEdit(Cancel As Boolean, Item As cListItem)
+   Debug.Print "Before Label Edit: ", Item.Text
+End Sub
+
+Private Sub lvwMain_Click()
+   lblStatus.Caption = "Click"
+End Sub
+
+Private Sub lvwMain_ColumnClick(Column As cColumn)
+   ' Sort according to the column type:
+   Select Case Column.Key
+   Case "NAME"
+      Column.SortType = eLVSortString
+      Column.SortOrder = NewSortOrder(Column.SortOrder)
+   Case "DATE"
+      Column.SortType = eLVSortDate
+      Column.SortOrder = NewSortOrder(Column.SortOrder)
+   Case "SIZE"
+      Column.SortType = eLVSortNumeric
+      Column.SortOrder = NewSortOrder(Column.SortOrder)
+   End Select
+   lvwMain.ListItems.SortItems
+End Sub
+
+Private Function NewSortOrder(ByVal SortOrder As ESortOrderConstants) As
+ ESortTypeConstants
+   Select Case SortOrder
+   Case eSortOrderNone, eSortOrderDescending
+      NewSortOrder = eSortOrderAscending
+   Case eSortOrderAscending
+      NewSortOrder = eSortOrderDescending
+   End Select
+End Function
+
+Private Sub lvwMain_DblClick()
+   lblStatus.Caption = "Double Click"
+End Sub
+
+Private Sub lvwMain_ItemClick(Item As cListItem)
+   lblStatus.Caption = "Clicked Item " &amp; Item.Text
+End Sub
+
+Private Sub lvwMain_ItemDblClick(Item As cListItem)
+   lblStatus.Caption = "Double-Clicked Item " &amp; Item.Text
+End Sub
+
+Private Sub lvwMain_KeyDown(KeyCode As Integer, Shift As Integer)
+   lblStatus.Caption = "KeyDown " &amp; KeyCode &amp; ",Shift"
+End Sub
+
+Private Sub lvwMain_KeyPress(KeyAscii As Integer)
+   lblStatus.Caption = "KeyPress " &amp; KeyAscii
+End Sub
+
+Private Sub lvwMain_KeyUp(KeyCode As Integer, Shift As Integer)
+   lblStatus.Caption = "KeyUp " &amp; KeyCode &amp; ",Shift"
+End Sub
+
+Private Sub lvwMain_MouseDown(Button As Integer, Shift As Integer, x As Single,
+ y As Single)
+   lblStatus.Caption = "MouseDown " &amp; x &amp; "," &amp; y
+End Sub
+
+Private Sub lvwMain_MouseMove(Button As Integer, Shift As Integer, x As Single,
+ y As Single)
+   lblStatus.Caption = "MouseMove " &amp; x &amp; "," &amp; y
+End Sub
+
+Private Sub lvwMain_MouseUp(Button As Integer, Shift As Integer, x As Single, y
+ As Single)
+   lblStatus.Caption = "MouseUp " &amp; x &amp; "," &amp; y
+End Sub
+
+Private Sub Form_Load()
+Dim i As Long
+Dim j As Long
+   
+   Me.Show
+   Me.Refresh
+   
+   With cboView
+      .AddItem "Tiles"
+      .ItemData(.NewIndex) = 4
+      .AddItem "Large Icons"
+      .ItemData(.NewIndex) = 0
+      .AddItem "Small Icons"
+      .ItemData(.NewIndex) = 2
+      .AddItem "List"
+      .ItemData(.NewIndex) = 3
+      .AddItem "Details"
+      .ItemData(.NewIndex) = 1
+      
+      .ListIndex = 0
+   End With
+   
+   With cboBorder
+      .AddItem "None"
+      .ItemData(.NewIndex) = 0
+      .AddItem "Fixed Single"
+      .ItemData(.NewIndex) = 1
+      .AddItem "Thin"
+      .ItemData(.NewIndex) = 2
+      .ListIndex = 1
+   End With
+
+   With cboAppearance
+      .AddItem "Flat"
+      .ItemData(.NewIndex) = 0
+      .AddItem "3D"
+      .ItemData(.NewIndex) = 1
+      .ListIndex = 1
+   End With
+      
+Dim colX As cColumn
+Dim itmX As cListItem
+         
+   With lvwMain
+      .Visible = False
+      .CustomDraw = True
+            
+      .AutoArrange = True
+      
+      ' Set up image lists:
+      .ImageList(eLVLargeIcon) = ilsIcons32
+      .ImageList(eLVSmallIcon) = ilsIcons16
+      .ImageList(eLVTileImages) = ilsIcons48
+      .ImageList(eLVHeaderImages) = ilsIcons16
+      
+      ' Add column headers
+      Set colX = .Columns.Add(, "NAME", "Name")
+      colX.Tag = "Stores the name of the item"
+      colX.IconIndex = 0
+      Set colX = .Columns.Add(, "DATE", "Date")
+      colX.Tag = "Stores the date of the item"
+      colX.IconIndex = 1
+      Set colX = .Columns.Add(, "SIZE", "Size")
+      colX.Tag = "Stores the size of the item"
+      colX.Alignment = eLVColumnAlignRight
+            
+      For i = 1 To 3
+         .Columns(i).ItemData = i * 100
+      Next i
+      
+      With .ListItems
+         For i = 1 To 100
+            Set itmX = .Add(, "I" &amp; i, "Test Item " &amp; i, Rnd *
+             ilsIcons32.ImageCount, Rnd * ilsIcons16.ImageCount)
+            If (i Mod 2) = 0 Then
+               itmX.ToolTipText = "This is a test tool tip for item " &amp; i
+            End If
+            With itmX.SubItems(1)
+               .Caption = DateSerial(Year(Now), Rnd * Month(Now) + 1, Rnd *
+                Day(Now) + 1)
+               .ShowInTile = ((i Mod 2) = 0)
+               '.IconIndex = itmX.IconIndex
+            End With
+            With itmX.SubItems(2)
+               .Caption = CLng(Rnd * 1024 * 1024)
+               .ShowInTile = True
+            End With
+            If (i = 1) Then
+               ' test font/colours:
+               itmX.BackColor = RGB(98, 176, 255)
+               itmX.ForeColor = RGB(240, 248, 255)
+               Dim sFnt As New StdFont
+               sFnt.Name = "Tahoma"
+               sFnt.Size = 10
+               sFnt.Bold = True
+               itmX.Font = sFnt
+            End If
+         Next i
+      End With
+      
+      .TileViewItemLines = 3
+               
+      .Visible = True
+   End With
+   
+   
+End Sub
+
+Private Sub lvwMain_OLEStartDrag(Data As DataObject, AllowedEffects As Long)
+   AllowedEffects = vbDropEffectMove
+End Sub
+
+Private Sub lvwMain_Resize()
+   '
+   'lvwMain.Arrange eLVAlignLeft
+   '
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator ListView Control</a>&#160;.&#160;<a href="VB6_ListView_Full_Source.html">VB6 ListView Full Source</a>&#160;.&#160;frmTestListView.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 23 June 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/ListView/VB6_ListView_Full_Source_zip_frmTestListView_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:23 GMT -->
+</html>

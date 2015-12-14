@@ -1,0 +1,193 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/DIB_Sections/Resampling_With_Alpha/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:28 GMT -->
+<head>
+
+<title>vbAccelerator - Resampling with Alpha</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+If you want to change the size of a bitmap, you quickly find that standard techniques
+such as GDI's StretchBlt aren't particularly good and the result is usually
+very pixelated.  Resampling is a technique which smooths the contribution of each
+pixel whilst changing the size, and although it takes more computation it provides a
+vastly better output.  However, if you're trying to resize a bitmap with a transparent
+area, resampling can cause problems too because it tends to pull the 'transparent' 
+background colours into the image.  This problem can be resolved by introducing alpha
+into the resampling method.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">DIB Sections</a>&#160;.&#160;Resampling with Alpha</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Alpha_Resample_Demo.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Alpha Resample Demo</a> (57K)</p><p /><p class="nav"><a href="VB6_Alpha_Resample_Demo.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Alpha Resample Demo</a> (54K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:11998</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=11998&amp;type=Article&amp;title=Resampling%20with%20Alpha">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Apr 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3017">True Colour DIBSection</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Resampling with Alpha</h1><p class="splash">Use Alpha DIBSections to provide quality anti-aliased reduced bitmaps</p><img src="alphaResample.png" width="337" height="377" alt="Alpha Resampling Demonstration" /><p /><p>
+If you want to change the size of a bitmap, you quickly find that standard techniques
+such as GDI's <i>StretchBlt</i> aren't particularly good and the result is usually
+very pixelated.  Resampling is a technique which smooths the contribution of each
+pixel whilst changing the size, and although it takes more computation it provides a
+vastly better output.  However, if you're trying to resize a bitmap with a transparent
+area, resampling can cause problems too because it tends to pull the "transparent" 
+background colours into the image.  This problem can be resolved by introducing alpha
+into the resampling method.
+</p><h2>The Problem With Resampling and Transparent Bitmaps</h2><p>
+Consider the following bitmap section:
+</p><img src="sourceBitmap.png" width="64" height="64" alt="Simple 4x4 source bitmap" /><p>
+Let's say you wanted to reduce it to 1/4 of its size.  If you resampled it, you
+would end up with a new bitmap which was a combination of red and white.  For
+the section above, you would normally end up with a single pixel which has
+10/16 contribution from red and 6/16 contribution from white, or a pink-ish
+shade:
+</p><img src="sourceBitmapResampled.png" width="8" height="8" alt="Resampled bitmap" /><p>
+This technique works well.  However, one time it isn't so good is if you're trying
+to use the result to draw over another image.  If the original image's background
+colour (the white area) should have been regarded as transparent, then trying to
+draw the resampled version doesn't work properly:
+</p><img src="transparentOriginal.png" width="452" height="127" alt="Original image rendered transparently over a background" /><p><small><strong>Original image drawn transparently over a background</strong></small></p><img src="transparentResampled.png" width="452" height="127" alt="Resampled image rendered over background" /><p><small><strong>Resampled image drawn the same way</strong></small></p><p>
+Clearly something isn't quite right.  The resampled image has captured some of the background
+colour from the original image, and when it is drawn over the original background it no longer
+resembles the original drawn transparently.  In larger images, you will normally see a "halo"
+appear around the image unless it was resampled with the background in place.
+</p><h2>Deal With It *</h2><p>
+To fix this problem, you can take advantage of an alpha channel when resampling the image.
+Rather than just resampling the pixels, you can then start modifying the resampled result
+so that where it should have elements of the background colour a proportion of the background
+will show through.
+</p><p>
+The first step is to set the alpha of all the background pixels to 0 (transparent), and then set all of 
+the pixels to include to alpha 255 (opaque).  If you take the alpha channel into account when
+resampling, the result works out like this instead:
+</p><table class="article"><tr class="header"><td>Pixel</td><td>Alpha</td><td>Red</td><td>Green</td><td>Blue</td></tr><tr class="body"><td>0,0</td><td>0</td><td>255</td><td>255</td><td>255</td></tr><tr class="body"><td>1,0</td><td>0</td><td>255</td><td>255</td><td>255</td></tr><tr class="body"><td>2,0</td><td>0</td><td>255</td><td>255</td><td>255</td></tr><tr class="body"><td>3,0</td><td>255</td><td>255</td><td>0</td><td>0</td></tr><tr class="body"><td>0,1</td><td>0</td><td>255</td><td>255</td><td>255</td></tr><tr class="body"><td>1,1</td><td>0</td><td>255</td><td>255</td><td>255</td></tr><tr class="body"><td>2,1</td><td>255</td><td>255</td><td>0</td><td>0</td></tr><tr class="body"><td>3,1</td><td>255</td><td>255</td><td>0</td><td>0</td></tr><tr class="body"><td>0,2</td><td>0</td><td>255</td><td>255</td><td>255</td></tr><tr class="body"><td>1,2</td><td>255</td><td>255</td><td>0</td><td>0</td></tr><tr class="body"><td>2,2</td><td>255</td><td>255</td><td>0</td><td>0</td></tr><tr class="body"><td>3,2</td><td>255</td><td>255</td><td>0</td><td>0</td></tr><tr class="body"><td>0,3</td><td>255</td><td>255</td><td>0</td><td>0</td></tr><tr class="body"><td>1,3</td><td>255</td><td>255</td><td>0</td><td>0</td></tr><tr class="body"><td>2,3</td><td>255</td><td>255</td><td>0</td><td>0</td></tr><tr class="body"><td>3,3</td><td>255</td><td>255</td><td>0</td><td>0</td></tr><tr class="body"><td>Average</td><td>96</td><td>255</td><td>96</td><td>96</td></tr></table><p>
+If you apply the new resulting red colour with alpha, it blends with the background correctly:
+</p><img src="transparentAlphaResampled.png" width="452" height="127" alt="Alpha resampled image rendered over background" /><p><small><strong>Alpha resampled image rendered over background</strong></small></p><p class="indent">
+* Deal With It is a great track from the Beastie Boys marvellous Aglio E Oglio EP.  1 min 58 of
+thrash which you can encode at 9.6kbps without losing any sound quality whatsoever.
+</p><h2>Implementing The Algorithm</h2><p>
+The simple case for implementing this algorithm occurs when the size of the 
+resampled result is related to the size of the original by an integral divider 
+in both directions.  When that happens, each pixel in the original
+version only ever contributes towards one pixel in the result.  As a consequence,
+the algorithm only ever has to visit each pixel in the source once to determine
+its contribution to the output.   If on the other hand, the new size is a
+non-integral multiplier, a single pixel in the source can contribute to either
+0,1,2 or 3 pixels in the destination depending on the multiplication factor.
+</p><img src="algorithms.png" width="362" height="125" alt="Effect of different sizing ratios on resampling" /><p><strong><small>Effect of different sizing ratios on resampling</small></strong></p><p>
+One of the consequences of this is that for non-integral size ratios the resampling
+algorithm must build a temporary work area to calculate the contributions from
+each of the pixels. It is worth remembering this if you are using the algorithm - 
+for example, often you can often add more transparent pixels
+to the source image to get an integral size.  In any case, even if you prefer to
+use prime numbers for your image sizes you can still achieve a result and the 
+algorithms typically both run in a sensible time.
+</p><p>
+The implementation of the simple resample algorithm for a DIB is shown below:
+</p><pre>
+      ' Number of pixels in the result per pixel in
+      ' the source:
+      scaleX = m_tBI.bmiHeader.biWidth \ cDibTo.Width
+      scaleY = m_tBI.bmiHeader.biHeight \ cDibTo.Height
+
+      ' The number of pixels per output pixel is constant:
+      lTotAlpha = scaleX * scaleY
+
+      ' Number of scans to step in X in the source whilst
+      ' building the result:
+      xStep = (scaleX - 1) * 4
+
+      ' For each group of pixels in the source horizontally:
+      For x = 0 To BytesPerScanLine - 4 Step 4 * scaleX
+         yDest = 0
+
+         ' For each group of pixels in the source vertically:
+         For y = 0 To m_tBI.bmiHeader.biHeight - 1 Step scaleY
+
+            ' Start calculating the resampled values:
+            lR = 0: lG = 0: lB = 0: lA = 0
+            lTotColour = 0
+
+            ' Loop through each source pixel which contributes
+            ' to this output pixel:
+            For i = 0 To xStep Step 4
+               For j = 0 To scaleY - 1
+
+                  ' Get the alpha:
+                  lAMult = bDib(x + i + 3, y + j)
+
+                  ' If alpha is non-zero, add the result to the 
+                  ' output:
+                  If (lAMult &gt; 0) Then
+                     lB = lB + (bDib(x + i, y + j) * lAMult) \ 255
+                     lG = lG + (bDib(x + i + 1, y + j) * lAMult) \ 255
+                     lR = lR + (bDib(x + i + 2, y + j) * lAMult) \ 255
+                     lTotColour = lTotColour + 1
+                  End If
+                  lA = lA + lAMult
+               Next j
+            Next i
+
+            ' Now we can calculate the resulting pixel and
+            ' set it:
+            If (lTotColour &gt; 0) Then
+               bDibTo(xDest, yDest) = (lB \ lTotColour)
+               bDibTo(xDest + 1, yDest) = (lG \ lTotColour)
+               bDibTo(xDest + 2, yDest) = (lR \ lTotColour)
+            End If
+            bDibTo(xDest + 3, yDest) = (lA \ lTotAlpha)
+            yDest = yDest + 1
+
+         Next y
+
+         xDest = xDest + 4
+      Next x
+</pre><h2>Sample Code</h2><p>
+The sample code includes implementations of both the resampling algorithms
+and shows how to create a simple real-time animation using a resampled
+bitmap.
+</p><h2>Conclusion</h2><p>
+If you're working with bitmaps with transparent backgrounds and want
+to be able to resize them in a visually pleasing way, you should take
+advantage of the alpha channel.  This article provides some code with
+good performance to allow you to do this easily.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">DIB Sections</a>&#160;.&#160;Resampling with Alpha</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 26 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/DIB_Sections/Resampling_With_Alpha/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:31 GMT -->
+</html>

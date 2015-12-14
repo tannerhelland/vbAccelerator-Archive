@@ -1,0 +1,283 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Movies/AVI_Creator/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:51 GMT -->
+<head>
+<title>vbAccelerator - AVI Creation</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+One thing that's always been tricky with AVIs is the lack of suitable 
+software to create them.
+This article provides VB classes allowing 8-bit and 24-bit AVIs to be created, 
+using any available Codec on the system.  The demonstration project uses 
+these classes to provide a pretty comprehensive programmer's AVI creation utility.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" />
+<link rel="contents" href="../index.html" /><link rel="meta" type="application/rdf+xml" href="article.rdf" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Movies</a>&#160;.&#160;AVI Creation</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_AVI_Creator.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 AVI Creator</a> (143K)</p><p /><p class="nav"><a href="VB6_AVI_Creator.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 AVI Creator</a> (139K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:13548</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13548&amp;type=Article&amp;title=AVI%20Creation">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />23 Nov 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3910">Transparent AVI Player Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3909">ComCtl32.DLL Animation Control Class</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2522">Reading Data from Local or External Library Resources</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>AVI Creation</h1><p class="splash">Write your own AVIs from Visual Basic</p><img src="aviCreatorWizard2.png" width="487" height="374" alt="Programmer's AVI Creator in action" /><p /><p>
+One thing that's always been tricky with AVIs is the lack of suitable 
+software to create them.
+This article provides VB classes allowing 8-bit and 24-bit AVIs to be created, 
+using any available Codec on the system.  The demonstration project uses 
+these classes to provide a pretty comprehensive programmer's AVI creation utility.
+</p><h2>Before You Begin</h2><p>
+The AVI video codecs are notoriously under-documented and some issues can arise
+when trying to create arbitrary AVIs using them.  In particular, look out for
+the following:
+    </p><ol><li>The MSRLE 8 bits/pixel AVI generation has only been demonstrated to set the 
+palette correctly under Windows XP with MSRLE32.DLL version 5.1.2600.1106.  
+On other versions, the palette is ignored.  This issue is under 
+intensive research.</li><li>Some Codecs don't work unless the dimensions of the source images are
+compatible. For example, the MPG4 codecs will only work properly for AVIs 
+which are an even multiple of 4 bytes in each dimension.</li></ol><h2>About AVIs and Compressors</h2><p>
+In its simplest form, an AVI is just a stream of Device Independent Bitmaps
+(DIBs) written in series into a file with some header information describing
+the type and size of a DIB.  However, without any form of compression very large
+files can be created.  For example, the File Download AVI you get when you
+are downloading using IE consists of 31 frames, each of which is 272 x 60 pixels.
+Even if we use 8 bits/per pixel bitmaps for each frame, the raw data size would
+be 272 x 60 x 31 = 494k.  If you look at the actual AVI stored in Shell32.DLL, you'll 
+see it is only 11k in size.  This reduction in size is created by compressing
+the file.
+</p><p>
+There are various forms of compression available, however, they typically fall into
+two types:
+</p><ol><li><strong>Run Length Encoding</strong><br />
+A run-length encoding algorithm looks for runs of pixels with the same value.
+Then rather than writing one byte for each pixel, it instead writes out the
+value followed by the count for that pixel.  These algorithms are lossless
+and you get exactly the same image back when it is decompressed.
+These properties make Run Length Encoding
+ideal when not many pixels change between frames, frames include large
+areas of continuous pixel colour and when you 
+want to maintain sharp edges in the result.  This is the algorithm used
+for all of the AVIs used in Windows, which use the MRLE (Microsoft Run-Length Encoding)
+implementation.  Note that MRLE only works on 8 bits/pixel images.</li><li><strong>Frequency Encoding</strong><br />
+Frequency domain encoding is a more general purpose encoding algorithm which 
+yields good compression regardless of the source material. These algorithms 
+typically use Fourier transformations and effectively apply a low-pass filter
+to the image.  As a consequence, some detail is lost and sharp edges are
+blurred.  Examples of this type are the MPG4 and CVID compressor implementations.
+</li></ol><h2>Identifying Compressors</h2><p>
+Generally, the Multimedia functions in Windows have been documented from the 
+standpoint that there are no predefined multimedia types, compressors or
+decompressors. That may be useful to someone, maybe a driver writer, as the
+system is generic, and allows different implementations to be plugged in.
+But it isn't so helpful to anyone who just wants to write some code which 
+uses the API, since there are no functional examples in the documentation
+which you can use.  This is very irritating.  I would suggest as a minimum
+that there ought to be a reference implementation to test against, which
+would at least allow you to prove your code is workable prior to 
+experimenting with the other, utterly undocumented, compressors you may 
+find.
+</p><p>
+In any case, particular multimedia types and compressors are identified
+using a unique four-byte character code (normally referred to as <span class="i">FourCC</span>).
+Since four bytes are used, the FourCC value can be held as a long value,
+and translated to and from a character representation.
+</p><p>
+There are two FourCC parameters which are used to identify the type of
+compressor to use in the API:
+</p><ol><li><span class="code">fccType</span><br />
+This specifies the type of multi-media being handled.  For video this
+is (always?) set to 'vids'.</li><li><span class="code">fccHandler</span><br />
+This specifies the specific compression implementation.  The 
+types of compressor that are available will depend on what you have 
+installed on your system.
+</li></ol><p>
+The code provided with this article allows either 8-bit or 24-bit AVIs to be 
+created, however as noted above if your intention is to create an AVI for
+use with the <a href="http://www.vbaccelerator.com/article.asp?id=3909">Common Controls AVI player</a> then
+you should be using 8 bits/pixel images and the 'mrle' compressor.
+</p><h2>Using the Programmer's AVI Creator</h2><p>
+The AVI Creator wizard in the download exercises all of the features of 
+the classes.  It divides creation into four steps:
+</p><ol><li>Setting the name of the AVI to create, and the length of each frame.</li><li>Choosing the bit-depth of the resulting AVI, the Video compressor to
+use and a palette if you want to create an 8-bit AVI.</li><li>Selecting the images to be included.</li><li>Creating the AVI itself.</li></ol><h3>1. Setting the Main AVI Options</h3><img src="aviCreatorWizard1.png" width="487" height="374" alt="AVI Creator main options." /><p class="caption">AVI Creator Main Options Page</p><p>
+This page is fairly self-explanatory.  First choose the file to write to,
+adjust the AVI name if you wish and then set the frame duration in milliseconds.
+</p><h3>2. Setting the Compressor and Bit-Depth</h3><img src="aviCreatorWizard2.png" width="487" height="374" alt="Video Compressor, Bit-Depth and Palette Page." /><p class="caption">Video Compressor, Bit-Depth and Palette Page</p><p>
+In this page you can choose between 8 Bits/Pixel and 24 Bits/Pixel AVIs.  The
+available video-compressors on your system are enumerated in the Handler drop-down box.
+At this point I have not determined how to only list handlers which are appropriate
+for each output format, so all handlers are displayed.  However, when you choose the bits/pixel
+for the AVI, the default handler is automatically selected for you.
+</p><p>
+If you choose to create an 8-bit AVI, then you will want to ensure that
+the source images that you will create the AVI from all have the same palette, and 
+that you have a copy of the palette's colours in the JASC palette format.  You can
+create these files either using Paint Shop Pro or programmatically with the 
+<span class="code">cPalette</span> class in the code.  Standard palettes for
+16 colours, half-tones and web-safe colours are also available.
+</p><h3>3. Choosing the Image Source</h3><img src="aviCreatorWizard3.png" width="487" height="374" alt="Choosing Image Source." /><p class="caption">Image Source page with bitmap strip option.</p><p>
+To create the AVI, you can either choose to include all bitmaps in a directory,
+or you can load a bitmap strip which contains each of the images.  When using
+bitmap strips, the application assumes that the next frame is the next image
+in the x direction first, and moves down a row whenever it moves off the end
+of the bitmap strip image.
+</p><p>
+Note that if you want to create a particularly large AVI with many frames then this utility
+has the wrong UI for the job since it loads up all the bitmaps into
+a single preview bitmap. It would be easy to comment this out of the source code, though.
+</p><h3>4. Creating the AVI</h3><img src="aviCreatorWizard4.png" width="487" height="374" alt="Create the AVI." /><p class="caption">Final Step in AVI Creation</p><p>
+The last step allows you to review your settings and then create the file.
+Note that the AVI file must not be open in any other AVI player in order
+to write out the result.
+</p><h2>Creating AVIs In Code</h2><p>
+If you want to write your own code to create AVIs, then you will need to 
+include these classes from the download:
+</p><ul><li><span class="i">cAVICreator</span><br />
+This class is the main class which contains all the methods for creating
+AVIs.
+</li><li><span class="i">cPalette</span><br />
+Provides the ability to manage the palette associated with 8-bit images.
+</li><li><span class="i">cBmp</span><br />
+A wrapper class around a Windows bitmap which is used to provide data
+for individual frames to <span class="code">cAVICreator</span>.
+</li><li><span class="i">cDIBSection256</span><br />
+A utility class used internally by <span class="code">cAVICreator</span>
+when writing 8-bit images.  Using this class ensures that the correct
+palette is associated with the images.
+</li><li><span class="i">cMemDC</span><br />
+A wrapper class around a Windows memory DC.  This class is used internally
+by the <span class="code">cAVICreator</span> but can also be used in the
+application to draw into a <span class="code">cBmp</span> object.
+</li><li><span class="i">mRGBQuad</span><br />
+Provides the shared definition for the shared <span class="code">RGBQUAD</span>
+user-defined type that is used in various other classes.
+</li></ul><p>Optionally, you may also want to include the code for enumerating
+video handlers and suggesting a default handler for a particular
+image format:
+</p><ul><li><span class="i">cVideoHandlers</span><br />
+Provides a list of installed video handlers and allows the suggested
+format for a particular bit-depth to be obtained.
+</li><li><span class="i">cVideoHandler</span><br />
+Provides information about a single video compression handler.
+</li></ul><p>
+Once you have these files in place, then you can start
+creating AVIs. For an example, suppose you wanted to create an 
+MPG4 compressed AVI from a 
+series of bitmap images in a directory. Note that 
+you will firstly need the Microsoft MPG4 codec on your system in order to 
+do this and secondly the width and height of the source images need to be an even 
+multiple of 4.
+</p><p>
+The steps to creating the AVI are then:
+</p><ol><li>Set general output options.</li><li>Create an AVI stream to write to.</li><li>Add bitmaps from the directory and close the stream.</li></ol><p>
+I'll cover these in turn.
+</p><h3>1. Setting General Output Options.</h3><p>
+The things you need to configure for the output are the
+AVI compressor to use, bits per pixel of the frames, 
+frame duration, filename to write to and AVI name:
+</p><pre>
+   ' Create an instance of the AVI Creator:
+   Dim cAVI as New cAVICreator
+
+   ' Bits/pixel in images:
+   cAVI.BitsPerPixel = 24
+   ' MPEG4 video handler has the FourCC identifier MPG4:
+   cAVI.VideoHandlerFourCC = FourCCFromString("MPG4")
+
+   ' Each frame displayed for 25ms
+   cAVI.FrameDuration = 25
+
+   ' AVI name:
+   cAVI.Name = "My Movie"
+
+   ' Output file name:
+   cAVI.Filename = App.Path &amp; "\mymovie.avi"
+</pre><h3>2. Creating an AVI Stream to Write To.</h3><p>
+In order to create an AVI stream, you also provide 
+the first image to write.  This is an object of type <span class="code">cBmp</span>,
+which you can create from a bitmap on disk using it's <span class="code">Load</span>
+method:
+</p><pre>
+   ' Variables to allow files in the directory to be
+   ' enumerated
+   Dim sBaseDir As String
+   sBaseDir = App.Path &amp; "\images\"
+   Dim sDir As String
+   sDir = Dir(sBaseDir &amp; "*.bmp")
+
+   Dim cB as New cBitmap
+   cB.Load sBaseDir &amp; sDir
+
+   ' Create the file stream to write to:
+   cAVI.StreamCreate cB
+</pre><h3>3. Adding bitmaps and closing the stream.</h3><p>
+Once the stream has been created, the <span class="code">StreamAdd</span>
+method is called for each subsquent image, and finally the
+<span class="code">StreamClose</span> method must be called to flush
+out the AVI and clear up any resources associated with the stream:
+</p><pre>
+   Do
+      ' Get next file:
+      sDir = Dir
+
+      ' If there was a next file:
+      If (Len(sDir) &gt; 0) Then
+  
+         ' Read the image:
+         cB.Load sBaseDir &amp; sDir
+    
+         ' Add it as a new frame to the stream
+         cAVI.StreamAdd cB
+
+      End If
+
+   Loop While Len(sDir) &gt; 0
+
+   ' Ensure that the stream is closed.
+   cAVI.StreamClose 
+</pre><h2>Other Resources</h2><ul><li><strong>Create a movie from an HBitmap</strong><p>CodeProject article describing creating MPG4 AVIs, as well as WMV and QuickTime movies 
+from bitmaps in MFC:</p><p><a href="http://www.codeproject.com/bitmap/createmovie.asp">http://www.codeproject.com/bitmap/createmovie.asp</a></p></li><li><strong>FourCC Code Register</strong><p>Microsoft repository listing (some?) of the available FourCC codes:</p><p><a href="http://www.microsoft.com/whdc/hwdev/archive/devdes/fourcc.mspx">http://www.microsoft.com/whdc/hwdev/archive/devdes/fourcc.mspx</a></p></li><li><strong>vbAccelerator Graphics Library</strong><p>A number of useful AVIs - if you have any more to contribute, then please <a href="mailto:steve@vbaccelerator.com">mail them to me</a>.</p><p><a href="http://www.vbaccelerator.com/indexLookup.asp?id=6">http://vbaccelerator.com/indexLookup.asp?id=6</a></p></li><li><strong>Reading Resources from Local and External Libraries</strong><p>Demonstrates how to extract resources of any type from EXEs or DLLs, including AVIs
+if found:</p><p><a href="http://www.vbaccelerator.com/article.asp?id=2522">http://vbaccelerator.com/article.asp?id=2522</a></p></li></ul><h2>Conclusion</h2><p>
+This article provides the code you need to create your own AVIs and a 
+utility for writing them.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Movies</a>&#160;.&#160;AVI Creation</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 12 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Movies/AVI_Creator/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:59 GMT -->
+</html>

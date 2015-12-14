@@ -1,0 +1,142 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Clipboard/File_Clipboard_Enhancer/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:15 GMT -->
+<head>
+
+<title>vbAccelerator - File Clipboard Enhancer</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Windows Explorer allows you to cut, copy and paste files.  However, whilst it uses the
+clipboard to do this, the file information is not made generally accessible as a custom
+clipboard is used.  Often it's useful to be able to paste a file name as text: for example,
+into a file name field in an application or into a batch or text file which can be used
+for batch renaming or other automated tasks.  This utility allows for this by monitoring the clipboard
+and creating text entries for any files which appear on the clipboard.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Clipboard</a>&#160;.&#160;File Clipboard Enhancer</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_File_Clipboard_Enhancer.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 File Clipboard Enhancer</a> (99K)</p><p /><p class="nav"><a href="VB6_File_Clipboard_Enhancer.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 File Clipboard Enhancer</a> (95K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:12677</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12677&amp;type=Article&amp;title=File%20Clipboard%20Enhancer">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />23 Aug 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2518">Complete Registry control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2767">vbAccelerator Visual Studio Style Tab Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=16">Add Your App to the Systray the Easy Way</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2520">Setting Your Application to Automatically Run When Windows Starts</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3619">Customising Clipboard Use </a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>File Clipboard Enhancer</h1><p class="splash">Work with Explorer and files more easily</p><img src="fileClipEnhance.png" width="364" height="287" alt="File Clipboard Enhancer configuration tab" /><p /><p>
+Windows Explorer allows you to cut, copy and paste files.  However, whilst it uses the
+clipboard to do this, the file information is not made generally accessible as a custom
+clipboard is used.  Often it's useful to be able to paste a file name as text: for example,
+into a file name field in an application or into a batch or text file which can be used
+for batch renaming or other automated tasks.  This utility allows for this by monitoring the clipboard
+and creating text entries for any files which appear on the clipboard.
+</p><h2>About the Utility</h2><p>
+The main function of the utility is simple: intercept clipboard change events, check
+if the clipboard contains any data about files copied from Windows Explorer; if so then
+extract the file names and then add them to the existing data as text.
+</p><h3>Processing Clipboard Data</h3><p>
+Intercepting clipboard change events is done using the Windows Clipboard Viewer API.
+This API allows an application to register itself as clipboard "viewer" (ostensibly
+to display the contents of the clipboard somehow or other to the user, however, since
+the API only notifies when changes occur you don't actually need to provide any sort of UI).  
+The <a href="http://www.vbaccelerator.com/article.asp?id=3619">Clipboard Viewer</a> class is used to do this.
+</p><p>
+Windows sometimes notifies clipboard changes too early, when the application that's changing
+the clipboard still has it open and is adding extra data.  If another application has the 
+clipboard open, attempting to read it will cause errors.  To prevent this occuring, a 50ms
+timer is started whenever the clipboard has changed.  Only when this timer fires is the
+clipboard checked.
+</p><p>
+Determining the contents of the clipboard and reading which files are present is done using the
+<a href="http://www.vbaccelerator.com/article.asp?id=3619">Custom Clipboard</a> class.  This class enables the types of
+data on the clipboard to be determined, and any arbitrary format type to be read or set.
+The first thing that's checked is whether the clipboard contains any data for the Windows
+"File List" custom format:
+</p><pre>
+   Dim cCustClip As New cCustomClipboard
+   Dim lFmtId As Long
+   Dim bFileList As Boolean
+   
+   On Error GoTo ErrorHandler
+   cCustClip.GetCurrentFormats Me.hWnd
+   
+   lFmtId = cCustClip.FormatIDForName(Me.hWnd, "File List")
+   If (cCustClip.IsDataAvailableForFormat(lFmtId)) Then
+      ' Has File List
+
+   End If
+</pre><p>
+If there is a file list, then we need to check if the utility has already put the text 
+versions there (since when the text versions are added, a clipboard change event will
+occur, which will be intercepted by the utility's clipboard viewer class, which will then
+call this routine again, which will...).  If there is no text, then the clipboard is
+opened and any files are put on the clipboard as text:
+</p><pre>
+      If Not (cCustClip.IsDataAvailableForFormat(CF_TEXT)) Then
+         ' Does not have text
+         If (cCustClip.ClipboardOpen(Me.hWnd)) Then
+            If cCustClip.GetFileList(m_sFiles, m_iFileCount) Then
+               Dim sFileList As String
+               Dim i As Long
+               For i = 1 To m_iFileCount
+                  If (i &gt; 1) Then
+                     sFileList = sFileList &amp; vbCrLf
+                  End If
+                  sFileList = sFileList &amp; m_sFiles(i)
+               Next i
+               cCustClip.SetTextData CF_TEXT, sFileList
+            End If
+            cCustClip.ClipboardClose
+         End If
+      End If
+</pre><h3>Other Details</h3><p>
+Beyond the clipboard processing, the remainder of the utility is fairly straightforward.
+The application is designed to appear in the SysTray, so the main form of the application
+uses a simple <a href="http://www.vbaccelerator.com/article.asp?id=16">SysTray implementation</a>.  The tabbed 
+interface is created using the <a href="http://www.vbaccelerator.com/article.asp?id=2767">Visual Studio Style Tab
+Control</a> - the code is copied locally into the application so you don't need to 
+ship the control separately.  Finally, the application uses <a href="http://www.vbaccelerator.com/article.asp?id=2518">cRegistry</a>
+to persist settings and to allow it to <a href="http://www.vbaccelerator.com/article.asp?id=2520">auto-start when Windows starts</a>.
+</p><h2>Conclusion</h2><p>
+This article demonstrates how to process data put onto the clipboard by other applications
+to make it more generally usable by building a complete utility to allow files copied
+from Windows Explorer to be pasted as text.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Clipboard</a>&#160;.&#160;File Clipboard Enhancer</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 25 August 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Clipboard/File_Clipboard_Enhancer/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:16 GMT -->
+</html>

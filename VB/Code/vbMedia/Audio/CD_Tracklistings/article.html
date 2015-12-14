@@ -1,0 +1,164 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Tracklistings/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:23 GMT -->
+<head>
+
+<title>vbAccelerator - CD Track Listing Using freedb.org</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This article demonstrates how to use ASPI to read the table of contents from a CD, and then
+to use FreeDB's CD look-up service to retrieve artist, title and track listing information for 
+the CD.  Along the way it describes some of the alternatives and pitfalls." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;CD Track Listing Using freedb.org</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="ASPIshim_DLL.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />ASPIshim DLL</a> (14K)</p><p /><p class="nav"><a href="VB5_CD_Track_Listings.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 CD Track Listings</a> (63K)</p><p /><p class="nav"><a href="VB6_CD_Track_Listings.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 CD Track Listings</a> (60K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3489</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3489&amp;type=Article&amp;title=CD%20Track%20Listing%20Using%20freedb%2Eorg">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />26 Jan 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>CD Track Listing Using freedb.org</h1><p class="splash">Accurately retrieve CD Table of Contents using ASPI and get Artist, Title and Track Listing Information automatically</p><img src="cdTrackListing.png" width="340" height="262" alt="CD Track Listing Sample Application" /><p /><p>This article demonstrates how to use ASPI to read the table of contents from a CD, and then
+to use FreeDB's CD look-up service to retrieve artist, title and track listing information for 
+the CD.  Along the way it describes some of the alternatives and pitfalls.</p><h2>About the Sample</h2><p>Before diving into the detail of how and why everything works, first you might want
+to have a look at the sample code.  Before you start, you need to:</p><ul><li>Make sure you have ASPI installed.  If you have a CD Burning utility, such as <a href="http://www.nero.com/">Nero</a>
+then its likely that ASPI will be installed.  If not, you will want to go to the <a href="http://www.adaptec.com/">Adaptec</a>
+site and download ASPI.  You can find it there by choosing Downloads and searching for "ASPI" then
+downloading the latest version.  Make sure that the ASPI DLL (WNASPI32.DLL) is copied to your System directory before
+starting.</li><li>Copy ASPIShim.DLL from the download into your System directory.  This is a Win32 DLL so it doesn't need registering.</li></ul><p>Now you're ready to try the code.  When you run the sample, the drives combo box will be populated with 
+the available drives on the system.  In this version, only the SCSI hardware adaptor, device ID and Logical Device Unit (LUN)
+are shown for the drives.  In a future update, I'll add code to look up the drive letter and drive description using
+the registry (or the equivalent <i>DeviceIOControl</i> call under NT).  If a drive containing a CD is selected, the 
+TOC will be read and populated into the listbox, and at the same time the query to post to FreeDB is generated.
+If you click the "Get Details" button the sample will connect to FreeDB and download the artist, title
+and track listing asynchrononously.</p><h3>Provided classes</h3><p>The following classes in the sample are provided for re-use:</p><ul><li><strong>cCDDrives</strong><br />
+This class uses ASPI to generate a list of CD Drives on the system.  For each CD Drive you can 
+retrieve the <i>HostAdaptor</i>, <i>ID</i>, <i>LUN</i> and the <i>TOC</i> object, which returns
+a <i>cCDToc</i> instance.</li><li><strong>cCDToc</strong><br />
+This class contains a table of contents for the selected CD (if present).  From this object you
+can get the following:
+<ol><li><i>NoCD</i>: True if no CD in the drive, False otherwise.</li><li><i>TrackCount</i>: Count of tracks on the CD.</li><li><i>TrackOffset(track)</i>: The offset, in frames (a CD frame is 1/75 of a second) of the track from the start of the CD.</li><li><i>TrackLengthMinutes(track)</i>: The Minutes portion of the length of the track.</li><li><i>TrackLengthSeconds(track)</i>: The Seconds portion of the length of the track.</li><li><i>TrackLengthFrames(track)</i>: The Frames portion of the length of the track.</li><li><i>LeadOut...</i>: The Offset and Minutes/Seconds/Frames of the lead out of the CD.</li><li><i>TrackType(track)</i>: Whether the track is an audio or data track.</li><li><i>TotalLengthSeconds</i>: The total length of the Audio CD In seconds.</li><li><i>CDDBId</i>: The CDDB DiscID for this CD.</li><li><i>CDDBQuery</i>: A string containing the query to pass to FreeDB.</li></ol></li><li><strong>cFreeDb</strong><br />
+A class which wraps up access to FreeDb using HTTP.
+<ol><li><i>Server</i>: The FreeDB server to connect to. Defaults to "http://freedb.freedb.org/".</li><li><i>Url</i>: The URL on the FreeDB server which implements the CDDB service. Defaults to "~cddb/cddb.cgi".</li><li><i>UserName</i>: The name which will be passed to FreeDB in the hello command.</li><li><i>UserHost</i>: The hostname which will be passed to FreeDB in the hello command.</li><li><i>AgentName</i>: The name of the application which will be passed to FreeDB.</li><li><i>AgentVersion</i>: The version of the application which will be passed to FreeDB.</li><li><i>Command</i>: The FreeDB command to execute.</li><li><i>Start</i>: Submits the command to FreeDB and waits for a response.  When the response is received, the
+<i>CommandReady</i> event will be fired.</li><li><i>Abort</i>: Aborts any command which is in progress.</li><li><i>CommandSubmitted</i>: Whether a command has been submitted to FreeDB and is in progress.</li><li><i>Response</i>: The (unparsed) response from FreeDB to a successful request.</li></ol>
+There are also two properties which can be used to parse the response to the query or the read command 
+into classes with the fields ready to read:
+<ol><li><i>QueryResponse</i>: Returns a <i>cFreeDbQueryResponse</i> object containing the details of the query command response.</li><li><i>ReadResponse</i>: Returns a <i>cFreeDbReadResponse</i> object containing the details of the read command response.</li></ol></li></ul><h2>Getting Track-Lists from CDs: An Overview</h2><p>You will probably already have seen track-list download functionality in other music applications such
+as <a href="http://www.winamp.com/">WinAmp</a>, <a href="http://www.musicmatch.com/">MusicMatch</a> and many others.  
+When you insert a CD, and you're connected to the Internet, the application downloads the
+CD's artist, title and track list, allowing you to see the track names for the CD.</p><p>Most commercial applications use the <a href="http://www.gracenote.com/">Gracenote CDDB</a> to achieve
+this functionality.  This is easy to use, but unfortunately for almost any distribution you require a
+licence, which is both costly and restrictive.  Luckily there is a completely free alternative service 
+which also maintains a comprehensive database of CD track information at <a href="http://www.freedb.org/">FreeDb.org</a>.
+This is an open-source service running under the LPGL licence and there are numerous freeware and shareware 
+music players out there which use its facilities, which keeps the database strong.</p><p>So what do you need to do to use FreeDB?  The complete technical details of their service are posted on 
+the site, but basically you need to do two things:</p><ol><li>Generate a <i>DiscID</i> from the CD</li><li>Send a request to FreeDb.org for the specified disc, and read the results.</li></ol><p>I'll cover these in turn.</p><h2>1. Generating a <i>DiscID</i></h2><h3>1.1 DiscID Calculation</h3><p>CDs themselves do not generally have any useful unique identifier which you can use to identify
+the CD. For this reason various algorithms have been developed which attempt to generate a unique
+id based on the contents of the CD itself.  The FreeDB.org disc ID is generated from the CD's Table
+of Contents (TOC), the number of tracks on the CD and the total length of the CD.  The algorithm
+in pseudo code is like this:</p><pre>
+Function DiscID() As Long
+     tocSum = 0
+     For Each track in CDTOC
+        tocSum = tocSum + AddDigits(track.PositionInSeconds)
+     Next
+
+     firstLastSum = CDTOC.track(0).PositionInSeconds
+     firstLastSum = firstLastSum - CDTOC.leadOut.PositionInSeconds
+
+     DiscId = ((tocSum and &amp;HFF)&gt;&gt;24) Or ((firstLastSum)&gt;&gt;8) Or CDTOC.NumTracks
+End Function
+
+Function AddDigits(position)
+    addDigits = 0
+    Do While (position &gt; 0)
+       addDigits = addDigits + (position Mod 10)
+       position = position \ 10
+    Loop
+End Function
+</pre><p>The &gt;&gt; operator is a Right-Shift which basically shifts the bits up by the specified
+number; so for example (tocSum and &amp;HFF)&gt;&gt;24 will move the first 8 bits of tocSum (since
+we and with &amp;HFF) from positions 0-7 in the long to positions 24-31.</p><p>Implementing this algorithm is not too hard, although you have to be careful in VB because
+the DiscID needs to be calculated using <i>unsigned</i> arithmetic.  In VB, long values are
+signed, which means the high-bit (bit 31) is used to work out if the number is positive or 
+negative.  If you just used VB's + operator, then you can end up with an incorrect result.  The
+download code demonstrates how to perform unsigned addition and shifting correctly.</p><h3>1.2 Getting a CD's TOC</h3><p>In order to actually perform the calculation, you see you need the Table of Contents (TOC)
+for the CD. There are three possible ways of doing this, with varying levels of difficulty:</p><ol><li><strong>Using MCI</strong><br />
+The MCI interface can be used to provide a list of CD contents.  However, this method is not
+good for calculating DiscIDs because it only returns a TOC for audio tracks on the CD.  If the CD
+is mixed, and has both audio and data tracks, then the resulting DiscID calculation is incorrect.
+The advantage of using it is it is simple to implement.</li><li><strong>Using the Advanced SCSI Programming Interface (ASPI)</strong><br />
+ASPI is a technology provided by Adaptec for Win32 systems.  Although it refers to SCSI this appears
+to be a misnomer as it works fine with IDE drives on the system too; it is probably there for legacy
+reasons.  This interface is available for all Win32 OS versions.</li><li><strong>Using <i>DeviceIOCtl</i></strong><br />
+NT/2000/XP systems provide the <i>DeviceIOCtl</i> API which allows you perform SCSI passthrough requests
+to devices. The disadvantage to using this method is firstly there is no equivalent for Win 9x/SE/ME and
+secondly you need to be able to open the CD drive for shared reading.  If any other application is using
+the CD you can't do this, whereas ASPI allows querying even when the CD is being used elsewhere.</li></ol><p>In order to provide code which works on all OS, I've implemented this example using ASPI.  The first 
+thing to note about ASPI is that you can't call ASPI functions directly from VB.  Although the API
+looks straightforward (erm, well, reasonable) all of the calls have been exported using the <i>_cdecl</i>
+calling convention rather than the <i>_stdcall</i> convention which is supported by VB.  This means
+that you although you can declare the functions in VB when you try to call them you get
+Run-time Error 49 ("Bad DLL Calling Convention").</p><p>There is a 
+<a href="http://support.microsoft.com/default.aspx?scid=kb;en-us;Q153586">Knowledge
+Base</a> article on this if you're interested in the details (which also provides
+the bizarre snippet of information that VB actually can succeed in making calls
+to _cdecl DLLs but only when the application is compiled into an executable, and
+that this is apparently a bug!).</p><p>To work around this you need to create a Win32 DLL which just wraps the _cdecl
+calls with _stdcall equivalents.  Luckily, there is a free-source (LGPL) <a href="http://www.hochfeiler.it/alvise/aspi_VB.htm">wrapper
+DLL</a> called ASPIShim.DLL which was written by Jon F. Zohornacky and posted 
+at Alvise Valsecchi's <a href="http://www.hochfeiler.it/alvise/">Web site</a>.  This DLL simply wraps
+the ASPI API calls with <i>_stdcall</i> exported versions.</p><h2>2. Sending Requests to FreeDB.org</h2><p>FreeDB itself exposes its API across the internet in two ways: firstly, as a TCP/IP interface
+and secondly as a HTTP version.  Whilst the TCP/IP version allows stateful connections and probably some
+small performance improvements, the HTTP version is used here.  The main reasons for this were:</p><ol><li>The HTTP interface works on Port 80 using text only, hence firewalls are unlikely to be a problem</li><li>Can leverage the MSXML3 <i>ServerXMLHTTP</i> object to easily send and receive data across HTTP.</li></ol><p>There are a variety of FreeDB services, however the default (random server selection) can be found at</p><p>http://freedb.freedb.org/~cddb/cddb.cgi</p><p>This responds to either GET or POST requests for the specified command; both interfaces are identical
+except that the POST request takes the command as the body of the request whereas the GET request uses
+the URL's get parameters.  Using GET is simpler and is the method adopted here.  The GET request takes
+three parameters:</p><ol><li><i>cmd</i> - The command to execute, with spaces converted to + signs</li><li><i>hello</i> - The parameters to the CDDB hello command separated by + signs.</li><li><i>proto</i> - Which version of the CDDB protocol to use (1 - 5).</li></ol><p>A complete list of all the commands you can issue to the server, and the responses, is provided 
+at the freedb website under the Developers section.  The articles you need are the "CDDB-protocol
+documentation" and the "Database-format specification".
+
+<p>As an example, however, the "cddb read" command is used to get the track listing
+for a CD with a specified genre and a specified DiscId.  The command is as follows:</p><pre>
+   cddb read genre discid
+</pre>
+
+To issue a cddb read command for <a href="http://www.invictahifi.co.uk/ladytron">Ladytron's</a> 604 album, 
+which has a DiscID of <i>d90c9510</i> and a genre of "misc" (ho hum) you send this:</p><p><a href="http://freedb.freedb.org/~cddb/cddb.cgi?cmd=cddb+read+misc+d90c9510&amp;hello=name+host.com+appname+1.0&amp;proto=1">http://freedb.freedb.org/~cddb/cddb.cgi?cmd=cddb+read+misc+d90c9510&amp;hello=name+host.com+appname+1.0&amp;proto=1</a></p><p>Note that name, host.com, appname and 1.0 specify details about you and the program you're using.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;CD Track Listing Using freedb.org</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 18 April 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Tracklistings/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:25 GMT -->
+</html>

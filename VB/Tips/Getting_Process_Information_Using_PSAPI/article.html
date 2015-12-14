@@ -1,0 +1,302 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Getting_Process_Information_Using_PSAPI/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:11 GMT -->
+<head>
+
+<title>vbAccelerator - Using PSAPI to get a complete task list and memory usage.</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+PSAPI.DLL is a DLL provided for NT/2000/XP systems which greatly simplifies the job of getting task list and memory usage information. The information is also available in the dyamic data section of the registry, but the format is fairly obstructive and it is a considerable task to extract it programmatically.
+
+This tip demonstrates how to use the API to get a list of processes, investigate the memory they
+are using and the DLLs loaded into their working set.
+" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Using PSAPI to get a complete task list and memory usage.</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB_PSAPI_Demonstration.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB PSAPI Demonstration</a> (12K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:13015</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13015&amp;type=Article&amp;title=Using%20PSAPI%20to%20get%20a%20complete%20task%20list%20and%20memory%20usage%2E">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />16 Aug 1998<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4591">GUI Resource Tracer</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Using PSAPI to get a complete task list and memory usage.</h1><p class="splash">Get information about running processes and DLLs on NT/2000/XP systems.</p><img src="PSAPIDemonstration.png" width="569" height="293" alt="PSAPI Demonstration Application" /><p /><p>
+PSAPI.DLL is a DLL provided for NT/2000/XP systems which greatly simplifies the job of getting task list and memory usage information. The information is also available in the dyamic data section of the registry, but the format is fairly obstructive and it is a considerable task to extract it programmatically.
+</p><p>
+This tip demonstrates how to use the API to get a list of processes, investigate the memory they
+are using and the DLLs loaded into their working set.
+</p><h2>Using PSAPI</h2><p>
+There are four calls within PSAPI you can use to find information about running
+processes:
+</p><ol><li><span class="code">EnumProcesses</span><br />
+This returns a list of handles to processes running on the system as an array.</li><li><span class="code">GetProcessMemoryInfo</span><br />
+Returns memory usage information for a process, such as its current and peak Working Set and 
+
+page file usage.</li><li><span class="code">EnumProcessModules</span><br />
+Given a handle to a process, this returns all the modules running within the process.
+The first module is the executable running the process, and subsequent handles describe
+DLLs loaded into the process.</li><li><span class="code">GetModuleBaseName</span><br />
+This function returns the short name for a module, typically the file name portion
+of the EXE or DLL.</li><li><span class="code">GetModuleFileNameEx</span><br />
+Returns the full file name of a module including its path.</li></ol><p>
+Declares for these functions aren't available in the VB API Viewer, but luckily they are
+easy to translate to VB:
+</p><pre>
+Type MODULEINFO
+   lpBaseOfDLL As Long
+   SizeOfImage As Long
+   EntryPoint As Long
+End Type
+
+Type PROCESS_MEMORY_COUNTERS
+   cb As Long
+   PageFaultCount As Long
+   PeakWorkingSetSize As Long
+   WorkingSetSize As Long
+   QuotaPeakPagedPoolUsage As Long
+   QuotaPagedPoolUsage As Long
+   QuotaPeakNonPagedPoolUsage As Long
+   QuotaNonPagedPoolUsage As Long
+   PagefileUsage As Long
+   PeakPagefileUsage As Long
+End Type
+
+Type PSAPI_WS_WATCH_INFORMATION
+   FaultingPc As Long
+   FaultingVa As Long
+End Type
+
+Public Declare Function EmptyWorkingSet Lib "PSAPI.DLL" ( _
+   ByVal hProcess As Long _
+) As Long
+
+Public Declare Function EnumDeviceDrivers Lib "PSAPI.DLL" ( _
+   lpImageBase() As Long, _
+   ByVal cb As Long, _
+   lpcbNeeded As Long _
+) As Long
+
+Public Declare Function EnumProcesses Lib "PSAPI.DLL" ( _
+   lpidProcess As Long, _
+   ByVal cb As Long, _
+   cbNeeded As Long _
+) As Long
+
+Public Declare Function EnumProcessModules Lib "PSAPI.DLL" _
+   (ByVal hProcess As Long, _
+   lphModule As Long, _
+   ByVal cb As Long, _
+   lpcbNeeded As Long _
+) As Long
+
+Public Declare Function GetDeviceDriverBaseName Lib "PSAPI.DLL" Alias "GetDeviceDriverBaseNameA" _
+   (ByVal ImageBase As Long, _
+   ByVal lpBaseName As String, _
+   ByVal nSize As Long _
+) As Long
+
+Public Declare Function GetDeviceDriverFileName Lib "PSAPI.DLL" Alias "GetDeviceDriverFileNameA" _
+   (ByVal ImageBase As Long, _
+   ByVal lpFileName As String, _
+   ByVal nSize As Long _
+) As Long
+
+Public Declare Function GetMappedFileName Lib "PSAPI.DLL" Alias "GetMappedFileNameA" _
+   (ByVal hProcess As Long, _
+   ByVal lpv As Long, _
+   ByVal lpFileName As String, _
+   ByVal nSize As Long _
+) As Long
+
+Public Declare Function GetModuleBaseName Lib "PSAPI.DLL" Alias "GetModuleBaseNameA" _
+   (ByVal hProcess As Long, _
+   ByVal hModule As Long, _
+   ByVal lpFileName As String, _
+   ByVal nSize As Long _
+) As Long
+
+Public Declare Function GetModuleFileNameEx Lib "PSAPI.DLL" Alias "GetModuleFileNameExA" _
+   (ByVal hProcess As Long, _
+   ByVal hModule As Long, _
+   ByVal lpFileName As String, _
+   ByVal nSize As Long _
+) As Long
+
+Public Declare Function GetModuleInformation Lib "PSAPI.DLL" _
+   (ByVal hProcess As Long, _
+   ByVal hModule As Long, _
+   lpmodinfo As MODULEINFO, _
+   ByVal cb As Long _
+) As Long
+
+Public Declare Function GetProcessMemoryInfo Lib "PSAPI.DLL" _
+   (ByVal hProcess As Long, _
+   ppsmemCounters As PROCESS_MEMORY_COUNTERS, _
+   ByVal cb As Long _
+) As Long
+
+Public Declare Function GetWsChanges Lib "PSAPI.DLL" _
+   (ByVal hProcess As Long, _
+   lpWatchInfo As PSAPI_WS_WATCH_INFORMATION, _
+   ByVal cb As Long _
+) As Long
+
+Public Declare Function InitializeProcessForWsWatch Lib "PSAPI.DLL" _
+   (ByVal hProcess As Long _
+) As Long
+
+Public Declare Function QueryWorkingSet Lib "PSAPI.DLL" _
+   (ByVal hProcess As Long, _
+   pv As Long, _
+   ByVal cb As Long _
+) As Long
+</pre><h2>Using the API</h2><p>
+This example demonstrates how to enumerate all running process and provides information
+about each of the modules running, along with their working set usage.  The first thing
+to do is to get a list of running processes.  The <span class="code">EnumProcesses</span>
+takes an array which you must pre-initialize to the maximum number of processes you can 
+work with, then tells you how many were actually returned:
+</p><pre>
+Dim aProcesses() As Long
+Dim cbNeeded As Long
+Dim cProcesses As Long
+
+   ReDim aProcesses(0 To 1023) As Long
+   If (EnumProcesses( _
+      aProcesses(0), 1024 * 4, cbNeeded) &lt;&gt; 0) Then
+
+      '// Calculate how many process identifiers were returned.
+      cProcesses = cbNeeded / 4
+
+     ...      
+    
+   End If
+</pre><p>
+Having got a process list, you can then find the specific information about
+each process.  The first thing to do is to convert the process ID into a 
+handle to a process:
+</p><pre>
+Private Const MAX_PATH = 260
+Private Declare Function OpenProcess Lib "kernel32" ( _ 
+   ByVal dwDesiredAccess As Long, ByVal bInheritHandle As Long, _
+   ByVal dwProcessId As Long) As Long
+Private Declare Function CloseHandle Lib "kernel32" ( _
+   ByVal hObject As Long) As Long
+Private Const PROCESS_TERMINATE = &amp;H1
+Private Const PROCESS_CREATE_THREAD = &amp;H2
+Private Const PROCESS_VM_OPERATION = &amp;H8
+Private Const PROCESS_VM_READ = &amp;H10
+Private Const PROCESS_VM_WRITE = &amp;H20
+Private Const PROCESS_DUP_HANDLE = &amp;H40
+Private Const PROCESS_CREATE_PROCESS = &amp;H80
+Private Const PROCESS_SET_QUOTA = &amp;H100
+Private Const PROCESS_SET_INFORMATION = &amp;H200
+Private Const PROCESS_QUERY_INFORMATION = &amp;H400
+
+
+   Dim hProcess As Long
+
+   hProcess = OpenProcess(PROCESS_QUERY_INFORMATION Or _
+                                   PROCESS_VM_READ, _
+                                   0, lProcessID)
+
+   ...
+
+   CloseHandle hProcess
+</pre><p>
+Once you have a handle, you can then find the memory usage information
+and a list of modules
+associated with the process.  The list of modules is obtained using an 
+array in the same manner as getting a list
+of processes in the first place:
+</p><pre>
+Dim hMod(0 To 1023) As Long
+Dim cbNeeded As Long
+Dim cModules As Long
+Dim tPMC As PROCESS_MEMORY_COUNTERS
+Dim workingSetSize As Long
+
+   GetProcessMemoryInfo(hProcess, tPMC, Len(tPMC)   
+   workingSetSize = tPMC.WorkingSetSize
+
+   If (hProcess &lt;&gt; 0) Then
+      If (EnumProcessModules(hProcess, hMod(0), 1024 * 4, _
+           cbNeeded)) Then
+         cModules = cbNeeded \ 4
+  
+         ...
+    
+      End If
+   End If
+</pre><p>
+Then you can find the name, file name and information about
+the memory usage of the process:
+</p><pre>
+Dim szProcessName As String
+Dim processName As String
+Dim processFileName As String
+Dim lR As Long
+
+   For i = 0 To cModules - 1
+
+      szProcessName = String$(MAX_PATH, 0)
+      LSet szProcessName = "unknown"
+      lR = GetModuleBaseName(hProcess, hMod(i), szProcessName, lLen)
+      processName = szProcessName
+               
+      szProcessName = String$(MAX_PATH, 0)
+      LSet szProcessName = "unknown"
+      lR = GetModuleFileNameEx(hProcess, hMod(i), szProcessName, lLen)
+      processFileName = szProcessName
+
+   Next i	
+</pre><p>
+The demonstration application uses these techniques to present a complete process
+list with names, file names and memory usage in a ListView.
+</p><h2>Conclusion</h2><p>
+This tip demonstrates how to use the PSAPI.DLL functions under Windows NT/2000/XP
+to investigate running processes. You can use this information to monitor 
+memory usage of an application, or to look into which DLLs a particular application
+is using.  See also the <a href="http://www.vbaccelerator.com/article.asp?id=4591">GUI Resource Tracer</a> utility
+which uses these techniques to provide a correct task list matched against the running
+processes.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Using PSAPI to get a complete task list and memory usage.</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 November 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Getting_Process_Information_Using_PSAPI/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:11 GMT -->
+</html>

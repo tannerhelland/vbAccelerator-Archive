@@ -1,0 +1,330 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/ListBar/Outlook_ListBar/VB5_List_Bar_Full_Source_zip_cOwnerDrawButton_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:51 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cOwnerDrawButton.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cOwnerDrawButton.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">ListBar</a>&#160;.&#160;<a href="article.html">vbAccelerator ListBar Control</a>&#160;.&#160;<a href="VB5_List_Bar_Full_Source.html">VB5 List Bar Full Source</a>&#160;.&#160;cOwnerDrawButton.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_List_Bar_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 List Bar Control Binary</a> (44K)</p><p class="nav"><a href="VB5_List_Bar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 List Bar Demonstration</a> (39K)</p><p class="nav"><a href="VB5_List_Bar_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 List Bar Full Source</a> (136K)</p><p /><p class="nav"><a href="VB6_List_Bar_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 List Bar Control Binary</a> (45K)</p><p class="nav"><a href="VB6_List_Bar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 List Bar Demonstration</a> (35K)</p><p class="nav"><a href="VB6_List_Bar_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 List Bar Full Source</a> (132K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:3780</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3780&amp;type=Zip&amp;title=VB5%20List%20Bar%20Full%20Source%2Ezip%5FcOwnerDrawButton">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 4 / 7</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 6 / 7</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:21 January 2004</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />17 Feb 2003<br /><p class="update">Added Office XP highlighting style.</p><p class="update">Fixed two bugs in the cListBar class: ForeColor and HelpText
+ 	properties did not work correctly - thanks to Simon Horton.</p><p class="update">Added a method to the <i>cListBarItems</i> class to 
+	remove all items from a bar, and fixed an intermittent problem with 
+	removing the last item from a bar (item still showed and caused a crash 
+	if you clicked on it - thanks to Daniel).
+	this.</p><p class="update">Prevented BarClick events from firing when the ListBar was
+	resized - thanks to Billy Propes.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3771">vbAccelerator Visual Studio Style ToolBox ListBar</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11">vbAccelerator S-Grid Control</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cOwnerDrawButton.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cOwnerDrawButton"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+'
+ ===============================================================================
+=======
+' Name:     cOwnerDrawButton
+' Author:   Steve McMahon (steve@vbaccelerator.com)
+' Date:     20 October 1999
+'
+' Requires: SSUBTMR.DLL
+'
+' Copyright  1999 Steve McMahon for vbAccelerator
+'
+ -------------------------------------------------------------------------------
+-------
+' Visit vbAccelerator - advanced free source code for VB programmers
+'    http://vbaccelerator.com
+'
+ -------------------------------------------------------------------------------
+-------
+'
+' Draws the face of any VB button with the style set
+' to graphical.  This particular implementation draws
+' the standard windows buttons.
+'
+' FREE SOURCE CODE - ENJOY!
+' Do not sell this code.  Credit vbAccelerator.
+'
+ ===============================================================================
+=======
+
+Implements ISubclass
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+Private Const WM_GETTEXT = &amp;HD
+Private Const WM_DRAWITEM = &amp;H2B
+Private Const ODT_BUTTON = 4
+
+' Structures:
+Private Type DRAWITEMSTRUCT
+   CtlType As Long
+   CtlID As Long
+   itemID As Long
+   itemAction As Long
+   itemState As Long
+   hwndItem As Long
+   hdc As Long
+   rcItem As RECT
+   itemData As Long
+End Type
+
+' Button messages:
+Private Const BM_GETCHECK = &amp;HF0&amp;
+Private Const BM_SETCHECK = &amp;HF1&amp;
+Private Const BM_GETSTATE = &amp;HF2&amp;
+Private Const BM_SETSTATE = &amp;HF3&amp;
+Private Const BM_SETSTYLE = &amp;HF4&amp;
+Private Const BM_CLICK = &amp;HF5&amp;
+Private Const BM_GETIMAGE = &amp;HF6&amp;
+Private Const BM_SETIMAGE = &amp;HF7&amp;
+
+Private Const BST_UNCHECKED = &amp;H0&amp;
+Private Const BST_CHECKED = &amp;H1&amp;
+Private Const BST_INDETERMINATE = &amp;H2&amp;
+Private Const BST_PUSHED = &amp;H4&amp;
+Private Const BST_FOCUS = &amp;H8&amp;
+
+' GDI etc
+Private Declare Function DrawFrameControl Lib "user32" (ByVal lHDC As Long, tR
+ As RECT, ByVal eFlag As Long, ByVal eStyle As Long) As Long
+Private Const DFC_CAPTION = 1
+Private Const DFC_MENU = 2
+Private Const DFC_SCROLL = 3
+Private Const DFC_BUTTON = 4
+'#if(WINVER &gt;= =&amp;H0500)
+Private Const DFC_POPUPMENU = 5
+'#endif /* WINVER &gt;= =&amp;H0500 */
+
+Private Const DFCS_CAPTIONCLOSE = &amp;H0
+Private Const DFCS_CAPTIONMIN = &amp;H1
+Private Const DFCS_CAPTIONMAX = &amp;H2
+Private Const DFCS_CAPTIONRESTORE = &amp;H3
+Private Const DFCS_CAPTIONHELP = &amp;H4
+
+Private Const DFCS_MENUARROW = &amp;H0
+Private Const DFCS_MENUCHECK = &amp;H1
+Private Const DFCS_MENUBULLET = &amp;H2
+Private Const DFCS_MENUARROWRIGHT = &amp;H4
+Private Const DFCS_SCROLLUP = &amp;H0
+Private Const DFCS_SCROLLDOWN = &amp;H1
+Private Const DFCS_SCROLLLEFT = &amp;H2
+Private Const DFCS_SCROLLRIGHT = &amp;H3
+Private Const DFCS_SCROLLCOMBOBOX = &amp;H5
+Private Const DFCS_SCROLLSIZEGRIP = &amp;H8
+Private Const DFCS_SCROLLSIZEGRIPRIGHT = &amp;H10
+
+Private Const DFCS_BUTTONCHECK = &amp;H0
+Private Const DFCS_BUTTONRADIOIMAGE = &amp;H1
+Private Const DFCS_BUTTONRADIOMASK = &amp;H2
+Private Const DFCS_BUTTONRADIO = &amp;H4
+Private Const DFCS_BUTTON3STATE = &amp;H8
+Private Const DFCS_BUTTONPUSH = &amp;H10
+
+Private Const DFCS_INACTIVE = &amp;H100
+Private Const DFCS_PUSHED = &amp;H200
+Private Const DFCS_CHECKED = &amp;H400
+
+'#if(WINVER &gt;= =&amp;H0500)
+Private Const DFCS_TRANSPARENT = &amp;H800
+Private Const DFCS_HOT = &amp;H1000
+'#endif /* WINVER &gt;= =&amp;H0500 */
+
+Private Const DFCS_ADJUSTRECT = &amp;H2000
+Private Const DFCS_FLAT = &amp;H4000
+Private Const DFCS_MONO = &amp;H8000
+
+Public Enum EODStandardButtonStyle
+   eodNone = 0
+   eodClose = 1
+   eodHelp = 2
+   eodMax = 3
+   eodMin = 4
+   eodRestore = 5
+   eodDown = 6
+   eodUp = 7
+   eodLeft = 8
+   eodRight = 9
+   eodSizeBox = 10
+End Enum
+
+Private Const vbalODButtonStyleProp = "vbalODButtonStyle"
+
+Private m_hWnd As Long
+
+Public Sub Attach(ByRef hWndButtonOwner As Long)
+   Detach
+   m_hWnd = hWndButtonOwner
+   AttachMessage Me, m_hWnd, WM_DRAWITEM
+End Sub
+Public Sub Detach()
+   If Not m_hWnd = 0 Then
+      DetachMessage Me, m_hWnd, WM_DRAWITEM
+      m_hWnd = 0
+   End If
+End Sub
+Public Property Let ButtonStyle(ByVal hwnd As Long, ByVal eStyle As
+ EODStandardButtonStyle)
+   If eStyle &lt; eodNone Then
+      RemoveProp hwnd, vbalODButtonStyleProp
+   Else
+      SetProp hwnd, vbalODButtonStyleProp, eStyle
+   End If
+End Property
+Public Property Get ButtonStyle(ByVal hwnd As Long) As EODStandardButtonStyle
+   ButtonStyle = GetProp(hwnd, vbalODButtonStyleProp)
+End Property
+
+Private Sub pDrawButton(tDis As DRAWITEMSTRUCT, eStyle As
+ EODStandardButtonStyle)
+Dim hBr As Long
+Dim lState As Long
+Dim bPushed As Boolean
+Dim bEnabled As Boolean
+Dim bChecked As Boolean
+Dim bFocus As Boolean
+Dim lType As Long
+Dim lStyle As Long
+   
+   ' Find out about the button:
+   lState = SendMessageLong(tDis.hwndItem, BM_GETSTATE, 0, 0)
+   bPushed = ((lState And BST_CHECKED) = BST_CHECKED) Or ((lState And
+    BST_PUSHED) = BST_PUSHED)
+   bChecked = (SendMessageLong(tDis.hwndItem, BM_GETCHECK, 0, 0) &lt;&gt; 0)
+   bEnabled = IsWindowEnabled(tDis.hwndItem)
+   bFocus = (GetFocus() = tDis.hwndItem)
+
+   ' Use draw frame control to render the button:
+   Select Case eStyle
+   Case eodUp
+      lType = DFC_SCROLL
+      lStyle = DFCS_SCROLLUP
+   Case eodSizeBox
+      lType = DFC_SCROLL
+      lStyle = DFCS_SCROLLSIZEGRIP
+   Case eodRight
+      lType = DFC_SCROLL
+      lStyle = DFCS_SCROLLRIGHT
+   Case eodRestore
+      lType = DFC_CAPTION
+      lStyle = DFCS_CAPTIONRESTORE
+   Case eodMin
+      lType = DFC_CAPTION
+      lStyle = DFCS_CAPTIONMIN
+   Case eodMax
+      lType = DFC_CAPTION
+      lStyle = DFCS_CAPTIONMAX
+   Case eodLeft
+      lType = DFC_SCROLL
+      lStyle = DFCS_SCROLLLEFT
+   Case eodHelp
+      lType = DFC_CAPTION
+      lStyle = DFCS_CAPTIONHELP
+   Case eodDown
+      lType = DFC_SCROLL
+      lStyle = DFCS_SCROLLDOWN
+   Case eodClose
+      lType = DFC_CAPTION
+      lStyle = DFCS_CAPTIONCLOSE
+   End Select
+   If (bPushed) Or (bChecked) Then
+      lStyle = lStyle Or DFCS_PUSHED
+   End If
+   If Not (bEnabled) Then
+      lStyle = lStyle Or DFCS_INACTIVE
+   End If
+   DrawFrameControl tDis.hdc, tDis.rcItem, lType, lStyle
+
+
+End Sub
+
+Private Sub Class_Terminate()
+   Detach
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As SSubTimer.EMsgResponse)
+   '
+End Property
+
+Private Property Get ISubclass_MsgResponse() As SSubTimer.EMsgResponse
+   If (CurrentMessage = WM_DRAWITEM) Then
+      ISubclass_MsgResponse = emrConsume
+   End If
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+Dim tDis As DRAWITEMSTRUCT
+Dim eStyle As EODStandardButtonStyle
+
+   Select Case iMsg
+   Case WM_DRAWITEM
+      CopyMemory tDis, ByVal lParam, Len(tDis)
+      If tDis.CtlType = ODT_BUTTON Then
+         eStyle = GetProp(tDis.hwndItem, vbalODButtonStyleProp)
+         If (eStyle &gt; 0) Then
+            pDrawButton tDis, eStyle
+            ISubclass_WindowProc = 1
+         Else
+            ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lParam)
+         End If
+      End If
+   End Select
+   
+End Function
+
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">ListBar</a>&#160;.&#160;<a href="article.html">vbAccelerator ListBar Control</a>&#160;.&#160;<a href="VB5_List_Bar_Full_Source.html">VB5 List Bar Full Source</a>&#160;.&#160;cOwnerDrawButton.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/ListBar/Outlook_ListBar/VB5_List_Bar_Full_Source_zip_cOwnerDrawButton_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:51 GMT -->
+</html>

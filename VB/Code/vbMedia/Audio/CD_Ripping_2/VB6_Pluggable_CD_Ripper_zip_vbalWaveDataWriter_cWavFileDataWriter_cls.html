@@ -1,0 +1,413 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_2/VB6_Pluggable_CD_Ripper_zip_vbalWaveDataWriter_cWavFileDataWriter_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: vbalWaveDataWriter_cWavFileDataWriter.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: vbalWaveDataWriter_cWavFileDataWriter.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" /><link rel="contents" href="VB6_Pluggable_CD_Ripper.html" /><link rel="meta" type="application/rdf+xml" href="VB6%20Pluggable%20CD%20Ripper.html" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">CD Ripping in VB Part 2</a>&#160;.&#160;<a href="VB6_Pluggable_CD_Ripper.html">VB6 Pluggable CD Ripper</a>&#160;.&#160;vbalWaveDataWriter_cWavFileDataWriter.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_CD_Ripper_Plugin_Interface.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 CD Ripper Plugin Interface</a> (9K)</p><p class="nav"><a href="VB5_Pluggable_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Pluggable CD Ripper</a> (191K)</p><p /><p class="nav"><a href="VB6_CD_Ripper_Plugin_Interface.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 CD Ripper Plugin Interface</a> (9K)</p><p class="nav"><a href="VB6_Pluggable_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Pluggable CD Ripper</a> (189K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:15346</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=15346&amp;type=Zip&amp;title=VB6%20Pluggable%20CD%20Ripper%2Ezip%5FvbalWaveDataWriter%5FcWavFileDataWriter">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />27 May 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13703">SGrid 2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2767">vbAccelerator Visual Studio Style Tab Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14898">MP3 Encoding with LAME</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14971">CD Ripping in VB Part 1</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: vbalWaveDataWriter_cWavFileDataWriter.cls</h1><p>This file is part of the download <a href="VB6_Pluggable_CD_Ripper.html">VB6 Pluggable CD Ripper</a>, which is described in the article <a href="article.html">CD Ripping in VB Part 2</a>.</p><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "cWavFileDataWriter"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+' ------------------------------------------------------------
+' Name:   cWAVWriter
+' Author: Steve McMahon (steve@vbaccelerator.com)
+' Date:   2004-05-06
+' Description:
+' Wrapper around the Windows multi-media IO for writing
+' 16-bit stereo 44.1kHz Wave Files.
+'
+' See http://vbaccelerator.com/
+' ------------------------------------------------------------
+
+
+Implements IWaveDataWriter
+Implements IPluginInformation
+
+Private Type WAVEFORMATEX
+   wFormatTag As Integer
+   nChannels As Integer
+   nSamplesPerSec As Long
+   nAvgBytesPerSec As Long
+   nBlockAlign As Integer
+   wBitsPerSample As Integer
+   cbSize As Integer
+End Type
+
+Private Type mmioinfo
+   dwFlags As Long
+   fccIOProc As Long
+   pIOProc As Long
+   wErrorRet As Long
+   htask As Long
+   cchBuffer As Long
+   pchBuffer As String
+   pchNext As String
+   pchEndRead As String
+   pchEndWrite As String
+   lBufOffset As Long
+   lDiskOffset As Long
+   adwInfo(4) As Long
+   dwReserved1 As Long
+   dwReserved2 As Long
+   hmmio As Long
+End Type
+
+Private Type MMCKINFO
+   ckid As Long
+   ckSize As Long
+   fccType As Long
+   dwDataOffset As Long
+   dwFlags As Long
+End Type
+
+Private Declare Function mmioClose Lib "winmm.dll" (ByVal hmmio As Long, ByVal
+ uFlags As Long) As Long
+Private Declare Function mmioDescend Lib "winmm.dll" (ByVal hmmio As Long, lpck
+ As MMCKINFO, lpckParent As MMCKINFO, ByVal uFlags As Long) As Long
+Private Declare Function mmioDescendParent Lib "winmm.dll" Alias "mmioDescend"
+ (ByVal hmmio As Long, lpck As MMCKINFO, ByVal x As Long, ByVal uFlags As Long)
+ As Long
+Private Declare Function mmioOpen Lib "winmm.dll" Alias "mmioOpenA" (ByVal
+ szFileName As String, lpmmioinfo As Any, ByVal dwOpenFlags As Long) As Long
+Private Declare Function mmioSeek Lib "winmm.dll" (ByVal hmmio As Long, ByVal
+ lOffset As Long, ByVal iOrigin As Long) As Long
+Private Declare Function mmioStringToFOURCC Lib "winmm.dll" Alias
+ "mmioStringToFOURCCA" (ByVal sz As String, ByVal uFlags As Long) As Long
+Private Declare Function mmioAscend Lib "winmm.dll" (ByVal hmmio As Long, lpck
+ As MMCKINFO, ByVal uFlags As Long) As Long
+Private Declare Function mmioWrite Lib "winmm.dll" (ByVal hmmio As Long, pch As
+ Any, ByVal cch As Long) As Long
+Private Declare Function mmioWriteString Lib "winmm.dll" Alias "mmioWrite"
+ (ByVal hmmio As Long, ByVal pch As String, ByVal cch As Long) As Long
+Private Declare Function mmioCreateChunk Lib "winmm.dll" (ByVal hmmio As Long,
+ pmmcki As MMCKINFO, ByVal fuCreate As Long) As Long
+
+Private Const MMIO_READ = &amp;H0
+Private Const MMIO_WRITE = &amp;H1           '/* open file for writing only */
+Private Const MMIO_READWRITE = &amp;H2       '/* open file for reading and writing
+ */
+Private Const MMIO_FINDCHUNK = &amp;H10
+Private Const MMIO_FINDRIFF = &amp;H20
+Private Const MMIO_CREATERIFF = &amp;H20  '/* mmioCreateChunk: make a LIST chunk */
+Private Const MMIO_ALLOCBUF = &amp;H10000         '/* mmioOpen() should allocate a
+ buffer */
+Private Const MMIO_CREATE = &amp;H1000&amp;          '/* create new file (or truncate
+ file) */
+
+Private Const MM_WOM_DONE = &amp;H3BD
+Private Const MMSYSERR_NOERROR = 0
+Private Const SEEK_CUR = 1
+Private Const SEEK_END = 2
+Private Const SEEK_SET = 0
+Private Const TIME_BYTES = &amp;H4
+Private Const WHDR_DONE = &amp;H1
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" (dest As
+ Any, src As Any, ByVal cb As Long)
+Private Declare Sub CopyMemoryFromString Lib "kernel32" Alias "RtlMoveMemory"
+ (dest As Any, ByVal source As String, ByVal cb As Long)
+Private Declare Sub CopyMemoryToString Lib "kernel32" Alias "RtlMoveMemory"
+ (ByVal dest As String, source As Any, ByVal cb As Long)
+Private Declare Function GlobalAlloc Lib "kernel32" (ByVal wFlags As Long,
+ ByVal dwBytes As Long) As Long
+Private Declare Function GlobalLock Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function GlobalUnlock Lib "kernel32" (ByVal hMem As Long) As
+ Long
+Private Declare Function GlobalFree Lib "kernel32" (ByVal hMem As Long) As Long
+Private Const GMEM_FIXED = &amp;H0
+Private Const GMEM_ZEROINIT = &amp;H40
+Private Const GPTR = (GMEM_FIXED Or GMEM_ZEROINIT)
+
+Private m_hMmio As Long
+Private m_ckBlank As MMCKINFO
+Private m_mmckInfoChild As MMCKINFO
+Private m_mmckInfoParent As MMCKINFO
+
+Private Const ERR_BASE = 29600
+
+Private Sub Class_Terminate()
+   If Not (m_hMmio = 0) Then
+      On Error Resume Next
+      IWaveDataWriter_CloseFile
+      Debug.Assert "" = "Warning: class terminated when file still open"
+   End If
+End Sub
+
+Private Property Get IPluginInformation_Configuration() As
+ vbalCDRipInterfaces6.IPluginConfig
+   ' Not supported
+   Set IPluginInformation_Configuration = Nothing
+End Property
+
+Private Property Get IPluginInformation_PluginAcknowledgements(ByVal locale As
+ String) As String
+   ' none
+End Property
+
+Private Property Get IPluginInformation_PluginAuthor(ByVal locale As String) As
+ String
+   IPluginInformation_PluginAuthor = "Steve McMahon (steve@vbaccelerator.com)"
+End Property
+
+Private Property Get IPluginInformation_PluginDescription(ByVal locale As
+ String) As String
+   IPluginInformation_PluginDescription = "Writes stereo 16 bit 44.1kHz
+    Wavefiles."
+End Property
+
+Private Property Get IPluginInformation_PluginName(ByVal locale As String) As
+ String
+   IPluginInformation_PluginName = "Wave File Output Plugin"
+End Property
+
+Private Property Get IPluginInformation_PluginWebsite(ByVal locale As String)
+ As String
+   IPluginInformation_PluginWebsite = "http://vbaccelerator.com/"
+End Property
+
+Private Property Let IWaveDataWriter_Album(ByVal RHS As String)
+   ' ignored
+End Property
+
+Private Property Let IWaveDataWriter_Artist(ByVal RHS As String)
+   ' ignored
+End Property
+
+Private Property Let IWaveDataWriter_Comment(ByVal RHS As String)
+   ' ignored
+End Property
+
+Private Property Get IWaveDataWriter_FileExtension() As String
+   '
+   IWaveDataWriter_FileExtension = "wav"  '
+   '
+End Property
+
+Private Property Let IWaveDataWriter_Genre(ByVal RHS As String)
+   ' ignored
+End Property
+
+Private Property Let IWaveDataWriter_Title(ByVal RHS As String)
+   ' ignored
+End Property
+
+Private Property Let IWaveDataWriter_TrackNumber(ByVal RHS As String)
+   ' ignored
+End Property
+
+Public Function IWaveDataWriter_WriteWavData(ByVal lPtrBuff As Long, ByVal
+ lWriteSize As Long) As Long
+Dim lSize As Long
+   If (m_hMmio = 0) Then
+      errHandler 5, "WriteWavData"
+   Else
+      ' Write to the data chunk:
+      lSize = mmioWrite(m_hMmio, ByVal lPtrBuff, lWriteSize)
+      ' Check we wrote the right number of bytes:
+      If Not (lSize = lWriteSize) Then
+         errHandler 6, "WriteWavData"
+      End If
+      IWaveDataWriter_WriteWavData = lSize
+   End If
+End Function
+
+
+Private Function WriteWaveFormatHeader() As Boolean
+   
+   ' This code writes 16 bit/44.1kHz Stereo Wave Files
+   Dim wavEx As WAVEFORMATEX
+   wavEx.cbSize = 0
+   wavEx.nAvgBytesPerSec = 176400
+   wavEx.nBlockAlign = 4
+   wavEx.nChannels = 2
+   wavEx.nSamplesPerSec = 44100
+   wavEx.wBitsPerSample = 16
+   wavEx.wFormatTag = 1
+   Dim lSize As Long
+
+   ' Create the RIFF header chunk:
+   LSet m_mmckInfoParent = m_ckBlank
+   m_mmckInfoParent.fccType = mmioStringToFOURCC("WAVE", 0)
+   
+   If Not (mmioCreateChunk(m_hMmio, m_mmckInfoParent, MMIO_CREATERIFF) = 0) Then
+      mmioClose m_hMmio, 0
+      m_hMmio = 0
+      errHandler 4, "WriteWaveFormatHeader"
+      Exit Function
+   End If
+      
+   ' Create the "fmt" chunk:
+   LSet m_mmckInfoChild = m_ckBlank
+   m_mmckInfoChild.ckid = mmioStringToFOURCC("fmt", 0)
+   m_mmckInfoChild.ckSize = Len(wavEx)
+      
+   If Not (mmioCreateChunk(m_hMmio, m_mmckInfoChild, 0) = 0) Then
+      mmioClose m_hMmio, 0
+      m_hMmio = 0
+      errHandler 4, "WriteWaveFormatHeader"
+      Exit Function
+   End If
+      
+   lSize = mmioWrite(m_hMmio, wavEx, Len(wavEx))
+   If Not (lSize = Len(wavEx)) Then
+      mmioClose m_hMmio, 0
+      m_hMmio = 0
+      errHandler 4, "WriteWaveFormatHeader"
+      Exit Function
+   End If
+   
+   ' Jump back to the RIFF chunk
+   If Not (mmioAscend(m_hMmio, m_mmckInfoChild, 0) = 0) Then
+      mmioClose m_hMmio, 0
+      m_hMmio = 0
+      errHandler 4, "WriteWaveFormatHeader"
+      Exit Function
+   End If
+   
+   ' Create the "data" chunk
+   m_mmckInfoChild.ckid = mmioStringToFOURCC("data", 0)
+   If Not (mmioCreateChunk(m_hMmio, m_mmckInfoChild, 0) = 0) Then
+      mmioClose m_hMmio, 0
+      m_hMmio = 0
+      errHandler 4, "WriteWaveFormatHeader"
+      Exit Function
+   End If
+   
+   ' Stay in the data chunk for writing
+   
+   WriteWaveFormatHeader = True
+   
+End Function
+
+Public Sub IWaveDataWriter_CloseFile()
+Dim lErr As Long
+   If Not (m_hMmio = 0) Then
+   
+      ' Ascend the output file out of the 'data' chunk:
+      If Not (mmioAscend(m_hMmio, m_mmckInfoChild, 0) = 0) Then
+         lErr = 1
+      End If
+      
+      ' Ascend the output file out of the 'RIFF' chunk, this writes out
+      ' the size of the data
+      If Not (mmioAscend(m_hMmio, m_mmckInfoParent, 0) = 0) Then
+         lErr = 2
+      End If
+   
+      mmioClose m_hMmio, 0
+      m_hMmio = 0
+      
+      errHandler lErr, "CloseFile"
+      
+   End If
+End Sub
+
+
+Private Function IWaveDataWriter_OpenFile(ByVal sSoundFile As String) As Boolean
+    
+   ' close previously open file (if any)
+   IWaveDataWriter_CloseFile
+   
+   m_hMmio = mmioOpen(sSoundFile, ByVal 0&amp;, MMIO_ALLOCBUF Or MMIO_READWRITE Or
+    MMIO_CREATE)
+   If (m_hMmio = 0) Then
+      errHandler 3, "OpenFile"
+      Exit Function
+   End If
+
+   If (WriteWaveFormatHeader()) Then
+      IWaveDataWriter_OpenFile = True
+   End If
+
+End Function
+
+Private Property Let IWaveDataWriter_Year(ByVal RHS As String)
+   ' ignored
+End Property
+
+Private Sub errHandler(ByVal lErr As Long, ByVal sProc As String)
+Dim sMsg As String
+   Select Case lErr
+   Case 0
+      ' No error
+      Exit Sub
+   Case 1
+      sMsg = "Unable to finalise data chunk; WAV file may not be usable."
+   Case 2
+      sMsg = "Unable to finalise RIFF chunk; WAV file may not be usable."
+   Case 3
+      sMsg = "Unable to open file for writing."
+   Case 4
+      sMsg = "Unable to write the WAV file header."
+   Case 5
+      sMsg = "WAV file not open."
+   Case 6
+      sMsg = "Error writing data: bytes written does not match request, WAV
+       file may not be usable."
+   End Select
+   
+   Err.Raise lErr + ERR_BASE, App.EXEName &amp; "." &amp; sProc, sMsg
+   
+End Sub
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">CD Ripping in VB Part 2</a>&#160;.&#160;<a href="VB6_Pluggable_CD_Ripper.html">VB6 Pluggable CD Ripper</a>&#160;.&#160;vbalWaveDataWriter_cWavFileDataWriter.cls</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 12 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_2/VB6_Pluggable_CD_Ripper_zip_vbalWaveDataWriter_cWavFileDataWriter_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+</html>

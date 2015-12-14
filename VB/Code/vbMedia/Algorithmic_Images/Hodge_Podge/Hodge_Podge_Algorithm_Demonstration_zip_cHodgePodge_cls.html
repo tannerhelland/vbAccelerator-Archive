@@ -1,0 +1,408 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Algorithmic_Images/Hodge_Podge/Hodge_Podge_Algorithm_Demonstration_zip_cHodgePodge_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:48 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cHodgePodge.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cHodgePodge.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Algorithmic Images</a>&#160;.&#160;<a href="article.html">Cellular Automata - Catalytic Reactions</a>&#160;.&#160;<a href="Hodge_Podge_Algorithm_Demonstration.html">Hodge Podge Algorithm Demonstration</a>&#160;.&#160;cHodgePodge.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Hodge_Podge_Algorithm_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Hodge Podge Algorithm Demonstration</a> (36K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:12779</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12779&amp;type=Zip&amp;title=Hodge%20Podge%20Algorithm%20Demonstration%2Ezip%5FcHodgePodge">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Aug 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12678">Cellular Automata - Crystal Model</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3015">256 Colour DIBSections </a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cHodgePodge.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cHodgePodge"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Type SAFEARRAYBOUND
+    cElements As Long
+    lLbound As Long
+End Type
+Private Type SAFEARRAY2D
+    cDims As Integer
+    fFeatures As Integer
+    cbElements As Long
+    cLocks As Long
+    pvData As Long
+    Bounds(0 To 1) As SAFEARRAYBOUND
+End Type
+Private Declare Function VarPtrArray Lib "msvbvm50.dll" Alias "VarPtr" (Ptr()
+ As Any) As Long
+
+Private Type tOffset
+   x As Long
+   y As Long
+   bUse As Boolean
+End Type
+
+Private m_cDib As cDIBSection256
+Private m_cDibLast As cDIBSection256
+Private m_tNeighbourOffset(0 To 8) As tOffset
+Private m_lWidth As Long
+Private m_lHeight As Long
+Private m_lStates As Long
+Private m_lInfectionRate As Long
+Private m_lWeighting1 As Long
+Private m_lWeighting2 As Long
+Private m_lColorLight As Long
+Private m_lColorDark As Long
+
+Public Property Get ColorDark() As OLE_COLOR
+   ColorDark = m_lColorDark
+End Property
+Public Property Let ColorDark(ByVal lColor As OLE_COLOR)
+   m_lColorDark = lColor
+   States = m_lStates
+End Property
+Public Property Get ColorLight() As OLE_COLOR
+   ColorLight = m_lColorLight
+End Property
+Public Property Let ColorLight(ByVal lColor As OLE_COLOR)
+   m_lColorLight = lColor
+   States = m_lStates
+End Property
+Public Property Get States() As Long
+   States = m_lStates
+End Property
+Public Property Let States(ByVal lStates As Long)
+   
+   m_lStates = lStates
+   ReDim lColor(0 To States) As Long
+   Dim i As Long
+   Dim rS As Long, gS As Long, bS As Long
+   Dim rE As Long, gE As Long, bE As Long
+   rS = m_lColorDark And &amp;HFF&amp;
+   gS = (m_lColorDark And &amp;HFF00&amp;) \ &amp;H100&amp;
+   bS = (m_lColorDark And &amp;HFF0000) \ &amp;H10000
+   rE = m_lColorLight And &amp;HFF&amp;
+   gE = (m_lColorLight And &amp;HFF00&amp;) \ &amp;H100&amp;
+   bE = (m_lColorLight And &amp;HFF0000) \ &amp;H10000
+   For i = 0 To States
+      lColor(i) = RGB( _
+         rS + (i * (rE - rS)) \ States, _
+         gS + (i * (gE - gS)) \ States, _
+         bS + (i * (bE - bS)) \ States _
+         )
+   Next i
+   m_cDib.SetPalette lColor
+   m_cDibLast.SetPalette lColor
+   
+End Property
+Public Property Get Width() As Long
+   Width = m_lWidth
+End Property
+Public Property Let Width(ByVal lWidth As Long)
+   m_lWidth = lWidth
+End Property
+Public Property Get Height() As Long
+   Height = m_lHeight
+End Property
+Public Property Let Height(ByVal lHeight As Long)
+   m_lHeight = lHeight
+End Property
+
+Public Sub Init()
+   If Not (m_lWidth = m_cDib.Width) Or Not (m_lHeight = m_cDib.Height) Then
+      m_cDib.Create m_lWidth, m_lHeight
+      m_cDibLast.Create m_lWidth, m_lHeight
+   End If
+   AddRandom 100
+   m_cDibLast.PaintPicture m_cDib.hdc
+End Sub
+Public Sub Paint( _
+      ByVal lHDC As Long, _
+      Optional ByVal lLeft As Long = 0, _
+      Optional ByVal lTop As Long = 0 _
+   )
+   m_cDib.PaintPicture lHDC, lLeft, lTop, m_lWidth, m_lHeight
+End Sub
+Public Sub AddRandom(ByVal lPercent As Long)
+Dim tSALast As SAFEARRAY2D
+Dim bDibLast() As Byte
+Dim x As Long
+Dim y As Long
+
+   lPercent = 100 - lPercent
+   
+   With tSALast
+       .cbElements = 1
+       .cDims = 2
+       .Bounds(0).lLbound = 0
+       .Bounds(0).cElements = m_cDibLast.Height
+       .Bounds(1).lLbound = 0
+       .Bounds(1).cElements = m_cDibLast.BytesPerScanLine()
+       .pvData = m_cDibLast.DIBSectionBitsPtr
+   End With
+   CopyMemory ByVal VarPtrArray(bDibLast()), VarPtr(tSALast), 4
+
+   For x = 0 To m_cDib.Width - 1
+      For y = 0 To m_cDib.Height - 1
+         If (Rnd * 100 &gt; lPercent) Then
+            bDibLast(x, y) = Rnd * m_lStates
+         End If
+      Next y
+   Next x
+   
+   ' Clear the temporary array descriptor
+   CopyMemory ByVal VarPtrArray(bDibLast), 0&amp;, 4
+
+End Sub
+
+Public Sub Step()
+Dim x As Long
+Dim y As Long
+Dim tSALast As SAFEARRAY2D
+Dim tSA As SAFEARRAY2D
+Dim bDibLast() As Byte
+Dim bDibNext() As Byte
+Dim lOldStateInc As Long
+Dim i As Long
+Dim j As Long
+Dim lOffset As Long
+Dim infectedNeighbours As Long
+Dim illNeighbours As Long
+Dim neighbouringSickness As Long
+Dim newState As Long
+   
+   With tSALast
+       .cbElements = 1
+       .cDims = 2
+       .Bounds(0).lLbound = 0
+       .Bounds(0).cElements = m_cDibLast.Height
+       .Bounds(1).lLbound = 0
+       .Bounds(1).cElements = m_cDibLast.BytesPerScanLine()
+       .pvData = m_cDibLast.DIBSectionBitsPtr
+   End With
+   CopyMemory ByVal VarPtrArray(bDibLast()), VarPtr(tSALast), 4
+
+   With tSA
+       .cbElements = 1
+       .cDims = 2
+       .Bounds(0).lLbound = 0
+       .Bounds(0).cElements = m_cDib.Height
+       .Bounds(1).lLbound = 0
+       .Bounds(1).cElements = m_cDib.BytesPerScanLine()
+       .pvData = m_cDib.DIBSectionBitsPtr
+   End With
+   CopyMemory ByVal VarPtrArray(bDibNext()), VarPtr(tSA), 4
+
+   ' Run the hodge podge step:
+   For x = 0 To m_cDib.Width - 1
+      For y = 0 To m_cDib.Height - 1
+         
+         infectedNeighbours = 0
+         illNeighbours = 0
+         neighbouringSickness = bDibLast(x, y)
+         
+         For lOffset = 0 To 8
+            If (m_tNeighbourOffset(lOffset).bUse) Then
+            
+               i = x + m_tNeighbourOffset(lOffset).x
+               If (i &lt; 0) Then i = m_cDib.Width - 1
+               If (i &gt;= m_cDib.Width) Then i = 0
+               j = y + m_tNeighbourOffset(lOffset).y
+               If (j &lt; 0) Then j = m_cDib.Height - 1
+               If (j &gt;= m_cDib.Height) Then j = 0
+                  
+               If (bDibLast(i, j) &lt; m_lStates) Then
+                  If (bDibLast(i, j) &gt; 0) Then
+                     infectedNeighbours = infectedNeighbours + 1
+                  End If
+               Else
+                  illNeighbours = illNeighbours + 1
+               End If
+               neighbouringSickness = neighbouringSickness + bDibLast(i, j)
+               
+            End If
+         Next lOffset
+         
+         If (bDibLast(x, y) &gt; 0) Then
+            infectedNeighbours = infectedNeighbours + 1
+         End If
+         
+         ' healthy cell
+         If (bDibLast(x, y) = 0) Then
+            bDibNext(x, y) = infectedNeighbours / m_lWeighting1 + illNeighbours
+             / m_lWeighting2
+         ' infected cell
+         ElseIf (bDibLast(x, y) &gt; 0 And bDibLast(x, y) &lt; m_lStates) Then
+            newState = (neighbouringSickness \ infectedNeighbours) +
+             m_lInfectionRate
+            If (newState &gt; m_lStates) Then
+               newState = m_lStates
+            End If
+            bDibNext(x, y) = newState
+         ' ill cell
+         ElseIf (bDibLast(x, y) = m_lStates) Then
+            bDibNext(x, y) = 0
+         End If
+         
+      Next y
+   Next x
+   
+   ' Copy New -&gt; Old
+   m_cDib.PaintPicture m_cDibLast.hdc
+
+   ' Clear the temporary array descriptor
+   CopyMemory ByVal VarPtrArray(bDibNext), 0&amp;, 4
+   CopyMemory ByVal VarPtrArray(bDibLast), 0&amp;, 4
+
+End Sub
+
+' suggested infection rate is between 1 and 20
+' All four different types of hodge-podge behaviour
+' will occur in this range
+Public Property Get InfectionRate() As Long
+   InfectionRate = m_lInfectionRate
+End Property
+Public Property Let InfectionRate(ByVal lRate As Long)
+   m_lInfectionRate = lRate
+End Property
+' suggested value is 2
+Public Property Get WeightingParameter1() As Long
+   WeightingParameter1 = m_lWeighting1
+End Property
+Public Property Let WeightingParameter1(ByVal lWeight As Long)
+   m_lWeighting1 = lWeight
+End Property
+' suggested value is 3
+Public Property Get WeightingParameter2() As Long
+   WeightingParameter2 = m_lWeighting2
+End Property
+Public Property Let WeightingParameter2(ByVal lWeight As Long)
+   m_lWeighting2 = lWeight
+End Property
+Public Property Get ConsiderNeighbour(ByVal xOffset As Long, ByVal yOffset As
+ Long) As Boolean
+Dim i As Long
+   For i = 0 To 8
+      If (m_tNeighbourOffset(i).x = xOffset) And (m_tNeighbourOffset(i).y =
+       yOffset) Then
+         ConsiderNeighbour = m_tNeighbourOffset(i).bUse
+         Exit For
+      End If
+   Next i
+End Property
+Public Property Let ConsiderNeighbour(ByVal xOffset As Long, ByVal yOffset As
+ Long, ByVal bState As Boolean)
+Dim i As Long
+Dim iFirstFree As Long
+   
+   iFirstFree = -1
+   For i = 0 To 8
+      If (m_tNeighbourOffset(i).x = xOffset) And (m_tNeighbourOffset(i).y =
+       yOffset) Then
+         m_tNeighbourOffset(i).bUse = bState
+         ' done
+         Exit Property
+      Else
+         If (m_tNeighbourOffset(i).x = 0) And (m_tNeighbourOffset(i).y = 0) Then
+            iFirstFree = i
+         End If
+      End If
+   Next i
+   
+   With m_tNeighbourOffset(iFirstFree)
+      .x = xOffset
+      .y = yOffset
+      .bUse = bState
+   End With
+      
+End Property
+
+Private Sub Class_Initialize()
+   
+   m_lColorDark = RGB(22, 32, 64)
+   m_lColorLight = RGB(90, 128, 255)
+   
+   m_lStates = 64
+   m_lInfectionRate = 4
+   m_lWeighting1 = 2
+   m_lWeighting2 = 3
+   
+   m_lWidth = 256
+   m_lHeight = 256
+
+   With m_tNeighbourOffset(0)
+      .x = 0
+      .y = -1
+   End With
+   With m_tNeighbourOffset(1)
+      .x = -1
+      .y = 0
+   End With
+   With m_tNeighbourOffset(2)
+      .x = 1
+      .y = 0
+   End With
+   With m_tNeighbourOffset(3)
+      .x = 0
+      .y = 1
+   End With
+   Dim i As Long
+   For i = 0 To 8
+      m_tNeighbourOffset(i).bUse = (i &lt;= 3)
+   Next i
+      
+   
+   Set m_cDib = New cDIBSection256
+   Set m_cDibLast = New cDIBSection256
+   Init
+   States = m_lStates
+
+End Sub
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Algorithmic Images</a>&#160;.&#160;<a href="article.html">Cellular Automata - Catalytic Reactions</a>&#160;.&#160;<a href="Hodge_Podge_Algorithm_Demonstration.html">Hodge Podge Algorithm Demonstration</a>&#160;.&#160;cHodgePodge.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 8 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Algorithmic_Images/Hodge_Podge/Hodge_Podge_Algorithm_Demonstration_zip_cHodgePodge_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:48 GMT -->
+</html>

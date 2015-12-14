@@ -1,0 +1,285 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Common_Dialogs/Folder_Browser/VB6_Folder_Browser_zip_frmCapture_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmCapture.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmCapture.frm" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Common Dialogs</a>&#160;.&#160;<a href="article.html">Browsing For Folders</a>&#160;.&#160;<a href="VB6_Folder_Browser.html">VB6 Folder Browser</a>&#160;.&#160;frmCapture.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Folder_Browser.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Folder Browser</a> (50K)</p><p /><p class="nav"><a href="VB6_Folder_Browser.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Folder Browser</a> (43K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1807</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1807&amp;type=Zip&amp;title=VB6%20Folder%20Browser%2Ezip%5FfrmCapture">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />16 Dec 2002<br />Added VB6 version</p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmCapture.frm</h1><pre>VERSION 5.00
+Begin VB.Form frmCapture 
+   BorderStyle     =   3  'Fixed Dialog
+   Caption         =   "Extract To Folder..."
+   ClientHeight    =   4005
+   ClientLeft      =   4335
+   ClientTop       =   1965
+   ClientWidth     =   7290
+   BeginProperty Font 
+      Name            =   "Tahoma"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "frmCapture.frx":0000
+   LinkTopic       =   "Form2"
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
+   ScaleHeight     =   4005
+   ScaleWidth      =   7290
+   ShowInTaskbar   =   0   'False
+   StartUpPosition =   1  'CenterOwner
+   Begin VB.CommandButton cmdPick 
+      Caption         =   "-&gt;"
+      Height          =   315
+      Left            =   2220
+      TabIndex        =   7
+      Top             =   300
+      Width           =   375
+   End
+   Begin VB.ComboBox cboExtractTo 
+      Height          =   315
+      Left            =   60
+      TabIndex        =   5
+      Text            =   "Combo1"
+      Top             =   300
+      Width           =   2115
+   End
+   Begin VB.CommandButton cmdNewFolder 
+      Caption         =   "&amp;New Folder..."
+      Height          =   375
+      Left            =   6000
+      TabIndex        =   3
+      Top             =   3480
+      Width           =   1215
+   End
+   Begin VB.CommandButton cmdExtract 
+      Caption         =   "&amp;Extract To"
+      Height          =   375
+      Left            =   6000
+      TabIndex        =   2
+      Top             =   60
+      Width           =   1215
+   End
+   Begin VB.CommandButton cmdCancel 
+      Caption         =   "Cancel"
+      Height          =   375
+      Left            =   6000
+      TabIndex        =   1
+      Top             =   480
+      Width           =   1215
+   End
+   Begin VB.PictureBox picCapture 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   3555
+      Left            =   2640
+      ScaleHeight     =   3495
+      ScaleWidth      =   3195
+      TabIndex        =   0
+      Top             =   300
+      Width           =   3255
+   End
+   Begin VB.Image imgVBAL 
+      Height          =   495
+      Left            =   75
+      Picture         =   "frmCapture.frx":1272
+      Top             =   3255
+      Width           =   2490
+   End
+   Begin VB.Label lblExtractTo 
+      Caption         =   "Extract To:"
+      Height          =   195
+      Left            =   120
+      TabIndex        =   6
+      Top             =   60
+      Width           =   2415
+   End
+   Begin VB.Label lblFolder 
+      Caption         =   "Folder/Dirs"
+      Height          =   195
+      Left            =   2640
+      TabIndex        =   4
+      Top             =   60
+      Width           =   2895
+   End
+   Begin VB.Label Label1 
+      BackColor       =   &amp;H00000000&amp;
+      BorderStyle     =   1  'Fixed Single
+      Caption         =   "Label1"
+      Height          =   675
+      Left            =   60
+      TabIndex        =   8
+      Top             =   3180
+      Width           =   2535
+   End
+End
+Attribute VB_Name = "frmCapture"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private m_c As cCaptureBF
+Private m_sCurrentFolder As String
+Private m_bCancel As Boolean
+
+Private Declare Function SetFocusAPI Lib "user32" Alias "SetFocus" (ByVal hwnd
+ As Long) As Long
+
+Implements ICaptureBF
+
+Public Property Get Cancelled() As Boolean
+   Cancelled = m_bCancel
+End Property
+Public Property Get SelectedFolder() As String
+   SelectedFolder = m_sCurrentFolder
+End Property
+
+Private Sub cmdCancel_Click()
+   frmTestFolderBrowse.Enabled = True
+   frmTestFolderBrowse.SetFocus
+   Unload Me
+End Sub
+
+Private Sub cmdExtract_Click()
+   ' Chosen to extract!
+   m_bCancel = False
+   frmTestFolderBrowse.Enabled = True
+   frmTestFolderBrowse.SetFocus
+   Unload Me
+End Sub
+
+Private Sub cmdNewFolder_Click()
+Dim sI As String
+   ' Get a new folder to extract to:
+   sI = InputBox("Please enter the folder name.", , m_sCurrentFolder)
+   If sI &lt;&gt; "" Then
+      On Error Resume Next
+      MkDir sI
+      If Err.Number &lt;&gt; 0 Then
+         MsgBox "An error occurred: " &amp; Err.Description, vbExclamation
+      Else
+         ' Reload the browse dialog but point to
+         ' the newly created path.  This is much
+         ' smoother than the WinZip equivalent!!!
+         m_c.Reload sI
+      End If
+   End If
+End Sub
+
+Private Sub cmdPick_Click()
+   m_c.Browse.SetFolder cboExtractTo.Text
+End Sub
+
+Private Sub Form_Initialize()
+   'DebugMsg "frmCapture:Initialize"
+   m_bCancel = True
+End Sub
+
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+   ' Ensure we have unloaded the dialog:
+   m_c.Unload
+   ' Important: to ensure this class terminates we
+   ' must set to nothing here:
+   Set m_c = Nothing
+   ' Re-enable the main form- this ensures it doesn't loose focus
+End Sub
+
+Private Sub Form_Terminate()
+   'DebugMsg "frmCapture:Terminate"
+End Sub
+
+Private Property Let ICaptureBF_CaptureBrowseForFolder(RHS As Object)
+   ' Provides you with a reference to the cCaptureBrowseForFolder
+   ' object, which you can use to refer to the cBrowseForFolder
+   ' dialog:
+   Set m_c = RHS
+End Property
+
+Private Property Get ICaptureBF_CapturehWnd() As Long
+   ' Requests the window you want to capture the folder browse
+   ' dialog into.  You must ensure you have shown the form at this stage.
+   Me.Show , frmTestFolderBrowse
+   picCapture.BorderStyle = 0
+   ICaptureBF_CapturehWnd = picCapture.hwnd
+End Property
+
+Private Sub ICaptureBF_SelectionChanged(ByVal sPath As String)
+   ' Fired when the selection in the folder browse dialog
+   ' changes:
+   cboExtractTo.Text = sPath
+   cboExtractTo.SelStart = Len(sPath)
+   If Len(sPath) &gt; 0 Then
+      cboExtractTo.SelLength = Len(sPath)
+   End If
+   m_sCurrentFolder = sPath
+End Sub
+
+Private Sub ICaptureBF_Unload()
+   ' Fired when the browse for folder dialog
+   ' is closed.  Ensures that you clear up at
+   ' the right time.
+   frmTestFolderBrowse.Enabled = True
+   frmTestFolderBrowse.SetFocus
+   Unload Me
+End Sub
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Common Dialogs</a>&#160;.&#160;<a href="article.html">Browsing For Folders</a>&#160;.&#160;<a href="VB6_Folder_Browser.html">VB6 Folder Browser</a>&#160;.&#160;frmCapture.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Common_Dialogs/Folder_Browser/VB6_Folder_Browser_zip_frmCapture_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+</html>

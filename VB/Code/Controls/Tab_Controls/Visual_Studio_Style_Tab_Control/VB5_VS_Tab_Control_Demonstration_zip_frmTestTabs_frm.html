@@ -1,0 +1,533 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Tab_Controls/Visual_Studio_Style_Tab_Control/VB5_VS_Tab_Control_Demonstration_zip_frmTestTabs_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:53 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmTestTabs.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmTestTabs.frm" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Tab Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator Visual Studio Style Tab Control</a>&#160;.&#160;<a href="VB5_VS_Tab_Control_Demonstration.html">VB5 VS Tab Control Demonstration</a>&#160;.&#160;frmTestTabs.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Pinnable_VS_Tab_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Pinnable VS Tab Demonstration</a> (21K)</p><p class="nav"><a href="VB5_VS_Tab_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 VS Tab Control Binary</a> (30K)</p><p class="nav"><a href="VB5_VS_Tab_Control_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 VS Tab Control Demonstration</a> (17K)</p><p class="nav"><a href="VB5_VS_Tab_Control_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 VS Tab Control Full Source</a> (97K)</p><p /><p class="nav"><a href="VB6_Pinnable_VS_Tab_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Pinnable VS Tab Demonstration</a> (20K)</p><p class="nav"><a href="VB6_VS_Tab_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 VS Tab Control Binary</a> (30K)</p><p class="nav"><a href="VB6_VS_Tab_Control_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 VS Tab Control Demonstration</a> (16K)</p><p class="nav"><a href="VB6_VS_Tab_Control_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 VS Tab Control Full Source</a> (95K)</p><p /><p class="nav"><a href="vbalDTab6_Interface_Definition.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />vbalDTab6 Interface Definition</a> (1K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2829</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2829&amp;type=Zip&amp;title=VB5%20VS%20Tab%20Control%20Demonstration%2Ezip%5FfrmTestTabs">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 4 / 6</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 6 / 6</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 1 / 1</a></p><p class="nav">Updated:22 November 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />11 May 2003<br /><p class="update">Calling remove on a non-existent tab did not raise an error because the control ate it.</p><p class="update">Inserting a tab did not work correctly since the existing tabs were not shuffled up.</p><p class="update">If a tab with a panel was removed, and then added, then a subscript out of range error occurred.</p><p class="update">Thanks to Michael Elashoff, Julien Margail and Matt Funnell</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=931">Using the System Image List with (and without) vbAccelerator Controls</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2965">Flicker Free API Drawing</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2310">vbAccelerator MDITabs Control</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmTestTabs.frm</h1><pre>VERSION 5.00
+Object = "{74AB545E-1F51-4CA8-A61B-89925A0B8D2A}#1.6#0"; "vbalDTab.ocx"
+Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
+Begin VB.Form frmTestTabs 
+   Caption         =   "Visual Studio Tab Tester"
+   ClientHeight    =   4215
+   ClientLeft      =   4500
+   ClientTop       =   3630
+   ClientWidth     =   7140
+   BeginProperty Font 
+      Name            =   "Tahoma"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "frmTestTabs.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   4215
+   ScaleWidth      =   7140
+   Begin VB.CommandButton cmdTestAddRemove 
+      Caption         =   "Test Remove"
+      Height          =   375
+      Left            =   6060
+      TabIndex        =   11
+      Top             =   60
+      Width           =   1035
+   End
+   Begin VB.CommandButton cmdTestFont 
+      Caption         =   "Test &amp;Font"
+      Height          =   375
+      Left            =   4920
+      TabIndex        =   10
+      Top             =   60
+      Width           =   1035
+   End
+   Begin vbalDTab.vbalDTabControl tabTest 
+      Height          =   2235
+      Left            =   60
+      TabIndex        =   9
+      Top             =   780
+      Width           =   3135
+      _ExtentX        =   5530
+      _ExtentY        =   3942
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      BeginProperty SelectedFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin VB.CheckBox chkNoClose 
+      Caption         =   "No &amp;Close Button"
+      Height          =   255
+      Left            =   3120
+      TabIndex        =   8
+      Top             =   60
+      Width           =   1515
+   End
+   Begin VB.TextBox txtTest 
+      BorderStyle     =   0  'None
+      Height          =   435
+      Left            =   4560
+      MultiLine       =   -1  'True
+      ScrollBars      =   3  'Both
+      TabIndex        =   7
+      Top             =   1740
+      Width           =   1155
+   End
+   Begin VB.PictureBox picEvents 
+      BorderStyle     =   0  'None
+      Height          =   1335
+      Left            =   2820
+      ScaleHeight     =   1335
+      ScaleWidth      =   2655
+      TabIndex        =   4
+      Top             =   720
+      Width           =   2655
+      Begin VB.ListBox lstEvents 
+         Height          =   540
+         IntegralHeight  =   0   'False
+         Left            =   60
+         TabIndex        =   5
+         Top             =   240
+         Width           =   2355
+      End
+      Begin VB.Label lblEvents 
+         Caption         =   "Events:"
+         Height          =   195
+         Left            =   60
+         TabIndex        =   6
+         Top             =   0
+         Width           =   1395
+      End
+   End
+   Begin VB.CheckBox chkAllowScroll 
+      Caption         =   "Allow &amp;Scroll"
+      Height          =   255
+      Left            =   1560
+      TabIndex        =   3
+      Top             =   360
+      Value           =   1  'Checked
+      Width           =   1515
+   End
+   Begin VB.CheckBox chkNoTabs 
+      Caption         =   "&amp;No Tabs"
+      Height          =   255
+      Left            =   1560
+      TabIndex        =   2
+      Top             =   60
+      Width           =   1515
+   End
+   Begin VB.CheckBox chkIcons 
+      Caption         =   "&amp;Icons"
+      Height          =   255
+      Left            =   60
+      TabIndex        =   1
+      Top             =   360
+      Value           =   1  'Checked
+      Width           =   1515
+   End
+   Begin VB.CheckBox chkTabBottom 
+      Caption         =   "&amp;Tabs at Bottom"
+      Height          =   255
+      Left            =   60
+      TabIndex        =   0
+      Top             =   60
+      Value           =   1  'Checked
+      Width           =   1515
+   End
+   Begin ComctlLib.ImageList ilsIcons 
+      Left            =   4860
+      Top             =   2400
+      _ExtentX        =   1005
+      _ExtentY        =   1005
+      BackColor       =   -2147483643
+      ImageWidth      =   16
+      ImageHeight     =   16
+      MaskColor       =   12632256
+      _Version        =   327682
+      BeginProperty Images {0713E8C2-850A-101B-AFC0-4210102A8DA7} 
+         NumListImages   =   8
+         BeginProperty ListImage1 {0713E8C3-850A-101B-AFC0-4210102A8DA7} 
+            Picture         =   "frmTestTabs.frx":1272
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage2 {0713E8C3-850A-101B-AFC0-4210102A8DA7} 
+            Picture         =   "frmTestTabs.frx":144C
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage3 {0713E8C3-850A-101B-AFC0-4210102A8DA7} 
+            Picture         =   "frmTestTabs.frx":1626
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage4 {0713E8C3-850A-101B-AFC0-4210102A8DA7} 
+            Picture         =   "frmTestTabs.frx":1800
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage5 {0713E8C3-850A-101B-AFC0-4210102A8DA7} 
+            Picture         =   "frmTestTabs.frx":19DA
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage6 {0713E8C3-850A-101B-AFC0-4210102A8DA7} 
+            Picture         =   "frmTestTabs.frx":1BB4
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage7 {0713E8C3-850A-101B-AFC0-4210102A8DA7} 
+            Picture         =   "frmTestTabs.frx":1D8E
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage8 {0713E8C3-850A-101B-AFC0-4210102A8DA7} 
+            Picture         =   "frmTestTabs.frx":1F68
+            Key             =   ""
+         EndProperty
+      EndProperty
+   End
+   Begin VB.Menu mnuContextTOP 
+      Caption         =   ""
+      Visible         =   0   'False
+      Begin VB.Menu mnuContext 
+         Caption         =   "&amp;Tabs At Bottom"
+         Checked         =   -1  'True
+         Index           =   0
+      End
+      Begin VB.Menu mnuContext 
+         Caption         =   "&amp;Icons"
+         Checked         =   -1  'True
+         Index           =   1
+      End
+      Begin VB.Menu mnuContext 
+         Caption         =   "Allow &amp;Scroll"
+         Checked         =   -1  'True
+         Index           =   2
+      End
+      Begin VB.Menu mnuContext 
+         Caption         =   "No &amp;Close Button"
+         Index           =   3
+      End
+      Begin VB.Menu mnuContext 
+         Caption         =   "-"
+         Index           =   4
+      End
+      Begin VB.Menu mnuContext 
+         Caption         =   "&amp;No Tabs"
+         Index           =   5
+      End
+   End
+End
+Attribute VB_Name = "frmTestTabs"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+' remove border from ListBox
+Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA"
+ (ByVal hWnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long
+Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA"
+ (ByVal hWnd As Long, ByVal nIndex As Long) As Long
+Private Enum EWindowLongIndexes
+    GWL_EXSTYLE = (-20)
+    GWL_HINSTANCE = (-6)
+    GWL_HWNDPARENT = (-8)
+    GWL_ID = (-12)
+    GWL_STYLE = (-16)
+    GWL_USERDATA = (-21)
+    GWL_WNDPROC = (-4)
+End Enum
+' General window styles:
+Private Enum EExWindowStyles
+     WS_EX_DLGMODALFRAME = &amp;H1
+     WS_EX_NOPARENTNOTIFY = &amp;H4
+     WS_EX_TOPMOST = &amp;H8
+     WS_EX_ACCEPTFILES = &amp;H10
+     WS_EX_TRANSPARENT = &amp;H20
+     WS_EX_MDICHILD = &amp;H40
+     WS_EX_TOOLWINDOW = &amp;H80
+     WS_EX_WINDOWEDGE = &amp;H100
+     WS_EX_CLIENTEDGE = &amp;H200
+     WS_EX_CONTEXTHELP = &amp;H400
+     WS_EX_RIGHT = &amp;H1000
+     WS_EX_LEFT = &amp;H0
+     WS_EX_RTLREADING = &amp;H2000
+     WS_EX_LTRREADING = &amp;H0
+     WS_EX_LEFTSCROLLBAR = &amp;H4000
+     WS_EX_RIGHTSCROLLBAR = &amp;H0
+     WS_EX_CONTROLPARENT = &amp;H10000
+     WS_EX_STATICEDGE = &amp;H20000
+     WS_EX_APPWINDOW = &amp;H40000
+     WS_EX_OVERLAPPEDWINDOW = (WS_EX_WINDOWEDGE Or WS_EX_CLIENTEDGE)
+     WS_EX_PALETTEWINDOW = (WS_EX_WINDOWEDGE Or WS_EX_TOOLWINDOW Or
+      WS_EX_TOPMOST)
+End Enum
+
+Private Sub LogEvent(ByVal sMsg As String)
+   lstEvents.AddItem sMsg
+   lstEvents.ListIndex = lstEvents.ListCount - 1
+End Sub
+
+Private Sub chkAllowScroll_Click()
+   If (chkAllowScroll.Value = vbChecked) Then
+      tabTest.AllowScroll = True
+      mnuContext(2).Checked = True
+   Else
+      tabTest.AllowScroll = False
+      mnuContext(2).Checked = True
+   End If
+End Sub
+
+Private Sub chkIcons_Click()
+   If (chkIcons.Value = vbChecked) Then
+      tabTest.ImageList = ilsIcons
+      mnuContext(1).Checked = True
+   Else
+      tabTest.ImageList = 0
+      mnuContext(1).Checked = False
+   End If
+End Sub
+
+Private Sub chkNoClose_Click()
+   If (chkNoClose.Value = vbChecked) Then
+      tabTest.ShowCloseButton = False
+      mnuContext(3).Checked = False
+   Else
+      tabTest.ShowCloseButton = True
+      mnuContext(3).Checked = True
+   End If
+End Sub
+
+Private Sub chkNoTabs_Click()
+   If (chkNoTabs.Value = vbChecked) Then
+      tabTest.ShowTabs = False
+      mnuContext(5).Checked = True
+   Else
+      tabTest.ShowTabs = True
+      mnuContext(5).Checked = True
+   End If
+End Sub
+
+Private Sub chkTabBottom_Click()
+   If (chkTabBottom.Value = vbChecked) Then
+      tabTest.TabAlign = TabAlignBottom
+      mnuContext(0).Checked = True
+   Else
+      tabTest.TabAlign = TabAlignTop
+      mnuContext(0).Checked = False
+   End If
+End Sub
+
+Private Sub cmdTestAddRemove_Click()
+   tabTest.Tabs.Remove "SOLUTION"
+   Dim c As cTab
+   Set c = tabTest.Tabs.Add("SOLUTION", "CLASS", "Contents", 2)
+   c.Panel = picEvents
+End Sub
+
+Private Sub cmdTestFont_Click()
+Dim sF As New StdFont
+   sF.Name = tabTest.Font.Name
+   If (tabTest.Font.Size &lt; 24) Then
+      sF.Size = 24
+      tabTest.Font = sF
+      sF.Bold = True
+      tabTest.SelectedFont = sF
+   Else
+      tabTest.Font.Size = 8
+      sF.Size = 8
+      tabTest.Font = sF
+      sF.Bold = True
+      tabTest.SelectedFont = sF
+   End If
+End Sub
+
+Private Sub Form_Load()
+   
+   'Dim lStyle As Long
+   'lStyle = GetWindowLong(lstEvents.hWnd, GWL_EXSTYLE)
+   'lStyle = lStyle And Not WS_EX_CLIENTEDGE
+   'SetWindowLong lstEvents.hWnd, GWL_EXSTYLE, lStyle
+
+   Dim c As cTab
+   With tabTest
+      .ImageList = ilsIcons
+      Set c = .Tabs.Add("SOLUTION", , "Solution Explorer")
+      c.IconIndex = 0
+      c.Panel = picEvents
+      Set c = .Tabs.Add("CLASS", , "Class View")
+      c.IconIndex = 1
+      c.CanClose = False
+      c.Panel = txtTest
+      Set c = .Tabs.Add("CONTENTS")
+      c.IconIndex = 2
+      c.Caption = "Contents"
+      Set c = .Tabs.Add("INDEX", , "Index")
+      c.IconIndex = 3
+      Set c = .Tabs.Add("SEARCH", , "Search")
+      c.IconIndex = 4
+   End With
+   
+   txtTest.Text = "vbAccelerator VS Tab Control Demonstration"
+   
+End Sub
+
+Private Sub Form_Resize()
+   On Error Resume Next ' in case form is too small
+   tabTest.Move _
+      2 * Screen.TwipsPerPixelX, _
+      tabTest.Top, _
+      Me.ScaleWidth - 4 * Screen.TwipsPerPixelX, _
+      Me.ScaleHeight - tabTest.Top - 2 * Screen.TwipsPerPixelY
+End Sub
+
+Private Sub Form_Terminate()
+   If (Forms.Count = 0) Then
+      UnloadApp
+   End If
+End Sub
+
+Private Sub mnuContext_Click(Index As Integer)
+   Select Case Index
+   Case 0
+      If (chkTabBottom.Value = vbChecked) Then
+         chkTabBottom.Value = vbUnchecked
+      Else
+         chkTabBottom.Value = vbChecked
+      End If
+   Case 1
+      If (chkIcons.Value = vbChecked) Then
+         chkIcons.Value = vbUnchecked
+      Else
+         chkIcons.Value = vbChecked
+      End If
+   Case 2
+      If (chkAllowScroll.Value = vbChecked) Then
+         chkAllowScroll.Value = vbUnchecked
+      Else
+         chkAllowScroll.Value = vbChecked
+      End If
+   Case 3
+      If (chkNoClose.Value = vbChecked) Then
+         chkNoClose.Value = vbUnchecked
+      Else
+         chkNoClose.Value = vbChecked
+      End If
+   Case 5
+      If (chkNoTabs.Value = vbChecked) Then
+         chkNoTabs.Value = vbUnchecked
+      Else
+         chkNoTabs.Value = vbChecked
+      End If
+   End Select
+End Sub
+
+Private Sub picEvents_Resize()
+   On Error Resume Next ' in case it gets too small
+   lblEvents.Width = picEvents.ScaleWidth - lstEvents.Left * 2
+   lstEvents.Move lstEvents.Left, lstEvents.Top, picEvents.ScaleWidth -
+    lstEvents.Left * 2, picEvents.ScaleHeight - lstEvents.Top - 2 *
+    Screen.TwipsPerPixelY
+End Sub
+
+Private Sub tabTest_Resize()
+   LogEvent "Resize"
+End Sub
+
+
+Private Sub tabTest_TabBarClick(ByVal iButton As MouseButtonConstants, ByVal
+ Shift As ShiftConstants, ByVal x As Single, ByVal y As Single)
+   LogEvent "TabBarClick: Button = " &amp; iButton &amp; ", Shift = " &amp; Shift &amp; ", X =
+    " &amp; x &amp; ", Y = " &amp; y
+End Sub
+
+Private Sub tabTest_TabClick(theTab As cTab, ByVal iButton As
+ MouseButtonConstants, ByVal Shift As ShiftConstants, ByVal x As Single, ByVal
+ y As Single)
+   LogEvent "TabClick: '" &amp; theTab.Caption &amp; "', Button = " &amp; iButton &amp; ",
+    Shift = " &amp; Shift &amp; ", X = " &amp; x &amp; ", Y = " &amp; y
+   If (iButton = vbRightButton) Then
+      Me.PopupMenu mnuContextTOP, , x + tabTest.Left, y + tabTest.Top
+   End If
+End Sub
+
+Private Sub tabTest_TabClose(theTab As cTab, bCancel As Boolean)
+   LogEvent "TabClose: '" &amp; theTab.Caption &amp; "'"
+   If (vbNo = MsgBox("Are you sure you want to close the " &amp; theTab.Caption &amp; "
+    tab?", vbQuestion Or vbYesNo)) Then
+      bCancel = True
+   End If
+End Sub
+
+Private Sub tabTest_TabDoubleClick(theTab As cTab)
+   LogEvent "TabDoubleClick: '" &amp; theTab.Caption &amp; "'"
+End Sub
+
+Private Sub tabTest_TabSelected(theTab As cTab)
+   If Not (theTab Is Nothing) Then
+      LogEvent "TabSelected: '" &amp; theTab.Caption &amp; "'"
+   Else
+      LogEvent "No Tab Selected"
+   End If
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Tab Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator Visual Studio Style Tab Control</a>&#160;.&#160;<a href="VB5_VS_Tab_Control_Demonstration.html">VB5 VS Tab Control Demonstration</a>&#160;.&#160;frmTestTabs.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 May 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Tab_Controls/Visual_Studio_Style_Tab_Control/VB5_VS_Tab_Control_Demonstration_zip_frmTestTabs_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:53 GMT -->
+</html>

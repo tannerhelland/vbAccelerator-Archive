@@ -1,0 +1,223 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Link_Spoof/LinkSpoof_zip_CTokenizer_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:10 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: CTokenizer.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: CTokenizer.cls" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;<a href="article.html">Link Spoof</a>&#160;.&#160;<a href="LinkSpoof.html">LinkSpoof</a>&#160;.&#160;CTokenizer.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="LinkSpoof.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />LinkSpoof</a> (45K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2279</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2279&amp;type=Zip&amp;title=LinkSpoof%2Ezip%5FCTokenizer">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:rheinig@gmx.net">Robert Heinig</a></p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />15 Nov 1999<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: CTokenizer.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "CTokenizer"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+'***********************************************************************
+'*         Copyright 1999 Robert Heinig, All Rights Reserved          *
+'*                         mailto:rheinig@gmx.net                      *
+'***********************************************************************
+'* You are free to use this tool within your own applications, but you *
+'* are expressly forbidden from selling or otherwise distributing this *
+'* source code without prior written consent. Free distribution of     *
+'* this tool is only allowed in form of its original, unmodified ZIP   *
+'* file, including the executable, the source, the readme and the      *
+'* sample program. Additionally, distribution must not charge any fee. *
+'***********************************************************************
+
+Option Explicit
+
+
+Private Const cAllocChunk = 8
+
+' Arbeitsvariablen Tokenizer
+Private masTokens() As String
+Private mnTokens As Long
+
+
+Private Sub Class_Terminate()
+    Zap
+End Sub
+
+Private Sub Zap()
+    mnTokens = 0
+    Erase masTokens
+End Sub
+
+Public Sub Tokenize(sQuery As String)
+    Dim i As Long, st As Long, En As Long, j As Long
+    Dim bInWord As Boolean, bInQuote As Boolean
+    Dim bStoreToken As Boolean, bQuoteBeginInWord As Boolean
+
+    Zap
+    
+    ReDim masTokens(0 To 3)
+    mnTokens = 0
+    i = 1
+    Do Until i &gt; Len(sQuery) + 1
+        If i &gt; Len(sQuery) Then
+            bStoreToken = bInWord
+            En = i
+            i = i + 1
+        Else
+            bStoreToken = False
+            Select Case Asc(Mid$(sQuery, i, 1))
+            Case 32, 9, 10, 13  ' Whitespace
+                If Not bInQuote And bInWord Then
+                    En = i
+                    bStoreToken = True
+                    bInWord = False
+                End If
+                i = i + 1
+            Case 34     ' Quote
+                If bInQuote Then
+                    bInQuote = False
+                    If Not bQuoteBeginInWord Then
+                        En = i
+                        bStoreToken = True
+                        bInWord = False
+                    End If
+                Else
+                    bInQuote = True
+                    bQuoteBeginInWord = bInWord
+                    If Not bInWord Then
+                        st = i + 1
+                        bInWord = True
+                    End If
+                End If
+                i = i + 1
+            Case Else
+                If Not bInWord Then
+                    st = i
+                    bInWord = True
+                End If
+                i = i + 1
+            End Select
+        End If
+        If bStoreToken Then
+            If mnTokens &gt;= UBound(masTokens) Then
+                ReDim Preserve masTokens(0 To mnTokens + cAllocChunk)
+            End If
+            masTokens(mnTokens) = Mid$(sQuery, st, En - st)
+            mnTokens = mnTokens + 1
+        End If
+    Loop
+End Sub
+
+Public Property Get Token(ByVal Index As Long) As String
+    Token = masTokens(Index)
+End Property
+Public Property Let Token(ByVal Index As Long, ByVal sData As String)
+    masTokens(Index) = sData
+End Property
+
+Public Property Get OptionName(ByVal Index As Long) As String
+    Dim s As String, i As Long
+    s = masTokens(Index)
+    i = InStr(s, ":"): If i = 0 Then i = Len(s) + 1
+    If Left$(s, 1) = "/" And i &gt; 2 Then OptionName = Mid$(s, 2, i - 2)
+End Property
+
+Public Property Get TokenCount() As Long
+    TokenCount = mnTokens
+End Property
+
+Public Function Rebuild() As String
+    Dim i As Long, s As String, st As String
+
+    s = ""
+    For i = 0 To mnTokens - 1
+        st = masTokens(i)
+        If InStr(st, " ") Then
+            st = """" &amp; st &amp; """"
+        End If
+        If Len(s) &gt; 0 Then
+            s = s &amp; " " &amp; st
+        Else
+            s = st
+        End If
+    Next
+    Rebuild = s
+End Function
+
+Public Sub Insert(sData As String, Optional ByVal lBefore As Long = -1)
+    Dim i As Long
+    
+    If mnTokens = 0 Then
+        ReDim masTokens(0 To cAllocChunk \ 2 - 1)
+    End If
+    If mnTokens &gt;= UBound(masTokens) Then
+        ReDim Preserve masTokens(0 To mnTokens + cAllocChunk)
+    End If
+    If lBefore &lt; 0 Or lBefore &gt; mnTokens Then lBefore = mnTokens
+    For i = mnTokens - 1 To lBefore Step -1
+        masTokens(i + 1) = masTokens(i)
+    Next
+    masTokens(lBefore) = sData
+    mnTokens = mnTokens + 1
+End Sub
+
+Public Sub Remove(ByVal lIndex As Long)
+    Dim i As Long
+
+    If lIndex &lt; 0 Or lIndex &gt;= mnTokens Then Exit Sub
+    For i = lIndex + 1 To mnTokens - 1
+        masTokens(i - 1) = masTokens(i)
+    Next
+    masTokens(mnTokens - 1) = ""
+    mnTokens = mnTokens - 1
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;<a href="article.html">Link Spoof</a>&#160;.&#160;<a href="LinkSpoof.html">LinkSpoof</a>&#160;.&#160;CTokenizer.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Link_Spoof/LinkSpoof_zip_CTokenizer_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:10 GMT -->
+</html>

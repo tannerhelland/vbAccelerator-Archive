@@ -1,0 +1,390 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Transparent_GDI_Sprite_Library/Blob_Screen_Saver_zip_cSpriteBitmaps_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:48 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cSpriteBitmaps.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cSpriteBitmaps.cls" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">vbMedia</a>&#160;.&#160;<a href="article.html">Transparent GDI Sprite Library</a>&#160;.&#160;<a href="Blob_Screen_Saver.html">Blob Screen Saver</a>&#160;.&#160;cSpriteBitmaps.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Blob_Screen_Saver.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Blob Screen Saver</a> (266K)</p><p /><p class="nav"><a href="Simple_Transparent_Sprites_Demo.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Simple Transparent Sprites Demo</a> (35K)</p><p /><p class="nav"><a href="Transparent_Sprite_Classes.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Transparent Sprite Classes</a> (8K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:12055</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12055&amp;type=Zip&amp;title=Blob%20Screen%20Saver%2Ezip%5FcSpriteBitmaps">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />24 Jun 1998<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cSpriteBitmaps.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cSpriteBitmaps"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+' ======================================================================
+' Class:    cSpriteBitmaps
+' Filename: cSpriteBitmaps.cls
+' Author:   SP McMahon
+' Date:     14 July 1998
+'
+' A class to store a picture clip of sprite bitmaps and an associated
+' mask to allow transparent drawing onto a DC.
+' ======================================================================
+
+' Memory DC &amp; Bitmap to hold the sprite
+Private m_hdcSprite As Long
+Private m_hBmpSprite As Long
+Private m_hBmpSpriteOld As Long
+
+' Memory DC &amp; Bitmap to hold the mask element of the sprite
+Private m_hdcMask As Long
+Private m_hBmpMask As Long
+Private m_hBmpMaskOld As Long
+
+' Memory DC to build up the sprite and draw it:
+Private m_hDCBuild As Long
+Private m_hBmpBuild As Long
+Private m_hBmpBuildOld As Long
+
+' Variables to store sprite frames, current cell and cell size:
+Private m_lDX As Long
+Private m_lDY As Long
+Private m_lCX As Long
+Private m_lCY As Long
+
+Public Sub TransparentDraw( _
+        ByVal hDCDest As Long, _
+        ByVal lX As Long, _
+        ByVal lY As Long, _
+        ByVal lCell As Long, _
+        Optional ByVal bUseBuildDC As Boolean = True _
+    )
+Dim lDX As Long
+Dim lDY As Long
+Dim lDC As Long
+Dim loX As Long
+Dim loY As Long
+
+    ' Get the position of the sprite cell within the data:
+    pGetXYForCell lCell, lDX, lDY
+    
+    ' Determine where to draw to:
+    If (bUseBuildDC) Then
+        ' Now we take a copy of the background we are drawing on
+        ' into the work DC:
+        lDC = m_hDCBuild
+        BitBlt lDC, 0, 0, m_lDX, m_lDY, hDCDest, lX, lY, SRCCOPY
+        loX = 0
+        loY = 0
+    Else
+        lDC = hDCDest
+        loX = lX
+        loY = lY
+    End If
+    
+    ' We OR the mask into place, i.e. wherever the mask is black
+    ' there is no effem_cTile, but wherever it is white the background
+    ' goes completely white:
+    BitBlt lDC, loX, loY, m_lDX, m_lDY, m_hdcMask, lDX, lDY, SRCPAINT
+    ' Now we AND the sprite into position: wherever the sprite is white,
+    ' there is no effem_cTile, but over the whitened mask area the sprite
+    ' shows as normal:
+    BitBlt lDC, loX, loY, m_lDX, m_lDY, m_hdcSprite, lDX, lDY, SRCAND
+    
+    If (bUseBuildDC) Then
+        ' Now we can blit the combination of the background with the
+        ' transparently drawn area onto the Destination:
+        BitBlt hDCDest, lX, lY, m_lDX, m_lDY, m_hDCBuild, 0, 0, SRCCOPY
+    End If
+    
+End Sub
+
+Public Function CreateFromPicture( _
+        ByRef oPic As StdPicture, _
+        ByVal lXImageCount As Long, _
+        ByVal lYImageCount As Long, _
+        Optional ByRef oMaskPic As StdPicture = Nothing, _
+        Optional ByVal lTransColor As Long = &amp;HFFFFFF _
+    ) As Boolean
+Dim tBM As Bitmap
+Dim bContinue As Boolean
+    
+    ' First ensure that we've cleared up anything
+    ' we already have:
+    ClearUp
+    
+    ' First create the sprite bitmap:
+    If (GDILoadPictureIntoDC( _
+            False, _
+            oPic, _
+            m_hdcSprite, _
+            m_hBmpSprite, _
+            m_hBmpSpriteOld _
+            )) Then
+        ' Get the dimensions of the bitmap (which is
+        ' a DIB):
+        GetObjectAPI m_hBmpSprite, Len(tBM), tBM
+        
+        If (oMaskPic Is Nothing) Then
+            ' Create a mask based on white areas of the
+            ' original sprite:
+            bContinue = pbCreateMaskFromSprite( _
+                tBM.bmWidth, _
+                tBM.bmHeight, _
+                lTransColor _
+                )
+        Else
+            ' We load the specified mask image:
+            bContinue = GDILoadPictureIntoDC( _
+                True, _
+                oMaskPic, _
+                m_hdcMask, _
+                m_hBmpMask, _
+                m_hBmpMaskOld)
+        End If
+        
+        If (bContinue) Then
+            ' Set the x and y count for image cells in the sprite:
+            m_lCX = lXImageCount
+            m_lCY = lYImageCount
+            ' The width &amp; Height of the sprite:
+            m_lDX = tBM.bmWidth \ m_lCX
+            m_lDY = tBM.bmHeight \ m_lCY
+            ' Make a working DC to draw the sprite in:
+            If (GDIMakeDCAndBitmap( _
+                False, _
+                m_hDCBuild, m_hBmpBuild, m_hBmpBuildOld, _
+                m_lDX, m_lDY)) Then
+                CreateFromPicture = True
+            Else
+                Debug.Print "Failed to create working DC/Bitmap"
+            End If
+        Else
+            Debug.Print "Failed to create mask DC/Bitmap"
+        End If
+    Else
+        Debug.Print "Failed to create sprite DC/Bitmap"
+    End If
+    
+End Function
+
+Public Function CreateFromFile( _
+        ByVal sSpriteBitmap As String, _
+        ByVal lXImageCount As Long, _
+        ByVal lYImageCount As Long, _
+        Optional ByVal sMaskBitmap As String = "", _
+        Optional ByVal lTransColor As Long = &amp;HFFFFFF _
+    ) As Boolean
+Dim tBM As Bitmap
+Dim bContinue As Boolean
+
+    ' First ensure that we've cleared up anything
+    ' we already have:
+    ClearUp
+    
+    ' First create the sprite bitmap:
+    If (GDILoadBitmapIntoDC( _
+            False, _
+            sSpriteBitmap, _
+            m_hdcSprite, _
+            m_hBmpSprite, _
+            m_hBmpSpriteOld _
+            )) Then
+        ' Get the dimensions of the bitmap (which is
+        ' a DIB):
+        GetObjectAPI m_hBmpSprite, Len(tBM), tBM
+        
+        If (sMaskBitmap = "") Then
+            ' Create a mask based on white areas of the
+            ' original sprite:
+            bContinue = pbCreateMaskFromSprite( _
+                tBM.bmWidth, _
+                tBM.bmHeight, _
+                lTransColor _
+                )
+        Else
+            ' We load the specified mask image:
+            bContinue = GDILoadBitmapIntoDC( _
+                True, _
+                sMaskBitmap, _
+                m_hdcMask, _
+                m_hBmpMask, _
+                m_hBmpMaskOld)
+        End If
+        
+        If (bContinue) Then
+            ' Set the x and y count for image cells in the sprite:
+            m_lCX = lXImageCount
+            m_lCY = lYImageCount
+            ' The width &amp; Height of the sprite:
+            m_lDX = tBM.bmWidth \ m_lCX
+            m_lDY = tBM.bmHeight \ m_lCY
+            ' Make a working DC to draw the sprite in:
+            If (GDIMakeDCAndBitmap( _
+                False, _
+                m_hDCBuild, m_hBmpBuild, m_hBmpBuildOld, _
+                m_lDX, m_lDY)) Then
+                CreateFromFile = True
+            Else
+                Debug.Print "Failed to create working DC/Bitmap"
+            End If
+        Else
+            Debug.Print "Failed to create mask DC/Bitmap"
+        End If
+    Else
+        Debug.Print "Failed to create sprite DC/Bitmap"
+    End If
+    
+End Function
+Private Function pbCreateMaskFromSprite( _
+        ByVal bmWidth As Long, _
+        ByVal bmHeight As Long, _
+        ByVal lTransColor As Long _
+    ) As Boolean
+Dim lOrigColor As Long
+Dim bTransColorIsWhite As Boolean
+    
+    ' Now create a mask Object.  Here we want
+    ' to just copy the bitmap into a monochrome
+    ' DC, then invert it:
+    If (GDIMakeDCAndBitmap( _
+        True, _
+        m_hdcMask, m_hBmpMask, m_hBmpMaskOld, _
+        bmWidth, bmHeight)) Then
+        
+        If (lTransColor = &amp;HFFFFFF) Then
+            bTransColorIsWhite = True
+        End If
+        
+        If (bTransColorIsWhite) Then
+            ' Copy the Bitmap from the source, inverting it
+            ' as we go:
+            BitBlt m_hdcMask, 0, 0, bmWidth, bmHeight, m_hdcSprite, 0, 0,
+             &amp;HFF0062 ' Whiteness
+            BitBlt m_hdcMask, 0, 0, bmWidth, bmHeight, m_hdcSprite, 0, 0,
+             SRCINVERT
+            pbCreateMaskFromSprite = True
+        Else
+            ' We need to make an non-inverse mask first.  This
+            ' is ORed with the original sprite to make the area
+            ' with transparent colour = white, then it the mask is
+            ' inverted.
+            Dim hdcTemp As Long, hBmpTemp As Long, hBmpTempOld As Long
+            
+            If (GDIMakeDCAndBitmap( _
+                True, _
+                hdcTemp, hBmpTemp, hBmpTempOld, _
+                bmWidth, bmHeight)) Then
+                
+                ' Set the back colour for the sprite to the
+                ' transparent colour (this means it is set to
+                ' black when we bitblt to the mono DC):
+                lOrigColor = SetBkColor(m_hdcSprite, lTransColor)
+                ' Make non-inverse mask:
+                BitBlt hdcTemp, 0, 0, bmWidth, bmHeight, m_hdcSprite, 0, 0,
+                 SRCCOPY
+                ' Return back colour of sprite
+                SetBkColor m_hdcSprite, lOrigColor
+                ' Make sprite white in lTransColor region:
+                BitBlt m_hdcSprite, 0, 0, bmWidth, bmHeight, hdcTemp, 0, 0,
+                 SRCPAINT
+                ' Invert the mask:
+                BitBlt m_hdcMask, 0, 0, bmWidth, bmHeight, m_hdcSprite, 0, 0,
+                 &amp;HFF0062 ' Whiteness
+                BitBlt m_hdcMask, 0, 0, bmWidth, bmHeight, hdcTemp, 0, 0,
+                 SRCINVERT
+                
+                ' Clear up temporary bitmap:
+                GDIClearDCBitmap hdcTemp, hBmpTemp, hBmpTempOld
+            
+                pbCreateMaskFromSprite = True
+            End If
+        End If
+    End If
+
+End Function
+Property Get CellWidth() As Long
+    CellWidth = m_lDX
+End Property
+Property Get CellHeight() As Long
+    CellHeight = m_lDY
+End Property
+Public Sub DirectBltSprite( _
+        ByVal lHDC As Long, _
+        ByVal lX As Long, _
+        ByVal lY As Long, _
+        ByVal lCell As Long _
+    )
+Dim lDX As Long
+Dim lDY As Long
+    pGetXYForCell lCell, lDX, lDY
+    BitBlt lHDC, lX, lY, m_lDX, m_lDY, m_hdcSprite, lDX, lDY, SRCCOPY
+End Sub
+Private Sub pGetXYForCell( _
+        ByVal lCell As Long, _
+        ByRef lX As Long, _
+        ByRef lY As Long _
+    )
+    lX = ((lCell - 1) Mod m_lCX) * m_lDX
+    lY = ((lCell - 1) \ m_lCX) * m_lDY
+End Sub
+
+Private Sub ClearUp()
+    ' Here we ensure all our Objects are destroyed:
+    GDIClearDCBitmap m_hdcSprite, m_hBmpSprite, m_hBmpSpriteOld
+    GDIClearDCBitmap m_hdcMask, m_hBmpMask, m_hBmpMaskOld
+    GDIClearDCBitmap m_hDCBuild, m_hBmpBuild, m_hBmpBuildOld
+End Sub
+
+Private Sub Class_Initialize()
+    Debug.Print "m_cSpriteBitmaps:Initialise"
+End Sub
+
+Private Sub Class_Terminate()
+    Debug.Print "m_cSpriteBitmaps:Terminate"
+    ClearUp
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">vbMedia</a>&#160;.&#160;<a href="article.html">Transparent GDI Sprite Library</a>&#160;.&#160;<a href="Blob_Screen_Saver.html">Blob Screen Saver</a>&#160;.&#160;cSpriteBitmaps.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 28 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Transparent_GDI_Sprite_Library/Blob_Screen_Saver_zip_cSpriteBitmaps_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:48 GMT -->
+</html>

@@ -1,0 +1,5341 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/TreeView/TreeView_Control/VB5_TreeView_Full_Source_zip_vbalTreeView_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:14 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: vbalTreeView.ctl</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: vbalTreeView.ctl" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">TreeView</a>&#160;.&#160;<a href="article.html">vbAccelerator TreeView Control</a>&#160;.&#160;<a href="VB5_TreeView_Full_Source.html">VB5 TreeView Full Source</a>&#160;.&#160;vbalTreeView.ctl</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_TreeView_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 TreeView Control</a> (83K)</p><p class="nav"><a href="VB5_TreeView_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 TreeView Demonstration</a> (51K)</p><p class="nav"><a href="VB5_TreeView_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 TreeView Full Source</a> (176K)</p><p /><p class="nav"><a href="VB6_TreeView_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TreeView Control</a> (82K)</p><p class="nav"><a href="VB6_TreeView_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TreeView Demonstration</a> (45K)</p><p class="nav"><a href="VB6_TreeView_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TreeView Full Source</a> (170K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:13500</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13500&amp;type=Zip&amp;title=VB5%20TreeView%20Full%20Source%2Ezip%5FvbalTreeView">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><p class="nav">&#160;&#160;<a href="mailto:litwin@gottliebaza.org">Dan Litwin</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 5 / 19</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 1 / 4</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 1 / 1</a></p><p class="nav">Updated:27 February 2004</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />16 Apr 2004<br /><p class="update">Drag enhancements and bug fixes.  See
+BugTrak for full details.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=931">Using the System Image List with (and without) vbAccelerator Controls</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: vbalTreeView.ctl</h1><pre>VERSION 5.00
+Begin VB.UserControl vbalTreeView 
+   ClientHeight    =   3600
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   4800
+   ScaleHeight     =   3600
+   ScaleWidth      =   4800
+   ToolboxBitmap   =   "vbalTreeView.ctx":0000
+End
+Attribute VB_Name = "vbalTreeView"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+' =========================================================================
+' vbalTreeView
+'
+' Implements a TreeView using the API.
+'
+' Thanks in no particular order for getting this to work:
+'
+' - Dan Litwin for the excellent  original TreeView from which
+'   this is derived
+' - Mike Gainer for demonstrating the IOLEInPlaceActiveObject
+'   code
+' - Matt Currland/Bill Storage for writing the OLEGuids TypeLib
+'   and publishing the info about it to the VB world
+' - Jeffery. M Richter for Spy++
+' - Brad Martinez for the fantastic IShellFolderEx_TLB TypeLib
+' - Bruce McKinney for Hardcore Visual Basic, CopyMemory,
+'   ObjectFromPtr, Subclassing and Timer Assistant (even if
+'   it was broken...)
+' - M83 - Dead Cities
+' - LFO - Sheath
+' - Marlboro Lights
+'
+'
+' SteveMac, 2003, vbAccelerator.com (&gt;&gt;)
+'
+' =========================================================================
+
+' Based on xuiTreeView by Dan Litwin.
+'
+' Changes here:
+'  - Object model for accessing the items
+'  - Bug fixes in event handling
+'  - More colour properties and global colour settings
+'  - Recoded Drag/Drop using VB style OLE methods
+'  -
+
+' ///////////////////////////////////////////////////
+' //
+' //  This was coded by Dan Litwin. Isn't that nice?
+' //  litwin@gottliebaza.org is my mail, so send me
+' //  anything you want me to take a look at.
+' //
+' //  About the TreeView, it's a work in progress.
+' //  I haven't done Drag-and-Drop yet, nor custom
+' //  sorting. FolderTreeView comes later, but I'm
+' //  working on it.
+' //
+' //  This was done with the help of Brad Martinez's
+' //  code (http://members.aol.com/btmtz/vb), MFC
+' //  stuff at CodeGuru (http://www.codeguru.com/),
+' //  and, of course, the guidance of Steve over at
+' //  vbAccelerator (http://www.vbaccelerator.com).
+' //  To them, I salute.
+' //
+' //  Now, on with the code!
+' //
+' ///////////////////////////////////////////////////
+' //
+' //  But wait! Not yet! How about some darn cool,
+' //  brand-spaking new features? Oh, yeah, baby.
+' //  Here's some updates for ya...
+' //
+' //  January, 2000:
+' //    - For the new millennium, new stuff.
+' //    - I fixed the ExplorerBar code, because Steve
+' //      at vbAccelerator didn't like his own version,
+' //      said it wasn't elegant. So I tried another way.
+' //    - Custom sorting is all implemented. I hijacked
+' //      some space from Steve's mIMalloc module to use
+' //      for the callback.
+' //    - For that same custom sorting, I added a method
+' //      for built-in custom sorting to use with the
+' //      CustomSort event, called StockCustomSort.
+' //    - And, finally, ladies and gents, we have the
+' //      Drag and Drop that we've all been waiting for.
+' //      Including some nice events to expose it, and a
+' //      couple properties for controlling the cool
+' //      subfeatures of it.
+' //    - There's other stuff in here, just search for
+' //      the word "DLL" (my initials) to find them.
+' //
+' //  Happy hunting!
+' //
+' ///////////////////////////////////////////////////
+
+' Some standard API junkola.
+Private Type POINTAPI
+    X As Long
+    Y As Long
+End Type
+' This next one I put in to help myself out. Coulda done
+' without it, but what the heck, why not?
+Private Type DWORD
+    LOWORD As Integer
+    HIWORD As Integer
+End Type
+Private Type RECT
+    left As Long
+    top As Long
+    right As Long
+    bottom As Long
+End Type
+Private Declare Function ImageList_Destroy Lib "COMCTL32.DLL" (ByVal hIml As
+ Long) As Long
+Private Declare Function lstrlen Lib "kernel32" Alias "lstrlenA" (ByVal
+ lpString As String) As Long
+Private Declare Function GetCursorPos Lib "user32" (lpPoint As POINTAPI) As Long
+Private Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Long) As
+ Integer
+Private Declare Function CreateWindowEx Lib "user32" Alias "CreateWindowExA"
+ (ByVal dwExStyle As Long, ByVal lpClassName As String, ByVal lpWindowName As
+ String, ByVal dwStyle As Long, ByVal X As Long, ByVal Y As Long, ByVal nWidth
+ As Long, ByVal nHeight As Long, ByVal hWndParent As Long, ByVal hMenu As Long,
+ ByVal hInstance As Long, lpParam As Any) As Long
+Private Declare Function GetWindowRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function MoveWindow Lib "user32" (ByVal hwnd As Long, ByVal X
+ As Long, ByVal Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ bRepaint As Long) As Long
+Private Declare Function DestroyWindow Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function ShowWindow Lib "user32" (ByVal hwnd As Long, ByVal
+ nCmdShow As Long) As Long
+Private Declare Function UpdateWindow Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function SetParent Lib "user32" (ByVal hWndChild As Long, ByVal
+ hWndNewParent As Long) As Long
+Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long
+Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long) As Long
+Private Declare Function SetFocusAPI Lib "user32" Alias "SetFocus" (ByVal hwnd
+ As Long) As Long
+Private Declare Function GetFocus Lib "user32" () As Long
+Private Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+' This next one is for the messages that take Long
+' values as their lParam, so it passes ByVal.
+Private Declare Function SendMessageL Lib "user32" Alias "SendMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As Long)
+ As Long
+Private Declare Function PostMessage Lib "user32" Alias "PostMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As Long)
+ As Long
+Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function OffsetRect Lib "user32" (lpRect As RECT, ByVal X As
+ Long, ByVal Y As Long) As Long
+Private Declare Function PtInRect Lib "user32" (lpRect As RECT, ByVal ptX As
+ Long, ByVal ptY As Long) As Long
+Private Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal
+ hObject As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+Private Declare Function ClientToScreen Lib "user32" (ByVal hwnd As Long,
+ lpPoint As POINTAPI) As Long
+Private Declare Function ScreenToClient Lib "user32" (ByVal hwnd As Long,
+ lpPoint As POINTAPI) As Long
+Private Declare Function SetBkColor Lib "gdi32" (ByVal hdc As Long, ByVal
+ crColor As Long) As Long
+Private Declare Function SetBkMode Lib "gdi32" (ByVal hdc As Long, ByVal
+ nBkMode As Long) As Long
+Private Declare Function SetTextColor Lib "gdi32" (ByVal hdc As Long, ByVal
+ crColor As Long) As Long
+Private Declare Function DrawEdge Lib "user32" (ByVal hdc As Long, qrc As RECT,
+ ByVal edge As Long, ByVal grfFlags As Long) As Long
+Private Declare Function CreatePen Lib "gdi32" (ByVal nPenStyle As Long, ByVal
+ nWidth As Long, ByVal crColor As Long) As Long
+Private Declare Function MoveToEx Lib "gdi32" (ByVal hdc As Long, ByVal X As
+ Long, ByVal Y As Long, lpPoint As POINTAPI) As Long
+Private Declare Function LineTo Lib "gdi32" (ByVal hdc As Long, ByVal X As
+ Long, ByVal Y As Long) As Long
+Private Declare Function GetScrollPos Lib "user32" (ByVal hwnd As Long, ByVal
+ nBar As Long) As Long
+Private Declare Function DrawText Lib "user32" Alias "DrawTextA" (ByVal hdc As
+ Long, ByVal lpStr As String, ByVal nCount As Long, lpRect As RECT, ByVal
+ wFormat As Long) As Long
+    Private Const DT_BOTTOM = &amp;H8&amp;
+    Private Const DT_CENTER = &amp;H1&amp;
+    Private Const DT_LEFT = &amp;H0&amp;
+    Private Const DT_CALCRECT = &amp;H400&amp;
+    Private Const DT_WORDBREAK = &amp;H10&amp;
+    Private Const DT_VCENTER = &amp;H4&amp;
+    Private Const DT_TOP = &amp;H0&amp;
+    Private Const DT_TABSTOP = &amp;H80&amp;
+    Private Const DT_SINGLELINE = &amp;H20&amp;
+    Private Const DT_RIGHT = &amp;H2&amp;
+    Private Const DT_NOCLIP = &amp;H100&amp;
+    Private Const DT_INTERNAL = &amp;H1000&amp;
+    Private Const DT_EXTERNALLEADING = &amp;H200&amp;
+    Private Const DT_EXPANDTABS = &amp;H40&amp;
+    Private Const DT_CHARSTREAM = 4&amp;
+    Private Const DT_WORD_ELLIPSIS = &amp;H40000
+Private Declare Function SetWindowPos Lib "user32" (ByVal hwnd As Long, ByVal
+ hWndInsertAfter As Long, ByVal X As Long, ByVal Y As Long, ByVal cx As Long,
+ ByVal cy As Long, ByVal wFlags As Long) As Long
+   Private Const SWP_FRAMECHANGED = &amp;H20        '  The frame changed: send
+    WM_NCCALCSIZE
+   Private Const SWP_NOACTIVATE = &amp;H10
+   Private Const SWP_NOMOVE = &amp;H2
+   Private Const SWP_NOOWNERZORDER = &amp;H200      '  Don't do owner Z ordering
+   Private Const SWP_NOREDRAW = &amp;H8
+   Private Const SWP_NOSIZE = &amp;H1
+   Private Const SWP_NOZORDER = &amp;H4
+   Private Const SWP_SHOWWINDOW = &amp;H40
+   Private Const HWND_TOPMOST = -1
+Private Declare Function InvalidateRect Lib "user32" (ByVal hwnd As Long,
+ lpRect As RECT, ByVal bErase As Long) As Long
+Private Declare Function InflateRect Lib "user32" (lpRect As RECT, ByVal X As
+ Long, ByVal Y As Long) As Long
+Private Type DLLVERSIONINFO
+    cbSize As Long
+    dwMajor As Long
+    dwMinor As Long
+    dwBuildNumber As Long
+    dwPlatformID As Long
+End Type
+Private Declare Function LoadLibrary Lib "kernel32" Alias "LoadLibraryA" (ByVal
+ lpLibFileName As String) As Long
+Private Declare Function FreeLibrary Lib "kernel32" (ByVal hLibModule As Long)
+ As Long
+Private Declare Function GetProcAddress Lib "kernel32" (ByVal hModule As Long,
+ ByVal lpProcName As String) As Long
+Private Declare Function DllGetVersion Lib "comctl32" (pdvi As DLLVERSIONINFO)
+ As Long
+Private Declare Function timeGetTime Lib "winmm.dll" () As Long
+
+Private Declare Function OleTranslateColor Lib "OLEPRO32.DLL" (ByVal OLE_COLOR
+ As Long, ByVal HPALETTE As Long, pccolorref As Long) As Long
+Private Const CLR_INVALID = -1
+
+' Class name.
+Private Const WC_TREEVIEW = "SysTreeView32"
+
+' Some styles and messages.
+Private Const GWL_STYLE = (-16)
+Private Const WS_BORDER = &amp;H800000
+Private Const WS_CHILD = &amp;H40000000
+Private Const WS_DISABLED = &amp;H8000000
+Private Const WS_VISIBLE = &amp;H10000000
+Private Const WS_TABSTOP = &amp;H10000
+Private Const GWL_EXSTYLE = (-20)
+Private Const WS_EX_CLIENTEDGE = &amp;H200
+
+Private Const WM_SETFOCUS = &amp;H7
+Private Const WM_SETREDRAW = &amp;HB
+Private Const WM_MOUSEACTIVATE = &amp;H21
+Private Const WM_NOTIFY = &amp;H4E
+Private Const WM_KEYDOWN = &amp;H100
+Private Const WM_KEYUP = &amp;H101
+Private Const WM_MOUSEMOVE = &amp;H200
+Private Const WM_LBUTTONUP = &amp;H202
+Private Const WM_LBUTTONDOWN = &amp;H201
+Private Const WM_RBUTTONDOWN = &amp;H204
+Private Const WM_RBUTTONUP = &amp;H205
+Private Const WM_MBUTTONDOWN = &amp;H207
+Private Const WM_MBUTTONUP = &amp;H208
+Private Const WM_HSCROLL = &amp;H114
+Private Const WM_VSCROLL = &amp;H115
+    Private Const SB_LINEDOWN = 1
+    Private Const SB_LINEUP = 0
+Private Const WM_USER = &amp;H400
+
+' mouse activate responses
+Private Const MA_ACTIVATE = 1
+Private Const MA_ACTIVATEANDEAT = 2
+Private Const MA_NOACTIVATE = 3
+Private Const MA_NOACTIVATEANDEAT = 4
+
+Private Const SW_HIDE = 0
+Private Const SW_SHOW = 1
+
+' All the structures that you could ever ask for!
+Private Type NMHDR
+    hwndFrom As Long
+    idfrom As Long
+    code As Long
+End Type
+Private Type TVITEM
+    mask As Long
+    hItem As Long
+    State As Long
+    stateMask As Long
+    pszText As String
+    cchTextMax As Long
+    iImage As Long
+    iSelectedImage As Long
+    cChildren As Long
+    lParam As Long
+End Type
+' SPM: for CopyMemory lParam purposes.  The pszText property must be a long
+ pointer otherwise VB goes a bit 'funny'
+Private Type TVITEM_textptr
+    mask As Long
+    hItem As Long
+    State As Long
+    stateMask As Long
+    pszText As Long
+    cchTextMax As Long
+    iImage As Long
+    iSelectedImage As Long
+    cChildren As Long
+    lParam As Long
+End Type
+Private Type TVITEMEX
+    mask As Long
+    hItem As Long
+    State As Long
+    stateMask As Long
+    pszText As String
+    cchTextMax As Long
+    iImage As Long
+    iSelectedImage As Long
+    cChildren As Long
+    lParam As Long
+    iIntegral As Long
+End Type
+Private Type NMCUSTOMDRAW
+    hdr As NMHDR
+    dwDrawStage As Long
+    hdc As Long
+    rc As RECT
+    dwItemSpec As Long ' this is control specific, but it's how to specify an
+     item.  valid only with CDDS_ITEM bit set
+    uItemState As Long
+    lItemlParam As Long
+End Type
+Private Type NMTVCUSTOMDRAW
+    NMCD As NMCUSTOMDRAW
+    clrText As Long
+    clrTextBk As Long
+    iLevel As Long
+End Type
+Private Type TVDISPINFO
+    hdr As NMHDR
+    Item As TVITEM
+End Type
+Private Type TVDISPINFO_ptr
+    hdr As NMHDR
+    Item As TVITEM_textptr
+End Type
+Private Type TVHITTESTINFO
+    pt As POINTAPI
+    flags As Long
+    hItem As Long
+End Type
+Private Type NMTREEVIEW
+    hdr As NMHDR
+    action As Long
+    itemOld As TVITEM
+    itemNew As TVITEM
+    ptDrag As POINTAPI
+End Type
+Private Type NMTREEVIEW_textptr
+   hdr As NMHDR
+   action As Long
+   itemOld As TVITEM_textptr
+   itemNew As TVITEM_textptr
+   ptDrag As POINTAPI
+End Type
+Private Type NMTVGETINFOTIP
+    hdr As NMHDR
+    pszText As Long
+    cchTextMax As Long
+    hItem As Long
+    lParam As Long
+End Type
+Private Type TVINSERTSTRUCT
+    hParent As Long
+    hInsertAfter As Long
+    Item As TVITEMEX
+End Type
+Private Type TVKEYDOWN
+    hdr As NMHDR
+    wVKey As Integer
+    flags1 As Integer
+    flags2 As Integer
+End Type
+Private Type TVSORTCB
+    hParent As Long
+    lpfnCompare As Long
+    lParam As Long
+End Type
+Private Type NMCHAR
+    hdr As NMHDR
+    ch As Long
+    dwItemPrev As Long
+    dwItemNext As Long
+End Type
+
+' Common Controls stuff.
+Private Const ICC_TREEVIEW_CLASSES = &amp;H2
+Private Declare Function InitCommonControlsEx Lib "COMCTL32.DLL" (icc As ICCEx)
+ As Long
+Private Declare Sub InitCommonControls Lib "COMCTL32.DLL" ()
+Private Type ICCEx
+    dwSize As Long          ' size of this structure
+    dwICC As Long           ' flags indicating which classes to be initialized
+End Type
+
+Private Const CCM_FIRST = &amp;H2000&amp;                   '// Common control shared
+ messages
+Private Const CCM_SETVERSION = (CCM_FIRST + 7)
+Private Const CCM_GETVERSION = (CCM_FIRST + 8)
+Private Const CCM_SETNOTIFYWINDOW = (CCM_FIRST + 9)    '// wParam == hwndParent.
+
+' Notification messages.
+Private Const NM_FIRST = 0
+Private Const NM_CLICK = (NM_FIRST - 2)
+Private Const NM_CUSTOMDRAW = (NM_FIRST - 12)
+Private Const NM_DBLCLK = (NM_FIRST - 3)
+Private Const NM_KILLFOCUS = (NM_FIRST - 8)
+Private Const NM_RCLICK = (NM_FIRST - 5)
+Private Const NM_RETURN = (NM_FIRST - 4)
+Private Const NM_CHAR = (NM_FIRST - 18)                '// uses NMCHAR struct
+
+' Expanding stuff.
+Private Const TVE_COLLAPSE = &amp;H1
+Private Const TVE_COLLAPSERESET = &amp;H8000
+Private Const TVE_EXPAND = &amp;H2
+Private Const TVE_EXPANDPARTIAL = &amp;H4000
+Private Const TVE_TOGGLE = &amp;H3
+
+Private Const TVC_BYKEYBOARD = &amp;H2
+Private Const TVC_BYMOUSE = &amp;H1
+Private Const TVC_UNKNOWN = &amp;H0
+
+' TVM_GETNEXTITEM goodies.
+Private Const TVGN_CARET = &amp;H9
+Private Const TVGN_CHILD = &amp;H4
+Private Const TVGN_DROPHILITE = &amp;H8
+Private Const TVGN_FIRSTVISIBLE = &amp;H5
+Private Const TVGN_LASTVISIBLE = &amp;HA
+Private Const TVGN_NEXT = &amp;H1
+Private Const TVGN_NEXTVISIBLE = &amp;H6
+Private Const TVGN_PARENT = &amp;H3
+Private Const TVGN_PREVIOUS = &amp;H2
+Private Const TVGN_PREVIOUSVISIBLE = &amp;H7
+Private Const TVGN_ROOT = &amp;H0
+
+
+' The root value. Nice and useful. I return this in
+' the Index helper function, when -1 is passed.
+Private Const TVI_ROOT = &amp;HFFFF0000
+
+' Inserting stuff.
+Private Const TVI_FIRST = &amp;HFFFF0001
+Private Const TVI_LAST = &amp;HFFFF0002
+Private Const TVI_SORT = &amp;HFFFF0003
+
+' Mask values.
+Private Const TVIF_CHILDREN = &amp;H40
+Private Const TVIF_DI_SETITEM = &amp;H1000
+Private Const TVIF_HANDLE = &amp;H10
+Private Const TVIF_IMAGE = &amp;H2
+Private Const TVIF_INTEGRAL = &amp;H80
+Private Const TVIF_PARAM = &amp;H4
+Private Const TVIF_SELECTEDIMAGE = &amp;H20
+Private Const TVIF_STATE = &amp;H8
+Private Const TVIF_TEXT = &amp;H1
+
+' More mask values, of the state kind.
+Private Const TVIS_BOLD = &amp;H10
+Private Const TVIS_CUT = &amp;H4
+Private Const TVIS_DROPHILITED = &amp;H8
+Private Const TVIS_EXPANDED = &amp;H20
+Private Const TVIS_EXPANDEDONCE = &amp;H40
+Private Const TVIS_EXPANDPARTIAL = &amp;H80
+Private Const TVIS_OVERLAYMASK = &amp;HF00
+Private Const TVIS_SELECTED = &amp;H2
+Private Const TVIS_STATEIMAGEMASK = &amp;HF000
+Private Const TVIS_USERMASK = &amp;HF000
+
+' TreeView messages.
+Private Const TV_FIRST = &amp;H1100
+Private Const TVM_CREATEDRAGIMAGE = (TV_FIRST + 18)
+Private Const TVM_DELETEITEM = (TV_FIRST + 1)
+Private Const TVM_EDITLABEL = (TV_FIRST + 14)
+Private Const TVM_ENDEDITLABELNOW = (TV_FIRST + 22)
+Private Const TVM_ENSUREVISIBLE = (TV_FIRST + 20)
+Private Const TVM_EXPAND = (TV_FIRST + 2)
+Private Const TVM_GETBKCOLOR = (TV_FIRST + 31)
+Private Const TVM_GETBORDER = (TV_FIRST + 36)
+Private Const TVM_GETCOUNT = (TV_FIRST + 5)
+Private Const TVM_GETEDITCONTROL = (TV_FIRST + 15)
+Private Const TVM_GETIMAGELIST = (TV_FIRST + 8)
+Private Const TVM_GETINDENT = (TV_FIRST + 6)
+Private Const TVM_GETISEARCHSTRINGA = (TV_FIRST + 23)
+Private Const TVM_GETITEM = (TV_FIRST + 12)
+Private Const TVM_GETITEMHEIGHT = (TV_FIRST + 28)
+Private Const TVM_GETITEMRECT = (TV_FIRST + 4)
+Private Const TVM_GETNEXTITEM = (TV_FIRST + 10)
+Private Const TVM_GETSCROLLTIME = (TV_FIRST + 34)
+Private Const TVM_GETTEXTCOLOR = (TV_FIRST + 32)
+Private Const TVM_GETTOOLTIPS = (TV_FIRST + 25)
+Private Const TVM_GETVISIBLECOUNT = (TV_FIRST + 16)
+Private Const TVM_HITTEST = (TV_FIRST + 17)
+Private Const TVM_INSERTITEM = (TV_FIRST + 0)
+Private Const TVM_SELECTITEM = (TV_FIRST + 11)
+Private Const TVM_SETBKCOLOR = (TV_FIRST + 29)
+Private Const TVM_SETBORDER = (TV_FIRST + 35)
+Private Const TVM_SETIMAGELIST = (TV_FIRST + 9)
+Private Const TVM_SETINDENT = (TV_FIRST + 7)
+Private Const TVM_SETINSERTMARK = (TV_FIRST + 26)
+Private Const TVM_SETITEM = (TV_FIRST + 13)
+Private Const TVM_SETITEMHEIGHT = (TV_FIRST + 27)
+Private Const TVM_SETSCROLLTIME = (TV_FIRST + 33)
+Private Const TVM_SETTEXTCOLOR = (TV_FIRST + 30)
+Private Const TVM_SETTOOLTIPS = (TV_FIRST + 24)
+Private Const TVM_SORTCHILDREN = (TV_FIRST + 19)
+Private Const TVM_SORTCHILDRENCB = (TV_FIRST + 21)
+Private Const TVM_SETLINECOLOR = (TV_FIRST + 40)
+Private Const TVM_GETLINECOLOR = (TV_FIRST + 41)
+
+
+' TreeView notifications, telling us what's going down.
+Private Const TVN_FIRST = -400 ' SPM :) it's negative...
+Private Const TVN_BEGINLABELEDIT = (TVN_FIRST - 10)
+Private Const TVN_BEGINDRAG = (TVN_FIRST - 7)
+Private Const TVN_BEGINRDRAG = (TVN_FIRST - 8)
+Private Const TVN_DELETEITEM = (TVN_FIRST - 9)
+Private Const TVN_GETDISPINFO = (TVN_FIRST - 3)
+Private Const TVN_GETINFOTIP = (TVN_FIRST - 13)
+Private Const TVN_KEYDOWN = (TVN_FIRST - 12)
+Private Const TVN_ENDLABELEDIT = (TVN_FIRST - 11)
+Private Const TVN_ITEMEXPANDED = (TVN_FIRST - 6)
+Private Const TVN_ITEMEXPANDING = (TVN_FIRST - 5)
+Private Const TVN_SELCHANGED = (TVN_FIRST - 2)
+Private Const TVN_SELCHANGING = (TVN_FIRST - 1)
+Private Const TVN_SINGLEEXPAND = (TVN_FIRST - 15)
+
+' TreeView specific styles.
+Private Const TVS_CHECKBOXES = &amp;H100
+Private Const TVS_DISABLEDRAGDROP = &amp;H10
+Private Const TVS_EDITLABELS = &amp;H8
+Private Const TVS_FULLROWSELECT = &amp;H1000
+Private Const TVS_HASBUTTONS = &amp;H1
+Private Const TVS_HASLINES = &amp;H2
+Private Const TVS_INFOTIP = &amp;H800
+Private Const TVS_LINESATROOT = &amp;H4
+Private Const TVS_NOSCROLL = &amp;H2000
+Private Const TVS_NOTOOLTIPS = &amp;H80
+Private Const TVS_SHOWSELALWAYS = &amp;H20
+Private Const TVS_SINGLEEXPAND = &amp;H400
+Private Const TVS_TRACKSELECT = &amp;H200
+Private Const TVS_NONEVENHEIGHT = &amp;H4000&amp;
+Private Const TVS_NOHSCROLL = &amp;H8000&amp;
+
+' TVHT_* hit testing codes
+Private Const TVHT_NOWHERE = &amp;H1
+Private Const TVHT_ONITEMICON = &amp;H2
+Private Const TVHT_ONITEMLABEL = &amp;H4
+Private Const TVHT_ONITEMINDENT = &amp;H8
+Private Const TVHT_ONITEMBUTTON = &amp;H10
+Private Const TVHT_ONITEMRIGHT = &amp;H20
+Private Const TVHT_ONITEMSTATEICON = &amp;H40
+Private Const TVHT_ONITEM = (TVHT_ONITEMICON Or TVHT_ONITEMLABEL Or
+ TVHT_ONITEMSTATEICON)
+
+Private Const TVHT_ABOVE = &amp;H100
+Private Const TVHT_BELOW = &amp;H200
+Private Const TVHT_TORIGHT = &amp;H400
+Private Const TVHT_TOLEFT = &amp;H800
+
+
+' These next ones are for TVM_*ETBORDER, which is
+' exposed in the InternalBorder properties.
+Private Const TVSBF_XBORDER = &amp;H1
+Private Const TVSBF_YBORDER = &amp;H2
+
+' ImageList type values. (Wonder what 1 is?)
+Private Const TVSIL_NORMAL = 0
+Private Const TVSIL_STATE = 2
+
+' CustomDraw paint stages.
+Private Const CDDS_ITEM = &amp;H10000
+Private Const CDDS_POSTERASE = &amp;H4
+Private Const CDDS_POSTPAINT = &amp;H2
+Private Const CDDS_PREERASE = &amp;H3
+Private Const CDDS_PREPAINT = &amp;H1
+Private Const CDDS_ITEMPREPAINT = (&amp;H10000 Or &amp;H1)
+Private Const CDDS_ITEMPOSTPAINT = (&amp;H10000 Or &amp;H2)
+Private Const CDDS_SUBITEM = &amp;H20000
+
+' CustomDraw Item states.
+Private Const CDIS_SELECTED = &amp;H1
+Private Const CDIS_GRAYED = &amp;H2
+Private Const CDIS_DISABLED = &amp;H4
+Private Const CDIS_CHECKED = &amp;H8
+Private Const CDIS_FOCUS = &amp;H10
+Private Const CDIS_DEFAULT = &amp;H20
+Private Const CDIS_HOT = &amp;H40
+Private Const CDIS_MARKED = &amp;H80
+Private Const CDIS_INDETERMINATE = &amp;H100
+
+' CustomDraw return values.
+Private Const CDRF_DODEFAULT = &amp;H0
+Private Const CDRF_NEWFONT = &amp;H2
+Private Const CDRF_SKIPDEFAULT = &amp;H4
+
+Private Const CDRF_NOTIFYITEMDRAW = &amp;H20
+Private Const CDRF_NOTIFYPOSTERASE = &amp;H40
+Private Const CDRF_NOTIFYPOSTPAINT = &amp;H10
+Private Const CDRF_NOTIFYSUBITEMDRAW = &amp;H20
+
+' Other miskulanius (miscellaneous) messages.
+Private Const WM_GETFONT = &amp;H31
+Private Const WM_SETFONT = &amp;H30
+Private Const TTM_GETTIPBKCOLOR = (WM_USER + 22)
+Private Const TTM_GETTIPTEXTCOLOR = (WM_USER + 23)
+Private Const TTM_SETTIPBKCOLOR = (WM_USER + 19)
+Private Const TTM_SETTIPTEXTCOLOR = (WM_USER + 20)
+
+' See KB Q261289
+Private Const UM_CHECKSTATECHANGED = WM_USER + &amp;H112
+'
+Private Const UM_STARTDRAG = WM_USER + &amp;H113
+
+
+Public Enum ETreeViewRelationshipContants
+   etvwFirst
+   etvwLast
+   etvwNext
+   etvwPrevious
+   etvwChild
+End Enum
+
+Public Enum ETreeViewLineStyleConstants
+   etvwRootLines
+   etvwTreeLines
+End Enum
+
+Public Enum ETreeViewStyleConstants
+   etvwTextOnly
+   etvwPictureText
+   etvwPlusMinusText
+   etvwPlusMinusPictureText
+   etvwTreelinesText
+   etvwTreelinesPlusMinusText
+   etvwTreelinesPictureText
+   etvwTreelinesPlusMinusPictureText
+End Enum
+
+Public Enum ETreeViewHitTestConstants
+   etvwHitTestAbove = &amp;H100
+   etvwHitTestBelow = &amp;H200
+   etvwHitTestBelowLast = &amp;H1
+   etvwHitTestItemPlusMinus = &amp;H10
+   etvwHitTestItemIcon = &amp;H2
+   etvwHitTestItemIndent = &amp;H8
+   etvwHitTestItemText = &amp;H4
+   etvwHitTestItemRight = &amp;H20
+   etvwHitTestItemState = &amp;H40
+   etvwHitTestLeft = &amp;H800
+   etvwHitTestRight = &amp;H400
+End Enum
+
+Public Enum ETreeViewBorderStyle
+   etvwNone = 0
+   etvwFixedSingle = 1
+End Enum
+
+Public Enum ETreeViewChildrenSortMode
+   etvwNoSort = 0
+   etvwAlphabetic = 1
+   etvwItemDataThenAlphabetic = 2
+   etvwTagThenAlphabetic = 3
+   etvwCustomSortEvent = 4
+End Enum
+
+Public Enum ETreeViewSortResult
+   etvwItem1PreceedsItem2 = -1
+   etvwItem1EqualsItem2 = 0
+   etvwItem1FollowsItem2 = 1
+End Enum
+
+Public Enum ETreeViewDragInsertStyle
+   etvwInsertMark = 0
+   etvwDropHighlight = 1
+End Enum
+
+Public Event AfterLabelEdit(ByRef node As cTreeViewNode, ByRef NewString As
+ String, ByRef cancel As Boolean)
+Attribute AfterLabelEdit.VB_Description = "Raised when a label editing
+ operation is completed."
+Public Event BeforeCollapse(node As cTreeViewNode, ByRef cancel As Boolean)
+Attribute BeforeCollapse.VB_Description = "Raised when a node is about to be
+ collapsed."
+Public Event BeforeExpand(node As cTreeViewNode, ByRef cancel As Boolean)
+Attribute BeforeExpand.VB_Description = "Raised when a node is about to be
+ expanded."
+Public Event BeforeLabelEdit(ByRef node As cTreeViewNode, ByRef cancel As
+ Boolean)
+Attribute BeforeLabelEdit.VB_Description = "Raised when the control is about to
+ start editing on a node."
+Public Event Click()
+Attribute Click.VB_Description = "Raised when the control is clicked."
+Public Event Collapse(node As cTreeViewNode)
+Attribute Collapse.VB_Description = "Raised when a node has been collapsed."
+Public Event DblClick()
+Attribute DblClick.VB_Description = "Raised when the control is double-clicked."
+Public Event Expand(node As cTreeViewNode)
+Attribute Expand.VB_Description = "Raised when a node has been expanded."
+Public Event KeyDown(KeyCode As Integer, Shift As Integer)
+Attribute KeyDown.VB_Description = "Raised when a key is depressed in the
+ control."
+Public Event KeyPress(KeyAscii As Integer)
+Attribute KeyPress.VB_Description = "Raised when a key is pressed in the
+ control."
+Public Event KeyUp(KeyCode As Integer, Shift As Integer)
+Attribute KeyUp.VB_Description = "Raised when a key is released in the control."
+Public Event MouseDown(Button As Integer, Shift As Integer, X As Single, Y As
+ Single)
+Attribute MouseDown.VB_Description = "Raised when a mouse button is depressed
+ in the control."
+Public Event MouseMove(Button As Integer, Shift As Integer, X As Single, Y As
+ Single)
+Attribute MouseMove.VB_Description = "Raised when the mouse moves over the
+ control."
+Public Event MouseUp(Button As Integer, Shift As Integer, X As Single, Y As
+ Single)
+Attribute MouseUp.VB_Description = "Raised when the mouse is released over the
+ control (not supported by the TreeView)."
+Public Event nodeCheck(node As cTreeViewNode)
+Attribute nodeCheck.VB_Description = "Raised when the check state of a node
+ changes."
+Public Event NodeClick(node As cTreeViewNode)
+Attribute NodeClick.VB_Description = "Raised when a Node is clicked."
+Public Event NodeDblClick(node As cTreeViewNode)
+Attribute NodeDblClick.VB_Description = "Raised when a node is double-clicked."
+Public Event NodeRightClick(node As cTreeViewNode)
+Attribute NodeRightClick.VB_Description = "Raised when a node is right-clicked."
+Public Event OLECompleteDrag(Effect As Long)
+Attribute OLECompleteDrag.VB_Description = "Raised when an OLE drag-drop
+ operation completes."
+Public Event OLEDragDrop(Data As DataObject, Effect As Long, Button As Integer,
+ Shift As Integer, X As Single, Y As Single)
+Attribute OLEDragDrop.VB_Description = "Raised when an item is dropped during a
+ DragDrop operation."
+Public Event OLEDragOver(Data As DataObject, Effect As Long, Button As Integer,
+ Shift As Integer, X As Single, Y As Single, State As Integer)
+Attribute OLEDragOver.VB_Description = "Raised when an OLE Drag Over event
+ occurs."
+Public Event OLEGiveFeedback(Effect As Long, DefaultCursors As Boolean)
+Attribute OLEGiveFeedback.VB_Description = "Raised during an OLE Drag operation
+ when visual feedback is required."
+Public Event OLEStartDrag(Data As DataObject, AllowedEffects As Long)
+Attribute OLEStartDrag.VB_Description = "Raised when an OLE Drag-Drop operation
+ is about to start from this control."
+Public Event DragDropRequest(Data As DataObject, nodeOver As cTreeViewNode,
+ ByVal bAbove As Boolean, ByVal hitTest As Long)
+Attribute DragDropRequest.VB_Description = "Raised when the user releases an
+ item in a drag-drop operation."
+Public Event CustomSort(node1 As cTreeViewNode, node2 As cTreeViewNode,
+ nodeParent As cTreeViewNode, ByRef iCompareResult As ETreeViewSortResult)
+Attribute CustomSort.VB_Description = "Raised when the children of a node need
+ to be sorted and the sort mode has been set to custom."
+
+Public Event SelectedNodeChanged()
+Attribute SelectedNodeChanged.VB_Description = "Raised when the selected node
+ in the control is changed."
+
+Implements ISubclass
+
+' TreeView control
+Private m_hWnd As Long
+Private m_hWndParent As Long
+Private m_bTerminate As Boolean
+Private m_bSubclassed As Boolean
+Private m_IPAOHookStruct As IPAOHookStruct
+Private m_hMod As Long
+' hWNd of Edit control in TreeView
+Private m_hEdit As Long
+
+Private m_bClearing As Boolean
+Private m_bDragging As Boolean
+Private m_bNoCustomDraw As Boolean
+Private m_bShowNumber As Boolean
+Private m_bExplorerBar As Boolean
+
+' ComCtl version
+Private m_lMajor As Long
+Private m_lMinor As Long
+
+' Style related
+Private m_eTreeViewStyle As ETreeViewStyleConstants
+Private m_bCheckBoxes As Boolean
+Private m_bFullRowSelect As Boolean
+Private m_bScroll As Boolean
+Private m_bHideSelection  As Boolean
+Private m_bHotTracking As Boolean
+Private m_bEnabled As Boolean
+Private m_eLineStyle As ETreeViewLineStyleConstants
+Private m_bSingleSel As Boolean
+Private m_eBorderStyle As ETreeViewBorderStyle
+Private m_bLabelEdit As Boolean
+Private m_eDragStyle As ETreeViewDragInsertStyle
+
+' Sizes
+Private m_lItemHeight As Long
+Private m_lIndent As Long
+
+' Colours
+Private m_oBackColor As OLE_COLOR
+Private m_oForeColor As OLE_COLOR
+Private m_oLineColor As OLE_COLOR
+Private m_oTooltipBackColor As OLE_COLOR
+Private m_oTooltipForeColor As OLE_COLOR
+Private m_oSelectedForeColor As OLE_COLOR
+Private m_oSelectedBackColor As OLE_COLOR
+Private m_oSelectedNoFocusForeColor As OLE_COLOR
+Private m_oSelectedNoFocusBackColor As OLE_COLOR
+Private m_oSelectedMouseOverForeColor As OLE_COLOR
+Private m_oSelectedMouseOverBackColor As OLE_COLOR
+Private m_oMouseOverForeColor As OLE_COLOR
+Private m_oMouseOverBackColor As OLE_COLOR
+Private m_fnt As IFont
+Private m_eCurrentSortMode As ETreeViewChildrenSortMode
+
+' General
+Private m_sTag As String
+Private m_sPathSeparator As String
+
+' Internal storage:
+Private Type tTreeViewInfoStore
+   hRel As Long
+   
+   ItemColor As Long
+   bDoColor As Boolean
+   
+   ItemBackColor As Long
+   bDoBackColor As Boolean
+   
+   ItemMouseOverColor As Long
+   bDoMouseOverColor As Boolean
+   
+   ItemMouseOverBackColor As Long
+   bDoMouseOverBackColor As Boolean
+   
+   ItemSelectedMouseOverColor As Long
+   bDoSelectedMouseOverColor As Boolean
+   
+   ItemSelectedMouseOverBackColor As Long
+   bDoSelectedMouseOverBackColor As Boolean
+   
+   ItemSelectedColor As Long
+   bDoSelectedColor As Boolean
+   
+   ItemSelectedBackColor As Long
+   bDoSelectedBackColor As Boolean
+      
+   ItemSelectedNoFocusColor As Long
+   bDoSelectedNoFocusColor As Boolean
+   
+   ItemSelectedNoFocusBackColor As Long
+   bDoSelectedNoFocusBackColor As Boolean
+   
+   ItemFont As Long
+   bDoFont As Boolean
+   
+   eSortMode As ETreeViewChildrenSortMode
+      
+   ItemData As Long
+   ItemNumber As Long
+   lID As Long          ' ID from hRel
+   
+End Type
+
+Private m_colData As New Collection
+Private m_fntItem() As IFont
+Private m_lFontCount As Long
+
+' obtain a key from a hRel:
+Private m_colKeys As New Collection
+' obtain a hRel from the Key:
+Private m_colIndexes As New Collection
+' Obtain an hRel from an ID
+Private m_colIDs As New Collection
+' Obtain a Tag from an ID
+Private m_colTags As New Collection
+
+' This holds the values every time we use GetStyle and SetIStyle.
+Private m_itemStyle As TVITEMEX
+
+' Drag-drop
+Private m_eOLEDragMode As OLEDragConstants
+
+Private m_hDragItem As Long
+Private m_bStartDrag As Boolean
+Private m_hDragOver As Long
+Private m_hItemInsert As Long
+Private m_bItemInsertAbove As Boolean
+Private m_cImageListDrag As pcImageListDrag
+Private m_hIml As Long
+Private m_bDragAutoExpand As Long
+Private WithEvents tmrDragScroll As CTimer
+Attribute tmrDragScroll.VB_VarHelpID = -1
+Private WithEvents tmrDragAutoExpand As CTimer
+Attribute tmrDragAutoExpand.VB_VarHelpID = -1
+Private WithEvents tmrDragNoMore As CTimer
+Attribute tmrDragNoMore.VB_VarHelpID = -1
+
+Public Property Get DragStyle() As ETreeViewDragInsertStyle
+Attribute DragStyle.VB_Description = "Gets/sets the drag style for the control.
+  In insert mode, the order of children can be modified, whereas in
+ drop-highlight mode only an item's parent can be changed."
+   DragStyle = m_eDragStyle
+End Property
+Public Property Let DragStyle(ByVal eStyle As ETreeViewDragInsertStyle)
+   If Not (m_eDragStyle = eStyle) Then
+      m_eDragStyle = eStyle
+      PropertyChanged "DragStyle"
+   End If
+End Property
+
+Public Property Get BackColor() As OLE_COLOR
+Attribute BackColor.VB_Description = "Gets/sets the background colour of the
+ treeview."
+   BackColor = m_oBackColor
+End Property
+Public Property Let BackColor(ByVal value As OLE_COLOR)
+   If Not (value = m_oBackColor) Then
+      m_oBackColor = value
+      UserControl.BackColor = m_oBackColor
+      If Not (m_hWnd = 0) Then
+         SendMessageL m_hWnd, TVM_SETBKCOLOR, 0, TranslateColor(value)
+      End If
+      PropertyChanged "BackColor"
+   End If
+End Property
+
+Public Property Get SelectedBackColor() As OLE_COLOR
+Attribute SelectedBackColor.VB_Description = "Gets the default background
+ colour for selected items."
+   SelectedBackColor = m_oSelectedBackColor
+End Property
+Public Property Let SelectedBackColor(ByVal value As OLE_COLOR)
+   If Not (value = m_oSelectedBackColor) Then
+      m_oSelectedBackColor = value
+      PropertyChanged "SelectedBackColor"
+   End If
+End Property
+
+Public Property Get SelectedForeColor() As OLE_COLOR
+Attribute SelectedForeColor.VB_Description = "Gets the default foreground
+ colour for selected items."
+   SelectedForeColor = m_oSelectedForeColor
+End Property
+Public Property Let SelectedForeColor(ByVal value As OLE_COLOR)
+   If Not (value = m_oSelectedForeColor) Then
+      m_oSelectedForeColor = value
+      PropertyChanged "SelectedForeColor"
+   End If
+End Property
+
+Public Property Get SelectedNoFocusBackColor() As OLE_COLOR
+Attribute SelectedNoFocusBackColor.VB_Description = "Gets the default
+ background colour for selected items when the control is out of focus."
+   SelectedNoFocusBackColor = m_oSelectedNoFocusBackColor
+End Property
+Public Property Let SelectedNoFocusBackColor(ByVal value As OLE_COLOR)
+   If Not (value = m_oSelectedNoFocusBackColor) Then
+      m_oSelectedNoFocusBackColor = value
+      PropertyChanged "SelectedNoFocusBackColor"
+   End If
+End Property
+
+Public Property Get SelectedNoFocusForeColor() As OLE_COLOR
+Attribute SelectedNoFocusForeColor.VB_Description = "Gets the default
+ foreground colour for selected items when the control is out of focus."
+   SelectedNoFocusForeColor = m_oSelectedNoFocusForeColor
+End Property
+Public Property Let SelectedNoFocusForeColor(ByVal value As OLE_COLOR)
+   If Not (value = m_oSelectedNoFocusForeColor) Then
+      m_oSelectedNoFocusForeColor = value
+      PropertyChanged "SelectedNoFocusForeColor"
+   End If
+End Property
+
+Public Property Get SelectedMouseOverBackColor() As OLE_COLOR
+Attribute SelectedMouseOverBackColor.VB_Description = "Gets the default
+ background colour for selected items when the mouse is over them."
+   SelectedMouseOverBackColor = m_oSelectedMouseOverBackColor
+End Property
+Public Property Let SelectedMouseOverBackColor(ByVal value As OLE_COLOR)
+   If Not (value = m_oSelectedMouseOverBackColor) Then
+      m_oSelectedMouseOverBackColor = value
+      PropertyChanged "SelectedMouseOverBackColor"
+   End If
+End Property
+
+Public Property Get SelectedMouseOverForeColor() As OLE_COLOR
+Attribute SelectedMouseOverForeColor.VB_Description = "Gets the default
+ foreground colour for selected items when the mouse is over them."
+   SelectedMouseOverForeColor = m_oSelectedMouseOverForeColor
+End Property
+Public Property Let SelectedMouseOverForeColor(ByVal value As OLE_COLOR)
+   If Not (value = m_oSelectedMouseOverForeColor) Then
+      m_oSelectedMouseOverForeColor = value
+      PropertyChanged "SelectedMouseOverForeColor"
+   End If
+End Property
+
+Public Property Get MouseOverBackColor() As OLE_COLOR
+Attribute MouseOverBackColor.VB_Description = "Gets/sets the default background
+ colour used to draw items when the mouse is over them."
+   MouseOverBackColor = m_oMouseOverBackColor
+End Property
+Public Property Let MouseOverBackColor(ByVal value As OLE_COLOR)
+   If Not (value = m_oMouseOverBackColor) Then
+      m_oMouseOverBackColor = value
+      PropertyChanged "MouseOverBackColor"
+   End If
+End Property
+
+Public Property Get MouseOverForeColor() As OLE_COLOR
+Attribute MouseOverForeColor.VB_Description = "Gets/sets the default foreground
+ colour used to draw items when the mouse is over them."
+   MouseOverForeColor = m_oMouseOverForeColor
+End Property
+Public Property Let MouseOverForeColor(ByVal value As OLE_COLOR)
+   If Not (value = m_oMouseOverForeColor) Then
+      m_oMouseOverForeColor = value
+      PropertyChanged "MouseOverForeColor"
+   End If
+End Property
+Public Property Get BorderStyle() As ETreeViewBorderStyle
+Attribute BorderStyle.VB_Description = "Gets/sets the border style used for the
+ control."
+   BorderStyle = m_eBorderStyle
+End Property
+Public Property Let BorderStyle(ByVal value As ETreeViewBorderStyle)
+   If Not (m_eBorderStyle = value) Then
+      m_eBorderStyle = value
+      UserControl.BorderStyle = value
+      PropertyChanged "BorderStyle"
+   End If
+End Property
+
+Public Property Get CheckBoxes() As Boolean
+Attribute CheckBoxes.VB_Description = "Gets/sets whether the control shows
+ CheckBoxes next to items."
+   CheckBoxes = m_bCheckBoxes
+End Property
+Public Property Let CheckBoxes(ByVal value As Boolean)
+   If Not (m_bCheckBoxes = value) Then
+      m_bCheckBoxes = value
+      pSetStyles
+      PropertyChanged "CheckBoxes"
+   End If
+End Property
+
+Public Property Get DragAutoExpand() As Boolean
+Attribute DragAutoExpand.VB_Description = "Gets/sets whether items will
+ automatically expand during drag operations when the mouse hovers over them."
+   DragAutoExpand = m_bDragAutoExpand
+End Property
+Public Property Let DragAutoExpand(ByVal value As Boolean)
+   If Not (m_bDragAutoExpand = value) Then
+      m_bDragAutoExpand = value
+      PropertyChanged "DragAutoExpand"
+   End If
+End Property
+
+Public Property Get NoCustomDraw() As Boolean
+Attribute NoCustomDraw.VB_Description = "Gets/sets whether the control should
+ not use custom draw.  Custom draw allows configuration of item colours and
+ fonts but reduces display performance."
+   NoCustomDraw = m_bNoCustomDraw
+End Property
+Public Property Let NoCustomDraw(ByVal value As Boolean)
+   If Not (m_bNoCustomDraw = value) Then
+      m_bNoCustomDraw = value
+      pSetStyles
+      PropertyChanged "NoCustomDraw"
+   End If
+End Property
+
+Public Property Get ShowNumber() As Boolean
+Attribute ShowNumber.VB_Description = "Gets/sets whether the number in a nodes
+ ItemNumber property should be displayed next to the item."
+   ShowNumber = m_bShowNumber
+End Property
+Public Property Let ShowNumber(ByVal value As Boolean)
+   If Not (m_bShowNumber = value) Then
+      m_bShowNumber = value
+      PropertyChanged "ShowNumber"
+   End If
+End Property
+
+Public Property Get HistoryStyle() As Boolean
+Attribute HistoryStyle.VB_Description = "Gets/sets whether the control draws
+ using an IE-History style or not."
+   HistoryStyle = m_bExplorerBar
+End Property
+Public Property Let HistoryStyle(ByVal value As Boolean)
+   If Not (m_bExplorerBar = value) Then
+      m_bExplorerBar = value
+      
+      ' Certain features are required for Explorer Bar mode
+      If Not (m_bSingleSel) Then
+         m_bSingleSel = True
+         PropertyChanged "SingleSel"
+      End If
+      If Not (m_bFullRowSelect) Then
+         m_bFullRowSelect = True
+         PropertyChanged "FullRowSelect"
+      End If
+      If Not (m_eTreeViewStyle = etvwPictureText) Then
+         m_eTreeViewStyle = etvwPictureText
+         PropertyChanged "Style"
+      End If
+      
+      If Not (m_hWnd = 0) Then
+         Dim rc As RECT
+         GetClientRect m_hWnd, rc
+         InvalidateRect m_hWnd, rc, 1
+      End If
+      
+      PropertyChanged "HistoryStyle"
+   End If
+End Property
+
+Public Property Get Enabled() As Boolean
+Attribute Enabled.VB_Description = "Gets/sets whether the control is Enabled or
+ not."
+   Enabled = m_bEnabled
+End Property
+Public Property Let Enabled(ByVal value As Boolean)
+   If (Not (m_bEnabled = value)) Then
+      m_bEnabled = value
+      UserControl.Enabled = m_bEnabled
+      PropertyChanged "Enabled"
+   End If
+End Property
+
+Public Property Get Font() As IFont
+Attribute Font.VB_Description = "Gets/sets the font used to draw the items."
+   Set m_fnt = UserControl.Font
+   Set Font = m_fnt
+End Property
+Public Property Let Font(value As IFont)
+   '
+   Set m_fnt = value
+   Set UserControl.Font = m_fnt
+   If Not (m_hWnd = 0) Then
+      SendMessageL m_hWnd, WM_SETFONT, m_fnt.hFont, 1
+      PropertyChanged "Font"
+   End If
+   '
+End Property
+Public Property Set Font(value As IFont)
+   '
+   Set m_fnt = value
+   Set UserControl.Font = m_fnt
+   If Not (m_hWnd = 0) Then
+      SendMessageL m_hWnd, WM_SETFONT, m_fnt.hFont, 1
+      PropertyChanged "Font"
+   End If
+   '
+End Property
+
+Public Property Get ForeColor() As OLE_COLOR
+Attribute ForeColor.VB_Description = "Gets the default foreground colour of the
+ items."
+   ForeColor = m_oForeColor
+End Property
+Public Property Let ForeColor(ByVal value As OLE_COLOR)
+   If Not (m_oForeColor = value) Then
+      m_oForeColor = value
+      SendMessageL m_hWnd, TVM_SETTEXTCOLOR, 0, TranslateColor(value)
+      PropertyChanged "ForeColor"
+   End If
+End Property
+
+Public Property Get FullRowSelect() As Boolean
+Attribute FullRowSelect.VB_Description = "Gets/sets whether the selection box
+ for an item extends the full width of the control or not."
+   FullRowSelect = m_bFullRowSelect
+End Property
+Public Property Let FullRowSelect(ByVal value As Boolean)
+   If Not (m_bFullRowSelect = value) Then
+      m_bFullRowSelect = value
+      pSetStyles
+      PropertyChanged "FullRowSelect"
+   End If
+End Property
+
+Public Function GetVisibleCount() As Long
+Attribute GetVisibleCount.VB_Description = "Gets the number of visible nodes in
+ the TreeView."
+   '
+   GetVisibleCount = SendMessageL(m_hWnd, TVM_GETVISIBLECOUNT, 0, 0)
+   '
+End Function
+
+Public Property Get HideSelection() As Boolean
+Attribute HideSelection.VB_Description = "Gets/sets whether the selected node
+ is hidden when the control is out of focus."
+   HideSelection = m_bHideSelection
+End Property
+Public Property Let HideSelection(ByVal value As Boolean)
+   If Not (m_bHideSelection = value) Then
+      m_bHideSelection = value
+      pSetStyles
+      PropertyChanged "HideSelection"
+   End If
+End Property
+
+Public Function hitTest(ByVal X As Single, ByVal Y As Single) As cTreeViewNode
+Attribute hitTest.VB_Description = "Gets the Node at the specified position."
+   '
+Dim tVHT As TVHITTESTINFO
+Dim lID As Long
+
+   fUnScale X, Y, tVHT.pt.X, tVHT.pt.Y
+   SendMessage m_hWnd, TVM_HITTEST, 0, tVHT
+   If Not (tVHT.hItem = 0) Then
+      lID = fIDForhItem(tVHT.hItem)
+      Dim nod As New cTreeViewNode
+      nod.fInit Me, lID
+      Set hitTest = nod
+   End If
+   '
+End Function
+
+Public Function HitTestInfo(ByVal X As Single, ByVal Y As Single) As
+ ETreeViewHitTestConstants
+Attribute HitTestInfo.VB_Description = "Gets the node at the specified position
+ and returns information about which area of the node is under the position."
+Dim tVHT As TVHITTESTINFO
+Dim lID As Long
+
+   fUnScale X, Y, tVHT.pt.X, tVHT.pt.Y
+   SendMessage m_hWnd, TVM_HITTEST, 0, tVHT
+   HitTestInfo = tVHT.flags
+   '
+End Function
+
+Public Property Get HotTracking() As Boolean
+Attribute HotTracking.VB_Description = "Gets/sets whether the TreeView hot
+ tracks the mouse and highlights items as the mouse moves over them."
+   HotTracking = m_bHotTracking
+End Property
+Public Property Let HotTracking(ByVal value As Boolean)
+   If Not (m_bHotTracking = value) Then
+      m_bHotTracking = value
+      pSetStyles
+      PropertyChanged "HotTracking"
+   End If
+End Property
+
+Public Property Get hwnd() As Long
+Attribute hwnd.VB_Description = "Gets the hWnd of this control."
+   hwnd = UserControl.hwnd
+End Property
+
+Public Property Get hWndTreeView() As Long
+Attribute hWndTreeView.VB_Description = "Gets the hWnd of the TreeView
+ contained within this control."
+   hWndTreeView = m_hWnd
+End Property
+
+Public Property Let ImageList(value As Variant)
+Attribute ImageList.VB_Description = "Associates an ImageList handle with the
+ TreeView used to draw the node images."
+Dim hIml As Long
+   '
+    If (VarType(value) = vbLong) Then
+      ' Assume a handle to an image list:
+      hIml = value
+   ElseIf (VarType(hIml) = vbObject) Then
+      ' Assume a VB image list:
+      On Error Resume Next
+      ' Get the image list initialised..
+      value.ListImages(1).Draw 0, 0, 0, 1
+      hIml = value.hImageList
+      If (Err.Number = 0) Then
+          ' OK
+      Else
+          gErr 4, "vbalTreeViewCtl"
+      End If
+      On Error GoTo 0
+   End If
+   
+   If Not (hIml = 0) Then
+      SendMessageL m_hWnd, TVM_SETIMAGELIST, TVSIL_NORMAL, hIml
+   End If
+   '
+End Property
+
+Public Property Get Indentation() As Long
+Attribute Indentation.VB_Description = "Gets/sets the indentation."
+   Indentation = m_lIndent
+End Property
+Public Property Let Indentation(ByVal value As Long)
+   If Not (m_lIndent = value) Then
+      m_lIndent = value
+      If Not (m_hWnd = 0) Then
+         SendMessageL m_hWnd, TVM_SETINDENT, m_lIndent, 0
+      End If
+      PropertyChanged "Indentation"
+   End If
+End Property
+
+Public Property Get ItemHeight() As Long
+Attribute ItemHeight.VB_Description = "Gets the height of individual items in
+ the TreeView."
+   ItemHeight = m_lItemHeight
+End Property
+Public Property Let ItemHeight(ByVal value As Long)
+   If Not (value = m_lItemHeight) Then
+      m_lItemHeight = value
+      SendMessageL m_hWnd, TVM_SETITEMHEIGHT, m_lItemHeight, 0
+      PropertyChanged "ItemHeight"
+   End If
+End Property
+
+Public Property Get LabelEdit() As Boolean
+Attribute LabelEdit.VB_Description = "Gets/sets whether items in the TreeView
+ can be edited or not."
+   LabelEdit = m_bLabelEdit
+End Property
+Public Property Let LabelEdit(ByVal value As Boolean)
+   If Not (m_bLabelEdit = value) Then
+      m_bLabelEdit = value
+      pSetStyles
+      PropertyChanged "LabelEdit"
+   End If
+End Property
+
+Public Property Get LineColor() As OLE_COLOR
+Attribute LineColor.VB_Description = "Gets/sets the colour of the lines in the
+ TreeView."
+   LineColor = m_oLineColor
+End Property
+Public Property Let LineColor(ByVal value As OLE_COLOR)
+   If Not (value = m_oLineColor) Then
+      m_oLineColor = value
+      SendMessageL m_hWnd, TVM_SETLINECOLOR, 0, TranslateColor(value)
+      PropertyChanged "LineColor"
+   End If
+End Property
+
+Public Property Get LineStyle() As ETreeViewLineStyleConstants
+Attribute LineStyle.VB_Description = "Gets/sets the line style used in the
+ TreeView."
+   LineStyle = m_eLineStyle
+End Property
+Public Property Let LineStyle(ByVal value As ETreeViewLineStyleConstants)
+   If Not (m_eLineStyle = value) Then
+      m_eLineStyle = value
+      pSetStyles
+      PropertyChanged "LineStyle"
+   End If
+End Property
+
+Public Property Get DragInsertNode() As cTreeViewNode
+Attribute DragInsertNode.VB_Description = "During a drag-drop operation,
+ returns the node associated with the current drag-drop location."
+   If Not (m_hItemInsert = 0) Then
+      Dim lID As Long
+      lID = fIDForhItem(m_hItemInsert)
+      If Not (lID = 0) Then
+         Dim cNod As New cTreeViewNode
+         cNod.fInit Me, lID
+         Set DragInsertNode = cNod
+      End If
+   End If
+End Property
+
+Public Property Get DragInsertAbove() As Boolean
+Attribute DragInsertAbove.VB_Description = "During drag-drop operations, gets
+ whether the current drag-drop location is above the DragInsertMode or not."
+   DragInsertAbove = m_bItemInsertAbove
+End Property
+
+Public Property Get NodeFromDragData(Data As DataObject) As cTreeViewNode
+Attribute NodeFromDragData.VB_Description = "Gets the Node stored in the Data
+ parameter of an Ole Drag/Drop event, if any."
+Dim hItem As Long
+Dim lID As Long
+Dim lErr As Long
+Dim hwnd As Long
+Dim cNod As New cTreeViewNode
+
+   If (m_bStartDrag And Not (m_hDragItem = 0)) Then
+      lID = fIDForhItem(m_hDragItem)
+      If Not (lID = 0) Then
+         cNod.fInit Me, lID
+         Set NodeFromDragData = cNod
+      End If
+   Else
+
+      hItem = hItemFromDragData(Data, hwnd)
+      If Not (hwnd = UserControl.hwnd) Then
+         If Not (IsWindow(hwnd) = 0) Then
+            Dim lPtr As Long
+            Dim ctl As vbalTreeView
+            lPtr = GetProp(hwnd, gcOBJECT_PROP)
+            Set ctl = ObjectFromPtr(lPtr)
+            Set NodeFromDragData = ctl.NodeFromDragData(Data)
+         End If
+      Else
+         lID = fIDForhItem(hItem)
+         If Not (lID = 0) Then
+            cNod.fInit Me, lID
+            Set NodeFromDragData = cNod
+         End If
+      End If
+      
+   End If
+   
+End Property
+
+Private Function hItemFromDragData(Data As DataObject, ByRef hwnd As Long) As
+ Long
+Dim hItem As Long
+Dim b() As Byte
+Dim ihWndPos As Long
+Dim ihItemPos As Long
+Dim hWndForItem As Long
+Dim lPtr As Long
+
+   hwnd = 0
+
+   On Error Resume Next
+   b = Data.GetData(&amp;HFFFFB044) ' gcOLE_DATA_FORMAT)
+   Dim s As String
+   On Error GoTo 0
+   s = b
+   
+   If Len(s) &gt; 6 Then
+      ihWndPos = InStr(s, "H:")
+      If (ihWndPos = 1) Then
+         ihItemPos = InStr(s, ";I:")
+         If (ihItemPos &gt;= 4) Then
+            On Error Resume Next
+            ' Try to interpret hWnd and Item:
+            hWndForItem = CLng(Mid(s, 3, ihItemPos - 3))
+            hItem = CLng(Mid(s, ihItemPos + 3))
+            On Error GoTo 0
+            
+            If Not (hWndForItem = 0) And Not (hItem = 0) Then
+               If (hWndForItem = UserControl.hwnd) Then
+                  ' This hItem belongs to me
+                  hwnd = UserControl.hwnd
+                  hItemFromDragData = hItem
+               Else
+                  ' It doesn't
+                  hwnd = hWndForItem
+                  hItemFromDragData = hItem
+               End If
+            End If
+         End If
+      End If
+   End If
+      
+End Function
+
+Public Property Get Nodes() As cTreeViewNodes
+Attribute Nodes.VB_Description = "Gets the root collection of nodes in the
+ TreeView."
+   Dim cN As New cTreeViewNodes
+   cN.fInit Me, 0
+   Set Nodes = cN
+End Property
+
+Public Property Get OLEDragMode() As OLEDragConstants
+Attribute OLEDragMode.VB_Description = "Gets/sets the drag mode for the
+ control."
+   OLEDragMode = m_eOLEDragMode
+End Property
+Public Property Let OLEDragMode(ByVal eMode As OLEDragConstants)
+   m_eOLEDragMode = eMode
+   PropertyChanged "OLEDragMode"
+End Property
+Public Property Get OLEDropMode() As OLEDropConstants
+Attribute OLEDropMode.VB_Description = "Gets/sets the OLE Drop Mode of the
+ control."
+   OLEDropMode = UserControl.OLEDropMode
+End Property
+Public Property Let OLEDropMode(ByVal eMode As OLEDropConstants)
+   UserControl.OLEDropMode = eMode
+   PropertyChanged "OLEDropMode"
+End Property
+Public Property Get ScaleMode() As ScaleModeConstants
+Attribute ScaleMode.VB_Description = "Gets the scale mode of the control."
+   ScaleMode = UserControl.ScaleMode
+End Property
+Public Property Let ScaleMode(ByVal eMode As ScaleModeConstants)
+   UserControl.ScaleMode = eMode
+   PropertyChanged "ScaleMode"
+End Property
+Public Property Get ScaleWidth() As Single
+Attribute ScaleWidth.VB_Description = "Gets the scaled width of the control."
+   ScaleWidth = UserControl.ScaleWidth
+End Property
+Public Property Get ScaleHeight() As Single
+Attribute ScaleHeight.VB_Description = "Gets the Scaled height of the control."
+   ScaleHeight = UserControl.ScaleHeight
+End Property
+Public Property Get PathSeparator() As String
+Attribute PathSeparator.VB_Description = "Gets the path separator used by the
+ FullPath property of a Node."
+   PathSeparator = m_sPathSeparator
+End Property
+Public Property Let PathSeparator(ByVal value As String)
+   If Not (StrComp(value, m_sPathSeparator) = 0) Then
+      m_sPathSeparator = value
+      PropertyChanged "PathSeparator"
+   End If
+End Property
+
+Public Property Get Scroll() As Boolean
+Attribute Scroll.VB_Description = "Raised when the control is scrolled."
+   Scroll = m_bScroll
+End Property
+Public Property Let Scroll(ByVal value As Boolean)
+   If Not (m_bScroll = value) Then
+      m_bScroll = value
+      pSetStyles
+      PropertyChanged "Scroll"
+   End If
+End Property
+
+Public Property Get SelectedItem() As cTreeViewNode
+Attribute SelectedItem.VB_Description = "Gets the selected node, if any,
+ otherwise returns Nothing."
+   Dim lID As Long
+   lID = fSelected()
+   If Not (lID = 0) Then
+      Dim cNod As New cTreeViewNode
+      cNod.fInit Me, lID
+      Set SelectedItem = cNod
+   End If
+End Property
+
+Public Property Get SingleSel() As Boolean
+Attribute SingleSel.VB_Description = "Gets/sets whether the only expanded nodes
+ should be the ones containing the selection."
+   SingleSel = m_bSingleSel
+End Property
+Public Property Let SingleSel(ByVal value As Boolean)
+   If Not (m_bSingleSel = value) Then
+      m_bSingleSel = value
+      pSetStyles
+      PropertyChanged "SingleSel"
+   End If
+End Property
+
+Public Property Get Sorted() As Boolean
+Attribute Sorted.VB_Description = "Not used.  See ChildSortMode and Sort in
+ cTreeViewNode."
+   '
+   ' NOT USED: use child sort mode instead...
+   '
+End Property
+Public Property Let Sorted(ByVal value As Boolean)
+   '
+   ' NOT USED: use child sort mode instead...
+   '
+End Property
+
+Public Property Let StateImageList(value As Variant)
+Attribute StateImageList.VB_Description = "Associates an image list with the
+ control used to draw State Images."
+Dim hIml As Long
+   '
+    If (VarType(value) = vbLong) Then
+      ' Assume a handle to an image list:
+      hIml = value
+   ElseIf (VarType(hIml) = vbObject) Then
+      ' Assume a VB image list:
+      On Error Resume Next
+      ' Get the image list initialised..
+      value.ListImages(1).Draw 0, 0, 0, 1
+      hIml = value.hImageList
+      If (Err.Number = 0) Then
+          ' OK
+      Else
+          gErr 4, "vbalTreeViewCtl"
+      End If
+      On Error GoTo 0
+   End If
+   
+   If Not (hIml = 0) Then
+      SendMessageL m_hWnd, TVM_SETIMAGELIST, TVSIL_STATE, hIml
+   End If
+   '
+End Property
+
+Public Property Get Style() As ETreeViewStyleConstants
+Attribute Style.VB_Description = "Gets/sets the style of the TreeView."
+   Style = m_eTreeViewStyle
+End Property
+Public Property Let Style(ByVal value As ETreeViewStyleConstants)
+   If (Not (m_eTreeViewStyle = value)) Then
+      m_eTreeViewStyle = value
+      pSetStyles
+      PropertyChanged "Style"
+   End If
+End Property
+
+Public Property Get Tag() As String
+Attribute Tag.VB_Description = "Gets/sets a string tag associated with the
+ control."
+   Tag = m_sTag
+End Property
+Public Property Let Tag(ByVal value As String)
+   If Not (StrComp(m_sTag, value) = 0) Then
+      Tag = m_sTag
+      PropertyChanged "Tag"
+   End If
+End Property
+
+Public Property Get TooltipBackColor() As OLE_COLOR
+Attribute TooltipBackColor.VB_Description = "Gets/sets the background colour of
+ tooltips displayed by the control."
+   TooltipBackColor = m_oTooltipBackColor
+End Property
+Public Property Let TooltipBackColor(ByVal value As OLE_COLOR)
+   If Not (value = m_oTooltipBackColor) Then
+      m_oTooltipBackColor = value
+      If Not (m_hWnd = 0) Then
+         Dim hWndTT As Long
+         hWndTT = SendMessage(m_hWnd, TVM_GETTOOLTIPS, 0, 0)
+         SendMessageL hWndTT, TTM_SETTIPBKCOLOR, TranslateColor(value), 0
+      End If
+      PropertyChanged "TooltipBackColor"
+   End If
+End Property
+
+Public Property Get TooltipForeColor() As OLE_COLOR
+Attribute TooltipForeColor.VB_Description = "Gets/sets the foreground colour of
+ tooltips displayed by the control."
+   TooltipForeColor = m_oTooltipForeColor
+End Property
+Public Property Let TooltipForeColor(ByVal value As OLE_COLOR)
+   If Not (value = m_oTooltipForeColor) Then
+      m_oTooltipForeColor = value
+      If Not (m_hWnd = 0) Then
+         Dim hWndTT As Long
+         hWndTT = SendMessage(m_hWnd, TVM_GETTOOLTIPS, 0, 0)
+         SendMessageL hWndTT, TTM_SETTIPTEXTCOLOR, TranslateColor(value), 0
+      End If
+      PropertyChanged "TooltipBackColor"
+   End If
+End Property
+
+Public Sub Refresh()
+Attribute Refresh.VB_Description = "Refreshes the control."
+    UpdateWindow m_hWnd
+End Sub
+
+Friend Function TranslateAccelerator(lpMsg As VBOleGuids.MSG) As Long
+    TranslateAccelerator = S_FALSE
+    If m_hWnd &lt;&gt; 0 Then
+        ' Here you can modify the response to the key down
+        ' accelerator command using the values in lpMsg.  This
+        ' can be used to capture Tabs, Returns, Arrows etc.
+        ' Just process the message as required and return S_OK.
+        If lpMsg.message = WM_KEYDOWN Or lpMsg.message = WM_KEYUP Then
+            Select Case lpMsg.wParam And &amp;HFFFF&amp;
+            Case vbKeyUp, vbKeyDown, vbKeyLeft, vbKeyRight, vbKeyPageDown,
+             vbKeyPageUp, vbKeyHome, vbKeyEnd, vbKeyReturn
+                SendMessageL m_hWnd, lpMsg.message, lpMsg.wParam, lpMsg.lParam
+                TranslateAccelerator = S_OK
+            End Select
+        End If
+    End If
+End Function
+
+Friend Sub fRemove(ByVal lID As Long)
+Dim hItem As Long
+   hItem = m_colIDs.Item(CStr(lID))
+   SendMessageL m_hWnd, TVM_DELETEITEM, 0, hItem
+   ' The notification back to the control will
+   ' actually clear everything up during the delete
+End Sub
+
+Friend Sub fRemoveChildren(ByVal lID As Long)
+Dim hItem As Long
+Dim hItemChild As Long
+   hItem = m_colIDs.Item(CStr(lID))
+   hItemChild = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_CHILD, hItem)
+   Do While Not (hItemChild = 0)
+      SendMessageL m_hWnd, TVM_DELETEITEM, 0, hItemChild
+      hItemChild = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_CHILD, hItem)
+   Loop
+End Sub
+
+Friend Sub fRemoveAll()
+   ' Say -1 for the root to clear it all.
+   ShowWindow m_hWnd, SW_HIDE
+   SendMessageL m_hWnd, TVM_DELETEITEM, 0, TVI_ROOT
+   Set m_colData = New Collection
+   Set m_colKeys = New Collection
+   Set m_colIndexes = New Collection
+   Set m_colIDs = New Collection
+   ShowWindow m_hWnd, SW_SHOW
+End Sub
+
+Public Property Get NodeCount() As Long
+Attribute NodeCount.VB_Description = "Gets the number of nodes in the Tree."
+Dim lCount As Long
+   lCount = SendMessageL(m_hWnd, TVM_GETCOUNT, 0, 0)
+   If (lCount &lt; 0) Then
+      lCount = &amp;HFFFF&amp; + lCount ' KB Q182231
+   End If
+   NodeCount = lCount
+End Property
+
+Friend Property Get fCount(ByVal lID As Long)
+Dim iCount As Long
+Dim hItem As Long
+Dim lErr As Long
+Dim rel As Long
+   
+   On Error Resume Next
+   hItem = m_colIDs(CStr(lID))
+   lErr = Err.Number
+   On Error GoTo 0
+   If (lErr = 0) Then
+      rel = TVGN_CHILD
+      Do While Not (hItem = 0)
+         hItem = SendMessageL(m_hWnd, TVM_GETNEXTITEM, rel, hItem)
+         If Not (hItem = 0) Then
+            iCount = iCount + 1
+         End If
+         rel = TVGN_NEXT
+      Loop
+      fCount = iCount
+   End If
+   
+End Property
+
+Friend Function fIDForIndex(Index As Variant) As Long
+Dim lID As Long
+Dim cCast As cTreeViewNode
+Dim hItem As Long
+
+   If TypeOf Index Is cTreeViewNode Then
+      Set cCast = Index
+      lID = cCast.ID
+   ElseIf (IsNumeric(Index)) Then
+      ' This returns the node by
+      ' the order added.  Otherwise, you
+      ' need to enumerate the nodes and
+      ' that is slow (not that this isn't
+      ' slow already)
+      hItem = m_colIndexes(Index)
+      If Not (hItem = 0) Then
+         lID = fIDForhItem(hItem)
+      End If
+   Else
+      ' a key
+      hItem = m_colIndexes(CStr(Index))
+      If Not (hItem = 0) Then
+         lID = fIDForhItem(hItem)
+      End If
+   End If
+   fIDForIndex = lID
+End Function
+Friend Function fNumericIndexInSubTree(ByVal lID As Long) As Long
+Dim hItem As Long
+Dim hItemParent As Long
+Dim hItemTest As Long
+Dim lErr As Long
+Dim rel As Long
+Dim lCount As Long
+
+   
+   On Error Resume Next
+   hItem = m_colIDs(CStr(lID))
+   lErr = Err.Number
+   On Error GoTo 0
+   If (lErr = 0) Then
+      hItemParent = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_PARENT, hItem)
+   
+      hItemTest = hItemParent
+      rel = TVGN_CHILD
+      Do
+         hItemTest = SendMessageL(m_hWnd, TVM_GETNEXTITEM, rel, hItemTest)
+         lCount = lCount + 1
+         If (hItemTest = hItem) Then
+            fNumericIndexInSubTree = lCount
+            Exit Do
+         Else
+            rel = TVGN_NEXT
+         End If
+      Loop While Not hItemTest = 0
+   End If
+
+End Function
+Friend Function fIDForNumericIndexInSubTree(ByVal lIDParent As Long, ByVal
+ iIndex As Long) As Long
+Dim hItem As Long
+Dim hItemParent As Long
+Dim iCount As Long
+Dim lErr As Long
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim rel As Long
+
+   On Error Resume Next
+   hItemParent = m_colIDs(CStr(lIDParent))
+   lErr = Err.Number
+   On Error GoTo 0
+   If (lErr = 0) Then
+      hItem = hItemParent
+      rel = TVGN_CHILD
+      Do While (iCount &lt;= iIndex) And Not (hItem = 0)
+         hItem = SendMessageL(m_hWnd, TVM_GETNEXTITEM, rel, hItem)
+         If Not (hItem = 0) Then
+            iCount = iCount + 1
+         End If
+         If (iCount = iIndex) Then
+            If Not (hItem = 0) Then
+                If pbGetItemInfo(hItem, tIS, lPtr) Then
+                  fIDForNumericIndexInSubTree = tIS.lID
+                  Exit Do
+               End If
+            End If
+         End If
+         rel = TVGN_NEXT
+      Loop
+   End If
+   
+End Function
+
+Friend Function fhItemForID(ByVal lID As Long) As Long
+Dim hItem As Long
+   On Error Resume Next
+   hItem = m_colIDs.Item(CStr(lID))
+   If (Not (Err.Number = 0)) Then
+      hItem = 0
+   End If
+   On Error GoTo 0
+   fhItemForID = hItem
+End Function
+
+Friend Function fIDForhItem(ByVal hItem As Long) As Long
+    Dim tIS As tTreeViewInfoStore
+    Dim lPtr As Long
+    If pbGetItemInfo(hItem, tIS, lPtr) Then
+        fIDForhItem = tIS.lID
+    End If
+End Function
+
+Friend Function fParentContainsItem(ByVal lParentID As Long, ByVal lID As Long)
+ As Boolean
+
+End Function
+
+Friend Function fMoveNode( _
+      ByVal lID As Long, _
+      nodeRelative As cTreeViewNode, _
+      ByVal relation As ETreeViewRelationshipContants _
+   ) As Long
+   
+   ' Procedure is as follows:
+   
+   ' Recursively create duplicates of the node
+   ' until there are none left, then delete the
+   ' original, with the keys adjusted using a
+   ' random string.  Once complete, fix up
+   ' the keys by removing the random string
+Dim sRandomString  As String
+Dim lIDRelative As Long
+   
+   sRandomString = "TVMN" &amp; timeGetTime() &amp; ":"
+   lIDRelative = nodeRelative.fID
+   fMoveNode = recurseDuplicateAndMoveNode(lID, lIDRelative, relation,
+    sRandomString)
+   
+   
+End Function
+
+Private Function recurseDuplicateAndMoveNode( _
+      ByVal lID As Long, _
+      ByVal lIDRelative As Long, _
+      ByVal relation As ETreeViewRelationshipContants, _
+      ByVal sKeyTemp As String _
+   ) As Long
+Dim lIDNew As Long
+Dim lPtr As Long
+Dim lPtrTo As Long
+Dim hItemFrom As Long
+Dim hItemTo As Long
+Dim sKey As String
+Dim tIS As tTreeViewInfoStore
+Dim tISJunk As tTreeViewInfoStore
+Dim lIDChild As Long
+   
+   sKey = sKeyTemp &amp; fItemKey(lID)
+   hItemFrom = fhItemForID(lID)
+   ' Do the node itself:
+   lIDNew = fAdd(lIDRelative, relation, sKey, fItemText(lID), fItemImage(lID),
+    fItemSelectedImage(lID), , fItemBold(lID), fChildSortMode(lID))
+   hItemTo = fhItemForID(lIDNew)
+   
+
+   
+   ' Now do any children
+   lIDChild = fItemChild(lID)
+   Do While (lIDChild &gt; 0)
+      recurseDuplicateAndMoveNode lIDChild, lIDNew, etvwChild, sKeyTemp
+      lIDChild = fItemChild(lID)
+   Loop
+   
+   ' Remove the original node
+   fRemove lID
+   fItemKey(lIDNew) = Mid(sKey, Len(sKeyTemp) + 1)
+   
+   ' Return the new node
+   recurseDuplicateAndMoveNode = lIDNew
+   
+End Function
+
+Friend Function fAdd( _
+      ByVal lIDRelative As Long, _
+      ByVal relation As ETreeViewRelationshipContants, _
+      ByVal sKey As String, _
+      ByVal sText As String, _
+      Optional Image As Long = -1, _
+      Optional SelectedImage As Long = -1, _
+      Optional integralHeight As Long = 1, _
+      Optional Bold As Boolean = False, _
+      Optional ChildSortMode As ETreeViewChildrenSortMode = etvwNoSort _
+   ) As Long
+Dim TVIN As TVINSERTSTRUCT
+Dim hRelative As Long
+Dim hNew As Long
+Dim hItemPrev As Long
+Dim TVI As TVITEMEX
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim lID As Long
+Dim lErr As Long
+Dim sKeyAlready As String
+Dim lIDParent As Long
+Dim eParentSortMode As ETreeViewChildrenSortMode
+
+   ' Check validity of key
+   On Error Resume Next
+   sKeyAlready = m_colIndexes(sKey)
+   lErr = Err.Number
+   On Error GoTo 0
+   If (lErr = 0) Then
+      gErr 5, "vbalTreeView"
+      Exit Function
+   End If
+
+   lID = NextId
+    
+   ' By default, assume the new item will be a child of
+   ' the relative item.
+   If Not (lIDRelative = 0) Then
+      hRelative = m_colIDs(CStr(lIDRelative))
+   End If
+   
+   TVIN.hParent = hRelative
+   ' Set the mask to whatever's been specified.
+   If Image &gt;= 0 Then
+       TVIN.Item.mask = TVIN.Item.mask Or TVIF_IMAGE
+       If SelectedImage &lt; 0 Then
+           SelectedImage = Image
+           TVIN.Item.mask = TVIN.Item.mask Or TVIF_SELECTEDIMAGE
+       End If
+   End If
+   If SelectedImage &gt;= 0 Then
+       TVIN.Item.mask = TVIN.Item.mask Or TVIF_SELECTEDIMAGE
+   End If
+   If integralHeight Then
+       TVIN.Item.mask = TVIN.Item.mask Or TVIF_INTEGRAL
+   End If
+   TVIN.Item.mask = TVIN.Item.mask Or TVIF_STATE Or TVIF_TEXT Or TVIF_PARAM
+   ' Initialize the text buffer and buffer-length.
+   TVIN.Item.pszText = sText &amp; vbNullChar
+   TVIN.Item.cchTextMax = Len(sText) + 1
+   ' Set the other properties. If we didn't specify them,
+   ' it's okay because we only set the mask to what we
+   ' want. Gotta love that mask member.
+   If Image &gt;= 0 Then
+       TVIN.Item.iImage = Image
+   End If
+   If SelectedImage &gt;= 0 Then
+       TVIN.Item.iSelectedImage = SelectedImage
+   End If
+   TVIN.Item.iIntegral = integralHeight
+   TVIN.Item.stateMask = TVIS_BOLD
+   TVIN.Item.State = IIf(Bold, TVIS_BOLD, 0)
+   
+   If (relation = etvwFirst) Then
+       ' Or to insert it first under hRel.
+       TVIN.hInsertAfter = TVI_FIRST
+   ElseIf (relation = etvwLast) Then
+       ' Or even last, if you want.
+       TVIN.hInsertAfter = TVI_LAST
+   ElseIf (relation = etvwNext) Then
+       ' If it's Next, then set the parent to the
+       ' relative item's parent ...
+       TVIN.hParent = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_PARENT,
+        hRelative)
+       ' ... so we're brothers with it. Aw.
+       TVIN.hInsertAfter = hRelative
+   ElseIf (relation = etvwPrevious) Then
+      ' Find the previous item
+      hItemPrev = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_PREVIOUS,
+       hRelative)
+      If (hItemPrev = 0) Then
+         ' Same as first
+         TVIN.hParent = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_PARENT,
+          hRelative)
+         TVIN.hInsertAfter = TVI_FIRST
+      Else
+         ' next with previous item as relative
+         TVIN.hParent = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_PARENT,
+          hRelative)
+         TVIN.hInsertAfter = hItemPrev
+      End If
+   End If
+   TVIN.Item.lParam = lID
+   
+   ' Add that sucker to our control.
+   hNew = SendMessage(m_hWnd, TVM_INSERTITEM, 0, TVIN)
+   
+   If Not (hNew = 0) Then
+      
+      ' Allow the hItem to be looked up by ID
+      m_colIDs.Add hNew, CStr(lID)
+      ' Add the handle to our collection, so it can
+      ' be referenced by key.
+       m_colIndexes.Add hNew, sKey
+      ' And vice versa.
+      m_colKeys.Add sKey, CStr(hNew)
+      
+      ' Add the default members to the collections.
+      lPtr = isMalloc.Alloc(LenB(tIS))
+      tIS.hRel = hNew
+      tIS.bDoBackColor = False
+      tIS.bDoColor = False
+      tIS.eSortMode = ChildSortMode
+      tIS.bDoFont = False
+      tIS.ItemBackColor = m_oBackColor
+      tIS.ItemColor = m_oForeColor
+      tIS.ItemFont = 0 ' the default
+      tIS.lID = lID
+      CopyMemory ByVal lPtr, tIS, LenB(tIS)
+      m_colData.Add lPtr, CStr(hNew)
+      
+      ' If we've told the parent to sort, then sort.
+      lIDParent = fIDForhItem(TVIN.hParent)
+      If Not (lIDParent = 0) Then
+         eParentSortMode = fChildSortMode(lIDParent)
+         fSortChildren lIDParent, eParentSortMode
+      End If
+    
+      ' Return the id
+      fAdd = lID
+
+   End If
+    
+End Function
+
+' The item that's under a dragged item.
+Friend Property Get fDropTarget() As Long
+    fDropTarget = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_DROPHILITE, 0)
+End Property
+
+Friend Property Let fDropTarget(ByVal hItem As Long)
+    SendMessageL m_hWnd, TVM_SELECTITEM, TVGN_DROPHILITE, hItem
+End Property
+
+Friend Property Get fItemBackColor(ByVal lID As Long) As OLE_COLOR
+Dim hItem As Long
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+    
+   fItemBackColor = m_oBackColor
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If tIS.bDoBackColor Then
+         fItemBackColor = tIS.ItemBackColor
+      End If
+   End If
+   
+End Property
+
+Friend Property Let fItemBackColor(ByVal lID As Long, ByVal value As OLE_COLOR)
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+    
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If value = m_oBackColor Then
+         tIS.bDoBackColor = False
+      Else
+         tIS.bDoBackColor = True
+      End If
+      tIS.ItemBackColor = value
+      pbPutItemInfo tIS, lPtr
+   End If
+   
+End Property
+
+Friend Property Get fItemSelectedBackColor(ByVal lID As Long) As OLE_COLOR
+Dim hItem As Long
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+    
+   fItemSelectedBackColor = vbHighlight
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If tIS.bDoSelectedBackColor Then
+         fItemSelectedBackColor = tIS.ItemSelectedBackColor
+      End If
+   End If
+   
+End Property
+
+Friend Property Let fItemSelectedBackColor(ByVal lID As Long, ByVal value As
+ OLE_COLOR)
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+    
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If value = vbHighlight Or value = -1 Then
+         tIS.bDoSelectedBackColor = False
+      Else
+         tIS.bDoSelectedBackColor = True
+      End If
+      tIS.ItemSelectedBackColor = value
+      pbPutItemInfo tIS, lPtr
+   End If
+   
+End Property
+
+Friend Property Get fItemMouseOverBackColor(ByVal lID As Long) As OLE_COLOR
+Dim hItem As Long
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+    
+   fItemMouseOverBackColor = -1
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If tIS.bDoMouseOverBackColor Then
+         fItemMouseOverBackColor = tIS.ItemMouseOverBackColor
+      End If
+   End If
+   
+End Property
+
+Friend Property Let fItemMouseOverBackColor(ByVal lID As Long, ByVal value As
+ OLE_COLOR)
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+    
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If value = -1 Or value = vbWindowBackground Then
+         tIS.bDoMouseOverBackColor = False
+      Else
+         tIS.bDoMouseOverBackColor = True
+      End If
+      tIS.ItemMouseOverBackColor = value
+      pbPutItemInfo tIS, lPtr
+   End If
+   
+End Property
+
+Friend Property Get fItemSelectedMouseOverBackColor(ByVal lID As Long) As
+ OLE_COLOR
+Dim hItem As Long
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+    
+   fItemSelectedMouseOverBackColor = -1
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If tIS.bDoSelectedMouseOverBackColor Then
+         fItemSelectedMouseOverBackColor = tIS.ItemSelectedMouseOverBackColor
+      End If
+   End If
+   
+End Property
+
+Friend Property Let fItemSelectedMouseOverBackColor(ByVal lID As Long, ByVal
+ value As OLE_COLOR)
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+    
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If value = -1 Or value = vbHighlight Then
+         tIS.bDoSelectedMouseOverBackColor = False
+      Else
+         tIS.bDoSelectedMouseOverBackColor = True
+      End If
+      tIS.ItemSelectedMouseOverBackColor = value
+      pbPutItemInfo tIS, lPtr
+   End If
+   
+End Property
+
+Friend Property Get fItemSelectedNoFocusBackColor(ByVal lID As Long) As
+ OLE_COLOR
+Dim hItem As Long
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+    
+   fItemSelectedNoFocusBackColor = -1
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If tIS.bDoSelectedNoFocusBackColor Then
+         fItemSelectedNoFocusBackColor = tIS.ItemSelectedNoFocusBackColor
+      End If
+   End If
+   
+End Property
+
+Friend Property Let fItemSelectedNoFocusBackColor(ByVal lID As Long, ByVal
+ value As OLE_COLOR)
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+    
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If value = -1 Or value = vbButtonFace Then
+         tIS.bDoSelectedNoFocusBackColor = False
+      Else
+         tIS.bDoSelectedNoFocusBackColor = True
+      End If
+      tIS.ItemSelectedNoFocusBackColor = value
+      pbPutItemInfo tIS, lPtr
+   End If
+   
+End Property
+
+
+Friend Property Get fItemBold(ByVal lID As Long) As Boolean
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   fItemBold = pbIsState(hItem, TVIS_BOLD)
+End Property
+
+Friend Property Let fItemBold(ByVal lID As Long, ByVal value As Boolean)
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   pSetState hItem, TVIS_BOLD, value
+End Property
+
+
+
+Friend Property Get fItemChecked(ByVal lID As Long) As Boolean
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   m_itemStyle.stateMask = TVIS_STATEIMAGEMASK
+   pGetStyle hItem, TVIF_STATE
+   ' The state image is stored 12 bits above the rest,
+   ' (2 ^ 12 = &amp;H1000), so divide the rest out. Add one,
+   ' because state images are one-based (zero means no
+   ' image).
+   fItemChecked = CBool((m_itemStyle.State \ &amp;H1000) - 1)
+End Property
+
+Friend Property Let fItemChecked(ByVal lID As Long, ByVal value As Boolean)
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   m_itemStyle.stateMask = TVIS_STATEIMAGEMASK
+   pGetStyle hItem, TVIF_STATE
+   m_itemStyle.stateMask = TVIS_STATEIMAGEMASK
+   ' Get that one-based state image 12 bits up,
+   ' (2 ^ 12 = &amp;H1000).
+   m_itemStyle.State = (IIf(value, 2, 1) * &amp;H1000)
+   pSetIStyle hItem, TVIF_STATE
+End Property
+
+Friend Property Get fItemNoCheckBox(ByVal lID As Long) As Boolean
+Dim hItem As Long
+Dim iCheckState As Long
+   hItem = m_colIDs(CStr(lID))
+   m_itemStyle.stateMask = TVIS_STATEIMAGEMASK
+   pGetStyle hItem, TVIF_STATE
+   ' The state image is stored 12 bits above the rest,
+   ' (2 ^ 12 = &amp;H1000), so divide the rest out. Add one,
+   ' because state images are one-based (zero means no
+   ' image).
+   iCheckState = m_itemStyle.State \ &amp;H1000
+   fItemNoCheckBox = (iCheckState = 0)
+End Property
+
+Friend Property Let fItemNoCheckBox(ByVal lID As Long, ByVal value As Boolean)
+Dim hItem As Long
+Dim iCheckState As Long
+   hItem = m_colIDs(CStr(lID))
+   m_itemStyle.stateMask = TVIS_STATEIMAGEMASK
+   pGetStyle hItem, TVIF_STATE
+   m_itemStyle.stateMask = TVIS_STATEIMAGEMASK
+   ' Get that one-based state image 12 bits up,
+   ' (2 ^ 12 = &amp;H1000).
+   iCheckState = m_itemStyle.State \ &amp;H1000
+   If (value) Then
+      If (iCheckState &lt;&gt; 0) Then
+         m_itemStyle.State = 0
+         pSetIStyle hItem, TVIF_STATE
+      End If
+   Else
+      If (iCheckState = 0) Then
+         m_itemStyle.State = &amp;H1000
+         pSetIStyle hItem, TVIF_STATE
+      End If
+   End If
+End Property
+
+
+Friend Property Get fItemForeColor(ByVal lID As Long) As OLE_COLOR
+Dim hItem As Long
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+
+   fItemForeColor = m_oForeColor
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If tIS.bDoColor Then
+         fItemForeColor = tIS.ItemColor
+      End If
+   End If
+   
+End Property
+
+Friend Property Let fItemForeColor(ByVal lID As Long, ByVal value As OLE_COLOR)
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+   
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If value = m_oForeColor Or value = -1 Then
+         tIS.bDoColor = False
+      Else
+         tIS.bDoColor = True
+      End If
+      tIS.ItemColor = value
+      pbPutItemInfo tIS, lPtr
+   End If
+   
+End Property
+
+Friend Property Get fItemMouseOverColor(ByVal lID As Long) As OLE_COLOR
+Dim hItem As Long
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+   
+   fItemMouseOverColor = vbHighlight
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If tIS.bDoMouseOverColor Then
+         fItemMouseOverColor = tIS.ItemMouseOverColor
+      End If
+    End If
+    
+End Property
+
+Friend Property Let fItemMouseOverColor(ByVal lID As Long, ByVal value As
+ OLE_COLOR)
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+    
+    hItem = m_colIDs(CStr(lID))
+    If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If value = vbHighlight Or value = -1 Or value = &amp;H800000 Then
+         tIS.bDoMouseOverColor = False
+      Else
+         tIS.bDoMouseOverColor = True
+      End If
+      tIS.ItemMouseOverColor = value
+      pbPutItemInfo tIS, lPtr
+    End If
+    
+End Property
+
+Friend Property Get fItemSelectedColor(ByVal lID As Long) As OLE_COLOR
+Dim hItem As Long
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+   
+   fItemSelectedColor = vbHighlight
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If tIS.bDoSelectedColor Then
+         fItemSelectedColor = tIS.ItemSelectedColor
+      End If
+    End If
+    
+End Property
+
+Friend Property Let fItemSelectedColor(ByVal lID As Long, ByVal value As
+ OLE_COLOR)
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+    
+    hItem = m_colIDs(CStr(lID))
+    If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If value = vbHighlightText Or value = -1 Then
+         tIS.bDoSelectedColor = False
+      Else
+         tIS.bDoSelectedColor = True
+      End If
+      tIS.ItemSelectedColor = value
+      pbPutItemInfo tIS, lPtr
+    End If
+    
+End Property
+
+
+Friend Property Get fItemSelectedMouseOverColor(ByVal lID As Long) As OLE_COLOR
+Dim hItem As Long
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+    
+   fItemSelectedMouseOverColor = -1
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If tIS.bDoSelectedMouseOverColor Then
+         fItemSelectedMouseOverColor = tIS.ItemSelectedMouseOverColor
+      End If
+   End If
+   
+End Property
+
+Friend Property Let fItemSelectedMouseOverColor(ByVal lID As Long, ByVal value
+ As OLE_COLOR)
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+    
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If value = -1 Or value = vbHighlightText Then
+         tIS.bDoSelectedMouseOverColor = False
+      Else
+         tIS.bDoSelectedMouseOverColor = True
+      End If
+      tIS.ItemSelectedMouseOverColor = value
+      pbPutItemInfo tIS, lPtr
+   End If
+   
+End Property
+
+Friend Property Get fItemSelectedNoFocusColor(ByVal lID As Long) As OLE_COLOR
+Dim hItem As Long
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+    
+   fItemSelectedNoFocusColor = -1
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If tIS.bDoSelectedNoFocusColor Then
+         fItemSelectedNoFocusColor = tIS.ItemSelectedNoFocusColor
+      End If
+   End If
+   
+End Property
+
+Friend Property Let fItemSelectedNoFocusColor(ByVal lID As Long, ByVal value As
+ OLE_COLOR)
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+    
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If value = -1 Or value = vbWindowText Then
+         tIS.bDoSelectedNoFocusColor = False
+      Else
+         tIS.bDoSelectedNoFocusColor = True
+      End If
+      tIS.ItemSelectedNoFocusColor = value
+      pbPutItemInfo tIS, lPtr
+   End If
+   
+End Property
+Friend Sub fItemRect(ByVal lID As Long, ByRef lLeft As Long, ByRef lTop As
+ Long, ByRef lRight As Long, ByRef lBottom As Long)
+Dim lR As Long
+Dim tR As RECT
+   tR.left = m_colIDs(CStr(lID))
+   lR = SendMessage(m_hWnd, TVM_GETITEMRECT, 0, tR)
+   lLeft = tR.left
+   lTop = tR.top
+   lRight = tR.right
+   lBottom = tR.bottom
+End Sub
+
+Friend Property Get fItemCut(ByVal lID As Long) As Boolean
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   fItemCut = pbIsState(hItem, TVIS_CUT)
+End Property
+
+Friend Property Let fItemCut(ByVal lID As Long, ByVal value As Boolean)
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   pSetState hItem, TVIS_CUT, value
+End Property
+
+Friend Property Get fItemData(ByVal lID As Long) As Long
+Dim hItem As Long
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      fItemData = tIS.ItemData
+   End If
+   
+End Property
+Friend Property Let fItemData(ByVal lID As Long, ByVal value As Long)
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+    
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      tIS.ItemData = value
+      pbPutItemInfo tIS, lPtr
+   End If
+
+End Property
+
+Friend Property Get fItemNumber(ByVal lID As Long) As Long
+Dim hItem As Long
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      fItemNumber = tIS.ItemNumber
+   End If
+   
+End Property
+Friend Property Let fItemNumber(ByVal lID As Long, ByVal value As Long)
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+    
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      tIS.ItemNumber = value
+      pbPutItemInfo tIS, lPtr
+   End If
+
+End Property
+
+
+Friend Property Get fItemDropHighlight(ByVal lID As Long) As Boolean
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   fItemDropHighlight = pbIsState(hItem, TVIS_DROPHILITED)
+End Property
+
+Friend Property Let fItemDropHighlight(ByVal lID As Long, ByVal value As
+ Boolean)
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   pSetState hItem, TVIS_DROPHILITED, value
+End Property
+
+
+Friend Property Get fItemExpanded(ByVal lID As Long) As Boolean
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   fItemExpanded = pbIsState(hItem, TVIS_EXPANDED)
+End Property
+
+' The next sibling of an item.
+Friend Property Get fItemNextSibling(ByVal lID As Long) As Long
+Dim hItem As Long
+Dim hItemNext As Long
+   hItem = m_colIDs(CStr(lID))
+   hItemNext = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_NEXT, hItem)
+   If Not hItemNext = 0 Then
+      fItemNextSibling = fIDForhItem(hItemNext)
+   End If
+End Property
+' The previous sibling of an item.
+Friend Property Get fItemPreviousSibling(ByVal lID As Long) As Long
+Dim hItem As Long
+Dim hItemPrev As Long
+   hItem = m_colIDs(CStr(lID))
+   hItemPrev = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_PREVIOUS, hItem)
+   If Not hItemPrev = 0 Then
+      fItemPreviousSibling = fIDForhItem(hItemPrev)
+   End If
+End Property
+
+' The first child item of an item.
+Friend Property Get fItemChild(ByVal lID As Long) As Long
+Dim hItem As Long
+Dim hItemChild As Long
+   hItem = m_colIDs(CStr(lID))
+   hItemChild = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_CHILD, hItem)
+   If Not (hItemChild = 0) Then
+      fItemChild = fIDForhItem(hItemChild)
+   End If
+End Property
+
+Friend Property Get fItemLastSibling(ByVal lID As Long) As Long
+Dim hItem As Long
+Dim hItemTest As Long
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+   hItem = m_colIDs(CStr(lID))
+   hItemTest = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_NEXT, hItem)
+   Do While Not (hItemTest = 0)
+      hItem = hItemTest
+      hItemTest = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_NEXT, hItem)
+   Loop
+   If Not (hItem = 0) Then
+      If pbGetItemInfo(hItem, tIS, lPtr) Then
+         fItemLastSibling = tIS.lID
+      End If
+   End If
+End Property
+
+' The parent of an item.
+Friend Function fItemParent(ByVal lID As Long) As Long
+Dim hItem As Long
+Dim hItemParent As Long
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+   hItem = m_colIDs(CStr(lID))
+   hItemParent = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_PARENT, hItem)
+   If pbGetItemInfo(hItemParent, tIS, lPtr) Then
+      fItemParent = tIS.lID
+   End If
+End Function
+
+
+Friend Property Get fItemHasChildren(ByVal lID As Long) As Boolean
+'DLL (Fixed!): Aggggg. The following code is just reading the
+' ItemPlusMinus property. So if you change that property,
+' this is useless.
+'    GetStyle Item, TVIF_CHILDREN
+'    ' If the cChildren member is 1, then it has children,
+'    ' otherwise, it's zero. It's not the *count* of children.
+'    ItemHasChildren = CBool(ItemStyle.cChildren)
+'Since the above code sucks, we manually find if the
+' item's ItemChild property returns zero.
+    fItemHasChildren = CBool(fItemChild(lID))
+End Property
+
+Friend Property Get fItemImage(ByVal lID As Long) As Long
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   pGetStyle hItem, TVIF_IMAGE
+   fItemImage = m_itemStyle.iImage
+End Property
+
+Friend Property Let fItemImage(ByVal lID As Long, ByVal value As Long)
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   pGetStyle hItem, TVIF_IMAGE
+   m_itemStyle.iImage = value
+   pSetIStyle hItem, TVIF_IMAGE
+End Property
+
+Friend Property Get fItemSelectedImage(ByVal lID As Long) As Long
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   pGetStyle hItem, TVIF_SELECTEDIMAGE
+   fItemSelectedImage = m_itemStyle.iSelectedImage
+End Property
+
+Friend Property Let fItemSelectedImage(ByVal lID As Long, ByVal value As Long)
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   pGetStyle hItem, TVIF_SELECTEDIMAGE
+   m_itemStyle.iSelectedImage = value
+   pSetIStyle hItem, TVIF_IMAGE Or TVIF_SELECTEDIMAGE
+End Property
+
+Friend Property Get fItemIndex(Key As String) As Long
+   fItemIndex = m_colIndexes(Key)
+End Property
+
+Friend Property Get fItemIntegralHeight(ByVal lID As Long) As Long
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   pGetStyle hItem, TVIF_INTEGRAL
+   fItemIntegralHeight = m_itemStyle.iIntegral
+End Property
+
+Friend Property Let fItemIntegralHeight(ByVal lID As Long, ByVal value As Long)
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   pGetStyle hItem, TVIF_INTEGRAL
+   m_itemStyle.iIntegral = value
+   pSetIStyle hItem, TVIF_INTEGRAL
+End Property
+
+
+Friend Property Get fItemKey(ByVal lID As Long) As String
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   ' Get the key value out of our collection.
+   fItemKey = m_colKeys(CStr(hItem))
+End Property
+
+Friend Property Let fItemKey(ByVal lID As Long, ByVal value As String)
+Dim hItem As Long
+Dim lErr As Long
+Dim sKeyAlready As String
+   
+   ' Check validity of key
+   On Error Resume Next
+   sKeyAlready = m_colIndexes(value)
+   lErr = Err.Number
+   On Error GoTo 0
+   If (lErr = 0) Then
+      gErr 5, "vbalTreeView"
+      Exit Property
+   End If
+   
+   hItem = m_colIDs(CStr(lID))
+   
+   m_colIndexes.Remove m_colKeys(CStr(hItem))
+    m_colIndexes.Add hItem, value
+   
+   m_colKeys.Remove CStr(hItem)
+   m_colKeys.Add value, CStr(hItem)
+   
+End Property
+
+Friend Property Get fItemPlusMinus(ByVal lID As Long) As Boolean
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   pGetStyle hItem, TVIF_CHILDREN
+   ' The cChildren member is only 1 or 0, saying whether
+   ' it has children or not. But it actually means
+   ' whether we should show the PlusMinus or not.
+   fItemPlusMinus = CBool(m_itemStyle.cChildren)
+End Property
+
+Friend Property Let fItemPlusMinus(ByVal lID As Long, ByVal value As Boolean)
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   pGetStyle hItem, TVIF_CHILDREN
+   ' cChildren is 1 or 0, saying whether it has children.
+   ' If we fake it out, and tell it has children (or
+   ' doesn't), we can control whether or not to show
+   ' the PlusMinus without adding or deleting items.
+   m_itemStyle.cChildren = Abs(CLng(value))
+   pSetIStyle hItem, TVIF_CHILDREN
+End Property
+
+Friend Property Get fItemPath(ByVal lID As Long) As String
+Dim hItem As Long
+Dim sRet As String
+   hItem = m_colIDs(CStr(lID))
+   Do While Not (hItem = 0)
+      pGetStyle hItem, TVIF_TEXT
+      If (Len(sRet) &gt; 0) Then
+         sRet = m_sPathSeparator &amp; sRet
+      End If
+      sRet = m_itemStyle.pszText &amp; sRet
+      hItem = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_PARENT, hItem)
+   Loop
+   fItemPath = sRet
+End Property
+
+Friend Property Get fItemTag(ByVal lID As Long) As String
+Dim sTag As String
+   On Error Resume Next
+   sTag = m_colTags(CStr(lID))
+   fItemTag = sTag
+End Property
+Friend Property Let fItemTag(ByVal lID As Long, ByVal sTag As String)
+   On Error Resume Next
+   m_colTags.Remove CStr(lID)
+   On Error GoTo 0
+   m_colTags.Add sTag, CStr(lID)
+End Property
+
+Friend Property Get fItemText(ByVal lID As Long) As String
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   pGetStyle hItem, TVIF_TEXT
+   fItemText = m_itemStyle.pszText
+End Property
+
+Friend Property Let fItemText(ByVal lID As Long, ByVal value As String)
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   pGetStyle hItem, TVIF_TEXT
+   pSetIStyle hItem, TVIF_TEXT, value
+End Property
+
+' The Selected item.
+Friend Property Get fSelected() As Long
+Dim hItem As Long
+    hItem = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_CARET, fRootItem)
+    fSelected = fIDForhItem(hItem)
+End Property
+
+Friend Sub fSelectItem(ByVal lID As Long, ByVal State As Boolean)
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   If (State) Then
+      SendMessageL m_hWnd, TVM_SELECTITEM, TVGN_CARET, hItem
+   End If
+End Sub
+
+Friend Function fScale(xPixels As Long, yPixels As Long, X As Single, Y As
+ Single)
+   X = ScaleX(xPixels, vbPixels, UserControl.ScaleMode)
+   Y = ScaleY(yPixels, vbPixels, UserControl.ScaleMode)
+End Function
+Friend Function fUnScale(X As Single, Y As Single, xPixels As Long, yPixels As
+ Long)
+   xPixels = ScaleX(X, UserControl.ScaleMode, vbPixels)
+   yPixels = ScaleY(Y, UserControl.ScaleMode, vbPixels)
+End Function
+
+' The root item.
+Friend Property Get fRootItem() As Long
+Dim hItem As Long
+   hItem = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_ROOT, 0)
+   fRootItem = fIDForhItem(hItem)
+End Property
+
+' The first visible item in the control.
+Friend Property Get fFirstVisible() As Long
+Dim hItem As Long
+    hItem = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_FIRSTVISIBLE, 0)
+    fFirstVisible = fIDForhItem(hItem)
+End Property
+Friend Property Let fFirstVisible(ByVal lID As Long)
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   SendMessageL m_hWnd, TVM_SELECTITEM, TVGN_FIRSTVISIBLE, hItem
+End Property
+
+' The previous *visible* item in a control, not the
+' previous *sibling*.
+Friend Property Get fItemPreviousVisible(ByVal lID As Long) As Long
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   fItemPreviousVisible = SendMessageL(m_hWnd, TVM_GETNEXTITEM,
+    TVGN_PREVIOUSVISIBLE, hItem)
+End Property
+
+' The next *visible* item in a control, not the next
+' *sibling*.
+Friend Property Get fItemNextVisible(ByVal lID As Long) As Long
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   fItemNextVisible = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_NEXTVISIBLE,
+    hItem)
+End Property
+
+Friend Property Let fItemExpanded(ByVal lID As Long, ByVal value As Boolean)
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   ' It won't work right if you just try to set the Expanded state.
+   ' You must do it manually.
+   If value Then
+      SendMessageL m_hWnd, TVM_EXPAND, TVE_EXPAND, hItem
+   Else
+      SendMessageL m_hWnd, TVM_EXPAND, TVE_COLLAPSE, hItem
+   End If
+End Property
+
+Friend Function fItemEnsureVisible(ByVal lID As Long) As Boolean
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   ' Make sure an item is visible.
+   SendMessageL m_hWnd, TVM_ENSUREVISIBLE, 0, hItem
+End Function
+
+Friend Function fItemVisible(ByVal lID As Long) As Boolean
+Dim tR As RECT
+Dim lR As Long
+   tR.left = m_colIDs(CStr(lID))
+   lR = SendMessage(m_hWnd, TVM_GETITEMRECT, 0, tR)
+   fItemVisible = Not (lR = 0)
+End Function
+
+Friend Sub fItemToggle(ByVal lID As Long)
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   ' Expand if collapsed, collapse if Expanded.
+   ' They go together like a horse and carriage.
+   SendMessageL m_hWnd, TVM_EXPAND, TVE_TOGGLE, hItem
+End Sub
+
+
+Friend Sub fItemEndEdit(ByVal lID As Long, ByVal saveChanges As Boolean)
+   ' Automagically *stop* editing an item. And save
+   ' the changes if you feel like it.
+   SendMessageL m_hWnd, TVM_ENDEDITLABELNOW, Abs(saveChanges), 0
+End Sub
+
+Friend Sub fItemStartEdit(ByVal lID As Long)
+Dim hItem As Long
+   'SetFocusAPI m_hWnd
+   hItem = m_colIDs(CStr(lID))
+   ' Automagically start editing an item.
+   SendMessageL m_hWnd, TVM_EDITLABEL, 0, hItem
+End Sub
+
+Friend Property Get fItemExpandedOnce(ByVal lID As Long) As Boolean
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   fItemExpandedOnce = pbIsState(hItem, TVIS_EXPANDEDONCE)
+End Property
+
+Friend Property Get fItemExpandedPartial(ByVal lID As Long) As Boolean
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   fItemExpandedPartial = pbIsState(hItem, TVIS_EXPANDED Or TVIS_EXPANDPARTIAL)
+End Property
+
+Friend Property Let fItemExpandedPartial(ByVal lID As Long, ByVal value As
+ Boolean)
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   pSetState hItem, TVIS_EXPANDPARTIAL, value
+End Property
+
+Friend Property Get fItemFont(ByVal lID As Long) As IFont
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+    
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If tIS.bDoFont Then
+         Set fItemFont = m_fntItem(tIS.ItemFont)
+      Else
+         Set fItemFont = Me.Font
+      End If
+   End If
+End Property
+
+Friend Property Let fItemFont(ByVal lID As Long, ByVal fnt As IFont)
+   pSetFont lID, fnt
+End Property
+
+Friend Property Set fItemFont(ByVal lID As Long, ByVal fnt As IFont)
+   pSetFont lID, fnt
+End Property
+
+Private Sub pSetFont(ByVal lID As Long, ByVal fnt As IFont)
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+Dim lFontIndex As Long
+   
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      If fnt Is Nothing Then
+         tIS.bDoFont = False
+      ElseIf fnt Is Me.Font Then
+         tIS.bDoFont = False
+      Else
+         lFontIndex = plAddFont(fnt)
+         tIS.bDoFont = True
+         tIS.ItemFont = lFontIndex
+      End If
+      pbPutItemInfo tIS, lPtr
+   End If
+   
+End Sub
+
+Private Function plAddFont(iFnt As IFont) As Long
+    
+   Dim i As Long
+   For i = 1 To m_lFontCount
+       ' Hmmm
+       With m_fntItem(i)
+           If .Name = iFnt.Name Then
+               If .Bold = iFnt.Bold Then
+                   If .Size = iFnt.Size Then
+                       If .Italic = iFnt.Italic Then
+                           If .Underline = iFnt.Underline Then
+                               If .Strikethrough = iFnt.Strikethrough Then
+                                   If .Charset = iFnt.Charset Then
+                                       plAddFont = i
+                                       Exit Function
+                                   End If
+                               End If
+                           End If
+                       End If
+                   End If
+               End If
+           End If
+       End With
+   Next i
+   
+   m_lFontCount = m_lFontCount + 1
+   ReDim Preserve m_fntItem(0 To m_lFontCount) As IFont
+   Set m_fntItem(m_lFontCount) = iFnt
+   plAddFont = m_lFontCount
+   
+End Function
+
+Friend Sub fSortChildren(ByVal lID As Long, ByVal eSortMode As
+ ETreeViewChildrenSortMode)
+   ' more efficient if you know you're adding a whole pile of items
+   ' to sort like this
+   m_eCurrentSortMode = eSortMode
+   If (eSortMode = etvwAlphabetic) Then
+      SendMessageL m_hWnd, TVM_SORTCHILDREN, 0, fhItemForID(lID)
+   ElseIf (eSortMode &gt; etvwAlphabetic) Then
+      Dim TVCB As TVSORTCB
+      TVCB.hParent = fhItemForID(lID)
+      TVCB.lpfnCompare = plAddressOf(AddressOf tvCustomSortProc)
+      TVCB.lParam = lID
+      Set m_TreeViewControl = Me
+      SendMessage m_hWnd, TVM_SORTCHILDRENCB, 0, TVCB
+      Set m_TreeViewControl = Nothing
+   End If
+   '
+End Sub
+
+Friend Property Get fChildSortMode(ByVal lID As Long) As
+ ETreeViewChildrenSortMode
+Dim hItem As Long
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      fChildSortMode = tIS.eSortMode
+   End If
+End Property
+
+Friend Property Let fChildSortMode(ByVal lID As Long, ByVal eSortMode As
+ ETreeViewChildrenSortMode)
+Dim hItem As Long
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      tIS.eSortMode = eSortMode
+      pbPutItemInfo tIS, lPtr
+   End If
+End Property
+
+Friend Property Get fDoBackColor(ByVal lID As Long) As Boolean
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      fDoBackColor = tIS.bDoBackColor
+   End If
+End Property
+
+Friend Property Let fDoBackColor(ByVal lID As Long, ByVal bState As Boolean)
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      tIS.bDoBackColor = bState
+      pbPutItemInfo tIS, lPtr
+   End If
+End Property
+
+Friend Property Get fDoForeColor(ByVal lID As Long) As Boolean
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      fDoForeColor = tIS.bDoColor
+   End If
+End Property
+
+Friend Property Let fDoForeColor(ByVal lID As Long, ByVal bState As Boolean)
+Dim tIS As tTreeViewInfoStore
+Dim lPtr As Long
+Dim hItem As Long
+   hItem = m_colIDs(CStr(lID))
+   If pbGetItemInfo(hItem, tIS, lPtr) Then
+      tIS.bDoColor = bState
+      pbPutItemInfo tIS, lPtr
+   End If
+End Property
+
+
+
+Private Sub OnDoubleClick(ByVal hItem As Long)
+   If Not (m_bTerminate) Then
+      RaiseEvent DblClick
+      If Not (hItem = 0) Then
+         Dim lID As Long
+         On Error Resume Next
+         lID = fIDForhItem(hItem)
+         If (Err.Number = 0 And Not (lID = 0)) Then
+            On Error GoTo 0
+            Dim cNod As New cTreeViewNode
+            cNod.fInit Me, lID
+            RaiseEvent NodeDblClick(cNod)
+            If (m_bLabelEdit) Then
+               fItemStartEdit lID
+            End If
+         End If
+      End If
+   End If
+End Sub
+
+Private Sub OnCheckStateChanged(ByVal hItem As Long)
+   
+   If Not (hItem = 0) And Not (m_bTerminate) Then
+      Dim lID As Long
+      On Error Resume Next
+      lID = fIDForhItem(hItem)
+      If (Err.Number = 0 And Not (lID = 0)) Then
+         On Error GoTo 0
+         Dim cNod As New cTreeViewNode
+         cNod.fInit Me, lID
+         RaiseEvent nodeCheck(cNod)
+      End If
+   End If
+   
+End Sub
+
+Private Sub OnClick()
+   '
+   If Not (m_bTerminate) Then
+      RaiseEvent Click
+   End If
+   '
+End Sub
+
+Private Sub OnBeginDrag(ByVal hItem As Long)
+   
+   If Not (hItem = 0) And Not (m_bTerminate) Then
+      Dim lID As Long
+      On Error Resume Next
+      lID = fIDForhItem(hItem)
+      If (Err.Number = 0 And Not (lID = 0)) Then
+         On Error GoTo 0
+         m_hDragItem = hItem
+         m_hDragOver = hItem
+         UserControl.OLEDrag
+      End If
+   End If
+   
+   
+End Sub
+
+Private Sub OnNodeClick(ByVal hItem As Long)
+   '
+   If Not (hItem = 0) And Not (m_bTerminate) Then
+      Dim lID As Long
+      On Error Resume Next
+      lID = fIDForhItem(hItem)
+      If (Err.Number = 0 And Not (lID = 0)) Then
+         On Error GoTo 0
+         Dim cNod As New cTreeViewNode
+         cNod.fInit Me, lID
+         RaiseEvent NodeClick(cNod)
+      End If
+   End If
+   '
+End Sub
+
+Private Sub OnRightClick(pt As POINTAPI, ByVal hItem As Long)
+   If Not (hItem = 0) And Not (m_bTerminate) Then
+      Dim lID As Long
+      On Error Resume Next
+      lID = fIDForhItem(hItem)
+      If (Err.Number = 0 And Not (lID = 0)) Then
+         On Error GoTo 0
+         Dim cNod As New cTreeViewNode
+         cNod.fInit Me, lID
+         RaiseEvent NodeRightClick(cNod)
+      End If
+      On Error GoTo 0
+   End If
+End Sub
+
+Private Sub OnBeforeLabelEdit(ByVal hItem As Long, ByRef cancel As Boolean)
+   '
+   If Not (hItem = 0) And Not (m_bTerminate) Then
+      Dim lID As Long
+      On Error Resume Next
+      lID = fIDForhItem(hItem)
+      If (Err.Number = 0 And Not (lID = 0)) Then
+         On Error GoTo 0
+         Dim cNod As New cTreeViewNode
+         cNod.fInit Me, lID
+         RaiseEvent BeforeLabelEdit(cNod, cancel)
+      End If
+      On Error GoTo 0
+   End If
+   '
+End Sub
+
+Private Sub OnAfterLabelEdit(ByVal hItem As Long, ByRef sText As String, ByRef
+ cancel As Boolean)
+   '
+   If Not (hItem = 0) And Not (m_bTerminate) Then
+      Dim lID As Long
+      On Error Resume Next
+      lID = fIDForhItem(hItem)
+      If (Err.Number = 0 And Not (lID = 0)) Then
+         On Error GoTo 0
+         Dim cNod As New cTreeViewNode
+         cNod.fInit Me, lID
+         RaiseEvent AfterLabelEdit(cNod, sText, cancel)
+      End If
+      On Error GoTo 0
+   End If
+   '
+End Sub
+
+Private Sub OnItemExpand(ByVal hItem As Long, ByVal actionCode As Long)
+   '
+   If Not (hItem = 0) And Not (m_bTerminate) Then
+      Dim lID As Long
+      On Error Resume Next
+      lID = fIDForhItem(hItem)
+      If (Err.Number = 0 And Not (lID = 0)) Then
+         On Error GoTo 0
+         Dim cNod As New cTreeViewNode
+         cNod.fInit Me, lID
+         If (actionCode = TVE_EXPAND Or actionCode = TVE_EXPANDPARTIAL) Then
+            RaiseEvent Expand(cNod)
+         Else
+            RaiseEvent Collapse(cNod)
+         End If
+      End If
+      On Error GoTo 0
+   End If
+   '
+End Sub
+
+Private Sub OnItemExpanding(ByVal hItem As Long, ByVal actionCode As Long,
+ ByRef cancel As Boolean)
+   '
+   If Not (hItem = 0) And Not (m_bTerminate) Then
+      Dim lID As Long
+      On Error Resume Next
+      lID = fIDForhItem(hItem)
+      If (Err.Number = 0 And Not (lID = 0)) Then
+         On Error GoTo 0
+         Dim cNod As New cTreeViewNode
+         cNod.fInit Me, lID
+         If (actionCode = TVE_EXPAND Or actionCode = TVE_EXPANDPARTIAL) Then
+            RaiseEvent BeforeExpand(cNod, cancel)
+         Else
+            RaiseEvent BeforeCollapse(cNod, cancel)
+         End If
+      End If
+      On Error GoTo 0
+   End If
+   
+   '
+End Sub
+
+Private Sub OnKeyDown(Key As Integer)
+   '
+   If Not (m_bTerminate) Then
+      Dim Shift As Integer
+      Shift = pShiftState()
+      RaiseEvent KeyDown(Key, Shift)
+   End If
+   '
+End Sub
+
+Private Sub OnKeyPress(ByVal Key As Long)
+   '
+   If Not (m_bTerminate) Then
+      Dim iKey As Integer
+      iKey = Key And &amp;H7FFF
+      RaiseEvent KeyPress(iKey)
+   End If
+   '
+End Sub
+
+
+Private Sub OnSelChanged()
+   '
+   If Not (m_bTerminate) Then
+      RaiseEvent SelectedNodeChanged
+   End If
+   '
+End Sub
+
+Private Sub OnSelChanging()
+   '
+   ' not used as this point
+   '
+End Sub
+
+Private Sub OnSingleExpand(ByVal hItem As Long, ByVal actionCode As Long)
+   '
+   ' not used at this point
+   '
+End Sub
+
+Private Sub OnMouseDown(ByVal iMsg As Long)
+Dim X As Single
+Dim Y As Single
+Dim iShift As Integer
+Dim iBtn As Integer
+Dim tP As POINTAPI
+   
+   If Not (m_bTerminate) Then
+      iBtn = pButton(iMsg)
+      iShift = pShiftState()
+      GetCursorPos tP
+      ScreenToClient m_hWnd, tP
+      fScale tP.X, tP.Y, X, Y
+      RaiseEvent MouseDown(iBtn, iShift, X, Y)
+   End If
+   
+End Sub
+
+Private Sub OnMouseMove()
+Dim X As Single
+Dim Y As Single
+Dim iShift As Integer
+Dim iBtn As Integer
+Dim tP As POINTAPI
+   
+   If Not (m_bTerminate) Then
+      iBtn = pButton(WM_MOUSEMOVE)
+      iShift = pShiftState()
+      GetCursorPos tP
+      ScreenToClient m_hWnd, tP
+      fScale tP.X, tP.Y, X, Y
+      RaiseEvent MouseMove(iBtn, iShift, X, Y)
+   End If
+
+End Sub
+
+Private Sub OnMouseUp(ByVal iMsg As Long)
+Dim X As Single
+Dim Y As Single
+Dim iShift As Integer
+Dim iBtn As Integer
+Dim tP As POINTAPI
+   
+   If Not (m_bTerminate) Then
+      iBtn = pButton(iMsg)
+      iShift = pShiftState()
+      GetCursorPos tP
+      ScreenToClient m_hWnd, tP
+      fScale tP.X, tP.Y, X, Y
+      RaiseEvent MouseDown(iBtn, iShift, X, Y)
+   End If
+   
+End Sub
+
+Friend Function OnCustomSort(ByVal lParam1 As Long, ByVal lParam2 As Long,
+ ByVal lParamParent As Long) As Long
+Dim iCompare As ETreeViewSortResult
+    
+    ' Check the sort mode of the parent:
+    Select Case m_eCurrentSortMode
+    Case etvwTagThenAlphabetic
+      Dim sTag1 As String
+      Dim sTag2 As String
+      On Error Resume Next
+      sTag1 = m_colTags(lParam1)
+      sTag2 = m_colTags(lParam2)
+      On Error GoTo 0
+      iCompare = StrComp(sTag1, sTag2)
+      If (iCompare = etvwItem1EqualsItem2) Then
+         iCompare = StrComp(fItemText(lParam1), fItemText(lParam2),
+          vbTextCompare)
+      End If
+      
+    Case etvwItemDataThenAlphabetic
+      Dim lItemData1 As Long
+      Dim lItemData2 As Long
+      lItemData1 = fItemData(lParam1)
+      lItemData2 = fItemData(lParam2)
+      If (lItemData1 &lt; lItemData2) Then
+         iCompare = etvwItem1PreceedsItem2
+      ElseIf (lItemData1 = lItemData2) Then
+         iCompare = StrComp(fItemText(lParam1), fItemText(lParam2),
+          vbTextCompare)
+      Else
+         iCompare = etvwItem1FollowsItem2
+      End If
+    
+    Case etvwCustomSortEvent
+    
+      Dim cNode1 As New cTreeViewNode
+      Dim cNode2 As New cTreeViewNode
+      Dim cNodeParent As New cTreeViewNode
+      
+      cNode1.fInit Me, lParam1
+      cNode2.fInit Me, lParam2
+      cNodeParent.fInit Me, lParamParent
+          
+      RaiseEvent CustomSort(cNode1, cNode2, cNodeParent, iCompare)
+      
+   End Select
+   
+   OnCustomSort = iCompare
+   
+End Function
+
+Private Function pButton(ByVal iMsg As Long) As Integer
+   Select Case iMsg
+   Case WM_LBUTTONDOWN, WM_LBUTTONUP
+      pButton = vbLeftButton
+   Case WM_RBUTTONDOWN, WM_RBUTTONUP
+      pButton = vbRightButton
+   Case WM_MBUTTONDOWN, WM_MBUTTONUP
+      pButton = vbMiddleButton
+   Case WM_MOUSEMOVE
+      Select Case True
+      Case GetAsyncKeyState(vbKeyLButton)
+         pButton = vbLeftButton
+      Case GetAsyncKeyState(vbKeyRButton)
+         pButton = vbRightButton
+      Case GetAsyncKeyState(vbKeyMButton)
+         pButton = vbMiddleButton
+      End Select
+   End Select
+End Function
+
+
+Private Function pShiftState() As Integer
+Dim lS As Integer
+   If GetAsyncKeyState(vbKeyShift) Then
+      lS = lS Or vbShiftMask
+   End If
+   If GetAsyncKeyState(vbKeyMenu) Then
+      lS = lS Or vbAltMask
+   End If
+   If GetAsyncKeyState(vbKeyControl) Then
+      lS = lS Or vbCtrlMask
+   End If
+   pShiftState = lS
+End Function
+
+
+Private Sub pDeleteItem(ByVal hItem As Long)
+Dim lPtr As Long
+Dim sKey As String
+Dim shItem As String
+Dim tIS As tTreeViewInfoStore
+Dim lID As Long
+
+   shItem = CStr(hItem)
+   ' Find this item in Data:
+   lPtr = m_colData(shItem)
+   If Not (lPtr = 0) Then
+      CopyMemory tIS, ByVal lPtr, LenB(tIS)
+      lID = tIS.lID
+      isMalloc.Free ByVal lPtr
+   End If
+   m_colData.Remove shItem
+   sKey = m_colKeys(shItem)
+   m_colIDs.Remove CStr(lID)
+   m_colKeys.Remove shItem
+   m_colIndexes.Remove sKey
+   On Error Resume Next
+   m_colTags.Remove CStr(lID)
+   
+End Sub
+
+Private Function pbGetItemInfo(ByVal hItem As Long, ByRef tIS As
+ tTreeViewInfoStore, ByRef lPtr As Long) As Boolean
+    On Error Resume Next
+    lPtr = m_colData(CStr(hItem))
+    If Not lPtr = 0 Then
+        CopyMemory tIS, ByVal lPtr, LenB(tIS)
+        pbGetItemInfo = True
+    End If
+End Function
+
+Private Function pbPutItemInfo(ByRef tIS As tTreeViewInfoStore, ByVal lPtr As
+ Long) As Boolean
+    If Not lPtr = 0 Then
+        If isMalloc.DidAlloc(ByVal lPtr) Then
+            CopyMemory ByVal lPtr, tIS, LenB(tIS)
+            pbPutItemInfo = True
+        End If
+    End If
+End Function
+
+Private Function pbIsState( _
+      ByVal hItem, _
+      ByVal value As Long, _
+      Optional UseAsMask As Boolean = False _
+   ) As Boolean
+   If UseAsMask Then
+      m_itemStyle.stateMask = value
+   End If
+   pGetStyle hItem, TVIF_STATE
+   pbIsState = ((m_itemStyle.State And value) = value)
+End Function
+
+Private Sub pSetState(ByVal hItem As Long, ByVal value As Long, ByVal Bool As
+ Boolean, Optional ByVal UseAsMask As Boolean = True)
+   If UseAsMask Then
+      m_itemStyle.stateMask = value
+   End If
+   pGetStyle hItem, TVIF_STATE
+   If Bool Then
+      m_itemStyle.State = m_itemStyle.State Or _
+         value
+   Else
+      m_itemStyle.State = m_itemStyle.State _
+         And (Not value)
+   End If
+   pSetIStyle hItem, TVIF_STATE
+End Sub
+
+' Retrieves the item info into ItemStyle module variable.
+Private Sub pGetStyle(ByVal hItem As Long, ByVal mask As Long)
+Dim s As String, e As Long
+   
+   s = String(260, Chr$(0))
+   m_itemStyle.hItem = hItem
+   m_itemStyle.mask = mask Or TVIF_HANDLE
+   m_itemStyle.pszText = s
+   m_itemStyle.cchTextMax = 260
+   SendMessage m_hWnd, TVM_GETITEM, 0, m_itemStyle
+   e = InStr(1, m_itemStyle.pszText, Chr$(0))
+   m_itemStyle.pszText = left$(m_itemStyle.pszText, e - 1)
+   m_itemStyle.cchTextMax = Len(m_itemStyle.pszText)
+   
+End Sub
+
+' SetIStyle, not to be confused with SetStyle.
+' Sets the item info from ItemStyle module variable.
+Private Sub pSetIStyle(ByVal hItem As Long, ByVal mask As Long, Optional ByVal
+ sText As String)
+Dim s As String, e As Long
+   s = String(260, Chr$(0))
+   m_itemStyle.hItem = hItem
+   m_itemStyle.mask = mask Or TVIF_HANDLE
+   m_itemStyle.pszText = sText &amp; vbNullChar
+   SendMessage m_hWnd, TVM_SETITEM, 0, m_itemStyle
+End Sub
+
+
+
+Private Function plSelectedTreeViewStyles() As Long
+Dim lStyle As Long
+
+   Select Case m_eTreeViewStyle
+   Case etvwTextOnly
+   Case etvwPictureText
+   Case etvwPlusMinusText
+      lStyle = lStyle Or TVS_HASBUTTONS
+   Case etvwPlusMinusPictureText
+      lStyle = lStyle Or TVS_HASBUTTONS
+   Case etvwTreelinesText
+      lStyle = lStyle Or TVS_HASLINES
+   Case etvwTreelinesPlusMinusText
+      lStyle = lStyle Or TVS_HASLINES Or TVS_HASBUTTONS
+   Case etvwTreelinesPictureText
+      lStyle = lStyle Or TVS_HASLINES
+   Case etvwTreelinesPlusMinusPictureText
+      lStyle = lStyle Or TVS_HASLINES Or TVS_HASBUTTONS
+   End Select
+   
+   If (m_bCheckBoxes) Then
+      lStyle = lStyle Or TVS_CHECKBOXES
+   End If
+   
+   If (m_bFullRowSelect) Then
+      lStyle = lStyle Or TVS_FULLROWSELECT
+   End If
+   
+   If Not (m_bScroll) Then
+      lStyle = lStyle Or TVS_NOSCROLL
+   End If
+   
+   If Not (m_bHideSelection) Then
+      lStyle = lStyle Or TVS_SHOWSELALWAYS
+   End If
+   
+   If (m_bHotTracking) Then
+      lStyle = lStyle Or TVS_TRACKSELECT
+   End If
+   
+   If (m_eLineStyle = etvwRootLines) Then
+      lStyle = lStyle Or TVS_LINESATROOT
+   End If
+   
+   If (m_bSingleSel) Then
+      lStyle = lStyle Or TVS_SINGLEEXPAND
+   End If
+   
+   If (m_bLabelEdit) Then
+      lStyle = lStyle Or TVS_EDITLABELS
+   End If
+   
+   plSelectedTreeViewStyles = lStyle
+   
+End Function
+
+
+Private Function TranslateColor(ByVal oClr As OLE_COLOR, _
+                        Optional hPal As Long = 0) As Long
+    ' Convert Automation color to Windows color
+    If OleTranslateColor(oClr, hPal, TranslateColor) Then
+        TranslateColor = CLR_INVALID
+    End If
+End Function
+
+Private Function plAddressOf(ByVal lPtr As Long)
+   plAddressOf = lPtr
+End Function
+
+Private Sub pSetStyles()
+   
+   If Not (m_hWnd = 0) Then
+      Dim lStyle As Long
+      lStyle = GetWindowLong(hwnd, GWL_STYLE)
+      
+      lStyle = lStyle And Not (TVS_CHECKBOXES Or TVS_DISABLEDRAGDROP Or _
+         TVS_EDITLABELS Or TVS_FULLROWSELECT Or TVS_HASBUTTONS Or _
+         TVS_HASLINES Or TVS_INFOTIP Or TVS_LINESATROOT Or TVS_NOSCROLL Or _
+         TVS_NOTOOLTIPS Or TVS_SHOWSELALWAYS Or TVS_SINGLEEXPAND Or _
+         TVS_TRACKSELECT)
+      lStyle = lStyle Or plSelectedTreeViewStyles()
+      
+      SetWindowLong m_hWnd, GWL_STYLE, lStyle
+      SetWindowPos m_hWnd, 0, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE Or
+       SWP_NOOWNERZORDER Or SWP_NOZORDER Or SWP_FRAMECHANGED
+   End If
+End Sub
+
+Private Sub pInitialize()
+Dim lStyle As Long
+Dim lExStyle As Long
+Dim tR As RECT
+Dim hTT As Long
+
+   pTerminate
+       
+   ' Create the treeview control, filled to our UserControl.
+    
+    ' Set the style to what we told it to be.
+   lStyle = WS_TABSTOP Or WS_VISIBLE Or WS_CHILD Or plSelectedTreeViewStyles()
+   lExStyle = GetWindowLong(UserControl.hwnd, GWL_EXSTYLE)
+   lExStyle = lExStyle And Not WS_EX_CLIENTEDGE
+   GetWindowRect UserControl.hwnd, tR
+   m_hWnd = CreateWindowEx(lExStyle, _
+      WC_TREEVIEW, "", _
+      lStyle, 0, 0, tR.right - tR.left, tR.bottom - tR.top, _
+      UserControl.hwnd, 0, App.hInstance, 0)
+    
+   If Not (m_hWnd = 0) Then
+      ' Tell the control to try to do version the right thing (message will
+       have no effect if
+      ' COMCTL32.DLL version &lt; 5.00):
+      ComCtlVersion m_lMajor, m_lMinor
+      SendMessageL m_hWnd, CCM_SETVERSION, m_lMajor, 0
+      ' Set the design-time properties.
+      SendMessageL m_hWnd, TVM_SETBKCOLOR, 0, TranslateColor(m_oBackColor)
+      SendMessageL m_hWnd, TVM_SETTEXTCOLOR, 0, TranslateColor(m_oForeColor)
+      SendMessageL m_hWnd, TVM_SETLINECOLOR, 0, TranslateColor(m_oLineColor)
+        
+      hTT = SendMessage(m_hWnd, TVM_GETTOOLTIPS, 0, 0)
+      SendMessage hTT, TTM_SETTIPBKCOLOR, TranslateColor(m_oTooltipBackColor), 0
+      SendMessage hTT, TTM_SETTIPTEXTCOLOR,
+       TranslateColor(m_oTooltipForeColor), 0
+      SendMessage m_hWnd, TVM_SETINDENT, m_lIndent, 0
+      
+      ' If it's too early to have set the properties,
+      ' ItemHeight will be zero, and ComCtl32.dll will
+      ' make a fuss about that, so set it to default (16).
+      SendMessage m_hWnd, TVM_SETITEMHEIGHT, m_lItemHeight, 0
+      
+      SendMessage m_hWnd, WM_SETFONT, m_fnt.hFont, 1
+      
+      UserControl.BorderStyle = m_eBorderStyle
+      
+      SetProp UserControl.hwnd, gcOBJECT_PROP, ObjPtr(Me)
+      
+      Dim hWndToolTips As Long
+      hWndToolTips = SendMessageL(m_hWnd, TVM_GETTOOLTIPS, 0, 0)
+      If (Not (hWndToolTips) = 0) Then
+         SetWindowPos hWndToolTips, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE Or
+          SWP_NOSIZE Or SWP_NOACTIVATE
+      End If
+      
+      On Error GoTo SkipUserMode ' If it's too early for Ambient.
+      If Not UserControl.Ambient.UserMode Then
+         ' Set up the sample items during design-time:
+         ' a root item, a parent item, and 2 children.
+         ' This is just a courtesy to the user. A nice one.
+         Dim TVIN As TVINSERTSTRUCT
+         Dim mRoot As Long
+         Dim mParent As Long
+         Dim i As Byte
+         
+         TVIN.hParent = TVI_ROOT
+         TVIN.hInsertAfter = TVI_FIRST
+         TVIN.Item.pszText = "Root Item" &amp; Chr(0)
+         TVIN.Item.cchTextMax = 10
+         TVIN.Item.mask = TVIF_TEXT
+         mRoot = SendMessage(m_hWnd, TVM_INSERTITEM, 0, TVIN)
+         
+         TVIN.hParent = mRoot
+         TVIN.Item.pszText = "Parent Item" &amp; Chr(0)
+         TVIN.Item.cchTextMax = 12
+         mParent = SendMessage(m_hWnd, TVM_INSERTITEM, 0, TVIN)
+         SendMessage m_hWnd, TVM_EXPAND, TVE_EXPAND, ByVal mRoot
+         For i = 1 To 2
+            TVIN.hParent = mParent
+            TVIN.Item.pszText = "Child Item" &amp; Chr(0)
+            TVIN.Item.cchTextMax = 11
+            SendMessage m_hWnd, TVM_INSERTITEM, 0, TVIN
+         Next
+         SendMessage m_hWnd, TVM_EXPAND, TVE_EXPAND, ByVal mParent
+         ' Sample items done. Yay.
+      End If
+      
+      UserControl_Resize
+      
+      If UserControl.Ambient.UserMode Then
+         If Not (m_bSubclassed) Then
+            ' Subclass it, so we can do sweet stuff.
+            m_hWndParent = UserControl.hwnd
+             
+            AttachMessage Me, m_hWndParent, WM_SETFOCUS
+            AttachMessage Me, m_hWnd, WM_SETFOCUS
+            AttachMessage Me, m_hWnd, WM_MOUSEACTIVATE
+            
+            AttachMessage Me, m_hWnd, WM_LBUTTONDOWN
+            AttachMessage Me, m_hWnd, WM_MBUTTONDOWN
+            AttachMessage Me, m_hWnd, WM_RBUTTONDOWN
+            AttachMessage Me, m_hWnd, WM_MOUSEMOVE
+            AttachMessage Me, m_hWnd, WM_LBUTTONUP
+            AttachMessage Me, m_hWnd, WM_MBUTTONUP
+            AttachMessage Me, m_hWnd, WM_RBUTTONUP
+            AttachMessage Me, m_hWnd, WM_KEYDOWN
+            
+            AttachMessage Me, m_hWnd, UM_CHECKSTATECHANGED
+            AttachMessage Me, m_hWnd, UM_STARTDRAG
+            
+
+            AttachMessage Me, m_hWndParent, WM_NOTIFY
+                          
+            m_bSubclassed = True
+             
+            Set m_cImageListDrag = New pcImageListDrag
+             
+            Set tmrDragScroll = New CTimer
+            Set tmrDragAutoExpand = New CTimer
+            Set tmrDragNoMore = New CTimer
+         End If
+      End If
+      
+   End If
+   Exit Sub
+
+SkipUserMode:
+    UserControl_Resize
+    Exit Sub
+    
+End Sub
+
+Private Sub pTerminate()
+
+   If Not (m_hWnd = 0) Then
+      
+      If Not (tmrDragScroll Is Nothing) Then
+         tmrDragScroll.Interval = 0
+      End If
+      Set tmrDragScroll = Nothing
+      If Not (tmrDragAutoExpand Is Nothing) Then
+         tmrDragAutoExpand.Interval = 0
+      End If
+      Set tmrDragAutoExpand = Nothing
+      
+      Set m_cImageListDrag = Nothing
+        
+      If Not (m_hIml = 0) Then
+         ImageList_Destroy m_hIml
+      End If
+        
+      m_bTerminate = True
+      If m_bSubclassed Then
+         ' Unsubclass, or we're screwed.
+         DetachMessage Me, m_hWndParent, WM_SETFOCUS
+         DetachMessage Me, m_hWnd, WM_SETFOCUS
+         DetachMessage Me, m_hWnd, WM_MOUSEACTIVATE
+          
+         DetachMessage Me, m_hWnd, WM_LBUTTONDOWN
+         DetachMessage Me, m_hWnd, WM_MBUTTONDOWN
+         DetachMessage Me, m_hWnd, WM_RBUTTONDOWN
+         DetachMessage Me, m_hWnd, WM_MOUSEMOVE
+         DetachMessage Me, m_hWnd, WM_LBUTTONUP
+         DetachMessage Me, m_hWnd, WM_MBUTTONUP
+         DetachMessage Me, m_hWnd, WM_RBUTTONUP
+         DetachMessage Me, m_hWnd, WM_KEYDOWN
+      
+         DetachMessage Me, m_hWnd, UM_CHECKSTATECHANGED
+         DetachMessage Me, m_hWnd, UM_STARTDRAG
+              
+      End If
+      
+      ' Clear the items, so we don't leak memory out
+      ' of our ears.
+      ' - SPM - We do this first to ensure we get delete item
+      ' events still (if the user does something that might
+      ' need to know about that).
+      SendMessageL m_hWnd, TVM_DELETEITEM, 0, TVI_ROOT
+      
+      If m_bSubclassed Then
+          ' Now we stop subclassing for notify:
+          DetachMessage Me, m_hWndParent, WM_NOTIFY
+          m_bSubclassed = False
+      End If
+      RemoveProp m_hWndParent, gcOBJECT_PROP
+      
+      ' Delete the window.
+      ShowWindow m_hWnd, SW_HIDE
+      SetParent m_hWnd, 0
+      DestroyWindow m_hWnd
+      m_hWnd = 0
+      m_hWndParent = 0
+
+   End If
+End Sub
+
+Private Function ComCtlVersion( _
+        ByRef lMajor As Long, _
+        ByRef lMinor As Long, _
+        Optional ByRef lBuild As Long _
+    ) As Boolean
+Dim hMod As Long
+Dim lR As Long
+Dim lptrDLLVersion As Long
+Dim tDVI As DLLVERSIONINFO
+
+    lMajor = 0: lMinor = 0: lBuild = 0
+
+    hMod = LoadLibrary("comctl32.dll")
+    If (hMod &lt;&gt; 0) Then
+        lR = S_OK
+        '/*
+        ' You must get this function explicitly because earlier versions of the
+         DLL
+        ' don't implement this function. That makes the lack of implementation
+         of the
+        ' function a version marker in itself. */
+        lptrDLLVersion = GetProcAddress(hMod, "DllGetVersion")
+        If (lptrDLLVersion &lt;&gt; 0) Then
+            tDVI.cbSize = Len(tDVI)
+            lR = DllGetVersion(tDVI)
+            If (lR = S_OK) Then
+                lMajor = tDVI.dwMajor
+                lMinor = tDVI.dwMinor
+                lBuild = tDVI.dwBuildNumber
+            End If
+        Else
+            'If GetProcAddress failed, then the DLL is a version previous to
+             the one
+            'shipped with IE 3.x.
+            lMajor = 4
+        End If
+        FreeLibrary hMod
+        ComCtlVersion = True
+    End If
+
+End Function
+
+Private Function CustomDraw(ByVal lParam As Long) As Long
+Dim NMTVCD As NMTVCUSTOMDRAW
+Dim hFont As IFont
+Dim tItem As TVITEM
+Dim tItemex As TVITEMEX
+Dim tIS As tTreeViewInfoStore
+Dim hItem As Long
+Dim lLen As Long
+Dim rc As RECT
+Dim rcItem As RECT
+Dim lOrigColor As Long
+Dim lBackMode As Long
+Dim lOrigBkMode As Long
+Dim lPtr As Long
+Dim lNumber As Long
+Dim lRet As Long
+Dim tR As RECT
+Dim tJ As POINTAPI
+       
+   ' This is where it gets complicated.
+   ' Get the CustomDraw data.
+   lLen = Len(NMTVCD)
+   ' SPM: Check if COMCTL&lt; 4.71, if so, drop 4 bytes off the len
+   ' and ignore level (could get from the hItem)
+   If m_lMajor &lt; 4 Or (m_lMajor = 4 And m_lMinor &lt; 71) Then
+      lLen = lLen - 4
+   End If
+   CopyMemory NMTVCD, ByVal lParam, lLen
+    
+   ' First see what stage of painting:
+   Select Case NMTVCD.NMCD.dwDrawStage
+   Case CDDS_PREPAINT
+      ' Tell it we want to be told when an
+      ' item is drawn.
+      CustomDraw = CDRF_NOTIFYITEMDRAW
+        
+    Case CDDS_ITEMPREPAINT
+      
+      ' An item is being drawn, apparently.
+      ' If we're going to implement ExplorerBar, we want
+      ' to be told when it's done painting, too.
+      If (m_bExplorerBar Or m_bShowNumber) Then
+         lRet = CDRF_NOTIFYPOSTPAINT
+      Else
+         lRet = CDRF_DODEFAULT
+      End If
+        
+      ' Get the data for the drawn item.
+      On Error Resume Next
+      hItem = NMTVCD.NMCD.dwItemSpec
+      If pbGetItemInfo(hItem, tIS, lPtr) Then
+         
+         ' If we've changed the colors/fonts, set them:
+         If (NMTVCD.NMCD.uItemState And CDIS_HOT) = CDIS_HOT Then
+            If (NMTVCD.NMCD.uItemState And CDIS_SELECTED) = CDIS_SELECTED Then
+               If (NMTVCD.NMCD.uItemState And CDIS_FOCUS) = CDIS_FOCUS Then
+                  If tIS.bDoSelectedMouseOverColor Then
+                     NMTVCD.clrText =
+                      TranslateColor(tIS.ItemSelectedMouseOverColor)
+                  Else
+                     NMTVCD.clrText =
+                      TranslateColor(m_oSelectedMouseOverForeColor)
+                  End If
+                  If tIS.bDoSelectedMouseOverBackColor Then
+                     NMTVCD.clrTextBk =
+                      TranslateColor(tIS.ItemSelectedMouseOverBackColor)
+                  Else
+                     NMTVCD.clrTextBk =
+                      TranslateColor(m_oSelectedMouseOverBackColor)
+                  End If
+               Else
+                  If tIS.bDoSelectedColor Then
+                     NMTVCD.clrText =
+                      TranslateColor(tIS.ItemSelectedNoFocusColor)
+                  Else
+                     NMTVCD.clrText =
+                      TranslateColor(m_oSelectedNoFocusForeColor)
+                  End If
+                  If tIS.bDoSelectedBackColor Then
+                     NMTVCD.clrTextBk =
+                      TranslateColor(tIS.ItemSelectedNoFocusBackColor)
+                  Else
+                     NMTVCD.clrTextBk =
+                      TranslateColor(m_oSelectedNoFocusBackColor)
+                  End If
+               End If
+            Else
+               If tIS.bDoMouseOverColor Then
+                  NMTVCD.clrText = TranslateColor(tIS.ItemMouseOverColor)
+               Else
+                  NMTVCD.clrText = TranslateColor(m_oMouseOverForeColor)
+               End If
+               If tIS.bDoMouseOverBackColor Then
+                  NMTVCD.clrTextBk = TranslateColor(tIS.ItemMouseOverBackColor)
+               Else
+                  NMTVCD.clrTextBk = TranslateColor(m_oMouseOverBackColor)
+               End If
+            End If
+         ElseIf (NMTVCD.NMCD.uItemState And CDIS_SELECTED) = CDIS_SELECTED Then
+            If (NMTVCD.NMCD.uItemState And CDIS_FOCUS) = CDIS_FOCUS Then
+               If tIS.bDoSelectedColor Then
+                  NMTVCD.clrText = TranslateColor(tIS.ItemSelectedColor)
+               Else
+                  NMTVCD.clrText = TranslateColor(m_oSelectedForeColor)
+               End If
+               If tIS.bDoSelectedBackColor Then
+                  NMTVCD.clrTextBk = TranslateColor(tIS.ItemSelectedBackColor)
+               Else
+                  NMTVCD.clrTextBk = TranslateColor(m_oSelectedBackColor)
+               End If
+            Else
+               If tIS.bDoSelectedColor Then
+                  NMTVCD.clrText = TranslateColor(tIS.ItemSelectedNoFocusColor)
+               Else
+                  NMTVCD.clrText = TranslateColor(m_oSelectedNoFocusForeColor)
+               End If
+               If tIS.bDoSelectedBackColor Then
+                  NMTVCD.clrTextBk =
+                   TranslateColor(tIS.ItemSelectedNoFocusBackColor)
+               Else
+                  NMTVCD.clrTextBk = TranslateColor(m_oSelectedNoFocusBackColor)
+               End If
+            End If
+         Else
+            If (tIS.bDoColor) Then
+               NMTVCD.clrText = TranslateColor(tIS.ItemColor)
+            Else
+               NMTVCD.clrText = TranslateColor(m_oForeColor)
+            End If
+            If (tIS.bDoBackColor) Then
+               NMTVCD.clrTextBk = TranslateColor(tIS.ItemBackColor)
+            Else
+               NMTVCD.clrTextBk = TranslateColor(m_oBackColor)
+            End If
+         End If
+               
+         ' If we've changed fonts:
+         If tIS.bDoFont Then
+            
+            SelectObject NMTVCD.NMCD.hdc, m_fntItem(tIS.ItemFont).hFont
+                
+            ' Tell it to recalculate the item size, which it
+            ' *still* doesn't do! I don't get it!
+            ' - SPM - problem with COMCTL32.DLL &lt; v5.00.  You need IE5 v of
+             COMCTL32.DLL
+            '         to make this work - and even then it doesn't work unless
+             you have
+            '         sent the control the CCM_SETVERSION message to actually
+             tell
+            '         it it is a v5... bit pathetic it doesn't know itself
+             property (perhaps
+            '         tvw has got issues with its version number)
+            '         - Anyway, works now for v5
+            'DLL (Just blabbing): Cool, man. I didn't know that. TreeView has
+            ' inherent problems with version compatibility, since
+            ' it's actually the oldest Common Control out there.
+            ' Tied in first place with it's sister ListView, I'm
+            ' told that TreeViews stretch back to Windows 1.0!
+            lRet = lRet Or CDRF_NEWFONT
+         End If
+         
+         ' Copy what we've done back in.
+         CopyMemory ByVal lParam, NMTVCD, Len(NMTVCD)
+         
+      End If
+      CustomDraw = lRet
+      
+    Case CDDS_ITEMPOSTPAINT
+      
+      ' Now everything's been painted, then let's add our own:
+      lRet = CDRF_DODEFAULT
+      
+      If m_bExplorerBar Then
+         
+         ' we want to draw a border around the
+         ' selected item.  Therefore we need to
+         ' know the start and end positions
+         ' of the group that contains the
+         ' selected item.
+         Dim hItemSel As Long
+         Dim hItemParent As Long
+         Dim hItemParentTest As Long
+         Dim hNextSibling As Long
+         Dim hPen As Long
+         Dim hPenOld As Long
+         
+         ' Get the selected item:
+         hItemSel = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_CARET, fRootItem)
+         If Not (hItemSel = 0) Then
+            ' Find it's parent, if any:
+            hItemParentTest = hItemSel
+            Do While Not (hItemParentTest = 0)
+               hItemParent = hItemParentTest
+               hItemParentTest = SendMessageL(m_hWnd, TVM_GETNEXTITEM,
+                TVGN_PARENT, hItemParent)
+            Loop
+            
+            ' Find the next sibling of the parent, if any:
+            hNextSibling = SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_NEXT,
+             hItemParent)
+            ' If there was one, then this item is the bounds, otherwise,
+            ' we stop at the last item in the control.
+            
+         End If
+         
+         ' Get this item:
+         hItem = NMTVCD.NMCD.dwItemSpec
+         
+         ' Does it correspond to the first selected item?
+         If (hItem = hItemParent) Then
+            
+            tR.left = hItem
+            SendMessage m_hWnd, TVM_GETITEMRECT, 0, tR
+            
+            ' Draw top border, left and right borders:
+            hPen = CreatePen(0, 1, TranslateColor(vbButtonShadow))
+            hPenOld = SelectObject(NMTVCD.NMCD.hdc, hPen)
+            MoveToEx NMTVCD.NMCD.hdc, tR.left + 1, tR.bottom, tJ
+            LineTo NMTVCD.NMCD.hdc, tR.left + 1, tR.top
+            LineTo NMTVCD.NMCD.hdc, tR.right - 1, tR.top
+            LineTo NMTVCD.NMCD.hdc, tR.right - 1, tR.bottom
+            SelectObject NMTVCD.NMCD.hdc, hPenOld
+            DeleteObject hPen
+         
+            hPen = CreatePen(0, 1, TranslateColor(m_oBackColor))
+            hPenOld = SelectObject(NMTVCD.NMCD.hdc, hPen)
+            MoveToEx NMTVCD.NMCD.hdc, tR.left, tR.bottom, tJ
+            LineTo NMTVCD.NMCD.hdc, tR.left, tR.top - 1
+            SelectObject NMTVCD.NMCD.hdc, hPenOld
+            DeleteObject hPen
+         
+         Else
+         
+            ' is its parent the first selected item?
+            hItemParentTest = SendMessageL(m_hWnd, TVM_GETNEXTITEM,
+             TVGN_PARENT, hItem)
+            Do While (hItemParentTest &lt;&gt; hItemParent) And (hItemParentTest &lt;&gt; 0)
+               hItemParentTest = SendMessageL(m_hWnd, TVM_GETNEXTITEM,
+                TVGN_PARENT, hItemParentTest)
+            Loop
+            
+            If (hItemParentTest = hItemParent) Then
+               
+               tR.left = hItem
+               SendMessage m_hWnd, TVM_GETITEMRECT, 0, tR
+         
+               ' Draw left and right borders;
+               hPen = CreatePen(0, 1, TranslateColor(vbButtonShadow))
+               hPenOld = SelectObject(NMTVCD.NMCD.hdc, hPen)
+               MoveToEx NMTVCD.NMCD.hdc, tR.left + 1, tR.bottom - 1, tJ
+               LineTo NMTVCD.NMCD.hdc, tR.left + 1, tR.top - 1
+               MoveToEx NMTVCD.NMCD.hdc, tR.right - 1, tR.top, tJ
+               LineTo NMTVCD.NMCD.hdc, tR.right - 1, tR.bottom
+               SelectObject NMTVCD.NMCD.hdc, hPenOld
+               DeleteObject hPen
+            
+               hPen = CreatePen(0, 1, TranslateColor(m_oBackColor))
+               hPenOld = SelectObject(NMTVCD.NMCD.hdc, hPen)
+               MoveToEx NMTVCD.NMCD.hdc, tR.left, tR.bottom, tJ
+               LineTo NMTVCD.NMCD.hdc, tR.left, tR.top - 1
+               SelectObject NMTVCD.NMCD.hdc, hPenOld
+               DeleteObject hPen
+            
+            End If
+            
+         End If
+         
+         ' Is the next visible item in the control the next sibling?
+         If (SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_NEXTVISIBLE, hItem) =
+          hNextSibling) Then
+            ' Draw a bottom border
+            hPen = CreatePen(0, 1, TranslateColor(vbButtonShadow))
+            hPenOld = SelectObject(NMTVCD.NMCD.hdc, hPen)
+            tR.left = hItem
+            SendMessage m_hWnd, TVM_GETITEMRECT, 0, tR
+            MoveToEx NMTVCD.NMCD.hdc, tR.left + 1, tR.bottom - 1, tJ
+            LineTo NMTVCD.NMCD.hdc, tR.right - 1, tR.bottom - 1
+            SelectObject NMTVCD.NMCD.hdc, hPenOld
+            DeleteObject hPen
+         End If
+         
+      
+      ElseIf m_bShowNumber Then
+            
+         ' If the ItemNumber property is &gt; 0, then display
+         ' the number in brackets following the text:
+            
+         hItem = NMTVCD.NMCD.dwItemSpec
+         If pbGetItemInfo(hItem, tIS, lPtr) Then
+            lNumber = tIS.ItemNumber
+            If lNumber &gt; 0 Then
+              
+              lOrigColor = SetTextColor(NMTVCD.NMCD.hdc, &amp;HFF0000) ' Bright Blue
+              lOrigBkMode = SetBkMode(NMTVCD.NMCD.hdc, 2) ' OPAQUE
+              LSet rc = NMTVCD.NMCD.rc
+              rcItem.left = NMTVCD.NMCD.dwItemSpec
+              SendMessage m_hWnd, TVM_GETITEMRECT, 1, rcItem
+              rc.left = rc.left + rcItem.right + 2
+              DrawText NMTVCD.NMCD.hdc, "(" &amp; CStr(lNumber) &amp; ")", -1, rc,
+               DT_LEFT
+              SetTextColor NMTVCD.NMCD.hdc, lOrigColor
+              SetBkMode NMTVCD.NMCD.hdc, lOrigBkMode
+              
+              lRet = CDRF_SKIPDEFAULT
+            End If
+         
+         End If
+         
+      End If
+   
+      CustomDraw = lRet
+      
+   End Select
+   
+End Function
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As SSubTimer.EMsgResponse)
+   '
+   '
+End Property
+
+Private Property Get ISubclass_MsgResponse() As SSubTimer.EMsgResponse
+   '
+    Select Case CurrentMessage
+    Case WM_MOUSEACTIVATE
+        ISubclass_MsgResponse = emrConsume
+    Case Else
+        ISubclass_MsgResponse = emrPreprocess
+    End Select
+   '
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+   '
+Dim RetVal As Long
+Dim tHDR As NMHDR
+Dim tvInsert As TVINSERTSTRUCT
+Dim tDI_ptr As TVDISPINFO_ptr
+Dim pt As POINTAPI
+Dim bCancel As Boolean
+Dim rc As RECT
+Dim TVK As TVKEYDOWN
+Dim lLen As Long, iPos As Long
+Dim sText As String
+Dim sOrigText As String
+Dim tNMTV As NMTREEVIEW_textptr
+Dim tVHT As TVHITTESTINFO
+Dim tNMChar As NMCHAR
+Dim lID As Long
+    
+   Select Case iMsg
+   Case WM_KEYDOWN
+      If Not (m_hEdit = 0) Then
+         ' Escape cancels editing
+         ' Return ends editing
+         If (wParam = vbKeyReturn) Then ' return
+            SendMessageL m_hWnd, TVM_ENDEDITLABELNOW, 0, 0
+         ElseIf (wParam = vbKeyEscape) Then ' escape
+            SendMessageL m_hWnd, TVM_ENDEDITLABELNOW, 1, 0
+         End If
+      Else
+         If (wParam = vbKeyF2) Then
+            lID = fSelected()
+            If Not (lID = 0) Then
+               fItemStartEdit lID
+            End If
+         End If
+      End If
+    
+   Case WM_NOTIFY
+   
+     ' Get the header structure.
+     CopyMemory tHDR, ByVal lParam, LenB(tHDR)
+     If Not (tHDR.hwndFrom = m_hWnd) Then
+        Exit Function
+     End If
+     
+     ' Return zero by default.
+     RetVal = 0
+     
+     Select Case tHDR.code
+        
+        Case NM_DBLCLK
+           ' Get the point that was clicked.
+           GetCursorPos tVHT.pt
+           ' Convert it to client coordinates.
+           ScreenToClient m_hWnd, tVHT.pt
+           ' See what's under there.
+           SendMessage m_hWnd, TVM_HITTEST, 0, tVHT
+           ' If there's an item there, tell the user.
+           OnDoubleClick tVHT.hItem
+        
+        Case NM_CLICK
+           ' Get the point that was clicked.
+           GetCursorPos tVHT.pt
+           ' Convert it to client coordinates.
+           ScreenToClient m_hWnd, tVHT.pt
+           ' See what's under there.
+           SendMessage m_hWnd, TVM_HITTEST, 0, tVHT
+           ' If there's an item there, tell the user.
+           If tVHT.hItem &lt;&gt; 0 Then
+              OnNodeClick tVHT.hItem
+              
+              ' Provide check box change notifications (see KB Q261289)
+              If ((tVHT.flags And TVHT_ONITEMSTATEICON) = TVHT_ONITEMSTATEICON)
+               And (m_bCheckBoxes) Then
+                 PostMessage m_hWnd, UM_CHECKSTATECHANGED, 0, tVHT.hItem
+              End If
+              
+           End If
+           OnClick
+           
+        Case NM_CUSTOMDRAW
+           If m_bNoCustomDraw Then
+              RetVal = CDRF_DODEFAULT
+           Else
+              RetVal = CustomDraw(lParam)
+           End If
+               
+        Case NM_KILLFOCUS
+           ' don't need to do anything
+               
+        Case NM_RCLICK
+           ' See NM_CLICK
+           GetCursorPos tVHT.pt
+           ScreenToClient m_hWnd, tVHT.pt
+           SendMessage m_hWnd, TVM_HITTEST, 0, tVHT
+           OnRightClick tVHT.pt, tVHT.hItem
+               
+        Case NM_RETURN
+           ' Enter button pressed.
+           OnKeyDown vbKeyReturn
+           
+        Case NM_CHAR
+           CopyMemory tNMChar, ByVal lParam, Len(tNMChar)
+           OnKeyPress tNMChar.ch
+        
+        Case TVN_BEGINLABELEDIT
+            CopyMemory tDI_ptr, ByVal lParam, LenB(tDI_ptr)
+            Dim hEdit As Long
+            hEdit = SendMessage(m_hWnd, TVM_GETEDITCONTROL, 0, 0)
+            OnBeforeLabelEdit tDI_ptr.Item.hItem, bCancel
+            If Not (bCancel) Then
+              m_hEdit = hEdit
+            End If
+            RetVal = Abs(CLng(bCancel))
+               
+        Case TVN_DELETEITEM
+           CopyMemory tNMTV, ByVal lParam, Len(tNMTV)
+           ' User must delete items his/herself if they
+           ' *need* to know when to delete the items. Here,
+           ' the user could stop shutdown, causing GPF.
+           
+           ' SPM - we need to clear any information associated with this item
+            here
+           pDeleteItem tNMTV.itemOld.hItem
+           
+        Case TVN_ENDLABELEDIT
+            CopyMemory tDI_ptr, ByVal lParam, LenB(tDI_ptr)
+            
+            ' Get the text:
+            If Not (tDI_ptr.Item.pszText = 0) Then
+              lLen = lstrlen(tDI_ptr.Item.pszText)
+              If lLen &gt; 0 Then
+                   ReDim b(0 To tDI_ptr.Item.cchTextMax) As Byte
+                   CopyMemory b(0), ByVal tDI_ptr.Item.pszText,
+                    tDI_ptr.Item.cchTextMax - 1
+                   sText = StrConv(b, vbUnicode)
+                   iPos = InStr(sText, vbNullChar)
+                   If iPos &gt; 1 Then
+                       sText = left$(sText, iPos - 1)
+                   ElseIf iPos = 1 Then
+                       sText = ""
+                   End If
+              End If
+              sOrigText = sText
+              
+              OnAfterLabelEdit tDI_ptr.Item.hItem, sText, bCancel
+              
+              If Not (bCancel) Then
+                ' Ensure any change to the text is reflected
+                If Not (StrComp(sText, sOrigText) = 0) Then
+                   If (Len(sText) = 0) Then
+                      bCancel = True
+                   Else
+                      b = StrConv(sText, vbFromUnicode)
+                      ' pad/trim to text size
+                      ReDim Preserve b(0 To tDI_ptr.Item.cchTextMax - 1) As Byte
+                      b(tDI_ptr.Item.cchTextMax - 1) = 0
+                      ' Copy the available characters:
+                      CopyMemory ByVal tDI_ptr.Item.pszText, b(0), iPos
+                   End If
+                End If
+              End If
+           Else
+              bCancel = True
+           End If
+           
+           If Not (m_hEdit = 0) Then
+              m_hEdit = 0
+           End If
+           
+            ' Tell control whether to accept or not
+            RetVal = CLng(Abs(Not (bCancel)))
+            
+        Case TVN_ITEMEXPANDED
+           CopyMemory tNMTV, ByVal lParam, LenB(tNMTV)
+           If (tNMTV.action = TVE_EXPAND Or tNMTV.action = TVE_EXPANDPARTIAL)
+            Then
+              ' tNMTV_ptr.itemNew is valid:
+           Else
+              ' Neither old nor new appears to be valid. I don't understand
+              tNMTV.itemNew.hItem = SendMessageL(m_hWnd, TVM_GETNEXTITEM,
+               TVGN_CARET, 0)
+           End If
+           OnItemExpand tNMTV.itemNew.hItem, tNMTV.action
+           
+        Case TVN_ITEMEXPANDING
+                           
+           CopyMemory tNMTV, ByVal lParam, LenB(tNMTV)
+           If (tNMTV.action = TVE_EXPAND Or tNMTV.action = TVE_EXPANDPARTIAL)
+            Then
+              ' tNMTV_ptr.itemNew is valid:
+           Else
+              ' Neither old nor new appears to be valid. I don't understand
+              tNMTV.itemNew.hItem = SendMessageL(m_hWnd, TVM_GETNEXTITEM,
+               TVGN_CARET, 0)
+           End If
+           OnItemExpanding tNMTV.itemNew.hItem, tNMTV.action, bCancel
+            
+           ' If the user wants it cancelled, then return TRUE to cancel.
+           If bCancel Then RetVal = 1
+   
+        Case TVN_KEYDOWN
+            CopyMemory TVK, ByVal lParam, LenB(TVK)
+            If Not (TVK.wVKey = vbKeyReturn) Then
+               OnKeyDown TVK.wVKey
+               CopyMemory ByVal lParam, TVK, LenB(TVK)
+               If (TVK.wVKey = 0) Then
+                  RetVal = 0
+               Else
+                  RetVal = 1
+               End If
+            End If
+        
+        Case TVN_SELCHANGED
+            If Not m_bClearing Then
+                OnSelChanged
+            End If
+        
+        Case TVN_SELCHANGING
+           If Not m_bClearing Then
+               OnSelChanging
+           End If
+        
+        Case TVN_SINGLEEXPAND
+            ' Item Expanded with a singleExpand style.
+            'CopyMemory tNMTV, ByVal lParam, LenB(tNMTV)
+            'OnSingleExpand tNMTV.itemNew.hItem, tNMTV.action
+            
+        ' SPM
+        Case TVN_GETINFOTIP
+            ' Info tips:
+            Dim tNMTVGIT As NMTVGETINFOTIP
+            Dim sTip As String
+            
+            CopyMemory tNMTVGIT, ByVal lParam, LenB(tNMTVGIT)
+            'RaiseEvent GetItemToolTipText(tNMTVGIT.hItem, sTip)
+            'If sTip &lt;&gt; "" Then
+            '    sTip = sTip &amp; vbNullChar
+            '    tNMTVGIT.cchTextMax = Len(sTip)
+            '    gsInfoTipBuffer = StrConv(sTip, vbFromUnicode)
+            '    tNMTVGIT.pszText = StrPtr(gsInfoTipBuffer)
+            '    CopyMemory ByVal lParam, tNMTVGIT, Len(tNMTVGIT)
+            'End If
+           
+        'DLL (New!): That oh-so requested drag-and-drop is now
+        ' yours, fearless programmers.
+        Case TVN_BEGINDRAG
+           CopyMemory tNMTV, ByVal lParam, LenB(tNMTV)
+           PostMessage m_hWnd, UM_STARTDRAG, 0, tNMTV.itemNew.hItem
+           
+     End Select
+       
+   Case UM_CHECKSTATECHANGED
+     OnCheckStateChanged lParam
+   
+   Case UM_STARTDRAG
+     OnBeginDrag lParam
+       
+   Case WM_LBUTTONDOWN, WM_MBUTTONDOWN, WM_RBUTTONDOWN
+     OnMouseDown iMsg
+     
+   Case WM_MOUSEMOVE
+     OnMouseMove
+   
+   Case WM_LBUTTONUP, WM_MBUTTONUP, WM_RBUTTONUP
+     OnMouseUp iMsg
+   
+   '
+    ----------------------------------------------------------------------------
+   --
+   ' Implement focus.  Many many thanks to Mike Gainer for showing me this
+   ' code.
+   Case WM_SETFOCUS
+     If (m_hWnd = hwnd) Then
+        ' The TreeView control:
+        Dim pOleObject                  As IOleObject
+        Dim pOleInPlaceSite             As IOleInPlaceSite
+        Dim pOleInPlaceFrame            As IOleInPlaceFrame
+        Dim pOleInPlaceUIWindow         As IOleInPlaceUIWindow
+        Dim pOleInPlaceActiveObject     As IOleInPlaceActiveObject
+        Dim PosRect                     As RECT
+        Dim ClipRect                    As RECT
+        Dim FrameInfo                   As OLEINPLACEFRAMEINFO
+        Dim grfModifiers                As Long
+        Dim AcceleratorMsg              As MSG
+        
+        'Get in-place frame and make sure it is set to our in-between
+        'implementation of IOleInPlaceActiveObject in order to catch
+        'TranslateAccelerator calls
+        Set pOleObject = Me
+        Set pOleInPlaceSite = pOleObject.GetClientSite
+        If Not pOleInPlaceSite Is Nothing Then
+           pOleInPlaceSite.GetWindowContext pOleInPlaceFrame,
+            pOleInPlaceUIWindow, VarPtr(PosRect), VarPtr(ClipRect),
+            VarPtr(FrameInfo)
+           If m_IPAOHookStruct.ThisPointer &lt;&gt; 0 Then
+              CopyMemory pOleInPlaceActiveObject, m_IPAOHookStruct.ThisPointer,
+               4
+              If Not pOleInPlaceActiveObject Is Nothing Then
+                 If Not pOleInPlaceFrame Is Nothing Then
+                    pOleInPlaceFrame.SetActiveObject pOleInPlaceActiveObject,
+                     vbNullString
+                    If Not pOleInPlaceUIWindow Is Nothing Then
+                       pOleInPlaceUIWindow.SetActiveObject
+                        pOleInPlaceActiveObject, vbNullString
+                    End If
+                 End If
+              End If
+              CopyMemory pOleInPlaceActiveObject, 0&amp;, 4
+           End If
+        End If
+     Else
+        ' THe user control:
+        SetFocusAPI m_hWnd
+     End If
+     
+   Case WM_MOUSEACTIVATE
+     If GetFocus() &lt;&gt; m_hWnd Then
+        SetFocusAPI m_hWndParent
+        'UserControl.SetFocus
+        ISubclass_WindowProc = MA_NOACTIVATE
+     Else
+        ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lParam)
+     End If
+   ' End Implement focus.
+   '
+    ----------------------------------------------------------------------------
+   --
+   
+   End Select
+ErrHandler:
+    ' Return the value we intended to.
+    ISubclass_WindowProc = RetVal
+   
+   '
+End Function
+
+Private Sub tmrDragAutoExpand_ThatTime()
+   '
+   If m_bTerminate Then
+      tmrDragAutoExpand.Interval = 0
+      Exit Sub
+   End If
+
+   Dim hItem As Long
+   Dim lTime As Long
+   Dim iPos As Long
+   iPos = InStr(CStr(tmrDragAutoExpand.Item), ",")
+   If (iPos &gt; 0) Then
+      On Error Resume Next
+      hItem = CLng(Mid(CStr(tmrDragAutoExpand.Item), 1, iPos - 1))
+      lTime = CLng(Mid(CStr(tmrDragAutoExpand.Item), iPos + 1))
+      On Error GoTo 0
+      If Not (hItem = 0) Then
+         If (timeGetTime() &gt; lTime + 350) Then
+            If Not (pbIsState(hItem, TVIS_EXPANDED)) Then
+               If Not (m_cImageListDrag Is Nothing) Then
+                  If Not (m_cImageListDrag.hImageList = 0) Then
+                     m_cImageListDrag.HideDragImage True
+                  End If
+               End If
+               If Not (m_hItemInsert = 0) And (m_eDragStyle = etvwInsertMark)
+                Then
+                  SendMessageL m_hWnd, TVM_SETINSERTMARK, 0, 0
+               End If
+               SendMessageL m_hWnd, TVM_EXPAND, TVE_EXPAND, hItem
+               If Not (m_hItemInsert = 0) And (m_eDragStyle = etvwInsertMark)
+                Then
+                  SendMessageL m_hWnd, TVM_SETINSERTMARK, Abs(Not
+                   (m_bItemInsertAbove)), m_hItemInsert
+               End If
+               If Not (m_cImageListDrag Is Nothing) Then
+                  If Not (m_cImageListDrag.hImageList = 0) Then
+                     m_cImageListDrag.HideDragImage False
+                  End If
+               End If
+            End If
+         Else
+            ' Don't stop checking yet
+            Exit Sub
+         End If
+      End If
+   
+   End If
+   tmrDragAutoExpand.Interval = 0
+   '
+End Sub
+
+Private Sub tmrDragNoMore_ThatTime()
+Dim tP As POINTAPI
+Dim tR As RECT
+   
+   GetCursorPos tP
+   GetWindowRect m_hWnd, tR
+
+   If (PtInRect(tR, tP.X, tP.Y) = 0) Then
+      tmrDragAutoExpand.Interval = 0
+      tmrDragAutoExpand.Item = ""
+      tmrDragScroll.Interval = 0
+      
+      If Not (m_cImageListDrag Is Nothing) Then
+         If Not (m_cImageListDrag.hImageList = 0) Then
+            m_cImageListDrag.HideDragImage True
+         End If
+      End If
+   
+      SendMessageL m_hWnd, TVM_SETINSERTMARK, 0, 0
+      m_hItemInsert = 0
+      SendMessageL m_hWnd, TVM_SELECTITEM, TVGN_DROPHILITE, 0
+   
+      If Not (m_cImageListDrag Is Nothing) Then
+         If Not (m_cImageListDrag.hImageList = 0) Then
+            m_cImageListDrag.HideDragImage False
+         End If
+      End If
+               
+      tmrDragNoMore.Interval = 0
+   End If
+   
+End Sub
+
+Private Sub tmrDragScroll_ThatTime()
+Dim tP As POINTAPI
+Dim tR As RECT
+Dim bVertUp As Boolean
+Dim bVertDown As Boolean
+Dim bHorzLeft As Boolean
+Dim bHorzRight As Boolean
+Dim tCR As RECT
+
+   If m_bTerminate Then
+      tmrDragScroll.Interval = 0
+      Exit Sub
+   End If
+   
+   GetCursorPos tP
+   GetWindowRect m_hWnd, tR
+   If (PtInRect(tR, tP.X, tP.Y) = 0) Then
+      ' No longer over this window
+      tmrDragScroll.Interval = 0
+   Else
+   
+      ' Convert it to client coordinates.
+      ScreenToClient m_hWnd, tP
+      ' Get client size:
+      GetClientRect m_hWnd, tCR
+
+     ' Do we need to consider scrolling?
+      If (tP.X &lt; 12) Then
+         bHorzLeft = True
+      ElseIf (tP.X &gt;= (tCR.right - 12)) Then
+         bHorzRight = True
+      End If
+      If (tP.Y &lt; 12) Then
+         bVertUp = True
+      ElseIf (tP.Y &gt;= (tCR.bottom - 12)) Then
+        bVertDown = True
+      End If
+   
+      If (bHorzLeft Or bHorzRight Or bVertUp Or bVertDown) Then
+         If Not (m_cImageListDrag Is Nothing) Then
+            If Not (m_cImageListDrag.hImageList = 0) Then
+               m_cImageListDrag.HideDragImage True
+            End If
+         End If
+         If bHorzLeft Then
+            SendMessageL m_hWnd, WM_HSCROLL, SB_LINEUP, 0
+         ElseIf bHorzRight Then
+            SendMessageL m_hWnd, WM_HSCROLL, SB_LINEDOWN, 0
+         End If
+         If bVertUp Then
+            SendMessageL m_hWnd, WM_VSCROLL, SB_LINEUP, 0
+         ElseIf bVertDown Then
+            SendMessageL m_hWnd, WM_VSCROLL, SB_LINEDOWN, 0
+         End If
+         tmrDragScroll.Interval = 25
+         If Not (m_cImageListDrag Is Nothing) Then
+            If Not (m_cImageListDrag.hImageList = 0) Then
+               m_cImageListDrag.HideDragImage False
+            End If
+         End If
+      
+      Else
+         tmrDragScroll.Interval = 0
+      End If
+      
+   End If
+   
+
+End Sub
+
+Private Sub UserControl_Initialize()
+   
+   Debug.Print "Initialize"
+   
+   ' Attach custom IOleInPlaceActiveObject interface
+   Dim IPAO As IOleInPlaceActiveObject
+   With m_IPAOHookStruct
+      Set IPAO = Me
+      CopyMemory .IPAOReal, IPAO, 4
+      CopyMemory .TBEx, Me, 4
+      .lpVTable = IPAOVTable
+      .ThisPointer = VarPtr(m_IPAOHookStruct)
+   End With
+   
+   m_hMod = LoadLibrary("shell32.dll")
+   InitCommonControls
+   
+   ' Set defaults
+   m_bScroll = True
+   m_oBackColor = vbWindowBackground
+   m_oForeColor = vbWindowText
+   m_oLineColor = vbButtonFace
+   m_oTooltipForeColor = vbInfoText
+   m_oTooltipBackColor = vbInfoBackground
+   m_oSelectedBackColor = vbHighlight
+   m_oSelectedForeColor = vbHighlightText
+   m_oSelectedNoFocusBackColor = vbButtonFace
+   m_oSelectedNoFocusForeColor = vbWindowText
+   m_oSelectedMouseOverBackColor = vbHighlight
+   m_oSelectedMouseOverForeColor = vbHighlightText
+   m_oMouseOverBackColor = vbWindowBackground
+   m_oMouseOverForeColor = &amp;H800000
+   m_bEnabled = True
+   m_bFullRowSelect = False
+   m_bHotTracking = True
+   m_eTreeViewStyle = etvwTreelinesPlusMinusPictureText
+   m_eLineStyle = etvwTreeLines
+   m_lIndent = 20
+   m_lItemHeight = 16
+   m_eBorderStyle = etvwFixedSingle
+   m_bSingleSel = False
+   m_bNoCustomDraw = True
+   m_bLabelEdit = False
+   Dim sFnt As New StdFont
+   sFnt.Name = "Tahoma"
+   sFnt.Size = 8.25
+   Set m_fnt = sFnt
+   
+    'm_DragScrollTime = 500
+    'm_DragExpandTime = 2000
+   
+End Sub
+
+Private Sub UserControl_InitProperties()
+   '
+   Dim iFnt As IFont
+   Set iFnt = Ambient.Font
+   iFnt.Clone m_fnt
+   Set UserControl.Font = m_fnt
+   pInitialize
+   '
+End Sub
+
+Private Sub UserControl_OLECompleteDrag(Effect As Long)
+   
+   If Not (m_cImageListDrag.hImageList = 0) Then
+      m_cImageListDrag.CompleteDrag
+      m_cImageListDrag.hImageList = 0
+   End If
+   If Not (m_hIml = 0) Then
+      ImageList_Destroy m_hIml
+   End If
+   If Not (m_hItemInsert = 0) Then
+      m_hItemInsert = 0
+   End If
+   SendMessageL m_hWnd, TVM_SETINSERTMARK, 0, 0
+
+End Sub
+
+Private Sub UserControl_OLEDragDrop(Data As DataObject, Effect As Long, Button
+ As Integer, Shift As Integer, X As Single, Y As Single)
+   
+   
+   tmrDragScroll.Interval = 0
+   If Not (m_cImageListDrag.hImageList = 0) Then
+      m_cImageListDrag.CompleteDrag
+      m_cImageListDrag.hImageList = 0
+   End If
+   If Not (m_hIml = 0) Then
+      ImageList_Destroy m_hIml
+   End If
+   
+   Dim tVHT As TVHITTESTINFO
+   Dim tR As RECT
+   Dim tCR As RECT
+   
+   ' Now determine what we should do:
+   GetCursorPos tVHT.pt
+   GetWindowRect m_hWnd, tR
+   
+   SendMessageL m_hWnd, TVM_SETINSERTMARK, 0, 0
+   m_hItemInsert = 0
+   SendMessageL m_hWnd, TVM_SELECTITEM, TVGN_DROPHILITE, 0
+   
+   ' In the control?
+   If Not (PtInRect(tR, tVHT.pt.X, tVHT.pt.Y) = 0) Then
+         
+      ' Convert it to client coordinates.
+      ScreenToClient m_hWnd, tVHT.pt
+      ' Get client size:
+      GetClientRect m_hWnd, tCR
+   
+      ' See what's under there.
+      SendMessage m_hWnd, TVM_HITTEST, 0, tVHT
+   
+      If Not (tVHT.hItem = 0) Then
+         
+         tR.left = tVHT.hItem
+         SendMessage m_hWnd, TVM_GETITEMRECT, 1, tR
+         
+         Dim bAbove As Boolean
+         bAbove = (tVHT.pt.Y &lt; tR.top + (tR.bottom - tR.top) \ 2)
+         If (m_eDragStyle = etvwInsertMark) Then
+            If (bAbove) Then
+               ' Insert above
+               SendMessageL m_hWnd, TVM_SETINSERTMARK, 0, tVHT.hItem
+               m_hItemInsert = tVHT.hItem
+               m_bItemInsertAbove = True
+            Else
+               ' Insert below
+               SendMessageL m_hWnd, TVM_SETINSERTMARK, 1, tVHT.hItem
+               m_hItemInsert = tVHT.hItem
+               m_bItemInsertAbove = False
+            End If
+         End If
+   
+         ' Request what to do:
+         Dim lID As Long
+         lID = fIDForhItem(tVHT.hItem)
+         Dim cNod As New cTreeViewNode
+         cNod.fInit Me, lID
+         RaiseEvent DragDropRequest(Data, cNod, bAbove, tVHT.flags)
+
+         SendMessageL m_hWnd, TVM_SETINSERTMARK, 0, 0
+         m_hItemInsert = 0
+
+      Else
+         ' Not over an item, but we may want to do something anyway
+         RaiseEvent DragDropRequest(Data, Nothing, False, tVHT.flags)
+         
+      End If
+      
+   End If
+   '
+End Sub
+
+Private Sub UserControl_OLEDragOver(Data As DataObject, Effect As Long, Button
+ As Integer, Shift As Integer, X As Single, Y As Single, State As Integer)
+Dim tVHT As TVHITTESTINFO
+Dim tR As RECT
+Dim tCR As RECT
+Dim iPos As Long
+Dim hItemNow As Long
+Dim hItem As Long
+      
+   If Not (OLEDropMode = vbOLEDropNone) Then
+  
+      m_hItemInsert = 0
+  
+      If (tmrDragNoMore.Interval = 0) Then
+         tmrDragNoMore.Interval = 100
+      End If
+           
+      ' Find out where we are:
+      GetCursorPos tVHT.pt
+      GetWindowRect m_hWnd, tR
+      
+      ' In the control?
+      If Not (PtInRect(tR, tVHT.pt.X, tVHT.pt.Y) = 0) Then
+      
+         ' Convert it to client coordinates.
+         ScreenToClient m_hWnd, tVHT.pt
+         ' Get client size:
+         GetClientRect m_hWnd, tCR
+         
+         ' Do we need to consider scrolling?
+         If (tVHT.pt.X &lt; 8) Or (tVHT.pt.X &gt;= (tCR.right - 8)) Then
+            ' Horizontal scroll
+            tmrDragScroll.Interval = 25
+         End If
+         If (tVHT.pt.Y &lt; 8) Or (tVHT.pt.Y &gt;= (tCR.bottom - 8)) Then
+            ' Vertical scroll
+            tmrDragScroll.Interval = 25
+         End If
+      
+         ' See what's under there.
+         SendMessage m_hWnd, TVM_HITTEST, 0, tVHT
+           
+         If Not (tVHT.hItem = 0) Then
+            If Not (m_cImageListDrag Is Nothing) Then
+               If Not (m_cImageListDrag.hImageList = 0) Then
+                  m_cImageListDrag.HideDragImage True
+               End If
+            End If
+            
+            tR.left = tVHT.hItem
+            SendMessage m_hWnd, TVM_GETITEMRECT, 1, tR
+            
+            If (tVHT.pt.Y &lt; tR.top + (tR.bottom - tR.top) \ 2) Then
+               ' Insert above
+               m_hItemInsert = tVHT.hItem
+               m_bItemInsertAbove = True
+            Else
+               ' Insert below
+               m_hItemInsert = tVHT.hItem
+               m_bItemInsertAbove = False
+            End If
+              
+            RaiseEvent OLEDragOver(Data, Effect, Button, Shift, X, Y, State)
+            
+            If (m_eDragStyle = etvwInsertMark) Then
+               SendMessageL m_hWnd, TVM_SETINSERTMARK, Abs(Not
+                (m_bItemInsertAbove)), tVHT.hItem
+            End If
+              
+            ' Does it work?
+            SendMessageL m_hWnd, TVM_SELECTITEM, TVGN_DROPHILITE, tVHT.hItem
+            
+            
+            If (m_bDragAutoExpand) Then
+               ' Check if this item has children:
+               If Not (SendMessageL(m_hWnd, TVM_GETNEXTITEM, TVGN_CHILD,
+                tVHT.hItem) = 0) Then
+                  If Not (pbIsState(tVHT.hItem, TVIS_EXPANDED)) Then
+                     iPos = InStr(CStr(tmrDragAutoExpand.Item), ",")
+                     If (iPos &gt; 0) Then
+                        On Error Resume Next
+                        hItemNow = CLng(Mid(CStr(tmrDragAutoExpand.Item), 1,
+                         iPos - 1))
+                        On Error GoTo 0
+                     End If
+                     If Not (hItemNow = tVHT.hItem) Then
+                        tmrDragAutoExpand.Interval = 25
+                        tmrDragAutoExpand.Item = tVHT.hItem &amp; "," &amp;
+                         timeGetTime()
+                     End If
+                  End If
+               End If
+            End If
+            
+            If Not (m_cImageListDrag Is Nothing) Then
+               If Not (m_cImageListDrag.hImageList = 0) Then
+                  m_cImageListDrag.HideDragImage False
+               End If
+            End If
+           
+         Else ' No item under mouse
+              
+            If Not (m_cImageListDrag Is Nothing) Then
+               If Not (m_cImageListDrag.hImageList = 0) Then
+                  m_cImageListDrag.HideDragImage True
+               End If
+            End If
+         
+            RaiseEvent OLEDragOver(Data, Effect, Button, Shift, X, Y, State)
+         
+            SendMessageL m_hWnd, TVM_SETINSERTMARK, 0, 0
+            m_hItemInsert = 0
+            SendMessageL m_hWnd, TVM_SELECTITEM, TVGN_DROPHILITE, 0
+         
+            If Not (m_cImageListDrag Is Nothing) Then
+               If Not (m_cImageListDrag.hImageList = 0) Then
+                  m_cImageListDrag.HideDragImage False
+               End If
+            End If
+         
+         End If
+           
+      Else ' Not over the control
+      
+         tmrDragAutoExpand.Interval = 0
+         tmrDragAutoExpand.Item = ""
+         tmrDragScroll.Interval = 0
+         
+         If Not (m_cImageListDrag Is Nothing) Then
+            If Not (m_cImageListDrag.hImageList = 0) Then
+               m_cImageListDrag.HideDragImage True
+            End If
+         End If
+         
+         RaiseEvent OLEDragOver(Data, Effect, Button, Shift, X, Y, State)
+         
+         SendMessageL m_hWnd, TVM_SETINSERTMARK, 0, 0
+         m_hItemInsert = 0
+         SendMessageL m_hWnd, TVM_SELECTITEM, TVGN_DROPHILITE, 0
+         
+         If Not (m_cImageListDrag Is Nothing) Then
+            If Not (m_cImageListDrag.hImageList = 0) Then
+               m_cImageListDrag.HideDragImage False
+            End If
+         End If
+           
+      End If
+   
+   End If ' OLEDropMode = None
+   
+End Sub
+
+Private Sub UserControl_OLEGiveFeedback(Effect As Long, DefaultCursors As
+ Boolean)
+   
+   RaiseEvent OLEGiveFeedback(Effect, DefaultCursors)
+   
+   If Not (Effect = vbDropEffectNone) Then
+      If Not (m_cImageListDrag Is Nothing) Then
+         m_cImageListDrag.DragDrop
+      End If
+   End If
+   
+End Sub
+   
+Private Sub UserControl_OLEStartDrag(Data As DataObject, AllowedEffects As Long)
+      
+   '
+   If Not (m_hDragItem = 0) Then
+      
+      On Error Resume Next
+      Dim sKey As String
+      sKey = m_colKeys(CStr(m_hDragItem))
+      On Error GoTo 0
+      
+      If (Len(sKey) = 0) Then
+         Debug.Print "NOT A VALID DRAG ITEM"
+         m_hDragItem = 0
+         Exit Sub
+      End If
+         
+      m_bStartDrag = True
+      Data.Clear
+
+      ' 2004-02-15: Set data before start drag,
+      ' allows it to be checked
+      Dim sText As String
+         
+      pGetStyle m_hDragItem, TVIF_TEXT
+      sText = m_itemStyle.pszText
+               
+      ' Start dragging this item:
+      Data.SetData sText, vbCFText
+                  
+      Dim b() As Byte
+      Dim s As String
+      s = "H:" &amp; UserControl.hwnd &amp; ";I:" &amp; m_hDragItem
+      b = s
+      Data.SetData b, &amp;HFFFFB044 ' gcOLE_DATA_FORMAT
+   
+
+      ' This gives the user the opportunity to set AllowedEffects
+      RaiseEvent OLEStartDrag(Data, AllowedEffects)
+      
+      If (AllowedEffects = vbDropEffectNone) Then
+      
+         Data.Clear
+         
+         m_hDragItem = 0
+         
+      Else
+                                          
+         If Not (m_hIml = 0) Then
+            ImageList_Destroy m_hIml
+         End If
+         m_hIml = SendMessageL(m_hWnd, TVM_CREATEDRAGIMAGE, 0, m_hDragItem)
+            
+         'm_cImageListDrag.hImageList = m_hIml
+         'm_cImageListDrag.StartDrag 0, -8, -8
+         
+      End If
+      
+      m_bStartDrag = False
+      
+   End If
+   '
+End Sub
+
+Private Sub UserControl_ReadProperties(PropBag As PropertyBag)
+   '
+   
+   m_bExplorerBar = PropBag.ReadProperty("HistoryStyle", False)
+   If Not (m_bExplorerBar) Then
+      m_bShowNumber = False
+   Else
+      m_bShowNumber = PropBag.ReadProperty("ShowNumber", False)
+   End If
+   
+   m_oTooltipBackColor = PropBag.ReadProperty("TooltipBackColor",
+    vbInfoBackground)
+   m_oTooltipForeColor = PropBag.ReadProperty("TooltipForeColor", vbInfoText)
+   m_sPathSeparator = PropBag.ReadProperty("PathSeparator", "")
+   m_oBackColor = PropBag.ReadProperty("BackColor", vbWindowBackground)
+   m_eBorderStyle = PropBag.ReadProperty("BorderStyle", etvwFixedSingle)
+   m_bCheckBoxes = PropBag.ReadProperty("CheckBoxes", False)
+   m_bEnabled = PropBag.ReadProperty("Enabled", True)
+   m_oForeColor = PropBag.ReadProperty("ForeColor", vbWindowText)
+   m_bHideSelection = PropBag.ReadProperty("HideSelection", False)
+   m_bHotTracking = PropBag.ReadProperty("HotTracking", True)
+   m_lIndent = PropBag.ReadProperty("Indentation", 20)
+   m_lItemHeight = PropBag.ReadProperty("ItemHeight", 16)
+   m_oLineColor = PropBag.ReadProperty("LineColor", vbButtonFace)
+   m_bScroll = PropBag.ReadProperty("Scroll", True)
+   m_sTag = PropBag.ReadProperty("Tag", "")
+   m_eLineStyle = PropBag.ReadProperty("LineStyle", etvwTreeLines)
+   m_bLabelEdit = PropBag.ReadProperty("LabelEdit", False)
+   m_oSelectedBackColor = PropBag.ReadProperty("SelectedBackColor", vbHighlight)
+   m_oSelectedForeColor = PropBag.ReadProperty("SelectedForeColor",
+    vbHighlightText)
+   m_oSelectedNoFocusBackColor = PropBag.ReadProperty("SelectedBackColor",
+    vbButtonFace)
+   m_oSelectedNoFocusForeColor = PropBag.ReadProperty("SelectedForeColor",
+    vbWindowText)
+   m_oSelectedMouseOverBackColor = PropBag.ReadProperty("SelectedBackColor",
+    vbHighlight)
+   m_oSelectedMouseOverForeColor = PropBag.ReadProperty("SelectedForeColor",
+    vbHighlightText)
+   m_oMouseOverBackColor = PropBag.ReadProperty("SelectedBackColor",
+    vbWindowBackground)
+   m_oMouseOverForeColor = PropBag.ReadProperty("SelectedForeColor", &amp;H800000)
+   ScaleMode = PropBag.ReadProperty("ScaleMode", vbTwips)
+   OLEDropMode = PropBag.ReadProperty("OLEDropMode", vbOLEDropNone)
+   OLEDragMode = PropBag.ReadProperty("OLEDragMode", vbOLEDragManual)
+   m_bDragAutoExpand = PropBag.ReadProperty("DragAutoExpand", False)
+   Dim sFnt As New StdFont
+   sFnt.Name = "Tahoma"
+   sFnt.Size = 8.25
+   Dim iFnt As IFont
+   Set iFnt = sFnt
+   Set m_fnt = PropBag.ReadProperty("Font", iFnt)
+   Set UserControl.Font = m_fnt
+   
+   If (m_bExplorerBar) Then
+      m_bFullRowSelect = True
+   Else
+      m_bFullRowSelect = PropBag.ReadProperty("FullRowSelect", False)
+   End If
+   
+   If (m_bExplorerBar) Then
+      m_eTreeViewStyle = etvwPictureText
+   Else
+      m_eTreeViewStyle = PropBag.ReadProperty("Style",
+       etvwTreelinesPlusMinusPictureText)
+      If (m_bFullRowSelect) Then
+         m_eTreeViewStyle = m_eTreeViewStyle And Not &amp;H4&amp;
+      End If
+   End If
+   
+   If Not (m_bExplorerBar Or m_bShowNumber) Then
+      m_bNoCustomDraw = PropBag.ReadProperty("NoCustomDraw", True)
+   Else
+      m_bNoCustomDraw = False
+   End If
+   If (m_bExplorerBar) Then
+      m_bSingleSel = True
+   Else
+      m_bSingleSel = PropBag.ReadProperty("SingleSel", False)
+   End If
+   
+   pInitialize
+   '
+End Sub
+
+Private Sub UserControl_Resize()
+   '
+    Dim rc As RECT
+    If m_hWnd = 0 Then Exit Sub
+    GetClientRect UserControl.hwnd, rc
+    'InflateRect rc, -m_lInternalBorderX, -m_lInternalBorderY
+    MoveWindow m_hWnd, rc.left, rc.top, rc.right - rc.left, rc.bottom - rc.top,
+     1
+   '
+End Sub
+
+Private Sub UserControl_Show()
+   '
+   '
+End Sub
+
+Private Sub UserControl_Terminate()
+    ' Detach the custom IOleInPlaceActiveObject interface
+    ' pointers.
+    With m_IPAOHookStruct
+        CopyMemory .IPAOReal, 0&amp;, 4
+        CopyMemory .TBEx, 0&amp;, 4
+    End With
+    
+    pTerminate
+    
+   If Not (m_hMod = 0) Then
+      FreeLibrary m_hMod
+      m_hMod = 0
+   End If
+    
+   Debug.Print "Terminate"
+   
+End Sub
+
+Private Sub UserControl_WriteProperties(PropBag As PropertyBag)
+   '
+   PropBag.WriteProperty "PathSeparator", m_sPathSeparator, ""
+   PropBag.WriteProperty "BackColor", m_oBackColor, vbWindowBackground
+   PropBag.WriteProperty "BorderStyle", m_eBorderStyle, etvwFixedSingle
+   PropBag.WriteProperty "CheckBoxes", m_bCheckBoxes, False
+   PropBag.WriteProperty "NoCustomDraw", m_bNoCustomDraw, True
+   PropBag.WriteProperty "ShowNumber", m_bShowNumber, False
+   PropBag.WriteProperty "HistoryStyle", m_bExplorerBar, False
+   PropBag.WriteProperty "Enabled", m_bEnabled, True
+   PropBag.WriteProperty "ForeColor", m_oForeColor, vbWindowText
+   PropBag.WriteProperty "FullRowSelect", m_bFullRowSelect, False
+   PropBag.WriteProperty "HideSelection", m_bHideSelection, False
+   PropBag.WriteProperty "HotTracking", m_bHotTracking, True
+   PropBag.WriteProperty "Indentation", m_lIndent, 20
+   PropBag.WriteProperty "ItemHeight", m_lItemHeight, 16
+   PropBag.WriteProperty "LineColor", m_oLineColor, vbButtonFace
+   PropBag.WriteProperty "LineStyle", m_eLineStyle, etvwTreeLines
+   PropBag.WriteProperty "Scroll", m_bScroll, True
+   PropBag.WriteProperty "SingleSel", m_bSingleSel, False
+   PropBag.WriteProperty "Style", m_eTreeViewStyle,
+    etvwTreelinesPlusMinusPictureText
+   PropBag.WriteProperty "Tag", m_sTag, ""
+   PropBag.WriteProperty "LabelEdit", m_bLabelEdit, False
+   PropBag.WriteProperty "SelectedBackColor", m_oSelectedBackColor, vbHighlight
+   PropBag.WriteProperty "SelectedForeColor", m_oSelectedForeColor,
+    vbHighlightText
+   PropBag.WriteProperty "SelectedBackColor", m_oSelectedNoFocusBackColor,
+    vbButtonFace
+   PropBag.WriteProperty "SelectedForeColor", m_oSelectedNoFocusForeColor,
+    vbWindowText
+   PropBag.WriteProperty "SelectedBackColor", m_oSelectedMouseOverBackColor,
+    vbHighlight
+   PropBag.WriteProperty "SelectedForeColor", m_oSelectedMouseOverForeColor,
+    vbHighlightText
+   PropBag.WriteProperty "SelectedBackColor", m_oMouseOverBackColor,
+    vbWindowBackground
+   PropBag.WriteProperty "SelectedForeColor", m_oMouseOverForeColor, &amp;H800000
+   PropBag.WriteProperty "ScaleMode", ScaleMode, vbTwips
+   PropBag.WriteProperty "OLEDropMode", OLEDropMode, vbOLEDropNone
+   PropBag.WriteProperty "OLEDragMode", OLEDragMode, vbOLEDragManual
+   PropBag.WriteProperty "DragAutoExpand", m_bDragAutoExpand, False
+   PropBag.WriteProperty "TooltipBackColor", m_oTooltipBackColor,
+    vbInfoBackground
+   PropBag.WriteProperty "TooltipForeColor", m_oTooltipForeColor, vbInfoText
+   PropBag.WriteProperty "DragStyle", m_eDragStyle, etvwInsertMark
+   Dim sFnt As New StdFont
+   sFnt.Name = "Tahoma"
+   sFnt.Size = 8.25
+   Dim iFnt As IFont
+   Set iFnt = sFnt
+   PropBag.WriteProperty "Font", m_fnt, iFnt
+   
+   '
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">TreeView</a>&#160;.&#160;<a href="article.html">vbAccelerator TreeView Control</a>&#160;.&#160;<a href="VB5_TreeView_Full_Source.html">VB5 TreeView Full Source</a>&#160;.&#160;vbalTreeView.ctl</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 18 April 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/TreeView/TreeView_Control/VB5_TreeView_Full_Source_zip_vbalTreeView_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:14 GMT -->
+</html>

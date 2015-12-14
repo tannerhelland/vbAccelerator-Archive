@@ -1,0 +1,327 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Common_Dialogs/Find_and_Replace/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:35 GMT -->
+<head>
+
+<title>vbAccelerator - Using the Find and Replace Common Dialogs</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+VB has never provided direct support for the Find/Replace common
+dialogs.  This may have been because these dialogs are non-modal, and
+it is more difficult to use these from an ActiveX control container,
+or that it is fairly simple to knock up your own Find/Replace form
+in VB without bothering with the ones provided by Windows.  
+In any case, this sample provides a simple class and a module
+which enable you to use the dialogs direct from VB, although
+there is problem with Tab key handling in the dialogs.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Common Dialogs</a>&#160;.&#160;Using the Find and Replace Common Dialogs</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_FindReplace_Class_and_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 FindReplace Class and Sample</a> (18K)</p><p /><p class="nav"><a href="VB6_FindReplace_Class_and_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 FindReplace Class and Sample</a> (17K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:12289</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12289&amp;type=Article&amp;title=Using%20the%20Find%20and%20Replace%20Common%20Dialogs">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />20 Jun 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12338">Win32 Hooks in VB - The vbAccelerator Hook Library</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Using the Find and Replace Common Dialogs</h1><p class="splash">Reuse the standard Find/Replace dialogs in VB for that Notepad-style application feel...</p><img src="findReplace.png" width="492" height="366" alt="Find/Replace Dialog in use" /><p /><p>
+VB has never provided direct support for the Find/Replace common
+dialogs.  This may have been because these dialogs are non-modal, and
+it is more difficult to use these from an ActiveX control container,
+or that it is fairly simple to knock up your own Find/Replace form
+in VB without bothering with the ones provided by Windows.  
+In any case, this sample provides a simple class and a module
+which enable you to use the dialogs direct from VB, although
+there is problem with Tab key handling in the dialogs.
+</p><h2>Using The Code</h2><p>
+To use the Find/Replace dialog code, first add a reference to the
+<a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing and Timer Assistant</a> and
+then add <span class="i">cFindReplace.cls</span> and <span class="i">mFindReplaceHook.bas</span>
+from the download to your project.  Now you will be able to declare 
+a <span class="code">WithEvents</span> instance of the 
+<span class="i">cFindReplace</span> component to your code.
+</p><pre>
+Private WithEvents m_cFR As cFindReplace
+
+Private Sub Form_Load()
+   
+   ' Create instance of Find/Replace object
+   Set m_cFR = New cFindReplace
+
+End Sub    
+
+Private Sub m_cFR_FindNext( _
+      ByVal sToFind As String, _
+      ByVal eFlags As EFindReplaceFlags _
+   )
+   ' Fired when find button clicked
+End Sub
+
+Private Sub m_cFR_Replace( _
+      ByVal sToReplace As String, _
+      ByVal sReplaceWith As String, _
+      ByVal eFlags As EFindReplaceFlags _
+   )
+   ' Fired when replace button clicked
+End Sub
+
+Private Sub m_cFR_ReplaceAll( _
+      ByVal sToReplace As String, _
+      ByVal sReplaceWith As String, _
+      ByVal eFlags As EFindReplaceFlags _
+   )
+   ' Fired when replace all button clicked
+End Sub
+
+Private Sub m_cFR_ShowHelp()
+   ' Fired if the help button clicked
+End Sub
+</pre><p>
+Now all you need to do is to show the dialog when needed and
+also to respond to the events.  To show a Find dialog, call the
+<span class="code">VBFindText</span> method, passing in the window
+handle of the form you want to own the dialog and optionally the 
+initial text to display in the find box and options controlling
+the search.  Likewise, to show the Replace dialog,
+call <span class="code">VBReplaceText</span>, in which case you
+can also specify the initial text in the replace with text box
+as well as the text to find.  You cannot display
+both the Find and Replace dialogs at the same time.
+</p><p>
+In responding to the events, you receive the text to find/replace
+and also flags specifying how to search.  These flags are bit-fields
+and so you can determine if a particular option is selected
+using the <span class="code">And</span> operator:
+</p><pre>
+    bSearchDown = ((eOptions And FR_DOWN) = FR_DOWN)
+    bWholeWord = ((eOptions And FR_WHOLEWORD) = FR_WHOLEWORD)
+    bMatchCase = ((eOptions And FR_MATCHCASE) = FR_MATCHCASE)
+</pre><p>
+Finally, you can close an open dialog using the, erm, <span class="code">CloseDialog</span>
+method.  Dialogs are automatically closed if their owning form is unloaded.
+</p><h2>About the Find/Replace Common Dialogs</h2><p>
+The Find/Replace common dialogs are designed to be easily 
+used with minimal effort from a C/C++ application.  There is just
+one structure to initialise and then two API calls to make, one
+for Find and one for Replace.  Whenever the user clicks one of the
+buttons, a notification is sent to the owning application in the
+form of a custom Window Message.
+</p><p>
+There are relatively few difficulties in converting the API over
+to VB (I further simplified life by using the 
+<a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing and Timer assistant</a>
+to catch the messages.  Here are the declares which provide
+access to the API:
+</p><pre>
+Private Type FINDREPLACE
+   lStructSize As Long        '// size of this struct 0x20
+   hWndOwner As Long          '// handle to owner's window
+   hInstance As Long          '// instance handle of.EXE that
+                              '// contains cust. dlg. template
+   flags As Long              '// one or more of the FR_?? flags
+   lpstrFindWhat As Long      '// ptr. to search string
+   lpstrReplaceWith As Long   '// ptr. to replace string
+   wFindWhatLen As Integer    '// size of find buffer
+   wReplaceWithLen As Integer '// size of replace buffer
+   lCustData As Long          '// data passed to hook fn.
+   lpfnHook As Long           '// ptr. to hook fn. or NULL
+   lpTemplateName As Long     '// custom template name
+End Type
+Private Declare Function FindTextA Lib "COMDLG32.DLL" ( _
+   tF As FINDREPLACE) As Long
+Private Declare Function ReplaceTextA Lib "COMDLG32.DLL" ( _
+   tF As FINDREPLACE) As Long
+Private Declare Function FindTextW Lib "COMDLG32.DLL" ( _
+   tF As FINDREPLACE) As Long
+Private Declare Function ReplaceTextW Lib "COMDLG32.DLL" ( _
+   tF As FINDREPLACE) As Long
+</pre><p>
+The <span class="code">FINDREPLACE</span> structure uses a pointer 
+to an area in memory to hold the find and replace strings. Although
+in theory you can use a pointer to a VB string to do this, I found
+it easier to manage an API buffer in memory and use a couple of
+helper functions called <span class="code">GetString</span> and
+<span class="code">SetString</span>, which in turn use the ubiquitous 
+<span class="code">CopyMemory</span> function and byte arrays to 
+transfer the data to and from strings:
+</p><pre>
+Private Declare Function LocalAlloc Lib "kernel32" ( _
+   ByVal wFlags As Long, ByVal wBytes As Long) As Long
+Private Declare Function LocalFree Lib "kernel32" ( _
+   ByVal hMem As Long) As Long
+Private Declare Function LocalLock Lib "kernel32" ( _
+   ByVal hMem As Long) As Long
+Private Declare Function LocalUnlock Lib "kernel32" ( _
+   ByVal hMem As Long) As Long
+Private Const GMEM_FIXED = &amp;H0
+Private Const GMEM_ZEROINIT = &amp;H40
+Private Const GPTR = (GMEM_FIXED Or GMEM_ZEROINIT)
+
+Private Function GetString(ByVal lPtr As Long) As String
+   Dim sRet As String
+   If Not (lPtr = 0) Then
+      Dim b() As Byte
+      ReDim b(0 To m_lBuffLen - 1) As Byte
+      CopyMemory b(0), ByVal lPtr, m_lBuffLen
+      If IsNt Then
+         sRet = b
+      Else
+         sRet = StrConv(b, vbUnicode)
+      End If
+      Dim iPos As Long
+      iPos = InStr(sRet, vbNullChar)
+      If (iPos &gt; 1) Then
+         GetString = Left(sRet, iPos - 1)
+      End If
+   End If
+End Function
+
+Private Sub SetString(ByVal lPtr As Long, ByVal sString As String)
+   If Not (lPtr = 0) Then
+      If (Len(sString) &gt; 0) Then
+         Dim b() As Byte
+         If IsNt Then
+            If (Len(sString) &gt; m_lBuffLen \ 2) Then
+               sString = Left(sString, m_lBuffLen \ 2)
+            End If
+            b = sString
+         Else
+            If (Len(sString) &gt; m_lBuffLen) Then
+               sString = Left(sString, m_lBuffLen)
+            End If
+            b = StrConv(sString, vbFromUnicode)
+         End If
+         ReDim Preserve b(0 To m_lBuffLen) As Byte
+         CopyMemory ByVal lPtr, b(0), m_lBuffLen
+      End If
+   End If
+End Sub
+
+' To allocate memory:
+hMem = LocalAlloc(GPTR, size)
+lPtr = LocalLock(hMem)
+
+' To set the string:
+SetString lPtr, "vbAccelerator.com"
+
+' To get the string
+Debug.Print GetString(lPtr)
+
+' Clear up resources:
+LocalUnlock lPtr
+LocalFree hMem
+</pre><p>
+With this together its fairly simple to set up the <span class="code">FINDREPLACE</span>
+structure and call the API functions.
+</p><h2>A Problem</h2><p>
+Whilst this is all workable enough, in practice there is a 
+bigger problem. The Find and Replace dialogs are
+non-modal.  ActiveX control containers have specific requirements
+on the implementation of non-modal dialogs around the handling
+of focus and the routing of key presses.  Since VB forms
+are essentially implementations of ActiveX control containers 
+this issue comes up when trying to use the Find and Replace dialogs.
+</p><p>
+If you run the sample code with any calls to the 
+<span class="code">Attach</span> method of the 
+<span class="i">mFindReplaceHook</span> module commented out, you'll
+see the effect of this.  When the Find or Replace dialog is in 
+focus hitting Return or Escape has no effect, and the Tab key causes
+the system to Beep.
+</p><p>
+Resolving this is tricky since you don't have any access to the 
+ActiveX Container interfaces you might need to fix this from VB.
+The reason that the keys don't work correctly is that they are 
+swallowed by the VB application rather than being directed to 
+the dialog's message loop.  What you want is to force VB to stop 
+eating the keys and send the message; one way of doing this is
+to intercept all key presses using a Windows Hook, and to perform
+custom processing and then consume them.
+</p><p>
+This fixes the Return and Escape keys, however for some 
+reason tabs are not being processed correctly.  Whenever you
+hit tab, focus is always transferred to the first text box in
+the dialog. If anyone knows how to fix this it
+would be greatly appreciated.
+</p><h3>Using a Keyboard Hook To Process Dialog Messages</h3><p></p><h3>Keyboard Hooks and the IDE</h3><p>
+One unpleasant side effect of this techinque is that since
+VB debugs in the same process as the IDE, if the hook is installed
+then keys normally intended for the IDE (such as Ctrl-Break and
+other debugging keys) can end up being caught by the hook.  This
+means that debugging becomes very difficult.  
+</p><p>
+You can resolve this issue by either of the following techniques:
+</p><ol><li>Compile <span class="i">cFindReplace</span> and <span class="i">mFindReplaceHook</span>
+into an ActiveX DLL and use that instead.</li><li>Prevent the code from attaching a hook at debug time by putting
+an IDE-only line of code into the <span class="code">Attach</span> method.
+</li></ol><p>
+The second method is the easiest.  The code might look something like
+this:
+</p><pre>
+Private m_bInIDE As Boolean
+
+Private Property Get InIDE() As Boolean
+   Debug.Assert IsInIDE()
+   InIDE = m_bInIDE
+End Property
+Private Function IsInIDE() As Boolean
+   m_bInIDE = True
+   IsInIDE = m_bInIDE
+End Function
+
+...
+
+Public Sub Attach(ByVal hWnd As Long)
+   If (InIDE) Then
+      Exit Sub
+   End If
+
+   ... 
+
+End Sub
+</pre><h2>Conclusion</h2><p>
+This article provides some short VB code which allows you to 
+invoke the Common Dialog Find and Replace dialogs easily.  However, 
+there are problems integrating non-modal API dialogs with VB 
+applications.  This sample fixes most but there is still a tab
+key handling problem.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Common Dialogs</a>&#160;.&#160;Using the Find and Replace Common Dialogs</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 8 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Common_Dialogs/Find_and_Replace/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:36 GMT -->
+</html>

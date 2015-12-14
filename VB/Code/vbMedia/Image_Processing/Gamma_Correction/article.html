@@ -1,0 +1,167 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Gamma_Correction/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:49 GMT -->
+<head>
+
+<title>vbAccelerator - Gamma Correction</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+A Gamma Correction filter is primarily used for colour matching
+purposes on CRT based displays, but it can also be used for
+creative image processing.  This article shows how the gamma
+filter is calculated and provides an implementation.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;Gamma Correction</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Gamma_Correction_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Gamma Correction Sample</a> (57K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:12684</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12684&amp;type=Article&amp;title=Gamma%20Correction">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />5 Sep 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3017">True Colour DIBSection</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Gamma Correction</h1><p class="splash">How to apply a gamma correction filter to an image</p><img src="gammaCorrection.png" width="262" height="164" alt="Gamma Correction Demonstration" /><p /><p>
+A Gamma Correction filter is primarily used for colour matching
+purposes on CRT based displays, but it can also be used for
+creative image processing.  This article shows how the gamma
+filter is calculated and provides an implementation.
+</p><h2>About the Gamma Filter</h2><p>
+Gamma correction was developed to make it easier to adjust colours displayed on Cathode Ray Tube (CRT) displays.
+CRT displays produce a light intensity (luminance) proportional to the input
+voltage raised to a power.  Since no two CRTs are exactly alike in their luminance
+characteristic, a way of adjusting the input image so the displayed colours match
+a reference is needed.  This is done by adjusting the colours to be displayed by a 
+power which is termed <span class="i">gamma</span>.
+</p><p>
+Since gamma lightens or darkens the colours in an image it can be used for image
+processing effects as well as the normal colour profile adjustment.
+Gamma is normally restricted to the range <sup>1</sup>/<sub>5</sub> to 5, where a value
+less than 1 lightens the image, a value of 1 leaves the image unaffected and an value
+greater than 1 darkens the image:
+</p><h2>Calculating Gamma</h2><p>
+To apply a gamma filter, each colour is factored using the 
+inverse power of the gamma value:
+</p><img src="gammaEquation.png" width="245" height="57" alt="New colour = 255 * [ (old colour / 255) ^ (1 / gamma) ]" /><p>
+Since the gamma calculation involves powers, and for a given value of gamma and 
+colour the output colour value is constant, it makes sense to pre-calculate the new
+colour values and store them in an array so the calculation doesn't need to be
+repeated each time.  Then the new value can be looked up simply as the index of
+the entry in a one-dimensional array:
+</p><pre>
+Private m_fGamma As Double
+Private m_red(0 To 255) As Byte
+Private m_green(0 To 255) As Byte
+Private m_blue(0 To 255) As Byte
+
+Private Sub createGammaTable()
+Dim i As Long
+Dim lValue As Long
+   For i = 0 To 255
+      lValue = (255# * ((i / 255#) ^ (1# / m_fGamma))) + 0.5
+      If (lValue &gt; 255) Then lValue = 255
+      m_red(i) = lValue
+      m_green(i) = lValue
+      m_blue(i) = lValue
+   Next i
+End Sub
+</pre><p>
+Note that the red, green and blue gamma values are all set to the same amount
+in this example.  A different gamma could be used for each to achieve 
+colourisation effects.
+</p><h2>Applying The Filter</h2><p>
+Once the gamma arrays have been calculated it is relatively simple to apply
+them to an image using a <a href="http://www.vbaccelerator.com/article.asp?id=3017">DIB Section</a>.  For each pixel 
+in the image array, read the red, green and blue
+values and then replace them with their lookup within the gamma tables:
+</p><pre>
+      Dim bDib() As Byte
+      Dim bDibDst() As Byte
+      Dim tSA As SAFEARRAY2D
+      Dim tSADst As SAFEARRAY2D
+    
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = cSrc.Height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = cSrc.BytesPerScanLine
+          .pvData = cSrc.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+      ' Get the bits in the from DIB section:
+      With tSADst
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = cDst.Height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = cDst.BytesPerScanLine()
+          .pvData = cDst.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+      
+      Dim x As Long
+      Dim y As Long
+      Dim xEnd As Long
+      Dim yEnd As Long
+      
+      xEnd = cSrc.BytesPerScanLine() - 3
+      yEnd = cSrc.Height - 1
+      
+      For x = 0 To xEnd Step 3
+         For y = 0 To yEnd
+            bDibDst(x + 2, y) = m_red(bDib(x + 2, y))
+            bDibDst(x + 1, y) = m_green(bDib(x + 1, y))
+            bDibDst(x, y) = m_blue(bDib(x, y))
+         Next y
+      Next x
+      
+      CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+</pre><h2>Conclusion</h2><p>
+The sample code demonstrates applying gamma to a True Colour DIB Section.
+This type of code can be used as a simple way to highlight, brighten or
+darken images.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;Gamma Correction</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 23 October 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Gamma_Correction/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:54 GMT -->
+</html>

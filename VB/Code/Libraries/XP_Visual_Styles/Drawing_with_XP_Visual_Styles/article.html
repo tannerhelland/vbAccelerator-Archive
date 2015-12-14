@@ -1,0 +1,221 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/XP_Visual_Styles/Drawing_with_XP_Visual_Styles/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:19 GMT -->
+<head>
+
+<title>vbAccelerator - Drawing with XP Visual Styles</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This sample demonstrates using the UxTheme API calls to draw the various objects provided
+by current Windows XP Theme.  This can be a very powerful and simple technique to providing
+the latest UI effects in controls and applications, as demonstrated by the 
+No Status Bar and No Progress
+Bar samples." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">XP Visual Styles</a>&#160;.&#160;Drawing with XP Visual Styles</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Theme_Explorer.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Theme Explorer</a> (47K)</p><p /><p class="nav"><a href="VB6_Theme_Explorer.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Theme Explorer</a> (44K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4091</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4091&amp;type=Article&amp;title=Drawing%20with%20XP%20Visual%20Styles">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />20 Feb 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1416">vbAccelerator No Status Bar Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1414">vbAccelerator Progress Bar Class</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1427">Adding XP Visual Styles to Your Visual Basic Application</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Drawing with XP Visual Styles</h1><p class="splash">All the declares and constants you need to draw custom controls using XP Visual Theme components.</p><img src="themeExplorer.png" width="294" height="233" alt="Theme Explorer Sample Application" /><p /><p>This sample demonstrates using the UxTheme API calls to draw the various objects provided
+by current Windows XP Theme.  This can be a very powerful and simple technique to providing
+the latest UI effects in controls and applications, as demonstrated by the 
+<a href="http://www.vbaccelerator.com/article.asp?id=1416">No Status Bar</a> and <a href="http://www.vbaccelerator.com/article.asp?id=1414">No Progress
+Bar</a> samples.</p><h2>The UxTheme API</h2><p>One of the great things about XP Visual Styles is that Microsoft have chosen to expose
+the API for drawing at two different levels.  At the simple level, ComCtl32.DLL can automatically
+convert all of your controls to draw with the new style, provided that you 
+<a href="http://www.vbaccelerator.com/article.asp?id=1427">link to it</a> - not that this is difficult!  At the more
+complex level, all of the components that ComCtl32.DLL draws in place of the existing controls
+can also be drawn by your own application by using functions exposed by UxTheme.DLL.</p><h2>200 KM/H In The Wrong Lane</h2><p>Whilst that's a nice thing, the actual API itself is provided through the medium
+of barely documented string constants and some particularly clouded enumeration devices in 
+the Platform SDK files <i>Uxtheme.h</i>, <i>Tmschema.h</i> and <i>SchemaDef.h</i>.
+Fine if you're writing in C/C++, but not so easy for other languages. So in the interest of 
+doing something helpful I provide an application here which attempts to draw all of the 
+things that the selected theme is capable of (and some of the features which are advertised 
+in the API don't seem to have made the grade; not least nicer menus..).  The style 
+explorer shows all the potentially available parts for drawing and the associated states
+in a TreeView: you can either try and draw everything in the current theme or you
+can drill down and see what particular parts and states consist of.</p><h2>Slow Down, Speedy</h2><p>The sample really contains two main parts to make it run: an XML file (<i>uxtheme.xml</i>)
+which contains all of the classes that the UXTheme API allegedly draws, and each of the possible
+parts and states associated with these, and a class (<i>cUXTheme.cls</i>) which makes its best 
+attempt to draw an item in a generic way.  I say best attempt because you actually can't 
+really create a generic routine to draw all possible parts and states in the same way: some
+parts look good with text over the top, whilst others, like arrow and icon buttons, look terrible.  
+Regardless of that, lets get on to what classes, parts and states are and how to use the API and
+see what you can do.
+</p><ol><li>&gt;<strong>Classes</strong><br /><p>The items that can be drawn by UxTheme are divided into classes describing which type of
+control you're trying to draw.  So for example, what you need to draw for a <i>ProgressBar</i> 
+is different to a <i>ScrollBar</i> class.</p></li><li><strong>Parts</strong><br /><p>Controls often consist of components, which are referrred to as <i>Parts</i> in the API.  For
+example, a scroll bar has buttons at either end, a thumb track slider and a background, all of
+which are drawn using different visual components.</p></li><li><strong>States</strong><br /><p>Controls often look different depending on whether the mouse is over a part of the control
+or when it is pressed.  The UXTheme <i>State</i> concept allows different visual displays 
+depending on which state a particular part is in.</p></li></ol><p>Its easy to see these concepts when you try the Explorer sample.  There are three levels
+in the TreeView - Classes, Parts and States, and most of them have reasonably descriptive 
+names.  Note that if nothing draws this isn't a bug, its just that the current theme doesn't
+support the combination in question (although as of the time of writing drawing only fails
+at the entire class level, and anything underneath works just fine).</p><h2>How Soon Is Now?</h2><p>Actually using the UxTheme API divides into three parts:</p><ol><li><strong>Get a handle to the theme data</strong><br />
+This allows you to determine whether a theme is available for the item you want
+to draw and if it is, provides you with a <i>hTheme</i> handle which is needed
+for any subsequent drawing.  If you're trying to write code which runs on all
+systems, then you should use VB's horrendous <i>On Error Resume Next</i> to 
+trap failures: if an error occurs you just proceeed as if no Visual Style
+was available.
+<pre>
+Private Declare Function OpenThemeData Lib "uxtheme.dll" _
+   (ByVal hwnd As Long, ByVal pszClassList As Long) As Long
+...
+
+   Dim hTheme As Long
+   On Error Resume Next
+   hTheme = OpenThemeData(m_hWnd, StrPtr(sClass))
+   On Error Goto 0
+   If hTheme = 0 Then
+      ' You need to choose some other way to draw the 
+      ' component
+   Else
+      ' You can draw using XP Visual Styles
+   End If
+</pre></li><li><strong>Drawing the Selected Component</strong><p>There are four different calls you can use to assist in drawing the item in
+question.  However, you have to bear in mind that some options don't make
+sense for some components.  For example, if you're drawing a ScrollBar
+thumb then although you can draw text and an icon over it using the API, this
+component looks strange with text and/or icons.  On the other hand, a StatusBar
+panel can quite reasonably include these components.</p><p>Once you've decided what you want to draw, the API calls are 
+<i>DrawThemeParentBackground</i> and <i>DrawThemeBackground</i> to draw the
+background to the item and <i>DrawThemeText</i> and <i>DrawThemeIcon</i>
+for the text and image.</p><p>There are also APIs to help you determine the
+ideal size of the item; depending on whether text and icons should be shown
+or not you can use <i>GetThemePartSize</i>, <i>GetThemeBackgroundContentRect</i>, <i>GetThemeBackgroundContentRect</i> and 
+<i>GetThemeTextExtent</i> to try and work this out.</p><p>You can refer to the source code of the Theme Explorer sample and try the different
+options to see what happens when use these APIs.  However, typically you want to 
+draw the background and then (optionally) draw the text, which would be done
+like this:</p><pre>
+Private Declare Function DrawThemeBackground Lib "uxtheme.dll" _
+   (ByVal hTheme As Long, ByVal lHDC As Long, _
+    ByVal iPartId As Long, ByVal iStateId As Long, _
+    pRect As RECT, pClipRect As RECT) As Long
+Private Declare Function DrawThemeText Lib "uxtheme.dll" _
+   (ByVal hTheme As Long, ByVal hdc As Long, ByVal iPartId As Long, _
+    ByVal iStateId As Long, ByVal pszText As Long, _
+    ByVal iCharCount As Long, ByVal dwTextFlag As Long, _
+    ByVal dwTextFlags2 As Long, pRect As RECT) As Long
+
+Public Enum DrawTextFlags
+    DT_TOP = &amp;H0
+    DT_LEFT = &amp;H0
+    DT_CENTER = &amp;H1
+    DT_RIGHT = &amp;H2
+    DT_VCENTER = &amp;H4
+    DT_BOTTOM = &amp;H8
+    DT_WORDBREAK = &amp;H10
+    DT_SINGLELINE = &amp;H20
+    DT_EXPANDTABS = &amp;H40
+    DT_TABSTOP = &amp;H80
+    DT_NOCLIP = &amp;H100
+    DT_EXTERNALLEADING = &amp;H200
+    DT_CALCRECT = &amp;H400
+    DT_NOPREFIX = &amp;H800
+    DT_INTERNAL = &amp;H1000
+    DT_EDITCONTROL = &amp;H2000
+    DT_PATH_ELLIPSIS = &amp;H4000
+    DT_END_ELLIPSIS = &amp;H8000
+    DT_MODIFYSTRING = &amp;H10000
+    DT_RTLREADING = &amp;H20000
+    DT_WORD_ELLIPSIS = &amp;H40000
+    DT_NOFULLWIDTHCHARBREAK = &amp;H80000
+    DT_HIDEPREFIX = &amp;H100000
+    DT_PREFIXONLY = &amp;H200000
+End Enum
+
+Public Enum DrawTextAdditionalFlags
+   DTT_GRAYED = &amp;H1  '// draw a grayed-out string
+End Enum
+
+...
+      Dim lR As Long
+      Dim tTextR as RECT
+
+      ' m_hDC is the DC to draw to
+      ' m_lPartId and m_lStateId are the part + state to draw
+      ' tR is a RECT specifying the area to draw in
+      ' m_sText is the text to draw 
+      ' m_eAlign is a combination of the DrawTextFlags values
+    
+      lR = DrawThemeBackground( _
+         hTheme, _
+         m_hDC, _
+         m_lPartId, _
+         m_lStateId, _
+
+         tR, tR)
+
+      lR = GetThemeBackgroundContentRect( _
+         hTheme, _
+         m_hDC, _
+         m_lPartId, _
+         m_lStateId, _
+         tR, _
+         tTextR)
+      
+      lR = DrawThemeText( _
+         hTheme, _
+         m_hDC, _
+         m_lPartId, _
+         m_lStateId, _
+         StrPtr(m_sText), _
+         -1, _
+         m_eTextAlign, _
+         0, _
+         tTextR)
+</pre></li><li><strong>Closing The Theme Data Handle</strong><p>Whenever you get a non-zero <i>hTheme</i> from the <i>OpenThemeData</i> call you 
+should always try to close it again once you've finished:</p><pre>
+Private Declare Function CloseThemeData Lib "uxtheme.dll" _
+   (ByVal hTheme As Long) As Long
+
+...
+
+    ' Drawing now complete
+    CloseThemeData hTheme
+</pre></li></ol><h2>I'll Have a Dry Martini</h2><p>That's it for this sample.  I'm now off to the freezer where a bottle
+of Bombay Sapphire and a Martini glass are both waiting...</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">XP Visual Styles</a>&#160;.&#160;Drawing with XP Visual Styles</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/XP_Visual_Styles/Drawing_with_XP_Visual_Styles/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:20 GMT -->
+</html>

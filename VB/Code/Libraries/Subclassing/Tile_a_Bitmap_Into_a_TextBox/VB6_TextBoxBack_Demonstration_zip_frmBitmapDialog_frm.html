@@ -1,0 +1,396 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Tile_a_Bitmap_Into_a_TextBox/VB6_TextBoxBack_Demonstration_zip_frmBitmapDialog_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:41 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmBitmapDialog.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmBitmapDialog.frm" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;<a href="article.html">Tile a Bitmap Into a TextBox Background</a>&#160;.&#160;<a href="VB6_TextBoxBack_Demonstration.html">VB6 TextBoxBack Demonstration</a>&#160;.&#160;frmBitmapDialog.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_TextBoxBack_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 TextBoxBack Demonstration</a> (126K)</p><p /><p class="nav"><a href="VB6_TextBoxBack_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TextBoxBack Demonstration</a> (122K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1220</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1220&amp;type=Zip&amp;title=VB6%20TextBoxBack%20Demonstration%2Ezip%5FfrmBitmapDialog">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Nov 2002<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmBitmapDialog.frm</h1><pre>VERSION 5.00
+Begin VB.Form frmBitmapDialog 
+   BorderStyle     =   3  'Fixed Dialog
+   Caption         =   "Confirm Registration"
+   ClientHeight    =   4020
+   ClientLeft      =   45
+   ClientTop       =   435
+   ClientWidth     =   5310
+   BeginProperty Font 
+      Name            =   "Tahoma"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "frmBitmapDialog.frx":0000
+   LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
+   ScaleHeight     =   4020
+   ScaleWidth      =   5310
+   ShowInTaskbar   =   0   'False
+   StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton cmdOK 
+      Caption         =   "OK"
+      Default         =   -1  'True
+      Height          =   435
+      Left            =   2640
+      Style           =   1  'Graphical
+      TabIndex        =   9
+      Top             =   3420
+      Width           =   1275
+   End
+   Begin VB.CommandButton cmdCancel 
+      Cancel          =   -1  'True
+      Caption         =   "Cancel"
+      Height          =   435
+      Left            =   4020
+      Style           =   1  'Graphical
+      TabIndex        =   8
+      Top             =   3420
+      Width           =   1275
+   End
+   Begin VB.TextBox txtPhone 
+      Appearance      =   0  'Flat
+      ForeColor       =   &amp;H00000000&amp;
+      Height          =   375
+      Left            =   1200
+      MultiLine       =   -1  'True
+      TabIndex        =   7
+      Top             =   2880
+      Width           =   4095
+   End
+   Begin VB.TextBox txtAddress 
+      Appearance      =   0  'Flat
+      ForeColor       =   &amp;H00000000&amp;
+      Height          =   1335
+      Left            =   1200
+      MultiLine       =   -1  'True
+      TabIndex        =   5
+      Top             =   1140
+      Width           =   4095
+   End
+   Begin VB.TextBox txtLastName 
+      Appearance      =   0  'Flat
+      ForeColor       =   &amp;H00000000&amp;
+      Height          =   375
+      Left            =   1200
+      MultiLine       =   -1  'True
+      TabIndex        =   3
+      Top             =   600
+      Width           =   4095
+   End
+   Begin VB.TextBox txtFirstName 
+      Appearance      =   0  'Flat
+      ForeColor       =   &amp;H00000000&amp;
+      Height          =   375
+      Left            =   1200
+      MultiLine       =   -1  'True
+      TabIndex        =   1
+      Top             =   120
+      Width           =   4095
+   End
+   Begin VB.Label lblPhone 
+      BackStyle       =   0  'Transparent
+      Caption         =   "&amp;Phone"
+      ForeColor       =   &amp;H00000000&amp;
+      Height          =   315
+      Left            =   120
+      TabIndex        =   6
+      Top             =   2940
+      Width           =   915
+   End
+   Begin VB.Label lblAddress 
+      BackStyle       =   0  'Transparent
+      Caption         =   "&amp;Address:"
+      ForeColor       =   &amp;H00000000&amp;
+      Height          =   315
+      Left            =   120
+      TabIndex        =   4
+      Top             =   1200
+      Width           =   915
+   End
+   Begin VB.Label lblLastName 
+      BackStyle       =   0  'Transparent
+      Caption         =   "&amp;Last Name:"
+      ForeColor       =   &amp;H00000000&amp;
+      Height          =   315
+      Left            =   120
+      TabIndex        =   2
+      Top             =   660
+      Width           =   915
+   End
+   Begin VB.Label Label1 
+      BackStyle       =   0  'Transparent
+      Caption         =   "&amp;First Name:"
+      ForeColor       =   &amp;H00000000&amp;
+      Height          =   315
+      Left            =   120
+      TabIndex        =   0
+      Top             =   180
+      Width           =   915
+   End
+End
+Attribute VB_Name = "frmBitmapDialog"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private m_cBack() As cTextBoxBackground
+Private m_cButtons As cOwnerDrawButton
+
+Implements IOwnerDrawButton
+
+' Functions for drawing the buttons:
+Private Type RECT
+   left As Long
+   tOp As Long
+   Right As Long
+   Bottom As Long
+End Type
+
+Private Declare Function SetBkMode Lib "gdi32" (ByVal hDC As Long, ByVal
+ nBkMode As Long) As Long
+    Private Const OPAQUE = 2
+    Private Const TRANSPARENT = 1
+
+Private Declare Function DrawText Lib "user32" Alias "DrawTextA" (ByVal hDC As
+ Long, ByVal lpStr As String, ByVal nCount As Long, lpRect As RECT, ByVal
+ wFormat As Long) As Long
+    Private Const DT_BOTTOM = &amp;H8
+    Private Const DT_CENTER = &amp;H1
+    Private Const DT_LEFT = &amp;H0
+    Private Const DT_CALCRECT = &amp;H400
+    Private Const DT_WORDBREAK = &amp;H10
+    Private Const DT_VCENTER = &amp;H4
+    Private Const DT_TOP = &amp;H0
+    Private Const DT_TABSTOP = &amp;H80
+    Private Const DT_SINGLELINE = &amp;H20
+    Private Const DT_RIGHT = &amp;H2
+    Private Const DT_NOCLIP = &amp;H100
+    Private Const DT_INTERNAL = &amp;H1000
+    Private Const DT_EXTERNALLEADING = &amp;H200
+    Private Const DT_EXPANDTABS = &amp;H40
+    Private Const DT_CHARSTREAM = 4
+    Private Const DT_NOPREFIX = &amp;H800
+    Private Const DT_WORD_ELLIPSIS = &amp;H40000
+
+Private Type POINTAPI
+   x As Long
+   y As Long
+End Type
+   
+Private Declare Function LineTo Lib "gdi32" ( _
+   ByVal hDC As Long, ByVal x As Long, ByVal y As Long) As Long
+Private Declare Function MoveToEx Lib "gdi32" ( _
+   ByVal hDC As Long, ByVal x As Long, ByVal y As Long, lpPoint As POINTAPI) As
+    Long
+
+Private Sub cmdCancel_Click()
+   Unload Me
+End Sub
+
+Private Sub cmdOK_Click()
+   Unload Me
+End Sub
+
+Private Sub Form_Load()
+   
+   txtFirstName.Text = "Lord"
+   txtLastName.Text = "Lucan"
+   txtAddress.Text = "60 Victoria Embankment," &amp; vbCrLf &amp; "Blackfriars," &amp;
+    vbCrLf &amp; "London," &amp; vbCrLf &amp; "EC4Y 0JP" &amp; vbCrLf &amp; "UK"
+   txtPhone.Text = "(+44 20) 7325 1000"
+   
+   Dim backNormal As StdPicture
+   Dim backLite As StdPicture
+   
+   Set backNormal = LoadPicture(App.Path &amp; "\back.bmp")
+   Set backLite = LoadPicture(App.Path &amp; "\backlite.bmp")
+   
+   ' Text Boxes:
+   Dim textBoxes As New Collection
+   Dim i As Long
+   For i = 0 To Me.Controls.Count - 1
+      If (TypeName(Me.Controls(i)) = "TextBox") Then
+         textBoxes.Add (Me.Controls(i))
+      End If
+   Next i
+   ReDim m_cBack(1 To textBoxes.Count + 2) As cTextBoxBackground
+   ' The first items are actually attached to text boxes:
+   Dim txt As TextBox
+   For i = 1 To textBoxes.Count
+      Set m_cBack(i) = New cTextBoxBackground
+      m_cBack(i).SetBackdrop backLite
+      Set txt = textBoxes(i)
+      m_cBack(i).TileOffsetX = txt.left \ Screen.TwipsPerPixelX
+      m_cBack(i).TileOffsetY = txt.tOp \ Screen.TwipsPerPixelY
+      m_cBack(i).Attach txt.hwnd
+   Next i
+   ' use the last two items for tiling only (not attached):
+   ' dark and pale versions of the bitmap
+   Set m_cBack(textBoxes.Count + 1) = New cTextBoxBackground
+   m_cBack(textBoxes.Count + 1).SetBackdrop backNormal
+   Set m_cBack(textBoxes.Count + 2) = New cTextBoxBackground
+   m_cBack(textBoxes.Count + 2).SetBackdrop backLite
+   
+   ' Buttons:
+   Set m_cButtons = New cOwnerDrawButton
+   m_cButtons.Attach Me
+   m_cButtons.AddhWnd cmdOK.hwnd
+   m_cButtons.AddhWnd cmdCancel.hwnd
+
+End Sub
+
+
+Private Sub Form_Paint()
+   ' Draw a dark background:
+   m_cBack(UBound(m_cBack) - 1).TileArea Me.hDC, 0, 0, _
+      Me.ScaleWidth \ Screen.TwipsPerPixelX, _
+      Me.ScaleHeight \ Screen.TwipsPerPixelY
+   ' Draw a separator line before the buttons:
+   m_cBack(UBound(m_cBack)).TileArea Me.hDC, _
+      0, cmdCancel.tOp \ Screen.TwipsPerPixelY - 4, _
+      Me.ScaleWidth \ Screen.TwipsPerPixelX, 1
+End Sub
+ 
+Private Function ControlForHwnd(ByVal lhWnd As Long) As Control
+Dim ctl As Control
+   For Each ctl In Controls
+      On Error Resume Next
+      If (ctl.hwnd = lhWnd) Then
+         If (Err.Number = 0) Then
+            Set ControlForHwnd = ctl
+         End If
+      End If
+      Err.Clear
+      On Error GoTo 0
+   Next
+End Function
+
+Private Property Get IOwnerDrawButton_ButtonContainerhWnd() As Long
+   IOwnerDrawButton_ButtonContainerhWnd = Me.hwnd
+End Property
+
+Private Property Get IOwnerDrawButton_DoOwnerDraw(ByVal lhWnd As Long) As
+ Boolean
+   IOwnerDrawButton_DoOwnerDraw = True
+End Property
+
+Private Sub IOwnerDrawButton_DrawItem(ByVal lhWnd As Long, ByVal lHDC As Long,
+ lLeft As Long, lTop As Long, lRight As Long, lBottom As Long, ByVal bPushed As
+ Boolean, ByVal bChecked As Boolean, ByVal bEnabled As Boolean, ByVal bInFocus
+ As Boolean, bDoDefault As Boolean)
+   '
+   bDoDefault = False
+     
+   Dim xOffset As Long
+   Dim yOffset As Long
+   Dim tilerIndex As Long
+   
+   ' draw light button, up
+   tilerIndex = UBound(m_cBack)
+   If (bPushed) Then
+      ' draw dark button, down
+      tilerIndex = tilerIndex - 1
+   End If
+   
+   ' store original offsets:
+   xOffset = m_cBack(tilerIndex).TileOffsetX
+   yOffset = m_cBack(tilerIndex).TileOffsetX
+   
+   Dim cmd As Control
+   Set cmd = ControlForHwnd(lhWnd)
+   
+   ' create new offsets:
+   m_cBack(tilerIndex).TileOffsetX = cmd.left / Screen.TwipsPerPixelX
+   m_cBack(tilerIndex).TileOffsetY = cmd.tOp / Screen.TwipsPerPixelY
+   If (bPushed) Then
+      m_cBack(tilerIndex).TileOffsetX = m_cBack(tilerIndex).TileOffsetX - 1
+      m_cBack(tilerIndex).TileOffsetY = m_cBack(tilerIndex).TileOffsetY - 1
+   End If
+   
+   ' Fill background:
+   m_cBack(tilerIndex).TileArea lHDC, lLeft, lTop, lRight - lLeft, lBottom -
+    lTop
+   
+   ' Button edge:
+   SetBkMode lHDC, TRANSPARENT
+   Dim junk As POINTAPI
+   MoveToEx lHDC, lLeft, lTop, junk
+   LineTo lHDC, lRight - 1, lTop
+   LineTo lHDC, lRight - 1, lBottom - 1
+   LineTo lHDC, lLeft, lBottom - 1
+   LineTo lHDC, lLeft, lTop
+   
+   ' Draw Text:
+   Dim tR As RECT
+   tR.left = lLeft
+   tR.Right = lRight
+   tR.tOp = lTop
+   tR.Bottom = lBottom
+   If (bPushed) Then
+      tR.left = tR.left + 1
+      tR.tOp = tR.tOp + 1
+      tR.Right = tR.Right + 1
+      tR.Bottom = tR.Bottom + 1
+   End If
+   DrawText lHDC, cmd.Caption, -1, tR, DT_CENTER Or DT_VCENTER Or DT_SINGLELINE
+   
+   ' return offsets:
+   m_cBack(tilerIndex).TileOffsetX = xOffset
+   m_cBack(tilerIndex).TileOffsetX = yOffset
+   
+End Sub
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;<a href="article.html">Tile a Bitmap Into a TextBox Background</a>&#160;.&#160;<a href="VB6_TextBoxBack_Demonstration.html">VB6 TextBoxBack Demonstration</a>&#160;.&#160;frmBitmapDialog.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Tile_a_Bitmap_Into_a_TextBox/VB6_TextBoxBack_Demonstration_zip_frmBitmapDialog_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:41 GMT -->
+</html>

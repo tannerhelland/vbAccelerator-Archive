@@ -1,0 +1,142 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/HiResTimer/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:55:20 GMT -->
+<head>
+
+<title>vbAccelerator - High Resolution Multimedia Timer</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="The standard timer supplied with VB is great for most tasks, but the frequency it updates 
+at isn't acceptable for high-performance multimedia. In audio applications the system must be 
+capable of firing audio events with a 1ms resolution, otherwise the ear will be able to 
+discern the timing inaccuracy.This article presents a small, hardcore multimedia timer capable of 1ms resolution in VB code." /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Libraries</a>&#160;.&#160;High Resolution Multimedia Timer</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_HiResTimer_Full_Source_Code.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 HiResTimer Full Source Code</a> (26K)</p><p /><p class="nav"><a href="VB6_HiResTimer_Full_Source_Code.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 HiResTimer Full Source Code</a> (29K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:15</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=15&amp;type=Article&amp;title=High%20Resolution%20Multimedia%20Timer">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />21 Nov 2002<br /><p class="update">Added a VB6 version of the timer.  Note that in the VB6 version, we need to use a Type Library
+to call the <i>PostMessage</i> Win32 call.  This is because the multimedia timer fires on another
+thread to the VB application, and, as described in Matt Curland's excellent book "Advanced Visual Basic"
+VB6 uses Thread Local Storage which isn't initialised on receipt of an event from another Thread.  As a 
+consequence you can only make calls to methods described in a type library.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>High Resolution Multimedia Timer</h1><p class="splash">A Stable, Safe high resolution timer for VB applications, capable of 1ms resolution.</p><img src="hirestmr.gif" width="214" height="100" alt="Speedy Pic, Tenuously Related To The Article" /><p /><p>The standard timer supplied with VB is great for most tasks, but the frequency it updates 
+at isn't acceptable for high-performance multimedia. In audio applications the system must be 
+capable of firing audio events with a 1ms resolution, otherwise the ear will be able to 
+discern the timing inaccuracy.</p><p>This article presents a small, hardcore multimedia timer capable of 1ms resolution in VB code.</p><h2>Timer Overview</h2><p>The VB timer is based on the standard Win32 timer, and this is not intended for time critical tasks. 
+The basic minimum resolution of this timer is no better than about 50ms on a Pentium II system 
+running Win9x, although it is somewhat better on NT/2000/XP, at around 10ms.</p><p>This leads to an irritating VB coding problem: if you write graphics code on an NT system 
+using a timer it all seems to work nicely, but when you run it on Win9x it runs too slowly because 
+the timer doesn't fire so quickly. Whilst one alternative to this sort of problem is using a 
+<i>DoEvents</i>, <i>Sleep</i> and <i>QueryPerformanceCounter</i> loop, this is rarely what you want in 
+a real world application.</p><h2>About Multimedia Timers</h2><p>Multimedia timers are implemented using the Win32 multimedia library (winmm.dll). Before 
+creating a timer, it is important to be aware of a number of system limitations and 
+VB problems which can occur when using multimedia timers.</p><h3>Timers are a Limited Resource</h3><p>In Win9x, the system is limited to a maximum of only <strong>32</strong> multimedia timers. 
+(In NT, things are much better and each process on the system can have up to 16 timers.) To 
+provide full Win9x support it is therefore desirable to minimise the number of timers 
+you create to reduce the chance of running out of timer resources. A single application should 
+never create more than one timer regardless of how many controls, DLLs or modules within that 
+application require the timer's services.</p><h3>Multimedia Timers are remorseless</h3><p>If you build a multimedia timer directly into a VB application, you will almost certainly 
+not be able to debug it with any consistency. Building this timer component was somewhat 
+tricky for this reason! Any time the application stops for an error or a break-point, 
+the timer keeps on firing from its own separate thread in the background. This 
+immediately crashes or locks up the VB IDE. Adding <i>Debug.Print</i> messages doesn't help 
+either - the debug window can't keep up with the high rate of messages fired by the timer and 
+VB IDE locks up in a loop again.</p><h3>You can only make a handful of calls from the timer event</h3><p>The Win32 SDK states that only the following calls are allowed during a multimedia timer event:</p><ul><li><i>PostMessage</i></li><li><i>timeGetSystemTime</i></li><li><i>timeGetTime</i></li><li><i>timeSetEvent</i></li><li><i>timeKillEvent</i></li><li><i>midiOutShortMsg</i></li><li><i>midiOutLongMsg</i></li><li><i>OutputDebugString</i></li></ul><p>This isn't much! It seems to be correct for most standard operations. For example, I found 
+just putting a <i>Debug.Print</i> statement in the timer event causes the timer to crash when 
+you try to terminate it. Putting methods there to raise an event directly also caused an 
+untimely crash. (Note that from other MSDN code, it would appear that DirectX calls are allowed)</p><h2>Implementing a Stable HiRes Timer in VB</h2><p>The first thing to do with this sort of component is to ensure the code can be isolated 
+from the VB IDE by coding it into an ActiveX DLL. You really don't want to have to try to 
+deal with the IDE locking up every time you set a break-point.</p><p>Once it is in the DLL then the next thing is to consider how to reduce the number of 
+timer instances to ensure you aren't too likely to run out of them. In this code, the timer 
+itself is implemented in a module. If you implement code in a module, this module will be global 
+to all classes which use it within a process. As well as your executable project, this includes 
+any OCX or DLL which attaches to the DLL. Therefore it is possible to create a single timer to 
+service as many classes as you want. The trick is to ensure that the module doesn't get a 
+reference to the classes that are attached, otherwise you will get a circular reference. 
+You can prevent circular references by storing object pointers rather than direct references to 
+classes as described in the article Subclassing without the crashes.</p><p>The final problem to work around is that you can only call a very limited selection of 
+functions during a multimedia timer event. I work around this by using the <i>PostMessage</i> 
+function. The function posts a custom <i>WM_USER</i> message to a hidden form owned by the 
+timer module within the DLL. The form is subclassed by the DLL so when the custom message is 
+received it is intercepted by the hidden form's <i>WindowProc</i> function, and this allows 
+the module to forward the message on as an event to any objects which are using the DLL.</p><p>This method of working may seem rather stupid - a timer event is received by the DLL's 
+timer module, then posted to a form and intercepted from the form using the same DLL - 
+but it turns out this is vital to ensure the timer is stable during operation. There are 
+various examples of how to crash your system by not doing this available elsewhere on the 
+Internet (no names - you know who you are :)</p><p>When using the DLL provided with the download, you can get stable crash-free operation. 
+You can press stop in the VB IDE when the timer is running without any problems. Even 
+if you set the timer to do something at a silly rate which your code can't keep up with you 
+shouldn't have difficulty provided you use the Event interface, because the 
+<i>PostMessage</i> operation prevents things going wrong.</p><p>However, I should point out if you are running the DLL code in the group project, 
+no such niceties apply. No point giving disclaimers about when and how you will crash - you will! 
+It isn't a problem though, just restart VB. If you're interested in building this code into 
+your project, I strongly advise using the DLL to begin with and then only incorporate the code 
+when you come to make the EXE.</p><h2>Using the HiRes Timer</h2><p>The HiRes Timer offers a simple way of adding and removing timers, and there are two ways 
+of receiving timer events (the Third Way, as proposed by UK's increasingly bizarre 
+Prime Minister, will not be made available here).</p><ul><li>Responding to timers the first way involves setting up the class as <i>WithEvents</i>. 
+If you do this, the timer will call the <i>Timer</i> event every time it fires. This is the 
+simplest and easiest to debug method to use.</li><li>The second way of receiving timer events is via an implemented interface. If the 
+calling object <i>Implements</i> the <i>ITimer</i> interface, you will have to implement 
+the <i>ITimer_Timer(ByVal sKey As String)</i> sub. If you do this, you should use the Connect 
+method to specify the object which receives the timer notifications. By doing this, you create an 
+early-bound interface between your code and the Timer, and you receive notifications with the 
+minimum of system overhead. This method is the fastest but can cause trouble as it can 
+occasionally overwhelm VB's IDE with event calls whilst you are debugging, something which 
+can't happen with the event interface. The best idea is to use the Events interface for development 
+and then switch to the implementation method for compiled executables.</li></ul><p>The demonstration project supplied with the download demonstrates setting up two timer objects 
+and enabling/disabling them. It also compares the performance of the High-Resolution timer against 
+the standard VB Timer. On my Win95 system, the High-Resolution version manages to fire 
+40x more events than the standard VB version. (On NT4/2000/XP it manages about 10x more).</p><h2>More!</h2><p>If you aren't interested in the code for this sort of thing, then I recommend looking 
+at the High-Resolution timer available from the Common Controls Replacement Project (CCRP). 
+This offers extra interfaces such as a countdown timer and an About screen (Hmmm.)</p><p>Top code, but depends on your aim. If you want to create a MIDI or Audio sequencer, then 
+you need the code, and CCRP can't give you that for their own personal reasons. 
+An audio project has got to to be 1ms fast all the time and you don't want to know about 
+the hacks that some other coder went through to get their version to happen - you need to 
+make your own hacks and get it to run at the right speed. Hence the source code here.</p><p>One odd thing about the CCRP component is that it appears to be recommended as a general timer 
+- I'm not sure that the Multimedia one does this job. The VB Timer is a nice thing in all ways except 
+that it requires a form to site it on, but don't let that put you off. 
+VB only ever uses one timer resource no matter how many apps run on the system (because all VB apps by 
+definition are linked to the VB run-time library) so you are rarely in danger of running 
+out of timers.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Libraries</a>&#160;.&#160;High Resolution Multimedia Timer</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 1999-2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 25 November 2002</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/HiResTimer/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:55:21 GMT -->
+</html>

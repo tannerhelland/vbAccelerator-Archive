@@ -1,0 +1,530 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Hooks/Middle_Scroller/VB5_Middle_Scroller_Full_Source_zip_cMiddleButtonScroller_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:43 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cMiddleButtonScroller.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cMiddleButtonScroller.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Hooks</a>&#160;.&#160;<a href="article.html">Scrolling on the Middle Mouse Button</a>&#160;.&#160;<a href="VB5_Middle_Scroller_Full_Source.html">VB5 Middle Scroller Full Source</a>&#160;.&#160;cMiddleButtonScroller.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Middle_Scroller_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Middle Scroller Full Source</a> (47K)</p><p /><p class="nav"><a href="VB6_Middle_Scroller_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Middle Scroller Full Source</a> (45K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:14284</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14284&amp;type=Zip&amp;title=VB5%20Middle%20Scroller%20Full%20Source%2Ezip%5FcMiddleButtonScroller">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />24 Jan 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12338">Win32 Hooks in VB - The vbAccelerator Hook Library</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2768">A window that's star-shaped, circular or tank-shaped</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12334">(Incomplete) Docking Forms In VB</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cMiddleButtonScroller.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cMiddleButtonScroller"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Type POINTAPI
+   X As Long
+   Y As Long
+End Type
+
+Private Type RECT
+   left As Long
+   top As Long
+   right As Long
+   bottom As Long
+End Type
+
+Private Type SCROLLINFO
+    cbSize As Long
+    fMask As Long
+    nMin As Long
+    nMax As Long
+    nPage As Long
+    nPos As Long
+    nTrackPos As Long
+End Type
+
+Private Type SCROLLBARINFO
+    cbSize As Long
+    rcScrollBar As RECT
+    dxyLineButton As Long
+    xyThumbTop As Long
+    xyThumbBottom As Long
+    reserved As Long
+    rgstate(0 To 5) As Long
+End Type
+
+Private Declare Function timeGetTime Lib "winmm.dll" () As Long
+Private Declare Function GetCursorPos Lib "user32" (lpPoint As POINTAPI) As Long
+Private Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Long) As
+ Integer
+Private Declare Function GetParent Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function IsWindowVisible Lib "user32" (ByVal hwnd As Long) As
+ Long
+Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long) As Long
+Private Declare Function SetScrollInfo Lib "user32" (ByVal hwnd As Long, ByVal
+ n As Long, lpcScrollInfo As SCROLLINFO, ByVal BOOL As Boolean) As Long
+Private Declare Function GetScrollInfo Lib "user32" (ByVal hwnd As Long, ByVal
+ n As Long, LPSCROLLINFO As SCROLLINFO) As Long
+Private Declare Function GetScrollBarInfo Lib "user32" (ByVal hwnd As Long,
+ ByVal idObject As Long, psbi As SCROLLBARINFO) As Long
+Private Declare Function SendMessageLong Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Declare Function ShowWindow Lib "user32" (ByVal hwnd As Long, ByVal
+ nCmdShow As Long) As Long
+Private Declare Function MoveWindow Lib "user32" (ByVal hwnd As Long, ByVal X
+ As Long, ByVal Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ bRepaint As Long) As Long
+
+Private Const SW_SHOWNOACTIVATE = 4
+Private Const GWL_STYLE = (-16)
+Private Const WS_HSCROLL = &amp;H100000
+Private Const WS_VSCROLL = &amp;H200000
+Private Const WM_ACTIVATEAPP = &amp;H1C
+Private Const SIF_RANGE = &amp;H1
+Private Const SIF_PAGE = &amp;H2
+Private Const SIF_POS = &amp;H4
+Private Const SIF_DISABLENOSCROLL = &amp;H8
+Private Const SIF_TRACKPOS = &amp;H10
+Private Const SIF_ALL = (SIF_RANGE Or SIF_PAGE Or SIF_POS Or SIF_TRACKPOS)
+Private Const SB_HORZ = 0
+Private Const SB_VERT = 1
+Private Const WM_VSCROLL = &amp;H115
+Private Const WM_HSCROLL = &amp;H114
+Private Const SB_THUMBPOSITION = 4
+Private Const SB_THUMBTRACK = 5
+Private Const OBJID_VSCROLL = &amp;HFFFFFFFB
+Private Const OBJID_HSCROLL = &amp;HFFFFFFFA
+Private Const STATE_SYSTEM_UNAVAILABLE = &amp;H1&amp;         '// Disabled
+
+Private Enum EMiddleButtonScrollerEndMode
+   eAnyButtonPress
+   eMiddleButtonRelease
+End Enum
+
+Public Enum EMiddleButtonScrollerMode
+   eNone
+   ePixelBased
+   eLineBased
+End Enum
+
+Private m_hWnd As Long
+Private m_hWndParent As Long
+Private m_tP As POINTAPI
+Private m_bInMiddleScroll As Boolean
+Private m_bInitial As Boolean
+Private m_eMode As EMiddleButtonScrollerEndMode
+Private m_bHasHorizontalScroll As Boolean
+Private m_bHasVerticalScroll As Boolean
+Private m_eHorizontalMode As EMiddleButtonScrollerMode
+Private m_eVerticalMode As EMiddleButtonScrollerMode
+Private m_lLastScreenCursor As Long
+Private m_lLastVertTime As Long
+Private m_lLastHorzTime As Long
+
+Private WithEvents m_tmr As CTimer
+Attribute m_tmr.VB_VarHelpID = -1
+
+Private m_frmRefPoint As frmRefPoint
+
+Implements IWindowsHook
+Implements ISubclass
+
+Public Property Get VerticalMode() As EMiddleButtonScrollerMode
+   VerticalMode = m_eVerticalMode
+End Property
+Public Property Let VerticalMode(ByVal eMode As EMiddleButtonScrollerMode)
+   m_eVerticalMode = eMode
+End Property
+
+Public Property Get HorizontalMode() As EMiddleButtonScrollerMode
+   HorizontalMode = m_eHorizontalMode
+End Property
+Public Property Let HorizontalMode(ByVal eMode As EMiddleButtonScrollerMode)
+   m_eHorizontalMode = eMode
+End Property
+
+Public Sub StartMiddleScroll(ByVal hwnd As Long)
+   '
+   EndMiddleScroll
+
+   If (m_eHorizontalMode = eNone) And (m_eVerticalMode = eNone) Then
+      ' nothing to do
+      Exit Sub
+   End If
+      
+   ' Determine which scroll bars we have:
+   Dim lStyle As Long
+   lStyle = GetWindowLong(hwnd, GWL_STYLE)
+   m_bHasHorizontalScroll = ((lStyle And WS_HSCROLL) = WS_HSCROLL)
+   m_bHasVerticalScroll = ((lStyle And WS_VSCROLL) = WS_VSCROLL)
+   Dim tSBI As SCROLLBARINFO
+   tSBI.cbSize = Len(tSBI)
+   GetScrollBarInfo hwnd, OBJID_HSCROLL, tSBI
+   If (tSBI.rgstate(0) And STATE_SYSTEM_UNAVAILABLE) = STATE_SYSTEM_UNAVAILABLE
+    Then
+      m_bHasHorizontalScroll = False
+   End If
+   GetScrollBarInfo hwnd, OBJID_VSCROLL, tSBI
+   If (tSBI.rgstate(0) And STATE_SYSTEM_UNAVAILABLE) = STATE_SYSTEM_UNAVAILABLE
+    Then
+      m_bHasVerticalScroll = False
+   End If
+   
+   ' Get the current cursor position
+   GetCursorPos m_tP
+   
+   m_hWnd = hwnd
+   
+   ' Attach subclass for WM_ACTIVATEAPP to the
+   ' parent window:
+   m_hWndParent = GetParentFormhWNd(m_hWnd)
+   AttachMessage Me, m_hWndParent, WM_ACTIVATEAPP
+   
+   ' Attach mouse hook
+   InstallHook Me, WH_MOUSE
+   m_bInMiddleScroll = True
+   
+   ' Show the middle scroller form:
+   Set m_frmRefPoint = New frmRefPoint
+   m_frmRefPoint.Init ((Not (m_eHorizontalMode = eNone)) And
+    m_bHasHorizontalScroll), _
+      ((Not (m_eVerticalMode = eNone)) And m_bHasVerticalScroll)
+   Load m_frmRefPoint
+   ShowWindow m_frmRefPoint.hwnd, SW_SHOWNOACTIVATE
+   MoveWindow m_frmRefPoint.hwnd, m_tP.X - 11, m_tP.Y - 11, 23, 23, 1
+   
+   Set m_tmr = New CTimer
+   m_tmr.Interval = 25
+   
+   m_bInitial = True
+      
+   '
+End Sub
+
+Private Sub EndMiddleScroll()
+   
+   If Not (m_hWndParent = 0) Then
+      DetachMessage Me, m_hWndParent, WM_ACTIVATEAPP
+   End If
+   
+   If (m_bInMiddleScroll) Then
+      RemoveHook Me, WH_MOUSE
+      m_bInMiddleScroll = False
+   End If
+   
+   If Not (m_frmRefPoint Is Nothing) Then
+      Unload m_frmRefPoint
+      Set m_frmRefPoint = Nothing
+   End If
+   
+   Screen.MousePointer = vbDefault
+End Sub
+
+Private Function GetParentFormhWNd(ByVal lHWnd As Long) As Long
+Dim lhWndParent As Long
+   lhWndParent = GetParent(lHWnd)
+   Do While Not (lhWndParent = 0) And Not (IsWindowVisible(lhWndParent) = 0)
+      lHWnd = lhWndParent
+      lhWndParent = GetParent(lHWnd)
+   Loop
+   GetParentFormhWNd = lHWnd
+End Function
+
+Private Function getScrollWParam(ByVal lCode As Long, ByVal lPos As Long) As
+ Long
+Dim wParam As Long
+Dim lHIWord As Long
+   wParam = lCode
+   lHIWord = (lPos And &amp;H7FFF&amp;) * &amp;H10000
+   If (lPos And &amp;H8000&amp;) Then
+      lHIWord = lHIWord Or &amp;H80000000
+   End If
+   wParam = wParam Or lHIWord
+   getScrollWParam = wParam
+End Function
+
+Private Sub MiddleScroll()
+Dim lXOffset As Long
+Dim lYOffset As Long
+Dim tP As POINTAPI
+Dim tSIHorz As SCROLLINFO
+Dim tSIVert As SCROLLINFO
+Dim lVertOffset As Long
+Dim lHorzOffset As Long
+Dim lRes As Long
+Dim lNewPos As Long
+Dim bDoIt As Boolean
+
+   GetCursorPos tP
+   lXOffset = tP.X - m_tP.X
+   lYOffset = tP.Y - m_tP.Y
+   
+   If (m_bHasHorizontalScroll) Then
+      tSIHorz.cbSize = Len(tSIHorz)
+      tSIHorz.fMask = SIF_RANGE Or SIF_PAGE Or SIF_POS Or SIF_TRACKPOS
+      GetScrollInfo m_hWnd, SB_HORZ, tSIHorz
+      lHorzOffset = deltaToScrollAmount(lXOffset, m_eHorizontalMode, tSIHorz)
+      If Not (lHorzOffset = 0) Then
+         bDoIt = True
+         If (m_eVerticalMode = eLineBased) Then
+            If (lHorzOffset &lt; 32) Then
+               If (timeGetTime() - m_lLastHorzTime) &lt; 100 Then
+                  bDoIt = False
+               Else
+                  m_lLastHorzTime = timeGetTime()
+               End If
+            End If
+         End If
+         If (bDoIt) Then
+            tSIHorz.fMask = SIF_POS Or SIF_TRACKPOS
+            lNewPos = tSIHorz.nPos + lHorzOffset
+            If (lNewPos &lt; 0) Then lNewPos = 0
+            If (lNewPos &gt; tSIHorz.nMax + tSIHorz.nPage) Then lNewPos =
+             tSIHorz.nMax + tSIHorz.nPage
+            tSIHorz.nPos = lNewPos
+            tSIHorz.nTrackPos = lNewPos
+            SetScrollInfo m_hWnd, SB_HORZ, tSIHorz, True
+            SendMessageLong m_hWnd, WM_HSCROLL, getScrollWParam(SB_THUMBTRACK,
+             lNewPos), 0
+         End If
+      End If
+   End If
+   
+   If (m_bHasVerticalScroll) Then
+      tSIVert.cbSize = Len(tSIVert)
+      tSIVert.fMask = SIF_RANGE Or SIF_PAGE Or SIF_POS Or SIF_TRACKPOS
+      GetScrollInfo m_hWnd, SB_VERT, tSIVert
+      lVertOffset = deltaToScrollAmount(lYOffset, m_eVerticalMode, tSIVert)
+      If Not (lVertOffset = 0) Then
+         bDoIt = True
+         If (m_eVerticalMode = eLineBased) Then
+            If (lVertOffset &lt; 32) Then
+               If (timeGetTime() - m_lLastVertTime) &lt; 100 Then
+                  bDoIt = False
+               Else
+                  m_lLastVertTime = timeGetTime()
+               End If
+            End If
+         End If
+         If (bDoIt) Then
+            tSIVert.fMask = SIF_POS Or SIF_TRACKPOS
+            lNewPos = tSIVert.nPos + lVertOffset
+            If (lNewPos &lt; 0) Then lNewPos = 0
+            If (lNewPos &gt; tSIVert.nMax + tSIVert.nPage) Then lNewPos =
+             tSIVert.nMax + tSIVert.nPage
+            tSIVert.nPos = lNewPos
+            tSIVert.nTrackPos = lNewPos
+            SetScrollInfo m_hWnd, SB_VERT, tSIVert, True
+            SendMessageLong m_hWnd, WM_VSCROLL, getScrollWParam(SB_THUMBTRACK,
+             lNewPos), 0
+         End If
+      End If
+   End If
+      
+   If lVertOffset = lHorzOffset And lVertOffset = 0 Then
+      If (m_eHorizontalMode = eNone) Or Not (m_bHasHorizontalScroll) Then
+         lRes = 107
+      ElseIf (m_eVerticalMode = eNone) Or Not (m_bHasVerticalScroll) Then
+         lRes = 106
+      Else
+         lRes = 105
+      End If
+   ElseIf Abs(lVertOffset) &gt; Abs(lHorzOffset) And Not (m_eVerticalMode = eNone)
+    Then
+      If (lVertOffset &gt; 0) Then
+         lRes = 102
+      Else
+         lRes = 104
+      End If
+   Else
+      If (lHorzOffset &gt; 0) Then
+         lRes = 103
+      Else
+         lRes = 101
+      End If
+   End If
+   
+   If Not (lRes = m_lLastScreenCursor) Then
+      Set Screen.MouseIcon = LoadResPicture(lRes, vbResCursor)
+      Screen.MousePointer = 99
+      m_lLastScreenCursor = lRes
+   End If
+   
+End Sub
+
+Private Function deltaToScrollAmount(ByVal lDelta As Long, ByVal eMode As
+ EMiddleButtonScrollerMode, tSI As SCROLLINFO) As Long
+   
+   If (eMode = ePixelBased) Then
+   
+      If Abs(lDelta) &lt; 12 Then
+         deltaToScrollAmount = 0
+      ElseIf Abs(lDelta) &lt; 32 Then
+         deltaToScrollAmount = 2 * Sgn(lDelta)
+      ElseIf Abs(lDelta) &lt; 56 Then
+         deltaToScrollAmount = 4 * Sgn(lDelta)
+      ElseIf Abs(lDelta) &lt; 80 Then
+         deltaToScrollAmount = 8 * Sgn(lDelta)
+      ElseIf Abs(lDelta) &lt; 104 Then
+         deltaToScrollAmount = 32 * Sgn(lDelta)
+      ElseIf Abs(lDelta) &lt; 128 Then
+         deltaToScrollAmount = 128 * Sgn(lDelta)
+      Else
+         deltaToScrollAmount = 512 * Sgn(lDelta)
+      End If
+            
+   ElseIf (eMode = eLineBased) Then
+      
+      If Abs(lDelta) &lt; 12 Then
+         deltaToScrollAmount = 0
+      ElseIf Abs(lDelta) &lt; 32 Then
+         deltaToScrollAmount = Sgn(lDelta)
+      ElseIf Abs(lDelta) &lt; 56 Then
+         deltaToScrollAmount = 2 * Sgn(lDelta)
+      ElseIf Abs(lDelta) &lt; 80 Then
+         deltaToScrollAmount = 4 * Sgn(lDelta)
+      ElseIf Abs(lDelta) &lt; 104 Then
+         deltaToScrollAmount = 8 * Sgn(lDelta)
+      ElseIf Abs(lDelta) &lt; 128 Then
+         deltaToScrollAmount = 32 * Sgn(lDelta)
+      Else
+         deltaToScrollAmount = 80 * Sgn(lDelta)
+      End If
+      
+   End If
+      
+End Function
+
+Private Sub Class_Initialize()
+   m_eHorizontalMode = ePixelBased
+   m_eVerticalMode = ePixelBased
+End Sub
+
+Private Sub Class_Terminate()
+   
+   If Not (m_tmr Is Nothing) Then
+      m_tmr.Interval = 0
+      Set m_tmr = Nothing
+   End If
+   
+   If Not (m_frmRefPoint Is Nothing) Then
+      Unload m_frmRefPoint
+      Set m_frmRefPoint = Nothing
+   End If
+   
+   EndMiddleScroll
+   
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As EMsgResponse)
+   '
+End Property
+
+Private Property Get ISubclass_MsgResponse() As EMsgResponse
+   '
+   ISubclass_MsgResponse = emrPreprocess
+   '
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+   '
+   If (iMsg = WM_ACTIVATEAPP) Then
+      If (wParam = 0) Then
+         EndMiddleScroll
+      End If
+   End If
+   '
+End Function
+
+Private Function IWindowsHook_HookProc(ByVal eType As EHTHookTypeConstants,
+ ByVal nCode As Long, ByVal wParam As Long, ByVal lParam As Long, bConsume As
+ Boolean) As Long
+   '
+   Dim tP As POINTAPI
+   Dim iTmp As Long
+   
+   GetCursorPos tP
+   If (m_bInitial) Then
+      'Debug.Print Abs(tP.X - m_tP.X), Abs(tP.Y - m_tP.Y),
+      iTmp = GetAsyncKeyState(vbKeyMButton)
+      If Abs(tP.X - m_tP.X) &gt; 4 Or Abs(tP.Y - m_tP.Y) &gt; 4 Then
+         If Not (GetAsyncKeyState(vbKeyMButton) = 0) Then
+            m_eMode = eMiddleButtonRelease
+         Else
+            m_eMode = eAnyButtonPress
+         End If
+         m_bInitial = False
+      End If
+   Else
+      If (m_eMode = eAnyButtonPress) Then
+         iTmp = GetAsyncKeyState(vbKeyLButton)
+         iTmp = GetAsyncKeyState(vbKeyRButton)
+         iTmp = GetAsyncKeyState(vbKeyMButton)
+         If Not (GetAsyncKeyState(vbKeyLButton) = 0) Or _
+            Not (GetAsyncKeyState(vbKeyRButton) = 0) Or _
+            Not (GetAsyncKeyState(vbKeyMButton) = 0) Then
+            EndMiddleScroll
+         End If
+      Else
+         If (GetAsyncKeyState(vbKeyMButton) = 0) Then
+            EndMiddleScroll
+         End If
+      End If
+   End If
+   
+End Function
+
+Private Sub m_tmr_ThatTime()
+   If (m_bInMiddleScroll) Then
+      MiddleScroll
+   Else
+      m_tmr.Interval = 0
+   End If
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Hooks</a>&#160;.&#160;<a href="article.html">Scrolling on the Middle Mouse Button</a>&#160;.&#160;<a href="VB5_Middle_Scroller_Full_Source.html">VB5 Middle Scroller Full Source</a>&#160;.&#160;cMiddleButtonScroller.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 February 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Hooks/Middle_Scroller/VB5_Middle_Scroller_Full_Source_zip_cMiddleButtonScroller_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:43 GMT -->
+</html>

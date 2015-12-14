@@ -1,0 +1,278 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/HiResTimer/VB6_HiResTimer_Full_Source_Code_zip_cHiResTimer_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:34 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cHiResTimer.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cHiResTimer.cls" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Libraries</a>&#160;.&#160;<a href="article.html">High Resolution Multimedia Timer</a>&#160;.&#160;<a href="VB6_HiResTimer_Full_Source_Code.html">VB6 HiResTimer Full Source Code</a>&#160;.&#160;cHiResTimer.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_HiResTimer_Full_Source_Code.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 HiResTimer Full Source Code</a> (26K)</p><p /><p class="nav"><a href="VB6_HiResTimer_Full_Source_Code.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 HiResTimer Full Source Code</a> (29K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:641</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=641&amp;type=Zip&amp;title=VB6%20HiResTimer%20Full%20Source%20Code%2Ezip%5FcHiResTimer">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />21 Nov 2002<br /><p class="update">Added a VB6 version of the timer.  Note that in the VB6 version, we need to use a Type Library
+to call the <i>PostMessage</i> Win32 call.  This is because the multimedia timer fires on another
+thread to the VB application, and, as described in Matt Curland's excellent book "Advanced Visual Basic"
+VB6 uses Thread Local Storage which isn't initialised on receipt of an event from another Thread.  As a 
+consequence you can only make calls to methods described in a type library.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cHiResTimer.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "cHiResTimer"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+'
+ ===============================================================================
+=======
+' Name:     vbAccelerator Safe Hi Resolution Timer Object (VB6 Version)
+' Author:   Steve McMahon (steve@vbaccelerator.com)
+' Date:     02 September 2000
+'
+' Requires: vbalHRTA.TLB
+'           see http://vbaccelerator.com/
+'
+' Copyright  1999-2000 Steve McMahon for vbAccelerator
+'
+ -------------------------------------------------------------------------------
+-------
+' Visit vbAccelerator - advanced free source code for VB programmers
+' http://vbaccelerator.com
+'
+ -------------------------------------------------------------------------------
+-------
+'
+' A VB6 implementation of the Hi Resolution Timer object.  In VB6, the code
+' doesn't respond so elegantly to the threaded implementation of a Win32 HiRes
+' Timer than in VB5 - it crashed the original code.  This occurs because, as
+' Matt Currland has described, in VB6 no code can be run on a new thread
+' until an object has been created because of the use of TLS.
+'
+' In this implementation we fix the problem by only running non-VB code in
+' the threaded section of the implementation, i.e. we make only API calls
+ defined
+' in a TLB instead.
+'
+'
+ ===============================================================================
+=======
+
+
+' No need to use GetPerformanceCounter() because this
+' will be accurate to the highest timer resolution:
+Private Declare Function timeGetTime Lib "winmm.dll" () As Long
+Private Declare Sub CopyMemory Lib "KERNEL32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Type tTimerData
+   lInterval As Long
+   sKey As String
+   bEnabled As Boolean
+   lLastTick As Long
+End Type
+Private m_tT() As tTimerData
+Private m_iCount As Long
+Private m_lPtr As Long
+
+Public Event Timer(ByVal sKey As String)
+
+Public Sub Connect(iTmr As ITimer)
+   ' Do this is you want to get an implemented
+   ' call:
+   m_lPtr = ObjPtr(iTmr)
+End Sub
+
+Private Property Get ObjectFromPtr(ByVal lPtr As Long) As ITimer
+Dim oTHis As ITimer
+    CopyMemory oTHis, lPtr, 4
+    Set ObjectFromPtr = oTHis
+    CopyMemory oTHis, 0&amp;, 4
+End Property
+
+Friend Sub FireTimer()
+Dim i As Long
+Dim lTick As Long
+Dim lAmount As Long
+Dim iTmr As ITimer
+   
+   If m_iCount &gt; 0 Then
+      If m_lPtr &lt;&gt; 0 Then
+         ' Using implements
+         Set iTmr = ObjectFromPtr(m_lPtr)
+         lTick = timeGetTime()
+         For i = 1 To m_iCount
+            If m_tT(i).bEnabled Then
+               lAmount = (lTick - m_tT(i).lLastTick)
+               If lAmount &gt;= m_tT(i).lInterval Or lAmount &lt; 0 Then
+                  m_tT(i).lLastTick = lTick
+                  iTmr.Timer m_tT(i).sKey
+               End If
+            End If
+         Next i
+      Else
+         ' using events
+         lTick = timeGetTime()
+         For i = 1 To m_iCount
+            If m_tT(i).bEnabled Then
+               lAmount = (lTick - m_tT(i).lLastTick)
+               If lAmount &gt;= m_tT(i).lInterval Or lAmount &lt; 0 Then
+                  m_tT(i).lLastTick = lTick
+                  RaiseEvent Timer(m_tT(i).sKey)
+               End If
+            End If
+         Next i
+      End If
+   End If
+End Sub
+
+Public Property Get Count() As Long
+   Count = m_iCount
+End Property
+Public Function Add(ByVal sKey As String, Optional ByVal lInterval As Long =
+ 10, Optional ByVal bEnabled As Boolean = False) As Long
+   If Not (Exists(sKey)) Then
+      m_iCount = m_iCount + 1
+      ReDim Preserve m_tT(1 To m_iCount) As tTimerData
+      With m_tT(m_iCount)
+         .sKey = sKey
+         .lInterval = lInterval
+         .bEnabled = bEnabled
+      End With
+      If m_iCount = 1 Then
+         StartTimer
+         AddObject Me
+      End If
+   End If
+End Function
+Public Sub Remove(ByVal vKey As Variant)
+Dim lIndex As Long
+Dim i As Long
+   lIndex = Index(vKey)
+   If (lIndex &gt; 0) Then
+      If (m_iCount &gt; 1) Then
+         For i = lIndex To m_iCount - 1
+            LSet m_tT(i) = m_tT(i + 1)
+         Next i
+         m_iCount = m_iCount - 1
+         ReDim Preserve m_tT(1 To m_iCount) As tTimerData
+      Else
+         Erase m_tT
+         m_iCount = 0
+         StopTimer
+         RemoveObject Me
+      End If
+   End If
+End Sub
+Public Property Get Exists(ByVal sKey As String) As Boolean
+Dim i As Long
+   For i = 1 To m_iCount
+      If (m_tT(i).sKey = sKey) Then
+         Exists = True
+         Exit For
+      End If
+   Next i
+End Property
+Public Property Get Interval(ByVal vKey As Variant) As Long
+Dim lIndex As Long
+   lIndex = Index(vKey)
+   If (lIndex &gt; 0) Then
+      Interval = m_tT(lIndex).lInterval
+   End If
+End Property
+Public Property Let Interval(ByVal vKey As Variant, ByVal lInterval As Long)
+Dim lIndex As Long
+   lIndex = Index(vKey)
+   If (lIndex &gt; 0) Then
+      m_tT(lIndex).lInterval = lInterval
+   End If
+End Property
+Public Property Get Enabled(ByVal vKey As Variant) As Boolean
+Dim lIndex As Long
+   lIndex = Index(vKey)
+   If (lIndex &gt; 0) Then
+      Enabled = m_tT(lIndex).bEnabled
+   End If
+End Property
+Public Property Let Enabled(ByVal vKey As Variant, ByVal bEnabled As Boolean)
+Dim lIndex As Long
+   lIndex = Index(vKey)
+   If (lIndex &gt; 0) Then
+      m_tT(lIndex).bEnabled = bEnabled
+      If (bEnabled) Then
+         m_tT(lIndex).lLastTick = timeGetTime()
+      End If
+   End If
+End Property
+Public Property Get Index(ByVal vKey As Variant) As Long
+Dim i As Long
+   If IsNumeric(vKey) Then
+      If vKey &gt; 0 And vKey &lt;= m_iCount Then
+         Index = vKey
+         Exit Property
+      End If
+   Else
+      For i = 1 To m_iCount
+         If m_tT(i).sKey = vKey Then
+            Index = i
+            Exit Property
+         End If
+      Next i
+   End If
+   Err.Raise 9, App.EXEName &amp; ".cHiResTimer"
+End Property
+
+Private Sub Class_Terminate()
+   StopTimer
+   RemoveObject Me
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Libraries</a>&#160;.&#160;<a href="article.html">High Resolution Multimedia Timer</a>&#160;.&#160;<a href="VB6_HiResTimer_Full_Source_Code.html">VB6 HiResTimer Full Source Code</a>&#160;.&#160;cHiResTimer.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/HiResTimer/VB6_HiResTimer_Full_Source_Code_zip_cHiResTimer_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:34 GMT -->
+</html>

@@ -1,0 +1,116 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Component_Base_Addresses/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:07 GMT -->
+<head>
+
+<title>vbAccelerator - Component Base Addresses</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Every in-process component has a Base Address associated with it. When an application 
+loads the component, the Win32 DLL routines are invoked. Approximately speaking, 
+the component is placed in a memory location according to its Base Address. 
+If two components have the same base address, a conflict occurs, and time is wasted as 
+all the offsets within the second component are adjusted.You can make things run quicker if you specify unique base addresses for your 
+components in advance." /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;Component Base Addresses</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2189</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2189&amp;type=Article&amp;title=Component%20Base%20Addresses">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />15 Nov 1999<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Component Base Addresses</h1><p class="splash">Techniques for coding real-world components in VB</p><img src="baseaddr.gif" width="209" height="186" alt="VB Component Base Address Settting Dialog" /><p /><p>Every in-process component has a Base Address associated with it. When an application 
+loads the component, the Win32 DLL routines are invoked. Approximately speaking, 
+the component is placed in a memory location according to its Base Address. 
+If two components have the same base address, a conflict occurs, and time is wasted as 
+all the offsets within the second component are adjusted.</p><p>You can make things run quicker if you specify unique base addresses for your 
+components in advance.</p><h2>Specifying Base Addresses</h2><p>To specify a new base address for your component, use the Compile tab in the 
+Project Properties dialog. The base address is entered in the DLL Base Address 
+textbox. The default value is &amp;H11000000, but the operating system can accept any value 
+from &amp;H1000000 and &amp;H80000000, in steps of 64k (which is &amp;H10000 - i.e. you leave the 
+last 4 digits at zero).</p><p>There are therefore around 32,000 different base addresses to choose from. That's 
+obviously not enough to cover all the components that are ever written in the world, 
+but considering that each application on the system has its own 2Gb address space to work 
+in, 32,000 different components per app should be enough!</p><p>Because the operating system doesn't like to have components loaded above 
+2 gigabytes (the high-end value of &amp;H80000000), the maximum value for 
+the base address is effectively 2 gigabytes minus the size of your component rounded 
+up to the nearest 64K multiple.</p><h2>Technically Speaking - Does It Really Matter?</h2><p>Typically the answer to this question will be no for VB coders. But if there's 
+a way to ensure maximum speed it seems a bit silly to ignore it.</p><p>Base Addresses are covered in the MSDN Library in an article by Ruediger R. Asche, 
+"Rebasing Win32 DLLs: The Whole Story" (and when he says the whole story he 
+isn't joking!)  Whilst the article is long and technical, the aim of it was to find out 
+empirically the performance impact of re-basing a DLL when base addresses clash. His 
+conclusions are that it probably won't have much effect unless there are a large 
+number of addresses that need to be fixed up. His other conclusions are interesting to 
+VB coders though:</p><ul><li>"All other things being equal, the size of the DLL does not matter; that is, 
+the costs for loading a small DLL and a large DLL are pretty much equal. Thus, if 
+possible, you should avoid writing a lot of small DLLs and instead write fewer 
+large DLLs if load time is an issue for you. Note that this observation holds true over 
+a very wide range of DLL sizes. When I ran the test on the huge binary DLL [...] the 
+load time did not differ very much from the load time for the small DLL that contains six 
+pages total."</li><li>"The single biggest factor that slows down the loading of DLLs is 
+the location of the DLL. The documentation for <i>LoadLibrary</i> describes the algorithm 
+that the operating system uses for locating the DLL image; a DLL located at 
+the first search position (the current directory) loads in typically 20 percent or 
+less of the time as the same DLL located deep down in the path loads. It is fairly 
+obvious that the exact load time difference depends a lot on the length of the path, 
+the efficiency of the underlying file system, and the number of files and directories 
+that need to be searched."</li><li>"Rebasing the [test] DLL incurs an overhead of about 
+600 percent on Windows NT and around 400 percent on Windows 95. Note, however, that 
+this implies a great number of fixups (34,000 in the sample suite). For a typical DLL, the 
+number is much smaller on the average; for example, in the debug version of MFC30D.DLL, which 
+ships with Visual C++ version 2.x, there are about [..] 5 percent of the [..] fixups."</li></ul><h2>Sleuthing Out a Base Address</h2><p>If you have an exisiting component that you don't know the base address for, 
+but you'd like yours to be different, what do you do?</p><p>Luckily there is a free utility to achieve this, available from the MSDN Library again, 
+called "YAHU", or "Yet Another Header Utility" (one assumes that 
+names of this style were de rigeur back in 1985 when the utility was written). It can be 
+found here at MSDN:</p><p>
+Library<br />
+   Technical Articles<br />
+      Windows Platform<br />
+         Base Services<br />
+            "YAHU, or Yet Another Header Utility"<br /></p><p>On running YAHU.EXE, choose Open and then pick the OCX or DLL you want to find the base 
+address for. YAHU will open three windows full of obscure and probably useless information. 
+The Base Address however, can be found in the "Image Based at:" entry of the 
+top-left hand pane of the PE File Header window.</p><p>Another thing you can use YAHU for is to determine which version of VB an 
+OCX or DLL was compiled with (check the Imports section, bottom-left of the PE 
+File Header window. VB4-32 should show VBRUN400.DLL, VB5 will show MSVBVM50.DLL, 
+VB6 will have MSVBVM60.DLL)</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;Component Base Addresses</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 1999-2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 24 December 2002</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Component_Base_Addresses/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:08 GMT -->
+</html>

@@ -1,0 +1,248 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Adding_Scroll_Bars_To_Forms__PictureBoxes_and_UserControls/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:22 GMT -->
+<head>
+
+<title>vbAccelerator - Adding Scroll Bars to Forms, PictureBoxes and User Controls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="In the Win32 API, all windows can have scroll bars. However, this feature is not exposed in any 
+way in Visual Basic. Its not too hard to enable, though provided you can intercept WM_HSCROLL and 
+WM_VSCROLL messages sent to the window. This project provides a small, self-contained class which extends 
+Forms, UserControls and PictureBoxes to allow full scroll-bar functionality. This class is based on 
+the Flat Scroll-Bar control and provides the same functionality but in a smaller, easier-to-use package which 
+you can compile directly into your executable." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;Adding Scroll Bars to Forms, PictureBoxes and User Controls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Scroll_Bars_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Scroll Bars Demonstration</a> (88K)</p><p /><p class="nav"><a href="VB6_Scroll_Bars_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Scroll Bars Demonstration</a> (87K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2185</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2185&amp;type=Article&amp;title=Adding%20Scroll%20Bars%20to%20Forms%2C%20PictureBoxes%20and%20User%20Controls">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 2</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:11 November 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />2 Jul 2003<br /><p class="update">Added Mouse Wheel support. Thanks to Chris Eastwood
+at <a href="http://vbcodelibrary.co.uk/">vbCode Library</a> for the
+suggestion.</p><p class="update">The <span class="code">SB_BOTTOM</span> and
+<span class="code">SB_TOP</span> scroll codes were swapped.  The scroll
+bar now goes to the correct position when you choose Top or Bottom from
+the Scroll Bar's context menu.</p><p class="update">Added <span class="code">ScrollClick</span> event which
+is raised when a mouse down occurs on the scroll bar. </p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Adding Scroll Bars to Forms, PictureBoxes and User Controls</h1><img src="scrollDemo.png" width="343" height="198" alt="Scroll Bar Sample Project" /><p /><p>In the Win32 API, all windows can have scroll bars. However, this feature is not exposed in any 
+way in Visual Basic. Its not too hard to enable, though provided you can intercept <span class="code">WM_HSCROLL</span> and 
+<span class="code">WM_VSCROLL</span> messages sent to the window. This project provides a small, self-contained class which extends 
+Forms, UserControls and PictureBoxes to allow full scroll-bar functionality. This class is based on 
+the Flat Scroll-Bar control and provides the same functionality but in a smaller, easier-to-use package which 
+you can compile directly into your executable.</p><p>Don't confuse the Win32 windows scroll bars with the scroll bar controls provided with Visual Basic. 
+The VB scroll bars have always been a bit pants: they don't draw in the neat,professional style of 
+Win32 scroll bars (the worst offense is the continual flashing when in focus and the fact it is impossible 
+to prevent this occuring!) and they don't support the full scroll extents (allowing only 16-bit integer values 
+rather than the full 32-bit offered by Win32).</p><p>COMCTL32.DLL v4.72 or above offers enhanced scroll bar controls which support Flat and Encarta drawing styles 
+as well as the standard styles. This class takes advantage of these facilities whilst still allowing standard 
+scroll styles regardless of which COMCTL32.DLL version is installed.</p><h2>How It Works</h2><p>Showing a window scroll bar is simple - just call the API call <span class="code">ShowScrollBar</span> with the Window handle of the 
+control and the appropriate scroll bar constant (<span class="code">SB_HORZ</span> or <span class="code">SB_VERT</span>) and the scroll bar appears. 
+Windows automatically adjusts the client area of the window for you, and this is reflected in the values 
+returned by VB's <span class="code">ScaleWidth</span> and <span class="code">ScaleHeight</span> properties.</p><h3>Setting Scroll Bar Properties</h3><p>Getting and setting scroll bar value, max, min and large-change properties is achieved via the 
+<span class="code">GetScrollInfo</span> and <span class="code">SetScrollInfo</span> properties, which work on the <span class="code">SCROLLINFO</span> structure:</p><pre>
+' Scroll bar: 
+Private Type SCROLLINFO 
+    cbSize As Long    ' Size of structure
+    fMask As Long     ' Which value(s) you are changing
+    nMin As Long      ' Minimum value of the scroll bar
+    nMax As Long      ' Maximum value of the scroll bar
+    nPage As Long     ' Large-change amount
+    nPos As Long      ' Current value
+    nTrackPos As Long ' Current scroll position
+End Type 
+
+' SCROLLINFO fMask constants: 
+Private Const SIF_RANGE = &amp;H1
+Private Const SIF_PAGE = &amp;H2
+Private Const SIF_POS = &amp;H4
+Private Const SIF_DISABLENOSCROLL = &amp;H8
+Private Const SIF_TRACKPOS = &amp;H10
+Private Const SIF_ALL = (SIF_RANGE Or SIF_PAGE Or SIF_POS Or SIF_TRACKPOS)
+</pre><p>Note that the actual Max value of the scroll bar is actually equal to the <span class="code">nMax</span> value plus the 
+<span class="code">nPage</span> value, so when modifying the <span class="code">LargeChange</span> or <span class="code">Max</span> value you have to 
+take this into account.</p><p>This allows you to set up the scroll bars. You then need to respond to the scroll bar 
+position changing. This is done by intercepting the <span class="code">WM_HSCROLL</span> and <span class="code">WM_VSCROLL</span> messages sent 
+to the window you have added scroll bars to:</p><pre>
+' Scroll bar messages:
+Private Const WM_VSCROLL = &amp;H115 
+Private Const WM_HSCROLL = &amp;H114 
+
+' Scroll bar type constants:
+Private Const SB_HORZ = 0 
+Private Const SB_VERT = 1 
+Private Const SB_CTL = 2 
+Private Const SB_BOTH = 3 
+
+' Scroll bar notification types (returned in the first 
+' 16 bits of the wParam parameter of the message i.e. 
+' (wParam And &amp;HFFFF&amp;):
+
+' - Set scroll value to max
+Private Const SB_BOTTOM = 7 
+' - Set scroll value to max
+Private Const SB_ENDSCROLL = 8 
+' - Time to raise Change event
+Private Const SB_LEFT = 6 
+' - Set scroll value to value - SmallChange
+Private Const SB_LINEDOWN = 1 
+' - Set scroll value to value + SmallChange
+Private Const SB_LINELEFT = 0 
+' - Set scroll value to value + SmallChange
+Private Const SB_LINERIGHT = 1 
+' - Set scroll value to value - SmallChange
+Private Const SB_LINEUP = 0 
+' - Set scroll value to value + LargeChange
+Private Const SB_PAGEDOWN = 3 
+' - Set scroll value to value - LargeChange
+Private Const SB_PAGELEFT = 2 
+' - Set scroll value to value + LargeChange
+Private Const SB_PAGERIGHT = 3 
+' - Set scroll value to value - LargeChange
+Private Const SB_PAGEUP = 2 
+' - Set scroll value to max
+Private Const SB_RIGHT = 7 
+' - Not required?
+Private Const SB_THUMBPOSITION = 4 
+' - Set scroll value to track position
+Private Const SB_THUMBTRACK = 5 
+' - Set scroll value to min
+Private Const SB_TOP = 6 
+</pre><p>Once this is done, it is a simple matter to set the appropriate value using the 
+<span class="code">GetScrollInfo</span> and <span class="code">SetScrollInfo</span> API methods. These ensure you have access to the 
+full 32bit range for the scroll bar rather than the old 16 bit (-32,768 to 32,767) values. 
+To use Flat Scroll bars, simply use the <span class="code">FlatSB_</span> versions of the API calls instead. 
+The <i>cScrollBars.cls</i> code in the downloads shows how it is done.</p><h3>Interacting with the Mouse Wheel</h3><p>Mouse Wheel support is enabled by intercepting the Windows
+<span class="code">WM_MOUSEWHEEL</span> message, which was added to the Windows API for
+Windows NT4.0/Windows 98 and above. (Note Microsoft do provide an Intellimouse driver
+for earlier systems which uses custom messages.  These messages are documented in the code but
+I have not implemented them here as these systems are now rare).
+</p><p>Typically current mouse wheels are notched, and have a series of detents which click into position
+as you rotate the wheel.  However, this is not a design requirement for a wheel mouse, and
+ the 
+specification allows for free running wheels as well.  To accommodate this notched mice wheels
+send a value which is a multiple of points whenever they click around.  To calculate the
+actual number of lines you scroll from the value sent in the <span class="code">WM_MOUSEWHEEL</span>
+you use this calculation:
+</p><pre>
+  ScrollLines = (WheelPoints \ WHEEL_DELTA) * WheelScrollLines
+</pre><p>
+Where <span class="code">WHEEL_DELTA</span> is defined in the Platform SDK as 120
+and <span class="code">WheelScrollLines</span> is the value returned by the 
+<span class="code">SPI_GETWHEELSCROLLLINES</span> system settings parameter (with
+a default of 3.
+</p><p>
+By default, the class automatically scrolls the bar by this number of lines 
+in the vertical direction whenever the mouse wheel is used.  One line is assumed to
+be one <span class="code">SmallChange</span> increment.  However, you can customise
+this behaviour by responding to the <span class="code">MouseWheeel</span> event.
+This event provides the scroll bar which will be changed and the amount by which
+it will be scrolled.  Both are passed by reference so you can change them.  So
+if you want the mouse wheel to scroll horizontally, you can change the <span class="code">eBar</span>
+parameter; if you want the scroll amount to be different, or no scroll to occur, then change
+the <span class="code">lDelta</span> amount.
+    </p><h3>Notifying ScrollClick events</h3><p>
+One thing to note when using these scroll bars is that clicking on the 
+scroll bar will not automatically set focus to the control that contains
+the scroll bar; neither will it cause focus to be lost for any child
+control in the bar.  For this reason you may want to be able to determine
+when the scroll bars are clicked.  The <span class="code">ScrollClick</span>
+event is provided for this purpose.
+</p><p>
+To generate a scroll click event, the code intercepts non-client mouse
+down messages <span class="code">WM_NCLBUTTONDOWN</span> and 
+<span class="code">WM_NCRBUTTONDOWN</span> for the control or form that
+owns the scroll bars.  It then checks the HitTest code associated with
+the message to see if the non-client event was associated with a scroll
+bar or not.
+</p><h2>Quick Start: Using the Class</h2><p>This demonstrates how to add a vertical scroll bar to a VB form.</p><ul><li>Start a new project and add a reference to the Subclassing and Timer Assistant 
+(for VB, it appears in the References box as "Subclassing and Timer Assistant (with 
+multi-control support and timer bug fix)", for VB6 it is the same but with VB6 at the beginning). 
+Then add <i>cScrollBars.cls</i> from the download to the project.</li><li>Now declare an instance of the cScrollBars in the declarations section of your form:
+<pre>
+Private WithEvents m_cScroll As cScrollBars
+</pre></li><li>During the <span class="code">Form_Load</span> event, initialise the scroll bars:,
+<pre>
+Private Sub Form_Load()
+
+    ' Set up scroll bars:
+    Set m_cScroll = New cScrollBars
+    m_cScroll.Create Me.hwnd
+
+End Sub
+</pre></li><li>Now your scroll bars are set up. Initially, they will not work however until you set 
+<span class="code">Minimum</span>, <span class="code">Maximum</span>, <span class="code">LargeChange</span> 
+and <span class="code">SmallChange</span> properties. Normally your 
+scroll bar ranges change when the form is resized (not in this simple example, though) so the easiest place to 
+do this is in the <span class="code">Form_Resize</span> event. If you are scrolling an object on the form, remember 
+that the smallest amount the object can move will be 1 pixel. Therefore don't set a scroll bar range in 
+Twips because it will mean it will take <span class="code">Screen.TwipsPerPixel</span> (normally 15) scroll bar steps before it moves:
+<pre>
+Private Sub Form_Resize()
+
+    With m_cScroll
+        ' Set up vertical scroll bar for 1024 steps:
+        .LargeChange(efsVertical) = 64
+        .SmallChange(efsVertical) = 8
+        .Max(efsVertical) = 1024
+        .Visible(efsVertical) = True
+
+        ' Hide horizontal scroll bar:
+        .Visible(efsHorizontal) = False
+
+    End With
+
+End Sub
+</pre></li><li>Finally, you can respond to the scroll bar events. For this example we will just 
+update a Label, so add a Label control to the form and then this code:
+<pre>
+Private Sub m_cScroll_Change(eBar As EFSScrollBarConstants)
+    Label1.Caption = m_cScroll.Value(efsVertical)
+End Sub
+
+Private Sub m_cScroll_Scroll(eBar as EFSScrollBarConstants)
+    m_cScroll_Change eBar
+End Sub
+</pre></li></ul><p>Run the project. The form will have a vertical scroll bar and the label will update when you scroll it.</p><p>The demonstration project shows how to use the scroll bars in three ways:</p><ol><li>To scroll the controls on a form</li><li>To scroll an Image within a PictureBox</li><li>To scroll a very simple owner-draw grid within a PictureBox.</li></ol><p>For a more complex demonstration of the <i>cScrollBars</i> class, check out the 
+<a href="http://www.vbaccelerator.com/article.asp?id=11">vbAccelerator S-Grid control</a>.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;Adding Scroll Bars to Forms, PictureBoxes and User Controls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 6 July 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Adding_Scroll_Bars_To_Forms__PictureBoxes_and_UserControls/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:24 GMT -->
+</html>

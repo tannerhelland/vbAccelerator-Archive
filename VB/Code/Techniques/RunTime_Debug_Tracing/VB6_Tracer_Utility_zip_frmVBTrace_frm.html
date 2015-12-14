@@ -1,0 +1,730 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/RunTime_Debug_Tracing/VB6_Tracer_Utility_zip_frmVBTrace_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:10 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmVBTrace.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmVBTrace.frm" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;<a href="article.html">RunTime Debug Tracing</a>&#160;.&#160;<a href="VB6_Tracer_Utility.html">VB6 Tracer Utility</a>&#160;.&#160;frmVBTrace.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="mTrace_bas.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />mTrace.bas</a> (1K)</p><p /><p class="nav"><a href="Trace_Sample_Application.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Trace Sample Application</a> (14K)</p><p /><p class="nav"><a href="VB5_Tracer_Utility.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Tracer Utility</a> (92K)</p><p /><p class="nav"><a href="VB6_Tracer_Utility.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Tracer Utility</a> (84K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:3595</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3595&amp;type=Zip&amp;title=VB6%20Tracer%20Utility%2Ezip%5FfrmVBTrace">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:19 March 2003</p>
+<br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />3 Feb 2003<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2314">StringBuilder Class for VB</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmVBTrace.frm</h1><pre>VERSION 5.00
+Begin VB.Form frmVBTrace 
+   Caption         =   "VB Tracer"
+   ClientHeight    =   5625
+   ClientLeft      =   2280
+   ClientTop       =   2565
+   ClientWidth     =   8355
+   Icon            =   "frmVBTrace.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   5625
+   ScaleWidth      =   8355
+   Begin VB.TextBox txtTrace 
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   5475
+      HideSelection   =   0   'False
+      Left            =   120
+      Locked          =   -1  'True
+      MultiLine       =   -1  'True
+      ScrollBars      =   3  'Both
+      TabIndex        =   0
+      Top             =   60
+      Width           =   8115
+   End
+   Begin VB.Menu mnuFileTOP 
+      Caption         =   "&amp;File"
+      Begin VB.Menu mnuFile 
+         Caption         =   "&amp;Save..."
+         Index           =   0
+         Shortcut        =   ^S
+      End
+      Begin VB.Menu mnuFile 
+         Caption         =   "-"
+         Index           =   1
+      End
+      Begin VB.Menu mnuFile 
+         Caption         =   "E&amp;xit"
+         Index           =   2
+      End
+   End
+   Begin VB.Menu mnuEditTOP 
+      Caption         =   "&amp;Edit"
+      Begin VB.Menu mnuEdit 
+         Caption         =   "&amp;Copy"
+         Index           =   0
+         Shortcut        =   ^C
+      End
+      Begin VB.Menu mnuEdit 
+         Caption         =   "-"
+         Index           =   1
+      End
+      Begin VB.Menu mnuEdit 
+         Caption         =   "&amp;Find..."
+         Index           =   2
+         Shortcut        =   ^F
+      End
+      Begin VB.Menu mnuEdit 
+         Caption         =   "Find &amp;Next"
+         Enabled         =   0   'False
+         Index           =   3
+         Shortcut        =   {F3}
+      End
+      Begin VB.Menu mnuEdit 
+         Caption         =   "-"
+         Index           =   4
+      End
+      Begin VB.Menu mnuEdit 
+         Caption         =   "&amp;Select All"
+         Index           =   5
+         Shortcut        =   ^A
+      End
+      Begin VB.Menu mnuEdit 
+         Caption         =   "C&amp;lear"
+         Index           =   6
+         Shortcut        =   {DEL}
+      End
+   End
+   Begin VB.Menu mnuTraceTOP 
+      Caption         =   "&amp;Tracing"
+      Begin VB.Menu mnuTrace 
+         Caption         =   "&amp;Pause"
+         Checked         =   -1  'True
+         Index           =   0
+         Shortcut        =   {F5}
+      End
+      Begin VB.Menu mnuTrace 
+         Caption         =   "-"
+         Index           =   1
+      End
+      Begin VB.Menu mnuTrace 
+         Caption         =   "&amp;Configure..."
+         Index           =   2
+      End
+   End
+   Begin VB.Menu mnuHelpTOP 
+      Caption         =   "&amp;Help"
+      Begin VB.Menu mnuHelp 
+         Caption         =   "&amp;About..."
+         Index           =   0
+      End
+   End
+End
+Attribute VB_Name = "frmVBTrace"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Declare Function SendMessageStringA Lib "user32" Alias "SendMessageA"
+ (ByVal hWnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ String) As Long
+Private Declare Function SendMessageStringW Lib "user32" Alias "SendMessageW"
+ (ByVal hWnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Declare Function SendMessageLong Lib "user32" Alias "SendMessageA"
+ (ByVal hWnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Declare Function SendMessageLongW Lib "user32" Alias "SendMessageW"
+ (ByVal hWnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Declare Function SendMessageRef Lib "user32" Alias "SendMessageA"
+ (ByVal hWnd As Long, ByVal wMsg As Long, ByRef wParam As Long, ByRef lParam As
+ Long) As Long
+Private Declare Function SendMessageRefW Lib "user32" Alias "SendMessageW"
+ (ByVal hWnd As Long, ByVal wMsg As Long, ByRef wParam As Long, ByRef lParam As
+ Long) As Long
+Private Const EM_REPLACESEL = &amp;HC2
+Private Const EM_SETLIMITTEXT = &amp;HC5 '        EM_LIMITTEXT   /* ;win40 Name
+ change */
+Private Const EM_GETLIMITTEXT = &amp;HD5
+Private Const EM_SETSEL = &amp;HB1
+Private Const EM_GETSEL = &amp;HB0
+Private Const WM_COPY = &amp;H301
+Private Const EM_GETLINE = &amp;HC4
+Private Const EM_GETLINECOUNT = &amp;HBA
+Private Const EM_LINEINDEX = &amp;HBB
+Private Const EM_LINEFROMCHAR = &amp;HC9
+Private Const EM_SCROLLCARET = &amp;HB7
+Private Const EM_LINELENGTH = &amp;HC1
+
+Private Declare Function LocalAlloc Lib "kernel32" (ByVal wFlags As Long, ByVal
+ wBytes As Long) As Long
+Private Declare Function LocalFree Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function LocalLock Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function LocalUnlock Lib "kernel32" (ByVal hMem As Long) As Long
+Private Const GMEM_FIXED = &amp;H0
+Private Const GMEM_ZEROINIT = &amp;H40
+Private Const GPTR = (GMEM_FIXED Or GMEM_ZEROINIT)
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Declare Function timeGetTime Lib "winmm.dll" () As Long
+Private Declare Function timeBeginPeriod Lib "winmm.dll" (ByVal uPeriod As
+ Long) As Long
+Private Declare Function timeEndPeriod Lib "winmm.dll" (ByVal uPeriod As Long)
+ As Long
+
+Private Declare Function LoadImageLong Lib "user32" Alias "LoadImageA" (ByVal
+ hInst As Long, ByVal lpsz As Long, ByVal uType As Long, ByVal cx As Long,
+ ByVal cy As Long, ByVal uFlags As Long) As Long
+Private Declare Function LoadImageString Lib "user32" Alias "LoadImageA" (ByVal
+ hInst As Long, ByVal lpsz As String, ByVal uType As Long, ByVal cx As Long,
+ ByVal cy As Long, ByVal uFlags As Long) As Long
+Private Const IMAGE_BITMAP = 0
+Private Const IMAGE_ICON = 1
+Private Const IMAGE_CURSOR = 2
+Private Declare Function DestroyIcon Lib "user32" (ByVal hIcon As Long) As Long
+
+Private WithEvents m_cSysTray As frmSysTray
+Attribute m_cSysTray.VB_VarHelpID = -1
+Private WithEvents m_cMessage As frmMessageWindow
+Attribute m_cMessage.VB_VarHelpID = -1
+Private WithEvents m_cFindReplace As cFindReplace
+Attribute m_cFindReplace.VB_VarHelpID = -1
+Private m_iLength As Long
+Private m_bPaused As Boolean
+Private m_hIcon As Long
+
+Private m_sToFind As String
+Private m_iLastFindIndex As Long
+Private m_eFindFlags As EFindReplaceFlags
+Private m_lStartLine As Long
+
+Public Sub Test()
+   m_sToFind = "I've"
+   txtTrace.Text = "This" &amp; vbCrLf &amp; "is " &amp; vbCrLf &amp; vbCrLf &amp; "Some text " &amp;
+    vbCrLf &amp; vbCrLf &amp; "That I've added" &amp; vbCrLf
+   txtTrace.Text = txtTrace.Text + txtTrace.Text
+   FindInTextBox
+End Sub
+
+Private Sub FindInTextBox()
+Dim lLines As Long
+Dim lFirstLine As Long
+Dim lLine As Long
+Dim sLine As String
+Dim hMem As Long
+Dim lPtrMem As Long
+Dim iSize As Integer
+Dim lR As Long
+Dim b() As Byte
+Dim eCompare As VbCompareMethod
+Dim iPos As Long
+Dim iCharIndex As Long
+Dim iStartPos As Long
+
+   If (m_eFindFlags And FR_MATCHCASE) = FR_MATCHCASE Then
+      eCompare = vbBinaryCompare
+   Else
+      eCompare = vbTextCompare
+   End If
+
+   If (IsNt) Then
+      hMem = LocalAlloc(GPTR, 4096)
+   Else
+      hMem = LocalAlloc(GPTR, 2048)
+   End If
+   lPtrMem = LocalLock(hMem)
+   iSize = 2048
+
+   If (IsNt) Then
+      lLines = SendMessageLongW(txtTrace.hWnd, EM_GETLINECOUNT, 0, 0)
+   Else
+      lLines = SendMessageLong(txtTrace.hWnd, EM_GETLINECOUNT, 0, 0)
+   End If
+   lFirstLine = 0
+   If (m_iLastFindIndex &gt; 0) Then
+      If (IsNt) Then
+         lFirstLine = SendMessageLongW(txtTrace.hWnd, EM_LINEFROMCHAR,
+          m_iLastFindIndex, 0)
+      Else
+         lFirstLine = SendMessageLong(txtTrace.hWnd, EM_LINEFROMCHAR,
+          m_iLastFindIndex, 0)
+      End If
+   End If
+   
+   lLine = lFirstLine
+   Do
+      sLine = ""
+      CopyMemory ByVal lPtrMem, iSize, 2
+      If (IsNt) Then
+         lR = SendMessageLongW(txtTrace.hWnd, EM_GETLINE, lLine, lPtrMem)
+         If (lR &gt; 0) Then
+            ReDim b(0 To lR * 2 - 1) As Byte
+            CopyMemory b(0), ByVal lPtrMem, lR * 2
+            sLine = b
+         End If
+      Else
+         lR = SendMessageLong(txtTrace.hWnd, EM_GETLINE, lLine, lPtrMem)
+         If (lR &gt; 0) Then
+            ReDim b(0 To lR - 1) As Byte
+            CopyMemory b(0), ByVal lPtrMem, lR
+            sLine = StrConv(b, vbUnicode)
+         End If
+      End If
+      
+      iStartPos = 1
+      If IsNt Then
+         iCharIndex = SendMessageLongW(txtTrace.hWnd, EM_LINEINDEX, lLine, 0)
+      Else
+         iCharIndex = SendMessageLong(txtTrace.hWnd, EM_LINEINDEX, lLine, 0)
+      End If
+      If (m_iLastFindIndex &gt; 0) Then
+         ' does this line include m_iLastFindIndex?
+         If (m_iLastFindIndex &gt;= iCharIndex) And (m_iLastFindIndex &lt;=
+          iCharIndex + Len(sLine)) Then
+            iStartPos = (m_iLastFindIndex + Len(m_sToFind) - iCharIndex) + 1
+         End If
+      End If
+      iPos = InStr(iStartPos, sLine, m_sToFind, eCompare)
+      
+      If (iPos &gt; 0) Then
+         iCharIndex = iCharIndex + iPos - 1
+         If (IsNt) Then
+            SendMessageLongW txtTrace.hWnd, EM_SETSEL, iCharIndex, iCharIndex +
+             Len(m_sToFind)
+            SendMessageLongW txtTrace.hWnd, EM_SCROLLCARET, 0, 0
+         Else
+            SendMessageLong txtTrace.hWnd, EM_SETSEL, iCharIndex, iCharIndex +
+             Len(m_sToFind)
+            SendMessageLong txtTrace.hWnd, EM_SCROLLCARET, 0, 0
+         End If
+         Debug.Print iPos
+         m_iLastFindIndex = iCharIndex
+         txtTrace.SetFocus
+         mnuEdit(3).Enabled = True
+         Exit Do
+      End If
+      lLine = lLine + 1
+   Loop While lLine &lt; lLines
+   
+   
+   LocalUnlock hMem
+   LocalFree hMem
+   
+End Sub
+
+Private Function GetIcon(ByVal lId As Long) As Long
+   If Not (m_hIcon = 0) Then
+      DestroyIcon m_hIcon
+      m_hIcon = 0
+   End If
+   If (lId &gt; 0) Then
+      m_hIcon = LoadImageLong(App.hInstance, lId, IMAGE_ICON, 16, 16, 0)
+   End If
+   GetIcon = m_hIcon
+End Function
+
+
+Private Sub SaveTrace()
+
+On Error GoTo ErrorHandler
+
+Dim bPause As Boolean
+   
+   If Not (m_bPaused) Then
+      bPause = True
+      ActionHandler "PAUSE"
+   End If
+   
+Dim cD As New cCommonDialog
+Dim sFile As String
+   If (cD.VBGetSaveFileName( _
+      FileName:=sFile, _
+      Filter:="Log Files (*.log)|*.log|CSV Files (*.csv)|*.csv|All Files
+       (*.*)|*.*|", _
+      DefaultExt:="log", _
+      Owner:=Me.hWnd)) Then
+            
+   End If
+   
+   If (bPause) Then
+      ActionHandler "GO"
+      bPause = False
+   End If
+   Exit Sub
+
+ErrorHandler:
+   MsgBox "An error occurred trying to save:" &amp; Err.Description, vbExclamation
+   If (bPause) Then
+      ActionHandler "GO"
+      bPause = False
+   End If
+   Exit Sub
+End Sub
+
+Private Sub CopyTrace()
+Dim lStart As Long
+Dim lEnd As Long
+Dim lSwap As Long
+Dim sBuf As String
+Dim bPause As Boolean
+
+On Error GoTo ErrorHandler
+
+   If Not (m_bPaused) Then
+      bPause = True
+      ActionHandler "PAUSE"
+   End If
+   If IsNt Then
+      SendMessageRefW txtTrace.hWnd, EM_GETSEL, lStart, lEnd
+   Else
+      SendMessageRef txtTrace.hWnd, EM_GETSEL, lStart, lEnd
+   End If
+   If (lStart = lEnd) Then
+      ' everything
+      sBuf = m_cMessage.Buffer
+      Clipboard.Clear
+      Clipboard.SetText sBuf
+   Else
+      If IsNt Then
+         SendMessageLongW txtTrace.hWnd, WM_COPY, 0, 0
+      Else
+         SendMessageLong txtTrace.hWnd, WM_COPY, 0, 0
+      End If
+   End If
+   
+   If (bPause) Then
+      ActionHandler "GO"
+      bPause = False
+   End If
+   Exit Sub
+   
+ErrorHandler:
+   MsgBox "An error occurred trying to copy:" &amp; Err.Description, vbExclamation
+   If (bPause) Then
+      ActionHandler "GO"
+      bPause = False
+   End If
+   Exit Sub
+End Sub
+
+Private Sub SelectAll()
+   '
+Dim lLines As Long
+Dim lCharIndex As Long
+Dim lSize As Long
+
+   lLines = SendMessageLong(txtTrace.hWnd, EM_GETLINECOUNT, 0, 0) - 1
+   lCharIndex = SendMessageLong(txtTrace.hWnd, EM_LINEINDEX, lLines, 0)
+   lSize = SendMessageLong(txtTrace.hWnd, EM_LINELENGTH, lCharIndex, 0)
+   SendMessageLong txtTrace.hWnd, EM_SETSEL, 0, lCharIndex + lSize
+   '
+End Sub
+
+Private Sub ConfigureTracer()
+   '
+   Dim f As New frmConfigure
+   f.Show vbModal, Me
+   '
+End Sub
+
+Private Sub ActionHandler(ByVal sAction As String)
+   Select Case sAction
+   Case "SAVE"
+      SaveTrace
+   
+   Case "FIND"
+      If (m_cFindReplace.hWndDialog = 0) Then
+         m_cFindReplace.VBFindText Me.hWnd
+      End If
+   
+   Case "FINDNEXT"
+      FindInTextBox
+      
+   Case "COPY"
+      CopyTrace
+   
+   Case "SELECTALL"
+      SelectAll
+      
+   Case "CLEAR"
+      m_cMessage.Clear
+      txtTrace.Text = ""
+      m_iLength = 0
+   
+   Case "PAUSE"
+      m_bPaused = True
+      mnuTrace(0).Checked = True
+      m_cSysTray.IconHandle = GetIcon(25)
+   
+   Case "GO"
+      m_bPaused = False
+      m_cMessage_DataAdded
+      mnuTrace(0).Checked = False
+      m_cSysTray.IconHandle = GetIcon(24)
+      
+   Case "CONFIGURE"
+      ConfigureTracer
+      
+   Case "RESTORE"
+      Me.Tag = "RESTORE"
+      Me.Visible = True
+      m_cSysTray.RestoreAndActivate Me.hWnd
+      Me.Tag = ""
+      
+   Case "EXIT"
+      Unload Me
+   
+   Case "ABOUT"
+      Dim fA As New frmAbout
+      Set fA.Icon = Me.Icon
+      fA.Show vbModal, Me
+      
+   End Select
+End Sub
+
+Private Sub Command1_Click()
+
+   Dim sNewData As String
+   sNewData = String$(100, "0") &amp; vbCrLf
+   Dim i As Long
+   txtTrace.Visible = False
+   For i = 1 To 700
+      AddData sNewData
+   Next i
+   txtTrace.Visible = True
+   
+   Dim lStart As Long
+   Dim lEnd As Long
+   If IsNt Then
+      SendMessageRefW txtTrace.hWnd, EM_GETSEL, lStart, lEnd
+   Else
+      SendMessageRef txtTrace.hWnd, EM_GETSEL, lStart, lEnd
+   End If
+   Debug.Print lStart, lEnd
+   
+'   Dim sNewData As String
+'   sNewData = "Hi Mum" &amp; vbCrLf
+'   Dim lT As Long
+'   Dim i As Long
+'   timeBeginPeriod 1
+'
+'   txtTrace.Text = ""
+'   txtTrace.Visible = False
+'   lT = timeGetTime()
+'   For i = 1 To 2000
+'      txtTrace.Text = txtTrace.Text &amp; sNewData
+'   Next i
+'   txtTrace.Visible = True
+'   MsgBox "VB Method: " &amp; timeGetTime() - lT
+'
+'   txtTrace.Text = ""
+'   m_iLength = 0
+'   lT = timeGetTime()
+'   txtTrace.Visible = False
+'   For i = 1 To 2000
+'      txtTrace.SelStart = m_iLength
+'      SendMessageString txtTrace.hwnd, EM_REPLACESEL, 0, sNewData
+'      m_iLength = m_iLength + Len(sNewData)
+'   Next i
+'   txtTrace.Visible = True
+'   MsgBox "API Method: " &amp; timeGetTime() - lT
+'
+'   timeEndPeriod 1
+End Sub
+
+Public Sub AddData(ByVal sData As String)
+Dim lLines As Long
+Dim lStart As Long
+Dim lEnd As Long
+   If (Len(sData) &gt; 0) Then
+      If (IsNt) Then
+         lLines = SendMessageLongW(txtTrace.hWnd, EM_GETLINECOUNT, 0, 0)
+         If (lLines &gt; g_cConfiguration.MaxLines) Then
+            lStart = SendMessageLongW(txtTrace.hWnd, EM_LINEINDEX, 0, 0)
+            lEnd = SendMessageLongW(txtTrace.hWnd, EM_LINEINDEX, 1, 0)
+            SendMessageLongW txtTrace.hWnd, EM_SETSEL, lStart, lEnd - 1
+            SendMessageStringW txtTrace.hWnd, EM_REPLACESEL, 0, StrPtr("")
+         End If
+         SendMessageLongW txtTrace.hWnd, EM_SETSEL, m_iLength, m_iLength
+         SendMessageStringW txtTrace.hWnd, EM_REPLACESEL, 0, StrPtr(sData)
+      Else
+         SendMessageLong txtTrace.hWnd, EM_SETSEL, m_iLength, m_iLength
+         SendMessageStringA txtTrace.hWnd, EM_REPLACESEL, 0, sData
+      End If
+      m_iLength = m_iLength + Len(sData)
+   End If
+End Sub
+
+Private Sub Form_Load()
+   
+   TagWindow Me.hWnd
+      
+   Set m_cSysTray = New frmSysTray
+   Set m_cSysTray.Icon = Me.Icon
+   m_cSysTray.AddMenuItem "&amp;Restore", "RESTORE", True
+   m_cSysTray.AddMenuItem "-"
+   m_cSysTray.AddMenuItem "E&amp;xit", "EXIT"
+   m_cSysTray.ToolTip = "VB Tracer"
+   Load m_cSysTray
+   
+   Set m_cMessage = New frmMessageWindow
+   Load m_cMessage
+   
+   Set m_cFindReplace = New cFindReplace
+   
+   ActionHandler "GO"
+   
+End Sub
+
+Private Sub Form_Resize()
+   If Me.Tag &lt;&gt; "RESTORE" Then
+      If (Me.WindowState = vbMinimized) Then
+         Me.Visible = False
+      End If
+   End If
+   On Error Resume Next
+   txtTrace.Move txtTrace.Left, txtTrace.Top, Me.ScaleWidth - txtTrace.Left *
+    2, Me.ScaleHeight - txtTrace.Top * 2
+End Sub
+
+Private Sub m_cFindReplace_FindNext(ByVal sToFind As String, ByVal eFlags As
+ EFindReplaceFlags)
+   '
+   If Not (StrComp(sToFind, m_sToFind) = 0) Then
+      m_sToFind = sToFind
+      m_iLastFindIndex = 0
+   End If
+   FindInTextBox
+   '
+End Sub
+
+Private Sub m_cFindReplace_ShowHelp()
+   '
+End Sub
+
+Private Sub m_cMessage_DataAdded()
+   '
+   If Not m_bPaused Then
+      AddData m_cMessage.NewData
+   End If
+   '
+End Sub
+
+Private Sub m_cSysTray_MenuClick(ByVal lIndex As Long, ByVal sKey As String)
+   ActionHandler sKey
+End Sub
+
+Private Sub m_cSysTray_SysTrayDoubleClick(ByVal eButton As MouseButtonConstants)
+   ActionHandler "RESTORE"
+End Sub
+
+Private Sub m_cSysTray_SysTrayMouseUp(ByVal eButton As MouseButtonConstants)
+   If (eButton = vbLeftButton) Then
+      ActionHandler "RESTORE"
+   ElseIf (eButton = vbRightButton) Then
+      m_cSysTray.ShowMenu
+   End If
+End Sub
+
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+   GetIcon 0
+   Unload m_cSysTray
+   Set m_cSysTray = Nothing
+   Unload m_cMessage
+   Set m_cMessage = Nothing
+   EndApp
+   
+End Sub
+
+Private Sub mnuEdit_Click(Index As Integer)
+   Select Case Index
+   Case 0
+      ActionHandler "COPY"
+   Case 2
+      ActionHandler "FIND"
+   Case 3
+      ActionHandler "FINDNEXT"
+   Case 5
+      ActionHandler "SELECTALL"
+   Case 6
+      ActionHandler "CLEAR"
+   End Select
+End Sub
+
+Private Sub mnuFile_Click(Index As Integer)
+   Select Case Index
+   Case 0
+      ActionHandler "SAVE"
+   Case 2
+      ActionHandler "EXIT"
+   End Select
+End Sub
+
+Private Sub mnuHelp_Click(Index As Integer)
+   Select Case Index
+   Case 0
+      ActionHandler "ABOUT"
+   End Select
+End Sub
+
+Private Sub mnuTrace_Click(Index As Integer)
+   Select Case Index
+   Case 0
+      If (mnuTrace(0).Checked) Then
+         ActionHandler "GO"
+      Else
+         ActionHandler "PAUSE"
+      End If
+   Case 2
+      ActionHandler "CONFIGURE"
+   End Select
+End Sub
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;<a href="article.html">RunTime Debug Tracing</a>&#160;.&#160;<a href="VB6_Tracer_Utility.html">VB6 Tracer Utility</a>&#160;.&#160;frmVBTrace.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/RunTime_Debug_Tracing/VB6_Tracer_Utility_zip_frmVBTrace_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:10 GMT -->
+</html>

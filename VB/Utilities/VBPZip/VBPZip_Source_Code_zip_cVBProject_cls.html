@@ -1,0 +1,608 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/VBPZip/VBPZip_Source_Code_zip_cVBProject_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:20:03 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cVBProject.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cVBProject.cls" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Visual Basic Project Zip Utility</a>&#160;.&#160;<a href="VBPZip_Source_Code.html">VBPZip Source Code</a>&#160;.&#160;cVBProject.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Info-ZIP_Unzip_DLL_(Renamed_vbuzip10_dll).html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />Info-ZIP Unzip DLL (Renamed vbuzip10.dll)</a> (63K)</p><p /><p class="nav"><a href="VBPZip_Source_Code.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VBPZip Source Code</a> (152K)</p><p class="nav"><a href="VBPZip_VB5_Executable.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VBPZip VB5 Executable</a> (69K)</p><p class="nav"><a href="VBPZip_VB6_Executable.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VBPZip VB6 Executable</a> (62K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2150</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2150&amp;type=Zip&amp;title=VBPZip%20Source%20Code%2Ezip%5FcVBProject">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:3 July 2003</p>
+<br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />3 Mar 2003<br /><p class="update">Previous version failed on Windows 2000 because the
+	version check in the NoStatusBar component was incorrect. Now fixed.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1426">Zipping files using the free Info-Zip Zip DLL (now with encryption support)</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1424">Introduction to the freeware Info-ZIP libraries</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cVBProject.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cVBProject"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private m_sFileName As String
+Private m_sPath As String
+Private m_sType As String
+Private m_sStartup As String
+Private m_sName As String
+
+Private m_lMajorVer As Long
+Private m_lMinorVer As Long
+Private m_lRevisionVer As Long
+Private m_lAutoIncrementVer As Long
+Private m_lServerSupportFiles  As Long
+Private m_sVersionCompanyName As String
+Private m_sVersionComments As String
+Private m_sVersionFileDescription As String
+Private m_sVersionLegalCopyright As String
+Private m_sVersionProductName As String
+
+Private m_lCompilationType As Long
+Private m_lOptimizationType  As Long
+Private m_lFavorPentiumProtm As Long
+Private m_lCodeViewDebugInfo As Long
+Private m_lNoAliasing As Long
+Private m_lBoundsCheck As Long
+Private m_lOverflowCheck  As Long
+Private m_lFlPointCheck As Long
+Private m_lFDIVCheck As Long
+Private m_lUnroundedFP As Long
+
+Private m_lStartMode As Long
+Private m_lUnattended As Long
+Private m_lThreadPerObject As Long
+Private m_lMaxNumberOfThreads As Long
+
+Private m_sLines() As String
+Private m_iLineCount As Long
+Private Type tFileInfo
+   sPath As String
+   iType As EVBPFileTypes
+   sGUID As String
+   sDescription As String
+   lMajor As Long
+   lMinor As Long
+   lRevision As Long
+   iLine As Long
+End Type
+Private m_iCount As Long
+Private m_tFile() As tFileInfo
+
+Private m_bNoBaseLine As Boolean
+Private m_sBaseLinePath As String
+
+Private m_bStartup As Boolean
+
+Private m_bFixPaths As Boolean
+
+Public Property Get FixPaths() As Boolean
+   FixPaths = m_bFixPaths
+End Property
+Public Property Let FixPaths(ByVal bState As Boolean)
+   m_bFixPaths = bState
+End Property
+
+Public Sub Show( _
+      lstThis As ListBox, _
+      cODList As cSimpleODListBox, _
+      cSysILS As cVBALSysImageList, _
+      ByVal lBaseIndent As Long, _
+      ByVal bShowFolders As Boolean _
+   )
+Dim i As Long
+Dim iType As Long
+Dim sE As String
+Dim sS As String
+Dim bFirst As Boolean
+Dim lIndent As Long
+Dim iPos As Long
+Dim iIconIndex As Long
+Dim sFilename As String
+
+   sFilename = NormalizePath(ProjectPath) &amp; ProjectFileName
+   cODList.AddItem lstThis, m_sName &amp; " (" &amp; sFilename &amp; ")" &amp; vbTab &amp;
+    "&lt;Project&gt;&lt;Name&gt;" &amp; m_sName &amp; "&lt;/Name&gt;&lt;Filename&gt;" &amp; sFilename &amp;
+    "&lt;/Filename&gt;&lt;Files&gt;?&lt;/Files&gt;&lt;/Project&gt;", cSysILS.ItemIndex("C:\Junk.VBP"),
+    lBaseIndent
+   For iType = 0 To 10
+      bFirst = True
+      lIndent = lBaseIndent + 1
+      For i = 1 To m_iCount
+         With m_tFile(i)
+            If .iType = iType Then
+               Select Case .iType
+               Case evbpUserDocument
+                  sE = ".dob"
+                  sS = "UserDocuments"
+               Case evbpUserControl
+                  sE = ".ctl"
+                  sS = "UserControls"
+               Case evbpResourceFile
+                  sE = ".res"
+                  sS = "Resource Files"
+               Case evbpPropertyPage
+                  sE = ".pag"
+                  sS = "Property Page"
+               Case evbpRelatedFile
+                  iPos = InstrRev(.sPath, ".")
+                  If iPos &gt; 0 Then
+                     sE = Mid$(.sPath, iPos)
+                  Else
+                     sE = ".txt"
+                  End If
+                  sS = "Related Files"
+               Case evbpReference
+                  sE = ".dll"
+                  sS = "References"
+               Case evbpModule
+                  sE = ".bas"
+                  sS = "Modules"
+               Case evbpForm
+                  sE = ".frm"
+                  sS = "Forms"
+               Case evbpControl
+                  sE = ".ocx"
+                  sS = "Components"
+               Case evbpClass
+                  sE = ".cls"
+                  sS = "Classes"
+               Case evbpBinary
+                  iPos = InstrRev(.sPath, ".")
+                  If iPos &gt; 0 Then
+                     sE = Mid$(.sPath, iPos)
+                  End If
+                  sS = "Project Binaries"
+               End Select
+               
+               If bFirst And bShowFolders Then
+                  cODList.AddItem lstThis, sS &amp; vbTab &amp; "&lt;Null/&gt;", 4, lIndent
+                  lIndent = lIndent + 1
+                  bFirst = False
+                  lstThis.Selected(lstThis.NewIndex) =
+                   g_cFileTypes.IncludeInZip(iType)
+               End If
+               If .iType = evbpBinary Then
+                  iIconIndex = cSysILS.ItemIndex(.sPath, True)
+               Else
+                  iIconIndex = cSysILS.ItemIndex("C:\Junk" &amp; sE)
+               End If
+               If .iType = evbpControl Then
+                  cODList.AddItem lstThis, .sPath &amp; " " &amp; .sGUID &amp; vbTab &amp;
+                   "&lt;File&gt;&lt;ID&gt;" &amp; i &amp; "&lt;/ID&gt;&lt;/File&gt;", iIconIndex, lIndent
+               Else
+                  cODList.AddItem lstThis, .sDescription &amp; "(" &amp; .sPath &amp; ")" &amp;
+                   vbTab &amp; "&lt;File&gt;&lt;ID&gt;" &amp; i &amp; "&lt;/ID&gt;&lt;/File&gt;", iIconIndex,
+                   lIndent
+               End If
+               lstThis.Selected(lstThis.NewIndex) =
+                g_cFileTypes.IncludeInZip(iType)
+            End If
+         End With
+      Next i
+   Next iType
+End Sub
+
+
+Public Sub Load(ByVal sPath As String, ByVal sFile As String, ByVal bStartup As
+ Boolean)
+Dim sFullPath As String
+Dim sText As String
+Dim sThis As String
+Dim sItem As String
+Dim sType As String
+Dim sExeName As String
+Dim iExeLine As Long
+Dim iPos As Long
+Dim i As Long
+
+   sPath = ReplaceSection(sPath, """", "")
+   sFullPath = AddFileToPath(sPath, sFile)
+   
+   ' Need to re-extract path &amp; file from the fullpath, because sFile
+   ' might have contained ..\ etc:
+   iPos = InstrRev(sFullPath, "\")
+   sPath = Left$(sFullPath, iPos - 1)
+   sFile = Mid$(sFullPath, iPos + 1)
+   
+   m_bStartup = bStartup
+   m_bNoBaseLine = True
+   m_sBaseLinePath = ""
+   m_iCount = 0
+   Erase m_tFile
+   m_sPath = sPath
+   m_sFileName = sFile
+   
+   If ReadFileText(sFullPath, sText) Then
+      Dim cS As New cSplitString
+      cS.TheString = sText
+      cS.Splitter(1) = vbCrLf
+      cS.Splitter(2) = "="
+      Do
+         sThis = cS.NextItem
+         If cS.SplitItem = 2 Then
+            sType = sThis
+         Else
+            sItem = sThis
+            
+            m_iLineCount = m_iLineCount + 1
+            ReDim Preserve m_sLines(1 To m_iLineCount) As String
+            m_sLines(m_iLineCount) = sType &amp; "=" &amp; sItem
+            
+            Select Case Trim$(sType)
+            Case "Type"
+               m_sType = sItem
+            Case "Startup"
+               m_sStartup = sItem
+            Case "Name"
+               m_sName = sItem
+            Case "MajorVer"
+               m_lMajorVer = sItem
+            Case "MinorVer"
+               m_lMinorVer = sItem
+            Case "RevisionVer"
+               m_lRevisionVer = sItem
+            Case "AutoIncrementVer"
+               m_lAutoIncrementVer = sItem
+            Case "ServerSupportFiles"
+               m_lServerSupportFiles = sItem
+            Case "VersionCompanyName"
+               m_sVersionCompanyName = sItem
+            Case "VersionComments"
+               m_sVersionComments = sItem
+            Case "VersionFileDescription"
+               m_sVersionFileDescription = sItem
+            Case "VersionLegalCopyright"
+               m_sVersionLegalCopyright = sItem
+            Case "VersionProductName"
+               m_sVersionProductName = sItem
+            Case "CompilationType"
+               m_lCompilationType = sItem
+            Case "OptimizationType"
+               m_lOptimizationType = sItem
+            Case "FavorPentiumPro(tm)"
+               m_lFavorPentiumProtm = sItem
+            Case "CodeViewDebugInfo"
+               m_lCodeViewDebugInfo = sItem
+            Case "NoAliasing"
+               m_lNoAliasing = sItem
+            Case "BoundsCheck"
+               m_lBoundsCheck = sItem
+            Case "OverflowCheck"
+               m_lOverflowCheck = sItem
+            Case "FlPointCheck"
+               m_lFlPointCheck = sItem
+            Case "FDIVCheck"
+               m_lFDIVCheck = sItem
+            Case "UnroundedFP"
+               m_lUnroundedFP = sItem
+            
+            Case "StartMode"
+               m_lStartMode = sItem
+            Case "Unattended"
+               m_lUnattended = sItem
+            Case "ThreadPerObject"
+               m_lThreadPerObject = sItem
+            Case "MaxNumberOfThreads"
+               'm_lMaxNumberOfThreads = sItem
+               
+            Case "Module"
+               pAddFile sItem, evbpModule, m_iLineCount
+            Case "Class"
+               pAddFile sItem, evbpClass, m_iLineCount
+            Case "Reference"
+               pAddFile sItem, evbpReference, m_iLineCount
+            Case "Form"
+               pAddFile sItem, evbpForm, m_iLineCount
+            Case "Object"
+               pAddFile sItem, evbpControl, m_iLineCount
+            Case "UserControl"
+               pAddFile sItem, evbpUserControl, m_iLineCount
+            Case "PropertyPage"
+               pAddFile sItem, evbpPropertyPage, m_iLineCount
+            Case "UserDocument"
+               pAddFile sItem, evbpUserDocument, m_iLineCount
+            Case "ResFile32"
+               pAddFile sItem, evbpResourceFile, m_iLineCount
+            Case "RelatedDoc"
+               pAddFile sItem, evbpRelatedFile, m_iLineCount
+               
+            Case "ExeName32"
+               sExeName = sItem
+               iExeLine = m_iLineCount
+            Case "Path32"
+               sExeName = NormalizePath(sItem) &amp; sExeName
+               pAddFile sExeName, evbpBinary, m_iLineCount
+               sExeName = ""
+            End Select
+            
+         End If
+      Loop While cS.More
+      
+      If Not sExeName = "" Then
+         pAddFile sExeName, evbpBinary, iExeLine
+      End If
+      
+      If m_bFixPaths Then
+         sText = ""
+         For i = 1 To m_iLineCount
+            If i &gt; 1 Then
+               sText = sText &amp; vbCrLf
+            End If
+            sText = sText &amp; m_sLines(i)
+         Next i
+         ReplaceFileText sFullPath, sText
+      End If
+      
+      
+   End If
+End Sub
+Private Sub pAddFile(ByVal sItem As String, ByVal eType As EVBPFileTypes, ByVal
+ iLine As Long)
+Dim sFile As String
+Dim iPos As Long
+Dim sBit As String
+Dim iCP As Long
+Dim sNum As String
+Dim sRelPath As String
+   m_iCount = m_iCount + 1
+   ReDim Preserve m_tFile(1 To m_iCount) As tFileInfo
+   With m_tFile(m_iCount)
+      .iType = eType
+      .iLine = iLine
+      Select Case eType
+      Case evbpClass, evbpModule
+         iPos = InStr(sItem, "; ")
+         If iPos &gt; 0 Then
+            .sDescription = Left$(sItem, iPos - 1)
+            .sPath = AddFileToPath(m_sPath, ReplaceSection(Mid$(sItem, iPos +
+             2), """", ""))
+            sRelPath = RelativePath(m_sPath, .sPath)
+         Else
+            .sPath = AddFileToPath(m_sPath, ReplaceSection(sItem, """", ""))
+            sRelPath = RelativePath(m_sPath, .sPath)
+         End If
+         Debug.Print
+         If InStr(sRelPath, " ") Then sRelPath = """" &amp; sRelPath &amp; """"
+         iPos = InStr(m_sLines(iLine), "=")
+         m_sLines(iLine) = Left$(m_sLines(iLine), iPos) &amp; .sDescription &amp; "; "
+          &amp; sRelPath
+         Debug.Print
+      Case evbpForm, evbpResourceFile, evbpRelatedFile, evbpUserControl,
+       evbpBinary, evbpPropertyPage
+         .sPath = AddFileToPath(m_sPath, ReplaceSection(sItem, """", ""))
+         sRelPath = RelativePath(m_sPath, .sPath)
+         iPos = InStr(m_sLines(iLine), "=")
+         If InStr(sRelPath, " ") Then sRelPath = """" &amp; sRelPath &amp; """"
+         If Left$(m_sLines(iLine), iPos) = "Path32=" Then
+            iPos = InstrRev(sRelPath, "\")
+            If iPos &gt; 0 Then
+               m_sLines(iLine) = "Path32=" &amp; Left$(sRelPath, iPos - 1)
+            Else
+               m_sLines(iLine) = "Path32="
+            End If
+         Else
+            m_sLines(iLine) = Left$(m_sLines(iLine), iPos) &amp; sRelPath
+         End If
+         Debug.Print
+      Case evbpReference
+         Dim cS As New cSplitString
+         cS.TheString = sItem
+         cS.Splitter = "#"
+         Do
+            sBit = cS.NextItem
+            iPos = iPos + 1
+            Select Case iPos
+            Case 1
+               ' GUID:
+               iCP = InStr(sBit, "*\G")
+               If iCP &gt; 0 Then
+                  .sGUID = Mid$(sBit, iCP + 3)
+               Else
+                  .sGUID = sBit
+               End If
+            Case 2
+               ' Major . Minor
+               On Error Resume Next
+               iCP = InStr(sBit, ".")
+               If iCP &gt; 0 Then
+                  sNum = Left$(sBit, iCP - 1)
+                  If Asc(sNum) &gt; 65 Then
+                     .lMajor = Asc(sNum) - Asc("A") + 10
+                  Else
+                     .lMajor = sNum
+                  End If
+                  sNum = Mid$(sBit, iCP + 1)
+                  If Asc(sNum) &gt; 65 Then
+                     .lMinor = Asc(sNum) - Asc("A") + 10
+                  Else
+                     .lMinor = sNum
+                  End If
+               Else
+                  .lMajor = sBit
+               End If
+               Err.Clear
+            Case 3
+               ' Revision
+               .lRevision = sBit
+            Case 4
+               ' Path
+               .sPath = AddFileToPath(m_sPath, ReplaceSection(sBit, """", ""))
+               sRelPath = RelativePath(m_sPath, .sPath)
+            Case 5
+               ' Description
+               .sDescription = sBit
+            End Select
+         Loop While cS.More
+         
+      Case evbpControl
+         '
+         cS.TheString = sItem
+         cS.Splitter = "#"
+         Do
+            sBit = cS.NextItem
+            iPos = iPos + 1
+            Select Case iPos
+            Case 1
+               ' GUID:
+               .sGUID = sBit
+            Case 2
+               ' Major . Minor
+               iCP = InStr(sBit, ".")
+               If iCP &gt; 0 Then
+                  .lMajor = Left$(sBit, iCP - 1)
+                  .lMinor = Mid$(sBit, iCP + 1)
+               Else
+                  .lMajor = sBit
+               End If
+            Case 3
+               ' Revision
+               iCP = InStr(sBit, ";")
+               If iCP &gt; 0 Then
+                  .lRevision = Left$(sBit, iCP - 1)
+                  .sPath = Trim$(Mid$(sBit, iCP + 1))
+               Else
+                   '?
+               End If
+            End Select
+         Loop While cS.More
+      End Select
+   End With
+End Sub
+
+Private Sub pSetBaseLinePath(ByVal sPath As String)
+Dim iPos As Long
+Dim sThisPath As String
+   iPos = InstrRev(sPath, "\")
+   sThisPath = Left$(sThisPath, iPos - 1)
+   If m_bNoBaseLine Then
+      m_sBaseLinePath = sThisPath
+   Else
+      If InStr(m_sBaseLinePath, sPath) Then
+         m_sBaseLinePath = sPath
+      Else
+         Do
+            iPos = InstrRev(m_sBaseLinePath, "\")
+            If iPos &gt; 0 Then
+               m_sBaseLinePath = Left$(m_sBaseLinePath, iPos - 1)
+               If InStr(m_sBaseLinePath, sPath) Then
+                  m_sBaseLinePath = sPath
+                  Exit Do
+               End If
+            Else
+               m_sBaseLinePath = ""
+               Exit Do
+            End If
+         Loop
+      End If
+   End If
+End Sub
+
+Public Property Get ProjectPath() As String
+   ProjectPath = m_sPath
+End Property
+Public Property Get ProjectFileName() As String
+   ProjectFileName = m_sFileName
+End Property
+Public Property Get ProjectName() As String
+   ProjectName = m_sName
+End Property
+Public Property Get FileCount() As Long
+   FileCount = m_iCount
+End Property
+Public Property Get FilePath(ByVal nIndex As Long) As String
+   FilePath = m_tFile(nIndex).sPath
+End Property
+Public Property Get FileDescription(ByVal nIndex As Long) As String
+   FileDescription = m_tFile(nIndex).sDescription
+End Property
+Public Property Get FileGUID(ByVal nIndex As Long) As String
+   FileGUID = m_tFile(nIndex).sGUID
+End Property
+Public Property Get FileType(ByVal nIndex As Long) As EVBPFileTypes
+   FileType = m_tFile(nIndex).iType
+End Property
+Public Property Get FileMajorVer(ByVal nIndex As Long) As Long
+   FileMajorVer = m_tFile(nIndex).lMajor
+End Property
+Public Property Get FileMinorVer(ByVal nIndex As Long) As Long
+   FileMinorVer = m_tFile(nIndex).lMinor
+End Property
+Public Property Get FileRevisionVer(ByVal nIndex As Long) As Long
+   FileRevisionVer = m_tFile(nIndex).lRevision
+End Property
+Public Property Get BaseLinePath() As String
+   BaseLinePath = m_sBaseLinePath
+End Property
+Public Sub Zip( _
+      cZ As cZip _
+   )
+Dim i As Long
+Dim bStore As Boolean
+   cZ.AddFileSpec AddFileToPath(ProjectPath, ProjectFileName)
+   For i = 1 To m_iCount
+      If g_cFileTypes.IncludeInZip(m_tFile(i).iType) Then
+         If m_tFile(i).iType = evbpForm Or m_tFile(i).iType = evbpUserControl
+          Then
+            ' need to check for frx/ctx
+            cZ.AddFileSpec Left$(FilePath(i), Len(FilePath(i)) - 1) &amp; "*"
+         ElseIf m_tFile(i).iType = evbpPropertyPage Then
+            ' why, why, why..
+            cZ.AddFileSpec FilePath(i)
+            If (FileExists(Left$(FilePath(i), Len(FilePath(i)) - 2) &amp; "gx"))
+             Then
+               cZ.AddFileSpec Left$(FilePath(i), Len(FilePath(i)) - 2) &amp; "gx"
+            End If
+         Else
+            cZ.AddFileSpec FilePath(i)
+         End If
+      End If
+   Next i
+End Sub
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Visual Basic Project Zip Utility</a>&#160;.&#160;<a href="VBPZip_Source_Code.html">VBPZip Source Code</a>&#160;.&#160;cVBProject.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/VBPZip/VBPZip_Source_Code_zip_cVBProject_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:20:03 GMT -->
+</html>

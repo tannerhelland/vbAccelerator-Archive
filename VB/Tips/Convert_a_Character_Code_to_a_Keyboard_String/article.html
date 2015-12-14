@@ -1,0 +1,166 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Convert_a_Character_Code_to_a_Keyboard_String/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:18:59 GMT -->
+<head>
+
+<title>vbAccelerator - Convert a Character Code to a string describing the Keyboard Keys which must be pressed</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Different keyboard layouts use different virtual key codes and shift combinations to 
+represent character codes.  This tip demonstrates how to convert a key code into
+the equivalent virtual key code and shift state, as well as how to provide the name
+of a virtual key on the keyboard.
+   " /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Convert a Character Code to a string describing the Keyboard Keys which must be pressed</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Character_To_Keyboard_String_Sample.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />Character To Keyboard String Sample</a> (11K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:12635</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12635&amp;type=Article&amp;title=Convert%20a%20Character%20Code%20to%20a%20string%20describing%20the%20Keyboard%20Keys%20which%20must%20be%20pressed">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />27 Jun 2003<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Convert a Character Code to a string describing the Keyboard Keys which must be pressed</h1><img src="charConvert.png" width="330" height="230" alt="Character Code Sample" /><p /><p>
+Different keyboard layouts use different virtual key codes and shift combinations to 
+represent character codes.  This tip demonstrates how to convert a key code into
+the equivalent virtual key code and shift state, as well as how to provide the name
+of a virtual key on the keyboard.
+   </p><p>
+There are two stages in converting a character into the keyboard
+equivalent.
+The first stage is to obtain the Keyboard Scan Code for the character, using the
+API call <span class="code">VkKeyScan</span>.  This provides the key's
+virtual key code and the shift state.  Once that has been done, the virtual
+key code can be converted to the name of the key using the 
+<span class="code">MapVirtualKey</span> and <span class="code">GetKeyNameText</span>
+functions.
+</p><h2>Converting a Character to the Virtual Key and Shift State</h2><p>
+The code below shows how this is achieved.  First, the <span class="code">GetVersion</span>
+function is called to determine whether the system is NT and has Unicode
+support or not.  This is indicated by the high-bit of the return value
+being set.  Then a suitable value is prepared for the <span class="code">VkKeyScan</span>
+call.  For Unicode systems this is an Integer value whereas ANSI systems
+use Byte values.   Then the result of the call is an integer where the
+low-byte is the virtual key code and the high-byte is the shift state, 
+made up from a ORed combination of the constants in 
+VB's <span class="code">ShiftConstant</span> values:
+</p><pre>
+Private Declare Function GetVersion Lib "kernel32" () As Long
+Private Declare Function VkKeyScan Lib "user32" Alias "VkKeyScanA" ( _
+   ByVal cChar As Byte) As Integer
+Private Declare Function VkKeyScanW Lib "user32" ( _
+   ByVal cChar As Integer) As Integer
+
+...
+
+Dim bNt As Boolean
+Dim iKeyCode As Integer
+Dim b() As Byte
+Dim iKey as integer
+Dim vKey as KeyCodeConstants
+Dim iShift As ShiftConstants
+
+   ' Determine if we have Unicode support or not:
+   bNt = ((GetVersion() And &amp;H80000000) = 0)
+   
+   ' Get the keyboard scan code for the character:
+   If (bNt) Then
+      b = sChar
+      CopyMemory iKey, b(0), 2
+      iKeyCode = VkKeyScanW(iKey)
+   Else
+      b = StrConv(sChar, vbFromUnicode)
+      iKeyCode = VkKeyScan(b(0))
+   End If
+   
+   ' Split into shift and key portions:
+   iShift = (iKeyCode And &amp;HFF00&amp;) \ &amp;H100&amp;
+   vKey = iKeyCode And &amp;HFF&amp;
+</pre><h2>Converting the Virtual Key Code to a Keyboard Name</h2><p>
+To convert the key code, first the Unicode or ANSI version
+of <span class="code">MapVirtualKey</span> is called. This
+returns a scan code which can be used to obtain the
+name of the key from the <span class="code">GetKeyNameText</span>
+function.  This function expects the scan code in a long value
+shifted to the high word and a pointer to an buffer which will
+hold the keyboard text name.  In the Unicode world this needs to
+be a byte array with two bytes for each character in the buffer
+ 
+whereas in ANSI it is a pre-allocated VB string.  The code
+to achieve this is shown below:
+</p><pre>
+Dim lScanCode As Long
+Dim sBuf As String
+Dim lSize As Long
+Dim b() As Byte
+
+   ' Translate the virtual-key code into a scan code.
+   If (bNt) Then
+      lScanCode = MapVirtualKeyW(vKey, 0)
+   Else
+      lScanCode = MapVirtualKey(vKey, 0)
+   End If
+   
+   ' GetKeyNameText retrieves the name of a key (the scan code
+   ' must be in bits 16-23):
+   lScanCode = lScanCode * &amp;H10000
+   If (bNt) Then
+      ReDim b(0 To 512) As Byte
+      lSize = GetKeyNameTextW(lScanCode, VarPtr(b(0)), 256)
+      If (lSize &gt; 0) Then
+         sBuf = b
+         sKeyName = Left$(sBuf, lSize)
+      End If
+   Else
+      sBuf = Space$(256)
+      lSize = GetKeyNameText(lScanCode, sBuf, 256)
+      sKeyName &amp; Left$(sBuf, lSize)
+   End If
+</pre><h2>Using It</h2><p>
+The sample application in the download wraps this function
+into a simple function within a module called
+<span class="code">GetKeyboardString</span>.  This takes
+a character as a VB string and returns a string with the keystroke,
+as well as populating two optional parameters <span class="code">vKey</span>
+and <span class="code">iShift</span> with the virtual key and shift
+flags.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Convert a Character Code to a string describing the Keyboard Keys which must be pressed</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 5 July 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Convert_a_Character_Code_to_a_Keyboard_String/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:00 GMT -->
+</html>

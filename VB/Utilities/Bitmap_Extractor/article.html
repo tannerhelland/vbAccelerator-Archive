@@ -1,0 +1,167 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/Bitmap_Extractor/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:44:30 GMT -->
+<head>
+
+<title>vbAccelerator - Bitmap Extractor Utility</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+In a similar vein to the Icon Extractor
+utility, this article provides a resource extractor for Bitmaps in executables.
+By using an alpha-capable DIB Section from
+this site, it also breaks VB's StdPicture limitations and allows you to read
+and save 32-bit bitmaps, like the ones used in the XP Visual Styles theme
+files.
+" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;Bitmap Extractor Utility</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Bitmap_Extractor.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Bitmap Extractor</a> (87K)</p><p /><p class="nav"><a href="VB6_Bitmap_Extractor.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Bitmap Extractor</a> (80K)</p><p /><p class="nav"><a href="XP_Explorer_Toolbar_Bitmaps.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />XP Explorer Toolbar Bitmaps</a> (128K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4590</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4590&amp;type=Article&amp;title=Bitmap%20Extractor%20Utility">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />15 May 2003<br /><p class="update">
+On some systems the alpha channel was discarded before loading into the
+alpha-DIB section. This is fixed by using the <i>LR_CREATEDIBSECTION</i>
+option in the <i>LoadImage</i> call when reading the bitmap.
+</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1418">Two code only solutions for displaying Common/Dialogs</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11957">ThemeXP</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11956">Resource Hacker</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1420">Browsing For Folders</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2522">Reading Data from Local or External Library Resources</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1430">Icon Extractor Utility </a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3912">Splitting the Easy Way</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Bitmap Extractor Utility</h1><p class="splash">Extract embedded resource bitmaps from executables and DLLs
+at any colour depth</p><img src="bitmapEx.png" width="275" height="224" alt="Bitmap Extractor Utility" /><p /><p>
+In a similar vein to the <a href="http://www.vbaccelerator.com/article.asp?id=1430">Icon Extractor</a>
+utility, this article provides a resource extractor for Bitmaps in executables.
+By using an alpha-capable <a href="http://www.vbaccelerator.com/article.asp?id=3016">DIB Section</a> from
+this site, it also breaks VB's StdPicture limitations and allows you to read
+and save 32-bit bitmaps, like the ones used in the XP Visual Styles theme
+files.
+</p><h2>The Bitmaps Extractor</h2><p>
+The extractor provided in the download is a fairly simple utility: you 
+can open any Executable or DLL and then it will display a list of all the
+bitmaps within the resource in the left-hand TreeView.  Clicking on any
+resource will display the bitmap information (size and colour depth) as
+well as rendering it, with alpha if necessary, in the preview area.  Then
+you can save the bitmap out to disk.  You can also save all the bitmaps
+from a single executable in one shot to a folder.
+</p><p>
+Some useful things you can do with it:
+</p><ul><li>
+Many application executables contain bitmap strips for use with their
+toolbars. This can be an easy way to get hold of a copy of the image
+you're looking for.
+</li><li>
+You can get at the Explorer/IE toolbar images by
+inspecting Shell32.DLL (the XP 32 bit versions of these image strips are
+included in the download).
+</li><li>
+You can get all the XP Visual Style resource bitmaps - see later in the
+article.
+</li></ul><h2>Extracting Resources</h2><p>
+This code re-uses the classes from the article
+<a href="http://www.vbaccelerator.com/article.asp?id=2522">reading data from local or external library
+resources</a> to read the list of bitmaps from an Exe or DLL.  Whilst the
+original article demonstrated creating a <i>StdPicture</i> object from
+the resource, in this case I wanted to be able to extract 32-bit bitmaps
+with alpha channels, and save those.  Unfortunately <i>StdPicture</i>
+discards the alpha channel which means you end up with a mess wherever the
+alpha is less than 255 (opaque).  So instead this sample uses an
+<a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSection</a> to hold the bitmap.
+</p><h2>Using Alpha DIB Sections</h2><p>
+One of the advantages of an Alpha DIBSection is that the bits are stored
+in local Windows memory for ease of access.  If you read the article for
+that you'll see that when drawing a bitmap with per-pixel alpha set, you're
+irritatingly obliged to pre-multiply the R,G,B pixel values by the alpha
+component before drawing with <i>TransparentBlt</i>.  Using an Alpha DIB
+Section makes it easy to do this; check the <i>PreMultiplyAlpha</i>
+routine with <i>cAlphaDIBSection</i> in the class.
+</p><p>
+On top of that, since you have access to the bits in the bitmap, you can
+save the data directly from the DIBSection to a BMP file on disk.  That's
+what allows this sample to save to native 32-bit bitmaps.  Remember that
+if you want to load them again in VB, you'll have to use the <i>LoadImage</i>
+API function rather than the <i>LoadPicture</i> method if you want to
+keep the alpha channel, or use GDI Plus instead.
+</p><h2>Now For Some Fun...</h2><p>
+If you were ever interested in where XP sources the images used to draw
+the XP Visual Styles components, you can use this utility to have a look.
+XP Visual Styles are actually installed as Windows theme, just like the
+way the original themes provided with the laughable Plus pack for Windows
+9x used to be installed.  However, the associated <i>.theme</i> file has
+an additional entry:
+</p><pre>
+[VisualStyles]
+Path=%ResourceDir%\Themes\luna\luna.msstyles
+ColorStyle=NormalColor
+Size=NormalSize
+</pre><p>
+This entry is deliberately undocumented by Microsoft as they want to keep
+control over the XP look and feel; however,
+on inspection, it appears that <i>luna.msstyles</i> is simply a Windows DLL
+which contains resources.
+So you can use any tool which allows to access to
+resources to have a look at it; if you use Visual Studio you can open the
+file if you make a copy and add a .DLL extension; however, note that
+current releases of Visual Studio do not support alpha bitmaps.
+</p><p>
+In fact, if you have a copy of a tool that allows you to make in-place
+changes to resources, like the popular <a href="http://www.vbaccelerator.com/article.asp?id=11956">ResHacker</a> then you can start
+customising the themes to your own liking... but I'll leave that for your
+investigation (visit <a href="http://www.vbaccelerator.com/article.asp?id=11957">ThemeXP.org</a>, read the details and don't
+install anything that looks nasty in Control Panel!)
+</p><p>
+To make copies of the images, just point the Bitmap Extractor utility at
+the <i>luna.msstyles</i> file (typically you will find this at
+WINDOWS\Resources\Themes\luna\luna.msstyles
+.  You should find it contains some 500 or so
+bitmaps - which are divided into separate bitmaps for the Blue, Olive Green and
+Silver themes (the Olive Green style is actually named "Homestead" in the 
+file; no doubt one of designers associated with the abysmal Windows Plus Pack
+themes had their hand in this).
+</p><p>
+Using this file you should find it rather simple, for example, to create
+an owner-draw button which renders using any of the XP styles but runs on
+any OS...
+</p><h2>Wrap Up</h2><p>
+That's it for Bitmap Extractor.  If you find this useful, or have any 
+feature suggestions, then please <a href="mailto:steve@vbaccelerator.com">write</a>.
+Incidentally, if you could write the code for your feature suggestion too
+then that would be better!
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;Bitmap Extractor Utility</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 15 May 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/Bitmap_Extractor/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:44:32 GMT -->
+</html>

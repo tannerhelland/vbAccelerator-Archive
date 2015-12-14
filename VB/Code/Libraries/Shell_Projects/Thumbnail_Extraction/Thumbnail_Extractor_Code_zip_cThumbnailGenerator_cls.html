@@ -1,0 +1,330 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Shell_Projects/Thumbnail_Extraction/Thumbnail_Extractor_Code_zip_cThumbnailGenerator_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:42 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cThumbnailGenerator.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cThumbnailGenerator.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Shell Projects</a>&#160;.&#160;<a href="article.html">Thumbnail Extraction Using the Shell</a>&#160;.&#160;<a href="Thumbnail_Extractor_Code.html">Thumbnail Extractor Code</a>&#160;.&#160;cThumbnailGenerator.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Thumbnail_Extractor_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Thumbnail Extractor Code</a> (41K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:4074</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4074&amp;type=Zip&amp;title=Thumbnail%20Extractor%20Code%2Ezip%5FcThumbnailGenerator">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />14 Feb 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4031">VB IExtractImage Interface (IVBExtractImageLib.tlb)</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1420">Browsing For Folders</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cThumbnailGenerator.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cThumbnailGenerator"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" (pDest As
+ Any, pSource As Any, ByVal dwLength As Long)
+Private Declare Function SHGetMalloc Lib "shell32.dll" (ppMalloc As IVBMalloc)
+ As Long
+Private Declare Function SHGetPathFromIDList Lib "shell32.dll" Alias
+ "SHGetPathFromIDListA" (ByVal pidl As Long, ByVal pszPath As String) As Long
+Private Declare Function lstrlen Lib "kernel32" Alias "lstrlenA" (ByVal
+ lpString As String) As Long
+Private Declare Function FormatMessage Lib "kernel32" Alias "FormatMessageA"
+ (ByVal dwFlags As Long, lpSource As Any, ByVal dwMessageId As Long, ByVal
+ dwLanguageId As Long, ByVal lpBuffer As String, ByVal nSize As Long, Arguments
+ As Long) As Long
+Private Const FORMAT_MESSAGE_FROM_SYSTEM = &amp;H1000
+Private Const FORMAT_MESSAGE_IGNORE_INSERTS = &amp;H200
+
+Private Const S_OK = 0           ' indicates success
+Private Const S_FALSE = 1&amp;   ' special HRESULT value
+
+Private Const MAX_PATH = 260
+Private Declare Function GetFullPathName Lib "kernel32" Alias
+ "GetFullPathNameA" (ByVal lpFileName As String, ByVal nBufferLength As Long,
+ ByVal lpBuffer As String, ByVal lpFilePart As String) As Long
+Private Declare Function SHGetDesktopFolder Lib "shell32.dll" _
+   (ppshf As IVBShellFolder) As Long
+
+' GetItemID item ID retrieval constants
+Private Const GIID_FIRST = 1
+Private Const GIID_LAST = -1
+
+Private alloc As IVBMalloc
+
+Private m_lDesiredWidth As Long
+Private m_lDesiredHeight As Long
+Private m_sFileName As String
+Private m_eOptions As EIEIFLAG
+
+Public Property Get Options() As EIEIFLAG
+   Options = m_eOptions
+End Property
+Public Property Let Options(ByVal eOptions As EIEIFLAG)
+   m_eOptions = eOptions
+End Property
+
+Public Property Get DesiredWidth() As Long
+   DesiredWidth = m_lDesiredWidth
+End Property
+Public Property Let DesiredWidth(ByVal lWidth As Long)
+   m_lDesiredWidth = lWidth
+End Property
+Public Property Get DesiredHeight() As Long
+   DesiredHeight = m_lDesiredHeight
+End Property
+Public Property Let DesiredHeight(ByVal lHeight As Long)
+   m_lDesiredHeight = lHeight
+End Property
+Public Property Get Filename() As String
+   Filename = m_sFileName
+End Property
+Public Property Let Filename(ByVal sFileName As String)
+   m_sFileName = sFileName
+End Property
+
+Private Property Get Allocator() As IVBMalloc
+    If alloc Is Nothing Then SHGetMalloc alloc
+    Set Allocator = alloc
+End Property
+
+Private Function GetDirectoryName(ByVal sFileName As String) As String
+Dim i As Long
+Dim sDir As String
+   For i = Len(sFileName) To 1 Step -1
+      If (Mid(sFileName, i, 1) = "\") Then
+         sDir = Left(sFileName, i - 1)
+         If (Right(sDir, 1) = ":") Then
+            sDir = sDir &amp; "\"
+         End If
+         GetDirectoryName = sDir
+         Exit Function
+      End If
+   Next i
+End Function
+Private Function GetFileName(ByVal sFileName As String) As String
+Dim i As Long
+   For i = Len(sFileName) To 1 Step -1
+      If (Mid(sFileName, i, 1) = "\") Then
+         GetFileName = Mid(sFileName, i + 1)
+         Exit Function
+      End If
+   Next i
+End Function
+
+Public Function GetThumbnail() As pcMemDC
+Dim folder As IVBShellFolder
+Dim sRet As String
+Dim lR As Long
+Dim sPath As String
+Dim sFileName As String
+Dim lFilePos As Long
+Dim cParsed As Long
+Dim afItem As Long
+Dim pidlMain As Long
+Dim item As IVBShellFolder
+Dim iidShellFolder As UUID
+Dim idenum As IVBEnumIDList
+Dim pidl As Long
+Dim cFetched As Long
+Dim afAttrib As Long
+   
+   sPath = GetDirectoryName(m_sFileName) '"C:\SteveMac" '"C:\Documents and
+    Settings\Steve McMahon\My Documents"
+   sRet = String$(MAX_PATH, 0)
+   lR = GetFullPathName(sPath, MAX_PATH, sRet, lFilePos)
+   If lR = 0 Then
+      Err.Raise 45001, App.EXEName &amp; ".cThumbnailImage",
+       WinApiError(Err.LastDllError)
+   Else
+      
+      Set folder = GetDesktopFolder
+      afItem = 0
+      On Error Resume Next
+      folder.ParseDisplayName 0&amp;, 0&amp;, sPath, cParsed, pidlMain, 0&amp;
+      If Not (Err.Number = 0) Then
+         On Error GoTo 0
+         Err.Raise 45002, App.EXEName &amp; ".cThumbnailGenerator", "Unable to
+          locate the folder '" &amp; sPath &amp; "'"
+         Exit Function
+      End If
+      
+      ' IShellFolder:
+      IIDFromString "{000214E6-0000-0000-C000-000000000046}", iidShellFolder
+      folder.BindToObject pidlMain, 0&amp;, iidShellFolder, item
+      If Not (Err.Number = 0) Then
+         On Error GoTo 0
+         Err.Raise 45003, App.EXEName &amp; ".cThumbnailGenerator", "Unable to bind
+          to the folder '" &amp; sPath &amp; "'"
+         Exit Function
+      End If
+      
+      item.EnumObjects 0&amp;, SHCONTF_FOLDERS Or SHCONTF_NONFOLDERS, idenum
+      If Not (Err.Number = 0) Then
+         Allocator.Free pidlMain
+         On Error GoTo 0
+         Err.Raise 45004, App.EXEName &amp; ".cThumbnailGenerator", "Unable to read
+          the contents of the folder '" &amp; sPath &amp; "'"
+         Exit Function
+      End If
+      
+      On Error GoTo 0
+      Dim hRes As Long
+      Do
+         pidl = 0
+         hRes = idenum.Next(1, pidl, cFetched)
+         
+         If hRes Then Exit Do ' no more items left
+                  
+         sPath = PathFromPidl(pidl)
+         If (GetFileName(sPath) = GetFileName(m_sFileName)) Then
+            
+            ' Let's get an IVBContextMenu object from it:
+            Dim iidExtractImage As UUID
+            Dim extractImage As IExtractImage
+            
+            On Error Resume Next
+            IIDFromString "{BB2E617C-0920-11d1-9A0B-00C04FC2D6C1}",
+             iidExtractImage
+            item.GetUIObjectOf 0&amp;, 1&amp;, pidl, iidExtractImage, 0&amp;, extractImage
+            If Not (Err.Number = 0) Then
+               Allocator.Free pidl
+               Allocator.Free pidlMain
+               On Error GoTo 0
+               Err.Raise 45005, App.EXEName &amp; ".cThumbnailGenerator", "The
+                object " &amp; m_sFileName &amp; " does not support thumbnails"
+               Exit Function
+            End If
+            
+            sRet = String$(MAX_PATH, 0)
+            Dim tSize As SIZE
+            Dim pdwFlags As EIEIFLAG
+            tSize.cx = m_lDesiredHeight
+            tSize.cy = m_lDesiredWidth
+            pdwFlags = m_eOptions
+            extractImage.GetLocation sRet, 260, 0&amp;, tSize, 32, pdwFlags
+            If Not (Err.Number = 0) Then
+               Allocator.Free pidl
+               Allocator.Free pidlMain
+               On Error GoTo 0
+               Err.Raise 45006, App.EXEName &amp; ".cThumbnailGenerator",
+                "ExtractImage on " &amp; m_sFileName &amp; " failed."
+               Exit Function
+            End If
+            
+            Dim hBmp As Long
+            extractImage.Extract hBmp
+            If Not (Err.Number = 0) Then
+               Allocator.Free pidl
+               Allocator.Free pidlMain
+               On Error GoTo 0
+               Err.Raise 45007, App.EXEName &amp; ".cThumbnailGenerator",
+                "ExtractImage on " &amp; m_sFileName &amp; " failed."
+               Exit Function
+            End If
+
+            Allocator.Free pidl
+            pidl = 0
+                                    
+            If Not (hBmp = 0) Then
+               On Error GoTo 0
+               Dim c As New pcMemDC
+               c.CreateFromHBitmap hBmp
+               Set GetThumbnail = c
+            Else
+               Allocator.Free pidlMain
+               On Error GoTo 0
+               Err.Raise 45008, App.EXEName &amp; ".cThumbnailGenerator", "No
+                Thumbnail was provided."
+               Exit Function
+            End If
+            Exit Do
+            
+         End If
+      
+         ' Free the pidl from Next
+         Allocator.Free pidl
+         pidl = 0
+      Loop
+      
+      ' Free the pidl:
+      Allocator.Free pidlMain
+      pidlMain = 0
+         
+   End If
+   
+
+End Function
+Public Function PathFromPidl(ByVal pidl As Long) As String
+Dim sPath As String
+Dim lR As Long
+   sPath = String$(MAX_PATH, 0)
+   lR = SHGetPathFromIDList(pidl, sPath)
+   If lR &lt;&gt; 0 Then
+      PathFromPidl = Left$(sPath, lstrlen(sPath))
+   End If
+End Function
+Private Function GetDesktopFolder() As IVBShellFolder
+Dim lR As Long
+    lR = SHGetDesktopFolder(GetDesktopFolder)
+End Function
+Private Function WinApiError(ByVal e As Long) As String
+Dim s As String, c As Long
+   s = String(256, 0)
+   c = FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM Or _
+                     FORMAT_MESSAGE_IGNORE_INSERTS, _
+                     0&amp;, e, 0&amp;, s, Len(s), ByVal 0&amp;)
+   If c Then WinApiError = Left$(s, c)
+End Function
+
+
+Private Sub Class_Initialize()
+   m_lDesiredWidth = 100
+   m_lDesiredHeight = 100
+   m_eOptions = IEIFLAG_NOBORDER Or IEIFLAG_SCREEN Or IEIFLAG_OFFLINE 'Or
+    IEIFLAG_ORIGSIZE
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Shell Projects</a>&#160;.&#160;<a href="article.html">Thumbnail Extraction Using the Shell</a>&#160;.&#160;<a href="Thumbnail_Extractor_Code.html">Thumbnail Extractor Code</a>&#160;.&#160;cThumbnailGenerator.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Shell_Projects/Thumbnail_Extraction/Thumbnail_Extractor_Code_zip_cThumbnailGenerator_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:42 GMT -->
+</html>

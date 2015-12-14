@@ -1,0 +1,1851 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Skins/VB5_NeoCaption_Full_Source_zip_cNeoCaption_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:13 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cNeoCaption.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cNeoCaption.cls" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator NeoCaption Component v2.0</a>&#160;.&#160;<a href="VB5_NeoCaption_Full_Source.html">VB5 NeoCaption Full Source</a>&#160;.&#160;cNeoCaption.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Skins.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Skins</a> (52K)</p><p /><p class="nav"><a href="VB5_NeoCaption_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 NeoCaption Demonstration</a> (114K)</p><p class="nav"><a href="VB5_NeoCaption_DLL.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 NeoCaption DLL</a> (74K)</p><p class="nav"><a href="VB5_NeoCaption_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 NeoCaption Full Source</a> (239K)</p><p /><p class="nav"><a href="VB6_NeoCaption_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 NeoCaption Demonstration</a> (127K)</p><p class="nav"><a href="VB6_NeoCaption_DLL.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 NeoCaption DLL</a> (74K)</p><p class="nav"><a href="VB6_NeoCaption_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 NeoCaption Full Source</a> (253K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:870</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=870&amp;type=Zip&amp;title=VB5%20NeoCaption%20Full%20Source%2Ezip%5FcNeoCaption">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 3 / 3</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:10 November 2003</p>
+<br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />21 Feb 2002<br /><p class="update">Release of Version 2.0.</p><p class="update">Fixes for support of different sized skinning parts.</p><p class="update">New <i>cSkinConfiguration</i> object for setting up the skin, which
+includes XML serialization and deserialization</p><p class="update">Colour customisation using HLS and RGB added.</p><p class="update">Transparent colour now added.</p><p class="update">Three new skins included.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cNeoCaption.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cNeoCaption"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+' 18 January 2003
+' Bugs in original version now fixed:
+' 1) The caption bar offsets were hardcoded for the sample skins.
+' 2) The button offsets where hardcoded for the sample skins.
+' 3) The menu font was always set to the same font as the caption font.
+' 4) The menu was always displayed using the inactive menu color.
+' 5) The control box offset was hardcoded
+' 6) When Alt-Tab to another window, the menu sometimes displayed over
+'    the client area
+' 7) The Menu area hit test was slightly inaccurate and only worked
+'    towards the bottom of the menu buttons
+
+' Enhancements
+' New Attach2 method takes a cSkinConfiguration
+' object and creates the skin, with additional
+' parameters:
+'
+' 1) Can turn off title drawing
+' 2) Can have borders with both active and inactive versions
+' 3) Can customise the left &amp; right border widths, so they can be
+'    different than the bottom border height
+' 4) can customise the position of the control buttons offset
+'    from the top right corner
+' 5) can have active and inactive versions of the control
+'    buttons
+' 6) can have different sizing borders depending on whether the
+'    form is sizable or not.
+' 7) cSkinConfiguration supports colourisation and RGB modification
+' 8) TransparentColour supported on 2000 and above
+
+' APIs
+Private Declare Function IsWindowVisible Lib "user32" (ByVal hwnd As Long) As
+ Long
+Private Declare Function SetForegroundWindow Lib "user32" (ByVal hwnd As Long)
+ As Long
+Private Declare Function SetFocusAPI Lib "user32" Alias "SetFocus" (ByVal hwnd
+ As Long) As Long
+Private Declare Function GetCursorPos Lib "user32" (lpPoint As POINTAPI) As Long
+Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Any) As Long
+Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long) As Long
+Private Declare Function SetLayeredWindowAttributes Lib "user32" _
+   (ByVal hwnd As Long, ByVal crKey As Long, _
+   ByVal bAlpha As Byte, ByVal dwFlags As Long) As Long
+Private Const LWA_COLORKEY = &amp;H1
+Private Const LWA_ALPHA = &amp;H2
+
+Private Declare Function PtInRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function CreateSolidBrush Lib "gdi32" (ByVal crColor As Long)
+ As Long
+Private Declare Function FillRect Lib "user32" (ByVal hdc As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+Private Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Long) As
+ Integer
+Private Declare Function GetWindowDC Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function ReleaseDC Lib "user32" (ByVal hwnd As Long, ByVal hdc
+ As Long) As Long
+Private Declare Function GetWindowText Lib "user32" Alias "GetWindowTextA"
+ (ByVal hwnd As Long, ByVal lpString As String, ByVal cch As Long) As Long
+Private Declare Function GetWindowTextLength Lib "user32" Alias
+ "GetWindowTextLengthA" (ByVal hwnd As Long) As Long
+Private Declare Function BitBlt Lib "gdi32" (ByVal hDestDC As Long, ByVal x As
+ Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal dwRop As Long)
+ As Long
+Private Declare Function DrawText Lib "user32" Alias "DrawTextA" (ByVal hdc As
+ Long, ByVal lpStr As String, ByVal nCount As Long, lpRect As RECT, ByVal
+ wFormat As Long) As Long
+Private Declare Function SetBkColor Lib "gdi32" (ByVal hdc As Long, ByVal
+ crColor As Long) As Long
+Private Declare Function SetTextColor Lib "gdi32" (ByVal hdc As Long, ByVal
+ crColor As Long) As Long
+Private Declare Function SetBkMode Lib "gdi32" (ByVal hdc As Long, ByVal
+ nBkMode As Long) As Long
+Private Declare Function OleTranslateColor Lib "OLEPRO32.DLL" (ByVal OLE_COLOR
+ As Long, ByVal HPALETTE As Long, pccolorref As Long) As Long
+Private Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal
+ hObject As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+
+Private Declare Function RedrawWindow Lib "user32" (ByVal hwnd As Long,
+ lprcUpdate As Any, ByVal hrgnUpdate As Long, ByVal fuRedraw As Long) As Long
+Private Const RDW_ALLCHILDREN = &amp;H80
+Private Const RDW_ERASE = &amp;H4
+Private Const RDW_FRAME = &amp;H400
+Private Const RDW_INVALIDATE = &amp;H1
+
+Private Const CLR_INVALID = -1
+
+Private Const OPAQUE = 2
+Private Const TRANSPARENT = 1
+
+Private Const DT_BOTTOM = &amp;H8
+Private Const DT_CENTER = &amp;H1
+Private Const DT_LEFT = &amp;H0
+Private Const DT_CALCRECT = &amp;H400
+Private Const DT_WORDBREAK = &amp;H10
+Private Const DT_VCENTER = &amp;H4
+Private Const DT_TOP = &amp;H0
+Private Const DT_TABSTOP = &amp;H80
+Private Const DT_SINGLELINE = &amp;H20
+Private Const DT_RIGHT = &amp;H2
+Private Const DT_NOCLIP = &amp;H100
+Private Const DT_INTERNAL = &amp;H1000
+Private Const DT_EXTERNALLEADING = &amp;H200
+Private Const DT_EXPANDTABS = &amp;H40
+Private Const DT_CHARSTREAM = 4
+Private Const DT_NOPREFIX = &amp;H800
+Private Const DT_EDITCONTROL = &amp;H2000&amp;
+Private Const DT_PATH_ELLIPSIS = &amp;H4000&amp;
+Private Const DT_END_ELLIPSIS = &amp;H8000&amp;
+Private Const DT_MODIFYSTRING = &amp;H10000
+Private Const DT_RTLREADING = &amp;H20000
+Private Const DT_WORD_ELLIPSIS = &amp;H40000
+
+' Font:
+Private Const LF_FACESIZE = 32
+Private Type LOGFONT
+   lfHeight As Long
+   lfWidth As Long
+   lfEscapement As Long
+   lfOrientation As Long
+   lfWeight As Long
+   lfItalic As Byte
+   lfUnderline As Byte
+   lfStrikeOut As Byte
+   lfCharSet As Byte
+   lfOutPrecision As Byte
+   lfClipPrecision As Byte
+   lfQuality As Byte
+   lfPitchAndFamily As Byte
+   lfFaceName(LF_FACESIZE) As Byte
+End Type
+Private Const FW_NORMAL = 400
+Private Const FW_BOLD = 700
+Private Const FF_DONTCARE = 0
+Private Const DEFAULT_QUALITY = 0
+Private Const DEFAULT_PITCH = 0
+Private Const DEFAULT_CHARSET = 1
+Private Declare Function CreateFontIndirect Lib "gdi32" Alias
+ "CreateFontIndirectA" (lpLogFont As LOGFONT) As Long
+Private Declare Function MulDiv Lib "kernel32" (ByVal nNumber As Long, ByVal
+ nNumerator As Long, ByVal nDenominator As Long) As Long
+Private Declare Function GetDeviceCaps Lib "gdi32" (ByVal hdc As Long, ByVal
+ nIndex As Long) As Long
+Private Const LOGPIXELSY = 90
+
+Private Declare Function SetMenu Lib "user32" (ByVal hwnd As Long, ByVal hMenu
+ As Long) As Long
+
+Private Declare Function GetWindowRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function OffsetRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+
+Private Const GWL_STYLE = (-16)
+Private Const GWL_EXSTYLE = (-20)
+Private Const WS_BORDER = &amp;H800000
+Private Const WS_CAPTION = &amp;HC00000                  '  WS_BORDER Or WS_DLGFRAME
+Private Const WS_CHILD = &amp;H40000000
+Private Const WS_CLIPCHILDREN = &amp;H2000000
+Private Const WS_CLIPSIBLINGS = &amp;H4000000
+Private Const WS_DISABLED = &amp;H8000000
+Private Const WS_DLGFRAME = &amp;H400000
+Private Const WS_GROUP = &amp;H20000
+Private Const WS_HSCROLL = &amp;H100000
+Private Const WS_MAXIMIZE = &amp;H1000000
+Private Const WS_MAXIMIZEBOX = &amp;H10000
+Private Const WS_MINIMIZE = &amp;H20000000
+Private Const WS_MINIMIZEBOX = &amp;H20000
+Private Const WS_OVERLAPPED = &amp;H0&amp;
+Private Const WS_POPUP = &amp;H80000000
+Private Const WS_SYSMENU = &amp;H80000
+Private Const WS_TABSTOP = &amp;H10000
+Private Const WS_THICKFRAME = &amp;H40000
+Private Const WS_VISIBLE = &amp;H10000000
+Private Const WS_VSCROLL = &amp;H200000
+Private Const WS_SIZEBOX = WS_THICKFRAME
+Private Const WS_EX_LAYERED = &amp;H80000
+
+Private Declare Function PostMessage Lib "user32" Alias "PostMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As Long)
+ As Long
+Private Const WM_SYSCOMMAND = &amp;H112
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Type SAFEARRAYBOUND
+    cElements As Long
+    lLbound As Long
+End Type
+Private Type SAFEARRAY2D
+    cDims As Integer
+    fFeatures As Integer
+    cbElements As Long
+    cLocks As Long
+    pvData As Long
+    Bounds(0 To 1) As SAFEARRAYBOUND
+End Type
+Private Declare Function VarPtrArray Lib "msvbvm50.dll" Alias "VarPtr" (Ptr()
+ As Any) As Long
+
+
+' Implementation
+Implements INCAreaModifier
+
+Private Enum ECNCButtonStates
+   up
+   down
+End Enum
+
+Private m_cNCS As cNCCalcSize
+Private m_hWnd As Long
+
+' MemDCs for storing GFX
+Private m_cBorder As cMemDC
+Private m_cCaption As cMemDC
+
+' MemDC for building caption:
+Private m_cFF As cMemDC
+' and l/r borders
+Private m_cFFB As cMemDC
+' Menu bar:
+Private WithEvents m_cMenu As cMenuBar
+Attribute m_cMenu.VB_VarHelpID = -1
+
+Private m_picCaption As IPicture
+Private m_picBorders As IPicture
+
+Private m_oActiveCaptionColor As OLE_COLOR
+Private m_oInActiveCaptionColor As OLE_COLOR
+Private m_fnt As IFont
+
+Private m_oActiveMenuColor As OLE_COLOR
+Private m_oActiveMenuColorOver As OLE_COLOR
+Private m_oInActiveMenuColor As OLE_COLOR
+Private m_oMenuBackgroundColor As OLE_COLOR
+Private m_fntMenu As IFont
+
+Private m_lButtonWidth As Long
+Private m_lButtonHeight As Long
+Private m_lActiveLeftEnd As Long
+Private m_lActiveRightStart As Long
+Private m_lActiveRightEnd As Long
+Private m_lInactiveOffset As Long
+
+' New in v2.0
+Private m_bBorderHasInactiveVersion As Boolean
+Private m_bDrawTitle As Boolean
+Private m_lTitleStartOffsetY As Long
+Private m_lLeftBorderWidth As Long
+Private m_lRightBorderWidth As Long
+Private m_lTopSizingBorderHeight  As Long
+Private m_lBottomSizingBorderHeight As Long
+Private m_bControlButtonHasInactiveVersion As Boolean
+Private m_lControlButtonOffsetX As Long
+Private m_lControlButtonOffsetY As Long
+Private m_bCustomControlButtonPosition As Boolean
+Private m_lMenuStartOffsetY As Long
+Private m_lMenuStartOffsetX As Long
+Private m_sName As String
+Private m_bColourise As Boolean
+Private m_hue As Single
+Private m_saturation As Single
+
+Private m_bAdjustRGB As Boolean
+Private m_percentRed As Single
+Private m_percentGreen As Single
+Private m_percentBlue As Single
+
+Private m_oTransparentColor  As OLE_COLOR
+
+Private m_tBtn(0 To 2) As RECT
+Private m_bMaximise As Boolean
+Private m_bMinimise As Boolean
+Private m_bClose As Boolean
+Private m_bCanSize As Boolean
+Private m_bCanClose As Boolean
+Private m_bActive As Boolean
+Private m_bMouseDownMinimise As Boolean
+Private m_bMouseDownMaximise As Boolean
+Private m_bMouseDownClose As Boolean
+
+Private m_tMenuR As RECT
+Private m_tClientR As RECT
+
+Private m_eMethod As Long
+
+Public Event Unload(ByRef Cancel As Boolean)
+Public Event Repaint()
+
+Public Sub Detach()
+Dim lMenu As Long
+   If Not m_cNCS Is Nothing Then
+      m_cNCS.Detach
+   End If
+   If Not m_cMenu Is Nothing Then
+      lMenu = m_cMenu.hMenu
+      m_cMenu.Detach
+   End If
+   If Not (lMenu = 0) Then
+      SetMenu m_hWnd, lMenu
+   End If
+   m_hWnd = 0
+End Sub
+
+Public Property Get SkinConfiguration() As cSkinConfiguration
+   
+   Dim cSkin As New cSkinConfiguration
+   cSkin.ButtonWidth = m_lButtonWidth
+   cSkin.ButtonHeight = m_lButtonHeight
+
+   cSkin.ActiveLeftEnd = m_lActiveLeftEnd
+   cSkin.ActiveRightStart = m_lActiveRightStart
+   cSkin.ActiveRightEnd = m_lActiveRightEnd
+   cSkin.InactiveOffset = m_lInactiveOffset
+   
+   cSkin.ActiveCaptionColor = m_oActiveCaptionColor
+   cSkin.ActiveMenuColor = m_oActiveMenuColor
+   cSkin.ActiveMenuColorOver = m_oActiveMenuColorOver
+   cSkin.InActiveCaptionColor = m_oInActiveCaptionColor
+   cSkin.InActiveMenuColor = m_oInActiveMenuColor
+   cSkin.MenuBackgroundColor = m_oMenuBackgroundColor
+   Set cSkin.CaptionFont = m_fnt
+   Set cSkin.MenuFont = m_fntMenu
+   
+   Set cSkin.Caption = m_picCaption
+   Set cSkin.Borders = m_picBorders
+   
+   cSkin.BorderHasInactiveVersion = m_bBorderHasInactiveVersion
+   cSkin.DrawTitle = m_bDrawTitle
+   cSkin.LeftBorderWidth = m_lLeftBorderWidth
+   cSkin.RightBorderWidth = m_lRightBorderWidth
+   cSkin.TopSizingBorderHeight = m_lTopSizingBorderHeight
+   cSkin.BottomSizingBorderHeight = m_lBottomSizingBorderHeight
+   cSkin.CustomControlButtonPosition = m_bCustomControlButtonPosition
+   cSkin.ControlButtonOffsetX = m_lControlButtonOffsetX
+   cSkin.ControlButtonOffsetY = m_lControlButtonOffsetY
+   cSkin.ControlButtonHasInactiveVersion = m_bControlButtonHasInactiveVersion
+   
+   cSkin.TitleStartOffsetY = m_lTitleStartOffsetY
+   
+   cSkin.MenuStartOffsetY = m_lMenuStartOffsetY
+   cSkin.MenuStartOffsetX = m_lMenuStartOffsetX
+   
+   cSkin.Name = m_sName
+      
+   cSkin.Colourise = m_bColourise
+   cSkin.Hue = m_hue
+   cSkin.Saturation = m_saturation
+   cSkin.AdjustRGB = m_bAdjustRGB
+   cSkin.PercentRed = m_percentRed
+   cSkin.PercentGreen = m_percentGreen
+   cSkin.PercentBlue = m_percentBlue
+   
+   cSkin.TransparentColor = m_oTransparentColor
+   
+   Set SkinConfiguration = cSkin
+   
+End Property
+
+Friend Sub PrepareSample( _
+      cSkin As cSkinConfiguration _
+   )
+   
+   ' Store the pictures:
+   Set m_cCaption = New cMemDC
+   m_cCaption.CreateFromPicture cSkin.Caption
+   Set m_cBorder = New cMemDC
+   m_cBorder.CreateFromPicture cSkin.Borders
+   
+   Set m_picCaption = cSkin.Caption
+   Set m_picBorders = cSkin.Borders
+   
+   ' FF drawing
+   Set m_cFF = New cMemDC
+   Set m_cFFB = New cMemDC
+   
+   ' Store passed in vars:
+   m_lButtonWidth = cSkin.ButtonWidth
+   m_lButtonHeight = cSkin.ButtonHeight
+
+   m_lActiveLeftEnd = cSkin.ActiveLeftEnd
+   m_lActiveRightStart = cSkin.ActiveRightStart
+   m_lActiveRightEnd = cSkin.ActiveRightEnd
+   m_lInactiveOffset = cSkin.InactiveOffset
+   
+   m_oActiveCaptionColor = cSkin.ActiveCaptionColor
+   m_oActiveMenuColor = cSkin.ActiveMenuColor
+   m_oActiveMenuColorOver = cSkin.ActiveMenuColorOver
+   m_oInActiveCaptionColor = cSkin.InActiveCaptionColor
+   m_oInActiveMenuColor = cSkin.InActiveMenuColor
+   m_oMenuBackgroundColor = cSkin.MenuBackgroundColor
+   Set m_fnt = cSkin.CaptionFont
+   Set m_fntMenu = cSkin.MenuFont
+   
+   m_bBorderHasInactiveVersion = cSkin.BorderHasInactiveVersion
+   m_bDrawTitle = cSkin.DrawTitle
+   m_lLeftBorderWidth = cSkin.LeftBorderWidth
+   m_lRightBorderWidth = cSkin.RightBorderWidth
+   m_lTopSizingBorderHeight = cSkin.TopSizingBorderHeight
+   m_lBottomSizingBorderHeight = cSkin.BottomSizingBorderHeight
+   m_bCustomControlButtonPosition = cSkin.CustomControlButtonPosition
+   m_lControlButtonOffsetX = cSkin.ControlButtonOffsetX
+   m_lControlButtonOffsetY = cSkin.ControlButtonOffsetY
+   m_bControlButtonHasInactiveVersion = cSkin.ControlButtonHasInactiveVersion
+   
+   m_lTitleStartOffsetY = cSkin.TitleStartOffsetY
+   
+   m_lMenuStartOffsetY = cSkin.MenuStartOffsetY
+   m_lMenuStartOffsetX = cSkin.MenuStartOffsetX
+   
+   m_sName = cSkin.Name
+   
+   m_oTransparentColor = cSkin.TransparentColor
+   
+   ' Menu:
+   Set m_cMenu = New cMenuBar
+   m_cMenu.Font = m_fntMenu
+   m_cMenu.SetColors _
+      m_oActiveMenuColor, _
+      m_oActiveMenuColorOver, _
+      m_oInActiveMenuColor, _
+      m_oMenuBackgroundColor
+   m_cMenu.CaptionHeight = m_cCaption.Height
+   
+   Set m_cNCS = New cNCCalcSize
+      
+End Sub
+
+Public Sub Attach2( _
+      f As Object, _
+      cSkin As cSkinConfiguration _
+   )
+Dim bNoReattach As Boolean
+
+   If (cSkin.Borders Is Nothing) Or (cSkin.Caption Is Nothing) Then
+      Exit Sub
+   End If
+
+   If (f.hwnd = m_hWnd) And (cSkin.Method = m_eMethod) Then
+      bNoReattach = True
+   End If
+   
+   If Not (bNoReattach) Then
+      Detach
+   End If
+   
+   ' We store all of the skin information locally
+   ' so you can modify a cSkin object independently
+   ' of the cNeoCaption object
+   m_eMethod = cSkin.Method
+   
+   ' Store the pictures;
+   Set m_cCaption = New cMemDC
+   m_cCaption.CreateFromPicture cSkin.Caption
+   Set m_cBorder = New cMemDC
+   m_cBorder.CreateFromPicture cSkin.Borders
+   
+   Set m_picCaption = cSkin.Caption
+   Set m_picBorders = cSkin.Borders
+   
+   ' FF drawing
+   Set m_cFF = New cMemDC
+   Set m_cFFB = New cMemDC
+   
+   ' Store passed in vars:
+   m_lButtonWidth = cSkin.ButtonWidth
+   m_lButtonHeight = cSkin.ButtonHeight
+
+   m_lActiveLeftEnd = cSkin.ActiveLeftEnd
+   m_lActiveRightStart = cSkin.ActiveRightStart
+   m_lActiveRightEnd = cSkin.ActiveRightEnd
+   m_lInactiveOffset = cSkin.InactiveOffset
+   
+   m_oActiveCaptionColor = cSkin.ActiveCaptionColor
+   m_oActiveMenuColor = cSkin.ActiveMenuColor
+   m_oActiveMenuColorOver = cSkin.ActiveMenuColorOver
+   m_oInActiveCaptionColor = cSkin.InActiveCaptionColor
+   m_oInActiveMenuColor = cSkin.InActiveMenuColor
+   m_oMenuBackgroundColor = cSkin.MenuBackgroundColor
+   Set m_fnt = cSkin.CaptionFont
+   Set m_fntMenu = cSkin.MenuFont
+   
+   m_bBorderHasInactiveVersion = cSkin.BorderHasInactiveVersion
+   m_bDrawTitle = cSkin.DrawTitle
+   m_lLeftBorderWidth = cSkin.LeftBorderWidth
+   m_lRightBorderWidth = cSkin.RightBorderWidth
+   m_lTopSizingBorderHeight = cSkin.TopSizingBorderHeight
+   m_lBottomSizingBorderHeight = cSkin.BottomSizingBorderHeight
+   m_bCustomControlButtonPosition = cSkin.CustomControlButtonPosition
+   m_lControlButtonOffsetX = cSkin.ControlButtonOffsetX
+   m_lControlButtonOffsetY = cSkin.ControlButtonOffsetY
+   m_bControlButtonHasInactiveVersion = cSkin.ControlButtonHasInactiveVersion
+   
+   m_lTitleStartOffsetY = cSkin.TitleStartOffsetY
+   
+   m_lMenuStartOffsetY = cSkin.MenuStartOffsetY
+   m_lMenuStartOffsetX = cSkin.MenuStartOffsetX
+   
+   m_sName = cSkin.Name
+   
+   m_bColourise = cSkin.Colourise
+   m_hue = cSkin.Hue
+   m_saturation = cSkin.Saturation
+   If (cSkin.Colourise) Then
+      Colourise cSkin.Hue, cSkin.Saturation
+   End If
+   m_bAdjustRGB = cSkin.AdjustRGB
+   m_percentRed = cSkin.PercentRed
+   m_percentGreen = cSkin.PercentGreen
+   m_percentBlue = cSkin.PercentBlue
+   If (cSkin.AdjustRGB) Then
+      AdjustRGB cSkin.PercentRed, cSkin.PercentGreen, cSkin.PercentBlue
+   End If
+   
+   m_oTransparentColor = cSkin.TransparentColor
+   
+   ' Store hWNd:
+   If Not (bNoReattach) Then
+      m_hWnd = f.hwnd
+   End If
+   
+   ' Menu:
+   If Not (bNoReattach) Then
+      Set m_cMenu = New cMenuBar
+      m_cMenu.Attach m_hWnd, (m_eMethod = ECNCUseClientArea)
+   End If
+   m_cMenu.Font = m_fntMenu
+   m_cMenu.SetColors _
+      m_oActiveMenuColor, _
+      m_oActiveMenuColorOver, _
+      m_oInActiveMenuColor, _
+      m_oMenuBackgroundColor
+   m_cMenu.CaptionHeight = m_cCaption.Height
+         
+   ' Start non-client modification:
+   If Not (bNoReattach) Then
+      Set m_cNCS = New cNCCalcSize
+      m_cNCS.Attach Me
+   End If
+   m_cNCS.Display f
+   
+      Dim lStyle As Long
+      lStyle = GetWindowLong(m_hWnd, GWL_EXSTYLE)
+      If Not (m_oTransparentColor = -1) Then
+         If Not ((lStyle And WS_EX_LAYERED) = WS_EX_LAYERED) Then
+            SetWindowLong m_hWnd, GWL_EXSTYLE, lStyle Or WS_EX_LAYERED
+         End If
+         On Error Resume Next ' may not be supported
+         SetLayeredWindowAttributes m_hWnd,
+          TranslateColor(m_oTransparentColor), 0, LWA_COLORKEY
+      Else
+         SetWindowLong m_hWnd, GWL_EXSTYLE, lStyle And Not WS_EX_LAYERED
+      End If
+   
+   If IsWindowVisible(m_hWnd) &lt;&gt; 0 Then
+   
+      SetForegroundWindow m_hWnd
+      SetFocusAPI m_hWnd
+      SendMessageLong m_hWnd, WM_NCACTIVATE, 1, 0
+      RedrawWindow m_hWnd, 0, 0, RDW_ERASE Or RDW_INVALIDATE Or RDW_FRAME Or
+       RDW_ALLCHILDREN
+
+   End If
+   
+End Sub
+
+Friend Sub Colourise( _
+      ByVal Hue As Single, _
+      ByVal Saturation As Single _
+   )
+   
+   ' do each of the colours:
+   ColouriseColour m_oActiveCaptionColor, Hue, Saturation
+   ColouriseColour m_oActiveMenuColor, Hue, Saturation
+   ColouriseColour m_oActiveMenuColorOver, Hue, Saturation
+   ColouriseColour m_oInActiveCaptionColor, Hue, Saturation
+   ColouriseColour m_oInActiveMenuColor, Hue, Saturation
+   ColouriseColour m_oMenuBackgroundColor, Hue, Saturation
+   
+   ' now do the bitmaps:
+   ColouriseDC m_cBorder.hdc, m_cBorder.Width, m_cBorder.Height, Hue, Saturation
+   ColouriseDC m_cCaption.hdc, m_cCaption.Width, m_cCaption.Height, Hue,
+    Saturation
+   
+   ' force a refresh
+   If IsWindowVisible(m_hWnd) &lt;&gt; 0 Then
+      SetForegroundWindow m_hWnd
+      SetFocusAPI m_hWnd
+      SendMessageLong m_hWnd, WM_NCACTIVATE, 1, 0
+   End If
+
+   
+End Sub
+
+Public Sub ColouriseColour( _
+      ByRef oColour As OLE_COLOR, _
+      ByVal Hue As Single, _
+      ByVal Saturation As Single _
+   )
+Dim h As Single, l As Single, s As Single
+Dim lR As Long, lG As Long, lB As Long
+Dim lC As Long
+   lC = TranslateColor(oColour)
+   If Not (lC = TranslateColor(m_oTransparentColor)) Then
+      RGBToHLS lC And &amp;HFF&amp;, (lC And &amp;HFF00&amp;) \ &amp;H100&amp;, (lC And &amp;HFF0000) \
+       &amp;H10000, h, s, l
+      HLSToRGB Hue, Saturation, l, lR, lG, lB
+      oColour = RGB(lR, lG, lB)
+   End If
+End Sub
+
+Public Sub ColouriseDC( _
+      ByVal lHDC As Long, _
+      ByVal lWidth As Long, _
+      ByVal lHeight As Long, _
+      ByVal Hue As Single, _
+      ByVal Saturation As Single _
+   )
+   
+   Dim cD As New cDIBSection
+   cD.Create lWidth, lHeight
+   cD.LoadPictureBlt lHDC
+   
+Dim bDib() As Byte
+Dim x As Long, y As Long
+Dim lC As Long
+Dim tSA As SAFEARRAY2D
+Dim xEnd As Long
+Dim h As Single, s As Single, l As Single
+Dim lR As Long, lG As Long, lB As Long
+Dim lTrans As Long, lRTrans As Long, lGTrans As Long, lBTrans As Long
+
+   ' Get the transparent color:
+   lTrans = TranslateColor(m_oTransparentColor)
+   lRTrans = (lTrans And &amp;HFF&amp;)
+   lGTrans = (lTrans And &amp;HFF00&amp;) \ &amp;H100&amp;
+   lBTrans = (lTrans And &amp;HFF0000) \ &amp;H10000
+   Debug.Print lRTrans, lGTrans, lBTrans
+    
+   ' Get the bits in the from DIB section:
+   With tSA
+       .cbElements = 1
+       .cDims = 2
+       .Bounds(0).lLbound = 0
+       .Bounds(0).cElements = cD.Height
+       .Bounds(1).lLbound = 0
+       .Bounds(1).cElements = cD.BytesPerScanLine()
+       .pvData = cD.DIBSectionBitsPtr
+   End With
+   CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+    
+   xEnd = (cD.Width - 1) * 3
+   For y = 0 To cD.Height - 1
+      For x = 0 To xEnd Step 3
+         ' don;t modify the transparent color
+         If Not (bDib(x + 2, y) = lRTrans And bDib(x + 1, y) = lGTrans And
+          bDib(x, y) = lBTrans) Then
+            RGBToHLS bDib(x + 2, y), bDib(x + 1, y), bDib(x, y), h, s, l
+            HLSToRGB Hue, Saturation, l, lR, lG, lB
+            bDib(x + 2, y) = lR
+            bDib(x + 1, y) = lG
+            bDib(x, y) = lB
+         End If
+      Next x
+   Next y
+    
+    ' Clear the temporary array descriptor
+    ' (This does not appear to be necessary, but
+    ' for safety do it anyway)
+    CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   
+   cD.PaintPicture lHDC
+End Sub
+
+Friend Sub AdjustRGB( _
+      ByVal PercentRed As Single, _
+      ByVal PercentGreen As Single, _
+      ByVal PercentBlue As Single _
+   )
+   ' do each of the colours:
+   AdjustRGBColour m_oActiveCaptionColor, PercentRed, PercentGreen, PercentBlue
+   AdjustRGBColour m_oActiveMenuColor, PercentRed, PercentGreen, PercentBlue
+   AdjustRGBColour m_oActiveMenuColorOver, PercentRed, PercentGreen, PercentBlue
+   AdjustRGBColour m_oInActiveCaptionColor, PercentRed, PercentGreen,
+    PercentBlue
+   AdjustRGBColour m_oInActiveMenuColor, PercentRed, PercentGreen, PercentBlue
+   AdjustRGBColour m_oMenuBackgroundColor, PercentRed, PercentGreen, PercentBlue
+   
+   ' now do the bitmaps:
+   AdjustRGBDC m_cBorder.hdc, m_cBorder.Width, m_cBorder.Height, PercentRed,
+    PercentGreen, PercentBlue
+   AdjustRGBDC m_cCaption.hdc, m_cCaption.Width, m_cCaption.Height, PercentRed,
+    PercentGreen, PercentBlue
+   
+   ' force a refresh
+   If IsWindowVisible(m_hWnd) &lt;&gt; 0 Then
+      SetForegroundWindow m_hWnd
+      SetFocusAPI m_hWnd
+      SendMessageLong m_hWnd, WM_NCACTIVATE, 1, 0
+   End If
+   
+End Sub
+
+Public Sub AdjustRGBColour( _
+      ByRef oColour As OLE_COLOR, _
+      ByVal PercentRed As Single, _
+      ByVal PercentGreen As Single, _
+      ByVal PercentBlue As Single _
+   )
+Dim lC As Long
+Dim lR As Long
+Dim lG As Long
+Dim lB As Long
+   lC = TranslateColor(oColour)
+   If Not (lC = TranslateColor(m_oTransparentColor)) Then
+      lR = (lC And &amp;HFF&amp;) * (1 + PercentRed)
+      If (lR &lt; 0) Then lR = 0 Else If (lR &gt; 255) Then lR = 255
+      lG = ((lC And &amp;HFF00&amp;) \ &amp;H100&amp;) * (1 + PercentGreen)
+      If (lG &lt; 0) Then lG = 0 Else If (lG &gt; 255) Then lG = 255
+      lB = ((lC And &amp;HFF0000) \ &amp;H10000) * (1 + PercentBlue)
+      If (lB &lt; 0) Then lB = 0 Else If (lB &gt; 255) Then lB = 255
+      oColour = RGB(lR, lG, lB)
+   End If
+End Sub
+
+Public Sub AdjustRGBDC( _
+      ByVal lHDC As Long, _
+      ByVal lWidth As Long, _
+      ByVal lHeight As Long, _
+      ByVal PercentRed As Single, _
+      ByVal PercentGreen As Single, _
+      ByVal PercentBlue As Single _
+   )
+   Dim cD As New cDIBSection
+   cD.Create lWidth, lHeight
+   cD.LoadPictureBlt lHDC
+   
+Dim bDib() As Byte
+Dim x As Long, y As Long
+Dim lC As Long
+Dim tSA As SAFEARRAY2D
+Dim xEnd As Long
+Dim lR As Long, lG As Long, lB As Long
+Dim lTrans As Long, lRTrans As Long, lGTrans As Long, lBTrans As Long
+
+   ' Get the transparent color:
+   lTrans = TranslateColor(m_oTransparentColor)
+   lRTrans = (lTrans And &amp;HFF&amp;)
+   lGTrans = (lTrans And &amp;HFF00&amp;) \ &amp;H100&amp;
+   lBTrans = (lTrans And &amp;HFF0000) \ &amp;H10000
+    
+   ' Get the bits in the from DIB section:
+   With tSA
+       .cbElements = 1
+       .cDims = 2
+       .Bounds(0).lLbound = 0
+       .Bounds(0).cElements = cD.Height
+       .Bounds(1).lLbound = 0
+       .Bounds(1).cElements = cD.BytesPerScanLine()
+       .pvData = cD.DIBSectionBitsPtr
+   End With
+   CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+    
+   xEnd = (cD.Width - 1) * 3
+   For y = 0 To cD.Height - 1
+      For x = 0 To xEnd Step 3
+         If Not (bDib(x + 2, y) = lRTrans And bDib(x + 1, y) = lGTrans And
+          bDib(x, y) = lBTrans) Then
+            lR = bDib(x + 2, y) * (1 + PercentRed)
+            If (lR &lt; 0) Then lR = 0 Else If (lR &gt; 255) Then lR = 255
+            bDib(x + 2, y) = lR
+            lR = bDib(x + 1, y) * (1 + PercentGreen)
+            If (lR &lt; 0) Then lR = 0 Else If (lR &gt; 255) Then lR = 255
+            bDib(x + 1, y) = lR
+            lR = bDib(x, y) * (1 + PercentBlue)
+            If (lR &lt; 0) Then lR = 0 Else If (lR &gt; 255) Then lR = 255
+            bDib(x, y) = lR
+         End If
+      Next x
+   Next y
+    
+    ' Clear the temporary array descriptor
+    ' (This does not appear to be necessary, but
+    ' for safety do it anyway)
+    CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+
+   
+   cD.PaintPicture lHDC
+   
+End Sub
+
+Public Sub Attach( _
+      f As Object, _
+      picCaption As StdPicture, _
+      picBorder As StdPicture, _
+      lButtonWidth As Long, _
+      lButtonHeight As Long, _
+      lActiveLeftEnd As Long, _
+      lActiveRightStart As Long, _
+      lActiveRightEnd As Long, _
+      lInactiveOffset As Long _
+   )
+   Dim cSkin As New cSkinConfiguration
+   With cSkin
+      Set .Caption = picCaption
+      Set .Borders = picBorder
+      .ButtonHeight = lButtonHeight
+      .ButtonWidth = lButtonWidth
+      .ActiveLeftEnd = lActiveLeftEnd
+      .ActiveRightEnd = lActiveRightEnd
+      .ActiveRightStart = lActiveRightStart
+      .InactiveOffset = lInactiveOffset
+      .ActiveCaptionColor = ActiveCaptionColor
+      .InActiveCaptionColor = InActiveCaptionColor
+      Set .CaptionFont = CaptionFont
+      .MenuBackgroundColor = MenuBackgroundColor
+      .ActiveMenuColor = ActiveMenuColor
+      .ActiveMenuColorOver = ActiveMenuColorOver
+      .InActiveMenuColor = InActiveMenuColor
+      Set .MenuFont = MenuFont
+   End With
+   Attach2 f, cSkin
+   
+End Sub
+Public Property Get MenuBackgroundColor() As OLE_COLOR
+   MenuBackgroundColor = m_oMenuBackgroundColor
+End Property
+Public Property Let MenuBackgroundColor(ByVal oColor As OLE_COLOR)
+   m_oMenuBackgroundColor = oColor
+End Property
+Public Property Get ActiveCaptionColor() As OLE_COLOR
+   ActiveCaptionColor = m_oActiveCaptionColor
+End Property
+Public Property Let ActiveCaptionColor(ByVal oColor As OLE_COLOR)
+   m_oActiveCaptionColor = oColor
+End Property
+Public Property Get InActiveCaptionColor() As OLE_COLOR
+   InActiveCaptionColor = m_oInActiveCaptionColor
+End Property
+Public Property Let InActiveCaptionColor(ByVal oColor As OLE_COLOR)
+   m_oInActiveCaptionColor = oColor
+End Property
+Public Property Get CaptionFont() As IFont
+   Set CaptionFont = m_fnt
+End Property
+Public Property Let CaptionFont(iFnt As IFont)
+   Set m_fnt = iFnt
+End Property
+Public Property Get MenuFont() As IFont
+   Set MenuFont = m_fntMenu
+End Property
+Public Property Let MenuFont(iFnt As IFont)
+   Set m_fntMenu = iFnt
+End Property
+Public Property Get ActiveMenuColor() As OLE_COLOR
+   ActiveMenuColor = m_oActiveMenuColor
+End Property
+Public Property Get ActiveMenuColorOver() As OLE_COLOR
+   ActiveMenuColorOver = m_oActiveMenuColorOver
+End Property
+Public Property Get InActiveMenuColor() As OLE_COLOR
+   InActiveMenuColor = m_oInActiveMenuColor
+End Property
+Public Property Let ActiveMenuColor(oColor As OLE_COLOR)
+   m_oActiveMenuColor = oColor
+End Property
+Public Property Let ActiveMenuColorOver(oColor As OLE_COLOR)
+   m_oActiveMenuColorOver = oColor
+End Property
+Public Property Let InActiveMenuColor(oColor As OLE_COLOR)
+   m_oInActiveMenuColor = oColor
+End Property
+Private Sub Class_Initialize()
+   m_oActiveCaptionColor = &amp;HCCCCCC
+   m_oInActiveCaptionColor = &amp;H999999
+   m_oActiveMenuColor = &amp;H0&amp;
+   m_oActiveMenuColorOver = &amp;H0&amp;
+   m_oInActiveMenuColor = &amp;H808080
+   m_oMenuBackgroundColor = &amp;HFFFFFF
+   Set m_fnt = New StdFont
+   m_fnt.Name = "MS Sans Serif"
+   Set m_fntMenu = New StdFont
+   m_fntMenu.Name = "MS Sans Serif"
+   
+   ' Default to False for compatibility with Attach
+   m_bBorderHasInactiveVersion = False
+   ' Default to True for compatibility with Attach
+   m_bDrawTitle = True
+   ' Default to 0 for compatibility with Attach
+   m_lLeftBorderWidth = 0
+   m_lRightBorderWidth = 0
+   
+   m_bCanSize = True
+   m_bCanClose = True
+
+End Sub
+
+Private Sub Class_Terminate()
+   '
+End Sub
+
+Private Function INCAreaModifier_AltKeyAccelerator(ByVal vKey As
+ KeyCodeConstants) As Long
+    INCAreaModifier_AltKeyAccelerator = m_cMenu.AltKeyAccelerator(vKey)
+End Function
+
+Private Property Get INCAreaModifier_CanClose() As Boolean
+   If (m_eMethod = ECNCModifyNonClientArea) Then
+      ' for compatibility
+      Dim lStyle As Long
+      lStyle = GetWindowLong(m_hWnd, GWL_STYLE)
+      INCAreaModifier_CanClose = ((lStyle And WS_SYSMENU) = WS_SYSMENU)
+   Else
+      INCAreaModifier_CanClose = m_bCanClose
+   End If
+End Property
+
+Private Property Get INCAreaModifier_CanSize() As Boolean
+   
+   If (m_eMethod = ECNCModifyNonClientArea) Then
+      ' for compatibility
+      Dim lStyle As Long
+      lStyle = GetWindowLong(m_hWnd, GWL_STYLE)
+      INCAreaModifier_CanSize = ((lStyle And WS_SIZEBOX) = WS_SIZEBOX)
+   Else
+      INCAreaModifier_CanSize = m_bCanSize
+   End If
+   
+End Property
+
+Private Sub INCAreaModifier_ExitMenuLoop()
+   m_cMenu.pRestoreList
+End Sub
+
+Private Sub INCAreaModifier_HitTest(ByVal x As Long, ByVal y As Long, eHitTest
+ As vbalNCSizeModifier.ECNCHitTestConstants)
+Dim bMouseOverClose As Boolean
+Dim bMouseOverMaximise As Boolean
+Dim bMouseOverMinimise As Boolean
+Dim bBtnMouseDown As Boolean
+Dim hdc As Long
+Dim lLeftBorder As Long
+Dim lRightBorder As Long
+Dim lTopBorder As Long
+Dim lBottomBorder As Long
+
+   ' Default control box position.
+   ' Calculate left &amp; right:
+   Dim tR As RECT
+   If (m_lLeftBorderWidth &gt; 0) Then
+      tR.left = m_lLeftBorderWidth
+   Else
+      tR.left = m_cBorder.Height
+      If (m_bBorderHasInactiveVersion) Then
+         tR.left = tR.left \ 2
+      End If
+   End If
+   tR.right = m_lActiveLeftEnd
+   
+   ' Calculate Top &amp; Bottom:
+   If (m_lTopSizingBorderHeight &gt; 0) Then
+      tR.top = m_lTopSizingBorderHeight
+      tR.bottom = m_cCaption.Height - m_lTopSizingBorderHeight
+   Else
+      '
+      tR.top = m_cBorder.Height
+      If (m_bBorderHasInactiveVersion) Then
+         tR.top = tR.top \ 2
+      End If
+      tR.bottom = m_cCaption.Height
+   End If
+   
+   If (tR.right - tR.left &gt; tR.bottom - tR.top) Then
+      ' assume a square for sys menu
+      tR.right = tR.left + (tR.bottom - tR.top)
+   End If
+   
+   If PtInRect(tR, x, y) &lt;&gt; 0 Then
+      eHitTest = HTSYSMENU
+   End If
+   
+   ' Menu:
+   If PtInRect(m_tMenuR, x, y) &lt;&gt; 0 Then
+      eHitTest = HTMENU
+      Exit Sub
+   End If
+   
+   ' Caption:
+   If (m_lTopSizingBorderHeight &gt; 0) Then
+      If (y &gt;= m_lTopSizingBorderHeight) And (y &lt;= m_cCaption.Height) Then
+         eHitTest = HTCAPTION
+      End If
+   Else
+      lTopBorder = m_cBorder.Height
+      If (m_bBorderHasInactiveVersion) Then
+         lTopBorder = lTopBorder \ 2
+      End If
+      If (y &gt;= lTopBorder) And (y &lt;= m_cCaption.Height) Then
+         eHitTest = HTCAPTION
+      End If
+   End If
+   
+   ' Borders:
+   If (INCAreaModifier_CanSize) Then
+      
+      GetWindowRect m_hWnd, tR
+      OffsetRect tR, -tR.left, -tR.top
+      
+      ' Left border:
+      If (m_lLeftBorderWidth &gt; 0) Then
+         lLeftBorder = m_lLeftBorderWidth
+      Else
+         lLeftBorder = m_cBorder.Height
+         If (m_bBorderHasInactiveVersion) Then
+            lLeftBorder = lLeftBorder \ 2
+         End If
+      End If
+      ' Right border:
+      If (m_lRightBorderWidth &gt; 0) Then
+         lRightBorder = tR.right - m_lRightBorderWidth
+      Else
+         lRightBorder = tR.right - lLeftBorder
+      End If
+      ' Top border:
+      If (m_lTopSizingBorderHeight &gt; 0) Then
+         lTopBorder = m_lTopSizingBorderHeight
+      Else
+         lTopBorder = lLeftBorder
+      End If
+      ' Bottom:
+      If (m_lBottomSizingBorderHeight &gt; 0) Then
+         lBottomBorder = tR.bottom - m_lBottomSizingBorderHeight
+      Else
+         lBottomBorder = tR.bottom - lLeftBorder
+      End If
+            
+      If (x &gt;= 0) And (x &lt;= lLeftBorder) Then
+         If (y &gt;= 0) And (y &lt;= lTopBorder) Then
+            'Debug.Print "TopLeft"
+            eHitTest = HTTOPLEFT
+         ElseIf (y &gt;= lBottomBorder) And (y &lt;= tR.bottom) Then
+            'Debug.Print "BottomLeft"
+            eHitTest = HTBOTTOMLEFT
+         Else
+            'Debug.Print "Left"
+            eHitTest = HTLEFT
+         End If
+         
+      ElseIf (x &gt;= lRightBorder) And (x &lt;= tR.right) Then
+         If (y &gt;= 0) And (y &lt;= lTopBorder) Then
+            'Debug.Print "TopRight"
+            eHitTest = HTTOPRIGHT
+         ElseIf (y &gt;= lBottomBorder) And (y &lt;= tR.bottom) Then
+            'Debug.Print "BottomRight", lBottomBorder
+            eHitTest = HTBOTTOMRIGHT
+         Else
+            'Debug.Print "Right"
+            eHitTest = HTRIGHT
+         End If
+         
+      ElseIf (y &gt;= 0) And (y &lt;= lTopBorder) Then
+         'Debug.Print "Top"
+         eHitTest = HTTOP
+         
+      ElseIf (y &gt;= lBottomBorder) And (y &lt;= tR.bottom) Then
+         'Debug.Print "Bottom"
+         eHitTest = HTBOTTOM
+      End If
+      
+   End If
+         
+   ' Code for working out whether in the buttons or not:
+   If m_bClose Then
+      'Debug.Print "Checking PtInRect", x, y, m_tBtn(0).left, m_tBtn(0).top,
+       m_tBtn(0).right, m_tBtn(0).bottom
+      If PtInRect(m_tBtn(0), x, y) &lt;&gt; 0 Then
+         'Debug.Print "MouseOverClose"
+         eHitTest = HTSYSMENU
+         bMouseOverClose = True
+      Else
+         bMouseOverClose = False
+      End If
+   End If
+   If m_bMaximise Then
+      If PtInRect(m_tBtn(1), x, y) &lt;&gt; 0 Then
+         eHitTest = HTSYSMENU
+         bMouseOverMaximise = True
+      Else
+         bMouseOverMaximise = False
+      End If
+   End If
+   If m_bMinimise Then
+      If PtInRect(m_tBtn(2), x, y) &lt;&gt; 0 Then
+         eHitTest = HTSYSMENU
+         bMouseOverMinimise = True
+      Else
+         bMouseOverMinimise = False
+      End If
+   End If
+   
+   hdc = GetWindowDC(m_hWnd)
+   
+   bBtnMouseDown = GetAsyncKeyState(vbLeftButton)
+   If m_bClose Then
+      If Not (m_bMouseDownClose = bMouseOverClose) Then
+         'Debug.Print "Drawing Down Close Button", bMouseOverClose,
+          bBtnMouseDown, m_bMouseDownClose
+         If bMouseOverClose And bBtnMouseDown And m_bMouseDownClose Then
+            DrawButton hdc, 0, down, m_tBtn(0)
+         Else
+            DrawButton hdc, 0, up, m_tBtn(0)
+         End If
+      End If
+   End If
+   If m_bMaximise Then
+      If Not (m_bMouseDownMaximise = bMouseOverMaximise) Then
+         If bMouseOverMaximise And bBtnMouseDown And m_bMouseDownMaximise Then
+            DrawButton hdc, 1, down, m_tBtn(1)
+         Else
+            DrawButton hdc, 1, up, m_tBtn(1)
+         End If
+      End If
+   End If
+   If m_bMinimise Then
+      If Not (m_bMouseDownMinimise = bMouseOverMinimise) Then
+         If bMouseOverMinimise And bBtnMouseDown And m_bMouseDownMinimise Then
+            DrawButton hdc, 2, down, m_tBtn(2)
+         Else
+            DrawButton hdc, 2, up, m_tBtn(2)
+         End If
+      End If
+   End If
+   
+   ReleaseDC m_hWnd, hdc
+   
+End Sub
+
+Private Property Get INCAreaModifier_hWnd() As Long
+   INCAreaModifier_hWnd = m_hWnd
+End Property
+
+
+Private Sub INCAreaModifier_InitMenuPopup(ByVal wParam As Long, ByVal lParam As
+ Long)
+   ' Set all the menu items to Owner-Draw:
+   ' wParam = hMenu
+   m_cMenu.OwnerDrawMenu wParam
+End Sub
+
+Private Property Get INCAreaModifier_Method() As ECNCDrawMethodConstants
+   INCAreaModifier_Method = m_eMethod
+End Property
+
+Private Sub INCAreaModifier_NCMouseDown(ByVal x As Long, ByVal y As Long,
+ bHandled As Boolean, ByVal hdc As Long, ByVal lLeft As Long, ByVal lTop As
+ Long, ByVal lRight As Long, ByVal lBottom As Long)
+   
+   If m_bClose Then
+      If PtInRect(m_tBtn(0), x, y) &lt;&gt; 0 Then
+         ' Redraw close button pressed:
+         DrawButton hdc, 0, down, m_tBtn(0)
+         m_bMouseDownClose = True
+         bHandled = True
+      End If
+   End If
+   If m_bMaximise Then
+      If PtInRect(m_tBtn(1), x, y) &lt;&gt; 0 Then
+         ' Redraw maximise button pressed:
+         DrawButton hdc, 1, down, m_tBtn(1)
+         m_bMouseDownMaximise = True
+         bHandled = True
+      End If
+   End If
+   If m_bMinimise Then
+      If PtInRect(m_tBtn(2), x, y) &lt;&gt; 0 Then
+         ' Redraw minimise button pressed:
+         DrawButton hdc, 2, down, m_tBtn(2)
+         m_bMouseDownMinimise = True
+         bHandled = True
+      End If
+   End If
+
+End Sub
+
+Private Sub INCAreaModifier_NCMouseUp(ByVal x As Long, ByVal y As Long, ByVal
+ hdc As Long, ByVal lLeft As Long, ByVal lTop As Long, ByVal lRight As Long,
+ ByVal lBottom As Long)
+Dim lStyle As Long
+   If m_bClose Then
+      If PtInRect(m_tBtn(0), x, y) &lt;&gt; 0 Then
+         If m_bMouseDownClose Then
+            Dim bCancel As Boolean
+            RaiseEvent Unload(bCancel)
+            If Not bCancel Then
+               If (m_eMethod = ECNCUseClientArea) Then
+                  Detach
+               End If
+               m_cNCS.SysCommand SC_CLOSE
+            End If
+         End If
+      End If
+   End If
+   If m_bMaximise Then
+      If PtInRect(m_tBtn(1), x, y) &lt;&gt; 0 Then
+         If m_bMouseDownMaximise Then
+            ' Redraw maximise button pressed:
+            lStyle = GetWindowLong(m_hWnd, GWL_STYLE)
+            If ((lStyle And WS_MAXIMIZE) = WS_MAXIMIZE) Then
+               m_cNCS.SysCommand SC_RESTORE
+            Else
+               m_cNCS.SysCommand SC_MAXIMIZE
+            End If
+         End If
+      End If
+   End If
+   If m_bMinimise Then
+      If PtInRect(m_tBtn(2), x, y) &lt;&gt; 0 Then
+         If m_bMouseDownMinimise Then
+            m_cNCS.SysCommand SC_MINIMIZE
+         End If
+      End If
+   End If
+   DrawButton hdc, 0, up, m_tBtn(0)
+   DrawButton hdc, 1, up, m_tBtn(1)
+   DrawButton hdc, 2, up, m_tBtn(2)
+   
+   m_bMouseDownMinimise = False
+   m_bMouseDownMaximise = False
+   m_bMouseDownClose = False
+   
+End Sub
+Private Sub DrawButton( _
+      ByVal hdc As Long, _
+      ByVal iIndex As Long, _
+      ByVal eState As ECNCButtonStates, _
+      tR As RECT, _
+      Optional ByVal bForceActive As Boolean = False _
+   )
+Dim lY As Long
+Dim lX As Long
+Dim lStyle As Long
+   
+   If eState = down Then
+      lY = m_lButtonHeight
+   Else
+      lY = 0
+   End If
+   lX = m_lActiveRightEnd
+   
+   If Not bForceActive Then
+      If (m_bControlButtonHasInactiveVersion) Then
+         If Not (m_cNCS.WindowActive) Then
+            lX = lX + m_lInactiveOffset
+         End If
+      End If
+   End If
+   
+   Select Case iIndex
+   Case 0
+      If m_bClose Then
+         BitBlt hdc, tR.left, tR.top, m_lButtonWidth, m_lButtonHeight,
+          m_cCaption.hdc, lX, lY, vbSrcCopy
+      End If
+   Case 1
+      If m_bMaximise Then
+         lStyle = GetWindowLong(m_hWnd, GWL_STYLE)
+         If ((lStyle And WS_MAXIMIZE) = WS_MAXIMIZE) Then
+            BitBlt hdc, tR.left, tR.top, m_lButtonWidth, m_lButtonHeight,
+             m_cCaption.hdc, lX + m_lButtonWidth, lY, vbSrcCopy
+         Else
+            BitBlt hdc, tR.left, tR.top, m_lButtonWidth, m_lButtonHeight,
+             m_cCaption.hdc, lX + m_lButtonWidth * 2, lY, vbSrcCopy
+         End If
+      End If
+   Case 2
+      If m_bMinimise Then
+         BitBlt hdc, tR.left, tR.top, m_lButtonWidth, m_lButtonHeight,
+          m_cCaption.hdc, lX + m_lButtonWidth * 3, lY, vbSrcCopy
+      End If
+   End Select
+End Sub
+Public Sub Paint( _
+      ByVal hdc As Long, _
+      ByRef left As Long, _
+      ByRef top As Long, _
+      ByRef Width As Long, _
+      ByRef Height As Long, _
+      menu As Variant _
+   )
+   If VarType(menu) = vbLong Then
+      ' ok
+   ElseIf TypeName(menu) = "cPopupMenu" Then
+      ' ok
+   Else
+      ' no good
+      Err.Raise vbObjectError + 1048 + 513, App.EXEName &amp; ".cNeoCaption",
+       "Invalid Menu Parameter: must be hMenu or cPopupMenu object"
+      Exit Sub
+   End If
+   
+   NCPaint hdc, m_hWnd, left, top, Width + left, Height + top, menu,
+    m_cNCS.WindowActive, False
+   left = m_tClientR.left
+   top = m_tClientR.top
+   Width = m_tClientR.right - m_tClientR.left
+   Height = m_tClientR.bottom - m_tClientR.top
+   
+End Sub
+Friend Sub NCPaint( _
+      ByVal hdc As Long, _
+      ByVal hwnd As Long, _
+      ByVal lLeft As Long, _
+      ByVal lTop As Long, _
+      ByVal lRight As Long, _
+      ByVal lBottom As Long, _
+      menu As Variant, _
+      ByVal bActive As Boolean, _
+      ByVal bAsSample As Boolean _
+   )
+Dim lX As Long, lXE As Long
+Dim lY As Long
+Dim lBtnLeft As Long
+Dim lW As Long, lH As Long, lRW As Long, lAR As Long
+Dim lBorderSize As Long
+Dim lT As Long
+Dim lSrcDC As Long, lSrcX As Long, lSrcY As Long
+Dim lOrgX As Long
+Dim bNoMiddle As Boolean
+Dim tR As RECT
+Dim tTextR As RECT
+Dim sCaption As String
+Dim lLen As Long
+Dim tLF As LOGFONT
+Dim hFnt As Long
+Dim hFntOld As Long
+Dim lStyle As Long
+Dim lHDC As Long, lhDCB As Long
+Dim hFntMenu As Long
+Dim bFirstTime As Boolean
+Dim tButtons As RECT
+Dim tMenuR As RECT
+Dim tButtonR As RECT
+Dim bWindowActive As Boolean
+Dim bCanSize As Boolean
+Dim eState As ECNCButtonStates
+Dim tP As POINTAPI
+
+   '
+   ' Here we do the work!
+   tR.left = lLeft
+   tR.top = lTop
+   tR.right = lRight
+   tR.bottom = lBottom
+   
+   ' Ensure mem DCs are big enough to draw into:
+   m_cFF.Width = tR.right - tR.left
+   m_cFF.Height = m_cCaption.Height
+   lHDC = m_cFF.hdc
+   
+   If (m_bBorderHasInactiveVersion) Then
+      m_cFFB.Width = m_cBorder.Width
+   Else
+      m_cFFB.Width = m_cBorder.Width * 2
+   End If
+   m_cFFB.Height = tR.bottom - tR.top + 1
+      
+   If (bAsSample) Then
+      bWindowActive = bActive
+   Else
+      bWindowActive = m_cNCS.WindowActive
+   End If
+   
+   ' Title bar font:
+   If (m_bDrawTitle) Then
+      pOLEFontToLogFont m_fnt, hdc, tLF
+      If bWindowActive Then
+         tLF.lfWeight = FW_BOLD
+      End If
+      hFnt = CreateFontIndirect(tLF)
+      hFntOld = SelectObject(lHDC, hFnt)
+   End If
+  
+   ' Title bar:
+   If bWindowActive Then
+      lOrgX = 0
+   Else
+      lOrgX = m_lInactiveOffset
+   End If
+   ' Draw the caption
+   BitBlt lHDC, 0, 0, m_lActiveLeftEnd, m_cCaption.Height, m_cCaption.hdc,
+    lOrgX, 0, vbSrcCopy
+   lRW = (m_lActiveRightEnd - m_lActiveRightStart + 1)
+   lXE = (lRight - lLeft) - lRW + 1
+   If lXE &lt; lLeft + lRW Then
+      lXE = lLeft + lRW
+      bNoMiddle = True
+   End If
+   BitBlt lHDC, lXE, 0, lRW, m_cCaption.Height, m_cCaption.hdc, lOrgX +
+    m_lActiveRightStart, 0, vbSrcCopy
+   
+   ' Buttons:
+   lStyle = GetWindowLong(hwnd, GWL_STYLE)
+   m_bMaximise = ((lStyle And WS_MAXIMIZEBOX) = WS_MAXIMIZEBOX)
+   m_bMinimise = ((lStyle And WS_MINIMIZEBOX) = WS_MINIMIZEBOX)
+   m_bClose = INCAreaModifier_CanClose
+   bCanSize = INCAreaModifier_CanSize
+            
+   ' Fill in middle of title bar:
+   lX = m_lActiveLeftEnd
+   Do
+      lW = m_lActiveRightStart - m_lActiveLeftEnd
+      If (lW &lt;= 0) Then lW = 16
+      
+      If (lX + lW) &gt; lXE Then
+         lW = lXE - lX
+      End If
+      BitBlt lHDC, lX, 0, lW, m_cCaption.Height, m_cCaption.hdc, lOrgX +
+       m_lActiveLeftEnd + 1, 0, vbSrcCopy
+      lX = lX + lW
+   Loop While lX &lt; lXE
+      
+   If Not bNoMiddle Then
+      
+      ' Draw the caption:
+      If (m_bDrawTitle) Then
+         SetBkMode lHDC, TRANSPARENT
+         If bWindowActive Then
+            SetTextColor lHDC, TranslateColor(m_oActiveCaptionColor)
+         Else
+            SetTextColor lHDC, TranslateColor(m_oInActiveCaptionColor)
+         End If
+         lLen = GetWindowTextLength(hwnd)
+         If lLen &gt; 0 Then
+            tR.left = m_lActiveLeftEnd + 2
+            tR.right = lRight - lLeft - (m_lActiveRightEnd -
+             m_lActiveRightStart)
+            If (m_lTitleStartOffsetY &gt; 0) Then
+               tR.top = m_lTitleStartOffsetY
+               DrawText lHDC, "Tg", -1, tTextR, DT_LEFT Or DT_SINGLELINE Or
+                DT_CALCRECT
+               tR.bottom = tR.top + tTextR.bottom - tTextR.top
+            Else
+               tR.top = m_cBorder.Height + 1
+               tR.bottom = tR.top + (m_cCaption.Height - m_cBorder.Height - 2)
+                \ 2
+            End If
+            sCaption = String$(lLen + 1, 0)
+            GetWindowText hwnd, sCaption, lLen + 1
+            DrawText lHDC, sCaption, -1, tR, DT_LEFT Or DT_SINGLELINE Or
+             DT_END_ELLIPSIS Or DT_NOPREFIX
+         End If
+      End If
+   End If
+   
+   ' Menu:
+   pOLEFontToLogFont m_fntMenu, hdc, tLF
+   If TypeName(menu) = "cPopupMenu" Then
+      m_cMenu.PopupMenuObject = menu
+   Else
+      m_cMenu.hMenu = menu
+   End If
+   lW = lXE - m_lActiveLeftEnd
+   lW = lW + m_lMenuStartOffsetX
+   tLF.lfWeight = FW_NORMAL
+   hFntMenu = CreateFontIndirect(tLF)
+   tMenuR.left = m_lActiveLeftEnd + 2 - m_lMenuStartOffsetX
+   tMenuR.top = m_cCaption.Height \ 2
+   tMenuR.bottom = m_cCaption.Height
+   tMenuR.right = tMenuR.left + lW - 2
+   If (m_lTopSizingBorderHeight &gt; 0) Then
+      tMenuR.top = m_lTopSizingBorderHeight + 1
+      If (m_bDrawTitle) Then
+         If (m_lMenuStartOffsetY &gt; 0) Then
+            tMenuR.top = tMenuR.top + m_lMenuStartOffsetY
+         Else
+            tMenuR.top = tMenuR.top + tTextR.bottom - tTextR.top
+         End If
+      End If
+   End If
+   If (m_bDrawTitle) Then
+      m_cMenu.Render hFntMenu, lHDC, m_lActiveLeftEnd - m_lMenuStartOffsetX,
+       tMenuR.top, lW, tMenuR.bottom - tMenuR.top, -(m_cCaption.Height -
+       tMenuR.top) + 2, bWindowActive, lAR
+   Else
+      m_cMenu.Render hFntMenu, lHDC, m_lActiveLeftEnd - m_lMenuStartOffsetX,
+       tMenuR.top, lW, tMenuR.bottom - tMenuR.top, -(m_cCaption.Height -
+       tMenuR.top) + 2, bWindowActive, lAR
+   End If
+   tMenuR.right = tMenuR.left + lAR
+   DeleteObject hFntMenu
+   If Not bAsSample Then
+      LSet m_tMenuR = tMenuR
+   End If
+   
+   ' Buttons
+   If (m_bCustomControlButtonPosition) Then
+      tButtons.left = lRight - lLeft + m_lControlButtonOffsetX
+      tButtons.top = m_lControlButtonOffsetY
+   Else
+      tButtons.left = lXE + lRW - m_cBorder.Height + 4
+      tButtons.top = 5
+   End If
+   tButtons.bottom = tButtons.top + m_lButtonHeight
+   lBtnLeft = tButtons.left
+   
+   GetCursorPos tP
+   GetWindowRect m_hWnd, tR
+   tP.x = tP.x - tR.left
+   tP.y = tP.y - tR.top
+   
+   If m_bClose Then
+      LSet tButtonR = tButtons
+      lBtnLeft = lBtnLeft - (m_lButtonWidth + 1)
+      tButtonR.left = lBtnLeft
+      tButtonR.right = tButtonR.left + m_lButtonWidth + 1
+      If (bAsSample) Then
+         DrawButton lHDC, 0, up, tButtonR, bWindowActive
+      Else
+         LSet m_tBtn(0) = tButtonR
+         'Debug.Print "Drawing Close Button", m_tBtn(0).left, m_tBtn(0).top,
+          m_tBtn(0).right, m_tBtn(0).bottom
+         eState = up
+         If m_bMouseDownClose And PtInRect(tButtonR, tP.x, tP.y) Then
+            eState = down
+         End If
+         DrawButton lHDC, 0, eState, tButtonR, bWindowActive
+      End If
+   End If
+   
+   If m_bMaximise Then
+      LSet tButtonR = tButtons
+      lBtnLeft = lBtnLeft - (m_lButtonWidth + 1)
+      tButtonR.left = lBtnLeft
+      tButtonR.right = tButtonR.left + m_lButtonWidth + 1
+      If (bAsSample) Then
+         DrawButton lHDC, 1, up, tButtonR, bWindowActive
+      Else
+         LSet m_tBtn(1) = tButtonR
+         eState = up
+         If m_bMouseDownMinimise And PtInRect(tButtonR, tP.x, tP.y) Then
+            eState = down
+         End If
+         DrawButton lHDC, 1, eState, tButtonR, bWindowActive
+      End If
+   End If
+   
+   If m_bMinimise Then
+      LSet tButtonR = tButtons
+      lBtnLeft = lBtnLeft - (m_lButtonWidth + 1)
+      tButtonR.left = lBtnLeft
+      tButtonR.right = tButtonR.left + m_lButtonWidth + 1
+      If bAsSample Then
+         DrawButton lHDC, 2, up, tButtonR, bWindowActive
+      Else
+         LSet m_tBtn(2) = tButtonR
+         eState = up
+         If m_bMouseDownMaximise And PtInRect(tButtonR, tP.x, tP.y) Then
+            eState = down
+         End If
+         DrawButton lHDC, 2, eState, tButtonR, bWindowActive
+      End If
+   End If
+   
+   ' Copy to display
+   BitBlt hdc, lLeft, lTop, m_cFF.Width, m_cFF.Height, lHDC, 0, 0, vbSrcCopy
+   
+   
+   ' Draw the left &amp; right borders:
+   ' First, draw the left and right portions into the output DC:
+   lBorderSize = m_cBorder.Height
+   lSrcY = 0
+   If (m_bBorderHasInactiveVersion) Then
+      lBorderSize = lBorderSize \ 2
+      If Not (bWindowActive) Then
+         lSrcY = lSrcY + lBorderSize
+      End If
+   End If
+   ' left border:
+   BitBlt m_cFFB.hdc, 0, 0, lBorderSize, lBorderSize, m_cBorder.hdc, 0, lSrcY,
+    vbSrcCopy
+   ' right border:
+   BitBlt m_cFFB.hdc, lBorderSize, 0, lBorderSize, lBorderSize, m_cBorder.hdc,
+    lBorderSize * 4, lSrcY, vbSrcCopy
+'   ' now copy that until we have filled the size:
+   lY = lBorderSize
+   lH = lBorderSize
+   Do While (lY &lt; lBottom - lTop)
+      BitBlt m_cFFB.hdc, 0, lY, lBorderSize * 2, lH, m_cFFB.hdc, 0, 0, vbSrcCopy
+      lY = lY + lH
+      lH = lH * 2
+   Loop
+   ' Copy to the display:
+   If (m_lLeftBorderWidth &gt; 0) Then
+      BitBlt hdc, lLeft, lTop + m_cCaption.Height, m_lLeftBorderWidth, lBottom
+       - lTop - m_cCaption.Height, m_cFFB.hdc, 0, 0, vbSrcCopy
+   Else
+      BitBlt hdc, lLeft, lTop + m_cCaption.Height, lBorderSize, lBottom - lTop
+       - m_cCaption.Height, m_cFFB.hdc, 0, 0, vbSrcCopy
+   End If
+   If (m_lRightBorderWidth &gt; 0) Then
+      BitBlt hdc, lRight - m_lRightBorderWidth - 1, lTop + m_cCaption.Height,
+       m_lRightBorderWidth + 1, lBottom - lTop - m_cCaption.Height, m_cFFB.hdc,
+       lBorderSize + (lBorderSize - m_lRightBorderWidth - 1), 0, vbSrcCopy
+   Else
+      BitBlt hdc, lRight - lBorderSize, lTop + m_cCaption.Height, lW, lBottom -
+       lTop - m_cCaption.Height, m_cFFB.hdc, lBorderSize, 0, vbSrcCopy
+   End If
+      
+   ' Draw the bottom border:
+   ' First, construct the middle part using the caption memdc:
+   BitBlt m_cFF.hdc, 0, 0, lBorderSize, lBorderSize, m_cBorder.hdc, lBorderSize
+    * 3, lSrcY, vbSrcCopy
+   ' now copy across:
+   lX = lBorderSize
+   lW = lBorderSize
+   Do While (lX &lt; lRight)
+      BitBlt m_cFF.hdc, lX, 0, lW, lBorderSize, m_cFF.hdc, 0, 0, vbSrcCopy
+      lX = lX + lW
+      lW = lW * 2
+   Loop
+   ' Now draw left &amp; right parts:
+   BitBlt m_cFF.hdc, 0, 0, lBorderSize, lBorderSize, m_cBorder.hdc, lBorderSize
+    * 2, lSrcY, vbSrcCopy
+   If (bCanSize) Then
+      BitBlt m_cFF.hdc, lRight - lLeft - lBorderSize, 0, lBorderSize,
+       lBorderSize, m_cBorder.hdc, lBorderSize * 6, lSrcY, vbSrcCopy
+   Else
+      BitBlt m_cFF.hdc, lRight - lLeft - lBorderSize, 0, lBorderSize,
+       lBorderSize, m_cBorder.hdc, lBorderSize * 5, lSrcY, vbSrcCopy
+   End If
+   ' Copy to display:
+   BitBlt hdc, lLeft, lBottom - lBorderSize, lRight - lLeft + 1, lBorderSize,
+    m_cFF.hdc, 0, 0, vbSrcCopy
+  
+   If Not (hFntOld = 0) Then
+      SelectObject lHDC, hFntOld
+      DeleteObject hFnt
+   End If
+   
+   m_tClientR.left = lLeft
+   If (m_lLeftBorderWidth &gt; 0) Then
+      m_tClientR.left = m_tClientR.left + m_lLeftBorderWidth
+   Else
+      If (m_bBorderHasInactiveVersion) Then
+         m_tClientR.left = m_tClientR.left + m_cBorder.Height \ 2
+      Else
+         m_tClientR.left = m_tClientR.left + m_cBorder.Height
+      End If
+   End If
+   m_tClientR.right = lRight
+   If (m_lRightBorderWidth &gt; 0) Then
+      m_tClientR.right = m_tClientR.right - m_lRightBorderWidth
+   Else
+      If (m_bBorderHasInactiveVersion) Then
+         m_tClientR.right = m_tClientR.right - m_cBorder.Height \ 2
+      Else
+         m_tClientR.right = m_tClientR.right - m_cBorder.Height
+      End If
+   End If
+   m_tClientR.top = lTop + m_cCaption.Height
+   If (m_bBorderHasInactiveVersion) Then
+      m_tClientR.bottom = lBottom - m_cBorder.Height \ 2
+   Else
+      m_tClientR.bottom = lBottom - m_cBorder.Height
+   End If
+   
+   If (bAsSample) Then
+      Dim hBr As Long
+      hBr = CreateSolidBrush(TranslateColor(m_oMenuBackgroundColor))
+      FillRect hdc, m_tClientR, hBr
+      DeleteObject hBr
+      SetTextColor lHDC, TranslateColor(m_oActiveMenuColorOver)
+      DrawText hdc, sCaption, -1, m_tClientR, DT_CENTER Or DT_VCENTER Or
+       DT_SINGLELINE Or DT_WORD_ELLIPSIS
+   End If
+   
+End Sub
+
+Private Sub INCAreaModifier_NCPaint(ByVal hdc As Long, ByVal lLeft As Long,
+ ByVal lTop As Long, ByVal lRight As Long, ByVal lBottom As Long)
+   If (m_eMethod = ECNCUseClientArea) Then
+      RaiseEvent Repaint
+   Else
+      NCPaint hdc, m_hWnd, lLeft, lTop, lRight, lBottom, m_cNCS.hMenu,
+       m_cNCS.WindowActive, False
+   End If
+End Sub
+
+Private Sub INCAreaModifier_GetBottomMarginHeight(cy As Long)
+   '
+   If (m_bBorderHasInactiveVersion) Then
+      cy = m_cBorder.Height \ 2 - 1
+   Else
+      cy = m_cBorder.Height - 1
+   End If
+   '
+End Sub
+
+Private Sub INCAreaModifier_GetLeftMarginWidth(cx As Long)
+   '
+   If (m_lLeftBorderWidth &gt; 0) Then
+      cx = m_lLeftBorderWidth
+   Else
+      If (m_bBorderHasInactiveVersion) Then
+         cx = m_cBorder.Height \ 2
+      Else
+         cx = m_cBorder.Height
+      End If
+   End If
+   '
+End Sub
+
+Private Sub INCAreaModifier_GetRightMarginWidth(cx As Long)
+   '
+   If (m_lRightBorderWidth &gt; 0) Then
+      cx = m_lRightBorderWidth - 1
+   Else
+      If (m_bBorderHasInactiveVersion) Then
+         cx = m_cBorder.Height \ 2 - 1
+      Else
+         cx = m_cBorder.Height - 1
+      End If
+   End If
+   '
+End Sub
+
+Private Sub INCAreaModifier_GetTopMarginHeight(cy As Long)
+   '
+   cy = m_cCaption.Height
+   '
+End Sub
+
+' Convert Automation color to Windows color
+Private Function TranslateColor(ByVal clr As OLE_COLOR, _
+                        Optional hPal As Long = 0) As Long
+    If OleTranslateColor(clr, hPal, TranslateColor) Then
+        TranslateColor = CLR_INVALID
+    End If
+End Function
+
+
+Private Sub pOLEFontToLogFont(fntThis As StdFont, ByVal hdc As Long, tLF As
+ LOGFONT)
+Dim sFont As String
+Dim iChar As Integer
+Dim b() As Byte
+
+   ' Convert an OLE StdFont to a LOGFONT structure:
+   With tLF
+     sFont = fntThis.Name
+     b = StrConv(sFont, vbFromUnicode)
+     For iChar = 1 To Len(sFont)
+       .lfFaceName(iChar - 1) = b(iChar - 1)
+     Next iChar
+     ' Based on the Win32SDK documentation:
+     .lfHeight = -MulDiv((fntThis.Size), (GetDeviceCaps(hdc, LOGPIXELSY)), 72)
+     .lfItalic = fntThis.Italic
+     If (fntThis.Bold) Then
+       .lfWeight = FW_BOLD
+     Else
+       .lfWeight = FW_NORMAL
+     End If
+     .lfUnderline = fntThis.Underline
+     .lfStrikeOut = fntThis.Strikethrough
+     .lfCharSet = fntThis.Charset
+   End With
+
+End Sub
+
+
+
+
+Private Sub m_cMenu_Repaint()
+   RaiseEvent Repaint
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator NeoCaption Component v2.0</a>&#160;.&#160;<a href="VB5_NeoCaption_Full_Source.html">VB5 NeoCaption Full Source</a>&#160;.&#160;cNeoCaption.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Skins/VB5_NeoCaption_Full_Source_zip_cNeoCaption_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:13 GMT -->
+</html>

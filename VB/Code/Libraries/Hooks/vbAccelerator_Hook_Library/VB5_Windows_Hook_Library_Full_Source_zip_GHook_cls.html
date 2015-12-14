@@ -1,0 +1,296 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Hooks/vbAccelerator_Hook_Library/VB5_Windows_Hook_Library_Full_Source_zip_GHook_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:43 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: GHook.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: GHook.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Hooks</a>&#160;.&#160;<a href="article.html">Win32 Hooks in VB - The vbAccelerator Hook Library</a>&#160;.&#160;<a href="VB5_Windows_Hook_Library_Full_Source.html">VB5 Windows Hook Library Full Source</a>&#160;.&#160;GHook.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Windows_Hook_Library_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Windows Hook Library Binary</a> (17K)</p><p class="nav"><a href="VB5_Windows_Hook_Library_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Windows Hook Library Full Source</a> (61K)</p><p /><p class="nav"><a href="VB6_Windows_Hook_Library_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Windows Hook Library Binary</a> (17K)</p><p class="nav"><a href="VB6_Windows_Hook_Library_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Windows Hook Library Full Source</a> (60K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:12569</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12569&amp;type=Zip&amp;title=VB5%20Windows%20Hook%20Library%20Full%20Source%2Ezip%5FGHook">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />27 Jun 2003<br /><p class="update">Added support for Journal Record and Playback hooks</p><p class="update">Added <span class="code">MsgFilterlParam</span> method
+for working with the <span class="code">WH_GETMESSAGE</span> Hook.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12335">vbAccelerator Accelerator Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12334">(Incomplete) Docking Forms In VB</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: GHook.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "GHook"
+Attribute VB_GlobalNameSpace = True
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Attribute VB_Description = "Interface to connect to and use the vbAccelerator
+ Hook Library functions."
+Option Explicit
+
+'
+ ===============================================================================
+=======
+' Name:     vbAccelerator Windows Hook Library
+' Author:   Steve McMahon (steve@vbaccelerator.com)
+' Date:     25 August 1999
+'
+' Requires:
+'
+' Copyright  1998-1999 Steve McMahon for vbAccelerator
+'
+ -------------------------------------------------------------------------------
+-------
+' Visit vbAccelerator - advanced free source code for VB programmers
+' http://vbaccelerator.com
+'
+ -------------------------------------------------------------------------------
+-------
+'
+' Public Interface to mWindowsHook.bas from outside
+' vbalWinHook.DLL. Also provides classes to interpret
+' the lParam member for most hooks.
+'
+'
+ ===============================================================================
+=======
+
+' Interface to mWindowsHook for DLL:
+Public Enum EHTHookTypeConstants
+   [_WH_MIN] = -1
+   WH_CALLWNDPROC = 4
+   WH_CBT = 5
+   WH_DEBUG = 9
+   WH_FOREGROUNDIDLE = 11
+   WH_GETMESSAGE = 3
+   'WH_HARDWARE = 8 ' Not implemented in Win32
+   WH_JOURNALRECORD = 0
+   WH_JOURNALPLAYBACK = 1
+   WH_KEYBOARD = 2
+   WH_MOUSE = 7
+   WH_MSGFILTER = (-1)
+   WH_SHELL = 10
+   WH_SYSMSGFILTER = 6
+   WH_CALLWNDPROCRET = 12
+   [_WH_MAX] = 14
+End Enum
+
+Public Enum EHTMsgFilterCodes
+   MSGF_DDEMGR = &amp;H8001
+   MSGF_DIALOGBOX = 0
+   MSGF_MAINLOOP = 8
+   MSGF_MAX = 8
+   MSGF_MENU = 2
+   MSGF_MESSAGEBOX = 1
+   MSGF_MOVE = 3
+   MSGF_NEXTWINDOW = 6
+   MSGF_SCROLLBAR = 5
+   MSGF_SIZE = 4
+   MSGF_USER = 4096
+End Enum
+Public Enum EHTShellCodes
+   HSHELL_ACTIVATESHELLWINDOW = 3
+   HSHELL_WINDOWCREATED = 1
+   HSHELL_WINDOWDESTROYED = 2
+   HSHELL_WINDOWACTIVATED = 4
+   HSHELL_GETMINRECT = 5
+   HSHELL_REDRAW = 6
+   HSHELL_TASKMAN = 7
+   HSHELL_LANGUAGE = 8
+   HSHELL_ACCESSIBILITYSTATE = 11
+End Enum
+Public Enum EHTMousewParamValues
+   WM_MOUSEMOVE = &amp;H200
+   WM_LBUTTONDBLCLK = &amp;H203
+   WM_LBUTTONDOWN = &amp;H201
+   WM_LBUTTONUP = &amp;H202
+   WM_MBUTTONDBLCLK = &amp;H209
+   WM_MBUTTONDOWN = &amp;H207
+   WM_MBUTTONUP = &amp;H208
+   WM_RBUTTONDBLCLK = &amp;H206
+   WM_RBUTTONUP = &amp;H205
+   WM_RBUTTONDOWN = &amp;H204
+   WM_NCLBUTTONDBLCLK = &amp;HA3
+   WM_NCLBUTTONDOWN = &amp;HA1
+   WM_NCLBUTTONUP = &amp;HA2
+   WM_NCMBUTTONDBLCLK = &amp;HA9
+   WM_NCMBUTTONDOWN = &amp;HA7
+   WM_NCMBUTTONUP = &amp;HA8
+   WM_NCMOUSEMOVE = &amp;HA0
+   WM_NCRBUTTONDBLCLK = &amp;HA6
+   WM_NCRBUTTONDOWN = &amp;HA4
+   WM_NCRBUTTONUP = &amp;HA5
+End Enum
+Public Enum EHTHookErrorConstants
+   eehHookBase = vbObjectError + 1048
+End Enum
+Public Enum EHTHookCode
+   HC_ACTION = 0
+   HC_GETNEXT = 1
+   HC_SKIP = 2
+   HC_NOREMOVE = 3
+   HC_SYSMODALON = 4
+   HC_SYSMODALOFF = 5
+End Enum
+
+Public Function InstallHook( _
+      ByVal IHook As IWindowsHook, _
+      ByVal eType As EHTHookTypeConstants _
+   ) As Boolean
+Attribute InstallHook.VB_Description = "Installs a Hook of the specified type."
+   InstallHook = mWindowsHook.InstallHook(IHook, eType)
+End Function
+Public Sub RemoveHook( _
+      ByVal IHook As IWindowsHook, _
+      ByVal eType As EHTHookTypeConstants _
+   )
+Attribute RemoveHook.VB_Description = "Removes a previously installed Hook."
+   mWindowsHook.RemoveHook IHook, eType
+End Sub
+Public Property Get MouselParam( _
+      ByVal lParam As Long _
+   ) As cMouselParam
+Attribute MouselParam.VB_Description = "Converts the lParam member of a
+ WH_MOUSE hook notification into the consituent members."
+   If ValidlParamType = WH_MOUSE Then
+      Dim c As New cMouselParam
+      c.Init lParam
+      Set MouselParam = c
+   Else
+      Debug.Print "ERROR IN MOUSELPARAM"
+      pError 1
+   End If
+End Property
+Public Property Get KeyboardlParam( _
+      ByVal lParam As Long _
+   ) As cKeyboardlParam
+Attribute KeyboardlParam.VB_Description = "Converts the lParam member of a
+ WH_KEYBOARD hook notification into the consituent members."
+   If ValidlParamType = WH_KEYBOARD Then
+      Dim c As New cKeyboardlParam
+      c.Init lParam
+      Set KeyboardlParam = c
+   Else
+      pError 1
+   End If
+End Property
+Public Property Get GetMsglParam( _
+      ByVal lParam As Long _
+   ) As cGetMsglParam
+Attribute GetMsglParam.VB_Description = "Converts the lParam member of a
+ WH_GETMSG hook notification into the consituent members."
+   If ValidlParamType = WH_GETMESSAGE Then
+      Dim c As New cGetMsglParam
+      c.Init lParam
+      Set GetMsglParam = c
+   Else
+      pError 1
+   End If
+End Property
+Public Property Get MsgFilterlParam( _
+      ByVal lParam As Long _
+   ) As cGetMsglParam
+   If ValidlParamType = WH_MSGFILTER Then
+      Dim c As New cGetMsglParam
+      c.Init lParam
+      Set MsgFilterlParam = c
+   Else
+      pError 1
+   End If
+End Property
+Public Property Get CallWndProclParam( _
+      ByVal lParam As Long _
+   ) As cCallWndProclParam
+   If ValidlParamType = WH_CALLWNDPROC Then
+      Dim c As New cCallWndProclParam
+      c.Init lParam
+      Set CallWndProclParam = c
+   Else
+      pError 1
+   End If
+End Property
+Public Property Get CallWndProcRetlParam( _
+      ByVal lParam As Long _
+   ) As cCallWndProcRetlParam
+Attribute CallWndProcRetlParam.VB_Description = "Converts the lParam member of
+ a WH_CALLWNDPROCRET hook notification into the consituent members."
+   If ValidlParamType = WH_CALLWNDPROCRET Then
+      Dim c As New cCallWndProcRetlParam
+      c.Init lParam
+      Set CallWndProcRetlParam = c
+   Else
+      pError 1
+   End If
+End Property
+Public Property Get JournalPlaybacklParam( _
+      ByVal lParam As Long _
+   ) As cJournallParam
+   If ValidlParamType = WH_JOURNALPLAYBACK Then
+      Dim c As New cJournallParam
+      c.Init lParam
+      Set JournalPlaybacklParam = c
+   Else
+      pError 1
+   End If
+End Property
+Public Property Get JournalRecordlParam( _
+      ByVal lParam As Long _
+   ) As cJournallParam
+   If ValidlParamType = WH_JOURNALRECORD Then
+      Dim c As New cJournallParam
+      c.Init lParam
+      Set JournalRecordlParam = c
+   Else
+      Debug.Print "Get JournalRecordlParam"
+      pError 1
+   End If
+End Property
+Private Sub pError(ByVal lErr As Long)
+   Err.Raise vbObjectError + 1048 + lErr + 3000, App.EXEName &amp; ".vbalWinHook",
+    "Class only valid during HookCall with the same hook type."
+End Sub
+
+Private Sub Class_Terminate()
+   ' Clear up?
+   debugmsg "GHook:terminate"
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Hooks</a>&#160;.&#160;<a href="article.html">Win32 Hooks in VB - The vbAccelerator Hook Library</a>&#160;.&#160;<a href="VB5_Windows_Hook_Library_Full_Source.html">VB5 Windows Hook Library Full Source</a>&#160;.&#160;GHook.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 July 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Hooks/vbAccelerator_Hook_Library/VB5_Windows_Hook_Library_Full_Source_zip_GHook_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:43 GMT -->
+</html>

@@ -1,0 +1,290 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Trapping_The_Tab_Key_in_a_UserControl_with_IOLEInPlaceActiveObject/TabCatch_Sample_Code_zip_uKeyTest2_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:10 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: uKeyTest2.ctl</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: uKeyTest2.ctl" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;<a href="article.html">How to Trap the Tab Key in a UserControl with IOLEInPlaceActiveObject</a>&#160;.&#160;<a href="TabCatch_Sample_Code.html">TabCatch Sample Code</a>&#160;.&#160;uKeyTest2.ctl</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="TabCatch_Sample_Code.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />TabCatch Sample Code</a> (22K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2936</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2936&amp;type=Zip&amp;title=TabCatch%20Sample%20Code%2Ezip%5FuKeyTest2">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><p class="nav">&#160;&#160;Mike Gainer</p><p class="nav">&#160;&#160;Bill Storage</p><p class="nav">&#160;&#160;Matt Curland</p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />20 Feb 1999<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1431">VB Type Library Registration Utility</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1412">Owner Draw Combo and List Boxes Version 2.1</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2190">Dealing with Circular References</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: uKeyTest2.ctl</h1><pre>VERSION 5.00
+Begin VB.UserControl uKeyTest2 
+   BorderStyle     =   1  'Fixed Single
+   ClientHeight    =   3600
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   4800
+   ScaleHeight     =   3600
+   ScaleWidth      =   4800
+   Begin VB.Label lblKeyDown 
+      Height          =   315
+      Left            =   60
+      TabIndex        =   3
+      Top             =   420
+      Width           =   2535
+   End
+   Begin VB.Label lblKey 
+      Height          =   315
+      Left            =   60
+      TabIndex        =   2
+      Top             =   840
+      Width           =   2535
+   End
+   Begin VB.Label lblKeyUp 
+      Height          =   315
+      Left            =   60
+      TabIndex        =   1
+      Top             =   1260
+      Width           =   2535
+   End
+   Begin VB.Label lblFocus 
+      Caption         =   "Not In Focus"
+      Height          =   255
+      Left            =   60
+      TabIndex        =   0
+      Top             =   60
+      Width           =   4635
+   End
+End
+Attribute VB_Name = "uKeyTest2"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+' ===========================================================================
+' Filename:    uKeyTest2.ctl
+' Author:      Steve McMahon
+' Date:        21 January 1999
+'
+' Requires:    OleGuids.tlb (in IDE only)
+'              mIOLEInPlaceActiveObject.bas
+'              SSUBTMR.DLL
+'
+' Description:
+' Demonstrates how to trap the tab-key in a UserControl, if you
+' *really* want to do it properly!
+'
+' ---------------------------------------------------------------------------
+' Visit vbAccelerator, advanced, free source for VB programmers
+'     http://vbaccelerator.com
+' ===========================================================================
+
+Implements ISubclass
+Private m_IPAOHookStruct As IPAOHookStruct
+Private Const WM_KEYDOWN = &amp;H100
+Private Const WM_KEYUP = &amp;H101
+Private Const WM_SETFOCUS = &amp;H7
+Private m_hWnd As Long
+Private m_bInterceptTabs As Boolean
+Private Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Long) As
+ Integer
+
+Private Property Get ShiftState() As Integer
+   ' we don't need to consider Alt for a Tab key press.
+   ShiftState = GetAsyncKeyState(vbKeyShift) * vbShiftMask Or
+    GetAsyncKeyState(vbKeyControl) * vbCtrlMask
+End Property
+
+Public Property Get InterceptTabs() As Boolean
+   InterceptTabs = m_bInterceptTabs
+End Property
+Public Property Let InterceptTabs(ByVal bState As Boolean)
+   m_bInterceptTabs = bState
+End Property
+Friend Function TranslateAccelerator(lpMsg As VBOleGuids.MSG) As Long
+   TranslateAccelerator = S_FALSE
+   If (m_bInterceptTabs) Then
+      ' Here you can modify the response to the key down
+      ' accelerator command using the values in lpMsg.  This
+      ' can be used to capture Tabs, Returns, Arrows etc.
+      ' Just process the message as required and return S_OK.
+      If (lpMsg.wParam And &amp;HFFFF&amp;) = vbKeyTab Then
+         Select Case lpMsg.message
+         Case WM_KEYDOWN
+            UserControl_KeyDown vbKeyTab, ShiftState
+            TranslateAccelerator = S_OK
+         Case WM_KEYUP
+            UserControl_KeyUp vbKeyTab, ShiftState
+            TranslateAccelerator = S_OK
+         End Select
+      End If
+   End If
+End Function
+Private Sub pInitTabTrap(ByVal bState As Boolean)
+   If (m_hWnd &lt;&gt; 0) Then
+      DetachMessage Me, m_hWnd, WM_SETFOCUS
+   End If
+   m_hWnd = 0
+   If bState Then
+      If UserControl.Ambient.UserMode Then
+         m_hWnd = UserControl.hwnd
+         AttachMessage Me, m_hWnd, WM_SETFOCUS
+      End If
+   End If
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As SSubTimer.EMsgResponse)
+   '
+End Property
+
+Private Property Get ISubclass_MsgResponse() As SSubTimer.EMsgResponse
+   ISubclass_MsgResponse = emrPreprocess
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+   
+   Select Case iMsg
+   
+   
+   ' --------------------------------------------------------------------------
+   ' Required to allow Tab keys to be trapped:
+   Case WM_SETFOCUS
+      If m_bInterceptTabs Then
+         Dim pOleObject                  As IOleObject
+         Dim pOleInPlaceSite             As IOleInPlaceSite
+         Dim pOleInPlaceFrame            As IOleInPlaceFrame
+         Dim pOleInPlaceUIWindow         As IOleInPlaceUIWindow
+         Dim pOleInPlaceActiveObject     As IOleInPlaceActiveObject
+         Dim PosRect                     As RECT
+         Dim ClipRect                    As RECT
+         Dim FrameInfo                   As OLEINPLACEFRAMEINFO
+         Dim grfModifiers                As Long
+         Dim AcceleratorMsg              As MSG
+      
+         'Get in-place frame and make sure it is set to our in-between
+         'implementation of IOleInPlaceActiveObject in order to catch
+         'TranslateAccelerator calls
+         Set pOleObject = Me
+         Set pOleInPlaceSite = pOleObject.GetClientSite
+         pOleInPlaceSite.GetWindowContext pOleInPlaceFrame,
+          pOleInPlaceUIWindow, VarPtr(PosRect), VarPtr(ClipRect),
+          VarPtr(FrameInfo)
+         CopyMemory pOleInPlaceActiveObject, m_IPAOHookStruct.ThisPointer, 4
+         pOleInPlaceFrame.SetActiveObject pOleInPlaceActiveObject, vbNullString
+         If Not pOleInPlaceUIWindow Is Nothing Then
+            pOleInPlaceUIWindow.SetActiveObject pOleInPlaceActiveObject,
+             vbNullString
+         End If
+         ' Clear up the inbetween implementation:
+         CopyMemory pOleInPlaceActiveObject, 0&amp;, 4
+      End If
+   ' --------------------------------------------------------------------------
+     
+   End Select
+   
+   
+End Function
+
+Private Sub UserControl_Initialize()
+   
+   m_bInterceptTabs = True
+   
+   ' Set up information about this control for
+   ' IOleInPlaceActiveObject interface:
+   Dim IPAO As IOleInPlaceActiveObject
+
+   With m_IPAOHookStruct
+      Set IPAO = Me
+      CopyMemory .IPAOReal, IPAO, 4
+      CopyMemory .TBEx, Me, 4
+      .lpVTable = IPAOVTable
+      .ThisPointer = VarPtr(m_IPAOHookStruct)
+   End With
+   
+End Sub
+
+Private Sub UserControl_GotFocus()
+   lblFocus.Caption = "Focus"
+End Sub
+
+Private Sub UserControl_InitProperties()
+   ' Start subclassing for WM_SETFOCUS if runtime:
+   pInitTabTrap True
+End Sub
+
+Private Sub UserControl_KeyDown(KeyCode As Integer, Shift As Integer)
+   lblKeyDown.Caption = KeyCode
+   lblKeyUp.Caption = ""
+   lblKey.Caption = ""
+End Sub
+
+Private Sub UserControl_KeyPress(KeyAscii As Integer)
+   lblKey.Caption = KeyAscii
+End Sub
+
+Private Sub UserControl_KeyUp(KeyCode As Integer, Shift As Integer)
+   lblKeyUp.Caption = KeyCode
+End Sub
+
+Private Sub UserControl_LostFocus()
+   lblFocus.Caption = "Not in Focus"
+End Sub
+
+
+Private Sub UserControl_ReadProperties(PropBag As PropertyBag)
+   ' Start subclassing for WM_SETFOCUS if runtime:
+   pInitTabTrap True
+End Sub
+
+Private Sub UserControl_Terminate()
+   
+   ' Detach the custom IOleInPlaceActiveObject interface
+   ' pointers.
+   With m_IPAOHookStruct
+      CopyMemory .IPAOReal, 0&amp;, 4
+      CopyMemory .TBEx, 0&amp;, 4
+   End With
+   
+   ' Stop subclassing for SetFocus:
+   pInitTabTrap False
+   
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;<a href="article.html">How to Trap the Tab Key in a UserControl with IOLEInPlaceActiveObject</a>&#160;.&#160;<a href="TabCatch_Sample_Code.html">TabCatch Sample Code</a>&#160;.&#160;uKeyTest2.ctl</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Trapping_The_Tab_Key_in_a_UserControl_with_IOLEInPlaceActiveObject/TabCatch_Sample_Code_zip_uKeyTest2_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:10 GMT -->
+</html>

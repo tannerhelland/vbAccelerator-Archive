@@ -1,0 +1,453 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/ListView_Style_Grouping/VB5_Fixed_Grouping_Sample_zip_cBugList_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:06 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cBugList.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cBugList.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;<a href="article.html">Creating ListView Style Groups with SGrid 2</a>&#160;.&#160;<a href="VB5_Fixed_Grouping_Sample.html">VB5 Fixed Grouping Sample</a>&#160;.&#160;cBugList.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Fixed_Grouping_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Fixed Grouping Sample</a> (64K)</p><p /><p class="nav"><a href="VB6_Fixed_Grouping_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Fixed Grouping Sample</a> (62K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:13939</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13939&amp;type=Zip&amp;title=VB5%20Fixed%20Grouping%20Sample%2Ezip%5FcBugList">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />24 Jan 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13703">SGrid 2.0</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cBugList.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cBugList"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Declare Function CreateSolidBrush Lib "gdi32" (ByVal crColor As Long)
+ As Long
+Private Declare Function FillRect Lib "user32" (ByVal hDC As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+Private Declare Function SelectObject Lib "gdi32" (ByVal hDC As Long, ByVal
+ hObject As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+Private Declare Function FrameRect Lib "user32" (ByVal hDC As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+Private Declare Function DrawTextA Lib "user32" (ByVal hDC As Long, ByVal lpStr
+ As String, ByVal nCount As Long, lpRect As RECT, ByVal wFormat As Long) As Long
+Private Declare Function DrawFocusRect Lib "user32" (ByVal hDC As Long, lpRect
+ As RECT) As Long
+
+Implements IGridCellOwnerDraw
+
+Private m_sFile As String
+Private m_bDirty As Boolean
+Private m_grd As vbalGrid
+Private m_fnt As StdFont
+Private m_lArticleId As Long
+Private m_lMaxBugId As Long
+
+Public Sub Initialise(grd As vbalGrid)
+   Set m_grd = grd
+   configureGrid
+End Sub
+
+Public Property Get Dirty() As Boolean
+   Dirty = m_bDirty
+End Property
+Public Sub SetDirty()
+   m_bDirty = True
+End Sub
+
+Public Property Get ArticleId() As Long
+   ArticleId = m_lArticleId
+End Property
+Public Property Let ArticleId(ByVal lID As Long)
+   m_lArticleId = lID
+   m_bDirty = True
+End Property
+
+Public Sub AddNewBug( _
+      ByVal sType As String, _
+      ByVal sStatus As String, _
+      ByVal sHeadline As String, _
+      ByVal sAuthor As String _
+   )
+Dim lRow As Long
+Dim lNewRow As Long
+   
+   m_grd.Redraw = False
+   
+   m_lMaxBugId = m_lMaxBugId + 1
+   
+   ' Add the bug to the end of the list:
+   m_grd.AddRow
+   lRow = m_grd.Rows
+   m_grd.CellText(lRow, 1) = m_lMaxBugId
+   m_grd.CellText(lRow, 2) = sType
+   m_grd.CellText(lRow, 3) = sAuthor
+   m_grd.CellText(lRow, 4) = Now
+   m_grd.CellText(lRow, 5) = Now
+   m_grd.CellText(lRow, 6) = sStatus
+   m_grd.CellText(lRow, 7) = sHeadline
+   
+   ' Then move it to the right place:
+   lNewRow = m_grd.ShiftLastRowToSortLocation()
+   
+   expandAllGroups
+   
+   m_grd.Redraw = True
+   
+End Sub
+
+Public Sub NewBugList(ByVal lArticleId As Long)
+   
+   m_lArticleId = lArticleId
+   m_lMaxBugId = 0
+   m_sFile = CStr(m_lArticleId) &amp; ".xml"
+   m_bDirty = True
+   
+   m_grd.Clear
+   
+End Sub
+
+
+Public Sub SaveAs(ByVal sFile As String)
+   
+   If (saveBugList(sFile)) Then
+      m_sFile = sFile
+      m_bDirty = False
+   End If
+   
+End Sub
+
+Private Function saveBugList(ByVal sFile As String) As Boolean
+   MsgBox "Not implemented in this demonstration.", vbInformation
+End Function
+
+Public Property Get File() As String
+   File = m_sFile
+End Property
+Public Property Let File(ByVal sFile As String)
+   
+   If m_grd Is Nothing Then
+      Err.Raise 500, App.EXEName &amp; ".cBugList", "cBugList class needs to be
+       initialised with a grid before use."
+      Exit Property
+   End If
+   
+   m_lArticleId = -1
+   m_sFile = ""
+   m_lMaxBugId = 0
+   
+   Dim dom As DOMDocument
+   Set dom = loadBugList(sFile)
+   If Not (dom Is Nothing) Then
+      m_grd.Redraw = False
+      m_grd.Clear
+      loadBugTrackInfo dom
+      setGroups
+      m_grd.Redraw = True
+      m_sFile = sFile
+   Else
+      Err.Raise 501, App.EXEName &amp; ".cBugList", _
+         "An error occurred trying to read the data file '" &amp; sFile &amp; "'" &amp; _
+         vbCrLf &amp; vbCrLf &amp; dom.parseError.reason
+   End If
+   
+End Property
+
+Private Function loadBugList(ByVal sFile As String) As DOMDocument
+   
+   Dim dom As New DOMDocument
+   If dom.Load(sFile) Then
+      Set loadBugList = dom
+   End If
+
+End Function
+
+Private Function parseDate(ByVal sIsoDate As String) As Date
+   parseDate = DateSerial(CLng(Mid(sIsoDate, 1, 4)), CLng(Mid(sIsoDate, 6, 2)),
+    CLng(Mid(sIsoDate, 9, 2)))
+End Function
+
+Private Function parseType(ByVal sType As String) As String
+   Select Case UCase(left(sType, 1))
+   Case "B"
+      parseType = "Bug"
+   Case "C"
+      parseType = "Issue"
+   Case "Q"
+      parseType = "Question"
+   End Select
+End Function
+
+Private Sub setRowBackColor(ByVal lRow As Long, ByVal sStatus As String)
+Dim iCol As Long
+Dim lColor As Long
+   If left(Trim(LCase(sStatus)), 3) = "res" Then
+      lColor = RGB(225, 237, 226)
+   Else
+      lColor = RGB(251, 246, 206)
+   End If
+   For iCol = 1 To 7
+      m_grd.CellBackColor(lRow, iCol) = lColor
+   Next iCol
+End Sub
+
+Private Function getBugTypeIconIndex(ByVal sType As String) As Long
+   '
+End Function
+
+Private Sub loadBugTrackInfo(dom As DOMDocument)
+   
+   Dim topLevelChildren As IXMLDOMNodeList
+   Set topLevelChildren = dom.documentElement.childNodes
+   
+   Dim i As Long
+   For i = 0 To topLevelChildren.length - 1
+      
+      Dim childNode As IXMLDOMNode
+      Set childNode = topLevelChildren.Item(i)
+      
+      Select Case childNode.nodeName
+      Case "ArticleId"
+         m_lArticleId = CLng(childNode.firstChild.nodeValue)
+      Case "IssueDetails"
+         loadDetailsIntoGrid childNode
+      Case "Bugs"
+         '
+      Case "Issues"
+         '
+      Case "Questions"
+         '
+      End Select
+   Next i
+   
+End Sub
+
+Private Sub loadDetailsIntoGrid(nod As IXMLDOMNode)
+      
+   Dim issueNodes As IXMLDOMNodeList
+   Set issueNodes = nod.childNodes
+   
+   Dim i As Long
+   Dim j As Long
+   
+   For i = 0 To issueNodes.length - 1
+      Dim issueNode As IXMLDOMNode
+      Set issueNode = issueNodes.Item(i)
+      
+      Dim lRow As Long
+      m_grd.AddRow
+      lRow = m_grd.Rows
+      
+      Dim childNodes As IXMLDOMNodeList
+      Set childNodes = issueNode.childNodes
+      For j = 0 To childNodes.length - 1
+         
+         Dim childNode As IXMLDOMNode
+         Set childNode = childNodes.Item(j)
+         Dim sParse As String
+         
+         Select Case childNode.nodeName
+         Case "IssueId"
+            m_grd.CellText(lRow, 1) = CLng(childNode.firstChild.nodeValue)
+            If (m_grd.CellText(lRow, 1) &gt; m_lMaxBugId) Then
+               m_lMaxBugId = m_lMaxBugId + 1
+            End If
+         Case "Title"
+            m_grd.CellText(lRow, 7) = childNode.firstChild.nodeValue
+         Case "FirstPosted"
+            m_grd.CellText(lRow, 4) = parseDate(childNode.firstChild.nodeValue)
+         Case "MostRecentUpdate"
+            m_grd.CellText(lRow, 5) = parseDate(childNode.firstChild.nodeValue)
+         Case "IssueType"
+            sParse = parseType(childNode.firstChild.nodeValue)
+            m_grd.CellText(lRow, 2) = sParse
+            m_grd.CellIcon(lRow, 2) = getBugTypeIconIndex(sParse)
+         Case "CurrentStatus"
+            sParse = childNode.firstChild.nodeValue
+            m_grd.CellText(lRow, 6) = sParse
+            setRowBackColor lRow, sParse
+         Case "Author"
+            m_grd.CellText(lRow, 3) = childNode.firstChild.firstChild.nodeValue
+         End Select
+      Next j
+      
+   Next i
+   
+   For i = 1 To 6
+      If (m_grd.ColumnVisible(i)) Then
+         m_grd.AutoWidthColumn i
+      End If
+   Next i
+   
+End Sub
+
+Private Sub configureGrid()
+   
+   With m_grd
+      
+      ' Allow the grid to be grouped, but
+      ' don't show the grouping box
+      .HideGroupingBox = True
+      .AllowGrouping = True
+      
+      ' Group rows will be shown by
+      ' a gradient underline
+      .GroupRowBackColor = vbWindowBackground
+      .GroupRowForeColor = vbWindowText
+      
+      .GridLineColor = vbWindowBackground
+      .GridFillLineColor = vbWindowBackground
+      .GridLines = True
+      
+      .SelectionAlphaBlend = True
+      .SelectionOutline = True
+      .DrawFocusRectangle = False
+      
+      .RowMode = True
+      
+      .AddColumn "ID", "Id", eSortType:=CCLSortNumeric
+      .AddColumn "Type", "Type", eSortType:=CCLSortStringNoCase
+      .AddColumn "Author", "Author", eSortType:=CCLSortStringNoCase
+      .AddColumn "Raised", "Raised", sFmtString:="short date",
+       eSortType:=CCLSortDateDayAccuracy
+      .AddColumn "Updated", "Updated", sFmtString:="short date",
+       eSortType:=CCLSortDateDayAccuracy
+      .AddColumn "Status", "Status"
+      .AddColumn "Title", "Title", eSortType:=CCLSortStringNoCase
+      
+      .StretchLastColumnToFit = True
+      
+      
+      .OwnerDrawImpl = Me
+   End With
+   
+End Sub
+
+Private Sub setGroups()
+   
+   ' group by issue type, then by status
+   m_grd.ColumnIsGrouped(2) = True
+   m_grd.ColumnIsGrouped(6) = True
+   
+   expandAllGroups
+   
+End Sub
+
+Private Sub expandAllGroups()
+   ' Expand all of the groups
+   Dim iRow As Long
+   For iRow = 1 To m_grd.Rows
+      If (m_grd.RowIsGroup(iRow)) Then
+         m_grd.RowGroupingState(iRow) = ecgExpanded
+      End If
+   Next iRow
+End Sub
+
+Private Sub Class_Initialize()
+   Set m_fnt = New StdFont
+   m_fnt.Name = "Tahoma"
+   m_fnt.Size = 8
+   m_fnt.Bold = True
+End Sub
+
+Private Property Get IFontOf(sFnt As StdFont) As IFont
+   Set IFontOf = sFnt
+End Property
+
+Private Sub IGridCellOwnerDraw_Draw(cell As vbAcceleratorSGrid.cGridCell, ByVal
+ lHDC As Long, ByVal eDrawStage As vbAcceleratorSGrid.ECGDrawStage, ByVal lLeft
+ As Long, ByVal lTop As Long, ByVal lRight As Long, ByVal lBottom As Long,
+ bSkipDefault As Boolean)
+   '
+   If (eDrawStage = ecgBeforeIconAndText) Then
+      If m_grd.RowIsGroup(cell.Row) Then
+         drawGroupRow cell, lHDC, lLeft, lTop, lRight, lBottom
+         bSkipDefault = True
+      End If
+   End If
+   '
+End Sub
+
+Private Sub drawGroupRow( _
+      cell As cGridCell, _
+      ByVal lHDC As Long, _
+      ByVal lLeft As Long, _
+      ByVal lTop As Long, _
+      ByVal lRight As Long, _
+      ByVal lBottom As Long _
+   )
+Dim hFont As Long
+Dim hFontOld As Long
+Dim tR As RECT
+Dim tBR As RECT
+   
+   tR.left = lLeft
+   tR.top = lTop
+   tR.right = lRight
+   tR.bottom = lBottom
+   
+   LSet tBR = tR
+   tBR.top = tBR.bottom - 5
+   tBR.bottom = tBR.bottom - 2
+   If (cell.Selected) Then
+      GradientFillRect lHDC, tBR, vbHighlight, vbWindowBackground,
+       GRADIENT_FILL_RECT_H
+   Else
+      GradientFillRect lHDC, tBR, vbButtonShadow, vbWindowBackground,
+       GRADIENT_FILL_RECT_H
+   End If
+   
+   hFont = IFontOf(m_fnt).hFont
+   hFontOld = SelectObject(lHDC, hFont)
+   tR.bottom = tR.bottom - 3
+   DrawTextA lHDC, " " &amp; cell.Text, -1, tR, cell.TextAlign
+   SelectObject lHDC, hFontOld
+
+End Sub
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;<a href="article.html">Creating ListView Style Groups with SGrid 2</a>&#160;.&#160;<a href="VB5_Fixed_Grouping_Sample.html">VB5 Fixed Grouping Sample</a>&#160;.&#160;cBugList.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 February 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/ListView_Style_Grouping/VB5_Fixed_Grouping_Sample_zip_cBugList_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:06 GMT -->
+</html>

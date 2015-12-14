@@ -1,0 +1,917 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Combo_and_List_Boxes/ComboBoxEx/VB5_ComboBoxEx_Full_Source_zip_mDriveList_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:24 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: mDriveList.bas</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: mDriveList.bas" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Combo and List Boxes</a>&#160;.&#160;<a href="article.html">vbAccelerator ComboBoxEx Control</a>&#160;.&#160;<a href="VB5_ComboBoxEx_Full_Source.html">VB5 ComboBoxEx Full Source</a>&#160;.&#160;mDriveList.bas</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_ComboBoxEx_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ComboBoxEx Control</a> (28K)</p><p class="nav"><a href="VB5_ComboBoxEx_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ComboBoxEx Demonstration</a> (38K)</p><p class="nav"><a href="VB5_ComboBoxEx_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ComboBoxEx Full Source</a> (94K)</p><p /><p class="nav"><a href="VB6_ComboBoxEx_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ComboBoxEx Control</a> (28K)</p><p class="nav"><a href="VB6_ComboBoxEx_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ComboBoxEx Demonstration</a> (34K)</p><p class="nav"><a href="VB6_ComboBoxEx_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ComboBoxEx Full Source</a> (91K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1515</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1515&amp;type=Zip&amp;title=VB5%20ComboBoxEx%20Full%20Source%2Ezip%5FmDriveList">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 2</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:12 January 2004</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />26 Jan 2003<br /><p class="update">Updated WM_CTLCOLOR.. processing so the control renders
+correctly with an XP Manifest.</p><p class="update">Added missing mnubar.bmp to download.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1412">Owner Draw Combo and List Boxes Version 2.1</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: mDriveList.bas</h1><pre>Attribute VB_Name = "mDeclares"
+Option Explicit
+
+' WinAPI:
+Public Type POINTAPI
+   x As Long
+   y As Long
+End Type
+Public Type SIZEAPI
+   cX As Long
+   cY As Long
+End Type
+Public Type RECT
+   Left As Long
+   Top As Long
+   Right As Long
+   Bottom As Long
+End Type
+Public Const LF_FACESIZE = 32
+Public Type LOGFONT
+    lfHeight As Long
+    lfWidth As Long
+    lfEscapement As Long
+    lfOrientation As Long
+    lfWeight As Long
+    lfItalic As Byte
+    lfUnderline As Byte
+    lfStrikeOut As Byte
+    lfCharSet As Byte
+    lfOutPrecision As Byte
+    lfClipPrecision As Byte
+    lfQuality As Byte
+    lfPitchAndFamily As Byte
+    lfFaceName(LF_FACESIZE) As Byte
+End Type
+Public Type DRAWITEMSTRUCT
+    CtlType As Long
+    CtlID As Long
+    ItemId As Long
+    ItemAction As Long
+    ItemState As Long
+    hwndItem As Long
+    hdc As Long
+    rcItem As RECT
+    ItemData As Long
+End Type
+Public Declare Function ShowWindow Lib "user32" (ByVal hwnd As Long, ByVal
+ nCmdShow As Long) As Long
+Public Declare Function CreateWindowEX Lib "user32" Alias "CreateWindowExA"
+ (ByVal dwExStyle As Long, ByVal lpClassName As String, ByVal lpWindowName As
+ String, ByVal dwStyle As Long, ByVal x As Long, ByVal y As Long, ByVal nWidth
+ As Long, ByVal nHeight As Long, ByVal hWndParent As Long, ByVal hMenu As Long,
+ ByVal hInstance As Long, lpParam As Any) As Long
+Public Declare Function DestroyWindow Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function SetParent Lib "user32" (ByVal hWndChild As Long, ByVal
+ hWndNewParent As Long) As Long
+Public Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+Public Declare Function SendMessageLong Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Public Declare Function SendMessageString Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ String) As Long
+Public Declare Function SendMessageByref Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, wParam As Any, lParam As Any) As Long
+Public Declare Function MoveWindow Lib "user32" (ByVal hwnd As Long, ByVal x As
+ Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ bRepaint As Long) As Long
+Public Declare Function GetWindowRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Public Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Public Declare Function EnableWindow Lib "user32" (ByVal hwnd As Long, ByVal
+ fEnable As Long) As Long
+Public Declare Function GetWindow Lib "user32" (ByVal hwnd As Long, ByVal wCmd
+ As Long) As Long
+Public Declare Function SetFocusAPI Lib "user32" Alias "SetFocus" (ByVal hwnd
+ As Long) As Long
+Public Declare Function GetFocus Lib "user32" () As Long
+Public Declare Function CreateFontIndirect&amp; Lib "gdi32" Alias
+ "CreateFontIndirectA" (lpLogFont As LOGFONT)
+Public Declare Function MulDiv Lib "kernel32" (ByVal nNumber As Long, ByVal
+ nNumerator As Long, ByVal nDenominator As Long) As Long
+Public Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As Long
+Public Declare Function DrawText Lib "user32" Alias "DrawTextA" (ByVal hdc As
+ Long, ByVal lpStr As String, ByVal nCount As Long, lpRect As RECT, ByVal
+ wFormat As Long) As Long
+Public Declare Function DrawTextExAsNull Lib "user32" Alias "DrawTextExA"
+ (ByVal hdc As Long, ByVal lpsz As String, ByVal n As Long, lpRect As RECT,
+ ByVal un As Long, ByVal lpDrawTextParams As Long) As Long
+Public Declare Function GetDeviceCaps Lib "gdi32" (ByVal hdc As Long, ByVal
+ nIndex As Long) As Long
+Public Declare Function FindWindowEx Lib "user32" Alias "FindWindowExA" (ByVal
+ hWnd1 As Long, hWnd2 As Any, ByVal lpsz1 As String, lpsz2 As Any) As Long
+Public Declare Function IsWindowVisible Lib "user32" (ByVal hwnd As Long) As
+ Long
+Public Declare Function OleTranslateColor Lib "OLEPRO32.DLL" (ByVal OLE_COLOR
+ As Long, ByVal HPALETTE As Long, pccolorref As Long) As Long
+Public Declare Function CreateSolidBrush Lib "gdi32" (ByVal crColor As Long) As
+ Long
+Public Declare Function SetClassLong Lib "user32" Alias "SetClassLongA" (ByVal
+ hwnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long
+Public Declare Function GetClassLong Lib "user32" Alias "GetClassLongA" (ByVal
+ hwnd As Long, ByVal nIndex As Long) As Long
+Public Declare Function GetDC Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function ReleaseDC Lib "user32" (ByVal hwnd As Long, ByVal hdc
+ As Long) As Long
+Public Declare Function DeleteDC Lib "gdi32" (ByVal hdc As Long) As Long
+Public Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal
+ hObject As Long) As Long
+Public Declare Function GetStockObject Lib "gdi32" (ByVal nIndex As Long) As
+ Long
+Public Declare Function GetTextExtentPoint32 Lib "gdi32" Alias
+ "GetTextExtentPoint32A" (ByVal hdc As Long, ByVal lpsz As String, ByVal
+ cbString As Long, lpSize As SIZEAPI) As Long
+Public Declare Function IsWindow Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Long) As
+ Integer
+Public Declare Function GetSysColor Lib "user32" (ByVal nIndex As Long) As Long
+Public Declare Function GetSysColorBrush Lib "user32" (ByVal nIndex As Long) As
+ Long
+Public Declare Function SetBkColor Lib "gdi32" (ByVal hdc As Long, ByVal
+ crColor As Long) As Long
+Public Declare Function SetBkMode Lib "gdi32" (ByVal hdc As Long, ByVal nBkMode
+ As Long) As Long
+Public Declare Function SetTextColor Lib "gdi32" (ByVal hdc As Long, ByVal
+ crColor As Long) As Long
+Public Declare Function FillRect Lib "user32" (ByVal hdc As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+Public Declare Function DrawEdge Lib "user32" (ByVal hdc As Long, qrc As RECT,
+ ByVal edge As Long, ByVal grfFlags As Long) As Long
+Public Declare Function InvalidateRectAsNull Lib "user32" Alias
+ "InvalidateRect" (ByVal hwnd As Long, lpRect As Any, ByVal bErase As Long) As
+ Long
+Public Declare Function UpdateWindow Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function CreateDCAsNull Lib "gdi32" Alias "CreateDCA" (ByVal
+ lpDriverName As String, lpDeviceName As Any, lpOutput As Any, lpInitData As
+ Any) As Long
+Public Declare Function ShowCaret Lib "user32" (ByVal hwnd As Long) As Long
+
+Private Const LF_FULLFACESIZE = 64
+Private Type ENUMLOGFONTEX
+    elfLogFont As LOGFONT
+    elfFullName(LF_FULLFACESIZE - 1) As Byte
+    elfStyle(LF_FACESIZE - 1) As Byte
+    elfScript(LF_FACESIZE - 1) As Byte
+End Type
+
+Private Type NEWTEXTMETRIC
+    tmHeight As Long
+    tmAscent As Long
+    tmDescent As Long
+    tmInternalLeading As Long
+    tmExternalLeading As Long
+    tmAveCharWidth As Long
+    tmMaxCharWidth As Long
+    tmWeight As Long
+    tmOverhang As Long
+    tmDigitizedAspectX As Long
+    tmDigitizedAspectY As Long
+    tmFirstChar As Byte
+    tmLastChar As Byte
+    tmDefaultChar As Byte
+    tmBreakChar As Byte
+    tmItalic As Byte
+    tmUnderlined As Byte
+    tmStruckOut As Byte
+    tmPitchAndFamily As Byte
+    tmCharSet As Byte
+    ' Additional to TEXTMETRIC
+    ntmFlags As Long
+    ntmSizeEM As Long
+    ntmCellHeight As Long
+    ntmAveWidth As Long
+End Type
+
+Private Type FONTSIGNATURE
+   fsUsb(4) As Long
+   fsCsb(2) As Long
+End Type
+
+Private Type TEXTMETRIC
+    tmHeight As Long
+    tmAscent As Long
+    tmDescent As Long
+    tmInternalLeading As Long
+    tmExternalLeading As Long
+    tmAveCharWidth As Long
+    tmMaxCharWidth As Long
+    tmWeight As Long
+    tmOverhang As Long
+    tmDigitizedAspectX As Long
+    tmDigitizedAspectY As Long
+    tmFirstChar As Byte
+    tmLastChar As Byte
+    tmDefaultChar As Byte
+    tmBreakChar As Byte
+    tmItalic As Byte
+    tmUnderlined As Byte
+    tmStruckOut As Byte
+    tmPitchAndFamily As Byte
+    tmCharSet As Byte
+End Type
+
+Private Type NEWTEXTMETRICEX
+    ntmTm As NEWTEXTMETRIC
+    ntmFontSig As FONTSIGNATURE
+End Type
+Private Declare Function EnumFontFamiliesEx Lib "gdi32" Alias
+ "EnumFontFamiliesExA" (ByVal hdc As Long, lpLogFont As LOGFONT, ByVal
+ lpEnumFontProc As Long, ByVal lParam As Long, ByVal dw As Long) As Long
+
+'/* EnumFonts Masks */
+Private Const RASTER_FONTTYPE = 1&amp;
+Private Const DEVICE_FONTTYPE = 2&amp;
+Private Const TRUETYPE_FONTTYPE = 4&amp;
+
+Private Const ANSI_CHARSET = 0
+Private Const DEFAULT_CHARSET = 1
+Private Const SYMBOL_CHARSET = 2
+Private Const SHIFTJIS_CHARSET = 128
+Private Const HANGEUL_CHARSET = 129
+Private Const GB2312_CHARSET = 134
+Private Const CHINESEBIG5_CHARSET = 136
+Private Const OEM_CHARSET = 255
+Private Const JOHAB_CHARSET = 130
+Private Const HEBREW_CHARSET = 177
+Private Const ARABIC_CHARSET = 178
+Private Const GREEK_CHARSET = 161
+Private Const TURKISH_CHARSET = 162
+Private Const THAI_CHARSET = 222
+Private Const EASTEUROPE_CHARSET = 238
+Private Const RUSSIAN_CHARSET = 204
+
+Private Const MAC_CHARSET = 77
+Private Const BALTIC_CHARSET = 186
+
+Public Const OPAQUE = 2
+Public Const TRANSPARENT = 1
+
+Public Const WS_VISIBLE = &amp;H10000000
+Public Const WS_CHILD = &amp;H40000000
+Public Const WS_BORDER = &amp;H800000
+Public Const WS_TABSTOP = &amp;H10000
+
+Public Const GCL_HBRBACKGROUND = (-10)
+
+Public Const GW_CHILD = 5
+
+Public Const WM_SETFOCUS = &amp;H7
+Public Const WM_SETREDRAW = &amp;HB
+Public Const WM_SETTEXT = &amp;HC
+Public Const WM_GETTEXT = &amp;HD
+Public Const WM_GETTEXTLENGTH = &amp;HE
+Public Const WM_MOUSEACTIVATE = &amp;H21
+Public Const WM_DRAWITEM = &amp;H2B
+Public Const WM_SETFONT = &amp;H30
+Public Const WM_NOTIFY = &amp;H4E
+Public Const WM_KEYDOWN = &amp;H100
+Public Const WM_KEYUP = &amp;H101
+Public Const WM_CHAR = &amp;H102
+Public Const WM_COMMAND = &amp;H111
+Public Const WM_CTLCOLOREDIT = &amp;H133
+Public Const WM_CTLCOLORLISTBOX = &amp;H134
+Public Const WM_USER = &amp;H400
+
+Public Const SW_HIDE = 0
+Public Const SW_SHOWNORMAL = 1
+
+Public Const MA_NOACTIVATE = 3
+
+Public Const BITSPIXEL = 12
+Public Const LOGPIXELSX = 88    '  Logical pixels/inch in X
+Public Const LOGPIXELSY = 90    '  Logical pixels/inch in Y
+
+Public Const FW_NORMAL = 400
+Public Const FW_BOLD = 700
+Public Const FF_DONTCARE = 0
+Public Const DEFAULT_QUALITY = 0
+Public Const DEFAULT_PITCH = 0
+
+Public Const ANSI_FIXED_FONT = 11
+Public Const ANSI_VAR_FONT = 12
+Public Const SYSTEM_FONT = 13
+Public Const DEFAULT_GUI_FONT = 17 'win95 only
+
+' Draw text flags:
+Public Const DT_EDITCONTROL = &amp;H2000
+Public Const DT_PATH_ELLIPSIS = &amp;H4000
+Public Const DT_END_ELLIPSIS = &amp;H8000
+Public Const DT_MODIFYSTRING = &amp;H10000
+Public Const DT_RTLREADING = &amp;H20000
+Public Const DT_WORD_ELLIPSIS = &amp;H40000
+Public Const DT_BOTTOM = &amp;H8
+Public Const DT_CENTER = &amp;H1
+Public Const DT_LEFT = &amp;H0
+Public Const DT_WORDBREAK = &amp;H10
+Public Const DT_VCENTER = &amp;H4
+Public Const DT_TOP = &amp;H0
+Public Const DT_TABSTOP = &amp;H80
+Public Const DT_SINGLELINE = &amp;H20
+Public Const DT_RIGHT = &amp;H2
+Public Const DT_NOCLIP = &amp;H100
+Public Const DT_INTERNAL = &amp;H1000
+Public Const DT_EXTERNALLEADING = &amp;H200
+Public Const DT_EXPANDTABS = &amp;H40
+Public Const DT_CHARSTREAM = 4
+Public Const DT_NOPREFIX = &amp;H800
+Public Const DT_CALCRECT = &amp;H400
+
+' Draw edge constants:
+Public Const BF_LEFT = 1
+Public Const BF_TOP = 2
+Public Const BF_RIGHT = 4
+Public Const BF_BOTTOM = 8
+Public Const BF_RECT = BF_LEFT Or BF_TOP Or BF_RIGHT Or BF_BOTTOM
+Public Const BF_MIDDLE = 2048
+Public Const BDR_SUNKENINNER = 8
+Public Const BDR_SUNKENOUTER = 2
+
+' Combo box styles:
+Public Const CBS_DROPDOWN = &amp;H2&amp;
+Public Const CBS_DROPDOWNLIST = &amp;H3&amp;
+Public Const CBS_HASSTRINGS = &amp;H200&amp;
+Public Const CBS_DISABLENOSCROLL = &amp;H800&amp;
+Public Const CBS_NOINTEGRALHEIGHT = &amp;H400&amp;
+Public Const CBS_OWNERDRAWFIXED = &amp;H10&amp;
+Public Const CBS_OWNERDRAWVARIABLE = &amp;H20&amp;
+Public Const CBS_SIMPLE = &amp;H1&amp;
+Public Const CBS_SORT = &amp;H100&amp;
+
+' Combo box messages:
+Public Const CB_ADDSTRING = &amp;H143
+Public Const CB_DELETESTRING = &amp;H144
+Public Const CB_DIR = &amp;H145
+Public Const CB_ERR = (-1)
+Public Const CB_ERRSPACE = (-2)
+Public Const CB_FINDSTRING = &amp;H14C
+Public Const CB_FINDSTRINGEXACT = &amp;H158
+Public Const CB_GETCOUNT = &amp;H146
+Public Const CB_GETCURSEL = &amp;H147
+Public Const CB_GETDROPPEDCONTROLRECT = &amp;H152
+Public Const CB_GETDROPPEDSTATE = &amp;H157
+Public Const CB_GETEDITSEL = &amp;H140
+Public Const CB_GETEXTENDEDUI = &amp;H156
+Public Const CB_GETITEMDATA = &amp;H150
+Public Const CB_GETITEMHEIGHT = &amp;H154
+Public Const CB_GETLBTEXT = &amp;H148
+Public Const CB_GETLBTEXTLEN = &amp;H149
+Public Const CB_GETLOCALE = &amp;H15A
+Public Const CB_INSERTSTRING = &amp;H14A
+Public Const CB_LIMITTEXT = &amp;H141
+Public Const CB_MSGMAX = &amp;H15B
+Public Const CB_OKAY = 0
+Public Const CB_RESETCONTENT = &amp;H14B
+Public Const CB_SELECTSTRING = &amp;H14D
+Public Const CB_SETCURSEL = &amp;H14E
+Public Const CB_SETEDITSEL = &amp;H142
+Public Const CB_SETEXTENDEDUI = &amp;H155
+Public Const CB_SETITEMDATA = &amp;H151
+Public Const CB_SETITEMHEIGHT = &amp;H153
+Public Const CB_SETLOCALE = &amp;H159
+Public Const CB_SHOWDROPDOWN = &amp;H14F
+Public Const CB_GETDROPPEDWIDTH = &amp;H15F
+Public Const CB_SETDROPPEDWIDTH = &amp;H160
+
+' Combo box notifications:
+Public Const CBN_CLOSEUP = 8
+Public Const CBN_DBLCLK = 2
+Public Const CBN_DROPDOWN = 7
+Public Const CBN_EDITCHANGE = 5
+Public Const CBN_EDITUPDATE = 6
+Public Const CBN_KILLFOCUS = 4
+Public Const CBN_SELCHANGE = 1
+Public Const CBN_SELENDCANCEL = 10
+Public Const CBN_SELENDOK = 9
+Public Const CBN_SETFOCUS = 3
+
+' Owner draw style types:
+Public Const ODS_CHECKED = &amp;H8
+Public Const ODS_DISABLED = &amp;H4
+Public Const ODS_FOCUS = &amp;H10
+Public Const ODS_GRAYED = &amp;H2
+Public Const ODS_SELECTED = &amp;H1
+Public Const ODS_COMBOBOXEDIT = &amp;H1000
+
+' Owner draw action types:
+Public Const ODA_DRAWENTIRE = &amp;H1
+Public Const ODA_FOCUS = &amp;H4
+Public Const ODA_SELECT = &amp;H2
+
+Public Const CLR_NONE = -1
+
+' Edit box:
+Public Const EM_GETSEL = &amp;HB0
+Public Const EM_SETSEL = &amp;HB1
+
+' CC API
+Public Const H_MAX As Long = &amp;HFFFF + 1
+Public Type tagInitCommonControlsEx
+   lngSize As Long
+   lngICC As Long
+End Type
+Public Declare Function InitCommonControlsEx Lib "comctl32.dll" (iccex As
+ tagInitCommonControlsEx) As Boolean
+Public Const ICC_USEREX_CLASSES = &amp;H200
+
+Public Type NMHDR
+   hwndFrom As Long
+   idfrom As Long
+   code As Long
+End Type
+
+Public Const CCM_FIRST = &amp;H2000&amp;                   '// Common control shared
+ messages
+Public Const CCM_SETBKCOLOR = (CCM_FIRST + 1)         '// lParam is bkColor
+
+' ImageList API:
+Public Declare Function ImageList_DrawEx Lib "COMCTL32" (ByVal hIml As Long,
+ ByVal i As Long, ByVal hdcDst As Long, ByVal x As Long, ByVal y As Long, ByVal
+ dx As Long, ByVal dy As Long, ByVal rgbBk As Long, ByVal rgbFg As Long, ByVal
+ fStyle As Long) As Long
+Public Declare Function ImageList_Draw Lib "COMCTL32" (ByVal hImageList As
+ Long, ByVal ImgIndex As Long, ByVal hDCDest As Long, ByVal x As Long, ByVal y
+ As Long, ByVal flags As Long) As Long
+Public Declare Function ImageList_GetIconSize Lib "COMCTL32" (ByVal hImageList
+ As Long, cX As Long, cY As Long) As Long
+
+Public Const ILD_NORMAL = 0
+Public Const ILD_TRANSPARENT = 1
+Public Const ILD_BLEND25 = 2
+Public Const ILD_SELECTED = 4
+Public Const ILD_FOCUS = 4
+Public Const ILD_MASK = &amp;H10&amp;
+Public Const ILD_IMAGE = &amp;H20&amp;
+Public Const ILD_ROP = &amp;H40&amp;
+Public Const ILD_OVERLAYMASK = 3840
+
+' CBEX API:
+Public Const WC_COMBOBOXEX = "ComboBoxEx32"
+
+Public Type COMBOBOXEXITEM
+   mask As Long    ' CBEIF..
+   iItem As Long
+   pszText As String
+   cchTextMax As Long
+   iImage As Long
+   iSelectedImage As Long
+   iOverlay As Long
+   iIndent As Long
+   lParam As Long
+End Type
+Public Const CBEIF_TEXT = &amp;H1
+Public Const CBEIF_IMAGE = &amp;H2
+Public Const CBEIF_SELECTEDIMAGE = &amp;H4
+Public Const CBEIF_OVERLAY = &amp;H8
+Public Const CBEIF_INDENT = &amp;H10
+Public Const CBEIF_LPARAM = &amp;H20
+Public Const CBEIF_DI_SETITEM = &amp;H10000000
+
+' Combo box extended messages:
+Public Const CBEM_INSERTITEMA = (WM_USER + 1)
+Public Const CBEM_SETIMAGELIST = (WM_USER + 2)
+Public Const CBEM_GETIMAGELIST = (WM_USER + 3)
+Public Const CBEM_GETITEMA = (WM_USER + 4)
+Public Const CBEM_SETITEMA = (WM_USER + 5)
+Public Const CBEM_DELETEITEM = CB_DELETESTRING
+Public Const CBEM_GETCOMBOCONTROL = (WM_USER + 6)
+Public Const CBEM_GETEDITCONTROL = (WM_USER + 7)
+Public Const CBEM_SETEXSTYLE = (WM_USER + 8)
+Public Const CBEM_GETEXSTYLE = (WM_USER + 9)
+Public Const CBEM_HASEDITCHANGED = (WM_USER + 10)
+Public Const CBEM_INSERTITEMW = (WM_USER + 11)
+Public Const CBEM_SETITEMW = (WM_USER + 12)
+Public Const CBEM_GETITEMW = (WM_USER + 13)
+Public Const CBEM_INSERTITEM = CBEM_INSERTITEMA
+Public Const CBEM_SETITEM = CBEM_SETITEMA
+Public Const CBEM_GETITEM = CBEM_GETITEMA
+
+' Combo box extended notifications:
+Public Const CBEN_FIRST = (H_MAX - 800&amp;)
+Public Const CBEN_LAST = (H_MAX - 830&amp;)
+Public Const CBEN_GETDISPINFO = (CBEN_FIRST - 0)
+Public Const CBEN_INSERTITEM = (CBEN_FIRST - 1)
+Public Const CBEN_DELETEITEM = (CBEN_FIRST - 2)
+Public Const CBEN_BEGINEDIT = (CBEN_FIRST - 4)
+Public Const CBEN_ENDEDITA = (CBEN_FIRST - 5)
+Public Const CBEN_ENDEDITW = (CBEN_FIRST - 6)
+Public Const CBEN_ENDEDIT = CBEN_ENDEDITA
+
+' Combo box extended styles:
+Public Const CBES_EX_NOEDITIMAGE = &amp;H1&amp; ' no image to left of edit portion
+Public Const CBES_EX_NOEDITIMAGEINDENT = &amp;H2&amp; ' edit box and dropdown box will
+ not display images
+Public Const CBES_EX_PATHWORDBREAKPROC = &amp;H4&amp; ' NT only. Edit box uses \ . and
+ / as word delimiters
+'#if (_WIN32_IE &gt;= 0x0400)
+Public Const CBES_EX_NOSIZELIMIT = &amp;H8&amp; ' Allow combo box ex vertical size &lt;
+ combo, clipped.
+Public Const CBES_EX_CASESENSITIVE = &amp;H10&amp; ' case sensitive search
+
+Public Const CBEMAXSTRLEN = 260
+Public Type NMCBEENDEDIT
+    hdr As NMHDR
+    fChanged As Long
+    iNewSelection As Long
+    szText(0 To CBEMAXSTRLEN - 1) As Byte '// CBEMAXSTRLEN is 260
+    iWhy As Integer
+End Type
+Public Type NMCBEENDEDITW
+    hdr As NMHDR
+    fChanged As Long
+    iNewSelection As Long
+    szText(0 To 518) As Byte '// CBEMAXSTRLEN is 260
+    iWhy As Long
+End Type
+
+
+Public Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Const MAX_PATH = 260
+Private Declare Function GetLogicalDriveStrings Lib "kernel32" Alias
+ "GetLogicalDriveStringsA" (ByVal nBufferLength As Long, lpBuffer As Any) As
+ Long
+Private Declare Function GetDriveType Lib "kernel32" Alias "GetDriveTypeA"
+ (ByVal nDrive As String) As Long
+
+Private Type SHFILEINFO
+    hIcon As Long
+    iIcon As Long
+    dwAttributes As Long
+    szDisplayName As String * MAX_PATH
+    szTypeName As String * 80
+End Type
+Private Declare Function SHGetFileInfo Lib "shell32.dll" Alias "SHGetFileInfoA"
+ _
+    (ByVal pszPath As String, ByVal dwAttributes As Long, psfi As SHFILEINFO,
+     ByVal cbSizeFileInfo As Long, ByVal uFlags As Long) As Long
+Private Enum EShellGetFileInfoConstants
+   SHGFI_ICON = &amp;H100                       ' // get icon
+   SHGFI_DISPLAYNAME = &amp;H200                ' // get display name
+   SHGFI_TYPENAME = &amp;H400                   ' // get type name
+   SHGFI_ATTRIBUTES = &amp;H800                 ' // get attributes
+   SHGFI_ICONLOCATION = &amp;H1000              ' // get icon location
+   SHGFI_EXETYPE = &amp;H2000                   ' // return exe type
+   SHGFI_SYSICONINDEX = &amp;H4000              ' // get system icon index
+   SHGFI_LINKOVERLAY = &amp;H8000               ' // put a link overlay on icon
+   SHGFI_SELECTED = &amp;H10000                 ' // show icon in selected state
+   SHGFI_ATTR_SPECIFIED = &amp;H20000           ' // get only specified attributes
+   SHGFI_LARGEICON = &amp;H0                    ' // get large icon
+   SHGFI_SMALLICOn = &amp;H1                    ' // get small icon
+   SHGFI_OPENICON = &amp;H2                     ' // get open icon
+   SHGFI_SHELLICONSIZE = &amp;H4                ' // get shell size icon
+   SHGFI_PIDL = &amp;H8                         ' // pszPath is a pidl
+   SHGFI_USEFILEATTRIBUTES = &amp;H10           ' // use passed dwFileAttribute
+End Enum
+Private Const FILE_ATTRIBUTE_NORMAL = &amp;H80
+
+Private m_sDriveStrings As String
+Private m_cCbo As vbalCboEx
+Private m_iType As Long
+Private m_iCharSet As Long
+
+Public Sub LoadDriveList(ByVal cbo As vbalCboEx, ByVal bLargeIcons As Boolean)
+'// ==========================================================================
+'// Load Items - collects all drive information and place it into the listbox,
+'// return number of items added to the list: a negative value is an error;
+'// ==========================================================================
+Dim lAllDriveStrings As Long
+Dim sDrive As String
+Dim lR As Long
+Dim dwIconSize As Long
+Dim FileInfo As SHFILEINFO
+Dim iPos As Long, iLastPos As Long
+Dim iType As EDriveType
+Dim hIml As Long
+Dim dwFlags As Long
+Dim lDefIndex As Long
+
+   cbo.Clear
+   cbo.Redraw = False
+   
+   '// allocate buffer for the drive strings: GetLogicalDriveStrings will tell
+   '// me how much is needed (minus the trailing zero-byte)
+   lAllDriveStrings = GetLogicalDriveStrings(0, ByVal 0&amp;)
+
+   m_sDriveStrings = String$(lAllDriveStrings + 1, 0) 'new _TCHAR[
+    lAllDriveStrings + sizeof( _T("")) ]; // + for trailer
+   lR = GetLogicalDriveStrings(lAllDriveStrings, ByVal m_sDriveStrings)
+   Debug.Assert lR = (lAllDriveStrings - 1)
+  
+   InitSystemImageList cbo, bLargeIcons
+  
+   '// now loop over each drive (string)
+   If bLargeIcons Then
+      dwIconSize = SHGFI_LARGEICON
+   Else
+      dwIconSize = SHGFI_SMALLICOn
+   End If
+   
+   iLastPos = 1
+   Do
+      iPos = InStr(iLastPos, m_sDriveStrings, vbNullChar)
+      
+      If iPos &lt;&gt; 0 Then
+         sDrive = Mid$(m_sDriveStrings, iLastPos, iPos - iLastPos)
+         iLastPos = iPos + 1
+      Else
+         sDrive = Mid$(m_sDriveStrings, iLastPos)
+      End If
+      If Not sDrive = vbNullString Then
+         lR = SHGetFileInfo(sDrive, FILE_ATTRIBUTE_NORMAL, FileInfo,
+          LenB(FileInfo), SHGFI_DISPLAYNAME Or SHGFI_SYSICONINDEX Or dwIconSize)
+         If (lR = 0) Then  '// failure - which can be ignored
+            Debug.Print "SHGetFileInfo failed, no more details available"
+         Else
+            '// insert icon and string into list box
+            cbo.AddItemAndData FileInfo.szDisplayName, FileInfo.iIcon,
+             FileInfo.iIcon, Asc(Left$(sDrive, 1))
+            If lDefIndex = 0 Then
+               iType = GetDriveType(Left$(sDrive, 2))
+               If iType = 1 Or iType = DRIVE_FIXED Then
+                  lDefIndex = cbo.NewIndex
+               End If
+            End If
+         End If
+         cbo.ListIndex = lDefIndex
+      Else
+         iPos = 0
+      End If
+   Loop While iPos &lt;&gt; 0
+   cbo.Redraw = True
+   
+End Sub
+Public Sub InitSystemImageList(ByRef cbo As vbalCboEx, ByVal bLargeIcons As
+ Boolean)
+Dim dwFlags As Long
+Dim hIml As Long
+Dim FileInfo As SHFILEINFO
+
+   dwFlags = SHGFI_USEFILEATTRIBUTES Or SHGFI_SYSICONINDEX
+   If Not (bLargeIcons) Then
+      dwFlags = dwFlags Or SHGFI_SMALLICOn
+   End If
+   '// Load the image list - use an arbitrary file extension for the
+   '// call to SHGetFileInfo (we don't want to touch the disk, so use
+   '// FILE_ATTRIBUTE_NORMAL &amp;&amp; SHGFI_USEFILEATTRIBUTES).
+   hIml = SHGetFileInfo(".txt", FILE_ATTRIBUTE_NORMAL, FileInfo,
+    LenB(FileInfo), dwFlags)
+       
+   ' MFC code sample says to do this, but this looks dubious to me.  Likely
+   ' you will disrupt Explorer in Win9x...
+   '// Make the background colour transparent, works better for lists etc.
+   'ImageList_SetBkColor m_hIml, CLR_NONE
+   
+   cbo.ImageList = hIml
+
+End Sub
+Public Sub LoadSysColorList(ByRef cbo As vbalCboEx)
+      'assign system color names
+   With cbo
+      .Clear
+      .Redraw = False
+      .AddItemAndData "3DDKShadow", , , vb3DDKShadow
+      .AddItemAndData "3DFace", , , vb3DFace
+      .AddItemAndData "3DHighlight", , , vb3DHighlight
+      .AddItemAndData "3DLight", , , vb3DLight
+      .AddItemAndData "3DShadow", , , vb3DShadow
+      .AddItemAndData "ActiveBorder", , , vbActiveBorder
+      .AddItemAndData "ActiveTitleBar", , , vbActiveTitleBar
+      .AddItemAndData "ApplicationWorkspace", , , vbApplicationWorkspace
+      .AddItemAndData "ButtonFace", , , vbButtonFace
+      .AddItemAndData "ButtonShadow", , , vbButtonShadow
+      .AddItemAndData "ButtonText", , , vbButtonText
+      .AddItemAndData "Desktop", , , vbDesktop
+      .AddItemAndData "GrayText", , , vbGrayText
+      .AddItemAndData "Highlight", , , vbHighlight
+      .AddItemAndData "HighlightText", , , vbHighlightText
+      .AddItemAndData "InactiveBorder", , , vbInactiveBorder
+      .AddItemAndData "InactiveCaptionText", , , vbInactiveCaptionText
+      .AddItemAndData "InactiveTitleBar", , , vbInactiveTitleBar
+      .AddItemAndData "InfoBackground", , , vbInfoBackground
+      .AddItemAndData "InfoText", , , vbInfoText
+      .AddItemAndData "MenuBar", , , vbMenuBar
+      .AddItemAndData "MenuText", , , vbMenuText
+      .AddItemAndData "ScrollBars", , , vbScrollBars
+      .AddItemAndData "TitleBarText", , , vbTitleBarText
+      .AddItemAndData "WindowBackground", , , vbWindowBackground
+      .AddItemAndData "WindowFrame", , , vbWindowFrame
+      .AddItemAndData "WindowText", , , vbWindowText
+      .ListIndex = 0
+      .Redraw = True
+   End With
+
+End Sub
+Public Function LoadFontList(ByRef cbo As vbalCboEx, ByVal sFace As String,
+ ByVal iType As Long, ByVal lCharSet As Long) As Long
+Dim tLF As LOGFONT
+Dim i As Integer
+Dim lHDC As Long
+
+   ' No re-entrancy..
+   If m_cCbo Is Nothing Then
+      Set m_cCbo = cbo
+      cbo.Clear
+      cbo.Redraw = False
+      
+      ' Set up to load the fonts:
+      m_iType = iType
+      m_iCharSet = lCharSet
+      ' Convert the face name into a byte array:
+      If Len(sFace) &gt; 0 Then
+         For i = 1 To Len(sFace)
+            tLF.lfFaceName(i - 1) = Asc(Mid$(sFace, i, 1))
+         Next i
+      End If
+      If lCharSet &lt;= 0 Then lCharSet = ANSI_CHARSET
+      tLF.lfCharSet = lCharSet
+      
+      InitSystemImageList cbo, False
+      cbo.Sorted = True
+      cbo.ExtendedStyle(eccxCaseSensitiveSearch) = False
+      ' Start the enumeration:
+      lHDC = CreateDCAsNull("DISPLAY", ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)
+      LoadFontList = EnumFontFamiliesEx(lHDC, tLF, AddressOf EnumFontFamExProc,
+       (Len(sFace) &gt; 0), 0)
+      DeleteDC lHDC
+      
+      cbo.Redraw = True
+      
+      ' Clear up reference to the caller:
+      Set m_cCbo = Nothing
+   End If
+   
+End Function
+Public Function EnumFontFamExProc(ByVal lpelfe As Long, ByVal lpntme As Long,
+ ByVal iFontType As Long, ByVal lParam As Long) As Long
+' The callback function for EnumFontFamiliesEx.
+
+' lpelf points to an ENUMLOGFONTEX structure, lpntm points to either
+' a NEWTEXTMETRICEX (if true type) or a TEXTMETRIC (non-true type)
+' structure.
+
+Dim tLFEx As ENUMLOGFONTEX
+Dim sFace As String, sScript As String
+Dim sStyle As String, sFullName As String
+Dim lPos As Long
+Dim sItem As String
+Dim iIcon As Long
+Dim FileInfo As SHFILEINFO
+    
+   CopyMemory tLFEx, ByVal lpelfe, LenB(tLFEx) ' Get the ENUMLOGFONTEX info
+   ' Face Name
+   sFace = StrConv(tLFEx.elfLogFont.lfFaceName, vbUnicode)
+   lPos = InStr(sFace, Chr$(0))
+   If (lPos &gt; 0) Then sFace = Left$(sFace, (lPos - 1))
+    
+   ' Script
+   sScript = StrConv(tLFEx.elfScript, vbUnicode)
+   lPos = InStr(sScript, Chr$(0))
+   If (lPos &gt; 0) Then sScript = Left$(sScript, (lPos - 1))
+    
+   ' mbShowStyle
+   If lParam = True Then
+      ' Style
+      sStyle = StrConv(tLFEx.elfStyle, vbUnicode)
+      lPos = InStr(sStyle, Chr$(0))
+      If (lPos &gt; 0) Then sStyle = Left$(sStyle, (lPos - 1))
+   Else
+      sStyle = ""
+   End If
+    
+   ' Full Name
+   sFullName = StrConv(tLFEx.elfFullName, vbUnicode)
+   lPos = InStr(sFullName, Chr$(0))
+   If (lPos &gt; 0) Then sFullName = Left$(sFullName, (lPos - 1))
+    
+   ' Only display printer and true type fonts:
+   If (m_iType &gt; 0) Then
+      If (iFontType And m_iType) &lt;&gt; m_iType Then
+         EnumFontFamExProc = 1
+         Exit Function
+      End If
+   End If
+    
+   ' Only display a given font once:
+   If m_cCbo.FindItemIndex(sFace, True) = -1 Then
+       'm_cSink.AddFont sFace, sStyle, sScript, tLFEx.elfLogFont.lfCharSet,
+        m_bPrinterFont
+      If (iFontType And TRUETYPE_FONTTYPE) = TRUETYPE_FONTTYPE Then
+         SHGetFileInfo ".ttf", FILE_ATTRIBUTE_NORMAL, FileInfo, LenB(FileInfo),
+          SHGFI_SYSICONINDEX Or SHGFI_USEFILEATTRIBUTES Or SHGFI_SMALLICOn
+      ElseIf (iFontType And RASTER_FONTTYPE) = RASTER_FONTTYPE Then
+         SHGetFileInfo ".fon", FILE_ATTRIBUTE_NORMAL, FileInfo, LenB(FileInfo),
+          SHGFI_SYSICONINDEX Or SHGFI_USEFILEATTRIBUTES Or SHGFI_SMALLICOn
+      Else
+         FileInfo.iIcon = -1
+      End If
+      m_cCbo.AddItemAndData sFace, FileInfo.iIcon, FileInfo.iIcon
+   End If
+   ' Ask for more fonts:
+   EnumFontFamExProc = 1
+    
+End Function
+
+Public Sub gSplitDelimitedString( _
+        ByVal sString As String, _
+        ByVal sDelim As String, _
+        ByRef sValues() As String, _
+        ByRef iCount As Integer _
+    )
+' ==================================================================
+' Splits sString into an array of parts which are
+' delimited in the string by sDelim.  The array is
+' indexed 1-iCount where iCount is the number of
+' items.  If no items found iCount=1 and the array has
+' one element, the original string.
+'   sString : String to split
+'   sDelim  : Delimiter
+'   sValues : Return array of values
+'   iCount  : Number of items returned in sValues()
+' ==================================================================
+Dim iPos As Integer
+Dim iNextPos As Integer
+Dim iDelimLen As Integer
+    iCount = 0
+    Erase sValues
+    iDelimLen = Len(sDelim)
+    iPos = 1
+    iNextPos = InStr(sString, sDelim)
+    Do While iNextPos &gt; 0
+        iCount = iCount + 1
+        ReDim Preserve sValues(1 To iCount) As String
+        sValues(iCount) = Mid$(sString, iPos, (iNextPos - iPos))
+        iPos = iNextPos + iDelimLen
+        iNextPos = InStr(iPos, sString, sDelim)
+    Loop
+    iCount = iCount + 1
+    ReDim Preserve sValues(1 To iCount) As String
+    sValues(iCount) = Mid$(sString, iPos)
+End Sub
+Public Function glCStr(ByVal sThis As String, Optional ByVal lDefault As Long =
+ 0) As Long
+On Error Resume Next
+    glCStr = CLng(sThis)
+    If (Err.Number &lt;&gt; 0) Then
+        glCStr = lDefault
+    End If
+End Function
+Public Sub debugmsg(ByVal sMsg As String)
+#Const DEBUG_MSG = 0
+#If DEBUG_MSG = 1 Then
+   MsgBox sMsg, vbInformation
+#Else
+   Debug.Print sMsg
+#End If
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Combo and List Boxes</a>&#160;.&#160;<a href="article.html">vbAccelerator ComboBoxEx Control</a>&#160;.&#160;<a href="VB5_ComboBoxEx_Full_Source.html">VB5 ComboBoxEx Full Source</a>&#160;.&#160;mDriveList.bas</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Combo_and_List_Boxes/ComboBoxEx/VB5_ComboBoxEx_Full_Source_zip_mDriveList_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:24 GMT -->
+</html>

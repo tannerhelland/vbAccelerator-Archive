@@ -1,0 +1,582 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Shell_Projects/Shell_And_Wait_For_Completion/ShellWait_Demonstration_zip_cUpDown_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:42 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cUpDown.ctl</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cUpDown.ctl" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Shell Projects</a>&#160;.&#160;<a href="article.html">Shell an application and wait asynchronously for completion</a>&#160;.&#160;<a href="ShellWait_Demonstration.html">ShellWait Demonstration</a>&#160;.&#160;cUpDown.ctl</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="ShellWait_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />ShellWait Demonstration</a> (19K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1062</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1062&amp;type=Zip&amp;title=ShellWait%20Demonstration%2Ezip%5FcUpDown">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />15 Jun 1998<br />First Version</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cUpDown.ctl</h1><pre>VERSION 5.00
+Begin VB.UserControl cUpDown 
+   ClientHeight    =   495
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   2685
+   ControlContainer=   -1  'True
+   ScaleHeight     =   495
+   ScaleWidth      =   2685
+   ToolboxBitmap   =   "cUpDown.ctx":0000
+End
+Attribute VB_Name = "cUpDown"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+' ======================================================================
+' Declares and types:
+' ======================================================================
+' Windows general:
+Private Const WM_USER = &amp;H400
+Private Const WM_NOTIFY = &amp;H4E
+Private Declare Function SendMessageLong Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Declare Function SendMessageStr Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ String) As Long
+Private Declare Function ShowWindow Lib "user32" (ByVal hwnd As Long, ByVal
+ nCmdShow As Long) As Long
+Private Declare Function MoveWindow Lib "user32" (ByVal hwnd As Long, ByVal x
+ As Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ bRepaint As Long) As Long
+Private Declare Function DestroyWindow Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function SetParent Lib "user32" (ByVal hWndChild As Long, ByVal
+ hWndNewParent As Long) As Long
+Private Declare Function GetParent Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" (pDest As
+ Any, pSrc As Any, ByVal ByteLen As Long)
+Private Declare Function IsWindowVisible Lib "user32" (ByVal hwnd As Long) As
+ Long
+Private Declare Function IsWindowEnabled Lib "user32" (ByVal hwnd As Long) As
+ Long
+Private Declare Function SetFocus Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function GetFocus Lib "user32" () As Long
+Private Const SW_HIDE = 0
+Private Const WS_CHILD = &amp;H40000000
+Private Const WS_VISIBLE = &amp;H10000000
+Private Const WS_CLIPCHILDREN = &amp;H2000000
+Private Const WS_CLIPSIBLINGS = &amp;H4000000
+Private Const WS_BORDER = &amp;H800000
+Private Const WM_HSCROLL = &amp;H114
+Private Const WM_VSCROLL = &amp;H115
+Private Const WM_GETTEXT = &amp;HD
+
+' Common controls general:
+Private Declare Sub InitCommonControls Lib "Comctl32.dll" ()
+Private Type NMHDR
+    hwndFrom As Long
+    idfrom As Long
+    code As Long
+End Type
+Private Const CCM_FIRST = &amp;H2000                   '// Common control shared
+ messages
+Private Const CCM_SETUNICODEFORMAT = (CCM_FIRST + 5)
+Private Const CCM_GETUNICODEFORMAT = (CCM_FIRST + 6)
+Private Const H_MAX As Long = &amp;HFFFF + 1
+Private Const UDN_FIRST = (H_MAX - 721)                   '// updown
+Private Const UDN_LAST = (H_MAX - 740)
+
+
+'//====== UPDOWN CONTROL =======================================================
+Private Const UPDOWN_CLASSA = "msctls_updown32"
+Private Const UPDOWN_CLASSW = "msctls_updown32"
+
+#If UNICODE Then
+    Private Const UPDOWN_CLASS = UPDOWN_CLASSW
+#Else
+    Private Const UPDOWN_CLASS = UPDOWN_CLASSA
+#End If
+
+Private Type UDACCEL
+    nSec As Long
+    nInc As Long
+End Type
+
+Private Const UD_MAXVAL = &amp;H7FFF&amp;
+Private Const UD_MINVAL = (-UD_MAXVAL)
+
+'// begin_r_commctrl
+
+Private Const UDS_WRAP = &amp;H1
+Private Const UDS_SETBUDDYINT = &amp;H2
+Private Const UDS_ALIGNRIGHT = &amp;H4
+Private Const UDS_ALIGNLEFT = &amp;H8
+Private Const UDS_AUTOBUDDY = &amp;H10
+Private Const UDS_ARROWKEYS = &amp;H20
+Private Const UDS_HORZ = &amp;H40
+Private Const UDS_NOTHOUSANDS = &amp;H80
+'#if (_WIN32_IE &gt;= =&amp;H0300)
+Private Const UDS_HOTTRACK = &amp;H100
+'#End If
+
+'// end_r_commctrl
+
+Private Const UDM_SETRANGE = (WM_USER + 101)
+Private Const UDM_GETRANGE = (WM_USER + 102)
+Private Const UDM_SETPOS = (WM_USER + 103)
+Private Const UDM_GETPOS = (WM_USER + 104)
+Private Const UDM_SETBUDDY = (WM_USER + 105)
+Private Const UDM_GETBUDDY = (WM_USER + 106)
+Private Const UDM_SETACCEL = (WM_USER + 107)
+Private Const UDM_GETACCEL = (WM_USER + 108)
+Private Const UDM_SETBASE = (WM_USER + 109)
+Private Const UDM_GETBASE = (WM_USER + 110)
+'#if (_WIN32_IE &gt;= =&amp;H0400)
+Private Const UDM_SETRANGE32 = (WM_USER + 111)
+Private Const UDM_GETRANGE32 = (WM_USER + 112)       '// wParam &amp; lParam are
+ LPINT
+Private Const UDM_SETUNICODEFORMAT = CCM_SETUNICODEFORMAT
+Private Const UDM_GETUNICODEFORMAT = CCM_GETUNICODEFORMAT
+'#End If
+
+'WINCOMMCTRLAPI HWND WINAPI CreateUpDownControl(DWORD dwStyle, int x, int y,
+ int cx, int cy,
+'                                HWND hParent, int nID, HINSTANCE hInst,
+'                                HWND hBuddy,
+'                                int nUpper, int nLower, int nPos)
+Private Declare Function CreateUpDownControl Lib "COMCTL32" _
+    (ByVal dwStyle As Long, _
+    ByVal x As Long, ByVal y As Long, _
+    ByVal cx As Long, ByVal cy As Long, _
+    ByVal hParent As Long, ByVal nID As Long, ByVal hInst As Long, _
+    ByVal hBuddy As Long, _
+    ByVal nUpper As Long, ByVal nLower As Long, ByVal nPos As Long _
+) As Long
+
+
+'#if (_WIN32_IE &gt;= =&amp;H0300)
+'Private Const NM_UPDOWN = NMUPDOWN
+'Private Const LPNM_UPDOWN = LPNMUPDOWN
+'#Else
+'Private Const NMUPDOWN = NM_UPDOWN
+'Private Const LPNMUPDOWN = LPNM_UPDOWN
+'#End If
+
+Private Type NMUPDOWN
+    hdr As NMHDR
+    iPos As Long
+    iDelta As Long
+End Type
+Private Const UDN_DELTAPOS = (UDN_FIRST - 1)
+
+'#endif  // NOUPDOWN
+
+
+' ======================================================================
+' Interface:
+' ======================================================================
+Public Enum ECUDAlignment
+    udALIGNLEFT = UDS_ALIGNLEFT
+    udALIGNRIGHT = UDS_ALIGNRIGHT
+End Enum
+Public Enum ECUDOrientation
+    udVertical = 0
+    udHorizontal = UDS_HORZ
+End Enum
+Public Enum ECUDNumberStyles
+    udDecimal = 10
+    udHexadecimal = 16
+End Enum
+Public Event BeforeChange(ByVal iPos As Long, ByRef iDelta As Long)
+Public Event Change()
+
+' ======================================================================
+' Private Implementation:
+' ======================================================================
+Implements ISubclass
+Private m_emr As EMsgResponse
+Private m_bSubClassing As Boolean
+
+Private m_hWnd As Long
+Private m_bShowThousandsSeparator As Boolean
+Private m_bAutoChangeBuddyText As Boolean
+Private m_bAutoPositionToBuddyText As Boolean
+Private m_bArrowKeysChange As Boolean
+Private m_eAlignment As ECUDAlignment
+Private m_eOrientation As ECUDOrientation
+Private m_lUpper As Long
+Private m_lLower As Long
+Private m_eNumberStyle As ECUDNumberStyles
+Private m_hWndBuddy As Long
+Private m_lPosition As Long
+
+Public Property Get ShowThousandsSeparator() As Boolean
+    ShowThousandsSeparator = m_bShowThousandsSeparator
+End Property
+Public Property Let ShowThousandsSeparator(ByVal bShow As Boolean)
+    If (bShow &lt;&gt; m_bShowThousandsSeparator) Then
+        m_bShowThousandsSeparator = bShow
+        If (m_hWnd &lt;&gt; 0) Then
+            pInitialise
+        End If
+        PropertyChanged "ShowThousandsSeparator"
+    End If
+End Property
+Public Property Get AutoChangeBuddyText() As Boolean
+    AutoChangeBuddyText = m_bAutoChangeBuddyText
+End Property
+Public Property Let AutoChangeBuddyText(ByVal bChange As Boolean)
+    If (bChange &lt;&gt; m_bAutoChangeBuddyText) Then
+        m_bAutoChangeBuddyText = bChange
+        If (m_hWnd &lt;&gt; 0) Then
+            pInitialise
+        End If
+        PropertyChanged "AutoChangeBuddyText"
+    End If
+End Property
+Public Property Get AutoPositionToBuddyText() As Boolean
+    AutoPositionToBuddyText = m_bAutoPositionToBuddyText
+End Property
+Public Property Let AutoPositionToBuddyText(ByVal bState As Boolean)
+    m_bAutoPositionToBuddyText = bState
+End Property
+Public Property Get ArrowKeysChange() As Boolean
+    ArrowKeysChange = m_bArrowKeysChange
+End Property
+Public Property Let ArrowKeysChange(ByVal bChange As Boolean)
+    If (bChange &lt;&gt; m_bArrowKeysChange) Then
+        m_bArrowKeysChange = bChange
+        If (m_hWnd &lt;&gt; 0) Then
+            pInitialise
+        End If
+        PropertyChanged "ArrowKeysChange"
+    End If
+End Property
+Public Property Get Alignment() As ECUDAlignment
+    Alignment = m_eAlignment
+End Property
+Public Property Let Alignment(ByVal eAlign As ECUDAlignment)
+    If (eAlign &lt;&gt; m_eAlignment) Then
+        m_eAlignment = eAlign
+        If (m_hWnd &lt;&gt; 0) Then
+            pInitialise
+        End If
+        PropertyChanged "Alignment"
+    End If
+End Property
+Public Property Get Orientation() As ECUDOrientation
+    Orientation = m_eOrientation
+End Property
+Public Property Let Orientation(ByVal eOrientation As ECUDOrientation)
+    If (m_eOrientation &lt;&gt; eOrientation) Then
+        m_eOrientation = eOrientation
+        If (m_hWnd &lt;&gt; 0) Then
+            pInitialise
+        End If
+        PropertyChanged "Orientation"
+    End If
+End Property
+Public Property Get NumberStyle() As ECUDNumberStyles
+    NumberStyle = m_eNumberStyle
+End Property
+Public Property Let NumberStyle(ByVal eStyle As ECUDNumberStyles)
+    If (eStyle &lt;&gt; m_eNumberStyle) Then
+        m_eNumberStyle = eStyle
+        If (m_hWnd &lt;&gt; 0) Then
+            SendMessageLong m_hWnd, UDM_SETBASE, eStyle, 0
+        End If
+    End If
+End Property
+
+Public Property Get Upper() As Long
+    Upper = m_lUpper
+End Property
+Public Property Let Upper(ByVal lUpper As Long)
+    If (m_lUpper &lt;&gt; lUpper) Then
+        m_lUpper = lUpper
+        If (Abs(m_lUpper) &gt; 32725) Then
+            m_lUpper = Sgn(lUpper) * 32725
+        End If
+        SetRange
+        PropertyChanged "Upper"
+    End If
+End Property
+Public Property Get Lower() As Long
+    Lower = m_lLower
+End Property
+Public Property Let Lower(ByVal lLower As Long)
+    If (m_lLower &lt;&gt; lLower) Then
+        m_lLower = lLower
+        If (Abs(m_lLower) &gt; 32725) Then
+            m_lLower = Sgn(lLower) * 32725
+        End If
+        SetRange
+        PropertyChanged "Lower"
+    End If
+End Property
+Public Property Get Position() As Long
+    If (m_hWnd &lt;&gt; 0) Then
+        Position = (SendMessageLong(m_hWnd, UDM_GETPOS, 0, 0) And &amp;HFFFF&amp;)
+    Else
+        Position = m_lPosition
+    End If
+End Property
+Public Property Let Position(ByVal lPos As Long)
+    If (lPos &lt;&gt; m_lPosition) Then
+        lPos = lPos And &amp;HFFFF&amp;
+        If (m_lUpper &gt; m_lLower) Then
+            If (lPos &gt; m_lUpper) Then
+                lPos = m_lUpper
+            ElseIf (lPos &lt; m_lLower) Then
+                lPos = m_lLower
+            End If
+        Else
+            If (lPos &lt; m_lUpper) Then
+                lPos = m_lUpper
+            ElseIf (lPos &gt; m_lLower) Then
+                lPos = m_lLower
+            End If
+        
+        End If
+        m_lPosition = lPos
+        If (m_hWnd &lt;&gt; 0) Then
+            SendMessageLong m_hWnd, UDM_SETPOS, 0, lPos
+        End If
+        PropertyChanged "Position"
+    End If
+End Property
+Private Sub SetRange()
+Dim lP As Long
+    If (m_hWnd &lt;&gt; 0) Then
+        lP = (m_lUpper And &amp;HFFFF&amp;) * &amp;H10000 Or (m_lLower And &amp;HFFFF&amp;)
+        SendMessageLong m_hWnd, UDM_SETRANGE, 0, lP
+    End If
+
+End Sub
+Public Property Get hwnd() As Long
+    hwnd = m_hWnd
+End Property
+Public Property Let BuddyhWnd(ByVal hWndA As Long)
+    If (m_hWnd &lt;&gt; 0) Then
+        SendMessageLong m_hWnd, UDM_SETBUDDY, hWndA, 0
+    End If
+    m_hWndBuddy = hWndA
+End Property
+Public Property Get BuddyhWnd() As Long
+    If (m_hWnd &lt;&gt; 0) Then
+        BuddyhWnd = SendMessageLong(m_hWnd, UDM_GETBUDDY, 0, 0)
+    End If
+End Property
+Private Sub pInitialise()
+Dim dwStyle As Long
+    
+    ' Ensure we don't already have UpDown control:
+    pTerminate
+    
+    ' Ensure common controls:
+    InitCommonControls
+    
+    ' Create the control:
+    dwStyle = WS_VISIBLE Or WS_CHILD  'Or WS_BORDER
+    dwStyle = dwStyle Or m_eAlignment Or m_eOrientation
+    If Not (m_bShowThousandsSeparator) Then
+        dwStyle = dwStyle Or UDS_NOTHOUSANDS
+    End If
+    If m_bAutoChangeBuddyText Then
+        dwStyle = dwStyle Or UDS_SETBUDDYINT
+    End If
+    If m_bArrowKeysChange Then
+        dwStyle = dwStyle Or UDS_ARROWKEYS
+    End If
+    m_hWnd = CreateUpDownControl( _
+        dwStyle, _
+        0, 0, UserControl.ScaleWidth \ Screen.TwipsPerPixelX,
+         UserControl.ScaleHeight \ Screen.TwipsPerPixelY, _
+        UserControl.hwnd, UserControl.hwnd, _
+        App.hInstance, m_hWndBuddy, _
+        m_lUpper, m_lLower, _
+        m_lPosition)
+    Debug.Assert m_hWnd &lt;&gt; 0
+    If (m_hWnd &lt;&gt; 0) Then
+        If (NumberStyle &lt;&gt; udDecimal) Then
+            SendMessageLong m_hWnd, UDM_SETBASE, m_eNumberStyle, 0
+        End If
+        If (UserControl.Ambient.UserMode) Then
+            ' Attach messages to the control:
+            pAttachMessages
+        End If
+    End If
+    
+End Sub
+Private Sub pAttachMessages()
+    AttachMessage Me, UserControl.hwnd, WM_NOTIFY
+    AttachMessage Me, UserControl.hwnd, WM_VSCROLL
+    AttachMessage Me, UserControl.hwnd, WM_HSCROLL
+    m_emr = emrPreprocess
+    m_bSubClassing = True
+End Sub
+Private Sub pDetachMessages()
+    If (m_bSubClassing) Then
+        DetachMessage Me, UserControl.hwnd, WM_NOTIFY
+        DetachMessage Me, UserControl.hwnd, WM_VSCROLL
+        DetachMessage Me, UserControl.hwnd, WM_HSCROLL
+        m_bSubClassing = False
+    End If
+End Sub
+Private Sub pTerminate()
+    
+    If (m_hWnd &lt;&gt; 0) Then
+        ' Stop subclassing:
+        pDetachMessages
+        ' Destroy the window:
+        ShowWindow m_hWnd, SW_HIDE
+        SetParent m_hWnd, 0
+        Debug.Print DestroyWindow(m_hWnd)
+        m_hWnd = 0
+    End If
+    
+End Sub
+
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As SSubTimer.EMsgResponse)
+    m_emr = RHS
+End Property
+
+Private Property Get ISubclass_MsgResponse() As SSubTimer.EMsgResponse
+    ISubclass_MsgResponse = m_emr
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+Dim tNMH As NMHDR
+Dim tNMUD As NMUPDOWN
+    'Process messages here:
+    Select Case iMsg
+    Case WM_NOTIFY
+        'Debug.Print "Got WM_NOTIFY"
+        CopyMemory tNMH, ByVal lParam, Len(tNMH)
+        If (tNMH.idfrom = UserControl.hwnd) And (tNMH.hwndFrom = m_hWnd) Then
+            If (tNMH.code = UDN_DELTAPOS) Then
+                CopyMemory tNMUD, ByVal lParam, Len(tNMUD)
+                pbSetFocus tNMUD.iPos
+                RaiseEvent BeforeChange(tNMUD.iPos, tNMUD.iDelta)
+                If (tNMUD.iDelta = 0) Then
+                    ISubclass_WindowProc = 1
+                End If
+            End If
+        End If
+    Case WM_VSCROLL, WM_HSCROLL
+        'Debug.Print "Got WM_nSCROLL"
+        If (lParam = m_hWnd) Then
+            RaiseEvent Change
+        End If
+    End Select
+End Function
+Private Function pbSetFocus(ByVal iPos As Long) As Boolean
+    ' If we have a buddy control, and it is not in focus but could be, then
+    ' put it into focus:
+    If (m_hWndBuddy &lt;&gt; 0) Then
+        If (IsWindowVisible(m_hWndBuddy)) Then
+            If (IsWindowEnabled(m_hWndBuddy)) Then
+                If Not (GetFocus() = m_hWndBuddy) Then
+                    SetFocus m_hWndBuddy
+                End If
+            End If
+        End If
+    End If
+End Function
+
+Private Sub UserControl_Initialize()
+    Debug.Print "cUpDown:Initialize"
+    Upper = 1000
+    ShowThousandsSeparator = True
+    Alignment = udALIGNRIGHT
+    Orientation = udVertical
+    NumberStyle = udDecimal
+    ArrowKeysChange = True
+End Sub
+
+Private Sub UserControl_InitProperties()
+    pInitialise
+End Sub
+
+Private Sub UserControl_ReadProperties(PropBag As PropertyBag)
+    Lower = PropBag.ReadProperty("Lower", 0)
+    Upper = PropBag.ReadProperty("Upper", 1000)
+    Position = PropBag.ReadProperty("Position", 0)
+    Orientation = PropBag.ReadProperty("Orientation", udVertical)
+    Alignment = PropBag.ReadProperty("Alignment", udALIGNRIGHT)
+    ShowThousandsSeparator = PropBag.ReadProperty("ShowThousandsSeparator",
+     True)
+    NumberStyle = PropBag.ReadProperty("NumberStyle", udDecimal)
+    ArrowKeysChange = PropBag.ReadProperty("ArrowKeysChange", True)
+    AutoChangeBuddyText = PropBag.ReadProperty("AutoChangeBuddyText", False)
+    pInitialise
+End Sub
+
+Private Sub UserControl_Resize()
+    If (m_hWnd &lt;&gt; 0) Then
+        MoveWindow m_hWnd, 0, 0, UserControl.ScaleWidth \
+         Screen.TwipsPerPixelX, UserControl.ScaleHeight \
+         Screen.TwipsPerPixelY, 1
+    End If
+End Sub
+
+Private Sub UserControl_Terminate()
+    pTerminate
+    Debug.Print "cUpDown:Terminate"
+End Sub
+
+Private Sub UserControl_WriteProperties(PropBag As PropertyBag)
+    PropBag.WriteProperty "Lower", Lower, 0
+    PropBag.WriteProperty "Upper", Upper, 1000
+    PropBag.WriteProperty "Position", Position, 0
+    PropBag.WriteProperty "Orientation", Orientation, udVertical
+    PropBag.WriteProperty "Alignment", Alignment, udALIGNRIGHT
+    PropBag.WriteProperty "ShowThousandsSeparator", ShowThousandsSeparator, True
+    PropBag.WriteProperty "NumberStyle", NumberStyle, udDecimal
+    PropBag.WriteProperty "ArrowKeysChange", ArrowKeysChange, True
+    PropBag.WriteProperty "AutoChangeBuddyText", AutoChangeBuddyText, False
+    pTerminate
+End Sub
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Shell Projects</a>&#160;.&#160;<a href="article.html">Shell an application and wait asynchronously for completion</a>&#160;.&#160;<a href="ShellWait_Demonstration.html">ShellWait Demonstration</a>&#160;.&#160;cUpDown.ctl</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Shell_Projects/Shell_And_Wait_For_Completion/ShellWait_Demonstration_zip_cUpDown_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:42 GMT -->
+</html>

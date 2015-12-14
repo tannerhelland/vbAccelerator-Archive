@@ -1,0 +1,207 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/TreeView/TreeView_Control/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:51:09 GMT -->
+<head>
+
+<title>vbAccelerator - vbAccelerator TreeView Control</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This article provides a new TreeView control that provides an alternative to the standard
+version provided with VB.  Enhancements include much wider support for item colours and formatting,
+better drag-drop support including node auto-expand and scrolling, styles to support numbering
+items and an IE-style history mode and an improved object model.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">TreeView</a>&#160;.&#160;vbAccelerator TreeView Control</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_TreeView_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 TreeView Control</a> (83K)</p><p class="nav"><a href="VB5_TreeView_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 TreeView Demonstration</a> (51K)</p><p class="nav"><a href="VB5_TreeView_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 TreeView Full Source</a> (176K)</p><p /><p class="nav"><a href="VB6_TreeView_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TreeView Control</a> (82K)</p><p class="nav"><a href="VB6_TreeView_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TreeView Demonstration</a> (45K)</p><p class="nav"><a href="VB6_TreeView_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 TreeView Full Source</a> (170K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:13463</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13463&amp;type=Article&amp;title=vbAccelerator%20TreeView%20Control">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><p class="nav">&#160;&#160;<a href="mailto:litwin@gottliebaza.org">Dan Litwin</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 5 / 19</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 1 / 4</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 1 / 1</a></p><p class="nav">Updated:27 February 2004</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />16 Apr 2004<br /><p class="update">Drag enhancements and bug fixes.  See
+BugTrak for full details.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=931">Using the System Image List with (and without) vbAccelerator Controls</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator TreeView Control</h1><p class="splash">A fully-featured TreeView with enhanced Drag-Drop support</p><img src="treeView.png" width="368" height="257" alt="Two TreeView controls  with customised colouring" /><p /><p>
+This article provides a new TreeView control that provides an alternative to the standard
+version provided with VB.  Enhancements include much wider support for item colours and formatting,
+better drag-drop support including node auto-expand and scrolling, styles to support numbering
+items and an IE-style history mode and an improved object model.
+</p><h2>About the TreeView control</h2><p>
+This control is a significantly revised version of the XuiTreeView control
+written by Dan Litwin which is still available on the <a href="http://www.vbaccelerator.com/oldindex.html">legacy version
+of the site</a>. This time around the control has an object model, not to mention 
+many bug fixes and enhancements over the last version.
+</p><p>
+This control has a similar object model to the standard VB TreeView, but with a 
+notable exception.  In the VB TreeView, the <span class="code">Nodes</span>
+collection is the collection of <span class="i">all</span> in the control.  In
+this control, the <span class="code">Nodes</span> collection refers to the 
+collection of nodes at a particular level.  In this way the object model is
+more similar to the <span class="code">DOM</span> interfaces provided in 
+XML parsers.  This seems a more natural way to look at the TreeView, since now
+each <span class="code">Node</span> has a <span class="code">Children</span>
+object which can be used to access just the child nodes of that node.
+</p><p>
+The diagram below shows the object model in the control.
+</p><img src="treeViewObjectModel.png" width="246" height="222" alt="Tree View Object Model" /><p class="caption">TreeView Object Model</p><p>
+Here's a brief tour of the features:
+</p><h3>The Control</h3><p>
+The <span class="code">vbalTreeViewCtl</span> provides access to the object collections,
+raises events and lets you configure the visual properties of the control.
+The new and changed features are:
+</p><ul><li><span class="code">ImageList</span><p>
+This allows you to associate a handle to an image list with the control rather than just
+an ImageList object.  This allows you to use an <a href="http://www.vbaccelerator.com/article.asp?id=931">System Image
+List</a> as a source of icons, as shown in the demo.
+Please note that MSCOMCTL.OCX (VB6 Windows Common Controls) ImageLists are not supported as the hImageList handle returned by this object is incorrect. This may be resolved in the future by an update from Microsoft (see KB).
+</p></li><li><span class="code">DragAutoExpand</span><p>
+Gets/sets whether nodes will auto-expand when you are dragging over them.
+</p></li><li><span class="code">DragStyle</span><p>
+Gets/sets the drag style of the TreeView.  The default drag style is <span class="code">etvwInsertMark</span>.  Using this
+mode, the exact order of nodes within a tree can be controlled.  This is useful when using a
+Tree to represent hierarchies where ordering is important, such as the Favourites dialog.
+Alternatively, the drag style can be set to <span class="code">etvwDropHighlight</span>, 
+which only allows you to drop
+items on a particular node in the tree.  This mode is useful when the order of items in 
+a particular branch isn't either fixed, or isn't important, such as views of the file
+system.
+</p></li><li><span class="code">DragInsertNode, DragInsertAbove</span><p>
+During a drag operation, <span class="code">DragInsertNode</span> returns the node which has the 
+insert point, if any, and <span class="code">DragInsertAbove</span> returns whether the insert
+location is above or below this node.
+	</p></li><li><span class="code">NodeFromDragData</span><p>
+When an OLE Drag-Drop operation is performed using a Node, the control adds text format and
+private internal formats to the drag <span class="code">Data</span> argument.  The Node
+associated with this data can be extracted using this function.  Note that any instance of
+the TreeView control can be used, not just the source of the node that is being dragged.
+If the node is from another control, it is located and the information is populated by the
+owner.
+	</p></li><li><span class="code">NoCustomDraw</span><p>
+Gets/sets whether custom-draw is disabled for the control.  When custom draw is disabled,
+the display is faster, but you cannot configure colours or formatting on a per-item
+basis.  Note that by default this is <span class="code">True</span>.
+</p></li><li><span class="code">ShowNumber, HistoryStyle</span><p>
+Get/set two new styles which are provided for the control.  In both cases the
+<span class="code">NoCustomDraw</span> flag must be set to <span class="code">False</span>
+in order for the mode to draw.  When the <span class="code">ShowNumber</span> mode is set,
+any <span class="code">ItemNumber</span> value above zero associated with a node is
+displayed next to the item in brackets, like Outlook.  If <span class="code">HistoryStyle</span>
+is set, then the control renders a border around the selected node tree in the same way
+that IE does in the History bar.  These styles are mutually exclusive.
+</p><img src="historyAndNumbers.png" width="368" height="260" alt="History and Number Styles" /><p class="caption">TreeView control with Number and History styles applied</p></li><li><strong>Colour properties</strong><p>
+When <span class="code">NoCustomDraw</span> is set <span class="code">False</span>, you
+can set a number of default colours for the rendering of the control (these can also
+be overridden for individual items).  In all cases except <span class="code">BackColor</span>,
+<span class="code">ForeColor</span> and <span class="code">LineColor</span> setting a 
+property to -1 will mean the default colours are used.
+</p><p>
+The list of colours supported are:
+</p><ul><li><span class="code">BackColor</span><br />
+Gets/sets the background colour of the control.  Works regardless of the setting of the
+<span class="code">NoCustomDraw</span> flag.
+</li><li><span class="code">ForeColor</span><br />
+Gets/sets the foreground colour of the control.  Works regardless of the setting of the
+<span class="code">NoCustomDraw</span> flag.
+</li><li><span class="code">LineColor</span><br />
+Gets/sets the colour of the lines shown in the control.  Works regardless of the setting of the
+<span class="code">NoCustomDraw</span> flag.
+</li><li><span class="code">MouseOverForeColor, MouseOverBackColor</span><br />
+Gets/sets the colour of an item when it is highlighted using hot-tracking.
+</li><li><span class="code">SelectedForeColor, SelectedBackColor</span><br />
+Gets/sets the normal colour of an item when it is selected.
+</li><li><span class="code">SelectedMouseOverForeColor, SelectedMouseOverBackColor</span><br />
+Gets/sets the colour of an item when it is selected and the mouse is over.
+</li><li><span class="code">SelectedNoFocusForeColor, SelectedNoFocusBackColor</span><br />
+Gets/sets the colour of an item when it is selected and the control is out of focus.
+</li></ul></li></ul><h3>cTreeViewNodes</h3><p>
+This behaves int the same way as the standard version except as noted before a
+collection only contains the children of the parent node. Also <span class="code">For..Each</span> is not supported.
+</p><h3>cTreeViewNode</h3><p>
+This object is largely compatible with the standard VB <span class="code">Node</span> 
+object, with these enhancements:
+</p><ul><li><span class="code">Children</span><br />
+Returns a <span class="code">cTreeViewNodes</span> collection containing the
+children for this node, if any, otherwise <span class="code">Nothing</span>.
+</li><li><span class="code">MoveNode</span><br />
+Moves this Node to another position in the tree.  The new location is specified
+by a relative node and the relationship of the new position to it.
+	</li><li><span class="code">InsertNodeBefore, InsertNodeAfter</span><br />
+Adds a new node and inserts it either before or after this node.  These are 
+convenient alternatives to the <span class="code">cTreeViewNodes</span> 
+properties.
+	</li><li><span class="code">AddChildNode</span><br />
+Adds a new child node to this node.  This is a convenient alternative to the 
+<span class="code">cTreeViewNodes</span>
+collection when building up a tree recursively.
+	</li><li><span class="code">StartEdit, EndEdit</span><br />
+These methods allow you to programmatically control editing of nodes.
+</li><li><span class="code">NoCheckBox</span><br />
+Gets/sets whether this node has a checkbox in a TreeView with the 
+<span class="code">Checkboxes</span> style.
+</li><li><span class="code">ShowPlusMinus</span><br />
+Gets/sets whether the plus/minus button is shown for this item, regardless
+of whether the item contains children.  This is useful when creating a TreeView
+that is dynamically populated - in the standard TreeView you have to add a 
+dummy item to the node to allow it to be expanded, here you can simply
+set <span class="code">ShowPlusMinus</span> to <span class="code">True</span>.
+</li><li><strong>Colour Properties</strong><br />
+The same set of colours that can be customised globally for the TreeView control
+can also be customised for an individual node.
+</li><li><span class="code">Font</span><br />
+Gets/sets a specific font used to render this node, or <span class="code">Nothing</span>
+to use the default font.
+</li><li><span class="code">ItemNumber</span><br />
+Gets/sets a number to display in brackets next to the node when the
+control has the <span class="code">ShowNumbers</span> style.  Otherwise,
+it can be used to store data against the item.
+</li><li><span class="code">Index</span><br />
+Gets the 1-based index of this item within its parent tree.
+</li></ul><!--
+<img src="./dragInsert.png" width="183" height="258" alt="Drag Insertion Point" />
+<p class="caption">Dragging in the TreeView control with the Drag Insertion point displayed.</p>
+--><h2>Conclusion</h2><p>
+This TreeView control provides a comprehensive replacement for the standard VB
+TreewView with enhanced formatting, drag and drop and style support.  Other articles
+in this section provide more details of how to use drag-drop, show Shell folders and files
+and customising the behaviour and display of the TreeView.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">TreeView</a>&#160;.&#160;vbAccelerator TreeView Control</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 18 April 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/TreeView/TreeView_Control/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:51:13 GMT -->
+</html>

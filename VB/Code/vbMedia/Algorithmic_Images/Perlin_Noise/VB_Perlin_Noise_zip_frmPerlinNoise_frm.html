@@ -1,0 +1,363 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Algorithmic_Images/Perlin_Noise/VB_Perlin_Noise_zip_frmPerlinNoise_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:48 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmPerlinNoise.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmPerlinNoise.frm" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Algorithmic Images</a>&#160;.&#160;<a href="article.html">Perlin Noise</a>&#160;.&#160;<a href="VB_Perlin_Noise.html">VB Perlin Noise</a>&#160;.&#160;frmPerlinNoise.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB_Perlin_Noise.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB Perlin Noise</a> (32K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:13259</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13259&amp;type=Zip&amp;title=VB%20Perlin%20Noise%2Ezip%5FfrmPerlinNoise">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />1 Nov 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmPerlinNoise.frm</h1><pre>VERSION 5.00
+Begin VB.Form frmPerlinNoise 
+   Caption         =   "vbAccelerator - Perlin Noise Demonstration"
+   ClientHeight    =   7275
+   ClientLeft      =   2070
+   ClientTop       =   2535
+   ClientWidth     =   6480
+   BeginProperty Font 
+      Name            =   "Tahoma"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "frmPerlinNoise.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   485
+   ScaleMode       =   3  'Pixel
+   ScaleWidth      =   432
+   Begin VB.HScrollBar hscScale 
+      Height          =   255
+      Left            =   4680
+      Max             =   16
+      Min             =   1
+      TabIndex        =   5
+      Top             =   1440
+      Value           =   1
+      Width           =   1695
+   End
+   Begin VB.CheckBox chkAbsolute 
+      Caption         =   "&amp;Use Absolute Value"
+      Height          =   255
+      Left            =   4680
+      TabIndex        =   4
+      Top             =   780
+      Width           =   1695
+   End
+   Begin VB.HScrollBar hscOctaves 
+      Height          =   255
+      Left            =   4680
+      Max             =   6
+      Min             =   1
+      TabIndex        =   3
+      Top             =   420
+      Value           =   1
+      Width           =   1695
+   End
+   Begin VB.CommandButton cmdAnimate 
+      Caption         =   "&amp;Go"
+      Height          =   495
+      Left            =   5280
+      TabIndex        =   0
+      Top             =   6300
+      Width           =   975
+   End
+   Begin VB.Label lblScale 
+      Caption         =   "&amp;Scale"
+      Height          =   195
+      Left            =   4680
+      TabIndex        =   6
+      Top             =   1200
+      Width           =   1695
+   End
+   Begin VB.Label lblOctaves 
+      Caption         =   "&amp;Octaves"
+      Height          =   195
+      Left            =   4680
+      TabIndex        =   2
+      Top             =   180
+      Width           =   1695
+   End
+   Begin VB.Label lblFPS 
+      Caption         =   "FPS: "
+      Height          =   255
+      Left            =   240
+      TabIndex        =   1
+      Top             =   6360
+      Width           =   4935
+   End
+End
+Attribute VB_Name = "frmPerlinNoise"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Type SAFEARRAYBOUND
+    cElements As Long
+    lLbound As Long
+End Type
+Private Type SAFEARRAY2D
+    cDims As Integer
+    fFeatures As Integer
+    cbElements As Long
+    cLocks As Long
+    pvData As Long
+    Bounds(0 To 1) As SAFEARRAYBOUND
+End Type
+Private Declare Function VarPtrArray Lib "msvbvm50.dll" Alias "VarPtr" (Ptr()
+ As Any) As Long
+
+Private Declare Function timeGetTime Lib "winmm.dll" () As Long
+
+Private m_cPerlin As New cPerlin3D
+Private m_cDib As New cDIBSection
+Private m_calcTime As Long
+Private m_totTime As Long
+Private m_frames As Long
+
+Private m_z As Double
+Private m_zStep As Double
+Private m_octaves As Long
+Private m_bAbsolute As Boolean
+Private m_scale As Double
+
+Private Sub Render()
+   m_cDib.PaintPicture Me.hdc, 16, 16
+End Sub
+
+Private Sub chkAbsolute_Click()
+   m_bAbsolute = (chkAbsolute.Value = Checked)
+End Sub
+
+Private Sub cmdAnimate_Click()
+Dim x As Double
+Dim y As Double
+Dim xStep As Double
+Dim yStep As Double
+Dim xO As Double
+Dim yO As Double
+Dim zO As Double
+Dim l As Double
+Dim i As Double
+Dim px As Long
+Dim py As Long
+Dim pxEnd As Long
+Dim pyEnd As Long
+Dim lTime As Long
+Dim r As Double
+Dim g As Double
+Dim b As Double
+Dim bDib() As Byte
+Dim tSA As SAFEARRAY2D
+    
+   If (cmdAnimate.Caption = "&amp;Go") Then
+      
+      cmdAnimate.Caption = "&amp;Stop"
+      
+      pxEnd = m_cDib.BytesPerScanLine
+      pyEnd = m_cDib.Height
+      xStep = 1# / (m_cDib.Width / (m_scale * 2#))
+      yStep = 1# / (m_cDib.Height / (m_scale * 2#))
+      
+      ' Get the bits in the from DIB section:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = m_cDib.Height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = m_cDib.BytesPerScanLine
+          .pvData = m_cDib.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+      
+      Do
+            
+         lTime = timeGetTime()
+         
+         m_z = m_z + m_zStep
+         
+         px = 0
+         For x = -m_scale To m_scale Step xStep
+            
+            py = 0
+            
+            For y = -m_scale To m_scale Step yStep
+               
+               l = m_cPerlin.Noise(x, y, m_z)
+               
+               If (m_bAbsolute) Then
+                  l = Abs(l)
+                  If (m_octaves &gt; 1) Then
+                     xO = x
+                     yO = y
+                     zO = m_z
+                     i = 1#
+                     Do
+                        xO = xO + xO
+                        yO = yO + yO
+                     '   'xO = yO + xO - turn on for streaks
+                     '   'yO = xO + yO - turn on for streaks
+                        zO = zO + zO
+                        i = i + i
+                        l = l + Abs(m_cPerlin.Noise(xO, yO, zO) / i)
+                     Loop While (i &lt; m_octaves)
+                     If (l &gt; 1#) Then l = 1#
+                  End If
+                  
+                  r = 255 * l
+                  
+               Else
+                  If (m_octaves &gt; 1) Then
+                     xO = x
+                     yO = y
+                     zO = m_z
+                     i = 1#
+                     Do
+                        xO = xO + xO
+                        yO = yO + yO
+                     '   'xO = yO + xO - turn on for streaks
+                     '   'yO = xO + yO - turn on for streaks
+                        zO = zO + zO
+                        i = i + i
+                        l = l + m_cPerlin.Noise(xO, yO, zO) / i
+                     Loop While (i &lt; m_octaves)
+                  End If
+                  
+                  ' Adjust colour in range 0-255
+                  r = 128 + 128 * l
+                  ' Check for out of bounds
+                  If (r &gt; 255) Then r = 255
+                  If (r &lt; 0) Then r = 0
+               End If
+               
+               bDib(px, py) = r
+               bDib(px + 1, py) = r
+               bDib(px + 2, py) = r
+               
+               py = py + 1
+               If (py &gt;= pyEnd) Then
+                  Exit For
+               End If
+               
+            Next y
+            
+            px = px + 3
+            If (px &gt;= pxEnd) Then
+               Exit For
+            End If
+            
+         Next x
+         
+         'm_frames = m_frames + 1
+         m_calcTime = timeGetTime() - lTime
+         If (m_calcTime = 0) Then m_calcTime = 1
+         
+         Render
+         
+         m_totTime = timeGetTime() - lTime
+         If (m_totTime = 0) Then m_totTime = 1
+         
+         ' FPS:
+         lblFPS.Caption = "FPS: Calculation: " &amp; Format$(1000# / m_calcTime,
+          "00.00") &amp; _
+            ", Total: " &amp; Format$(1000# / m_totTime, "00.00")
+         
+         DoEvents
+         
+      Loop While (cmdAnimate.Caption = "&amp;Stop")
+   
+      ' Clear the temporary array descriptor
+      ' (This does not appear to be necessary, but
+      ' for safety do it anyway)
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+      
+   Else
+      cmdAnimate.Caption = "&amp;Go"
+   End If
+    
+End Sub
+
+Private Sub Form_Load()
+   
+   Set m_cPerlin = New cPerlin3D
+   
+   Set m_cDib = New cDIBSection
+   m_cDib.Create 128, 128 ' g256, 256
+   
+   ' Initial Z
+   m_z = 0.01
+   ' Step in Z direction
+   m_zStep = 0.03
+   ' Initial Scale
+   m_scale = 4
+   
+   hscOctaves_Change
+   hscScale_Change
+   
+End Sub
+
+Private Sub hscOctaves_Change()
+   lblOctaves.Caption = "Octaves: " &amp; hscOctaves.Value
+   m_octaves = 2 ^ (hscOctaves.Value - 1)
+End Sub
+
+Private Sub hscScale_Change()
+   lblScale.Caption = "Scale: " &amp; hscScale.Value
+   m_scale = hscScale.Value
+End Sub
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Algorithmic Images</a>&#160;.&#160;<a href="article.html">Perlin Noise</a>&#160;.&#160;<a href="VB_Perlin_Noise.html">VB Perlin Noise</a>&#160;.&#160;frmPerlinNoise.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 November 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Algorithmic_Images/Perlin_Noise/VB_Perlin_Noise_zip_frmPerlinNoise_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:48 GMT -->
+</html>

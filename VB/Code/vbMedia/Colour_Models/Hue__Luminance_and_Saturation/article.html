@@ -1,0 +1,233 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Colour_Models/Hue__Luminance_and_Saturation/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:48 GMT -->
+<head>
+
+<title>vbAccelerator - Hue Luminance and Saturation (HLS) Model and Manipulating Colours</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Normally in computers colours are described in terms of their Red, Green and Blue components. 
+Whilst you can specify all displayable colours this way, it leaves something to be desired when 
+it comes to picking a colour. For example, most people find it very difficult to determine 
+what RGB values you would use to create a Pink or Brown colour (try it!).  The HLS model
+provides a more intuitive method and enables you to create lighter/darker or more intense/less
+intense versions of colours very easily." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Colour Models</a>&#160;.&#160;Hue Luminance and Saturation (HLS) Model and Manipulating Colours</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Hue__Luminance_and_Saturation_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Hue, Luminance and Saturation Demonstration</a> (10K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:14453</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14453&amp;type=Article&amp;title=Hue%20Luminance%20and%20Saturation%20%28HLS%29%20Model%20and%20Manipulating%20Colours">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Aug 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Hue Luminance and Saturation (HLS) Model and Manipulating Colours</h1><p class="splash">Pick and manipulate colours more easily </p><img src="hlsdemo.gif" width="198" height="154" alt="Hue Luminance and Saturation Demonstration" /><p /><p>Normally in computers colours are described in terms of their Red, Green and Blue components. 
+Whilst you can specify all displayable colours this way, it leaves something to be desired when 
+it comes to picking a colour. For example, most people find it very difficult to determine 
+what RGB values you would use to create a Pink or Brown colour (try it!).  The HLS model
+provides a more intuitive method and enables you to create lighter/darker or more intense/less
+intense versions of colours very easily.</p><h2>The Hue, Luminance and Saturation Model</h2><p>There are numerous colour models which attempt to work around the limitations of RGB
+and provide a more intuitive way of getting to the colour you want. One of the easiest, and
+most frequently used, is the Hue, Luminance and Saturation (HLS) Model.</p><p>This HLS model describes colours in the following terms:</p><ul><li><strong>Hue</strong><br />
+The horizontal axis of the box in the demonstration project picture, which varies 
+from magenta - red - yellow - green - cyan - blue - magenta.</li><li><strong>Saturation</strong><br />
+The vertical axis of the box, and describes how intense (saturated) or
+"grey" (unsaturated) the colour is.</li><li><strong>Luminance</strong><br />
+The second picture box in the demonstration project picture, which and varies from 
+black (0 luminace) through to the brightest version of the colour itself.</li></ul><p>With this model it is easier to pick a colour and it allows you to do things in 
+code which you can't really achieve with RGB.  Examples are determining what 
+a lighter or darker tone of a given RGB colour is (by modifying the Luminance), 
+creating a more washed out colour (by modifying the Saturation) or colourising a whole
+image (by modifying the Hue).</p><h2>Coding the HLS Model</h2><p>Normally Hue is expressed as an angle between 0-360 to describe the colour 
+and a value between 0 and 1 (a percentage) to describe Hue and Saturation. I have 
+missed out the conversion to an angle in this implementation so the Hue works as follows:</p><pre>
+Hue   Colour 
+ -1   Magenta 
+  0   Red 
+  1   Yellow 
+  2   Green 
+  3   Aqua 
+  4   Blue 
+  5   Magenta 
+</pre><p>Here is the code to do a conversion between HLS and RGB and vice-versa:</p><pre>
+Public Sub RGBToHLS( _ 
+    ByVal r As Long, ByVal g As Long, ByVal b As Long, _ 
+    h As Single, s As Single, l As Single _ 
+    ) 
+Dim Max As Single 
+Dim Min As Single 
+Dim delta As Single 
+Dim rR As Single, rG As Single, rB As Single 
+
+    rR = r / 255: rG = g / 255: rB = b / 255 
+
+    '{Given: rgb each in [0,1]. 
+    ' Desired: h in [0,360] and s in [0,1], except if s=0, then h=UNDEFINED.} 
+    Max = Maximum(rR, rG, rB) 
+    Min = Minimum(rR, rG, rB) 
+    l = (Max + Min) / 2'{This is the lightness} 
+        
+    '{Next calculate saturation} 
+    If Max = Min Then 
+        'begin {Acrhomatic case} 
+        s = 0 
+        h = 0 
+        'end {Acrhomatic case} 
+    Else 
+        'begin {Chromatic case} 
+        '{First calculate the saturation.} 
+        If l &lt;= 0.5 Then 
+            s = (Max - Min) / (Max + Min) 
+        Else 
+            s = (Max - Min) / (2 - Max - Min) 
+        End If 
+        '{Next calculate the hue.} 
+        delta = Max - Min 
+        If rR = Max Then 
+            '{Resulting color is between yellow and magenta} 
+            h = (rG - rB) / delta
+        ElseIf rG = Max Then 
+            '{Resulting color is between cyan and yellow}  
+            h = 2 + (rB - rR) / delta 
+        ElseIf rB = Max Then 
+            '{Resulting color is between magenta and cyan} 
+            h = 4 + (rR - rG) / delta 
+        End If 
+        'end {Chromatic Case} 
+    End If 
+End Sub 
+
+Public Sub HLSToRGB( _ 
+    ByVal h As Single, ByVal s As Single, ByVal l As Single, _ 
+    r As Long, g As Long, b As Long _ 
+    ) 
+Dim rR As Single, rG As Single, rB As Single 
+Dim Min As Single, Max As Single 
+
+    If s = 0 Then 
+        ' Achromatic case: 
+        rR = l: rG = l: rB = l 
+    Else 
+        ' Chromatic case: 
+        ' delta = Max-Min 
+        If l &lt;= 0.5 Then 
+            's = (Max - Min) / (Max + Min) 
+            ' Get Min value: 
+            Min = l * (1 - s) 
+        Else 
+            's = (Max - Min) / (2 - Max - Min) 
+            ' Get Min value: 
+            Min = l - s * (1 - l) 
+        End If 
+        ' Get the Max value: 
+        Max = 2 * l - Min 
+    
+        ' Now depending on sector we can evaluate the h,l,s: 
+        If (h &lt; 1) Then 
+            rR = Max 
+            If (h &lt; 0) Then 
+                rG = Min 
+                rB = rG - h * (Max - Min) 
+            Else 
+                rB = Min 
+                rG = h * (Max - Min) + rB 
+            End If 
+        ElseIf (h &lt; 3) Then 
+            rG = Max 
+            If (h &lt; 2) Then 
+                rB = Min 
+                rR = rB - (h - 2) * (Max - Min) 
+            Else 
+                rR = Min 
+                rB = (h - 2) * (Max - Min) + rR 
+            End If 
+        Else 
+            rB = Max 
+            If (h &lt; 4) Then 
+                rR = Min 
+                rG = rR - (h - 4) * (Max - Min) 
+            Else 
+                rG = Min 
+                rR = (h - 4) * (Max - Min) + rG 
+            End If         
+        End If             
+    End If 
+    r = rR * 255: g = rG * 255: b = rB * 255 
+End Sub 
+
+Private Function Maximum(rR As Single, rG As Single, rB As Single) As Single 
+    If (rR &gt; rG) Then 
+        If (rR &gt; rB) Then 
+            Maximum = rR 
+        Else 
+            Maximum = rB 
+        End If 
+    Else 
+        If (rB &gt; rG) Then 
+            Maximum = rB 
+        Else 
+            Maximum = rG 
+        End If 
+    End If 
+End Function 
+
+Private Function Minimum(rR As Single, rG As Single, rB As Single) As Single 
+    If (rR &lt; rG) Then 
+        If (rR &lt; rB) Then 
+            Minimum = rR 
+        Else 
+            Minimum = rB 
+        End If 
+    Else 
+        If (rB &lt; rG) Then 
+            Minimum = rB 
+        Else 
+            Minimum = rG 
+        End If 
+    End If 
+End Function 
+</pre><h2>Limitations of the HLS Model</h2><p>Whilst the HLS Model is simple to implement, and gives a relatively easy colour 
+picking interface, it is not a physically accurate model. That is to say, 
+linear changes in luminance, hue or saturation do not correspond to a linear change in
+colour to the eye. More accurate models which overcome these limitations exist, such as 
+the CIE scheme, but I've yet to understand these enough to work them out! Anyway, 
+HLS works well enough unless you are interested in exact colour matching and 
+processing between different display devices. </p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Colour Models</a>&#160;.&#160;Hue Luminance and Saturation (HLS) Model and Manipulating Colours</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 1999-2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Colour_Models/Hue__Luminance_and_Saturation/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:49 GMT -->
+</html>

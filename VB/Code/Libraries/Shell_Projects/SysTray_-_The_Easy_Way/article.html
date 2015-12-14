@@ -1,0 +1,130 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Shell_Projects/SysTray_-_The_Easy_Way/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:51 GMT -->
+<head>
+
+<title>vbAccelerator - Add Your App to the Systray the Easy Way</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This sample application presents a small form which you can drop into your project 
+to get immediate SysTray support. A lot of the source code I've seen for VB SysTray interfaces 
+has used an OCX or DLL and subclassed for a SysTray message, however, it turns out you don't 
+need to do this, because you can specify what message Windows will use to notify you of 
+events in the tray. As a consequence, you just need to choose a message that corresponds to 
+a Visual Basic event - in this case the sample code uses the WM_MOUSEMOVE message. 
+This fires a mouse move event on the Visual Basic form, with the x parameter set to the 
+corresponding notification flag." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Shell Projects</a>&#160;.&#160;Add Your App to the Systray the Easy Way</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="frmSysTray.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />frmSysTray</a> (3K)</p><p /><p class="nav"><a href="SysTray_Demonstration_Project.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />SysTray Demonstration Project</a> (27K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:16</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=16&amp;type=Article&amp;title=Add%20Your%20App%20to%20the%20Systray%20the%20Easy%20Way">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />3 Mar 2003<br /><p class="update">Added support for Balloon Info tips (Windows ME or 2000 and above required).</p><p class="update">Added Unicode support (Windows NT required).</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Add Your App to the Systray the Easy Way</h1><p class="splash">This form class encapsulates all the SysTray functionality you'll need!</p><img src="sysTray.png" width="393" height="397" alt="SysTray Demonstration App Setup Screen" /><p /><p>This sample application presents a small form which you can drop into your project 
+to get immediate SysTray support. A lot of the source code I've seen for VB SysTray interfaces 
+has used an OCX or DLL and subclassed for a SysTray message, however, it turns out you don't 
+need to do this, because you can specify what message Windows will use to notify you of 
+events in the tray. As a consequence, you just need to choose a message that corresponds to 
+a Visual Basic event - in this case the sample code uses the <i>WM_MOUSEMOVE</i> message. 
+This fires a mouse move event on the Visual Basic form, with the x parameter set to the 
+corresponding notification flag.</p><p>
+To avoid any confusion with actual MouseMove events due to the user moving the mouse over the 
+form acting as the SysTray interface, the form is set to be invisible. Since the form can 
+act as a class, it is easy to provide it with methods to set the menu options to show, 
+what icon will be shown in the System Tray and also what tool tip to show in the SysTray. 
+I've also provided events which are fired whenever there is a Mouse Down, Mouse Up or 
+Double Click on your SysTray icon, and a method to show the menu created in the form 
+(which raises a MenuClick event when a menu is selected).
+</p><h2>How To Use It</h2><p>Here is all the code you need in a project which has frmSysTray included:</p><pre>
+Private WithEvents m_frmSysTray As frmSysTray 
+
+Private Sub Form_Load() 
+    Set m_frmSysTray = New frmSysTray 
+    With m_frmSysTray 
+        .AddMenuItem "&amp;Open SysTray Sample", "open", True 
+        .AddMenuItem "-" 
+        .AddMenuItem "&amp;Close", "close" 
+        .ToolTip = "SysTray Sample!" 
+        .IconHandle = Me.Icon.Handle 
+    End With 
+End Sub 
+
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer) 
+    Unload m_frmSysTray 
+    Set m_frmSysTray = Nothing 
+End Sub 
+
+Private Sub m_frmSysTray_MenuClick(ByVal lIndex As Long, ByVal sKey As String) 
+    Select Case sKey 
+    Case "open" 
+        Me.Show 
+        Me.ZOrder 
+    Case "close" 
+        Unload Me 
+    End Select 
+    
+End Sub 
+
+Private Sub m_frmSysTray_SysTrayDoubleClick(ByVal eButton As MouseButtonConstants) 
+    Me.Show 
+    Me.ZOrder 
+End Sub 
+
+Private Sub m_frmSysTray_SysTrayMouseDown(ByVal eButton As MouseButtonConstants) 
+    If (eButton = vbRightButton) Then 
+        m_frmSysTray.ShowMenu 
+    End If
+End Sub 
+</pre><h2>Showing Balloon Tips</h2><p>If your application is running on a system with Shell version 5.00 or above (Windows Me
+and Windows 2000 are the minimum versions for this Shell version) then you can pop-up
+Balloon Tips to provide the user with information or warning messages.  The balloon
+tips themselves are queued by the operating system, so if there is already one displayed
+then you need to wait until it is cleared by the user or the system decides to the tip
+out.</p><p>To display a balloon tip, call the <i>ShowBalloonTip</i> passing in the message to display
+and optionally the title of the tip, the icon to show (which also affects the overall appearance
+of the tip - for example, a warning tip shows in a different colour to an information tip) and
+the timeout to use.  The SysTray form has these events to notify what has happened:</p><ul><li><i>BalloonShow</i> - Raised when your Balloon tip is shown.</li><li><i>BalloonHide</i> - Raised if the Balloon tip is hidden for a reason other than the user
+clicking it or it timing out.</li><li><i>BalloonClick</i> - Raised if the user clicks on the Balloon Tip itself.  This 
+indicates acceptance of the information in the tip.</li><li><i>BalloonTimeOut</i> - Raised if the balloon tip times out.  Note that this is also raised
+on XP systems if the user clicks the Close button for the tip.</li></ul><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Shell Projects</a>&#160;.&#160;Add Your App to the Systray the Easy Way</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 3 March 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Shell_Projects/SysTray_-_The_Easy_Way/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:53 GMT -->
+</html>

@@ -1,0 +1,420 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Type_Libraries/IShellFolder/IShellFolder_Type_Library_Source_Code_zip_ISHView_odl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:23 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: ISHView.odl</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: ISHView.odl" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Type Libraries</a>&#160;.&#160;<a href="article.html">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a>&#160;.&#160;<a href="IShellFolder_Type_Library_Source_Code.html">IShellFolder Type Library Source Code</a>&#160;.&#160;ISHView.odl</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="IShellFolder_Type_Library_Source_Code.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />IShellFolder Type Library Source Code</a> (10K)</p><p class="nav"><a href="IShellFolder_Type_Library.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />IShellFolder Type Library</a> (7K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1033</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1033&amp;type=Zip&amp;title=IShellFolder%20Type%20Library%20Source%20Code%2Ezip%5FISHView">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Brad Martinez</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />21 Mar 2000<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: ISHView.odl</h1><pre>
+//--------------------------------------------------------------------------
+//
+// FOLDERSETTINGS
+//
+//  FOLDERSETTINGS is a data structure that explorer passes from one folder
+// view to another, when the user is browsing. It calls ISV::GetCurrentInfo
+// member to get the current settings and pass it to ISV::CreateViewWindow
+// to allow the next folder view "inherit" it. These settings assumes a
+// particular UI (which the shell's folder view has), and shell extensions
+// may or may not use those settings.
+//
+//--------------------------------------------------------------------------
+
+typedef LPBYTE LPVIEWSETTINGS;
+
+// NB Bitfields.
+// FWF_DESKTOP implies FWF_TRANSPARENT/NOCLIENTEDGE/NOSCROLL
+typedef enum
+{
+    FWF_AUTOARRANGE =       0x0001,
+    FWF_ABBREVIATEDNAMES =  0x0002,
+    FWF_SNAPTOGRID =        0x0004,
+    FWF_OWNERDATA =         0x0008,
+    FWF_BESTFITWINDOW =     0x0010,
+    FWF_DESKTOP =           0x0020,
+    FWF_SINGLESEL =         0x0040,
+    FWF_NOSUBFOLDERS =      0x0080,
+    FWF_TRANSPARENT  =      0x0100,
+    FWF_NOCLIENTEDGE =      0x0200,
+    FWF_NOSCROLL     =      0x0400,
+    FWF_ALIGNLEFT    =      0x0800,
+    FWF_SINGLECLICKACTIVATE=0x8000  // TEMPORARY -- NO UI FOR THIS
+} FOLDERFLAGS;
+
+typedef enum
+{
+    FVM_ICON =              1,
+    FVM_SMALLICON =         2,
+    FVM_LIST =              3,
+    FVM_DETAILS =           4,
+} FOLDERVIEWMODE;
+
+typedef struct
+{
+    UINT ViewMode;       // View mode (FOLDERVIEWMODE values)
+    UINT fFlags;         // View options (FOLDERFLAGS bits)
+} FOLDERSETTINGS;
+typedef FOLDERSETTINGS * LPFOLDERSETTINGS;
+// typedef const FOLDERSETTINGS * LPCFOLDERSETTINGS;
+typedef FOLDERSETTINGS * LPCFOLDERSETTINGS;
+
+/////////////////////////////////////////////////////////////////////
+//==========================================================================
+//
+// Interface:   IShellView
+//
+// IShellView::GetWindow(phwnd)
+//
+//   Inherited from IOleWindow::GetWindow.
+//
+//
+// IShellView::ContextSensitiveHelp(fEnterMode)
+//
+//   Inherited from IOleWindow::ContextSensitiveHelp.
+//
+//
+// IShellView::TranslateAccelerator(lpmsg)
+//
+//   Similar to IOleInPlaceActiveObject::TranlateAccelerator. The explorer
+//  calls this function BEFORE any other translation. Returning S_OK
+//  indicates that the message was translated (eaten) and should not be
+//  translated or dispatched by the explorer.
+//
+//
+// IShellView::EnableModeless(fEnable)
+//   Similar to IOleInPlaceActiveObject::EnableModeless.
+//
+//
+// IShellView::UIActivate(uState)
+//
+//   The explorer calls this member function whenever the activation
+//  state of the view window is changed by a certain event that is
+//  NOT caused by the shell view itself.
+//
+//   SVUIA_DEACTIVATE will be passed when the explorer is about to
+//  destroy the shell view window; the shell view is supposed to remove
+//  all the extended UIs (typically merged menu and modeless popup windows).
+//
+//   SVUIA_ACTIVATE_NOFOCUS will be passsed when the shell view is losing
+//  the input focus or the shell view has been just created without the
+//  input focus; the shell view is supposed to set menuitems appropriate
+//  for non-focused state (no selection specific items should be added).
+//
+//   SVUIA_ACTIVATE_FOCUS will be passed when the explorer has just
+//  created the view window with the input focus; the shell view is
+//  supposed to set menuitems appropriate for focused state.
+//
+//   SVUIA_INPLACEACTIVATE(new) will be passed when the shell view is opened
+//  within an ActiveX control, which is not a UI active. In this case,
+//  the shell view should not merge menus or put toolbas. To be compatible
+//  with Win95 client, we don't pass this value unless the view supports
+//  IShellView2.
+//
+//   The shell view should not change focus within this member function.
+//  The shell view should not hook the WM_KILLFOCUS message to remerge
+//  menuitems. However, the shell view typically hook the WM_SETFOCUS
+//  message, and re-merge the menu after calling IShellBrowser::
+//  OnViewWindowActivated.
+//
+//
+// IShellView::Refresh()
+//
+//   The explorer calls this member when the view needs to refresh its
+//  contents (such as when the user hits F5 key).
+//
+//
+// IShellView::CreateViewWindow
+//
+//   This member creates the view window (right-pane of the explorer or the
+//  client window of the folder window).
+//
+//
+// IShellView::DestroyViewWindow
+//
+//   This member destroys the view window.
+//
+//
+// IShellView::GetCurrentInfo
+//
+//   This member returns the folder settings.
+//
+//
+// IShellView::AddPropertySHeetPages
+//
+//   The explorer calls this member when it is opening the option property
+//  sheet. This allows the view to add additional pages to it.
+//
+//
+// IShellView::SaveViewState()
+//
+//   The explorer calls this member when the shell view is supposed to
+//  store its view settings. The shell view is supposed to get a view
+//  stream by calling IShellBrowser::GetViewStateStream and store the
+//  current view state into that stream.
+//
+//
+// IShellView::SelectItem(pidlItem, uFlags)
+//
+//   The explorer calls this member to change the selection state of
+//  item(s) within the shell view window.  If pidlItem is NULL and uFlags
+//  is SVSI_DESELECTOTHERS, all items should be deselected.
+//
+//-------------------------------------------------------------------------
+
+
+//
+// shellview select item flags 
+//
+typedef enum {                     // were #defines
+    SVSI_DESELECT       = 0x0000,
+    SVSI_SELECT         = 0x0001,
+    SVSI_EDIT           = 0x0003,  // includes select
+    SVSI_DESELECTOTHERS = 0x0004,
+    SVSI_ENSUREVISIBLE  = 0x0008,
+    SVSI_FOCUSED        = 0x0010,
+} SVSI;
+
+//
+// shellview get item object flags
+//
+typedef enum {                     // were #defines
+    SVGIO_BACKGROUND    = 0x00000000,
+    SVGIO_SELECTION     = 0x00000001,
+    SVGIO_ALLVIEW       = 0x00000002,
+} SVGIO;
+
+//
+// uState values for IShellView::UIActivate
+//
+typedef enum {
+    SVUIA_DEACTIVATE       = 0,
+    SVUIA_ACTIVATE_NOFOCUS = 1,
+    SVUIA_ACTIVATE_FOCUS   = 2,
+    SVUIA_INPLACEACTIVATE  = 3          // new flag for IShellView2
+} SVUIA_STATUS;
+
+
+///////////////////////////////////////////////////////////////////
+// IOleWindow 
+
+[
+//    object,
+    uuid(00000114-0000-0000-C000-000000000046),
+//    pointer_default(unique)
+    helpstring("IOleWindow Interface"),
+    odl
+]
+
+interface IOleWindow : IUnknown
+{
+//    typedef [unique] IOleWindow *LPOLEWINDOW;
+    typedef IOleWindow *LPOLEWINDOW;
+
+//    [input_sync]
+    long    GetWindow(
+                [in,out]    HWND *phwnd);
+
+    HRESULT ContextSensitiveHelp(
+                [in]        BOOL fEnterMode);
+}
+
+
+///////////////////////////////////////////////////////////////////
+// IShellView
+
+[   odl,
+    helpstring("IShellView interface"),
+    uuid(000214E3-0000-0000-C000-000000000046)
+]
+
+interface IShellView : IOleWindow
+{
+    // *** IUnknown methods ***
+    // *** IOleWindow methods ***
+
+    // *** IShellView methods ***
+    long    TranslateAccelerator(
+                [in]        long lpmsg);    // LPMSG
+
+#ifdef _FIX_ENABLEMODELESS_CONFLICT
+    long    EnableModelessSV(
+                [in]        BOOL fEnable);
+#else
+    long    EnableModeless(
+                [in]        BOOL fEnable);
+#endif
+
+    long    UIActivate(
+                [in]        UINT uState);
+
+    long    Refresh();
+
+    // E_NOTIMPL
+    long    CreateViewWindow(
+                [in]        IShellView          *lpPrevView,
+                [in]        LPCFOLDERSETTINGS   lpfs,
+                [in]        long                *psb,       // IShellBrowser
+                [in]        long                *prcView,   // RECT
+                [in,out]    HWND                *phWnd);
+
+    long    DestroyViewWindow();
+
+    long    GetCurrentInfo(
+                [in,out]    LPFOLDERSETTINGS    lpfs);
+
+    // E_NOTIMPL
+    long    AddPropertySheetPages(
+                [in]        DWORD               dwReserved,
+                [in]        long                lpfn,       //
+                 LPFNADDPROPSHEETPAGE
+                [in]        LPARAM              lparam);
+
+    long    SaveViewState();
+
+    long    SelectItem(
+                [in]        LPCITEMIDLIST       pidlItem,
+                [in]        UINT                uFlags);
+
+    long    GetItemObject(
+                [in]        UINT                uItem,
+                [in]        REFIID              riid,
+                [in,out]    LPVOID              ppv);
+};
+
+typedef IShellView *    LPSHELLVIEW;
+
+typedef GUID SHELLVIEWID;
+
+
+///////////////////////////////////////////////////////////////////
+
+#define SV2GV_CURRENTVIEW ((UINT)-1)
+#define SV2GV_DEFAULTVIEW ((UINT)-2)
+
+typedef struct _SV2CVW2_PARAMS
+{
+        DWORD cbSize;
+
+        IShellView              *psvPrev;
+        FOLDERSETTINGS          *pfs;       // const
+        long                    *psbOwner;  // IShellBrowser
+        long                    *prcView;   // RECT
+        SHELLVIEWID             *pvid;      // const
+
+        HWND hwndView;
+} SV2CVW2_PARAMS;
+typedef SV2CVW2_PARAMS *LPSV2CVW2_PARAMS;
+
+#undef  INTERFACE
+#define INTERFACE   IShellView2
+
+
+///////////////////////////////////////////////////////////////////
+// IShellView2
+
+[   odl,
+    helpstring("IShellView2 interface"),
+    uuid(88E39E80-3578-11CF-AE69-08002B2E1262)
+]
+
+
+interface IShellView2 : IShellView
+{
+    // *** IUnknown methods ***
+    // *** IOleWindow methods ***
+    // *** IShellView methods ***
+    
+    // *** IShellView2 methods ***
+    long    GetView(
+                [in]        SHELLVIEWID         *pvid, 
+                [in]        ULONG               uView);
+    long    CreateViewWindow2(
+                [in]        LPSV2CVW2_PARAMS    lpParams);
+};
+
+
+///////////////////////////////////////////////////////////////////
+// ****the remainder of this file is from Chris Becke's shext.h ***
+// http://www.dbn.lia.net/users/chris
+
+// Column Info for IShellDetails::GetDetailsOf
+typedef struct
+{
+   int      justify;
+   int      width;
+   STRRET   text;
+} SHColInfo;
+
+
+///////////////////////////////////////////////////////////////////
+// IShellDetails, 
+
+[   odl,
+    helpstring("IShellDetails interface"),
+    uuid(000214EC-0000-0000-C000-000000000046)
+]
+
+interface IShellDetails : IUnknown
+{
+   // IShellDetails methods
+    long    GetDetailsOf(
+            [in]      LPCITEMIDLIST      pidl, 
+            [in]      UINT            col, 
+            [in,out]   SHColInfo         *data);
+
+   long    ColumnClick(
+            [in]      UINT            col);
+
+   // There may be a third interface function
+//   STDMETHOD(Unknown)(THIS_ DWORD) PURE;
+};
+
+typedef IShellDetails * LPSHELLDETAILS;
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Type Libraries</a>&#160;.&#160;<a href="article.html">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a>&#160;.&#160;<a href="IShellFolder_Type_Library_Source_Code.html">IShellFolder Type Library Source Code</a>&#160;.&#160;ISHView.odl</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Type_Libraries/IShellFolder/IShellFolder_Type_Library_Source_Code_zip_ISHView_odl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:23 GMT -->
+</html>

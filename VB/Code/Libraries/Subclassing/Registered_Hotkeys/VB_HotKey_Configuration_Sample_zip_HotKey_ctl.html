@@ -1,0 +1,420 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Registered_Hotkeys/VB_HotKey_Configuration_Sample_zip_HotKey_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:38 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: HotKey.ctl</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: HotKey.ctl" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;<a href="article.html">Creating and Responding to System-Wide Hotkeys</a>&#160;.&#160;<a href="VB_HotKey_Configuration_Sample.html">VB HotKey Configuration Sample</a>&#160;.&#160;HotKey.ctl</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB_HotKey_Configuration_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB HotKey Configuration Sample</a> (35K)</p><p /><p class="nav"><a href="VB5_Hot_Key_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Hot Key Sample</a> (21K)</p><p /><p class="nav"><a href="VB6_Hot_Key_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Hot Key Sample</a> (20K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:5023</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=5023&amp;type=Zip&amp;title=VB%20HotKey%20Configuration%20Sample%2Ezip%5FHotKey">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 2 / 2</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:29 August 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />27 Jan 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: HotKey.ctl</h1><pre>VERSION 5.00
+Begin VB.UserControl HotKey 
+   ClientHeight    =   600
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   630
+   ScaleHeight     =   600
+   ScaleWidth      =   630
+   ToolboxBitmap   =   "HotKey.ctx":0000
+End
+Attribute VB_Name = "HotKey"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+'
+ ===============================================================================
+=======
+' cHotKey
+' Steve McMahon
+' 09 June 1998
+'
+' A simple implementation of the hot key control.
+'
+ ===============================================================================
+=======
+
+'
+ ===============================================================================
+=======
+' API declares:
+'
+ ===============================================================================
+=======
+' Memory functions:
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+' Send message:
+Private Declare Function SendMessageByLong Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+' Creating new windows:
+Private Declare Function CreateWindowEx Lib "user32" Alias "CreateWindowExA"
+ (ByVal dwExStyle As Long, ByVal lpClassName As String, ByVal lpWindowName As
+ String, ByVal dwStyle As Long, ByVal X As Long, ByVal Y As Long, ByVal nWidth
+ As Long, ByVal nHeight As Long, ByVal hWndParent As Long, ByVal hMenu As Long,
+ ByVal hInstance As Long, lpParam As Any) As Long
+' General window styles:
+Private Const WS_BORDER = &amp;H800000
+Private Const WS_CAPTION = &amp;HC00000                  '  WS_BORDER Or WS_DLGFRAME
+Private Const WS_CHILD = &amp;H40000000
+Private Const WS_CHILDWINDOW = (WS_CHILD)
+Private Const WS_CLIPCHILDREN = &amp;H2000000
+Private Const WS_CLIPSIBLINGS = &amp;H4000000
+Private Const WS_DISABLED = &amp;H8000000
+Private Const WS_DLGFRAME = &amp;H400000
+Private Const WS_EX_ACCEPTFILES = &amp;H10&amp;
+Private Const WS_EX_DLGMODALFRAME = &amp;H1&amp;
+Private Const WS_EX_NOPARENTNOTIFY = &amp;H4&amp;
+Private Const WS_EX_TOPMOST = &amp;H8&amp;
+Private Const WS_EX_TRANSPARENT = &amp;H20&amp;
+Private Const WS_GROUP = &amp;H20000
+Private Const WS_HSCROLL = &amp;H100000
+Private Const WS_MAXIMIZE = &amp;H1000000
+Private Const WS_MAXIMIZEBOX = &amp;H10000
+Private Const WS_MINIMIZE = &amp;H20000000
+Private Const WS_ICONIC = WS_MINIMIZE
+Private Const WS_MINIMIZEBOX = &amp;H20000
+Private Const WS_OVERLAPPED = &amp;H0&amp;
+Private Const WS_POPUP = &amp;H80000000
+Private Const WS_SYSMENU = &amp;H80000
+Private Const WS_TABSTOP = &amp;H10000
+Private Const WS_THICKFRAME = &amp;H40000
+Private Const WS_SIZEBOX = WS_THICKFRAME
+Private Const WS_TILED = WS_OVERLAPPED
+Private Const WS_VISIBLE = &amp;H10000000
+Private Const WS_VSCROLL = &amp;H200000
+Private Const WS_OVERLAPPEDWINDOW = (WS_OVERLAPPED Or WS_CAPTION Or WS_SYSMENU
+ Or WS_THICKFRAME Or WS_MINIMIZEBOX Or WS_MAXIMIZEBOX)
+Private Const WS_TILEDWINDOW = WS_OVERLAPPEDWINDOW
+Private Const WS_POPUPWINDOW = (WS_POPUP Or WS_BORDER Or WS_SYSMENU)
+Private Declare Function MoveWindow Lib "user32" (ByVal hwnd As Long, ByVal X
+ As Long, ByVal Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ bRepaint As Long) As Long
+Private Declare Function SetFocusAPI Lib "user32" Alias "SetFocus" (ByVal hwnd
+ As Long) As Long
+Private Const WM_SETFONT = &amp;H30
+Private Const WM_SETHOTKEY = &amp;H32
+Private Const WM_USER = &amp;H400
+
+' Font
+Private Const LF_FACESIZE = 32
+Private Type LOGFONT
+    lfHeight As Long
+    lfWidth As Long
+    lfEscapement As Long
+    lfOrientation As Long
+    lfWeight As Long
+    lfItalic As Byte
+    lfUnderline As Byte
+    lfStrikeOut As Byte
+    lfCharSet As Byte
+    lfOutPrecision As Byte
+    lfClipPrecision As Byte
+    lfQuality As Byte
+    lfPitchAndFamily As Byte
+    lfFaceName(LF_FACESIZE) As Byte
+End Type
+Private Const FW_NORMAL = 400
+Private Const FW_BOLD = 700
+Private Const FF_DONTCARE = 0
+Private Const DEFAULT_QUALITY = 0
+Private Const DEFAULT_PITCH = 0
+Private Const DEFAULT_CHARSET = 1
+Private Declare Function CreateFontIndirect&amp; Lib "gdi32" Alias
+ "CreateFontIndirectA" (lpLogFont As LOGFONT)
+Private Declare Function MulDiv Lib "kernel32" (ByVal nNumber As Long, ByVal
+ nNumerator As Long, ByVal nDenominator As Long) As Long
+Private Declare Function SelectObject Lib "gdi32" (ByVal hDC As Long, ByVal
+ hObject As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+Private Declare Function GetDeviceCaps Lib "gdi32" (ByVal hDC As Long, ByVal
+ nIndex As Long) As Long
+    Private Const BITSPIXEL = 12
+    Private Const LOGPIXELSX = 88    '  Logical pixels/inch in X
+    Private Const LOGPIXELSY = 90    '  Logical pixels/inch in Y
+' CommonControls function
+Private Declare Sub InitCommonControls Lib "COMCTL32.DLL" ()
+Private Const HOTKEY_CLASS = "msctls_hotkey32"
+Public Enum echkModifierKeys
+   HOTKEYF_SHIFT = &amp;H1
+   HOTKEYF_CONTROL = &amp;H2
+   HOTKEYF_ALT = &amp;H4
+   HOTKEYF_EXT = &amp;H8
+   HOTKEYF_SHIFTCONTROL = &amp;H3
+   HOTKEYF_ALTSHIFT = &amp;H5
+   HOTKEYF_CONTROLALT = &amp;H6
+   HOTKEYF_CONTROLALTSHIFT = &amp;H7
+End Enum
+Public Enum echkInvalidHotKeyModifiers
+   HKCOMB_NONE = &amp;H1
+   HKCOMB_S = &amp;H2
+   HKCOMB_C = &amp;H4
+   HKCOMB_A = &amp;H8
+   HKCOMB_SC = &amp;H10
+   HKCOMB_SA = &amp;H20
+   HKCOMB_CA = &amp;H40
+   HKCOMB_SCA = &amp;H80
+End Enum
+Public Enum echkHotKeyErrors
+    eHotKeyAlreadyAssigned = vbObjectError + 1048 + 40
+    eHotKeyInvalidWindow
+    eHotKeyInvalidHotKey
+    eHotKeyUnknownError
+End Enum
+
+Private Const HKM_SETHOTKEY = (WM_USER + 1)
+Private Const HKM_GETHOTKEY = (WM_USER + 2)
+Private Const HKM_SETRULES = (WM_USER + 3)
+
+Private m_hWnd As Long
+Private m_lfwCombInv As Long
+Private m_lfwModInv As Long
+
+' Font support:
+Private m_tULF As LOGFONT
+Private m_hFnt As Long
+
+Public Sub SetApplicationHotKey(ByVal hwnd As Long)
+Attribute SetApplicationHotKey.VB_Description = "Sets the current hot key as
+ the hot key for a window with handle  hWnd."
+Dim iR As Long
+    iR = SendMessageByLong(hwnd, WM_SETHOTKEY, HotKeyAndModifier(), 0)
+    Select Case iR
+    Case 2
+        Err.Raise eHotKeyAlreadyAssigned, App.EXEName &amp; ".cHotKey", "Hot key
+         previously assigned"
+    Case 1
+        ' success
+    Case 0
+        Err.Raise eHotKeyAlreadyAssigned, App.EXEName &amp; ".cHotKey", "Invalid
+         window for Hot key"
+    Case -1
+        Err.Raise eHotKeyInvalidHotKey, App.EXEName &amp; ".cHotKey", "Invalid Hot
+         key"
+    Case Else
+        Err.Raise eHotKeyUnknownError, App.EXEName &amp; ".cHotKey", "Failed to set
+         Hot key"
+    End Select
+End Sub
+
+Public Property Let InvalidHotKeyOperation(ByVal eInvalidModifier As
+ echkInvalidHotKeyModifiers, ByVal eAlternateModifier As echkModifierKeys,
+ ByVal bState As Boolean)
+Attribute InvalidHotKeyOperation.VB_Description = "Sets rules determining which
+ key combinations are valid as a hotkey."
+   If (bState) Then
+      m_lfwCombInv = m_lfwCombInv Or (eInvalidModifier And &amp;HFF&amp;)
+      m_lfwModInv = m_lfwModInv Or (eAlternateModifier And &amp;HFF&amp;)
+   Else
+      m_lfwCombInv = m_lfwCombInv And Not (eInvalidModifier And &amp;HFF&amp;)
+      m_lfwModInv = m_lfwModInv And Not (eAlternateModifier And &amp;HFF&amp;)
+   End If
+   SendMessageByLong m_hWnd, HKM_SETRULES, m_lfwCombInv, m_lfwModInv
+End Property
+
+Public Property Get HotKey() As Long
+Attribute HotKey.VB_Description = "Gets/sets the virtual key code of the key
+ used in the hotkey combination."
+Dim lT As Long
+   lT = HotKeyAndModifier()
+   HotKey = (lT And &amp;HFF&amp;)
+End Property
+Public Property Let HotKey(ByVal lKey As Long)
+Dim lT As Long
+   lT = HotKeyAndModifier
+   If (lKey &lt;&gt; (lT And &amp;HFF&amp;)) Then
+      lT = (lT And &amp;HFF00) Or (lKey And &amp;HFF&amp;)
+      SendMessageByLong m_hWnd, HKM_SETHOTKEY, lT, 0
+      PropertyChanged "HotKey"
+   End If
+End Property
+Public Property Get HotKeyModifier() As echkModifierKeys
+Attribute HotKeyModifier.VB_Description = "Gets/sets the modifier code (i.e.
+ Ctrl, Alt etc) of the key used in the hotkey combination."
+Dim lT As Long
+   lT = HotKeyAndModifier
+   HotKeyModifier = (lT And &amp;HFF00&amp;) \ &amp;H100&amp;
+End Property
+Public Property Let HotKeyModifier(ByVal eModifier As echkModifierKeys)
+Dim lT As Long
+   lT = HotKeyAndModifier
+   If ((lT And &amp;HFF00F) \ &amp;HFF&amp;) &lt;&gt; (eModifier And &amp;HFF&amp;) Then
+      lT = (eModifier And &amp;HFF&amp;) * &amp;H100&amp; Or (lT And &amp;HFF&amp;)
+      SendMessageByLong m_hWnd, HKM_SETHOTKEY, lT, 0
+      PropertyChanged "HotKeyModifier"
+   End If
+End Property
+Public Property Get HotKeyAndModifier() As Long
+Attribute HotKeyAndModifier.VB_Description = "Gets a word containing the
+ virtual key code in the lobyte and the modifier in the hibyte -  used in some
+ API functions."
+Dim lT As Long
+   HotKeyAndModifier = SendMessageByLong(m_hWnd, HKM_GETHOTKEY, 0, 0)
+End Property
+
+Public Property Get Font() As StdFont
+Attribute Font.VB_Description = "Gets/sets the font for the control."
+    Set Font = UserControl.Font
+End Property
+Public Property Set Font(sFont As StdFont)
+Dim hFnt As Long
+    If Not (UserControl.Font Is sFont) Then
+        Set UserControl.Font = sFont
+        ' Store a log font structure for this font:
+        pOLEFontToLogFont sFont, UserControl.hDC, m_tULF
+        ' Store old font handle:
+        hFnt = m_hFnt
+        ' Create a new version of the font:
+        m_hFnt = CreateFontIndirect(m_tULF)
+        ' Ensure the edit portion has the correct font:
+        If (m_hWnd &lt;&gt; 0) Then
+            SendMessage m_hWnd, WM_SETFONT, m_hFnt, 1
+        End If
+        ' Delete previous version, if we had one:
+        If (hFnt &lt;&gt; 0) Then
+            DeleteObject hFnt
+        End If
+        PropertyChanged "Font"
+    End If
+End Property
+Private Sub pOLEFontToLogFont(fntThis As StdFont, hDC As Long, tLF As LOGFONT)
+Dim sFont As String
+Dim iChar As Integer
+
+    ' Convert an OLE StdFont to a LOGFONT structure:
+    With tLF
+        sFont = fntThis.Name
+        ' There is a quicker way involving StrConv and CopyMemory, but
+        ' this is simpler!:
+        For iChar = 1 To Len(sFont)
+            .lfFaceName(iChar - 1) = CByte(Asc(Mid$(sFont, iChar, 1)))
+        Next iChar
+        ' Based on the Win32SDK documentation:
+        .lfHeight = -MulDiv((fntThis.Size), (GetDeviceCaps(hDC, LOGPIXELSY)),
+         72)
+        .lfItalic = fntThis.Italic
+        If (fntThis.Bold) Then
+            .lfWeight = FW_BOLD
+        Else
+            .lfWeight = FW_NORMAL
+        End If
+        .lfUnderline = fntThis.Underline
+        .lfStrikeOut = fntThis.Strikethrough
+    End With
+
+End Sub
+
+Private Function pCreateHotKeyWindow()
+Static bNotFirst As Boolean
+   If Not (bNotFirst) Then
+      InitCommonControls
+      bNotFirst = True
+   End If
+   m_hWnd = CreateWindowEx( _
+         0, _
+         HOTKEY_CLASS, _
+         "", _
+         WS_CHILD Or WS_VISIBLE, _
+         0, 0, UserControl.ScaleWidth \ Screen.TwipsPerPixelX,
+          UserControl.ScaleHeight \ Screen.TwipsPerPixelY, _
+         UserControl.hwnd, _
+         0, _
+         App.hInstance, _
+         0)
+   If (m_hWnd &lt;&gt; 0) Then
+      SetFocusAPI m_hWnd
+      
+   End If
+End Function
+
+Private Sub UserControl_GotFocus()
+   If (m_hWnd &lt;&gt; 0) Then
+      SetFocusAPI m_hWnd
+   End If
+End Sub
+
+Private Sub UserControl_InitProperties()
+   Set Font = UserControl.Ambient.Font
+   pCreateHotKeyWindow
+End Sub
+
+Private Sub UserControl_ReadProperties(PropBag As PropertyBag)
+   pCreateHotKeyWindow
+    Dim sFnt As New StdFont
+    sFnt.Name = "MS Sans Serif"
+    sFnt.Size = 8
+   Set Font = PropBag.ReadProperty("Font", sFnt)
+   HotKey = PropBag.ReadProperty("HotKey", 0)
+   HotKeyModifier = PropBag.ReadProperty("HotKeyModifier", HOTKEYF_ALT)
+End Sub
+
+Private Sub UserControl_Resize()
+    If (m_hWnd &lt;&gt; 0) Then
+        MoveWindow m_hWnd, 0, 0, UserControl.ScaleWidth \
+         Screen.TwipsPerPixelX, UserControl.ScaleHeight \
+         Screen.TwipsPerPixelY, 1
+    End If
+End Sub
+
+Private Sub UserControl_WriteProperties(PropBag As PropertyBag)
+Dim sFnt As New StdFont
+    sFnt.Name = "MS Sans Serif"
+    sFnt.Size = 8
+    PropBag.WriteProperty "Font", Font, sFnt
+    PropBag.WriteProperty "HotKey", HotKey, 0
+    PropBag.WriteProperty "HotKeyModifier", HotKeyModifier, HOTKEYF_ALT
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;<a href="article.html">Creating and Responding to System-Wide Hotkeys</a>&#160;.&#160;<a href="VB_HotKey_Configuration_Sample.html">VB HotKey Configuration Sample</a>&#160;.&#160;HotKey.ctl</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Registered_Hotkeys/VB_HotKey_Configuration_Sample_zip_HotKey_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:38 GMT -->
+</html>

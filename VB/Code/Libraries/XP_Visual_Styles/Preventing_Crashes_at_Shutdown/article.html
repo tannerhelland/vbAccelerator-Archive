@@ -1,0 +1,232 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/XP_Visual_Styles/Preventing_Crashes_at_Shutdown/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:20 GMT -->
+<head>
+
+<title>vbAccelerator - Preventing Crashes at Shutdown</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Some versions of ComCtl32.DLL version 6.0 cause a crash at shutdown when you enable XP Visual Styles in an application.  This particularly 
+occurs when using VB User Controls.  
+
+This article provides two solutions to the problem.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">XP Visual Styles</a>&#160;.&#160;Preventing Crashes at Shutdown</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Clean_Unload_with_Manifest_Tester.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Clean Unload with Manifest Tester</a> (8K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:5294</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=5294&amp;type=Article&amp;title=Preventing%20Crashes%20at%20Shutdown">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 1</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:22 June 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />20 Jun 2003<br /><p class="update">Added information about the "official" solution to the problem.
+Thanks to Michael Bell for sending me the information.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3911">vbAccelerator ListBar Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4591">GUI Resource Tracer</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Preventing Crashes at Shutdown</h1><p class="splash">Resolving a thorny problem with some versions of ComCtl32.DLL and VB UserControls</p><img src="noCrash.png" width="200" height="156" alt="No Crashes" /><p /><p>
+Some versions of ComCtl32.DLL version 6.0 cause a crash at shutdown when you enable XP Visual Styles in an application.  This particularly 
+occurs when using VB User Controls.  
+</p><p>
+This article provides two solutions to the problem.
+</p><h2>Someone Has To Do It</h2><p>
+My main development machine had been playing up for about a month: the TCP/IP stack
+was impenetrably broken, hence IIS and SQL Server were not working, DVDs played in a stuttering 
+Max Headroom/Paul Hardcastle stylee and even worse any attempt to rip a CD caused my audio
+ripper to crash.  Time for a long overdue ground-up rebuild.
+</p><p>
+After collection the enormous pile of install CDs, downloading all of the drivers I'd, erm, misplaced
+and backing up, and psyching myself up for the 8 hour job with a collection of expensive lagers, I 
+was delighted and somewhat surprised to find the whole thing went perfectly and the rebuilt
+machine runs like a dream.  Except...
+</p><h2>Horrific</h2><p>
+All of a sudden about 40% of my projects that linked to ComCtl32 to apply XP Visual Styles
+suddenly started crashing when the application was shutdown.  This chimed with a number of
+mails I'd received which also complained of shutdown-related problems that I'd never been
+able to reproduce.  16 hours of investigation later, I found the following:
+</p><ul><li>ComCtl32.DLL had been updated compared to my prior XP installation.  The new version was
+5.80.2800.1106, previously the version was 5.80.2600.0.</li><li>The crash only occurred:
+<ol><li>In projects that included Visual Basic User Controls.</li><li>When the project was linked to ComCtl32.DLL v6.0 (using either a file or a resource manifest).</li><li>When running the executable version of the project.</li></ol></li><li>Adding message boxes to the application proved that the crash occurred <i>after</i> the
+last line of VB code had been executed.  Regardless of how complex the project was, or
+how many forms, the crash only ever occurred during shutdown.  <a href="http://www.vbaccelerator.com/article.asp?id=4591">GDI
+and User Resources</a> were fine.
+</li><li>Running a debugger against the app showed that the crash was occurring in user32.DLL
+following some VB runtime call.</li></ul><p>
+After many attempts at running different VB apps, I finally ending up with an app that only
+contained a single UserControl without a single line of code in it, and that still crashed. 
+I became confident that this problem isn't one that can be fixed by modifying the code.  
+Whilst this problem may be fixable by MS, VB was never designed to support XP Visual Styles,
+and its unlikely a new service pack would be released to fix it, particularly for VB5
+which is now very old.
+</p><p>
+So what to do?
+</p><h2>Two Fixes; One Nicer Than The Other</h2><p>
+There are two ways of solving this problem.  The first is a more "correct" fix, whilst the second is nefarious hack of my own devising which can be applied more generally to any type of issue which results in an crash at shutdown.
+</p><h3>1. The Official Fix</h3><p>
+Microsoft acknowledges this problem in the <a href="http://support.microsoft.com/default.aspx?scid=kb;en-us;309366">knowledge base article KBID 309366</a>.  Unfortunately, the cause of the problem isn't explained and their suggested resolution doesn't work.
+However, trawling through the message boards for information about
+this article you will eventually find there is a solution, which
+is to use the API call
+<span class="code">LoadLibrary</span> to preload <span class="i">Shell32.DLL</span> during 
+the <span class="code">Initialize</span>
+event of the Form containing the control:
+</p><pre>
+Private Declare Sub InitCommonControls Lib "comctl32.dll" ()
+Private Declare Function LoadLibrary Lib "kernel32" Alias "LoadLibraryA" ( _
+    ByVal lpLibFileName As String) As Long
+Private Declare Function FreeLibrary Lib "kernel32" ( _
+   ByVal hLibModule As Long) As Long
+
+Private m_hMod As Long
+
+Private Sub Form_Initialize()
+    m_hMod = LoadLibrary("shell32.dll")
+    InitCommonControls
+End Sub
+
+Private Sub Form_Unload(Cancel As Integer)
+    FreeLibrary m_hMod
+End Sub
+</pre><p>
+Once this is applied, crashes no longer occur.  It appears that the same code can be used directly within the 
+UserControl's own <span class="code">_Initialize</span> and <span class="code">_Terminate</span> events,
+assuming you have access to the source code for the control.
+</p><h3>2. Ignore It And It Will Go Away</h3><p>
+Ignorance isn't the most elegant solution, but it can be bliss, and this technique may come 
+in useful in resolving other problems.
+    </p><p>
+In this instance we're not leaking any resources, everything
+is being terminated and closed in the correct order, but there's some problem within the VB
+runtime that only occurs when VB cleans up after all executing code has stopped.
+</p><p>
+So, noting that the crash only occurs 
+after the application is shutdown, you know that the process is trying to go away 
+when the crash occurs.  Since each application runs in its own memory space, Windows is going
+to clear up anything you leave lying around when it shuts down anyway.  Once its done, 
+there isn't anything left that  could then continue to interfere with other applications, unless 
+VB installed something system-wide, such as a hook, which I regard as highly unlikely.
+</p><p><i>Therefore we can resolve this problem by simply ignoring it</i>.  The only problem with that,
+though, is that the application keeps throwing up pesky UAE dialogs, and inviting you to send
+Microsoft information about the problem:
+</p><img src="uae.png" width="419" height="264" alt="We are sorry for the inconvenience..." /><p><small><strong>Aargh! Not Again..</strong></small></p><p>
+Luckily, Windows offers a way to turn these off, as part of the Structured Exception Handling API.
+Whilst this API also allows you to intercept any UAE and keep your application running, in this case we 
+don't care about that, since all our code has stopped running and we just want to stop the message showing.  
+You do this by calling the <span class="code">SetErrorMode</span> API call:
+</p><pre>
+Private Declare Function SetErrorMode Lib "kernel32" ( _
+   ByVal wMode As Long) As Long
+
+Private Const SEM_FAILCRITICALERRORS = &amp;H1
+Private Const SEM_NOGPFAULTERRORBOX = &amp;H2
+Private Const SEM_NOOPENFILEERRORBOX = &amp;H8000&amp;
+
+...
+
+   ' Prevent all UAE dialogs and message boxes:
+   SetErrorMode SEM_NOGPFAULTERRORBOX
+
+</pre><p>
+This instructs Windows to eat the UAE message box.  Now all you need to do is to call
+this as the last line of code you execute in the application. Note you could call it
+as the first line, but then any UAEs actually associated with code would also
+be swallowed and you would end up with the app disappearing without trace - not 
+ideal.
+</p><p>
+I also added some code so that call isn't made in the IDE, since the problem
+only occurs in compiled executables:
+</p><pre>
+Private Declare Function SetErrorMode Lib "kernel32" ( _
+   ByVal wMode As Long) As Long
+
+Private Const SEM_NOGPFAULTERRORBOX = &amp;H2&amp;
+
+Private m_bInIDE As Boolean
+
+Public Sub UnloadApp()
+   If Not InIDE() Then
+      SetErrorMode SEM_NOGPFAULTERRORBOX
+   End If
+End Sub
+
+Public Property Get InIDE() As Boolean
+   Debug.Assert (IsInIDE())
+   InIDE = m_bInIDE
+End Property
+
+Private Function IsInIDE() As Boolean
+   m_bInIDE = True
+   IsInIDE = m_bInIDE
+End Function
+</pre><p>
+Determining when to call this function is application-specific, however, 
+one simple way of doing it which will work in most cases is to add the following line 
+of code to each of your Form's <span class="code">_Terminate</span> events:
+</p><pre>
+Private Sub Form_Terminate()
+   If (Forms.Count = 0) Then
+      UnloadApp
+   End If
+End Sub
+</pre><p>
+If that doesn't work for your app, then it is certain that you will know when the
+application is being shutdown some other way, so you can call the code there.
+</p><h2>Demonstration Application</h2><p>
+The download provides a simple demonstration of the second technique in use.  Project1.exe 
+is a VB project which contains a blank User Control compiled in.  When you run this
+project with a Manifest applied, it crashes on shutdown.  If you check the
+"Unload Cleanly" box, however, the <span class="code">UnloadApp</span> method is called
+and all appears to be fine.  Of course, the crash still actually happens, it's just
+that we don't see it (or care about it) anymore.
+</p><h2>Conclusion</h2><p>
+Applying new features to older applications can lead to 
+unexpected problems, since the older application was not designed against these new
+features.  However, it isn't always practical to upgrade to the latest version,
+and sometimes workarounds are needed.
+</p><p>
+Microsoft's ComCtl32.DLL provides a multitude of excellent features but
+in the past upgraded versions of this DLL have caused problems to existing
+apps. This appears to be continuing, despite ready availability and actual
+implementation (to a degree) of side-by-side versioning for the DLL.
+</p><p>
+The fixes to the UAE problem for VB applications using XP Visual Styles 
+described in this article aren't ideal, but they are very easy to apply 
+and work reliably.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">XP Visual Styles</a>&#160;.&#160;Preventing Crashes at Shutdown</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 7 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/XP_Visual_Styles/Preventing_Crashes_at_Shutdown/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:22 GMT -->
+</html>

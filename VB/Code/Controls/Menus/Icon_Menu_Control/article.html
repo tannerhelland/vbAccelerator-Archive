@@ -1,0 +1,168 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Menus/Icon_Menu_Control/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:50:36 GMT -->
+<head>
+
+<title>vbAccelerator - IconMenu Control</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="The IconMenu (cPopMenu.ocx) control is a really simple way to get icons into a VB project's menus. 
+It also allows you to create arbitrary new submenus, gives you control over the system menu 
+and has some useful new events indicating when menu items are highlighted and exited." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Menus</a>&#160;.&#160;IconMenu Control</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="IconMenu_Documentation.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />IconMenu Documentation</a> (3K)</p><p /><p class="nav"><a href="VB5_IconMenu_Complete_Source_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IconMenu Complete Source Code</a> (187K)</p><p class="nav"><a href="VB5_IconMenu_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IconMenu Control Binary</a> (41K)</p><p class="nav"><a href="VB5_IconMenu_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IconMenu Demonstration</a> (82K)</p><p /><p class="nav"><a href="VB6_IconMenu_Complete_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IconMenu Complete Source</a> (177K)</p><p class="nav"><a href="VB6_IconMenu_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IconMenu Control Binary</a> (41K)</p><p class="nav"><a href="VB6_IconMenu_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IconMenu Demonstration</a> (79K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3&amp;type=Article&amp;title=IconMenu%20Control">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />28 Mar 2003<br /><p class="update">Added support for Office XP Style menus.</p><p class="update">VB6 ImageList under XP is now supported.</p><p class="update">Can now customise menu foreground and background colours
+as with the other menu controls.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>IconMenu Control</h1><p class="splash">Convert standard VB Menus to Icon Menus for a smarter look, and build custom menu trees at runtime.</p><img src="iconMenuControl.png" width="366" height="281" alt="IconMenu Control in Action" /><p /><p>The IconMenu (cPopMenu.ocx) control is a really simple way to get icons into a VB project's menus. 
+It also allows you to create arbitrary new submenus, gives you control over the system menu 
+and has some useful new events indicating when menu items are highlighted and exited.</p><h2>Introducing the PopMenu Control</h2><p>VB is a great language and interface designer, don't get me wrong. But sometimes you get 
+the feeling there just hasn't been enough effort put in. Two particular examples are the 
+printer object (better than it used to be, but still not very good!) and menus.</p><p>When you first start VB5, you are presented with a wonderful interface: all the menus 
+have icons which reflect the toolbar function, and there are neat popup right-click menus 
+everywhere. So I naturally thought we'd get these functions to use ourselves for our 
+own VB applications. Er... no.</p><p>Instead we get the same old menu control that's been there since whenever. You've got to 
+predesign your menus at design time, and although you can add new levels to a existing menu, 
+you're stuck if you want to add a new submenu. </p><p>I found that for my application I needed to create a Favorites menu. The 
+Internet Explorer Favourites list seemed to be a good model as it allows you to organise stuff 
+if you want to, or just add it straight in. Since you can't add a submenu to an existing menu 
+in VB, however, you just can't do it! (Or, at least, you could but you would have to harshly 
+restrict where things can be organised to).</p><p>Rather than give up (which maybe I should have, because for various reasons, which were 
+unusally not code related, that application never got completed!) I decided to build a 
+menu control which allows you to create arbitrary numbers of sub-menus at run time. At 
+the same time I added icon support so you get Office/VB style menus for VB.</p><h2>How PopMenu Works</h2><p>The cPopMenu control is a VB UserControl which is invisible at runtime. When you call the 
+initialisation method (<i>SubClass</i>) the control uses the Win32 API menu functions to 
+determine what menus there are on the form and stores their IDs, captions, enabled state and 
+so on in an internal array. At the same time it also converts them to Owner-Draw menu items, 
+so the cPopMenu control is notified when the menu items need drawing, and can draw the menu 
+as required. Finally, the control subclasses the form so it can react to menu items being 
+higlighted, clicked and when a popup menu is just about to be drawn.</p><p>This means that the control draws over the existing VB menus, but still allows the 
+old menu events to be fired in code. By exposing properties to access the internal array, 
+the control allows icons to be associated with the existing menu items, as well as allowing 
+you store some useful extra information against the menu items (Key, HelpText, ItemData etc).</p><h2>Quick Start - Adding Icon Menu Support to an Existing Application</h2><p>Adding Icon Menu support to an existing application can be very simple, depending on what 
+VB menu features you use. If you don't use the menu <i>Load</i>, <i>Unload</i>, <i>Caption</i> 
+or <i>Visible</i> methods, you only have to add a small amount of code. I'll cover this case now.</p><p>The steps are: </p><ul><li>Add a cPopMenu to your form. If you don't already have an ImageList, add one 
+with the icons you want. You can use either a standard COMCTL32.OCX image list or a 
+vbAccelerator Image List control/class as the Image List.</li><li>Initialise the cPopMenu control and the icons against the menu items in the 
+<i>Form_Load</i> event as follows: 
+<pre>
+    with cPopMenu1
+        ' Associate the image list:
+        ' NOTE: If you are using a VB ImageList, make sure that it has at
+        ' least one icon in it before calling this method.
+        .ImageList = ilsIcons
+
+        ' Parse through the VB designed menu and sub class the items:
+        .SubClassMenu Me
+
+        ' The Key property for a VB menu is set to the menu's name.
+        ' In this example I set the icon for the mnuFileOpen menu item:
+        .ItemIcon("mnuFileOpen") = ilsIcons.ListImages("OPEN").Index-1
+
+        ' Repeat for your other menus
+
+    End With
+</pre></li><li>And that's it!  Everything else will continue to work as before. If you use the 
+VB <i>Caption</i> property, there is a minor change you must make to make sure the menu 
+item keeps being owner-drawn. Instead of: 
+<pre>
+    mnuFile(0).Caption = "&amp;Open Project..." 
+</pre>
+Write this: 
+<pre>
+    cPopMenu1.Caption("mnuFile(0)") = "&amp;Open Project..." 
+</pre></li></ul><p>If you use VB's <i>Load</i>, <i>Unload</i> methods or the <i>Visible</i> property, however, 
+you'll need to modify the code a bit more to use the new <i>Add</i> and <i>Remove</i> menu features. 
+</p><h2>Adding, Inserting and Deleting Menu items</h2><p>You can extend existing menus, create as many new sub-menus as you want and modify 
+items in the menu using the following methods:</p><ul><li><strong>AddItem</strong><br />
+This adds a new item to the menu. You can specify a parent item if you want to create a new submenu.</li><li><strong>InsertItem</strong><br />
+This works in the same way as add item, but allows you to insert an item to the menu. In 
+combination with the <li>RemoveItem</li> method this makes it much easier to work with menu items.</li><li><strong>RemoveItem</strong><br />
+Removes an item from a menu.</li><li><strong>ReplaceItem</strong><br />
+Similar to AddItem, but instead replaces an existing menu item. This allows you to 
+change multiple properties of the menu item at the same time.</li><li><strong>ClearSubMenusOfItem</strong><br />
+This clears all the menu items in a submenu. You can then use the <i>AddItem</i> and 
+<i>InsertItem</i> methods to rebuild the list.</li></ul><p>Note that menu items added or inserted using these methods do not raise events through the 
+standard VB menu events. (This is because your menu might be a completely new sub-menu, 
+which has no corresponding VB event to fire through.) Instead the <i>ItemClick</i> event of 
+cPopMenu fires, passing the index of the menu in the control. You should use cPopMenu's 
+<i>ItemData</i>, <i>MenuKey</i> and <i>Caption</i> properties to make it easier to identify which item 
+has actually been clicked.</p><p>Menu items deleted using <i>ReplaceItem</i> or <i>ClearSubMenusOfItem</i> are hard-deleted from 
+the control. If you ever subsequently want to get these items back again, you need to re-add them.</p><h2>cPopMenu and the VB Menu .Visible Property</h2><p>Unfortunately, VB implements menus with <i>.Visible</i> set to false by actually deleting 
+the menu handle entirely from the menu. Because the cPopMenu control must use Windows API 
+methods to work with the menu, it cannot detect VB menus that are not visible. Here is an overview 
+of what happens with menus that have <i>.Visible</i> = False:</p><h3>Menus set to be Invisible in the VB Menu designer</h3><p>In this case, the menu is not created when you the run the VB project. When you call 
+cPopMenu's <i>SubClassMenu</i> method, it will have no reference to these menu items. 
+The worst case is when all menu items are set to be invisible in the designer - then the 
+cPopMenu will find no menus at all and will return a completely blank menu and the 
+<i>.MenuCount</i> property will return 0! If you are trying to do this, it is likely you 
+are trying to create a pop-up menu with the submenu of one or more of the invisible items. 
+You should consider using the <a href="http://www.vbaccelerator.com/article.asp?id=7">Pop-up Menu ActiveX</a> DLL instead - it is much better suited 
+to the task.</p><h3>Setting .Visible = False at run-time.</h3><p>In this case, the cPopMenu control will have a reference to the menu until you set 
+<i>.Visible = False</i>. When you do this, VB deletes the menu handle that cPopMenu is 
+referring to. The control still thinks the menu is valid even though it has been removed. 
+You can continue to set properties for the removed menu item but they will have no effect. 
+When you set <i>.Visible</i> True again, VB creates a completely new menu handle for the 
+item that the control does not know about - it still looks for the old menu handle. 
+The new menu will not be owner-drawn and you will not be able to refer to it from the control. 
+There is now a work-around in the control for the lack of the <i>.Visible</i> property support 
+in the control, but it still can't really address all the problems. To use this method, whenever 
+you change a menu item's <i>.Visible</i> property, you can call cPopMenu's 
+<i>CheckForNewMenuItems</i> event. This rechecks all the menu items and: 
+<ul><li>Removes items that have been made invisible in VB.</li><li>For each menu item which was previously invisible but has subsequently been made visible, it fires a <i>RequestNewMenuItem</i> event. You must fill in the <i>Icon</i>, 
+<i>Tag</i>, <i>Itemdata</i> and other properties each time, because the cPopMenu control 
+cannot keep track of menu items that are added and removed.</li></ul></p><p>It is recommended that you avoid using the <i>.Visible</i> property and instead rewrite 
+your code to use cPopMenu's <i>AddItem</i>, <i>InsertItem</i> and <i>RemoveItem</i> methods
+instead.  These properties are much more flexible and allow you to add unlimited menu 
+items at any level in the hierarchy.</p><h2>Recoding for Load and Unload Methods</h2>
+The VB <i>Load</i> and <i>Unload</i> methods for menu items will interfere with the 
+operation of the cPopMenu control in a similar way to the <i>.Visible</i> property: 
+<ul><li><i>Load</i> will successfully add a new menu, but the menu will not be under cPopMenu's 
+control and you will not be able to set icons for it.</li><li><i>Unload</i> will remove the menu from the display but the cPopMenu control will 
+still think that exists.</li></ul><p>Again, you can work around these issues by using the <i>CheckForNewMenuItems</i> method, but 
+it is recommended you recode using the <i>AddItem</i>, <i>InsertItem</i> and <i>RemoveItem</i>
+ properties instead.</p><h2>About the Demonstration Project</h2><p>The demonstration project shows how to exercise all these features, including dynamically 
+building a menu from a directory listing (it checks for subdirectories below the project itself).</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Menus</a>&#160;.&#160;IconMenu Control</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 11 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Menus/Icon_Menu_Control/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:50:38 GMT -->
+</html>

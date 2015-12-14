@@ -1,0 +1,150 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/System_Internet_Connection_-_Determining_How_and_If_Connected/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:06 GMT -->
+<head>
+
+<title>vbAccelerator - System Internet Connection - Determining How and If Connected</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="If you are designing a project which can use an Internet connection, 
+it can be useful to know whether the system is connected or not. There 
+are various methods of doing this, however the most informative and reliable method 
+is to use the WinInet.DLL InternetGetConnectedStateEx API call. 
+The only problem with this call is it is only implemented for the WinInet.DLL version shipped 
+with Internet Explorer version 4.0 or higher." /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;System Internet Connection - Determining How and If Connected</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2962</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2962&amp;type=Article&amp;title=System%20Internet%20Connection%20%2D%20Determining%20How%20and%20If%20Connected">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />17 Aug 1999<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>System Internet Connection - Determining How and If Connected</h1><p /><p>If you are designing a project which can use an Internet connection, 
+it can be useful to know whether the system is connected or not. There 
+are various methods of doing this, however the most informative and reliable method 
+is to use the WinInet.DLL <i>InternetGetConnectedStateEx</i> API call. 
+The only problem with this call is it is only implemented for the WinInet.DLL version shipped 
+with Internet Explorer version 4.0 or higher.</p><p>To test out this function, start a new project and add the following code: </p><pre>
+Public Declare Function InternetGetConnectedStateEx Lib "wininet.dll" _
+   Alias "InternetGetConnectedStateExA" _
+   (ByRef lpdwFlags As Long, _
+   ByVal lpszConnectionName As String, _
+   ByVal dwNameLen As Long, _
+   ByVal dwReserved As Long _
+   ) As Long
+
+Public Enum EIGCInternetConnectionState
+   INTERNET_CONNECTION_MODEM = &amp;H1&amp;
+   INTERNET_CONNECTION_LAN = &amp;H2&amp;
+   INTERNET_CONNECTION_PROXY = &amp;H4&amp;
+   INTERNET_RAS_INSTALLED = &amp;H10&amp;
+   INTERNET_CONNECTION_OFFLINE = &amp;H20&amp;
+   INTERNET_CONNECTION_CONFIGURED = &amp;H40&amp;
+End Enum
+
+Public Property Get InternetConnected( _
+     Optional ByRef eConnectionInfo As EIGCInternetConnectionState, _
+     Optional ByRef sConnectionName As String _
+   ) As Boolean
+Dim dwFlags As Long
+Dim sNameBuf As String
+Dim lR As Long
+Dim iPos As Long
+   sNameBuf = String$(513, 0)
+   lR = InternetGetConnectedStateEx(dwFlags, sNameBuf, 512, 0&amp;)
+   eConnectionInfo = dwFlags
+   iPos = InStr(sNameBuf, vbNullChar)
+   If iPos &gt; 0 Then
+     sConnectionName = Left$(sNameBuf, iPos - 1)
+   ElseIf Not sNameBuf = String$(513, 0) Then
+     sConnectionName = sNameBuf
+   End If
+     InternetConnected = (lR = 1)
+End Property
+</pre><p>To try out the code, add a CommandButton and a 
+Multi-Line TextBox to your test project's main form. Then add the following code to try the function:</p><pre>
+Private Sub Command1_Click()
+Dim eR As EIGCInternetConnectionState
+Dim sMsg As String
+Dim sName As String
+Dim bConnected As Boolean
+
+   ' Determine whether we have a connection:
+   bConnected = InternetConnected(eR, sName)
+
+   ' The connection state info parameter provides details
+   ' about how we connect:
+   If (eR And INTERNET_CONNECTION_MODEM) = INTERNET_CONNECTION_MODEM Then
+     sMsg = sMsg &amp; "Connection uses a modem." &amp; vbCrLf
+   End If
+   If (eR And INTERNET_CONNECTION_LAN) = INTERNET_CONNECTION_LAN Then
+     sMsg = sMsg &amp; "Connection uses LAN." &amp; vbCrLf
+   End If
+   If (eR And INTERNET_CONNECTION_PROXY) = INTERNET_CONNECTION_PROXY Then
+     sMsg = sMsg &amp; "Connection is via Proxy." &amp; vbCrLf
+   End If
+   If (eR And INTERNET_CONNECTION_OFFLINE) = INTERNET_CONNECTION_OFFLINE Then
+     sMsg = sMsg &amp; "Connection is Off-line." &amp; vbCrLf
+   End If
+   If (eR And INTERNET_CONNECTION_CONFIGURED) = INTERNET_CONNECTION_CONFIGURED Then
+     sMsg = sMsg &amp; "Connection is Configured." &amp; vbCrLf
+   Else
+     sMsg = sMsg &amp; "Connection is Not Configured." &amp; vbCrLf
+   End If
+   If (eR And INTERNET_RAS_INSTALLED) = INTERNET_RAS_INSTALLED Then
+     sMsg = sMsg &amp; "System has RAS installed." &amp; vbCrLf
+   End If
+   
+   ' Display the connection name and info:
+   If bConnected Then
+     Text1.Text = "Connected: " &amp; sName &amp; vbCrLf &amp; vbCrLf &amp; sMsg
+   Else
+     Text1.Text = "Not Connected: " &amp; sName &amp; vbCrLf &amp; vbCrLf &amp; sMsg
+   End If
+
+End Sub
+</pre><p>Run the project. When you click the command button, the text box 
+will be updated with the status of the current connection, the name of 
+RAS dial-up connection used (if applicable) and also various information about 
+how the connection is being achieved (i.e. by modem or LAN, via a proxy and whether 
+the connection is configured or not).</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;System Internet Connection - Determining How and If Connected</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 8 January 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/System_Internet_Connection_-_Determining_How_and_If_Connected/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:06 GMT -->
+</html>

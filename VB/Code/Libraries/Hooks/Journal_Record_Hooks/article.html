@@ -1,0 +1,168 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Hooks/Journal_Record_Hooks/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:01 GMT -->
+<head>
+
+<title>vbAccelerator - Using a Journal Record Hook to Capture Mouse and Key Events from any System Window</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Normally, a Windows hook used in Visual Basic can only act on Windows within the process 
+in which it is running.  The exception to this rule is the Windows Journal Hook, which 
+allows capturing of mouse and keyboard events from any Window on the system.  Many thanks
+to the coder known only by his email alias 'Mr Yummys' for sending 
+the original sample which showed how to use this technique and on which the demonstration
+is derived.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Hooks</a>&#160;.&#160;Using a Journal Record Hook to Capture Mouse and Key Events from any System Window</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Journal_Record_Hook_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Journal Record Hook Sample</a> (13K)</p><p /><p class="nav"><a href="VB6_Journal_Record_Hook_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Journal Record Hook Sample</a> (12K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:12336</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12336&amp;type=Article&amp;title=Using%20a%20Journal%20Record%20Hook%20to%20Capture%20Mouse%20and%20Key%20Events%20from%20any%20System%20Window">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;Mr Yummys</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />27 Jun 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12338">Win32 Hooks in VB - The vbAccelerator Hook Library</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Using a Journal Record Hook to Capture Mouse and Key Events from any System Window</h1><img src="journalRecorder.png" width="447" height="301" alt="Journal Recorder Sample Application" /><p /><p>
+Normally, a Windows hook used in Visual Basic can only act on Windows within the process 
+in which it is running.  The exception to this rule is the Windows Journal Hook, which 
+allows capturing of mouse and keyboard events from any Window on the system.  Many thanks
+to the coder known only by his email alias "Mr Yummys" for sending 
+the original sample which showed how to use this technique and on which the demonstration
+is derived.
+</p><h2>About the Demonstration</h2><p>
+The sample code demonstrates how to create a Journal Hook and logs a message for each key
+event and mouse event (except Mouse Move events, which it internally counts).  It also
+demonstrates how to find information about which Window the mouse is over for each type
+of event, and to get its class name.
+</p><p>
+As a useless sideline, the demonstration also counts the number of key presses, pixels moved
+by the mouse and shows how long the UI has been idle. (As you will see from the picture above,
+in the process of typing this article, that ran to well over 16,000 key presses and 250,000 
+pixels.  Don't ever say I don't work hard to get this site done for you!).
+</p><p>
+Incidentally, on Windows 2000 and XP systems you can also get the idle time using the API
+call <span class="code">GetLastInputInfo</span>.
+</p><h2>Using Journal Hooks</h2><h3>Using The <span class="code">WH_JOURNALRECORD</span> Hook</h3><p>
+Installing this hook using the vbAccelerator Hook library is straightforward.  
+Once the library is referenced, you implement the <span class="code">IWindowsHook</span>
+interface and then call <span class="code">InstallHook</span>:
+</p><pre>
+Implements IWindowsHook
+
+Private Sub Form_Load()
+   InstallHook Me, WH_JOURNALRECORD
+End Sub
+
+Private Sub Form_QueryUnload( _
+      Cancel As Integer, UnloadMode As Integer)
+   RemoveHook Me, WH_JOURNALRECORD
+End Sub
+
+Private Function IWindowsHook_HookProc( _
+      ByVal eType As vbalWinHook.EHTHookTypeConstants, _
+      ByVal nCode As Long, _
+      ByVal wParam As Long, _
+      ByVal lParam As Long, _
+      bConsume As Boolean) As Long
+
+   If (eType = WH_JOURNALRECORD) Then
+
+      Dim cEvent As cJournallParam
+      Set cEvent = JournalRecordlParam(lParam)
+
+      ' cEvent now contains information about
+      ' the Journal record message.
+
+   End If
+
+End Function
+</pre><p>
+The <span class="code">cJournallParam</span> contains the information 
+stored in the Windows API <span class="code">EVENTMSG</span> structure.
+This structure isn't very well documented in the SDK and also the members
+which get set depend on the message being sent.  Here's a quick guide
+to the values:
+</p><table class="article"><tr class="header"><td><strong>Member</strong></td><td><strong>Notes</strong></td></tr><tr class="body"><td><span class="code">Msg</span></td><td>
+The Windows Message Code of this particular message.  Always populated.  Valid values are
+any of the Windows Messages associated with the keyboard or the mouse, i.e. WM_KEYDOWN, 
+WM_KEYUP, WM_CHAR, WM_MOUSEMOVE, WM_LBUTTONDOWN, WM_LBUTTONUP, WM_LBUTTONDBLCLK, 
+WM_RBUTTONDOWN, WM_RBUTTONUP, WM_RBUTTONDBLCLK, WM_MBUTTONDOWN, WM_MBUTTONUP, 
+WM_MBUTTONDBLCLK, WM_MOUSEWHEEL, WM_SYSTEMKEYDOWN, WM_SYSTEMKEYUP.
+</td></tr><tr class="body"><td><span class="code">hWnd</span></td><td>
+The Windows handle that the mouse is over for mouse messages.  For keyboard
+messages, this value does not get set.  This means it is difficult to determine
+where a particular keyboard message was destined.
+</td></tr><tr class="body"><td><span class="code">lParamLow</span></td><td>
+For keyboard messages, the low byte of this parameter contains
+the virtual key code of the key that was pressed.  For mouse messages,
+the x position of the cursor.
+</td></tr><tr class="body"><td><span class="code">lParamHigh</span></td><td>
+For keyboard messages, this mesage is not relevant.  For mouse messages,
+the y position of the cursor.
+</td></tr><tr class="body"><td><span class="code">MsgTime</span></td><td>
+A long value representing the time at which the message was posted.
+</td></tr></table><p>
+The demonstration project shows how to use these parameters along
+with a handful of other useful API calls to log information about
+the messages.
+</p><h3>The <span class="code">WM_CANCELJOURNAL</span> Message</h3><p>
+Whenever the keystrokes <span class="i">Ctrl+Esc</span> or <span class="i">Ctrl+Alt+Del</span>
+are used, Windows internally stops sending messages through the Journal Hook.  From this point
+your hook stays installed in the system but does not receive any further information.  
+The only thing you can do if you want to continue tracking messages after that point 
+is to remove your hook and re-install it.  
+</p><p>
+Windows informs you when this has occurred using the <span class="code">WM_CANCELJOURNAL</span>
+message, which is posted to your application.  In this sample I have installed a 
+<span class="code">WH_GETMESSAGE</span> hook to catch this message, however, it should also be 
+possible to use a subclass on the top level window.  (The top level window in a VB application
+is a special hidden Window that VB creates which can be obtained from any form using the
+<span class="code">GetWindow</span> API call with flag <span class="code">GW_OWNER</span>).
+</p><p>
+For the purposes of the sample, receipt of <span class="code">WM_CANCELJOURNAL</span>
+causes the application to uninstall the hook.  However, in real life you could re-install
+the hook again directly afterwards.
+</p><h2>Conclusion</h2><p>
+Using a Journal Record hook, you can intercept keyboard and mouse messages for
+any application on the system.  This could be useful for measuring system use,
+determining idle time and scheduling intensive background tasks.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Hooks</a>&#160;.&#160;Using a Journal Record Hook to Capture Mouse and Key Events from any System Window</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 29 June 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Hooks/Journal_Record_Hooks/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:02 GMT -->
+</html>

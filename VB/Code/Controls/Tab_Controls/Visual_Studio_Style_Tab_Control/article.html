@@ -1,0 +1,136 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Tab_Controls/Visual_Studio_Style_Tab_Control/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:06:57 GMT -->
+<head>
+
+<title>vbAccelerator - vbAccelerator Visual Studio Style Tab Control</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This control reimplements the tab drawing code used in the 
+vbAccelerator MDITabs Control as a fully-featured Visual Studio style Tab Control, 
+with a fully-typed object interface.  It also supports pinning and unpinning tabs, so when they're unpinned they
+show a small vertical tab-bar which slides-out the tab to the display.  Cool!" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Tab Controls</a>&#160;.&#160;vbAccelerator Visual Studio Style Tab Control</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Pinnable_VS_Tab_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Pinnable VS Tab Demonstration</a> (21K)</p><p class="nav"><a href="VB5_VS_Tab_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 VS Tab Control Binary</a> (30K)</p><p class="nav"><a href="VB5_VS_Tab_Control_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 VS Tab Control Demonstration</a> (17K)</p><p class="nav"><a href="VB5_VS_Tab_Control_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 VS Tab Control Full Source</a> (97K)</p><p /><p class="nav"><a href="VB6_Pinnable_VS_Tab_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Pinnable VS Tab Demonstration</a> (20K)</p><p class="nav"><a href="VB6_VS_Tab_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 VS Tab Control Binary</a> (30K)</p><p class="nav"><a href="VB6_VS_Tab_Control_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 VS Tab Control Demonstration</a> (16K)</p><p class="nav"><a href="VB6_VS_Tab_Control_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 VS Tab Control Full Source</a> (95K)</p><p /><p class="nav"><a href="vbalDTab6_Interface_Definition.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />vbalDTab6 Interface Definition</a> (1K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2767</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2767&amp;type=Article&amp;title=vbAccelerator%20Visual%20Studio%20Style%20Tab%20Control">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 4 / 6</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 6 / 6</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 1 / 1</a></p><p class="nav">Updated:22 November 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />11 May 2003<br /><p class="update">Calling remove on a non-existent tab did not raise an error because the control ate it.</p><p class="update">Inserting a tab did not work correctly since the existing tabs were not shuffled up.</p><p class="update">If a tab with a panel was removed, and then added, then a subscript out of range error occurred.</p><p class="update">Thanks to Michael Elashoff, Julien Margail and Matt Funnell</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=931">Using the System Image List with (and without) vbAccelerator Controls</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2965">Flicker Free API Drawing</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2310">vbAccelerator MDITabs Control</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator Visual Studio Style Tab Control</h1><img src="vsTabControl.png" width="580" height="239" alt="VS Tab Demonstrations" /><p /><p>This control reimplements the tab drawing code used in the 
+<a href="http://www.vbaccelerator.com/article.asp?id=2310">vbAccelerator MDITabs Control</a> as a fully-featured Visual Studio style Tab Control, 
+with a fully-typed object interface.  It also supports pinning and unpinning tabs, so when they're unpinned they
+show a small vertical tab-bar which slides-out the tab to the display.  Cool!</p><h2>Features of the Control</h2><p>The visual style of the tab control closely follows the styles of the tabs
+displayed in Visual Studio.NET.  The design of the control enables the following features:</p><ul><li>Position tabs at the bottom or the top of the control.</li><li>Tabs can be dragged by the user to any position.</li><li>Tabs can optionally display an icon before the caption.</li><li>Set whether tabs are squashed up if there is insufficient room, or whether scroll buttons are displayed.</li><li>A Close button can be displayed, and if it is, you can determine for individual tabs whether the close
+button is enabled or not.</li><li>Independent fonts for selected and non-selected tabs.</li><li>Disabled tabs can't be selected by the user.</li><li>Pinnable mode allows the tab to display in a compact vertical form where the tabs slide out as the mouse
+moves over the tabs.  Once pinned, the control converts to the standard tab style.</li></ul><h2>Using the Control</h2><p>The object model for the Tab control is shown below:</p><img src="vsTabControlObjectModel.png" width="215" height="143" alt="Tab Control Object Model" /><br /><p><small><strong>Tab Control Object Model</strong></small></p><p>There are three main areas in using the control:</p><ol><li>Configuring the Control</li><li>Adding and Removing Tabs</li><li>Responding to Events</li></ol><p>These will be covered in turn.</p><h3>Configuring the Control</h3><p>These properties and methods are exposed through the main control interface.  All can be
+modified at run-time and most can be set in the IDE at design-time.</p><ul><li><strong>Pinnable</strong><br />
+Gets/sets whether the control is pinnable. When the control is <i>Pinnable</i>, and
+<i>Pinned</i> is false, the control will display in a compact vertical form, and when
+the user moves over the tabs the tab slides out with a button to Pin the tabs in place.
+When <i>Pinnable</i> is false the control always displays as a set of horizontal tabs.
+This property defaults to False for compatibility
+with the previous version of the control.</li><li><strong>Pinned</strong><br />
+Only relevant when <i>Pinnable</i> is set to True.  If the control is <i>Pinnable</i> 
+then this property gets/sets whether the control is pinned or not.</li><li><strong>AllowScroll</strong><br />
+Gets/sets whether scrolling of the tabs is allowed.  When <i>AllowScroll</i> is true, the
+control will show scroll buttons whenever the control is too small to display all of the
+tabs.  When it is false, the tabs will be squashed up to fit the available space in the
+control. The property defaults to True. </li><li><strong>BackColor</strong><br />
+Gets/sets the background colour of the client area of the control.</li><li><strong>Font</strong><br />
+Gets/sets the font used to draw non-selected tab captions</li><li><strong>ForeColor</strong><br />
+Gets/sets the colour used to draw the tab captions in the control.</li><li><strong>SelectedFont</strong><br />
+Gets/sets the font used to draw selected tab captions</li><li><strong>ShowCloseButton</strong><br />
+Gets/sets whether a close button is displayed at the end of the tabs to allow the
+user to close the tab.</li><li><strong>ShowCloseButton</strong><br />
+Gets/sets whether a close button is displayed at the end of the tabs to allow the
+user to close the tab.</li><li><strong>ShowTabs</strong><br />
+Gets/sets whether the tabs are shown or not.</li><li><strong>TabAlign</strong><br />
+Gets/sets whether tabs are displayed at the top or the bottom of the control.</li><li><strong>ImageList</strong><br />
+Associates an ImageList with the control as a source of icons for the tabs.  This can
+either be a VB ImageList from the VB5 or VB6 Common Controls OCX packages or a handle
+to any other ComCtl32 ImageList (such as the 
+<a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator Image List Control or Class</a> or the
+<a href="http://www.vbaccelerator.com/article.asp?id=931">System Image List</a>).  This property is set-only and can only be
+used at run-time.  If you want to remove a previously added ImageList, do this:
+<pre>
+    tab.ImageList = 0 ' no ImageList handle
+</pre></li><li><strong>ClientLeft, ClientTop, ClientWidth, ClientHeight</strong><br />
+Return the position of the client area relative to the control in pixels (run-time only).
+</li></ul><h3>Adding and Removing Tabs</h3><p>Manipulating the tabs in the control is achieved through the <i>Tabs</i> property
+of the control, which returns a <i>cTabCollection</i> class.  This class supports the
+following methods:</p><ul><li><strong>Add</strong><br />
+Adds or inserts a tab to the control. You can specify the Key, Caption and IconIndex 
+you want for the tab at this point.  Once the tab has been created, the method returns
+a <i>cTab</i> object which you can use to set any additional properties.  It is
+highly recommended to associate a Key with the tab at this point, as the Key cannot
+be changed later, and as the user can re-order the tabs, you cannot be sure which
+index a particular tab will be found at.</li><li><strong>Count</strong><br />
+Returns the number of tabs currently in the control.</li><li><strong>Item</strong><br />
+Returns a <i>cTab</i> object for the specified Key or index.</li><li><strong>Remove</strong><br />
+Removes a tab from the control based on its Key or index.</li></ul><p>The <i>cTab</i> class is used to get and set all of the properties of an individual tab.</p><ul><li><strong>CanClose</strong><br />
+Gets/sets whether the Close button is enabled (if the <i>ShowCloseButton</i> property is set
+for the control) for this tab.</li><li><strong>Caption</strong><br />
+Gets/sets the caption for the tab.</li><li><strong>Enabled</strong><br />
+Gets/sets whether the tab is enabled (can be selected by the user).</li><li><strong>IconIndex</strong><br />
+Gets/sets the 0-based index of the icon to be displayed for this tab.  If you don't want
+an icon, set to -1 (the default value).</li><li><strong>ItemData</strong><br />
+Gets/sets an optional long value to be associated with the tab.</li><li><strong>Key</strong><br />
+Gets the Key for this tab</li><li><strong>Panel</strong><br />
+Gets/sets a control to be displayed in the ClientArea of the tab when the tab is selected.</li><li><strong>Selected</strong><br />
+Gets/sets whether the tab is selected or not.</li><li><strong>Tag</strong><br />
+Gets/sets an optional string value to be associated with the tab.</li><li><strong>ToolTipText</strong><br />
+Gets/sets the tooltip to be displayed when the mouse hovers over the tab.</li></ul><h3>Responding to Events</h3><p>The tab control generates the following events:</p><ul><li><strong>Resize</strong><br />
+Raised whenever the control is resized</li><li><strong>TabDoubleClick</strong><br />
+Raised when a tab is double clicked, passing <i>cTab</i> object.</li><li><strong>TabClose</strong><br />
+Raised when the close button is clicked for a tab, passing a <i>cTab</i> object for the
+tab which has been clicked and a Cancel argument, which can be set to True to prevent the
+tab from being removed,</li><li><strong>TabClick</strong><br />
+Raised whenever the user clicks a tab.  Passes a <i>cTab</i> object and the mouse details
+for the click.</li><li><strong>TabBarClick</strong><br />
+Raised whenever the user clicks on a non-tab portion of the tab bar.  Passes the mouse details
+for the click.</li><li><strong>TabSelected</strong><br />
+Raised whenever the selected tab changes.  Provides a <i>cTab</i> object containing details
+of the selected tab.</li></ul><h2>Documentation</h2><p>Documentation for the control, created using <a href="http://www.vbaccelerator.com/article.asp?id=1428">ActiveX Documenter</a>
+is also available as a download.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Tab Controls</a>&#160;.&#160;vbAccelerator Visual Studio Style Tab Control</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 11 May 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Tab_Controls/Visual_Studio_Style_Tab_Control/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:07:01 GMT -->
+</html>

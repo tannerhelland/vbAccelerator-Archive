@@ -1,0 +1,432 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/Music_Library/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:49:43 GMT -->
+<head>
+
+<title>vbAccelerator - MusicLibrary SGrid Sample</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This sample uses SGrid 2.0 along with the 
+MP3 Tags code to load, display and persist 
+a Music Library.  It allows library import, sorting, grouping and in the future
+should be upgraded to include tag editing and play functions. It has been successfully 
+used with over 7,000 tracks.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;MusicLibrary SGrid Sample</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Music_Library.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Music Library</a> (108K)</p><p /><p class="nav"><a href="VB6_Music_Library.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Music Library</a> (104K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:13699</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13699&amp;type=Article&amp;title=MusicLibrary%20SGrid%20Sample">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />24 Jan 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1418">Two code only solutions for displaying Common/Dialogs</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13703">SGrid 2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3490">Reading and Writing MP3 ID3v1 and ID3v2 Tags</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2950">Compact a Long Path Name to fit a given space</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1420">Browsing For Folders</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>MusicLibrary SGrid Sample</h1><img src="musicLib.png" width="259" height="216" alt="Music Library Demonstration Application" /><p /><p>
+This sample uses SGrid 2.0 along with the 
+<a href="http://www.vbaccelerator.com/article.asp?id=3490">MP3 Tags code</a> to load, display and persist 
+a Music Library.  It allows library import, sorting, grouping and in the future
+should be upgraded to include tag editing and play functions. It has been successfully 
+used with over 7,000 tracks.
+</p><h2>About The Music Library</h2><p>
+This sample was created for two reasons: firstly, 
+during development of SGrid 2.0, I wanted to be sure that it was going to provide
+the necessary performance to be a useful control.  Secondly, I wanted something 
+better than the useless MusicMatch which came with my iPod, and Media Player.
+(The licence for the latest version of Media Player appears to require you to accept
+that Microsoft are in complete control of your PC, you, your family and 
+that you specifically allow Microsoft to use you at any point in time to perform 
+menial and/or degrading tasks for them at your expense.  This is surely reasonable since 
+in return Microsoft gracefully offer no warranty, liability or any sort of responsiblity
+for any problems or issues that arise through use of the software, up to and including
+inadvertent triggering of nuclear war, famine, the end of the universe etc, 
+etc.<a href="#disclaimer"><super>1</super></a>).
+</p><p>
+Anyway, as it stands this application doesn't fulfil the second point (for a start, "playing" is just enqueueing to WinAmp, and there's no Find facility nor
+tag editing yet) but it is fine for the first.  
+</p><h2>Inside the Music Library</h2><p>
+The application itself is a fairly simple implementation of the grid.  The first
+thing it does is to set up a colour theme for the grid, using the default properties.
+You could use the <a href="http://www.vbaccelerator.com/article.asp?id=3162">Hue, Luminance and Saturation</a> code
+here to provide a neat user option to customise these colours.  The grid is
+set up with a moss-green theme, alternate rows being slightly highlighted and group
+rows having a darker shade.  The highlight colour is set to white, and then this is
+alpha-blended with the background colour of the grid.  Finally, the grid is set to 
+multi-select row mode and hot-tracking.
+</p><pre>
+   With grdLib
+
+      .BackColor = RGB(80, 120, 100)
+      .AlternateRowBackColor = RGB(84, 126, 105)
+      .GroupRowBackColor = RGB(56, 84, 70)
+      .GroupingAreaBackColor = .BackColor
+      .ForeColor = RGB(243, 247, 245)
+      .GroupRowForeColor = .ForeColor
+      .HighlightForeColor = vbWindowText
+      .HighlightBackColor = RGB(255, 255, 255)
+      .NoFocusHighlightBackColor = RGB(200, 200, 200)
+      .SelectionAlphaBlend = True
+      .SelectionOutline = True
+      .DrawFocusRectangle = False
+      .HighlightSelectedIcons = False
+
+      .HotTrack = True
+      .RowMode = True
+      .MultiSelect = True
+   End With
+</pre><p>
+Next, the columns are added.  The control is configured to sort most tags 
+alphabetically without case-sensitivity, with track number and year set
+to sort numerically (if these tags do not contain a number, the item will
+be sorted to the end of the list).  The numeric fields are also set to 
+right-align in the cells, and the last column is stretched to fit the
+available grid size (note that the <span class="code">StretchLastColumnToFit</span>
+should ideally always be set after adding the columns, to prevent columns
+being incorrectly sized during set up).
+</p><pre>
+   With grdLib
+      ' Add the columns:
+      .AddColumn "Title", "Title", _
+          lColumnWidth:=192, eSortType:=CCLSortStringNoCase
+      .AddColumn "Artist", "Artist", _
+          lColumnWidth:=128, eSortType:=CCLSortStringNoCase
+      .AddColumn "Album", "Album", _
+          lColumnWidth:=192, eSortType:=CCLSortStringNoCase
+      .AddColumn "Track", "Track", _
+          eAlign:=ecgHdrTextALignRight, eSortType:=CCLSortNumeric
+      .AddColumn "Genre", "Genre", _
+          bVisible:=False, eSortType:=CCLSortStringNoCase
+      .AddColumn "Filename", "Filename", _
+          eSortType:=CCLSortStringNoCase
+      .AddColumn "TagType", "TagType", _
+          eAlign:=ecgHdrTextALignRight, bVisible:=False, _
+          eSortType:=CCLSortStringNoCase
+      .AddColumn "Year", "Year", _
+          eAlign:=ecgHdrTextALignRight, bVisible:=False, _
+          eSortType:=CCLSortNumeric
+      .AddColumn "LastImportFileDate", "", , , , bVisible:=False
+      .AddColumn "Comments", "Comments", bRowTextColumn:=True
+            
+      .StretchLastColumnToFit = True
+   End With
+</pre><p>
+The invisible "LastImportFileDate" is used to allow the library
+to track the file date of each MP3 file that is imported; this allows
+future imports to detect whether the tags need to be rechecked.
+</p><p>
+Once the grid is configured, we can load and save the library.  For performance,
+the grid's internal persistence mechanism (<span class="code">LoadGridData</span>
+and <span class="code">SaveGridData</span>) is used.  For a 7,000 track library,
+the data file is typically 3-4Mb, and loads and saves take around a second 
+on an Athlon 2000XP machine.  The code also calls the
+<span class="code">SelectionChange</span> event after loading to ensure that the
+menus reflect no selection:
+</p><pre>
+Private Sub loadLibrary()
+Dim sFile As String
+   sFile = musicLibFile()
+   If (fileExists(sFile)) Then
+      grdLib.LoadGridData sFile
+      grdLib_SelectionChange 0, 0
+   End If
+End Sub
+
+Private Sub saveLibrary()
+Dim sFile As String
+Dim sBackFile As String
+   sFile = musicLibFile()
+   If (fileExists(sFile)) Then
+      ' Make a backup:
+      sBackFile = musicLibBackupFile()
+      killFileIfExists sBackFile
+      FileCopy sFile, sBackFile
+      killFileIfExists sFile
+   End If
+   If (grdLib.Rows &gt; 0) Then
+      grdLib.SaveGridData musicLibFile()
+   Else
+      killFileIfExists sFile
+   End If
+End Sub
+</pre><p>
+Now data can be added to the grid.  Data is added directly from the results
+of the <span class="code">cMP3ID3v1</span> or <span class="code">cMP3ID3v2</span>
+data for each MP3 file that's imported into the library, and the cell format
+is set to truncate the text and either align it right- or left- depending on
+the column type.  Note that DT_PATH_ELLIPSIS is supported, which truncates 
+file names whilst attempting to preserve as much of the information about the
+file as possible (for more information, see also the tip on 
+<a href="http://www.vbaccelerator.com/article.asp?id=2950">compacting paths to fit a given space</a>):
+</p><pre>
+Private Sub processMp3File(ByVal sFile As String)
+Dim c1 As New cMP3ID3v1
+Dim c2 As New cMP3ID3v2
+Dim sType As String
+Dim lRow As Long
+Dim dFileLastImport As Date
+Dim dFileDateTime As Date
+   
+   dFileDateTime = FileDateTime(sFile)
+   lRow = findMp3Row(sFile)
+   If (lRow &gt; 0) Then
+      ' Check whether need to process this file or not:
+      dFileLastImport = grdLib.CellText(lRow, 9)
+      If (dFileDateTime &lt;= dFileLastImport) Then
+         ' unchanged
+         Exit Sub
+      End If
+   Else
+      ' Add a new row
+      grdLib.AddRow
+      lRow = grdLib.Rows
+   End If
+   
+
+   c1.MP3File = sFile
+   If (c1.HasID3v1Tag) Then
+      sType = "1"
+   End If
+   
+   c2.MP3File = sFile
+   If (c2.HasID3v2Tag) Then
+      If (Len(sType) &gt; 0) Then
+         sType = sType &amp; ","
+      End If
+      sType = sType &amp; "2"
+   End If
+     
+   If (c2.HasID3v2Tag) Then
+      grdLib.CellText(lRow, 1) = c2.Title
+      grdLib.CellText(lRow, 2) = c2.Artist
+      grdLib.CellText(lRow, 3) = c2.Album
+      grdLib.CellText(lRow, 4) = c2.Track
+      grdLib.CellText(lRow, 5) = c2.GenreName(c2.Genre)
+      grdLib.CellText(lRow, 8) = c2.Year
+      grdLib.CellText(lRow, 10) = c2.Comment
+   ElseIf (c1.HasID3v1Tag) Then
+      grdLib.CellText(lRow, 1) = c1.Title
+      grdLib.CellText(lRow, 2) = c1.Artist
+      grdLib.CellText(lRow, 3) = c1.Album
+      grdLib.CellText(lRow, 4) = c1.Track
+      grdLib.CellText(lRow, 5) = c1.GenreName(c1.Genre)
+      grdLib.CellText(lRow, 8) = c1.Year
+      grdLib.CellText(lRow, 10) = c1.Comment
+   Else
+      grdLib.CellText(lRow, 1) = fileNameOf(sFile)
+   End If
+   grdLib.CellText(lRow, 6) = sFile
+   grdLib.CellText(lRow, 7) = sType
+   grdLib.CellText(lRow, 9) = dFileDateTime
+   
+   grdLib.CellTextAlign(lRow, 6) = DT_LEFT Or DT_SINGLELINE Or DT_PATH_ELLIPSIS
+   grdLib.CellTextAlign(lRow, 4) = DT_RIGHT Or DT_SINGLELINE Or DT_END_ELLIPSIS
+   grdLib.CellTextAlign(lRow, 7) = DT_RIGHT Or DT_SINGLELINE Or DT_END_ELLIPSIS
+   grdLib.CellTextAlign(lRow, 8) = DT_RIGHT Or DT_SINGLELINE Or DT_END_ELLIPSIS
+      
+End Sub
+</pre><p>
+The import function uses the filename part of the file to import to match with
+an existing item in the grid; if it is already there the code checks the file
+date time against the last import file date time to confirm whether there has
+been 
+a change not.
+</p><p>
+Once some data has been loaded, you can start sorting, grouping and working
+with the cells as the user selects them.  Firstly, sorting.  The grid
+responds to column click events and configures the <span class="code">SortObject</span> to sort
+the data.  Any groupings that have been configured in the grid are preserved in the SortObject 
+by using the <span class="code">ClearNongrouped</span> method to initialise the sort object
+so it only contains sort information about the grouped rows.  Once a sort has been chosen,
+the column is used to cache the order and a header icon set to show the sort direction:
+</p><pre>
+Dim iCol As Long
+Dim iSortCol As Long
+
+   With grdLib.SortObject
+      .ClearNongrouped
+      iSortCol = .IndexOf(lCol)
+      If (iSortCol &lt;= 0) Then
+         iSortCol = .Count + 1
+      End If
+      
+      .SortColumn(iSortCol) = lCol
+      If (grdLib.ColumnSortOrder(lCol) = CCLOrderNone) Or _
+         (grdLib.ColumnSortOrder(lCol) = CCLOrderDescending) Then
+         .SortOrder(iSortCol) = CCLOrderAscending
+      Else
+         .SortOrder(iSortCol) = CCLOrderDescending
+      End If
+      grdLib.ColumnSortOrder(lCol) = .SortOrder(iSortCol)
+      .SortType(iSortCol) = grdLib.ColumnSortType(lCol)
+      
+      ' Place ascending/descending icon:
+      For iCol = 1 To grdLib.Columns
+         If (iCol &lt;&gt; lCol) Then
+            If Not (grdLib.ColumnIsGrouped(iCol)) Then
+               If grdLib.ColumnImage(iCol) &gt; -1 Then
+                  grdLib.ColumnImage(iCol) = -1
+               End If
+            End If
+         ElseIf grdLib.ColumnHeader(iCol) &lt;&gt; "" Then
+            grdLib.ColumnImageOnRight(iCol) = True
+            If (.SortOrder(iSortCol) = CCLOrderAscending) Then
+               grdLib.ColumnImage(iCol) = 0
+            Else
+               grdLib.ColumnImage(iCol) = 1
+            End If
+         End If
+      Next iCol
+      
+   End With
+   
+   Screen.MousePointer = vbHourglass
+   grdLib.Sort
+   Screen.MousePointer = vbDefault
+</pre><p>
+Grouping is enabled either through drag-drop or through a context menu
+displayed when right-clicking on a column.   Header right-clicks are
+notified to the application by the SGrid <span class="code">HeaderRightClick</span>
+event, which passes the coordinates of the mouse click. You then use the
+<span class="code">ColumnHeaderFromPoint</span> function to determine which
+(if any) column header was clicked; this function returns zero if the user clicked
+on a non-column part of the header control.  Once the column is determined, the
+context menu is set up to show allowable options, including an option at index
+3 to allow the column to be grouped or removed from the grouping and the 
+popip menu is shown at the right point by adjusting the click coordinates to 
+the coordinates of the form:
+</p><pre>
+Private Sub grdLib_HeaderRightClick( _
+       ByVal x As Single, ByVal y As Single _
+   )
+Dim lCol As Long
+   
+   lCol = grdLib.ColumnHeaderFromPoint(x, y)
+   
+   If (lCol &gt; 0) Then
+      mnuHeaderCtx(0).Enabled = True
+      mnuHeaderCtx(1).Enabled = True
+      mnuHeaderCtx(3).Enabled = True
+      mnuHeaderCtx(3).Caption = IIf( _
+         grdLib.ColumnIsGrouped(lCol), _
+            "Don't Group By This Field", _
+            "Group By This Field")
+      mnuHeaderCtx(6).Enabled = True
+            
+      mnuHeaderCtx(0).Checked = _
+         (grdLib.ColumnSortOrder(lCol) = CCLOrderAscending)
+      mnuHeaderCtx(1).Checked = _
+         (grdLib.ColumnSortOrder(lCol) = CCLOrderDescending)
+      
+   Else
+      mnuHeaderCtx(0).Enabled = False
+      mnuHeaderCtx(1).Enabled = False
+      mnuHeaderCtx(3).Enabled = False
+      mnuHeaderCtx(6).Enabled = False
+   
+      mnuHeaderCtx(0).Checked = False
+      mnuHeaderCtx(1).Checked = False
+   
+   End If
+      
+   x = (x + grdLib.ScrollOffsetX) * Screen.TwipsPerPixelX _
+      + grdLib.Left
+   y = y * Screen.TwipsPerPixelY + grdLib.TOp
+
+   ' Cache column in the tag of the menu:
+   mnuHeaderCtxTOP.Tag = lCol
+
+   Me.PopupMenu mnuHeaderCtxTOP, , x, y
+
+End Sub
+</pre><p>
+Finally, the ability to act on selected items in the grid control can be added.
+For this application, the available commands depend upon whether the selection
+is a single file, or multiple files.  Selection of a group row is taken to
+mean selection of all items within the group.  The grid's <span class="code">SelectionChange</span>
+event is used to configure the application menus for the selection (although note
+there is a bug with multiple selections which means Selection Change isn't always fired 
+when an item is added to the selection, so this is augmented by responding to
+<span class="code">MouseUp</span> events too):
+</p><pre>
+Private Sub grdLib_SelectionChange(ByVal lRow As Long, ByVal lCol As Long)
+   
+   Dim iSelCount As Long
+   iSelCount = grdLib.SelectionCount
+   
+   If (lRow &gt; 0) And (lCol &gt; 0) Then
+      
+      If (grdLib.RowIsGroup(lRow) Or (iSelCount &gt; 1)) Then
+         ' Multi-selection logic here
+      Else
+         ' Single selection logic here
+      End If
+   Else
+      ' No selection logic here
+   End If
+
+End Sub
+
+Private Sub grdLib_MouseUp( _
+      Button As Integer, Shift As Integer, _
+      x As Single, y As Single)
+   '
+   ' TODO: bug for multi select: doesn't always raise selection
+   ' changed...
+   If (Button = vbLeftButton) Or (Button = vbRightButton) Then
+      Dim lRow As Long
+      Dim lCol As Long
+      grdLib.CellFromPoint _
+         x \ Screen.TwipsPerPixelX, y \ Screen.TwipsPerPixelY, _
+         lRow, lCol
+      grdLib_SelectionChange lRow, lCol
+   End If
+
+End Sub
+</pre><p></p><h2>Timing Data</h2><p>
+Here are some timings taken from importing files an AthlonXP/2000 with 512Mb RAM
+from a 60Gb/5400rpm Western Digital Hard Drive (Athlon64/3400/SATA timings coming soon!).
+All tasks shown for 4,200 MP3 files:
+</p><table class="article"><tr class="header"><td><strong>Task</strong></td><td><strong>Time (ms)</strong></td></tr><tr class="body"><td>Import 3,500 MP3s</td><td>236,000</td></tr><tr><td>Load Library</td><td>298</td></tr><tr class="body"><td>Save Library</td><td>748</td></tr><tr class="body"><td>Sort on Title</td><td>72</td></tr><tr><td>Sort on Artist</td><td>64</td></tr><tr class="body"><td>Sort on Track</td><td>150</td></tr><tr><td>Group By Artist</td><td>364/188<super><a href="#note">*</a></super></td></tr><tr class="body"><td>Ungroup By Artist</td><td>90</td></tr><tr><td>Group By Title</td><td>950/486<super>*</super></td></tr><tr class="body"><td>Ungroup By Title</td><td>218</td></tr></table><a name="note" /><p class="caption"><super>*</super> - the first time that a group-by is
+performed, additional rows may need to be allocated in the grid.  The timing therefore
+depends upon how many garbage allocated rows are available when grouping is done.</p><h2>Conclusion</h2><p>
+This article provides a Music Library sample for SGrid 2.0 which although incomplete
+provides a good starting point and also demonstrates the grid's performance.
+</p><br /><br /><a name="disclaimer" /><p class="caption"><super>1</super> - Some of these suggestions may be untrue</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;MusicLibrary SGrid Sample</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 February 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/Music_Library/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:49:44 GMT -->
+</html>

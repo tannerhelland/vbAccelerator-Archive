@@ -1,0 +1,508 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Link_Spoof/LinkSpoof_zip_Globals_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:10 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: Globals.bas</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: Globals.bas" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;<a href="article.html">Link Spoof</a>&#160;.&#160;<a href="LinkSpoof.html">LinkSpoof</a>&#160;.&#160;Globals.bas</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="LinkSpoof.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />LinkSpoof</a> (45K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2279</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2279&amp;type=Zip&amp;title=LinkSpoof%2Ezip%5FGlobals">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:rheinig@gmx.net">Robert Heinig</a></p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />15 Nov 1999<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: Globals.bas</h1><pre>Attribute VB_Name = "Globals"
+'***********************************************************************
+'*         Copyright 1999 Robert Heinig, All Rights Reserved          *
+'*                         mailto:rheinig@gmx.net                      *
+'***********************************************************************
+'* You are free to use this tool within your own applications, but you *
+'* are expressly forbidden from selling or otherwise distributing this *
+'* source code without prior written consent. Free distribution of     *
+'* this tool is only allowed in form of its original, unmodified ZIP   *
+'* file, including the executable, the source, the readme and the      *
+'* sample program. Additionally, distribution must not charge any fee. *
+'***********************************************************************
+
+Option Explicit
+
+
+' Tokenized Command line global
+Public tok As CTokenizer
+
+' Path of INF file
+Public sInfFile As String
+
+' Debug verbose flag
+Public bVerbose As Boolean
+
+' Name of Linker executable
+Public sLinker As String
+
+' Linker exit code
+Public lExitCode As Long
+
+' Flag: Redirect output?
+Public bRedirect As Boolean
+
+' Redirect-to file name
+Public sOutFile As String
+' ... handle
+Public hOut As Long, hOut2 As Long
+
+' Timeout for Linker run
+Public lTimeOutMilliSecs As Long
+
+
+Private Const cIniBufferSize = 1024
+Private Declare Function GetPrivateProfileString Lib "kernel32" Alias
+ "GetPrivateProfileStringA" (ByVal lpApplicationName As String, ByVal lpKeyName
+ As Any, ByVal lpDefault As String, ByVal lpReturnedString As String, ByVal
+ lSize As Long, ByVal lpFilename As String) As Long
+Private Const DUPLICATE_SAME_ACCESS = &amp;H2&amp;
+
+
+Public Sub Main()
+    Dim sCmd As String, s As String
+
+    sCmd = Command$
+    sLinker = NormalizePath(App.Path) &amp; "LINK0.EXE"
+    Set tok = New CTokenizer
+    tok.Tokenize sCmd
+    lTimeOutMilliSecs = 60000
+    If FindInfFile Then
+        ' Evaluate some options
+        sLinker = ReadIniFile("Options", "Linker", sLinker)
+        s = String$(1024, 0)
+        Call ExpandEnvironmentStrings(sLinker, s, 1024)
+        sLinker = TrimAPIString(s)
+        bVerbose = ReadIniFileFlag("Options", "Verbose", False)
+        bRedirect = ReadIniFileFlag("Options", "Redirect", True)
+        On Error Resume Next
+        lTimeOutMilliSecs = ReadIniFile("Options", "LinkerTimeout")
+        On Error GoTo 0
+        sOutFile = "Link.log"
+        sOutFile = ReadIniFile("Options", "OutFile", sOutFile)
+        If InStr(sOutFile, "\") = 0 Then sOutFile =
+         NormalizePath(GetFileDir(sInfFile)) &amp; sOutFile
+        If ReadIniFileFlag("Options", "ShowCmd", False) And Len(sCmd) &gt; 0 Then
+            Clipboard.Clear
+            Clipboard.SetText sCmd
+            If vbCancel = MsgBox("Received command line:" &amp; vbCr &amp; sCmd,
+             vbInformation + vbOKCancel, App.Title) Then Exit Sub
+        End If
+        If bVerbose Then
+            If vbCancel = MsgBox( _
+                "Inf File=" &amp; sInfFile &amp; vbCr &amp; _
+                "Linker=" &amp; sLinker &amp; vbCr &amp; _
+                "Redirect=" &amp; bRedirect &amp; vbCr &amp; _
+                "OutFile=" &amp; sOutFile, _
+                vbInformation + vbOKCancel, App.Title) Then Exit Sub
+        End If
+        ' Process object file replacement
+        If ObjReplace Or OptReplace Or OptRemove Or OptAppend(True) Or
+         OptAppend(False) Then
+            sCmd = tok.Rebuild
+            If bVerbose Then
+                If vbCancel = MsgBox("Translated command line:" &amp; vbCr &amp; sCmd,
+                 vbInformation + vbOKCancel, App.Title) Then Exit Sub
+            End If
+        End If
+    End If
+    bRedirect = bRedirect And (Len(sOutFile) &gt; 0)
+    
+    LaunchLinker sCmd
+    
+    ExitProcess lExitCode
+End Sub
+
+Private Sub LaunchLinker(sCmd As String)
+    Dim secatt As SECURITY_ATTRIBUTES
+    Dim hThisProcess As Long
+    Dim pi As PROCESS_INFORMATION
+    Dim sti As STARTUPINFO
+    Dim lFlags As Long
+    Dim lTimeStart As Long
+    Dim rc As Long
+
+    If Len(sLinker) = 0 Then Exit Sub
+    On Error Resume Next
+    If bRedirect Then
+        ' Set up redirection of StdOut and StdErr
+        secatt.nLength = LenB(secatt)
+        secatt.lpSecurityDescriptor = 0&amp;
+        secatt.bInheritHandle = APITRUE
+        hOut = CreateFile( _
+            sOutFile, GENERIC_READ Or GENERIC_WRITE, FILE_SHARE_READ, _
+            secatt, OPEN_ALWAYS, _
+            FILE_ATTRIBUTE_NORMAL Or FILE_FLAG_WRITE_THROUGH Or
+             FILE_FLAG_SEQUENTIAL_SCAN, _
+            0&amp;)
+        If hOut = INVALID_HANDLE_VALUE Then
+            DisplayError " creating output file '" &amp; sOutFile &amp; "'", , True
+            GoTo Abort
+        End If
+        SetFilePointer hOut, 0, 0, FILE_END
+        hThisProcess = GetCurrentProcess()
+        If 0 = DuplicateHandle(hThisProcess, hOut, hThisProcess, hOut2, 0&amp;,
+         APITRUE, DUPLICATE_SAME_ACCESS) Then
+            DisplayError " creating output duplicate handle", , True
+            GoTo Abort
+        End If
+        If 0 = SetStdHandle(STD_OUTPUT_HANDLE, hOut) Then
+            DisplayError " redirecting stdout", , True
+            GoTo Abort
+        End If
+        If 0 = SetStdHandle(STD_ERROR_HANDLE, hOut2) Then
+            DisplayError " redirecting stderr", , True
+            GoTo Abort
+        End If
+        ' Now let's hope these output handles are inherited automatically by
+         the VB Shell call.
+        ' If not, we'll be forced to go through the CreateProcess API.
+    End If
+    
+    ' Prepare CreateProcess arguments
+    'lFlags = CREATE_NO_WINDOW
+    lFlags = 0
+    sti.cb = LenB(sti)
+    sti.lpTitle = StrPtr("Linker run by " &amp; App.Title)
+    sti.hStdInput = GetStdHandle(STD_INPUT_HANDLE)
+    sti.hStdOutput = hOut
+    sti.hStdError = hOut2
+    sti.wShowWindow = SW_SHOWMINNOACTIVE
+    sti.dwFlags = STARTF_USESHOWWINDOW Or IIf(bRedirect, STARTF_USESTDHANDLES,
+     0)
+    If APIFALSE = CreateProcess( _
+            sLinker, """" &amp; sLinker &amp; """ " &amp; sCmd, _
+            ByVal 0&amp;, ByVal 0&amp;, _
+            APITRUE, lFlags, _
+            ByVal 0&amp;, vbNullString, _
+            sti, pi) Then
+        DisplayError " launching '" &amp; sLinker &amp; "'", , True
+        GoTo Abort
+    End If
+    CloseHandle pi.hThread
+    
+    ' Process has been started. Wait for termination
+    Err.Clear
+    lTimeStart = timeGetTime()
+    Do
+        ' Status ermitteln
+        GetExitCodeProcess pi.hProcess, rc
+        ' Prozessorzeit abgeben
+        Sleep 100
+        If (timeGetTime() - lTimeStart &gt; lTimeOutMilliSecs) Then
+            ' Zeit ist abgelaufen
+            Err.Description = "Linker process '" &amp; sLinker &amp; "' timed out."
+            Err.Number = vbObjectError + 2003
+            rc = 0
+        End If
+    Loop While rc = STILL_ACTIVE
+    lExitCode = rc
+    CloseHandle pi.hProcess
+    
+    If Err Then
+        DisplayError " executing Linker '" &amp; sLinker &amp; "'"
+    End If
+
+Abort:
+    If hOut2 Then CloseHandle hOut2
+    If hOut Then CloseHandle hOut
+End Sub
+
+Private Function FindInfFile() As Boolean
+    Dim i As Long
+    
+    If Not tok Is Nothing Then
+        On Error Resume Next
+        For i = 0 To tok.TokenCount - 1
+            If Len(tok.OptionName(i)) = 0 Then
+                sInfFile = NormalizePath(GetFileDir(tok.Token(i))) &amp; App.Title
+                 &amp; ".inf"
+                If Len(Dir$(sInfFile)) &gt; 0 Then Exit For
+                sInfFile = ""
+            End If
+        Next
+    End If
+    If Len(sInfFile) = 0 Then
+        sInfFile = NormalizePath(CurDir$) &amp; App.Title &amp; ".inf"
+        If Len(Dir$(sInfFile)) = 0 Then sInfFile = ""
+    End If
+    If Len(sInfFile) = 0 Then
+        sInfFile = NormalizePath(App.Path) &amp; App.Title &amp; ".inf"
+        If Len(Dir$(sInfFile)) = 0 Then sInfFile = ""
+    End If
+    FindInfFile = (Len(sInfFile) &gt; 0)
+End Function
+
+Public Function ReadIniFile(ByVal sSection As String, ByVal sKey As String,
+ Optional ByVal sDefault As String = "") As String
+    Dim sBuffer As String
+
+    '
+    ' Wenn die .INI-Datei erfolgreich gelesen worden ist,
+    ' wird jede vom Windows-API GetPrivateProfileString
+    ' angehngte Null wieder entfernt.
+    '
+    sBuffer = Space$(cIniBufferSize)
+
+    If GetPrivateProfileString(sSection, sKey, vbNullString, sBuffer,
+     cIniBufferSize, sInfFile) Then
+        ReadIniFile = TrimAPIString(sBuffer)
+    Else
+        ReadIniFile = sDefault
+    End If
+End Function
+
+Public Function ReadIniFileFlag(ByVal sSection As String, ByVal sKey As String,
+ ByVal bDefault As Boolean) As Boolean
+    Dim sValue As String
+    
+    sValue = ReadIniFile(sSection, sKey)
+    If IsNumeric(sValue) Then
+        ReadIniFileFlag = (CLng(sValue) &lt;&gt; 0)
+    Else
+        ReadIniFileFlag = bDefault
+    End If
+End Function
+
+Public Function TrimAPIString(ByVal x As String) As String
+    Dim i As Long
+
+    i = InStr(x, vbNullChar)
+    If i = 0 Then
+        TrimAPIString = x
+    Else
+        TrimAPIString = Left$(x, i - 1)
+    End If
+End Function
+
+Public Sub DisplayError(Optional ByVal Tit As String = "", Optional ByVal
+ PreTit As String = "", Optional ByVal bAPIError As Boolean = False)
+    Dim msg As String, i As Integer, Cur As Integer
+    Dim lErr As Long, sDesc As String
+    
+    If bAPIError Then
+        lErr = Err.LastDllError
+        sDesc = ApiError(lErr)
+    Else
+        lErr = Err.Number
+        sDesc = Err.Description
+    End If
+    msg = PreTit &amp; "Error" &amp; Tit &amp; ":" &amp; vbCr
+    If lErr &lt;&gt; 0 And (lErr &lt;&gt; 3146 Or bAPIError) Then
+        msg = msg &amp; vbCr
+        If lErr &gt;= 0 And lErr &lt; 100000 Then
+            msg = msg &amp; lErr
+        Else
+            msg = msg &amp; " = &amp;H" &amp; Right$("00000000" &amp; Hex$(lErr), 8)
+        End If
+        msg = msg &amp; " - " &amp; sDesc
+    End If
+    Cur = Screen.MousePointer
+    Screen.MousePointer = vbNormal
+    MsgBox msg, vbOKOnly + vbExclamation, App.Title &amp; ": Error"
+    Screen.MousePointer = Cur
+End Sub
+
+Public Function ApiError(ByVal e As Long) As String
+    Dim s As String, c As Long
+    s = String(256, 0)
+    c = FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM Or _
+                      FORMAT_MESSAGE_IGNORE_INSERTS, _
+                      pNull, e, 0&amp;, s, Len(s), ByVal pNull)
+    If c Then ApiError = Left$(s, c)
+End Function
+
+
+Public Function ObjReplace() As Boolean
+    Dim i As Long
+    Dim sTok As String, sBase As String, sPath As String, sNew As String
+
+    If tok Is Nothing Then Exit Function
+    On Error Resume Next
+    For i = 0 To tok.TokenCount - 1
+        sTok = tok.Token(i)
+        Err.Clear
+        sPath = GetFileDir(sTok)
+        sBase = GetFileBaseExt(sTok)
+        If Err = 0 Then
+            sNew = ReadIniFile("ReplaceObj", sBase)
+            If Len(sNew) &gt; 0 Then
+                ObjReplace = True
+                If InStr(sNew, "\") = 0 Then
+                    tok.Token(i) = NormalizePath(sPath) &amp; sNew
+                Else
+                    tok.Token(i) = sNew
+                End If
+            End If
+        End If
+    Next
+End Function
+
+Public Function OptReplace() As Boolean
+    Dim i As Long
+    Dim sOpt As String, sNew As String
+
+    If tok Is Nothing Then Exit Function
+    On Error Resume Next
+    For i = 0 To tok.TokenCount - 1
+        sOpt = tok.OptionName(i)
+        If Len(sOpt) &gt; 0 Then
+            sNew = ReadIniFile("ReplaceOpt", sOpt, "~*~")
+            If sNew &lt;&gt; "~*~" Then
+                OptReplace = True
+                tok.Token(i) = "/" &amp; sOpt &amp; ":" &amp; sNew
+            End If
+        End If
+    Next
+End Function
+
+Public Function OptAppend(ByVal bPrepend As Boolean) As Boolean
+    Dim i As Long, iIndex As Long
+    Dim sOpt As String, sNew As String
+    Dim iFirstOpt As Long
+
+    If tok Is Nothing Then Exit Function
+    On Error Resume Next
+    ' Prepare: where is the first option in the present tokens?
+    For iFirstOpt = 0 To tok.TokenCount - 1
+        If Len(tok.OptionName(iFirstOpt)) &gt; 0 Then Exit For
+    Next
+    iIndex = 1
+    Do
+        ' Get next enumerated Option string
+        sNew = ReadIniFile(IIf(bPrepend, "Insert", "Append"), CStr(iIndex), "")
+        If Len(sNew) = 0 Then Exit Do
+        OptAppend = True
+        ' extract Option name from that
+        i = InStr(sNew, ":"): If i = 0 Then i = Len(sNew) + 1
+        If Left$(sNew, 1) = "/" And i &gt; 2 Then
+            sOpt = Mid$(sNew, 2, i - 2)
+            ' Check whether this option already exists
+            For i = iFirstOpt To tok.TokenCount - 1
+                If UCase$(tok.OptionName(i)) = UCase$(sOpt) Then Exit For
+            Next
+            If i &gt;= tok.TokenCount Then
+                ' New Option - append to end or insert just before the existing
+                 options
+                tok.Insert sNew, IIf(bPrepend, iFirstOpt, i)
+            Else
+                ' Existing option - replace
+                tok.Token(i) = sNew
+            End If
+        Else
+            ' New text not formatted as an option - insert just before the
+             options or in front
+            If InStr(sNew, "\") = 0 Then
+                sNew = NormalizePath(GetFileDir(sInfFile)) &amp; sNew
+            End If
+            tok.Insert sNew, IIf(bPrepend, 0, iFirstOpt)
+            iFirstOpt = iFirstOpt + 1
+        End If
+        iIndex = iIndex + 1
+    Loop
+End Function
+
+Public Function OptRemove() As Boolean
+    Dim i As Long, iIndex As Long
+    Dim sOpt As String, sRmv As String, sFile As String
+    Dim iFirstOpt As Long
+    Dim bWithPath As Boolean
+
+    If tok Is Nothing Then Exit Function
+    On Error Resume Next
+    ' Prepare: where is the first option in the present tokens?
+    For iFirstOpt = 0 To tok.TokenCount - 1
+        If Len(tok.OptionName(iFirstOpt)) &gt; 0 Then Exit For
+    Next
+    iIndex = 1
+    Do
+        ' Get next enumerated Option string
+        sRmv = UCase$(ReadIniFile("Remove", CStr(iIndex), ""))
+        If Len(sRmv) = 0 Then Exit Do
+        ' extract Option name from that
+        i = InStr(sRmv, ":"): If i = 0 Then i = Len(sRmv) + 1
+        If Left$(sRmv, 1) = "/" And i &gt; 2 Then
+            sOpt = Mid$(sRmv, 2, i - 2)
+            ' Check whether this option exists
+            For i = iFirstOpt To tok.TokenCount - 1
+                If UCase$(tok.OptionName(i)) = sOpt Then Exit For
+            Next
+            If i &lt; tok.TokenCount Then
+                ' Existing option - remove
+                tok.Remove i
+                OptRemove = True
+            End If
+        Else
+            ' not formatted as an option - search for file
+            bWithPath = (InStr(sRmv, "\") &gt; 0)
+            For i = 0 To iFirstOpt - 1
+                sFile = UCase$(tok.Token(i))
+                If Not bWithPath And Len(sFile) &gt; Len(sRmv) Then
+                    If Mid$(sFile, Len(sFile) - Len(sRmv), 1) &lt;&gt; "\" Then
+                        ' Separator not backslash - fail compare
+                        sFile = ""
+                    Else
+                        ' Compare only basename portion of existing token
+                        sFile = Mid$(sFile, Len(sFile) - Len(sRmv) + 1)
+                    End If
+                End If
+                If sFile = sRmv Then Exit For
+            Next
+            If i &lt; iFirstOpt Then
+                ' Existing file - remove
+                tok.Remove i
+                iFirstOpt = iFirstOpt - 1
+                OptRemove = True
+            End If
+        End If
+        iIndex = iIndex + 1
+    Loop
+End Function
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;<a href="article.html">Link Spoof</a>&#160;.&#160;<a href="LinkSpoof.html">LinkSpoof</a>&#160;.&#160;Globals.bas</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Link_Spoof/LinkSpoof_zip_Globals_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:10 GMT -->
+</html>

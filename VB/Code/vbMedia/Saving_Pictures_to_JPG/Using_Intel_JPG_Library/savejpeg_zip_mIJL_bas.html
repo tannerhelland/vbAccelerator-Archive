@@ -1,0 +1,614 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Saving_Pictures_to_JPG/Using_Intel_JPG_Library/savejpeg_zip_mIJL_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:47 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: mIJL.bas</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: mIJL.bas" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Saving Pictures to JPG</a>&#160;.&#160;<a href="article.html">Saving Pictures to JPG Files Using the Intel JPEG Library</a>&#160;.&#160;<a href="savejpeg.html">savejpeg</a>&#160;.&#160;mIJL.bas</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="savejpeg.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />savejpeg</a> (150K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:3325</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3325&amp;type=Zip&amp;title=savejpeg%2Ezip%5FmIJL">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />13 Jan 2002<br /><p class="update">Note that Intel are no longer supporting this library through their site.  I am not aware of any
+problems that will prevent you using it though.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3017">True Colour DIBSection</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2313">malloc in VB?</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: mIJL.bas</h1><pre>Attribute VB_Name = "mIntelJPEGLibrary"
+Option Explicit
+
+'
+ ===============================================================================
+===
+' Filename:    mIntelJPEGLibrary.bas
+' Author:      Steve McMahon
+' Date:        15 March 1999
+' Requires:    cDIBSection.cls (vbAccelerator)
+'              IJL11.DLL (Intel)
+'
+' An interface to Intel's IJL (Intel JPG Library) for use in VB.
+'
+' Copyright  1999 Steve McMahon for vbAccelerator
+' http://vbaccelerator.com/
+'
+' Modifications
+' 16 Jan 2000  SPM
+' * Modified to declares to access v1.1. of Intel's IJL DLL
+' * SaveJPG - if you were overwriting an existing JPG, the file could never be
+'   reduced in size, only increased.  Old bytes were simply left trailing as
+'   an unnecessary payload at the JPG.  The JPG could be loaded, but this was
+'   not ideal.  The new version ensures the file size is always set.
+' * LoadJPGFromPtr - new function, allows you to read a JPG from a memory
+'   address (e.g. resource etc)
+'
+'
+' Copyright.
+' IJL.DLL is a copyright  Intel, which is a registered trade mark of the Intel
+' Corporation.
+'
+'
+' Note.
+' Intel are not responsible for any errors in this code and should not be
+' mentioned in any Help, About or support in any product using the Intel
+ library.
+'
+'
+'
+'
+ ===============================================================================
+===
+
+' IJL Declares:
+Private Enum IJLERR
+  '// The following "error" values indicate an "OK" condition.
+  IJL_OK = 0
+  IJL_INTERRUPT_OK = 1
+  IJL_ROI_OK = 2
+
+  '// The following "error" values indicate an error has occurred.
+  IJL_EXCEPTION_DETECTED = -1
+  IJL_INVALID_ENCODER = -2
+  IJL_UNSUPPORTED_SUBSAMPLING = -3
+  IJL_UNSUPPORTED_BYTES_PER_PIXEL = -4
+  IJL_MEMORY_ERROR = -5
+  IJL_BAD_HUFFMAN_TABLE = -6
+  IJL_BAD_QUANT_TABLE = -7
+  IJL_INVALID_JPEG_PROPERTIES = -8
+  IJL_ERR_FILECLOSE = -9
+  IJL_INVALID_FILENAME = -10
+  IJL_ERROR_EOF = -11
+  IJL_PROG_NOT_SUPPORTED = -12
+  IJL_ERR_NOT_JPEG = -13
+  IJL_ERR_COMP = -14
+  IJL_ERR_SOF = -15
+  IJL_ERR_DNL = -16
+  IJL_ERR_NO_HUF = -17
+  IJL_ERR_NO_QUAN = -18
+  IJL_ERR_NO_FRAME = -19
+  IJL_ERR_MULT_FRAME = -20
+  IJL_ERR_DATA = -21
+  IJL_ERR_NO_IMAGE = -22
+  IJL_FILE_ERROR = -23
+  IJL_INTERNAL_ERROR = -24
+  IJL_BAD_RST_MARKER = -25
+  IJL_THUMBNAIL_DIB_TOO_SMALL = -26
+  IJL_THUMBNAIL_DIB_WRONG_COLOR = -27
+  IJL_RESERVED = -99
+
+End Enum
+
+Private Enum IJLIOTYPE
+  IJL_SETUP = -1&amp;
+  ''// Read JPEG parameters (i.e., height, width, channels,
+  ''// sampling, etc.) from a JPEG bit stream.
+  IJL_JFILE_READPARAMS = 0&amp;
+  IJL_JBUFF_READPARAMS = 1&amp;
+  ''// Read a JPEG Interchange Format image.
+  IJL_JFILE_READWHOLEIMAGE = 2&amp;
+  IJL_JBUFF_READWHOLEIMAGE = 3&amp;
+  ''// Read JPEG tables from a JPEG Abbreviated Format bit stream.
+  IJL_JFILE_READHEADER = 4&amp;
+  IJL_JBUFF_READHEADER = 5&amp;
+  ''// Read image info from a JPEG Abbreviated Format bit stream.
+  IJL_JFILE_READENTROPY = 6&amp;
+  IJL_JBUFF_READENTROPY = 7&amp;
+  ''// Write an entire JFIF bit stream.
+  IJL_JFILE_WRITEWHOLEIMAGE = 8&amp;
+  IJL_JBUFF_WRITEWHOLEIMAGE = 9&amp;
+  ''// Write a JPEG Abbreviated Format bit stream.
+  IJL_JFILE_WRITEHEADER = 10&amp;
+  IJL_JBUFF_WRITEHEADER = 11&amp;
+  ''// Write image info to a JPEG Abbreviated Format bit stream.
+  IJL_JFILE_WRITEENTROPY = 12&amp;
+  IJL_JBUFF_WRITEENTROPY = 13&amp;
+  ''// Scaled Decoding Options:
+  ''// Reads a JPEG image scaled to 1/2 size.
+  IJL_JFILE_READONEHALF = 14&amp;
+  IJL_JBUFF_READONEHALF = 15&amp;
+  ''// Reads a JPEG image scaled to 1/4 size.
+  IJL_JFILE_READONEQUARTER = 16&amp;
+  IJL_JBUFF_READONEQUARTER = 17&amp;
+  ''// Reads a JPEG image scaled to 1/8 size.
+  IJL_JFILE_READONEEIGHTH = 18&amp;
+  IJL_JBUFF_READONEEIGHTH = 19&amp;
+  ''// Reads an embedded thumbnail from a JFIF bit stream.
+  IJL_JFILE_READTHUMBNAIL = 20&amp;
+  IJL_JBUFF_READTHUMBNAIL = 21&amp;
+
+End Enum
+
+Private Type JPEG_CORE_PROPERTIES_VB ' Sadly, due to a limitation in VB (UDT
+ variable count)
+                                     ' we can't encode the full
+                                      JPEG_CORE_PROPERTIES structure
+  UseJPEGPROPERTIES As Long                      '// default = 0
+
+  '// DIB specific I/O data specifiers.
+  DIBBytes As Long ';                  '// default = NULL 4
+  DIBWidth As Long ';                  '// default = 0 8
+  DIBHeight As Long ';                 '// default = 0 12
+  DIBPadBytes As Long ';               '// default = 0 16
+  DIBChannels As Long ';               '// default = 3 20
+  DIBColor As Long ';                  '// default = IJL_BGR 24
+  DIBSubsampling As Long  ';            '// default = IJL_NONE 28
+
+  '// JPEG specific I/O data specifiers.
+  JPGFile As Long 'LPTSTR              JPGFile;                32   '// default
+   = NULL
+  JPGBytes As Long ';                  '// default = NULL 36
+  JPGSizeBytes As Long ';              '// default = 0 40
+  JPGWidth As Long ';                  '// default = 0 44
+  JPGHeight As Long ';                 '// default = 0 48
+  JPGChannels As Long ';               '// default = 3
+  JPGColor As Long           ';                  '// default = IJL_YCBCR
+  JPGSubsampling As Long  ';            '// default = IJL_411
+  JPGThumbWidth As Long ' ;             '// default = 0
+  JPGThumbHeight As Long ';            '// default = 0
+
+  '// JPEG conversion properties.
+  cconversion_reqd As Long ';          '// default = TRUE
+  upsampling_reqd As Long ';           '// default = TRUE
+  jquality As Long ';                  '// default = 75.  100 is my preferred
+   quality setting.
+
+  '// Low-level properties - 20,000 bytes.  If the whole structure
+  ' is written out then VB fails with an obscure error message
+  ' "Too Many Local Variables" !
+  '
+  ' These all default if they are not otherwise specified so there
+  ' is no trouble to just assign a sufficient buffer in memory:
+  jprops(0 To 19999) As Byte
+
+End Type
+
+
+Private Declare Function ijlInit Lib "ijl11.dll" (jcprops As Any) As Long
+Private Declare Function ijlFree Lib "ijl11.dll" (jcprops As Any) As Long
+Private Declare Function ijlRead Lib "ijl11.dll" (jcprops As Any, ByVal ioType
+ As Long) As Long
+Private Declare Function ijlWrite Lib "ijl11.dll" (jcprops As Any, ByVal ioType
+ As Long) As Long
+Private Declare Function ijlGetLibVersion Lib "ijl11.dll" () As Long
+Private Declare Function ijlGetErrorString Lib "ijl11.dll" (ByVal code As Long)
+ As Long
+
+' Win32 Declares
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+Private Declare Function GlobalAlloc Lib "kernel32" (ByVal wFlags As Long,
+ ByVal dwBytes As Long) As Long
+Private Declare Function GlobalFree Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function GlobalLock Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function GlobalUnlock Lib "kernel32" (ByVal hMem As Long) As
+ Long
+Private Const GMEM_DDESHARE = &amp;H2000
+Private Const GMEM_DISCARDABLE = &amp;H100
+Private Const GMEM_DISCARDED = &amp;H4000
+Private Const GMEM_FIXED = &amp;H0
+Private Const GMEM_INVALID_HANDLE = &amp;H8000
+Private Const GMEM_LOCKCOUNT = &amp;HFF
+Private Const GMEM_MODIFY = &amp;H80
+Private Const GMEM_MOVEABLE = &amp;H2
+Private Const GMEM_NOCOMPACT = &amp;H10
+Private Const GMEM_NODISCARD = &amp;H20
+Private Const GMEM_NOT_BANKED = &amp;H1000
+Private Const GMEM_NOTIFY = &amp;H4000
+Private Const GMEM_SHARE = &amp;H2000
+Private Const GMEM_VALID_FLAGS = &amp;H7F72
+Private Const GMEM_ZEROINIT = &amp;H40
+Private Const GPTR = (GMEM_FIXED Or GMEM_ZEROINIT)
+
+' Stuff for replacing a file when you have to Kill the original:
+Private Const MAX_PATH = 260
+Private Type FILETIME
+   dwLowDateTime As Long
+   dwHighDateTime As Long
+End Type
+Private Type WIN32_FIND_DATA
+   dwFileAttributes As Long
+   ftCreationTime As FILETIME
+   ftLastAccessTime As FILETIME
+   ftLastWriteTime As FILETIME
+   nFileSizeHigh As Long
+   nFileSizeLow As Long
+   dwReserved0 As Long
+   dwReserved1 As Long
+   cFileName As String * MAX_PATH
+   cAlternate As String * 14
+End Type
+Private Declare Function FindFirstFile Lib "kernel32" Alias "FindFirstFileA"
+ (ByVal lpFileName As String, lpFindFileData As WIN32_FIND_DATA) As Long
+Private Declare Function lopen Lib "kernel32" Alias "_lopen" (ByVal lpPathName
+ As String, ByVal iReadWrite As Long) As Long
+Private Declare Function lclose Lib "kernel32" Alias "_lclose" (ByVal hFile As
+ Long) As Long
+Private Declare Function SetFileTime Lib "kernel32" (ByVal hFile As Long,
+ lpCreationTime As FILETIME, lpLastAccessTime As FILETIME, lpLastWriteTime As
+ FILETIME) As Long
+Private Declare Function SetFileAttributes Lib "kernel32" Alias
+ "SetFileAttributesA" (ByVal lpFileName As String, ByVal dwFileAttributes As
+ Long) As Long
+Private Const OF_WRITE = &amp;H1
+Private Const OF_SHARE_DENY_WRITE = &amp;H20
+Private Const GENERIC_WRITE = &amp;H40000000
+Private Const GENERIC_READ = &amp;H80000000
+Private Const FILE_SHARE_WRITE = &amp;H2
+Private Const CREATE_ALWAYS = 2
+Private Const FILE_BEGIN = 0
+Private Const SECTION_MAP_WRITE = &amp;H2
+
+Public Function LoadJPG( _
+      ByRef cDib As cDIBSection, _
+      ByVal sFile As String _
+   ) As Boolean
+Dim tJ As JPEG_CORE_PROPERTIES_VB
+Dim bFile() As Byte
+Dim lR As Long
+Dim lPtr As Long
+Dim lJPGWidth As Long, lJPGHeight As Long
+
+   lR = ijlInit(tJ)
+   If lR = IJL_OK Then
+      
+      ' Write the filename to the jcprops.JPGFile member:
+      bFile = StrConv(sFile, vbFromUnicode)
+      ReDim Preserve bFile(0 To UBound(bFile) + 1) As Byte
+      bFile(UBound(bFile)) = 0
+      lPtr = VarPtr(bFile(0))
+      CopyMemory tJ.JPGFile, lPtr, 4
+      
+      ' Read the JPEG file parameters:
+      lR = ijlRead(tJ, IJL_JFILE_READPARAMS)
+      If lR &lt;&gt; IJL_OK Then
+         ' Throw error
+         MsgBox "Failed to read JPG", vbExclamation
+      Else
+        ' set JPG color
+         If tJ.JPGChannels = 1 Then
+            tJ.JPGColor = 4&amp; ' IJL_G
+         Else
+            tJ.JPGColor = 3&amp; ' IJL_YCBCR
+         End If
+            
+         ' Get the JPGWidth ...
+         lJPGWidth = tJ.JPGWidth
+         ' .. &amp; JPGHeight member values:
+         lJPGHeight = tJ.JPGHeight
+      
+         ' Create a buffer of sufficient size to hold the image:
+         If cDib.Create(lJPGWidth, lJPGHeight) Then
+            ' Store DIBWidth:
+            tJ.DIBWidth = lJPGWidth
+            ' Very important: tell IJL how many bytes extra there
+            ' are on each DIB scan line to pad to 32 bit boundaries:
+            tJ.DIBPadBytes = cDib.BytesPerScanLine - lJPGWidth * 3
+            ' Store DIBHeight:
+            tJ.DIBHeight = -lJPGHeight
+            ' Store Channels:
+            tJ.DIBChannels = 3&amp;
+            ' Store DIBBytes (pointer to uncompressed JPG data):
+            tJ.DIBBytes = cDib.DIBSectionBitsPtr
+            
+            ' Now decompress the JPG into the DIBSection:
+            lR = ijlRead(tJ, IJL_JFILE_READWHOLEIMAGE)
+            If lR = IJL_OK Then
+               ' That's it!  cDib now contains the uncompressed JPG.
+               LoadJPG = True
+            Else
+               ' Throw error:
+               MsgBox "Cannot read Image Data from file.", vbExclamation
+            End If
+         Else
+            ' failed to create the DIB...
+         End If
+      End If
+                        
+      ' Ensure we have freed memory:
+      ijlFree tJ
+   Else
+      ' Throw error:
+      MsgBox "Failed to initialise the IJL library: " &amp; lR, vbExclamation
+   End If
+   
+   
+End Function
+Public Function LoadJPGFromPtr( _
+      ByRef cDib As cDIBSection, _
+      ByVal lPtr As Long, _
+      ByVal lSize As Long _
+   ) As Boolean
+Dim tJ As JPEG_CORE_PROPERTIES_VB
+Dim bFile() As Byte
+Dim lR As Long
+Dim lJPGWidth As Long, lJPGHeight As Long
+
+   lR = ijlInit(tJ)
+   If lR = IJL_OK Then
+            
+      ' set JPEG buffer
+      tJ.JPGBytes = lPtr
+      tJ.JPGSizeBytes = lSize
+            
+      ' Read the JPEG parameters:
+      lR = ijlRead(tJ, IJL_JBUFF_READPARAMS)
+      If lR &lt;&gt; IJL_OK Then
+         ' Throw error
+         MsgBox "Failed to read JPG", vbExclamation
+      Else
+        ' set JPG color
+         If tJ.JPGChannels = 1 Then
+            tJ.JPGColor = 4&amp; ' IJL_G
+         Else
+            tJ.JPGColor = 3&amp; ' IJL_YCBCR
+         End If
+      
+         ' Get the JPGWidth ...
+         lJPGWidth = tJ.JPGWidth
+         ' .. &amp; JPGHeight member values:
+         lJPGHeight = tJ.JPGHeight
+      
+         ' Create a buffer of sufficient size to hold the image:
+         If cDib.Create(lJPGWidth, lJPGHeight) Then
+            ' Store DIBWidth:
+            tJ.DIBWidth = lJPGWidth
+            ' Very important: tell IJL how many bytes extra there
+            ' are on each DIB scan line to pad to 32 bit boundaries:
+            tJ.DIBPadBytes = cDib.BytesPerScanLine - lJPGWidth * 3
+            ' Store DIBHeight:
+            tJ.DIBHeight = -lJPGHeight
+            ' Store Channels:
+            tJ.DIBChannels = 3&amp;
+            ' Store DIBBytes (pointer to uncompressed JPG data):
+            tJ.DIBBytes = cDib.DIBSectionBitsPtr
+            
+            ' Now decompress the JPG into the DIBSection:
+            lR = ijlRead(tJ, IJL_JBUFF_READWHOLEIMAGE)
+            If lR = IJL_OK Then
+               ' That's it!  cDib now contains the uncompressed JPG.
+               LoadJPGFromPtr = True
+            Else
+               ' Throw error:
+               MsgBox "Cannot read Image Data from file.", vbExclamation
+            End If
+         Else
+            ' failed to create the DIB...
+         End If
+      End If
+                        
+      ' Ensure we have freed memory:
+      ijlFree tJ
+   Else
+      ' Throw error:
+      MsgBox "Failed to initialise the IJL library: " &amp; lR, vbExclamation
+   End If
+   
+End Function
+
+Public Function SaveJPG( _
+      ByRef cDib As cDIBSection, _
+      ByVal sFile As String, _
+      Optional ByVal lQuality As Long = 90 _
+   ) As Boolean
+Dim tJ As JPEG_CORE_PROPERTIES_VB
+Dim bFile() As Byte
+Dim lPtr As Long
+Dim lR As Long
+Dim tFnd As WIN32_FIND_DATA
+Dim hFile As Long
+Dim bFileExisted As Boolean
+Dim lFileSize As Long
+   
+   hFile = -1
+   
+   lR = ijlInit(tJ)
+   If lR = IJL_OK Then
+      
+      ' Check if we're attempting to overwrite an existing file.
+      ' If so hFile &lt;&gt; INVALID_FILE_HANDLE:
+      bFileExisted = (FindFirstFile(sFile, tFnd) &lt;&gt; -1)
+      If bFileExisted Then
+         Kill sFile
+      End If
+      
+      ' Set up the DIB information:
+      ' Store DIBWidth:
+      tJ.DIBWidth = cDib.Width
+      ' Store DIBHeight:
+      tJ.DIBHeight = -cDib.Height
+      ' Store DIBBytes (pointer to uncompressed JPG data):
+      tJ.DIBBytes = cDib.DIBSectionBitsPtr
+      ' Very important: tell IJL how many bytes extra there
+      ' are on each DIB scan line to pad to 32 bit boundaries:
+      tJ.DIBPadBytes = cDib.BytesPerScanLine - cDib.Width * 3
+      
+      ' Set up the JPEG information:
+      
+      ' Store JPGFile:
+      bFile = StrConv(sFile, vbFromUnicode)
+      ReDim Preserve bFile(0 To UBound(bFile) + 1) As Byte
+      bFile(UBound(bFile)) = 0
+      lPtr = VarPtr(bFile(0))
+      CopyMemory tJ.JPGFile, lPtr, 4
+      ' Store JPGWidth:
+      tJ.JPGWidth = cDib.Width
+      ' .. &amp; JPGHeight member values:
+      tJ.JPGHeight = cDib.Height
+      ' Set the quality/compression to save:
+      tJ.jquality = lQuality
+            
+      ' Write the image:
+      lR = ijlWrite(tJ, IJL_JFILE_WRITEWHOLEIMAGE)
+      
+      ' Check for success:
+      If lR = IJL_OK Then
+      
+         ' Now if we are replacing an existing file, then we want to
+         ' put the file creation and archive information back again:
+         If bFileExisted Then
+            
+            hFile = lopen(sFile, OF_WRITE Or OF_SHARE_DENY_WRITE)
+            If hFile = 0 Then
+               ' problem
+            Else
+               SetFileTime hFile, tFnd.ftCreationTime, tFnd.ftLastAccessTime,
+                tFnd.ftLastWriteTime
+               lclose hFile
+               SetFileAttributes sFile, tFnd.dwFileAttributes
+            End If
+            
+         End If
+         
+         lFileSize = tJ.JPGSizeBytes - tJ.JPGBytes
+         
+         ' Success:
+         SaveJPG = True
+         
+      Else
+         ' Throw error
+         Err.Raise 26001, App.EXEName &amp; ".mIntelJPEGLibrary", "Failed to save
+          to JPG " &amp; lR, vbExclamation
+      End If
+      
+      ' Ensure we have freed memory:
+      ijlFree tJ
+   Else
+      ' Throw error:
+      Err.Raise 26001, App.EXEName &amp; ".mIntelJPEGLibrary", "Failed to
+       initialise the IJL library: " &amp; lR
+   End If
+   
+
+End Function
+
+Public Function SaveJPGToPtr( _
+      ByRef cDib As cDIBSection, _
+      ByVal lPtr As Long, _
+      ByRef lBufSize As Long, _
+      Optional ByVal lQuality As Long = 90 _
+   ) As Boolean
+Dim tJ As JPEG_CORE_PROPERTIES_VB
+Dim bFile() As Byte
+Dim lR As Long
+Dim tFnd As WIN32_FIND_DATA
+Dim hFile As Long
+Dim bFileExisted As Boolean
+Dim b As Boolean
+   
+   hFile = -1
+   
+   lR = ijlInit(tJ)
+   If lR = IJL_OK Then
+      
+      ' Set up the DIB information:
+      ' Store DIBWidth:
+      tJ.DIBWidth = cDib.Width
+      ' Store DIBHeight:
+      tJ.DIBHeight = -cDib.Height
+      ' Store DIBBytes (pointer to uncompressed JPG data):
+      tJ.DIBBytes = cDib.DIBSectionBitsPtr
+      ' Very important: tell IJL how many bytes extra there
+      ' are on each DIB scan line to pad to 32 bit boundaries:
+      tJ.DIBPadBytes = cDib.BytesPerScanLine - cDib.Width * 3
+      
+      ' Set up the JPEG information:
+      ' Store JPGWidth:
+      tJ.JPGWidth = cDib.Width
+      ' .. &amp; JPGHeight member values:
+      tJ.JPGHeight = cDib.Height
+      ' Set the quality/compression to save:
+      tJ.jquality = lQuality
+      ' set JPEG buffer
+      tJ.JPGBytes = lPtr
+      tJ.JPGSizeBytes = lBufSize
+            
+      ' Write the image:
+      lR = ijlWrite(tJ, IJL_JBUFF_WRITEWHOLEIMAGE)
+            
+      ' Check for success:
+      If lR = IJL_OK Then
+         
+         lBufSize = tJ.JPGSizeBytes
+         
+         ' Success:
+         SaveJPGToPtr = True
+         
+      Else
+         ' Throw error
+         Err.Raise 26001, App.EXEName &amp; ".mIntelJPEGLibrary", "Failed to save
+          to JPG " &amp; lR, vbExclamation
+      End If
+      
+      ' Ensure we have freed memory:
+      ijlFree tJ
+   Else
+      ' Throw error:
+      Err.Raise 26001, App.EXEName &amp; ".mIntelJPEGLibrary", "Failed to
+       initialise the IJL library: " &amp; lR
+   End If
+   
+
+End Function
+
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Saving Pictures to JPG</a>&#160;.&#160;<a href="article.html">Saving Pictures to JPG Files Using the Intel JPEG Library</a>&#160;.&#160;<a href="savejpeg.html">savejpeg</a>&#160;.&#160;mIJL.bas</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Saving_Pictures_to_JPG/Using_Intel_JPG_Library/savejpeg_zip_mIJL_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:47 GMT -->
+</html>

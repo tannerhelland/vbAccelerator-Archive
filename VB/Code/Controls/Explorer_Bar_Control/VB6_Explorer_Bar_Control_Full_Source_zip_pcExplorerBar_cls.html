@@ -1,0 +1,428 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Explorer_Bar_Control/VB6_Explorer_Bar_Control_Full_Source_zip_pcExplorerBar_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:21:25 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: pcExplorerBar.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: pcExplorerBar.cls" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator Explorer Bar Control</a>&#160;.&#160;<a href="VB6_Explorer_Bar_Control_Full_Source.html">VB6 Explorer Bar Control Full Source</a>&#160;.&#160;pcExplorerBar.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Explorer_Bar_Control.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Explorer Bar Control</a> (63K)</p><p class="nav"><a href="VB5_ExplorerBar_Control_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ExplorerBar Control Demonstration</a> (83K)</p><p class="nav"><a href="VB5_ExplorerBar_Control_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ExplorerBar Control Full Source</a> (221K)</p><p /><p class="nav"><a href="VB6_Explorer_Bar_Control_Binary.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Explorer Bar Control Binary</a> (64K)</p><p class="nav"><a href="VB6_Explorer_Bar_Control_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Explorer Bar Control Demonstration</a> (81K)</p><p class="nav"><a href="VB6_Explorer_Bar_Control_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Explorer Bar Control Full Source</a> (221K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:12217</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12217&amp;type=Zip&amp;title=VB6%20Explorer%20Bar%20Control%20Full%20Source%2Ezip%5FpcExplorerBar">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 7 / 16</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 3 / 6</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:13 January 2004</p>
+<br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />15 Nov 2003<br /><p class="update">Added Watermark and Title Icon properties.</p><p class="update">Titlebars in Search mode can now wrap onto
+more than one line.</p><p class="update">Control can now be resized horizontally
+or vertically at runtime and items are wrapped correctly.</p><p class="update">Bug fixes: font property, Title background
+colour properties, MSVBVM50.DLL dependency, large number of
+items truncated, key navigation.  See the BugTrak for full
+details.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4091">Drawing with XP Visual Styles</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12140">vbAccelerator COM/VB Support Type Library (vbaCOM.Tlb)</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4590">Bitmap Extractor Utility</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2522">Reading Data from Local or External Library Resources</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: pcExplorerBar.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "pcExplorerBar"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal
+ hObject As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+Private Declare Function BitBlt Lib "gdi32" (ByVal hDestDC As Long, ByVal x As
+ Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal dwRop As Long)
+ As Long
+
+Public ID As Long
+Public Title As String
+Public ToolTipText As String
+Public Key As String
+Public Tag As String
+Public ItemData As Long
+Public TitleBackColorLight As OLE_COLOR
+Public TitleBackColorDark As OLE_COLOR
+Public PanelBackColor As OLE_COLOR
+Public TitleFont As IFont
+Public TitleForeColor As OLE_COLOR
+Public TitleForeColorOver As OLE_COLOR
+Public CanExpand As Boolean
+Public State As EExplorerBarStates
+Public IsSpecial As Boolean
+Public IconIndex As Long
+
+Public TitleHeightWithScroll As Long
+Public TitleTextHeightWithScroll As Long
+Public SingleLineTitleWithScroll As Boolean
+Public TitleHeightWithoutScroll As Long
+Public TitleTextHeightWithoutScroll As Long
+Public SingleLineTitleWithoutScroll As Boolean
+Public HeightWithScroll As Long
+Public HeightWithoutScroll As Long
+Public Top As Long
+Public MouseOver As Boolean
+Public MouseDown As Boolean
+Public Expanding As Boolean
+Public Collapsing As Boolean
+Public Alpha As Long
+Public CollapseOffset As Long
+Public Height As Long
+
+Public HasFocus As Boolean
+
+Private Watermark As pcAlphaDibSection
+Public WatermarkHAlign As Long
+Public WatermarkVAlign As Long
+Public WatermarkMode As Long
+Private WatermarkhDIB As Long
+
+' Items is a collection of pcBarItems keyed on ID
+' in the order they appear within the bar:
+Private m_colItems As Collection
+' A collection of the Ids keyed by the Item Key:
+Private m_colItemKeys As Collection
+
+Public Function GetWatermarkPicture() As IPicture
+   If Not (WatermarkhDIB = 0) Then
+      Set GetWatermarkPicture = Watermark.Picture
+   End If
+End Function
+
+Public Sub RenderWatermark( _
+      ByVal outputdc As Long, _
+      ByVal workDC As Long, _
+      ByVal lLeft As Long, _
+      ByVal lTop As Long, _
+      ByVal lRight As Long, _
+      ByVal lBottom As Long, _
+      ByVal lMargin As Long, _
+      ByVal lItemSpacing As Long _
+   )
+Dim x As Long
+Dim y As Long
+Dim iWidth As Long
+Dim iHeight As Long
+Dim hBmpOld As Long
+
+   If Not (WatermarkhDIB = 0) Then
+      hBmpOld = SelectObject(workDC, WatermarkhDIB)
+      
+      x = lLeft + lMargin
+      y = lTop + lItemSpacing
+      iWidth = Watermark.Width
+      iHeight = Watermark.Height
+      
+      If (WatermarkHAlign = eWaterMarkAlignHCentre) Then
+         x = ((lRight - lLeft) - iWidth) \ 2
+      ElseIf (WatermarkHAlign = eWaterMarkAlignRight) Then
+         x = lRight - iWidth
+      End If
+      If (x &lt; lLeft) Then
+         x = lLeft
+      End If
+      If (x + iWidth &gt; lRight) Then
+         iWidth = lRight - x
+      End If
+      
+      If (WatermarkVAlign = eWaterMarkAlignVCentre) Then
+         y = ((lBottom - lTop) - iHeight) \ 2
+      ElseIf (WatermarkVAlign = eWaterMarkAlignBottom) Then
+         y = lBottom - lItemSpacing - iHeight
+      End If
+      If (Collapsing) Then
+         y = y + CollapseOffset
+      End If
+      If (y + iHeight &gt; lBottom) Then
+         iHeight = lBottom - y
+      End If
+      BitBlt outputdc, x, y, iWidth, iHeight, workDC, 0, 0, vbSrcCopy
+      
+      SelectObject workDC, hBmpOld
+   End If
+
+End Sub
+
+Public Sub ColouriseWatermark(ctl As vbalExplorerBarCtl)
+   If Not (Watermark Is Nothing) Then
+      
+      If (Not (WatermarkhDIB) = 0) Then
+         DeleteObject WatermarkhDIB
+      End If
+   
+      Dim cCopy As New pcAlphaDibSection
+      cCopy.Create Watermark.Width, Watermark.Height
+      cCopy.LoadPictureBlt Watermark.hdc
+   
+      If (WatermarkMode = eWaterMarkColourise) Then
+         Dim lBackColor As Long
+         lBackColor = PanelBackColor
+         If (lBackColor = -1) Then
+            lBackColor = ctl.DefaultPanelColor(IsSpecial)
+         End If
+         mColouriseGlyph.ColouriseWatermark cCopy, lBackColor
+      End If
+   
+      WatermarkhDIB = cCopy.ExtractDib
+      Set cCopy = Nothing
+   
+   End If
+End Sub
+
+Public Sub SetWatermarkPicture(ctl As vbalExplorerBarCtl, ipic As IPicture)
+      
+   If (Not (WatermarkhDIB) = 0) Then
+      DeleteObject WatermarkhDIB
+   End If
+      
+   If (ipic Is Nothing) Then
+      
+      Set Watermark = Nothing
+      
+   Else
+      
+      Set Watermark = New pcAlphaDibSection
+      
+      Watermark.CreateFromPicture ipic
+      
+      ColouriseWatermark ctl
+   
+   End If
+
+End Sub
+
+Public Function HasMnemonic(ByVal sMnemonic As String) As Boolean
+   HasMnemonic = (InStr(LCase(Title), "&amp;" &amp; LCase(sMnemonic)) &gt; 0)
+End Function
+
+Public Property Get ItemCount() As Long
+   ItemCount = m_colItems.Count
+End Property
+Public Property Get ItemIndex(Key As Variant) As Long
+Dim i As Long
+   If (IsNumeric(Key)) Then
+      For i = 1 To ItemCount
+         If (i = Key) Then
+            ItemIndex = i
+            Exit For
+         End If
+      Next i
+   Else
+      For i = 1 To ItemCount
+         If (m_colItems(i).Key = Key) Then
+            ItemIndex = i
+            Exit For
+         End If
+      Next i
+   End If
+End Property
+Public Property Let ItemIndex(Key As Variant, ByVal lIndex As Long)
+   '
+Dim itmSwap As pcExplorerBarItem
+Dim i As Long
+Dim lIndexNow As Long
+Dim colItemsTmp As New Collection
+Dim colItemKeysTmp As New Collection
+
+   If (lIndex &lt; 0) Or (lIndex &gt; m_colItems.Count) Then
+      gErr 9, "cExplorerBarItems"
+   Else
+      lIndexNow = ItemIndex(Key)
+      If Not (lIndex = lIndexNow) Then
+         If (lIndex &gt; lIndexNow) Then
+            ' Moving the item down
+            For i = 1 To m_colItems.Count
+               If (i &lt; lIndexNow) Then
+                  colItemsTmp.Add m_colItems(i), "C:" &amp; m_colItems(i).ID
+                  colItemKeysTmp.Add m_colItems(i).ID, m_colItems(i).Key
+               ElseIf (i &lt; lIndex) Then
+                  colItemsTmp.Add m_colItems(i + 1), "C:" &amp; m_colItems(i + 1).ID
+                  colItemKeysTmp.Add m_colItems(i + 1).ID, m_colItems(i + 1).Key
+               ElseIf (i = lIndex) Then
+                  colItemsTmp.Add m_colItems(lIndexNow), "C:" &amp;
+                   m_colItems(lIndexNow).ID
+                  colItemKeysTmp.Add m_colItems(lIndexNow).ID,
+                   m_colItems(lIndexNow).Key
+                  Set itmSwap = m_colItems(lIndexNow)
+               Else
+                  colItemsTmp.Add m_colItems(i), "C:" &amp; m_colItems(i).ID
+                  colItemKeysTmp.Add m_colItems(i).ID, m_colItems(i).Key
+               End If
+            Next i
+            Set m_colItems = colItemsTmp
+            Set m_colItemKeys = colItemKeysTmp
+         
+         Else
+            ' Moving the bar up
+            For i = 1 To m_colItems.Count
+               If (i &lt; lIndex) Then
+                  colItemsTmp.Add m_colItems(i), "C:" &amp; m_colItems(i).ID
+                  colItemKeysTmp.Add m_colItems(i).ID, m_colItems(i).Key
+               ElseIf (i = lIndex) Then
+                  colItemsTmp.Add m_colItems(lIndexNow), "C:" &amp;
+                   m_colItems(lIndexNow).ID
+                  colItemKeysTmp.Add m_colItems(lIndexNow).ID,
+                   m_colItems(lIndexNow).Key
+                  Set itmSwap = m_colItems(lIndexNow)
+               ElseIf (i &lt;= lIndexNow) Then
+                  colItemsTmp.Add m_colItems(i + 1), "C:" &amp; m_colItems(i + 1).ID
+                  colItemKeysTmp.Add m_colItems(i + 1).ID, m_colItems(i + 1).Key
+               Else
+                  colItemsTmp.Add m_colItems(i), "C:" &amp; m_colItems(i).ID
+                  colItemKeysTmp.Add m_colItems(i).ID, m_colItems(i).Key
+               End If
+            Next i
+            Set m_colItems = colItemsTmp
+            Set m_colItemKeys = colItemKeysTmp
+            
+         End If
+      
+      End If
+   End If
+   
+   '
+End Property
+Public Property Get Item(ByVal lIndex As Long) As pcExplorerBarItem
+   Set Item = m_colItems(lIndex)
+End Property
+
+Public Sub SetHeightFromItems()
+Dim itm As pcExplorerBarItem
+   
+   HeightWithScroll = 12
+   HeightWithoutScroll = 12
+   
+   For Each itm In m_colItems
+      HeightWithScroll = HeightWithScroll + itm.HeightWithScroll +
+       itm.SpacingAfter
+      HeightWithoutScroll = HeightWithoutScroll + itm.HeightWithoutScroll +
+       itm.SpacingAfter
+   Next
+   
+End Sub
+
+Public Property Get ContainsControl() As Boolean
+Dim i As Long
+   For i = 1 To ItemCount
+      If Not (m_colItems(i).lPtrPanel = 0) Then
+         ContainsControl = True
+         Exit For
+      End If
+   Next i
+End Property
+
+Public Sub ClearItems()
+   Set m_colItems = New Collection
+   'Set m_colItemKeys = New Collection
+   HeightWithScroll = 0
+   HeightWithoutScroll = 0
+End Sub
+Public Property Get IDForKey(Key As Variant) As Long
+Dim vId As Variant
+   
+   '
+   ' If you get an error here, then you're
+   ' running the control as code, and you
+   ' have to select
+   '     Toggle -&gt; Break on Unhandled errors
+   '
+   vId = m_colItemKeys(Key)
+   '
+   '
+   
+   IDForKey = CLng(vId)
+   
+End Property
+Public Sub RemoveItem(ByVal lId As Long)
+Dim itm As pcExplorerBarItem
+   Set itm = m_colItems.Item("C:" &amp; lId)
+   m_colItems.Remove "C:" &amp; lId
+   m_colItemKeys.Remove itm.Key
+End Sub
+Public Sub AddItem(itm As pcExplorerBarItem, ByVal lIndex As Long, Optional
+ Index As Variant)
+   If (lIndex &gt; 0) Then
+      m_colItems.Add itm, "C:" &amp; itm.ID, Index
+      m_colItemKeys.Add itm.ID, itm.Key, Index
+   Else
+      m_colItems.Add itm, "C:" &amp; itm.ID
+      m_colItemKeys.Add itm.ID, itm.Key
+   End If
+End Sub
+
+Private Sub Class_Initialize()
+   
+   ' Set defaults:
+   IconIndex = -1
+   TitleBackColorLight = CLR_NONE
+   TitleBackColorDark = CLR_NONE
+   PanelBackColor = CLR_NONE
+   TitleForeColor = CLR_NONE
+   TitleForeColorOver = CLR_NONE
+   CanExpand = True
+   Randomize Timer
+   HeightWithoutScroll = 12
+   HeightWithScroll = 12
+   TitleHeightWithoutScroll = 24
+   TitleHeightWithScroll = 24
+   State = eBarExpanded
+   Alpha = 255
+   WatermarkMode = eWaterMarkColourise
+   WatermarkHAlign = eWaterMarkAlignRight
+   WatermarkVAlign = eWaterMarkAlignBottom
+   Set m_colItems = New Collection
+   Set m_colItemKeys = New Collection
+   
+End Sub
+
+Private Sub Class_Terminate()
+   If Not (WatermarkhDIB = 0) Then
+      DeleteObject WatermarkhDIB
+   End If
+   Set Watermark = Nothing
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator Explorer Bar Control</a>&#160;.&#160;<a href="VB6_Explorer_Bar_Control_Full_Source.html">VB6 Explorer Bar Control Full Source</a>&#160;.&#160;pcExplorerBar.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 15 November 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Explorer_Bar_Control/VB6_Explorer_Bar_Control_Full_Source_zip_pcExplorerBar_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:21:25 GMT -->
+</html>

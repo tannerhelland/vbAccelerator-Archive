@@ -1,0 +1,265 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/DrawEdge_Function/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:35 GMT -->
+<head>
+
+<title>vbAccelerator - Drawing Borders and Edges using the API DrawEdge Function</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="The DrawEdge function is a useful function provided by the Win32 API. It can draw a variety of the edge styles used to draw buttons, frames and borders around controls and forms. The source code for this article shows you how to:Use the DrawEdge to achieve a variety of edge styles.Evaluate the client area within an edge and prevent it being overdrawn." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;Drawing Borders and Edges using the API DrawEdge Function</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="DrawEdge_Demonstration_Project.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />DrawEdge Demonstration Project</a> (19K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:971</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=971&amp;type=Article&amp;title=Drawing%20Borders%20and%20Edges%20using%20the%20API%20DrawEdge%20Function">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />21 Jun 1998<br />First Posted.</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=974">Text At Any Angle</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=5293">Hierarchy Selector Control </a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Drawing Borders and Edges using the API DrawEdge Function</h1><p class="splash">Simplify standard drawing tasks using the System's built-in functionality</p><img src="drawedge.gif" width="341" height="453" alt="DrawEdge Tester Project" /><p /><p>The DrawEdge function is a useful function provided by the Win32 API. It can draw a variety of the edge styles used to draw buttons, frames and borders around controls and forms. The source code for this article shows you how to:</p><ul><li>Use the DrawEdge to achieve a variety of edge styles.</li><li>Evaluate the client area within an edge and prevent it being overdrawn.</li></ul><p>DrawEdge is declared as follows:</p><pre>
+Private Declare Function DrawEdge Lib "user32" ( _
+    ByVal hDC As Long, _
+    qrc As RECT, _
+    ByVal edge As Long, _
+    ByVal grfFlags As Long) As Long 
+</pre><p>The parameters to it are the <i>hDC</i> to draw onto, the rectangle in which to draw the edge, then two parameters to determine how the edge is drawn:</p><ul><li><i>edge</i> determines what type of edge is drawn. This can be set to show outer and inner border parts, 
+either sunken or raised.</li><li><i>grfFlags</i> sets which parts (left, top, right, bottom) of the edge are going to be drawn, and has 
+some additional options which modify how the edge is drawn (although these don't seem to do anything for me!). 
+See the code below for a list of constants you can use in these parameters (<i>EDEDBorderStyle</i> in the sample code enumerates settings for edge, <i>EDEDBorderParts</i> the settings for grfFlags).</li></ul><p>Once you have drawn an edge, you then normally want to draw any other parts of the control within the edge rather than overdrawing it. The Inner and Outer parts of the border occupy 1 pixel (or <i>TwipsPerPixel</i> twips) each, so it isn't too difficult to work out what the client area within the border is. The <i>EvaluateSize()</i> function below shows how this is done. This function also demonstrates how to make drawing easier by preventing anything from being drawn over the border.</p><p>This is done by selecting a 'clipping region' which excludes the border into the device you are drawing into. When the clipping region is in place, Windows will only draw within the clipping region, all other drawing simply disappears. To select a clipping region, first create it with a region creating API function. The sample below uses <i>CreateRectRgn</i>, however you can create regions of any shape you like (see my article "A window that's star-shaped, circular or tank-shaped for details on creating more arbitrary shaped regions"). Once the region is created, you can make it the clipping region by using <i>SelectClipRgn</i>. To remove the region again, simply select a region handle of zero into the control.</p><p>The code below provides a simple UserControl which allows all the DrawEdge options to be exercised, and also demonstrates clipping to prevent drawing over the edge which has been drawn. The code in the download expands on the details below by drawing some text into the control to prove that the edge isn't overwritten. It also demonstrates a couple of other techniques:</p><ul><li>Providing a neat interface for choosing different edge options using a hierarchical tree (a simple implementation of the <a href="http://www.vbaccelerator.com/article.asp?id=5293">Hierarchy Selector Control</a>.</li><li>Drawing text at any angle - in this case text is drawn at 30 degrees across the control (see also <a href="http://www.vbaccelerator.com/article.asp?id=974">Text at Any Angle</a> for more details).</li></ul><pre>
+' ================================================================== 
+' EDGE Drawing: 
+' ================================================================== 
+Public Enum EDEDBorderStyle 
+    BDR_RAISEDOUTER = 1 
+    BDR_SUNKENOUTER = 2 
+    BDR_RAISEDINNER = 4 
+    BDR_SUNKENINNER = 8 
+    
+    BDR_BUTTON = BDR_RAISEDINNER Or BDR_RAISEDOUTER 
+    BDR_CONTROL = BDR_SUNKENINNER Or BDR_SUNKENOUTER 
+    BDR_THINBUTTON = BDR_RAISEDOUTER 
+    BDR_THINCONTROL = BDR_SUNKENOUTER 
+    
+    BDR_ETCHRAISE = BDR_RAISEDOUTER Or BDR_SUNKENINNER 
+    BDR_ETCHINSET = BDR_SUNKENOUTER Or BDR_RAISEDINNER 
+    
+    BDR_ALL = BDR_BUTTON Or BDR_CONTROL 
+End Enum 
+Public Enum EDEDBorderParts 
+    Bf_left = 1 
+    Bf_Top = 2 
+    Bf_right = 4 
+    Bf_bottom = 8 
+    BF_TOPLEFT = Bf_left Or Bf_Top 
+    Bf_BOTTOMRIGHT = Bf_right Or Bf_bottom 
+    BF_RECT = Bf_left Or Bf_Top Or Bf_right Or Bf_bottom 
+    BF_MIDDLE = &amp;H800 
+    BF_SOFT = &amp;H1000 
+    BF_ADJUST = &amp;H2000 
+    BF_FLAT = &amp;H4000 
+    BF_MONO = &amp;H8000&amp;
+    BF_ALL = BF_RECT Or BF_MIDDLE Or BF_SOFT Or BF_ADJUST Or BF_FLAT Or BF_MONO 
+End Enum 
+Private Type RECT 
+    Left As Long 
+    Top As Long 
+    Right As Long 
+    Bottom As Long 
+End Type 
+Private Declare Function DrawEdge Lib "user32" ( _
+    ByVal hDC As Long, qrc As RECT, _
+    ByVal edge As Long, ByVal grfFlags As Long) As Long 
+
+' ================================================================== 
+' Clipping functions: 
+' ================================================================== 
+Private Declare Function SelectClipRgn Lib "gdi32" ( _
+    ByVal hDC As Long, ByVal hRgn As Long) As Long 
+Private Declare Function CreateRectRgn Lib "gdi32" ( _
+    ByVal x1 As Long, ByVal y1 As Long, _
+    ByVal x2 As Long, ByVal y2 As Long) As Long 
+Private Declare Function DeleteObject Lib "gdi32" ( _
+    ByVal hObject As Long) As Long 
+
+
+' ================================================================== 
+' Client Region: 
+' ================================================================== 
+Private m_lLeft As Long 
+Private m_lTop As Long 
+Private m_lWidth As Long 
+Private m_lHeight As Long 
+Private m_hRgn As Long 
+
+' ================================================================== 
+' Border styles: 
+' ================================================================== 
+Private m_lBorderStyle As Long 
+Private m_lFlags As Long 
+
+Public Property Get BackColor() As OLE_COLOR 
+    BackColor = UserControl.BackColor 
+End Property 
+
+Public Property Let BackColor(ByVal eColor As OLE_COLOR) 
+    UserControl.BackColor = eColor 
+    PropertyChanged "BackColor" 
+    Draw 
+End Property 
+
+Public Property Let BorderPart(ByVal ePart As EDEDBorderParts, _
+    ByVal bState As Boolean) 
+    If (bState) Then 
+        m_lFlags = m_lFlags Or ePart 
+    Else 
+        m_lFlags = m_lFlags And Not ePart 
+    End If 
+    Draw 
+    PropertyChanged "BorderPart" 
+End Property 
+
+Public Property Get BorderPart(ByVal ePart As EDEDBorderParts) As Boolean 
+    BorderPart = BitSet(m_lFlags, ePart) 
+End Property 
+
+Public Property Let BorderStyle(ByVal eStyle As EDEDBorderStyle, _
+    ByVal bState As Boolean) 
+    If (bState) Then 
+        m_lBorderStyle = m_lBorderStyle Or eStyle 
+    Else 
+        m_lBorderStyle = m_lBorderStyle And Not eStyle 
+    End If 
+    Draw 
+    PropertyChanged "BorderStyle" 
+End Property 
+
+Public Property Get BorderStyle(ByVal eStyle As EDEDBorderStyle) As Boolean 
+    BorderStyle = BitSet(m_lBorderStyle, eStyle) 
+End Property 
+
+Private Function BitSet(ByVal lIn As Long, ByVal lBits As Long) As Boolean 
+    BitSet = ((lIn And lBits) = lBits) 
+End Function 
+
+Private Sub EvaluateSize() 
+Dim lBSize As Long 
+    m_lWidth = UserControl.ScaleWidth \ Screen.TwipsPerPixelX 
+    m_lHeight = UserControl.ScaleHeight \ Screen.TwipsPerPixelY 
+    m_lLeft = 0 
+    m_lTop = 0 
+    If (m_lBorderStyle &gt;= 4) Then 
+        lBSize = 2 
+    ElseIf (m_lBorderStyle &gt;= 1) Then 
+        lBSize = 1 
+    End If 
+    If (BitSet(m_lFlags, Bf_left)) Then 
+        m_lLeft = lBSize 
+        m_lWidth = m_lWidth - lBSize 
+    End If 
+    If (BitSet(m_lFlags, Bf_Top)) Then 
+        m_lTop = lBSize 
+        m_lHeight = m_lHeight - lBSize 
+    End If 
+    If (BitSet(m_lFlags, Bf_right)) Then 
+        m_lWidth = m_lWidth - lBSize 
+    End If 
+    If (BitSet(m_lFlags, Bf_bottom)) Then 
+        m_lHeight = m_lHeight - lBSize 
+    End If 
+    DeleteObject m_hRgn 
+    m_hRgn = CreateRectRgn(m_lLeft, m_lTop, m_lWidth + m_lLeft, _
+                m_lHeight + m_lTop) 
+    SelectClipRgn UserControl.hDC, m_hRgn 
+End Sub 
+
+Public Sub Draw() 
+Dim tR As RECT 
+
+    ' Clear control: 
+    If (m_hRgn &lt;&gt; 0) Then 
+        SelectClipRgn UserControl.hDC, 0 
+    End If 
+    UserControl.Cls 
+    
+    ' Draw the edge: 
+    tR.Right = UserControl.ScaleWidth \ Screen.TwipsPerPixelX 
+    tR.Bottom = UserControl.ScaleHeight \ Screen.TwipsPerPixelY 
+    DrawEdge UserControl.hDC, tR, m_lBorderStyle, m_lFlags 
+    
+    ' Draw in the 'client area' 
+    EvaluateSize 
+        
+    UserControl.Refresh 
+
+End Sub 
+
+Private Sub UserControl_Initialize() 
+    m_lBorderStyle = BDR_CONTROL 
+    m_lFlags = BF_RECT 
+End Sub 
+
+Private Sub UserControl_Paint() 
+    Draw 
+End Sub 
+
+Private Sub UserControl_ReadProperties(PropBag As PropertyBag) 
+    m_lBorderStyle = PropBag.ReadProperty("BorderStyle", BDR_CONTROL) 
+    m_lFlags = PropBag.ReadProperty("BorderPart", BF_RECT) 
+    BackColor = PropBag.ReadProperty("BackColor", vbButtonFace) 
+End Sub 
+
+Private Sub UserControl_Resize() 
+    Draw 
+End Sub 
+
+Private Sub UserControl_Terminate() 
+    If (m_hRgn &lt;&gt; 0) Then 
+        SelectClipRgn UserControl.hDC, 0 
+        DeleteObject m_hRgn 
+    End If 
+End Sub 
+
+Private Sub UserControl_WriteProperties(PropBag As PropertyBag) 
+    PropBag.WriteProperty "BorderStyle", m_lBorderStyle, BDR_CONTROL 
+    PropBag.WriteProperty "BorderPart", m_lFlags, BF_RECT 
+    PropBag.WriteProperty "BackColor", BackColor, vbButtonFace 
+End Sub 
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;Drawing Borders and Edges using the API DrawEdge Function</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 11 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/DrawEdge_Function/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:36 GMT -->
+</html>

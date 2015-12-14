@@ -1,0 +1,405 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Writing_CDs/IMAPI/VB6_IMAPI_Library_Source_zip_cDiscMaster_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:41 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cDiscMaster.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cDiscMaster.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" /><link rel="contents" href="VB6_IMAPI_Library_Source.html" /><link rel="meta" type="application/rdf+xml" href="VB6%20IMAPI%20Library%20Source.html" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Writing CDs</a>&#160;.&#160;<a href="article.html">Image Mastering API (IMAPI) Library for VB</a>&#160;.&#160;<a href="VB6_IMAPI_Library_Source.html">VB6 IMAPI Library Source</a>&#160;.&#160;cDiscMaster.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_IMAPI_Library_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IMAPI Library Binary</a> (26K)</p><p class="nav"><a href="VB5_IMAPI_Library_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IMAPI Library Source</a> (74K)</p><p class="nav"><a href="VB5_IMAPI_Properties_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IMAPI Properties Demonstration</a> (31K)</p><p /><p class="nav"><a href="VB6_IMAPI_Library_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IMAPI Library Binary</a> (27K)</p><p class="nav"><a href="VB6_IMAPI_Library_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IMAPI Library Source</a> (74K)</p><p class="nav"><a href="VB6_IMAPI_Properties_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IMAPI Properties Demonstration</a> (30K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:15029</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=15029&amp;type=Zip&amp;title=VB6%20IMAPI%20Library%20Source%2Ezip%5FcDiscMaster">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />2 Jun 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13463">vbAccelerator TreeView Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14969">Simple Data CD Creation Using ICDBurn</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14976">VB IMAPI (CD Burning) Interfaces (IVBIMAPI.tlb)</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14974">Mapping NT Device Names to Drive Letters and vice-versa</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cDiscMaster.cls</h1><p>This file is part of the download <a href="VB6_IMAPI_Library_Source.html">VB6 IMAPI Library Source</a>, which is described in the article <a href="article.html">Image Mastering API (IMAPI) Library for VB</a>.</p><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cDiscMaster"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+Private Const CLSID_MSDiscMasterObj As String =
+ "520CCA63-51A5-11D3-9144-00104BA11C5E"
+Private Const IID_IDiscMaster As String = "520CCA62-51A5-11D3-9144-00104BA11C5E"
+Private Const IID_IRedbookDiscMaster As String =
+ "E3BC42CD-4E5C-11D3-9144-00104BA11C5E"
+Private Const IID_IJolietDiscMaster As String =
+ "E3BC42CE-4E5C-11D3-9144-00104BA11C5E"
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" (lpvDest As
+ Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Const ERR_BASE As Long = 47700
+
+Private m_cDiscMaster As IVBDiscMaster
+Private m_cdBurn As ICDBurn
+Private m_cSimpleRecorder As cSimpleDiscRecorder
+Private m_cDiscRecorders As cDiscRecorders
+Private WithEvents m_cProgress As cDiscMasterProgressEvents
+Attribute m_cProgress.VB_VarHelpID = -1
+Private m_lProgressCookie As Long
+
+Public Event AddProgress(ByVal nCompleted As Long, ByVal nTotal As Long)
+Attribute AddProgress.VB_Description = "Raised as items are added to the stash."
+Public Event BlockProgress(ByVal nCurrentBlock As Long, ByVal nTotalBlocks As
+ Long)
+Attribute BlockProgress.VB_Description = "Raised as blocks are burnt to the CD."
+Public Event ClosingDisc(ByVal nEstimatedSeconds As Long)
+Attribute ClosingDisc.VB_Description = "Raised when the disc is about to be
+ closed."
+Public Event EraseComplete(ByVal status As Long)
+Attribute EraseComplete.VB_Description = "Raised when an erase operation on a
+ CDRW disc has completed."
+Public Event BurnComplete(ByVal status As Long)
+Attribute BurnComplete.VB_Description = "Raised when a CD Burn operation has
+ completed."
+Public Event PnPActivity()
+Attribute PnPActivity.VB_Description = "Raised when a Plug and Play activity
+ has occurred which has changed the list of drives on the machine."
+Public Event PreparingBurn(ByVal nEstimatedSeconds As Long)
+Attribute PreparingBurn.VB_Description = "Raised when a burn is being prepared."
+Public Event TrackProgress(ByVal nCurrentTrack As Long, ByVal nTotalTracks As
+ Long)
+Attribute TrackProgress.VB_Description = "Raised as tracks are completed when
+ buring an audio CD."
+Public Event QueryCancel(ByRef bCancel As Boolean)
+Attribute QueryCancel.VB_Description = "Raised during a burn process to request
+ whether the burn should be cancelled."
+
+Public Sub Initialise()
+Attribute Initialise.VB_Description = "Initialises the disc master library for
+ use.  Must be called before any other method can be used."
+Dim clsidMsDiscMaster As UUID
+Dim iidIDiscMaster As UUID
+Dim hR As Long
+Dim l As Long
+Dim cDiscMaster As IVBDiscMaster
+
+   If (InitialiseCDBurn()) Then
+
+      With clsidMsDiscMaster
+         .Data1 = &amp;H520CCA63
+         .Data2 = &amp;H51A5&amp;
+         .Data3 = &amp;H11D3&amp;
+         .Data4(0) = &amp;H91
+         .Data4(1) = &amp;H44
+         .Data4(2) = &amp;H0
+         .Data4(3) = &amp;H10
+         .Data4(4) = &amp;H4B
+         .Data4(5) = &amp;HA1
+         .Data4(6) = &amp;H1C
+         .Data4(7) = &amp;H5E
+      End With
+   
+      With iidIDiscMaster
+         .Data1 = &amp;H520CCA62
+         .Data2 = &amp;H51A5&amp;
+         .Data3 = &amp;H11D3&amp;
+         .Data4(0) = &amp;H91
+         .Data4(1) = &amp;H44
+         .Data4(2) = &amp;H0
+         .Data4(3) = &amp;H10
+         .Data4(4) = &amp;H4B
+         .Data4(5) = &amp;HA1
+         .Data4(6) = &amp;H1C
+         .Data4(7) = &amp;H5E
+      End With
+            
+      hR = CoCreateInstance(clsidMsDiscMaster, _
+         Nothing, _
+         CLSCTX_INPROC_SERVER Or CLSCTX_LOCAL_SERVER, _
+         iidIDiscMaster, _
+         cDiscMaster)
+      If (FAILED(hR)) Then
+         err.Raise ERR_BASE + 1, App.EXEName &amp; ".cDiscMaster", "Failed to
+          instantiate IDiscMaster implementation"
+      Else
+         Set m_cDiscMaster = cDiscMaster
+         cDiscMaster.Release
+         CopyMemory cDiscMaster, 0&amp;, 4
+         
+         m_cDiscMaster.Open
+            
+         Set m_cProgress = New cDiscMasterProgressEvents
+         m_cDiscMaster.ProgressAdvise m_cProgress, m_lProgressCookie
+                           
+      End If
+   End If
+   
+End Sub
+
+Public Property Get SimpleRecorder() As cSimpleDiscRecorder
+   Set SimpleRecorder = m_cSimpleRecorder
+End Property
+
+Public Property Get Recorders() As cDiscRecorders
+Attribute Recorders.VB_Description = "Gets a collection of Recorders attached
+ to the system."
+   If Not (m_cDiscMaster Is Nothing) Then
+      If (m_cDiscRecorders Is Nothing) Then
+         Set m_cDiscRecorders = New cDiscRecorders
+         m_cDiscRecorders.fInit m_cDiscMaster
+      End If
+      Set Recorders = m_cDiscRecorders
+   End If
+End Property
+
+Public Sub RefreshRecorders()
+   If Not (m_cDiscRecorders Is Nothing) Then
+      m_cDiscRecorders.fRefresh
+   End If
+End Sub
+
+Public Sub ClearFormatContent()
+Attribute ClearFormatContent.VB_Description = "Clears any content added to the
+ stash."
+   m_cDiscMaster.ClearFormatContent
+End Sub
+
+Public Property Get RedbookDiscMaster() As cRedbookDiscMaster
+Attribute RedbookDiscMaster.VB_Description = "Gets a Redbook (Audio) disc
+ master object which can be used to write Audio CDs."
+   '
+   Set m_cDiscRecorders = Nothing
+   
+   Dim redbook As IVBRedbookDiscMaster
+   Dim iid As UUID
+   iid.Data1 = &amp;HE3BC42CD
+   iid.Data2 = &amp;H4E5C
+   iid.Data3 = &amp;H11D3
+   iid.Data4(0) = &amp;H91
+   iid.Data4(1) = &amp;H44
+   iid.Data4(2) = &amp;H0
+   iid.Data4(3) = &amp;H10
+   iid.Data4(4) = &amp;H4B
+   iid.Data4(5) = &amp;HA1
+   iid.Data4(6) = &amp;H1C
+   iid.Data4(7) = &amp;H5E
+   m_cDiscMaster.SetActiveDiscMasterFormat iid, redbook
+   redbook.AddRef
+   
+   Dim cRedbook As cRedbookDiscMaster
+   Set cRedbook = New cRedbookDiscMaster
+   cRedbook.fInit redbook
+   redbook.Release
+   CopyMemory redbook, 0&amp;, 4
+   
+   Recorders.Recorder(1).SetAsActive
+   
+   Set RedbookDiscMaster = cRedbook
+   '
+End Property
+
+Public Property Get JolietDiscMaster() As cJolietDiscMaster
+Attribute JolietDiscMaster.VB_Description = "Gets a Joliet (Data) Disc Master
+ object which can be used to write files using an IStorage interface."
+   '
+   Set m_cDiscRecorders = Nothing
+   
+   Dim joliet As IVBJolietDiscMaster
+   Dim iid As UUID
+   iid.Data1 = &amp;HE3BC42CE
+   iid.Data2 = &amp;H4E5C
+   iid.Data3 = &amp;H11D3
+   iid.Data4(0) = &amp;H91
+   iid.Data4(1) = &amp;H44
+   iid.Data4(2) = &amp;H0
+   iid.Data4(3) = &amp;H10
+   iid.Data4(4) = &amp;H4B
+   iid.Data4(5) = &amp;HA1
+   iid.Data4(6) = &amp;H1C
+   iid.Data4(7) = &amp;H5E
+   m_cDiscMaster.SetActiveDiscMasterFormat iid, joliet
+   joliet.AddRef
+   
+   Dim cJoliet As cJolietDiscMaster
+   Set cJoliet = New cJolietDiscMaster
+   cJoliet.fInit joliet
+   joliet.Release
+   CopyMemory joliet, 0&amp;, 4
+   
+   Recorders.Recorder(1).SetAsActive
+   
+   Set JolietDiscMaster = cJoliet
+   '
+End Property
+
+Public Sub RecordDisc(ByVal bSimulate As Boolean, ByVal bEjectAfterBurn As
+ Boolean)
+Attribute RecordDisc.VB_Description = "Burns or simulates a burn to disc of the
+ contents stashed from either a JolietDiscMaster or RedbookDiscMaster instance."
+   m_cDiscMaster.RecordDisc Abs(CLng(bSimulate)), Abs(CLng(bEjectAfterBurn))
+End Sub
+
+Private Function InitialiseCDBurn() As Boolean
+Dim clsidCDBurn As UUID
+Dim cdBurn As ICDBurn
+
+   With clsidCDBurn
+      .Data1 = &amp;HFBEB8A05
+      .Data2 = &amp;HBEEE
+      .Data3 = &amp;H4442
+      .Data4(0) = &amp;H80
+      .Data4(1) = &amp;H4E
+      .Data4(2) = &amp;H40
+      .Data4(3) = &amp;H9D
+      .Data4(4) = &amp;H6C
+      .Data4(5) = &amp;H45
+      .Data4(6) = &amp;H15
+      .Data4(7) = &amp;HE9
+   End With
+Dim iidCDBurn As UUID
+   With iidCDBurn
+      .Data1 = &amp;H3D73A659
+      .Data2 = &amp;HE5D0
+      .Data3 = &amp;H4D42
+      .Data4(0) = &amp;HAF
+      .Data4(1) = &amp;HC0
+      .Data4(2) = &amp;H51
+      .Data4(3) = &amp;H21
+      .Data4(4) = &amp;HBA
+      .Data4(5) = &amp;H42
+      .Data4(6) = &amp;H5C
+      .Data4(7) = &amp;H8D
+   End With
+   
+   Dim hR As Long
+   hR = CoCreateInstance( _
+      clsidCDBurn, _
+      Nothing, _
+      CLSCTX_INPROC_SERVER, _
+      iidCDBurn, _
+      cdBurn)
+   If (FAILED(hR)) Then
+      err.Raise ERR_BASE + 1, App.EXEName &amp; ".cSimpleCDBurner", "Failed to
+       instantiate CDBurn implementation"
+   Else
+      Set m_cdBurn = cdBurn
+      cdBurn.Release
+      CopyMemory cdBurn, 0&amp;, 4
+      
+      Set m_cSimpleRecorder = New cSimpleDiscRecorder
+      m_cSimpleRecorder.fInit m_cdBurn
+      InitialiseCDBurn = True
+   End If
+   
+End Function
+
+Public Sub ClearUp()
+Attribute ClearUp.VB_Description = "Clears up resources associated with the
+ library.  It is recommended you call this before your application terminates."
+   
+   If Not (m_cSimpleRecorder Is Nothing) Then
+      Set m_cSimpleRecorder = Nothing
+   End If
+   
+   If Not (m_cDiscRecorders Is Nothing) Then
+      Set m_cDiscRecorders = Nothing
+   End If
+   
+   If Not (m_cDiscMaster Is Nothing) Then
+      m_cDiscMaster.ProgressUnadvise m_lProgressCookie
+      m_cDiscMaster.Close
+      Set m_cProgress = Nothing
+      
+      m_cDiscMaster.Release
+      Set m_cDiscMaster = Nothing
+   End If
+   
+   If Not (m_cdBurn Is Nothing) Then
+      m_cdBurn.Release
+      Set m_cdBurn = Nothing
+   End If
+   
+End Sub
+
+Private Sub Class_Terminate()
+   '
+   ClearUp
+   '
+End Sub
+
+Private Sub m_cProgress_Add(ByVal nCompleted As Long, ByVal nTotal As Long)
+   RaiseEvent AddProgress(nCompleted, nTotal)
+End Sub
+
+Private Sub m_cProgress_BlockProgress(ByVal nCurrentBlock As Long, ByVal
+ nTotalBlocks As Long)
+   RaiseEvent BlockProgress(nCurrentBlock, nTotalBlocks)
+End Sub
+
+Private Sub m_cProgress_BurnComplete(ByVal status As Long)
+   RaiseEvent BurnComplete(status)
+End Sub
+
+Private Sub m_cProgress_ClosingDisc(ByVal nEstimatedSeconds As Long)
+   RaiseEvent ClosingDisc(nEstimatedSeconds)
+End Sub
+
+Private Sub m_cProgress_EraseComplete(ByVal status As Long)
+   RaiseEvent EraseComplete(status)
+End Sub
+
+Private Sub m_cProgress_PnPActivity()
+   RaiseEvent PnPActivity
+End Sub
+
+Private Sub m_cProgress_PreparingBurn(ByVal nEstimatedSeconds As Long)
+   RaiseEvent PreparingBurn(nEstimatedSeconds)
+End Sub
+
+Private Sub m_cProgress_QueryCancel(bCancel As Boolean)
+   RaiseEvent QueryCancel(bCancel)
+End Sub
+
+Private Sub m_cProgress_TrackProgress(ByVal nCurrentTrack As Long, ByVal
+ nTotalTracks As Long)
+   RaiseEvent TrackProgress(nCurrentTrack, nTotalTracks)
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Writing CDs</a>&#160;.&#160;<a href="article.html">Image Mastering API (IMAPI) Library for VB</a>&#160;.&#160;<a href="VB6_IMAPI_Library_Source.html">VB6 IMAPI Library Source</a>&#160;.&#160;cDiscMaster.cls</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 9 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Writing_CDs/IMAPI/VB6_IMAPI_Library_Source_zip_cDiscMaster_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:41 GMT -->
+</html>

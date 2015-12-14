@@ -1,0 +1,152 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Threading/Multi-threading_using_classes_in_ActiveX_EXEs/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:56:56 GMT -->
+<head>
+
+<title>vbAccelerator - Multi-Threaded VB Using ActiveX EXEs</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Ever since VB5 service pack 2, there has been the possibility of running VB applications 
+multi-threaded by using ActiveX EXEs. However, if you try and research this you will find it 
+is fiddly to get working.  This article presents a method which makes running operations
+asynchronously really easy." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Threading</a>&#160;.&#160;Multi-Threaded VB Using ActiveX EXEs</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="MSDN_CodeFlow_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />MSDN CodeFlow Sample</a> (38K)</p><p /><p class="nav"><a href="Multi-Threaded_EXE_Project.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Multi-Threaded EXE Project</a> (18K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3620</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3620&amp;type=Article&amp;title=Multi%2DThreaded%20VB%20Using%20ActiveX%20EXEs">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />1 Jan 2000<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1026">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3377">Finding Which DLL Contains an API Call</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Multi-Threaded VB Using ActiveX EXEs</h1><p class="splash">Run code asynchronously with this simple and elegant design model</p><img src="axexethr.gif" width="147" height="119" alt="No more Hourglasses" /><p /><p>Ever since VB5 service pack 2, there has been the possibility of running VB applications 
+multi-threaded by using ActiveX EXEs. However, if you try and research this you will find it 
+is fiddly to get working.  This article presents a method which makes running operations
+asynchronously really easy.</p><h2>Multi-Threading</h2><p>Although ActiveX EXEs can run in a new thread, I've never really understood how to get it working: you 
+need to use <i>CreateObject</i> to make the object on a new thread, and then you need to be very 
+careful as to how you start the work you want to do asynchronously. Most times you find 
+that VB blocks until the method call is complete regardless of whether the object is in a new thread or not.</p><p>What you want to be able to do is to say I want to perform some operation asynchronously 
+and I would like to be notified when it is complete. This project demonstrates a tiny code module and 
+a type library you can add into your own ActiveX projects to do just that. It is based around 
+a part of the MSDN "CodeFlow sample" (see downloads).</p><h2>Asynchronous Running - Just to get it Started</h2><p>The main problem with getting a multi-threaded application up and running is how to 
+call a method in VB without the caller being blocked. It turns out there is a simple 
+solution to this problem. The steps are as follows:</p><ol><li>Put the method call into an ActiveX EXE, and make it private to the EXE.</li><li>Provide a new wrapper method to call the method you want to run asynchronously.  This
+wrapper method enables a timer. When the timer fires, the original method is called.</li></ol><p>This solves the problem because the method you call immediately 
+yields control back to the caller, and then it is left to Windows pre-emptive 
+multi-tasking to raise the timer event and kick off the process within the 
+ActiveX EXE. There is no further interference because the ActiveX EXE is running 
+in a different process to the caller.</p><h2>In More Detail</h2><p>To stop having to have a form in the ActiveX EXE, this solution is based on a Win32 API timer. 
+Win32 API timers come in two flavours: either they notify the application when they tick by posting a 
+<i>WM_TIMER</i> message to a window, or they fire a callback interface. This 
+solution uses the callback interface, and as a consequence must be implemented 
+within a module (because VB will not provide the address of a function to callback to 
+for any function within an object, only one in a module).</p><p>Because the code to start the object is implemented in a module, 
+the module must have a reference to the object instance it has to start 
+when the timer fires. To achieve this without the possibility for errors, an interface 
+is defined that the object can implement and the module will only use this 
+for communication. In this sample, the interface is defined in a Type Library called 
+<i>Runnable</i>. This allows you to reference the Type Library without having to declare 
+it as a public class from the ActiveX executable.</p><p>The final implementation feature is the use of the OLE/COM API call <i>CoLockObjectExternal</i> 
+to ensure that the object being started asynchronously isn't inadvertently terminated by the 
+caller before the timer has had a chance to be fired.</p><p>Here is the code in the mStart.bas module:</p><pre>
+' To prevent object going out of scope whilst the timer fires:
+Private Declare Function CoLockObjectExternal Lib "ole32" ( _
+      ByVal pUnk As IUnknown, ByVal fLock As Long, _
+      ByVal fLastUnlockReleases As Long) As Long
+
+' Timer API:
+Private Declare Function SetTimer Lib "user32" (ByVal hWnd As Long, _
+      ByVal nIDEvent As Long, ByVal uElapse As Long, ByVal lpTimerFunc As Long) _
+      As Long
+Private Declare Function KillTimer Lib "user32" (ByVal hWnd As Long, _
+      ByVal nIDEvent As Long) As Long
+
+' Collection of Runnable items to start:
+Private m_colRunnables As Collection
+' The ID of our API Timer:
+Private m_lTimerID As Long
+
+Private Sub TimerProc(ByVal lHwnd As Long, ByVal lMsg As Long, _
+         ByVal lTimerID As Long, ByVal lTime As Long)
+   Dim this As Runnable
+   ' Enumerate through the collection, firing the
+   ' Runnable_Start method for each item in it and
+   ' releasing our extra lock on the object:
+   With m_colRunnables
+      Do While .Count &gt; 0
+         Set this = .Item(1)
+         .Remove 1
+         this.Start
+         'Ask the system to release its lock on the object
+         CoLockObjectExternal this, 0, 1
+      Loop
+   End With
+   ' Remove the timer:
+   KillTimer 0, lTimerID
+   m_lTimerID = 0
+End Sub
+
+Public Sub Start(this As Runnable)
+   ' Ask the system to lock the object so that
+   ' it will still perform its work even if it
+   ' is released
+   CoLockObjectExternal this, 1, 1
+   ' Add this to runnables:
+   If m_colRunnables Is Nothing Then
+      Set m_colRunnables = New Collection
+   End If
+   m_colRunnables.Add this
+   ' Create a timer to start running the object:
+   If Not m_lTimerID Then
+      m_lTimerID = SetTimer(0, 0, 1, AddressOf TimerProc)
+   End If
+End Sub
+</pre><h2>In Use</h2><p>To create your own multi-threaded object, start a new ActiveX EXE project. Make a reference 
+to <i>Runnable.TLB</i> and add <i>mStart.bas</i> as discussed above. In your ActiveX EXE's class, 
+implement the Runnable interface: this only has one method, <i>Runnable_Start</i> which is fired when 
+the timer starts the object. Now provide a public method to allow your user to set the 
+object running, and in this method call:</p><pre>
+   mStart.Start Me
+</pre><p>The sample in the download demonstrates how to use the technique in a very simple object. 
+This object does nothing more than sleep for 2s but demonstrates using an event interface 
+to allow the ActiveX EXE object to be cancelled.  A more sophisticated demonstration
+of the technique is provided in the <a href="http://www.vbaccelerator.com/article.asp?id=3377">LibSearch</a> search
+utility, which demonstrates finding text in files asynchronously.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Threading</a>&#160;.&#160;Multi-Threaded VB Using ActiveX EXEs</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 29 March 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Threading/Multi-threading_using_classes_in_ActiveX_EXEs/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:56:57 GMT -->
+</html>

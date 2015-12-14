@@ -1,0 +1,291 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Writing_CDs/IMAPI/VB5_IMAPI_Library_Source_zip_gIMAPI_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:41 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: gIMAPI.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: gIMAPI.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" /><link rel="contents" href="VB5_IMAPI_Library_Source.html" /><link rel="meta" type="application/rdf+xml" href="VB5%20IMAPI%20Library%20Source.html" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Writing CDs</a>&#160;.&#160;<a href="article.html">Image Mastering API (IMAPI) Library for VB</a>&#160;.&#160;<a href="VB5_IMAPI_Library_Source.html">VB5 IMAPI Library Source</a>&#160;.&#160;gIMAPI.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_IMAPI_Library_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IMAPI Library Binary</a> (26K)</p><p class="nav"><a href="VB5_IMAPI_Library_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IMAPI Library Source</a> (74K)</p><p class="nav"><a href="VB5_IMAPI_Properties_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IMAPI Properties Demonstration</a> (31K)</p><p /><p class="nav"><a href="VB6_IMAPI_Library_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IMAPI Library Binary</a> (27K)</p><p class="nav"><a href="VB6_IMAPI_Library_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IMAPI Library Source</a> (74K)</p><p class="nav"><a href="VB6_IMAPI_Properties_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IMAPI Properties Demonstration</a> (30K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:15001</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=15001&amp;type=Zip&amp;title=VB5%20IMAPI%20Library%20Source%2Ezip%5FgIMAPI">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />2 Jun 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13463">vbAccelerator TreeView Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14969">Simple Data CD Creation Using ICDBurn</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14976">VB IMAPI (CD Burning) Interfaces (IVBIMAPI.tlb)</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14974">Mapping NT Device Names to Drive Letters and vice-versa</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: gIMAPI.cls</h1><p>This file is part of the download <a href="VB5_IMAPI_Library_Source.html">VB5 IMAPI Library Source</a>, which is described in the article <a href="article.html">Image Mastering API (IMAPI) Library for VB</a>.</p><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "gIMAPI"
+Attribute VB_GlobalNameSpace = True
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+Private Const SEVERITY_SUCCESS = 0
+Private Const SEVERITY_ERROR = 1
+Private Const FACILITY_ITF = 4
+
+Public Enum IMAPI_ERROR_CODES
+   IMAPI_S_PROPERTIESIGNORED
+   IMAPI_S_BUFFER_TO_SMALL
+   IMAPI_E_NOTOPENED
+   IMAPI_E_NOTINITIALIZED
+   IMAPI_E_USERABORT
+   IMAPI_E_GENERIC
+   IMAPI_E_MEDIUM_NOTPRESENT
+   IMAPI_E_MEDIUM_INVALIDTYPE
+   IMAPI_E_DEVICE_NOPROPERTIES
+   IMAPI_E_DEVICE_NOTACCESSIBLE
+   IMAPI_E_DEVICE_NOTPRESENT
+   IMAPI_E_DEVICE_INVALIDTYPE
+   IMAPI_E_INITIALIZE_WRITE
+   IMAPI_E_INITIALIZE_ENDWRITE
+   IMAPI_E_FILESYSTEM
+   IMAPI_E_FILEACCESS
+   IMAPI_E_DISCINFO
+   IMAPI_E_TRACKNOTOPEN
+   IMAPI_E_TRACKOPEN
+   IMAPI_E_DISCFULL
+   IMAPI_E_BADJOLIETNAME
+   IMAPI_E_INVALIDIMAGE
+   IMAPI_E_NOACTIVEFORMAT
+   IMAPI_E_NOACTIVERECORDER
+   IMAPI_E_WRONGFORMAT
+   IMAPI_E_ALREADYOPEN
+   IMAPI_E_WRONGDISC
+   IMAPI_E_FILEEXISTS
+   IMAPI_E_STASHINUSE
+   IMAPI_E_DEVICE_STILL_IN_USE
+   IMAPI_E_LOSS_OF_STREAMING
+   IMAPI_E_COMPRESSEDSTASH
+   IMAPI_E_ENCRYPTEDSTASH
+   IMAPI_E_NOTENOUGHDISKFORSTASH
+   IMAPI_E_REMOVABLESTASH
+   IMAPI_E_CANNOT_WRITE_TO_MEDIA
+   IMAPI_E_TRACK_NOT_BIG_ENOUGH
+   IMAPI_E_BOOTIMAGE_AND_NONBLANK_DISC
+End Enum
+
+Public Property Get IMAPIErrorDescription(ByVal iCode As IMAPI_ERROR_CODES) As
+ String
+Attribute IMAPIErrorDescription.VB_Description = "Gets the description for an
+ entry in the IMAPI_ERROR_CODE enumeration."
+Dim sMsg As String
+   Select Case iCode
+   Case IMAPI_S_PROPERTIESIGNORED
+      sMsg = "An unknown property was passed in a property set and it was
+       ignored."
+   Case IMAPI_E_NOTOPENED
+      sMsg = "A call to IDiscMaster::Open has not been made."
+   Case IMAPI_E_NOTINITIALIZED
+      sMsg = "A recorder object has not been initialized."
+   Case IMAPI_E_USERABORT
+      sMsg = "The user canceled the operation."
+   Case IMAPI_E_GENERIC
+      sMsg = "A generic error occurred."
+   Case IMAPI_E_MEDIUM_NOTPRESENT
+      sMsg = "There is no disc in the device."
+   Case IMAPI_E_MEDIUM_INVALIDTYPE
+      sMsg = "The media is not a type that can be used."
+   Case IMAPI_E_DEVICE_NOPROPERTIES
+      sMsg = "The recorder does not support any properties."
+   Case IMAPI_E_DEVICE_NOTACCESSIBLE
+      sMsg = "The device cannot be used or is already in use."
+   Case IMAPI_E_DEVICE_NOTPRESENT
+      sMsg = "The device is not present or has been removed."
+   Case IMAPI_E_DEVICE_INVALIDTYPE
+      sMsg = "The recorder does not support an operation."
+   Case IMAPI_E_INITIALIZE_WRITE
+      sMsg = "The drive interface could not be initialized for writing."
+   Case IMAPI_E_INITIALIZE_ENDWRITE
+      sMsg = "The drive interface could not be initialized for closing."
+   Case IMAPI_E_FILESYSTEM
+      sMsg = "An error occurred while enabling/disabling file system access or
+       during auto-insertion detection."
+   Case IMAPI_E_FILEACCESS
+      sMsg = "An error occurred while writing the image file."
+   Case IMAPI_E_DISCINFO
+      sMsg = "An error occurred while trying to read disc data from the device."
+   Case IMAPI_E_TRACKNOTOPEN
+      sMsg = "An audio track is not open for writing."
+   Case IMAPI_E_TRACKOPEN
+      sMsg = "An open audio track is already being staged."
+   Case IMAPI_E_DISCFULL
+      sMsg = "The disc cannot hold any more data."
+   Case IMAPI_E_BADJOLIETNAME
+      sMsg = "The application tried to add a badly named element to a disc."
+   Case IMAPI_E_INVALIDIMAGE
+      sMsg = "The staged image is not suitable for a burn. It has been
+       corrupted or cleared and has no usable content."
+   Case IMAPI_E_NOACTIVEFORMAT
+      sMsg = "An active format master has not been selected using
+       IDiscMaster::SetActiveDiscMasterFormat."
+   Case IMAPI_E_NOACTIVERECORDER
+      sMsg = "An active disc recorder has not been selected using
+       IDiscMaster::SetActiveDiscRecorder."
+   Case IMAPI_E_WRONGFORMAT
+      sMsg = "A call to IJolietDiscMaster has been made when IRedbookDiscMaster
+       is the active format, or vice versa. To use a different format, change
+       the format and clear the image file contents."
+   Case IMAPI_E_ALREADYOPEN
+      sMsg = "A call to IDiscMaster::Open has already been made against this
+       object by your application."
+   Case IMAPI_E_WRONGDISC
+      sMsg = "The IMAPI multi-session disc has been removed from the active
+       recorder."
+   Case IMAPI_E_FILEEXISTS
+      sMsg = "The file to add is already in the image file and the overwrite
+       flag was not set."
+   Case IMAPI_E_STASHINUSE
+      sMsg = "Another application is already using the IMAPI stash file
+       required to stage a disc image. Try again later."
+   Case IMAPI_E_DEVICE_STILL_IN_USE
+      sMsg = "Another application is already using this device, so IMAPI cannot
+       access the device."
+   Case IMAPI_E_LOSS_OF_STREAMING
+      sMsg = "Content streaming was lost; a buffer under-run may have occurred."
+   Case IMAPI_E_COMPRESSEDSTASH
+      sMsg = "The stash is located on a compressed volume and cannot be read."
+   Case IMAPI_E_ENCRYPTEDSTASH
+      sMsg = "The stash is located on an encrypted volume and cannot be read."
+   Case IMAPI_E_NOTENOUGHDISKFORSTASH
+      sMsg = "There is not enough free space to create the stash file on the
+       specified volume."
+   Case IMAPI_E_REMOVABLESTASH
+      sMsg = "The selected stash location is on a removable media."
+   Case IMAPI_E_MEDIUM_NOTPRESENT
+      sMsg = "There is no media in the drive to query."
+   Case Else
+      sMsg = "IMAPI Error with code [" &amp; iCode &amp; "]"
+   End Select
+   IMAPIErrorDescription = sMsg
+End Property
+
+Public Function DecodeIMAPIError(ByVal err As Long) As IMAPI_ERROR_CODES
+Attribute DecodeIMAPIError.VB_Description = "Converts a VB Err.Number thrown by
+ the VBIMAPI library into the equivalent IMAPI Error code."
+Dim iCode As IMAPI_ERROR_CODES
+   If err = MAKE_HRESULT(SEVERITY_SUCCESS, FACILITY_ITF, &amp;H200 + 0) Then
+      iCode = IMAPI_S_PROPERTIESIGNORED
+   ElseIf err = MAKE_HRESULT(SEVERITY_SUCCESS, FACILITY_ITF, &amp;H200 + 1) Then
+      iCode = IMAPI_S_BUFFER_TO_SMALL
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 11) Then
+      iCode = IMAPI_E_NOTOPENED
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 12) Then
+      iCode = IMAPI_E_NOTINITIALIZED
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 13) Then
+      iCode = IMAPI_E_USERABORT
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 14) Then
+      iCode = IMAPI_E_GENERIC
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 15) Then
+      iCode = IMAPI_E_MEDIUM_NOTPRESENT
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 16) Then
+      iCode = IMAPI_E_MEDIUM_INVALIDTYPE
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 17) Then
+      iCode = IMAPI_E_DEVICE_NOPROPERTIES
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 18) Then
+      iCode = IMAPI_E_DEVICE_NOTACCESSIBLE
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 19) Then
+      iCode = IMAPI_E_DEVICE_NOTPRESENT
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 20) Then
+      iCode = IMAPI_E_DEVICE_INVALIDTYPE
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 21) Then
+      iCode = IMAPI_E_INITIALIZE_WRITE
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 22) Then
+      iCode = IMAPI_E_INITIALIZE_ENDWRITE
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 23) Then
+      iCode = IMAPI_E_FILESYSTEM
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 24) Then
+      iCode = IMAPI_E_FILEACCESS
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 25) Then
+      iCode = IMAPI_E_DISCINFO
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 26) Then
+      iCode = IMAPI_E_TRACKNOTOPEN
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 27) Then
+      iCode = IMAPI_E_TRACKOPEN
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 28) Then
+      iCode = IMAPI_E_DISCFULL
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 29) Then
+      iCode = IMAPI_E_BADJOLIETNAME
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 30) Then
+      iCode = IMAPI_E_INVALIDIMAGE
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 31) Then
+      iCode = IMAPI_E_NOACTIVEFORMAT
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 32) Then
+      iCode = IMAPI_E_NOACTIVERECORDER
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 33) Then
+      iCode = IMAPI_E_WRONGFORMAT
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 34) Then
+      iCode = IMAPI_E_ALREADYOPEN
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 35) Then
+      iCode = IMAPI_E_WRONGDISC
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 36) Then
+      iCode = IMAPI_E_FILEEXISTS
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 37) Then
+      iCode = IMAPI_E_STASHINUSE
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 38) Then
+      iCode = IMAPI_E_DEVICE_STILL_IN_USE
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 39) Then
+      iCode = IMAPI_E_LOSS_OF_STREAMING
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 40) Then
+      iCode = IMAPI_E_COMPRESSEDSTASH
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 41) Then
+      iCode = IMAPI_E_ENCRYPTEDSTASH
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 42) Then
+      iCode = IMAPI_E_NOTENOUGHDISKFORSTASH
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 43) Then
+      iCode = IMAPI_E_REMOVABLESTASH
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 44) Then
+      iCode = IMAPI_E_CANNOT_WRITE_TO_MEDIA
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 45) Then
+      iCode = IMAPI_E_TRACK_NOT_BIG_ENOUGH
+   ElseIf err = MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, &amp;H200 + 46) Then
+      iCode = IMAPI_E_BOOTIMAGE_AND_NONBLANK_DISC
+   End If
+   DecodeIMAPIError = iCode
+End Function
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Writing CDs</a>&#160;.&#160;<a href="article.html">Image Mastering API (IMAPI) Library for VB</a>&#160;.&#160;<a href="VB5_IMAPI_Library_Source.html">VB5 IMAPI Library Source</a>&#160;.&#160;gIMAPI.cls</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 9 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Writing_CDs/IMAPI/VB5_IMAPI_Library_Source_zip_gIMAPI_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:41 GMT -->
+</html>

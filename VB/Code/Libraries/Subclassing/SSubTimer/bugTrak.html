@@ -1,0 +1,69 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/SSubTimer/bugTrak.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:57:23 GMT -->
+<head>
+<title>vbAccelerator - Subclassing Without The Crashes BugTrak Summary</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Prior to VB5, it was impossible to subclass a control without relying on a proprietary 
+custom control. This greatly restricted what you could do if you wanted to play around with 
+some of the neater customisation features - creating a new control was completely out, finding out 
+in detail what was going on with menus was impossible and so on.The introduction of the AddressOf operator to VB5 now allows you to subclass, although 
+it is not nearly as simple as it ought to be.The SSubTmr component is a more stable and consistent way of working with subclassing,
+without some of the attendent difficulties. You can either use it as an external DLL to provide, or 
+by including one module and one interface class, you can compile it directly into your application 
+once you are happy the subclassing is working. SSubTmr is the basis for most of the VB controls
+on this site.The component itself mostly uses the SubTimer.DLL component code from 
+Bruce McKinney's excellent 'Hardcore Visual Basic' book, however it has a couple of 
+very useful enhancements described in this article." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;<a href="article.html">Subclassing Without The Crashes</a>&#160;.&#160;BugTrak Summary</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Graduated_Title_Bar_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Graduated Title Bar Sample</a> (44K)</p><p class="nav"><a href="VB5_Minimum_Form_Size_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Minimum Form Size Demonstration</a> (9K)</p><p class="nav"><a href="VB5_SSubTmr_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 SSubTmr Binary</a> (11K)</p><p class="nav"><a href="VB5_SSubTmr_Source_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 SSubTmr Source Code</a> (34K)</p><p /><p class="nav"><a href="VB6_Graduated_Title_Bar_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Graduated Title Bar Sample</a> (38K)</p><p class="nav"><a href="VB6_Minimum_Form_Size_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Minimum Form Size Demonstration</a> (8K)</p><p class="nav"><a href="VB6_SSubTmr_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 SSubTmr Binary</a> (11K)</p><p class="nav"><a href="VB6_SSubTmr_Source_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 SSubTmr Source Code</a> (41K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:17</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=17&amp;type=Article&amp;title=Subclassing%20Without%20The%20Crashes">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:14 April 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />26 Jan 2003<br /><p class="update">Fixed problem with multiple attach/detach calls, 
+and added automatic detach for the <i>WM_DESTROY</i>
+message.</p><p class="update">Refactored code for clarity.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Subclassing Without The Crashes</h1><h2 style="margin-left: 16px;">Summary</h2><p style="margin-left:  16px;">Subclassing Without The Crashes, Article Id: 17<br />Latest bug update: <ul><li><a href="#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Open Bugs:</a> 0 / 0</li><li><a href="#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Open Change Requests:</a> 1 / 1</li><li><a href="#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Open Questions:</a> 0 / 0</li></ul><a name="bugs" /><h3 style="margin-left: 16px;">Bugs</h3><table class="article"><tr class="header"><td><strong>Id&#160;&#160;</strong></td><td><strong>Type&#160;&#160;</strong></td><td><strong>Author&#160;&#160;&#160;</strong></td><td><strong>Raised&#160;&#160;</strong></td><td><strong>Updated&#160;&#160;</strong></td><td width="100%"><strong>Title</strong></td></tr></table><a name="issues" /><h3 style="margin-left: 16px;">Change Requests</h3><table class="article"><tr class="header"><td><strong>Id&#160;&#160;</strong></td><td><strong>Type&#160;&#160;</strong></td><td><strong>Author&#160;&#160;&#160;</strong></td><td><strong>Raised&#160;&#160;</strong></td><td><strong>Updated&#160;&#160;</strong></td><td width="100%"><strong>Title</strong></td></tr><tr><td><a href="bugTrak17-1.html">17.1</a></td><td><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Change Requests" /></td><td>Matt Funnell</td><td>14 Apr<br />2003</td><td>14 Apr<br />2003</td><td><a href="bugTrak17-1.html">Provide support for subclassing Unicode Windows</a></td></tr></table><a name="questions" /><h3 style="margin-left: 16px;">Questions</h3><table class="article"><tr class="header"><td><strong>Id&#160;&#160;</strong></td><td><strong>Type&#160;&#160;</strong></td><td><strong>Author&#160;&#160;&#160;</strong></td><td><strong>Raised&#160;&#160;</strong></td><td><strong>Updated&#160;&#160;</strong></td><td width="100%"><strong>Title</strong></td></tr></table><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;<a href="article.html">Subclassing Without The Crashes</a>&#160;.&#160;BugTrak Summary</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 14 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/SSubTimer/bugTrak.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:57:24 GMT -->
+</html>

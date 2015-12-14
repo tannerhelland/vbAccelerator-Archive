@@ -1,0 +1,147 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/CRC32/VB_CRC32_zip_cCRC32_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:23:23 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cCRC32.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cCRC32.cls" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Libraries</a>&#160;.&#160;<a href="article.html">Calculating CRC32 With VB</a>&#160;.&#160;<a href="VB_CRC32.html">VB CRC32</a>&#160;.&#160;cCRC32.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB_CRC32.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB CRC32</a> (36K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:13212</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13212&amp;type=Zip&amp;title=VB%20CRC32%2Ezip%5FcCRC32">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><p class="nav">&#160;&#160;<a href="mailto:wpsjr1@succeed.net">Paul</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />23 Oct 2003<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=930">Calculating CRC32 (and MDA5 and SHA-1) From .NET</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cCRC32.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cCRC32"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+' This code is taken from the VB.NET CRC32 algorithm
+' provided by Paul (wpsjr1@succeed.net) - Excellent work!
+
+Private crc32Table() As Long
+Private Const BUFFER_SIZE As Long = 8192
+
+Public Function GetByteArrayCrc32(ByRef buffer() As Byte) As Long
+   
+   Dim crc32Result As Long
+   crc32Result = &amp;HFFFFFFFF
+      
+   Dim i As Integer
+   Dim iLookup As Integer
+   
+   For i = LBound(buffer) To UBound(buffer)
+      iLookup = (crc32Result And &amp;HFF) Xor buffer(i)
+      crc32Result = ((crc32Result And &amp;HFFFFFF00) \ &amp;H100) And 16777215 ' nasty
+       shr 8 with vb :/
+      crc32Result = crc32Result Xor crc32Table(iLookup)
+   Next i
+   
+   GetByteArrayCrc32 = Not (crc32Result)
+
+End Function
+
+Public Function GetFileCrc32(ByRef stream As cBinaryFileStream) As Long
+
+   Dim crc32Result As Long
+   crc32Result = &amp;HFFFFFFFF
+
+   Dim buffer(0 To BUFFER_SIZE - 1) As Byte
+   Dim readSize As Long
+   readSize = BUFFER_SIZE
+
+   Dim count As Integer
+   count = stream.Read(buffer, readSize)
+   
+   Dim i As Integer
+   Dim iLookup As Integer
+   Dim tot As Integer
+   
+   Do While (count &gt; 0)
+      For i = 0 To count - 1
+         iLookup = (crc32Result And &amp;HFF) Xor buffer(i)
+         crc32Result = ((crc32Result And &amp;HFFFFFF00) \ &amp;H100) And 16777215 '
+          nasty shr 8 with vb :/
+         crc32Result = crc32Result Xor crc32Table(iLookup)
+      Next i
+      count = stream.Read(buffer, readSize)
+   Loop
+
+   GetFileCrc32 = Not (crc32Result)
+
+End Function
+
+Private Sub Class_initialize()
+
+    ' This is the official polynomial used by CRC32 in PKZip.
+    ' Often the polynomial is shown reversed (04C11DB7).
+    Dim dwPolynomial As Long
+    dwPolynomial = &amp;HEDB88320
+    Dim i As Integer, j As Integer
+
+    ReDim crc32Table(256)
+    Dim dwCrc As Long
+
+    For i = 0 To 255
+        dwCrc = i
+        For j = 8 To 1 Step -1
+            If (dwCrc And 1) Then
+                dwCrc = ((dwCrc And &amp;HFFFFFFFE) \ 2&amp;) And &amp;H7FFFFFFF
+                dwCrc = dwCrc Xor dwPolynomial
+            Else
+                dwCrc = ((dwCrc And &amp;HFFFFFFFE) \ 2&amp;) And &amp;H7FFFFFFF
+            End If
+        Next j
+        crc32Table(i) = dwCrc
+    Next i
+
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Libraries</a>&#160;.&#160;<a href="article.html">Calculating CRC32 With VB</a>&#160;.&#160;<a href="VB_CRC32.html">VB CRC32</a>&#160;.&#160;cCRC32.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 November 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/CRC32/VB_CRC32_zip_cCRC32_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:23:23 GMT -->
+</html>

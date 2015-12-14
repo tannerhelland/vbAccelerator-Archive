@@ -1,0 +1,134 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Windows/Enumerating_Windows/VB_Window_Enumeration_Sample_zip_mWindow_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:42 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: mWindow.bas</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: mWindow.bas" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Windows</a>&#160;.&#160;<a href="article.html">Enumerating Windows Using the API </a>&#160;.&#160;<a href="VB_Window_Enumeration_Sample.html">VB Window Enumeration Sample</a>&#160;.&#160;mWindow.bas</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB_Window_Enumeration_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB Window Enumeration Sample</a> (13K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:5046</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=5046&amp;type=Zip&amp;title=VB%20Window%20Enumeration%20Sample%2Ezip%5FmWindow">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Oct 1998<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4591">GUI Resource Tracer</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: mWindow.bas</h1><pre>Attribute VB_Name = "mWindow"
+Option Explicit
+
+Public Declare Function EnumWindows Lib "user32" (ByVal lpEnumFunc As Long,
+ ByVal lparam As Long) As Long
+Public Declare Function IsWindowVisible Lib "user32" (ByVal hwnd As Long) As
+ Long
+Public Declare Function GetWindowText Lib "user32" Alias "GetWindowTextA"
+ (ByVal hwnd As Long, ByVal lpString As String, ByVal cch As Long) As Long
+Public Declare Function GetWindowTextLength Lib "user32" Alias
+ "GetWindowTextLengthA" (ByVal hwnd As Long) As Long
+Public Declare Function BringWindowToTop Lib "user32" (ByVal hwnd As Long) As
+ Long
+Public Declare Function SetForegroundWindow Lib "user32" (ByVal hwnd As Long)
+ As Long
+Public Declare Function GetClassName Lib "user32" Alias "GetClassNameA" (ByVal
+ hwnd As Long, ByVal lpClassName As String, ByVal nMaxCount As Long) As Long
+Type RECT
+    Left As Long
+    Top As Long
+    Right As Long
+    Bottom As Long
+End Type
+Public Declare Function GetWindowRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Public Const WM_COMMAND = &amp;H111
+
+Private m_cSink As IEnumWindowsSink
+
+Public Function EnumWindowsProc( _
+        ByVal hwnd As Long, _
+        ByVal lparam As Long _
+    ) As Long
+Dim bStop As Boolean
+    bStop = False
+    m_cSink.EnumWindow hwnd, bStop
+    If (bStop) Then
+        EnumWindowsProc = 0
+    Else
+        EnumWindowsProc = 1
+    End If
+End Function
+
+Public Function EnumerateWindows( _
+        ByRef cSink As IEnumWindowsSink _
+    ) As Boolean
+    If Not (m_cSink Is Nothing) Then Exit Function
+    Set m_cSink = cSink
+    EnumWindows AddressOf EnumWindowsProc, cSink.Identifier
+    Set m_cSink = Nothing
+End Function
+
+Public Function WindowTitle(ByVal lHwnd As Long) As String
+Dim lLen As Long
+Dim sBuf As String
+
+    ' Get the Window Title:
+    lLen = GetWindowTextLength(lHwnd)
+    If (lLen &gt; 0) Then
+        sBuf = String$(lLen + 1, 0)
+        lLen = GetWindowText(lHwnd, sBuf, lLen + 1)
+        WindowTitle = Left$(sBuf, lLen)
+    End If
+    
+End Function
+Public Function ClassName(ByVal lHwnd As Long) As String
+Dim lLen As Long
+Dim sBuf As String
+    lLen = 260
+    sBuf = String$(lLen, 0)
+    lLen = GetClassName(lHwnd, sBuf, lLen)
+    If (lLen &lt;&gt; 0) Then
+        ClassName = Left$(sBuf, lLen)
+    End If
+End Function
+Public Sub ActivateWindow(ByVal lHwnd As Long)
+    SetForegroundWindow lHwnd
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Windows</a>&#160;.&#160;<a href="article.html">Enumerating Windows Using the API </a>&#160;.&#160;<a href="VB_Window_Enumeration_Sample.html">VB Window Enumeration Sample</a>&#160;.&#160;mWindow.bas</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Windows/Enumerating_Windows/VB_Window_Enumeration_Sample_zip_mWindow_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:42 GMT -->
+</html>

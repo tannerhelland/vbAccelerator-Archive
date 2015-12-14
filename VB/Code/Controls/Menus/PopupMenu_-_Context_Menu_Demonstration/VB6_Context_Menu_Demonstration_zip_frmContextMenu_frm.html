@@ -1,0 +1,427 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Menus/PopupMenu_-_Context_Menu_Demonstration/VB6_Context_Menu_Demonstration_zip_frmContextMenu_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:13 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmContextMenu.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmContextMenu.frm" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Menus</a>&#160;.&#160;<a href="article.html">PopupMenu - Context Menu Demonstration</a>&#160;.&#160;<a href="VB6_Context_Menu_Demonstration.html">VB6 Context Menu Demonstration</a>&#160;.&#160;frmContextMenu.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_ContextMenu_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ContextMenu Demonstration</a> (21K)</p><p /><p class="nav"><a href="VB6_Context_Menu_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Context Menu Demonstration</a> (21K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:338</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=338&amp;type=Zip&amp;title=VB6%20Context%20Menu%20Demonstration%2Ezip%5FfrmContextMenu">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Nov 2002<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmContextMenu.frm</h1><pre>VERSION 5.00
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Begin VB.Form frmContextMenu 
+   Caption         =   "Custom Context Menu Demonstration"
+   ClientHeight    =   5085
+   ClientLeft      =   5220
+   ClientTop       =   4035
+   ClientWidth     =   6675
+   Icon            =   "frmContextMenu.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   5085
+   ScaleWidth      =   6675
+   Begin VB.ListBox lstTest 
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   2400
+      Left            =   120
+      MultiSelect     =   2  'Extended
+      TabIndex        =   1
+      Top             =   2460
+      Width           =   6435
+   End
+   Begin VB.TextBox txtTest 
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   2355
+      Left            =   120
+      MultiLine       =   -1  'True
+      ScrollBars      =   2  'Vertical
+      TabIndex        =   0
+      Text            =   "frmContextMenu.frx":014A
+      Top             =   60
+      Width           =   6435
+   End
+   Begin MSComctlLib.ImageList ilsIcons16 
+      Left            =   240
+      Top             =   4800
+      _ExtentX        =   1005
+      _ExtentY        =   1005
+      BackColor       =   -2147483643
+      ImageWidth      =   16
+      ImageHeight     =   16
+      MaskColor       =   12632256
+      _Version        =   393216
+      BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
+         NumListImages   =   43
+         BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":01EF
+            Key             =   "PASTE"
+         EndProperty
+         BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":0509
+            Key             =   "CUT"
+         EndProperty
+         BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":0823
+            Key             =   "COPY"
+         EndProperty
+         BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":0B3D
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":0E57
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":1171
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":148B
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":17A5
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":1ABF
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":1DD9
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":20F3
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage12 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":240D
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage13 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":2727
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage14 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":2A41
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage15 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":2D5B
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage16 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":3075
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage17 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":338F
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage18 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":36A9
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage19 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":39C3
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage20 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":3CDD
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage21 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":3FF7
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage22 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":4311
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage23 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":462B
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage24 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":4945
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage25 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":4C5F
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage26 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":4F79
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage27 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":5293
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage28 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":55AD
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage29 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":58C7
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage30 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":5BE1
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage31 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":5EFB
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage32 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":6215
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage33 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":652F
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage34 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":6849
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage35 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":6B63
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage36 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":6E7D
+            Key             =   "UNDO"
+         EndProperty
+         BeginProperty ListImage37 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":7197
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage38 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":74B1
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage39 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":77CB
+            Key             =   "Web"
+         EndProperty
+         BeginProperty ListImage40 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":7AE5
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage41 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":7DFF
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage42 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":8119
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage43 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmContextMenu.frx":8433
+            Key             =   "vbAccelerator"
+         EndProperty
+      EndProperty
+   End
+End
+Attribute VB_Name = "frmContextMenu"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private WithEvents cP As cPopupMenu
+Attribute cP.VB_VarHelpID = -1
+Private WithEvents cO As cOwnerDrawContextMenu
+Attribute cO.VB_VarHelpID = -1
+Private cTextEdit As cTextBoxEdit
+
+Private Sub createMenus()
+Dim i As Long
+   i = cP.AddItem("TOP0", , , , ilsIcons16.ListImages("UNDO").Index - 1, , ,
+    "TEXTBOX")
+   cP.AddItem "&amp;Undo", , , i, , , , "T:UNDO"
+   cP.AddItem "-", , , i
+   cP.AddItem "Cu&amp;t" &amp; vbTab &amp; "Ctrl+X", , , i,
+    ilsIcons16.ListImages("CUT").Index - 1, , , "T:CUT"
+   cP.AddItem "&amp;Copy" &amp; vbTab &amp; "Ctrl+C", , , i,
+    ilsIcons16.ListImages("COPY").Index - 1, , , "T:COPY"
+   cP.AddItem "&amp;Paste" &amp; vbTab &amp; "Ctrl+V", , , i,
+    ilsIcons16.ListImages("PASTE").Index - 1, , , "T:PASTE"
+   cP.AddItem "-", , , i
+   cP.AddItem "Select &amp;All" &amp; vbTab &amp; "Ctrl+A", , , i, , , , "T:SELECTALL"
+   i = cP.AddItem("TOP1", , , , , , , "LISTBOX")
+   cP.AddItem "Cu&amp;t" &amp; vbTab &amp; "Ctrl+X", , , i,
+    ilsIcons16.ListImages("CUT").Index - 1, , , "L:CUT"
+   cP.AddItem "&amp;Copy" &amp; vbTab &amp; "Ctrl+C", , , i,
+    ilsIcons16.ListImages("COPY").Index - 1, , , "L:COPY"
+   cP.AddItem "&amp;Paste" &amp; vbTab &amp; "Ctrl+V", , , i,
+    ilsIcons16.ListImages("PASTE").Index - 1, , , "L:PASTE"
+   cP.AddItem "-", , , i
+   cP.AddItem "Select &amp;All" &amp; vbTab &amp; "Ctrl+A", , , i, , , , "L:SELECTALL"
+   cP.AddItem "Invert Selection", , , i, , , , "L:INVERT"
+   
+End Sub
+
+Private Sub cO_ContextMenu(ByVal Key As String, bDoDefault As Boolean)
+   Select Case Key
+   Case "txtTest"
+      cTextEdit.TextBox = txtTest
+      cP.Enabled(cP.IndexForKey("T:CUT")) = cTextEdit.CanCut
+      cP.Enabled(cP.IndexForKey("T:COPY")) = cTextEdit.CanCopy
+      cP.Enabled(cP.IndexForKey("T:PASTE")) = cTextEdit.CanPaste
+      cP.Enabled(cP.IndexForKey("T:UNDO")) = cTextEdit.CanUndo
+   Case "lstTest"
+      cP.Enabled(cP.IndexForKey("L:CUT")) = (lstTest.SelCount &gt; 0)
+      cP.Enabled(cP.IndexForKey("L:COPY")) = (lstTest.SelCount &gt; 0)
+      cP.Enabled(cP.IndexForKey("L:PASTE")) = cTextEdit.CanPaste
+   End Select
+End Sub
+
+Private Sub cP_Click(ItemNumber As Long)
+Dim sKey As String
+Dim i As Long
+Dim sClip As String
+Dim iPos As Long, iNextPos As Long
+   lstTest.AddItem "Clicked: " &amp; ItemNumber &amp; ",Caption=" &amp;
+    cP.Caption(ItemNumber)
+   sKey = cP.ItemKey(ItemNumber)
+   If Left$(sKey, 2) = "T:" Then
+      Select Case Mid$(sKey, 3)
+      Case "UNDO"
+         cTextEdit.Undo
+      Case "CUT"
+         cTextEdit.Cut
+      Case "COPY"
+         cTextEdit.Copy
+      Case "PASTE"
+         cTextEdit.Paste
+      Case "SELECTALL"
+         txtTest.SetFocus
+         txtTest.SelStart = 0
+         txtTest.SelLength = Len(txtTest.Text)
+      End Select
+   ElseIf Left$(sKey, 2) = "L:" Then
+      Select Case Mid$(sKey, 3)
+      Case "CUT"
+         For i = lstTest.ListCount - 1 To 0 Step -1
+            If lstTest.Selected(i) Then
+               lstTest.RemoveItem i
+            End If
+         Next i
+      Case "COPY"
+         For i = lstTest.ListCount - 1 To 0 Step -1
+            If lstTest.Selected(i) Then
+               If Len(sClip) &gt; 0 Then
+                  sClip = sClip &amp; vbCrLf
+               End If
+               sClip = sClip &amp; lstTest.List(i)
+            End If
+         Next i
+         Clipboard.SetText sClip
+      Case "PASTE"
+         sClip = Clipboard.GetText()
+         iPos = 1
+         Do
+            iNextPos = InStr(iPos, sClip, vbCrLf)
+            If iNextPos &gt; 0 Then
+               lstTest.AddItem Mid$(sClip, iPos, iNextPos - iPos)
+               iPos = iNextPos + 2
+            Else
+               lstTest.AddItem Mid$(sClip, iPos)
+            End If
+         Loop While iNextPos &gt; 0
+      Case "SELECTALL"
+         For i = 0 To lstTest.ListCount - 1
+            lstTest.Selected(i) = True
+         Next i
+      Case "INVERT"
+         For i = 0 To lstTest.ListCount - 1
+            lstTest.Selected(i) = Not (lstTest.Selected(i))
+         Next i
+      End Select
+   End If
+End Sub
+
+Private Sub Form_Load()
+   Set cP = New cPopupMenu
+   cP.hWndOwner = Me.hWnd
+   cP.ImageList = ilsIcons16
+   createMenus
+   
+   Set cO = New cOwnerDrawContextMenu
+   cO.PopupMenu = cP
+   cO.Add "txtTest", txtTest.hWnd, "T:UNDO"
+   cO.Add "lstTest", lstTest.hWnd, "L:CUT"
+   
+   Set cTextEdit = New cTextBoxEdit
+   
+End Sub
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Menus</a>&#160;.&#160;<a href="article.html">PopupMenu - Context Menu Demonstration</a>&#160;.&#160;<a href="VB6_Context_Menu_Demonstration.html">VB6 Context Menu Demonstration</a>&#160;.&#160;frmContextMenu.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Menus/PopupMenu_-_Context_Menu_Demonstration/VB6_Context_Menu_Demonstration_zip_frmContextMenu_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:13 GMT -->
+</html>

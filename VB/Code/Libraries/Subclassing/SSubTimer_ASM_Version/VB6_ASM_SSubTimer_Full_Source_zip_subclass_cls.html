@@ -1,0 +1,708 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/SSubTimer_ASM_Version/VB6_ASM_SSubTimer_Full_Source_zip_subclass_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:41 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: subclass.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: subclass.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;<a href="article.html">SSubTimer - ASM Thunk Version</a>&#160;.&#160;<a href="VB6_ASM_SSubTimer_Full_Source.html">VB6 ASM SSubTimer Full Source</a>&#160;.&#160;subclass.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB6_ASM_SSubTimer_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ASM SSubTimer Full Source</a> (39K)</p><p class="nav"><a href="VB6_ASM_SSubTmr6_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ASM SSubTmr6 Binary</a> (15K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:14946</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14946&amp;type=Zip&amp;title=VB6%20ASM%20SSubTimer%20Full%20Source%2Ezip%5Fsubclass">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:marzojr@taskmail.com.br">Marzo Sette Torres Jr</a></p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Apr 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4090">Subclassing and Hooking with Machine Code Thunks</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: subclass.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "GSubclass"
+Attribute VB_GlobalNameSpace = True
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+'
+ ===============================================================================
+=======
+' Name:     vbAccelerator SSubTmr object
+'           SubClass.cls
+' Author:   Marzo Sette Torres Junior (marzojr@taskmail.com.br)
+' Date:     12 February 2004
+'
+' Strongly based on the original vbAccelerator SSubTmr object
+' by Steve McMahon (steve@vbaccelerator.com)
+'
+' Borrows heavily on code by Paul Caton, available for free at
+'
+ http://www.Planet-Source-Code.com/vb/scripts/ShowCode.asp?txtCodeId=51403&amp;lngWI
+d=1
+' (you need to register, but it is free)
+'
+' Most of this class module was moved from the (outdated) SubClass.bas
+' The exception is in the following functions/subs/properties:
+'       AddrFunc, CurrentMessage, InIDE/SetTrue, PatchRel, PatchVal
+'       Class_Initialize, Class_Terminate
+' Of these functions, InIDE/SetTrue are "general knowledge" in VB;
+' AddrFunc, although not as known as InIDE/SetTrue, is also "out",
+' being used mainly to call CDECL functions from VB. Despite that,
+' the specific form in which they appear here is due Paul Caton.
+'
+' Class_Initialize, Class_Terminate, PatchRel and PatchVal are all
+' essentially what Paul Caton wrote - the exception is that the
+' ASM snippet (the *really* *really* long hex string) is my
+' translation into ASM of the original SSubTmr WindowProc, by
+' Steve McMahon. However, I must still give credit to Paul Caton
+' because the ASM snippet borrows a few ideas from his subclassing code.
+'
+' Requires: None
+'
+' Donated to vbAccelerator
+'
+ -------------------------------------------------------------------------------
+-------
+' Visit vbAccelerator - advanced free source code for VB programmers
+' http://vbaccelerator.com
+'
+ -------------------------------------------------------------------------------
+-------
+' How to use this subclasser:
+'   Add a reference to the DLL. That's all.
+'
+'   This component retains binary compatibility with the original
+'   vbAccelerator component; this way, all you have to do is
+'   unregister the old component and re-register the new one
+'   to use on all your projects - compiled or otherwise.
+'
+'
+ -------------------------------------------------------------------------------
+-------
+'
+' The implementation of the Subclassing part of the SSubTmr object.
+' Use this class module + ISubClass.Cls to replace dependency on the DLL.
+'
+' History:
+'   12 February 2004
+'       Finished being written.
+'
+'
+ ===============================================================================
+=======
+
+' declares:
+Private Declare Function IsWindow Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function GetProp Lib "user32" Alias "GetPropA" (ByVal hwnd As
+ Long, ByVal lpString As String) As Long
+Private Declare Function SetProp Lib "user32" Alias "SetPropA" (ByVal hwnd As
+ Long, ByVal lpString As String, ByVal hData As Long) As Long
+Private Declare Function RemoveProp Lib "user32" Alias "RemovePropA" (ByVal
+ hwnd As Long, ByVal lpString As String) As Long
+Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long
+Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long) As Long
+Private Declare Function CallWindowProc Lib "user32" Alias "CallWindowProcA"
+ (ByVal lpPrevWndFunc As Long, ByVal hwnd As Long, ByVal Msg As Long, ByVal
+ wParam As Long, ByVal lParam As Long) As Long
+Private Declare Function GetWindowThreadProcessId Lib "user32" (ByVal hwnd As
+ Long, lpdwProcessId As Long) As Long
+Private Declare Function GetCurrentProcessId Lib "kernel32" () As Long
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+        lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+Private Const GWL_WNDPROC = (-4)
+Private Const WM_DESTROY = &amp;H2
+Private Declare Function GlobalAlloc Lib "kernel32" ( _
+     ByVal wFlags As Long, _
+     ByVal dwBytes As Long) As Long
+Private Declare Function GlobalFree Lib "kernel32" ( _
+     ByVal hMem As Long) As Long
+Private Declare Function GetProcAddress Lib "kernel32" ( _
+     ByVal hModule As Long, _
+     ByVal lpProcName As String) As Long
+Private Declare Function GetModuleHandle Lib "kernel32" Alias
+ "GetModuleHandleA" ( _
+     ByVal lpModuleName As String) As Long
+
+' SubTimer is independent of VBCore, so it hard codes error handling
+
+Public Enum EErrorWindowProc
+    eeBaseWindowProc = 13080 ' WindowProc
+    eeCantSubclass           ' Can't subclass window
+    eeAlreadyAttached        ' Message already handled by another class
+    eeInvalidWindow          ' Invalid window
+    eeNoExternalWindow       ' Can't modify external window
+End Enum
+
+Private m_f As Long
+
+Private nAddrSubclass As Long    'The address of our WndProc
+'The POINTER to were the current message is stored by the WinProc:
+Private m_iCurrentMessage As Long
+
+Private Declare Function EbMode_vb5 Lib "vba5" Alias "EbMode" () As Long
+Private Declare Function EbMode_vb6 Lib "vba6" Alias "EbMode" () As Long
+Sub AttachMessage(iwp As ISubclass, ByVal hwnd As Long, _
+                  ByVal iMsg As Long)
+Attribute AttachMessage.VB_Description = "Start subclassing for a particular
+ message."
+    Dim procOld As Long
+    Dim msgCount As Long
+    Dim msgClassCount As Long
+    Dim msgClass As Long
+
+    ' --------------------------------------------------------------------
+    ' 1) Validate window
+    ' --------------------------------------------------------------------
+    If IsWindow(hwnd) = False Then
+        ErrRaise eeInvalidWindow
+        Exit Sub
+    End If
+    If IsWindowLocal(hwnd) = False Then
+        ErrRaise eeNoExternalWindow
+        Exit Sub
+    End If
+
+    ' --------------------------------------------------------------------
+    ' 2) Check if this class is already attached for this message:
+    ' --------------------------------------------------------------------
+    msgClassCount = MessageClassCount(hwnd, iMsg)
+    If (msgClassCount &gt; 0) Then
+        For msgClass = 1 To msgClassCount
+            If (MessageClass(hwnd, iMsg, msgClass) = ObjPtr(iwp)) Then
+                ErrRaise eeAlreadyAttached
+                Exit Sub
+            End If
+        Next msgClass
+    End If
+
+    ' --------------------------------------------------------------------
+    ' 3) Associate this class with this message for this window:
+    ' --------------------------------------------------------------------
+    MessageClassCount(hwnd, iMsg) = MessageClassCount(hwnd, iMsg) + 1
+    If (m_f = 0) Then
+        ' Failed, out of memory:
+        ErrRaise 5
+        Exit Sub
+    End If
+
+    ' --------------------------------------------------------------------
+    ' 4) Associate the class pointer:
+    ' --------------------------------------------------------------------
+    MessageClass(hwnd, iMsg, MessageClassCount(hwnd, iMsg)) = ObjPtr(iwp)
+    If (m_f = 0) Then
+        ' Failed, out of memory:
+        MessageClassCount(hwnd, iMsg) = MessageClassCount(hwnd, iMsg) - 1
+        ErrRaise 5
+        Exit Sub
+    End If
+
+    ' --------------------------------------------------------------------
+    ' 5) Get the message count
+    ' --------------------------------------------------------------------
+    msgCount = MessageCount(hwnd)
+    If msgCount = 0 Then
+
+        ' Subclass window by installing window procedure
+        procOld = SetWindowLong(hwnd, GWL_WNDPROC, nAddrSubclass)
+        If procOld = 0 Then
+            ' remove class:
+            MessageClass(hwnd, iMsg, MessageClassCount(hwnd, iMsg)) = 0
+            ' remove class count:
+            MessageClassCount(hwnd, iMsg) = MessageClassCount(hwnd, iMsg) - 1
+
+            ErrRaise eeCantSubclass
+            Exit Sub
+        End If
+
+        ' Associate old procedure with handle
+        OldWindowProc(hwnd) = procOld
+        If m_f = 0 Then
+            ' SPM: Failed to VBSetProp, windows properties database problem.
+            ' Has to be out of memory.
+
+            ' Put the old window proc back again:
+            SetWindowLong hwnd, GWL_WNDPROC, procOld
+            ' remove class:
+            MessageClass(hwnd, iMsg, MessageClassCount(hwnd, iMsg)) = 0
+            ' remove class count:
+            MessageClassCount(hwnd, iMsg) = MessageClassCount(hwnd, iMsg) - 1
+
+            ' Raise an error:
+            ErrRaise 5
+            Exit Sub
+        End If
+    End If
+
+
+    ' Count this message
+    MessageCount(hwnd) = MessageCount(hwnd) + 1
+    If m_f = 0 Then
+        ' SPM: Failed to set prop, windows properties database problem.
+        ' Has to be out of memory
+
+        ' remove class:
+        MessageClass(hwnd, iMsg, MessageClassCount(hwnd, iMsg)) = 0
+        ' remove class count contribution:
+        MessageClassCount(hwnd, iMsg) = MessageClassCount(hwnd, iMsg) - 1
+
+        ' If we haven't any messages on this window then remove the subclass:
+        If (MessageCount(hwnd) = 0) Then
+            ' put old window proc back again:
+            procOld = OldWindowProc(hwnd)
+            If Not (procOld = 0) Then
+                SetWindowLong hwnd, GWL_WNDPROC, procOld
+                OldWindowProc(hwnd) = 0
+            End If
+        End If
+
+        ' Raise the error:
+        ErrRaise 5
+        Exit Sub
+    End If
+End Sub
+Sub DetachMessage(iwp As ISubclass, ByVal hwnd As Long, _
+                  ByVal iMsg As Long)
+Attribute DetachMessage.VB_Description = "Stop subclassing for a particular
+ message."
+    Dim msgClassCount As Long
+    Dim msgClass As Long
+    Dim msgClassIndex As Long
+    Dim msgCount As Long
+    Dim procOld As Long
+
+    ' --------------------------------------------------------------------
+    ' 1) Validate window
+    ' --------------------------------------------------------------------
+    If IsWindow(hwnd) = False Then
+        ' for compatibility with the old version, we don't
+        ' raise a message:
+        ' ErrRaise eeInvalidWindow
+        Exit Sub
+    End If
+    If IsWindowLocal(hwnd) = False Then
+        ' for compatibility with the old version, we don't
+        ' raise a message:
+        ' ErrRaise eeNoExternalWindow
+        Exit Sub
+    End If
+
+    ' --------------------------------------------------------------------
+    ' 2) Check if this message is attached for this class:
+    ' --------------------------------------------------------------------
+    msgClassCount = MessageClassCount(hwnd, iMsg)
+    If (msgClassCount &gt; 0) Then
+        msgClassIndex = 0
+        For msgClass = 1 To msgClassCount
+            If (MessageClass(hwnd, iMsg, msgClass) = ObjPtr(iwp)) Then
+                msgClassIndex = msgClass
+                Exit For
+            End If
+        Next msgClass
+
+        If (msgClassIndex = 0) Then
+            ' fail silently
+            Exit Sub
+        Else
+            ' remove this message class:
+
+            ' a) Anything above this index has to be shifted up:
+            For msgClass = msgClassIndex To msgClassCount - 1
+                MessageClass(hwnd, iMsg, msgClass) = MessageClass(hwnd, iMsg,
+                 msgClass + 1)
+            Next msgClass
+
+            ' b) The message class at the end can be removed:
+            MessageClass(hwnd, iMsg, msgClassCount) = 0
+
+            ' c) Reduce the message class count:
+            MessageClassCount(hwnd, iMsg) = MessageClassCount(hwnd, iMsg) - 1
+
+        End If
+
+    Else
+        ' fail silently
+        Exit Sub
+    End If
+
+    ' ---------------------------------------------------------------------
+    ' 3) Reduce the message count:
+    ' ---------------------------------------------------------------------
+    msgCount = MessageCount(hwnd)
+    If (msgCount = 1) Then
+        ' remove the subclass:
+        procOld = OldWindowProc(hwnd)
+        If Not (procOld = 0) Then
+            ' Unsubclass by reassigning old window procedure
+            Call SetWindowLong(hwnd, GWL_WNDPROC, procOld)
+        End If
+        ' remove the old window proc:
+        OldWindowProc(hwnd) = 0
+    End If
+    MessageCount(hwnd) = MessageCount(hwnd) - 1
+End Sub
+Private Sub ErrRaise(e As Long)
+    Dim sText As String, sSource As String
+    If e &gt; 1000 Then
+        sSource = App.EXEName &amp; ".WindowProc"
+        Select Case e
+            Case eeCantSubclass
+                sText = "Can't subclass window"
+            Case eeAlreadyAttached
+                sText = "Message already handled by another class"
+            Case eeInvalidWindow
+                sText = "Invalid window"
+            Case eeNoExternalWindow
+                sText = "Can't modify external window"
+        End Select
+        Err.Raise e Or vbObjectError, sSource, sText
+    Else
+        ' Raise standard Visual Basic error
+        Err.Raise e, sSource
+    End If
+End Sub
+Function IsWindowLocal(ByVal hwnd As Long) As Boolean
+    Dim idWnd As Long
+    Call GetWindowThreadProcessId(hwnd, idWnd)
+    IsWindowLocal = (idWnd = GetCurrentProcessId())
+End Function
+Private Sub logMessage(ByVal sMsg As String)
+    Debug.Print sMsg
+End Sub
+Private Property Get MessageClass(ByVal hwnd As Long, ByVal iMsg As Long, ByVal
+ index As Long) As Long
+    Dim sName As String
+    sName = hwnd &amp; "#" &amp; iMsg &amp; "#" &amp; index
+    MessageClass = GetProp(hwnd, sName)
+End Property
+Private Property Let MessageClass(ByVal hwnd As Long, ByVal iMsg As Long, ByVal
+ index As Long, ByVal classPtr As Long)
+    Dim sName As String
+    sName = hwnd &amp; "#" &amp; iMsg &amp; "#" &amp; index
+    m_f = SetProp(hwnd, sName, classPtr)
+    If (classPtr = 0) Then
+        RemoveProp hwnd, sName
+    End If
+    logMessage "Changed message class for " &amp; Hex(hwnd) &amp; " Message " &amp; iMsg &amp;
+     " Index " &amp; index &amp; " to " &amp; Hex(classPtr)
+End Property
+Private Property Get MessageCount(ByVal hwnd As Long) As Long
+    Dim sName As String
+    sName = "C" &amp; hwnd
+    MessageCount = GetProp(hwnd, sName)
+End Property
+Private Property Let MessageCount(ByVal hwnd As Long, ByVal count As Long)
+    Dim sName As String
+    m_f = 1
+    sName = "C" &amp; hwnd
+    m_f = SetProp(hwnd, sName, count)
+    If (count = 0) Then
+        RemoveProp hwnd, sName
+    End If
+    logMessage "Changed message count for " &amp; Hex(hwnd) &amp; " to " &amp; count
+End Property
+Private Property Get OldWindowProc(ByVal hwnd As Long) As Long
+    Dim sName As String
+    sName = hwnd
+    OldWindowProc = GetProp(hwnd, sName)
+End Property
+Private Property Let OldWindowProc(ByVal hwnd As Long, ByVal lPtr As Long)
+    Dim sName As String
+    m_f = 1
+    sName = hwnd
+    m_f = SetProp(hwnd, sName, lPtr)
+    If (lPtr = 0) Then
+        RemoveProp hwnd, sName
+    End If
+    logMessage "Changed Window Proc for " &amp; Hex(hwnd) &amp; " to " &amp; Hex(lPtr)
+End Property
+Private Property Get MessageClassCount(ByVal hwnd As Long, ByVal iMsg As Long)
+ As Long
+    Dim sName As String
+    sName = hwnd &amp; "#" &amp; iMsg &amp; "C"
+    MessageClassCount = GetProp(hwnd, sName)
+End Property
+Private Property Let MessageClassCount(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal count As Long)
+    Dim sName As String
+    sName = hwnd &amp; "#" &amp; iMsg &amp; "C"
+    m_f = SetProp(hwnd, sName, count)
+    If (count = 0) Then
+        RemoveProp hwnd, sName
+    End If
+    logMessage "Changed message count for " &amp; Hex(hwnd) &amp; " Message " &amp; iMsg &amp;
+     " to " &amp; count
+End Property
+Private Sub pClearUp(ByVal hwnd As Long)
+    Dim msgCount As Long
+    Dim procOld As Long
+    ' this is only called if you haven't explicitly cleared up
+    ' your subclass from the caller.  You will get a minor
+    ' resource leak as it does not clear up any message
+    ' specific properties.
+    msgCount = MessageCount(hwnd)
+    If (msgCount &gt; 0) Then
+        ' remove the subclass:
+        procOld = OldWindowProc(hwnd)
+        If Not (procOld = 0) Then
+            ' Unsubclass by reassigning old window procedure
+            Call SetWindowLong(hwnd, GWL_WNDPROC, procOld)
+        End If
+        ' remove the old window proc:
+        OldWindowProc(hwnd) = 0
+        MessageCount(hwnd) = 0
+    End If
+End Sub
+Public Property Get CurrentMessage() As Long
+Attribute CurrentMessage.VB_Description = "Returns the message currently being
+ worked on.  Only valid in the MsgResponse and WindowProc items of your
+ implemented interface."
+    'CurrentMessage = m_iCurrentMessage
+    CopyMemory CurrentMessage, ByVal m_iCurrentMessage, 4
+End Property
+Public Function CallOldWindowProc( _
+      ByVal hwnd As Long, _
+      ByVal iMsg As Long, _
+      ByVal wParam As Long, _
+      ByVal lParam As Long _
+   ) As Long
+Attribute CallOldWindowProc.VB_Description = "Calls the window procedure for
+ this handle which was installed before you added the subclass."
+    Dim iProcOld As Long
+    iProcOld = OldWindowProc(hwnd)
+    If Not (iProcOld = 0) Then
+        CallOldWindowProc = CallWindowProc(iProcOld, hwnd, iMsg, wParam, lParam)
+    End If
+End Function
+Private Sub Class_Initialize()
+    'This is the subclasser code. The patches are were we will write
+    'addresses of funtions so we can call them from the assembler.
+    'The exceptions are PATCH_0D and PATCH_0E, which are actually
+    'the address of the heap-allocated long were we will store
+    'the value of the current message.
+    Const PATCH_08 As Long = 32
+    Const PATCH_02 As Long = 59
+    Const PATCH_01 As Long = 77
+    Const PATCH_03 As Long = 141
+    Const PATCH_04 As Long = 187
+    Const PATCH_0D As Long = 199
+    Const PATCH_0F As Long = 219
+    Const PATCH_05 As Long = 278
+    Const PATCH_0E As Long = 290
+    Const PATCH_09 As Long = 357
+    Const PATCH_10 As Long = 370
+    Const PATCH_07 As Long = 407
+    Const PATCH_06 As Long = 434
+    Const PATCH_0A As Long = 454
+    Const PATCH_0B As Long = 465
+    Const PATCH_0C As Long = 486
+    Const CODE_STR As String =
+     "5589E581C4E0FFFFFF5752515331C08945F88945E068240000006800000000E8xxxxx08x89
+    C78945EC8B4508E8DE010000897DE8FF75ECFF7508E8xxxxx02x8945FC09C00F8417010000EB
+    1EE8xxxxx01x3D020000000F842501000085C0750AE826010000E9F70000008B7DE8B2238817
+    478B450CE895010000B243881747B2008817897DE8FF75ECFF7508E8xxxxx03x8945F03D0000
+    00000F8E570100008B7DE84FB223881747BB0100000089D8E85B010000FF75ECFF7508E8xxxx
+    x04x8945F409C07439B8xxxxx0Dx8B4D0C890868040000006800000000E8xxxxx0Fx8945E050
+    8B45F4508B00FF501C8B45E08B00A8027405E8DC000000E841010000433B5DF07F308B7DE889
+    D8E800010000FF75ECFF7508E8xxxxx05x8945F409C074DEB8xxxxx0Ex" &amp; _
+                               "8B4D0C8908E810010000E9CAFFFFFF8B45F8A9FFFFFFFF75
+                               228B45F409C0741B8B45E0508B45F4508B00FF501C8B45E08
+                               B00A8017405E875000000FF75ECE8xxxxx09x8B45E009C074
+                               0650E8xxxxx10x5B595A5F8B45E4C9C21000E850000000E9D
+                               6FFFFFFFF75FC68FCFFFFFFFF7508E8xxxxx07x8B7DECB243
+                               8817478B4508E864000000FF75ECFF7508E8xxxxx06x3D000
+                               000007CA48B55EC4252FF7508E8xxxxx0AxFF75ECFF7508E8
+                               xxxxx0BxC3FF7514FF7510FF750CFF7508FF75FCE8xxxxx0C
+                               x8945E4B8FFFFFFFF8945F8C38B450C3D020000007505E886
+                               FFFFFFE8CCFFFFFFE952FFFFFF5331C931D23D000000007D0
+                               7B22D881747F7D8BB0A00000031D2F7F3524109C075F15A80
+                               C230881747E2F7B20088175BC38B45E050FF7514FF7510FF7
+                               50CFF75088B45F4508B00FF50248B45E08B008945E4C3"
+               
+    'VBA's EbMode function allows the machine code thunk
+    'to know if the IDE has stopped or is on a breakpoint
+    Const FUNC_EBM As String = "EbMode"
+    Const FUNC_SAS As String = "SysAllocStringByteLen"
+    Const FUNC_SFS As String = "SysFreeString"
+    Const FUNC_GPp As String = "GetPropA"
+    Const FUNC_SWL As String = "SetWindowLongA"
+    Const FUNC_RPp As String = "RemovePropA"
+    Const FUNC_CWP As String = "CallWindowProcA"
+    Const FUNC_GAl As String = "GlobalAlloc"
+    Const FUNC_GFr As String = "GlobalFree"
+    'Location of the EbMode function if running VB5
+    Const MOD_VBA5 As String = "vba5"
+    'Location of the EbMode function if running VB6
+    Const MOD_VBA6 As String = "vba6"
+    'Location of GetProp, RemoveProp, SetWindowLong and CallWindowProc
+    Const MOD_USER As String = "user32"
+    'Location of SysAllocStringByteLen and SysFreeString
+    Const MOD_OLEA As String = "oleaut32"
+    'Location of GlobalAlloc and GlobalFree
+    Const MOD_KERN As String = "kernel32"
+    Dim i        As Long
+    'String lengths
+    Dim nLen     As Long
+    'Hex code string
+    Dim sHex     As String
+    'Binary code string
+    Dim sCode    As String
+    
+    'Store the hex pair machine code representation in sHex
+    sHex = CODE_STR
+    'Length of hex pair string
+    nLen = Len(sHex)
+    
+    'Convert the string from hex pairs to bytes and store
+    'in the ASCII string opcode buffer
+    For i = 1 To nLen Step 2
+        'Convert a pair of hex characters to a byte and
+        'append to the ASCII string
+        sCode = sCode &amp; ChrB$(Val("&amp;H" &amp; Mid$(sHex, i, 2)))
+    Next i
+    
+    'Get the machine code length
+    nLen = LenB(sCode)
+    'Allocate fixed memory for machine code buffer
+    nAddrSubclass = GlobalAlloc(0, nLen)
+    'Allocate fixed memory for the CurrentMessage property
+    m_iCurrentMessage = GlobalAlloc(0, 4)
+    
+    'Copy the code to allocated memory
+    Call CopyMemory(ByVal nAddrSubclass, ByVal StrPtr(sCode), nLen)
+    
+    Dim lIDEMode As Long
+    'Get the address of EbMode in vba6.dll
+    i = AddrFunc(MOD_VBA6, FUNC_EBM)
+    'Found?
+    If i = 0 Then
+        'VB5 perhaps, try vba5.dll
+        i = AddrFunc(MOD_VBA5, FUNC_EBM)
+        If i &lt;&gt; 0 Then lIDEMode = EbMode_vb5()
+    Else
+        lIDEMode = EbMode_vb6()
+    End If
+    
+    'Ensure the EbMode function was found
+    Debug.Assert i
+    
+    'Use EbMode to correctly determine whether or not
+    'the IDE is running. It works well, even in the
+    'compiled DLL; that way, we can ensure that we don't
+    'have to include SSubTmr in a project group.
+    If lIDEMode &lt;&gt; 0 Then
+    'If InIDE Then
+        Dim nOffset As Long
+        'Get the IDE patch offset:
+        nOffset = InStr(1, CODE_STR, "EB1E") - 1
+        nOffset = nOffset \ 2
+        
+        'Patch the jmp short (EB1E) with two nop's (90)
+        'enabling the IDE breakpoint/stop checking code
+        Call CopyMemory(ByVal nAddrSubclass + nOffset, &amp;H9090, 2)
+    
+        'Patch the relative address to the EbMode api function
+        Call PatchRel(PATCH_01, i)
+    End If
+    
+    'Here, we patch the addresses of the functions to be called
+    'by the assembler; also patched is the address of the
+    'heap-allocated CurrentMessage.
+    Call PatchRel(PATCH_02, AddrFunc(MOD_USER, FUNC_GPp))
+    Call PatchRel(PATCH_03, AddrFunc(MOD_USER, FUNC_GPp))
+    Call PatchRel(PATCH_04, AddrFunc(MOD_USER, FUNC_GPp))
+    Call PatchRel(PATCH_05, AddrFunc(MOD_USER, FUNC_GPp))
+    Call PatchRel(PATCH_06, AddrFunc(MOD_USER, FUNC_GPp))
+    Call PatchRel(PATCH_07, AddrFunc(MOD_USER, FUNC_SWL))
+    Call PatchRel(PATCH_08, AddrFunc(MOD_OLEA, FUNC_SAS))
+    Call PatchRel(PATCH_09, AddrFunc(MOD_OLEA, FUNC_SFS))
+    Call PatchRel(PATCH_0A, AddrFunc(MOD_USER, FUNC_RPp))
+    Call PatchRel(PATCH_0B, AddrFunc(MOD_USER, FUNC_RPp))
+    Call PatchRel(PATCH_0C, AddrFunc(MOD_USER, FUNC_CWP))
+    Call PatchRel(PATCH_0F, AddrFunc(MOD_KERN, FUNC_GAl))
+    Call PatchRel(PATCH_10, AddrFunc(MOD_KERN, FUNC_GFr))
+    Call PatchVal(PATCH_0D, m_iCurrentMessage)
+    Call PatchVal(PATCH_0E, m_iCurrentMessage)
+End Sub
+Private Function AddrFunc(ByVal sDLL As String, _
+                          ByVal sProc As String) As Long
+    AddrFunc = GetProcAddress(GetModuleHandle(sDLL), sProc)
+    
+    'You may want to comment out the following line if you're using vb5 else
+     the EbMode
+    'GetProcAddress will stop here everytime because we look in vba6.dll first
+    Debug.Assert AddrFunc
+End Function
+'Return whether we're running in the IDE. Public for general utility purposes
+Public Function InIDE() As Boolean
+    Debug.Assert SetTrue(InIDE)
+End Function
+'Worker function for InIDE - will only be called whilst running in the IDE
+Private Function SetTrue(bValue As Boolean) As Boolean
+    SetTrue = True
+    bValue = True
+End Function
+'Patch the machine code buffer offset with the relative address to the target
+ address
+Private Sub PatchRel(ByVal nOffset As Long, _
+                     ByVal nTargetAddr As Long)
+    Call CopyMemory(ByVal (nAddrSubclass + nOffset), nTargetAddr -
+     nAddrSubclass - nOffset - 4, 4)
+End Sub
+'Patch the machine code buffer offset with the passed value
+Private Sub PatchVal(ByVal nOffset As Long, _
+                     ByVal nValue As Long)
+    Call CopyMemory(ByVal (nAddrSubclass + nOffset), nValue, 4)
+End Sub
+Private Sub Class_Terminate()
+    'Call pClearUp                      'UnSubclass if the Subclass thunk is
+     active
+    Call GlobalFree(m_iCurrentMessage)  'Release the allocated memory
+    Call GlobalFree(nAddrSubclass)      'Release the allocated memory
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;<a href="article.html">SSubTimer - ASM Thunk Version</a>&#160;.&#160;<a href="VB6_ASM_SSubTimer_Full_Source.html">VB6 ASM SSubTimer Full Source</a>&#160;.&#160;subclass.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 25 April 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/SSubTimer_ASM_Version/VB6_ASM_SSubTimer_Full_Source_zip_subclass_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:41 GMT -->
+</html>

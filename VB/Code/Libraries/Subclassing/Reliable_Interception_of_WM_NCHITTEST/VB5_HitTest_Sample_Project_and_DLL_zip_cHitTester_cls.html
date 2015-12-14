@@ -1,0 +1,315 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Reliable_Interception_of_WM_NCHITTEST/VB5_HitTest_Sample_Project_and_DLL_zip_cHitTester_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:55 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cHitTester.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cHitTester.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;<a href="article.html">Moving Forms and Creating Resize Gripper Boxes</a>&#160;.&#160;<a href="VB5_HitTest_Sample_Project_and_DLL.html">VB5 HitTest Sample Project and DLL</a>&#160;.&#160;cHitTester.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_HitTest_Sample_Project_and_DLL.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 HitTest Sample Project and DLL</a> (26K)</p><p /><p class="nav"><a href="VB6_HitTest_Sample_Project_and_DLL.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 HitTest Sample Project and DLL</a> (22K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1164</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1164&amp;type=Zip&amp;title=VB5%20HitTest%20Sample%20Project%20and%20DLL%2Ezip%5FcHitTester">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />24 Nov 1998<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cHitTester.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cHitTester"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+Implements ISubclass
+
+Private Type RECT
+   Left As Long
+   Top As Long
+   Right As Long
+   Bottom As Long
+End Type
+Private Type POINTAPI
+   x As Long
+   y As Long
+End Type
+Private Const WM_NCHITTEST = &amp;H84&amp;
+Public Enum EHitTestAreas
+   HTERROR = (-2)
+   HTTRANSPARENT = (-1)
+   HTNOWHERE = 0
+   HTCLIENT = 1
+   HTCAPTION = 2
+   HTSYSMENU = 3
+   HTGROWBOX = 4
+   HTMENU = 5
+   HTHSCROLL = 6
+   HTVSCROLL = 7
+   HTMINBUTTON = 8
+   HTMAXBUTTON = 9
+   HTLEFT = 10
+   HTRIGHT = 11
+   HTTOP = 12
+   HTTOPLEFT = 13
+   HTBOTTOM = 15
+   HTBOTTOMLEFT = 16
+   HTBOTTOMRIGHT = 17
+   HTBORDER = 18
+End Enum
+
+Private Declare Function GetCursorPos Lib "user32" (lpPoint As POINTAPI) As Long
+Private Declare Function ScreenToClient Lib "user32" (ByVal hWnd As Long,
+ lpPoint As POINTAPI) As Long
+Private Declare Function GetClientRect Lib "user32" (ByVal hWnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function GetWindowRect Lib "user32" (ByVal hWnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function PtInRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Sub CopyMemory Lib "KERNEL32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+Private Declare Function OffsetRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+
+' Array of objects to perform WM_NCHITTEST on:
+Private m_lHTPtr() As Long
+' Array of hWnds to perform WM_NCHITTEST on:
+Private m_hWnd() As Long
+' Number of objects to perform WM_NCHITTEST on:
+Private m_iCount As Long
+
+' Rectangles to perform hit testing on:
+Private Type tHitTestRectangle
+   hWnd As Long
+   sKey As String
+   lLeft As Long
+   lTOp As Long
+   lRight As Long
+   lBottom As Long
+   eResponse As EHitTestAreas
+End Type
+Private m_tHTR() As tHitTestRectangle
+Private m_iHTRCount As Long
+
+Public Sub SetTestArea( _
+      ByVal vKey As Variant, _
+      ByVal lLeftPixels As Long, _
+      ByVal lTopPixels As Long, _
+      ByVal lWidthPixels As Long, _
+      ByVal lHeightPixels As Long, _
+      ByVal eResponse As EHitTestAreas _
+   )
+Attribute SetTestArea.VB_Description = "Sets the rectangle to be hit tested and
+ response for an area added earlier with the AddArea method."
+Dim iItem As Long
+
+   iItem = AreaIndex(vKey)
+   If (iItem &gt; 0) Then
+      With m_tHTR(iItem)
+         .lLeft = lLeftPixels
+         .lTOp = lTopPixels
+         .lRight = lLeftPixels + lWidthPixels
+         .lBottom = lTopPixels + lHeightPixels
+         .eResponse = eResponse
+      End With
+   End If
+   
+End Sub
+Public Sub SetTestAreaFromObject( _
+      ByVal vKey As Variant, _
+      ByRef objThis As Object, _
+      ByVal eResponse As EHitTestAreas _
+   )
+Attribute SetTestAreaFromObject.VB_Description = "Similar to the SetTestArea
+ method but sets the rectangle to be hit tested directly from an object such as
+ Label control."
+   SetTestArea vKey, objThis.Left \ Screen.TwipsPerPixelX, objThis.Top \
+    Screen.TwipsPerPixelY, objThis.Width \ Screen.TwipsPerPixelY,
+    objThis.Height \ Screen.TwipsPerPixelY, eResponse
+End Sub
+
+Public Function AddArea( _
+      ByVal hWnd As Long, _
+      Optional ByVal sKey As String = "" _
+   ) As Long
+Attribute AddArea.VB_Description = "Adds an area to be hit tested."
+      
+   m_iHTRCount = m_iHTRCount + 1
+   ReDim Preserve m_tHTR(1 To m_iHTRCount) As tHitTestRectangle
+   AddArea = m_iHTRCount
+   With m_tHTR(m_iHTRCount)
+      .hWnd = hWnd
+      If (sKey &lt;&gt; "") Then
+         .sKey = sKey
+      Else
+         .sKey = CStr(m_iHTRCount)
+      End If
+   End With
+
+End Function
+
+Private Function AreaIndex(ByVal vKey As Variant) As Long
+Dim i As Long
+
+   If (IsNumeric(vKey)) Then
+      i = CLng(vKey)
+      If (i &gt; 0) And (i &lt;= m_iHTRCount) Then
+         AreaIndex = i
+         Exit Function
+      End If
+   Else
+      For i = 1 To m_iHTRCount
+         If (m_tHTR(i).sKey = vKey) Then
+            AreaIndex = i
+            Exit Function
+         End If
+      Next i
+   End If
+   
+   ' error
+End Function
+
+Public Sub AttachHitTester(ByRef objThis As Object)
+Attribute AttachHitTester.VB_Description = "Adds a window to the list of
+ windows to perform hit testing on."
+Dim hWnd As Long
+   hWnd = objThis.hWnd
+   If (IsNew(hWnd)) Then
+      m_iCount = m_iCount + 1
+      ReDim Preserve m_lHTPtr(1 To m_iCount) As Long
+      ReDim Preserve m_hWnd(1 To m_iCount) As Long
+      m_lHTPtr(m_iCount) = ObjPtr(objThis)
+      m_hWnd(m_iCount) = hWnd
+      AttachMessage Me, m_hWnd(m_iCount), WM_NCHITTEST
+   End If
+End Sub
+
+Public Sub DestroyHitTester()
+Attribute DestroyHitTester.VB_Description = "Clears up all hit testers.  Called
+ automatically when the object is destroyed."
+Dim i As Long
+   For i = 1 To m_iCount
+      If (m_hWnd(i) &lt;&gt; 0) Then
+         DetachMessage Me, m_hWnd(i), WM_NCHITTEST
+         m_hWnd(i) = 0
+      End If
+      m_lHTPtr(i) = 0
+   Next i
+   m_iCount = 0
+End Sub
+
+Private Function IsNew(ByVal hWnd As Long) As Boolean
+Dim i As Long
+   IsNew = True
+   For i = 1 To m_iCount
+      If (m_hWnd(i) = hWnd) Then
+         IsNew = False
+         Exit For
+      End If
+   Next i
+      
+End Function
+
+Public Property Get PointInObject(ByRef oThis As Object, ByVal xPixels As Long,
+ ByVal yPixels As Long) As Boolean
+Attribute PointInObject.VB_Description = "Helper function.  Returns whether the
+ given point is within the boundary of an object."
+Dim tR As RECT
+Dim tFR As RECT
+
+   On Error Resume Next
+   ' Get object position:
+   tR.Left = oThis.Left \ Screen.TwipsPerPixelX
+   tR.Right = tR.Left + oThis.Width \ Screen.TwipsPerPixelX
+   tR.Top = oThis.Top \ Screen.TwipsPerPixelX
+   tR.Bottom = tR.Top + oThis.Height \ Screen.TwipsPerPixelY
+   If (Err.Number = 0) Then
+      ' Check for hit test:
+      PointInObject = (PtInRect(tR, xPixels, yPixels) &lt;&gt; 0)
+   End If
+End Property
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As SSubTimer.EMsgResponse)
+   '
+End Property
+
+Private Property Get ISubclass_MsgResponse() As SSubTimer.EMsgResponse
+   ISubclass_MsgResponse = emrPreprocess
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hWnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+Dim tP As POINTAPI
+Dim tR As RECT
+Dim lR As Long
+Dim bDoDefault As Boolean
+Dim eType As EHitTestAreas
+Dim i As Long, j As Long
+
+   For j = 1 To m_iHTRCount
+      With m_tHTR(j)
+         If (.hWnd = hWnd) Then
+            GetCursorPos tP
+            ScreenToClient hWnd, tP
+            eType = HTCLIENT
+            tR.Left = .lLeft
+            tR.Top = .lTOp
+            tR.Right = .lRight
+            tR.Bottom = .lBottom
+            If (PtInRect(tR, tP.x, tP.y) &lt;&gt; 0) Then
+               ISubclass_WindowProc = .eResponse
+               Exit Function
+            End If
+         End If
+      End With
+   Next j
+   
+   ' Do the default:
+   ISubclass_WindowProc = CallOldWindowProc(hWnd, iMsg, wParam, lParam)
+   
+End Function
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;<a href="article.html">Moving Forms and Creating Resize Gripper Boxes</a>&#160;.&#160;<a href="VB5_HitTest_Sample_Project_and_DLL.html">VB5 HitTest Sample Project and DLL</a>&#160;.&#160;cHitTester.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Reliable_Interception_of_WM_NCHITTEST/VB5_HitTest_Sample_Project_and_DLL_zip_cHitTester_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:55 GMT -->
+</html>

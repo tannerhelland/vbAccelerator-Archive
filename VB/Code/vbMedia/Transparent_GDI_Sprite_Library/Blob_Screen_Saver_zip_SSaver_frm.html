@@ -1,0 +1,490 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Transparent_GDI_Sprite_Library/Blob_Screen_Saver_zip_SSaver_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:48 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: SSaver.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: SSaver.frm" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">vbMedia</a>&#160;.&#160;<a href="article.html">Transparent GDI Sprite Library</a>&#160;.&#160;<a href="Blob_Screen_Saver.html">Blob Screen Saver</a>&#160;.&#160;SSaver.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Blob_Screen_Saver.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Blob Screen Saver</a> (266K)</p><p /><p class="nav"><a href="Simple_Transparent_Sprites_Demo.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Simple Transparent Sprites Demo</a> (35K)</p><p /><p class="nav"><a href="Transparent_Sprite_Classes.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Transparent Sprite Classes</a> (8K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:12055</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12055&amp;type=Zip&amp;title=Blob%20Screen%20Saver%2Ezip%5FSSaver">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />24 Jun 1998<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: SSaver.frm</h1><pre>VERSION 5.00
+Begin VB.Form frmSSaver 
+   Caption         =   "Form1"
+   ClientHeight    =   5190
+   ClientLeft      =   3120
+   ClientTop       =   2070
+   ClientWidth     =   8775
+   LinkTopic       =   "Form1"
+   PaletteMode     =   1  'UseZOrder
+   ScaleHeight     =   5190
+   ScaleWidth      =   8775
+   Begin VB.CommandButton Command1 
+      Caption         =   "Start"
+      Height          =   435
+      Left            =   6360
+      TabIndex        =   0
+      Top             =   240
+      Width           =   1275
+   End
+End
+Attribute VB_Name = "frmSSaver"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private m_cTile As cTile
+Private m_cStage As cBitmap
+Private m_cSp() As cSprite
+Private m_bAnimate As Boolean
+Private WithEvents m_tmr  As CTimer
+Attribute m_tmr.VB_VarHelpID = -1
+Private m_bStarted As Boolean
+Private m_hWNdPreview As Long
+
+
+Private Declare Function SetWindowPos Lib "user32" (ByVal hwnd As Long, ByVal
+ hWndInsertAfter As Long, ByVal X As Long, ByVal Y As Long, ByVal cx As Long,
+ ByVal cy As Long, ByVal wFlags As Long) As Long
+Private Const HWND_TOPMOST = -1
+Private Const HWND_NOTOPMOST = -2
+Private Const HWND_TOP = 0&amp;
+Private Const SWP_NOSIZE = &amp;H1
+Private Const SWP_NOZORDER = &amp;H4
+Private Const SWP_NOACTIVATE = &amp;H10
+Private Const SWP_FRAMECHANGED = &amp;H20        '  The frame changed: send
+ WM_NCCALCSIZE
+Private Const SWP_SHOWWINDOW = &amp;H40
+Private Declare Function ShowCursor Lib "user32" (ByVal bShow As Long) As Long
+Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long) As Long
+Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long
+Private Const WS_BORDER = &amp;H800000
+Private Const WS_CAPTION = &amp;HC00000                  '  WS_BORDER Or WS_DLGFRAME
+Private Const WS_DLGFRAME = &amp;H400000
+Private Const WS_EX_DLGMODALFRAME = &amp;H1&amp;
+Private Const WS_MAXIMIZEBOX = &amp;H10000
+Private Const WS_MINIMIZEBOX = &amp;H20000
+Private Const WS_SYSMENU = &amp;H80000
+Private Const WS_THICKFRAME = &amp;H40000
+Private Const WS_SIZEBOX = WS_THICKFRAME
+Private Const WS_CHILD = &amp;H40000000
+Private Const GWL_HWNDPARENT = (-8)
+Private Const GWL_STYLE = (-16)
+Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function SetParent Lib "user32" (ByVal hWndChild As Long, ByVal
+ hWndNewParent As Long) As Long
+
+Public Property Let PreviewhWnd(ByVal lhWnd As Long)
+    m_hWNdPreview = lhWnd
+End Property
+
+Private Sub Command1_Click()
+Static i As Integer
+Static lNewX As Long, lNewY As Long
+Static lHDC As Long
+Static lCell As Long
+Static iAnim() As Long
+Static iSpeed() As Long
+Static iXSpeed() As Long
+Static bSmall() As Boolean
+Static lTIme As Long
+
+    If (Command1.Caption = "Start") Then
+        Command1.Caption = "Stop"
+        ReDim iAnim(1 To g_iSpriteNum) As Long
+        ReDim iSpeed(1 To g_iSpriteNum) As Long
+        ReDim iXSpeed(1 To g_iSpriteNum) As Long
+        ReDim bSmall(1 To g_iSpriteNum) As Boolean
+        For i = 1 To g_iSpriteNum
+            iAnim(i) = Rnd * g_iSpriteNum + 1
+            iSpeed(i) = (Rnd * 17 - 8) / 2
+            If Rnd * 100 &gt;= g_iProportion Then
+                bSmall(i) = True
+                m_cSp(i).SpriteData = g_cSBs
+                iXSpeed(i) = Rnd * 2 + 4
+            Else
+                iXSpeed(i) = Rnd * 2 + 1
+            End If
+            With m_cSp(i)
+                .X = Rnd * Me.ScaleWidth \ Screen.TwipsPerPixelX
+                .Y = Rnd * Me.ScaleHeight \ Screen.TwipsPerPixelY
+                .Cell = Rnd * 35
+            End With
+        Next i
+        m_bAnimate = True
+    Else
+        Command1.Caption = "Start"
+        m_bAnimate = False
+    End If
+        
+    ' This is a rather poor solid loop!
+    lHDC = Me.hDC
+    Do While m_bAnimate
+    
+        lTIme = timeGetTime
+        
+        ' ******************************************************
+        ' 1) Firstly, we restore the stage bitmap to its original
+        ' state:
+        For i = 1 To g_iSpriteNum
+            m_cSp(i).RestoreBackground m_cStage.hDC
+        Next i
+        ' ******************************************************
+        
+        ' (At this point you could modify the background in cStage)
+        
+        ' ******************************************************
+        ' 2) Secondly, we move all the sprites to their new position
+        ' and store the stage background there:
+        For i = 1 To g_iSpriteNum
+            With m_cSp(i)
+                ' Get the next animation cell and position:
+                If (iAnim(i) &lt; g_iSpriteNum - 1) Then
+                    If (.Cell &lt; 17) Then
+                        .Y = .Y + (17 - .Cell) / (2 + Abs(bSmall(i) * 2)) +
+                         iSpeed(i)
+                        If (iAnim(i) &gt; 1) And (iAnim(i) &lt; g_iSpriteNum) Then
+                            .X = .X - (17 - .Cell) / iXSpeed(i) - (2 -
+                             bSmall(i))
+                        End If
+                    Else
+                        .Y = .Y + (.Cell - 17) / (2 + Abs(bSmall(i) * 2)) +
+                         iSpeed(i)
+                        If (iAnim(i) &gt; 1) And (iAnim(i) &lt; g_iSpriteNum) Then
+                            .X = .X - (.Cell - 17) / iXSpeed(i) - (2 -
+                             bSmall(i))
+                        End If
+                    End If
+                Else
+                    Select Case .Cell
+                    Case Is &lt; 12
+                        .X = .X - (8 - .Cell \ 2)
+                        .Y = .Y - (5 - .Cell \ 2)
+                    Case 12 To 16
+                        .X = .X - 2
+                        .Y = .Y - 1
+                    Case 16 To 18
+                        .X = .X - 1
+                    Case 18 To 20
+                        .X = .X + 1
+                        .Y = .Y + 1
+                    Case Is &gt; 21
+                        .Y = .Y + (.Cell - 21)
+                        '.X = .X + (.Cell - 21)
+                    End Select
+                End If
+                'wrapparound:
+                If (.X &lt; -.Width) Then
+                    .X = Me.ScaleWidth \ Screen.TwipsPerPixelX
+                End If
+                If (.Y &gt; Me.ScaleHeight \ Screen.TwipsPerPixelY) Then
+                    .Y = -.Height
+                End If
+                If (.Y &lt; -.Height) Then
+                    .Y = Me.ScaleHeight \ Screen.TwipsPerPixelY
+                End If
+                'If (iAnim(i) = 0) Then
+                '    iSpeed(i) = Rnd * 17 - 8
+                'End If
+                
+                .Cell = .Cell + 1
+                If (.Cell &gt; 35) Then
+                    .Cell = 1
+                    iAnim(i) = iAnim(i) + 1
+                    Select Case iAnim(i)
+                    Case 1
+                        iSpeed(i) = Rnd * 17 - 8
+                        If (bSmall(i)) Then
+                            .SpriteData = g_cSBs
+                        Else
+                            .SpriteData = g_cSB
+                        End If
+                    Case g_iSpriteNum - 1
+                        If (bSmall(i)) Then
+                            .SpriteData = g_cSBsA
+                        Else
+                            .SpriteData = g_cSBA
+                        End If
+                    Case g_iSpriteNum
+                        iAnim(i) = 0
+                        iSpeed(i) = 17 / Abs(bSmall(i) - 1)
+                    End Select
+                End If
+                ' Store the background:
+                .StoreBackground m_cStage.hDC, .X, .Y
+            End With
+        Next i
+        ' ******************************************************
+        
+        ' ******************************************************
+        ' 3) Thirdly, draw all the sprites to their new position
+        ' in the stage:
+        For i = 1 To g_iSpriteNum
+            With m_cSp(i)
+                ' Draw the sprite onto the stage in the new position:
+                .TransparentDraw m_cStage.hDC, .X, .Y, .Cell, False
+            End With
+        Next i
+        ' ******************************************************
+        
+        ' ******************************************************
+        ' 4) Finally we transfer the changes in the stage onto
+        ' the screen, minimising the number of visible screen
+        ' blits as best as we can:
+        For i = 1 To g_iSpriteNum
+            m_cSp(i).StageToScreen lHDC, m_cStage.hDC
+        Next i
+        ' ******************************************************
+
+        Do
+            DoEvents
+        Loop While lTIme + 25 &gt; timeGetTime
+        m_bStarted = True
+    Loop
+    
+End Sub
+
+Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
+    #If Release Then
+        pExitSaver
+    #End If
+End Sub
+
+Private Sub Form_Load()
+Dim i As Integer
+Dim lW As Long, lH As Long
+
+    Randomize Timer
+
+    ' Create a tiling Object in order to create the background:
+    Set m_cTile = New cTile
+    With m_cTile
+        .Initialise Me
+        Dim oPic As New StdPicture
+        Set oPic = LoadPicture(g_sBackdrop)
+        .Picture = oPic
+        
+    End With
+        
+    ' Create g_iSpriteNum sprites, each using the same graphic source:
+    If (g_eRunMode = ePreview) Then
+        g_iSpriteNum = 2
+    End If
+    ReDim m_cSp(1 To g_iSpriteNum) As cSprite
+    For i = 1 To g_iSpriteNum
+        Set m_cSp(i) = New cSprite
+        m_cSp(i).SpriteData = g_cSB
+        m_cSp(i).Create Me.hDC
+    Next i
+        
+    ' Create a bitmap on which to create the screen display
+    ' offscreen.  This will be blitted from onto the screen
+    ' to minimise flicker
+    Set m_cStage = New cBitmap
+    lW = Screen.Width \ Screen.TwipsPerPixelX
+    lH = Screen.Height \ Screen.TwipsPerPixelY
+    m_cStage.CreateAtSize lW, lH
+    
+    ' We tile the background bitmap into the stage bitmap
+    ' to get some sort of background for the process:
+    m_cTile.TileDC m_cStage.hDC, lW, lH
+    
+    #If Release Then
+        pMakeScreenSaver
+    #End If
+    
+    Me.Show
+    
+    #If Release Then
+        Set m_tmr = New CTimer
+        m_tmr.Interval = 100
+    #End If
+    
+End Sub
+
+Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y
+ As Single)
+    #If Release Then
+        pExitSaver
+    #End If
+End Sub
+
+Private Sub Form_MouseMove(Button As Integer, Shift As Integer, X As Single, Y
+ As Single)
+Static LastX As Single
+Static LastY As Single
+    #If Release Then
+        If (LastX = 0) And (LastY = 0) Or (Abs(X - LastX) &lt;
+         Screen.TwipsPerPixelX And Abs(Y - LastY) &lt; Screen.TwipsPerPixelY) Then
+            ' do nothing (mouse move is probably a drift)
+            LastX = X
+            LastY = Y
+        Else
+            pExitSaver
+        End If
+    #End If
+End Sub
+
+Private Sub Form_Paint()
+Dim lW As Long, lH As Long
+
+    ' Just redraw the current stage on the screen:
+    lW = Me.ScaleWidth \ Screen.TwipsPerPixelX
+    lH = Me.ScaleHeight \ Screen.TwipsPerPixelY
+    'BitBlt Me.hDC, 0, 0, lW, lH, m_cStage.hDC, 0, 0, SRCCOPY
+    m_cStage.RenderBitmap Me.hDC, 0, 0
+
+End Sub
+
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+Dim i As Integer
+    ' These clear up procedures are likely to be optional.
+    ' I just like being sure that's all:
+    
+    If (Command1.Caption = "Stop") Then
+        ' Make sure the animation stops first otherwise it will
+        ' try to recreate all the Objects again once the form
+        ' has unloaded - not too good...
+        Command1_Click
+    End If
+    
+    ' Clear all the sprite Objects:
+    For i = 1 To g_iSpriteNum
+        Set m_cSp(i) = Nothing
+    Next i
+    ' Clear the sprite bitmap source:
+    Set g_cSB = Nothing
+    Set g_cSBA = Nothing
+    Set g_cSBs = Nothing
+    Set g_cSBsA = Nothing
+    ' Clear the staging bitmap used for flicker free draw:
+    Set m_cStage = Nothing
+    ' Clear the tiling Object used to draw the surface of the
+    ' staging bitmap:
+    Set m_cTile = Nothing
+    
+End Sub
+Private Sub pExitSaver()
+    #If Release Then
+        If (g_eRunMode = eScreenSave) Then
+            If (m_bStarted) Then
+                ' Clear topmost flag:
+                SetWindowPos Me.hwnd, HWND_NOTOPMOST, 0&amp;, 0&amp;, 0, 0, SWP_NOSIZE
+                ' Cursor back again:
+                ShowCursor 1
+                ' Clear up:
+                Unload Me
+            End If
+        End If
+    #End If
+    
+End Sub
+Private Sub pMakeScreenSaver()
+Dim lStyle As Long
+Dim tR As RECT
+
+    ' Hide button
+    Command1.Visible = False
+
+    If (g_eRunMode = eScreenSave) Then
+        ' Remove the border, caption, minmax button &amp; control box:
+        lStyle = GetWindowLong(Me.hwnd, GWL_STYLE)
+        lStyle = lStyle And Not ( _
+            WS_BORDER Or WS_CAPTION Or WS_DLGFRAME Or WS_EX_DLGMODALFRAME Or _
+            WS_MAXIMIZEBOX Or WS_MINIMIZEBOX Or WS_SYSMENU Or _
+            WS_SIZEBOX Or WS_THICKFRAME _
+            )
+        SetWindowLong Me.hwnd, GWL_STYLE, lStyle
+        Me.WindowState = vbMaximized
+        
+        ' Make me always on top and resize for new frame:
+        SetWindowPos Me.hwnd, HWND_TOPMOST, 0&amp;, 0&amp;, 0, 0, SWP_NOSIZE Or
+         SWP_FRAMECHANGED
+    
+        ' Hide the mouse:
+        ShowCursor 0
+    Else
+        GetClientRect m_hWNdPreview, tR      ' Get Display Rectangle dimentions
+    
+        lStyle = GetWindowLong(frmSSaver.hwnd, GWL_STYLE) ' ** Get current
+         window style
+        lStyle = lStyle Or WS_CHILD                        ' ** Append
+         "WS_CHILD" style to the hWnd window style
+        lStyle = lStyle And Not ( _
+            WS_BORDER Or WS_CAPTION Or WS_DLGFRAME Or WS_EX_DLGMODALFRAME Or _
+            WS_MAXIMIZEBOX Or WS_MINIMIZEBOX Or WS_SYSMENU Or _
+            WS_SIZEBOX Or WS_THICKFRAME _
+            )
+        SetWindowLong frmSSaver.hwnd, GWL_STYLE, lStyle   ' ** Add new style to
+         window
+        
+        SetParent frmSSaver.hwnd, m_hWNdPreview   ' ** Set preview window as
+         parent window
+        SetWindowLong frmSSaver.hwnd, GWL_HWNDPARENT, m_hWNdPreview ' ** Save
+         the hWnd Parent in hWnd's window struct.
+        
+        ' ** Show screensaver in the preview window...
+        SetWindowPos frmSSaver.hwnd, _
+                     HWND_TOP, 0&amp;, 0&amp;, tR.Right, tR.Bottom, _
+                     SWP_NOZORDER Or SWP_NOACTIVATE Or SWP_SHOWWINDOW Or
+                      SWP_FRAMECHANGED
+    End If
+    
+End Sub
+
+Private Sub m_tmr_ThatTime()
+    m_tmr.Interval = 0
+    Set m_tmr = Nothing
+    Command1_Click
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">vbMedia</a>&#160;.&#160;<a href="article.html">Transparent GDI Sprite Library</a>&#160;.&#160;<a href="Blob_Screen_Saver.html">Blob Screen Saver</a>&#160;.&#160;SSaver.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 28 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Transparent_GDI_Sprite_Library/Blob_Screen_Saver_zip_SSaver_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:48 GMT -->
+</html>

@@ -1,0 +1,269 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/UserControl_OLE_Extensions/IPerPropertyBrowse/EX_Property_Browsing_in_VB_zip_Examples_Example1_ctlEnum_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:52 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: Examples_Example1_ctlEnum.ctl</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: Examples_Example1_ctlEnum.ctl" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">UserControl OLE Extensions</a>&#160;.&#160;<a href="article.html">Using IPerPropertyBrowse to Customise the Design Time Properties for a Control</a>&#160;.&#160;<a href="EX_Property_Browsing_in_VB.html">EX Property Browsing in VB</a>&#160;.&#160;Examples_Example1_ctlEnum.ctl</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="EX_Property_Browsing_in_VB.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />EX Property Browsing in VB</a> (19K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:4874</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4874&amp;type=Zip&amp;title=EX%20Property%20Browsing%20in%20VB%2Ezip%5FExamples%5FExample1%5FctlEnum">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:prw.exponential@dial.pipex.com">Paul Wilde</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />23 Nov 1998<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: Examples_Example1_ctlEnum.ctl</h1><pre>VERSION 5.00
+Begin VB.UserControl ctlEnum 
+   BorderStyle     =   1  'Fixed Single
+   ClientHeight    =   3384
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   3840
+   ScaleHeight     =   3384
+   ScaleWidth      =   3840
+   Begin VB.Label Label4 
+      AutoSize        =   -1  'True
+      Caption         =   "'TestEnum2' uses the custom implementation of
+       IPerPropertyBrowsing."
+      Height          =   384
+      Left            =   180
+      TabIndex        =   3
+      Top             =   2556
+      Width           =   3408
+      WordWrap        =   -1  'True
+   End
+   Begin VB.Label Label3 
+      AutoSize        =   -1  'True
+      Caption         =   "'TestEnum1' uses the standard VB implementation of
+       IPerPropertyBrowsing."
+      Height          =   384
+      Left            =   180
+      TabIndex        =   2
+      Top             =   1968
+      Width           =   3396
+      WordWrap        =   -1  'True
+   End
+   Begin VB.Label Label2 
+      AutoSize        =   -1  'True
+      Caption         =   "Select this control and then look at the 'TestEnum'
+       properties in the VB properties window."
+      Height          =   576
+      Left            =   180
+      TabIndex        =   1
+      Top             =   1224
+      Width           =   3396
+      WordWrap        =   -1  'True
+   End
+   Begin VB.Label Label1 
+      AutoSize        =   -1  'True
+      Caption         =   $"ctlEnum.ctx":0000
+      Height          =   768
+      Left            =   180
+      TabIndex        =   0
+      Top             =   180
+      Width           =   3396
+      WordWrap        =   -1  'True
+   End
+End
+Attribute VB_Name = "ctlEnum"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+'implement 'VB friendly' version of the IPerPropertyBrowsing interface
+Implements IPerPropertyBrowsingVB
+
+'public enums
+Public Enum TheTestEnum
+    tstEnumValue1 = 1
+    tstEnumValue2 = 2
+    tstEnumValue3 = 3
+    
+End Enum
+
+'private members
+Private m_oPerProp As New CPerPropertyBrowsing
+Private m_DispID_TestEnum2 As Long
+
+'persistent property members
+Private m_TestEnum1 As TheTestEnum
+Private m_TestEnum2 As TheTestEnum
+
+Public Property Get TestEnum1() As TheTestEnum
+'return member m_TestEnum1
+
+    TestEnum1 = m_TestEnum1
+End Property
+Public Property Get TestEnum2() As TheTestEnum
+'return member m_TestEnum2
+
+    TestEnum2 = m_TestEnum2
+End Property
+Public Property Let TestEnum1(ByVal NewVal As TheTestEnum)
+'set member m_TestEnum1
+
+    m_TestEnum1 = NewVal
+    PropertyChanged "TestEnum1"
+End Property
+Public Property Let TestEnum2(ByVal NewVal As TheTestEnum)
+'set member m_TestEnum2
+
+    m_TestEnum2 = NewVal
+    PropertyChanged "TestEnum2"
+End Property
+
+Private Function IPerPropertyBrowsingVB_GetDisplayString(DispID As Long,
+ DisplayName As String) As Boolean
+'return a more friendly string than the the default enum variable name
+'remember we aren't limited to variable names here, so we can
+'use any normally invalid characters, such as spaces and semicolons.
+'(returning False let's the caller, ie.VB, do it's default implementation)
+
+    'if DispID is for property 'TestEnum2'
+    If DispID = m_DispID_TestEnum2 Then
+        'convert current property value to friendlier string
+        If m_TestEnum2 = tstEnumValue1 Then
+            DisplayName = "One"
+        
+        ElseIf m_TestEnum2 = tstEnumValue2 Then
+            DisplayName = "Two"
+        
+        Else
+            DisplayName = "Three"
+        
+        End If
+        
+        'return True to override the default implementation
+        IPerPropertyBrowsingVB_GetDisplayString = True
+        
+    End If
+End Function
+Private Function IPerPropertyBrowsingVB_GetPredefinedStrings(DispID As Long,
+ StringsOut() As String, CookiesOut() As Long) As Boolean
+'returns an array of strings to represent the property
+'names of the specified DispID
+'(returning False let's the caller, ie.VB, do it's default implementation)
+
+    'if DispID is for property 'TestEnum2'
+    If DispID = m_DispID_TestEnum2 Then
+        'resize arrays
+        ReDim StringsOut(3) As String
+        ReDim CookiesOut(3) As Long
+        
+        'put friendlier names &amp; values into arrays
+        StringsOut(0) = "Value 1"
+        CookiesOut(0) = tstEnumValue1
+        StringsOut(1) = "Value 2"
+        CookiesOut(1) = tstEnumValue2
+        StringsOut(2) = "Value 3"
+        CookiesOut(2) = tstEnumValue3
+
+        'NOTE: The CookiesOut array can contain any value. It is
+        'used to store numerical data alongside the string representation
+        'of the property. It is similar to the relationship between the
+        'ItemData and ListItem properties of a ListBox or ComboBox.
+
+        'return True to override the default implementation
+        IPerPropertyBrowsingVB_GetPredefinedStrings = True
+        
+    End If
+End Function
+Private Function IPerPropertyBrowsingVB_GetPredefinedValue(DispID As Long,
+ Cookie As Long, Value As Variant) As Boolean
+'convert the value we passed previously in 'GetPredefinedStrings' to
+'the actual property value.
+'(returning False let's the caller, ie.VB, do it's default implementation)
+
+    'if DispID is for property 'TestEnum2'
+    If DispID = m_DispID_TestEnum2 Then
+        'we stored the actual value of the enum
+        'in the cookies array during the call to
+        'GetPredefinedStrings', so we can just return the
+        'value in 'Cookie'
+        Value = Cookie
+
+        'return True to override the default implementation
+        IPerPropertyBrowsingVB_GetPredefinedValue = True
+        
+    End If
+End Function
+Private Sub UserControl_Initialize()
+    
+    'attach the new IPerPropertyBrowsing interface to this control
+    m_oPerProp.Attach Me
+    'cache the despatch identifiers
+    m_DispID_TestEnum2 = m_oPerProp.GetDispID("TestEnum2")
+End Sub
+Private Sub UserControl_InitProperties()
+
+    'initialise default property values
+    m_TestEnum1 = tstEnumValue1
+    m_TestEnum2 = tstEnumValue1
+End Sub
+Private Sub UserControl_ReadProperties(PropBag As PropertyBag)
+
+    'read properties from stash
+    With PropBag
+        m_TestEnum1 = .ReadProperty("TestEnum1", tstEnumValue1)
+        m_TestEnum2 = .ReadProperty("TestEnum2", tstEnumValue1)
+        
+    End With
+End Sub
+Private Sub UserControl_Terminate()
+    
+    'restore the original interface
+    m_oPerProp.Detach
+End Sub
+Private Sub UserControl_WriteProperties(PropBag As PropertyBag)
+
+    'write properties to stash
+    With PropBag
+        .WriteProperty "TestEnum1", m_TestEnum1, tstEnumValue1
+        .WriteProperty "TestEnum2", m_TestEnum2, tstEnumValue1
+        
+    End With
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">UserControl OLE Extensions</a>&#160;.&#160;<a href="article.html">Using IPerPropertyBrowse to Customise the Design Time Properties for a Control</a>&#160;.&#160;<a href="EX_Property_Browsing_in_VB.html">EX Property Browsing in VB</a>&#160;.&#160;Examples_Example1_ctlEnum.ctl</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/UserControl_OLE_Extensions/IPerPropertyBrowse/EX_Property_Browsing_in_VB_zip_Examples_Example1_ctlEnum_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:52 GMT -->
+</html>

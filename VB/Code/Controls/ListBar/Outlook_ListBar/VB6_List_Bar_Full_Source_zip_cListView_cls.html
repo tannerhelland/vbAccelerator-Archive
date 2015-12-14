@@ -1,0 +1,2562 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/ListBar/Outlook_ListBar/VB6_List_Bar_Full_Source_zip_cListView_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:52 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cListView.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cListView.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">ListBar</a>&#160;.&#160;<a href="article.html">vbAccelerator ListBar Control</a>&#160;.&#160;<a href="VB6_List_Bar_Full_Source.html">VB6 List Bar Full Source</a>&#160;.&#160;cListView.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_List_Bar_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 List Bar Control Binary</a> (44K)</p><p class="nav"><a href="VB5_List_Bar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 List Bar Demonstration</a> (39K)</p><p class="nav"><a href="VB5_List_Bar_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 List Bar Full Source</a> (136K)</p><p /><p class="nav"><a href="VB6_List_Bar_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 List Bar Control Binary</a> (45K)</p><p class="nav"><a href="VB6_List_Bar_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 List Bar Demonstration</a> (35K)</p><p class="nav"><a href="VB6_List_Bar_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 List Bar Full Source</a> (132K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:3809</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3809&amp;type=Zip&amp;title=VB6%20List%20Bar%20Full%20Source%2Ezip%5FcListView">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 4 / 7</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 6 / 7</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:21 January 2004</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />17 Feb 2003<br /><p class="update">Added Office XP highlighting style.</p><p class="update">Fixed two bugs in the cListBar class: ForeColor and HelpText
+ 	properties did not work correctly - thanks to Simon Horton.</p><p class="update">Added a method to the <i>cListBarItems</i> class to 
+	remove all items from a bar, and fixed an intermittent problem with 
+	removing the last item from a bar (item still showed and caused a crash 
+	if you clicked on it - thanks to Daniel).
+	this.</p><p class="update">Prevented BarClick events from firing when the ListBar was
+	resized - thanks to Billy Propes.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3771">vbAccelerator Visual Studio Style ToolBox ListBar</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11">vbAccelerator S-Grid Control</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cListView.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "cListView"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+
+' ===
+' cListView
+'
+' Implements a CustomDraw ListView using the API,
+' aimed primarily at the features required for an Outlook
+' style ListBar.
+'
+' Thanks:
+' - to Dan Litwin for his TreeView demonstrating a
+' whole pile of nice tricks and teqchniques, particularly
+' a working and workable CustomDraw implementation
+' - to Mike Gainer for demonstrating the IOLEInPlaceActiveObject
+' code
+' - to Matt Currland/Bill Storage for writing the OLEGuids TypeLib
+' and publishing the info about it to the VB world
+' - to VBNet for the ListView tricks section
+' - to MS/Jeffery. M Richter for Spy++
+'
+' SteveMac 1999 vbAccelerator.
+'
+' ===
+
+
+
+'
+ ===============================================================================
+==========================================================
+' CC and LV declares
+'
+ ===============================================================================
+==========================================================
+Private Const ICC_LISTVIEW_CLASSES = &amp;H1&amp; ' ' listview, header
+Private Const ODT_LISTVIEW = &amp;H102
+Private Const LVM_FIRST = &amp;H1000&amp;                   '' ListView messages
+Private Const LVN_FIRST = -100                     '' listview
+Private Const LVN_LAST = -199
+
+Private Declare Function InitCommonControlsEx Lib "Comctl32.dll" (icc As ICCEx)
+ As Long
+Private Declare Sub InitCommonControls Lib "Comctl32.dll" ()
+Private Type ICCEx
+    dwSize As Long          ' size of this structure
+    dwICC As Long           ' flags indicating which classes to be initialized
+End Type
+
+Private Const CCM_FIRST = &amp;H2000&amp;                   '// Common control shared
+ messages
+Private Const CCM_SETBKCOLOR = (CCM_FIRST + 1)         '// lParam is bkColor
+
+Private Type COLORSCHEME
+   dwSize As Long ';
+   clrBtnHighlight As Long ';       // highlight color
+   clrBtnShadow As Long ';          // shadow color
+End Type
+
+Private Const CCM_SETCOLORSCHEME = (CCM_FIRST + 2)     '// lParam is color
+ scheme
+Private Const CCM_GETCOLORSCHEME = (CCM_FIRST + 3)     '// fills in COLORSCHEME
+ pointed to by lParam
+Private Const CCM_GETDROPTARGET = (CCM_FIRST + 4)
+Private Const CCM_SETUNICODEFORMAT = (CCM_FIRST + 5)
+Private Const CCM_GETUNICODEFORMAT = (CCM_FIRST + 6)
+'#if (_WIN32_IE &gt;= 0x0500)
+'Private Const COMCTL32_VERSION = 5
+Private Const CCM_SETVERSION = (CCM_FIRST + 7)
+Private Const CCM_GETVERSION = (CCM_FIRST + 8)
+Private Const CCM_SETNOTIFYWINDOW = (CCM_FIRST + 9)    '// wParam == hwndParent.
+
+' Notification messages.
+Private Const NM_FIRST = 0
+Private Const NM_CLICK = (NM_FIRST - 2)
+Private Const NM_CUSTOMDRAW = (NM_FIRST - 12)
+Private Const NM_DBLCLK = (NM_FIRST - 3)
+Private Const NM_KILLFOCUS = (NM_FIRST - 8)
+Private Const NM_RCLICK = (NM_FIRST - 5)
+Private Const NM_RETURN = (NM_FIRST - 4)
+
+Private Type NMCUSTOMDRAW
+    hdr As NMHDR
+    dwDrawStage As Long
+    hdc As Long
+    rc As RECT
+    dwItemSpec As Long ' this is control specific, but it's how to specify an
+     item.  valid only with CDDS_ITEM bit set
+    uItemState As Long
+    lItemlParam As Long
+End Type
+
+' CustomDraw paint stages.
+Private Const CDDS_PREPAINT = &amp;H1
+Private Const CDDS_POSTPAINT = &amp;H2
+Private Const CDDS_PREERASE = &amp;H3
+Private Const CDDS_POSTERASE = &amp;H4
+Private Const CDDS_ITEMPREPAINT = (&amp;H10000 Or &amp;H1)
+Private Const CDDS_ITEMPOSTPAINT = (&amp;H10000 Or &amp;H2)
+Private Const CDDS_ITEM = &amp;H10000
+Private Const CDDS_SUBITEM = &amp;H20000
+
+' CustomDraw Item states. Only the ones we need.
+Private Const CDIS_CHECKED = &amp;H8
+Private Const CDIS_FOCUS = &amp;H10
+Private Const CDIS_HOT = &amp;H40
+
+' CustomDraw return values.
+Private Const CDRF_DODEFAULT = &amp;H0
+Private Const CDRF_NEWFONT = &amp;H2
+Private Const CDRF_SKIPDEFAULT = &amp;H4
+Private Const CDRF_NOTIFYPOSTPAINT = &amp;H10
+Private Const CDRF_NOTIFYITEMDRAW = &amp;H20
+Private Const CDRF_NOTIFYPOSTERASE = &amp;H40
+Private Const CDRF_NOTIFYSUBITEMDRAW = &amp;H20
+
+' Header control styles
+Private Const HDS_HOTTRACK = &amp;H4 ' v 4.70
+Private Const HDS_BUTTONS = &amp;H2
+
+
+'====== LISTVIEW CONTROL =====================================================
+
+' #ifndef NOLISTVIEW
+
+' #ifdef _WIN32
+
+Private Const WC_LISTVIEWA = "SysListView32"
+'private const WC_LISTVIEWW            L"SysListView32"
+
+#If UNICODE Then
+Private Const WC_LISTVIEW = WC_LISTVIEWW
+#Else
+Private Const WC_LISTVIEW = WC_LISTVIEWA
+#End If
+
+' begin_r_commctrl
+
+Private Const LVS_ICON = &amp;H0
+Private Const LVS_REPORT = &amp;H1
+Private Const LVS_SMALLICON = &amp;H2
+Private Const LVS_LIST = &amp;H3
+Private Const LVS_TYPEMASK = &amp;H3
+Private Const LVS_SINGLESEL = &amp;H4
+Private Const LVS_SHOWSELALWAYS = &amp;H8
+Private Const LVS_SORTASCENDING = &amp;H10
+Private Const LVS_SORTDESCENDING = &amp;H20
+Private Const LVS_SHAREIMAGELISTS = &amp;H40
+Private Const LVS_NOLABELWRAP = &amp;H80
+Private Const LVS_AUTOARRANGE = &amp;H100
+Private Const LVS_EDITLABELS = &amp;H200
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+Private Const LVS_OWNERDATA = &amp;H1000
+' #end If
+Private Const LVS_NOSCROLL = &amp;H2000
+
+Private Const LVS_TYPESTYLEMASK = &amp;HFC00
+
+Private Const LVS_ALIGNTOP = &amp;H0
+Private Const LVS_ALIGNLEFT = &amp;H800
+Private Const LVS_ALIGNMASK = &amp;HC00
+
+Private Const LVS_OWNERDRAWFIXED = &amp;H400
+Private Const LVS_NOCOLUMNHEADER = &amp;H4000
+Private Const LVS_NOSORTHEADER = &amp;H8000
+
+' end_r_commctrl
+
+' #if (_WIN32_IE &gt;= =&amp;H0400)
+Private Const LVM_SETUNICODEFORMAT = CCM_SETUNICODEFORMAT
+'private const ListView_SetUnicodeFormat(hwnd, fUnicode)  \
+'    (BOOL)SNDMSG((hwnd), LVM_SETUNICODEFORMAT, (WPARAM)(fUnicode), 0)
+
+Private Const LVM_GETUNICODEFORMAT = CCM_GETUNICODEFORMAT
+'private const ListView_GetUnicodeFormat(hwnd)  \
+'    (BOOL)SNDMSG((hwnd), LVM_GETUNICODEFORMAT, 0, 0)
+' #end If
+
+Private Const LVM_GETBKCOLOR = (LVM_FIRST + 0)
+'private const ListView_GetBkColor(hwnd)  \
+'    (COLORREF)SNDMSG((hwnd), LVM_GETBKCOLOR, 0, 0L)
+
+Private Const LVM_SETBKCOLOR = (LVM_FIRST + 1)
+'private const ListView_SetBkColor(hwnd, clrBk) \
+'    (BOOL)SNDMSG((hwnd), LVM_SETBKCOLOR, 0, (LPARAM)(COLORREF)(clrBk))
+
+Private Const LVM_GETIMAGELIST = (LVM_FIRST + 2)
+'private const ListView_GetImageList(hwnd, iImageList) \
+'    (HIMAGELIST)SNDMSG((hwnd), LVM_GETIMAGELIST, (WPARAM)(INT)(iImageList), 0L)
+
+Private Const LVSIL_NORMAL = 0
+Private Const LVSIL_SMALL = 1
+Private Const LVSIL_STATE = 2
+
+Private Const LVM_SETIMAGELIST = (LVM_FIRST + 3)
+'private const ListView_SetImageList(hwnd, himl, iImageList) \
+'    (HIMAGELIST)SNDMSG((hwnd), LVM_SETIMAGELIST, (WPARAM)(iImageList),
+ (LPARAM)(HIMAGELIST)(himl))
+
+Private Const LVM_GETITEMCOUNT = (LVM_FIRST + 4)
+'private const ListView_GetItemCount(hwnd) \
+'    (int)SNDMSG((hwnd), LVM_GETITEMCOUNT, 0, 0L)
+
+
+Private Const LVIF_TEXT = &amp;H1
+Private Const LVIF_IMAGE = &amp;H2
+Private Const LVIF_PARAM = &amp;H4
+Private Const LVIF_STATE = &amp;H8
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+Private Const LVIF_INDENT = &amp;H10
+Private Const LVIF_NORECOMPUTE = &amp;H800
+' #end If
+
+Private Const LVIS_FOCUSED = &amp;H1
+Private Const LVIS_SELECTED = &amp;H2
+Private Const LVIS_CUT = &amp;H4
+Private Const LVIS_DROPHILITED = &amp;H8
+Private Const LVIS_ACTIVATING = &amp;H20
+
+Private Const LVIS_OVERLAYMASK = &amp;HF00
+Private Const LVIS_STATEIMAGEMASK = &amp;HF000
+
+'private const INDEXTOSTATEIMAGEMASK(i) ((i) &lt;&lt; 12)
+
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+Private Const I_INDENTCALLBACK = (-1)
+'Private Const LV_ITEMA = LVITEMA
+'Private Const LV_ITEMW = LVITEMW
+' #else
+'private const tagLVITEMA    _LV_ITEMA
+'private const LVITEMA       LV_ITEMA
+'private const tagLVITEMW    _LV_ITEMW
+'private const LVITEMW       LV_ITEMW
+' #end If
+
+'private const LV_ITEM LVITEM
+
+'private const LVITEMA_V1_SIZE CCSIZEOF_STRUCT(LVITEMA, lParam)
+'private const LVITEMW_V1_SIZE CCSIZEOF_STRUCT(LVITEMW, lParam)
+
+#If UNICODE Then
+Private Type LVITEM
+    mask As Long
+    iItem As Long
+    iSubitem As Long
+    state As Long
+    stateMask As Long
+    pszText As Long
+    cchTextMax As Long
+    iImage As Long
+    lParam As Long
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+    iIndent As Long
+' #end If
+End Type
+#Else
+Private Type LVITEM
+    mask As Long
+    iItem As Long
+    iSubitem As Long
+    state As Long
+    stateMask As Long
+    pszText As String
+    cchTextMax As Long
+    iImage As Long
+    lParam As Long
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+    iIndent As Long
+' #end If
+End Type
+#End If
+Private Type LVITEM_LT
+   mask As Long
+   iItem As Long
+   iSubitem As Long
+   state As Long
+   stateMask As Long
+   pszText As Long
+   cchTextMax As Long
+   iImage As Long
+   lParam As Long
+   iIndent As Long
+End Type
+
+'private const LPSTR_TEXTCALLBACKW     ((LPWSTR)-1L)
+Private Const LPSTR_TEXTCALLBACKA = -1&amp;  '  ((LPSTR)-1L)
+#If UNICODE Then
+Private Const LPSTR_TEXTCALLBACK = LPSTR_TEXTCALLBACKW
+#Else
+Private Const LPSTR_TEXTCALLBACK = LPSTR_TEXTCALLBACKA
+#End If
+
+Private Const I_IMAGECALLBACK = (-1)
+
+Private Const LVM_GETITEMA = (LVM_FIRST + 5)
+Private Const LVM_GETITEMW = (LVM_FIRST + 75)
+#If UNICODE Then
+   Private Const LVM_GETITEM = LVM_GETITEMW
+#Else
+   Private Const LVM_GETITEM = LVM_GETITEMA
+#End If
+
+'private const ListView_GetItem(hwnd, pitem) \
+'    (BOOL)SNDMSG((hwnd), LVM_GETITEM, 0, (LPARAM)(LV_ITEM FAR*)(pitem))
+
+
+Private Const LVM_SETITEMA = (LVM_FIRST + 6)
+Private Const LVM_SETITEMW = (LVM_FIRST + 76)
+#If UNICODE Then
+Private Const LVM_SETITEM = LVM_SETITEMW
+#Else
+Private Const LVM_SETITEM = LVM_SETITEMA
+#End If
+
+'private const ListView_SetItem(hwnd, pitem) \
+'    (BOOL)SNDMSG((hwnd), LVM_SETITEM, 0, (LPARAM)(const LV_ITEM FAR*)(pitem))
+
+
+Private Const LVM_INSERTITEMA = (LVM_FIRST + 7)
+Private Const LVM_INSERTITEMW = (LVM_FIRST + 77)
+#If UNICODE Then
+Private Const LVM_INSERTITEM = LVM_INSERTITEMW
+#Else
+Private Const LVM_INSERTITEM = LVM_INSERTITEMA
+#End If
+'private const ListView_InsertItem(hwnd, pitem)   \
+'    (int)SNDMSG((hwnd), LVM_INSERTITEM, 0, (LPARAM)(const LV_ITEM FAR*)(pitem))
+
+
+Private Const LVM_DELETEITEM = (LVM_FIRST + 8)
+'private const ListView_DeleteItem(hwnd, i) \
+'    (BOOL)SNDMSG((hwnd), LVM_DELETEITEM, (WPARAM)(int)(i), 0L)
+
+
+Private Const LVM_DELETEALLITEMS = (LVM_FIRST + 9)
+'private const ListView_DeleteAllItems(hwnd) \
+'    (BOOL)SNDMSG((hwnd), LVM_DELETEALLITEMS, 0, 0L)
+
+
+Private Const LVM_GETCALLBACKMASK = (LVM_FIRST + 10)
+'private const ListView_GetCallbackMask(hwnd) \
+'    (BOOL)SNDMSG((hwnd), LVM_GETCALLBACKMASK, 0, 0)
+
+
+Private Const LVM_SETCALLBACKMASK = (LVM_FIRST + 11)
+'private const ListView_SetCallbackMask(hwnd, mask) \
+'    (BOOL)SNDMSG((hwnd), LVM_SETCALLBACKMASK, (WPARAM)(UINT)(mask), 0)
+
+
+Private Const LVNI_ALL = &amp;H0
+Private Const LVNI_FOCUSED = &amp;H1
+Private Const LVNI_SELECTED = &amp;H2
+Private Const LVNI_CUT = &amp;H4
+Private Const LVNI_DROPHILITED = &amp;H8
+
+Private Const LVNI_ABOVE = &amp;H100
+Private Const LVNI_BELOW = &amp;H200
+Private Const LVNI_TOLEFT = &amp;H400
+Private Const LVNI_TORIGHT = &amp;H800
+
+
+Private Const LVM_GETNEXTITEM = (LVM_FIRST + 12)
+'private const ListView_GetNextItem(hwnd, i, flags) \
+'    (int)SNDMSG((hwnd), LVM_GETNEXTITEM, (WPARAM)(int)(i), MAKELPARAM((flags),
+ 0))
+
+
+Private Const LVFI_PARAM = &amp;H1
+Private Const LVFI_STRING = &amp;H2
+Private Const LVFI_PARTIAL = &amp;H8
+Private Const LVFI_WRAP = &amp;H20
+Private Const LVFI_NEARESTXY = &amp;H40
+
+#If UNICODE Then
+Private Type LVFINDINFO
+    flags As Long
+    psz As Long
+    lParam As Long
+    pt As POINTAPI
+    vkDirection As Long
+End Type
+#Else
+Private Type LVFINDINFO
+    flags As Long
+    psz As String
+    lParam As Long
+    pt As POINTAPI
+    vkDirection As Long
+End Type
+#End If
+
+
+Private Const LVM_FINDITEMA = (LVM_FIRST + 13)
+Private Const LVM_FINDITEMW = (LVM_FIRST + 83)
+#If UNICODE Then
+Private Const LVM_FINDITEM = LVM_FINDITEMW
+#Else
+Private Const LVM_FINDITEM = LVM_FINDITEMA
+#End If
+
+'private const ListView_FindItem(hwnd, iStart, plvfi) \
+'    (int)SNDMSG((hwnd), LVM_FINDITEM, (WPARAM)(int)(iStart), (LPARAM)(const
+ LV_FINDINFO FAR*)(plvfi))
+
+Private Const LVIR_BOUNDS = 0
+Private Const LVIR_ICON = 1
+Private Const LVIR_LABEL = 2
+Private Const LVIR_SELECTBOUNDS = 3
+
+
+Private Const LVM_GETITEMRECT = (LVM_FIRST + 14)
+'private const ListView_GetItemRect(hwnd, i, prc, code) \
+'     (BOOL)SNDMSG((hwnd), LVM_GETITEMRECT, (WPARAM)(int)(i), \
+'           ((prc) ? (((RECT FAR *)(prc))-&gt;left = (code),(LPARAM)(RECT
+ FAR*)(prc)) : (LPARAM)(RECT FAR*)NULL))
+
+
+Private Const LVM_SETITEMPOSITION = (LVM_FIRST + 15)
+'private const ListView_SetItemPosition(hwndLV, i, x, y) \
+'    (BOOL)SNDMSG((hwndLV), LVM_SETITEMPOSITION, (WPARAM)(int)(i),
+ MAKELPARAM((x), (y)))
+
+
+Private Const LVM_GETITEMPOSITION = (LVM_FIRST + 16)
+'private const ListView_GetItemPosition(hwndLV, i, ppt) \
+'    (BOOL)SNDMSG((hwndLV), LVM_GETITEMPOSITION, (WPARAM)(int)(i),
+ (LPARAM)(POINT FAR*)(ppt))
+
+
+Private Const LVM_GETSTRINGWIDTHA = (LVM_FIRST + 17)
+Private Const LVM_GETSTRINGWIDTHW = (LVM_FIRST + 87)
+#If UNICODE Then
+Private Const LVM_GETSTRINGWIDTH = LVM_GETSTRINGWIDTHW
+#Else
+Private Const LVM_GETSTRINGWIDTH = LVM_GETSTRINGWIDTHA
+#End If
+
+'private const ListView_GetStringWidth(hwndLV, psz) \
+'    (int)SNDMSG((hwndLV), LVM_GETSTRINGWIDTH, 0, (LPARAM)(LPCTSTR)(psz))
+
+
+Private Const LVHT_NOWHERE = &amp;H1
+Private Const LVHT_ONITEMICON = &amp;H2
+Private Const LVHT_ONITEMLABEL = &amp;H4
+Private Const LVHT_ONITEMSTATEICON = &amp;H8
+Private Const LVHT_ONITEM = (LVHT_ONITEMICON Or LVHT_ONITEMLABEL Or
+ LVHT_ONITEMSTATEICON)
+
+Private Const LVHT_ABOVE = &amp;H8
+Private Const LVHT_BELOW = &amp;H10
+Private Const LVHT_TORIGHT = &amp;H20
+Private Const LVHT_TOLEFT = &amp;H40
+
+Private Type LVHITTESTINFO
+    pt As POINTAPI
+    flags As Long
+    iItem As Long
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+      iSubitem As Long ';    ' this is was NOT in win95.  valid only for
+       LVM_SUBITEMHITTEST
+' #end If
+End Type
+
+Private Const LVM_HITTEST = (LVM_FIRST + 18)
+'private const ListView_HitTest(hwndLV, pinfo)
+'    (int)SNDMSG((hwndLV), LVM_HITTEST, 0, (LPARAM)(LV_HITTESTINFO FAR*)(pinfo))
+
+
+Private Const LVM_ENSUREVISIBLE = (LVM_FIRST + 19)
+'private const ListView_EnsureVisible(hwndLV, i, fPartialOK) \
+'    (BOOL)SNDMSG((hwndLV), LVM_ENSUREVISIBLE, (WPARAM)(int)(i),
+ MAKELPARAM((fPartialOK), 0))
+
+
+Private Const LVM_SCROLL = (LVM_FIRST + 20)
+'private const ListView_Scroll(hwndLV, dx, dy) \
+'    (BOOL)SNDMSG((hwndLV), LVM_SCROLL, (WPARAM)(int)dx, (LPARAM)(int)dy)
+
+
+Private Const LVM_REDRAWITEMS = (LVM_FIRST + 21)
+'private const ListView_RedrawItems(hwndLV, iFirst, iLast) \
+'    (BOOL)SNDMSG((hwndLV), LVM_REDRAWITEMS, (WPARAM)(int)iFirst,
+ (LPARAM)(int)iLast)
+
+
+Private Const LVA_DEFAULT = &amp;H0
+Private Const LVA_ALIGNLEFT = &amp;H1
+Private Const LVA_ALIGNTOP = &amp;H2
+Private Const LVA_SNAPTOGRID = &amp;H5
+
+Private Const LVM_ARRANGE = (LVM_FIRST + 22)
+'private const ListView_Arrange(hwndLV, code) \
+'    (BOOL)SNDMSG((hwndLV), LVM_ARRANGE, (WPARAM)(UINT)(code), 0L)
+
+
+Private Const LVM_EDITLABELA = (LVM_FIRST + 23)
+Private Const LVM_EDITLABELW = (LVM_FIRST + 118)
+#If UNICODE Then
+Private Const LVM_EDITLABEL = LVM_EDITLABELW
+#Else
+Private Const LVM_EDITLABEL = LVM_EDITLABELA
+#End If
+
+'private const ListView_EditLabel(hwndLV, i) \
+'    (HWND)SNDMSG((hwndLV), LVM_EDITLABEL, (WPARAM)(int)(i), 0L)
+
+
+Private Const LVM_GETEDITCONTROL = (LVM_FIRST + 24)
+'private const ListView_GetEditControl(hwndLV) \
+'    (HWND)SNDMSG((hwndLV), LVM_GETEDITCONTROL, 0, 0L)
+
+
+
+#If UNICODE Then
+Private Type LVCOLUMN
+   mask As Long
+   fmt As Long
+   cx As Long
+   pszText As Long
+   cchTextMax As Long
+   iSubitem As Long
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+   iImage As Long
+   iOrder As Long
+' #end If
+End Type
+#Else
+Private Type LVCOLUMN
+   mask As Long
+   fmt As Long
+   cx As Long
+   pszText As String
+   cchTextMax As Long
+   iSubitem As Long
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+   iImage As Long
+   iOrder As Long
+' #end If
+End Type
+#End If
+
+
+Private Const LVCF_FMT = &amp;H1
+Private Const LVCF_WIDTH = &amp;H2
+Private Const LVCF_TEXT = &amp;H4
+Private Const LVCF_SUBITEM = &amp;H8
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+Private Const LVCF_IMAGE = &amp;H10
+Private Const LVCF_ORDER = &amp;H20
+' #end If
+
+Private Const LVCFMT_LEFT = &amp;H0
+Private Const LVCFMT_RIGHT = &amp;H1
+Private Const LVCFMT_CENTER = &amp;H2
+Private Const LVCFMT_JUSTIFYMASK = &amp;H3
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+Private Const LVCFMT_IMAGE = &amp;H800
+Private Const LVCFMT_BITMAP_ON_RIGHT = &amp;H1000
+Private Const LVCFMT_COL_HAS_IMAGES = &amp;H8000
+' #end If
+
+Private Const LVM_GETCOLUMNA = (LVM_FIRST + 25)
+Private Const LVM_GETCOLUMNW = (LVM_FIRST + 95)
+#If UNICODE Then
+Private Const LVM_GETCOLUMN = LVM_GETCOLUMNW
+#Else
+Private Const LVM_GETCOLUMN = LVM_GETCOLUMNA
+#End If
+
+'private const ListView_GetColumn(hwnd, iCol, pcol) \
+'    (BOOL)SNDMSG((hwnd), LVM_GETCOLUMN, (WPARAM)(int)(iCol),
+ (LPARAM)(LV_COLUMN FAR*)(pcol))
+
+
+Private Const LVM_SETCOLUMNA = (LVM_FIRST + 26)
+Private Const LVM_SETCOLUMNW = (LVM_FIRST + 96)
+#If UNICODE Then
+Private Const LVM_SETCOLUMN = LVM_SETCOLUMNW
+#Else
+Private Const LVM_SETCOLUMN = LVM_SETCOLUMNA
+#End If
+
+'private const ListView_SetColumn(hwnd, iCol, pcol) \
+'    (BOOL)SNDMSG((hwnd), LVM_SETCOLUMN, (WPARAM)(int)(iCol), (LPARAM)(const
+ LV_COLUMN FAR*)(pcol))
+
+
+Private Const LVM_INSERTCOLUMNA = (LVM_FIRST + 27)
+Private Const LVM_INSERTCOLUMNW = (LVM_FIRST + 97)
+#If UNICODE Then
+Private Const LVM_INSERTCOLUMN = LVM_INSERTCOLUMNW
+#Else
+Private Const LVM_INSERTCOLUMN = LVM_INSERTCOLUMNA
+#End If
+
+'private const ListView_InsertColumn(hwnd, iCol, pcol) \
+'    (int)SNDMSG((hwnd), LVM_INSERTCOLUMN, (WPARAM)(int)(iCol), (LPARAM)(const
+ LV_COLUMN FAR*)(pcol))
+
+
+Private Const LVM_DELETECOLUMN = (LVM_FIRST + 28)
+'private const ListView_DeleteColumn(hwnd, iCol) \
+'    (BOOL)SNDMSG((hwnd), LVM_DELETECOLUMN, (WPARAM)(int)(iCol), 0)
+
+
+Private Const LVM_GETCOLUMNWIDTH = (LVM_FIRST + 29)
+'private const ListView_GetColumnWidth(hwnd, iCol) \
+'    (int)SNDMSG((hwnd), LVM_GETCOLUMNWIDTH, (WPARAM)(int)(iCol), 0)
+
+
+Private Const LVSCW_AUTOSIZE = -1
+Private Const LVSCW_AUTOSIZE_USEHEADER = -2
+Private Const LVM_SETCOLUMNWIDTH = (LVM_FIRST + 30)
+
+'private const ListView_SetColumnWidth(hwnd, iCol, cx) \
+'    (BOOL)SNDMSG((hwnd), LVM_SETCOLUMNWIDTH, (WPARAM)(int)(iCol),
+ MAKELPARAM((cx), 0))
+
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+Private Const LVM_GETHEADER = (LVM_FIRST + 31)
+'private const ListView_GetHeader(hwnd)\
+'    (HWND)SNDMSG((hwnd), LVM_GETHEADER, 0, 0L)
+' #end If
+
+Private Const LVM_CREATEDRAGIMAGE = (LVM_FIRST + 33)
+'private const ListView_CreateDragImage(hwnd, i, lpptUpLeft) \
+'    (HIMAGELIST)SNDMSG((hwnd), LVM_CREATEDRAGIMAGE, (WPARAM)(int)(i),
+ (LPARAM)(LPPOINT)(lpptUpLeft))
+
+
+Private Const LVM_GETVIEWRECT = (LVM_FIRST + 34)
+'private const ListView_GetViewRect(hwnd, prc) \
+'    (BOOL)SNDMSG((hwnd), LVM_GETVIEWRECT, 0, (LPARAM)(RECT FAR*)(prc))
+
+
+Private Const LVM_GETTEXTCOLOR = (LVM_FIRST + 35)
+'private const ListView_GetTextColor(hwnd)  \
+'    (COLORREF)SNDMSG((hwnd), LVM_GETTEXTCOLOR, 0, 0L)
+
+
+Private Const LVM_SETTEXTCOLOR = (LVM_FIRST + 36)
+'private const ListView_SetTextColor(hwnd, clrText) \
+'    (BOOL)SNDMSG((hwnd), LVM_SETTEXTCOLOR, 0, (LPARAM)(COLORREF)(clrText))
+
+
+Private Const LVM_GETTEXTBKCOLOR = (LVM_FIRST + 37)
+'private const ListView_GetTextBkColor(hwnd)  \
+'    (COLORREF)SNDMSG((hwnd), LVM_GETTEXTBKCOLOR, 0, 0L)
+
+
+Private Const LVM_SETTEXTBKCOLOR = (LVM_FIRST + 38)
+'private const ListView_SetTextBkColor(hwnd, clrTextBk) \
+'    (BOOL)SNDMSG((hwnd), LVM_SETTEXTBKCOLOR, 0, (LPARAM)(COLORREF)(clrTextBk))
+
+
+Private Const LVM_GETTOPINDEX = (LVM_FIRST + 39)
+'private const ListView_GetTopIndex(hwndLV) \
+'    (int)SNDMSG((hwndLV), LVM_GETTOPINDEX, 0, 0)
+
+
+Private Const LVM_GETCOUNTPERPAGE = (LVM_FIRST + 40)
+'private const ListView_GetCountPerPage(hwndLV) \
+'    (int)SNDMSG((hwndLV), LVM_GETCOUNTPERPAGE, 0, 0)
+
+
+Private Const LVM_GETORIGIN = (LVM_FIRST + 41)
+'private const ListView_GetOrigin(hwndLV, ppt) \
+'    (BOOL)SNDMSG((hwndLV), LVM_GETORIGIN, (WPARAM)0, (LPARAM)(POINT FAR*)(ppt))
+
+
+Private Const LVM_UPDATE = (LVM_FIRST + 42)
+'private const ListView_Update(hwndLV, i) \
+'    (BOOL)SNDMSG((hwndLV), LVM_UPDATE, (WPARAM)i, 0L)
+
+
+Private Const LVM_SETITEMSTATE = (LVM_FIRST + 43)
+'private const ListView_SetItemState(hwndLV, i, data, mask) \
+'{ LV_ITEM _ms_lvi;\
+'  _ms_lvi.stateMask = mask;\
+'  _ms_lvi.state = data;\
+'  SNDMSG((hwndLV), LVM_SETITEMSTATE, (WPARAM)i, (LPARAM)(LV_ITEM FAR
+ *)&amp;_ms_lvi);\
+'}
+
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+'private const ListView_SetCheckState(hwndLV, i, fCheck) \
+'  ListView_SetItemState(hwndLV, i, INDEXTOSTATEIMAGEMASK((fCheck)?2:1),
+ LVIS_STATEIMAGEMASK)
+' #end If
+
+Private Const LVM_GETITEMSTATE = (LVM_FIRST + 44)
+'private const ListView_GetItemState(hwndLV, i, mask) \
+'   (UINT)SNDMSG((hwndLV), LVM_GETITEMSTATE, (WPARAM)i, (LPARAM)mask)
+
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+'private const ListView_GetCheckState(hwndLV, i) \
+'   ((((UINT)(SNDMSG((hwndLV), LVM_GETITEMSTATE, (WPARAM)i,
+ LVIS_STATEIMAGEMASK))) &gt;&gt; 12) -1)
+' #end If
+
+Private Const LVM_GETITEMTEXTA = (LVM_FIRST + 45)
+Private Const LVM_GETITEMTEXTW = (LVM_FIRST + 115)
+
+#If UNICODE Then
+Private Const LVM_GETITEMTEXT = LVM_GETITEMTEXTW
+#Else
+Private Const LVM_GETITEMTEXT = LVM_GETITEMTEXTA
+#End If
+
+'private const ListView_GetItemText(hwndLV, i, iSubItem_, pszText_,
+ cchTextMax_) \
+'{ LV_ITEM _ms_lvi;\
+'  _ms_lvi.iSubItem = iSubItem_;\
+'  _ms_lvi.cchTextMax = cchTextMax_;\
+'  _ms_lvi.pszText = pszText_;\
+'  SNDMSG((hwndLV), LVM_GETITEMTEXT, (WPARAM)i, (LPARAM)(LV_ITEM FAR
+ *)&amp;_ms_lvi);\
+'}
+
+
+Private Const LVM_SETITEMTEXTA = (LVM_FIRST + 46)
+Private Const LVM_SETITEMTEXTW = (LVM_FIRST + 116)
+
+#If UNICODE Then
+Private Const LVM_SETITEMTEXT = LVM_SETITEMTEXTW
+#Else
+Private Const LVM_SETITEMTEXT = LVM_SETITEMTEXTA
+#End If
+
+'private const ListView_SetItemText(hwndLV, i, iSubItem_, pszText_) \
+'{ LV_ITEM _ms_lvi;\
+'  _ms_lvi.iSubItem = iSubItem_;\
+'  _ms_lvi.pszText = pszText_;\
+'  SNDMSG((hwndLV), LVM_SETITEMTEXT, (WPARAM)i, (LPARAM)(LV_ITEM FAR
+ *)&amp;_ms_lvi);\
+'}
+
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+' these flags only apply to LVS_OWNERDATA listviews in report or list mode
+Private Const LVSICF_NOINVALIDATEALL = &amp;H1
+Private Const LVSICF_NOSCROLL = &amp;H2
+' #end If
+
+Private Const LVM_SETITEMCOUNT = (LVM_FIRST + 47)
+'private const ListView_SetItemCount(hwndLV, cItems) \
+'  SNDMSG((hwndLV), LVM_SETITEMCOUNT, (WPARAM)cItems, 0)
+
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+'private const ListView_SetItemCountEx(hwndLV, cItems, dwFlags) \
+'  SNDMSG((hwndLV), LVM_SETITEMCOUNT, (WPARAM)cItems, (LPARAM)dwFlags)
+' #end If
+
+'private typedef int (CALLBACK *PFNLVCOMPARE)(LPARAM, LPARAM, LPARAM);
+
+
+Private Const LVM_SORTITEMS = (LVM_FIRST + 48)
+'private const ListView_SortItems(hwndLV, _pfnCompare, _lPrm) \
+'  (BOOL)SNDMSG((hwndLV), LVM_SORTITEMS, (WPARAM)(LPARAM)_lPrm, \
+'  (LPARAM)(PFNLVCOMPARE)_pfnCompare)
+
+
+Private Const LVM_SETITEMPOSITION32 = (LVM_FIRST + 49)
+'private const ListView_SetItemPosition32(hwndLV, i, x0, y0) \
+'{   POINT ptNewPos; \
+'    ptNewPos.x = x0; ptNewPos.y = y0; \
+'    SNDMSG((hwndLV), LVM_SETITEMPOSITION32, (WPARAM)(int)(i),
+ (LPARAM)&amp;ptNewPos); \
+'}
+
+
+Private Const LVM_GETSELECTEDCOUNT = (LVM_FIRST + 50)
+'private const ListView_GetSelectedCount(hwndLV) \
+'    (UINT)SNDMSG((hwndLV), LVM_GETSELECTEDCOUNT, 0, 0L)
+
+
+Private Const LVM_GETITEMSPACING = (LVM_FIRST + 51)
+'private const ListView_GetItemSpacing(hwndLV, fSmall) \
+'        (DWORD)SNDMSG((hwndLV), LVM_GETITEMSPACING, fSmall, 0L)
+
+
+Private Const LVM_GETISEARCHSTRINGA = (LVM_FIRST + 52)
+Private Const LVM_GETISEARCHSTRINGW = (LVM_FIRST + 117)
+
+#If UNICODE Then
+Private Const LVM_GETISEARCHSTRING = LVM_GETISEARCHSTRINGW
+#Else
+Private Const LVM_GETISEARCHSTRING = LVM_GETISEARCHSTRINGA
+#End If
+
+'private const ListView_GetISearchString(hwndLV, lpsz) \
+'        (BOOL)SNDMSG((hwndLV), LVM_GETISEARCHSTRING, 0, (LPARAM)(LPTSTR)lpsz)
+
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+Private Const LVM_SETICONSPACING = (LVM_FIRST + 53)
+' -1 for cx and cy means we'll use the default (system settings)
+' 0 for cx or cy means use the current setting (allows you to change just one
+ param)
+'private const ListView_SetIconSpacing(hwndLV, cx, cy) \
+'        (DWORD)SNDMSG((hwndLV), LVM_SETICONSPACING, 0, MAKELONG(cx,cy))
+
+
+Private Const LVM_SETEXTENDEDLISTVIEWSTYLE = (LVM_FIRST + 54)   ' optional
+ wParam == mask
+'private const ListView_SetExtendedListViewStyle(hwndLV, dw)\
+'        (DWORD)SNDMSG((hwndLV), LVM_SETEXTENDEDLISTVIEWSTYLE, 0, dw)
+' #if (_WIN32_IE &gt;= =&amp;H0400)
+'private const ListView_SetExtendedListViewStyleEx(hwndLV, dwMask, dw)\
+'        (DWORD)SNDMSG((hwndLV), LVM_SETEXTENDEDLISTVIEWSTYLE, dwMask, dw)
+' #end If
+
+Private Const LVM_GETEXTENDEDLISTVIEWSTYLE = (LVM_FIRST + 55)
+'private const ListView_GetExtendedListViewStyle(hwndLV)\
+'        (DWORD)SNDMSG((hwndLV), LVM_GETEXTENDEDLISTVIEWSTYLE, 0, 0)
+
+Private Const LVS_EX_GRIDLINES = &amp;H1
+Private Const LVS_EX_SUBITEMIMAGES = &amp;H2
+Private Const LVS_EX_CHECKBOXES = &amp;H4
+Private Const LVS_EX_TRACKSELECT = &amp;H8
+Private Const LVS_EX_HEADERDRAGDROP = &amp;H10
+Private Const LVS_EX_FULLROWSELECT = &amp;H20         ' applies to report mode only
+Private Const LVS_EX_ONECLICKACTIVATE = &amp;H40
+Private Const LVS_EX_TWOCLICKACTIVATE = &amp;H80
+' #if (_WIN32_IE &gt;= =&amp;H0400)
+Private Const LVS_EX_FLATSB = &amp;H100
+Private Const LVS_EX_REGIONAL = &amp;H200
+Private Const LVS_EX_INFOTIP = &amp;H400              ' listview does InfoTips for
+ you
+Private Const LVS_EX_UNDERLINEHOT = &amp;H800
+Private Const LVS_EX_UNDERLINECOLD = &amp;H1000
+Private Const LVS_EX_MULTIWORKAREAS = &amp;H2000
+' #end If
+
+' #if (_WIN32_IE &gt;= =&amp;H0500)
+Private Const LVS_EX_LABELTIP = &amp;H4000            ' listview unfolds partly
+ hidden labels if it does not have infotip text
+' #end If ' End (_WIN32_IE &gt;= =&amp;H0500)
+
+Private Const LVM_GETSUBITEMRECT = (LVM_FIRST + 56)
+'private const ListView_GetSubItemRect(hwnd, iItem, iSubItem, code, prc) \
+'        (BOOL)SNDMSG((hwnd), LVM_GETSUBITEMRECT, (WPARAM)(int)(iItem), \
+'                ((prc) ? ((((LPRECT)(prc))-&gt;top = iSubItem),
+ (((LPRECT)(prc))-&gt;left = code), (LPARAM)(prc)) : (LPARAM)(LPRECT)NULL))
+
+Private Const LVM_SUBITEMHITTEST = (LVM_FIRST + 57)
+'private const ListView_SubItemHitTest(hwnd, plvhti) \
+'        (int)SNDMSG((hwnd), LVM_SUBITEMHITTEST, 0,
+ (LPARAM)(LPLVHITTESTINFO)(plvhti))
+
+Private Const LVM_SETCOLUMNORDERARRAY = (LVM_FIRST + 58)
+'private const ListView_SetColumnOrderArray(hwnd, iCount, pi) \
+'        (BOOL)SNDMSG((hwnd), LVM_SETCOLUMNORDERARRAY, (WPARAM)iCount,
+ (LPARAM)(LPINT)pi)
+
+Private Const LVM_GETCOLUMNORDERARRAY = (LVM_FIRST + 59)
+'private const ListView_GetColumnOrderArray(hwnd, iCount, pi) \
+'        (BOOL)SNDMSG((hwnd), LVM_GETCOLUMNORDERARRAY, (WPARAM)iCount,
+ (LPARAM)(LPINT)pi)
+
+Private Const LVM_SETHOTITEM = (LVM_FIRST + 60)
+'private const ListView_SetHotItem(hwnd, i) \
+'        (int)SNDMSG((hwnd), LVM_SETHOTITEM, (WPARAM)i, 0)
+
+Private Const LVM_GETHOTITEM = (LVM_FIRST + 61)
+'private const ListView_GetHotItem(hwnd) \
+'        (int)SNDMSG((hwnd), LVM_GETHOTITEM, 0, 0)
+
+Private Const LVM_SETHOTCURSOR = (LVM_FIRST + 62)
+'private const ListView_SetHotCursor(hwnd, hcur) \
+'        (HCURSOR)SNDMSG((hwnd), LVM_SETHOTCURSOR, 0, (LPARAM)hcur)
+
+Private Const LVM_GETHOTCURSOR = (LVM_FIRST + 63)
+'private const ListView_GetHotCursor(hwnd) \
+'        (HCURSOR)SNDMSG((hwnd), LVM_GETHOTCURSOR, 0, 0)
+
+Private Const LVM_APPROXIMATEVIEWRECT = (LVM_FIRST + 64)
+'private const ListView_ApproximateViewRect(hwnd, iWidth, iHeight, iCount) \
+'        (DWORD)SNDMSG((hwnd), LVM_APPROXIMATEVIEWRECT, iCount,
+ MAKELPARAM(iWidth, iHeight))
+' #end If     ' _WIN32_IE &gt;= =&amp;H0300
+
+' #if (_WIN32_IE &gt;= =&amp;H0400)
+
+Private Const LV_MAX_WORKAREAS = 16
+Private Const LVM_SETWORKAREAS = (LVM_FIRST + 65)
+'private const ListView_SetWorkAreas(hwnd, nWorkAreas, prc) \
+'    (BOOL)SNDMSG((hwnd), LVM_SETWORKAREAS, (WPARAM)(int)nWorkAreas,
+ (LPARAM)(RECT FAR*)(prc))
+
+Private Const LVM_GETWORKAREAS = (LVM_FIRST + 70)
+'private const ListView_GetWorkAreas(hwnd, nWorkAreas, prc) \
+'    (BOOL)SNDMSG((hwnd), LVM_GETWORKAREAS, (WPARAM)(int)nWorkAreas,
+ (LPARAM)(RECT FAR*)(prc))
+
+
+Private Const LVM_GETNUMBEROFWORKAREAS = (LVM_FIRST + 73)
+'private const ListView_GetNumberOfWorkAreas(hwnd, pnWorkAreas) \
+'    (BOOL)SNDMSG((hwnd), LVM_GETNUMBEROFWORKAREAS, 0, (LPARAM)(UINT
+ *)(pnWorkAreas))
+
+
+Private Const LVM_GETSELECTIONMARK = (LVM_FIRST + 66)
+'private const ListView_GetSelectionMark(hwnd) \
+'    (int)SNDMSG((hwnd), LVM_GETSELECTIONMARK, 0, 0)
+
+Private Const LVM_SETSELECTIONMARK = (LVM_FIRST + 67)
+'private const ListView_SetSelectionMark(hwnd, i) \
+'    (int)SNDMSG((hwnd), LVM_SETSELECTIONMARK, 0, (LPARAM)i)
+
+Private Const LVM_SETHOVERTIME = (LVM_FIRST + 71)
+'private const ListView_SetHoverTime(hwndLV, dwHoverTimeMs)\
+'        (DWORD)SendMessage((hwndLV), LVM_SETHOVERTIME, 0, dwHoverTimeMs)
+
+Private Const LVM_GETHOVERTIME = (LVM_FIRST + 72)
+'private const ListView_GetHoverTime(hwndLV)\
+'        (DWORD)SendMessage((hwndLV), LVM_GETHOVERTIME, 0, 0)
+
+Private Const LVM_SETTOOLTIPS = (LVM_FIRST + 74)
+'private const ListView_SetToolTips(hwndLV, hwndNewHwnd)\
+'        (HWND)SendMessage((hwndLV), LVM_SETTOOLTIPS, hwndNewHwnd, 0)
+
+Private Const LVM_GETTOOLTIPS = (LVM_FIRST + 78)
+'private const ListView_GetToolTips(hwndLV)\
+'        (HWND)SendMessage((hwndLV), LVM_GETTOOLTIPS, 0, 0)
+
+
+Private Const LVM_SORTITEMSEX = (LVM_FIRST + 81)
+'private const ListView_SortItemsEx(hwndLV, _pfnCompare, _lPrm) \
+'  (BOOL)SNDMSG((hwndLV), LVM_SORTITEMSEX, (WPARAM)(LPARAM)_lPrm,
+ (LPARAM)(PFNLVCOMPARE)_pfnCompare)
+
+#If UNICODE Then
+Private Type LVBKIMAGE
+    ulFlags As Long ';              ' LVBKIF_*
+    hbm As Long
+    pszImage As Long
+    cchImageMax As Long
+    xOffsetPercent As Long
+    yOffsetPercent As Long
+End Type
+#Else
+Private Type LVBKIMAGE
+    ulFlags As Long ';              ' LVBKIF_*
+    hbm As Long
+    pszImage As String
+    cchImageMax As Long
+    xOffsetPercent As Long
+    yOffsetPercent As Long
+End Type
+#End If
+
+Private Const LVBKIF_SOURCE_NONE = &amp;H0
+Private Const LVBKIF_SOURCE_HBITMAP = &amp;H1
+Private Const LVBKIF_SOURCE_URL = &amp;H2
+Private Const LVBKIF_SOURCE_MASK = &amp;H3
+Private Const LVBKIF_STYLE_NORMAL = &amp;H0
+Private Const LVBKIF_STYLE_TILE = &amp;H10
+Private Const LVBKIF_STYLE_MASK = &amp;H10
+
+Private Const LVM_SETBKIMAGEA = (LVM_FIRST + 68)
+Private Const LVM_SETBKIMAGEW = (LVM_FIRST + 138)
+Private Const LVM_GETBKIMAGEA = (LVM_FIRST + 69)
+Private Const LVM_GETBKIMAGEW = (LVM_FIRST + 139)
+
+#If UNICODE Then
+Private Const LVM_SETBKIMAGE = LVM_SETBKIMAGEW
+Private Const LVM_GETBKIMAGE = LVM_GETBKIMAGEW
+#Else
+Private Const LVM_SETBKIMAGE = LVM_SETBKIMAGEA
+Private Const LVM_GETBKIMAGE = LVM_GETBKIMAGEA
+#End If
+
+
+'private const ListView_SetBkImage(hwnd, plvbki) \
+'    (BOOL)SNDMSG((hwnd), LVM_SETBKIMAGE, 0, (LPARAM)plvbki)
+
+'private const ListView_GetBkImage(hwnd, plvbki) \
+'    (BOOL)SNDMSG((hwnd), LVM_GETBKIMAGE, 0, (LPARAM)plvbki)
+
+
+' #end If     ' _WIN32_IE &gt;= =&amp;H0400
+
+' #end If
+
+Private Type NMLISTVIEW
+    hdr As NMHDR
+    iItem As Long
+    iSubitem As Long
+    uNewState As Long
+    uOldState As Long
+    uChanged As Long
+    ptAction As POINTAPI
+    lParam As Long
+End Type
+
+
+' #if (_WIN32_IE &gt;= =&amp;H400)
+' NMITEMACTIVATE is used instead of NMLISTVIEW in IE &gt;= =&amp;H400
+' therefore all the fields are the same except for extra uKeyFlags
+' they are used to store key flags at the time of the single click with
+' delayed activation - because by the time the timer goes off a user may
+' not hold the keys (shift, ctrl) any more
+Private Type NMITEMACTIVATE
+    hdr As NMHDR
+    iItem As Long
+    iSubitem As Long
+    uNewState As Long
+    uOldState As Long
+    uChanged As Long
+    ptAction As POINTAPI
+    lParam As Long
+    uKeyFlags As Long
+End Type
+
+' key flags stored in uKeyFlags
+Private Const LVKF_ALT = &amp;H1
+Private Const LVKF_CONTROL = &amp;H2
+Private Const LVKF_SHIFT = &amp;H4
+' #end If '(_WIN32_IE &gt;= =&amp;H0400)
+
+
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+'private const NMLVCUSTOMDRAW_V3_SIZE CCSIZEOF_STRUCT(NMLVCUSTOMDRW, clrTextBk)
+
+Private Type NMLVCUSTOMDRAW
+    nmcd As NMCUSTOMDRAW
+    clrText As Long
+    clrTextBk As Long
+' #if (_WIN32_IE &gt;= =&amp;H0400)
+    iSubitem As Long
+' #end If
+End Type
+
+Private Type NMLVCACHEHINT
+    hdr As NMHDR
+    iFrom As Long
+    iTo As Long
+End Type
+
+Private Type NMLVFINDITEM
+    hdr As NMHDR
+    iStart As Long
+    lvfi As LVFINDINFO
+End Type
+
+Private Type NMLVODSTATECHANGE
+    hdr As NMHDR
+    iFrom As Long
+    iTo As Long
+    uNewState As Long
+    uOldState As Long
+End Type
+
+' #end If     ' _WIN32_IE &gt;= =&amp;H0300
+
+
+Private Const LVN_ITEMCHANGING = (LVN_FIRST - 0)
+Private Const LVN_ITEMCHANGED = (LVN_FIRST - 1)
+Private Const LVN_INSERTITEM = (LVN_FIRST - 2)
+Private Const LVN_DELETEITEM = (LVN_FIRST - 3)
+Private Const LVN_DELETEALLITEMS = (LVN_FIRST - 4)
+Private Const LVN_BEGINLABELEDITA = (LVN_FIRST - 5)
+Private Const LVN_BEGINLABELEDITW = (LVN_FIRST - 75)
+Private Const LVN_ENDLABELEDITA = (LVN_FIRST - 6)
+Private Const LVN_ENDLABELEDITW = (LVN_FIRST - 76)
+Private Const LVN_COLUMNCLICK = (LVN_FIRST - 8)
+Private Const LVN_BEGINDRAG = (LVN_FIRST - 9)
+Private Const LVN_BEGINRDRAG = (LVN_FIRST - 11)
+
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+Private Const LVN_ODCACHEHINT = (LVN_FIRST - 13)
+Private Const LVN_ODFINDITEMA = (LVN_FIRST - 52)
+Private Const LVN_ODFINDITEMW = (LVN_FIRST - 79)
+
+Private Const LVN_ITEMACTIVATE = (LVN_FIRST - 14)
+Private Const LVN_ODSTATECHANGED = (LVN_FIRST - 15)
+
+#If UNICODE Then
+Private Const LVN_ODFINDITEM = LVN_ODFINDITEMW
+#Else
+Private Const LVN_ODFINDITEM = LVN_ODFINDITEMA
+#End If
+' #end If     ' _WIN32_IE &gt;= =&amp;H0300
+
+
+' #if (_WIN32_IE &gt;= =&amp;H0400)
+Private Const LVN_HOTTRACK = (LVN_FIRST - 21)
+' #end If
+
+Private Const LVN_GETDISPINFOA = (LVN_FIRST - 50)
+Private Const LVN_GETDISPINFOW = (LVN_FIRST - 77)
+Private Const LVN_SETDISPINFOA = (LVN_FIRST - 51)
+Private Const LVN_SETDISPINFOW = (LVN_FIRST - 78)
+
+#If UNICODE Then
+Private Const LVN_BEGINLABELEDIT = LVN_BEGINLABELEDITW
+Private Const LVN_ENDLABELEDIT = LVN_ENDLABELEDITW
+Private Const LVN_GETDISPINFO = LVN_GETDISPINFOW
+Private Const LVN_SETDISPINFO = LVN_SETDISPINFOW
+#Else
+Private Const LVN_BEGINLABELEDIT = LVN_BEGINLABELEDITA
+Private Const LVN_ENDLABELEDIT = LVN_ENDLABELEDITA
+Private Const LVN_GETDISPINFO = LVN_GETDISPINFOA
+Private Const LVN_SETDISPINFO = LVN_SETDISPINFOA
+#End If
+
+
+Private Const LVIF_DI_SETITEM = &amp;H1000
+
+Private Type NMLVDISPINFO
+    hdr As NMHDR
+    Item As LVITEM_LT
+End Type
+
+Private Const LVN_KEYDOWN = (LVN_FIRST - 55)
+
+
+Private Type NMLVKEYDOWN
+    hdr As NMHDR
+    wVKey As Integer
+    flags1 As Integer
+    flags2 As Integer
+    'UINT flags;
+End Type
+
+' #if (_WIN32_IE &gt;= =&amp;H0300)
+Private Const LVN_MARQUEEBEGIN = (LVN_FIRST - 56)
+' #end If
+
+' #if (_WIN32_IE &gt;= =&amp;H0400)
+#If UNICODE Then
+Private Type NMLVGETINFOTIP
+    hdr As NMHDR
+    dwFlags As Long
+    pszText As Long
+    cchTextMax As Long
+    iItem As Long
+    iSubitem As Long
+    lParam As Long
+End Type
+#Else
+Private Type NMLVGETINFOTIP
+    hdr As NMHDR
+    dwFlags As Long
+    pszText As String
+    cchTextMax As Long
+    iItem As Long
+    iSubitem As Long
+    lParam As Long
+End Type
+#End If
+Private Type NMLVGETINFOTIP_NOSTRING
+   hdr As NMHDR
+   dwFlags As Long
+   pszText As Long
+   cchTextMax As Long
+   iItem As Long
+   iSubitem As Long
+   lParam As Long
+End Type
+
+Private Const LVGIT_UNFOLDED = &amp;H1
+
+Private Const LVN_GETINFOTIPA = (LVN_FIRST - 57)
+Private Const LVN_GETINFOTIPW = (LVN_FIRST - 58)
+
+#If UNICODE Then
+Private Const LVN_GETINFOTIP = LVN_GETINFOTIPW
+#Else
+Private Const LVN_GETINFOTIP = LVN_GETINFOTIPA
+#End If
+
+
+' #end If     ' _WIN32_IE &gt;= =&amp;H0400
+
+' #end If ' NOLISTVIEW
+
+'
+ ===============================================================================
+==========================================================
+
+
+
+
+
+
+
+
+' The implementation:
+
+Implements ISubclass
+
+Private m_hWndParent As Long
+Private m_hWnd As Long
+
+Private m_hCurOld As Long
+Private m_hCur As Long
+
+' VB goes mad when trying to compile this.
+' Stupidity!!!!
+
+'Public Enum EVBALLVArrangeConstants
+'   evballvArrangeDefault = LVA_DEFAULT
+'   evballvAlignLeft = LVA_ALIGNLEFT
+'   evballvAlignTOp = LVA_ALIGNTOP
+'   evballvSnapToGrid = LVA_SNAPTOGRID
+'End Enum
+'
+'Public Enum EVBALLVIconSizeConstants
+'   evlvLargeIcon = LVSIL_NORMAL
+'   evlvSmallIcon = LVSIL_SMALL
+'   evlvStateImages = LVSIL_STATE
+'End Enum
+'
+'Public Enum EVBALLViewStyleConstants
+'   evballvViewIcon = LVS_ICON
+'   evballvViewSmallIcon = LVS_SMALLICON
+'   evballvViewList = LVS_LIST
+'   evballvViewDetails = LVS_REPORT
+'End Enum
+
+' Styles:
+Private m_bEditLabels As Boolean
+Private m_bSingleSelect As Boolean
+Private m_bHideSelection As Boolean
+Private m_bAutoArrange As Boolean
+Private m_bNoScrollBar As Boolean
+Private m_bHeaderButtons As Boolean
+Private m_bHeaderTrackSelect As Boolean
+Private m_bGridLines As Boolean
+Private m_bCheckBoxes As Boolean
+Private m_bInfoTips As Boolean
+Private m_bTrackSelect As Boolean
+Private m_bHeaderDragDrop As Boolean
+Private m_bFullRowSelect As Boolean
+Private m_bOneClickActivate As Boolean
+Private m_bTwoClickActivate As Boolean
+Private m_eStyle As Long 'vbalLbar.EVBALLViewStyleConstants
+
+' Colours/background/appearance
+Private m_oBackColor As OLE_COLOR
+Private m_oForeColor As OLE_COLOR
+Private m_sPicture As String
+Private m_lIconSpaceX As Long
+Private m_lIconSpaceY As Long
+
+Private m_bRunTime As Boolean
+
+' Image Lists:
+Private m_hIml(0 To 2) As Long
+Private m_lIconSizeX(0 To 2) As Long
+Private m_lIconSizeY(0 To 2) As Long
+
+' LVItem for generic work
+Private m_tLV As LVITEM
+
+' COMCTL32.DLL version:
+Private m_lMajor As Long
+Private m_lMinor As Long
+
+' CustomDraw:
+Private m_lToClear() As Long
+Private m_lToClearCount As Long
+
+' If using custom draw, use this to store background
+' before drawing hot borders:
+Private m_cMemDC As cMemDC
+Private m_lIdxPrev As Long
+Private m_lDownOn As Long
+Private m_bOfficeXpStyle As Boolean
+Private m_oHighlightColor As OLE_COLOR
+
+' Edit mode
+Private m_bInEdit As Boolean
+
+Public Event Click()
+Public Event CancelEdit(ByVal lIndex As Long)
+Public Event EndEdit(ByVal lIndex As Long, ByRef sText As String, ByRef bCancel
+ As Boolean)
+Public Event RequestEdit(ByVal lIndex As Long, ByRef bCancel As Boolean)
+Public Event RequestInfoTip(ByVal lIndex As Long, ByRef sInfoTip As String)
+
+Public Property Get OfficeXpStyle() As Boolean
+   OfficeXpStyle = m_bOfficeXpStyle
+End Property
+Public Property Let OfficeXpStyle(ByVal bState As Boolean)
+   m_bOfficeXpStyle = bState
+End Property
+
+Public Sub StartEdit(ByVal lIndex As Long)
+   SendMessageLong m_hWnd, LVM_EDITLABEL, -1, 0
+   SendMessageLong m_hWnd, LVM_EDITLABEL, lIndex - 1, 0
+End Sub
+Public Sub EnsureVisible(ByVal lIndex As Long)
+   ' TODO
+End Sub
+
+Private Function ComCtlVersion( _
+        ByRef lMajor As Long, _
+        ByRef lMinor As Long, _
+        Optional ByRef lBuild As Long _
+    ) As Boolean
+Dim hMod As Long
+Dim lR As Long
+Dim lptrDLLVersion As Long
+Dim tDVI As DLLVERSIONINFO
+
+    lMajor = 0: lMinor = 0: lBuild = 0
+
+    hMod = LoadLibrary("comctl32.dll")
+    If (hMod &lt;&gt; 0) Then
+        lR = S_OK
+        '/*
+        ' You must get this function explicitly because earlier versions of the
+         DLL
+        ' don't implement this function. That makes the lack of implementation
+         of the
+        ' function a version marker in itself. */
+        lptrDLLVersion = GetProcAddress(hMod, "DllGetVersion")
+        If (lptrDLLVersion &lt;&gt; 0) Then
+            tDVI.cbSize = Len(tDVI)
+            lR = DllGetVersion(tDVI)
+            If (lR = S_OK) Then
+                lMajor = tDVI.dwMajor
+                lMinor = tDVI.dwMinor
+                lBuild = tDVI.dwBuildNumber
+            End If
+        Else
+            'If GetProcAddress failed, then the DLL is a version previous to
+             the one
+            'shipped with IE 3.x.
+            lMajor = 4
+        End If
+        FreeLibrary hMod
+        ComCtlVersion = True
+    End If
+
+End Function
+Public Property Get DownOn() As Long
+   DownOn = m_lDownOn
+End Property
+Public Property Let DownOn(ByVal lDownOn As Long)
+Dim lBefore As Long
+   lBefore = m_lDownOn
+   m_lDownOn = lDownOn
+   If lDownOn &gt; 0 Then
+      ItemRedraw lDownOn
+   ElseIf lBefore &gt; 0 Then
+      ItemRedraw lBefore
+   End If
+End Property
+
+Public Function HitTest(ByVal x As Long, ByVal y As Long) As Long
+Dim i As Long
+Dim lCount As Long
+Dim tVFI As LVFINDINFO
+Dim rc As RECT
+Dim rcInit As RECT
+   
+   lCount = Count
+   If lCount &gt; 0 Then
+      rcInit.Left = LVIR_SELECTBOUNDS
+      For i = 1 To lCount
+         LSet rc = rcInit
+         SendMessage m_hWnd, LVM_GETITEMRECT, i - 1, rc
+         If PtInRect(rc, x, y) Then
+            HitTest = i
+            Exit For
+         End If
+      Next i
+   End If
+   
+End Function
+Public Sub ItemRedraw(ByVal iIndex As Long)
+   SendMessageLong m_hWnd, LVM_REDRAWITEMS, iIndex - 1, iIndex - 1
+End Sub
+Public Property Get ItemPositionX(ByVal iIndex As Long) As Long
+Dim tP As POINTAPI
+   SendMessage m_hWnd, LVM_GETITEMPOSITION, iIndex - 1, tP
+   ItemPositionX = tP.x
+End Property
+Public Property Get ItemPositionY(ByVal iIndex As Long) As Long
+Dim tP As POINTAPI
+   SendMessage m_hWnd, LVM_GETITEMPOSITION, iIndex - 1, tP
+   ItemPositionY = tP.y
+End Property
+Public Sub GetItemPosition(ByVal iIndex As Long, ByRef x As Long, ByRef y As
+ Long)
+Dim tP As POINTAPI
+   SendMessage m_hWnd, LVM_GETITEMPOSITION, iIndex - 1, tP
+   x = tP.x
+   y = tP.y
+End Sub
+Public Sub SetItemPosition(ByVal iIndex As Long, ByVal x As Long, ByVal y As
+ Long)
+Dim tP As POINTAPI
+Dim lR As Long
+   tP.x = x
+   tP.y = y
+   lR = SendMessage(m_hWnd, LVM_SETITEMPOSITION32, iIndex - 1, tP)
+End Sub
+Public Sub GetItemRect(ByVal iIndex As Long, ByRef lLeft As Long, ByRef lTop As
+ Long, ByRef lRight As Long, ByRef lBottom As Long)
+Dim tR As RECT
+   SendMessage m_hWnd, LVM_GETITEMRECT, iIndex - 1, tR
+   lLeft = tR.Left
+   lTop = tR.Top
+   lRight = tR.Right
+   lBottom = tR.Bottom
+End Sub
+
+Public Sub Arrange(ByVal eArrange As Long) 'EVBALLVArrangeConstants
+   SendMessageLong m_hWnd, LVM_ARRANGE, eArrange, 0
+End Sub
+
+Public Sub Scroll(ByVal dx As Long, ByVal dy As Long)
+   SendMessageLong m_hWnd, LVM_SCROLL, dx, dy
+End Sub
+
+Public Sub Clear()
+   SendMessageLong m_hWnd, LVM_DELETEALLITEMS, 0, 0
+End Sub
+
+Public Sub RemoveItem(ByVal lIndex As Long)
+   SendMessageLong m_hWnd, LVM_DELETEITEM, lIndex - 1, 0
+End Sub
+
+Public Property Get ItemCaption(ByVal lIndex As Long) As String
+   pGetStyle lIndex - 1, LVIF_TEXT
+   ItemCaption = m_tLV.pszText
+End Property
+Public Property Let ItemCaption(ByVal lIndex As Long, ByVal sCaption As String)
+   pGetStyle lIndex - 1, LVIF_TEXT
+   pSetIStyle lIndex - 1, LVIF_TEXT, sCaption
+End Property
+Public Property Get ItemIconIndex(ByVal lIndex As Long) As Long
+   pGetStyle lIndex - 1, LVIF_IMAGE
+   ItemIconIndex = m_tLV.iImage
+End Property
+Public Property Let ItemIconIndex(ByVal lIndex As Long, ByVal lIconIndex As
+ Long)
+   pGetStyle lIndex - 1, LVIF_IMAGE
+   m_tLV.iImage = lIconIndex
+   pSetIStyle lIndex - 1, LVIF_IMAGE
+End Property
+Public Property Get ItemIndent(ByVal lIndex As Long) As Long
+   pGetStyle lIndex - 1, LVIF_INDENT
+   ItemIndent = m_tLV.iIndent
+End Property
+Public Property Let ItemIndent(ByVal lIndex As Long, ByVal lIndent As Long)
+   pGetStyle lIndex - 1, LVIF_INDENT
+   m_tLV.iIndent = lIndent
+   pSetIStyle lIndex - 1, LVIF_INDENT
+End Property
+Public Property Get itemData(ByVal lIndex As Long) As Long
+   pGetStyle lIndex - 1, LVIF_PARAM
+   itemData = m_tLV.lParam
+End Property
+Public Property Let itemData(ByVal lIndex As Long, ByVal lItemData As Long)
+   pGetStyle lIndex - 1, LVIF_PARAM
+   m_tLV.lParam = lItemData
+   pSetIStyle lIndex - 1, LVIF_PARAM
+End Property
+Public Property Get ItemCut(ByVal lIndex As Long) As Boolean
+    ItemCut = pIsState(lIndex - 1, LVIS_CUT)
+End Property
+
+Public Property Let ItemCut(ByVal lIndex As Long, ByVal bState As Boolean)
+    pSetState lIndex - 1, LVIS_CUT, bState
+End Property
+Public Property Get ItemSelected(ByVal lIndex As Long) As Boolean
+    ItemSelected = pIsState(lIndex - 1, LVIS_SELECTED)
+End Property
+
+Public Property Let ItemSelected(ByVal lIndex As Long, ByVal bState As Boolean)
+    pSetState lIndex - 1, LVIS_SELECTED, bState
+End Property
+
+' Retrieves the item info into ItemStyle module variable.
+Private Sub pGetStyle(ByVal lIndex As Long, ByVal lMask As Long)
+Dim sBuf As String
+Dim lPos As Long
+    
+   m_tLV.mask = lMask
+   sBuf = String(261, 0)
+   m_tLV.pszText = sBuf
+   m_tLV.cchTextMax = 260
+   m_tLV.iItem = lIndex
+   SendMessage m_hWnd, LVM_GETITEM, 0, m_tLV
+   lPos = InStr(m_tLV.pszText, Chr$(0))
+   If lPos &gt; 0 Then
+      m_tLV.pszText = Left$(m_tLV.pszText, lPos - 1)
+   End If
+   m_tLV.cchTextMax = Len(m_tLV.pszText)
+    
+End Sub
+
+' SetIStyle, not to be confused with SetStyle.
+' Sets the item info from ItemStyle module variable.
+Private Sub pSetIStyle(ByVal lIndex As Long, ByVal lMask As Long, Optional
+ sText As String)
+Dim sBuf As String
+Dim lPos As Long
+   sBuf = String$(261, 0)
+   m_tLV.pszText = sBuf
+   m_tLV.cchTextMax = 260
+   m_tLV.iItem = lIndex
+   m_tLV.mask = lMask
+   If Not IsMissing(sText) Then
+      LSet m_tLV.pszText = sText &amp; Chr$(0)
+      m_tLV.cchTextMax = Len(sText) + 1
+   End If
+   SendMessage m_hWnd, LVM_SETITEM, 0, m_tLV
+   UpdateWindow m_hWnd
+End Sub
+
+Private Function pIsState(ByVal lIndex As Long, ByVal lValue As Long, Optional
+ bUseAsMask As Boolean = False) As Long
+   If bUseAsMask Then
+      m_tLV.stateMask = lValue
+   End If
+   m_tLV.iItem = lIndex
+   pGetStyle lIndex, LVIF_STATE
+   pIsState = CBool(m_tLV.state And lValue)
+End Function
+
+Private Sub pSetState(ByVal lIndex As Long, ByVal lValue As Long, ByVal bState
+ As Boolean, Optional bUseAsMask As Boolean = True)
+   If bUseAsMask Then
+      m_tLV.stateMask = lValue
+   End If
+   pGetStyle lIndex, LVIF_STATE
+   If bState Then
+      m_tLV.state = m_tLV.state Or lValue
+   Else
+      m_tLV.state = m_tLV.state And (Not lValue)
+   End If
+   pSetIStyle lIndex, LVIF_STATE
+End Sub
+
+
+Public Property Get IconSpaceX() As Long
+   IconSpaceX = m_lIconSpaceX
+End Property
+Public Property Let IconSpaceX(ByVal x As Long)
+   m_lIconSpaceX = x
+   If Not m_hWnd = 0 Then
+      pSetIconSpacing
+   End If
+End Property
+Public Property Get IconSpaceY() As Long
+   IconSpaceY = m_lIconSpaceY
+End Property
+Public Property Let IconSpaceY(ByVal y As Long)
+   m_lIconSpaceY = y
+   If Not m_hWnd = 0 Then
+      pSetIconSpacing
+   End If
+End Property
+Private Sub pSetIconSpacing()
+Dim lXY As Long
+Dim lXYD As Long
+Dim lXYC As Long
+Dim cx As Long, cY As Long
+   
+   ' Set cx=-1, cy=-1 to reset to default and return current settings:
+   lXYD = &amp;HFFFFFFFF
+   lXYC = SendMessageLong(m_hWnd, LVM_SETICONSPACING, 0, lXYD)
+   ' cX is loword:
+   cx = (lXYC And &amp;HFFFF&amp;)
+   ' cY is hiword:
+   cY = (lXYC \ &amp;H10000)
+   If m_lIconSpaceX &gt; 0 Then cx = m_lIconSpaceX
+   If m_lIconSpaceY &gt; 0 Then cY = m_lIconSpaceY
+   
+   lXY = cx And &amp;H7FFF
+   lXY = lXY Or ((cY And &amp;H7FFF) * &amp;H10000)
+   SendMessageLong m_hWnd, LVM_SETICONSPACING, 0, lXY
+   
+End Sub
+Public Property Let ImageList(Optional ByVal eSize As Long = LVSIL_NORMAL,
+ vThis As Variant)  'vbalLbar.EVBALLVIconSizeConstants = evlvLargeIcon
+   pImageList eSize, vThis
+End Property
+Public Property Set ImageList(Optional ByVal eSize As Long = LVSIL_NORMAL,
+ vThis As Variant) ' eSize As vbalLbar.EVBALLVIconSizeConstants = evlvLargeIcon
+   pImageList eSize, vThis
+End Property
+Private Sub pImageList(ByVal eSize As Long, vThis As Variant) '
+ vbalLbar.EVBALLVIconSizeConstants
+Dim hIml As Long
+   'If eSize &lt;&gt; evlvLargeIcon And eSize &lt;&gt; evlvSmallIcon And eSize &lt;&gt;
+    evlvStateImages Then
+   If eSize &lt;&gt; LVSIL_NORMAL And eSize &lt;&gt; LVSIL_SMALL And eSize &lt;&gt; LVSIL_STATE
+    Then
+      eSize = LVSIL_NORMAL
+   End If
+
+   ' Set the ImageList handle property either from a VB
+   ' image list or directly:
+   If VarType(vThis) = vbObject Then
+       ' Assume VB ImageList control.  Note that unless
+       ' some call has been made to an object within a
+       ' VB ImageList the image list itself is not
+       ' created.  Therefore hImageList returns error. So
+       ' ensure that the ImageList has been initialised by
+       ' drawing into nowhere:
+       On Error Resume Next
+       ' Get the image list initialised..
+       vThis.ListImages(1).Draw 0, 0, 0, 1
+       hIml = vThis.hImageList
+       If (Err.Number &lt;&gt; 0) Then
+           hIml = 0
+       End If
+       On Error GoTo 0
+   ElseIf VarType(vThis) = vbLong Then
+       ' Assume ImageList handle:
+       hIml = vThis
+   Else
+       Err.Raise vbObjectError + 1049, "cToolbar." &amp; App.EXEName, "ImageList
+        property expects ImageList object or long hImageList handle."
+   End If
+    
+   ' If we have a valid image list, then associate it with the control:
+   If (hIml &lt;&gt; 0) Then
+      m_hIml(eSize) = hIml
+      ImageList_GetIconSize m_hIml(eSize), m_lIconSizeX(eSize),
+       m_lIconSizeY(eSize)
+      SendMessageLong m_hWnd, LVM_SETIMAGELIST, eSize, m_hIml(eSize)
+   End If
+   
+End Sub
+
+Public Property Get Count() As Long
+   Count = SendMessageLong(m_hWnd, LVM_GETITEMCOUNT, 0, 0)
+End Property
+
+Public Sub Add( _
+      ByVal sText As String, _
+      Optional ByVal iIcon As Long = -1, _
+      Optional ByVal iIndent As Long = 0, _
+      Optional ByVal lItemData As Long = 0 _
+   )
+Dim tLV As LVITEM
+Dim lR As Long
+   tLV.pszText = sText &amp; Chr$(0)
+   tLV.cchTextMax = Len(sText) + 1
+   tLV.iImage = iIcon
+   tLV.iIndent = iIndent
+   tLV.lParam = lItemData
+   tLV.iItem = Count
+   tLV.mask = LVIF_TEXT Or LVIF_IMAGE Or LVIF_PARAM Or LVIF_INDENT
+   lR = SendMessage(m_hWnd, LVM_INSERTITEM, 0, tLV)
+   'Debug.Print lR
+End Sub
+
+Public Property Get TopIndex() As Long
+   TopIndex = SendMessageLong(m_hWnd, LVM_GETTOPINDEX, 0, 0) + 1
+End Property
+Public Property Get CountPerPage() As Long
+   CountPerPage = SendMessageLong(m_hWnd, LVM_GETCOUNTPERPAGE, 0, 0)
+End Property
+Public Property Get OriginX() As Long
+Dim tP As POINTAPI
+   SendMessage m_hWnd, LVM_GETORIGIN, 0, tP
+   OriginX = tP.x
+End Property
+Public Property Get OriginY() As Long
+Dim tP As POINTAPI
+   SendMessage m_hWnd, LVM_GETORIGIN, 0, tP
+   OriginY = tP.y
+End Property
+Public Sub Update()
+   SendMessageLong m_hWnd, LVM_UPDATE, 0, 0
+End Sub
+
+Public Property Get hWnd() As Long
+   hWnd = m_hWndParent
+End Property
+Public Property Get hWndLV() As Long
+   hWndLV = m_hWnd
+End Property
+
+Public Property Get hWndEdit() As Long
+   hWndEdit = SendMessageLong(m_hWnd, LVM_GETEDITCONTROL, 0, 0)
+End Property
+
+Public Property Get BackgroundPicture() As String
+   BackgroundPicture = m_sPicture
+End Property
+Public Property Let BackgroundPicture(ByVal sURL As String)
+Dim tLBI As LVBKIMAGE
+
+   m_sPicture = sURL
+   If Not (m_hWnd = 0) Then
+      tLBI.pszImage = sURL &amp; Chr$(0)
+      tLBI.cchImageMax = Len(sURL) + 1
+      tLBI.ulFlags = LVBKIF_SOURCE_URL Or LVBKIF_STYLE_TILE
+      SendMessage m_hWnd, LVM_SETBKIMAGE, 0, tLBI
+      ' Set the background colour of the ListView to &amp;HFFFFFFFF (-1)
+      ' so it will be transparent!
+      SendMessageLong m_hWnd, LVM_SETTEXTBKCOLOR, 0, CLR_NONE
+   End If
+End Property
+
+Public Property Get HighlightColor() As OLE_COLOR
+   HighlightColor = m_oHighlightColor
+End Property
+Public Property Let HighlightColor(ByVal oColor As OLE_COLOR)
+   m_oHighlightColor = oColor
+End Property
+
+Public Property Get BackColor() As OLE_COLOR
+   BackColor = m_oBackColor
+End Property
+Public Property Let BackColor(ByVal oColor As OLE_COLOR)
+   m_oBackColor = oColor
+   If Not m_hWnd = 0 Then
+      SendMessageLong m_hWnd, LVM_SETBKCOLOR, 0, TranslateColor(oColor)
+      SendMessageLong m_hWnd, LVM_SETTEXTBKCOLOR, 0, TranslateColor(oColor)
+   End If
+End Property
+Public Property Get ForeColor() As OLE_COLOR
+   ForeColor = m_oForeColor
+End Property
+Public Property Let ForeColor(ByVal oColor As OLE_COLOR)
+   m_oForeColor = oColor
+   If Not m_hWnd = 0 Then
+      SendMessageLong m_hWnd, LVM_SETTEXTCOLOR, 0, TranslateColor(oColor)
+   End If
+End Property
+Public Property Get HeaderButtons() As Boolean
+   HeaderButtons = m_bHeaderButtons
+End Property
+Public Property Let HeaderButtons(ByVal bState As Boolean)
+Dim lS As Long
+Dim lhWnd As Long
+   m_bHeaderButtons = bState
+   If Not m_hWnd = 0 Then
+      ' Set the Buttons mode of the ListView's header control:
+      lhWnd = SendMessageLong(m_hWnd, LVM_GETHEADER, 0, 0)
+      If (lhWnd &lt;&gt; 0) Then
+         lS = GetWindowLong(lhWnd, GWL_STYLE)
+         If bState Then
+            lS = lS And Not HDS_BUTTONS
+         Else
+            lS = lS Or HDS_BUTTONS
+         End If
+         SetWindowLong lhWnd, GWL_STYLE, lS
+      End If
+   End If
+End Property
+Public Property Get HeaderTrackSelect() As Boolean
+   HeaderTrackSelect = m_bHeaderTrackSelect
+End Property
+Public Property Let HeaderTrackSelect(ByVal bState As Boolean)
+Dim lS As Long
+Dim lhWnd As Long
+
+   m_bHeaderTrackSelect = bState
+
+   ' Set the track select mode of the ListView's header control:
+   If Not (m_hWnd = 0) Then
+      lhWnd = SendMessageLong(m_hWnd, LVM_GETHEADER, 0, 0)
+      If (lhWnd &lt;&gt; 0) Then
+         lS = GetWindowLong(lhWnd, GWL_STYLE)
+         If bState Then
+            lS = lS And Not HDS_BUTTONS
+         Else
+            lS = lS Or HDS_BUTTONS
+         End If
+         SetWindowLong lhWnd, GWL_STYLE, lS
+      End If
+   End If
+
+End Property
+
+Public Property Get View() As Long 'vbalLbar.EVBALLViewStyleConstants
+   View = m_eStyle
+End Property
+Public Property Let View(ByVal eView As Long)
+ 'vbalLbar.EVBALLViewStyleConstants)
+   m_eStyle = eView
+   pSetStyle eView, (LVS_ICON Or LVS_SMALLICON Or LVS_REPORT Or LVS_LIST)
+End Property
+Public Property Get MultiSelect() As Boolean
+   MultiSelect = Not (m_bSingleSelect)
+End Property
+Public Property Let MultiSelect(ByVal bState As Boolean)
+   m_bSingleSelect = Not (bState)
+   If bState Then
+      pSetStyle LVS_SINGLESEL, 0
+   Else
+      pSetStyle 0, LVS_SINGLESEL
+   End If
+End Property
+Public Property Get HideSelection() As Boolean
+   HideSelection = m_bHideSelection
+End Property
+Public Property Let HideSelection(ByVal bHide As Boolean)
+   m_bHideSelection = bHide
+   If bHide Then
+      pSetStyle 0, LVS_SHOWSELALWAYS
+   Else
+      pSetStyle LVS_SHOWSELALWAYS, 0
+   End If
+End Property
+Public Property Get GridLines() As Boolean
+   GridLines = m_bGridLines
+End Property
+Public Property Let GridLines(ByVal bState As Boolean)
+   m_bGridLines = bState
+   If bState Then
+      pSetExStyle 0, LVS_EX_GRIDLINES
+   Else
+      pSetExStyle LVS_EX_GRIDLINES, 0
+   End If
+End Property
+Public Property Get OneClickActivate() As Boolean
+   OneClickActivate = m_bOneClickActivate
+End Property
+Public Property Let OneClickActivate(ByVal bState As Boolean)
+   m_bOneClickActivate = bState
+   If bState Then
+      pSetExStyle LVS_EX_ONECLICKACTIVATE, 0
+   Else
+      pSetExStyle 0, LVS_EX_ONECLICKACTIVATE
+   End If
+End Property
+Public Property Get TwoClickActivate() As Boolean
+   TwoClickActivate = m_bTwoClickActivate
+End Property
+Public Property Let TwoClickActivate(ByVal bState As Boolean)
+   m_bTwoClickActivate = bState
+   If bState Then
+      pSetExStyle LVS_EX_TWOCLICKACTIVATE, 0
+   Else
+      pSetExStyle 0, LVS_EX_TWOCLICKACTIVATE
+   End If
+End Property
+Public Property Get InfoTips() As Boolean
+   InfoTips = m_bInfoTips
+End Property
+Public Property Let InfoTips(ByVal bState As Boolean)
+   m_bInfoTips = bState
+   If bState Then
+      pSetExStyle LVS_EX_INFOTIP, 0
+   Else
+      pSetExStyle 0, LVS_EX_INFOTIP
+   End If
+End Property
+Public Property Get CheckBoxes() As Boolean
+   CheckBoxes = m_bCheckBoxes
+End Property
+Public Property Let CheckBoxes(ByVal bState As Boolean)
+   m_bCheckBoxes = bState
+   If bState Then
+      pSetExStyle 0, LVS_EX_CHECKBOXES
+   Else
+      pSetExStyle LVS_EX_CHECKBOXES, 0
+   End If
+End Property
+Public Property Get TrackSelect() As Boolean
+   TrackSelect = m_bTrackSelect
+End Property
+Public Property Let TrackSelect(ByVal bState As Boolean)
+   m_bTrackSelect = bState
+   ' Thanks to Andrs Giraldo &lt;andres_giraldo@yahoo.com&gt;
+   ' for pointing out the bug here (state was inverted)
+   If bState Then
+      pSetExStyle LVS_EX_TRACKSELECT, 0
+   Else
+      pSetExStyle 0, LVS_EX_TRACKSELECT
+   End If
+End Property
+Public Property Get HeaderDragDrop() As Boolean
+   HeaderDragDrop = m_bHeaderDragDrop
+End Property
+Public Property Let HeaderDragDrop(ByVal bState As Boolean)
+   m_bHeaderDragDrop = bState
+   If bState Then
+      pSetExStyle 0, LVS_EX_HEADERDRAGDROP
+   Else
+      pSetExStyle LVS_EX_HEADERDRAGDROP, 0
+   End If
+
+End Property
+Public Property Get FullRowSelect() As Boolean
+   FullRowSelect = m_bFullRowSelect
+End Property
+Public Property Let FullRowSelect(ByVal bState As Boolean)
+   m_bFullRowSelect = bState
+   If bState Then
+      pSetExStyle 0, LVS_EX_FULLROWSELECT
+   Else
+      pSetExStyle LVS_EX_FULLROWSELECT, 0
+   End If
+End Property
+Public Property Get NoScrollBar() As Boolean
+   NoScrollBar = m_bNoScrollBar
+End Property
+Public Property Let NoScrollBar(ByVal bState As Boolean)
+   m_bNoScrollBar = bState
+   If bState Then
+      pSetStyle LVS_NOSCROLL, 0
+   Else
+      pSetStyle 0, LVS_NOSCROLL
+   End If
+End Property
+Public Property Get AutoArrange() As Boolean
+   AutoArrange = m_bAutoArrange
+End Property
+Public Property Let AutoArrange(ByVal bState As Boolean)
+   m_bAutoArrange = bState
+   If bState Then
+      pSetStyle LVS_AUTOARRANGE, 0
+   Else
+      pSetStyle 0, LVS_AUTOARRANGE
+   End If
+End Property
+Public Property Get EditLabels() As Boolean
+   EditLabels = m_bEditLabels
+End Property
+Public Property Let EditLabels(ByVal bState As Boolean)
+   m_bEditLabels = bState
+   If bState Then
+      pSetStyle LVS_EDITLABELS, 0
+   Else
+      pSetStyle 0, LVS_EDITLABELS
+   End If
+End Property
+
+Private Sub pSetStyle(ByVal lStyle As Long, ByVal lStyleNot As Long)
+Dim lS As Long
+   If Not m_hWnd = 0 Then
+      lS = GetWindowLong(m_hWnd, GWL_STYLE)
+      lS = lS And Not lStyleNot
+      lS = lS Or lStyle
+      SetWindowLong m_hWnd, GWL_STYLE, lS
+      SetWindowPos m_hWnd, 0, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE Or
+       SWP_NOOWNERZORDER Or SWP_NOZORDER Or SWP_FRAMECHANGED
+   End If
+End Sub
+Private Sub pSetExStyle(ByVal lStyle As Long, ByVal lStyleNot As Long)
+Dim lS As Long
+   If Not m_hWnd = 0 Then
+      lS = SendMessageLong(m_hWnd, LVM_GETEXTENDEDLISTVIEWSTYLE, 0, 0)
+      lS = lS And Not lStyleNot
+      lS = lS Or lStyle
+      SendMessageLong m_hWnd, LVM_SETEXTENDEDLISTVIEWSTYLE, 0, lS
+   End If
+End Sub
+Private Function pIFF(ByVal bSwitch As Boolean, ByVal lTrue As Long, ByVal
+ lFalse As Long) As Long
+   If bSwitch Then
+      pIFF = lTrue
+   Else
+      pIFF = lFalse
+   End If
+End Function
+
+Private Function pbCreate() As Boolean
+Dim lStyle As Long
+Dim lExStyle As Long
+Dim tR As RECT
+Dim lXY As Long
+Dim lXYD As Long
+Dim lXYC As Long
+
+   pDestroy
+   lStyle = WS_TABSTOP Or WS_VISIBLE Or WS_CHILD
+   lStyle = lStyle Or _
+         View() Or _
+         pIFF(MultiSelect, 0, LVS_SINGLESEL) Or _
+         LVS_SHAREIMAGELISTS Or _
+         pIFF(EditLabels, LVS_EDITLABELS, 0) Or _
+         pIFF(HideSelection, 0, LVS_SHOWSELALWAYS) Or _
+         pIFF(AutoArrange, LVS_AUTOARRANGE, 0) Or _
+         pIFF(NoScrollBar, LVS_NOSCROLL, 0) Or _
+         pIFF(MultiSelect, 0, LVS_SINGLESEL)
+         
+   lExStyle = GetWindowLong(m_hWndParent, GWL_EXSTYLE)
+   lExStyle = lExStyle And Not WS_EX_CLIENTEDGE
+   GetClientRect m_hWndParent, tR
+   m_hWnd = CreateWindowEx( _
+         lExStyle, WC_LISTVIEW, "", _
+         lStyle, 0, 0, tR.Right - tR.Left, tR.Bottom - tR.Top, _
+         m_hWndParent, 0, App.hInstance, 0)
+   If Not (m_hWnd = 0) Then
+      AttachMessage Me, m_hWndParent, WM_NOTIFY
+      AttachMessage Me, m_hWnd, WM_SETCURSOR
+      AttachMessage Me, m_hWnd, WM_ERASEBKGND
+      ' Messages being controlled by owner
+      'AttachMessage Me, m_hWnd, WM_MOUSEMOVE
+      'AttachMessage Me, m_hWnd, WM_LBUTTONDOWN
+      'AttachMessage Me, m_hWnd, WM_LBUTTONUP
+      'AttachMessage Me, m_hWnd, WM_RBUTTONDOWN
+      'AttachMessage Me, m_hWnd, WM_RBUTTONUP
+      'AttachMessage Me, m_hWnd, WM_MBUTTONDOWN
+      'AttachMessage Me, m_hWnd, WM_MBUTTONUP
+      lXYD = &amp;HFFFFFFFF
+      lXYC = SendMessageLong(m_hWnd, LVM_SETICONSPACING, 0, lXYD)
+      m_lIconSpaceX = (lXYC And &amp;HFFFF&amp;)
+      m_lIconSpaceY = (lXYC \ &amp;H10000)
+                        
+      ' Set cursor
+      m_hCur = LoadCursor(0, ByVal IDC_ARROW)
+      m_hCurOld = SetClassLong(m_hWnd, GCL_HCURSOR, m_hCur)
+      
+      pbCreate = True
+   End If
+End Function
+Private Sub pDestroy()
+   If Not m_hWnd = 0 Then
+      DetachMessage Me, m_hWndParent, WM_NOTIFY
+      DetachMessage Me, m_hWnd, WM_SETCURSOR
+      DetachMessage Me, m_hWnd, WM_ERASEBKGND
+      'DetachMessage Me, m_hWnd, WM_MOUSEMOVE
+      'DetachMessage Me, m_hWnd, WM_LBUTTONDOWN
+      'DetachMessage Me, m_hWnd, WM_LBUTTONUP
+      'DetachMessage Me, m_hWnd, WM_RBUTTONDOWN
+      'DetachMessage Me, m_hWnd, WM_RBUTTONUP
+      'DetachMessage Me, m_hWnd, WM_MBUTTONDOWN
+      'DetachMessage Me, m_hWnd, WM_MBUTTONUP
+            
+      If m_hCurOld Then
+         SetClassLong m_hWnd, GCL_HCURSOR, m_hCurOld
+         m_hCurOld = 0
+      End If
+      If m_hCur Then
+         DestroyCursor m_hCur
+         m_hCur = 0
+      End If
+      
+      ShowWindow m_hWnd, SW_HIDE
+      SetParent m_hWnd, 0
+      DestroyWindow m_hWnd
+      m_hWnd = 0
+   End If
+   Set m_cMemDC = Nothing
+End Sub
+
+Private Sub pGetIconRect(ByVal lIndex As Long, rc As RECT, Optional hIml As
+ Long, Optional lIconIndex As Long, Optional lIconLeft As Long, Optional
+ lIconTop As Long)
+Dim tR As RECT
+Dim lIconWidth As Long
+Dim lIconHeight As Long
+
+   If (View = LVS_ICON) Then
+      hIml = SendMessageLong(m_hWnd, LVM_GETIMAGELIST, LVSIL_NORMAL, 0)
+   Else
+      hIml = SendMessageLong(m_hWnd, LVM_GETIMAGELIST, LVSIL_SMALL, 0)
+   End If
+   ImageList_GetIconSize hIml, lIconWidth, lIconHeight
+   lIconIndex = ItemIconIndex(lIndex + 1)
+
+   rc.Left = LVIR_ICON
+   SendMessage m_hWnd, LVM_GETITEMRECT, lIndex, rc
+   LSet tR = rc
+   If m_eStyle = LVS_ICON Then
+      tR.Left = rc.Left + ((rc.Right - rc.Left) - (lIconWidth + 8)) \ 2
+      tR.Top = rc.Top + ((rc.Bottom - rc.Top) - (lIconHeight + 4)) \ 2
+      tR.Right = tR.Left + lIconWidth + 8
+      tR.Bottom = tR.Top + lIconHeight + 4
+      lIconLeft = tR.Left + 4
+      lIconTop = tR.Top + 2
+   Else
+      'InflateRect tR, 1, 1
+      lIconLeft = tR.Left '+ 1
+      lIconTop = tR.Top '+ 1
+   End If
+   LSet rc = tR
+End Sub
+
+Friend Function TranslateAccelerator(lpMsg As VBOleGuids.MSG) As Long
+Dim lhWnd As Long
+      
+   TranslateAccelerator = S_FALSE
+   If m_hWnd &lt;&gt; 0 Then
+      ' Here you can modify the response to the key down
+      ' accelerator command using the values in lpMsg.  This
+      ' can be used to capture Tabs, Returns, Arrows etc.
+      ' Just process the message as required and return S_OK.
+      If lpMsg.message = WM_KEYDOWN Or lpMsg.message = WM_KEYUP Then
+         Select Case lpMsg.wParam And &amp;HFFFF&amp;
+         Case vbKeyUp, vbKeyDown, vbKeyLeft, vbKeyRight, vbKeyPageDown,
+          vbKeyPageUp, vbKeyHome, vbKeyEnd, vbKeyReturn
+            'Debug.Print lpMsg.wParam
+            If m_bInEdit Then
+               lhWnd = SendMessageLong(m_hWnd, LVM_GETEDITCONTROL, 0, 0)
+               SendMessageLong lhWnd, lpMsg.message, lpMsg.wParam, lpMsg.lParam
+            Else
+               SendMessageLong m_hWnd, lpMsg.message, lpMsg.wParam, lpMsg.lParam
+            End If
+            TranslateAccelerator = S_OK
+         End Select
+      End If
+   End If
+   
+End Function
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As EMsgResponse)
+   '
+End Property
+
+Private Function CustomDraw(ByVal lParam As Long) As Long
+Dim NMLVCD As NMLVCUSTOMDRAW
+Dim lLen As Long
+Dim rc As RECT, trc As RECT
+Dim lIndex As Long
+Dim hBr As Long
+Dim hIml As Long
+Dim lHDC As Long
+Dim i As Long, iP As Long
+Dim lR As Long
+Dim lFlags As Long
+Dim lIconLeft As Long
+Dim lIconTop As Long
+Dim hPen As Long
+Dim hPenOld As Long
+Dim tJunk As POINTAPI
+Dim tR As RECT
+Dim lIconIndex As Long
+Dim lIconWidth As Long
+Dim lIconHeight As Long
+   
+   ' Get the CustomDraw data.
+   lLen = Len(NMLVCD)
+   ' Check if COMCTL&lt; 4.71, if so, drop 4 bytes off the len
+   ' and ignore level (could get from the hItem)
+   If m_lMajor &lt; 4 Or (m_lMajor = 4 And m_lMinor &lt; 71) Then
+      lLen = lLen - 4
+   End If
+   CopyMemory NMLVCD, ByVal lParam, lLen
+   
+   Select Case NMLVCD.nmcd.dwDrawStage
+   Case CDDS_PREPAINT
+       ' Tell it we want to be told when an
+       ' item is drawn.
+       CustomDraw = CDRF_NOTIFYITEMDRAW
+       'CustomDraw = CDRF_DODEFAULT
+   
+   Case CDDS_ITEMPREPAINT
+       ' An item is about to be drawn:
+       CustomDraw = CDRF_NEWFONT
+       
+       ' Check whether this is the hot item.
+      lIndex = SendMessageLong(m_hWnd, LVM_GETHOTITEM, 0, 0)
+      If lIndex = NMLVCD.nmcd.dwItemSpec Then
+         
+         ' Hot item; draw border
+         pGetIconRect lIndex, rc
+         
+         lHDC = GetDC(m_hWnd)
+         
+         If (m_lMajor &lt; 6) Then
+            ' Restore any previous item:
+            If (m_lIdxPrev &gt; -1) Then
+               pGetIconRect m_lIdxPrev, trc
+               BitBlt lHDC, trc.Left, trc.Top, trc.Right - trc.Left + 1,
+                trc.Bottom - trc.Top + 1, m_cMemDC.hdc, 0, 0, vbSrcCopy
+            End If
+            
+            m_lIdxPrev = lIndex
+            ' Store this item:
+            m_cMemDC.Width = rc.Right - rc.Left + 1
+            m_cMemDC.Height = rc.Bottom - rc.Top + 1
+            BitBlt m_cMemDC.hdc, 0, 0, rc.Right - rc.Left + 1, rc.Bottom -
+             rc.Top + 1, lHDC, rc.Left, rc.Top, vbSrcCopy
+            
+         End If
+         
+         If (m_bOfficeXpStyle) Then
+            CustomDraw = CDRF_NOTIFYPOSTPAINT
+         Else
+            If m_lDownOn - 1 = lIndex Then
+               lFlags = BDR_SUNKENINNER
+            Else
+               lFlags = BDR_RAISEDOUTER
+            End If
+            DrawEdge lHDC, rc, lFlags, BF_RECT
+            CustomDraw = CDRF_NEWFONT
+         End If
+         ReleaseDC m_hWnd, lHDC
+         
+      Else
+         ' Not hot item; erase border if required:
+         If (m_lMajor &lt; 6) Then ' This bug is fixed in ComCtl32.dll 6.0
+            lIndex = NMLVCD.nmcd.dwItemSpec
+            If lIndex &gt; -1 Then
+               If lIndex = m_lIdxPrev Then
+                  pGetIconRect lIndex, rc
+                  lHDC = GetDC(m_hWnd)
+                  BitBlt lHDC, rc.Left, rc.Top, rc.Right - rc.Left + 1,
+                   rc.Bottom - rc.Top + 1, m_cMemDC.hdc, 0, 0, vbSrcCopy
+                  If m_lDownOn - 1 = lIndex Then
+                     If (m_bOfficeXpStyle) Then
+                        CustomDraw = CDRF_NOTIFYPOSTPAINT
+                     Else
+                        DrawEdge lHDC, rc, BDR_RAISEDOUTER, BF_RECT
+                        CustomDraw = CDRF_NEWFONT
+                     End If
+                  Else
+                     m_lIdxPrev = -1
+                  End If
+                  ReleaseDC m_hWnd, lHDC
+               End If
+            End If
+         End If
+      End If
+      NMLVCD.clrText = TranslateColor(m_oForeColor)
+      If Len(m_sPicture) &gt; 0 Then
+         NMLVCD.clrTextBk = CLR_NONE
+      Else
+         NMLVCD.clrTextBk = TranslateColor(m_oBackColor)
+      End If
+      CopyMemory ByVal lParam, NMLVCD, lLen
+   '
+   
+   Case CDDS_ITEMPOSTPAINT
+      ' We don't get here unless we send CDRF_NOTIFYITEMPOSTPAINT in the
+      ' CDDS_ITEMPREPAINT stage.
+      CustomDraw = CDRF_SKIPDEFAULT
+      lIndex = SendMessageLong(m_hWnd, LVM_GETHOTITEM, 0, 0)
+      If lIndex = NMLVCD.nmcd.dwItemSpec Then
+         
+         pGetIconRect lIndex, rc, hIml, lIconIndex, lIconLeft, lIconTop
+                  
+         ' overdraw the icon:
+         lHDC = GetDC(m_hWnd)
+         If (m_lDownOn - 1 = lIndex) Then
+            hBr = CreateSolidBrush(BlendColor(m_oHighlightColor, m_oBackColor,
+             50))
+         Else
+            hBr = CreateSolidBrush(BlendColor(m_oHighlightColor, m_oBackColor,
+             100))
+         End If
+         FillRect lHDC, rc, hBr
+         DeleteObject hBr
+         hPen = CreatePen(PS_SOLID, 1, GetSysColor(m_oHighlightColor And &amp;H1F&amp;))
+         hPenOld = SelectObject(lHDC, hPen)
+         MoveToEx lHDC, rc.Left, rc.Top, tJunk
+         LineTo lHDC, rc.Right - 1, rc.Top
+         LineTo lHDC, rc.Right - 1, rc.Bottom - 1
+         LineTo lHDC, rc.Left, rc.Bottom - 1
+         LineTo lHDC, rc.Left, rc.Top
+         SelectObject lHDC, hPenOld
+         DeleteObject hPen
+         ImageList_DrawEx hIml, lIconIndex, lHDC, lIconLeft, lIconTop, 0, 0,
+          -1, -1, ILD_TRANSPARENT
+         ReleaseDC m_hWnd, lHDC
+         
+      End If
+      Debug.Print "PostPaint"
+      
+   End Select
+
+End Function
+
+Private Property Get ISubclass_MsgResponse() As EMsgResponse
+   Select Case CurrentMessage
+   Case WM_MOUSEACTIVATE
+      ISubclass_MsgResponse = emrConsume
+   Case Else
+      ISubclass_MsgResponse = emrPreprocess
+   End Select
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hWnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+Dim tNMH As NMHDR
+Dim bCancel As Boolean
+Dim sText As String
+Dim lLen As Long
+Dim b() As Byte
+Dim tNMLVDI As NMLVDISPINFO
+Dim tNMLVOD As NMLVODSTATECHANGE
+Dim tNMLV As NMLISTVIEW
+Dim iPos As Long
+Dim tMsg As MSG
+Dim tTTT As ToolTipText
+
+
+   Select Case iMsg
+   Case WM_ERASEBKGND
+      Debug.Print "EraseBkGnd"
+   
+   Case WM_SETCURSOR
+      SetCursor m_hCur
+      ISubclass_WindowProc = 1
+      
+      '
+   Case WM_NOTIFY
+      ' The LV is telling us something.  Shall we listen?
+      CopyMemory tNMH, ByVal lParam, Len(tNMH)
+      Select Case tNMH.code
+      Case NM_CUSTOMDRAW
+         ' Our Custom Draw procedure
+         
+         ' Begin: Only required for ListBar
+         ISubclass_WindowProc = CustomDraw(lParam)
+         ' End: Only required for ListBar
+      
+      Case NM_RETURN
+         ' Enter button pressed.
+         
+      Case NM_CLICK, NM_RCLICK
+         ' Click..
+         
+      Case NM_DBLCLK
+         ' Double click
+         
+      Case LVN_HOTTRACK
+         SetCursor m_hCur
+         
+      Case LVN_ITEMCHANGING
+         ' Editing the state of an item
+         CopyMemory tNMLVOD, ByVal lParam, Len(tNMLVOD)
+         
+      Case LVN_ITEMCHANGED
+         ' Edited the state of an item
+         CopyMemory tNMLVOD, ByVal lParam, Len(tNMLVOD)
+      
+      Case LVN_INSERTITEM
+         ' Notification
+      
+      Case LVN_DELETEITEM
+         ' Delete one item.  You would use this to delete
+         ' any associated data
+      
+      Case LVN_DELETEALLITEMS
+         ' Delete all items.  You would use this as a shortcut
+         ' to delete any associated data for all items
+      
+      Case LVN_BEGINLABELEDIT
+         lLen = Len(tNMLVDI)
+         If m_lMajor = 4 And m_lMinor &lt;= 70 Then
+            lLen = lLen - 4
+         End If
+         CopyMemory tNMLVDI, ByVal lParam, Len(tNMLVDI)
+         RaiseEvent RequestEdit(tNMLVDI.Item.iItem + 1, bCancel)
+         If bCancel Then
+            ISubclass_WindowProc = 1
+         Else
+            m_bInEdit = True
+         End If
+         
+      Case LVN_ENDLABELEDIT
+         lLen = Len(tNMLVDI)
+         If m_lMajor = 4 And m_lMinor &lt;= 70 Then
+            lLen = lLen - 4
+         End If
+         CopyMemory tNMLVDI, ByVal lParam, lLen
+         lLen = lstrlen(tNMLVDI.Item.pszText)
+         If lLen &gt; 1 Then
+            ReDim b(0 To tNMLVDI.Item.cchTextMax) As Byte
+            CopyMemory b(0), ByVal tNMLVDI.Item.pszText,
+             tNMLVDI.Item.cchTextMax - 1
+            sText = StrConv(b, vbUnicode)
+            iPos = InStr(sText, vbNullChar)
+            If iPos &gt; 1 Then
+               sText = Left$(sText, iPos - 1)
+            ElseIf iPos = 1 Then
+               sText = ""
+            End If
+         End If
+         If sText = "" Then
+            RaiseEvent CancelEdit(tNMLVDI.Item.iItem + 1)
+         Else
+            RaiseEvent EndEdit(tNMLVDI.Item.iItem + 1, sText, bCancel)
+            If Not bCancel Then
+               ISubclass_WindowProc = 1
+            End If
+         End If
+         ' Begin: Only required for ListBar
+         ItemSelected(tNMLVDI.Item.iItem + 1) = False
+         ' End: Only required for ListBar
+         m_bInEdit = False
+         
+      Case LVN_COLUMNCLICK
+      
+      Case LVN_BEGINDRAG
+         ' Begin drag
+         CopyMemory tNMLV, ByVal lParam, Len(tNMLV)
+         ' iItem indicates item being dragged.
+         'Debug.Print "BeginDrag", tNMLV.iItem
+                                        
+      Case LVN_BEGINRDRAG
+         ' Begin Right click drag
+      
+      Case LVN_ITEMACTIVATE
+         Dim tLVIA As NMITEMACTIVATE
+         CopyMemory tLVIA, ByVal lParam, Len(tLVIA)
+         
+      Case LVN_HOTTRACK
+         ' Hot tracking
+      
+      Case LVN_GETDISPINFO
+         '
+      
+      Case LVN_SETDISPINFO
+         '
+      
+      Case LVN_KEYDOWN
+         Dim tLV As NMLVKEYDOWN
+         CopyMemory tLV, ByVal lParam, Len(tLV)
+         
+         
+      
+      Case LVN_MARQUEEBEGIN
+         ' "Marquee" is defined as when you draw a bounding box
+         ' around the items in the ListView
+      
+      Case LVN_GETINFOTIP
+         ' Info tips:
+         Dim tLVIT As NMLVGETINFOTIP_NOSTRING
+         Dim sTip As String
+         
+         CopyMemory tLVIT, ByVal lParam, Len(tLVIT)
+         RaiseEvent RequestInfoTip(tLVIT.iItem + 1, sTip)
+         If sTip &lt;&gt; "" Then
+            sTip = sTip &amp; vbNullChar
+            tLVIT.cchTextMax = Len(sTip)
+            gsInfoTipBuffer = StrConv(sTip, vbFromUnicode)
+            tLVIT.pszText = StrPtr(gsInfoTipBuffer)
+            CopyMemory ByVal lParam, tLVIT, Len(tLVIT)
+         End If
+         
+      End Select
+                        
+   
+   End Select
+
+End Function
+Public Function BlendColor( _
+      ByVal oColor As OLE_COLOR, _
+      ByVal oColorBlend As OLE_COLOR, _
+      ByVal lProportion As Long _
+   ) As Long
+Dim lFrom As Long, lR As Long, lG As Long, lB As Long
+Dim lBlend As Long, lRBlend As Long, lGBlend As Long, lBBlend As Long
+Dim lRNew As Long, lGNew As Long, lBNew As Long
+   lFrom = TranslateColor(oColor)
+   lR = (lFrom And &amp;HFF&amp;)
+   lG = (lFrom And &amp;HFF00&amp;) \ &amp;H100&amp;
+   lB = (lFrom And &amp;HFF0000) \ &amp;H10000
+   lBlend = TranslateColor(oColorBlend)
+   lRBlend = (lBlend And &amp;HFF&amp;)
+   lGBlend = (lBlend And &amp;HFF00&amp;) \ &amp;H100&amp;
+   lBBlend = (lBlend And &amp;HFF0000) \ &amp;H10000
+   lRNew = lR + ((lRBlend - lR) * lProportion) \ 255
+   lGNew = lG + ((lGBlend - lG) * lProportion) \ 255
+   lBNew = lB + ((lBBlend - lB) * lProportion) \ 255
+   BlendColor = RGB(lRNew, lGNew, lBNew)
+End Function
+
+Public Sub Initialise(hWndParent As Long)
+   m_hWndParent = hWndParent
+   If pbCreate() Then
+      Set m_cMemDC = New cMemDC
+   End If
+End Sub
+Public Sub Terminate()
+   '
+   pDestroy
+End Sub
+
+Public Sub Resize()
+Dim tTR As RECT
+   If Not m_hWnd = 0 Then
+      GetClientRect m_hWndParent, tTR
+      SetWindowPos m_hWnd, 0, tTR.Left, tTR.Top, tTR.Right - tTR.Left,
+       tTR.Bottom - tTR.Top, SWP_NOZORDER Or SWP_NOOWNERZORDER
+   End If
+End Sub
+
+Private Sub Class_Initialize()
+   m_lIdxPrev = -1
+   m_oHighlightColor = vbHighlight
+   ComCtlVersion m_lMajor, m_lMinor
+End Sub
+
+Private Sub Class_Terminate()
+   Terminate
+End Sub
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">ListBar</a>&#160;.&#160;<a href="article.html">vbAccelerator ListBar Control</a>&#160;.&#160;<a href="VB6_List_Bar_Full_Source.html">VB6 List Bar Full Source</a>&#160;.&#160;cListView.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/ListBar/Outlook_ListBar/VB6_List_Bar_Full_Source_zip_cListView_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:52 GMT -->
+</html>

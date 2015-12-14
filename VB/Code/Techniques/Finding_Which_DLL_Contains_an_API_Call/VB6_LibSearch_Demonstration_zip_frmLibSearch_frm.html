@@ -1,0 +1,725 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Finding_Which_DLL_Contains_an_API_Call/VB6_LibSearch_Demonstration_zip_frmLibSearch_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:10 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmLibSearch.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmLibSearch.frm" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;<a href="article.html">Finding Which DLL Contains an API Call</a>&#160;.&#160;<a href="VB6_LibSearch_Demonstration.html">VB6 LibSearch Demonstration</a>&#160;.&#160;frmLibSearch.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB6_Async_File_Find_Component.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Async File Find Component</a> (10K)</p><p class="nav"><a href="VB6_LibSearch_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 LibSearch Demonstration</a> (89K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:3391</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3391&amp;type=Zip&amp;title=VB6%20LibSearch%20Demonstration%2Ezip%5FfrmLibSearch">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />14 Jan 2003<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2518">Complete Registry control</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1026">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmLibSearch.frm</h1><pre>VERSION 5.00
+Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
+Begin VB.Form frmLibSearch 
+   Caption         =   "Lib Searcher"
+   ClientHeight    =   4920
+   ClientLeft      =   60
+   ClientTop       =   450
+   ClientWidth     =   7110
+   BeginProperty Font 
+      Name            =   "Tahoma"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "frmLibSearch.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   4920
+   ScaleWidth      =   7110
+   StartUpPosition =   3  'Windows Default
+   Begin VB.PictureBox picWizard 
+      BackColor       =   &amp;H00000000&amp;
+      Height          =   4215
+      Left            =   60
+      Picture         =   "frmLibSearch.frx":1272
+      ScaleHeight     =   4155
+      ScaleWidth      =   1155
+      TabIndex        =   0
+      TabStop         =   0   'False
+      Top             =   60
+      Width           =   1215
+   End
+   Begin VB.CommandButton cmdFinish 
+      Caption         =   "&amp;Finished"
+      Height          =   435
+      Left            =   5760
+      TabIndex        =   16
+      Top             =   4380
+      Width           =   1275
+   End
+   Begin VB.CommandButton cmdNext 
+      Caption         =   "&amp;Next &gt;"
+      Default         =   -1  'True
+      Enabled         =   0   'False
+      Height          =   435
+      Left            =   4440
+      TabIndex        =   15
+      Top             =   4380
+      Width           =   1275
+   End
+   Begin VB.CommandButton cmdBack 
+      Caption         =   "&lt; &amp;Back"
+      Enabled         =   0   'False
+      Height          =   435
+      Left            =   3120
+      TabIndex        =   14
+      Top             =   4380
+      Width           =   1275
+   End
+   Begin VB.PictureBox picPage 
+      BorderStyle     =   0  'None
+      Height          =   4215
+      Index           =   1
+      Left            =   1440
+      ScaleHeight     =   4215
+      ScaleWidth      =   5595
+      TabIndex        =   18
+      TabStop         =   0   'False
+      Top             =   60
+      Visible         =   0   'False
+      Width           =   5595
+      Begin VB.TextBox txtFileName 
+         BackColor       =   &amp;H8000000F&amp;
+         BorderStyle     =   0  'None
+         Height          =   435
+         Left            =   0
+         MultiLine       =   -1  'True
+         TabIndex        =   13
+         TabStop         =   0   'False
+         Text            =   "frmLibSearch.frx":25FB
+         Top             =   3780
+         Width           =   5535
+      End
+      Begin VB.ListBox lstResults 
+         Height          =   960
+         Left            =   0
+         Style           =   1  'Checkbox
+         TabIndex        =   12
+         Top             =   300
+         Width           =   5535
+      End
+      Begin RichTextLib.RichTextBox rtfResults 
+         Height          =   2415
+         Left            =   0
+         TabIndex        =   19
+         Top             =   1320
+         Width           =   5535
+         _ExtentX        =   9763
+         _ExtentY        =   4260
+         _Version        =   393217
+         ScrollBars      =   3
+         MaxLength       =   16000000
+         Appearance      =   0
+         TextRTF         =   $"frmLibSearch.frx":260C
+      End
+      Begin VB.Label lblSearching 
+         Caption         =   "Searching..."
+         Height          =   255
+         Left            =   60
+         TabIndex        =   11
+         Top             =   60
+         Width           =   4875
+      End
+   End
+   Begin VB.PictureBox picPage 
+      BorderStyle     =   0  'None
+      Height          =   4155
+      Index           =   0
+      Left            =   1440
+      ScaleHeight     =   4155
+      ScaleWidth      =   5595
+      TabIndex        =   17
+      TabStop         =   0   'False
+      Top             =   60
+      Width           =   5595
+      Begin VB.CheckBox chkMatchCase 
+         Caption         =   "&amp;Match Case"
+         Height          =   255
+         Left            =   960
+         TabIndex        =   10
+         Top             =   2940
+         Width           =   4155
+      End
+      Begin VB.ComboBox cboFileSpec 
+         Height          =   315
+         Left            =   960
+         TabIndex        =   7
+         Text            =   "*.*"
+         Top             =   1440
+         Width           =   3915
+      End
+      Begin VB.ComboBox cboSearchFor 
+         Height          =   315
+         Left            =   960
+         TabIndex        =   9
+         Top             =   2580
+         Width           =   3915
+      End
+      Begin VB.CheckBox chkRecurse 
+         Caption         =   "&amp;Recurse sub-directories"
+         Height          =   255
+         Left            =   960
+         TabIndex        =   5
+         Top             =   1140
+         Width           =   4155
+      End
+      Begin VB.CommandButton cmdPick 
+         Caption         =   "..."
+         Height          =   315
+         Left            =   4920
+         TabIndex        =   4
+         ToolTipText     =   "Pick Folder"
+         Top             =   780
+         Width           =   375
+      End
+      Begin VB.ComboBox cboPath 
+         Height          =   315
+         Left            =   960
+         TabIndex        =   3
+         Top             =   780
+         Width           =   3915
+      End
+      Begin VB.Label lblFileSpec 
+         Caption         =   "File Spec:"
+         Height          =   255
+         Left            =   60
+         TabIndex        =   6
+         Top             =   1500
+         Width           =   975
+      End
+      Begin VB.Label lblSearchFor 
+         Caption         =   "Search For:"
+         Height          =   255
+         Left            =   60
+         TabIndex        =   8
+         Top             =   2640
+         Width           =   975
+      End
+      Begin VB.Label lblInfo 
+         Caption         =   "Select the path you want to search in and what
+          you're looking for here, then click Next to start the search."
+         Height          =   555
+         Left            =   60
+         TabIndex        =   1
+         Top             =   60
+         Width           =   5415
+      End
+      Begin VB.Label lblPath 
+         Caption         =   "Path:"
+         Height          =   255
+         Left            =   60
+         TabIndex        =   2
+         Top             =   840
+         Width           =   915
+      End
+   End
+End
+Attribute VB_Name = "frmLibSearch"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Declare Sub SleepApi Lib "kernel32" Alias "Sleep" (ByVal dwMilliseconds
+ As Long)
+Private Declare Function timeBeginPeriod Lib "winmm.dll" (ByVal uPeriod As
+ Long) As Long
+Private Declare Function timeEndPeriod Lib "winmm.dll" (ByVal uPeriod As Long)
+ As Long
+Private Declare Function timeGetTime Lib "winmm.dll" () As Long
+
+Private WithEvents m_cBrowse As cBrowseForFolder
+Attribute m_cBrowse.VB_VarHelpID = -1
+Private WithEvents m_cFind As cFindInFiles
+Attribute m_cFind.VB_VarHelpID = -1
+Private m_bCancelFind As Boolean
+Private m_bFinding As Boolean
+Private m_cMruPath As New cMRU
+Private m_cMruFileSpec As New cMRU
+Private m_cMruSearchFor As New cMRU
+Private m_cODList As cSimpleODListBox
+Private m_cSysIls As cVBALSysImageList
+Private m_lTime As Long
+Private m_lFileCount As Long
+
+Private Const REGISTRY_SECTION = "Software\vbAccelerator\LibSearch\v1.0.0"
+
+Private Sub StartTiming()
+   timeBeginPeriod 1
+   m_lTime = timeGetTime()
+End Sub
+Private Function EndTiming()
+   EndTiming = timeGetTime() - m_lTime
+   timeEndPeriod 1
+End Function
+
+Private Sub loadItem(ByVal sThing As String)
+   Dim iPos As Long
+   Dim iSelPos As Long
+   Dim sFile As String
+   iPos = InStr(sThing, vbTab)
+   If (iPos &gt; 0) Then
+      sFile = left$(sThing, iPos - 1)
+      iSelPos = CLng(Mid$(sThing, iPos + 1))
+   Else
+      sFile = sThing
+   End If
+   
+   If (sFile &lt;&gt; rtfResults.Tag) Then
+
+      Dim iFile As Integer
+      Dim sBuf As String
+      On Error GoTo ErrorHandler
+      iFile = FreeFile
+      Open sFile For Binary Access Read Lock Write As #iFile
+      sBuf = Space$(LOF(iFile))
+      Get #iFile, , sBuf
+      rtfResults.Text = sBuf
+      rtfResults.Tag = sFile
+      Close #iFile
+      iFile = 0
+      
+   End If
+   
+   txtFileName.Text = sFile
+   
+   rtfResults.SelStart = iSelPos - 1
+   rtfResults.SelLength = Len(cboSearchFor.Text)
+   rtfResults.SetFocus
+   Exit Sub
+   
+ErrorHandler:
+   If (iFile &lt;&gt; 0) Then
+      Close #iFile
+   End If
+   MsgBox "An error occurred trying to load file '" &amp; sFile &amp; "'" &amp; vbCrLf &amp;
+    vbCrLf &amp; Err.Description, vbExclamation
+   Exit Sub
+   
+End Sub
+
+Private Function LoadSettings(cR As cRegistry) As Boolean
+Dim sVer As String
+
+   cR.SectionKey = REGISTRY_SECTION
+   cR.ValueKey = "Version"
+   cR.ValueType = REG_SZ
+   cR.Default = "sausages"
+   sVer = cR.Value
+   If Not (sVer = cR.Default) Then
+   
+      cR.SectionKey = REGISTRY_SECTION &amp; "\Paths"
+      m_cMruPath.DeSerialise cR
+      displayMru m_cMruPath, cboPath
+      cR.SectionKey = REGISTRY_SECTION &amp; "\FileSpecs"
+      m_cMruFileSpec.DeSerialise cR
+      displayMru m_cMruFileSpec, cboFileSpec
+      cR.SectionKey = REGISTRY_SECTION &amp; "\SearchFor"
+      m_cMruSearchFor.DeSerialise cR
+      displayMru m_cMruSearchFor, cboSearchFor
+      
+      cR.SectionKey = REGISTRY_SECTION
+      cR.Default = 0
+      cR.ValueType = REG_DWORD
+      cR.ValueKey = "RecurseSubDirs"
+      chkRecurse.Value = IIf(cR.Value &lt;&gt; 0, vbChecked, vbUnchecked)
+      cR.ValueKey = "MatchCase"
+      chkMatchCase.Value = IIf(cR.Value &lt;&gt; 0, vbChecked, vbUnchecked)
+      
+      LoadSettings = True
+   End If
+   
+End Function
+Private Function SaveSettings(cR As cRegistry) As Boolean
+   
+   cR.SectionKey = REGISTRY_SECTION &amp; "\Paths"
+   m_cMruPath.Serialise cR
+   cR.SectionKey = REGISTRY_SECTION &amp; "\FileSpecs"
+   m_cMruFileSpec.Serialise cR
+   cR.SectionKey = REGISTRY_SECTION &amp; "\SearchFor"
+   m_cMruSearchFor.Serialise cR
+   
+   cR.SectionKey = REGISTRY_SECTION
+   cR.Default = 0
+   cR.ValueType = REG_DWORD
+   cR.ValueKey = "RecurseSubDirs"
+   cR.Value = (chkRecurse.Value * -1)
+   cR.ValueKey = "MatchCase"
+   cR.Value = (chkMatchCase.Value * -1)
+   
+   cR.ValueType = REG_SZ
+   cR.ValueKey = "Version"
+   cR.Value = App.Major &amp; "." &amp; App.Minor &amp; "." &amp; App.Revision
+   
+End Function
+Private Sub displayMru(cM As cMRU, cbo As ComboBox)
+Dim i As Long
+   cbo.Clear
+   For i = 1 To cM.Count
+      cbo.AddItem cM.Item(i)
+   Next i
+   If (cbo.ListCount &gt; 0) Then
+      cbo.ListIndex = 0
+   End If
+End Sub
+
+Private Function ValidateTab(ByVal iTab As Long) As Boolean
+Dim bValid As Boolean
+   Select Case iTab
+   Case 0
+      If Len(cboPath.Text) &gt; 0 Then
+         If DirectoryExists(cboPath.Text) Then
+            If Len(cboSearchFor.Text) &gt; 0 Then
+               bValid = True
+            End If
+         End If
+      End If
+      cmdNext.Enabled = bValid
+      ValidateTab = bValid
+   Case 1
+      ' nothing to do
+      ValidateTab = False
+   End Select
+End Function
+
+Private Function DirectoryExists(ByVal sDir As String) As Boolean
+   On Error Resume Next
+   Dim s As String
+   s = Dir(sDir, vbDirectory)
+   If (Err.Number = 0) And Len(s) &gt; 0 Then
+      DirectoryExists = True
+   End If
+   On Error GoTo 0
+End Function
+
+Private Sub startFind()
+   
+   ' Store everything in the MRU:
+   m_cMruPath.Add cboPath.Text
+   m_cMruFileSpec.Add cboFileSpec.Text
+   m_cMruSearchFor.Add cboSearchFor.Text
+   ' ensure combos are consistent:
+   displayMru m_cMruPath, cboPath
+   displayMru m_cMruFileSpec, cboFileSpec
+   displayMru m_cMruSearchFor, cboSearchFor
+   
+   ' Clear old results:
+   lstResults.Clear
+   
+   ' wait until previous find is cancelled:
+   If (m_bFinding) Then
+      Screen.MousePointer = vbHourglass
+      Do While (m_bFinding)
+         m_bCancelFind = True
+         DoEvents
+         SleepApi 50
+      Loop
+      Screen.MousePointer = vbDefault
+   End If
+   
+   ' now start:
+   m_cFind.StartDirectory = cboPath.Text
+   m_cFind.FileSpec = cboFileSpec.Text
+   m_cFind.FindWhat = cboSearchFor.Text
+   m_cFind.Recurse = (chkRecurse.Value = vbChecked)
+   m_cFind.MatchCase = (chkMatchCase.Value = vbChecked)
+   StartTiming
+   m_cFind.Start
+   m_bFinding = True
+   
+   cmdNext.Enabled = False
+End Sub
+
+Private Sub cboPath_Change()
+   ValidateTab 0
+End Sub
+
+Private Sub cboPath_Click()
+   ValidateTab 0
+End Sub
+
+Private Sub cboSearchFor_Change()
+   ValidateTab 0
+End Sub
+
+Private Sub cboSearchFor_Click()
+   ValidateTab 0
+End Sub
+
+Private Sub cmdBack_Click()
+   picPage(1).Visible = False
+   picPage(0).Visible = True
+   cmdBack.Enabled = False
+   cmdNext.Enabled = True
+   If (m_bFinding) Then
+      m_bCancelFind = True
+   End If
+End Sub
+
+Private Sub cmdFinish_Click()
+   Unload Me
+End Sub
+
+Private Sub cmdNext_Click()
+   picPage(0).Visible = False
+   picPage(1).Visible = True
+   cmdNext.Enabled = False
+   cmdBack.Enabled = True
+   startFind
+End Sub
+
+Private Sub cmdPick_Click()
+Dim sFolder As String
+   m_cBrowse.hwndOwner = Me.hwnd
+   m_cBrowse.Title = "Pick Folder"
+   m_cBrowse.EditBox = True
+   m_cBrowse.ValidateEditBox = True
+   m_cBrowse.UseNewUI = True
+   If Not (DirectoryExists(cboPath.Text)) Then
+      m_cBrowse.InitialDir =
+       m_cBrowse.SpecialFolderLocation(CSIDL_PROGRAM_FILES)
+   Else
+      m_cBrowse.InitialDir = cboPath.Text
+   End If
+   sFolder = m_cBrowse.BrowseForFolder()
+   If Len(sFolder) &gt; 0 Then
+      cboPath.Text = sFolder
+   End If
+End Sub
+
+Private Sub Form_Load()
+   Dim cR As New cRegistry
+   cR.ClassKey = HKEY_CURRENT_USER
+   If Not LoadSettings(cR) Then
+      cR.ClassKey = HKEY_LOCAL_MACHINE
+      LoadSettings cR
+   End If
+   
+   AutoComplete GetComboBoxEdithWnd(cboPath.hwnd), SHACF_FILESYS_DIRS Or
+    SHACF_FILESYS_ONLY
+   
+   Set m_cSysIls = New cVBALSysImageList
+   m_cSysIls.IconSizeX = 16
+   m_cSysIls.Create
+   Set m_cODList = New cSimpleODListBox
+   m_cODList.Attach lstResults.hwnd
+   m_cODList.ImageList(lstResults) = m_cSysIls.hIml
+   m_cODList.ShowChecks(lstResults) = False
+   
+   Set m_cBrowse = New cBrowseForFolder
+   Set m_cFind = New cFindInFiles
+   
+   'rtfResults.BorderStyle = rtfFixedSingle
+   
+End Sub
+
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+   If (m_bFinding) Then
+      Screen.MousePointer = vbHourglass
+      Do While (m_bFinding)
+         m_bCancelFind = True
+         DoEvents
+         SleepApi 50
+      Loop
+      Screen.MousePointer = vbDefault
+   End If
+End Sub
+
+Private Sub Form_Resize()
+   '
+On Error Resume Next
+   
+   Dim lHeight As Long
+   lHeight = Me.ScaleHeight - cmdBack.Height - 2 * picWizard.left
+   
+   picWizard.Move _
+      picWizard.left, picWizard.tOp, _
+      picWizard.Width, _
+      lHeight - picWizard.tOp
+      
+   picPage(0).Move _
+      picWizard.left + picWizard.Width + picWizard.left * 2, picPage(0).tOp, _
+      Me.ScaleWidth - picWizard.Width - picWizard.left * 4, _
+      lHeight - 2 * Screen.TwipsPerPixelY
+      
+   picPage(1).Move _
+      picPage(0).left, picPage(0).tOp, _
+      Me.ScaleWidth - picWizard.Width - picWizard.left * 4, _
+      lHeight - 2 * Screen.TwipsPerPixelY
+   
+   cmdBack.Move _
+      Me.ScaleWidth - (cmdBack.Width + picWizard.left) * 3, _
+      lHeight + picWizard.left
+   cmdNext.Move _
+      Me.ScaleWidth - (cmdBack.Width + picWizard.left) * 2, _
+      lHeight + picWizard.left, _
+      cmdBack.Width
+   cmdFinish.Move _
+      Me.ScaleWidth - cmdBack.Width - picWizard.left, _
+      lHeight + picWizard.left, _
+      cmdBack.Width
+   
+   '
+End Sub
+
+Private Sub Form_Unload(Cancel As Integer)
+   Dim cR As New cRegistry
+   cR.ClassKey = HKEY_CURRENT_USER
+   SaveSettings cR
+   cR.ClassKey = HKEY_LOCAL_MACHINE
+   SaveSettings cR
+End Sub
+
+Private Sub lstResults_Click()
+   If (lstResults.ListIndex &gt; -1) Then
+      If Len(lstResults.Tag) = 0 Then
+         loadItem lstResults.List(lstResults.ListIndex)
+      End If
+   End If
+End Sub
+
+Private Sub m_cBrowse_ValidationFailed(ByVal sMsg As String, bKeepOpen As
+ Boolean)
+   If (MsgBox(sMsg, vbQuestion Or vbRetryCancel) = vbCancel) Then
+      bKeepOpen = False
+   Else
+      bKeepOpen = True
+   End If
+End Sub
+
+Private Sub m_cFind_Cancelled()
+   '
+   m_bCancelFind = False
+   m_bFinding = False
+   lblSearching.Caption = "Search Cancelled."
+   '
+End Sub
+
+Private Sub m_cFind_Complete()
+   '
+   m_bCancelFind = False
+   m_bFinding = False
+   lblSearching.Caption = "Complete (" &amp; EndTiming &amp; " ms). Results in " &amp;
+    lstResults.ListCount &amp; " of " &amp; m_lFileCount &amp; " files."
+   '
+End Sub
+
+Private Sub m_cFind_Found(ByVal sFile As String, ByVal iPos As Long, bCancel As
+ Boolean)
+   '
+Dim lIndex As Long
+
+   lIndex = lstResults.ListIndex
+   lstResults.Tag = IIf(lIndex &gt; -1, "NOCLICK", "")
+         
+   m_cODList.AddItem _
+      lstResults, _
+      sFile &amp; vbTab &amp; iPos, _
+      m_cSysIls.ItemIndex(sFile), _
+      0
+
+   If (lIndex &gt; -1) Then
+      lstResults.ListIndex = lIndex
+   End If
+   lstResults.Tag = ""
+   
+   bCancel = m_bCancelFind
+   '
+
+End Sub
+
+Private Sub m_cFind_Status(ByVal sMsg As String, bCancel As Boolean)
+   '
+   lblSearching.Caption = sMsg
+   lblSearching.Refresh
+   bCancel = m_bCancelFind
+   m_lFileCount = m_lFileCount + 1
+   '
+End Sub
+
+Private Sub picPage_Resize(Index As Integer)
+   '
+On Error Resume Next
+Dim lW As Long
+Dim lH As Long
+   lW = picPage(Index).ScaleWidth
+   lH = picPage(Index).ScaleHeight
+   
+   Select Case Index
+   Case 0
+      lblInfo.Move 0, 0, lW
+      cmdPick.Move lW - cmdPick.Width - 2 * Screen.TwipsPerPixelX
+      lW = lW - cmdPick.Width - lblPath.Width - 6 * Screen.TwipsPerPixelX
+      cboPath.Move cboPath.left, cboPath.tOp, lW
+      chkRecurse.Move cboPath.left, chkRecurse.tOp, lW
+      cboFileSpec.Move cboPath.left, cboFileSpec.tOp, lW
+      cboSearchFor.Move cboPath.left, cboSearchFor.tOp, lW
+      chkMatchCase.Move cboPath.left, chkMatchCase.tOp, lW
+      
+   Case 1
+      lblSearching.Move 0, 0, lW
+      lstResults.Move 0, lstResults.tOp, lW
+      rtfResults.Move _
+         0, _
+         lstResults.tOp + lstResults.Height + 2 * Screen.TwipsPerPixelY, _
+         lW, _
+         lH - _
+            (lstResults.tOp + lstResults.Height + 2 * Screen.TwipsPerPixelY) - _
+            (txtFileName.Height + 2 * Screen.TwipsPerPixelY)
+      txtFileName.Move _
+         0, _
+         rtfResults.tOp + rtfResults.Height + 2 * Screen.TwipsPerPixelY, _
+         lW
+   End Select
+   '
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;<a href="article.html">Finding Which DLL Contains an API Call</a>&#160;.&#160;<a href="VB6_LibSearch_Demonstration.html">VB6 LibSearch Demonstration</a>&#160;.&#160;frmLibSearch.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Finding_Which_DLL_Contains_an_API_Call/VB6_LibSearch_Demonstration_zip_frmLibSearch_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:24:10 GMT -->
+</html>

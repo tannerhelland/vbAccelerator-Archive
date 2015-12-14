@@ -1,0 +1,259 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Common_Dialogs/Folder_Browser/VB5_Folder_Browser_zip_cCapturedBrowseForFolder_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cCapturedBrowseForFolder.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cCapturedBrowseForFolder.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Common Dialogs</a>&#160;.&#160;<a href="article.html">Browsing For Folders</a>&#160;.&#160;<a href="VB5_Folder_Browser.html">VB5 Folder Browser</a>&#160;.&#160;cCapturedBrowseForFolder.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Folder_Browser.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Folder Browser</a> (50K)</p><p /><p class="nav"><a href="VB6_Folder_Browser.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Folder Browser</a> (43K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1794</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1794&amp;type=Zip&amp;title=VB5%20Folder%20Browser%2Ezip%5FcCapturedBrowseForFolder">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />16 Dec 2002<br />Added VB6 version</p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cCapturedBrowseForFolder.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cCaptureBF"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+Private Type RECT
+   left As Long
+   top As Long
+   right As Long
+   bottom As Long
+End Type
+
+Private WithEvents m_cBF As cBrowseForFolder
+Attribute m_cBF.VB_VarHelpID = -1
+Private m_iWp As ICaptureBF
+
+Private Declare Function IsWindow Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function MoveWindow Lib "user32" (ByVal hwnd As Long, ByVal X
+ As Long, ByVal Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ bRepaint As Long) As Long
+Private Declare Function SetParent Lib "user32" (ByVal hWndChild As Long, ByVal
+ hWndNewParent As Long) As Long
+Private Const WM_SYSCOMMAND = &amp;H112&amp;
+Private Const SC_CLOSE = &amp;HF060&amp;
+Private Declare Function SendMessageLong Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any)
+ As Long
+Private Const WM_CLOSE = &amp;H10
+Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long) As Long
+Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long
+Private Const GWL_STYLE = (-16)
+Private Const GWL_EXSTYLE = (-20)
+Private Const WS_OVERLAPPED = &amp;H0&amp;
+Private Const WS_POPUP = &amp;H80000000
+Private Const WS_CHILD = &amp;H40000000
+Private Const WS_MINIMIZE = &amp;H20000000
+Private Const WS_VISIBLE = &amp;H10000000
+Private Const WS_DISABLED = &amp;H8000000
+Private Const WS_CLIPSIBLINGS = &amp;H4000000
+Private Const WS_CLIPCHILDREN = &amp;H2000000
+Private Const WS_MAXIMIZE = &amp;H1000000
+Private Const WS_CAPTION = &amp;HC00000                 '/* WS_BORDER | WS_DLGFRAME
+  */
+Private Const WS_BORDER = &amp;H800000
+Private Const WS_DLGFRAME = &amp;H400000
+Private Const WS_VSCROLL = &amp;H200000
+Private Const WS_HSCROLL = &amp;H100000
+Private Const WS_SYSMENU = &amp;H80000
+Private Const WS_THICKFRAME = &amp;H40000
+Private Const WS_GROUP = &amp;H20000
+Private Const WS_TABSTOP = &amp;H10000
+
+Private Const WS_MINIMIZEBOX = &amp;H20000
+Private Const WS_MAXIMIZEBOX = &amp;H10000
+
+Private Const WS_TILED = WS_OVERLAPPED
+Private Const WS_ICONIC = WS_MINIMIZE
+Private Const WS_SIZEBOX = WS_THICKFRAME
+
+'/*
+' * Extended Window Styles
+' */
+Private Const WS_EX_DLGMODALFRAME = &amp;H1&amp;
+Private Const WS_EX_NOPARENTNOTIFY = &amp;H4&amp;
+Private Const WS_EX_TOPMOST = &amp;H8&amp;
+Private Const WS_EX_ACCEPTFILES = &amp;H10&amp;
+Private Const WS_EX_TRANSPARENT = &amp;H20&amp;
+Private Const WS_EX_MDICHILD = &amp;H40&amp;
+Private Const WS_EX_TOOLWINDOW = &amp;H80&amp;
+Private Const WS_EX_WINDOWEDGE = &amp;H100&amp;
+Private Const WS_EX_CLIENTEDGE = &amp;H200&amp;
+Private Const WS_EX_CONTEXTHELP = &amp;H400&amp;
+
+Private Const WS_EX_RIGHT = &amp;H1000&amp;
+Private Const WS_EX_LEFT = &amp;H0&amp;
+Private Const WS_EX_RTLREADING = &amp;H2000&amp;
+Private Const WS_EX_LTRREADING = &amp;H0&amp;
+Private Const WS_EX_LEFTSCROLLBAR = &amp;H4000&amp;
+Private Const WS_EX_RIGHTSCROLLBAR = &amp;H0&amp;
+
+Private Const WS_EX_CONTROLPARENT = &amp;H10000
+Private Const WS_EX_STATICEDGE = &amp;H20000
+Private Const WS_EX_APPWINDOW = &amp;H40000
+
+Private Const WS_EX_OVERLAPPEDWINDOW = (WS_EX_WINDOWEDGE Or WS_EX_CLIENTEDGE)
+Private Const WS_EX_PALETTEWINDOW = (WS_EX_WINDOWEDGE Or WS_EX_TOOLWINDOW Or
+ WS_EX_TOPMOST)
+
+Private Declare Function FindWindowEx Lib "user32" Alias "FindWindowExA" (ByVal
+ hWnd1 As Long, ByVal hWnd2 As Long, ByVal lpsz1 As String, ByVal lpsz2 As
+ String) As Long
+Private Declare Function DestroyWindow Lib "user32" (ByVal hwnd As Long) As Long
+
+Private m_bDontUnload As Boolean
+
+Public Sub Reload(ByVal sSelPath As String)
+Attribute Reload.VB_Description = "Closes the open Browse for Folder dialog and
+ opens a new one.  Required if you make or delete any folder when the dialog is
+ open."
+Dim hwnd As Long
+   m_bDontUnload = True
+   hwnd = m_cBF.DialoghWnd
+   pUnloadBrowseDialog hwnd
+   m_bDontUnload = False
+   m_cBF.InitialDir = sSelPath
+   Show m_iWp
+End Sub
+
+Public Property Get Browse() As cBrowseForFolder
+Attribute Browse.VB_Description = "Returns the cBrowseForFolder object.  Use
+ this to set up the options, initial folder and so on."
+   Set Browse = m_cBF
+End Property
+
+Public Sub Show(ByRef iwp As ICaptureBF)
+Attribute Show.VB_Description = "Shows the capture window and loads the folder
+ browser into it."
+Dim sR As String
+   Set m_iWp = iwp
+   sR = m_cBF.BrowseForFolder
+   If Not (m_bDontUnload) Then
+      If Not m_iWp Is Nothing Then
+         m_iWp.Unload
+      End If
+   End If
+End Sub
+
+Private Sub Class_Initialize()
+   DebugMsg "cCaptureBrowseForFolder:Initialize"
+   Set m_cBF = New cBrowseForFolder
+End Sub
+
+Private Sub Class_Terminate()
+   Set m_cBF = Nothing
+   Set m_iWp = Nothing
+   DebugMsg "cCaptureBrowseForFolder:Terminate"
+End Sub
+
+Private Sub m_cBF_Initialized()
+Dim tR As RECT
+Dim lhWndC As Long
+Dim lhWndT As Long
+Dim lStyle As Long
+Dim lhWndTV As Long
+   lhWndC = m_iWp.CapturehWnd
+   GetClientRect lhWndC, tR
+   lhWndT = m_cBF.DialoghWnd
+   lStyle = GetWindowLong(lhWndT, GWL_STYLE)
+   lStyle = lStyle And Not (WS_BORDER Or WS_DLGFRAME Or WS_CAPTION Or WS_BORDER
+    Or WS_SIZEBOX Or WS_THICKFRAME)
+   lStyle = lStyle Or WS_CHILD
+   SetWindowLong lhWndT, GWL_STYLE, lStyle
+   lStyle = GetWindowLong(lhWndT, GWL_EXSTYLE)
+   lStyle = lStyle And Not WS_EX_DLGMODALFRAME
+   SetWindowLong lhWndT, GWL_EXSTYLE, lStyle
+   SetParent lhWndT, lhWndC
+   'SetWindowPos lhWndT, 0, 0, 0, tR.Right - tR.Left, tR.bottom - tR.Top,
+    SWP_NOMOVE Or SWP_NOOWNERZORDER Or SWP_NOZORDER Or SWP_FRAMECHANGED
+   MoveWindow lhWndT, 0, 0, tR.right - tR.left, tR.bottom - tR.top, 1
+   lhWndTV = FindWindowEx(lhWndT, 0, "SysTreeView32", "")
+   If lhWndTV &lt;&gt; 0 Then
+      MoveWindow lhWndTV, 0, 0, tR.right - tR.left, tR.bottom - tR.top, 1
+   End If
+   lStyle = GetWindowLong(lhWndC, GWL_EXSTYLE)
+   lStyle = lStyle Or WS_EX_CONTROLPARENT
+   SetWindowLong lhWndC, GWL_EXSTYLE, lStyle
+   m_iWp.CaptureBrowseForFolder = Me
+End Sub
+Public Sub Unload()
+Attribute Unload.VB_Description = "Raised when the browse for folder dialog is
+ unloaded.  Call Unload Me in your form in response to this event."
+Dim hwnd As Long
+   Set m_iWp = Nothing
+   On Error Resume Next
+   hwnd = m_cBF.DialoghWnd
+   If Err.Number = 0 Then
+      If hwnd &lt;&gt; 0 Then
+         pUnloadBrowseDialog hwnd
+      End If
+   End If
+
+End Sub
+Private Sub pUnloadBrowseDialog(ByVal hwnd As Long)
+Dim lR As Long
+   SetParent hwnd, 0
+   lR = SendMessageLong(hwnd, WM_SYSCOMMAND, SC_CLOSE, 0)
+   DestroyWindow hwnd
+   Debug.Assert (IsWindow(hwnd) = 0)
+End Sub
+
+Private Sub m_cBF_SelectionChanged(ByVal sPath As String, bAllowOk As Boolean)
+   m_iWp.SelectionChanged sPath
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Common Dialogs</a>&#160;.&#160;<a href="article.html">Browsing For Folders</a>&#160;.&#160;<a href="VB5_Folder_Browser.html">VB5 Folder Browser</a>&#160;.&#160;cCapturedBrowseForFolder.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Common_Dialogs/Folder_Browser/VB5_Folder_Browser_zip_cCapturedBrowseForFolder_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+</html>

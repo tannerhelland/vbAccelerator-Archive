@@ -1,0 +1,245 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Random_Sequences_Using_Cellular_Automata/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:44:04 GMT -->
+<head>
+
+<title>vbAccelerator - Generating Random Boolean Sequences Using Cellular Automata</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This tip demonstrates how to generate a sequence of random boolean numbers using
+a cellular automata technique described in Stephen Wolfram's book 
+'A New Kind Of Science'.  Unlike many other linear congruential generators,
+the output of this method has been shown to be free of repetition and statistically
+random.
+" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Generating Random Boolean Sequences Using Cellular Automata</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Random_Sequence_Generator.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />Random Sequence Generator</a> (10K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:13016</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13016&amp;type=Article&amp;title=Generating%20Random%20Boolean%20Sequences%20Using%20Cellular%20Automata">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />23 Oct 2003<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2957">Generating Long Sequences of Unique Numbers</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Generating Random Boolean Sequences Using Cellular Automata</h1><p class="splash">Get more randomness with this mathematical technique</p><img src="randomGenerator.png" width="355" height="270" alt="Demonstration Application" /><p /><p>
+This tip demonstrates how to generate a sequence of random boolean numbers using
+a cellular automata technique described in Stephen Wolfram's book 
+"A New Kind Of Science".  Unlike many other linear congruential generators,
+the output of this method has been shown to be free of repetition and statistically
+random.
+</p><h2>Cellular Automata As Random Number Generators</h2><p>
+Cellular Automata are systems in which the current state is captured in a series
+of cells.  The next state of the system is then generated from the current state
+by application of simple rules which determine the new state of a cell based on 
+the states of its neighbours.  One of the simplest forms of this type of system
+uses a one-dimensional array of cells, and considers only the current cell and
+its immediate neighbours to the left and the right to determine the next state.
+Despite the simplicity of the rule, there are a number of rules which lead to
+extremely complex behaviour.  As a consequence the output is a good candidate
+for use in generating random numbers.
+</p><p>
+Typically, computer systems use a shift register type approach to generating
+numbers, like the one described in the article <a href="http://www.vbaccelerator.com/article.asp?id=2957">Generating 
+long sequences of random numbers</a>.
+Analysis of the output of these generators has shown that the output isn't as
+random as it ought to be.  If the numbers are plotted against 
+previously generated numbers in one, two or three dimensions then stripes begin
+to appear in the output, whereas a truly random sequence would be distributed.
+</p><h2>Class 30 One Dimensional Cellular Automata</h2><p>
+In Wolfram's book, all the possible one dimensional cellular automata with two
+states are given a number (there are 256 of them).  Class 30 is one of the four
+which generates complex non-repetitive behaviour, and that is used here.  This 
+automata has the following rules:
+</p><pre>
+  IF [cell - 1] = black  THEN
+     IF [cell] = black  OR  [cell + 1] = black  THEN
+        newCell = white
+     ELSE
+        newCell = black
+     ENDIF
+  ELSE
+     IF [cell] = black OR [cell + 1] = black THEN
+        newCell = black
+     ELSE
+        newCell = white
+     ENDIF
+  ENDIF
+</pre><p>
+A diagram of the output of this automata when the initial condition is a single
+black square is shown in the diagram below:
+</p><img src="automata.png" width="216" height="150" alt="Class 30 Cellular Automata Output" /><p class="figure">Class 30 Cellular Automata Output - 32 Iterations</p><p>
+The centre squares, highlighted in blue are used to generate the random heads/tails 
+result.
+</p><p>
+To completely generate the output of the algorithm, an infinite cellular space would be
+needed (since new cells are continually generated to the right of any previous cell).
+In practice, the size of the cellular space can be restricted to a much smaller number,
+typically around 200 and the cellular space wrapped around (so that the neighbour to the right
+of the rightmost cell is the leftmost cell and similarly for the leftmost cell).
+</p><p>
+Therefore to implement the algorithm we need two arrays of 200 cells each: one to hold the
+current state, and another to hold the next state.  The version provided here uses a two
+dimensional array to hold the current and next states, and simply swaps the index between
+the two blocks at each generation.  Here's the algorithm:
+</p><pre>
+Private m_lSize As Long
+Private m_cells() As Byte ' Using byte even though only two states needed
+Private m_iIndex As Long
+
+Public Function nextRandom() As Boolean
+   
+   ' determine the index to write into
+   Dim iNextIndex As Long
+   If (m_iIndex = 1) Then
+      iNextIndex = 0
+   Else
+      iNextIndex = 1
+   End If
+   
+   ' Calculate the automata
+   Dim i As Long
+   Dim iPrev As Long
+   Dim iNext As Long
+   iPrev = m_lSize - 1
+   For i = 0 To m_lSize - 1
+      iNext = (i + 1) Mod m_lSize
+      If (m_cells(m_iIndex, iPrev) = 0) Then
+         ' output is white if me or next is black:
+         If (m_cells(m_iIndex, i) = 0) Or (m_cells(m_iIndex, iNext) = 0) Then
+            m_cells(iNextIndex, i) = 1
+         Else
+            m_cells(iNextIndex, i) = 0
+         End If
+      Else
+         ' output is black if me or next is black:
+         If (m_cells(m_iIndex, i) = 0) Or (m_cells(m_iIndex, iNext) = 0) Then
+            m_cells(iNextIndex, i) = 0
+         Else
+            m_cells(iNextIndex, i) = 1
+         End If
+      End If
+      
+      iPrev = i
+   Next i
+         
+   m_iIndex = iNextIndex
+   nextRandom = m_cells(iNextIndex, m_lSize \ 2)
+   
+End Function
+
+Private Sub Class_Initialize()
+   m_lSize = 200
+   ReDim m_cells(0 To 1, 0 To m_lSize - 1) As Byte
+   m_iIndex = 0
+   ' seed the initial state
+   m_cells(m_iIndex, m_lSize \ 2) = 1
+End Sub
+</pre><p>
+Of course, since the initial state is always the same this algorithm will 
+always yield the same output.  To allow different outputs, different starting
+conditions can be used by seeding the generator (similar to the <span class="code">Randomize</span>
+method in VB.  Two methods are provided in the code: firstly one which takes a long
+value, and centres values of each of the 32 bits into the array, and secondly one which takes
+a byte array, which can be used to set longer initial seeds:
+</p><pre>
+Public Sub Seed(ByVal fSeed As Long)
+   
+   ' determine the index to write into
+   Dim iNextIndex As Long
+   If (m_iIndex = 1) Then
+      iNextIndex = 0
+   Else
+      iNextIndex = 1
+   End If
+
+   ' write the bits:
+   Dim lCentre As Long
+   lCentre = m_lSize \ 2
+   Dim i As Long
+   Dim j As Long
+   Dim pow As Long
+   pow = 1
+   j = lCentre - 16
+   For i = 0 To 31
+      If (j &gt;= 0) And (j &lt; m_lSize) Then
+         m_cells(iNextIndex, j) = ((fSeed And pow) = pow)
+      End If
+      j = j + 1
+      If (i &gt;= 30) Then
+         pow = &amp;H80000000
+      Else
+         pow = pow * 2
+      End If
+   Next i
+   
+   m_iIndex = iNextIndex
+
+End Sub
+
+Public Sub SeedLarge(b() As Byte)
+
+   ' determine the index to write into
+   Dim iNextIndex As Long
+   If (m_iIndex = 1) Then
+      iNextIndex = 0
+   Else
+      iNextIndex = 1
+   End If
+
+   Dim lSeedSize As Long
+   lSeedSize = UBound(b) - LBound(b) + 1
+   
+   Dim j As Long
+   For j = 0 To lSeedSize - 1
+      m_cells(iNextIndex, j) = IIf(b(j + LBound(b)) &gt; 0, 1, 0)
+      If (j &gt; m_lSize) Then
+         Exit For
+      End If
+   Next j
+   
+   m_iIndex = iNextIndex
+   
+End Sub
+</pre><h2>Conclusion</h2><p>
+This tip provides a new boolean random generator for VB which uses a more 
+uniformly random technique than the existing random generator.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Generating Random Boolean Sequences Using Cellular Automata</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 3 December 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Random_Sequences_Using_Cellular_Automata/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:44:05 GMT -->
+</html>

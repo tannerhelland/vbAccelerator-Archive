@@ -1,0 +1,110 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Quantisation/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:36 GMT -->
+<head>
+
+<title>vbAccelerator - Quantising Bitmaps</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This sample was inspired by a T-Shirt I bought which used circles of various sizes
+to represent the intensity level of a blown-up image.  The image is easy to see at
+a distance but not so straightforward close-up (which is handy, as I'm no oil-painting
+close-up).  The code demonstrates averaging the pixels in an image and then creating
+a new image with one which uses an image from a strip which corresponds to the intensity
+at that point, optionally setting the colour to match the original.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;Quantising Bitmaps</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Bitmap_Quantiser.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Bitmap Quantiser</a> (143K)</p><p /><p class="nav"><a href="VB6_Bitmap_Quantiser.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Bitmap Quantiser</a> (135K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:14455</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14455&amp;type=Article&amp;title=Quantising%20Bitmaps">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />16 Apr 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11998">Resampling with Alpha</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3162">Hue Luminance and Saturation (HLS) Model and Manipulating Colours</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Quantising Bitmaps</h1><img src="quantise.png" width="318" height="180" alt="Sample output from quantiser" /><p /><p>
+This sample was inspired by a T-Shirt I bought which used circles of various sizes
+to represent the intensity level of a blown-up image.  The image is easy to see at
+a distance but not so straightforward close-up (which is handy, as I'm no oil-painting
+close-up).  The code demonstrates averaging the pixels in an image and then creating
+a new image with one which uses an image from a strip which corresponds to the intensity
+at that point, optionally setting the colour to match the original.
+</p><h2>About the Demonstration</h2><p>
+The main demonstration screen is split into three parts:
+</p><ol><li>The image strip source to use for the different intensities.</li><li>Source image.</li><li>Result image.</li></ol><img src="application.png" width="485" height="545" alt="Demo application screen shot" /><p>
+The image strip source is used to represent the different intensities in the result 
+image. You can select the number of images in the strip (the image at the left-hand
+edge should be the darkest and the one at the rightmost edge the lightest).  This
+image can be scaled (using <a href="article1d49.html?id=11998">alpha resampling</a>) and
+you so you can also specify the transparent colour, which is normally picked automatically
+from the top-right corner.  Ideally the image strip source should be a much larger bitmap
+than needed, and scaled down to get a smooth effect.
+</p><p>
+Once a source image is loaded you can then create a quantised output. The options
+here are:
+</p><ol><li>Set the number of pixels sampled for each block.  The less pixels sampled, the
+larger the result.</li><li>Whether to apply the averaged colour from the source image to the destination.</li><li>Whether to use the luminance of the image selected from the quantise image strip
+to the result.  This is used if your image strip is not just a black and white
+image.</li><li>The background colour to use when saving the image to a standard bitmap (you
+can also save it as a bitmap with an alpha channel, but not all applications are
+capable of reading these files).</li></ol><p>
+Some examples of the output are as follows:
+</p><img src="quantiseLogo.png" width="320" height="320" alt="Quantised vbAccelerator Logo" /><p class="caption">Quantised vbAccelerator Logo.</p><img src="quantiseRobot.png" width="404" height="320" alt="Robot" /><p class="caption">Robot</p><h2>About the Code</h2><p>
+The quantising code is mostly applied by the <span class="code">cDibQuantiser</span>
+class.  Ignoring the code to set up the quantise image, source and result, all of the
+work is performed in the <span class="code">pQuantise</span> method.  The code runs
+through a few steps:
+</p><ol><li>Converts the memory for the quantise image, source and result DIBs into arrays:
+<span class="code">bDibStrip</span>, <span class="code">bDib</span> and 
+<span class="code">bDibTo</span> respectively.</li><li>Loops through the source image DIB, averaging the red, green, blue and gray
+components (gray is derived using the ITU formula 
+<span class="code">(222 * Red + 707 * Green + 71 Blue)/1000</span>). The code
+as it stands assumes that any pixels outside the image have a colour of black:
+this is not always appropriate and you could extend it to assume that the edge
+colour extends off the edge of the image.
+</li><li>The average colour is then used to pick the correct image from the quantise
+strip, and the bits of the quantise image are then copied to the output, adjusting
+the colours and luminance if needed.
+</li></ol><h2>Conclusion</h2><p>
+This article demonstrates applying quantising effects to images.  The code
+here can also be used to create other effects such as mosaics.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;Quantising Bitmaps</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 18 April 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Quantisation/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:38 GMT -->
+</html>

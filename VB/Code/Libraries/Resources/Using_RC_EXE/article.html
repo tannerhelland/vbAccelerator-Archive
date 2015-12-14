@@ -1,0 +1,202 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Resources/Using_RC_EXE/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:56:55 GMT -->
+<head>
+
+<title>vbAccelerator - Using RC.EXE</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This article provides a short look at how to use the Resource Compiler (RC.EXE) to create
+resource files (.RES) for Visual Basic applications.  Using RC.EXE directly is often
+better than using the wizards provided with VB5 and 6 as you have more control over
+including arbitrary data; in addition the wizard versions do not encode icons correctly.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Resources</a>&#160;.&#160;Using RC.EXE</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:11996</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=11996&amp;type=Article&amp;title=Using%20RC%2EEXE">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />1 Nov 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1427">Adding XP Visual Styles to Your Visual Basic Application</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2767">vbAccelerator Visual Studio Style Tab Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3909">ComCtl32.DLL Animation Control Class</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2523">Storing and Showing HTML Resources in a VB Application</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Using RC.EXE</h1><p class="splash">A brief overview of using the Resource Compiler (RC.EXE) to build resources</p><img src="resimg.gif" width="196" height="167" alt="Resources" /><p /><p>
+This article provides a short look at how to use the Resource Compiler (RC.EXE) to create
+resource files (.RES) for Visual Basic applications.  Using RC.EXE directly is often
+better than using the wizards provided with VB5 and 6 as you have more control over
+including arbitrary data; in addition the wizard versions do not encode icons correctly.
+</p><h2>About the Resource Compiler</h2><p>
+The Resource Compiler compiles resource definition files (.RC files) and the 
+actual resource to be included (binary files such as icon, bitmap, and cursor files) 
+into a binary resource (.RES) file. This .RES file can then be included in any VB project, 
+and once the VB project is compiled, the resources are accessible to Win32 API functions 
+as well as the standard VB <i>LoadResString</i>, <i>LoadResPicture</i> and <i>LoadResData</i>
+functions. 
+</p><p>
+The Resource Compiler itself consists of two files: 
+</p><ul><li>RC.EXE</li><li>RCDLL.DLL</li></ul><p>
+These files come in the \Tools directory of Enterprise Editions of VB; if you don't have that 
+then you can download the files by looking for the VB5 Resource Add-In at MSDN
+</p><p>
+Resources can be divided into two groups: 
+</p><ol><li>String resources (text strings such as "vbAccelerator")</li><li>Binary resources (icons, bitmaps, cursors, sounds, video, and so forth)</li></ol><h2>1. String Resources</h2><p>
+String resources are stored in a string table in the resource definition file. 
+</p><h3>Syntax</h3><pre>
+STRINGTABLE [load-option] [mem-option]
+BEGIN
+	stringID string
+	.
+    	.
+    	.
+END
+</pre><p>
+The <i>STRINGTABLE</i> statement defines one or more string resources for an application. 
+String resources are simply null-terminated ASCII strings that can be loaded when needed 
+from the executable file, using the <i>LoadResString</i> function. 
+</p><h3>Parameters</h3><ol><li><i>load-option</i>.
+<p>
+Specifies when the resource is to be loaded. 
+This optional parameter must be one of the following options:
+</p><ul><li><i>PRELOAD</i><br />
+Resource is loaded immediately. 
+</li><li><i>LOADONCALL</i><br />
+(Default) Resource is loaded when called.
+</li></ul></li><li><i>mem-option</i><p>
+Specifies whether the resource is fixed or can be moved and whether or not can 
+be discarded. This optional parameter can be one of the following options:
+</p><ul><li><i>FIXED</i><br />
+Resource remains at a fixed memory location. 
+</li><li><i>MOVEABLE</i><br />
+Resource can be moved if necessary in order to compact memory. 
+</li><li><i>DISCARDABLE</i><br />
+Resource can be discarded if no longer needed. 
+</li></ul></li><li><i>stringID</i>. 
+<p>
+Specifies an integer value that identifies the resource. 
+</p></li><li><i>string</i>. 
+<p>
+Specifies one or more ASCII strings, enclosed in double quotation marks. The string 
+must be no longer than 255 characters and must occupy a single line in the source file. 
+Grouping strings in separate segments allows all related strings to be read once 
+in a single reading and discarded together. When possible, you should be 
+able to move and discard the table. The Resource Compiler allocates 16 strings per 
+segment and uses the identifier value to determine which segment will contain the string. 
+Strings with the same upper-12 bits in their identifiers are placed in the same segment. 
+</p></li></ol><h3>Example</h3><p>
+The following example demonstrates the <i>STRINGTABLE</i> statement:
+</p><pre>
+#define IDS_HELLO    1
+#define IDS_GOODBYE  2
+
+STRINGTABLE
+BEGIN
+    IDS_HELLO,   "Hello"
+    IDS_GOODBYE, "Goodbye"
+END 
+</pre><h2>2. Binary Resources</h2><p>
+Binary resources are not stored in the resource definition file. 
+The resource definition file includes only a pointer to the files containing the 
+binary resources, for example, icon (.ICO), bitmap (.BMP), cursor (.CUR), 
+sound (.WAV), and video (.AVI) files.
+</p><p>
+This pointer is called a Single-Line Statement in the resource definition file. 
+</p><h3>Syntax</h3><pre>
+nameID keyword [load-option] [mem-option] filename
+</pre><h3>Parameters</h3><ol><li><i>nameID</i><p>
+Specifies either a name or an integer value identifying the resource. 
+This ID has to be unique for every category specified by the keyword. 
+In the category ICON the ID 0 is reserved for the Visual Basic icon. Therefore you'll 
+have to start ID for ICONS at 1. 
+</p></li><li><i>keyword</i><p>
+Specifies the type of file. This can either be one of the following standard options
+or your own customised type:
+</p><ul><li><i>BITMAP</i><br />
+Defines a bitmap (.BMP)</li><li><i>CURSOR</i><br />
+Defines a cursor (.CUR)</li><li><i>ICON</i><br />
+Defines an icon (.ICO)</li><li><i>SOUND</i><br />
+Defines a wave file (.WAV)</li><li><i>VIDEO</i><br />
+Defines a video file (.AVI)</li></ul></li><li><i>load-option</i><p>
+Specifies when the resource is to be loaded. The parameter must be 
+one of the following options:
+</p><ul><li><i>PRELOAD</i><br />
+Resource is loaded immediately.</li><li><i>LOADONCALL</i><br />
+(Default) Resource is loaded when called.</li></ul></li><li><i>mem-option</i><p>
+Specifies whether the resource is fixed or can be moved and whether it can be discarded. 
+The parameter must be one of the following options: 
+</p><ul><li><i>FIXED</i><br />
+Resource remains at a fixed memory location. 
+</li><li><i>MOVEABLE</i><br />
+Resource can be moved if necessary in order to compact memory. 
+</li><li><i>DISCARDABLE</i><br />
+Resource can be discarded if no longer needed. 
+</li></ul><p>The default for binary resources is MOVEABLE.</p></li><li><i>filename</i><p>Specifies the name of the file that contains the resource. The 
+name must be a valid filename; it must be a full path if the file is not 
+in the current working directory. The path can be either a quoted or non-quoted string. 
+</p></li></ol><h3>Example</h3><p>
+The following example specifies two bitmap resources: 
+</p><pre>
+disk1   BITMAP disk.bmp
+12      BITMAP PRELOAD diskette.bmp
+</pre><h2>RC.EXE Options</h2><p>
+To start the Resource Compiler, use the <i>rc</i> command.
+</p><h3>Syntax</h3><pre>
+rc /r [options] definition-file
+</pre><h3>Parameters</h3><ul><li><i>/r</i><p>
+This parameter specifies that the .RC file will only be compiled, not linked 
+to any executable (required for use with VB) 
+</p></li><li><i>options</i><p>
+You can use the following options with the rc command: 
+</p><ul><li>/?<br />
+Displays a list of rc command-line options.</li><li>/fo newname<br />
+Uses newname for the name of the .RES file.</li></ul></li><li><i>definition-file</i><p>
+The definition-file parameter specifies the name of the resource definition file 
+(.RC) that contains the names, types, filenames, and descriptions of the resources 
+to be compiled.
+</p></li></ul><h3>Example</h3><pre>
+RC /r /fo TEST32.RES TEST.RC
+</pre><p><strong>Note</strong> if the .RES file you re-create is part of a Visual Basic project, you 
+will not be able to create it if the Visual Basic project is open.
+</p><h2>Conclusion</h2><p>
+This article gives a brief overview of using RC.EXE to create a Resource file for use
+with Visual Basic.  You can see this technique used in many examples on the site; for
+some specific ones try these articles:
+</p><ul><li><a href="http://www.vbaccelerator.com/article.asp?id=2767">vbAccelerator Visual Studio Style Tab Control</a></li><li><a href="http://www.vbaccelerator.com/article.asp?id=1427">Adding XP Visual Styles to Your Visual Basic Application</a></li><li><a href="http://www.vbaccelerator.com/article.asp?id=3909">ComCtl32.DLL Animation Control Class</a></li><li><a href="http://www.vbaccelerator.com/article.asp?id=2523">Storing and Showing HTML Resources in a VB Application</a></li></ul><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Resources</a>&#160;.&#160;Using RC.EXE</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 26 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Resources/Using_RC_EXE/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:56:55 GMT -->
+</html>

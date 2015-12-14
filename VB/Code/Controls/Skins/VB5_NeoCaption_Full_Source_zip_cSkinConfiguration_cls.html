@@ -1,0 +1,554 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Skins/VB5_NeoCaption_Full_Source_zip_cSkinConfiguration_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:13 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cSkinConfiguration.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cSkinConfiguration.cls" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator NeoCaption Component v2.0</a>&#160;.&#160;<a href="VB5_NeoCaption_Full_Source.html">VB5 NeoCaption Full Source</a>&#160;.&#160;cSkinConfiguration.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Skins.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Skins</a> (52K)</p><p /><p class="nav"><a href="VB5_NeoCaption_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 NeoCaption Demonstration</a> (114K)</p><p class="nav"><a href="VB5_NeoCaption_DLL.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 NeoCaption DLL</a> (74K)</p><p class="nav"><a href="VB5_NeoCaption_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 NeoCaption Full Source</a> (239K)</p><p /><p class="nav"><a href="VB6_NeoCaption_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 NeoCaption Demonstration</a> (127K)</p><p class="nav"><a href="VB6_NeoCaption_DLL.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 NeoCaption DLL</a> (74K)</p><p class="nav"><a href="VB6_NeoCaption_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 NeoCaption Full Source</a> (253K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:870</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=870&amp;type=Zip&amp;title=VB5%20NeoCaption%20Full%20Source%2Ezip%5FcSkinConfiguration">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 3 / 3</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:10 November 2003</p>
+<br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />21 Feb 2002<br /><p class="update">Release of Version 2.0.</p><p class="update">Fixes for support of different sized skinning parts.</p><p class="update">New <i>cSkinConfiguration</i> object for setting up the skin, which
+includes XML serialization and deserialization</p><p class="update">Colour customisation using HLS and RGB added.</p><p class="update">Transparent colour now added.</p><p class="update">Three new skins included.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cSkinConfiguration.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cSkinConfiguration"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+Private Declare Function GetMenu Lib "USER32" (ByVal hWnd As Long) As Long
+
+' v 1.0 properties
+Public ButtonWidth As Long
+Public ButtonHeight As Long
+Public ActiveLeftEnd As Long
+Public ActiveRightStart As Long
+Public ActiveRightEnd As Long
+Public InactiveOffset As Long
+Public Caption As StdPicture
+Public Borders As StdPicture
+
+Public ActiveCaptionColor As OLE_COLOR
+Public InActiveCaptionColor As OLE_COLOR
+Public CaptionFont As IFont
+
+Public ActiveMenuColor As OLE_COLOR
+Public ActiveMenuColorOver As OLE_COLOR
+Public InActiveMenuColor As OLE_COLOR
+Public MenuBackgroundColor As OLE_COLOR
+Public MenuFont As IFont
+
+' v 2.0 border properties
+Public BorderHasInactiveVersion As Boolean
+Public LeftBorderWidth As Long
+Public RightBorderWidth As Long
+Public TopSizingBorderHeight As Long
+Public BottomSizingBorderHeight As Long
+
+' v 2.0 caption properties
+Public DrawTitle As Boolean
+Public TitleStartOffsetY As Long
+
+' v 2.0 control buttons
+Public ControlButtonHasInactiveVersion As Boolean
+Public CustomControlButtonPosition As Boolean
+Public ControlButtonOffsetX As Long
+Public ControlButtonOffsetY As Long
+
+' v 2.0 menu properties
+Public MenuStartOffsetY As Long
+Public MenuStartOffsetX As Long
+
+' v 2.0 skin name
+Public Name As String
+
+' v 2.0 colourisation
+Public Colourise As Boolean
+Public Hue As Single
+Public Saturation As Single
+
+Public AdjustRGB As Boolean
+Public PercentRed As Single
+Public PercentBlue As Single
+Public PercentGreen As Single
+
+' v 2.0 transparent colour
+Public TransparentColor As OLE_COLOR
+
+Public Method As ECNCDrawMethodConstants
+
+Public Sub DrawSample( _
+      ByVal lhWnd As Long, _
+      ByVal lHDC As Long, _
+      ByVal lLeft As Long, _
+      ByVal lTop As Long, _
+      ByVal lWidth As Long, _
+      ByVal lHeight As Long, _
+      ByVal bActive As Boolean _
+   )
+   Dim cN As New cNeoCaption
+   Dim hMenu As Long
+   cN.PrepareSample Me
+   If (Colourise) Then
+      cN.Colourise Hue, Saturation
+   End If
+   If (AdjustRGB) Then
+      cN.AdjustRGB PercentRed, PercentGreen, PercentBlue
+   End If
+   hMenu = GetMenu(lhWnd)
+   cN.NCPaint lHDC, lhWnd, lLeft, lTop, lLeft + lWidth, lTop + lHeight, hMenu,
+    bActive, True
+End Sub
+
+Public Sub Restore( _
+      ByVal sXml As String, _
+      picCaption As StdPicture, _
+      picBorders As StdPicture _
+   )
+   ' Set defaults:
+   SetDefaults
+   
+   ' Load the data:
+   Dim x As New DOMDocument
+   If x.loadXML(sXml) Then
+      ' ok
+      Dim nodTop As IXMLDOMNode
+      Set nodTop = x.selectSingleNode("//NeoCaptionSkin")
+      If (nodTop Is Nothing) Then
+         Err.Raise vbObjectError + 1048 + 513, App.EXEName &amp;
+          ".cSkinConfiguration", "NeoCaptionSkin element not found in XML
+          document."
+      Else
+         Dim nodItem As IXMLDOMNode
+         For Each nodItem In nodTop.childNodes
+            Select Case nodItem.nodeName
+            Case "Name"
+               Name = nodItem.firstChild.nodeValue
+            Case "Caption"
+               restoreCaption nodItem
+            Case "Buttons"
+               restoreButtons nodItem
+            Case "Menu"
+               restoreMenu nodItem
+            Case "Effects"
+               restoreEffects nodItem
+            End Select
+         Next
+      End If
+      Set Caption = picCaption
+      Set Borders = picBorders
+   Else
+      ' problem
+      Err.Raise vbObjectError + 1048 + 513, App.EXEName &amp;
+       ".cSkinConfiguration", "The XML document could not be loaded: " +
+       x.parseError.reason + " at position " + x.parseError.filepos
+   End If
+End Sub
+Private Sub restoreCaption(nodCaption As IXMLDOMNode)
+Dim attr As IXMLDOMAttribute
+   For Each attr In nodCaption.Attributes
+      Select Case attr.Name
+      Case "activeLeftEnd"
+         ActiveLeftEnd = attr.value
+      Case "activeRightStart"
+         ActiveRightStart = attr.value
+      Case "activeRightEnd"
+         ActiveRightEnd = attr.value
+      Case "inactiveOffset"
+         InactiveOffset = attr.value
+      Case "activeColor"
+         ActiveCaptionColor = attr.value
+      Case "inactiveColor"
+         InActiveCaptionColor = attr.value
+      Case "titleStartOffsetY"
+         TitleStartOffsetY = attr.value
+      Case "drawTitle"
+         DrawTitle = restoreBool(attr.value)
+      End Select
+   Next
+   If (nodCaption.hasChildNodes) Then
+      Dim nodFont As IXMLDOMNode
+      Set nodFont = nodCaption.selectSingleNode("Font")
+      If Not (nodFont Is Nothing) Then
+         restoreFont nodFont, CaptionFont
+      End If
+   End If
+End Sub
+Private Sub restoreButtons(nodButtons As IXMLDOMNode)
+   Dim attr As IXMLDOMAttribute
+   For Each attr In nodButtons.Attributes
+      Select Case attr.Name
+      Case "buttonWidth"
+         ButtonWidth = attr.value
+      Case "buttonHeight"
+         ButtonHeight = attr.value
+      Case "controlButtonHasInactiveVersion"
+         ControlButtonHasInactiveVersion = restoreBool(attr.value)
+      Case "customControlButtonPosition"
+         CustomControlButtonPosition = restoreBool(attr.value)
+      Case "controlButtonOffsetX"
+         ControlButtonOffsetX = attr.value
+      Case "controlButtonOffsetY"
+         ControlButtonOffsetY = attr.value
+      End Select
+   Next
+End Sub
+Private Sub restoreMenu(nodMenu As IXMLDOMNode)
+   Dim attr As IXMLDOMAttribute
+   For Each attr In nodMenu.Attributes
+      Select Case attr.Name
+      Case "activeMenuColor"
+         ActiveMenuColor = attr.value
+      Case "activeMenuColorOver"
+         ActiveMenuColorOver = attr.value
+      Case "inActiveMenuColor"
+         InActiveMenuColor = attr.value
+      Case "menuBackgroundColor"
+         MenuBackgroundColor = attr.value
+      Case "menuStartOffsetX"
+         MenuStartOffsetX = attr.value
+      Case "menuStartOffsetY"
+         MenuStartOffsetY = attr.value
+      End Select
+   Next
+   If (nodMenu.hasChildNodes) Then
+      Dim nodFont As IXMLDOMNode
+      Set nodFont = nodMenu.selectSingleNode("Font")
+      If Not (nodFont Is Nothing) Then
+         restoreFont nodFont, MenuFont
+      End If
+   End If
+End Sub
+Private Sub restoreEffects(nodEffects As IXMLDOMNode)
+   Dim attr As IXMLDOMAttribute
+   For Each attr In nodEffects.Attributes
+      Select Case attr.Name
+      Case "transparentColor"
+         TransparentColor = attr.value
+      End Select
+   Next
+   Dim nodChild As IXMLDOMNode
+   For Each nodChild In nodEffects.childNodes
+      Select Case nodChild.nodeName
+      Case "Colourise"
+         For Each attr In nodChild.Attributes
+            Select Case attr.Name
+            Case "active"
+               Colourise = restoreBool(attr.value)
+            Case "hue"
+               Hue = restoreFloat(attr.value)
+            Case "saturation"
+               Saturation = restoreFloat(attr.value)
+            End Select
+         Next
+      Case "AdjustRGB"
+         For Each attr In nodChild.Attributes
+            Select Case attr.Name
+            Case "active"
+               AdjustRGB = restoreBool(attr.value)
+            Case "percentRed"
+               PercentRed = restoreFloat(attr.value)
+            Case "percentGreen"
+               PercentGreen = restoreFloat(attr.value)
+            Case "percentBlue"
+               PercentBlue = restoreFloat(attr.value)
+            End Select
+         Next
+      End Select
+   Next
+End Sub
+Private Function restoreBool(ByVal sXmlBool As String) As Boolean
+   If (UCase(Trim(sXmlBool)) = "YES") Then
+      restoreBool = True
+   Else
+      restoreBool = False
+   End If
+End Function
+Private Sub restoreFont(nodFont As IXMLDOMNode, fnt As IFont)
+   Dim sFnt As New StdFont
+   Dim attr As IXMLDOMAttribute
+   For Each attr In nodFont.Attributes
+      Select Case attr.Name
+      Case "name"
+         sFnt.Name = attr.value
+      Case "size"
+         sFnt.Size = restoreFloat(attr.value)
+      Case "bold"
+         sFnt.Bold = restoreBool(attr.value)
+      Case "italic"
+         sFnt.Italic = restoreBool(attr.value)
+      Case "underline"
+         sFnt.Underline = restoreBool(attr.value)
+      Case "strikethrough"
+         sFnt.Strikethrough = restoreBool(attr.value)
+      Case "charSet"
+         sFnt.Charset = CLng(attr.value)
+      End Select
+   Next
+   Set fnt = sFnt
+End Sub
+Private Function restoreFloat(ByVal sXmlValue As String) As Double
+Dim sDec As String
+Dim iPos As Long
+Dim sValue As String
+   iPos = InStr(sXmlValue, ".")
+   If (iPos &gt; 0) Then
+      sDec = Mid$(Format$("1.5", "0.0"), 2, 1)
+      If (iPos &gt; 1) Then
+         sValue = left$(sXmlValue, iPos - 1)
+      End If
+      sValue = sValue &amp; sDec
+      sValue = sValue &amp; Mid$(sXmlValue, iPos + 1)
+      restoreFloat = CDbl(sValue)
+   Else
+      restoreFloat = CDbl(sXmlValue)
+   End If
+   
+   
+End Function
+Public Function Store() As String
+   Dim x As New DOMDocument
+   Dim nodTop As IXMLDOMNode
+   Set nodTop = x.createElement("NeoCaptionSkin")
+   
+   ' Name
+   Dim nodName As IXMLDOMNode
+   Set nodName = x.createElement("Name")
+   nodName.Text = Name
+   nodTop.appendChild nodName
+   
+   ' Caption
+   Dim nodCaption As IXMLDOMNode
+   Set nodCaption = x.createElement("Caption")
+   addAttribute nodCaption, "activeLeftEnd", ActiveLeftEnd
+   addAttribute nodCaption, "activeRightStart", ActiveRightStart
+   addAttribute nodCaption, "activeRightEnd", ActiveRightEnd
+   addAttribute nodCaption, "inactiveOffset", InactiveOffset
+   addAttribute nodCaption, "activeColor", ActiveCaptionColor
+   addAttribute nodCaption, "inactiveColor", InActiveCaptionColor
+   storeFont nodCaption, CaptionFont
+   addAttribute nodCaption, "drawTitle", DrawTitle
+   addAttribute nodCaption, "titleStartOffsetY", TitleStartOffsetY
+   nodTop.appendChild nodCaption
+   
+   ' Buttons
+   Dim nodButtons As IXMLDOMNode
+   Set nodButtons = x.createElement("Buttons")
+   addAttribute nodButtons, "buttonWidth", ButtonWidth
+   addAttribute nodButtons, "buttonHeight", ButtonHeight
+   addAttribute nodButtons, "controlButtonHasInactiveVersion",
+    ControlButtonHasInactiveVersion
+   addAttribute nodButtons, "customControlButtonPosition",
+    CustomControlButtonPosition
+   addAttribute nodButtons, "controlButtonOffsetX", ControlButtonOffsetX
+   addAttribute nodButtons, "controlButtonOffsetY", ControlButtonOffsetY
+   nodTop.appendChild nodButtons
+      
+   ' Menu
+   Dim nodMenu As IXMLDOMNode
+   Set nodMenu = x.createElement("Menu")
+   addAttribute nodMenu, "activeMenuColor", ActiveMenuColor
+   addAttribute nodMenu, "activeMenuColorOver", ActiveMenuColorOver
+   addAttribute nodMenu, "inActiveMenuColor", InActiveMenuColor
+   addAttribute nodMenu, "menuBackgroundColor", MenuBackgroundColor
+   storeFont nodMenu, MenuFont
+   addAttribute nodMenu, "menuStartOffsetY", MenuStartOffsetY
+   addAttribute nodMenu, "menuStartOffsetX", MenuStartOffsetX
+   nodTop.appendChild nodMenu
+   
+   ' Borders
+   Dim nodBorders As IXMLDOMNode
+   Set nodBorders = x.createElement("Borders")
+   addAttribute nodBorders, "borderHasInactiveVersion", BorderHasInactiveVersion
+   addAttribute nodBorders, "leftBorderWidth", LeftBorderWidth
+   addAttribute nodBorders, "rightBorderWidth", RightBorderWidth
+   addAttribute nodBorders, "topSizingBorderHeight", TopSizingBorderHeight
+   addAttribute nodBorders, "bottomSizingBorderHeight", BottomSizingBorderHeight
+
+   ' Effects
+   Dim nodEffects As IXMLDOMNode
+   Set nodEffects = x.createElement("Effects")
+   addAttribute nodEffects, "transparentColor", TransparentColor
+   Dim nodColourise As IXMLDOMNode
+   Set nodColourise = x.createElement("Colourise")
+   addAttribute nodColourise, "active", Colourise
+   addAttribute nodColourise, "hue", Hue
+   addAttribute nodColourise, "saturation", Saturation
+   nodEffects.appendChild nodColourise
+   Dim nodAdjustRGB As IXMLDOMNode
+   Set nodAdjustRGB = x.createElement("AdjustRGB")
+   addAttribute nodAdjustRGB, "active", AdjustRGB
+   addAttribute nodAdjustRGB, "percentRed", PercentRed
+   addAttribute nodAdjustRGB, "percentBlue", PercentBlue
+   addAttribute nodAdjustRGB, "percentGreen", PercentGreen
+   nodEffects.appendChild nodAdjustRGB
+   nodTop.appendChild nodEffects
+   
+   x.appendChild nodTop
+   
+   Store = x.xml
+End Function
+Private Sub storeFont( _
+      nodTo As IXMLDOMNode, _
+      fnt As IFont _
+   )
+   
+   Dim nodFont As IXMLDOMNode
+   Set nodFont = nodTo.ownerDocument.createElement("Font")
+   addAttribute nodFont, "name", fnt.Name
+   addAttribute nodFont, "size", fnt.Size
+   addAttribute nodFont, "bold", fnt.Bold
+   addAttribute nodFont, "italic", fnt.Italic
+   addAttribute nodFont, "underline", fnt.Underline
+   addAttribute nodFont, "strikethrough", fnt.Strikethrough
+   addAttribute nodFont, "charSet", fnt.Charset
+   nodTo.appendChild nodFont
+   
+End Sub
+
+Private Sub addAttribute( _
+      nodTo As IXMLDOMNode, _
+      ByVal sName As String, _
+      value As Variant _
+   )
+   Dim attr As IXMLDOMAttribute
+   Set attr = nodTo.ownerDocument.createAttribute(sName)
+   Select Case VarType(value)
+   Case vbBoolean
+      If (value) Then
+         attr.value = "yes"
+      Else
+         attr.value = "no"
+      End If
+   Case vbLong, vbInteger
+      attr.value = CStr(value)
+   Case vbSingle, vbDouble, vbDecimal, vbCurrency
+      Dim sValue As String
+      Dim sDec As String
+      Dim iPos As Long
+      sValue = CStr(value)
+      sDec = Mid$(Format$(1.5, "0.0"), 2, 1)
+      If (sDec &lt;&gt; ".") Then
+         iPos = InStr(sValue, sDec)
+         If (iPos &gt; 0) Then
+            If (iPos &gt; 1) Then
+               sValue = left$(sValue, iPos - 1)
+            End If
+            sValue = sValue &amp; Mid$(sValue, iPos + 1)
+         End If
+      End If
+      attr.value = sValue
+      
+   Case vbString
+      attr.value = value
+   End Select
+   nodTo.Attributes.setNamedItem attr
+   
+End Sub
+
+Private Sub SetDefaults()
+   
+   ' set all v2.0 parameters to defaults for 1.0:
+   BorderHasInactiveVersion = False
+   DrawTitle = True
+   LeftBorderWidth = 0
+   RightBorderWidth = 0
+   TopSizingBorderHeight = 0
+   BottomSizingBorderHeight = 0
+   
+   DrawTitle = True
+   TitleStartOffsetY = 0
+
+   ControlButtonHasInactiveVersion = False
+   CustomControlButtonPosition = False
+   ControlButtonOffsetX = 0
+   ControlButtonOffsetY = 0
+   
+   MenuStartOffsetX = 0
+   MenuStartOffsetY = 0
+   
+   Name = ""
+   
+   Colourise = False
+   Hue = 0
+   Saturation = 0
+   AdjustRGB = False
+   PercentRed = 0
+   PercentGreen = 0
+   PercentBlue = 0
+   
+   TransparentColor = -1
+   
+   
+   ' default v 1.0 properties
+   ActiveCaptionColor = &amp;HCCCCCC
+   InActiveCaptionColor = &amp;H999999
+   ActiveMenuColor = &amp;H0&amp;
+   ActiveMenuColorOver = &amp;H0&amp;
+   InActiveMenuColor = &amp;H808080
+   MenuBackgroundColor = &amp;HFFFFFF
+   Dim sFnt As StdFont
+   Set sFnt = New StdFont
+   sFnt.Name = "MS Sans Serif"
+   Set CaptionFont = sFnt
+   Set sFnt = New StdFont
+   sFnt.Name = "MS Sans Serif"
+   Set MenuFont = sFnt
+   
+   
+End Sub
+
+Private Sub Class_Initialize()
+   SetDefaults
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator NeoCaption Component v2.0</a>&#160;.&#160;<a href="VB5_NeoCaption_Full_Source.html">VB5 NeoCaption Full Source</a>&#160;.&#160;cSkinConfiguration.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Skins/VB5_NeoCaption_Full_Source_zip_cSkinConfiguration_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:13 GMT -->
+</html>

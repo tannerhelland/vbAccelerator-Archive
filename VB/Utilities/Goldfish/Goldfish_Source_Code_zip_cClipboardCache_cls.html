@@ -1,0 +1,580 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/Goldfish/Goldfish_Source_Code_zip_cClipboardCache_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:23 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cClipboardCache.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cClipboardCache.cls" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Goldfish</a>&#160;.&#160;<a href="Goldfish_Source_Code.html">Goldfish Source Code</a>&#160;.&#160;cClipboardCache.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Goldfish_Source_Code.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />Goldfish Source Code</a> (353K)</p><p /><p class="nav"><a href="VB5_Goldfish_Executable.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Goldfish Executable</a> (149K)</p><p /><p class="nav"><a href="VB6_Goldfish_Exectuable.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Goldfish Exectuable</a> (148K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2037</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2037&amp;type=Zip&amp;title=Goldfish%20Source%20Code%2Ezip%5FcClipboardCache">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />19 Dec 2002<br /><p class="update">vbAccelerator CoolMenu Toolbar and Menu controls version 3 incorporated.</p><p class="update">XP Visual Styles implemented</p><p class="update">Stability updates.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=16">Add Your App to the Systray the Easy Way</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1418">Two code only solutions for displaying Common/Dialogs</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1416">vbAccelerator No Status Bar Control</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2518">Complete Registry control</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=7">PopupMenu DLL - Create Unlimited Popup Menus</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1272">vbAccelerator Toolbar and CoolMenu Control v3.5</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2188">Sophisticated Control Over Window Sizing and Moving </a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cClipboardCache.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cClipboardCache"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+' ===========================================================================
+' Filename: cClipboardCache
+' Author:   Steve McMahon (steve@vbaccelerator.com)
+' Date:     2 January 1999
+'
+' Description:
+' Maintains a persistent store of a clipboard entry in various formats.
+'
+' ---------------------------------------------------------------------------
+' vbAccelerator - free, advanced source code for VB programmers.
+'     http://vbaccelerator.com
+' ===========================================================================
+
+' hWnd of owner:
+Private m_hWnd As Long
+
+' Order tag:
+Private m_iOrder As Long
+' Whether we've been used yet or not:
+Private m_bUsed As Boolean
+
+' Customisable render string:
+Private m_sRenderString As String
+
+' Cached data:
+Private m_hMem() As Long
+Private m_lID() As Long
+Private m_iCount As Long
+
+' For deserialisation
+Private m_lFormatMap() As Long
+Private m_lFormatMapCount As Long
+
+Public Function Copy(ByRef cClip As cCustomClipboard) As Boolean
+Dim iFmt As Long
+Dim bSuccess As Boolean
+Dim hMem As Long
+    If (cClip.ClipboardOpen(m_hWnd)) Then
+        ' Clear the clipboard's contents:
+        cClip.ClearClipboard
+        bSuccess = True
+        For iFmt = 1 To m_iCount
+            If (m_hMem(iFmt) &lt;&gt; 0) And m_lID(iFmt) &lt;&gt; 0 Then
+                ' We need to copy the memory to a GMEM_DDESHARE type
+                ' in order to put it on the clipboard:
+                hMem = plCreateClipboardMemory(m_hMem(iFmt))
+                If (hMem &lt;&gt; 0) Then
+                    If Not (cClip.SetClipboardMemoryHandle(m_lID(iFmt), hMem))
+                     Then
+                        bSuccess = False
+                    End If
+                Else
+                    bSuccess = False
+                End If
+            End If
+        Next iFmt
+        cClip.ClipboardClose
+    End If
+    Copy = bSuccess
+End Function
+Private Function plCreateClipboardMemory(ByVal hMem As Long) As Long
+Dim lSize As Long
+Dim lPtr As Long
+Dim lPtr2 As Long
+Dim hMemClip As Long
+
+    lSize = GlobalSize(hMem)
+    If lSize &gt; 0 Then
+        hMemClip = GlobalAlloc(GMEM_DDESHARE, lSize)
+        If (hMemClip &lt;&gt; 0) Then
+            ReDim b(0 To lSize - 1) As Byte
+            lPtr = GlobalLock(hMem)
+            If (lPtr &lt;&gt; 0) Then
+                lPtr2 = GlobalLock(hMemClip)
+                If (lPtr2 &lt;&gt; 0) Then
+                    CopyMemory ByVal lPtr2, ByVal lPtr, lSize
+                    GlobalUnlock hMemClip
+                    plCreateClipboardMemory = hMemClip
+                End If
+                GlobalUnlock hMem
+            End If
+        End If
+    End If
+End Function
+Public Sub ShowFormats(ByRef cClip As cCustomClipboard, ByRef cboThis As
+ ComboBox)
+Dim iFmt As Long
+Dim iCount As Long
+Dim iRtfIndex As Long
+Dim iTextIndex As Long
+Dim sName As String
+
+    cboThis.Clear
+    iRtfIndex = -1
+    iTextIndex = -1
+    For iFmt = 1 To m_iCount
+        If (m_hMem(iFmt) &lt;&gt; 0) And (m_lID(iFmt) &lt;&gt; 0) Then
+            sName = cClip.FormatName(m_lID(iFmt))
+            cboThis.AddItem sName
+            cboThis.ItemData(cboThis.NewIndex) = iFmt
+            If (sName = "Rich Text Format") Then
+                iRtfIndex = cboThis.NewIndex
+            ElseIf (m_lID(iFmt) = CF_TEXT) Then
+                iTextIndex = cboThis.NewIndex
+            End If
+            iCount = iCount + 1
+        End If
+    Next iFmt
+    
+    If (iCount &gt; 0) Then
+        If (iRtfIndex &gt; -1) Then
+            cboThis.ListIndex = iRtfIndex
+        ElseIf (iTextIndex &gt; -1) Then
+            cboThis.ListIndex = iTextIndex
+        Else
+            cboThis.ListIndex = 0
+        End If
+        cboThis.BackColor = vbWindowBackground
+        cboThis.ForeColor = vbWindowText
+        cboThis.Enabled = (iCount &gt; 1)
+    Else
+        cboThis.AddItem "No data available"
+        cboThis.BackColor = vbButtonFace
+        cboThis.ForeColor = vb3DShadow
+        cboThis.Enabled = False
+    End If
+    
+End Sub
+Public Property Get FormatCount() As Long
+    FormatCount = m_iCount
+End Property
+Public Property Get Used() As Boolean
+    Used = m_bUsed
+End Property
+Public Property Let Used(ByVal bUsed As Boolean)
+    m_bUsed = bUsed
+End Property
+Public Property Get Order() As Long
+    Order = m_iOrder
+End Property
+Public Property Let Order(ByVal lOrder As Long)
+    m_iOrder = lOrder
+End Property
+Public Function Serialise(ByVal hFile As Long) As Boolean
+Dim b() As Byte
+Dim lSize As Long
+Dim lPtr As Long
+Dim lOutID() As Long
+Dim hOutMem() As Long
+Dim hOutSize() As Long
+Dim i As Long
+Dim lCount As Long
+
+   ' Evaluate what to write:
+   For i = 1 To m_iCount
+      lSize = GlobalSize(m_hMem(i))
+      If (lSize &gt; 0) Then
+         lCount = lCount + 1
+         ReDim Preserve lOutID(1 To lCount) As Long
+         ReDim Preserve hOutMem(1 To lCount) As Long
+         ReDim Preserve hOutSize(1 To lCount) As Long
+         lOutID(lCount) = m_lID(i)
+         hOutMem(lCount) = m_hMem(i)
+         hOutSize(lCount) = lSize
+      End If
+   Next i
+
+   If (lCount &gt; 0) Then
+      ' Output identifier:
+      Put #hFile, , "CCC"
+      ' Output text to display for this item:
+      Put #hFile, , Len(m_sRenderString)
+      Put #hFile, , m_sRenderString
+   
+      ' Output write table:
+      Put #hFile, , lCount
+      For i = 1 To lCount
+         Put #hFile, , lOutID(i)
+         Put #hFile, , hOutSize(i)
+      Next i
+      
+      ' Output memory as byte arrays:
+      For i = 1 To lCount
+         ReDim b(0 To hOutSize(i) - 1) As Byte
+         lPtr = GlobalLock(hOutMem(i))
+         If (lPtr &lt;&gt; 0) Then
+            CopyMemory b(0), ByVal lPtr, hOutSize(i)
+            GlobalUnlock hOutMem(i)
+            Put #hFile, , b()
+         End If
+      Next i
+   End If
+    
+End Function
+Public Function Deserialise(ByVal hFile As Long) As Boolean
+Dim lCount As Long
+Dim lOutID() As Long
+Dim lOutSize() As Long
+Dim lPtr As Long
+Dim b() As Byte
+Dim i As Long, j As Long
+Dim hMem As Long
+Dim sIdent As String
+Dim lRenderSize As Long
+Dim sRender As String
+Dim bOk As Boolean
+   
+   ClearUp
+
+   sIdent = Space$(3)
+   Get #hFile, , sIdent
+   If (sIdent = "CCC") Then
+      Get #hFile, , lRenderSize
+      If (lRenderSize &gt; 0) And (lRenderSize &lt; 32767&amp;) Then
+         sRender = Space$(lRenderSize)
+         Get #hFile, , sRender
+         m_sRenderString = sRender
+         
+         Get #hFile, , lCount
+         If (lCount &gt; 0) Then
+            ReDim lOutID(1 To lCount) As Long
+            ReDim lOutSize(1 To lCount) As Long
+            For i = 1 To lCount
+               Get #hFile, , lOutID(i)
+               bOk = False
+               For j = 1 To m_lFormatMapCount
+                  If lOutID(i) = m_lFormatMap(1, j) Then
+                     lOutID(i) = m_lFormatMap(2, j)
+                     bOk = True
+                  End If
+               Next j
+               If Not bOk Then
+                  lOutID(i) = m_lFormatMap(2, 2)
+               End If
+               Get #hFile, , lOutSize(i)
+            Next i
+             
+            For i = 1 To lCount
+               ' Get the byte array:
+               ReDim b(0 To lOutSize(i) - 1) As Byte
+               Get #hFile, , b()
+               
+               ' Create a memory handle:
+               hMem = GlobalAlloc(GPTR, lOutSize(i))
+               If (hMem &lt;&gt; 0) Then
+                  lPtr = GlobalLock(hMem)
+                  If (lPtr &lt;&gt; 0) Then
+                     CopyMemory ByVal lPtr, b(0), lOutSize(i)
+                     ' Add it to the list
+                     m_iCount = m_iCount + 1
+                     ReDim Preserve m_hMem(1 To m_iCount) As Long
+                     ReDim Preserve m_lID(1 To m_iCount) As Long
+                     m_hMem(m_iCount) = hMem
+                     m_lID(m_iCount) = lOutID(i)
+                     GlobalUnlock hMem
+                  Else
+                     GlobalFree hMem
+                  End If
+               End If
+               
+            Next i
+            
+            m_bUsed = True
+         End If
+      End If
+   End If
+
+End Function
+Public Sub CacheItem(ByVal hMem As Long, ByVal lID As Long)
+Dim hMemCopy As Long
+Dim lSize As Long
+Dim lPtr As Long
+Dim lPtrCopy As Long
+Dim bSuccess As Boolean
+Dim lNowIndex As Long
+
+   m_sRenderString = ""
+
+    ' Make a copy of the memory at hMem if possible:
+    lSize = GlobalSize(hMem)
+    If (lSize &gt; 0) Then
+        hMemCopy = GlobalAlloc(GPTR, lSize)
+        If (hMemCopy &lt;&gt; 0) Then
+            lPtrCopy = GlobalLock(hMemCopy)
+            If (lPtrCopy &lt;&gt; 0) Then
+                lPtr = GlobalLock(hMem)
+                If (lPtr &lt;&gt; 0) Then
+                    CopyMemory ByVal lPtrCopy, ByVal lPtr, lSize
+                    bSuccess = True
+                    GlobalUnlock hMem
+                End If
+                GlobalUnlock hMemCopy
+            End If
+        End If
+    End If
+    
+    If Not (bSuccess) Then
+        ' Failed:
+        GlobalFree hMemCopy
+    Else
+        Debug.Print "Succeeded"
+        lNowIndex = IndexOfFormat(lID)
+        If (lNowIndex &gt; 0) Then
+            ' clear the existing item:
+            GlobalFree m_hMem(lNowIndex)
+        Else
+            ' Add it to the list
+            m_iCount = m_iCount + 1
+            ReDim Preserve m_hMem(1 To m_iCount) As Long
+            ReDim Preserve m_lID(1 To m_iCount) As Long
+            lNowIndex = m_iCount
+        End If
+        m_hMem(lNowIndex) = hMemCopy
+        m_lID(lNowIndex) = lID
+    End If
+    
+End Sub
+Public Sub InitFormatMapping(ByRef lFmtMap() As Long, ByVal lCount As Long)
+Dim i As Long
+   m_lFormatMapCount = lCount
+   ReDim m_lFormatMap(1 To 2, 1 To lCount) As Long
+   For i = 1 To lCount
+      m_lFormatMap(1, i) = lFmtMap(1, i)
+      m_lFormatMap(2, i) = lFmtMap(2, i)
+   Next i
+End Sub
+Public Property Get IndexOfFormat(ParamArray vFormat() As Variant) As Long
+Dim iIndex As Long
+Dim iItem As Long
+Dim iFormat As Long
+    iIndex = 0
+    For iItem = 1 To m_iCount
+        For iFormat = LBound(vFormat) To UBound(vFormat)
+            If (m_lID(iItem) = vFormat(iFormat)) Then
+                iIndex = iItem
+                Exit For
+            End If
+        Next iFormat
+    Next iItem
+    IndexOfFormat = iIndex
+End Property
+Private Function GetText(ByVal lIndex As Long, ByVal bForList As Boolean) As
+ String
+Dim lSize As Long
+Dim lPtr As Long
+Dim b() As Byte
+Dim sText As String
+    
+    lSize = GlobalSize(m_hMem(lIndex))
+    If (lSize &gt; 0) Then
+        lPtr = GlobalLock(m_hMem(lIndex))
+        If (lPtr &lt;&gt; 0) Then
+            ' Get the text into a byte array:
+            ReDim b(0 To lSize - 1) As Byte
+            CopyMemory b(0), ByVal lPtr, lSize
+            GlobalUnlock m_hMem(lIndex)
+            sText = StrConv(b, vbUnicode)
+            ParseText sText, bForList
+            GetText = sText
+        End If
+    End If
+
+End Function
+Private Sub ParseText(ByRef sThis As String, ByVal bForList As Boolean)
+Dim iPos As Long
+Dim iChar As Long
+Dim iSt As Long
+Dim iEn As Long
+Dim lLen As String
+Dim i As Long
+
+    iPos = InStr(sThis, Chr$(0))
+    If (iPos &lt;&gt; 0) Then
+        If (iPos &gt; 1) Then
+            sThis = Left$(sThis, iPos - 1)
+        Else
+            sThis = ""
+        End If
+    End If
+    
+    If (bForList) Then
+        ' try for start pos, only check max 512 items
+        lLen = Len(sThis)
+        If (lLen &gt; 512) Then sThis = Left$(sThis, 512): lLen = 512
+        iSt = 1
+        For i = 1 To lLen
+            If (Asc(Mid$(sThis, i, 1)) &lt; 32) Then
+                iSt = iSt + 1
+            Else
+                Exit For
+            End If
+        Next i
+        If (iSt &lt; lLen) Then
+            sThis = Mid$(sThis, iSt)
+            For i = iSt + 1 To lLen
+               If Len(Mid$(sThis, i, 1)) &gt; 0 Then
+                  If (Asc(Mid$(sThis, i, 1)) &lt; 32) Then
+                    iEn = i
+                    Exit For
+                  End If
+               End If
+            Next i
+            If (iEn &gt; 1) Then
+                sThis = Left$(sThis, iEn - 1)
+            End If
+        Else
+            sThis = "..."
+        End If
+        
+    End If
+    
+End Sub
+Private Function plFindFirstPosition( _
+        ByRef sString As String, _
+        ParamArray vItemsToFind() As Variant _
+    ) As Long
+Dim iItem As Long
+Dim iMinPos As Long
+Dim lR As Long
+    For iItem = LBound(vItemsToFind) To UBound(vItemsToFind)
+        lR = InStr(sString, vItemsToFind(iItem))
+        If (lR &gt; 0) Then
+            If (lR &lt; iMinPos) Or (iMinPos = 0) Then
+                iMinPos = lR
+            End If
+        End If
+    Next iItem
+    plFindFirstPosition = iMinPos
+End Function
+Public Property Get RenderString() As String
+Dim lIndex As Long
+   
+   If (m_sRenderString = "") Then
+      lIndex = IndexOfFormat(CF_TEXT, CF_UNICODETEXT, CF_OEMTEXT)
+      If (lIndex &gt; 0) Then
+         ' Copy the string from memory handle:
+         m_sRenderString = GetText(lIndex, True)
+      Else
+         If (m_iCount &lt;&gt; 0) Then
+             m_sRenderString = "Clipboard Data"
+         End If
+      End If
+   End If
+   RenderString = m_sRenderString
+    
+End Property
+Public Property Let RenderString(ByVal sThis As String)
+   m_sRenderString = sThis
+End Property
+Public Property Get Filename() As String
+Dim iPos As Long
+Dim iLen As Long
+Dim sName As String
+Dim sC As String
+Dim sPName As String
+
+    sName = Trim$(RenderString())
+    iLen = Len(sName)
+    If (iLen &gt; 24) Then iLen = 24
+    For iPos = 1 To Len(sName)
+        sC = Mid$(sName, iPos, 1)
+        If (sC = ".") Or (sC = "$") Or (sC = ",") Or (sC = """") Or (sC = "'")
+         Or (sC = "?") Or (sC = "&amp;") Or (sC = ":") Or (sC = "!") Or (sC = "=")
+         Then
+        Else
+            sPName = sPName &amp; sC
+        End If
+    Next iPos
+    sName = Trim$(sPName)
+    If (Len(sName) = 0) Then
+        sName = "Clipboard Data"
+    Else
+        sName = sPName
+    End If
+    Filename = sName
+    
+End Property
+Public Sub RenderFormat(ByRef cClip As cCustomClipboard, ByRef edtThis As
+ vbalRichEdit, ByVal lIndex As Long)
+Dim sText As String
+    sText = GetText(lIndex, False)
+    If cClip.FormatName(m_lID(lIndex)) = "Rich Text Format" And Len(sText) &gt; 0
+     Then
+        edtThis.Contents(SF_RTF) = sText
+    Else
+        edtThis.Contents(SF_TEXT) = sText
+        Dim sFnt As New StdFont
+        sFnt.Name = "Lucida Console"
+        sFnt.Size = 8
+        edtThis.SetFont sFnt, vbWindowText, , , ercSetFormatAll
+    End If
+End Sub
+
+Public Property Let hWndOwner(ByVal hwnd As Long)
+    m_hWnd = hwnd
+End Property
+Public Sub ClearUp()
+Dim iItem As Long
+    For iItem = 1 To m_iCount
+        If (m_hMem(iItem) &lt;&gt; 0) Then
+            GlobalFree m_hMem(iItem)
+        End If
+    Next iItem
+    m_iCount = 0
+    Erase m_hMem
+    Erase m_lID
+    m_bUsed = False
+    m_sRenderString = ""
+End Sub
+
+Private Sub Class_Terminate()
+    ClearUp
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Goldfish</a>&#160;.&#160;<a href="Goldfish_Source_Code.html">Goldfish Source Code</a>&#160;.&#160;cClipboardCache.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/Goldfish/Goldfish_Source_Code_zip_cClipboardCache_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:23 GMT -->
+</html>

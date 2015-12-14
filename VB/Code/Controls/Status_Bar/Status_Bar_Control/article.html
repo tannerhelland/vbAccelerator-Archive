@@ -1,0 +1,101 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Status_Bar/Status_Bar_Control/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:06:32 GMT -->
+<head>
+
+<title>vbAccelerator - vbAccelerator Status Bar Control</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This article provides a full implementation of the ComCtl32 status bar control 
+in VB, providing access to all of the features including Owner-Drawn panels.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Status Bar</a>&#160;.&#160;vbAccelerator Status Bar Control</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Status_Bar_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Status Bar Control Binary</a> (17K)</p><p class="nav"><a href="VB5_Status_Bar_Control_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Status Bar Control Full Source</a> (96K)</p><p /><p class="nav"><a href="VB6_Status_Bar_Control_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Status Bar Control Binary</a> (17K)</p><p class="nav"><a href="VB6_Status_Bar_Control_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Status Bar Control Full Source</a> (98K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:1417</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1417&amp;type=Article&amp;title=vbAccelerator%20Status%20Bar%20Control">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 2 / 2</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:1 February 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />19 Dec 2002<br /><p class="update">VB6 version added.</p><p class="update">Fixed bug when inserting panels, which led to some randomisation of 
+the panel text and icons.</p><p class="update">XP Style status bar now displayed from the demonstration.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator Status Bar Control</h1><p class="splash">An implementation of the ComCtl32 status bar control from VB</p><img src="statusBar.png" width="345" height="209" alt="Status Bar Control Demonstration" /><p /><p>
+This article provides a full implementation of the ComCtl32 status bar control 
+in VB, providing access to all of the features including Owner-Drawn panels.
+</p><h2>Using the StatusBar Control</h2><p>The StatusBar control supports all the standard VB Status Bar features, plus:</p><ul><li>Create Owner-Draw status bar sections. When you set the panel style to Owner Draw, 
+the control will fire an event whenever the status panel needs to be redrawn, passing 
+the Device Context to draw into, the panel number and the bounding rectangle. You can 
+either draw directly into the DC using GDI API methods or draw into a VB Picture Box 
+with <i>AutoRedraw</i> set to True and <i>BitBlt</i> the Picture Box's contents into the DC. 
+The demonstration code includes a sample owner draw panel which fills the panel with the 
+Swimming Pool texture and then draws a centred caption in an arbitrary colour over the top.
+You could use the vbAccelerator Progress bar class to draw into this DC as well.</li><li>Get the rectangle of any status bar panel. You can use this to position a control
+over any status bar panel, such as a TextBox or ComboBox.</li><li>Auto-Tooltip support.  If any of the text is hidden, or a panel has an icon and no
+text, the control will show a tooltip.</li><li>Icons in Panels.  Any panel can display an icon from a ComCtl32.DLL compatible 
+ImageList.  Note that the VB6 Common Controls (MSComCtl.OCX) ImageList is not compatible with
+ComCtl32.DLL so you will need to use one of the vbAccelerator alternatives.</li><li>Change StatusBar background colour.</li></ul><h2>Quickstart</h2><p>The main tasks in creating a status bar are as follows:</p><ol><li><strong>Associating an Image List</strong><br />Use the <i>ImageList</i> property to associate either
+a VB5 ImageList control or the <i>hImageList</i> of a vbAccelerator or API created 
+ImageList</li><li><strong>Adding Panels</strong><br />The <i>AddPanel</i> method allows you to add and insert panels,
+as well as setting almost all of the panel properties at the same time:
+<pre>Public Function AddPanel( _
+      Optional ByVal eStyle As ESTBRPanelStyle = estbrStandard, _
+      Optional ByVal sText As String = "", _
+      Optional ByVal sToolTipText As String = "", _
+      Optional ByVal iImgIndex As Long = -1, _
+      Optional ByVal lMinWidth As Long = 64, _
+      Optional ByVal bSpring As Boolean = False, _
+      Optional ByVal bFitContents As Boolean = False, _
+      Optional ByVal lItemData As Long = 0, _
+      Optional ByVal sKey As String = "", _
+      Optional ByVal vKeyBefore As Variant _
+   ) As Long
+</pre>
+Available panel styles are:
+<ul><li>estbrStandard: Standard panel.</li><li>estbrNoBorders: Panel with no borders.</li><li>estbrRaisedBorder: Panel with a raised border.</li><li>estbrTooltips: Show tooltips, can be combined with any other style.</li><li>estbrOwnerDraw: Panel is not drawn, a <i>DrawItem</i> event is raised to your code.</li><li>estbrCaps: Small panel showing the Caps Lock state.</li><li>estbrNum: Small panel showing the Num Lock state.</li><li>estbrIns: Small panel showing the Insert/Overwrite state.</li><li>estbrScrl: Small panel showing the Scroll Lock state.</li><li>estbrTime: Panel displaying the time using the locale short time format.</li><li>estbrDate: Panel displaying the date using the locale short date format.</li><li>estbrDateTime: Panel displaying the date and time using the locale short date and time formats.</li></ul></li><li><strong>Modifying Panel properties</strong><br />
+For each of the panel properties there is an associated <i>Panel[xxx]</i> property which
+takes the Key of the panel as a parameter.</li><li><strong>Removing Panels</strong><br />
+The <i>RemovePanel</i> method removes the panel with the specified key.</li></ol><h2>Enabling XP Styles</h2><p>As with all of the Common Controls in XP and above, the new XP styles will not
+be enabled unless you include an application manifest to associate your application
+with version 6.0 of ComCtl32.DLL.  See the article "Using XP Visual Styles in VB"
+for more details on how to do this.  The demonstration project includes a simple file-based
+manifest.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Status Bar</a>&#160;.&#160;vbAccelerator Status Bar Control</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 17 February 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Status_Bar/Status_Bar_Control/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:06:35 GMT -->
+</html>

@@ -1,0 +1,93 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Floyd-Stucci_Colour_Reduction_Methods_and_Gray_Scaling/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:23:26 GMT -->
+<head>
+
+<title>vbAccelerator - Floyd-Stucci Colour Reduction Methods and Gray Scaling</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This article describes the Floyd-Stucci method to dither an image to a specified
+palette and also how to Gray Scale an Image, as demonstrated in the 
+vbAccelerator Image Processor." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;Floyd-Stucci Colour Reduction Methods and Gray Scaling</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3172</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3172&amp;type=Article&amp;title=Floyd%2DStucci%20Colour%20Reduction%20Methods%20and%20Gray%20Scaling">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Sep 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3211">Optimised Colour Reduction Using Octrees</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3173">Image Processing Using DIB Sections </a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Floyd-Stucci Colour Reduction Methods and Gray Scaling</h1><p class="splash">Reduce a true-colour image to a specified palette using dithering, and convert images to gray scale.</p><img src="bulb.png" width="181" height="173" alt="Before and after - converting to Black and White" /><p /><p>This article describes the Floyd-Stucci method to dither an image to a specified
+palette and also how to Gray Scale an Image, as demonstrated in the 
+<a href="http://www.vbaccelerator.com/article.asp?id=3173">vbAccelerator Image Processor</a>.</p><p>This article covers two concepts:</p><ol><li>How to decrease colour depth to a specified palette</li><li>Gray-Scaling an Image</li></ol><h2>1. Decreasing Colour Depth</h2><p>There are two forms of colour depth reduction:</p><ol><li>Converting an image so it uses a specific palette of colours; for example, to a black and white
+image (a two colour palette) or to only use the WebSafe colours (a 216 colour palette).</li><li>Reducing colours to a specified number by choosing an optimal palette.</li></ol><p>The second method is achieved using <a href="http://www.vbaccelerator.com/article.asp?id=3211">Octree Colour Quantisation</a> and isn't 
+covered here.</p><p>To create an image using a fixed palette which resembles the original, you cannot 
+simply match colours onto the new palette using a closest match. You can see this 
+particularly if your destination palette is black and white, i.e. two colours. Just matching 
+the closest colour often produces an all black or all white image, and certainly the detail is lost.</p><p>To reduce colour depth like this correctly, you need to somehow dither the output 
+pixels so that different shades are still represented even with the 
+lower colour resolution. It turns out there is a very simple way of doing this, as 
+described by Floyd and Stucci involving <i>error diffusion</i>.</p><h3>Floyd-Stucci Method</h3><p>This is performed as follows:</p><ol><li>Starting at the top left pixel, determine the closest matching colour in the palette.</li><li>Determine the difference between this colour and the actual colour.</li><li>Add this error amount to the surrounding pixels and then continue.</li></ol><p>The exact error diffusion is probably not 100% critical, but these are the 
+amounts of error added to each pixel in the Floyd-Stucci method:</p><table><tr><td>-</td><td>Current</td><td>7/16</td></tr><tr><td>3/16</td><td>5/16</td><td>1/16</td></tr></table><p>In the Image Processing sample, colour reduction is implemented in the 
+<i>cImageProcessDIB</i> class. An optimised black and white method is supplied 
+as well as a method which decreases to an arbitrary palette. An Internet Explorer 216 
+colour palette is supplied as a sample, and it creates the same results as some of the 
+GIF images here on the vbAccelerator site (which were actually colour reduced using 
+Paint Shop Pro using the Error Diffusion-Reduce Colour Bleeding method). The 
+only problem is of course there is no way to save the resulting 256 colour image out as a GIF in VB! 
+(Even if it was, it would contravene the unpleasant GIF/LZW patent licensing agreements - 
+don't even think of acquiring a GIF license - it is prohibitively expensive.) 
+If anyone has code to save a bitmap to PNG I would be very interested to hear. 
+Unfortunately JPG is not a suitable format for saving 256 colour images: JPG only works 
+with True Colour and Grey Scale images, and does not preserve colour fidelity, so what 
+appears to be a flat area of colour in fact can vary quite a bit depending on the 
+JPG compression level chosen.</p><h2>Gray Scaling Images</h2><p>Reducing images to a gray scale is a common image processing task 
+which is also very simple to implement. The simplest method to do this is 
+simply to take the green value and use apply the same value to Red and Blue pixels. 
+This works well because the eye responds to green light in RGB colours much more strongly 
+that the Red and Blue values. Obviously completely saturated Reds and Blues will 
+not be represented this way. A more <a href="http://www.dcs.ed.ac.uk/~mxr/gfx/faqs/colourspace.faq">accurate conversion</a> can 
+be performed using the 
+ITU standard, which is:</p><pre>
+    (222 * Red + 707 * Green + 71 * Blue) / 1000 
+</pre><p>Using this calculation results in a gray value between 0 and 255 which should be applied to each of the
+Red, Green and Blue pixels.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;Floyd-Stucci Colour Reduction Methods and Gray Scaling</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Floyd-Stucci_Colour_Reduction_Methods_and_Gray_Scaling/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:23:26 GMT -->
+</html>

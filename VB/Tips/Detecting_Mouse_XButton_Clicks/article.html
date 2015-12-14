@@ -1,0 +1,248 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Detecting_Mouse_XButton_Clicks/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:51:30 GMT -->
+<head>
+
+<title>vbAccelerator - Detecting Mouse XButton Clicks</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Recently I discovered that my mouse had two strange buttons on the left-hand side
+(until then I'd thought that the mouse's case just wasn't very well put together).  
+Turns out these are the 'X Buttons' and can be used for moving backwards and 
+forwards in Explorer and IE.  This sample demonstrates how you can intercept clicks 
+on these buttons to provide the same functionality in a VB application.
+   " /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Detecting Mouse XButton Clicks</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_XButton_Sample.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 XButton Sample</a> (18K)</p><p /><p class="nav"><a href="VB6_XButton_Sample.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 XButton Sample</a> (17K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:12636</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12636&amp;type=Article&amp;title=Detecting%20Mouse%20XButton%20Clicks">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />27 Jun 2003<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1020">Restrict Mouse Movement to an Area of the Desktop</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12338">Win32 Hooks in VB - The vbAccelerator Hook Library</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2964">Moving, Clicking and Tracking the MousePointer in Code</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12334">(Incomplete) Docking Forms In VB</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Detecting Mouse XButton Clicks</h1><img src="xButton.png" width="316" height="227" alt="XButton Demonstration" /><p /><p>
+Recently I discovered that my mouse had two strange buttons on the left-hand side
+(until then I'd thought that the mouse's case just wasn't very well put together).  
+Turns out these are the 'X Buttons' and can be used for moving backwards and 
+forwards in Explorer and IE.  This sample demonstrates how you can intercept clicks 
+on these buttons to provide the same functionality in a VB application.
+   </p><h2>Intercepting XButton Messages</h2><p>
+XButton clicks are sent to a Window in a similar way as the
+more traditional mouse button actions are.  There are six
+XButton messages; the first group is for mouse actions in the
+client area and the second for mouse actions in the non-client
+area. Each group has an individual message for mouse down, mouse up and 
+double-click actions.
+</p><p>
+This allows you to detect XButton actions over individual windows or controls,
+however, there are few (if any) applications which offer the
+ability to perform a <span class="i">different</span> action for these
+buttons on a per-control basis.  Typically you want to use the buttons a similar
+way to Explorer or IE, which respond to clicks over any area of the window.
+</p><p>
+This sample provides a class you can use to do either type of processing.
+The <a href="article190a.html?id=17">Subclassing and Timer assistant</a> is
+used for detecting messages sent to an individual form or control, whilst
+the <a href="article2c5d.html?id=12338">Hooking Library</a> is used to 
+detect events anywhere over a particular form.
+</p><h2>Detecting XButton Events Using a Subclass</h2><p>
+In order to do this, you need to intercept all of the XButton mouse events
+sent or posted to the window you want to detect events for:
+</p><ul><li>Client Messages: <span class="code">WM_XBUTTONDOWN, WM_XBUTTONUP, WM_XBUTTONDBLCLK</span><p>
+These messages encode information about the mouse's position, the button which was pressed
+and the shift state as follows:
+</p><ul><li><span class="code">wParam</span> contains the button that has been pressed, and the 
+shift state using the API <span class="code">MK_..</span> constants in the low-word.
+</li><li><span class="code">lParam</span> contains the position of the mouse relative to the 
+client area of the window.  The x coordinate is in the low-word and the y coordinate is
+in the high-word.
+</li></ul></li><li>Non-Client Messages: <span class="code">WM_NCXBUTTONDOWN, WM_NCXBUTTONUP, WM_NCXBUTTONDBLCLK</span><p>
+These messages encode the mouse position and the button which was pressed as follows:
+</p><ul><li><span class="code">wParam</span> contains the non-client hittest code in the 
+low-word and the button that has been pressed in the high-word using the 
+API <span class="code">XBUTTON..</span> constants.
+</li><li><span class="code">lParam</span> contains a pointer to the absolute mouse position
+as a <span class="code">POINTS</span> structure.
+</li></ul></li></ul><p>
+Decoding this information is performed using this code:
+</p><pre>
+Private Function ISubclass_WindowProc( _
+      ByVal hwnd As Long, _
+      ByVal iMsg As Long, _
+      ByVal wParam As Long, _
+      ByVal lParam As Long) As Long
+   '
+Dim tP As POINTAPI
+Dim x As Single
+Dim y As Single
+Dim eShift As ShiftConstants
+Dim eBtn As XMouseButtonConstants
+Dim bConsumed As Boolean
+   
+   Select Case iMsg
+   Case WM_XBUTTONDOWN, WM_XBUTTONUP, WM_XBUTTONDBLCLK
+      tP.x = (lParam And &amp;HFFFF)
+      tP.y = (lParam And &amp;H7FFF0000) \ &amp;H10000
+      If (lParam And &amp;H80000000) Then
+         tP.y = tP.y Or &amp;H8000&amp;
+      End If
+      x = m_objTo.ScaleX(tP.x, vbTwips)
+      y = m_objTo.ScaleX(tP.y, vbTwips)
+      eBtn = (wParam And &amp;H60&amp;)
+      eShift = (wParam And &amp;HC&amp;)
+      If (iMsg = WM_XBUTTONDOWN) Then
+         RaiseEvent XMouseDown(eBtn, eShift, x, y, bConsumed)
+      ElseIf (iMsg = WM_XBUTTONUP) Then
+         RaiseEvent XMouseUp(eBtn, eShift, x, y, bConsumed)
+      Else
+         RaiseEvent XBtnDblClick(eBtn, eShift, x, y, bConsumed)
+      End If
+      If (bConsumed) Then
+         ISubclass_WindowProc = True
+      End If
+   
+   Case WM_NCXBUTTONDOWN, WM_NCXBUTTONUP, WM_NCXBUTTONDBLCLK
+      GetCursorPos tP
+      ScreenToClient m_hWnd, tP
+      x = m_objTo.ScaleX(tP.x, vbTwips)
+      y = m_objTo.ScaleX(tP.y, vbTwips)
+      If (wParam And &amp;H10000) = &amp;H10000 Then
+         eBtn = XBUTTON1
+      Else
+         eBtn = XBUTTON2
+      End If
+      eShift = _
+         vbShiftMask * Abs(Not (GetAsyncKeyState(vbKeyShift) = 0)) Or _
+         vbCtrlMask * Abs(Not (GetAsyncKeyState(vbKeyControl) = 0)) Or _
+         vbAltMask * Abs(Not (GetAsyncKeyState(vbKeyMenu) = 0))
+      If (iMsg = WM_XBUTTONDOWN) Then
+         RaiseEvent XMouseDown(eBtn, eShift, x, y, bConsumed)
+      ElseIf (iMsg = WM_XBUTTONUP) Then
+         RaiseEvent XMouseUp(eBtn, eShift, x, y, bConsumed)
+      Else
+         RaiseEvent XBtnDblClick(eBtn, eShift, x, y, bConsumed)
+      End If
+      If (bConsumed) Then
+         ISubclass_WindowProc = True
+      End If
+      
+   End Select
+   '
+End Function
+</pre><h2>Detecting XButton Events Using a Hook</h2><p>
+A <span class="code">WH_MOUSE</span> hook enables an application to be
+notified of all mouse actions prior to their occurrence.  The information
+about the mouse action is provided in a <span class="code">MOUSEHOOKSTRUCT</span>.
+This provided the screen position of the mouse, the 
+handle to the window that would receive the event and the
+HitTest code for the mouse position.
+Unfortunately, this structure was defined before the XButtons were invented,
+and consequently does not provide any information about which of the two buttons
+were pressed.  This can be worked around by using the <span class="code">GetAsyncKeyState</span>
+function to check if the virtual key corresponding to the mouse button is pressed during
+mouse down events, and storing this information for use in the subsequent mouse up event.
+</p><p>
+The code to parse the mouse information for the hook case is then:
+</p><pre>
+Private Function IWindowsHook_HookProc( _
+      ByVal eType As vbalWinHook.EHTHookTypeConstants, _
+      ByVal nCode As Long, _
+      ByVal wParam As Long, ByVal lParam As Long, _
+      bConsume As Boolean) As Long
+Dim tP As POINTAPI
+Dim tR As RECT
+Dim x As Single
+Dim y As Single
+Dim eShift As ShiftConstants
+Dim hWndA As Long
+Dim bOver As Boolean
+
+   If ((wParam = WM_XBUTTONDOWN) Or _
+      (wParam = WM_XBUTTONUP) Or _
+      (wParam = WM_XBUTTONDBLCLK) Or _
+      (wParam = WM_NCXBUTTONDOWN) Or _
+      (wParam = WM_NCXBUTTONUP) Or _
+      (wParam = WM_NCXBUTTONDBLCLK)) Then
+   
+      If Not (GetAsyncKeyState(VK_XBUTTON1) = 0) Then
+         m_eHookButtonDown = XBUTTON1
+      ElseIf Not (GetAsyncKeyState(VK_XBUTTON2) = 0) Then
+         m_eHookButtonDown = XBUTTON2
+      End If
+         
+      GetCursorPos tP
+      hWndA = WindowFromPoint(tP.x, tP.y)
+      Do While Not (bOver) And Not (hWndA = 0)
+         If (hWndA = m_hWnd) Then
+            bOver = True
+         Else
+            hWndA = GetParent(hWndA)
+         End If
+      Loop
+         
+      If bOver Then
+         ScreenToClient m_hWnd, tP
+         x = m_objTo.ScaleX(tP.x, vbTwips)
+         y = m_objTo.ScaleX(tP.y, vbTwips)
+         eShift = _
+            vbShiftMask * Abs(Not (GetAsyncKeyState(vbKeyShift) = 0)) Or _
+            vbCtrlMask * Abs(Not (GetAsyncKeyState(vbKeyControl) = 0)) Or _
+            vbAltMask * Abs(Not (GetAsyncKeyState(vbKeyMenu) = 0))
+         
+         bConsume = True
+         If (wParam = WM_XBUTTONDOWN) Or (wParam = WM_NCXBUTTONDOWN) Then
+            RaiseEvent XMouseDown(m_eHookButtonDown, eShift, x, y, bConsume)
+         ElseIf (wParam = WM_XBUTTONUP) Or (wParam = WM_NCXBUTTONUP) Then
+            RaiseEvent XMouseUp(m_eHookButtonDown, eShift, x, y, bConsume)
+         Else
+            RaiseEvent XBtnDblClick(m_eHookButtonDown, eShift, x, y, bConsume)
+         End If
+      End If
+      
+   End If
+   
+End Function
+</pre><h2>Wrap-Up</h2><p>
+Using a Windows Hook you can provide X Mouse Button functionality to
+match Explorer and IE from your VB app.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Detecting Mouse XButton Clicks</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Detecting_Mouse_XButton_Clicks/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:51:32 GMT -->
+</html>

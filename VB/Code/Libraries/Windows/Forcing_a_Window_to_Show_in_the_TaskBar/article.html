@@ -1,0 +1,233 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Windows/Forcing_a_Window_to_Show_in_the_TaskBar/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:47 GMT -->
+<head>
+
+<title>vbAccelerator - Forcing Any Window to Show in the Taskbar</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+VB provides a ShowInTaskBar property for forms which is meant to set whether a form is shown 
+in the Alt-Tab sequence and the shell's task bar. However there are two limitations to this:
+The property can't be set at run-time.Erm, it doesn't work anyway.
+Ok, it can work, but only when your form has certain styles. If your form is modal, there 
+is nothing you can do to put it into the task bar.  This article provides some code to force
+any type of window into the taskbar.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Windows</a>&#160;.&#160;Forcing Any Window to Show in the Taskbar</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Show_In_Taskbar.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Show In Taskbar</a> (29K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4578</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4578&amp;type=Article&amp;title=Forcing%20Any%20Window%20to%20Show%20in%20the%20Taskbar">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />21 Mar 2000<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12338">Win32 Hooks in VB - The vbAccelerator Hook Library</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Forcing Any Window to Show in the Taskbar</h1><p class="splash">A technique for control freaks - making things happen like you want them to.</p><img src="taskbar.gif" width="531" height="79" alt="Modal Dialog Showing in Taskbar" /><p /><p>
+VB provides a <span class="code">ShowInTaskBar</span> property for forms which is meant to set whether a form is shown 
+in the Alt-Tab sequence and the shell's task bar. However there are two limitations to this:
+</p><ol><li>The property can't be set at run-time.</li><li>Erm, it doesn't work anyway.</li></ol><p>
+Ok, it can work, but only when your form has certain styles. If your form is modal, there 
+is nothing you can do to put it into the task bar.  This article provides some code to force
+any type of window into the taskbar.
+</p><h2>ShowInTaskBar from a Windows Perspective</h2><p>
+The problem with affecting built-in behaviours in Windows is that they are not 
+well documented and sometimes troubling to use. The logic to put a window into the 
+task bar can be dug out from MSDN although you have to search the Knowledge Base to find the answer:
+</p><p>
+"When you create a window, the taskbar examines the window's extended style to see if
+either the <span class="code">WS_EX_APPWINDOW</span> (&amp;H40000) or <span class="code">WS_EX_TOOLWINDOW</span> 
+(&amp;H80) style is turned on.
+If <span class="code">WS_EX_APPWINDOW</span> is turned on, the taskbar shows a button for the window, and
+if <span class="code">WS_EX_ TOOLWINDOW</span> is turned on, the taskbar does not show a button for the window.
+A window should never have both of these extended styles. If the window doesn't have
+either of these styles, the taskbar decides to create a button if the window is unowned
+and does not create a button if the window is owned."
+</p><p>
+Incidentally, you use the <span class="code">GetWindow</span> API function with the <span class="code">GW_OWNER</span> flag
+to determine whether a window is owned.
+</p><p>
+However, this doesn't acknowledge the fact that the only time the taskbar seems 
+to check the styles is when the window is first created. If you create a dialog 
+without these styles, then no matter what you do to change the styles afterwards, nothing happens. 
+</p><h2>You can Take Control</h2><p>
+VB's interface into the window creation procedure is somewhat lacking. You get 
+a <span class="code">Form_Initialise</span> event when your form object is about
+to be created, followed by a <span class="code">Form_Load</span> event when the form is about to be shown 
+on screen. <span class="code">Form_Initialise</span> is of no use here because it is in effect an event 
+fired when the object is constructed, so although the object has just come into life, 
+and hence you can use local variables, the associated UI elements have not yet been created. 
+Therefore you may not refer to any windows or controls at this stage. 
+<span class="code">Form_Load</span> is no use either because this fires after the window has been created 
+and is about to be shown. It would have been nice to get some more intermediate events, but 
+I suppose this is the price to pay for having an easy to use interface. 
+</p><p>
+So, given that there is no VB hook into the point when the window is created, how else 
+might you detect window creation?
+</p><h2>The Windows Hook to the rescue</h2><p>
+When all other things have failed, a Windows Hook is often a good thing to consider. 
+Windows Hooks allow you to get into the message stream for your app before 
+the messages get sent to it - and allows you to change or otherwise subvert the standard processing. 
+</p><p>
+By installing a hook of type <span class="code">WH_CALLWNDPROC</span> during an <span class="code">_Initialise</span> event, your app 
+can be notified of any attempts by Windows to call a Window Procedure. This allows us to capture 
+the crucial <span class="code">WM_CREATE</span> message which is sent when the window is first created. 
+</p><h2>In Code - The Theory</h2><p>
+The first thing to do is to install a windows hook before any windows get created 
+and start watching for <span class="code">WM_CREATE</span> calls. The <span class="code">_Initialise</span> event of Forms, 
+UserControls and so on always fires before any windows have been created, whilst 
+all other events fire after the windows have been created, so this is a good place 
+as any to install the hook for window creation checking (note that the 
+<span class="code">_Initialise</span> event only fires once for a form object, so if you want this to work 
+correctly you will always need a new instance of a form). Here is how to initiate the hook: 
+</p><pre>
+Public Sub HookAttach()
+   m_hHook = SetWindowsHookEx( _
+      WH_CALLWNDPROC, 
+      AddressOf AppHook,
+      App.hInstance, 
+      App.ThreadID)
+   Debug.Assert m_hHook &lt;&gt; 0
+End Sub
+</pre><p>
+Now whenever any window in your application has its Window Procedure called, 
+the hook will fire your <span class="code">AppHook</span> procedure. You can then check whether the call 
+is a <span class="code">WM_CREATE</span> message and also you can isolate the particular window being created: 
+</p><pre>
+Private Function AppHook( _
+      ByVal idHook As Long, _
+      ByVal wParam As Long, _
+      ByVal lParam As Long _
+   ) As Long
+   Dim CWP As CWPSTRUCT
+   Dim k As Long, aClass As String
+
+   If idHook &gt;= 0 Then
+      CopyMemory CWP, ByVal lParam, Len(CWP)
+      Select Case CWP.message
+      Case WM_CREATE
+         aClass = Space$(128)
+         k = GetClassName(CWP.hwnd, ByVal aClass, 128)
+         aClass = Left$(aClass, k)
+         If IsIn(aClass, C_MDIFORMCLASS_IDE, C_MDIFORMCLASS_EXE, C_MDIFORMCLASS5_IDE, _
+               C_MDIFORMCLASS5_EXE, C_FORMCLASS_IDE_DC, C_FORMCLASS_EXE_DC, C_FORMCLASS_IDE, _
+               C_FORMCLASS_EXE, C_FORMCLASS5_IDE, C_FORMCLASS5_EXE) Then
+            m_lHookWndProc = SetWindowLong(CWP.hwnd, GWL_WNDPROC, AddressOf Form_WndProc)
+         End If
+      End Select
+   End If
+   AppHook = CallNextHookEx(m_hHook, idHook, wParam, ByVal lParam)
+End Function
+</pre><p>
+The constants listed above specify all the various class names that VB gives to a 
+form for VB5 and VB6 - and there's a lot of them! (Thanks to Geoff Glaze for his assistance with this): 
+</p><pre>
+Private Const C_MDIFORMCLASS_IDE = "ThunderMDIForm"
+Private Const C_MDIFORMCLASS_EXE = "ThunderRT6MDIForm"
+Private Const C_MDIFORMCLASS5_IDE = "ThunderMDIForm"
+Private Const C_MDIFORMCLASS5_EXE = "ThunderRT5MDIForm"
+
+Private Const C_FORMCLASS_IDE_DC = "ThunderFormDC"
+Private Const C_FORMCLASS_EXE_DC = "ThunderRT6FormDC"
+Private Const C_FORMCLASS_IDE = "ThunderForm"
+Private Const C_FORMCLASS_EXE = "ThunderRT6Form"
+Private Const C_FORMCLASS5_IDE = "ThunderForm"
+Private Const C_FORMCLASS5_EXE = "ThunderRT5Form"
+</pre><p>
+You will see that in the above function, I set a new Window Procedure to subclass the 
+window in response to the <span class="code">WM_CREATE</span> message. Why? 
+</p><p>
+Well, there is a problem with calling code in response to <span class="code">WH_CALLWNDPROC</span> events. 
+If you do anything during a <span class="code">WH_CALLWNDPROC</span> hook notification which would call the 
+window procedure of that window again, then VB crashes. This rules out a lot - for example, you 
+can't change the style of the window, and so forth. To get around this problem, you 
+can use the hook notification to install a temporary subclass on the window to capture 
+exactly the same message again - and then you can make as many modifications as you wish. 
+</p><p>
+So finally I respond to the <span class="code">WM_CREATE</span> message in a subclass procedure. As you will see, 
+I just change the Extended Style of the form using <span class="code">SetWindowLong</span> and by modifying the 
+Window's creation data, plus I know I no longer need the subclass so I can reinstall the 
+original window procedure: 
+</p><pre>
+Private Function Form_WndProc( _
+      ByVal hwnd As Long, _
+      ByVal Msg As Long, _
+      ByVal wParam As Long, _
+      ByVal lParam As Long _
+   ) As Long
+   Dim lSetStyleEX As Long
+
+   ' SPM - specific wnd proc for a form. 
+   ' Only called once for the WM_CREATE message.
+
+   Select Case Msg
+   Case WM_CREATE
+      Dim tCS As CREATESTRUCT
+      CopyMemory tCS, ByVal lParam, Len(tCS)
+      lSetStyleEX = GetWindowLong(hwnd, GWL_EXSTYLE)
+      lSetStyleEX = lSetStyleEX Or WS_EX_APPWINDOW
+      lSetStyleEX = lSetStyleEX And (Not WS_EX_TOOLWINDOW)
+      tCS.ExStyle = lSetStyleEX
+      CopyMemory ByVal lParam, tCS, Len(tCS)
+      SetWindowLong hwnd, GWL_WNDPROC, m_lHookWndProc
+      SetWindowLong hwnd, GWL_EXSTYLE, tCS.ExStyle
+   End Select
+
+   Form_WndProc = CallWindowProc( _
+      m_lHookWndProc, hwnd, Msg, wParam, lParam)
+
+End Function
+</pre><h2>In Code - In Practice</h2><p>
+In the download sample the code is all wrapped up into a single module, modStyles. 
+All you have to do to make this work is call <span class="code">HookAttach</span> from the 
+<span class="code">Form_Initialise</span> event and then call 
+<span class="code">HookDetach</span> sometime later (I use the <span class="code">Form_Load</span> event because I know this 
+fires after the window has been created).</p><p>
+Note that it isn't crucial to do things like this.  You can attach the hook whenever
+you want and detach it whenever you want as well.  Try to minimise the duration
+of the Hook's effect, though, as this will make life easier in terms of
+IDE stability.
+</p><p>
+There are a whole load of other possible uses of this code. Matt Hart has 
+demonstrated how you can use this technique to modify the style of a VB 
+control as it is created, for example, to create an Owner Draw Combo Box 
+and an Owner Draw Tab. Have fun! 
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Windows</a>&#160;.&#160;Forcing Any Window to Show in the Taskbar</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 8 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Windows/Forcing_a_Window_to_Show_in_the_TaskBar/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:47 GMT -->
+</html>

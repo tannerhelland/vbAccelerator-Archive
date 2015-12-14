@@ -1,0 +1,1164 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Icon_Controls/Icon_Editor/VB5_IconEditor_Full_Source_Code_zip_cIconEditorDraw_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:54 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cIconEditorDraw.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cIconEditorDraw.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Icon Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator Icon Editor Control</a>&#160;.&#160;<a href="VB5_IconEditor_Full_Source_Code.html">VB5 IconEditor Full Source Code</a>&#160;.&#160;cIconEditorDraw.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="IconEditor_Documentation.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />IconEditor Documentation</a> (1K)</p><p /><p class="nav"><a href="VB5_IconEditor_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IconEditor Demonstration</a> (126K)</p><p class="nav"><a href="VB5_IconEditor_Full_Source_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IconEditor Full Source Code</a> (211K)</p><p class="nav"><a href="VB5_IconEditor_OCX.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 IconEditor OCX</a> (43K)</p><p /><p class="nav"><a href="VB6_IconEditor_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IconEditor Demonstration</a> (123K)</p><p class="nav"><a href="VB6_IconEditor_Full_Source_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IconEditor Full Source Code</a> (209K)</p><p class="nav"><a href="VB6_IconEditor_OCX.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 IconEditor OCX</a> (43K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:11560</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=11560&amp;type=Zip&amp;title=VB5%20IconEditor%20Full%20Source%20Code%2Ezip%5FcIconEditorDraw">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />21 Mar 2000<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cIconEditorDraw.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cIconEditorDraw"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Type POINTAPI
+   x As Long
+   y As Long
+End Type
+Private Type LOGBRUSH
+   lbStyle As Long
+   lbColor As Long
+   lbHatch As Long
+End Type
+Private Declare Function CreatePen Lib "gdi32" (ByVal nPenStyle As Long, ByVal
+ nWidth As Long, ByVal crColor As Long) As Long
+Private Declare Function ExtCreatePen Lib "gdi32" (ByVal dwPenStyle As Long,
+ ByVal dwWidth As Long, lplb As LOGBRUSH, ByVal dwStyleCount As Long, lpStyle
+ As Long) As Long
+Private Declare Function LineTo Lib "gdi32" (ByVal hDC As Long, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function MoveToEx Lib "gdi32" (ByVal hDC As Long, ByVal x As
+ Long, ByVal y As Long, lpPoint As POINTAPI) As Long
+Private Const PS_ALTERNATE = 8
+Private Const PS_COSMETIC = &amp;H0
+Private Const PS_DASH = 1                    '  -------
+Private Const PS_DASHDOT = 3                 '  _._._._
+Private Const PS_DASHDOTDOT = 4              '  _.._.._
+Private Const PS_DOT = 2                     '  .......
+Private Const PS_ENDCAP_FLAT = &amp;H200
+Private Const PS_ENDCAP_MASK = &amp;HF00
+Private Const PS_ENDCAP_ROUND = &amp;H0
+Private Const PS_ENDCAP_SQUARE = &amp;H100
+Private Const PS_GEOMETRIC = &amp;H10000
+Private Const PS_INSIDEFRAME = 6
+Private Const PS_JOIN_BEVEL = &amp;H1000
+Private Const PS_JOIN_MASK = &amp;HF000
+Private Const PS_JOIN_MITER = &amp;H2000
+Private Const PS_JOIN_ROUND = &amp;H0
+Private Const PS_NULL = 5
+Private Const PS_SOLID = 0
+Private Const PS_STYLE_MASK = &amp;HF
+Private Const PS_TYPE_MASK = &amp;HF0000
+Private Const PS_USERSTYLE = 7
+Private Declare Function SetROP2 Lib "gdi32" (ByVal hDC As Long, ByVal
+ nDrawMode As Long) As Long
+Private Const R2_XORPEN = 7       '  DPx
+Private Const R2_WHITE = 16       '   1
+Private Const R2_NOTMERGEPEN = 2  '  DPon
+Private Const R2_NOTXORPEN = 10   '  DPxn
+Private Const R2_NOTMASKPEN = 8   '  DPan
+Private Const R2_NOTCOPYPEN = 4   '  PN
+Private Const R2_NOT = 6  '  Dn
+Private Const R2_NOP = 11         '  D
+Private Const R2_MERGEPENNOT = 14         '  PDno
+Private Const R2_MERGEPEN = 15    '  DPo
+Private Const R2_MERGENOTPEN = 12         '  DPno
+Private Const R2_MASKPENNOT = 5   '  PDna
+Private Const R2_MASKPEN = 9      '  DPa
+Private Const R2_MASKNOTPEN = 3   '  DPna
+Private Const R2_LAST = 16
+Private Const R2_COPYPEN = 13     '  P
+Private Const R2_BLACK = 1        '   0
+Private Declare Function Rectangle Lib "gdi32" (ByVal hDC As Long, ByVal X1 As
+ Long, ByVal Y1 As Long, ByVal X2 As Long, ByVal Y2 As Long) As Long
+Private Declare Function BeginPath Lib "gdi32" (ByVal hDC As Long) As Long
+Private Declare Function EndPath Lib "gdi32" (ByVal hDC As Long) As Long
+Private Declare Function StrokeAndFillPath Lib "gdi32" (ByVal hDC As Long) As
+ Long
+Private Declare Function StrokePath Lib "gdi32" (ByVal hDC As Long) As Long
+
+Private Declare Function SetBkColor Lib "gdi32" (ByVal hDC As Long, ByVal
+ crColor As Long) As Long
+Private Declare Function SetTextColor Lib "gdi32" (ByVal hDC As Long, ByVal
+ crColor As Long) As Long
+Private Const OPAQUE = 2
+Private Const TRANSPARENT = 1
+Private Declare Function SetBkMode Lib "gdi32" (ByVal hDC As Long, ByVal
+ nBkMode As Long) As Long
+Private Declare Function GetSysColorBrush Lib "user32" (ByVal nIndex As Long)
+ As Long
+Private Declare Function FillRect Lib "user32" (ByVal hDC As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+Private Declare Function PtInRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function OffsetRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function GetSysColor Lib "user32" (ByVal nIndex As Long) As Long
+
+Private Declare Function ExtFloodFill Lib "gdi32" (ByVal hDC As Long, ByVal x
+ As Long, ByVal y As Long, ByVal crColor As Long, ByVal wFillType As Long) As
+ Long
+Private Const FLOODFILLBORDER = 0
+Private Const FLOODFILLSURFACE = 1
+Private Declare Function GetPixel Lib "gdi32" (ByVal hDC As Long, ByVal x As
+ Long, ByVal y As Long) As Long
+
+' Clipboard
+Private Declare Function OpenClipboard Lib "user32" (ByVal hWnd As Long) As Long
+Private Declare Function CloseClipboard Lib "user32" () As Long
+Private Declare Function SetClipboardData Lib "user32" (ByVal wFormat As Long,
+ ByVal hMem As Long) As Long
+Private Declare Function GetClipboardData Lib "user32" (ByVal wFormat As Long)
+ As Long
+Private Declare Function EmptyClipboard Lib "user32" () As Long
+Private Declare Function IsClipboardFormatAvailable Lib "user32" (ByVal wFormat
+ As Long) As Long
+
+Private Const CF_BITMAP = 2
+Private Const CF_DIB = 8
+Private Const CF_METAFILEPICT = 3
+
+Private m_iZoom As Long
+Private m_iBorder As Long
+Private m_iSizeX As Long
+Private m_iSizeY As Long
+Private m_hDCOrig As Long
+
+Private m_lLeftColour As OLE_COLOR
+Private m_lRightColour As OLE_COLOR
+Private m_oTransparentColor As OLE_COLOR
+Private m_iXPos As Long, m_iYPos As Long
+Private m_eButton As VBRUN.MouseButtonConstants
+Private m_eShift As VBRUN.ShiftConstants
+
+Private m_eMode As Long
+
+Private m_cDispDC As cMemDC
+Private m_cCacheDC As cMemDC
+
+Private m_cSelectionDC As cMemDC
+Private m_cSelectionMaskDC As cMemDC
+
+Private m_bSelectionTransparent As Boolean
+Private m_eSelectionMode As MousePointerConstants
+Private m_bSelectionTopLeft As Boolean
+Private m_bDrewTrackLines As Boolean
+Private m_cGridBrush As cDottedBrush
+Private m_bMinorGrid As Boolean
+Private m_bMajorGrid As Boolean
+Private m_lMajorGridSizeX As Long
+Private m_lMajorGridSizeY As Long
+
+Private m_tSelection As RECT
+Private m_tOriginalSelection As RECT
+Private m_bHasSelection As Boolean
+Private m_bHadSelection As Boolean
+Private m_bMakingSelection As Boolean
+Private m_bModifyingSelection As Boolean
+Private m_iSelX As Long, m_iSelY As Long
+Private m_bMSResetFlag As Boolean
+
+Public Event ModifySelection(ByVal bFirstTime As Boolean)
+Public Event SetPointer(ByVal ePointer As MousePointerConstants)
+
+Public Property Get GridLines() As Boolean
+   GridLines = m_bMinorGrid
+End Property
+Public Property Let GridLines(ByVal bState As Boolean)
+   m_bMinorGrid = bState
+End Property
+
+Public Property Get TileGridLines() As Boolean
+   TileGridLines = m_bMajorGrid
+End Property
+Public Property Let TileGridLines(ByVal bState As Boolean)
+   m_bMajorGrid = bState
+End Property
+
+Public Property Get TileGridSizeX() As Long
+   TileGridSizeX = m_lMajorGridSizeX
+End Property
+Public Property Let TileGridSizeX(ByVal lX As Long)
+   m_lMajorGridSizeX = lX
+End Property
+
+Public Property Get TileGridSizeY() As Long
+   TileGridSizeY = m_lMajorGridSizeY
+End Property
+Public Property Let TileGridSizeY(ByVal lY As Long)
+   m_lMajorGridSizeY = lY
+End Property
+
+Public Sub MakeUndo(ByRef cUndo As cUndoRedo, ByVal sName As String)
+   cUndo.Add m_hDCOrig, sName
+End Sub
+
+Public Property Let SelectionTransparent(ByVal bState As Boolean)
+   m_bSelectionTransparent = bState
+End Property
+Public Property Get SelectionTransparent() As Boolean
+   SelectionTransparent = m_bSelectionTransparent
+End Property
+
+Public Sub Copy(hWnd As Long)
+Dim cCopyDC As New cMemDC
+Dim hBmp As Long
+Dim lR As Long
+
+   If Not m_bHasSelection Then
+      m_tSelection.Left = 0
+      m_tSelection.Top = 0
+      m_tSelection.Right = m_iSizeX - 1
+      m_tSelection.Bottom = m_iSizeY - 1
+   End If
+   cCopyDC.Width = m_tSelection.Right - m_tSelection.Left + 1
+   cCopyDC.Height = m_tSelection.Bottom - m_tSelection.Top + 1
+   If m_bHasSelection Then
+      StretchBlt cCopyDC.hDC, 0, 0, cCopyDC.Width, cCopyDC.Height,
+       m_cSelectionDC.hDC, 0, 0, m_tOriginalSelection.Right -
+       m_tOriginalSelection.Left + 1, m_tOriginalSelection.Bottom -
+       m_tOriginalSelection.Top + 1, vbSrcCopy
+   Else
+      BitBlt cCopyDC.hDC, 0, 0, cCopyDC.Width, cCopyDC.Height, m_hDCOrig, 0, 0,
+       vbSrcCopy
+   End If
+   If m_bSelectionTransparent Then
+      
+      Dim cWCDC As New cMemDC
+      Dim hBr As Long, tR As RECT
+      cWCDC.Width = cCopyDC.Width
+      cWCDC.Height = cCopyDC.Height
+      tR.Right = cWCDC.Width
+      tR.Bottom = cWCDC.Height
+      hBr = CreateSolidBrush(TranslateColor(m_oTransparentColor))
+      FillRect cWCDC.hDC, tR, hBr
+      DeleteObject hBr
+      
+      
+      If m_bHasSelection Then
+         SetBkColor cWCDC.hDC, TranslateColor(m_oTransparentColor)
+         SetTextColor cWCDC.hDC, &amp;HFFFFFF
+         StretchBlt cWCDC.hDC, 0, 0, cCopyDC.Width, cCopyDC.Height,
+          m_cSelectionMaskDC.hDC, 0, 0, m_tOriginalSelection.Right -
+          m_tOriginalSelection.Left + 1, m_tOriginalSelection.Bottom -
+          m_tOriginalSelection.Top + 1, vbSrcCopy
+         BitBlt cCopyDC.hDC, 0, 0, cCopyDC.Width, cCopyDC.Height, cWCDC.hDC, 0,
+          0, vbSrcAnd
+      End If
+            
+   End If
+   
+   If OpenClipboard(hWnd) Then
+      EmptyClipboard
+      
+      hBmp = cCopyDC.ExtractBitmap
+      
+      lR = SetClipboardData(CF_BITMAP, hBmp)
+      If lR = 0 Then
+         DeleteObject hBmp
+      End If
+      CloseClipboard
+      
+   End If
+   
+End Sub
+
+Public Sub Cut( _
+      ByVal hWnd As Long, _
+      ByVal lTransColour As OLE_COLOR _
+   )
+Dim hBr As Long
+Dim tS As RECT
+   If m_bHasSelection Then
+      If Not (hWnd = 0) Then
+         Copy hWnd
+      End If
+      hBr = CreateSolidBrush(lTransColour)
+      LSet tS = m_tSelection
+      tS.Right = tS.Right + 1
+      tS.Bottom = tS.Bottom + 1
+      FillRect m_hDCOrig, tS, hBr
+      DeleteObject hBr
+      Cache
+   End If
+End Sub
+
+Public Sub Paste(hWnd As Long)
+Dim hBmp As Long
+Dim tR As RECT
+
+   If CanPaste(hWnd) Then
+      
+      If OpenClipboard(hWnd) Then
+         hBmp = GetClipboardData(CF_BITMAP)
+         CloseClipboard
+      End If
+      If Not hBmp = 0 Then
+         Mode = ecModeSelection
+         
+         ' Load this into the selection:
+         Dim cPasted As New cMemDC
+         cPasted.InjectBitmap hBmp
+         tR.Right = cPasted.Width - 1
+         tR.Bottom = cPasted.Height - 1
+         MakeSelection cPasted.hDC, tR
+         cPasted.ExtractBitmap
+         
+         LSet m_tSelection = tR
+         m_bHasSelection = True
+         m_bMakingSelection = False
+         m_bModifyingSelection = True
+         m_bMSResetFlag = True
+         ModifySelection
+         
+      End If
+   End If
+End Sub
+
+Public Property Get CanPaste(ByVal hWnd As Long) As Boolean
+   CanPaste = (IsClipboardFormatAvailable(CF_BITMAP) &lt;&gt; 0)
+End Property
+
+Public Property Get LeftColour() As OLE_COLOR
+   LeftColour = m_lLeftColour
+End Property
+Public Property Let LeftColour(ByVal lColour As OLE_COLOR)
+   m_lLeftColour = lColour
+End Property
+
+Public Property Get RightColour() As OLE_COLOR
+   RightColour = m_lRightColour
+End Property
+Public Property Let RightColour(ByVal lColour As OLE_COLOR)
+   m_lRightColour = lColour
+End Property
+
+Public Property Let Mode(ByVal eMode As Long)
+   If m_eMode = ecModeSelection Then
+      m_bHadSelection = m_bHasSelection
+   End If
+   m_bModifyingSelection = False
+   m_eSelectionMode = vbDefault
+   m_eMode = eMode
+   If m_eMode = ecModeSelection Then
+      m_bHasSelection = m_bHadSelection
+   Else
+      m_bHasSelection = False
+   End If
+End Property
+Public Property Get Mode() As Long
+   Mode = m_eMode
+End Property
+
+Public Sub Transform(x As Single, y As Single)
+   x = (x - m_iBorder) \ m_iZoom
+   y = (y - m_iBorder) \ m_iZoom
+End Sub
+
+Public Sub ApplyBounds(x As Single, y As Single)
+   If x &gt;= m_iSizeX Then
+      x = m_iSizeX - 1
+   End If
+   If x &lt; 0 Then
+      x = 0
+   End If
+   If y &gt;= m_iSizeY Then
+      y = m_iSizeY - 1
+   End If
+   If y &lt; 0 Then
+      y = 0
+   End If
+End Sub
+
+Public Property Let OriginalDC(ByVal hDC As Long)
+   m_hDCOrig = hDC
+End Property
+Public Sub Initialise(ByVal iBorder As Long, ByVal iZoom As Long, ByVal cx As
+ Long, ByVal cy As Long)
+   m_iBorder = iBorder
+   m_iZoom = iZoom
+   m_iSizeX = cx
+   m_iSizeY = cy
+   Init
+End Sub
+
+Private Sub Init()
+Dim lWidth As Long, lHeight As Long
+Dim lHDC As Long
+   lWidth = m_iBorder * 2 + m_iSizeX * m_iZoom
+   lHeight = m_iBorder * 2 + m_iSizeY * m_iZoom
+   With m_cDispDC
+      .Width = lWidth
+      .Height = lHeight
+      lHDC = .hDC
+   End With
+   With m_cCacheDC
+      .Width = m_iSizeX
+      .Height = m_iSizeY
+      lHDC = .hDC
+   End With
+   m_bHasSelection = False
+   If m_tSelection.Right &gt; m_iSizeX Then
+      m_tSelection.Right = m_iSizeX
+   End If
+   If m_tSelection.Bottom &gt; m_iSizeY Then
+      m_tSelection.Bottom = m_iSizeY
+   End If
+   If m_tSelection.Left &gt; m_iSizeX Then
+      m_tSelection.Left = m_iSizeX
+   End If
+   If m_tSelection.Top &gt; m_iSizeY Then
+      m_tSelection.Top = m_iSizeY
+   End If
+End Sub
+
+Public Sub Cache()
+   BitBlt m_cCacheDC.hDC, 0, 0, m_iSizeX, m_iSizeY, m_hDCOrig, 0, 0, vbSrcCopy
+End Sub
+Public Sub UnCache()
+   BitBlt m_hDCOrig, 0, 0, m_iSizeX, m_iSizeY, m_cCacheDC.hDC, 0, 0, vbSrcCopy
+End Sub
+
+Public Sub SetSize(ByVal x As Long, ByVal y As Long)
+Dim bInit As Boolean
+   If x &gt; m_iSizeX Or y &gt; m_iSizeY Then
+      bInit = True
+   End If
+   m_iSizeX = x
+   m_iSizeY = y
+   If bInit Then
+      Init
+   End If
+End Sub
+
+Public Sub MousePos(ByVal Button As VBRUN.MouseButtonConstants, ByVal Shift As
+ VBRUN.ShiftConstants, ByVal x As Long, ByVal y As Long)
+Dim lX As Single, lY As Single
+Dim lSelX As Single, lSelY As Single
+   
+   If m_eButton &lt;&gt; 0 Then
+      If m_bModifyingSelection Then
+         lX = m_iXPos: lY = m_iYPos
+         Transform lX, lY
+         lSelX = m_iSelX: lSelY = m_iSelY
+         Transform lSelX, lSelY
+         If Not m_bMSResetFlag Then
+            If lX &lt;&gt; lSelX Or lY &lt;&gt; lSelY Then
+               Select Case m_eSelectionMode
+               Case vbSizeAll
+                  m_tSelection.Left = m_tSelection.Left + (lX - lSelX)
+                  m_tSelection.Right = m_tSelection.Right + (lX - lSelX)
+                  m_iSelX = m_iXPos
+                  m_tSelection.Top = m_tSelection.Top + (lY - lSelY)
+                  m_tSelection.Bottom = m_tSelection.Bottom + (lY - lSelY)
+                  m_iSelY = m_iYPos
+               Case vbSizeNS
+                  If m_bSelectionTopLeft Then
+                     m_tSelection.Top = m_tSelection.Top + (lY - lSelY)
+                     m_iSelY = m_iYPos
+                  Else
+                     m_tSelection.Bottom = m_tSelection.Bottom + (lY - lSelY)
+                     m_iSelY = m_iYPos
+                  End If
+               Case vbSizeWE
+                  If m_bSelectionTopLeft Then
+                     m_tSelection.Left = m_tSelection.Left + (lX - lSelX)
+                     m_iSelX = m_iXPos
+                  Else
+                     m_tSelection.Right = m_tSelection.Right + (lX - lSelX)
+                     m_iSelX = m_iXPos
+                  End If
+               Case vbSizeNESW
+                  ' arbitrary; topleft == top
+                  If m_bSelectionTopLeft Then
+                     m_tSelection.Right = m_tSelection.Right + (lX - lSelX)
+                     m_tSelection.Top = m_tSelection.Top + (lY - lSelY)
+                     m_iSelX = m_iXPos
+                     m_iSelY = m_iYPos
+                  Else
+                     m_tSelection.Left = m_tSelection.Left + (lX - lSelX)
+                     m_tSelection.Bottom = m_tSelection.Bottom + (lY - lSelY)
+                     m_iSelX = m_iXPos
+                     m_iSelY = m_iYPos
+                  End If
+                  
+               Case vbSizeNWSE
+                  ' arbitrary; topleft == top
+                  If m_bSelectionTopLeft Then
+                     m_tSelection.Left = m_tSelection.Left + (lX - lSelX)
+                     m_tSelection.Top = m_tSelection.Top + (lY - lSelY)
+                     m_iSelX = m_iXPos
+                     m_iSelY = m_iYPos
+                  Else
+                     m_tSelection.Right = m_tSelection.Right + (lX - lSelX)
+                     m_tSelection.Bottom = m_tSelection.Bottom + (lY - lSelY)
+                     m_iSelX = m_iXPos
+                     m_iSelY = m_iYPos
+                  End If
+                  
+               End Select
+            End If
+         Else
+            m_bMSResetFlag = False
+            m_iSelX = m_iXPos
+            m_iSelY = m_iYPos
+         End If
+      End If
+   Else
+      If m_bModifyingSelection Then
+         m_iSelX = m_iXPos
+         m_iSelY = m_iYPos
+      End If
+   End If
+   
+   m_iXPos = x
+   m_iYPos = y
+   m_eButton = Button
+   
+End Sub
+
+Public Property Get Zoom() As Long
+   Zoom = m_iZoom
+End Property
+Public Property Let Zoom(ByVal iZoom As Long)
+Dim bInit As Boolean
+   If m_iZoom &lt;&gt; iZoom Then
+      If iZoom &gt; m_iZoom Then
+         bInit = True
+      End If
+      m_iZoom = iZoom
+      If bInit Then
+         Init
+      End If
+   End If
+End Property
+
+Public Property Get Border() As Long
+   Border = m_iBorder
+End Property
+Public Property Let Border(ByVal iBorder As Long)
+Dim bInit As Boolean
+   If m_iBorder &lt;&gt; iBorder Then
+      If iBorder &gt; m_iBorder Then
+         bInit = True
+      End If
+      m_iBorder = iBorder
+      If bInit Then
+         Init
+      End If
+   End If
+End Property
+
+Public Sub FillArea(ByVal hDC As Long, ByVal x As Long, ByVal y As Long, ByVal
+ lColour As Long)
+Dim lR As Long
+Dim lC As Long
+Dim hBr As Long
+Dim hBrOld As Long
+   hBr = CreateSolidBrush(lColour)
+   hBrOld = SelectObject(hDC, hBr)
+   lC = GetPixel(hDC, x, y)
+   lR = ExtFloodFill(hDC, x, y, lC, FLOODFILLSURFACE)
+   Debug.Assert (lR &lt;&gt; 0)
+   SelectObject hDC, hBrOld
+   DeleteObject hBr
+End Sub
+
+Public Function SelectionMouseDown(x As Single, y As Single) As Boolean
+   
+   m_bMakingSelection = False
+   
+   If m_bHasSelection Then
+      ' We have a selection; if we are inside it then
+      ' we want to start a new one, otherwise we are
+      ' modifying.
+      If MouseInSelection() Then
+      Else
+         ' Fall through:
+         m_bHasSelection = False
+      End If
+   End If
+
+   If Not m_bHasSelection Then
+      ' No selection, mouse down, we are creating a
+      ' selection area:
+      m_bMakingSelection = True
+      m_bHasSelection = True
+      If x &lt; 0 Then x = 0
+      If x &gt;= m_iSizeX Then x = m_iSizeX - 1
+      If y &lt; 0 Then y = 0
+      If y &gt;= m_iSizeY Then y = m_iSizeY - 1
+      m_tSelection.Left = x
+      m_tSelection.Top = y
+      m_tSelection.Right = x
+      m_tSelection.Bottom = y
+   End If
+
+   If Not m_bModifyingSelection Then
+      Cache
+   End If
+
+End Function
+Public Sub MouseUp()
+Dim x As Single, y As Single
+      
+   If m_bMakingSelection Then
+      
+      x = m_iXPos: y = m_iYPos
+      Transform x, y
+      If x &gt; m_tSelection.Left Then
+         m_tSelection.Right = x
+      Else
+         m_tSelection.Right = m_tSelection.Left
+         m_tSelection.Left = x
+      End If
+      If y &gt; m_tSelection.Top Then
+         m_tSelection.Bottom = y
+      Else
+         m_tSelection.Bottom = m_tSelection.Top
+         m_tSelection.Top = y
+      End If
+      If m_tSelection.Left &lt; 0 Then m_tSelection.Left = 0
+      If m_tSelection.Top &lt; 0 Then m_tSelection.Top = 0
+      If m_tSelection.Left &gt;= m_iSizeX Then m_tSelection.Left = m_iSizeX - 1
+      If m_tSelection.Top &gt;= m_iSizeY Then m_tSelection.Top = m_iSizeY - 1
+      If m_tSelection.Right &lt; 0 Then m_tSelection.Right = 0
+      If m_tSelection.Bottom &lt; 0 Then m_tSelection.Bottom = 0
+      If m_tSelection.Right &gt;= m_iSizeX Then m_tSelection.Right = m_iSizeX - 1
+      If m_tSelection.Bottom &gt;= m_iSizeY Then m_tSelection.Bottom = m_iSizeY - 1
+            
+      If m_tSelection.Bottom &lt;&gt; m_tSelection.Top And m_tSelection.Right &lt;&gt;
+       m_tSelection.Left Then
+         m_bHasSelection = True
+         ' Make the selection:
+         MakeSelection m_hDCOrig, m_tSelection
+      Else
+         m_bHasSelection = False
+      End If
+   End If
+   m_bMakingSelection = False
+   
+End Sub
+Public Property Get HasSelection() As Boolean
+   HasSelection = m_bHasSelection
+End Property
+Private Sub MakeSelection( _
+      ByVal hDC As Long, _
+      tSel As RECT _
+   )
+Dim lBCol As Long, lFCol As Long
+Dim hBr As Long, tR As RECT
+Dim lHDC As Long
+   
+   LSet m_tOriginalSelection = tSel
+   With m_cSelectionDC
+      .Width = (tSel.Right - tSel.Left) + 1
+      .Height = (tSel.Bottom - tSel.Top) + 1
+      lHDC = .hDC
+      BitBlt .hDC, 0, 0, .Width, .Height, hDC, tSel.Left, tSel.Top, vbSrcCopy
+   End With
+   With m_cSelectionMaskDC
+      .Mono = True
+      .Width = (tSel.Right - tSel.Left) + 1
+      .Height = (tSel.Bottom - tSel.Top) + 1
+      lHDC = .hDC
+      SetBkColor .hDC, TranslateColor(m_oTransparentColor)
+      SetBkColor hDC, TranslateColor(m_oTransparentColor)
+      BitBlt .hDC, 0, 0, .Width, .Height, hDC, tSel.Left, tSel.Top, vbSrcCopy
+      
+      Dim cInvDC As New cMemDC
+      cInvDC.Mono = True
+      cInvDC.Width = .Width
+      cInvDC.Height = .Height
+      tR.Right = .Width
+      tR.Bottom = .Height
+      lHDC = cInvDC.hDC
+      hBr = CreateSolidBrush(&amp;H0&amp;)
+      FillRect lHDC, tR, hBr
+      DeleteObject hBr
+      BitBlt cInvDC.hDC, 0, 0, .Width, .Height, .hDC, 0, 0, vbSrcInvert
+      
+      BitBlt m_cSelectionDC.hDC, 0, 0, .Width, .Height, cInvDC.hDC, 0, 0,
+       vbSrcPaint
+      
+   End With
+   
+End Sub
+
+Public Property Get MouseInSelection() As Boolean
+Dim x As Single, y As Single
+Dim tSel As RECT
+   x = m_iXPos
+   y = m_iYPos
+   Transform x, y
+   LSet tSel = m_tSelection
+   tSel.Left = tSel.Left - 1
+   tSel.Top = tSel.Top - 1
+   tSel.Bottom = tSel.Bottom + 1
+   tSel.Right = tSel.Right + 1
+   If x &gt;= tSel.Left And x &lt;= tSel.Right And y &gt;= tSel.Top And y &lt;= tSel.Bottom
+    Then
+      If x = tSel.Left Then
+         m_bSelectionTopLeft = True
+         If y = tSel.Top Then
+            m_eSelectionMode = vbSizeNWSE
+            RaiseEvent SetPointer(m_eSelectionMode)
+         ElseIf y = tSel.Bottom Then
+            m_bSelectionTopLeft = False
+            m_eSelectionMode = vbSizeNESW
+            RaiseEvent SetPointer(m_eSelectionMode)
+         Else
+            m_eSelectionMode = vbSizeWE
+            RaiseEvent SetPointer(m_eSelectionMode)
+         End If
+      ElseIf x = tSel.Right Then
+         m_bSelectionTopLeft = False
+         If y = tSel.Top Then
+            m_bSelectionTopLeft = True
+            m_eSelectionMode = vbSizeNESW
+            RaiseEvent SetPointer(m_eSelectionMode)
+         ElseIf y = tSel.Bottom Then
+            m_eSelectionMode = vbSizeNWSE
+            RaiseEvent SetPointer(m_eSelectionMode)
+         Else
+            m_eSelectionMode = vbSizeWE
+            RaiseEvent SetPointer(m_eSelectionMode)
+         End If
+      ElseIf y = tSel.Top Then
+         m_bSelectionTopLeft = True
+         m_eSelectionMode = vbSizeNS
+         RaiseEvent SetPointer(m_eSelectionMode)
+      ElseIf y = tSel.Bottom Then
+         m_bSelectionTopLeft = False
+         m_eSelectionMode = vbSizeNS
+         RaiseEvent SetPointer(m_eSelectionMode)
+      Else
+         m_eSelectionMode = vbSizeAll
+         RaiseEvent SetPointer(m_eSelectionMode)
+      End If
+      MouseInSelection = True
+   Else
+      If m_eButton &lt;&gt; 0 Then
+         m_bModifyingSelection = False
+         m_iSelX = m_iXPos: m_iSelY = m_iYPos
+      End If
+      m_eSelectionMode = vbDefault
+      RaiseEvent SetPointer(vbDefault)
+   End If
+End Property
+
+Public Sub Draw(ByVal hDCOut As Long, ByVal bPaint As Boolean)
+Dim hBr As Long
+Dim tR As RECT
+Dim x As Single, y As Single
+Dim bDrawTrackLines As Boolean
+   
+   If m_hDCOrig &lt;&gt; 0 And hDCOut &lt;&gt; 0 Then
+      
+      If m_eButton &lt;&gt; 0 Then
+         If m_eMode = ecModeSelection Then
+            If Not m_bMakingSelection Then
+               If m_bHasSelection Then
+                  ModifySelection
+               End If
+            End If
+         End If
+      End If
+            
+      hBr = GetSysColorBrush(vbWindowBackground And &amp;H1F&amp;)
+      tR.Right = m_iBorder * 2 + m_iZoom * m_iSizeX
+      tR.Bottom = m_iBorder * 2 + m_iZoom * m_iSizeY
+      FillRect m_cDispDC.hDC, tR, hBr
+      DeleteObject hBr
+      StretchBlt m_cDispDC.hDC, m_iBorder, m_iBorder, m_iZoom * m_iSizeX,
+       m_iZoom * m_iSizeY, m_hDCOrig, 0, 0, m_iSizeX, m_iSizeY, vbSrcCopy
+      
+      DoGrid 0
+      
+      If m_eButton = 0 Then
+         If m_eMode = ecModeBrush Or m_eMode = ecModeEraser Or m_eMode =
+          ecModeFloodFill Then
+            ' No tracking lines
+            If Not bPaint Then
+               Exit Sub
+            End If
+         ElseIf m_eMode = ecModeSelection Then
+            If MouseInSelection Then
+               ' do nothing
+            Else
+               bDrawTrackLines = True
+            End If
+            If m_bHasSelection And Not m_bMakingSelection Then
+               DrawSelectionBounds
+            End If
+            If bDrawTrackLines Then
+               DrawTrackLines
+            End If
+         End If
+      Else
+         If m_eMode = ecModeSelection Then
+            If m_bMakingSelection Then
+               DrawTrackLines
+            End If
+         End If
+      End If
+      
+      If Not m_bMakingSelection Then
+         If m_eButton = 0 Then
+            DrawSelectionBounds
+         End If
+      End If
+      
+      BitBlt hDCOut, 0, 0, m_iZoom * m_iSizeX + m_iBorder * 2, m_iZoom *
+       m_iSizeY + m_iBorder * 2, m_cDispDC.hDC, 0, 0, vbSrcCopy
+   End If
+End Sub
+Private Sub RenderSelection()
+Dim hDC As Long
+Dim lFCol As Long, lBCol As Long
+
+   hDC = m_hDCOrig
+   If m_bSelectionTransparent Then
+      ' Or mask onto background:
+      lBCol = SetBkColor(hDC, &amp;H0)
+      lFCol = SetTextColor(hDC, &amp;HFFFFFF)
+      StretchBlt hDC, m_tSelection.Left, m_tSelection.Top, m_tSelection.Right -
+       m_tSelection.Left + 1, m_tSelection.Bottom - m_tSelection.Top + 1,
+       m_cSelectionMaskDC.hDC, 0, 0, m_tOriginalSelection.Right -
+       m_tOriginalSelection.Left + 1, m_tOriginalSelection.Bottom -
+       m_tOriginalSelection.Top + 1, vbSrcPaint
+      ' And selection:
+      SetBkColor hDC, lBCol
+      SetTextColor hDC, lFCol
+      StretchBlt hDC, m_tSelection.Left, m_tSelection.Top, m_tSelection.Right -
+       m_tSelection.Left + 1, m_tSelection.Bottom - m_tSelection.Top + 1,
+       m_cSelectionDC.hDC, 0, 0, m_tOriginalSelection.Right -
+       m_tOriginalSelection.Left + 1, m_tOriginalSelection.Bottom -
+       m_tOriginalSelection.Top + 1, vbSrcAnd
+   Else
+      Debug.Print "NON-TRANSPARENT"
+      StretchBlt hDC, m_tSelection.Left, m_tSelection.Top, m_tSelection.Right -
+       m_tSelection.Left + 1, m_tSelection.Bottom - m_tSelection.Top + 1,
+       m_cSelectionDC.hDC, 0, 0, m_tOriginalSelection.Right -
+       m_tOriginalSelection.Left + 1, m_tOriginalSelection.Bottom -
+       m_tOriginalSelection.Top + 1, vbSrcCopy
+   End If
+End Sub
+Private Sub ModifySelection()
+   If Not m_bModifyingSelection Then
+      Debug.Print "ModifySelection"
+      RaiseEvent ModifySelection(True)
+      Cache
+      m_iSelX = m_iXPos
+      m_iSelY = m_iYPos
+   End If
+   m_bModifyingSelection = True
+   RenderSelection
+   RaiseEvent ModifySelection(False)
+End Sub
+Friend Sub GetSelection(tR As RECT)
+   LSet tR = m_tSelection
+End Sub
+Private Sub DrawTrackLines()
+Dim hPen As Long
+Dim hPenOld As Long
+Dim tJunk As POINTAPI
+Dim lHDC As Long
+Dim lRop As Long
+Dim xq As Long, yq As Long
+Dim lL As Long, lT As Long
+
+   If m_iZoom &gt; 0 Then
+      If Not m_bMakingSelection Then
+         If m_iXPos &gt; -1 And m_iYPos &gt; -1 Then
+         Else
+            Exit Sub
+         End If
+      End If
+      
+      lHDC = m_cDispDC.hDC
+   
+      hPen = CreatePen(PS_SOLID, m_iZoom, &amp;HC0C0C0)
+      hPenOld = SelectObject(lHDC, hPen)
+      lRop = SetROP2(lHDC, R2_NOT) 'R2_NOTXORPEN)
+                  
+      xq = ((m_iXPos - m_iBorder) \ m_iZoom) * m_iZoom + m_iBorder + m_iZoom \ 2
+      yq = ((m_iYPos - m_iBorder) \ m_iZoom) * m_iZoom + m_iBorder + m_iZoom \ 2
+      
+      If xq &lt; m_iBorder + m_iZoom \ 2 Then
+         xq = m_iBorder + m_iZoom \ 2
+      End If
+      If yq &lt; m_iBorder + m_iZoom \ 2 Then
+         yq = m_iBorder + m_iZoom \ 2
+      End If
+      If xq &gt; m_iSizeX * m_iZoom + m_iBorder - m_iZoom \ 2 Then
+         xq = m_iSizeX * m_iZoom + m_iBorder - m_iZoom \ 2
+      End If
+      If yq &gt; m_iSizeY * m_iZoom + m_iBorder - m_iZoom \ 2 Then
+         yq = m_iSizeY * m_iZoom + m_iBorder - m_iZoom \ 2
+      End If
+               
+      If m_bMakingSelection Then
+         lL = m_tSelection.Left * m_iZoom + m_iBorder + m_iZoom \ 2
+         lT = m_tSelection.Top * m_iZoom + m_iBorder + m_iZoom \ 2
+         BeginPath lHDC
+         MoveToEx lHDC, lL, lT, tJunk
+         LineTo lHDC, xq, lT
+         LineTo lHDC, xq, yq
+         LineTo lHDC, lL, yq
+         LineTo lHDC, lL, lT
+         EndPath lHDC
+         StrokePath lHDC
+      Else
+         MoveToEx lHDC, 0, yq, tJunk
+         LineTo lHDC, xq, yq
+         MoveToEx lHDC, xq + 1, yq, tJunk
+         LineTo lHDC, m_cDispDC.Width, yq
+         
+         MoveToEx lHDC, xq, 0, tJunk
+         LineTo lHDC, xq, yq
+         MoveToEx lHDC, xq, yq + 1, tJunk
+         LineTo lHDC, xq, m_cDispDC.Height
+      End If
+      
+      SelectObject lHDC, hPenOld
+      DeleteObject hPen
+      
+      m_bDrewTrackLines = True
+   
+   End If
+End Sub
+
+Private Sub DoGrid(ByVal iOffset As Long)
+Dim hPen As Long
+Dim hPenOld As Long
+Dim lAXs As Long, lAXe As Long, lAX As Long
+Dim lAYs As Long, lAYe As Long, lAY As Long
+Dim lX As Long, lY As Long
+Dim tJunk As POINTAPI
+Dim lCol As Long, lBC As Long, lTCOl As Long, lBCol As Long
+
+   If m_iZoom &gt;= 4 Then
+      
+      lAXs = m_iBorder - 1
+      lAYs = m_iBorder - 1
+      lAXe = m_iBorder + m_iZoom * m_iSizeX
+      lAYe = m_iBorder + m_iZoom * m_iSizeY
+      lAX = lAXs
+         
+      lCol = SetTextColor(m_cDispDC.hDC, GetSysColor(vbButtonFace And &amp;H1F&amp;))
+      lBC = SetBkColor(m_cDispDC.hDC, GetSysColor(vbButtonShadow And &amp;H1F&amp;))
+      For lX = 0 To m_iSizeX
+         If m_bMinorGrid Then
+            m_cGridBrush.DrawLine m_cDispDC.hDC, lAX, lAYs + iOffset, 1, lAYe -
+             (lAYs + iOffset) + 1
+         End If
+         If m_bMajorGrid Then
+            If (lX Mod m_lMajorGridSizeX) = 0 Then
+               lTCOl = SetTextColor(m_cDispDC.hDC, &amp;H800000)
+               lBCol = SetBkColor(m_cDispDC.hDC, &amp;H800000)
+               m_cGridBrush.DrawLine m_cDispDC.hDC, lAX, lAYs + iOffset, 1,
+                lAYe - (lAYs + iOffset) + 1
+               SetBkColor m_cDispDC.hDC, lBCol
+               SetTextColor m_cDispDC.hDC, lTCOl
+            End If
+         End If
+         lAX = lAX + m_iZoom
+      Next lX
+      lAY = lAYs
+      For lY = 0 To m_iSizeY
+         If m_bMinorGrid Then
+            m_cGridBrush.DrawLine m_cDispDC.hDC, lAXs + iOffset, lAY, lAXe -
+             (lAXs + iOffset) + 1, 1
+         End If
+         If m_bMajorGrid Then
+            If (lY Mod m_lMajorGridSizeY) = 0 Then
+               lTCOl = SetTextColor(m_cDispDC.hDC, &amp;H800000)
+               lBCol = SetBkColor(m_cDispDC.hDC, &amp;H800000)
+               m_cGridBrush.DrawLine m_cDispDC.hDC, lAXs + iOffset, lAY, lAXe -
+                (lAXs + iOffset) + 1, 1
+               SetTextColor m_cDispDC.hDC, lTCOl
+               SetBkColor m_cDispDC.hDC, lBCol
+            End If
+         End If
+   
+         lAY = lAY + m_iZoom
+      Next lY
+      SetTextColor m_cDispDC.hDC, lCol
+      SetBkColor m_cDispDC.hDC, lBC
+   End If
+End Sub
+
+Public Sub ResizeOutput(ByRef picThis As PictureBox, ByRef picActual As
+ PictureBox)
+   picThis.Width = (((picThis.BorderStyle = 1) * -4) + m_iBorder * 2 + m_iZoom
+    * m_iSizeX) * Screen.TwipsPerPixelX
+   picThis.Height = (((picThis.BorderStyle = 1) * -4) + m_iBorder * 2 + m_iZoom
+    * m_iSizeY) * Screen.TwipsPerPixelX
+   picActual.Width = (m_iSizeX + 4) * Screen.TwipsPerPixelX
+   picActual.Height = (m_iSizeY + 4) * Screen.TwipsPerPixelY
+End Sub
+
+Private Sub DrawSelectionBounds()
+Dim tR As RECT
+Dim hPen As Long
+Dim hPenOld As Long
+Dim tJunk As POINTAPI
+Dim lHDC As Long
+Dim lRop As Long
+Dim hBr As Long
+
+   If Not m_bHasSelection Then
+      tR.Left = 0
+      tR.Top = 0
+      tR.Right = m_iSizeX - 1
+      tR.Bottom = m_iSizeY - 1
+   Else
+      LSet tR = m_tSelection
+   End If
+      
+   ' we expand the selection so it is larger:
+   tR.Left = (tR.Left - 1) * m_iZoom + m_iBorder + m_iZoom \ 2
+   tR.Top = (tR.Top - 1) * m_iZoom + m_iBorder + m_iZoom \ 2
+   tR.Right = (tR.Right + 1) * m_iZoom + m_iBorder + m_iZoom \ 2
+   tR.Bottom = (tR.Bottom + 1) * m_iZoom + m_iBorder + m_iZoom \ 2
+   
+   lHDC = m_cDispDC.hDC
+   
+   lRop = SetROP2(lHDC, R2_COPYPEN)
+   hPen = CreatePen(PS_SOLID, m_iZoom, &amp;HC0C0C0)
+   hPenOld = SelectObject(lHDC, hPen)
+   
+   BeginPath lHDC
+   MoveToEx lHDC, tR.Left, tR.Top, tJunk
+   LineTo lHDC, tR.Right, tR.Top
+   LineTo lHDC, tR.Right, tR.Bottom
+   LineTo lHDC, tR.Left, tR.Bottom
+   LineTo lHDC, tR.Left, tR.Top
+   EndPath lHDC
+   StrokePath lHDC
+   
+   SelectObject lHDC, hPenOld
+   DeleteObject hPen
+   
+   hPen = CreatePen(PS_SOLID, 1, GetSysColor(vbHighlightText And &amp;H1F))
+   hPenOld = SelectObject(lHDC, hPen)
+   hBr = GetSysColorBrush(vbHighlight And &amp;H1F&amp;)
+   pFilledRect lHDC, hBr, tR.Left - m_iZoom \ 2, tR.Top - m_iZoom \ 2, m_iZoom,
+    m_iZoom
+   pFilledRect lHDC, hBr, tR.Left - m_iZoom \ 2 + (tR.Right - tR.Left) \ 2,
+    tR.Top - m_iZoom \ 2, m_iZoom, m_iZoom
+   pFilledRect lHDC, hBr, tR.Right - m_iZoom \ 2, tR.Top - m_iZoom \ 2,
+    m_iZoom, m_iZoom
+   pFilledRect lHDC, hBr, tR.Right - m_iZoom \ 2, tR.Top - m_iZoom \ 2 +
+    (tR.Bottom - tR.Top) \ 2, m_iZoom, m_iZoom
+   pFilledRect lHDC, hBr, tR.Left - m_iZoom \ 2, tR.Bottom - m_iZoom \ 2,
+    m_iZoom, m_iZoom
+   pFilledRect lHDC, hBr, tR.Left - m_iZoom \ 2 + (tR.Right - tR.Left) \ 2,
+    tR.Bottom - m_iZoom \ 2, m_iZoom, m_iZoom
+   pFilledRect lHDC, hBr, tR.Right - m_iZoom \ 2, tR.Bottom - m_iZoom \ 2,
+    m_iZoom, m_iZoom
+   pFilledRect lHDC, hBr, tR.Left - m_iZoom \ 2, tR.Top - m_iZoom \ 2 +
+    (tR.Bottom - tR.Top) \ 2, m_iZoom, m_iZoom
+   DeleteObject hBr
+   SelectObject lHDC, hPenOld
+   DeleteObject hPen
+   
+End Sub
+
+Private Sub pFilledRect( _
+      ByVal lHDC As Long, _
+      ByVal hBr As Long, _
+      ByVal lLeft As Long, _
+      ByVal lTop As Long, _
+      ByVal lWidth As Long, _
+      ByVal lHeight As Long _
+   )
+Dim tR As RECT
+   tR.Left = lLeft
+   tR.Right = lLeft + lWidth
+   tR.Top = lTop
+   tR.Bottom = lTop + lHeight
+   FillRect lHDC, tR, hBr
+End Sub
+Public Property Let TransparentColor(ByVal oColor As OLE_COLOR)
+   m_oTransparentColor = oColor
+End Property
+   
+Private Sub Class_Initialize()
+   Set m_cDispDC = New cMemDC
+   Set m_cCacheDC = New cMemDC
+   Set m_cSelectionDC = New cMemDC
+   Set m_cSelectionMaskDC = New cMemDC
+   Set m_cGridBrush = New cDottedBrush
+   m_cGridBrush.Create
+   m_bMinorGrid = True
+   m_bMajorGrid = True
+   m_lMajorGridSizeX = 8
+   m_lMajorGridSizeY = 8
+   m_iZoom = 6
+End Sub
+
+Private Sub Class_Terminate()
+   Set m_cDispDC = Nothing
+   Set m_cCacheDC = Nothing
+   Set m_cSelectionDC = Nothing
+   Set m_cSelectionMaskDC = Nothing
+   m_cGridBrush.Destroy
+   Set m_cGridBrush = Nothing
+End Sub
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Icon Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator Icon Editor Control</a>&#160;.&#160;<a href="VB5_IconEditor_Full_Source_Code.html">VB5 IconEditor Full Source Code</a>&#160;.&#160;cIconEditorDraw.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Icon_Controls/Icon_Editor/VB5_IconEditor_Full_Source_Code_zip_cIconEditorDraw_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:54 GMT -->
+</html>

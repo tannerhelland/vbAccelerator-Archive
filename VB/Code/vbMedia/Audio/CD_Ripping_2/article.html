@@ -1,0 +1,475 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_2/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:05 GMT -->
+<head>
+<title>vbAccelerator - CD Ripping in VB Part 2</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This sample provides a more sophisticated CD Ripper which is capable of
+writing MP3 files by adding the following:
+A plugin-based architecture for writing audio files.Implementing a WAV to MP3 encoder.
+The audio plugins can be re-used wherever you want to be able to create audio files.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" />
+<link rel="contents" href="../index.html" /><link rel="meta" type="application/rdf+xml" href="article.rdf" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;CD Ripping in VB Part 2</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_CD_Ripper_Plugin_Interface.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 CD Ripper Plugin Interface</a> (9K)</p><p class="nav"><a href="VB5_Pluggable_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Pluggable CD Ripper</a> (191K)</p><p /><p class="nav"><a href="VB6_CD_Ripper_Plugin_Interface.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 CD Ripper Plugin Interface</a> (9K)</p><p class="nav"><a href="VB6_Pluggable_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Pluggable CD Ripper</a> (189K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:14972</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14972&amp;type=Article&amp;title=CD%20Ripping%20in%20VB%20Part%202">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />11 Jun 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13703">SGrid 2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2767">vbAccelerator Visual Studio Style Tab Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14898">MP3 Encoding with LAME</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14971">CD Ripping in VB Part 1</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>CD Ripping in VB Part 2</h1><p class="splash">Creating reusable components for writing MP3 and WAV files from audio data</p><img src="mp3Ripper.png" width="426" height="315" alt="CD Ripper Sample" /><p /><p>
+This sample provides a more sophisticated CD Ripper which is capable of
+writing MP3 files by adding the following:
+</p><ol><li>A plugin-based architecture for writing audio files.</li><li>Implementing a WAV to MP3 encoder.</li></ol><p>
+The audio plugins can be re-used wherever you want to be able to create audio files.
+</p><h2>Before you Begin</h2><p>
+This sample uses the <a href="http://www.vbaccelerator.com/article.asp?id=14971">CD Ripping 1</a> sample as a basis, and also uses the <a href="http://www.vbaccelerator.com/article.asp?id=14898">LAME encoder</a>.  
+CDRip is released under the <a href="http://creativecommons.org/licenses/GPL/2.0/">GPL licence</a>, and the LAME encoder under the 
+<a href="http://creativecommons.org/licenses/LGPL/2.1/">LGPL</a>. Please read the article notes as well for details of usage of these files.</p><p>
+To run the sample, you will need to have the following three Win32 DLLs somewhere that your 
+VB application will find it (generally it is easiest to put them in the Windows\System directory):
+</p><ul><li><span class="i">lame_enc.dll</span> and <span class="i">LameEncShim.dll</span> (Download: <a href="http://www.vbaccelerator.com/zip.asp?id=14903">LAME encoder DLLs</a>).</li><li><span class="i">CDRip.dll</span> (Download: <a href="http://www.vbaccelerator.com/zip.asp?id=15102">CD Rip DLLs</a>).</li></ul><p>
+Once that's in place, then note the sample also uses <a href="http://www.vbaccelerator.com/article.asp?id=13703">SGrid 2</a> 
+and the <a href="http://www.vbaccelerator.com/article.asp?id=2767">Visual Studio Style Tab</a> control.
+</p><h2>Creating a Plugin Architecture For Audio Writing</h2><p>
+The first step in creating an application which supports a
+ plugin architecture is to decide how the plugins will interface with the application
+itself.  There are really two ways of approaching this: you can either create
+a very loosely-typed interface, which allows for great flexiblity but tends
+to require the implementations to do more work, or you can build a 
+closely-specified interface, which makes coding a lot easier but restricts
+options in terms of what the plugins can achieve.
+</p><p>
+In this case I've chosen the latter approach as the task of encoding a file
+is fairly well constrained.  In addition, if the interface is well-defined
+then it can be deployed as an ActiveX DLL (essentially a Type Library; if
+you are an ODL fan you can write it directly as a TLB and skip the 10Kb 
+overhead of the DLL) and this means both plugin
+implementors and consumers can both take advantage of early-binding when
+writing code, which makes the Intelli-sense coding life rather nice!
+</p><h3>Before We Begin</h3><p>
+If you are going to create an application which uses an interface specified
+in a Type Library, life is easier if you define the interface up-front
+and build it before doing anything else.  Although you can develop in 
+a project group with the interface DLL and modify it as you go on, you'll
+soon find yourself in binary compatiblity hell and you'll find that
+it's easier to crash VB that you think just trying to compile the thing.
+</p><p>
+So the recommendation is to define your interface first, build the DLL
+with binary compatibility on and then don't touch it again unless
+you really have to.
+</p><h3>Defining the Interface</h3><p>
+To encode a file, you should be able to perform
+the following tasks:
+</p><ol><li>Open a file for writing.</li><li>Write chunks of data to the file.</li><li>Set file tags like the artist and track where possible.</li><li>Close a completed file.</li></ol><p>
+In addition to these standard tasks, applications typically also need
+to be able to find out information about the plugin like it's name,
+and any copyright information, for display purposes, and some plugins
+have configuration options which the user should be able to set.
+</p><p>
+Based on these requirements, I decided that plugins would support
+these interfaces: 
+</p><ol><li><span class="code">IWaveDataWriter</span><br />
+This interface provides all of the methods needed to encode an audio
+file (on reflection, I think it should probably have actually been called
+<span class="code">IAudioDataWriter</span>, since the current name might
+imply it writes wave data, rather than writing audio files from wave
+data, but it's too late now :).</li><li><span class="code">IPluginInformation</span><br />
+This interface provides the name, author, copyright and other related
+meta-data about the plugin.  It also provides access to the 
+<span class="code">IPluginConfiguration</span> interface (if
+supported by the plugin).</li><li><span class="code">IPluginConfiguration</span><br />
+This interface provides details of the parameters, their possible
+values and a way to set parameters for the plugin.</li></ol><p>
+The final interface looks like this:
+</p><img src="interfaces.png" width="384" height="407" alt="Plugin Audio Writer Interfaces" /><p class="caption">Plugin Audio Writer Interfaces.</p><h2>Implementing Audio Plugins</h2><p>
+With an interface in place, we can now start creating output audio plugins. 
+The download includes two plugins, although it should be straightforward to
+add an APE plugin using the code in the <a href="http://www.vbaccelerator.com/article.asp?id=14448">Lossless
+Audio Compression</a> sample:
+</p><ol><li>Wave File Writer (<span class="code">vbalWaveDataWriter</span>)</li><li>MP3 File Writer (<span class="code">vbalMp3DataWriter</span>)</li></ol><p>
+I'll cover the implementation of each.
+</p><h3>1. Wave Data Plugin</h3><p>
+The Wave Data Plugin is the simpler of the two.  There are no 
+configuration settings and the WAV format does not support track tags
+(well, actually I suppose it could if you added another chunk to the
+wave file, but if you do that you'll probably find many wave players
+won't read it, as they assume that the Wave file has the standard
+chunks).
+</p><p>
+The Implementation is basically the code from the <a href="http://www.vbaccelerator.com/article.asp?id=14971">CD
+Ripping in VB Part 1</a> wrapped into the interfaces.  The main (and only) class in
+the plugin is <span class="code">cWavDataWriter</span> and
+implements
+both <span class="code">IWaveDataWriter</span> and the <span class="code">IPluginInformation</span> interfaces:
+</p><pre>
+Implements IWaveDataWriter
+Implements IPluginInformation
+</pre><p>
+Implementing the <span class="code">IPluginInformation</span> interface
+is fairly trivial, although I haven't localised any of the strings in
+this example:
+</p><pre>
+Private Property Get IPluginInformation_Configuration() _
+      As vbalCDRipInterfaces.IPluginConfig
+   ' Not supported
+   Set IPluginInformation_Configuration = Nothing
+End Property
+
+Private Property Get IPluginInformation_PluginAcknowledgements( _
+   ByVal locale As String) As String
+   ' none
+End Property
+
+Private Property Get IPluginInformation_PluginAuthor( _
+      ByVal locale As String) As String
+   IPluginInformation_PluginAuthor = _
+      "Steve McMahon (steve@vbaccelerator.com)"
+End Property
+
+Private Property Get IPluginInformation_PluginDescription( _
+      ByVal locale As String) As String
+   IPluginInformation_PluginDescription = _
+      "Writes stereo 16 bit 44.1kHz Wavefiles."
+End Property
+
+Private Property Get IPluginInformation_PluginName( _ 
+      ByVal locale As String) As String
+   IPluginInformation_PluginName = _
+      "Wave File Output Plugin"
+End Property
+
+Private Property Get IPluginInformation_PluginWebsite( _
+      ByVal locale As String) As String
+   IPluginInformation_PluginWebsite = _
+      "http://vbaccelerator.com/"
+End Property
+</pre><p>
+Implementing the <span class="code">IWavDataWriter</span> interface is
+where the fun happens.  Firstly, I provide a null implementation of
+all the methods to set the tags:
+</p><pre>
+Private Property Let IWaveDataWriter_Album(ByVal RHS As String)
+   ' ignored
+End Property
+
+' etc
+</pre><p>
+Next, opening the file.  Most of the work in opening a Wave file is 
+performed in the <span class="code">WriteWaveFormatHeader</span> method;
+refer to the full source code for details of how this is done:
+</p><pre>
+Private Function IWaveDataWriter_OpenFile( _
+      ByVal sSoundFile As String) As Boolean
+    
+   ' close previously open file (if any)
+   IWaveDataWriter_CloseFile
+   
+   m_hMmio = mmioOpen( _
+      sSoundFile, ByVal 0&amp;, _
+      MMIO_ALLOCBUF Or MMIO_READWRITE Or MMIO_CREATE)
+   If (m_hMmio = 0) Then
+      errHandler 3, "OpenFile"
+      Exit Function
+   End If
+
+   If (WriteWaveFormatHeader()) Then
+      IWaveDataWriter_OpenFile = True
+   End If
+
+End Function
+</pre><p>
+With the file open, writing wave data is easy:
+</p><pre>
+Public Function IWaveDataWriter_WriteWavData( _
+      ByVal lPtrBuff As Long, ByVal lWriteSize As Long _
+   ) As Long
+Dim lSize As Long
+   If (m_hMmio = 0) Then
+      errHandler 5, "WriteWavData"
+   Else
+      ' Write to the data chunk:
+      lSize = mmioWrite(m_hMmio, ByVal lPtrBuff, lWriteSize)
+      ' Check we wrote the right number of bytes:
+      If Not (lSize = lWriteSize) Then
+         errHandler 6, "WriteWavData"
+      End If
+      IWaveDataWriter_WriteWavData = lSize
+   End If
+End Function
+</pre><p>
+Finally, the CloseFile implementation ascends out of the chunks to 
+write the chunk sizes and closes the file handle:
+</p><pre>
+Public Sub IWaveDataWriter_CloseFile()
+Dim lErr As Long
+   If Not (m_hMmio = 0) Then
+   
+      ' Ascend the output file out of the 'data' chunk:
+      If Not (mmioAscend(m_hMmio, m_mmckInfoChild, 0) = 0) Then
+         lErr = 1
+      End If
+      
+      ' Ascend the output file out of the 'RIFF' chunk, this writes out
+      ' the size of the data
+      If Not (mmioAscend(m_hMmio, m_mmckInfoParent, 0) = 0) Then
+         lErr = 2
+      End If
+   
+      mmioClose m_hMmio, 0
+      m_hMmio = 0
+      
+      errHandler lErr, "CloseFile"
+      
+   End If
+End Sub
+</pre><h3>2. MP3 Plugin</h3><p>
+The MP3 plugin is more sophisticated but follows along the same lines.
+MP3 encoding is performed using the code provided in the 
+<a href="http://www.vbaccelerator.com/article.asp?id=14898">MP3 Encoding with LAME</a> sample, with
+ID3v1 and ID3v2 tagging of the resulting file provided using the
+<a href="http://www.vbaccelerator.com/article.asp?id=14886">Reading and Writing MP3 ID3v1 and ID3v2 Tags</a>
+code.  
+</p><p>
+Integration with the plugin interfaces was generally straightforward,
+the only problem being that the LAME MP3 encoder defines the chunk size
+it can encode in one call.  This chunk size is different from the data chunk
+size provided by the CD ripper, and is typically not an even multiple.
+The data writer solves this problem by attempting to encode as many full chunks
+as it can and storing any extra in an overflow buffer.  Next time a write 
+operation is performed, data is appended to the overflow and that is encoded
+before repeating the operation.  Finally, when there is no more data, any
+data left in the overflow buffer is encoded and written to the file.
+</p><p>
+The code for managing the overflow is shown here:
+</p><pre>
+Private m_ptrOverflow As Long
+Private m_hMemOverflow As Long
+Private m_lOverflowSize As Long
+Private m_lOverflowUsed As Long
+
+  ' During open:
+   m_lOverflowSize = m_cLame.BufferSize
+   m_hMemOverflow = LocalAlloc(GPTR, m_lOverflowSize)
+   m_ptrOverflow = LocalLock(m_hMemOverflow)
+
+
+Private Function IWaveDataWriter_WriteWavData( _
+      ByVal lPtrBuff As Long, ByVal lWriteSize As Long) As Long
+   '
+   If Not (m_cLame Is Nothing) And Not (m_ptrOverflow = 0) Then
+      
+      ' Append to overflow if we can:
+      If (m_lOverflowUsed &gt; 0) Then
+         If (lWriteSize + m_lOverflowUsed &gt; m_lOverflowSize) Then
+            Dim ptrOffset As Long
+            ptrOffset = UnsignedAdd(m_ptrOverflow, m_lOverflowUsed)
+            Dim lAppendSize As Long
+            lAppendSize = m_lOverflowSize - m_lOverflowUsed
+            CopyMemory ByVal ptrOffset, ByVal lPtrBuff, lAppendSize
+         
+            ' Write overflow:
+            m_cLame.WriteData m_ptrOverflow, m_lOverflowSize
+            m_lOverflowUsed = 0
+         
+            ' Advance the pointer
+            lPtrBuff = UnsignedAdd(lPtrBuff, lAppendSize)
+            lWriteSize = lWriteSize - lAppendSize
+         End If
+      End If
+            
+      ' Write out any full chunks
+      Do While (lWriteSize &gt; m_lOverflowSize)
+         ' Write the data:
+         m_cLame.WriteData lPtrBuff, m_lOverflowSize
+         ' Advance the pointer:
+         lPtrBuff = UnsignedAdd(lPtrBuff, m_lOverflowSize)
+                  
+         lWriteSize = lWriteSize - m_lOverflowSize
+         
+      Loop
+      
+      ' Append anything that's left over to the overflow buffer
+      If (lWriteSize &gt; 0) Then
+         CopyMemory ByVal m_ptrOverflow, ByVal lPtrBuff, lWriteSize
+         m_lOverflowUsed = lWriteSize
+      End If
+   
+   End If
+   '
+End Function
+
+Private Function UnsignedAdd(Start As Long, Incr As Long) As Long
+' This function is useful when doing pointer arithmetic,
+' but note it only works for positive values of Incr
+
+   If Start And &amp;H80000000 Then 'Start &lt; 0
+      UnsignedAdd = Start + Incr
+   ElseIf (Start Or &amp;H80000000) &lt; -Incr Then
+      UnsignedAdd = Start + Incr
+   Else
+      UnsignedAdd = (Start + &amp;H80000000) + (Incr + &amp;H80000000)
+   End If
+   
+End Function
+</pre><h2>Integrating the Plugins into an Application</h2><p>
+The <span class="code">PluggableVBCDRip</span> application in the sample
+is the consumer of the audio plugins.  This is essentially a slightly
+upgraded version of the CD Ripper provided in the part 1 version of this
+article; the main changes being that it uses an SGrid for the CD tracks
+and allows you to edit the track tag information for use with the 
+MP3 writer.
+</p><p>
+Plugins are managed using the <span class="code">cPluginManager</span>
+class.  This class uses the <span class="i">ProgId</span> of the plugin
+to allow the plugins to be dynamically loaded.  In my sample, the 
+plugins that are loaded are hardcoded in the main form's load event, but
+it would be trivial to move this information into a configuration file
+instead.  (Even better would be to interogate any DLLs in a plugin directory,
+and use <a href="http://www.vbaccelerator.com/article.asp?id=1428">TLBINF32.DLL or similar</a> to find out 
+which ProgIds they exposed).
+</p><p>
+The <span class="code">AddPlugin</span> method is responsible for loading
+plugins.  This uses <span class="code">CreateObject</span> to instantiate
+the plugin and then the obligatory VB <span class="code">On Error</span>
+based check to find out if the correct interfaces are supported:
+</p><pre>
+Private m_colPluginProgIds As New Collection
+Private m_colPlugins As New Collection
+
+
+Public Function AddPlugin(ByVal sProgId As String) As Boolean
+   '
+   On Error Resume Next
+   Dim sChk As String
+   sChk = m_colPluginProgIds(sProgId)
+   If (Err.Number = 0) Then
+      MsgBox "This plugin has already been loaded.", vbExclamation
+   End If
+   Err.Clear
+   
+   Dim o As Object
+   Set o = CreateObject(sProgId)
+   If (Err.Number = 0) Then
+      ' Find the wave output interface
+      Dim iww As IWaveDataWriter
+      Set iww = o
+      If (Err.Number = 0) Then
+         m_colPluginProgIds.Add sProgId, _
+            "C" &amp; m_colPluginProgIds.Count + 1
+         m_colPlugins.Add o, sProgId
+         AddPlugin = True
+      Else
+         MsgBox "The specified object does not appear to be" &amp; _
+           " a valid plugin [does not implement the IWaveDataWriter interface]", _
+           vbExclamation
+      End If
+   Else
+      MsgBox "Could not create an instance of the object '" _
+         &amp; sProgId &amp; "'" &amp; vbCrLf &amp; vbCrLf &amp; _
+         "The object may not be registered", vbInformation
+   End If
+   '
+End Function
+</pre><p>
+With plugins loaded, applications are free to select a plugin and
+obtain it's <span class="code">IWaveDataWriter</span> or 
+<span class="code">IPluginConfiguration</span> implementations:
+</p><pre>
+Public Property Get PluginCount() As Long
+   PluginCount = m_colPlugins.Count
+End Property
+
+
+Public Property Get SelectedPluginIndex() As Long
+   SelectedPluginIndex = m_iSelPlugin
+End Property
+
+Public Property Let SelectedPluginIndex(ByVal lIndex As Long)
+   m_iSelPlugin = lIndex
+End Property
+
+Public Property Get WaveWriter() As IWaveDataWriter
+   Set WaveWriter = m_colPlugins.Item(m_iSelPlugin)
+End Property
+
+Public Property Get PluginInformation() As IPluginInformation
+   Set PluginInformation = PluginInformationByIndex(m_iSelPlugin)
+End Property
+</pre><p>
+Since we only want one plugin manager per application, an instance
+of the plugin manager is created as a "singleton" in a 
+module:
+</p><pre>
+Private m_cPluginManager As New cPluginManager
+
+Public Property Get PluginManagerInstance() As cPluginManager
+   Set PluginManagerInstance = m_cPluginManager
+End Property
+</pre><h2>More Ideas</h2><p>
+I'm quite happy with the sample application having ripped about
+20 discs with it now.  However, currently a number of functions
+are incomplete and there's plenty more to do:
+</p><ol><li>I have not yet implemented any of the configuration options!</li><li>A better ripping dialog which showed the audio waveform as it
+was being encoded would be very nice.</li><li>Integration with the <a href="http://www.vbaccelerator.com/article.asp?id=3489">CD Track Listing
+using freedb.org</a> code would make it easier when you have an 
+Internet connection.</li><li>A way to navigate tracks and select individual snippets of audio 
+for ripping would be invaluable for sampling purposes (on non-copyrighted
+material).  For example, 
+you know there's a break on track 3 at 2:48 into the track; it would
+be great to be able to play and scrub for the start and end of the
+break then set it up to rip.</li><li>Something to disable autorun on those foolish "Copy Protected"
+CDs.</li><li>A large warning sign telling you that you are breaking the law in 
+certain countries, such as the UK, if you use the program to rip a CD.
+It's only fair that you should not be able to make any sort of backup
+of a CD, after all, they are completely indestructable.
+</li></ol><h2>Conclusion</h2><p>
+This sample demonstrates a CD Ripper in VB which can has a plugin-based
+architecture to allow ripping to different formats; for this sample
+WAV and MP3 formats are provided.  Since the output plugins support 
+a standard interface, they can be used in other applications which need
+to encode audio data to different file formats, for example, audio
+encoders and real-time recorders.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;CD Ripping in VB Part 2</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 13 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_2/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:07 GMT -->
+</html>

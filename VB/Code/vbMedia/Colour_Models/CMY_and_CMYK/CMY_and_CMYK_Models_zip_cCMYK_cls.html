@@ -1,0 +1,241 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Colour_Models/CMY_and_CMYK/CMY_and_CMYK_Models_zip_cCMYK_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:47 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cCMYK.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cCMYK.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Colour Models</a>&#160;.&#160;<a href="article.html">CMY and CMYK Colour Models</a>&#160;.&#160;<a href="CMY_and_CMYK_Models.html">CMY and CMYK Models</a>&#160;.&#160;cCMYK.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="CMY_and_CMYK_Models.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />CMY and CMYK Models</a> (20K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:14810</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14810&amp;type=Zip&amp;title=CMY%20and%20CMYK%20Models%2Ezip%5FcCMYK">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />15 Apr 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cCMYK.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cCMYK"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+'
+' vbAccelerator.com
+' VB CMYK (Cyan, Magenta, Yellow, blacK) subtractive colour model.
+' Copyright  2003 Steve McMahon for vbAccelerator.com
+'
+'
+' http://www.neuro.sfc.keio.ac.jp/~aly/polygon/info/color-space-faq.html
+
+'CMY -&gt; CMYK             | CMYK -&gt; CMY
+'    Black=minimum(Cyan,Magenta,Yellow)  | Cyan=minimum(1,Cyan*(1-Black)+Black)
+'    Cyan=(Cyan-Black)/(1-Black)     |
+ Magenta=minimum(1,Magenta*(1-Black)+Black)
+'    Magenta=(Magenta-Black)/(1-Black)   |
+ Yellow=minimum(1,Yellow*(1-Black)+Black)
+'    Yellow=(Yellow-Black)/(1-Black) |
+'
+'    RGB -&gt; CMYK             | CMYK -&gt; RGB
+'    Black=minimum(1-Red,1-Green,1-Blue) | Red=1-minimum(1,Cyan*(1-Black)+Black)
+'    Cyan=(1-Red-Black)/(1-Black)    |
+ Green=1-minimum(1,Magenta*(1-Black)+Black)
+'    Magenta=(1-Green-Black)/(1-Black)   |
+ Blue=1-minimum(1,Yellow*(1-Black)+Black)
+'    Yellow=(1-Blue-Black)/(1-Black) |
+
+Private m_lR As Long
+Private m_lG As Long
+Private m_lB As Long
+
+Private m_lC As Long
+Private m_lM As Long
+Private m_lY As Long
+Private m_lK As Long
+
+Public Property Get RGB() As Long
+    RGB = (m_lR And &amp;HFF&amp;) + (m_lG And &amp;HFF&amp;) * &amp;H100&amp; + (m_lB And &amp;HFF&amp;) *
+     &amp;H10000
+End Property
+Public Property Let RGB(ByVal value As Long)
+    m_lR = value And &amp;HFF&amp;
+    m_lG = (value And &amp;HFF00&amp;) \ &amp;H100&amp;
+    m_lB = (value And &amp;HFF0000) \ &amp;H10000
+    calcCMYK
+End Property
+
+Public Property Get R() As Long
+    R = m_lR
+End Property
+Public Property Get G() As Long
+    G = m_lG
+End Property
+Public Property Get B() As Long
+    B = m_lB
+End Property
+
+Public Property Let R(ByVal value As Long)
+    m_lR = value And &amp;HFF&amp;
+    calcCMYK
+End Property
+Public Property Let G(ByVal value As Long)
+    m_lG = value And &amp;HFF&amp;
+    calcCMYK
+End Property
+Public Property Let B(ByVal value As Long)
+    m_lB = value And &amp;HFF&amp;
+    calcCMYK
+End Property
+
+Public Property Get C() As Long
+    C = m_lC
+End Property
+Public Property Get M() As Long
+    M = m_lM
+End Property
+Public Property Get y() As Long
+    y = m_lY
+End Property
+Public Property Get K() As Long
+    K = m_lK
+End Property
+
+Public Property Let C(ByVal value As Long)
+    m_lC = value And &amp;HFF&amp;
+    calcRGB
+End Property
+Public Property Let M(ByVal value As Long)
+    m_lM = value And &amp;HFF&amp;
+    calcRGB
+End Property
+Public Property Let y(ByVal value As Long)
+    m_lY = value And &amp;HFF&amp;
+    calcRGB
+End Property
+Public Property Let K(ByVal value As Long)
+    m_lK = value And &amp;HFF&amp;
+    calcRGB
+End Property
+
+Public Sub FromCMY(ByVal cValue As Long, ByVal mValue As Long, ByVal yValue As
+ Long)
+   m_lR = &amp;HFF&amp; - (cValue And &amp;HFF&amp;)
+   m_lG = &amp;HFF&amp; - (mValue And &amp;HFF&amp;)
+   m_lB = &amp;HFF&amp; - (yValue And &amp;HFF&amp;)
+   calcCMYK
+End Sub
+
+Public Function ToCMY() As cCMY
+   Dim cCMYCalc As New cCMY
+   cCMYCalc.RGB = RGB
+   Set ToCMY = cCMYCalc
+End Function
+
+Public Sub FromCMYK(ByVal cValue As Long, ByVal mValue As Long, ByVal yValue As
+ Long, ByVal kValue As Long)
+    m_lC = cValue And &amp;HFF&amp;
+    m_lM = mValue And &amp;HFF&amp;
+    m_lY = yValue And &amp;HFF&amp;
+    m_lK = kValue And &amp;HFF&amp;
+    calcRGB
+End Sub
+
+Private Sub calcRGB()
+    m_lR = m_lK + (m_lC * (&amp;HFF&amp; - m_lK)) / &amp;HFF&amp;
+    If (m_lR &gt; &amp;HFF&amp;) Then
+        m_lR = &amp;HFF&amp;
+    End If
+    m_lR = &amp;HFF&amp; - m_lR
+    m_lG = m_lK + (m_lM * (&amp;HFF&amp; - m_lK)) / &amp;HFF&amp;
+    If (m_lG &gt; &amp;HFF&amp;) Then
+        m_lG = &amp;HFF&amp;
+    End If
+    m_lG = &amp;HFF&amp; - m_lG
+    m_lB = m_lK + (m_lY * (&amp;HFF&amp; - m_lK)) / &amp;HFF&amp;
+    If (m_lB &gt; &amp;HFF&amp;) Then
+        m_lB = &amp;HFF&amp;
+    End If
+    m_lB = &amp;HFF&amp; - m_lB
+End Sub
+Private Sub calcCMYK()
+    
+    ' Get CMY model colours:
+    m_lC = &amp;HFF&amp; - m_lR
+    m_lM = &amp;HFF&amp; - m_lG
+    m_lY = &amp;HFF&amp; - m_lB
+    
+    ' Choose minimum as black:
+    If (m_lC &lt; m_lM) Then
+        If (m_lC &lt; m_lY) Then
+            m_lK = m_lC
+        Else
+            m_lK = m_lY
+        End If
+    Else
+        If (m_lM &lt; m_lY) Then
+            m_lK = m_lM
+        Else
+            m_lK = m_lY
+        End If
+    End If
+    
+    ' Set the CMY with black adjustment.
+    If (m_lK = &amp;HFF&amp;) Then
+      m_lC = &amp;HFF&amp;
+      m_lM = &amp;HFF&amp;
+      m_lY = &amp;HFF&amp;
+    Else
+      m_lC = ((&amp;HFF&amp; - m_lR - m_lK) * &amp;HFF&amp;) / (&amp;HFF&amp; - m_lK)
+      m_lM = ((&amp;HFF&amp; - m_lG - m_lK) * &amp;HFF&amp;) / (&amp;HFF&amp; - m_lK)
+      m_lY = ((&amp;HFF&amp; - m_lB - m_lK) * &amp;HFF&amp;) / (&amp;HFF&amp; - m_lK)
+   End If
+        
+End Sub
+
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Colour Models</a>&#160;.&#160;<a href="article.html">CMY and CMYK Colour Models</a>&#160;.&#160;<a href="CMY_and_CMYK_Models.html">CMY and CMYK Models</a>&#160;.&#160;cCMYK.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 18 April 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Colour_Models/CMY_and_CMYK/CMY_and_CMYK_Models_zip_cCMYK_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:47 GMT -->
+</html>

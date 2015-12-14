@@ -1,0 +1,344 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Drop_Down_Tool_Windows/Office_Style_Table_Picker/VB5_vbAccelerator_Toolbar_with_Office_Table_Picker_Sample_zip_cDropDownToolWindow_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:54 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cDropDownToolWindow.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cDropDownToolWindow.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Drop Down Tool Windows</a>&#160;.&#160;<a href="article.html">Creating drop-down tool windows</a>&#160;.&#160;<a href="VB5_vbAccelerator_Toolbar_with_Office_Table_Picker_Sample.html">VB5 vbAccelerator Toolbar with Office Table Picker Sample</a>&#160;.&#160;cDropDownToolWindow.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Office_Table_Picker_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Office Table Picker Sample</a> (21K)</p><p class="nav"><a href="VB5_vbAccelerator_Toolbar_with_Office_Table_Picker_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 vbAccelerator Toolbar with Office Table Picker Sample</a> (38K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1195</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1195&amp;type=Zip&amp;title=VB5%20vbAccelerator%20Toolbar%20with%20Office%20Table%20Picker%20Sample%2Ezip%5FcDropDownToolWindow">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />13 Aug 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2186">Detecting when another application is activated</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1272">vbAccelerator Toolbar and CoolMenu Control v3.5</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1070">vbAccelerator Drop-Down and Popup Form Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cDropDownToolWindow.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cDropDownToolWindow"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+' ============================================================
+' File:     cDropDownToolWindow
+' Author:   Steve McMahon (steve@dogma.demon.co.uk)
+' Date:     22 November 1998
+'
+' Requires: SSUBTMR.DLL
+'           (available from http://vbaccelerator.com)
+'
+' Allows a PictureBox to behave as a drop down window, like
+' the drop down windows in Office 97.
+'
+' Please report any bugs or problems to the author for
+' incorporation into the release version.
+
+' Visit vbAccelerator, the resource for free, advanced VB code
+' http://vbaccelerator.com
+' ============================================================
+
+' WinAPI declares:
+Private Type POINTAPI
+   x As Long
+   y As Long
+End Type
+Private Type RECT
+   Left As Long
+   Top As Long
+   Right As Long
+   Bottom As Long
+End Type
+Private Declare Function ClientToScreen Lib "user32" (ByVal hwnd As Long,
+ lpPoint As POINTAPI) As Long
+Private Declare Function SetParent Lib "user32" (ByVal hWndChild As Long, ByVal
+ hWndNewParent As Long) As Long
+Private Declare Function GetDesktopWindow Lib "user32" () As Long
+Private Declare Function FillRect Lib "user32" (ByVal hdc As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+Private Declare Function SetFocusAPI Lib "user32" Alias "SetFocus" (ByVal hwnd
+ As Long) As Long
+Private Declare Function SetCapture Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function ReleaseCapture Lib "user32" () As Long
+Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long
+Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long) As Long
+Private Const GWL_STYLE = (-16)
+Private Const GWL_EXSTYLE = (-20)
+Private Const WS_EX_APPWINDOW = &amp;H40000
+Private Const WS_EX_TOOLWINDOW = &amp;H80&amp;
+Private Declare Function SetWindowPos Lib "user32" (ByVal hwnd As Long, ByVal
+ hWndInsertAfter As Long, ByVal x As Long, ByVal y As Long, ByVal cx As Long,
+ ByVal cy As Long, ByVal wFlags As Long) As Long
+Private Const SWP_FRAMECHANGED = &amp;H20        '  The frame changed: send
+ WM_NCCALCSIZE
+Private Const SWP_HIDEWINDOW = &amp;H80
+Private Const SWP_NOACTIVATE = &amp;H10
+Private Const SWP_NOCOPYBITS = &amp;H100
+Private Const SWP_NOMOVE = &amp;H2
+Private Const SWP_NOOWNERZORDER = &amp;H200      '  Don't do owner Z ordering
+Private Const SWP_NOREDRAW = &amp;H8
+Private Const SWP_NOSIZE = &amp;H1
+Private Const SWP_NOZORDER = &amp;H4
+Private Const SWP_SHOWWINDOW = &amp;H40
+Private Const SWP_NOREPOSITION = SWP_NOOWNERZORDER
+Private Const SWP_DRAWFRAME = SWP_FRAMECHANGED
+Private Declare Function PtInRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function MoveWindow Lib "user32" (ByVal hwnd As Long, ByVal x
+ As Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ bRepaint As Long) As Long
+Private Declare Function GetWindowRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function SystemParametersInfo Lib "user32" Alias
+ "SystemParametersInfoA" (ByVal uAction As Long, ByVal uParam As Long, lpvParam
+ As Any, ByVal fuWinIni As Long) As Long
+Private Const SPI_GETWORKAREA = 48&amp;
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+' Subclassing object to catch Alt-Tab
+Implements ISubclass
+Private Const WM_ACTIVATE = &amp;H6
+Private Const WM_KEYDOWN = &amp;H100
+
+Private m_lPtr As Long
+Private m_hWndParent As Long
+Private m_hWndForm As Long
+Private m_hWndObject As Long
+Private m_bShown As Boolean
+
+Private Property Get ObjectFromPtr(ByVal lPtr As Long) As Object
+Dim oT As Object
+   ' Turn the pointer into an illegal, uncounted interface
+   CopyMemory oT, lPtr, 4
+   ' Do NOT hit the End button here! You will crash!
+   ' Assign to legal reference
+   Set ObjectFromPtr = oT
+   ' Still do NOT hit the End button here! You will still crash!
+   ' Destroy the illegal reference
+   CopyMemory oT, 0&amp;, 4
+   ' OK, hit the End button if you must--you'll probably still crash
+   ' but it will not be the uncounted reference...
+
+End Property
+
+Public Property Get DropDownObject() As Object
+   Set DropDownObject = ObjectFromPtr(m_lPtr)
+End Property
+
+Public Sub Create(ByRef picThis As Object)
+   If (m_lPtr &lt;&gt; 0) Then
+      Destroy
+   End If
+   On Error Resume Next
+   m_lPtr = ObjPtr(picThis)
+   If (m_lPtr &lt;&gt; 0) Then
+      With DropDownObject
+         m_hWndParent = .Container.hwnd
+         .BorderStyle = 0
+         .Visible = False
+      End With
+   End If
+   If (Err.Number &lt;&gt; 0) Then
+      Err.Raise Err.Number, App.EXEName &amp; ".Create", "Invalid object passed to
+       Create"
+      m_lPtr = 0
+      m_hWndParent = 0
+   End If
+   
+End Sub
+Public Sub Destroy()
+   If (m_hWndForm &lt;&gt; 0) Then
+      DetachMessage Me, m_hWndForm, WM_ACTIVATE
+      m_hWndForm = 0
+   End If
+   If (m_lPtr &lt;&gt; 0) Then
+      SetParent DropDownObject.hwnd, m_hWndParent
+      m_lPtr = 0
+   End If
+End Sub
+Public Sub Show(ByVal x As Long, ByVal y As Long)
+Dim tP As POINTAPI
+Dim hWndDesktop As Long
+Dim lStyle As Long
+Dim lhWnd As Long
+Dim lParenthWNd As Long
+   
+   ' Make sure the picture box won't appear in the
+   ' task bar by making it into a Tool Window:
+   lhWnd = DropDownObject.hwnd
+   lStyle = GetWindowLong(lhWnd, GWL_EXSTYLE)
+   lStyle = lStyle Or WS_EX_TOOLWINDOW
+   lStyle = lStyle And Not (WS_EX_APPWINDOW)
+   SetWindowLong lhWnd, GWL_EXSTYLE, lStyle
+   
+   ' Determine where to show it in Screen coordinates:
+   tP.x = x \ Screen.TwipsPerPixelX: tP.y = y \ Screen.TwipsPerPixelY
+   lParenthWNd = DropDownObject.Parent.hwnd
+   ClientToScreen lParenthWNd, tP
+   
+   ' Make the picture box a child of the desktop (so
+   ' it can be fully shown even if it extends beyond
+   ' the form boundaries):
+   SetParent lhWnd, hWndDesktop
+   
+   ' Show the form:
+   SetWindowPos lhWnd, lParenthWNd, tP.x, tP.y, DropDownObject.Width \
+    Screen.TwipsPerPixelX, DropDownObject.Height \ Screen.TwipsPerPixelY,
+    SWP_SHOWWINDOW
+   
+   ' Tell VB it is shown:
+   DropDownObject.Visible = True
+   DropDownObject.ZOrder
+   
+   ' Try to set focus:
+   SetFocusAPI lhWnd
+   
+   ' Capture all mouse messages.
+   SetCapture lhWnd
+   
+   ' Start subclassing for Alt-tab
+   m_hWndForm = lParenthWNd
+   m_hWndObject = lhWnd
+   AttachMessage Me, m_hWndForm, WM_ACTIVATE
+   
+   ' Store a flag saying we're shown:
+   m_bShown = True
+End Sub
+
+Public Sub Hide()
+   ' Stop subclassing for Alt-tab
+   If (m_hWndForm &lt;&gt; 0) Then
+      DetachMessage Me, m_hWndForm, WM_ACTIVATE
+   End If
+   If (m_hWndObject &lt;&gt; 0) Then
+      ' Hide the picturebox:
+      DropDownObject.Visible = False
+   End If
+   m_hWndForm = 0
+   m_hWndObject = 0
+   
+   ' Stop capturing mouse messages:
+   ReleaseCapture
+         
+   ' Store a flag saying we're not shown:
+   m_bShown = False
+   
+End Sub
+Public Property Get IsShown() As Boolean
+   ' Return whether we are shown or not.
+   IsShown = m_bShown
+End Property
+Public Property Get InRect(ByVal x As Single, ByVal y As Single) As Boolean
+Dim tR As RECT
+   If (IsShown()) Then
+      GetClientRect DropDownObject.hwnd, tR
+      x = x \ Screen.TwipsPerPixelX
+      y = y \ Screen.TwipsPerPixelY
+      If (PtInRect(tR, x, y) = 1) Then
+         InRect = True
+      End If
+   End If
+End Property
+Public Sub Resize(ByVal lNewWidth As Long, ByVal lNewHeight As Long)
+Dim tWR As RECT, tSR As RECT
+Dim lR As Long
+
+   ' Get the size of the window on screen:
+   GetWindowRect DropDownObject.hwnd, tWR
+   ' Check if it will fit:
+   lR = SystemParametersInfo(SPI_GETWORKAREA, 0, tSR, 0)
+   If (lR = 0) Then
+      ' Call failed - just use standard screen:
+      tSR.Left = 0
+      tSR.Top = 0
+      tSR.Right = Screen.Width \ Screen.TwipsPerPixelX
+      tSR.Bottom = Screen.Height \ Screen.TwipsPerPixelY
+   End If
+   If (tWR.Left + lNewWidth &gt; tSR.Right) Then
+      ' too big in x
+      lNewWidth = tSR.Right - tWR.Left
+   End If
+   If (tWR.Top + lNewHeight &gt; tSR.Bottom) Then
+      ' too big in y
+      lNewHeight = tSR.Bottom - tWR.Top
+   End If
+   MoveWindow DropDownObject.hwnd, tWR.Left, tWR.Top, lNewWidth, lNewHeight, 1
+
+End Sub
+
+Private Sub Class_Terminate()
+   ' Clear up
+   Destroy
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As SSubTimer.EMsgResponse)
+   ' NR
+End Property
+
+Private Property Get ISubclass_MsgResponse() As SSubTimer.EMsgResponse
+   ' Respond to the message after windows has done its stuff:
+   ISubclass_MsgResponse = emrPreprocess
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+   Select Case iMsg
+   Case WM_ACTIVATE
+      ' This effectively catches Alt-Tabbing:
+      If (IsShown()) Then
+         Hide
+      End If
+   Case WM_KEYDOWN
+      Debug.Print "KeyDown"
+   End Select
+End Function
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Drop Down Tool Windows</a>&#160;.&#160;<a href="article.html">Creating drop-down tool windows</a>&#160;.&#160;<a href="VB5_vbAccelerator_Toolbar_with_Office_Table_Picker_Sample.html">VB5 vbAccelerator Toolbar with Office Table Picker Sample</a>&#160;.&#160;cDropDownToolWindow.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Drop_Down_Tool_Windows/Office_Style_Table_Picker/VB5_vbAccelerator_Toolbar_with_Office_Table_Picker_Sample_zip_cDropDownToolWindow_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:54 GMT -->
+</html>

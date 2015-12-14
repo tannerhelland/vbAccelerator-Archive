@@ -1,0 +1,108 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Force_An_Area_of_a_Window_To_Repaint/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:16 GMT -->
+<head>
+
+<title>vbAccelerator - Force an area of a Window to Repaint</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This sample shows how to force an area of a window to repaint. Sometimes this is necessary, particularly when you're experimenting with owner draw control techniques, or when using the LockWindowUpdate API call to improve the speed at which a control fills with data." /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Force an area of a Window to Repaint</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:1014</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1014&amp;type=Article&amp;title=Force%20an%20area%20of%20a%20Window%20to%20Repaint">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />1 Aug 1998<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Force an area of a Window to Repaint</h1><p /><p>This sample shows how to force an area of a window to repaint. Sometimes this is necessary, particularly when you're experimenting with owner draw control techniques, or when using the <i>LockWindowUpdate</i> API call to improve the speed at which a control fills with data.</p><p>Create a new project, add a module and paste in the code below:</p><pre>
+Private Type RECT 
+    Left As Long 
+    Top As Long 
+    Right As Long 
+    Bottom As Long 
+End Type 
+Private Type POINTAPI 
+    X As Long 
+    Y As Long 
+End Type 
+Private Declare Function GetWindowRect Lib "user32" ( _
+    ByVal hWnd As Long, lpRect As RECT) As Long 
+Private Declare Function GetClientRect Lib "user32" ( _
+    ByVal hWnd As Long, lpRect As RECT) As Long 
+Private Declare Function InvalidateRect Lib "user32" ( _
+    ByVal hWnd As Long, lpRect As RECT, ByVal bErase As Long) As Long 
+Private Declare Function ScreenToClient Lib "user32" ( _
+    ByVal hWnd As Long, lpPoint As POINTAPI) As Long 
+
+Public Sub RepaintWindow( _ 
+        ByRef objThis As Object, _ 
+        Optional ByVal bClientAreaOnly As Boolean = True _ 
+    ) 
+Dim tR As RECT 
+Dim tP As POINTAPI 
+    If (bClientAreaOnly) Then 
+        GetClientRect objThis.hWnd, tR 
+    Else 
+        GetWindowRect objThis.hWnd, tR 
+        tP.X = tR.Left: tP.Y = tR.Top 
+        ScreenToClient objThis.hWnd, tP 
+        tR.Left = tP.X: tR.Top = tP.Y 
+        tP.X = tR.Right: tP.Y = tR.Bottom 
+        ScreenToClient objThis.hWnd, tP 
+        tR.Right = tP.X: tR.Bottom = tP.Y 
+    End If 
+    InvalidateRect objThis.hWnd, tR, 1 
+    
+End Sub 
+</pre><p>To try out the redrawing, add a ListBox and a Command button to your Project's form. Make the ListBox as big as possible so you will see the effect. Then add the following code:</p><pre>
+Private Sub Command1_Click() 
+    RepaintWindow List1 
+End Sub 
+
+Private Sub Form_Load() 
+Dim i As Long 
+    For i = 1 To 200 
+        List1.AddItem "TestItem " &amp; i 
+    Next i 
+End Sub 
+</pre><p>When you click on the button, the client area of the List Box will be entirely redrawn. The effect is not particularly noticeable with the List Box as shown, but basically this tip is here to get you around any problems you have when things don't redraw themselves properly.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Force an area of a Window to Repaint</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 1998-2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 25 November 2002</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Force_An_Area_of_a_Window_To_Repaint/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:16 GMT -->
+</html>

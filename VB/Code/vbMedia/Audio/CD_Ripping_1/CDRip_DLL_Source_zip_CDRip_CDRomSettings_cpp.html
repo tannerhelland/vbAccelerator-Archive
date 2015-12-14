@@ -1,0 +1,589 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_1/CDRip_DLL_Source_zip_CDRip_CDRomSettings_cpp.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: CDRip_CDRomSettings.cpp</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: CDRip_CDRomSettings.cpp" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" /><link rel="contents" href="CDRip_DLL_Source.html" /><link rel="meta" type="application/rdf+xml" href="CDRip%20DLL%20Source.html" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">CD Ripping in VB Part 1</a>&#160;.&#160;<a href="CDRip_DLL_Source.html">CDRip DLL Source</a>&#160;.&#160;CDRip_CDRomSettings.cpp</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="CDRip_DLL_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />CDRip DLL Source</a> (87K)</p><p class="nav"><a href="CDRip_DLL.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />CDRip DLL</a> (84K)</p><p /><p class="nav"><a href="VB5_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 CD Ripper</a> (103K)</p><p /><p class="nav"><a href="VB6_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 CD Ripper</a> (99K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:15102</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=15102&amp;type=Zip&amp;title=CDRip%20DLL%20Source%2Ezip%5FCDRip%5FCDRomSettings">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />6 May 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14896">CDEx</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3489">CD Track Listing Using freedb.org</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: CDRip_CDRomSettings.cpp</h1><p>This file is part of the download <a href="CDRip_DLL_Source.html">CDRip DLL Source</a>, which is described in the article <a href="article.html">CD Ripping in VB Part 1</a>.</p><pre>/*
+** Copyright (C) 1999 Albert L. Faber
+**  
+** This program is free software; you can redistribute it and/or modify
+** it under the terms of the GNU General Public License as published by
+** the Free Software Foundation; either version 2 of the License, or
+** (at your option) any later version.
+** 
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+** 
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software 
+** Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+*/
+
+#include "StdAfx.h"
+#include "CDRomSettings.h"
+#include "Aspi.h"
+#include &lt;math.h&gt;
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+
+void CToc::FillEntry(BYTE* btStream)
+{
+
+//   m_reserved1=btStream[0];
+   m_btaFlags[m_nNumTracks]=btStream[1];
+   m_btaTrackNumber[m_nNumTracks]=btStream[2];
+//   m_reserved2=btStream[3];
+   memcpy(&amp;m_dwaStartSector[m_nNumTracks],&amp;btStream[4],sizeof(DWORD));
+
+   // Swap DWORD order
+    Swap (&amp;m_dwaStartSector[m_nNumTracks], 4);
+
+   // Increase the number of total tracks
+   m_nNumTracks++;
+}
+
+// CONSTRUCTOR
+CToc::CToc()
+{
+   // Initialize variables
+   Clear();
+}
+
+
+void CToc::Clear()
+{
+   m_nNumTracks=0;
+   memset(m_dwaStartSector,0x00,sizeof(m_dwaStartSector));
+   memset(m_btaFlags,0x00,sizeof(m_btaFlags));
+   memset(m_btaTrackNumber,0x00,sizeof(m_btaTrackNumber));
+}
+
+
+// DESTRUCTOR
+CToc::~CToc()
+{
+}
+
+
+
+void CToc::DumpToc(LPBYTE pbtBuffer,int nSize)
+{
+/*
+   int         i;
+   DWORD      dw;
+   unsigned   mins;
+   double      secnds;
+   extern double fmod(double,double);
+
+
+   // Open Dump File
+   CADebug myLogFile(CString("C:\\CDEX_TOC.txt"));
+
+   // A header would not hurt
+   myLogFile.printf("Start of TOC dump\n\n");
+
+   // Dump binary data
+   myLogFile.printf("Dumping binary data first, buffer size=%d =&gt;%d toc
+    entries\n\n",nSize,nSize/8);
+   
+   myLogFile.DumpBinaray(pbtBuffer,nSize);
+
+   dw = GetStartSector(m_wNumTracks-1);
+
+   // Calculate number of minutes
+   mins= dw / (TRACKSPERSEC*60L);
+
+   secnds= (fmod(dw , 60*TRACKSPERSEC) / (DOUBLE)TRACKSPERSEC);
+
+
+   myLogFile.printf("\n\nDumping Toc Entries\n");
+   for (i=0; i&lt;m_wNumTracks; i++) 
+   {
+      myLogFile.printf("Toc Entry=%2d  StartSector=%8d
+       Flags=%2d",i,m_TrackInfo[i].GetStartSector(),m_TrackInfo[i].GetFlags());
+      // Skip nonaudio tracks 
+//      if (m_TrackInfo[i].GetFlags() != AUDIOTRKFLAG) 
+//         continue;               
+
+
+      if (m_TrackInfo[i].GetTrack() &lt;= MAXTRK) 
+      {
+         DWORD dw2;
+
+         dw2= m_TrackInfo[i].GetStartSector();
+
+         dw = m_TrackInfo[i+1].GetStartSector();
+
+         mins= (dw - dw2) / (TRACKSPERSEC*60L);
+         secnds= fmod(dw-dw2 , 60*TRACKSPERSEC) / TRACKSPERSEC;
+
+
+         CString strDuration=GetTrackDuration(i+1);
+         CString strStart=GetStartTime(i+1);
+
+         CString strNew;
+         myLogFile.printf(" =&gt; Start time=%s
+          Duration=%s\n",strStart,strDuration);
+      }
+
+   }
+   myLogFile.printf("\n\nEnd of TOC dump\n");
+*/
+}
+
+BOOL CToc::IsAudioTrack(int p_track)
+{
+   if ( !( m_btaFlags[p_track] &amp; CDROMDATAFLAG) )
+      return TRUE;
+   return FALSE;
+}
+
+DWORD CToc::GetSize(int nTrack)
+{
+   DWORD dwSectors = GetStartSector(nTrack+1)-GetStartSector(nTrack);
+   return dwSectors*CB_CDDASECTOR;
+}
+
+
+
+
+CDSETTINGSPARAMS::CDSETTINGSPARAMS()
+{
+   strcpy(lpszCDROMID,"DONTKNOW");
+   nOffsetStart=0;
+   nOffsetEnd=0;   
+   nSpeed=32;
+   nSpinUpTime=0;
+   bJitterCorrection=1;
+   bSwapLefRightChannel=0;
+   nNumOverlapSectors=7;
+   nNumReadSectors=26;   
+   nNumCompareSectors=1;   
+   nMultiReadCount=0;
+   bMultiReadFirstOnly=FALSE;
+   bLockDuringRead= TRUE;
+
+   btTargetID=0;
+   btAdapterID=0;
+   btLunID=0;
+   nAspiRetries=0;
+   nAspiTimeOut=3000;
+
+
+   DriveTable.DriveType=GENERIC;
+   DriveTable.ReadMethod=READMMC;
+   DriveTable.SetSpeed=SPEEDMMC;
+   DriveTable.Endian=LITTLEENDIAN;
+   DriveTable.EnableMode=ENABLENONE;
+   DriveTable.nDensity=0;
+   DriveTable.bAtapi=TRUE;
+
+   bAspiPosting=FALSE;
+   nRippingMode = 0;
+   nParanoiaMode = 0;
+
+}
+
+CDSETTINGSPARAMS::~CDSETTINGSPARAMS()
+{
+
+}
+
+
+char   CDRomSettings::m_lpszIniFname[255] = {'\0',};
+BOOL   CDRomSettings::m_nTransportLayer = TRANSPLAYER_ASPI;
+
+CDRomSettings::CDRomSettings()
+{
+   m_nActive = 0;
+}
+
+CDRomSettings::~CDRomSettings()
+{
+}
+
+
+void CDRomSettings::AddCDRom( LPSTR lpszName, BYTE btAdapterID, BYTE
+ btTargetID, BYTE btLunID )
+{
+   int nDeviceOffset=0;
+
+
+   // Loop through Array and see if there are any cd rom with the same name
+   for ( int i=0; i &lt; m_CDParams.size() ; i++ )
+   {
+      // Check if name to add is equal to current indexed CDROM setting
+      if ( strstr(m_CDParams[i].lpszCDROMID,lpszName ) !=NULL )
+      {
+         // Increase number
+         nDeviceOffset++;
+      }
+   }
+
+   // There appears to be CDROMs with the same name
+   if ( nDeviceOffset &gt; 0 )
+   {
+      // Add (nDeviceOffset) to strName
+      sprintf(lpszName,"(%d)",nDeviceOffset);
+   }
+   
+   // Create new CDROM setting
+   CDSETTINGSPARAMS newSettings;
+
+   // Set device name
+   strcpy( newSettings.lpszCDROMID,lpszName );
+   newSettings.btTargetID = btTargetID;
+   newSettings.btAdapterID = btAdapterID;
+   newSettings.btLunID = btLunID;
+
+   // Add to array of CDROM settings
+   m_CDParams.push_back( newSettings );
+
+   // Get default CD-ROM parameter values ( if available )
+   LoadCDSettingsEntry( m_CDParams.back(), "CDROM_DEFAULTS" );
+
+   // Also add a new Table of contents
+   m_Toc.push_back( CToc() );
+
+}
+
+void CDRomSettings::SaveSettings()
+{
+   CIni   myIni;
+   CIni*   pIni = &amp;myIni;
+
+   pIni-&gt;SetIniFileName( m_lpszIniFname );
+
+   // Loop through Array of CD-ROM settings
+   for ( int i=0; i &lt; m_CDParams.size(); i++ )
+   {
+      char lpszKey[255];
+
+      strcpy(lpszKey,m_CDParams[i].lpszCDROMID);
+
+      // Replace spaces with underscores
+      for (int j=0;j&lt;strlen(lpszKey);j++)
+         if (lpszKey[j]==' ')
+            lpszKey[j]='_';
+
+      pIni-&gt;SetValue(lpszKey, "nOffsetStart"        
+       ,m_CDParams[i].nOffsetStart );
+      pIni-&gt;SetValue(lpszKey, "nOffsetEnd"         ,m_CDParams[i].nOffsetEnd );
+      pIni-&gt;SetValue(lpszKey, "nSpeed"            ,m_CDParams[i].nSpeed );
+      pIni-&gt;SetValue(lpszKey, "nSpinUpTime"         ,m_CDParams[i].nSpinUpTime
+       );
+      pIni-&gt;SetValue(lpszKey, "bJitterCorrection"     
+       ,m_CDParams[i].bJitterCorrection );
+      pIni-&gt;SetValue(lpszKey, "bSwapLefRightChannel"  
+       ,m_CDParams[i].bSwapLefRightChannel );
+      pIni-&gt;SetValue(lpszKey, "nNumOverlapSectors"  
+       ,m_CDParams[i].nNumOverlapSectors );
+      pIni-&gt;SetValue(lpszKey, "nNumReadSectors"     
+       ,m_CDParams[i].nNumReadSectors );
+      pIni-&gt;SetValue(lpszKey, "nNumCompareSectors"  
+       ,m_CDParams[i].nNumCompareSectors );
+      pIni-&gt;SetValue(lpszKey, "nAspiTimeOut"        
+       ,m_CDParams[i].nAspiTimeOut );
+      pIni-&gt;SetValue(lpszKey, "nAspiRetries"        
+       ,m_CDParams[i].nAspiRetries );
+      pIni-&gt;SetValue(lpszKey, "bEnableMultiRead"     
+       ,m_CDParams[i].bEnableMultiRead );
+      pIni-&gt;SetValue(lpszKey, "bMultiReadFirstOnly"  
+       ,m_CDParams[i].bMultiReadFirstOnly );
+      pIni-&gt;SetValue(lpszKey, "nMultiReadCount"     
+       ,m_CDParams[i].nMultiReadCount );
+      pIni-&gt;SetValue(lpszKey, "bLockDuringRead"     
+       ,m_CDParams[i].bLockDuringRead );
+
+      // Write Drive Settings
+      pIni-&gt;SetValue(lpszKey, "DriveType"           
+       ,m_CDParams[i].DriveTable.DriveType );
+      pIni-&gt;SetValue(lpszKey, "ReadMethod"        
+       ,m_CDParams[i].DriveTable.ReadMethod );
+      pIni-&gt;SetValue(lpszKey, "SetSpeed"           
+       ,m_CDParams[i].DriveTable.SetSpeed );
+      pIni-&gt;SetValue(lpszKey, "EnableMode"        
+       ,m_CDParams[i].DriveTable.EnableMode );
+      pIni-&gt;SetValue(lpszKey, "nDensity"           
+       ,m_CDParams[i].DriveTable.nDensity );
+      pIni-&gt;SetValue(lpszKey, "Endian"           
+       ,m_CDParams[i].DriveTable.Endian );
+      pIni-&gt;SetValue(lpszKey, "bAtapi"           
+       ,m_CDParams[i].DriveTable.bAtapi );
+      pIni-&gt;SetValue(lpszKey, "bAspiPosting"        
+       ,m_CDParams[i].bAspiPosting );
+      pIni-&gt;SetValue(lpszKey, "nParanoiaMode"        
+       ,m_CDParams[i].nParanoiaMode );
+      pIni-&gt;SetValue(lpszKey, "nRippingMode"        
+       ,m_CDParams[i].nRippingMode );
+
+   }
+
+   // Save active CD-ROM setting
+   pIni-&gt;SetValue( "CD-ROM","nActive"   ,m_nActive );
+
+   pIni-&gt;SetValue( "CD-ROM","nTransportLayer",(int)m_nTransportLayer );
+
+}
+
+void CDRomSettings::LoadCDSettingsEntry( CDSETTINGSPARAMS&amp; cdSettings, const
+ char* lpszKey )
+{
+   CIni   myIni;
+
+   myIni.SetIniFileName( m_lpszIniFname );
+
+   cdSettings.nOffsetStart         = myIni.GetValue(lpszKey,"nOffsetStart"     
+       ,cdSettings.nOffsetStart );
+   cdSettings.nOffsetEnd         = myIni.GetValue(lpszKey,"nOffsetEnd"        
+    ,cdSettings.nOffsetEnd );
+   cdSettings.nSpeed            = myIni.GetValue(lpszKey,"nSpeed"           
+    ,cdSettings.nSpeed );
+   cdSettings.nSpinUpTime         = myIni.GetValue(lpszKey,"nSpinUpTime"       
+     ,cdSettings.nSpinUpTime );
+   cdSettings.bJitterCorrection   = myIni.GetValue(lpszKey,"bJitterCorrection" 
+     ,cdSettings.bJitterCorrection );
+   cdSettings.bSwapLefRightChannel   =
+    myIni.GetValue(lpszKey,"bSwapLefRightChannel"
+    ,cdSettings.bSwapLefRightChannel );
+   cdSettings.nNumOverlapSectors   =
+    myIni.GetValue(lpszKey,"nNumOverlapSectors"  
+    ,cdSettings.nNumOverlapSectors );
+   cdSettings.nNumReadSectors      = myIni.GetValue(lpszKey,"nNumReadSectors"  
+       ,cdSettings.nNumReadSectors );
+   cdSettings.nNumCompareSectors   =
+    myIni.GetValue(lpszKey,"nNumCompareSectors"  
+    ,cdSettings.nNumCompareSectors );
+   cdSettings.nAspiTimeOut         = myIni.GetValue(lpszKey,"nAspiTimeOut"     
+       ,cdSettings.nAspiTimeOut );
+   cdSettings.nAspiRetries         = myIni.GetValue(lpszKey,"nAspiRetries"     
+       ,cdSettings.nAspiRetries );
+   cdSettings.bEnableMultiRead      = myIni.GetValue(lpszKey,"bEnableMultiRead"
+         ,cdSettings.bEnableMultiRead );
+   cdSettings.bMultiReadFirstOnly   =
+    myIni.GetValue(lpszKey,"bMultiReadFirstOnly"  
+    ,cdSettings.bMultiReadFirstOnly );
+   cdSettings.nMultiReadCount      = myIni.GetValue(lpszKey,"nMultiReadCount"  
+       ,cdSettings.nMultiReadCount );
+   cdSettings.bLockDuringRead      = myIni.GetValue(lpszKey,"bLockDuringRead"  
+       ,cdSettings.bLockDuringRead );
+
+   // Custom Drive Settings
+   cdSettings.DriveTable.DriveType      =
+    DRIVETYPE(myIni.GetValue(lpszKey,"DriveType",cdSettings.DriveTable.DriveType
+    ));
+   cdSettings.DriveTable.ReadMethod   =
+    READMETHOD(myIni.GetValue(lpszKey,"ReadMethod",cdSettings.DriveTable.ReadMet
+   hod ));
+   cdSettings.DriveTable.SetSpeed      =
+    SETSPEED(myIni.GetValue(lpszKey,"SetSpeed",cdSettings.DriveTable.SetSpeed
+    ));
+   cdSettings.DriveTable.EnableMode   =
+    ENABLEMODE(myIni.GetValue(lpszKey,"EnableMode",cdSettings.DriveTable.EnableM
+   ode ));
+   cdSettings.DriveTable.nDensity      =
+    myIni.GetValue(lpszKey,"nDensity",cdSettings.DriveTable.nDensity );
+   cdSettings.DriveTable.Endian      =
+    ENDIAN(myIni.GetValue(lpszKey,"Endian",cdSettings.DriveTable.Endian ));
+   cdSettings.DriveTable.bAtapi      =
+    myIni.GetValue(lpszKey,"bAtapi",cdSettings.DriveTable.bAtapi );
+   cdSettings.bAspiPosting            = myIni.GetValue(lpszKey,"bAspiPosting"  
+       ,cdSettings.bAspiPosting );
+   cdSettings.nRippingMode            = myIni.GetValue(lpszKey,"nRippingMode"  
+       ,cdSettings.nRippingMode );
+   cdSettings.nParanoiaMode         = myIni.GetValue(lpszKey,"nParanoiaMode"  
+    ,cdSettings.nParanoiaMode );
+}
+
+void CDRomSettings::LoadSettings()
+{
+   CIni   myIni;
+   CIni*   pIni = NULL;
+
+   pIni = &amp;myIni;
+
+   pIni-&gt;SetIniFileName( m_lpszIniFname );
+
+   // Loop through Array of CD-ROM settings
+   for (int i=0;i&lt;m_CDParams.size();i++)
+   {
+      char lpszKey[255];
+      
+      strcpy(lpszKey,m_CDParams[i].lpszCDROMID);
+
+      // Replace spaces with underscores
+      for (int j=0;j&lt;strlen(lpszKey);j++)
+      {
+         if (lpszKey[j]==' ')
+         {
+            lpszKey[j]='_';
+         }
+      }
+
+      LoadCDSettingsEntry( m_CDParams[i], lpszKey );
+
+   }
+   // Load active CD-ROM setting
+   m_nActive = pIni-&gt;GetValue("CD-ROM","nActive",m_nActive );
+
+   // Make sure selection if valid
+   m_nActive=min(max(0,m_nActive),m_CDParams.size()-1);
+   m_nTransportLayer = pIni-&gt;GetValue( "CD-ROM", "nTransportLayer", 0 );
+
+
+   // Get default values when not a CUSTOM drive type
+   UpdateDriveSettings();
+}
+
+
+void CDRomSettings::UpdateDriveSettings()
+{
+   if (m_CDParams[m_nActive].DriveTable.DriveType!=CUSTOMDRIVE)
+   {
+      // Set defaults   (SONY)
+      m_CDParams[m_nActive].DriveTable.SetSpeed   =SPEEDNONE;
+      m_CDParams[m_nActive].DriveTable.Endian      =LITTLEENDIAN;
+      m_CDParams[m_nActive].DriveTable.nDensity   =0x00;
+      m_CDParams[m_nActive].DriveTable.EnableMode   =ENABLENONE;
+      m_CDParams[m_nActive].DriveTable.bAtapi      =FALSE;
+   }
+
+   // Setup the specific drive properties
+   switch (m_CDParams[m_nActive].DriveTable.DriveType)
+   {
+      case GENERIC:   
+         m_CDParams[m_nActive].DriveTable.ReadMethod   =READMMC;
+         m_CDParams[m_nActive].DriveTable.SetSpeed   =SPEEDMMC;
+         m_CDParams[m_nActive].DriveTable.bAtapi      =TRUE;
+      break;
+
+      case TOSHIBANEW:   
+         m_CDParams[m_nActive].DriveTable.ReadMethod   =READ10;
+         m_CDParams[m_nActive].DriveTable.SetSpeed   =SPEEDTOSHIBA;
+         m_CDParams[m_nActive].DriveTable.nDensity   =0x82;
+         m_CDParams[m_nActive].DriveTable.EnableMode   =ENABLESTD;
+      break;
+      case TOSHIBA:   
+      case IBM:   
+      case DEC:   
+         m_CDParams[m_nActive].DriveTable.ReadMethod   =READ10;
+         m_CDParams[m_nActive].DriveTable.SetSpeed   =SPEEDNONE;
+         m_CDParams[m_nActive].DriveTable.nDensity   =0x82;
+         m_CDParams[m_nActive].DriveTable.EnableMode   =ENABLESTD;
+      break;
+      case IMSCDD5:   //ReadTocCdrSCSI : ReadTocSCSI; not yet implemented yet
+      case IMS:   
+      case KODAK:   
+      case RICOH:   
+      case HP:   
+      case PHILIPS:   
+      case PLASMON:   
+      case GRUNDIGCDR100IPW:
+      case MITSUMICDR:
+         m_CDParams[m_nActive].DriveTable.ReadMethod   =READ10;
+         m_CDParams[m_nActive].DriveTable.SetSpeed   =SPEEDPHILIPS;
+         m_CDParams[m_nActive].DriveTable.EnableMode   =ENABLESTD;
+         m_CDParams[m_nActive].DriveTable.Endian      =BIGENDIAN;
+      break;
+      case NRC:
+         m_CDParams[m_nActive].DriveTable.SetSpeed   =SPEEDNONE;
+      break;
+      case YAMAHA:
+         m_CDParams[m_nActive].DriveTable.EnableMode   =ENABLESTD;
+         m_CDParams[m_nActive].DriveTable.SetSpeed   =SPEEDYAMAHA;
+      break;
+      case SONY:
+      case PLEXTOR:         // beware of type CD-ROM CDU55E can use MMC reading
+         m_CDParams[m_nActive].DriveTable.ReadMethod   =READSONY;
+         m_CDParams[m_nActive].DriveTable.SetSpeed   =SPEEDSONY;
+      break;
+      case NEC:
+         m_CDParams[m_nActive].DriveTable.ReadMethod   =READNEC;
+         m_CDParams[m_nActive].DriveTable.SetSpeed   =SPEEDNEC;
+      break;
+      case CUSTOMDRIVE:
+      break;
+      default:
+         MessageBox(NULL,"Internal CDex error, Device Type Not
+          Supported","CDRip.DLL Error",MB_OK);
+   }
+}
+
+
+
+
+
+int CDRomSettings::GetTransportLayer()
+{
+   return m_nTransportLayer;
+}
+
+void CDRomSettings::SetTransportLayer( int nValue )
+{
+   m_nTransportLayer = nValue;
+}
+
+void CDRomSettings::SetIniFileName( LPCSTR lpszIniFname)
+{
+   strcpy( m_lpszIniFname, lpszIniFname );
+}
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">CD Ripping in VB Part 1</a>&#160;.&#160;<a href="CDRip_DLL_Source.html">CDRip DLL Source</a>&#160;.&#160;CDRip_CDRomSettings.cpp</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 12 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_1/CDRip_DLL_Source_zip_CDRip_CDRomSettings_cpp.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+</html>

@@ -1,0 +1,469 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Persistance/XML_Property_Bag/VB5_XML_Property_Bag_DLL_and_Demonstration_zip_XMLPropertyBag_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:51 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: XMLPropertyBag.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: XMLPropertyBag.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Persistance</a>&#160;.&#160;<a href="article.html">XML Property Bag</a>&#160;.&#160;<a href="VB5_XML_Property_Bag_DLL_and_Demonstration.html">VB5 XML Property Bag DLL and Demonstration</a>&#160;.&#160;XMLPropertyBag.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_XML_Property_Bag_DLL_and_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 XML Property Bag DLL and Demonstration</a> (28K)</p><p /><p class="nav"><a href="VB6_XML_Property_Bag_DLL_and_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 XML Property Bag DLL and Demonstration</a> (28K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2974</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2974&amp;type=Zip&amp;title=VB5%20XML%20Property%20Bag%20DLL%20and%20Demonstration%2Ezip%5FXMLPropertyBag">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><p class="nav">&#160;&#160;<a href="mailto:Aaron.Anderson@mail.farmcreditbank.com">Aaron Anderson</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />21 Mar 2000<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: XMLPropertyBag.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "XMLPropertyBag"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+'
+ -------------------------------------------------------------------------------
+-
+' XMLPropertyBag.
+' vbAccelerator version -
+'
+' Based on the original code:
+'-------------------------------------------------------------------------------
+--
+'Written by Aaron A. Anderson
+'
+'Use this code however you see fit.  If you modify it to do something cool,
+'please send me the changes, so we can share it with everyone.
+'
+'To use this object, implement the IXMLPropertyBag interface in your
+'classes, then add the appropriate code to the ReadProperties and
+ WriteProperties
+'methods.
+'
+'Call PropertyBag.SaveState(YourObject) to capture your object state.
+'The Contents property then returns the XML containing the captured state, which
+'you can persist however you wish (e.g. save it to a file etc)
+'
+'To restore your object, set the Contents property to the persisted XML and
+'then call PropertyBag.RestoreState(YourObject).
+'-------------------------------------------------------------------------------
+--
+'
+' Mods:
+' 1) Added bin.base64 support for persisting byte arrays
+' 2) Added optional Name parameter for saving/restoring - enables multiple
+ objects
+'    to be persisted to the same XML document
+' 3) Added ability to retrieve/set DOMDocument object
+' 4) Added &lt;PropertyBag&gt;&lt;/PropertyBag&gt; as the overall tags around the control
+' 5) Modified to use XSL queries to find the nodes rather than enumerating the
+'    children
+' 6) Added ability to replace (overwrite) existing objects, and to delete
+ objects
+'
+'
+ -------------------------------------------------------------------------------
+-
+
+Private m_StartNode As MSXML.IXMLDOMNode
+Private m_XMLProps As MSXML.DOMDocument
+
+Private Enum epbtTypeConstants
+   epbtImplementsPropBag
+   epbtEmpty
+   epbtNull
+   epbtNothing
+   epbtByteArray
+   epbtDate
+   epbtNumber
+   epbtString
+   epbtStringCData
+   epbtError
+End Enum
+
+Public Enum epbtErrorConstants
+   eeXMLPropertyBagErrorBase = 29450
+   eeInvalidVariantType
+   eeInvalidXMLFile
+End Enum
+
+Private m_sTypeName As String
+
+Private Sub Class_Terminate()
+
+   Set m_StartNode = Nothing
+   Set m_XMLProps = Nothing
+
+End Sub
+
+Sub WriteProperty(ByVal PropertyName As String, ByVal PropertyValue As Variant,
+ Optional DefaultValue As Variant)
+
+Dim oNode As MSXML.IXMLDOMNode
+Dim oClassElement As MSXML.IXMLDOMNode
+Dim oTransactionData As XMLPropertyBag
+Dim eType As epbtTypeConstants
+
+   
+   ' Evaluate the type of variant we are adding to the XML:
+   eType = peValidateValueType(PropertyValue)
+   
+   ' Write out accordingly:
+   If eType = epbtError Then
+      ' Can't write!
+      Err.Raise (vbObjectError + 1048 + eeInvalidVariantType), App.EXEName &amp;
+       ".vbalXMLPBag", "Invalid PropertyValue type."
+   
+   ElseIf eType = epbtImplementsPropBag Then
+      ' Must recurse into that property bag implementation:
+      Set oTransactionData = New XMLPropertyBag
+      ' Prepare the property bag:
+      'Ask the object to serialize itself onto a new FCBPropertyBag object
+      Set oNode =
+       m_StartNode.appendChild(m_StartNode.ownerDocument.createElement(TypeName(
+      PropertyValue)))
+      IXMLDOMElement(oNode).setAttribute "name", PropertyName
+      Set oTransactionData.StartNode = oNode
+      IXMLPropertyBag(PropertyValue).WriteProperties oTransactionData
+      
+   Else
+      ' We can write:
+      Set oNode =
+       m_StartNode.appendChild(m_StartNode.ownerDocument.createElement(PropertyN
+      ame))
+      
+      Select Case eType
+      Case epbtDate
+         IXMLDOMElement(oNode).Text = PropertyValue
+      Case epbtNumber
+         IXMLDOMElement(oNode).Text = PropertyValue
+      Case epbtString
+         IXMLDOMElement(oNode).Text = PropertyValue
+      Case epbtStringCData
+         Dim cD As IXMLDOMCDATASection
+         Set cD = m_StartNode.ownerDocument.createCDATASection(PropertyValue)
+         oNode.appendChild cD
+      Case epbtByteArray
+         With IXMLDOMElement(oNode)
+            .dataType = "bin.base64"
+            .nodeTypedValue = PropertyValue
+         End With
+      Case epbtEmpty
+         ' Special values:
+         IXMLDOMElement(oNode).setAttribute "vartype", "empty"
+      Case epbtNothing
+         ' Special values:
+         IXMLDOMElement(oNode).setAttribute "vartype", "nothing"
+      Case epbtNull
+         ' Special values:
+         IXMLDOMElement(oNode).setAttribute "vartype", "null"
+      End Select
+   End If
+
+End Sub
+Private Function peValidateValueType(Value As Variant) As epbtTypeConstants
+   
+   ' Here we evaluate what type of variant we're
+   ' trying to write out to the XML:
+   peValidateValueType = epbtError
+   If IsEmpty(Value) Then
+      peValidateValueType = epbtEmpty
+   ElseIf IsNull(Value) Then
+      peValidateValueType = epbtNull
+   ElseIf IsObject(Value) Then
+      If Value Is Nothing Then
+         peValidateValueType = epbtNothing
+      ElseIf pbImplementsXMLPropBag(Value) Then
+         peValidateValueType = epbtImplementsPropBag
+      Else
+         ' Evalute for default value.
+         peValidateValueType = peGetOtherType(Value)
+      End If
+   ElseIf IsError(Value) Then
+      peValidateValueType = epbtError
+   ElseIf IsNumeric(Value) Then
+      peValidateValueType = epbtNumber
+   ElseIf IsDate(Value) Then
+      peValidateValueType = epbtDate
+   ElseIf IsArray(Value) Then
+      ' only byte arrays are supported:
+      If (VarType(Value) And vbByte) = vbByte Then
+         peValidateValueType = epbtByteArray
+      End If
+   Else
+      peValidateValueType = peGetOtherType(Value)
+   End If
+   
+End Function
+Private Function peGetOtherType(Value As Variant) As epbtTypeConstants
+Dim sThis As String
+   
+   On Error Resume Next
+   sThis = Value
+   If Err.Number = 0 Then
+      peGetOtherType = epbtString
+      
+      ' Does sThis contain XML delimiters?
+      ' NB: rough check.  If you're worried, pass the
+      ' information into WriteProperties as a byte
+      ' array &amp; the bin.base64 will do its work, then
+      ' you'll never have difficulties.
+      If Not (InStr(sThis, "&lt;") = 0) Then
+         peGetOtherType = epbtStringCData
+      ElseIf Not (InStr(sThis, "&gt;") = 0) Then
+         peGetOtherType = epbtStringCData
+      End If
+      
+   Else
+      peGetOtherType = epbtError
+   End If
+   Err.Clear
+   
+End Function
+Private Function pbImplementsXMLPropBag(Value As Variant) As epbtTypeConstants
+Dim ixpb As IXMLPropertyBag
+
+   On Error Resume Next
+   Set ixpb = Value
+   pbImplementsXMLPropBag = (Err.Number = 0)
+   Err.Clear
+   
+End Function
+
+Function ReadProperty(PropertyName As String, Optional DefaultValue As Variant)
+ As Variant
+
+Dim oTransactionData As XMLPropertyBag
+Dim Value As Variant
+Dim oNode As MSXML.IXMLDOMNode
+Dim oAtt  As MSXML.IXMLDOMAttribute
+Dim sQuery As String
+Dim bFound As Boolean
+Dim oRes As IXMLDOMNodeList
+Dim sTypeName As String
+
+   If pbImplementsXMLPropBag(DefaultValue) Then
+      sTypeName = m_sTypeName &amp; "/" &amp; TypeName(DefaultValue) &amp; "[@name = """ &amp;
+       PropertyName &amp; """]"
+      sQuery = "//" &amp; sTypeName
+      Set oRes = m_StartNode.selectNodes(sQuery)
+      If oRes.length &gt; 0 Then
+         Set oTransactionData = New XMLPropertyBag
+         Set oNode = oRes(0)
+         Set oTransactionData.StartNode = oNode
+         oTransactionData.TransTypeName = sTypeName
+         IXMLPropertyBag(DefaultValue).ReadProperties oTransactionData
+      End If
+   Else
+      ReadProperty = DefaultValue
+         
+      sQuery = "//" &amp; m_sTypeName &amp; "/" &amp; PropertyName
+      Set oRes = m_StartNode.selectNodes(sQuery)
+      If oRes.length &gt; 0 Then
+         Set oNode = oRes(0)
+         If oNode.dataType = "bin.base64" Then
+            ReadProperty = oNode.nodeTypedValue
+         Else
+            ReadProperty = oNode.Text
+         End If
+      End If
+   End If
+   
+End Function
+
+Public Sub SaveState(ByVal RootObject As IXMLPropertyBag, Optional ByVal sName
+ As String)
+Dim sQuery As String
+Dim oRes As IXMLDOMNodeList
+Dim oPBagElement As MSXML.IXMLDOMNode
+Dim oElement As MSXML.IXMLDOMNode
+Dim oClassElement As MSXML.IXMLDOMNode
+   
+   If Not RootObject Is Nothing Then
+   
+      ' Ensure the document is available:
+      If m_XMLProps Is Nothing Then
+         Set m_XMLProps = New MSXML.DOMDocument
+      End If
+      ' Make sure the root tag is present:
+      sQuery = "//PropertyBag"
+      Set oRes = m_XMLProps.selectNodes(sQuery)
+      If oRes.length = 0 Then
+         Set oPBagElement =
+          m_XMLProps.appendChild(m_XMLProps.createElement("PropertyBag"))
+      Else
+         Set oPBagElement = oRes.Item(0)
+      End If
+      
+      m_sTypeName = TypeName(RootObject)
+      Set oElement = m_XMLProps.createElement(m_sTypeName)
+      If Len(sName) &gt; 0 Then
+         IXMLDOMElement(oElement).setAttribute "name", sName
+      End If
+      sQuery = sQuery &amp; "/" &amp; m_sTypeName &amp; ""
+      If Len(sName) &gt; 0 Then
+         sQuery = sQuery &amp; "[@name=""" &amp; sName &amp; """]"
+      End If
+      Set oRes = m_XMLProps.selectNodes(sQuery)
+      If oRes.length = 0 Then
+         ' Need a new element:
+         Set oClassElement = IXMLDOMElement(oPBagElement).appendChild(oElement)
+      Else
+         ' replace
+         Set oClassElement =
+          IXMLDOMElement(oPBagElement).replaceChild(oElement,
+          IXMLDOMElement(oRes.Item(0)))
+         Set oClassElement = oElement
+      End If
+      
+      Set m_StartNode = oClassElement
+      RootObject.WriteProperties Me
+      
+   End If
+   
+End Sub
+
+Public Sub RestoreState(ByVal RootObject As IXMLPropertyBag, Optional ByVal
+ sName As String = "")
+'
+'Starts the process of restoring the object hierarchy
+'
+Dim sQuery As String
+Dim oRes As IXMLDOMNodeList
+
+   m_sTypeName = "PropertyBag/" &amp; TypeName(RootObject)
+   If Len(sName) &gt; 0 Then
+      m_sTypeName = m_sTypeName &amp; "[@name=""" &amp; sName &amp; """]"
+   End If
+   
+   sQuery = "//" &amp; m_sTypeName
+   Set oRes = m_XMLProps.selectNodes(sQuery)
+   If oRes.length &gt; 0 Then
+      Set m_StartNode = oRes.Item(0)
+      RootObject.ReadProperties Me
+   End If
+   
+End Sub
+
+Public Sub DeleteObject(ByVal sTypeName As String, Optional ByVal sName As
+ String = "")
+Dim sQuery As String
+Dim oRes As IXMLDOMNodeList
+Dim oClassElement As IXMLDOMNode
+Dim oRemove As IXMLDOMNode
+
+   m_sTypeName = "PropertyBag/" &amp; sTypeName
+   If Len(sName) &gt; 0 Then
+      m_sTypeName = m_sTypeName &amp; "[@name=""" &amp; sName &amp; """]"
+   End If
+   
+   sQuery = "//" &amp; m_sTypeName
+   Set oRes = m_XMLProps.selectNodes(sQuery)
+   If oRes.length &gt; 0 Then
+      Set oRemove = oRes.Item(0)
+      sQuery = "//PropertyBag"
+      Set oRes = m_XMLProps.selectNodes(sQuery)
+      IXMLDOMElement(oRes.Item(0)).removeChild oRemove
+   End If
+End Sub
+
+Friend Property Let TransTypeName(ByVal sTypeName As String)
+   m_sTypeName = sTypeName
+End Property
+
+Friend Property Set StartNode(ByVal Node As MSXML.IXMLDOMNode)
+   Set m_StartNode = Node
+   Set m_XMLProps = m_StartNode.ownerDocument
+End Property
+
+Friend Property Get StartNode() As MSXML.IXMLDOMNode
+   Set StartNode = m_StartNode
+End Property
+
+Public Property Let Contents(ByVal sXML As String)
+   Set m_XMLProps = New MSXML.DOMDocument
+   If Not m_XMLProps.loadXML(sXML) Then
+      ' need to raise an error!
+      Err.Raise (vbObjectError + 1048 + eeInvalidXMLFile), App.EXEName &amp;
+       ".vbalXMLPBag", m_XMLProps.parseError.reason
+   End If
+End Property
+
+Public Property Get Contents() As String
+   If Not m_XMLProps Is Nothing Then
+      Contents = m_XMLProps.xml
+   End If
+End Property
+
+Public Property Get Document() As DOMDocument
+   Set Document = m_XMLProps
+End Property
+Public Property Let Document(oDoc As DOMDocument)
+   Set m_XMLProps = oDoc
+End Property
+
+Private Function IXMLDOMElement(ByVal Node As IXMLDOMNode) As IXMLDOMElement
+   Set IXMLDOMElement = Node
+End Function
+
+Private Function IXMLPropertyBag(ByVal Source As IXMLPropertyBag) As
+ IXMLPropertyBag
+   Set IXMLPropertyBag = Source
+End Function
+
+Private Function AttributeValue( _
+      ByVal Node As MSXML.IXMLDOMNode, _
+      ByVal sAttributeName As String, _
+      Optional ByVal vDefault As Variant = Empty _
+   ) As Variant
+   If Not IXMLDOMElement(m_StartNode).getAttributeNode(sAttributeName) Is
+    Nothing Then
+      AttributeValue = IXMLDOMElement(m_StartNode).getAttribute(sAttributeName)
+   Else
+      AttributeValue = vDefault
+   End If
+End Function
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Persistance</a>&#160;.&#160;<a href="article.html">XML Property Bag</a>&#160;.&#160;<a href="VB5_XML_Property_Bag_DLL_and_Demonstration.html">VB5 XML Property Bag DLL and Demonstration</a>&#160;.&#160;XMLPropertyBag.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Persistance/XML_Property_Bag/VB5_XML_Property_Bag_DLL_and_Demonstration_zip_XMLPropertyBag_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:51 GMT -->
+</html>

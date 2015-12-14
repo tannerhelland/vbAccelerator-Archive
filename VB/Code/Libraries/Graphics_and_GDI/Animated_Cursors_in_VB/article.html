@@ -1,0 +1,103 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Animated_Cursors_in_VB/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:23:01 GMT -->
+<head>
+
+<title>vbAccelerator - Animated Cursors in VB</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Nice feature in Office - you can set it to show customised animated cursors. For example, 
+when Office is opening a document the cursor switches to an animation of a yellow handbag 
+throwing up a small piece of paper (I think that's what it is, anyway).It would be nice to do it this in VB too, yes? Well, as ever with graphics support in VB, 
+you can't do it with the standard methods. The bizarre MouseIcon property lets you 
+set a custom cursor, but this is yet another low quality workaround for the limitations of the 
+Picture object and so it doesn't work with colour or animated cursors.But with the aid of a few hardcore hacks you can make VB show cool animated cursors. 
+A rather dismal collection of animated cursors is included with the sample, you can
+get more from the Animated Cursor section of the
+Graphics Library." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;Animated Cursors in VB</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="vbAccelerator_Animated_Cursor_Classes_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />vbAccelerator Animated Cursor Classes Sample</a> (39K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:12</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12&amp;type=Article&amp;title=Animated%20Cursors%20in%20VB">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />1 Jul 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=5248">Animated Cursors</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4565">Using Animated Cursors in .NET</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Animated Cursors in VB</h1><p class="splash">Give your users something to look at when your program is doing nothing!</p><img src="anicur.gif" width="311" height="233" alt="Animated Cursor Demonstration" /><p /><p>Nice feature in Office - you can set it to show customised animated cursors. For example, 
+when Office is opening a document the cursor switches to an animation of a yellow handbag 
+throwing up a small piece of paper (I think that's what it is, anyway).</p><p>It would be nice to do it this in VB too, yes? Well, as ever with graphics support in VB, 
+you can't do it with the standard methods. The bizarre <i>MouseIcon</i> property lets you 
+set a custom cursor, but this is yet another low quality workaround for the limitations of the 
+Picture object and so it doesn't work with colour or animated cursors.</p><p>But with the aid of a few hardcore hacks you can make VB show cool animated cursors. 
+A rather dismal collection of animated cursors is included with the sample, you can
+get more from the <a href="http://www.vbaccelerator.com/article.asp?id=5248">Animated Cursor</a> section of the
+Graphics Library.</p><h2>This is Easy, Yes?</h2><p>The easy bit is to get VB to load and draw an animated cursor. This is achieved using 
+the multi-talented Win32 <i>LoadImage</i> and <i>DrawIconEx</i> functions. These functions 
+are poorly supported in the Win32 API text supplied with VB5, as they are given with 
+misleading declares and also all the constants you need to use them are missing. 
+The proper declares and constants are in the <i>cAniCursor</i> class, which wraps up these 
+methods to provide an easy to use class for loading animated or standard cursors from files 
+or resources, managing cursor handles and also drawing any frame of a cursor.</p><h2>When I Said 3 Lines of Code, I Underestimated</h2><p>Its a bit more tricky to persuade VB to show your cursor like a standard mouse pointer. 
+VB is very secretive about how it implements cursors and so you must guess how it does it. 
+My code shows two different ways of setting the cursor for a control or form and also a rather 
+brute force method of setting the cursor so it emulates VB's Screen.MousePointer.</p><p>Setting the cursor for a form or control can be achieved in two ways:</p><ol><li>Modifying the Win32 Class Cursor for the window</li><li>Subclassing the <i>WM_SETCURSOR</i> message and using the <i>SetCursor</i> call to apply 
+your own cursor.</li></ol><p>The first method is the simplest, but intercepting <i>WM_SETCURSOR</i> gives you more flexibility. 
+A limitation which applies to both methods is that the method only works directly for objects 
+which have a <i>hWnd</i> property. Labels, Images, Shapes and Lightweight controls are drawn 
+directly onto their parent window handle. If you need control to detect whether the mouse is 
+actually over a lightweight control you must use the subclassing method, because the class 
+cursor method applies to the entire window, whereas the <i>WM_SETCURSOR</i> message is fired 
+whenever the mouse is moved and so you get the opportunity to change what you set depending on 
+where the pointer is.</p><p>Setting the cursor using the class cursor method is supported directly in the <i>cAniCursor</i> class. 
+Subclassing a form or control to set the cursor is supported by the <i>cCustomCursor</i> class.</p><p>To emulate VB's Screen.MousePointer method is more difficult. In effect what you want to 
+do is to apply either of the two methods which apply to a single form or control to every form 
+and control in your VB project. That means quite a bit of work! It would be possible to enumerate 
+all the windows and their children in your project and then set the class cursor 
+for each to the same thing, or to apply a subclass to every one. However, a simpler 
+way of achieving this effect is to use a Windows Hook. There are various types of Windows Hooks, 
+the one used here is the <i>WH_CALLWNDPROCRET</i> hook. This hook is called for every single window 
+in your process whenever windows calls that Window's <i>WndProc</i> function (i.e. 
+the function you normally trap when you subclass a window). So using this hook we can 
+emulate applying a subclass on every window in your entire project at once!</p><p>The only downside of using this hook is that it can slow down performance of your application 
+when it is in place. However, since you normally want to show a <i>Screen.MousePointer</i> when your 
+application is busy doing something, this usually isn't an issue. Your app blocks <i>WndProc</i>
+ calls whilst it is actively doing work so there is no performance impact.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;Animated Cursors in VB</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 11 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Animated_Cursors_in_VB/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:23:02 GMT -->
+</html>

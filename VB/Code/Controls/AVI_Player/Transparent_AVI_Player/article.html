@@ -1,0 +1,178 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/AVI_Player/Transparent_AVI_Player/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:51:14 GMT -->
+<head>
+
+<title>vbAccelerator - Transparent AVI Player Control</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="The Animation control supplied with VB (and from various other VB websites) is derived 
+from the implementation within COMCTL32.DLL. However, this implementation only allows you to 
+play AVIs with no audio stream. Also, its idea of transparency isn't quite what 
+you might expect: setting an AVI to transparent only sets one of the colours in the 
+AVI to another colour, rather than allowing you to draw part of the background.If you want to play any type of AVI, or you want to modify the contents of the 
+transparent area, you must load and draw the AVI yourself using the API. Luckily, this API is 
+easily accessible to VB coders." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">AVI Player</a>&#160;.&#160;Transparent AVI Player Control</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Transparent_AVI_Player_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Transparent AVI Player Control</a> (13K)</p><p class="nav"><a href="VB5_Transparent_AVI_Player_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Transparent AVI Player Demonstration</a> (57K)</p><p class="nav"><a href="VB5_Transparent_AVI_Player_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Transparent AVI Player Full Source</a> (87K)</p><p /><p class="nav"><a href="VB6_Transparent_AVI_Player_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Transparent AVI Player Control</a> (13K)</p><p class="nav"><a href="VB6_Transparent_AVI_Player_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Transparent AVI Player Demonstration</a> (56K)</p><p class="nav"><a href="VB6_Transparent_AVI_Player_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Transparent AVI Player Full Source</a> (86K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3910</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3910&amp;type=Article&amp;title=Transparent%20AVI%20Player%20Control">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />23 Nov 2003<br /><p class="update">The last version of the control only rendered the AVI 
+transparently when a background bitmap was selected.  Corrected so now
+the <span class="code">BackColor</span> of the control is displayed 
+when no background bitmap is present.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3377">Finding Which DLL Contains an API Call</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Transparent AVI Player Control</h1><p class="splash">Play any AVI file using the API directly; also demonstrates how to implement transparency</p><img src="transavi.gif" width="295" height="242" alt="Transparent AVI Player Demonstration" /><p /><p>The Animation control supplied with VB (and from various other VB websites) is derived 
+from the implementation within COMCTL32.DLL. However, this implementation only allows you to 
+play AVIs with no audio stream. Also, its idea of transparency isn't quite what 
+you might expect: setting an AVI to transparent only sets one of the colours in the 
+AVI to another colour, rather than allowing you to draw part of the background.</p><p>If you want to play any type of AVI, or you want to modify the contents of the 
+transparent area, you must load and draw the AVI yourself using the API. Luckily, this API is 
+easily accessible to VB coders.</p><h2>The Transparent AVI Control</h2><p>The transparent AVI control supplied with the download is a simple implementation 
+based around reuse of a class, <i>cAVICtrl.cls</i>. This class allows you to play an AVI onto any window. 
+The implementation includes code to tile a bitmap into the background of the control. Use of the 
+control is pretty self explanatory. To set up the control to show an AVI transparently over 
+a background bitmap the code looks like this:</p><pre>
+With vbalAVIPlayer1
+   .Filename = App.Path &amp; "\clock.avi"
+   .Load
+   .Picture = picBackground.Picture
+   .Transparent = True
+   .TransparentColor = &amp;H0&amp;
+End With
+</pre><p>To start and stop the AVI playing, use the <i>Running</i> property.</p><h2>The API for Playing AVI</h2><p>Basically the API for playing AVIs is found in two DLLs: the AVI support DLL 
+Avifil32.Dll and the Video for Windows DLL msvfw32.dll (incidentally, to find out more about working 
+out which DLL contains which function, have a look at the article <a href="http://www.vbaccelerator.com/article.asp?id=3377">Finding 
+Which DLL Contains an API Call</a>.). AVI loading, reading and interrogation is provided by 
+the AVI support DLL, whilst Video for Windows provides some functions for rendering a DIB 
+directly from memory onto a device context, without having to create an intermediate GDI DIB 
+Section or memory device context to Blit it from.</p><h2>The DrawDib API</h2><p>The DrawDib API is aimed at fast rendering of DIBs (Device Independent Bitmaps) to screen without 
+the intermediate use of any GDI objects. This was important in 16 bit versions of windows, however, 
+most graphic card device drivers now deal with DIBs very quickly so the performance aspect of 
+this API is no longer relevant. It does help simplify drawing AVI frames, however, 
+so it is used in this project. There are three DrawDib API calls used:</p><ol><li><strong>DrawDibOpen</strong><br />
+Opens a DrawDib device and returns a handle to it.</li><li><strong>DrawDibDraw</strong><br />
+Draws a DIB from memory onto a device context. This call is very similar to the GDI 
+<i>StretchBlt</i> call except rather than taking a source DC it takes a pointer to the DIB 
+bits and a pointer to the DIB colour table. These pointers are provided directly by the 
+AVI API, as we will see next.</li><li><strong>DrawDibClose</strong><br />
+Closes a previously opened DrawDib device.</li></ol><h2>The AVI Support API</h2><p>Actually reading and use AVIs is performed using this DLL. To start using the DLL, call 
+<i>AVIFileInit</i> and when finished, call <i>AVIFileExit</i>.</p><p>To open an AVI file for playing, the <i>AVIStreamOpenFromFile</i> function is used:</p><pre>
+Private Declare Function AVIStreamOpenFromFile Lib "avifil32.dll" _
+    Alias "AVIStreamOpenFromFileA" ( _
+      ppavi As Any, ByVal szFile As String, _
+      ByVal fccType As Long, ByVal lParam As Long, _
+      ByVal mode As Long, pclsidHandler As Any _
+      ) As Long
+</pre><ul><li><strong>ppAVI</strong> is a pointer to the AVI stream, and is returned when the call returns. 
+Passing a long value in as this parameter allows us to return this pointer.</li><li><strong>szFile</strong> is the file to open.</li><li><strong>fccType</strong> defines which type of stream we want to read from, in 
+this case the video stream (MMIO type "vids", which is &amp;H73646976 as a long value)</li><li><strong>lParam</strong> is an application defined value, and can be set to anything you want.</li><li><strong>mode</strong> is the file mode, the same as the file mode values used 
+in the file APIs in Win32.</li><li><strong>pclsidHandler</strong> is a pointer to a CLSID if you take advantage of 
+the OLE interface to the AVI functions (not used in this sample).</li></ul><p>The return value from the function is a COM <i>HRESULT</i>.  Whilst a HRESULT sounds like it should
+be a handle to a result, it is actually just a long value where the bits are arranged in a particular
+way:</p><img src="hresult.gif" width="294" height="79" alt="Format of a HRESULT" /><p><strong><small>Format of a HRESULT value</small></strong></p><p>The most significant bit of the HRESULT (bit 31, which can be extracted by ANDing with &amp;H80000000) 
+determines whether the function call succeeded or failed. It is set for failure.</p><p>The bits betwen bit 30 and bit 16 contain what is termed the "facility" code. Microsoft 
+use this to separate different errors out, for example, control errors are supposed to set 
+<i>FACILITY_CONTROL</i> (=10) in this section whilst Win32 errors set <i>FACILITY_WINDOWS</i> (=7).</p><p>The low order word is the return code which specifies the code for the success or failure condition.</p><p>Since HRESULTs can be either success or failure codes, it is not enough just to check 
+whether the return value is zero or positive. C and C++ coders take advantage of the Macros FAILED and SUCCEEDED 
+which are defined in one of the COM header files; but these are simple to rewrite in VB:</p><pre>
+   Private Function FAILED(ByVal hr As Long) As Boolean
+      FAILED = Not (SUCCEEDED(hr))
+   End Function
+   Private Function SUCCEEDED(ByVal hr As Long) As Boolean
+      SUCCEEDED = ((hr And &amp;H80000000) = 0)
+   End Function
+</pre><p>If <i>AVIStreamOpenFromFile</i> succeeds, then the long variable passed into the <i>ppAVI</i> parameter is a 
+pointer to the AVI stream. We can then open the AVI for playing and find out more about the AVI.</p><p>To open the stream for playing, we call:</p><pre>
+   Private Declare Function AVIStreamGetFrameOpen Lib "avifil32.dll" ( _
+      pavi As Any, lpbiWanted As Any _
+      ) As Long
+</pre><ul><li><strong>pavi</strong> Takes a pointer to the AVI stream returned in the <i>ppavi</i>
+parameter earlier. Because the original return value was a pointer to a pointer (**) we need to pass 
+the value using the ByVal keyword into the <i>pavi</i> method of this call. The 
+same applies for all subsequent calls which take <i>pavi</i> as a parameter.</li><li><strong>lpbiWanted</strong> This parameter allows you to pass in a <i>BITMAPINFOHEADER</i> structure 
+indicating the format of DIB you would like the AVI functions to return. It can be 
+set to Null (ByVal 0&amp;) to return the default format.</li></ul><p>If this function succeeds it returns a long pointer to the GetFrame interface (<i>pGF</i>), otherwise 
+it returns 0.</p><p>Once both the <i>pavi</i> and <i>pGF</i> pointers have been returned, the AVI can then be queried 
+for information about its size, shape and so forth. All AVIs are encoded as a series of 
+"samples" (i.e. frames) which have a particular duration. This function returns the time 
+in milliseconds for a given sample in the AVI:</p><pre>
+   Private Declare Function AVIStreamSampleToTime Lib "avifil32.dll" _
+      (pavi As Any, ByVal lSample As Long) As Long
+</pre><p>The <i>AVIStreamLength</i> function returns the number of samples in the AVI, 
+which in turn directly indicates the duration of the AVI if passed into the <i>AVIStreamSampleToTime</i> function:</p><pre>
+   Private Declare Function AVIStreamLength Lib "avifil32.dll" _ 
+       (pavi As Any) As Long
+</pre><p>To find the position of the first sample in the AVI (which again can be converted into a 
+time using <i>AVIStreamSampleToTime</i>) we use <i>AVIStreamStart</i>:</p><pre>
+   Private Declare Function AVIStreamStart Lib "avifil32.dll" _
+       (pavi As Any) As Long
+</pre><p>To get more general information about the AVI, such as size, name, samples per second to play 
+and so forth, the <i>AVIStreamInfo</i> function fills in a <i>TAVISTREAMINFO</i> structure for a 
+given AVI stream pointer. The declare of the function looks like this:</p><pre>
+   Private Declare Sub AVIStreamInfo Lib "avifil32.dll" Alias "AVIStreamInfoA" _
+      (pavi As Any, psi As TAVISTREAMINFO, ByVal lSize As Long)
+
+   Private Type TAVISTREAMINFO ' this is the ANSI version
+      fccType As Long
+      fccHandler As Long
+      dwFlags As Long '/* Contains AVITF_* flags */
+      dwCaps As Long
+      wPriority As Integer
+      wLanguage As Integer
+      dwScale As Long
+      dwRate As Long ' /* dwRate / dwScale == samples/second */
+      dwStart As Long
+      dwLength As Long '; /* In units above... */
+      dwInitialFrames As Long
+      dwSuggestedBufferSize As Long
+      dwQuality As Long
+      dwSampleSize As Long
+      rcFrame As RECT
+      dwEditCount As Long
+      dwFormatChangeCount As Long
+      szName(0 To 63) As Byte
+   End Type
+</pre><p>To find out more, have a look at the code in the <i>cAviCtrl.cls</i> in the full source code 
+download.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">AVI Player</a>&#160;.&#160;Transparent AVI Player Control</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 23 November 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/AVI_Player/Transparent_AVI_Player/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:51:17 GMT -->
+</html>

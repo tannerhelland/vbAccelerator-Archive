@@ -1,0 +1,437 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Changing_Window_Shapes/Creating_Window_Shapes_from_Bitmaps/Bitmap_Shape_Project_Files_zip_cDIBSectionRegion_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:55 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cDIBSectionRegion.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cDIBSectionRegion.cls" /><link rel="stylesheet" href="../../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../../index.html">VB</a>&#160;.&#160;<a href="../../../../index.html">Code</a>&#160;.&#160;<a href="../../../index.html">Libraries</a>&#160;.&#160;<a href="../../index.html">Graphics and GDI</a>&#160;.&#160;<a href="../index.html">Changing Window Shapes</a>&#160;.&#160;<a href="article.html">Creating Window Shapes from Bitmaps</a>&#160;.&#160;<a href="Bitmap_Shape_Project_Files.html">Bitmap Shape Project Files</a>&#160;.&#160;cDIBSectionRegion.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Bitmap_Shape_Project_Files.html"><img src="../../../../../../res/get.png" width="8" height="8" alt="Download Page" />Bitmap Shape Project Files</a> (37K)</p><br /><br /><img src="../../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2881</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2881&amp;type=Zip&amp;title=Bitmap%20Shape%20Project%20Files%2Ezip%5FcDIBSectionRegion">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../../res/update.png" width="8" height="8" alt="Update" />13 Aug 1999<br />First Posted</p><br /><br /><img src="../../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2946">Window Shapes Using Layering</a></p><p class="nav"><img src="../../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2522">Reading Data from Local or External Library Resources</a></p><br /><br /><img src="../../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cDIBSectionRegion.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cDIBSectionRegion"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+' ==================================================================
+' FileName:    cDIBSectionRegion.cls
+' Author:      Steve McMahon
+'
+' Converts a cDIBSection object into a region which you can apply
+' to a form, UserControl or PictureBox (in fact, anything with a
+' hWnd property).
+'
+' Also includes functions to Save a region to a file, and to Load
+' a region either from a file or from a resource.  The resource
+' loading code is useful because it demonstrates how to load
+' arbitrary resource data from any external library.
+'
+' ------------------------------------------------------------------
+' Visit vbAccelerator - advanced, hardcore VB with full source code
+' http://vbaccelerator.com/
+' mailto:steve@vbaccelerator.com
+'
+' ==================================================================
+
+' API for creating a region:
+Private Declare Function CreateRectRgn Lib "gdi32" (ByVal X1 As Long, ByVal Y1
+ As Long, ByVal X2 As Long, ByVal Y2 As Long) As Long
+Private Declare Function CombineRgn Lib "gdi32" (ByVal hDestRgn As Long, ByVal
+ hSrcRgn1 As Long, ByVal hSrcRgn2 As Long, ByVal nCombineMode As Long) As Long
+Private Const RGN_AND = 1
+Private Const RGN_COPY = 5
+Private Const RGN_DIFF = 4
+Private Const RGN_OR = 2
+Private Const RGN_XOR = 3
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+Private Declare Function SetWindowRgn Lib "USER32" (ByVal hWnd As Long, ByVal
+ hRgn As Long, ByVal bRedraw As Boolean) As Long
+
+
+' API for saving and loading a region:
+Private Declare Function GetRegionData Lib "gdi32" (ByVal hRgn As Long, ByVal
+ dwCount As Long, lpRgnData As Any) As Long
+Private Declare Function ExtCreateRegion Lib "gdi32" (lpXform As Any, ByVal
+ nCount As Long, lpRgnData As Any) As Long
+' API for getting data from an external library module:
+Private Declare Function LoadLibraryEx Lib "kernel32" Alias "LoadLibraryExA"
+ (ByVal lpLibFileName As String, ByVal hFile As Long, ByVal dwFlags As Long) As
+ Long
+Private Declare Function FreeLibrary Lib "kernel32" (ByVal hLibModule As Long)
+ As Long
+Private Declare Function LoadResource Lib "kernel32" (ByVal hInstance As Long,
+ ByVal hResInfo As Long) As Long
+Private Declare Function LockResource Lib "kernel32" (ByVal hResData As Long)
+ As Long
+Private Declare Function FindResource Lib "kernel32" Alias "FindResourceA"
+ (ByVal hInstance As Long, lpName As Any, lpType As Any) As Long
+Private Declare Function SizeofResource Lib "kernel32" (ByVal hInstance As
+ Long, ByVal hResInfo As Long) As Long
+Private Declare Function FreeResource Lib "kernel32" (ByVal hResData As Long)
+ As Long
+Private Const LOAD_LIBRARY_AS_DATAFILE = &amp;H2&amp;
+Private Const RT_RCDATA = 10&amp;
+
+' API for reading cDIBSection bits:
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+Private Type SAFEARRAYBOUND
+    cElements As Long
+    lLbound As Long
+End Type
+Private Type SAFEARRAY2D
+    cDims As Integer
+    fFeatures As Integer
+    cbElements As Long
+    cLocks As Long
+    pvData As Long
+    Bounds(0 To 1) As SAFEARRAYBOUND
+End Type
+Private Declare Function VarPtrArray Lib "msvbvm50.dll" Alias "VarPtr" (Ptr()
+ As Any) As Long
+
+' Implementation:
+Private m_hRgn As Long
+Private m_hWnd() As Long
+Private m_iCount As Long
+
+Public Property Get Applied(ByVal hWnd As Long) As Boolean
+   Applied = Not (plIndex(hWnd) = 0)
+End Property
+Public Property Let Applied(ByVal hWnd As Long, ByVal bState As Boolean)
+Dim i As Long
+Dim lIndex As Long
+   lIndex = plIndex(hWnd)
+   If bState Then
+      If (lIndex = 0) Then
+         ' Apply to window:
+         m_iCount = m_iCount + 1
+         ReDim Preserve m_hWnd(1 To m_iCount) As Long
+         m_hWnd(m_iCount) = hWnd
+         SetWindowRgn m_hWnd(m_iCount), m_hRgn, True
+      Else
+         ' already applied, reset apply state jic
+         SetWindowRgn m_hWnd(m_iCount), m_hRgn, True
+      End If
+   Else
+      If (lIndex = 0) Then
+         ' Not applied, reset state jic
+         SetWindowRgn hWnd, 0, True
+      Else
+         ' Applied, reset:
+         SetWindowRgn hWnd, 0, True
+         If m_iCount &gt; 1 Then
+            For i = lIndex To m_iCount - 1
+               m_hWnd(i) = m_hWnd(i + 1)
+            Next i
+            m_iCount = m_iCount - 1
+            ReDim Preserve m_hWnd(1 To m_iCount) As Long
+         Else
+            m_iCount = 0
+            Erase m_hWnd
+         End If
+      End If
+   End If
+End Property
+Private Property Get plIndex(ByVal hWnd As Long) As Long
+Dim i As Long
+Dim lIndex As Long
+   For i = 1 To m_iCount
+      If hWnd = m_hWnd(i) Then
+         plIndex = i
+         Exit For
+      End If
+   Next i
+End Property
+Public Property Get AppliedToCount() As Long
+   AppliedToCount = m_iCount
+End Property
+Public Property Get hWndForIndex(ByVal lIndex As Long) As Long
+   hWndForIndex = m_hWnd(lIndex)
+End Property
+
+Private Sub UnApply()
+Dim i As Long
+   For i = 1 To m_iCount
+      If Not m_hWnd(i) = 0 Then
+         SetWindowRgn m_hWnd(i), 0, True
+         m_hWnd(i) = 0
+      End If
+   Next i
+   m_iCount = 0
+End Sub
+Public Sub Destroy()
+   UnApply
+   If Not m_hRgn = 0 Then
+      DeleteObject m_hRgn
+   End If
+   m_hRgn = 0
+End Sub
+
+Public Sub Create( _
+      ByRef cDib As cDIBSection, _
+      Optional ByRef lTransColor As Long = 0 _
+   )
+Dim x As Long, y As Long
+Dim lX As Long
+Dim yStart As Long
+Dim bStart As Boolean
+Dim hRgnTemp As Long
+Dim bR As Byte, bG As Byte, bB As Byte
+Dim lWidth As Long, lHeight As Long
+Dim bDib() As Byte
+Dim tSA As SAFEARRAY2D
+
+   Destroy
+   
+   ' The transparent colour:
+   bR = (lTransColor And &amp;HFF&amp;)
+   bG = (lTransColor And &amp;HFF00&amp;) \ &amp;H100&amp;
+   bB = (lTransColor And &amp;HFF0000) \ &amp;H10000
+   
+   ' Create the base region
+   m_hRgn = CreateRectRgn(0, 0, cDib.Width, cDib.Height)
+   Debug.Assert (m_hRgn &lt;&gt; 0)
+   If m_hRgn &lt;&gt; 0 Then
+      ' Get the DIB into byte array:
+      With tSA
+          .cbElements = 1
+          .cDims = 2
+          .Bounds(0).lLbound = 0
+          .Bounds(0).cElements = cDib.Height
+          .Bounds(1).lLbound = 0
+          .Bounds(1).cElements = cDib.BytesPerScanLine()
+          .pvData = cDib.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+               
+      lWidth = cDib.BytesPerScanLine \ 3
+      lHeight = cDib.Height
+      For x = 0 To (lWidth - 1) * 3 Step 3
+         ' DIB Sections are "upside down" :)
+         For y = lHeight - 1 To 0 Step -1
+            If bDib(x, y) = bB And bDib(x + 1, y) = bG And bDib(x + 2, y) = bR
+             Then
+               If Not bStart Then
+                  yStart = lHeight - 1 - y
+                  bStart = True
+               End If
+            Else
+               If bStart Then
+                  hRgnTemp = CreateRectRgn(lX, yStart, lX + 1, lHeight - 1 - y)
+                  CombineRgn m_hRgn, hRgnTemp, m_hRgn, RGN_XOR
+                  DeleteObject hRgnTemp
+                  bStart = False
+               End If
+            End If
+         Next y
+         If bStart Then
+            hRgnTemp = CreateRectRgn(lX, yStart, lX + 1, lHeight - 1 - y)
+            CombineRgn m_hRgn, hRgnTemp, m_hRgn, RGN_XOR
+            DeleteObject hRgnTemp
+            bStart = False
+         End If
+         lX = lX + 1
+      Next x
+      
+      CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+      
+   End If
+End Sub
+
+Public Function Save(ByVal sPath As String) As Boolean
+Dim iFile As Long
+Dim nBytes As Long
+Dim b() As Byte
+
+On Error GoTo ErrorHandler ' Out of memory
+
+   If Not m_hRgn = 0 Then
+      
+      nBytes = GetRegionData(m_hRgn, 0, ByVal 0&amp;)
+      If nBytes &gt; 0 Then
+         ReDim b(0 To nBytes - 1) As Byte
+         If nBytes = GetRegionData(m_hRgn, nBytes, b(0)) Then
+            On Error Resume Next ' Attempt to kill file
+            Kill sPath
+            On Error GoTo ErrorHandler ' Error handler checks for file error
+            iFile = FreeFile
+            Open sPath For Binary Access Write Lock Read As #iFile
+            Put #iFile, , b
+            Close #iFile
+            Save = True
+         Else
+            Err.Raise 26012, App.EXEName &amp; ".cDIBSectionRegion", "Unable to get
+             region data"
+         End If
+      Else
+         Err.Raise 26011, App.EXEName &amp; ".cDIBSectionRegion", "Unable to
+          determine size of region"
+      End If
+   Else
+      Err.Raise 26010, App.EXEName &amp; ".cDIBSectionRegion", "No region to save"
+   End If
+   Exit Function
+   
+ErrorHandler:
+Dim lErr As Long, sErr As String
+   lErr = Err.Number: sErr = Err.Description
+   If iFile &gt; 0 Then
+      Close #iFile
+   End If
+   Err.Raise lErr, App.EXEName &amp; ".cDIBSectionRegion", sErr
+   Exit Function
+End Function
+
+Public Function LoadFromFile(ByVal sFileName As String) As Boolean
+Dim iFile As Long
+Dim b() As Byte
+On Error GoTo ErrorHandler
+
+   iFile = FreeFile
+   Open sFileName For Binary Access Read Lock Write As #iFile
+   ReDim b(0 To LOF(iFile) - 1) As Byte
+   Get #iFile, , b
+   Close #iFile
+
+   LoadFromFile = pbLoadFromByteArray(b())
+   Exit Function
+
+ErrorHandler:
+Dim lErr As Long, sErr As String
+   lErr = Err.Number: sErr = Err.Description
+   If iFile &gt; 0 Then
+      Close #iFile
+   End If
+   Err.Raise lErr, App.EXEName &amp; ".cDIBSectionRegion", sErr
+   Exit Function
+End Function
+
+Public Function LoadFromResource(ByVal vID As Variant, Optional ByVal sDLL As
+ String = "") As Boolean
+Dim b() As Byte
+
+
+   If sDLL = "" Then
+      ' Local data
+      b = LoadResData(vID, 10)
+      LoadFromResource = pbLoadFromByteArray(b())
+   Else
+      Dim hMod As Long, hRes As Long, hGlobal As Long, lPtr As Long, lSize As
+       Long
+      Dim lID As Long, sID As String, lR As Long
+      
+      ' Load from external module, for data only:
+      hMod = LoadLibraryEx(sDLL, ByVal 0&amp;, LOAD_LIBRARY_AS_DATAFILE)
+      If Not hMod = 0 Then
+         If IsNumeric(vID) Then
+            sID = "#" &amp; CStr(vID)
+         End If
+         hRes = FindResource(hMod, ByVal sID, ByVal RT_RCDATA)
+         If Not hRes = 0 Then
+            lSize = SizeofResource(hMod, hRes)
+            hGlobal = LoadResource(hMod, hRes)
+            If Not hGlobal = 0 Then
+               lPtr = LockResource(hGlobal)
+               If Not lPtr = 0 Then
+                  ReDim b(0 To lSize - 1) As Byte
+                  CopyMemory b(0), ByVal lPtr, lSize
+                  LoadFromResource = pbLoadFromByteArray(b())
+               End If
+            Else
+               Err.Raise 26014, App.EXEName &amp; ".cDIBSectionRegion", "Cannot
+                access data for resource with ID " &amp; vID &amp; " could not be found"
+            End If
+         Else
+            Err.Raise 26014, App.EXEName &amp; ".cDIBSectionRegion", "Resource with
+             ID " &amp; vID &amp; " could not be found"
+         End If
+         lR = FreeLibrary(hMod)
+         Debug.Assert Not (lR = 0)
+         If Not lR = 0 Then
+            hMod = 0
+         End If
+      Else
+         Err.Raise 26013, App.EXEName &amp; ".cDIBSectionRegion", "Can't open DLL
+          for Resource Access"
+      End If
+   End If
+   Exit Function
+
+ErrorHandler:
+Dim lErr As Long, sErr As String
+   lErr = Err.Number: sErr = Err.Description
+   If Not hMod = 0 Then
+      lR = FreeLibrary(hMod)
+      Debug.Assert Not (lR = 0)
+   End If
+   Err.Raise lErr, App.EXEName &amp; ".cDIBSectionRegion", sErr
+   Exit Function
+End Function
+
+Private Function pbLoadFromByteArray(ByRef b() As Byte) As Boolean
+Dim dwCount As Long
+   
+   Destroy
+   dwCount = UBound(b) - LBound(b) + 1
+   m_hRgn = ExtCreateRegion(ByVal 0&amp;, dwCount, b(0))
+   pbLoadFromByteArray = Not (m_hRgn = 0)
+   
+End Function
+
+Private Sub Class_Terminate()
+   Destroy
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../../index.html">VB</a>&#160;.&#160;<a href="../../../../index.html">Code</a>&#160;.&#160;<a href="../../../index.html">Libraries</a>&#160;.&#160;<a href="../../index.html">Graphics and GDI</a>&#160;.&#160;<a href="../index.html">Changing Window Shapes</a>&#160;.&#160;<a href="article.html">Creating Window Shapes from Bitmaps</a>&#160;.&#160;<a href="Bitmap_Shape_Project_Files.html">Bitmap Shape Project Files</a>&#160;.&#160;cDIBSectionRegion.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Changing_Window_Shapes/Creating_Window_Shapes_from_Bitmaps/Bitmap_Shape_Project_Files_zip_cDIBSectionRegion_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:55 GMT -->
+</html>

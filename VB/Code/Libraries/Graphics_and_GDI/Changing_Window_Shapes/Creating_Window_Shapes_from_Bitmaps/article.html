@@ -1,0 +1,160 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Changing_Window_Shapes/Creating_Window_Shapes_from_Bitmaps/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:22:59 GMT -->
+<head>
+
+<title>vbAccelerator - Creating Window Shapes from Bitmaps</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="The Windows Shape article shows how to use the SetWindowRgn function 
+to apply a geometric region to a window using the GDI region creation functions. 
+However, beyond using a simple geometric region, things get difficult. How do you specify the exact 
+shape you want?This article demonstrates how to use a bitmap to create the Windows region for 
+completely unique forms and controls!" /><link rel="stylesheet" href="../../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../../index.html">VB</a>&#160;.&#160;<a href="../../../../index.html">Code</a>&#160;.&#160;<a href="../../../index.html">Libraries</a>&#160;.&#160;<a href="../../index.html">Graphics and GDI</a>&#160;.&#160;<a href="../index.html">Changing Window Shapes</a>&#160;.&#160;Creating Window Shapes from Bitmaps</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Bitmap_Shape_Project_Files.html"><img src="../../../../../../res/get.png" width="8" height="8" alt="Download Page" />Bitmap Shape Project Files</a> (37K)</p><br /><br /><img src="../../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2769</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2769&amp;type=Article&amp;title=Creating%20Window%20Shapes%20from%20Bitmaps">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../../res/update.png" width="8" height="8" alt="Update" />13 Aug 1999<br />First Posted</p><br /><br /><img src="../../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2946">Window Shapes Using Layering</a></p><p class="nav"><img src="../../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2522">Reading Data from Local or External Library Resources</a></p><br /><br /><img src="../../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Creating Window Shapes from Bitmaps</h1><p class="splash">Now complete control over window shape is yours - for all Win OS</p><img src="regfries.gif" width="247" height="138" alt="InkBlot Test - What Do You See?" /><p /><p>The Windows Shape article shows how to use the <i>SetWindowRgn</i> function 
+to apply a geometric region to a window using the GDI region creation functions. 
+However, beyond using a simple geometric region, things get difficult. How do you specify the exact 
+shape you want?</p><p>This article demonstrates how to use a bitmap to create the Windows region for 
+completely unique forms and controls!</p><h2>Using Bitmaps For Regions</h2><p>To a degree, VB allows you to do use Bitmaps to create Windows regions with UserControls 
+(using the <i>MaskPicture</i> and setting the misleadingly named <i>Transparent</i> setting for the 
+<i>BackStyle</i> property), but at a cost. The cost is performance - VB controls using these settings can 
+quickly become unusable. So much so there are even warnings in the Books OnLine against using the setting 
+if you use "... a complex bitmap".</p><p>An alternative which works on forms and other controls as well as VB UserControls is to use
+the <i>SetWindowsRgn</i> API to change the form shape.  However, the main difficulty with this
+is determining how to convert a bitmap into a region in the first place.  With the help of the 
+DIBSection code elsewhere on this site though, it isn't that tricky.</p><p>Note that determining a region from a Bitmap at runtime can lead to performance problems. If 
+you aren't a slave to VB's implementation, however, you can take the performance of complex region 
+code to new levels by precompiling your region data in files or resources. Sounds good? Then read on.</p><h2>Bitmap to Region</h2><p>The first part of this problem is how to create a region from a bitmap. To do this, you need to be able to do two things:</p><ol><li>Read the colours of the pixels of the bitmap to determine which ones should be transparent.</li><li>Remove transparent pixels from the region.</li></ol><p>To get at bitmap bits, I use a <i>DIBSection</i>. <i>DIBSections</i> are a GDI object 
+with two very useful properties:</p><ol><li>The bitmap data is stored as a Display Independent Bitmap (DIB), which means Windows will not 
+attempt to map colours for you, or dither any pixels.</li><li>The bitmap data is stored in Windows memory (rather than Graphics card memory), and 
+is therefore directly accessible to Windows programs for reading or modification.</li></ol><p>Once the bitmap is converted to a <i>DIBSection</i>, it is a simple matter to loop through 
+the pixel data and determine the colours. More information on reading data within a 
+<i>DIBSection</i> is given in the Image Processing samples at this site.</p><p>The next part is to convert the bitmap data to a Win32 region. This is achieved using 
+just two Win32 region functions: <i>CreateRectRgn</i> and <i>CombineRgn</i>. The <i>CombineRgn</i> function 
+is the powerful function in this instance. <i>CombineRgn</i> allows boolean operations to be used on 
+a pair of regions so they can be combined in many ways: where they both intersect (<i>RGN_AND</i>), where 
+either exists (<i>RGN_OR</i>), where either but not both exists (<i>RGN_XOR</i>) and so forth.</p><p>The simplified algorithm to set up the region from the bitmap is therefore:</p><pre>
+For x = 0 to Width
+  For y = 0 to Height
+    If Pixel(x,y) = Transparent Then
+      If Not bInTransparent Then
+        bInTransparent = True
+        yStartTransparent = y
+      End If
+    Else
+      If bInTransparent Then
+        ' Remove the transparent section from the region
+        hRgnTemp = CreateRectRgn(x,yStartTransparent,x+1,y)
+        CombineRgn hRgnOut, hRgnTemp, RGN_XOR
+        DeleteRgn hRgnTemp
+        bInTransparent = False
+      End If
+    End If
+  Next y
+  ' If last transparent section extends to the width of the bitmap, then remove it:
+  If bInTransparent Then
+   hRgnTemp = CreateRectRgn(x,yStartTransparent,x+1,y)
+    CombineRgn hRgnOut, hRgnTemp, RGN_XOR
+    DeleteRgn hRgnTemp
+    bInTransparent = False
+  End If
+Next x
+</pre><p>This algorithm attempts to improve performance compared to 
+the simple pixel by pixel algorithm by combining consecutive pixels in the y direction into 
+a single rectangle. Potentially there are more optimisations to be made (Can you think of one?) 
+Note that the real algorithm must also take into account that a <i>DIBSection</i> is flipped vertically
+in memory.</p><h2>From Region to High Performance</h2><p>So now we know how to create a region, however, if you experiment with the code you 
+will soon see that the time it takes to create your region at run-time is significant 
+if the source bitmap is large enough. If you need to work with an arbitrary bitmap at run-time 
+then you must live with this performance hit (perhaps you could run some sort of attract sequence whilst 
+the region create is running, similar to the way many Shockwave animations attempt to hide their 
+pathetic load times). However, if you know the bitmap in advance, you can create the region for 
+it almost instantaneously by loading precompiled region data in the form that GDI's region code wants it.</p><p>GDI provides a function <i>GetRegionData</i> to return a region's set-up information in native format, 
+and also an inverse function <i>ExtCreateRegion</i>. With a little modification to the VB API 
+viewer's declares for these functions, we can convert them into usable functions:</p><pre>
+Private Declare Function GetRegionData Lib "gdi32" ( _
+  ByVal hRgn As Long, ByVal dwCount As Long, lpRgnData As Any) As Long
+Private Declare Function ExtCreateRegion Lib "gdi32" ( _
+  lpXform As Any, ByVal nCount As Long, lpRgnData As Any) As Long
+</pre><p>Calling <i>GetRegionData</i> with the <i>dwCount</i> parameter set to zero and the <i>lpRgnData</i> parameter 
+set to <i>ByVal 0&amp;</i> returns the number of bytes of data required to hold the region data. Then you can 
+dimension a byte array to hold this number of bytes. To get the data into the array of bytes, you then set 
+<i>dwCount</i> to the number of bytes and pass a reference to the first byte of the array to the <i>lpRgnData</i>
+ parameter.</p><p>To create a region, you just set the <i>nCount</i> parameter to the size of the array and pass the byte 
+array back info <i>lpRgnData</i>. The <i>lpXform</i> parameter is an optional parameter which only works under 
+Windows NT/2000/XP. This allows you to rotate the region as it is created using a rotation matrix. 
+To ignore this parameter, pass in <i>ByVal 0&amp;</i>.</p><p>Since the region data is now stored in a byte array, you can easily save and 
+load it to a file or load it from a resource. See the article 
+<a href="http://www.vbaccelerator.com/article.asp?id=2522">Reading data from local or external library resources</a> for the details 
+of how to do this.</p><h2>Put it Into Use</h2><p>To use the code here, you need to incorporate two class libraries into your project:</p><ol><li><i>cDIBSection</i> - to allow creation of a DIBSection object to make the region from.</li><li><i>cDIBSectionRegion</i> - the region creation and managment class.</li></ol><h3>cDIBSection</h3><p>The use of cDIBSection is described elsewhere on this site, however the only methods 
+you will be interested in are the ones to create a bitmap to make your region from. These are:</p><ul><li><strong>CreateFromPicture</strong><br />
+Takes a StdPicture object and creates a DIBSection containing the same bitmap bits.</li><li><strong>Create</strong><br />
+Creates a DIBSection at the specified size. You can then use <i>LoadPictureBlt</i> to copy a bitmap 
+from another hDC into the <i>DIBSection</i>.</li></ul><p><strong>Tip</strong>: Don't use a JPG file to create a window region.</p><p>Whilst JPG files often have the smallest size, they are a generally a poor choice for 
+applications which need to create a mask (transparent) area. This is because JPG does 
+not preserve colour stability in an image. If you look close at a "black" area in a JPG file, 
+you will actually see that the pixels are all different, within around +/- 3 colour values of the actual value. 
+This effect becomes more pronounced (in scale as well as value) as the quality of the JPG file is reduced.</p><h3>cDIBSectionRegion</h3><p>Once you have a <i>cDIBSection</i> object containing the picture you want to create a bitmap from, 
+you can then use this class to create a region. The <i>cDIBSectionRegion</i> also contains methods to 
+save region data to disk and to load region data from a file or a resource.</p><ul><li><strong>Create</strong><br />
+Builds a region from a <i>cDIBSection</i> picture.</li><li><strong>Applied</strong><br />
+Gets/sets whether the current region is applied to the specified window handle.</li><li><strong>AppliedToCount</strong><br />
+Returns the number of windows the current region is applied to.</li><li><strong>hWndForIndex</strong><br />
+Returns the window handle the region is applied to at the specified index.</li><li><strong>Destroy</strong><br />
+Destroys the region, removing it from any window handle it is applied to.</li><li><strong>LoadFromFile</strong><br />
+Loads a region from a file previously created using the <i>Save</i> method.</li><li><strong>LoadFromResource</strong><br />
+Loads a region from a user-defined resource creating from the output of the <i>Save</i> method. 
+See the article <a href="http://www.vbaccelerator.com/article.asp?id=2522">Reading data from local or external library resources</a>
+for details on how to create the resource.</li><li><strong>Save</strong><br />
+Saves the current region to a file for subsequent use with the <i>LoadFromFile</i> and <i>LoadFromResource</i>
+functions</li></ul><h2>The End of the Beginning</h2><p>That's the end of arbitrary shaped windows under Win9x and NT. However, 
+Windows 2000 and above include a new way for creating windows of any shape, including windows with semi-transparent 
+(alpha-blended) regions and so on. These techniques are covered under the new Layered Windows API.  See the article
+<a href="http://www.vbaccelerator.com/article.asp?id=2946">Windows Shapes Using Layering</a> for details.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../../index.html">VB</a>&#160;.&#160;<a href="../../../../index.html">Code</a>&#160;.&#160;<a href="../../../index.html">Libraries</a>&#160;.&#160;<a href="../../index.html">Graphics and GDI</a>&#160;.&#160;<a href="../index.html">Changing Window Shapes</a>&#160;.&#160;Creating Window Shapes from Bitmaps</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 8 January 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Changing_Window_Shapes/Creating_Window_Shapes_from_Bitmaps/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:23:00 GMT -->
+</html>

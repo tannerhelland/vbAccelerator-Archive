@@ -1,0 +1,228 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Using_GDI_Plus/Reading_EXIF_and_Other_Image_Properties/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:36 GMT -->
+<head>
+
+<title>vbAccelerator - Reading EXIF and Other Image Properties Using GDI+</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Many digital cameras record information about when and how a picture was
+taken using the EXIF format (which is slowly becoming the DCF format under
+ISO).  You can read and write this information using GDI+; not just that
+but you can also read the image metadata from TIF and PNG files.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Using GDI Plus</a>&#160;.&#160;Reading EXIF and Other Image Properties Using GDI+</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="GDIPlus_EXIF_Tags.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />GDIPlus EXIF Tags</a> (18K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4581</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4581&amp;type=Article&amp;title=Reading%20EXIF%20and%20Other%20Image%20Properties%20Using%20GDI%2B">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:27 October 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />28 Mar 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4579">GDI+ Wrapper</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4588">GDI+ Type Library (GDIPlus.TLB)</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Reading EXIF and Other Image Properties Using GDI+</h1><p class="splash">Complete access to EXIF and TIFF Image tags.</p><img src="exifSample.png" width="543" height="394" alt="EXIF Tags Demonstration" /><p /><p>
+Many digital cameras record information about when and how a picture was
+taken using the EXIF format (which is slowly becoming the DCF format under
+ISO).  You can read and write this information using GDI+; not just that
+but you can also read the image metadata from TIF and PNG files.
+</p><h2>Getting Started</h2><p>
+As with the other GDI+ samples at the site, you'll need the <a href="http://www.vbaccelerator.com/article.asp?id=4579">GDIPlusWrapper</a>
+and the <a href="http://www.vbaccelerator.com/article.asp?id=4588">GDI+ Type Library</a> to run this sample.  The code also requires VB6.
+</p><h2>About EXIF Tags</h2><p>
+EXIF tags are an extension of the JPEG format used to store particular
+information about the make and model of a camera, when a picture was taken and
+digitised, information about the resolution of the image and things like
+the exposure time, focal length and whether a flash was used to take the
+photo.
+</p><p>
+if you're interested in the details of EXIF then read TsuruZoh Tachibanaya's
+<a href="http://www.ba.wakwak.com/~tsuruzoh/Computer/Digicams/exif-e.html">Description of Exif file format</a>
+which goes through most of the EXIF tags and exactly how they are stored.
+</p><p>
+GDI+ provides a <i>PropertyItem</i> class that contains details of meta-data
+associated with an image.  This covers all types of image meta-data, and not
+just EXIF, so you can also use it to investigate information stored in TIF
+and PNG files too.  
+</p><p>
+Meta-data and particularly EXIF tags have different storage formats defined
+to allow multiple types of data to be stored.  For example, the camera
+model is stored as ASCII, whilst the things like the focal length are
+stored as a series of rational (basically a fraction; one value stores
+the numerator and the other the denominator) value.
+</p><p>
+The GDI+ <i>PropertyItem</i>
+class shirks any responsibility for decoding this information and simply
+presents you with a pointer to an area of memory containing the data.
+This sample demonstrates how to decode the basic types and thus display 
+and use the information.
+</p><h2>Reading EXIF Tags</h2><p>
+The GDI+ Wrapper provides the following properties and methods as part of
+the <i>GDIPImage</i> class for reading and manipulating the EXIF tags
+and meta data of an Image:
+</p><ul><li><strong>PropertyCount</strong><br />
+Returns the total number of properties associated with an image.
+</li><li><strong>PropertyItem</strong><br />
+Returns a <i>GDIPPropertyItem</i> object for the property at the specified
+index.
+</li><li><strong>PropertyItemForID</strong><br />
+Returns a <i>GDIPPropertyItem</i> object for the property with the specified
+ID if it exists, or <i>Nothing</i> otherwise.  A complete list of all
+available IDs is provided in the <i>PropertyTag</i> enumeration of the
+GdiPlus Type Library.
+</li><li><strong>RemovePropertyItem</strong><br />
+Removes the property item with the specified id.
+</li><li><strong>SetPropertyItem</strong><br />
+Adds or updates a property item using the property item details passed in
+with the <i>GDIPPropertyItem</i> tag.
+</li></ul><p>
+The <i>GDIPPropertyItem</i> class provides methods to read and manipulate
+properties of an item.  A property item consists of an ID (one of the
+<i>PropertyTag</i> enumeration values, a Type (one of the <i>PropertyTagType</i>
+enumeration values), the Length (which is the total size of the binary data
+associated with the tag) and the data for the tag that is stored
+as a byte array.  The <i>Name</i> property provides a lookup between the
+item's ID and a text string specifying its name.
+</p><p>
+To make it easier to use the data, a number of helper methods are provided
+for interpreting the data.  The following table demonstrates how to
+use the helper methods to convert the byte data into a more usable form:
+</p><table class="article"><tr class="header" valign="top"><td><strong>Data Type</strong></td><td><strong>Method</strong></td><td><strong>Result</strong></td></tr><tr class="body" valign="top"><td><i>PropertyTagTypeASCII</i></td><td><i>ParseString</i></td><td>
+A VB string containing the data.
+</td></tr><tr class="body" valign="top"><td><i>PropertyTagTypeLong</i></td><td><i>ParseLong(ByVal lItem As Long)</i></td><td>
+A VB long containing the item at the 1-based index <i>lItem</i>.
+<i>lItem</i> must be greater than 0 and less than equal to the number
+of values associated with the property (use the <i>ValueCount</i>
+to get this.)
+</td></tr><tr class="body" valign="top"><td><i>PropertyTagShort</i></td><td><i>ParseShort(lItem)</i></td><td>
+An Integer containing the item at the 1-based index <i>lItem</i>.
+</td></tr><tr class="body" valign="top"><td><i>PropertyTagTypeRational</i></td><td><i>ParseRational(lItem)</i></td><td>
+A variant array containing two values for the item at the 1-based
+index <i>lItem</i>.  The first value contains the numerator of the
+fractional value, the second the denominator.
+</td></tr></table><p>
+With this information, you can now start working with the EXIF values.
+The code used in the sample to render the EXIT tags is as follows:
+</p><pre><font color="#3D4187">Private Sub </font><font color="#58596C">showEXIFTags(img </font><font color="#3D4187">As </font><font color="#58596C">GDIPImage)
+   </font><font color="#3D4187">Dim </font><font color="#58596C">i </font><font color="#3D4187">As Long
+   Dim </font><font color="#58596C">sItem </font><font color="#3D4187">As String
+   Dim </font><font color="#58596C">prop </font><font color="#3D4187">As </font><font color="#58596C">GDIPPropertyItem
+   </font><font color="#3D4187">Dim </font><font color="#58596C">j </font><font color="#3D4187">As Long
+   Dim </font><font color="#58596C">v </font><font color="#3D4187">As Variant
+   Dim </font><font color="#58596C">s </font><font color="#3D4187">As String
+   
+   For </font><font color="#58596C">i = </font><font color="#864F46">1 </font><font color="#3D4187">To </font><font color="#58596C">img.PropertyCount
+      </font><font color="#3D4187">Set </font><font color="#58596C">prop = img.PropertyItem(i)
+      sItem = prop.</font><font color="#3D4187">Name </font><font color="#58596C">&amp; </font><font color="#800000">" "
+      
+      </font><font color="#3D4187">Select Case </font><font color="#58596C">prop.ItemType
+      </font><font color="#3D4187">Case </font><font color="#58596C">PropertyTagTypeASCII
+         sItem = sItem &amp; prop.ParseString()
+         
+      </font><font color="#3D4187">Case </font><font color="#58596C">PropertyTagTypeRational, PropertyTagTypeSRational
+         </font><font color="#3D4187">For </font><font color="#58596C">j = </font><font color="#864F46">1 </font><font color="#3D4187">To </font><font color="#58596C">prop.ValueCount
+            </font><font color="#3D4187">If </font><font color="#58596C">(j &gt; </font><font color="#864F46">1</font><font color="#58596C">) </font><font color="#3D4187">Then
+               </font><font color="#58596C">sItem = sItem &amp; </font><font color="#800000">", "
+            </font><font color="#3D4187">End If
+            </font><font color="#58596C">v = prop.ParseRational(j)
+            sItem = sItem &amp; v(</font><font color="#864F46">1</font><font color="#58596C">) &amp; </font><font color="#800000">"/" </font><font color="#58596C">&amp; v(</font><font color="#864F46">2</font><font color="#58596C">)
+         </font><font color="#3D4187">Next </font><font color="#58596C">j
+         
+      </font><font color="#3D4187">Case </font><font color="#58596C">PropertyTagTypeLong
+         </font><font color="#3D4187">For </font><font color="#58596C">j = </font><font color="#864F46">1 </font><font color="#3D4187">To </font><font color="#58596C">prop.ValueCount
+            </font><font color="#3D4187">If </font><font color="#58596C">(j &gt; </font><font color="#864F46">1</font><font color="#58596C">) </font><font color="#3D4187">Then
+               </font><font color="#58596C">sItem = sItem &amp; </font><font color="#800000">", "
+            </font><font color="#3D4187">End If
+            </font><font color="#58596C">sItem = sItem &amp; prop.ParseLong(j)
+         </font><font color="#3D4187">Next </font><font color="#58596C">j
+
+      </font><font color="#3D4187">Case </font><font color="#58596C">PropertyTagTypeShort
+         </font><font color="#3D4187">For </font><font color="#58596C">j = </font><font color="#864F46">1 </font><font color="#3D4187">To </font><font color="#58596C">prop.ValueCount
+            </font><font color="#3D4187">If </font><font color="#58596C">(j &gt; </font><font color="#864F46">1</font><font color="#58596C">) </font><font color="#3D4187">Then
+               </font><font color="#58596C">sItem = sItem &amp; </font><font color="#800000">", "
+            </font><font color="#3D4187">End If
+            </font><font color="#58596C">sItem = sItem &amp; prop.ParseShort(j)
+         </font><font color="#3D4187">Next </font><font color="#58596C">j
+      
+      </font><font color="#3D4187">Case </font><font color="#58596C">PropertyTagTypeUndefined
+         </font><font color="#3D4187">ReDim </font><font color="#58596C">b(</font><font color="#864F46">0 </font><font color="#3D4187">To </font><font color="#58596C">prop.ValueCount - </font><font color="#864F46">1</font><font color="#58596C">) </font><font color="#3D4187">As Byte
+         </font><font color="#58596C">prop.GetData b
+         </font><font color="#3D4187">For </font><font color="#58596C">j = </font><font color="#864F46">1 </font><font color="#3D4187">To </font><font color="#58596C">prop.ValueCount - </font><font color="#864F46">1
+            </font><font color="#3D4187">If </font><font color="#58596C">(j &gt; </font><font color="#864F46">1</font><font color="#58596C">) </font><font color="#3D4187">Then
+               </font><font color="#58596C">sItem = sItem &amp; </font><font color="#800000">" "
+            </font><font color="#3D4187">End If
+            </font><font color="#58596C">s = </font><font color="#3D4187">Hex</font><font color="#58596C">(b(j - </font><font color="#864F46">1</font><font color="#58596C">))
+            </font><font color="#3D4187">If Len</font><font color="#58596C">(s) = </font><font color="#864F46">1 </font><font color="#3D4187">Then </font><font color="#58596C">s = </font><font color="#800000">"0" </font><font color="#58596C">&amp; s
+            sItem = sItem &amp; s
+         </font><font color="#3D4187">Next </font><font color="#58596C">j
+      
+      </font><font color="#3D4187">Case Else
+         </font><font color="#58596C">sItem = sItem &amp; prop.ItemType &amp; </font><font color="#800000">" " </font><font color="#58596C">&amp; prop.Length
+      </font><font color="#3D4187">End Select
+      </font><font color="#58596C">lstEXIFTags.AddItem sItem
+   </font><font color="#3D4187">Next </font><font color="#58596C">i
+</font><font color="#3D4187">End Sub
+
+</font></pre><p>
+Of course, there's more you can do to make this user friendly.  For
+example, the dates used for the time the photo was taken and digitised
+are provided in ISO format as a string. You can easily convert this
+to a <i>DateTime</i>:
+</p><pre><font color="#3D4187">Public Function </font><font color="#58596C">ISODateTimeToDate( _
+      ByVal isoDateTime </font><font color="#3D4187">As String </font><font color="#58596C">_
+   ) </font><font color="#3D4187">As Date
+Dim </font><font color="#58596C">dDate </font><font color="#3D4187">As Date
+   </font><font color="#58596C">dDate = </font><font color="#3D4187">DateSerial</font><font color="#58596C">( _
+         </font><font color="#3D4187">Mid</font><font color="#58596C">(isoDateTime, </font><font color="#864F46">1</font><font color="#58596C">, </font><font color="#864F46">4</font><font color="#58596C">), _
+         </font><font color="#3D4187">Mid</font><font color="#58596C">(isoDateTime, </font><font color="#864F46">6</font><font color="#58596C">, </font><font color="#864F46">2</font><font color="#58596C">), _
+         </font><font color="#3D4187">Mid</font><font color="#58596C">(isoDateTime, </font><font color="#864F46">9</font><font color="#58596C">, </font><font color="#864F46">2</font><font color="#58596C">)) + _
+      </font><font color="#3D4187">TimeSerial</font><font color="#58596C">( _
+         </font><font color="#3D4187">Mid</font><font color="#58596C">(isoDateTime, </font><font color="#864F46">12</font><font color="#58596C">, </font><font color="#864F46">2</font><font color="#58596C">), _
+         </font><font color="#3D4187">Mid</font><font color="#58596C">(isoDateTime, </font><font color="#864F46">15</font><font color="#58596C">, </font><font color="#864F46">2</font><font color="#58596C">), _
+         </font><font color="#3D4187">Mid</font><font color="#58596C">(isoDateTime, </font><font color="#864F46">18</font><font color="#58596C">, </font><font color="#864F46">2</font><font color="#58596C">))
+   ISODateTimeToDate = dDate
+</font><font color="#3D4187">End Function
+</font></pre><p>
+Another example is the Flash value (<i>PropertyTagExifFlash</i> = &amp;H9209&amp;).
+This is returned as an integer, but referring to the EXIF Tag Description
+document we see the available values are:
+</p><ul><li>0 - flash did not fire.</li><li>1 - flash fired.</li><li>5 - flash fired but strobe return light not detected.</li><li>7 - flash fired and strobe return light detected.</li></ul><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Using GDI Plus</a>&#160;.&#160;Reading EXIF and Other Image Properties Using GDI+</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Using_GDI_Plus/Reading_EXIF_and_Other_Image_Properties/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:37 GMT -->
+</html>

@@ -1,0 +1,391 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Explorer_Bar_Control/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:45:01 GMT -->
+<head>
+
+<title>vbAccelerator - vbAccelerator Explorer Bar Control</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+The vbAccelerator Explorer Bar control is a new control entirely 
+written in VB which provides a user interface like the one in
+Windows Explorer under XP.  You can use it to create handy lists
+of shortcuts and informational panels, or you can incorporate
+controls into the panels to provide flexible and configurable
+complex user interface panels.  The code allows you to use the
+inbuilt XP styles when available or to draw using an emulation
+otherwise.
+" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;vbAccelerator Explorer Bar Control</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Explorer_Bar_Control.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Explorer Bar Control</a> (63K)</p><p class="nav"><a href="VB5_ExplorerBar_Control_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ExplorerBar Control Demonstration</a> (83K)</p><p class="nav"><a href="VB5_ExplorerBar_Control_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ExplorerBar Control Full Source</a> (221K)</p><p /><p class="nav"><a href="VB6_Explorer_Bar_Control_Binary.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Explorer Bar Control Binary</a> (64K)</p><p class="nav"><a href="VB6_Explorer_Bar_Control_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Explorer Bar Control Demonstration</a> (81K)</p><p class="nav"><a href="VB6_Explorer_Bar_Control_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Explorer Bar Control Full Source</a> (221K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:12138</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12138&amp;type=Article&amp;title=vbAccelerator%20Explorer%20Bar%20Control">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 7 / 16</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 3 / 6</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:13 January 2004</p>
+<br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />15 Nov 2003<br /><p class="update">Added Watermark and Title Icon properties.</p><p class="update">Titlebars in Search mode can now wrap onto
+more than one line.</p><p class="update">Control can now be resized horizontally
+or vertically at runtime and items are wrapped correctly.</p><p class="update">Bug fixes: font property, Title background
+colour properties, MSVBVM50.DLL dependency, large number of
+items truncated, key navigation.  See the BugTrak for full
+details.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4091">Drawing with XP Visual Styles</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12140">vbAccelerator COM/VB Support Type Library (vbaCOM.Tlb)</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4590">Bitmap Extractor Utility</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2522">Reading Data from Local or External Library Resources</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator Explorer Bar Control</h1><p class="splash">Create highly customisable XP Style Explorer user interfaces on all versions of Windows</p><img src="expBar.png" width="479" height="431" alt="Explorer Bar Control in Action" /><p /><p>
+The vbAccelerator Explorer Bar control is a new control entirely 
+written in VB which provides a user interface like the one in
+Windows Explorer under XP.  You can use it to create handy lists
+of shortcuts and informational panels, or you can incorporate
+controls into the panels to provide flexible and configurable
+complex user interface panels.  The code allows you to use the
+inbuilt XP styles when available or to draw using an emulation
+otherwise.
+</p><h2>About the Demonstration</h2><p>
+The control demonstration includes three forms which demonstrate
+all the aspects of using the control.  The main form shows how
+to create an Explorer-style shortcut link bar, and demonstrates
+adding and removing items as well as using emulated mode and
+customising the colours.  The <span class="i">Search</span>
+demonstration form shows how to create an Explorer style Search
+interface complete with different search modes and customisation.
+Finally, the <span class="i">Media Search</span> form demonstrates how
+you might use the control to create a P2P search interface.
+</p><h2>Using the Control</h2><p>
+The Explorer bar itself has three modes of drawing, depending on
+which Windows version you're using and the setting of the 
+<span class="code">UseExplorerStyle</span> flag.  When the 
+<span class="code">UseExplorerStyle</span> flag is <span class="code">False</span>, 
+which is the default, the control will either draw using the 
+current XP theme's details, or will draw using the XP Window Classic
+style if no theme is in effect or you're running on an earlier version of
+Windows.  If the <span class="code">UseExplorerStyle</span> is set to 
+<span class="code">True</span> then the control draws using an emulated
+XP theme based on the current system colours.  You can also then customise
+the colours with your own choices for a specific appearance.
+</p><p>
+These different modes are illustrated below:
+</p><img src="expBarXpTheme.png" width="222" height="282" alt="Explorer Bar With XP Theme" /><p class="caption">Explorer Bar With XP Theme</p><img src="expBarClassic.png" width="222" height="275" alt="Explorer Bar in Classic Mode" /><p class="caption">Explorer Bar in Classic Mode</p><img src="expBarEmulated.png" width="221" height="274" alt="Explorer Bar in Emulated Mode with Custom Colours" /><p class="caption">Explorer Bar in Emulated Mode with Custom Colours</p><p>
+You can also decide whether each Bar in the control has its own distinct,
+separated box (the default), or whether all of the bars appear within the 
+same area with no spaces between them, like the XP Explorer Search mode using
+the <span class="code">Style</span> property.
+</p><table class="article"><tr class="body"><td><img src="expbarSearchMode.png" width="269" height="510" alt="Explorer Bar with Search Mode set" /><p class="caption">Style = eSearchStyle</p></td><td><img src="expbarNoSearchMode.png" width="269" height="511" alt="Explorer Bar in Default Mode" /><p class="caption">Style = eDefaultStyle</p></td></tr></table><p>
+Once the mode has been set, you can start working with the bars and items in the control.
+<span class="code">cExplorerBar</span> objects represent groupings of items in the control.
+These groupings normally have a title bar and can be expanded and collapsed by the user, 
+although this behaviour can be customised. <span class="code">cExplorerBarItem</span>
+objects represent items within the bars of the control.  Items can have one of three 
+different styles: they can either be <span class="i">links</span>, in which case they 
+appear underlined and can be clicked by the user, <span class="i">captions</span>
+in which case they purely display textual information or <span class="i">control place
+holders</span>, in which case the item can hold any control.
+</p><p>
+The control has a full object model to work with the bars and items, as shown in the
+diagram below:
+</p><img src="expBarObjectModel.png" width="270" height="250" alt="Explorer Bar Object model" /><p class="caption">Explorer Bar Control Object Model</p><h2>Working With Bars</h2><p>
+Bars are controlled through the control's <span class="i">Bars</span> property.  This property returns
+a <span class="code">cExplorerBars</span> collection object which allows you to manipulate the bars 
+in the control. These methods and properties are available through the collection:
+</p><ul><li><span class="code">Add</span><p>
+This method allows you to add or insert a new bar to the control.
+To insert a bar, specify the <span class="code">Index</span> property for the 
+bar to insert prior to, otherwise the bar will be added to the end of the
+existing bar collection.  In all cases you should specify a <span class="code">Key</span>
+for the bar, otherwise one will be generated by the control which you cannot 
+subsequently change.  Finally, you can also specify the 
+<span class="code">Title</span> of the bar at this point.  A reference
+to the newly added bar is returned.
+</p></li><li><span class="code">Item</span> (default)<br /><p>
+Gets a reference to the Bar in the collection with the specified 1-based
+index or key.
+</p></li><li><span class="code">Exists</span><br /><p>
+Returns <span class="code">True</span> if a Bar exists in the collection
+with the specified 1-based index or key.
+</p></li><li><span class="code">Remove</span><br /><p>
+Removes the bar with the specified 1-based index or key.
+</p></li><li><span class="code">Clear</span><br /><p>
+Clears all bars from the collection.
+</p></li></ul><p>
+Once a bar has been added, you can manipulate the properties
+of the bar itself.  The properties affecting a bar's appearance
+are listed below:
+</p><ul><li><span class="code">IsSpecial</span><p>
+Set this if the bar should be highlighted using the title bar colours or 
+not.  In Windows Explorer a special bar represents a special folder location
+such as "My Pictures" or "My Music".
+</p></li><li><span class="code">Title</span><p>
+Gets/sets the title of this bar.
+</p></li><li><span class="code">IconIndex</span><p>
+Gets/sets the 0-based index of an icon from the <span class="code">BarTitleImageList</span> to 
+draw for this bar.  Set to -1 to tell the control that no icon needs be drawn.
+</p></li><li><span class="code">ToolTipText</span><p>
+Gets/sets the text that will be displayed in a tooltip when the user hovers
+over the title of this bar, if any.
+</p></li><li><span class="code">TitleBackColorLight, TitleBackColorDark</span><p>
+If the control is running in Emulated mode (<span class="code">UseExplorerStyle = False</span>)
+then you can customise the colours of the title bar.  The title bar is drawn as
+a horizontal gradient from the <span class="i">Dark</span> to the <span class="i">Light</span>
+colour.  You should avoid having different colours for more than one type of bar
+(i.e. all bars with the same <span class="code">IsSpecial</span> setting should have 
+the same colours.  Set to -1 if you want the default colour.
+</p></li><li><span class="code">BackColor</span><p>
+Gets/sets the background colour of the bar.  Set to -1 if you want to use the default colour.
+The control's <span class="code">DefaultPanelColor</span> property returns the default colour
+for both special and normal bars.
+</p></li><li><span class="code">WatermarkPicture, WatermarkMode, WaterMarkHAlign, WaterMarkVAlign</span><p>
+Get and set properties to manipulate a Watermark image shown behind the items within the bar.
+By default, the control uses the <span class="code">eWaterMarkColourise</span> mode.  In this
+mode, the picture provided for the Watermark is colourised so that the top-left pixel of the
+picture is converted to the <span class="code">BackColor</span> of the control, and other
+pixels are lightened or darkened based on their relative luminance.  <span class="code">eWaterMarkDirect</span> allows you to display the Watermark image directly without
+manipulation.  The other two properties allow you to modify the positioning of the
+watermark within the bar.
+</p></li><li><span class="code">TitleFont</span><p>
+Gets/sets the font used to draw the title of the bar.  Set to <span class="code">Nothing</span> 
+if you want to use the default font (which is the System's Icon font)
+</p></li><li><span class="code">TitleForeColor, TitleForeColorOver</span><p>
+Gets/sets the colours used to draw the text in the title of the bar.  The <span class="i">Over</span>
+variant specifies the colour when the mouse is over the title.  Set either property to -1 to
+use the default colours.
+</p></li><li><span class="code">CanExpand</span><p>
+Gets/sets whether the bar can be expanded and collapsed or not.  The default value is
+<span class="code">True</span>.  When set to <span class="code">False</span> the bar
+is permanently expanded.
+</p></li><li><span class="code">State</span><p>
+Gets/sets whether the bar is expanded or collapsed.
+</p></li><li><span class="code">Key</span><p>
+Gets this bar's key. Read-only.
+</p></li><li><span class="code">Index</span><p>
+Get/sets the 1-based order of this bar in the control.
+</p></li><li><span class="code">ItemData, Tag</span><p>
+Properties for associating long values and strings with the bar.
+</p></li></ul><h2>Working With Items</h2><p>
+Items are controlled through a <span class="code">cExplorerBar</span> object's 
+<span class="i">Items</span> property.  
+This property returns a <span class="code">cExplorerBarItems</span> collection object which allows 
+you to manipulate the items in the bar using the same methods as for a bar (described earlier).
+The only difference is that when you add an item you can also optionally specify the icon and the
+style (<span class="code">ItemType</span>) of the item.
+</p><p>
+Properties and methods for working with an item in a bar are as follows:
+</p><ul><li><span class="code">ItemType</span><p>
+Gets/set the type of the item.  An item can be one of the following:
+<ul><li><span class="code">eItemLink</span><p>
+The default.  An item which highlights like a Hyperlink whilst the
+mouse is over, and can be clicked.
+</p></li><li><span class="code">eItemControlPlaceHolder</span><p>
+A textual label.  This type cannot be highlighted or clicked.
+</p></li><li><span class="code">eItemText</span><p>
+A placeholder for another ActiveX control.  The control is set using the <span class="code">Control</span>
+property.
+</p></li></ul></p></li><li><span class="code">Text</span><p>
+Gets/sets the text to show for this item.  Ignored if the item's 
+<span class="code">ItemType = eItemControlPlaceHolder</span>.
+</p></li><li><span class="code">IconIndex</span><p>
+Gets/sets the 0-based index of the icon to draw for this control.  Set to -1 to tell the control
+that no icon needs be drawn.
+</p></li><li><span class="code">ToolTipText</span><p>
+Gets/sets the text that will be displayed in a tooltip when the user hovers
+over this item.  Ignored if the item's 
+<span class="code">ItemType = eItemControlPlaceHolder</span>.
+</p></li><li><span class="code">Bold</span><p>
+Gets/sets whether the text for this item will be displayed in bold or not.
+</p></li><li><span class="code">SpacingAfter</span><p>
+Gets/sets the spacing after this item in the bar, specified in pixels.
+</p></li><li><span class="code">Control</span><p>
+Gets/sets the control associated with this item. Should only be used for
+items with <span class="code">ItemType = eItemControlPlaceHolder</span>.
+If the control you set is a VB <span class="i">PictureBox</span>, then 
+the control will automatically change its <span class="code">BackColor</span>
+to match the background colour of this item.  Note that the background
+colour can change, in which case the control will raise an event.
+See the section on Events below.
+</p></li><li><span class="code">TextColor, TextColorOver</span><p>
+Gets/sets the colours used to draw the text for this item.  The <span class="i">Over</span>
+variant specifies the colour when the mouse is over the item and the item has 
+<span class="code">ItemType = eItemLink</span>.  Set either property to -1 to
+use the default colours.
+</p></li><li><span class="code">CanClick</span><p>
+Gets/sets whether a click event will be raised when the item is clicked (only
+valid if the item has <span class="code">ItemType = eItemLink</span>).
+</p></li><li><span class="code">ItemData, Tag</span><p>
+Properties for associating long values and strings with the bar.
+</p></li></ul><h2>Events</h2><p>
+The control raises events for bar and item clicks, mouse-over
+highlighting and when the system colour settings change:
+</p><ul><li><span class="code">BarClick</span><p>
+Raised when a bar in the control is clicked.  This event is raised
+<span class="i">after</span> the control has completed expanding
+or collapsing, so you can use the bar's <i>State</i> property to 
+determine which state it is in.
+</p></li><li><span class="code">BarRightClick</span><p>
+Raised when the user right-clicks a bar in the control.
+</p></li><li><span class="code">ItemClick</span><p>
+Raised when an item in the control is clicked.
+</p></li><li><span class="code">ItemRightClick</span><p>
+Raised when the user right-clicks an item in the control.
+</p></li><li><span class="code">SettingChange</span><p>
+Raised when any of the global system settings (such as colours)
+change.  You can use this event to recolour any picture boxes in
+the control.
+</p></li></ul><h2>Notes</h2><h3>Limitations and Requirements</h3><p>
+Please note the limitations and requirements for the control:
+</p><ul><li>
+The control will fail if run under Windows 95 or NT4 unless
+<span class="code">UseExplorerStyle</span> is set <span class="code">True</span>.
+</li><li>
+Using the control in emulated mode with non-true colour systems is
+not recommended.
+</li><li>
+The Tab order for a control which contains child controls is incorrect.  
+This issue is being researched.  Any ideas about how to fix it would
+be most appreciated!
+</li></ul><h3>Other Notes</h3><p>
+The <span class="i">Redraw</span> property allows you to make changes to the content of the
+control without the control redrawing after each change.  This can greatly
+speed up removing and adding items to the control since each change does
+not cause the control to redraw.
+</p><h2>Implementing the Control</h2><p>
+The control presented here has the same fundamental window structure as the Windows version of 
+the control.  However, when I commenced on this project I believed that the control was drawn
+using the <a href="http://www.vbaccelerator.com/article.asp?id=4091">XP Theme API</a>.  It turns out this isn't entirely 
+the case.  The Media Explorer Bar uses this API to do some of its drawing (its probably that the
+Search Bar does too, because this appears in both Explorer and IE).  However, the bar that is 
+shown in Explorer when neither Search or Folders mode is in effect is not drawn using this API.
+</p><h3>Where Does Windows Keep The Graphics?</h3><p>
+A little look at the XP Theme directory reveals why this is.  It appears that Explorer's bar,
+whilst related to the other Explorer Bars, was a last minute hack to the theme and hence the
+rendering is not directly part of the XP Visual Style theme stuff.  If you look at 
+your XP themes directory (typically found at <span class="i">Windows\Resources\Themes\Luna</span>) 
+you'll see that the <span class="i">Luna</span> directory has a subdirectory called 
+<span class="i">Shell</span>.  This directory in turn contains three directories, each 
+containing a DLLs for one of the theme's different colour settings (at least, 
+this is true for the default Windows XP theme setup, if you have a 
+<a href="http://www.vbaccelerator.com/article.asp?id=11957">custom theme</a> then you 
+may have something different.  If this causes problems with the control then 
+<a href="mailto:steve@vbaccelerator.com">please write and tell me the problem plus
+how I can reproduce your setup</a>.)
+</p><p>
+Looking at these DLLs using the <a href="http://www.vbaccelerator.com/article.asp?id=4590">Bitmap Extractor Utility</a> 
+shows that these are the actual source of all images displayed in the Explorer bar.  This
+is a pain. It means that the Explorer Bar's rendering is <span class="i">not</span> accessible
+through <span class="i">UxTheme.DLL</span> calls, and so some reverse engineering is 
+required to draw the whole thing.
+</p><p>
+The first thing you can do (if you are running XP) is to find where the relevant 
+<span class="i">ShellStyle.DLL</span> resource utility can be found.  This is done by 
+interrogating the <span class="i">UxTheme.DLL</span> API for the current theme and
+colour set:
+</p><pre>
+Private Declare Function OpenThemeData Lib "uxtheme.dll" _
+   (ByVal hWnd As Long, ByVal pszClassList As Long) As Long
+Private Declare Function CloseThemeData Lib "uxtheme.dll" _
+   (ByVal hTheme As Long) As Long
+Private Declare Function GetCurrentThemeName Lib "uxtheme.dll" ( _
+    ByVal pszThemeFileName As Long, _
+    ByVal dwMaxNameChars As Long, _
+    ByVal pszColorBuff As Long, _
+    ByVal cchMaxColorChars As Long, _
+    ByVal pszSizeBuff As Long, _
+    ByVal cchMaxSizeChars As Long _
+   ) As Long
+
+...
+
+   hTheme = OpenThemeData(UserControl.hWnd, StrPtr("ExplorerBar"))
+   
+   If Not (hTheme = 0) Then
+      ReDim bThemeFile(0 To 260 * 2) As Byte
+      lPtrThemeFile = VarPtr(bThemeFile(0))
+      ReDim bColorName(0 To 260 * 2) As Byte
+      lPtrColorName = VarPtr(bColorName(0))
+      hRes = GetCurrentThemeName(lPtrThemeFile, 260, lPtrColorName, 260, 0, 0)
+      
+      sThemeFile = bThemeFile
+      iPos = InStr(sThemeFile, vbNullChar)
+      If (iPos &gt; 1) Then sThemeFile = left(sThemeFile, iPos - 1)
+      sColorName = bColorName
+      iPos = InStr(sColorName, vbNullChar)
+      If (iPos &gt; 1) Then sColorName = left(sColorName, iPos - 1)
+      
+      sShellStyle = sThemeFile
+      For iPos = Len(sThemeFile) To 1 Step -1
+         If (Mid(sThemeFile, iPos, 1) = "\") Then
+            sShellStyle = left(sThemeFile, iPos)
+            Exit For
+         End If
+      Next iPos
+      sShellStyle = sShellStyle &amp; "Shell\" &amp; sColorName &amp; "\shellstyle.dll"
+
+      ...
+
+      CloseThemeData hThem
+
+   End If
+
+</pre><p>
+Once that's done you can start loading the actual images themselves.  ShellStyle
+itself turns out to include both 256 bit images for the title bars themselves
+and 32 bit images with an alpha channel for the expand and collapse button
+images.  To ensure these are displayed correctly, the control uses the 
+<span class="code">LR_CREATEDIBSECTION</span> flag when calling 
+<span class="code">LoadImage</span> to read the images from the resource.  
+See the <a href="http://www.vbaccelerator.com/article.asp?id=4590">Bitmap Extractor Utility</a>
+and <a href="http://www.vbaccelerator.com/article.asp?id=2522">Reading Data from Local and External Resources</a>
+articles for more details on how to do this.
+</p><p>
+The remainder of the code for rendering the Explorer Bar has to all be custom
+code, since there's no assistance from the <span class="i">UxTheme</span>
+API to do this.  Essentially this means watching what Explorer does under
+various theme and colour settings and best emulating what's there.  This means
+that some of the colours do not entirely match the Explorer versions.  But they
+are generally visually pleasing (IMHO) and you can always use the emulation mode
+with your own colours if you disagree.  Note that under some XP themes there are
+some colours used in the Explorer Bar which theme with the bitmap used with
+the title bar: there is no API call to retreive these colours and the control can
+only use the system colour settings.  This means that the background colours for 
+the Silver theme look a little anaemic in emulated mode.  Any suggestions as to how
+to repair this would be interesting.
+</p><h2>Conclusion</h2><p>
+Despite lack of co-operation from Windows and VB, 
+this control implements an Explorer Bar which can be used on any OS to manage
+a series of links and/or controls in a neat graphical interface.  
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;vbAccelerator Explorer Bar Control</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 15 November 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Explorer_Bar_Control/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:45:07 GMT -->
+</html>

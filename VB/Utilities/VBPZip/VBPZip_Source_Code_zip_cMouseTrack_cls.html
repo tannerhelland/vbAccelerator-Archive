@@ -1,0 +1,455 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/VBPZip/VBPZip_Source_Code_zip_cMouseTrack_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:20:03 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cMouseTrack.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cMouseTrack.cls" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Visual Basic Project Zip Utility</a>&#160;.&#160;<a href="VBPZip_Source_Code.html">VBPZip Source Code</a>&#160;.&#160;cMouseTrack.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Info-ZIP_Unzip_DLL_(Renamed_vbuzip10_dll).html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />Info-ZIP Unzip DLL (Renamed vbuzip10.dll)</a> (63K)</p><p /><p class="nav"><a href="VBPZip_Source_Code.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VBPZip Source Code</a> (152K)</p><p class="nav"><a href="VBPZip_VB5_Executable.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VBPZip VB5 Executable</a> (69K)</p><p class="nav"><a href="VBPZip_VB6_Executable.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VBPZip VB6 Executable</a> (62K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2150</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2150&amp;type=Zip&amp;title=VBPZip%20Source%20Code%2Ezip%5FcMouseTrack">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:3 July 2003</p>
+<br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />3 Mar 2003<br /><p class="update">Previous version failed on Windows 2000 because the
+	version check in the NoStatusBar component was incorrect. Now fixed.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1426">Zipping files using the free Info-Zip Zip DLL (now with encryption support)</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1424">Introduction to the freeware Info-ZIP libraries</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cMouseTrack.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cMouseTrack"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+' 1. USER32 method:
+Private Const WM_MOUSEHOVER = &amp;H2A1&amp;
+Private Const WM_MOUSELEAVE = &amp;H2A3&amp;
+
+Private Const TME_HOVER = &amp;H1&amp;
+Private Const TME_LEAVE = &amp;H2&amp;
+Private Const TME_QUERY = &amp;H40000000
+Private Const TME_CANCEL = &amp;H80000000
+
+Private Const HOVER_DEFAULT = &amp;HFFFFFFFF
+
+Private Type tagTRACKMOUSEEVENT
+    cbSize As Long
+    dwFlags As Long
+    hwndTrack As Long
+    dwHoverTime As Long
+End Type
+
+Private Declare Function TrackMouseEvent Lib "user32" _
+   (lpEventTrack As tagTRACKMOUSEEVENT) As Long
+
+' 2. The COMCTL32.DLL Method:
+'// Declare _TrackMouseEvent.  This API tries to use the window manager's
+'// implementation of TrackMouseEvent if it is present, otherwise it emulates.
+Private Declare Function CCTrackMouseEvent Lib "COMCTL32.DLL" Alias
+ "_TrackMouseEvent" _
+   (lpEventTrack As tagTRACKMOUSEEVENT) As Long
+Private Const MK_LBUTTON = &amp;H1&amp;
+Private Const MK_RBUTTON = &amp;H2&amp;
+Private Const MK_SHIFT = &amp;H4&amp;
+Private Const MK_CONTROL = &amp;H8&amp;
+Private Const MK_MBUTTON = &amp;H10&amp;
+
+' 3 If ALL else fails, then use the work-around:
+Private Declare Function SetCapture Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function ReleaseCapture Lib "user32" () As Long
+Private Type RECT
+   Left As Long
+   Top As Long
+   Right As Long
+   Bottom As Long
+End Type
+Private Type POINTAPI
+   x As Long
+   y As Long
+End Type
+Private Declare Function ClientToScreen Lib "user32" (ByVal hwnd As Long,
+ lpPoint As POINTAPI) As Long
+Private Declare Function WindowFromPoint Lib "user32" (ByVal xPoint As Long,
+ ByVal yPoint As Long) As Long
+Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function PtInRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Long) As
+ Integer
+Private Const WM_MOUSEMOVE = &amp;H200
+Private Const WM_MOUSEUP = &amp;H200
+Private Const WM_ACTIVATE = &amp;H6
+Private Const WM_LBUTTONUP = &amp;H202
+Private Const WM_MBUTTONUP = &amp;H208
+Private Const WM_RBUTTONUP = &amp;H205
+
+' Version detection:
+' For OS:
+Private Type OSVERSIONINFO
+   dwOSVersionInfoSize As Long
+   dwMajorVersion As Long
+   dwMinorVersion As Long
+   dwBuildNumber As Long
+   dwPlatformID As Long
+   szCSDVersion As String * 128      '  Maintenance string for PSS usage
+End Type
+Private Declare Function GetVersionEx Lib "kernel32" Alias "GetVersionExA"
+ (lpVersionInformation As OSVERSIONINFO) As Long
+Private Const VER_PLATFORM_WIN32_NT = 2
+Private Const VER_PLATFORM_WIN32_WINDOWS = 1
+Private Const VER_PLATFORM_WIN32s = 0
+
+' For COMCTL32.DLL
+Private Const S_OK = &amp;H0
+Private Type DLLVERSIONINFO
+    cbSize As Long
+    dwMajor As Long
+    dwMinor As Long
+    dwBuildNumber As Long
+    dwPlatformID As Long
+End Type
+Private Declare Function LoadLibrary Lib "kernel32" Alias "LoadLibraryA" (ByVal
+ lpLibFileName As String) As Long
+Private Declare Function FreeLibrary Lib "kernel32" (ByVal hLibModule As Long)
+ As Long
+Private Declare Function GetProcAddress Lib "kernel32" (ByVal hModule As Long,
+ ByVal lpProcName As String) As Long
+Private Declare Function DllGetVersion Lib "comctl32" (pdvi As DLLVERSIONINFO)
+ As Long
+
+
+' Implementation:
+Implements ISubclass
+
+Public Event MouseHover(Button As MouseButtonConstants, Shift As
+ ShiftConstants, x As Single, y As Single)
+Public Event MouseLeave()
+
+Private m_bTracking As Boolean
+Private m_hWnd As Long
+Private m_hWndParent As Long
+Private m_bUseCC As Boolean
+Private m_bUseCapture As Boolean
+Public Enum EMouseTrackMethods
+   eMouseTrackDetect = -1
+   eMouseTrackUser32 = 0
+   eMouseTrackComCtl32 = 1
+   eMouseTrackWorkAround = 2
+End Enum
+Private m_eMethod As EMouseTrackMethods
+
+Private Sub pDetectMethod()
+Dim tVI As OSVERSIONINFO
+      
+   ' Default to use COMCTL32.DLL. (Requires IE4.0 or higher installed).
+   m_bUseCC = True
+   
+   ' Now we check for a window manager (user32.dll) implementation of
+   ' TrackMouseEvent.  We can rely on COMCTL32.DLL's version to use
+   ' the window manager's version directly, except IE4 may not be installed.
+   tVI.dwOSVersionInfoSize = Len(tVI)
+   If (GetVersionEx(tVI) &lt;&gt; 0) Then
+      ' NT4 or higher supports TrackMouseEvent in User32:
+      If (tVI.dwPlatformID = VER_PLATFORM_WIN32_NT) And (tVI.dwMajorVersion &gt;
+       3) Then
+         ' Using NT
+         m_bUseCC = False
+      ' Win98 or higher supports TrackMouseEvent in User32:
+      ElseIf (tVI.dwMajorVersion &gt;= 5) Then
+         ' Using 98
+         m_bUseCC = False
+      End If
+   End If
+   If (m_bUseCC) Then
+      Dim hMod As Long
+      Dim lR As Long
+      Dim lptrDLLVersion As Long
+      Dim tDVI As DLLVERSIONINFO
+      Dim bCC As Boolean
+      
+      hMod = LoadLibrary("comctl32.dll")
+      If (hMod &lt;&gt; 0) Then
+         lR = S_OK
+         '/*
+         ' You must get this function explicitly because earlier versions of
+          the DLL
+         ' don't implement this function. That makes the lack of implementation
+          of the
+         ' function a version marker in itself. */
+         lptrDLLVersion = GetProcAddress(hMod, "DllGetVersion")
+         If (lptrDLLVersion &lt;&gt; 0) Then
+            tDVI.cbSize = Len(tDVI)
+            lR = DllGetVersion(tDVI)
+            If (lR = S_OK) Then
+               If (tDVI.dwMajor &gt; 4) Then
+                  bCC = True
+               ElseIf (tDVI.dwMajor = 4) And (tDVI.dwMinor &gt; 70) Then
+                  bCC = True
+               End If
+            End If
+         End If
+         FreeLibrary hMod
+      End If
+      
+      If Not (bCC) Then
+         m_bUseCC = False
+         m_bUseCapture = True
+      End If
+   End If
+
+   If (m_bUseCC) Then
+      m_eMethod = eMouseTrackComCtl32
+   ElseIf (m_bUseCapture) Then
+      m_eMethod = eMouseTrackWorkAround
+   Else
+      m_eMethod = eMouseTrackUser32
+   End If
+
+End Sub
+Public Property Get Method() As EMouseTrackMethods
+   Method = m_eMethod
+End Property
+
+Public Sub AttachMouseTracking( _
+      objTo As Object, _
+      Optional ByVal eForceMethod As EMouseTrackMethods = eMouseTrackDetect _
+   )
+   
+   m_bUseCapture = False
+   m_bUseCC = False
+   
+   ' Check for tracking type if not forced:
+   If (eForceMethod = eMouseTrackDetect) Then
+      pDetectMethod
+   Else
+      Select Case eForceMethod
+      Case eMouseTrackWorkAround
+         m_bUseCapture = True
+      Case eMouseTrackComCtl32
+         m_bUseCC = True
+      End Select
+      m_eMethod = eForceMethod
+   End If
+   
+   ' Start subclassing for WM_MOUSEHOVER and WM_MOUSELEAVE
+   ' messages:
+   
+   DetachMouseTracking
+   m_hWnd = objTo.hwnd
+   If (m_hWnd &lt;&gt; 0) Then
+      If (m_bUseCapture) Then
+         AttachMessage Me, m_hWnd, WM_MOUSEMOVE
+         AttachMessage Me, m_hWnd, WM_LBUTTONUP
+         AttachMessage Me, m_hWnd, WM_MBUTTONUP
+         AttachMessage Me, m_hWnd, WM_RBUTTONUP
+         m_hWndParent = objTo.Parent.hwnd
+         AttachMessage Me, m_hWndParent, WM_ACTIVATE
+      Else
+         AttachMessage Me, m_hWnd, WM_MOUSEHOVER
+         AttachMessage Me, m_hWnd, WM_MOUSELEAVE
+      End If
+   End If
+   
+End Sub
+
+
+Public Sub StartMouseTracking()
+Dim tET As tagTRACKMOUSEEVENT
+Dim lR As Long
+
+On Error GoTo ErrorHandler
+
+   ' Tells Windows to start tracking the mouse over the specified
+   ' hWnd:
+
+   If Not (m_bTracking) Then
+      ' Tracking will stop whenever a WM_MOUSEHOVER or WM_MOUSELEAVE
+      ' event occurs.
+      tET.cbSize = Len(tET)
+      tET.dwFlags = TME_HOVER Or TME_LEAVE
+      tET.dwHoverTime = HOVER_DEFAULT
+      tET.hwndTrack = m_hWnd
+      If (m_bUseCC) Then
+         lR = CCTrackMouseEvent(tET)
+      ElseIf (m_bUseCapture) Then
+         SetCapture m_hWnd
+      Else
+         lR = TrackMouseEvent(tET)
+      End If
+      m_bTracking = True
+   End If
+   
+   Exit Sub
+
+ErrorHandler:
+   ' This occurs because the user has forced a method
+   ' which is not supported.  Raise error!
+   Err.Raise Err.Number, App.EXEName &amp; ".cMouseTrack", Err.Description
+   ' But don't allow this to get set...
+   m_bTracking = False
+   
+End Sub
+Public Sub DetachMouseTracking()
+
+   ' Stops subclassing for mouse tracking commands.
+   ' Called automatically when the class terminates.
+   If (m_hWnd &lt;&gt; 0) Then
+      If (m_bUseCapture) Then
+         ReleaseCapture
+         DetachMessage Me, m_hWnd, WM_MOUSEMOVE
+         DetachMessage Me, m_hWnd, WM_LBUTTONUP
+         DetachMessage Me, m_hWnd, WM_MBUTTONUP
+         DetachMessage Me, m_hWnd, WM_RBUTTONUP
+         If (m_hWndParent &lt;&gt; 0) Then
+            DetachMessage Me, m_hWndParent, WM_ACTIVATE
+         End If
+      Else
+         DetachMessage Me, m_hWnd, WM_MOUSEHOVER
+         DetachMessage Me, m_hWnd, WM_MOUSELEAVE
+      End If
+      m_hWnd = 0
+   End If
+   
+End Sub
+Public Property Get Tracking() As Boolean
+   ' Returns whether windows is tracking or not (it stops
+   ' everyime a WM_MOUSEHOVER or WM_MOUSELEAVE event is fired):
+   Tracking = m_bTracking
+End Property
+
+Private Sub Class_Initialize()
+   '
+End Sub
+
+Private Sub Class_Terminate()
+   ' Clear up subclass:
+   DetachMouseTracking
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As EMsgResponse)
+   '
+End Property
+
+Private Property Get ISubclass_MsgResponse() As EMsgResponse
+   ' Let Windows pre-process message:
+   ISubclass_MsgResponse = emrPreprocess
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+Dim x As Single, y As Single
+
+   ' Respond to WM_MOUSEHOVER and WM_MOUSELEAVE messages:
+   Select Case iMsg
+   ' ===============================================
+   ' To effect the TrackMouseEvent User32 or
+   ' Comctl32 methods:
+   Case WM_MOUSEHOVER
+      Dim Button As MouseButtonConstants
+      Dim Shift As ShiftConstants
+      
+      m_bTracking = False
+      If (wParam And MK_LBUTTON) = MK_LBUTTON Then
+         Button = Button Or vbLeftButton
+      End If
+      If (wParam And MK_RBUTTON) = MK_RBUTTON Then
+         Button = Button Or vbRightButton
+      End If
+      If (wParam And MK_MBUTTON) = MK_MBUTTON Then
+         Button = Button Or vbMiddleButton
+      End If
+      If (wParam And MK_CONTROL) = MK_CONTROL Then
+         Shift = Shift Or vbCtrlMask
+      End If
+      If (wParam And MK_SHIFT) = MK_SHIFT Then
+         Shift = Shift Or vbShiftMask
+      End If
+      x = lParam And &amp;HFFFF&amp;
+      y = lParam \ &amp;H10000
+      RaiseEvent MouseHover(Button, Shift, x, y)
+   Case WM_MOUSELEAVE
+      m_bTracking = False
+      RaiseEvent MouseLeave
+   ' ===============================================
+      
+   ' ===============================================
+   ' To effect the SetCapture/ReleaseCapture method:
+   Case WM_MOUSEMOVE, WM_LBUTTONUP, WM_RBUTTONUP, WM_MBUTTONUP
+      Dim tR As RECT, tP As POINTAPI
+      GetClientRect m_hWnd, tR
+      x = lParam And &amp;HFFFF&amp;
+      y = lParam \ &amp;H10000
+      tP.x = x
+      tP.y = y
+      ClientToScreen m_hWnd, tP
+      If (PtInRect(tR, x, y) = 0) Or (WindowFromPoint(tP.x, tP.y) &lt;&gt; m_hWnd)
+       Then
+         If (GetAsyncKeyState(vbKeyLButton) = 0) And
+          (GetAsyncKeyState(vbKeyMButton) = 0) And
+          (GetAsyncKeyState(vbKeyRButton) = 0) Then
+            m_bTracking = False
+            ReleaseCapture
+            RaiseEvent MouseLeave
+         End If
+      ElseIf (iMsg &lt;&gt; WM_MOUSEMOVE) Then
+         m_bTracking = False
+         StartMouseTracking
+      End If
+   
+   Case WM_ACTIVATE
+      If (m_bTracking) Then
+         m_bTracking = False
+         ReleaseCapture
+         RaiseEvent MouseLeave
+      End If
+   End Select
+   ' ===============================================
+   
+End Function
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Visual Basic Project Zip Utility</a>&#160;.&#160;<a href="VBPZip_Source_Code.html">VBPZip Source Code</a>&#160;.&#160;cMouseTrack.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/VBPZip/VBPZip_Source_Code_zip_cMouseTrack_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:20:03 GMT -->
+</html>

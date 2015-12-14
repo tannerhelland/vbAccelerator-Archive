@@ -1,0 +1,350 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Registry_and_Ini_Files/Easy_Ini_File_Access/cIniFile_Demonstration_Application_zip_CINIFILE_CLS.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:43 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: CINIFILE.CLS</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: CINIFILE.CLS" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Registry and Ini Files</a>&#160;.&#160;<a href="article.html">Easy INI File Access</a>&#160;.&#160;<a href="cIniFile_Demonstration_Application.html">cIniFile Demonstration Application</a>&#160;.&#160;CINIFILE.CLS</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="cIniFile_Class.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />cIniFile Class</a> (2K)</p><p class="nav"><a href="cIniFile_Demonstration_Application.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />cIniFile Demonstration Application</a> (25K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:12019</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12019&amp;type=Zip&amp;title=cIniFile%20Demonstration%20Application%2Ezip%5FCINIFILE">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />15 Jun 1998<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: CINIFILE.CLS</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cInifile"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+' =========================================================
+' Class:    cIniFile
+' Author:   Steve McMahon
+' Date  :   21 Feb 1997
+'
+' A nice class wrapper around the INIFile functions
+' Allows searching,deletion,modification and addition
+' of Keys or Values.
+'
+' Updated 10 May 1998 for VB5.
+'   * Added EnumerateAllSections method
+'   * Added Load and Save form position methods
+' =========================================================
+
+Private m_sPath As String
+Private m_sKey As String
+Private m_sSection As String
+Private m_sDefault As String
+Private m_lLastReturnCode As Long
+
+#If Win32 Then
+    ' Profile String functions:
+    Private Declare Function WritePrivateProfileString Lib "KERNEL32" Alias
+     "WritePrivateProfileStringA" (ByVal lpApplicationName As String, ByVal
+     lpKeyName As Any, ByVal lpString As Any, ByVal lpFileName As String) As
+     Long
+    Private Declare Function GetPrivateProfileString Lib "KERNEL32" Alias
+     "GetPrivateProfileStringA" (ByVal lpApplicationName As Any, ByVal
+     lpKeyName As Any, ByVal lpDefault As Any, ByVal lpReturnedString As
+     String, ByVal nSize As Long, ByVal lpFileName As String) As Long
+#Else
+    ' Profile String functions:
+    Private Declare Function WritePrivateProfileString Lib "Kernel" (ByVal
+     lpApplicationName As String, ByVal lpKeyName As Any, ByVal lpString As
+     Any, ByVal lpFileName As String) As Integer
+    Private Declare Function GetPrivateProfileString Lib "Kernel" (ByVal
+     lpApplicationName As String, ByVal lpKeyName As Any, ByVal lpDefault As
+     Any, ByVal lpReturnedString As String, ByVal nSize As Integer, ByVal
+     lpFileName As String) As Integer
+#End If
+
+Property Get LastReturnCode() As Long
+    LastReturnCode = m_lLastReturnCode
+End Property
+Property Get Success() As Boolean
+    Success = (m_lLastReturnCode &lt;&gt; 0)
+End Property
+Property Let Default(sDefault As String)
+    m_sDefault = sDefault
+End Property
+Property Get Default() As String
+    Default = m_sDefault
+End Property
+Property Let Path(sPath As String)
+    m_sPath = sPath
+End Property
+Property Get Path() As String
+    Path = m_sPath
+End Property
+Property Let Key(sKey As String)
+    m_sKey = sKey
+End Property
+Property Get Key() As String
+    Key = m_sKey
+End Property
+Property Let Section(sSection As String)
+    m_sSection = sSection
+End Property
+Property Get Section() As String
+    Section = m_sSection
+End Property
+Property Get Value() As String
+Dim sBuf As String
+Dim iSize As String
+Dim iRetCode As Integer
+
+    sBuf = Space$(255)
+    iSize = Len(sBuf)
+    iRetCode = GetPrivateProfileString(m_sSection, m_sKey, m_sDefault, sBuf,
+     iSize, m_sPath)
+    If (iSize &gt; 0) Then
+        Value = Left$(sBuf, iRetCode)
+    Else
+        Value = ""
+    End If
+
+End Property
+Property Let Value(sValue As String)
+Dim iPos As Integer
+    ' Strip chr$(0):
+    iPos = InStr(sValue, Chr$(0))
+    Do While iPos &lt;&gt; 0
+        sValue = Left$(sValue, (iPos - 1)) &amp; Mid$(sValue, (iPos + 1))
+        iPos = InStr(sValue, Chr$(0))
+    Loop
+    m_lLastReturnCode = WritePrivateProfileString(m_sSection, m_sKey, sValue,
+     m_sPath)
+End Property
+Public Sub DeleteKey()
+    m_lLastReturnCode = WritePrivateProfileString(m_sSection, m_sKey, 0&amp;,
+     m_sPath)
+End Sub
+Public Sub DeleteSection()
+    m_lLastReturnCode = WritePrivateProfileString(m_sSection, 0&amp;, 0&amp;, m_sPath)
+End Sub
+Property Get INISection() As String
+Dim sBuf As String
+Dim iSize As String
+Dim iRetCode As Integer
+
+    sBuf = Space$(8192)
+    iSize = Len(sBuf)
+    iRetCode = GetPrivateProfileString(m_sSection, 0&amp;, m_sDefault, sBuf, iSize,
+     m_sPath)
+    If (iSize &gt; 0) Then
+        INISection = Left$(sBuf, iRetCode)
+    Else
+        INISection = ""
+    End If
+
+End Property
+Property Let INISection(sSection As String)
+    m_lLastReturnCode = WritePrivateProfileString(m_sSection, 0&amp;, sSection,
+     m_sPath)
+End Property
+Property Get Sections() As String
+Dim sBuf As String
+Dim iSize As String
+Dim iRetCode As Integer
+
+    sBuf = Space$(8192)
+    iSize = Len(sBuf)
+    iRetCode = GetPrivateProfileString(0&amp;, 0&amp;, m_sDefault, sBuf, iSize, m_sPath)
+    If (iSize &gt; 0) Then
+        Sections = Left$(sBuf, iRetCode)
+    Else
+        Sections = ""
+    End If
+
+End Property
+Public Sub EnumerateCurrentSection(ByRef sKey() As String, ByRef iCount As Long)
+Dim sSection As String
+Dim iPos As Long
+Dim iNextPos As Long
+Dim sCur As String
+    
+    iCount = 0
+    Erase sKey
+    sSection = INISection
+    If (Len(sSection) &gt; 0) Then
+        iPos = 1
+        iNextPos = InStr(iPos, sSection, Chr$(0))
+        Do While iNextPos &lt;&gt; 0
+            sCur = Mid$(sSection, iPos, (iNextPos - iPos))
+            If (sCur &lt;&gt; Chr$(0)) Then
+                iCount = iCount + 1
+                ReDim Preserve sKey(1 To iCount) As String
+                sKey(iCount) = Mid$(sSection, iPos, (iNextPos - iPos))
+                iPos = iNextPos + 1
+                iNextPos = InStr(iPos, sSection, Chr$(0))
+            End If
+        Loop
+    End If
+End Sub
+Public Sub EnumerateAllSections(ByRef sSections() As String, ByRef iCount As
+ Long)
+Dim sIniFile As String
+Dim iPos As Long
+Dim iNextPos As Long
+Dim sCur As String
+    
+    iCount = 0
+    Erase sSections
+    sIniFile = Sections
+    If (Len(sIniFile) &gt; 0) Then
+        iPos = 1
+        iNextPos = InStr(iPos, sIniFile, Chr$(0))
+        Do While iNextPos &lt;&gt; 0
+            If (iNextPos &lt;&gt; iPos) Then
+                sCur = Mid$(sIniFile, iPos, (iNextPos - iPos))
+                iCount = iCount + 1
+                ReDim Preserve sSections(1 To iCount) As String
+                sSections(iCount) = sCur
+            End If
+            iPos = iNextPos + 1
+            iNextPos = InStr(iPos, sIniFile, Chr$(0))
+        Loop
+    End If
+
+End Sub
+Public Sub SaveFormPosition(ByRef frmThis As Object)
+Dim sSaveKey As String
+Dim sSaveDefault As String
+On Error GoTo SaveError
+    sSaveKey = Key
+    If Not (frmThis.WindowState = vbMinimized) Then
+        Key = "Maximised"
+        Value = (frmThis.WindowState = vbMaximized) * -1
+        If (frmThis.WindowState &lt;&gt; vbMaximized) Then
+            Key = "Left"
+            Value = frmThis.Left
+            Key = "Top"
+            Value = frmThis.Top
+            Key = "Width"
+            Value = frmThis.Width
+            Key = "Height"
+            Value = frmThis.Height
+        End If
+    End If
+    Key = sSaveKey
+    Exit Sub
+SaveError:
+    Key = sSaveKey
+    m_lLastReturnCode = 0
+    Exit Sub
+End Sub
+Public Sub LoadFormPosition(ByRef frmThis As Object, Optional ByRef lMinWidth =
+ 3000, Optional ByRef lMinHeight = 3000)
+Dim sSaveKey As String
+Dim sSaveDefault As String
+Dim lLeft As Long
+Dim lTOp As Long
+Dim lWidth As Long
+Dim lHeight As Long
+On Error GoTo LoadError
+    sSaveKey = Key
+    sSaveDefault = Default
+    Default = "FAIL"
+    Key = "Left"
+    lLeft = CLngDefault(Value, frmThis.Left)
+    Key = "Top"
+    lTOp = CLngDefault(Value, frmThis.Top)
+    Key = "Width"
+    lWidth = CLngDefault(Value, frmThis.Width)
+    If (lWidth &lt; lMinWidth) Then lWidth = lMinWidth
+    Key = "Height"
+    lHeight = CLngDefault(Value, frmThis.Height)
+    If (lHeight &lt; lMinHeight) Then lHeight = lMinHeight
+    If (lLeft &lt; 4 * Screen.TwipsPerPixelX) Then lLeft = 4 *
+     Screen.TwipsPerPixelX
+    If (lTOp &lt; 4 * Screen.TwipsPerPixelY) Then lTOp = 4 * Screen.TwipsPerPixelY
+    If (lLeft + lWidth &gt; Screen.Width - 4 * Screen.TwipsPerPixelX) Then
+        lLeft = Screen.Width - 4 * Screen.TwipsPerPixelX - lWidth
+        If (lLeft &lt; 4 * Screen.TwipsPerPixelX) Then lLeft = 4 *
+         Screen.TwipsPerPixelX
+        If (lLeft + lWidth &gt; Screen.Width - 4 * Screen.TwipsPerPixelX) Then
+            lWidth = Screen.Width - lLeft - 4 * Screen.TwipsPerPixelX
+        End If
+    End If
+    If (lTOp + lHeight &gt; Screen.Height - 4 * Screen.TwipsPerPixelY) Then
+        lTOp = Screen.Height - 4 * Screen.TwipsPerPixelY - lHeight
+        If (lTOp &lt; 4 * Screen.TwipsPerPixelY) Then lTOp = 4 *
+         Screen.TwipsPerPixelY
+        If (lTOp + lHeight &gt; Screen.Height - 4 * Screen.TwipsPerPixelY) Then
+            lHeight = Screen.Height - lTOp - 4 * Screen.TwipsPerPixelY
+        End If
+    End If
+    If (lWidth &gt;= lMinWidth) And (lHeight &gt;= lMinHeight) Then
+        frmThis.Move lLeft, lTOp, lWidth, lHeight
+    End If
+    Key = "Maximised"
+    If (CLngDefault(Value, 0) &lt;&gt; 0) Then
+        frmThis.WindowState = vbMaximized
+    End If
+    Key = sSaveKey
+    Default = sSaveDefault
+    Exit Sub
+LoadError:
+    Key = sSaveKey
+    Default = sSaveDefault
+    m_lLastReturnCode = 0
+    Exit Sub
+End Sub
+Public Function CLngDefault(ByVal sString As String, Optional ByVal lDefault As
+ Long = 0) As Long
+Dim lR As Long
+On Error Resume Next
+    lR = CLng(sString)
+    If (Err.Number &lt;&gt; 0) Then
+        CLngDefault = lDefault
+    Else
+        CLngDefault = lR
+    End If
+End Function
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Registry and Ini Files</a>&#160;.&#160;<a href="article.html">Easy INI File Access</a>&#160;.&#160;<a href="cIniFile_Demonstration_Application.html">cIniFile Demonstration Application</a>&#160;.&#160;CINIFILE.CLS</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 28 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Registry_and_Ini_Files/Easy_Ini_File_Access/cIniFile_Demonstration_Application_zip_CINIFILE_CLS.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:43 GMT -->
+</html>

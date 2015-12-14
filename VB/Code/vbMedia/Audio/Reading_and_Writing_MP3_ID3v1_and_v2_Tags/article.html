@@ -1,0 +1,127 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/Reading_and_Writing_MP3_ID3v1_and_v2_Tags/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:12 GMT -->
+<head>
+
+<title>vbAccelerator - Reading and Writing MP3 ID3v1 and ID3v2 Tags</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This article describes the MP3 ID3v1 and ID3v2 tags and provides a sample application which can 
+read and write both types from MP3 files, along with two reusable classes wrapping up the
+tag functionality." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;Reading and Writing MP3 ID3v1 and ID3v2 Tags</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="MP3_ID3_Tags_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />MP3 ID3 Tags Code</a> (41K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3490</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3490&amp;type=Article&amp;title=Reading%20and%20Writing%20MP3%20ID3v1%20and%20ID3v2%20Tags">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />15 Apr 2004<br /><p class="update">Fixed incorrect download - the ID3v1 tag class incorrectly contained the code
+for the ID3v2 tags...</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Reading and Writing MP3 ID3v1 and ID3v2 Tags</h1><p class="splash">Two classes to simplify MP3 Tag handling</p><img src="mp3Tag.png" width="245" height="221" alt="Tag Reader/Writer Sample Application" /><p /><p>This article describes the MP3 ID3v1 and ID3v2 tags and provides a sample application which can 
+read and write both types from MP3 files, along with two reusable classes wrapping up the
+tag functionality.</p><h2>About MP3 Tags</h2><p>The MP3 file standard includes specifications for tags, known as ID3 tags, which
+allow you to store information within the MP3 file about the track's title, artist and so on. 
+If you're running Windows XP, you will see that there is a Shell Extension to 
+read these tags, which allows you to read the tags in the Properties dialog for the file,
+or to see them in Explorer.</p><p>There are two types of MP3 tags: the v1 original version, which is rather limited, and 
+the v2 tags, which are much more sophisticated.</p><h3>ID3v1 Tags</h3><p>The ID3v1 tag is found at the end of an MP3 file and has a fixed number of fields and size.
+The structure of the tag is as follows:</p><pre>
+Private Type MP3ID3V1Tag
+  Tag As String * 3           '-- 03 = "TAG"
+  Title As String * 30        '-- 33
+  Artist As String * 30       '-- 63
+  Album As String * 30        '-- 93
+  Year As String * 4          '-- 97
+  Comment As String * 30      '-- 127
+  Genre As Byte               '-- 128
+End Type
+</pre><p>Note that v1.1 of the ID3v1 specification allows the last two bytes of the Comment tag
+to be used to store the track number.  Byte 29 is always set to 0 in this case, and Byte 30
+stores the track number itself.</p><p>Checking if an MP3 file contains an ID3v1 tag is a simple matter of rewinding 128 bytes from the
+end and checking if the bytes read "TAG".  If they do, then the rest of the bytes are the tag
+itself.  Reading and writing the tag is simple: if its already there, then you just fill in the
+structure and then write it over the last 128 bytes of the file.  If the tag isn't there, then
+just append a structure to the end of the file.</p><p>For information, a list of known Genre bytes is given at the end of this article.</p><p>The <span class="i">cMP3ID3v1</span> class provided with the download provides a wrapper for reading and
+writing this tag.  Properties and methods are:</p><ul><li><span class="code">MP3File</span> - Gets/sets the MP3 file to work on.</li><li><span class="code">HasID3v1Tag</span> - True if the MP3 file has an ID3v1 Tag, False otherwise.</li><li><span class="code">Title</span> - Gets/sets the title.  Use <span class="code">Update</span> to save to the file.</li><li><span class="code">Album</span> - Gets/sets the album.  Use <span class="code">Update</span> to save to the file.</li><li><span class="code">Year</span>  - Gets/sets the year.  Use <span class="code">Update</span> to save to the file.</li><li><span class="code">Genre</span> - Gets/sets the genre.  Use <span class="code">Update</span> to save to the file.</li><li><span class="code">GenreName(genre As Byte)</span> - Gets the genre name for the specified byte.</li><li><span class="code">Comments</span>  - Gets/sets the comment.  Use <span class="code">Update</span> to save to the file.</li><li><span class="code">Track</span> - Gets/sets the track number.  Use <span class="code">Update</span> to save to the file.</li><li><span class="code">Update</span> - Updates the MP3 file with the current values.</li></ul><p>All fields will be truncated so they are no longer than the length allowed in 
+the structure prior to saving.</p><h3>ID3v2 Tags</h3><p>The ID3v2 tag is more flexible and hence more difficult to work with.  An ID3v2 tag has
+a signature code of "ID3x" where x is the sub-version number of the tag.  Typically ID3v2
+tags are found at the beginning of an MP3 file but this is not an absolute restriction.
+What happens next depends on the subversion of the ID3v2 tag.  As far as I can tell, there
+have been three versions so far: 2,3 and 4.</p><p>Following the ID3v2 signature there are two reserved bytes and then 4 bytes containing the
+size of the ID3v2 tag.  Note that all sizes appear in the opposite byte-order to Win32, so
+to read the actual length you need to swap the byte order.  Once the size has been determined 
+then anywhere after the header until the end of the tag there can be an ID3v2 tag Frame.  The
+structure of a Frame header depends on the sub-version of ID3v2, but always encodes the
+name of the frame followed by its length in bytes and optionally some padding:
+</p><ul><li><strong>ID3v2 subversion 2 Frame header</strong><pre>
+Private Type ID3V22HDR
+   frameName1 As String * 3      ' 3
+   frameSize1 As Byte            ' 4
+   frameSize2 As Byte            ' 5
+   frameSize3 As Byte            ' 6
+End Type
+</pre></li><li><strong>ID3v2 subversion 3 or 4 Frame header</strong>
+Private Type ID3V23HDR
+   sFrameName As String * 4      ' 4
+   lSize As Long                 ' 8
+   bPad1 As Byte                 ' 10
+   bPad2 As Byte                 ' 12
+End Type
+</li></ul><p>
+Typical frame names used in the more modern ID3v2 tags are as follows (with the
+subversion 2 equivalent in brackets afterwards where I've found details):
+</p><ul><li><i>PCNT</i> - Play counter</li><li><i>TRCK</i> - Track (ID3v2.2: TRK)</li><li><i>TENC</i> - Encoded by (ID3v2.2: TEN)</li><li><i>WXXX</i> - Link to</li><li><i>TCOP</i> - Copyright</li><li><i>TOPE</i> - Original artist</li><li><i>TCOM</i> - Composer</li><li><i>TCON</i> - Genre (ID3v2.2: TCO)</li><li><i>COMM</i> - Comment (ID3v2.2: COM)</li><li><i>TYER</i> - Year (ID3v2.2: TYE)</li><li><i>TIT2</i> - Title (ID3v2.2: TT2)</li><li><i>TRCK</i> - Track number (ID3v2.2: TRK)</li><li><i>TPE1</i> - Artist (ID3v2.2: TP1)</li><li><i>TALB</i> - Album (ID3v2.2: TAL)</li><li><i>WOAF</i> - Audio URL</li><li><i>WOAR</i> - Artist URL</li><li><i>WCOM</i> - Buy URL</li><li><i>USLT</i> - Lyrics</li></ul><p>It is possible to have more than one of each tag.  For example, the <i>COMM</i> frame
+is used in MusicMatch to allow you tag Preferences, Notes, Bios, Moods, Tempos and other such
+trivial information.  A different <i>COMM</i> frame is written out for each of these with 
+the data within the <i>COMM</i> frames divided into a header (such as MusicMatch_Bio) followed
+by a null character and then the data.</p><p>Clearly it is more difficult to read and write this member. If the file doesn't contain
+an ID3v2 tag, or the ID3v2 is too short for the new data, then the MP3 data has to be shifted
+up until it can be read in the result.  I also noted that when writing some text frames,
+an additional null character is needed prior to the text otherwise the data isn't read 
+correctly.  The frames affected are Lyrics (USLT), Comments (COMM) and LinkTo (WXXX).</p><p>The <i>cMP3ID3v2</i> class provided with the download wraps up reading and writing this tag.
+There are two ways of using the class.  For access to any of the standard frames given above,
+there are corresponding Property Gets/Lets.  This does not allow you to create multiple <i>COMM</i>
+frames, though, so you can also work directly with the collection of frames.</p><h3>File Properties and Methods</h3><ul><li><span class="code">MP3File</span> - Gets/sets the MP3 file to work on.</li><li><span class="code">HasID3v2Tag</span> - True if the MP3 file has an ID3v2 Tag, False otherwise.</li><li><span class="code">Update</span> - Updates the MP3 file with the current values.</li></ul><h3>Standard Tag Properties and Methods</h3><p>Setting any of these properties will mean there will be only one occurrence of 
+the relevant frame.  For example, if you set the <span class="code">Comments</span> property on 
+an MP3 file that had multiple <span class="i">COMM</span> frames, the old <span class="i">COMM</span> frames
+are cleared and replaced with the new comment.</p><ul><li><span class="code">Title</span> - Gets/sets the title.</li><li><span class="code">Album</span> - Gets/sets the album.</li><li><span class="code">Year</span>  - Gets/sets the year.</li><li><span class="code">Comments</span>  - Gets/sets the comment.  Use <span class="code">Update</span> to save to the file.</li><li><span class="code">Genre</span> - Gets/sets the genre byte.</li><li><span class="code">GenreName(genre As Byte)</span> - Gets the genre name for the specified byte.</li><li><span class="code">OtherGenreName</span> - Gets sets the genre name.</li><li><span class="code">Track</span> - Gets/sets the track number.</li><li><span class="code">Copyright</span> - Gets/sets the copyright.</li><li><span class="code">OriginalArtist</span> - Gets/sets the original artist.</li><li><span class="code">LinkTo</span> - Gets/sets the LinkTo URL.</li><li><span class="code">Lyrics</span> - Gets/sets the lyrics.</li><li><span class="code">EncodedBy</span> - Gets/sets the encoder.</li><li><span class="code">ArtistURL</span> - Gets/sets the artist URL.</li><li><span class="code">BuyURL</span> - Gets/sets the Buy URL.</li><li><span class="code">AudioURL</span> - Gets/sets the Audio URL.</li></ul><h3>Frame Collection Properties and Methods</h3><ul><li><span class="code">FrameCount</span> - Number of frames in the tag.</li><li><span class="code">Frame(index)</span> - Gets the frame name (e.g. "COMM") for the specified frame index.</li><li><span class="code">RemoveFrame(frame)</span> - Removes all the frames with the specified name (e.g. "COMM") or frame index.</li><li><span class="code">TagsInFrame(frame)</span> - Returns the number of actual occurrences of the specified frame.</li><li><span class="code">AddTag(frame, tag)</span> - Adds a new instance of the specified frame.</li><li><span class="code">RemoveTag(frame, tagIndex)</span> - Removes the specified instance of a frame.</li></ul><h2>Genre Bytes</h2><ul><li><i> 34</i>: Acid</li><li><i> 74</i>: Acid Jazz</li><li><i> 73</i>: Acid Punk</li><li><i> 99</i>: Acoustic</li><li><i> 40</i>: Alt.Rock</li><li><i> 20</i>: Alternative</li><li><i> 26</i>: Ambient</li><li><i> 145</i>: Anime</li><li><i> 90</i>: Avant Garde</li><li><i> 116</i>: Ballad</li><li><i> 41</i>: Bass</li><li><i> 135</i>: Beat</li><li><i> 85</i>: Bebob</li><li><i> 96</i>: Big Band</li><li><i> 138</i>: Black Metal</li><li><i> 89</i>: Blue Grass</li><li><i> 0</i>: Blues</li><li><i> 107</i>: Booty Bass</li><li><i> 132</i>: Brit Pop</li><li><i> 65</i>: Cabaret</li><li><i> 88</i>: Celtic</li><li><i> 104</i>: Chamber Music</li><li><i> 102</i>: Chanson</li><li><i> 97</i>: Chorus</li><li><i> 136</i>: Christian Gangsta Rap</li><li><i> 61</i>: Christian Rap</li><li><i> 141</i>: Christian Rock</li><li><i> 1</i>: Classic Rock</li><li><i> 32</i>: Classical</li><li><i> 112</i>: Club</li><li><i> 128</i>: Club - House</li><li><i> 57</i>: Comedy</li><li><i> 140</i>: Contemporary Christian</li><li><i> 2</i>: Country</li><li><i> 139</i>: Crossover</li><li><i> 58</i>: Cult</li><li><i> 3</i>: Dance</li><li><i> 125</i>: Dance Hall</li><li><i> 50</i>: Darkwave</li><li><i> 22</i>: Death Metal</li><li><i> 4</i>: Disco</li><li><i> 55</i>: Dream</li><li><i> 127</i>: Drum &amp; Bass</li><li><i> 122</i>: Drum Solo</li><li><i> 120</i>: Duet</li><li><i> 98</i>: Easy Listening</li><li><i> 52</i>: Electronic</li><li><i> 48</i>: Ethnic</li><li><i> 54</i>: Eurodance</li><li><i> 124</i>: Euro - House</li><li><i> 25</i>: Euro - Techno</li><li><i> 84</i>: Fast Fusion</li><li><i> 80</i>: Folk</li><li><i> 81</i>: Folk / Rock</li><li><i> 115</i>: Folklore</li><li><i> 119</i>: Freestyle</li><li><i> 5</i>: Funk</li><li><i> 30</i>: Fusion</li><li><i> 36</i>: Game</li><li><i> 59</i>: Gangsta Rap</li><li><i> 126</i>: Goa</li><li><i> 38</i>: Gospel</li><li><i> 49</i>: Gothic</li><li><i> 91</i>: Gothic Rock</li><li><i> 6</i>: Grunge</li><li><i> 79</i>: Hard Rock</li><li><i> 129</i>: Hardcore</li><li><i> 137</i>: Heavy Metal</li><li><i> 7</i>: Hip Hop</li><li><i> 35</i>: House</li><li><i> 100</i>: Humour</li><li><i> 131</i>: Indie</li><li><i> 19</i>: Industrial</li><li><i> 33</i>: Instrumental</li><li><i> 46</i>: Instrumental Pop</li><li><i> 47</i>: Instrumental Rock</li><li><i> 8</i>: Jazz</li><li><i> 29</i>: Jazz - Funk</li><li><i> 146</i>: JPop</li><li><i> 63</i>: Jungle</li><li><i> 86</i>: Latin</li><li><i> 71</i>: Lo - fi</li><li><i> 45</i>: Meditative</li><li><i> 142</i>: Merengue</li><li><i> 9</i>: Metal</li><li><i> 77</i>: Musical</li><li><i> 82</i>: National Folk</li><li><i> 64</i>: Native American</li><li><i> 133</i>: Negerpunk</li><li><i> 10</i>: New Age</li><li><i> 66</i>: New Wave</li><li><i> 39</i>: Noise</li><li><i> 11</i>: Oldies</li><li><i> 103</i>: Opera</li><li><i> 12</i>: Other</li><li><i> 75</i>: Polka</li><li><i> 134</i>: Polsk Punk</li><li><i> 13</i>: Pop</li><li><i> 62</i>: Pop / Funk</li><li><i> 53</i>: Pop / Folk</li><li><i> 109</i>: Pr0n Groove</li><li><i> 117</i>: Power Ballad</li><li><i> 23</i>: Pranks</li><li><i> 108</i>: Primus</li><li><i> 92</i>: Progressive Rock</li><li><i> 67</i>: Psychedelic</li><li><i> 93</i>: Psychedelic Rock</li><li><i> 43</i>: Punk</li><li><i> 121</i>: Punk Rock</li><li><i> 14</i>: R&amp;B</li><li><i> 15</i>: Rap</li><li><i> 68</i>: Rave</li><li><i> 16</i>: Reggae</li><li><i> 76</i>: Retro</li><li><i> 87</i>: Revival</li><li><i> 118</i>: Rhythmic Soul</li><li><i> 17</i>: Rock</li><li><i> 78</i>: Rock 'n'Roll</li><li><i> 143</i>: Salsa</li><li><i> 114</i>: Samba</li><li><i> 110</i>: Satire</li><li><i> 69</i>: Showtunes</li><li><i> 21</i>: Ska</li><li><i> 111</i>: Slow Jam</li><li><i> 95</i>: Slow Rock</li><li><i> 105</i>: Sonata</li><li><i> 42</i>: Soul</li><li><i> 37</i>: Sound Clip</li><li><i> 24</i>: Soundtrack</li><li><i> 56</i>: Southern Rock</li><li><i> 44</i>: Space</li><li><i> 101</i>: Speech</li><li><i> 83</i>: Swing</li><li><i> 94</i>: Symphonic Rock</li><li><i> 106</i>: Symphony</li><li><i> 147</i>: Synth Pop</li><li><i> 113</i>: Tango</li><li><i> 18</i>: Techno</li><li><i> 51</i>: Techno - Industrial</li><li><i> 130</i>: Terror</li><li><i> 144</i>: Thrash Metal</li><li><i> 60</i>: Top 40</li><li><i> 70</i>: Trailer</li><li><i> 31</i>: Trance</li><li><i> 72</i>: Tribal</li><li><i> 27</i>: Trip Hop</li><li><i> 28</i>: Vocal</li></ul><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;Reading and Writing MP3 ID3v1 and ID3v2 Tags</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 18 April 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/Reading_and_Writing_MP3_ID3v1_and_v2_Tags/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:13 GMT -->
+</html>

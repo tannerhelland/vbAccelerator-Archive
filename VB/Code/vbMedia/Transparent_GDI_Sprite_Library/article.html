@@ -1,0 +1,150 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Transparent_GDI_Sprite_Library/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:49:23 GMT -->
+<head>
+
+<title>vbAccelerator - Transparent GDI Sprite Library</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This VB library aims to make it simple to add fast, animated graphics using transparent sprites, 
+something which is either missing or dismally slow using VB's standard methods. The source code 
+provides a complete screen saver, and a simpler (and somewhat smaller) sample which animates a 
+large number of asteroids around a non-firing, invunerable spaceship. These demonstrate how the 
+sprite library can be quickly incorporated into an application.
+
+Transparent bitmaps are not only used for games or screen savers; Windows uses them extensively 
+for icons and also the ImageList common control has built in functions specifically for 
+creating transparent bitmaps.
+" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">vbMedia</a>&#160;.&#160;Transparent GDI Sprite Library</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Blob_Screen_Saver.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Blob Screen Saver</a> (266K)</p><p /><p class="nav"><a href="Simple_Transparent_Sprites_Demo.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Simple Transparent Sprites Demo</a> (35K)</p><p /><p class="nav"><a href="Transparent_Sprite_Classes.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Transparent Sprite Classes</a> (8K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:11999</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=11999&amp;type=Article&amp;title=Transparent%20GDI%20Sprite%20Library">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />24 Jun 1998<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Transparent GDI Sprite Library</h1><p class="splash">Use basic Windows GDI functions to draw fast-moving transparent sprites</p><img src="scrsave.gif" width="268" height="191" alt="Blob ScreenSaver Demonstration" /><p /><p>
+This VB library aims to make it simple to add fast, animated graphics using transparent sprites, 
+something which is either missing or dismally slow using VB's standard methods. The source code 
+provides a complete screen saver, and a simpler (and somewhat smaller) sample which animates a 
+large number of asteroids around a non-firing, invunerable spaceship. These demonstrate how the 
+sprite library can be quickly incorporated into an application.
+</p><p>
+Transparent bitmaps are not only used for games or screen savers; Windows uses them extensively 
+for icons and also the ImageList common control has built in functions specifically for 
+creating transparent bitmaps.
+</p><h2>Drawing Bitmaps Transparently</h2><p>
+There are three methods to draw a bitmap transparently. The first is to 
+write custom drawing code which loops through all the bits in the bitmap and only 
+draws pixels which aren't the background colour of the bitmap.  The second is 
+to use the <i>TransparentBlt</i> API call added to Windows 98/2000 and later operating
+systems.  Both of these methods are fine, but if you need code which runs under
+every OS then another technique is needed.  
+</p><p>
+The third method is to take advantage of the API <i>BitBlt</i> method. 
+The grunt of <i>BitBlt</i> is implemented in the graphics card driver and is usually 
+extremely quick (even under Windows 95). To make use of it to draw transparently, we need 
+to process the bitmap to create what are know as the <i>Sprite</i> and the <i>Mask</i>
+ bitmaps to draw with.
+</p><h2>Creating Sprites and Masks</h2><p>
+To create a sprite and a mask you need to do three things:
+</p><ol><li>Choose a colour in the bitmap you want to be transparent.</li><li>Create a monochrome bitmap which is black where the bitmap should be transparent 
+and white otherwise (this is called the mask).</li><li>Change the bitmap colour to white in the transparent area (this becomes the sprite).</li></ol><p>
+Having done this, the bitmap can be drawn transparently in two <i>BitBlt</i> operations: 
+</p><ol><li>OR the Mask bitmap with the background.<br />
+This sets the background pixels to white where the sprite should be drawn 
+(where the mask is white) but leaves them unaffected otherwise. 
+(since 0 or 0 = 0, 1 or 0 = 1, 0 or 1 = 1, 1 or 1= 1). 
+</li><li>AND the Sprite bitmap over the area you've just ORed the mask into.<br />
+Where the Sprite is white (the transparent area) there is no effect - it leaves the 
+background pixels unaffected, but where the background has been coloured white 
+by the mask the bitmap itself is drawn. (since 0 and 0 = 0, 1 and 0 = 0, 0 and 1 = 1, 1 and 1 = 1) 
+</li></ol><p>
+Thus the bitmap can be drawn transparently. The following series of pictures shows the process in detail:
+</p><h3>Creating Sprite and Mask from the Bitmap</h3><img src="SpriteAndMask.png" width="394" height="149" alt="Creating the Sprite and Mask from a bitmap" /><h3>ORing the Mask onto the Background</h3><img src="OrMask.png" width="394" height="161" alt="ORing the Mask onto the background" /><h3>ANDing the Sprite to get the Transparency Effect</h3><img src="AndSprite.png" width="394" height="161" alt="ANDing the Sprite onto the prepared background" /><p>
+That demonstrates the way to achieve transparent sprites, but you can do more
+if you want truly flicker-free drawing.
+</p><h2>Achieving Flicker-Free Animation</h2><p>
+When moving sprites, it becomes necessary to redraw the previous background under the 
+sprite before moving it to its new position (unless you want to obtain a trail effect). 
+This makes flicker a problem - generally you have to draw an area where the new sprite 
+will be with the background and then draw the sprite in its new position over the top. 
+This almost always results in flickering.
+</p><p>
+To prevent this occuring, you can create a buffer (normally called a <i>Stage</i>) to make all the 
+changes in, maintaining the screen with the sprite in place for as long as possible. 
+When it comes to redrawing the sprite in its new position, you can then make a minimum 
+of calls to transfer the new position and erase the old position simultaneously. 
+You don't get any flicker this way because all the updates you do are draw an image 
+in which the new sprite is in place.
+</p><p>
+The code loop for this type of animation with my sprite library is always as follows: 
+</p><ol><li>Restore the background behind the sprite into the stage.</li><li>Move the sprite to its new position, and store the background behind the sprite. 
+The stored background can be used to restore the background next time round the loop. 
+</li><li>Draw the sprite in its new position on the stage using the transparent draw method.</li><li>Finally, copy the old and the new sprite positions from the stage to the screen. 
+Here if the old sprite position is close to the new sprite position, we can minimise 
+the amount of drawing by drawing both at the same time. 
+</li></ol><p>
+The loop is shown pictorially below:
+</p><h3>Initial Position</h3><img src="initial.png" width="232" height="138" alt="Initial Position" /><h3>Restore the background behind the sprites into the stage </h3><p>This step is repeating for all other sprites in the scene:</p><img src="restore.png" width="230" height="137" alt="Restoring Background" /><h3>Move the sprite to its new position in the stage</h3><p>At this point the previous background area behind the sprite is stored so it
+can be restored next time round the loop.  Note the background could be modified
+at this point if we wanted, provided you remember which rectangles have been
+updated so they can be copied in at the last point in the loop.
+</p><img src="move.png" width="232" height="140" alt="Moving the Sprite Position" /><h3>Draw The Sprite Transparently</h3><p>Repeat for all sprites in the screen onto the stage:</p><img src="drawSprite.png" width="232" height="139" alt="Drawing Sprites Onto Stage" /><h3>Finally, Copy All Changes to the Screen</h3><p>Ideally you can minimise the number of changes which need to be drawn.  In this case 
+the changed sprite and the background can be drawn together:
+</p><img src="copyChanges.png" width="232" height="142" alt="Copying Changes onto the screen" /><h2>Check it Out</h2><p>
+That's the principle of the sprite library. The code shows how to achieve all the 
+above effects using GDI calls. The mask creation routine in the code is quite neat and 
+can easily be pulled out and used elsewhere. This technique makes mask creation very quick: 
+to do it, you first create a monochrome DC (using <i>CreateCompatibleDC</i> with a hDC of 0) 
+and then select a monochrome bitmap into it. Use <i>SetBkColor</i> to set the back 
+'colour' of the monochrome DC to the colour you want to be the mask colour, and 
+then when you <i>BitBlt</i> any bitmap into it, Windows automatically maps all pixels of 
+this colour to black. You just need to invert it to get the mask.
+</p><h2>To Install BlobSaver</h2><p>
+If you want to try BlobSaver as a screen saver, just copy <i>BlobSaver.scr</i>, 
+all the associated <i>gif</i> files and <i>backdrop.jpg</i> into your Windows directory. 
+You can modify the images used to display the backdrop, or the sprite images with your 
+own files by editing the registry entries which the screen saver creates under</p><pre>   HKEY_CURRENT_USER\Software\vbaccelerator\Blob Saver</pre>. 
+<p>The sprite files should split into 7x5 images to display correctly.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">vbMedia</a>&#160;.&#160;Transparent GDI Sprite Library</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 26 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Transparent_GDI_Sprite_Library/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:49:28 GMT -->
+</html>

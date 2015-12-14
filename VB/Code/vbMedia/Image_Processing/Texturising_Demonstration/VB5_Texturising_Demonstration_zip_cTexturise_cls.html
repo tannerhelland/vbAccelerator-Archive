@@ -1,0 +1,276 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Texturising_Demonstration/VB5_Texturising_Demonstration_zip_cTexturise_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cTexturise.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cTexturise.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;<a href="article.html">Texturising Images </a>&#160;.&#160;<a href="VB5_Texturising_Demonstration.html">VB5 Texturising Demonstration</a>&#160;.&#160;cTexturise.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Texturising_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Texturising Demonstration</a> (164K)</p><p /><p class="nav"><a href="VB6_Texturising_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Texturising Demonstration</a> (161K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:3098</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3098&amp;type=Zip&amp;title=VB5%20Texturising%20Demonstration%2Ezip%5FcTexturise">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />13 Jan 2003<br />Added VB6 Download</p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3017">True Colour DIBSection</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cTexturise.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cTexturise"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Type SAFEARRAYBOUND
+    cElements As Long
+    lLbound As Long
+End Type
+Private Type SAFEARRAY2D
+    cDims As Integer
+    fFeatures As Integer
+    cbElements As Long
+    cLocks As Long
+    pvData As Long
+    Bounds(0 To 1) As SAFEARRAYBOUND
+End Type
+Private Declare Function VarPtrArray Lib "msvbvm50.dll" Alias "VarPtr" (Ptr()
+ As Any) As Long
+
+Private m_sTextureFile As String
+Private m_cTexture As cDIBSection
+
+Public Event Progress(ByVal lValue As Long, ByVal lMax As Long)
+
+Public Function LoadTexture( _
+      ByVal sTextureFile As String _
+   ) As Boolean
+Dim oPic As StdPicture
+On Error GoTo LoadTextureError
+   Set m_cTexture = New cDIBSection
+   Set oPic = LoadPicture(sTextureFile)
+   m_cTexture.CreateFromPicture oPic
+   LoadTexture = True
+   Exit Function
+LoadTextureError:
+   MsgBox "Failed to load texture '" &amp; sTextureFile &amp; "'", vbExclamation
+End Function
+Public Sub PaintTexture(ByVal lHDC As Long)
+   If m_cTexture Is Nothing Then
+      '
+   ElseIf m_cTexture.Width = 0 Then
+      '
+   Else
+      m_cTexture.PaintPicture lHDC
+   End If
+End Sub
+Public Sub ApplyTexture( _
+      ByRef cDibSrc As cDIBSection, _
+      ByRef cDibDst As cDIBSection, _
+      Optional ByVal lIntensity As Long = 100, _
+      Optional ByVal lMidValue As Long = 0, _
+      Optional ByVal lSaturation As Long = 100 _
+   )
+Dim bNo As Boolean
+   If (m_cTexture Is Nothing) Then
+      bNo = True
+   End If
+   If (m_cTexture.Width = 0) Then
+      bNo = True
+   End If
+   If Not (bNo) Then
+      ' do the processing:
+      pApplyTexture cDibSrc, cDibDst, lIntensity, lMidValue, lSaturation
+   Else
+      ' copy src to out
+      cDibSrc.PaintPicture cDibDst.hDC
+   End If
+End Sub
+Private Sub pApplyTexture( _
+      ByRef cDibSrc As cDIBSection, _
+      ByRef cDibDst As cDIBSection, _
+      Optional ByVal lIntensity As Long = 100, _
+      Optional ByVal lMidValue As Long = 0, _
+      Optional ByVal lSaturation As Long = 100 _
+   )
+Dim bDibSrc() As Byte
+Dim tSASrc As SAFEARRAY2D
+Dim bDibDst() As Byte
+Dim tSADst As SAFEARRAY2D
+Dim bDibTex() As Byte
+Dim tSATex As SAFEARRAY2D
+Dim x As Long, y As Long
+Dim cx As Long, cy As Long
+Dim tx As Long, ty As Long
+Dim tcx As Long, tcy As Long
+Dim lS As Long, fLightness As Single, fIntensity As Single
+Dim fSaturation As Single
+Dim fMidh As Single, fMids As Single, fMidl As Single
+Dim fAmount As Single
+Dim h As Single, s As Single, l As Single
+Dim r As Long, g As Long, b As Long
+
+
+   fIntensity = lIntensity / 100#
+   RGBToHSL lMidValue, lMidValue, lMidValue, fMidh, fMids, fMidl
+   fSaturation = lSaturation / 100#
+   
+   ' Get all the bits to work on:
+   With tSASrc
+      .cbElements = 1
+      .cDims = 2
+      .Bounds(0).lLbound = 0
+      .Bounds(0).cElements = cDibSrc.Height
+      .Bounds(1).lLbound = 0
+      .Bounds(1).cElements = cDibSrc.BytesPerScanLine
+      .pvData = cDibSrc.DIBSectionBitsPtr
+   End With
+   CopyMemory ByVal VarPtrArray(bDibSrc()), VarPtr(tSASrc), 4
+   
+   With tSADst
+      .cbElements = 1
+      .cDims = 2
+      .Bounds(0).lLbound = 0
+      .Bounds(0).cElements = cDibDst.Height
+      .Bounds(1).lLbound = 0
+      .Bounds(1).cElements = cDibDst.BytesPerScanLine
+      .pvData = cDibDst.DIBSectionBitsPtr
+   End With
+   CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+   With tSATex
+      .cbElements = 1
+      .cDims = 2
+      .Bounds(0).lLbound = 0
+      .Bounds(0).cElements = m_cTexture.Height
+      .Bounds(1).lLbound = 0
+      .Bounds(1).cElements = m_cTexture.BytesPerScanLine
+      .pvData = m_cTexture.DIBSectionBitsPtr
+   End With
+   CopyMemory ByVal VarPtrArray(bDibTex()), VarPtr(tSATex), 4
+   
+   
+   ' Get position information:
+   tx = 0: ty = 0
+   tcx = (m_cTexture.Width - 1) * 3
+   tcy = m_cTexture.Height - 1
+   cx = (cDibDst.Width - 1) * 3
+   If (cx &gt; (cDibSrc.Width - 1) * 3) Then cx = (cDibSrc.Width - 1) * 3
+   cy = cDibDst.Height - 1
+   If (cy &gt; cDibSrc.Height - 1) Then cy = cDibSrc.Height - 1
+   
+   For y = 0 To cy
+      For x = 0 To cx Step 3
+         ' Set the destination to src with brightness adjusted
+         ' to the texture:
+         lS = bDibTex(tx, ty)
+         RGBToHSL lS, lS, lS, h, s, fLightness
+         fAmount = fLightness - fMidl
+         r = bDibSrc(x + 2, y)
+         g = bDibSrc(x + 1, y)
+         b = bDibSrc(x, y)
+         RGBToHSL r, g, b, h, s, l
+         l = l * (1 + fAmount * fIntensity)
+         If (l &gt; 1) Then l = 1
+         If (l &lt; 0) Then l = 0
+         s = s * fSaturation
+         If (s &gt; 1) Then s = 1
+         If (s &lt; 0) Then s = 0
+         HLSToRGB h, s, l, r, g, b
+         bDibDst(x + 2, y) = r
+         bDibDst(x + 1, y) = g
+         bDibDst(x, y) = b
+         
+         tx = tx + 3
+         If (tx &gt; tcx) Then tx = 0
+      Next x
+      RaiseEvent Progress(y, cy)
+      ty = ty + 1: tx = 0
+      If (ty &gt; tcy) Then ty = 0
+   Next y
+   
+   ' Clear up:
+   CopyMemory ByVal VarPtrArray(bDibSrc), 0&amp;, 4
+   CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+   CopyMemory ByVal VarPtrArray(bDibTex), 0&amp;, 4
+   
+End Sub
+
+Public Property Get WithinTexture(ByVal x As Long, ByVal y As Long) As Boolean
+   If Not m_cTexture Is Nothing Then
+      WithinTexture = (x &lt; m_cTexture.Width) And (x &gt;= 0) And (y &lt;=
+       m_cTexture.Height) And (y &gt;= 0)
+   End If
+End Property
+Public Property Get TexturePixelColour(ByVal x As Long, ByVal y As Long) As Long
+Dim bDibTex() As Byte
+Dim tSATex As SAFEARRAY2D
+Dim xi As Long
+   
+   If Not m_cTexture Is Nothing Then
+      With tSATex
+         .cbElements = 1
+         .cDims = 2
+         .Bounds(0).lLbound = 0
+         .Bounds(0).cElements = m_cTexture.Height
+         .Bounds(1).lLbound = 0
+         .Bounds(1).cElements = m_cTexture.BytesPerScanLine
+         .pvData = m_cTexture.DIBSectionBitsPtr
+      End With
+      CopyMemory ByVal VarPtrArray(bDibTex()), VarPtr(tSATex), 4
+   
+      xi = (x * 3) \ 3
+      xi = xi * 3
+      TexturePixelColour = RGB(bDibTex(xi + 2, y), bDibTex(xi + 1, y),
+       bDibTex(xi, y))
+   
+      ' Clear up:
+      CopyMemory ByVal VarPtrArray(bDibTex), 0&amp;, 4
+   End If
+End Property
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;<a href="article.html">Texturising Images </a>&#160;.&#160;<a href="VB5_Texturising_Demonstration.html">VB5 Texturising Demonstration</a>&#160;.&#160;cTexturise.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Texturising_Demonstration/VB5_Texturising_Demonstration_zip_cTexturise_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+</html>

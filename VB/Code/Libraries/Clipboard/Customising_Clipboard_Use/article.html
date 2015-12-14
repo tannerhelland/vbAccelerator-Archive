@@ -1,0 +1,127 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Clipboard/Customising_Clipboard_Use/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:13 GMT -->
+<head>
+
+<title>vbAccelerator - Customising Clipboard Use </title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="The VB Clipboard object gives you quick and easy access to simple clipboard functions. 
+But the Win32 API clipboard object offers a lot more flexibility and functionality.  This article
+presents classes to use custom clipboard formats and receive notifications when the clipboard
+contents change.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Clipboard</a>&#160;.&#160;Customising Clipboard Use </p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="RTF_Format_Copy_and_Paste_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />RTF Format Copy and Paste Sample</a> (25K)</p><p /><p class="nav"><a href="VB5_Clipboard_Classes_and_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Clipboard Classes and Sample</a> (22K)</p><p /><p class="nav"><a href="VB6_Clipboard_Classes_and_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Clipboard Classes and Sample</a> (19K)</p><p class="nav"><a href="VB6_Clipoard_Classes_and_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Clipoard Classes and Sample</a> (23K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3619</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3619&amp;type=Article&amp;title=Customising%20Clipboard%20Use%20">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />23 Aug 2003<br /><p class="update">Modified the clipboard viewer task to ensure it removes itself from the
+clipboard chain at the right point.  Previously the class could attempt to remove itself
+from the chain after the owning Window was destroyed, which would not work.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1429">Goldfish</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Customising Clipboard Use </h1><p class="splash">Receive clipboard change notifications and get full control over reading, writing and adding formats </p><img src="cclip.gif" width="357" height="260" alt="Simple Clipboard Viewer" /><p /><p>The VB Clipboard object gives you quick and easy access to simple clipboard functions. 
+But the Win32 API clipboard object offers a lot more flexibility and functionality.  This article
+presents classes to use custom clipboard formats and receive notifications when the clipboard
+contents change.
+</p><h2>Limitations of the VB Clipboard Object</h2><p>The VB Clipboard object misses quite a few important clipboard functions:</p><ul><li>It cannot hook into the Clipboard Viewer notification system, so you can't get events when the clipboard 
+changes. Clipboard change events are very useful in an application particularly when you are trying 
+to code a Paste toolbar button.</li><li>There is a strict limitation on formats which can be retrieved. You are limited to Text, 
+Pictures and Metafiles. However, there are lots of other formats, and some are extremely useful. For example:
+<ul><li>The file copy/paste format used in Explorer (FileList and FileName formats). Allow 
+your app to share files with Explorer easily!</li><li>The HTML Format pasted by IE4 and above. When you copy a section from a web page in IE, 
+IE puts the data on the clipboard in text, RTF and HTML formats (and some other private or OLE binary formats). 
+The HTML format gives you a frament of HTML code for the selected item, which is great if you're 
+writing web pages.</li><li>Rich Text Format. It would be nice to be able to choose whether to paste RTF or Text in a 
+RichTextBox control. But you can't do it in VB.</li><li>OwnerLink format. This tells you what program pasted the object onto the 
+clipboard. If you can read it, you can make intelligent decisions about what to paste from 
+the clipboard. For example, Excel will often paste a bitmap and a metafile of an object. 
+The metafile is tiny in size compared with the bitmap and it would be much better to use this if 
+storage is at a premium.</li></ul></li><li>You can't define your own private formats, even if you only want to include text in them. 
+Private formats are extremely useful in applications which can paste data in multiple formats. 
+Normally your application will understand more about the data than other applications on the system. 
+But you still want to put information on the clipboard in standard formats such as Text so users can 
+easily paste into Word, Excel etc. (Of course, you really want to paste in RTF as well...) This 
+normally leads to a compromise where cut/copy/paste in your own application can't maintain all its 
+data because it has to provide a friendly format for data sharing.</li></ul><p>This project provides two new clipboard classes which break all of these limitations. 
+With these classes you can hook into clipboard change notifications and have complete access 
+to all clipboard formats, both read (paste) and write (cut/copy).</p><h2>The Clipboard Change Notification Class (cClipboardViewer)</h2><p>An application can be notified of changes in the data stored in the clipboard 
+by registering itself as a Win32 Clipboard Viewer. Having done this, the application is then 
+notified of changes in the clipboard by the <i>WM_DRAWCLIPBOARD</i> message. Your application 
+becomes part of a chain of applications on the system which respond to this message, and is 
+responsible for forwarding the message after reading it to the next application along. To 
+do this, your application must store the next window along in the chain to 
+forward messages to and also respond to the <i>WM_CHANGECBCHAIN</i> message which is sent whenever 
+any other clipboard viewer on the system is added or removed to ensure the next window along is valid.</p><p>This functionality is provided in the download code by the <i>cClipboardViewer</i> class. 
+This uses the <a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing and Timer DLL</a> to intercept 
+<i>WM_DRAWCLIPBOARD</i> and <i>WM_CHANGECBCHAIN</i> messages and to provide the required message 
+passing and chain fixing functions.</p><p>To use this class you only need to make two calls:</p><ul><li><strong>InitClipboardChangeNotification</strong><br />
+To attach your application to the clipboard viewer notification chain.</li><li><strong>StopClipboardChangeNotification</strong><br />
+To remove your application. Note this is called automatically when the class terminates.</li></ul><p>When notification is on, the class raises the <i>ClipboardChanged</i> event whenever the 
+clipboard changes. Your application can then query the clipboard contents using the next 
+class to work out what to do.</p><h2>The Custom Clipboard read/write class (cCustomClipboard)</h2><p>This class encapsulates the Win32 API Clipboard functions. The following list details 
+the methods and properties of the class:</p><ul><li><strong>AddFormat</strong><br />
+Adds a custom clipboard format and returns its ID if successful, otherwise returns 0.</li><li><strong>ClearClipboard</strong><br />
+Clears the contents of the clipboard.    </li><li><strong>ClipboardClose</strong><br />
+Closes the clipboard if the class has it open. Always call this after a call to ClipboardOpen. Whilst the class has the clipboard open, other applications cannot write to the clipboard.    </li><li><strong>ClipboardOpen</strong><br />
+Opens the clipboard for read/write access. You must call this before attempting to access or put data into the clipboard.    </li><li><strong>FormatCount</strong><br />
+Returns the number of formats currently available on the clipboard.    </li><li><strong>FormatIDForName</strong><br />
+Returns the Clipboard ID for a specified Clipboard format name. This does the opposite of the FormatName property.    </li><li><strong>FormatName</strong><br />
+Returns the Clipboard format name for a given ID. This does the opposite of the FormatIDForName property.   </li><li><strong>GetBinaryData</strong><br />
+Returns a byte array containing the clipboard contents for a specified format ID. You must have called ClipboardOpen before calling this function.    </li><li><strong>GetClipboardMemoryHandle</strong><br />
+Returns a Win32 API global memory handle to the data in the clipboard for a specified format ID. You must have called ClipboardOpen before calling this function.    </li><li><strong>GetCurrentFormatID</strong><br />
+After calling the GetCurrentFormats method, you can use this to retrieve the format ID for the Indexed entry in the 
+format list. </li><li><strong>GetCurrentFormatName</strong><br />
+Similar to GetCurrentFormatID, but returns the Name of the format for the Indexed entry in the format list.</li><li><strong>GetCurrentFormats</strong><br />
+Enumerates all the names and IDs of items currently on the clipboard, and returns the number of items. You can subsequently retrieve the names and IDs using the GetCurrentFormatName and GetCurrentFormatID properties.    </li><li><strong>GetFileList</strong><br />
+If the clipboard contains the file format CF_HDROP (i.e. files cut or copied from explorer) then this function will return the list of files associated with the format.    </li><li><strong>GetTextData</strong><br />
+Similar to GetBinaryData except it returns a string containing the clipboard data rather than a byte array. Use when you know the clipboard format can be read in text format.    </li><li><strong>HasCurrentFormat</strong><br />
+Following a call to GetCurrentFormats, this property returns whether a specified clipboard format ID is in the list of formats. See also IsDataAvailableForFormat.    </li><li><strong>IsDataAvailableForFormat</strong><br />
+Returns whether a specified clipboard format ID is available by querying the clipboard itself. The clipboard must have been opened with the ClipboardOpen method before this is called.    </li><li><strong>IsDataAvailableForFormatName</strong><br />
+Similar to the IsDataAvailableForFormat method except works on a specified clipboard format name rather than an ID.    </li><li><strong>SetBinaryData</strong><br />
+The write equivalent of GetBinaryData.    </li><li><strong>SetClipboardMemoryHandle</strong><br />
+The write equivalent of GetClipboardMemoryHandle.    </li><li><strong>SetFileList</strong><br />
+The write equivalent of GetFileList.    </li><li><strong>SetTextData</strong><br />
+The write equivalent of GetTextData.</li></ul><p>To see how to use these methods to implement clipboard copy and paste for non-standard formats, 
+download the RTF Clipboard Copy and Paste sample. This demonstrates how to add complete 
+custom clipboard format in about 10 or so lines of code.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Clipboard</a>&#160;.&#160;Customising Clipboard Use </p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 7 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Clipboard/Customising_Clipboard_Use/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:15 GMT -->
+</html>

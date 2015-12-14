@@ -1,0 +1,325 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/DIB_Sections/Alpha_DIBSection/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:32 GMT -->
+<head>
+
+<title>vbAccelerator - Alpha DIBSections</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This article provides an enhanced DIBSection class which allows you to create and draw images
+with per-pixel alpha.  The alpha component of a pixel allows you to determine how transparent
+you would like a pixel to be.  This concept is being increasingly used in the Windows UI to
+enhance the user experience with accurately blended drop-shadows and partially transparent objects.
+Note that system alpha-blending is not available on Win95 or NT.  If you want to display an
+alpha-image on these systems you have use your own code routine to implement 
+AlphaBlend.  Sample code is provided to do this." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">DIB Sections</a>&#160;.&#160;Alpha DIBSections</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Simple_Alpha_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Simple Alpha Sample</a> (26K)</p><p /><p class="nav"><a href="VB5_Alpha_DIB_Section_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Alpha DIB Section Demonstration</a> (101K)</p><p /><p class="nav"><a href="VB6_Alpha_DIB_Section_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Alpha DIB Section Demonstration</a> (97K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3016</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3016&amp;type=Article&amp;title=Alpha%20DIBSections">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />13 Jan 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2946">Window Shapes Using Layering</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3015">256 Colour DIBSections </a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3017">True Colour DIBSection</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1387">Replace one Colour with another in a Picture using BitBlt</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Alpha DIBSections</h1><p class="splash">Modify per pixel alpha in a bitmap for drop-shadows and other exciting effects.</p><img src="alphaDib.png" width="250" height="254" alt="Alpha DIB Demonstration" /><p /><p>This article provides an enhanced DIBSection class which allows you to create and draw images
+with per-pixel alpha.  The alpha component of a pixel allows you to determine how transparent
+you would like a pixel to be.  This concept is being increasingly used in the Windows UI to
+enhance the user experience with accurately blended drop-shadows and partially transparent objects.
+</p><p>Note that system alpha-blending is not available on Win95 or NT.  If you want to display an
+alpha-image on these systems you have use your own code routine to implement 
+<span class="code">AlphaBlend</span>.  Sample code is provided to do this.</p><h2>Introduction to Alpha </h2><p>A bitmap consists of a array of bytes which reflect the image colours.  In early computer
+days, little memory was available for the storage of images (in
+fact, my first computer was so challenged this way it couldn't even fill more than 
+30% of the display before running out of memory) and so the number of bits allocated to 
+each pixel was reduced.  So if you allocate 1 bit per pixel, you can have two colours: on or off.
+If you allocate 4 bits, you can have 16 combinations, hence 16 colours, and 
+if you allow 1 byte then you can have 256 colours and so on.</p><p>Now that memory is cheap, and graphics cards typically have more memory on board 
+than servers which ran an entire department used to have when I was a lad, more memory can be
+allocated to an image.  Psychological studies have demonstrated that the number of colours
+you require before two adjacent shades with only one-bit change in colour value are 
+indistinguisable is somewhere in the millions.  This means that you never need more than
+24 bits to store a colour value (24 bits is 16,777,216 different colours), which is why
+24-bit displays are often referred to as "True Color".  However, computers
+are typically organised in Word sizes of 32-bits or above.  Its easier to access memory when 
+it is aligned to the word size of the computer, since you can read the block in one go. One
+way of usefully using the additional 8 bits is to store an alpha value.
+(I would expect bigger graphics colour sizes to appear as computer word sizes increase, perhaps 
+this will allow for more accurate alpha and pixel math).</p><p>The idea of an alpha channel is it stores how transparent a given pixel should be, from 0 (completely
+transparent) to 255 (completely opaque).  Once this concept is in place it becomes easier to create
+much more sophisticated displays, in particular it allows for colour-accurate drop-shadows and 
+smoothing of anti-aliased edges against any background.</p><h2>The GDI Alpha Functions</h2><p>Whilst GDI has supported 32bit DIB Sections for some time, it was not until "MsImg32.DLL"
+was added to the OS in Windows 98 and 2000 that there was any built-in support for actually
+drawing an image and applying alpha.  Similar functionality is also provided through the
+<a href="http://www.vbaccelerator.com/article.asp?id=2946">Layering API functions</a>, although these do not appear in 9x systems.</p><p>MsImg32.DLL introduces a function for drawing bitmaps with alpha channels, called 
+<span class="code">AlphaBlend</span>.  There's also a <span class="code">TransparentBlt</span> function 
+that works the same as <span class="code">&gt;BitBlt</span> but allows you to specify the colour 
+that should be rendered transparently, although doing that is fairly easy using 
+<a href="http://www.vbaccelerator.com/article.asp?id=1387">Raster Operations</a>.
+(<span class="code">TransparentBlt</span> also has a terrible GDI leak under Win9x/ME.
+How rubbish is that?  Avoid it at all costs.)</p><p><span class="code">AlphaBlend</span> can basically be used in two ways:</p><ul><li>Drawing an entire bitmap with a constant alpha (transparency).</li><li>Drawing by merging individual alpha pixel components in the source or destination.</li></ul><h3>Drawing Bitmaps With Constant Alpha</h3><p>This way is the simplest, and is demonstrated in the "Simple Alpha Sample" 
+download. To draw a picture with 50% transparency over another,
+just start a VB project, add two PictureBoxes, set <span class="code">AutoRedraw</span> to true for each and 
+place images into them. Then add this code:</p><pre>
+Private Type BLENDFUNCTION
+  BlendOp As Byte
+  BlendFlags As Byte
+  SourceConstantAlpha As Byte
+  AlphaFormat As Byte
+End Type
+' BlendOp:
+Private Const AC_SRC_OVER = &amp;H0
+' AlphaFormat:
+Private Const AC_SRC_ALPHA = &amp;H1
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Declare Function AlphaBlend Lib "MSIMG32.dll" ( _
+  ByVal hdcDest As Long, _
+  ByVal nXOriginDest As Long, _
+  ByVal nYOriginDest As Long, _
+  ByVal nWidthDest As Long, _
+  ByVal nHeightDest As Long, _
+  ByVal hdcSrc As Long, _
+  ByVal nXOriginSrc As Long, _
+  ByVal nYOriginSrc As Long, _
+  ByVal nWidthSrc As Long, _
+  ByVal nHeightSrc As Long, _
+  ByVal lBlendFunction As Long _
+) As Long
+
+Private Sub Form_Paint()
+   Dim lBlend As Long
+   Dim bf As BLENDFUNCTION
+
+   ' Draw the first picture:
+   bf.BlendOp = AC_SRC_OVER
+   bf.BlendFlags = 0
+   bf.SourceConstantAlpha = 255
+   bf.AlphaFormat = 0
+   CopyMemory lBlend, bf, 4
+   AlphaBlend Me.hDC, 0, 0, _
+      Picture1.ScaleWidth \ Screen.TwipsPerPixelX, _
+      Picture1.ScaleHeight \ Screen.TwipsPerPixelY, _
+      Picture1.hDC, 0, 0, _
+      Picture1.ScaleWidth \ Screen.TwipsPerPixelX, _
+      Picture1.ScaleHeight \ Screen.TwipsPerPixelY, _
+      lBlend
+
+   ' Now draw the second picture with 50% transparency over the top:
+   bf.SourceConstantAlpha = 128
+   CopyMemory lBlend, bf, 4
+   AlphaBlend Me.hDC, 0, 0, _
+      Picture2.ScaleWidth \ Screen.TwipsPerPixelX, _
+      Picture2.ScaleHeight \ Screen.TwipsPerPixelY, _
+      Picture2.hDC, 0, 0, _
+      Picture2.ScaleWidth \ Screen.TwipsPerPixelX, _
+      Picture2.ScaleHeight \ Screen.TwipsPerPixelY, _
+      lBlend
+   
+End Sub
+</pre><p>The download also demonstrates how to do this without using the <span class="code">AlphaBlend</span>
+function with the <span class="code">cAlphaDibSection</span> class.  This would be useful if you're
+trying to implement drawing with Alpha on pre Win98 or NT systems.</p><h3>Drawing Bitmaps with Per-Pixel Alpha</h3><p>If you have a bitmap with an alpha-channel, that is, 32 bits/pixel, then you
+can draw the picture using the alpha contained within it quite easily.  There
+is only one catch, which is an annoying element of the working with the <span class="code">AlphaBlend</span>
+function.  When you use <span class="code">AlphaBlend</span> to draw bitmaps with individual alpha
+pixel components, the red, green and blue components must be pre-multiplied with
+the alpha amount.  So if for example a pixel is mid-grey and has a transparency around 25% (alpha = 64),
+then rather than the values being:</p><pre>
+   Red = 128
+   Green = 128
+   Blue = 128
+   Alpha = 64
+</pre><p>The values actually need to be:</p><pre>
+   Red = 128 * (64/255) = 32
+   Green = 128 * (64/255) = 32
+   Blue = 128 * (64/255) = 32
+   Alpha = 64
+</pre><p>See the MSDN documentation for <span class="code">BLENDFUNCTION</span> and the related code 
+sample "Alpha Blending a Bitmap". The other minor issue is that you have no way of 
+changing the alpha channel; 
+this may or may not be a problem depending on what you're trying to achieve.</p><p>Assuming you have a bitmap in the correct format (alphalogo.bmp in the main download is suitable for
+this) then the simple way to draw it is as follows.  To run this you need to create a PictureBox
+on the main form with <i>AutoRedraw</i> and <i>AutoSize</i> set True.</p><pre>
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Type BLENDFUNCTION
+  BlendOp As Byte
+  BlendFlags As Byte
+  SourceConstantAlpha As Byte
+  AlphaFormat As Byte
+End Type
+' BlendOp:
+Private Const AC_SRC_OVER = &amp;H0
+' AlphaFormat:
+Private Const AC_SRC_ALPHA = &amp;H1
+
+Private Declare Function AlphaBlend Lib "MSIMG32.dll" ( _
+  ByVal hdcDest As Long, _
+  ByVal nXOriginDest As Long, _
+  ByVal nYOriginDest As Long, _
+  ByVal nWidthDest As Long, _
+  ByVal nHeightDest As Long, _
+  ByVal hdcSrc As Long, _
+  ByVal nXOriginSrc As Long, _
+  ByVal nYOriginSrc As Long, _
+  ByVal nWidthSrc As Long, _
+  ByVal nHeightSrc As Long, _
+  ByVal lBlendFunction As Long _
+) As Long
+
+
+Private Sub Form_Load()
+   Set Picture1.Picture = LoadPicture(App.Path &amp; "\alphalogo.bmp")
+End Sub
+
+Private Sub Form_Paint()
+   
+   ' Draw a red background to demonstrate the alpha blend under
+   ' the shadow:
+   Me.Line _
+      (8 + Picture1.ScaleHeight \ 2, 8 + Picture1.ScaleWidth \ 2) - _
+      (8 + Picture1.ScaleHeight * 3 \ 2, 8 + Picture1.ScaleWidth * 3 \ 2), _
+      RGB(255, 0, 0), BF
+   
+   ' Now draw the image using per-pixel alpha values:
+   Dim lBlend As Long
+   Dim bf As BLENDFUNCTION
+   
+   bf.BlendOp = AC_SRC_OVER
+   bf.BlendFlags = 0
+   bf.SourceConstantAlpha = 255
+   bf.AlphaFormat = AC_SRC_ALPHA
+   CopyMemory lBlend, bf, 4
+   
+   AlphaBlend Me.hDC, 8, 8, _
+         Picture1.ScaleWidth \ Screen.TwipsPerPixelX, _
+         Picture1.ScaleHeight \ Screen.TwipsPerPixelY, _
+         Picture1.hDC, 0, 0, _
+         Picture1.ScaleWidth \ Screen.TwipsPerPixelX, _
+         Picture1.ScaleHeight \ Screen.TwipsPerPixelY, _
+         lBlend
+   
+End Sub
+</pre><p>If you actually want to create your own alpha images, or modify their alpha as
+the application runs, then you need a more powerful structure.  The 
+<span class="code">cAlphaDibSection</span> class provided with the downloads enables this.</p><h2>cAlphaDibSection</h2><p>The <span class="code">cAlphaDibSection</span> class provides a wrapper to a 32-bit DIB section
+which you can use to create, draw and manipulate per-pixel alpha images at will.
+The methods and properties of this object are the same as the 
+<a href="http://www.vbaccelerator.com/article.asp?id=3017">cDIBSection class</a>, 
+except an <span class="code">AlphaPaintPicture</span> method has been added to allow you to draw
+the picture with Alpha-blending.</p><p>As an example of how to manipulate an image using this wrapper, here's a 
+function which will take a VB StdPicture as input and return a version of
+it which fades to transparency towards the right-hand side:</p><pre>
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Type SAFEARRAYBOUND
+    cElements As Long
+    lLbound As Long
+End Type
+Private Type SAFEARRAY2D
+    cDims As Integer
+    fFeatures As Integer
+    cbElements As Long
+    cLocks As Long
+    pvData As Long
+    Bounds(0 To 1) As SAFEARRAYBOUND
+End Type
+Private Declare Function VarPtrArray Lib "msvbvm50.dll" Alias "VarPtr" (Ptr() As Any) As Long
+
+Public Function GetFadedPicture( _
+      ByRef pic As StdPicture _
+   ) As cAlphaDibSection
+
+   Dim c As New cAlphaDibSection
+   c.CreateFromPicture pic
+   
+   Dim tSASrc As SAFEARRAY2D
+   Dim bDibSrc() As Byte
+    ' Get the bits in the from DIB section:
+    With tSASrc
+        .cbElements = 1
+        .cDims = 2
+        .Bounds(0).lLbound = 0
+        .Bounds(0).cElements = c.Height
+        .Bounds(1).lLbound = 0
+        .Bounds(1).cElements = c.BytesPerScanLine()
+        .pvData = c.DIBSectionBitsPtr
+    End With
+    CopyMemory ByVal VarPtrArray(bDibSrc()), VarPtr(tSASrc), 4
+   
+   Dim x As Long, y As Long
+   Dim lAlpha As Long
+   For x = 0 To c.BytesPerScanLine - 4 Step 4
+      For y = 0 To c.Height - 1
+         ' set the alpha: 255 at the left, 0 at the right.
+         ' use a long so we can premultiply without overflow.
+         lAlpha = 255 * (1 - x / c.BytesPerScanLine)
+         bDibSrc(x + 3, y) = lAlpha
+         ' pre-multiply the R,G,B components by the alpha:
+         bDibSrc(x, y) = bDibSrc(x, y) * lAlpha / 255
+         bDibSrc(x + 1, y) = bDibSrc(x + 1, y) * lAlpha / 255
+         bDibSrc(x + 2, y) = bDibSrc(x + 2, y) * lAlpha / 255
+      Next y
+   Next x
+   
+    CopyMemory ByVal VarPtrArray(bDibSrc), 0&amp;, 4
+    
+    Set GetFadedPicture = c
+End Function
+</pre><p>Code to use it would be something like this:</p><pre>
+    Dim myPic as StdPicture
+    Set myPic = LoadPicture(App.Path &amp; "\anyImage.bmp")
+
+    Dim c As cAlphaDibSection
+    Set c = GetFadedPicture(myPic)
+    c.AlphaPaintPicture Me.hDc, 0, 0
+</pre><h2>About The Demonstration Project</h2><p>The demonstration project shows how to create a per-pixel alpha image at run-time
+from an image and a mask, and demonstrates displaying it over various backgrounds
+and with differing amounts of overall transparency.  There is also a sample of
+a button type control which uses the alpha-channel information within the DIB
+to determine whether the button has been hit, as well as how to create a disabled
+image or to change the colour theme of the bitmap at runtime.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">DIB Sections</a>&#160;.&#160;Alpha DIBSections</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 4 March 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/DIB_Sections/Alpha_DIBSection/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:48:34 GMT -->
+</html>

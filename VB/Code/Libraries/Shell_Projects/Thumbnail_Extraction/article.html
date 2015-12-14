@@ -1,0 +1,98 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Shell_Projects/Thumbnail_Extraction/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:53 GMT -->
+<head>
+
+<title>vbAccelerator - Thumbnail Extraction Using the Shell</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Since Windows Me/2000, the Windows Shell has included a mechanism
+for extracting a small thumbnail image for any item in the namespace. This sample
+demonstrates how to use this function to get thumbnail images for web pages, images,
+Office documents - in fact anything that supports thumbnailing in Explorer.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Shell Projects</a>&#160;.&#160;Thumbnail Extraction Using the Shell</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Thumbnail_Extractor_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Thumbnail Extractor Code</a> (41K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4030</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4030&amp;type=Article&amp;title=Thumbnail%20Extraction%20Using%20the%20Shell">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />14 Feb 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4031">VB IExtractImage Interface (IVBExtractImageLib.tlb)</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1420">Browsing For Folders</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Thumbnail Extraction Using the Shell</h1><p class="splash">Extract thumbnails from any file type which has a Shell thumbnail handler: folders, web pages, images and more!</p><img src="thumbExtract.png" width="330" height="204" alt="Thumbnail Extraction Demonstration Project" /><p /><p>Since Windows Me/2000, the Windows Shell has included a mechanism
+for extracting a small thumbnail image for any item in the namespace. This sample
+demonstrates how to use this function to get thumbnail images for web pages, images,
+Office documents - in fact anything that supports thumbnailing in Explorer.
+</p><h2>About the Sample</h2><p>The sample provides a VB class <i>cThumbnailGenerator</i> which provides simple
+access to thumbnail generation.  The methods and properties of the class are:</p><ul><li><strong>DesiredWidth</strong><br />
+Gets/sets the width in pixels you'd like the thumbnail to be.  Note that in Windows
+the default thumbnail size is 96 x 96 pixels.</li><li><strong>DesiredHeight</strong><br />
+As <i>DesiredWidth</i></li><li><strong>FileName</strong><br />
+Gets/sets the filename of the object you want a thumbnail for.</li><li><strong>Options&gt;</strong><br />
+Gets/sets options used to control the thumbnail extraction.  The main options
+are:
+   <ul><li><i>IEIFLAG_ASPECT</i> - Requests that the extractor tries to draw
+	using the aspect ratio specified by DesiredWidth/DesiredWidth, regardless
+        of the actual dimensions of the object.</li><li><i>IEIFLAG_OFFLINE</i> - Tells the extractor not to connect to the
+         Internet for any content which isn't available offline.</li><li><i>IEIFLAG_SCREEN</i> - Render the item as if for the screen (exclusive
+	with <i>IEIFLAG_ASPECT</i>.</li><li><i>IEIFLAG_QUALITY</i> - Request a higher quality image.  This may be
+	slower.</li></ul>
+Note that the <i>IEIFLAG_ASYNC</i> option is not supported: whilst some thumbnail
+generators support asynchronous generation, the host needs to create a background
+thread to generate the thumbnail, and this is difficult in VB.  A simple alternative
+would be to package the <i>cThumbnailGenerator</i> into an out-of-process
+ActiveX Exe and run that in a new thread instead.</li><li><strong>GetThumbnail</strong><br />
+Actually gets the thumbnail, if possible.  If there is no thumbnail support for
+the selected object an error will be raised.  Otherwise, a <i>pcMemDc</i> object
+containing the thumbnail is returned. This can be used to draw the thumbnail
+or convert it into a VB <i>StdPicture</i> object.</li>.
+</ul><p>The sample code demonstrates using the class to extract thumbnails for any
+file you choose (assuming there is support for thumbnail generation).  It 
+includes most of the code for the <a href="http://www.vbaccelerator.com/article.asp?id=1420">vbAccelerator Folder
+Browser</a> which is used to allow you to pick folders or files.</p><h2>Which Thumbnails Can You Get?</h2><p>In Windows 2000 and above, the system by default will provide thumbnail viewers
+for pictures (BMP, GIF, JPEG, PNG), video files (AVI, MPG etc), Office documents 
+(DOC, PPT, XLS, WMF), Web pages (HTML, MHT) and e-mail messages (EML). Note that 
+Office documents can be previewed only if they've been saved with an embedded 
+preview picture - you need to check the box in the Properties dialog to enable this.</p><p>However, other thumbnail extractors can be freely added to the system (sample
+coming soon) so you might have the ability to preview other files.  Whilst its probably possible to check whether there is a extractor for a particular file type by 
+looking in the registry, its easier just to try and create a thumbnail for the
+file - you'll get an error if its not possible.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Shell Projects</a>&#160;.&#160;Thumbnail Extraction Using the Shell</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 14 February 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Shell_Projects/Thumbnail_Extraction/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:54 GMT -->
+</html>

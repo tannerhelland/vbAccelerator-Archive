@@ -1,0 +1,417 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Compression/Compressing_and_Expanding_With_zLib/VB6_CompressZ-It_Code_zip_CompressZIt_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:51 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: CompressZIt.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: CompressZIt.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Compression</a>&#160;.&#160;<a href="article.html">Compressing and Expanding with the Freeware zLib.DLL</a>&#160;.&#160;<a href="VB6_CompressZ-It_Code.html">VB6 CompressZ-It Code</a>&#160;.&#160;CompressZIt.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_CompressZ-It_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 CompressZ-It Code</a> (17K)</p><p /><p class="nav"><a href="VB6_CompressZ-It_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 CompressZ-It Code</a> (19K)</p><p /><p class="nav"><a href="zLib_DLL.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />zLib DLL</a> (26K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1897</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1897&amp;type=Zip&amp;title=VB6%20CompressZ%2DIt%20Code%2Ezip%5FCompressZIt">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:bendowse@dingoblue.net.au">Benjamin Dowse</a></p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Benjamin Dowse</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />1 Jan 2000<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: CompressZIt.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "CompressZIt"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+'Default Property Values:
+Private Const m_def_CompressedSize = 0
+Private Const m_def_OriginalSize = 0
+'Property Variables:
+Private m_CompressedSize As Long
+Private m_OriginalSize As Long
+
+'Declares
+Private Declare Function ShellAbout Lib "shell32.dll" Alias "ShellAboutA"
+ (ByVal hwnd As Long, ByVal szApp As String, ByVal szOtherStuff As String,
+ ByVal hIcon As Long) As Long
+Private Declare Function GetFocus Lib "user32" () As Long
+Private Declare Function GetParent Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" (hpvDest As
+ Any, hpvSource As Any, ByVal cbCopy As Long)
+Private Declare Function compress Lib "zlib.dll" (dest As Any, destLen As Any,
+ src As Any, ByVal srcLen As Long) As Long
+Private Declare Function uncompress Lib "zlib.dll" (dest As Any, destLen As
+ Any, src As Any, ByVal srcLen As Long) As Long
+Private Const ZLIB_NOERROR = 0
+
+Private Declare Function CreateFile Lib "kernel32" Alias "CreateFileA" (ByVal
+ lpFileName As String, ByVal dwDesiredAccess As Long, ByVal dwShareMode As
+ Long, lpSecurityAttributes As Any, ByVal dwCreationDisposition As Long, ByVal
+ dwFlagsAndAttributes As Long, ByVal hTemplateFile As Long) As Long
+Private Declare Function CreateFileMapping Lib "kernel32" Alias
+ "CreateFileMappingA" (ByVal hFile As Long, lpFileMappingAttributes As Any,
+ ByVal flProtect As Long, ByVal dwMaximumSizeHigh As Long, ByVal
+ dwMaximumSizeLow As Long, ByVal lpName As String) As Long
+Private Declare Function UnmapViewOfFile Lib "kernel32" (lpBaseAddress As Any)
+ As Long
+Private Declare Function CloseHandle Lib "kernel32" (ByVal hObject As Long) As
+ Long
+Private Declare Function SetFilePointer Lib "kernel32" (ByVal hFile As Long,
+ ByVal lDistanceToMove As Long, lpDistanceToMoveHigh As Long, ByVal
+ dwMoveMethod As Long) As Long
+Private Declare Function SetEndOfFile Lib "kernel32" (ByVal hFile As Long) As
+ Long
+Private Declare Function MapViewOfFile Lib "kernel32" (ByVal hFileMappingObject
+ As Long, ByVal dwDesiredAccess As Long, ByVal dwFileOffsetHigh As Long, ByVal
+ dwFileOffsetLow As Long, ByVal dwNumberOfBytesToMap As Long) As Long
+Private Declare Function GetFileSize Lib "kernel32" (ByVal hFile As Long,
+ lpFileSizeHigh As Long) As Long
+Private Const GENERIC_WRITE = &amp;H40000000
+Private Const GENERIC_READ = &amp;H80000000
+Private Const FILE_SHARE_WRITE = &amp;H2
+Private Const FILE_SHARE_READ = &amp;H1
+Private Const CREATE_ALWAYS = 2
+Private Const OPEN_EXISTING = 3
+Private Const PAGE_NOACCESS = &amp;H1&amp;
+Private Const PAGE_READONLY = &amp;H2&amp;
+Private Const PAGE_READWRITE = &amp;H4&amp;
+Private Const PAGE_WRITECOPY = &amp;H8&amp;
+Private Const PAGE_EXECUTE = &amp;H10&amp;
+Private Const PAGE_EXECUTE_READ = &amp;H20&amp;
+Private Const PAGE_EXECUTE_READWRITE = &amp;H40&amp;
+Private Const PAGE_EXECUTE_WRITECOPY = &amp;H80&amp;
+Private Const PAGE_GUARD = &amp;H100&amp;
+Private Const PAGE_NOCACHE = &amp;H200&amp;
+Private Const FILE_BEGIN = 0
+Private Const SECTION_QUERY = &amp;H1
+Private Const SECTION_MAP_WRITE = &amp;H2
+Private Const SECTION_MAP_READ = &amp;H4
+Private Const SECTION_MAP_EXECUTE = &amp;H8
+Private Const SECTION_EXTEND_SIZE = &amp;H10
+
+Private Const FILE_MAP_WRITE = SECTION_MAP_WRITE
+Private Const FILE_MAP_COPY = SECTION_QUERY
+Private Const FILE_MAP_READ = SECTION_MAP_READ
+
+Private Type SYSTEM_INFO
+   dwOemID As Long
+   dwPageSize As Long
+   lpMinimumApplicationAddress As Long
+   lpMaximumApplicationAddress As Long
+   dwActiveProcessorMask As Long
+   dwNumberOrfProcessors As Long
+   dwProcessorType As Long
+   dwAllocationGranularity As Long
+   dwReserved As Long
+End Type
+Private Declare Sub GetSystemInfo Lib "kernel32" (lpSystemInfo As SYSTEM_INFO)
+
+' To Report API errors:
+Private Const FORMAT_MESSAGE_ALLOCATE_BUFFER = &amp;H100
+Private Const FORMAT_MESSAGE_ARGUMENT_ARRAY = &amp;H2000
+Private Const FORMAT_MESSAGE_FROM_HMODULE = &amp;H800
+Private Const FORMAT_MESSAGE_FROM_STRING = &amp;H400
+Private Const FORMAT_MESSAGE_FROM_SYSTEM = &amp;H1000
+Private Const FORMAT_MESSAGE_IGNORE_INSERTS = &amp;H200
+Private Const FORMAT_MESSAGE_MAX_WIDTH_MASK = &amp;HFF
+Private Declare Function FormatMessage Lib "kernel32" Alias "FormatMessageA"
+ (ByVal dwFlags As Long, lpSource As Any, ByVal dwMessageId As Long, ByVal
+ dwLanguageId As Long, ByVal lpBuffer As String, ByVal nSize As Long, Arguments
+ As Long) As Long
+
+Enum CZErrors
+    [Insufficient Buffer] = -5
+End Enum
+
+Public Function WinAPIError(ByVal lLastDLLError As Long) As String
+Dim sBuff As String
+Dim lCount As Long
+    
+   ' Return the error message associated with LastDLLError:
+   sBuff = String$(256, 0)
+   lCount = FormatMessage( _
+      FORMAT_MESSAGE_FROM_SYSTEM Or FORMAT_MESSAGE_IGNORE_INSERTS, _
+      0, lLastDLLError, 0&amp;, sBuff, Len(sBuff), ByVal 0)
+   If lCount Then
+      WinAPIError = Left$(sBuff, lCount)
+   End If
+
+End Function
+
+Public Function About() As Boolean
+    Dim i As VbMsgBoxResult
+    i = MsgBox("Compress-Z-It" &amp; vbCrLf &amp; vbCrLf &amp; "Data compression ActiveX
+     component module." &amp; vbCrLf &amp; vbCrLf &amp; "DLL written and compiled by
+     Benjamin Dowse. Portions written by other external 'zLib' compression
+     software library authors." &amp; vbCrLf &amp; vbCrLf &amp; "Special thanks and honor
+     to the authors of the zLib DLL.", vbInformation + vbOKOnly, "DowseWare -
+     Compress-Z-It ActiveX DLL")
+    
+    'Dim szOtherStuff As String
+    'Dim szApp As String
+    'szOtherStuff = "Compress-Z-It" &amp; vbCrLf &amp; "Data compression ActiveX
+     component module." &amp; vbCrLf &amp; vbCrLf &amp; "DLL written and compiled by
+     Benjamin Dowse. Portions written by other external 'zLib' compression
+     software library authors." &amp; vbCrLf &amp; vbCrLf &amp; "Special thanks and honor
+     to the authors of the zLib DLL."
+    'szApp = "DowseWare - Compress-Z-It ActiveX DLL"
+    'ShellAbout GetParent(GetFocus()), szApp, szOtherStuff, 0
+End Function
+
+
+Public Function CompressData(TheData() As Byte) As Long
+Dim lResult As Long
+'Allocate memory for byte array
+Dim lBufferSize As Long
+Dim bTempBuffer() As Byte
+Dim iL As Long, iU As Long
+
+   m_OriginalSize = 0
+   m_CompressedSize = 0
+   
+   GetBounds TheData, iL, iU
+   If iU &gt; iL Then
+      ' Store the original size of this data:
+      m_OriginalSize = iU - iL + 1
+   
+      ' Prepare the area to compress into.
+      ' Ensure we have sufficient space for the worst possible case (no
+      ' compression plus additional space for the compression info):
+      lBufferSize = m_OriginalSize
+      lBufferSize = lBufferSize + (lBufferSize * 0.01) + 12
+      ReDim bTempBuffer(0 To lBufferSize - 1) As Byte
+
+      'Compress byte array (data):
+      lResult = compress(bTempBuffer(0), lBufferSize, TheData(iL),
+       m_OriginalSize)
+      
+      ' Result is an error code
+      If lResult = ZLIB_NOERROR Then
+      
+         ' lBufferSize will have been set by zlib:
+         m_CompressedSize = lBufferSize
+         
+         ' If we got data back:
+         If m_CompressedSize &gt; 0 Then
+            'Truncate to actual compressed size
+            ReDim Preserve TheData(0 To lBufferSize - 1) As Byte
+            ' Return data in buffer:
+            CopyMemory TheData(0), bTempBuffer(0), lBufferSize
+            
+         Else
+            Erase TheData
+         End If
+            
+         'Set properties if no error occurred
+         m_CompressedSize = lBufferSize
+   
+      End If
+      
+      'Cleanup
+      Erase bTempBuffer
+
+   End If
+
+   'Return error code (if any)
+   CompressData = lResult
+
+End Function
+
+Public Function CompressString(TheString As String) As Long
+Dim lResult As Long
+Dim lCmpSize As Long
+Dim sTBuff As String
+
+   m_CompressedSize = 0
+   m_OriginalSize = Len(TheString)
+
+   'Allocate string space for the buffers
+   
+   lCmpSize = m_OriginalSize
+   lCmpSize = lCmpSize + (lCmpSize * 0.01) + 12
+   sTBuff = String$(lCmpSize, 0)
+
+   'Compress string (temporary string buffer) data
+   lResult = compress(ByVal sTBuff, lCmpSize, ByVal TheString, Len(TheString))
+
+   If lResult = ZLIB_NOERROR Then
+      
+      'Crop the string and set it to the actual string.
+      TheString = Left$(sTBuff, lCmpSize)
+
+      'Set compressed size of string.
+      m_CompressedSize = lCmpSize
+
+      'Cleanup
+      sTBuff = ""
+   
+   Else
+      ' Error
+      m_OriginalSize = 0
+      
+   End If
+
+   'Return error code (if any)
+   CompressString = lResult
+   
+End Function
+
+Public Function DecompressData( _
+      TheData() As Byte, _
+      OrigSize As Long _
+   ) As Long
+Dim lResult As Long
+Dim lBufferSize As Long
+Dim bTempBuffer() As Byte
+Dim iL As Long, iU As Long
+   
+   m_OriginalSize = 0
+   m_CompressedSize = 0
+
+   GetBounds TheData, iL, iU
+   If iU &gt; iL Then
+
+      m_OriginalSize = 0
+      m_CompressedSize = iU - iL + 1
+
+      lBufferSize = OrigSize + 1
+      ReDim bTempBuffer(0 To lBufferSize - 1) As Byte
+
+      'Decompress data
+      lResult = uncompress(bTempBuffer(0), lBufferSize, TheData(0),
+       UBound(TheData) + 1)
+
+      'Reset properties
+      If lResult = ZLIB_NOERROR Then
+         m_OriginalSize = lBufferSize
+         'Truncate buffer to compressed size
+         ReDim Preserve TheData(0 To lBufferSize - 1) As Byte
+         CopyMemory TheData(0), bTempBuffer(0), lBufferSize
+      Else
+         ' error
+         m_CompressedSize = 0
+         m_OriginalSize = 0
+      End If
+      
+   End If
+   
+   'Return error code (if any)
+   DecompressData = lResult
+
+End Function
+Public Function DecompressString( _
+      TheString As String, _
+      OrigSize As Long _
+   ) As Long
+Dim lResult As Long
+
+'Allocate string space
+Dim lCmpSize As Long
+Dim sTBuff As String
+    
+   m_CompressedSize = Len(TheString)
+   m_OriginalSize = 0
+   
+   sTBuff = String$(OrigSize + 1, 0)
+   lCmpSize = Len(sTBuff)
+
+   'Decompress
+   lResult = uncompress(ByVal sTBuff, lCmpSize, ByVal TheString,
+    m_CompressedSize)
+    
+   If lResult = ZLIB_NOERROR Then
+
+      'Make string the size of the uncompressed string
+      TheString = Left$(sTBuff, lCmpSize)
+      m_OriginalSize = lCmpSize
+   
+   Else
+      ' Error:
+      m_CompressedSize = 0
+      m_OriginalSize = 0
+   End If
+   
+   'Return error code (if any)
+   DecompressString = lResult
+   
+
+End Function
+
+Private Sub GetBounds(TheData() As Byte, iL As Long, iU As Long)
+On Error Resume Next ' irritating issue with Ubound &amp; LBound
+   iL = LBound(TheData)
+   If Err.Number = 0 Then
+      iU = UBound(TheData)
+   Else
+      iL = 0: iU = 0
+   End If
+End Sub
+
+Public Property Get CompressedSize() As Long
+    CompressedSize = m_CompressedSize
+End Property
+
+Public Property Get OriginalSize() As Long
+    OriginalSize = m_OriginalSize
+End Property
+
+Private Function UnsignedAdd _
+   (Start As Long, Incr As Long) As Long
+   ' only works with positive increments
+   If Start And &amp;H80000000 Then 'Start &lt; 0
+      UnsignedAdd = Start + Incr
+   ElseIf (Start Or &amp;H80000000) &lt; -Incr Then
+      UnsignedAdd = Start + Incr
+   Else
+      UnsignedAdd = (Start + &amp;H80000000) + _
+            (Incr + &amp;H80000000)
+   End If
+End Function
+
+
+Private Sub Class_Initialize()
+   m_CompressedSize = m_def_CompressedSize
+   m_OriginalSize = m_def_OriginalSize
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Compression</a>&#160;.&#160;<a href="article.html">Compressing and Expanding with the Freeware zLib.DLL</a>&#160;.&#160;<a href="VB6_CompressZ-It_Code.html">VB6 CompressZ-It Code</a>&#160;.&#160;CompressZIt.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Compression/Compressing_and_Expanding_With_zLib/VB6_CompressZ-It_Code_zip_CompressZIt_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:51 GMT -->
+</html>

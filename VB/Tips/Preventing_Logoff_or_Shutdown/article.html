@@ -1,0 +1,132 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Preventing_Logoff_or_Shutdown/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:43:58 GMT -->
+<head>
+<title>vbAccelerator - Preventing Logoff or Shutdown</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Sometimes if an application is performing a long operation you do not want the
+user to log-off or shutdown the system until it is complete.  An example is
+when burning a CD, as the CD burn will be terminated and the disc potentially
+ruined.  This sample demonstrates how to respond to the WM_QUERYENDSESSION
+message to prevent this from occurring.
+" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" />
+<link rel="contents" href="../index.html" /><link rel="meta" type="application/rdf+xml" href="article.rdf" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Preventing Logoff or Shutdown</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Query_End_Session_Sample.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Query End Session Sample</a> (10K)</p><p /><p class="nav"><a href="VB6_Query_End_Session_Sample.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Query End Session Sample</a> (10K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:14975</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14975&amp;type=Article&amp;title=Preventing%20Logoff%20or%20Shutdown">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />2 Jun 2004<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1385">How to Shutdown the System in Windows 9x and NT</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Preventing Logoff or Shutdown</h1><p class="splash">Respond to the WM_QUERYENDSESSION to control inappropriate log-offs</p><img src="endSession.png" width="374" height="274" alt="End Session Response Sample" /><p /><p>
+Sometimes if an application is performing a long operation you do not want the
+user to log-off or shutdown the system until it is complete.  An example is
+when burning a CD, as the CD burn will be terminated and the disc potentially
+ruined.  This sample demonstrates how to respond to the <span class="code">WM_QUERYENDSESSION</span>
+message to prevent this from occurring.
+</p><h2>About WM_QUERYENDSESSION</h2><p>
+The <span class="code">WM_QUERYENDSESSION</span> is sent to the top level Window of each application 
+when the user chooses
+to end a session by either logging off or shutting down Windows (or if a <a href="http://www.vbaccelerator.com/article.asp?id=1385">programmatic 
+request to shutdown the system</a> is made).  By default, applications return
+1 in response to this message, however, if you return 0 then the session is not ended and the
+system will stop sending the message to any other application.
+</p><p>
+Note that your application needs to respond to the message loop for this technique to work.  That
+means that the long operation must be non-blocking, otherwise if Windows sends the
+<span class="code">WM_QUERYENDSESSION</span> but does not get a timely response it will attempt 
+to kill your application after a short delay anyway.  Another thing is that you cannot (for
+example) put up a dialog or MessageBox here asking the user what to do: if you do Windows
+will again see that it doesn't get a timely response and will kill your application.
+</p><h2>In VB</h2><p>
+To respond to this in VB, you need to install a subclass on your applications top-level Window(s).
+As usual, this sample uses the <a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing and Timer Assistant</a>
+to achieve this.  Here's the code:
+</p><pre>
+Private Const WM_QUERYENDSESSION As Long = &amp;H11
+Private Const ENDSESSION_LOGOFF As Long = &amp;H80000000
+
+Implements ISubclass
+
+
+Private Sub Form_Load()
+   AttachMessage Me, Me.hWnd, WM_QUERYENDSESSION
+End Sub
+
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+   DetachMessage Me, Me.hWnd, WM_QUERYENDSESSION
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As SSubTimer.EMsgResponse)
+   '
+End Property
+
+Private Property Get ISubclass_MsgResponse() As SSubTimer.EMsgResponse
+   ISubclass_MsgResponse = emrPreprocess
+End Property
+
+Private Function ISubclass_WindowProc( _
+      ByVal hWnd As Long, _
+      ByVal iMsg As Long, _
+      ByVal wParam As Long, _
+      ByVal lParam As Long) As Long
+Dim lR As Long
+   If (iMsg = WM_QUERYENDSESSION) Then
+      If (lParam Or ENDSESSION_LOGOFF) = ENDSESSION_LOGOFF Then
+         ' user logging off
+      Else
+         ' shutdown
+      End If
+      lR = 1
+      ' Return 0 to prevent the session being ended,
+      ' otherwise return 1:
+      ISubclass_WindowProc = lR
+   End If
+End Function
+</pre><h2>Wrap Up</h2><p>
+This sample demonstrates how to prevent a Windows session from being ended
+by log-off or shutdown, which can be useful if your application is performing
+an operation that would otherwise result in data being corrupted.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Preventing Logoff or Shutdown</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 7 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Preventing_Logoff_or_Shutdown/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:44:02 GMT -->
+</html>

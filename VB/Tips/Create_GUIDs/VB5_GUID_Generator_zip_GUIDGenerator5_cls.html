@@ -1,0 +1,180 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Create_GUIDs/VB5_GUID_Generator_zip_GUIDGenerator5_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:55 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: GUIDGenerator5.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: GUIDGenerator5.cls" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;<a href="article.html">Create New GUIDs</a>&#160;.&#160;<a href="VB5_GUID_Generator.html">VB5 GUID Generator</a>&#160;.&#160;GUIDGenerator5.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_GUID_Generator.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 GUID Generator</a> (14K)</p><p /><p class="nav"><a href="VB6_GUID_Generator.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 GUID Generator</a> (12K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:5125</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=5125&amp;type=Zip&amp;title=VB5%20GUID%20Generator%2Ezip%5FGUIDGenerator5">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:dionwiggins@hotmail.com">Dion Wiggins</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />15 Nov 1999<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: GUIDGenerator5.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "GUIDGenerator"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+'Author:    Dion Wiggins
+'Purpose:   A simple component that generates a unique GUID value.
+'           A GUID is a 16-byte field used as a unique identifier.
+'           A GUID, also knows as a CLSID and IID a 16-byte identifier that is
+ guaranteed to be unique.
+'           This allows developers across the world can independently develop
+ and deploy their software
+'           without fear of accidental collision with software written by
+ others.
+'           This same GUID value can be used not only for software components,
+ but for unique keys in
+'           databases and any other application that requires a unique value.
+'           COM frequently must map GUIDs (IIDs and CLSIDs) to some arbitrarily
+ large set of other values.
+'
+'Copyright: Copyright (C) 1999, Control-Shift Inc. All Rights Reserved.
+'Notes:     You are free to use and modify this code, but not to distribute
+ modified versions
+'           of the ActiveX DLL with the same filename and/or ProgIds.
+'           If you have made changes which you think are beneficial, or have
+ bug reports, then you
+'           can email me (dionwiggins@hotmail.com) and I will do my utmost to
+ get the a new version
+'           published.
+'           You can freely distribute this code, but you must distribute them
+ it in its original state
+'           and particularly keep the disclaimer information. Notification
+ would be greatly appreciated!
+'           You can freely distribute any compiled code or any products you
+ build using the code.
+'           If you wish to distribute the source code files by any other means
+ (i.e. if you want to
+'           include it on a CD or any other software media) then the EXPRESS
+ PERMISSION of the
+'           Control-Shift Inc. is REQUIRED.
+Option Explicit
+
+Private Type GUID
+     Data1 As Long
+     Data2 As Long
+     Data3 As Long
+     Data4(8) As Byte
+End Type
+
+Private Declare Function CoCreateGuid Lib "ole32.dll" ( _
+     pguid As GUID) As Long
+
+Private Declare Function StringFromGUID2 Lib "ole32.dll" ( _
+     rguid As Any, _
+     ByVal lpstrClsId As Long, _
+     ByVal cbMax As Long) As Long
+
+'Author:    Dion Wiggins
+'Purpose:   Creates a GUID
+'Notes:
+'Inputs:
+'   - strRemoveChars    The characters to remove from the GUID (usually the {}-
+ characters)
+'History
+'Date           Author          Description
+'1 Jun 1999     Dion Wiggins    Created
+Public Function CreateGUID( _
+    Optional strRemoveChars As String = "{}-") As String
+Dim udtGUID As GUID
+Dim strGUID As String
+Dim bytGUID() As Byte
+Dim lngLen As Long
+Dim lngRetVal As Long
+Dim lngPos As Long
+
+'Initialize
+lngLen = 40
+bytGUID = String(lngLen, 0)
+
+'Create the GUID
+CoCreateGuid udtGUID
+
+'Convert the structure into a displayable string
+lngRetVal = StringFromGUID2(udtGUID, VarPtr(bytGUID(0)), lngLen)
+strGUID = bytGUID
+If (Asc(Mid$(strGUID, lngRetVal, 1)) = 0) Then
+    lngRetVal = lngRetVal - 1
+End If
+
+'Trim the trailing characters
+strGUID = Left$(strGUID, lngRetVal)
+
+'Remove the unwanted characters
+For lngPos = 1 To Len(strRemoveChars)
+    strGUID = Replace(strGUID, Mid(strRemoveChars, lngPos, 1), "")
+Next
+
+CreateGUID = strGUID
+End Function
+
+' author: Steve.  VB5 equivalent of VB6 replace function
+Private Function Replace(ByRef sThis As String, ByVal sToReplace As String,
+ ByVal sReplaceWith As String) As String
+Dim iPos As Long
+Dim iNextPos As Long
+Dim lLen As Long
+
+   lLen = Len(sToReplace)
+   iPos = 1
+   iNextPos = InStr(sThis, sToReplace)
+   Do While Not (iNextPos = 0)
+      Replace = Replace &amp; Mid$(sThis, iPos, iNextPos - iPos) &amp; sReplaceWith
+      iPos = iNextPos + lLen
+      iNextPos = InStr(iPos, sThis, sToReplace)
+   Loop
+   If iPos &lt; Len(sThis) Then
+      Replace = Replace &amp; Mid$(sThis, iPos)
+   End If
+End Function
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;<a href="article.html">Create New GUIDs</a>&#160;.&#160;<a href="VB5_GUID_Generator.html">VB5 GUID Generator</a>&#160;.&#160;GUIDGenerator5.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Create_GUIDs/VB5_GUID_Generator_zip_GUIDGenerator5_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:55 GMT -->
+</html>

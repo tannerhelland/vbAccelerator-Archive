@@ -1,0 +1,1208 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Icon_Controls/Icon_Selector/VB6_Icon_Selector_Full_Source_zip_ctlIconPicker_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:54 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: ctlIconPicker.ctl</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: ctlIconPicker.ctl" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Icon Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator Icon Selector Control</a>&#160;.&#160;<a href="VB6_Icon_Selector_Full_Source.html">VB6 Icon Selector Full Source</a>&#160;.&#160;ctlIconPicker.ctl</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Icon_Selector_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Icon Selector Control</a> (24K)</p><p class="nav"><a href="VB5_Icon_Selector_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Icon Selector Demonstration</a> (9K)</p><p class="nav"><a href="VB5_Icon_Selector_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Icon Selector Full Source</a> (59K)</p><p /><p class="nav"><a href="VB6_Icon_Selector_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Icon Selector Control</a> (24K)</p><p class="nav"><a href="VB6_Icon_Selector_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Icon Selector Demonstration</a> (9K)</p><p class="nav"><a href="VB6_Icon_Selector_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Icon Selector Full Source</a> (59K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:11666</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=11666&amp;type=Zip&amp;title=VB6%20Icon%20Selector%20Full%20Source%2Ezip%5FctlIconPicker">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />28 Mar 2003<br /><p class="update">Now using <i>ExtractIconEx</i> rather than resource
+enumeration to pick the icon.  This ensures the id is compatible
+with the ShellLink interface.</p><p class="update">Fixed bug preventing <i>SelectionChange</i> events from being sent.</p><p class="update">When an icon file is specified in code, the file name now
+appears in the text box.
+</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1418">Two code only solutions for displaying Common/Dialogs</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2522">Reading Data from Local or External Library Resources</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1412">Owner Draw Combo and List Boxes Version 2.1</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2967">Add File or URL AutoCompletion to TextBoxes and ComboBoxes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2315">Simple Windows Spy Utility</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: ctlIconPicker.ctl</h1><pre>VERSION 5.00
+Begin VB.UserControl ctlIconPicker 
+   Alignable       =   -1  'True
+   ClientHeight    =   3600
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   4800
+   ScaleHeight     =   3600
+   ScaleWidth      =   4800
+   ToolboxBitmap   =   "ctlIconPicker.ctx":0000
+   Begin VB.CommandButton cmdBrowse 
+      Caption         =   "&amp;Browse..."
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   3360
+      TabIndex        =   2
+      Top             =   300
+      Width           =   1335
+   End
+   Begin VB.TextBox txtFile 
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   60
+      TabIndex        =   0
+      Top             =   300
+      Width           =   3255
+   End
+   Begin VB.Label lblSelect 
+      Caption         =   "Select an icon from the list below:"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   255
+      Left            =   60
+      TabIndex        =   3
+      Top             =   720
+      Width           =   3315
+   End
+   Begin VB.Label lblLookFor 
+      Caption         =   "Look for icons in this file:"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   195
+      Left            =   60
+      TabIndex        =   1
+      Top             =   60
+      Width           =   3315
+   End
+End
+Attribute VB_Name = "ctlIconPicker"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+Private Type POINTAPI
+   x As Long
+   y As Long
+End Type
+
+Private Type RECT
+   Left As Long
+   TOp As Long
+   Right As Long
+   Bottom As Long
+End Type
+
+' Owner draw item measure:
+Private Type MEASUREITEMSTRUCT
+    CtlType As Long
+    CtlID As Long
+    ItemId As Long
+    itemWidth As Long
+    itemHeight As Long
+    itemData As Long
+End Type
+
+' Owner draw item draw:
+Private Type DRAWITEMSTRUCT
+    CtlType As Long
+    CtlID As Long
+    ItemId As Long
+    ItemAction As Long
+    ItemState As Long
+    hwndItem As Long
+    hdc As Long
+    rcItem As RECT
+    itemData As Long
+End Type
+
+Private Type ICONDIR
+   idReserved As Integer   '// Reserved
+   idType As Integer       '// resource type (1 for icons)
+   idCount As Integer      '// how many images?
+   ' idEntries() as ICONDIRENTRY array follows.
+End Type
+
+' Constants:
+Private Const WM_SIZE = &amp;H5
+Private Const WM_SETFOCUS = &amp;H7
+Private Const WM_KILLFOCUS = &amp;H8
+Private Const WM_MOUSEACTIVATE = &amp;H21
+Private Const WM_DRAWITEM = &amp;H2B
+Private Const WM_MEASUREITEM = &amp;H2C
+Private Const WM_SETFONT = &amp;H30
+Private Const WM_GETFONT = &amp;H31
+Private Const WM_COMMAND = &amp;H111
+Private Const WM_KEYDOWN = &amp;H100
+Private Const WM_KEYUP = &amp;H101
+Private Const WM_CHAR = &amp;H102
+'Private Const WM_MOUSEMOVE = &amp;H200
+'Private Const WM_LBUTTONDOWN = &amp;H201
+'Private Const WM_LBUTTONUP = &amp;H202
+'Private Const WM_RBUTTONDOWN = &amp;H204
+'Private Const WM_RBUTTONUP = &amp;H205
+'Private Const WM_MBUTTONDOWN = &amp;H207
+'Private Const WM_MBUTTONUP = &amp;H208
+Private Const WM_CTLCOLORLISTBOX = &amp;H134
+
+Private Const WS_HSCROLL = &amp;H100000
+Private Const WS_VISIBLE = &amp;H10000000
+Private Const WS_CHILD = &amp;H40000000
+
+Private Const WS_EX_CLIENTEDGE = &amp;H200
+
+' List box messages:
+Private Const LB_ERR = (-1)
+
+Private Const LB_ADDSTRING = &amp;H180
+Private Const LB_RESETCONTENT = &amp;H184
+Private Const LB_SETCURSEL = &amp;H186
+Private Const LB_GETCURSEL = &amp;H188
+Private Const LB_GETTEXT = &amp;H189
+Private Const LB_GETTEXTLEN = &amp;H18A
+Private Const LB_SETCOLUMNWIDTH = &amp;H195
+Private Const LB_GETITEMDATA = &amp;H199
+Private Const LB_SETITEMDATA = &amp;H19A
+Private Const LB_SETITEMHEIGHT = &amp;H1A0
+Private Const LB_FINDSTRINGEXACT = &amp;H1A2
+
+' List box styles;
+Private Const LBS_NOTIFY = &amp;H1&amp;
+Private Const LBS_HASSTRINGS = &amp;H40&amp;
+Private Const LBS_MULTICOLUMN = &amp;H200&amp;
+Private Const LBS_OWNERDRAWFIXED = &amp;H10&amp;
+
+' List box notification messages:
+Private Const LBN_DBLCLK = 2
+Private Const LBN_ERRSPACE = (-2)
+Private Const LBN_KILLFOCUS = 5
+Private Const LBN_SELCANCEL = 3
+Private Const LBN_SELCHANGE = 1
+Private Const LBN_SETFOCUS = 4
+
+' Owner draw style types:
+Private Const ODS_CHECKED = &amp;H8
+Private Const ODS_DISABLED = &amp;H4
+Private Const ODS_FOCUS = &amp;H10
+Private Const ODS_GRAYED = &amp;H2
+Private Const ODS_SELECTED = &amp;H1
+
+' Show window:
+Private Const SW_HIDE = 0
+Private Const SW_SHOW = 5
+
+' mouse activate responses
+Private Const MA_ACTIVATE = 1
+Private Const MA_ACTIVATEANDEAT = 2
+Private Const MA_NOACTIVATE = 3
+Private Const MA_NOACTIVATEANDEAT = 4
+
+' Virtual key code constants:
+Private Const VK_SHIFT = &amp;H10&amp;
+Private Const VK_CONTROL = &amp;H11&amp;
+Private Const VK_MENU = &amp;H12&amp; ' Alt key
+
+' Set window pos
+Private Const SWP_FRAMECHANGED = &amp;H20        '  The frame changed: send
+ WM_NCCALCSIZE
+Private Const SWP_HIDEWINDOW = &amp;H80
+Private Const SWP_NOACTIVATE = &amp;H10
+Private Const SWP_NOCOPYBITS = &amp;H100
+Private Const SWP_NOMOVE = &amp;H2
+Private Const SWP_NOOWNERZORDER = &amp;H200      '  Don't do owner Z ordering
+Private Const SWP_NOREDRAW = &amp;H8
+Private Const SWP_NOREPOSITION = SWP_NOOWNERZORDER
+Private Const SWP_NOSIZE = &amp;H1
+Private Const SWP_NOZORDER = &amp;H4
+Private Const SWP_SHOWWINDOW = &amp;H40
+
+' Creating new windows:
+Private Declare Function CreateWindowEx Lib "USER32" Alias "CreateWindowExA"
+ (ByVal dwExStyle As Long, ByVal lpClassName As String, ByVal lpWindowName As
+ String, ByVal dwStyle As Long, ByVal x As Long, ByVal y As Long, ByVal nWidth
+ As Long, ByVal nHeight As Long, ByVal hWndParent As Long, ByVal hMenu As Long,
+ ByVal hInstance As Long, lpParam As Any) As Long
+Private Declare Function DestroyWindow Lib "USER32" (ByVal hwnd As Long) As Long
+
+' Focus
+Private Declare Function SetFocusAPI Lib "USER32" Alias "SetFocus" (ByVal hwnd
+ As Long) As Long
+Private Declare Function GetFocus Lib "USER32" () As Long
+
+Private Declare Function ShowWindow Lib "USER32" (ByVal hwnd As Long, ByVal
+ nCmdShow As Long) As Long
+Private Declare Function MoveWindow Lib "USER32" (ByVal hwnd As Long, ByVal x
+ As Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ bRepaint As Boolean) As Long
+Private Declare Function SetWindowPos Lib "USER32" (ByVal hwnd As Long, ByVal
+ hWndInsertAfter As Long, ByVal x As Long, ByVal y As Long, ByVal cx As Long,
+ ByVal cy As Long, ByVal wFlags As Long) As Long
+Private Declare Function SetParent Lib "USER32" (ByVal hWndChild As Long, ByVal
+ hWndNewParent As Long) As Long
+Private Declare Function GetParent Lib "USER32" (ByVal hwnd As Long) As Long
+Private Declare Function GetClientRect Lib "USER32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function ClientToScreen Lib "USER32" (ByVal hwnd As Long,
+ lpPoint As POINTAPI) As Long
+Private Declare Function ScreenToClient Lib "USER32" (ByVal hwnd As Long,
+ lpPoint As POINTAPI) As Long
+Private Declare Function ChildWindowFromPoint Lib "USER32" (ByVal hWndParent As
+ Long, ByVal x As Long, ByVal y As Long) As Long
+Private Declare Function InvalidateRect Lib "USER32" (ByVal hwnd As Long,
+ lpRect As RECT, ByVal bErase As Long) As Long
+
+' Message functions:
+Private Declare Function SendMessageByString Lib "USER32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ String) As Long
+Private Declare Function SendMessageByLong Lib "USER32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Declare Function SendMessage Lib "USER32" Alias "SendMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+Private Declare Function PostMessage Lib "USER32" Alias "PostMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As Long)
+ As Long
+
+' GDI
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+Private Declare Function GetSysColorBrush Lib "USER32" (ByVal nIndex As Long)
+ As Long
+Private Declare Function FillRect Lib "USER32" (ByVal hdc As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+
+' Key functions:
+Private Declare Function GetAsyncKeyState Lib "USER32" (ByVal vKey As Long) As
+ Integer
+'
+' General
+Private Declare Function GetSystemMetrics Lib "USER32" (ByVal nIndex As Long)
+ As Long
+Private Const SM_CYHSCROLL = 3
+
+' SHAutoComplete:
+Private Enum SHAutoCompleteFlags
+   SHACF_DEFAULT = &amp;H0                           ' // Currently
+    (SHACF_FILESYSTEM | SHACF_URLALL)
+   SHACF_FILESYSTEM = &amp;H1                        ' // This includes the File
+    System as well as the rest of the shell (Desktop\My Computer\Control Panel\)
+   SHACF_URLHISTORY = &amp;H2                        ' // URLs in the User's History
+   SHACF_URLMRU = &amp;H4                            ' // URLs in the User's
+    Recently Used list.
+   SHACF_USETAB = &amp;H8                            ' // Use the tab to move thru
+    the autocomplete possibilities instead of to the next dialog/window control.
+   SHACF_URLALL = (SHACF_URLHISTORY Or SHACF_URLMRU)
+   SHACF_FILESYS_ONLY = &amp;H10                     ' // This includes the File
+    System
+   SHACF_FILESYS_DIRS = &amp;H20                     ' // Same as
+    SHACF_FILESYS_ONLY except it only includes directories, UNC servers, and
+    UNC server shares.
+   SHACF_AUTOSUGGEST_FORCE_ON = &amp;H10000000       ' // Ignore the registry
+    default and force the feature on.
+   SHACF_AUTOSUGGEST_FORCE_OFF = &amp;H20000000      ' // Ignore the registry
+    default and force the feature off.
+   SHACF_AUTOAPPEND_FORCE_ON = &amp;H40000000        ' // Ignore the registry
+    default and force the feature on. (Also know as AutoComplete)
+   SHACF_AUTOAPPEND_FORCE_OFF = &amp;H80000000       ' // Ignore the registry
+    default and force the feature off. (Also know as AutoComplete)
+End Enum
+Private Declare Function SHAutoComplete Lib "shlwapi.dll" ( _
+   ByVal hwndEdit As Long, ByVal dwFlags As Long) As Long
+
+' Extracting icons:
+Private Declare Function ExtractIconEx Lib "Shell32" Alias "ExtractIconExA" ( _
+      ByVal lpszFile As String, _
+      ByVal nIconIndex As Long, _
+      plIconLarge As Long, _
+      plIconSmall As Long, _
+      ByVal nIcons As Long _
+   ) As Long
+Private Declare Function DestroyIcon Lib "USER32" (ByVal hIcon As Long) As Long
+
+
+' Subclassing support:
+Implements ISubclass
+
+' Over-riding VB UserControl's default IOLEInPlaceActivate:
+Private m_IPAOHookStruct As IPAOHookStruct
+
+' Handle of ListBox:
+Private m_hWnd As Long
+' Handle of user control:
+Private m_hWndParent As Long
+' design time?
+Private m_bDesignMode As Boolean
+' Font
+Private m_fnt As IFont
+' BackColour brush
+Private m_hBackBrush As Long
+' Top of listBox:
+Private m_lTop As Long
+' icons:
+Private m_hIml As Long
+Private m_lIconWidth As Long
+Private m_lIconHeight As Long
+
+Private m_lNewItem As Long
+
+Private m_sFileName As String
+Private m_bAllowChangeFileName As Boolean
+
+Private m_cIml As pcVBALImageList
+
+Public Event DblClick()
+Public Event KeyDown(KeyCode As Integer, Shift As Integer)
+Public Event KeyPress(KeyAscii As Integer)
+Public Event KeyUp(KeyCode As Integer, Shift As Integer)
+Public Event SelectionChange()
+
+
+Public Sub AddIcon(sPic As StdPicture, ByVal sKey As String)
+Dim iCount As Long
+Dim lR As Long
+
+   iCount = m_cIml.ImageCount
+   m_cIml.AddFromHandle sPic.Handle, IMAGE_ICON
+   If (m_cIml.ImageCount &gt; iCount) Then
+      lR = SendMessageByString(m_hWnd, LB_ADDSTRING, 0, sKey)
+      If (lR &gt; LB_ERR) Then
+         m_lNewItem = lR
+         SendMessageByLong m_hWnd, LB_SETITEMDATA, lR, m_cIml.ImageCount
+         SendMessageByLong m_hWnd, LB_SETITEMHEIGHT, lR, m_cIml.IconSizeX + 4
+      Else
+         Debug.Print "Problem."
+      End If
+   End If
+End Sub
+
+Public Property Get SelectedIconResourceId() As String
+Dim lIndex As Long
+Dim lLen As Long
+Dim sBuf As String
+   If Not (m_hWnd = 0) Then
+      lIndex = SendMessageByLong(m_hWnd, LB_GETCURSEL, 0, 0)
+      If (lIndex &gt; -1) Then
+         lLen = SendMessageByLong(m_hWnd, LB_GETTEXTLEN, lIndex, 0)
+         If (lLen &lt;&gt; LB_ERR) Then
+            If (lLen &gt; 0) Then
+               sBuf = String$((lLen), 0)
+               SendMessageByString m_hWnd, LB_GETTEXT, lIndex, sBuf
+               SelectedIconResourceId = sBuf
+            End If
+         End If
+      End If
+   End If
+End Property
+
+Public Property Let SelectedIconResourceId(ByVal sName As String)
+Dim lR As Long
+   ' find the matching item in the control:
+   If Not (m_hWnd = 0) Then
+      lR = SendMessageByString(m_hWnd, LB_FINDSTRINGEXACT, 0, sName)
+      If (lR &gt; 0) Then
+         SendMessageByLong m_hWnd, LB_SETCURSEL, lR, 0
+      End If
+   End If
+End Property
+
+Public Property Get SelectedIcon() As IPicture
+Dim lIndex As Long
+Dim lLen As Long
+   lIndex = SendMessageByLong(m_hWnd, LB_GETCURSEL, 0, 0)
+   If (lIndex &gt; -1) Then
+      Set SelectedIcon = m_cIml.ItemPicture(lIndex + 1)
+   End If
+End Property
+
+Public Property Get AllowChangeFile() As Boolean
+   AllowChangeFile = m_bAllowChangeFileName
+End Property
+Public Property Let AllowChangeFile(ByVal bState As Boolean)
+   If Not (bState = m_bAllowChangeFileName) Then
+      m_bAllowChangeFileName = bState
+      lblLookFor.Visible = bState
+      txtFile.Visible = bState
+      lblSelect.Visible = bState
+      cmdBrowse.Visible = bState
+      UserControl_Resize
+      PropertyChanged "AllowChangeFile"
+   End If
+End Property
+
+Public Property Get Font() As IFont
+   Set Font = m_fnt
+End Property
+Public Property Let Font(ByVal iFnt As IFont)
+   pSetFont iFnt
+   PropertyChanged "Font"
+End Property
+Public Property Set Font(ByVal iFnt As IFont)
+   pSetFont iFnt
+   PropertyChanged "Font"
+End Property
+
+Public Property Get ScaleMode() As ScaleModeConstants
+   ScaleMode = UserControl.ScaleMode
+End Property
+Public Property Let ScaleMode(ByVal eMode As ScaleModeConstants)
+   If Not (UserControl.ScaleMode = eMode) Then
+      UserControl.ScaleMode = eMode
+      PropertyChanged "ScaleMode"
+   End If
+End Property
+Public Property Get ScaleX(x As Single, fromScale As ScaleModeConstants,
+ toScale As ScaleModeConstants)
+   ScaleX = UserControl.ScaleX(x, fromScale, toScale)
+End Property
+Public Property Get ScaleY(y As Single, fromScale As ScaleModeConstants,
+ toScale As ScaleModeConstants)
+   ScaleY = UserControl.ScaleY(y, fromScale, toScale)
+End Property
+
+Private Sub pSetFont(iFnt As IFont)
+   Set m_fnt = iFnt
+   Set lblLookFor.Font = m_fnt
+   Set cmdBrowse.Font = m_fnt
+   Set lblSelect.Font = m_fnt
+   If Not (m_hWnd = 0) Then
+      ' Ensure the control has the correct font:
+      SendMessageByLong m_hWnd, WM_SETFONT, m_fnt.hFont, 1
+   End If
+End Sub
+
+Private Sub Clear()
+   '
+   If Not (m_hWnd = 0) Then
+      SendMessageByLong m_hWnd, LB_RESETCONTENT, 0, 0
+      SendMessageByLong m_hWnd, LB_SETCOLUMNWIDTH, m_lIconWidth + 4, 0
+   End If
+   ' Set last added item to -1:
+   m_lNewItem = -1
+   '
+End Sub
+
+Public Property Get Filename() As String
+   Filename = m_sFileName
+End Property
+
+
+Public Property Let Filename(ByVal sFileName As String)
+   If Not (StrComp(sFileName, m_sFileName) = 0) Then
+      
+      m_sFileName = sFileName
+      If Not m_cIml Is Nothing Then
+         m_cIml.Clear
+      End If
+      Clear
+      
+      Screen.MousePointer = vbHourglass
+      ShowWindow m_hWnd, SW_HIDE
+      m_sFileName = sFileName
+      If Len(m_sFileName) &gt; 0 Then
+         'GetIconResources Me, m_sFileName
+         extractIcons m_sFileName
+      End If
+      If (m_cIml.ImageCount = 0) Then
+         ' Is this file an icon file?
+         GetIconFromIconFile
+      End If
+      
+      ShowWindow m_hWnd, SW_SHOW
+      Screen.MousePointer = vbDefault
+      
+      SelectedIconResourceId = SelectedIconResourceId
+      
+      txtFile.Text = sFileName
+      PropertyChanged "FileName"
+   End If
+   
+End Property
+
+Private Sub extractIcons(ByVal sFile As String)
+Dim iconCount As Long
+   iconCount = ExtractIconEx( _
+            sFile, -1, ByVal 0, ByVal 0, 0)
+   If (iconCount &gt; 0) Then
+   ReDim hIconlarge(0 To iconCount - 1) As Long
+   iconCount = ExtractIconEx( _
+            sFile, 0, hIconlarge(0), ByVal 0, iconCount)
+   Dim i As Long
+   Dim lR As Long
+   For i = 0 To iconCount - 1
+      m_cIml.AddFromHandle hIconlarge(i), IMAGE_ICON
+      DestroyIcon hIconlarge(i)
+      lR = SendMessageByString(m_hWnd, LB_ADDSTRING, 0, i)
+      If (lR &gt; LB_ERR) Then
+         m_lNewItem = lR
+         SendMessageByLong m_hWnd, LB_SETITEMDATA, lR, m_cIml.ImageCount
+         SendMessageByLong m_hWnd, LB_SETITEMHEIGHT, lR, m_cIml.IconSizeX + 4
+      Else
+         Debug.Print "Problem."
+      End If
+   Next i
+   End If
+   
+End Sub
+
+Private Sub GetIconFromIconFile()
+Dim iCount As Long
+Dim lR As Long
+   iCount = m_cIml.ImageCount
+   On Error Resume Next
+   m_cIml.AddFromFile m_sFileName, IMAGE_ICON
+   On Error GoTo 0
+   If (m_cIml.ImageCount &gt; iCount) Then
+      lR = SendMessageByString(m_hWnd, LB_ADDSTRING, 0, "")
+      If (lR &gt; LB_ERR) Then
+         m_lNewItem = lR
+         SendMessageByLong m_hWnd, LB_SETITEMDATA, lR, m_cIml.ImageCount
+         SendMessageByLong m_hWnd, LB_SETITEMHEIGHT, lR, m_cIml.IconSizeX + 4
+      Else
+         Debug.Print "Problem."
+      End If
+   End If
+
+End Sub
+
+Private Sub pInitialise()
+Dim hInst As Long
+Dim sStyle As String
+Dim wStyle As Long
+Dim lW As Long, lH As Long
+          
+   ' If we already have a window, then destroy it:
+   pTerminate
+   
+   m_bDesignMode = Not (UserControl.Ambient.UserMode)
+   
+   If Not m_bDesignMode Then
+      ' Start auto-complete on the text box:
+      On Error Resume Next ' may not be supported
+      SHAutoComplete txtFile.hwnd, SHACF_FILESYS_ONLY
+      On Error GoTo 0
+   
+      ' Create the combo box:
+      hInst = App.hInstance
+      
+      ' Set up style bits to get the appropriate type of
+      ' window:
+      sStyle = "LISTBOX"
+      wStyle = WS_VISIBLE Or WS_CHILD
+      wStyle = wStyle Or LBS_HASSTRINGS Or LBS_OWNERDRAWFIXED Or LBS_NOTIFY Or
+       LBS_MULTICOLUMN
+      wStyle = wStyle Or WS_HSCROLL
+      lH = 48
+      ' Create the window:
+      lW = UserControl.Width \ Screen.TwipsPerPixelX
+      m_hWndParent = UserControl.hwnd
+      m_hWnd = CreateWindowEx( _
+          WS_EX_CLIENTEDGE, _
+          sStyle, _
+          "", _
+          wStyle, _
+          0, 0, lW, lH, _
+          m_hWndParent, _
+          0, _
+          hInst, _
+          ByVal 0 _
+          )
+      ' If we succeed
+      If Not (m_hWnd = 0) Then
+         m_hBackBrush = GetSysColorBrush(vbWindowBackground And &amp;H1F&amp;)
+      
+         ' Ensure the correct font:
+         pSetFont m_fnt
+         
+         ' Start subclassing:
+         pSubClass
+         
+         ' Create the Image List:
+         Set m_cIml = New pcVBALImageList
+         m_cIml.IconSizeX = 32
+         m_cIml.IconSizeY = 32
+         m_cIml.ColourDepth = ILC_COLOR32
+         
+         m_lIconWidth = m_cIml.IconSizeX
+         m_lIconHeight = m_cIml.IconSizeY
+                  
+      End If
+           
+   End If
+   
+End Sub
+Private Sub pSubClass()
+   If Not (m_bDesignMode) Then
+      AttachMessage Me, m_hWndParent, WM_SIZE
+      AttachMessage Me, m_hWndParent, WM_COMMAND
+      AttachMessage Me, m_hWndParent, WM_MEASUREITEM
+      AttachMessage Me, m_hWndParent, WM_DRAWITEM
+      AttachMessage Me, m_hWndParent, WM_CTLCOLORLISTBOX
+      AttachMessage Me, m_hWndParent, WM_SETFOCUS
+      AttachMessage Me, m_hWndParent, WM_GETFONT
+      AttachMessage Me, m_hWnd, WM_KEYDOWN
+      AttachMessage Me, m_hWnd, WM_CHAR
+      AttachMessage Me, m_hWnd, WM_KEYUP
+      AttachMessage Me, m_hWnd, WM_SETFOCUS
+      AttachMessage Me, m_hWnd, WM_MOUSEACTIVATE
+      'AttachMessage Me, m_hWnd, WM_LBUTTONDOWN
+      'AttachMessage Me, m_hWnd, WM_MBUTTONDOWN
+      'AttachMessage Me, m_hWnd, WM_RBUTTONDOWN
+      'AttachMessage Me, m_hWnd, WM_MOUSEMOVE
+      'AttachMessage Me, m_hWnd, WM_LBUTTONUP
+      'AttachMessage Me, m_hWnd, WM_MBUTTONUP
+      'AttachMessage Me, m_hWnd, WM_RBUTTONUP
+   End If
+End Sub
+Private Sub pUnSubClass()
+   If Not (m_hWndParent = 0) Then
+      DetachMessage Me, m_hWndParent, WM_SIZE
+      DetachMessage Me, m_hWndParent, WM_COMMAND
+      DetachMessage Me, m_hWndParent, WM_MEASUREITEM
+      DetachMessage Me, m_hWndParent, WM_DRAWITEM
+      DetachMessage Me, m_hWndParent, WM_CTLCOLORLISTBOX
+      DetachMessage Me, m_hWndParent, WM_SETFOCUS
+      DetachMessage Me, m_hWndParent, WM_GETFONT
+   End If
+   If Not (m_hWnd = 0) Then
+      DetachMessage Me, m_hWnd, WM_KEYDOWN
+      DetachMessage Me, m_hWnd, WM_CHAR
+      DetachMessage Me, m_hWnd, WM_KEYUP
+      DetachMessage Me, m_hWnd, WM_SETFOCUS
+      DetachMessage Me, m_hWnd, WM_MOUSEACTIVATE
+      'detachMessage Me, m_hWnd, WM_LBUTTONDOWN
+      'detachMessage Me, m_hWnd, WM_MBUTTONDOWN
+      'detachMessage Me, m_hWnd, WM_RBUTTONDOWN
+      'detachMessage Me, m_hWnd, WM_MOUSEMOVE
+      'detachMessage Me, m_hWnd, WM_LBUTTONUP
+      'detachMessage Me, m_hWnd, WM_MBUTTONUP
+      'detachMessage Me, m_hWnd, WM_RBUTTONUP
+   End If
+End Sub
+
+Private Sub pTerminate()
+   
+   ' Stop subclassing:
+   pUnSubClass
+   
+   ' Clear the window
+   If (m_hWnd &lt;&gt; 0) Then
+      ShowWindow m_hWnd, SW_HIDE
+      SetParent m_hWnd, 0
+      DestroyWindow m_hWnd
+   End If
+   m_hWnd = 0
+   m_hWndParent = 0
+   
+   ' Clear background brush if we have one:
+   If (m_hBackBrush &lt;&gt; 0) Then
+      DeleteObject m_hBackBrush
+   End If
+
+
+End Sub
+
+
+Private Sub pRefreshControl()
+Dim tR As RECT
+    ' Invalidate the control so it gets redrawn:
+    If (m_hWnd &lt;&gt; 0) Then
+        tR.Right = UserControl.ScaleWidth \ Screen.TwipsPerPixelX
+        tR.Bottom = UserControl.ScaleHeight \ Screen.TwipsPerPixelY
+        InvalidateRect m_hWnd, tR, 1
+    End If
+End Sub
+
+Private Sub cmdBrowse_Click()
+   Dim cFB As New pcCommonDialog
+   Dim sFile As String
+   Dim sOrigFile As String
+   If (cFB.VBGetOpenFileName( _
+         Filename:=sFile, _
+         Filter:="Icon Files|*.ICO;*.EXE;*.DLL|Program Files|*.EXE|Library
+          Files|*.DLL|Icons|*.ICO|All Files|*.*", _
+         DefaultExt:="EXE", _
+         Owner:=UserControl.hwnd)) Then
+      sOrigFile = m_sFileName
+      Filename = sFile
+      txtFile.Text = sFile
+      If (m_cIml.ImageCount &lt;= 0) Then
+         MsgBox "The file '" &amp; sFile &amp; "' contains no icons", vbExclamation
+      End If
+   End If
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As EMsgResponse)
+   ' Not required.
+End Property
+
+Private Property Get ISubclass_MsgResponse() As EMsgResponse
+   Select Case CurrentMessage
+   Case WM_MOUSEACTIVATE ' WM_CHAR, WM_KEYDOWN
+      ISubclass_MsgResponse = emrConsume
+   Case Else
+      ISubclass_MsgResponse = emrPreprocess
+   End Select
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+Dim lW As Long
+Dim lH As Long
+Dim iKeyCode As Integer
+      
+   Select Case iMsg
+   Case WM_CTLCOLORLISTBOX
+      If (m_hBackBrush &lt;&gt; 0) Then
+         ISubclass_WindowProc = m_hBackBrush
+      End If
+      
+   Case WM_MEASUREITEM
+       ISubclass_WindowProc = plMeasureItem(wParam, lParam)
+
+   Case WM_DRAWITEM
+       ISubclass_WindowProc = plDrawItem(wParam, lParam)
+
+   Case WM_COMMAND
+      If (plNotificationEvent(hwnd, iMsg, wParam, lParam) &lt;&gt; 0) Then
+         ISubclass_WindowProc = 1
+      End If
+      
+   Case WM_GETFONT
+      ISubclass_WindowProc = m_fnt.hFont
+      
+   Case WM_SIZE
+      lW = (lParam And &amp;HFFFF&amp;)
+      lH = ((lParam \ &amp;H10000) And &amp;HFFFF&amp;)
+      pResize lW, lH
+      
+   Case WM_KEYDOWN, WM_CHAR, WM_KEYUP
+      If (plKeyEvent(hwnd, iMsg, wParam, lParam) = 1) Then
+         ISubclass_WindowProc = 1
+      End If
+
+      
+'   Case WM_LBUTTONDOWN, WM_MBUTTONDOWN, WM_RBUTTONDOWN
+'      iButton = (Abs(iMsg = WM_LBUTTONDOWN)) * vbLeftButton + (Abs(iMsg =
+ WM_RBUTTONDOWN)) * vbRightButton + (Abs(iMsg = WM_MBUTTONDOWN)) *
+ vbMiddleButton
+'      iShift = wParam
+'      If (lParam And &amp;H8000&amp;) = &amp;H8000&amp; Then
+'         x = -(&amp;H8000&amp; - (lParam And &amp;H7FFF&amp;))
+'      Else
+'         x = (lParam And &amp;HFFFF&amp;)
+'      End If
+'      If (lParam And &amp;H80000000) = &amp;H80000000 Then
+'         y = -(&amp;H8000&amp; - (lParam And &amp;H7FFF0000) \ &amp;H10000)
+'      Else
+'         y = (lParam \ &amp;H10000)
+'      End If
+'      RaiseEvent MouseDown(iButton, iShift, x, y)
+'
+'   Case WM_MOUSEMOVE
+'      iButton = Abs(GetAsyncKeyState(vbKeyLButton) &lt;&gt; 0) * vbLeftButton +
+ Abs(GetAsyncKeyState(vbKeyRButton) &lt;&gt; 0) * vbRightButton +
+ Abs(GetAsyncKeyState(vbKeyMButton) &lt;&gt; 0) * vbMiddleButton
+'      iShift = wParam
+'      If (lParam And &amp;H8000&amp;) = &amp;H8000&amp; Then
+'         x = -(&amp;H8000&amp; - (lParam And &amp;H7FFF&amp;))
+'      Else
+'         x = (lParam And &amp;HFFFF&amp;)
+'      End If
+'      If (lParam And &amp;H80000000) = &amp;H80000000 Then
+'         y = -(&amp;H8000&amp; - (lParam And &amp;H7FFF0000) \ &amp;H10000)
+'      Else
+'         y = (lParam \ &amp;H10000)
+'      End If
+'      RaiseEvent MouseMove(iButton, iShift, x, y)
+      
+'   Case WM_LBUTTONUP, WM_MBUTTONUP, WM_RBUTTONUP
+'      iButton = (Abs(iMsg = WM_LBUTTONDOWN)) * vbLeftButton + (Abs(iMsg =
+ WM_RBUTTONDOWN)) * vbRightButton + (Abs(iMsg = WM_MBUTTONDOWN)) *
+ vbMiddleButton
+'      iShift = wParam
+'      If (lParam And &amp;H8000&amp;) = &amp;H8000&amp; Then
+'         x = -(&amp;H8000&amp; - (lParam And &amp;H7FFF&amp;))
+'      Else
+'         x = (lParam And &amp;HFFFF&amp;)
+'      End If
+'      If (lParam And &amp;H80000000) = &amp;H80000000 Then
+'         y = -(&amp;H8000&amp; - (lParam And &amp;H7FFF0000) \ &amp;H10000)
+'      Else
+'         y = (lParam \ &amp;H10000)
+'      End If
+'      RaiseEvent MouseUp(iButton, iShift, x, y)
+      
+   '
+    ----------------------------------------------------------------------------
+   --
+   ' Implement focus.  Many many thanks to Mike Gainer for showing me this
+   ' code.
+   Case WM_SETFOCUS
+      If (m_hWnd = hwnd) Then
+         ' The list box itself
+         Dim pOleObject                  As IOleObject
+         Dim pOleInPlaceSite             As IOleInPlaceSite
+         Dim pOleInPlaceFrame            As IOleInPlaceFrame
+         Dim pOleInPlaceUIWindow         As IOleInPlaceUIWindow
+         Dim pOleInPlaceActiveObject     As IOleInPlaceActiveObject
+         Dim PosRect                     As RECT
+         Dim ClipRect                    As RECT
+         Dim FrameInfo                   As OLEINPLACEFRAMEINFO
+         Dim grfModifiers                As Long
+         Dim AcceleratorMsg              As MSG
+         
+         'Get in-place frame and make sure it is set to our in-between
+         'implementation of IOleInPlaceActiveObject in order to catch
+         'TranslateAccelerator calls
+         Set pOleObject = Me
+         Set pOleInPlaceSite = pOleObject.GetClientSite
+         pOleInPlaceSite.GetWindowContext pOleInPlaceFrame,
+          pOleInPlaceUIWindow, VarPtr(PosRect), VarPtr(ClipRect),
+          VarPtr(FrameInfo)
+         CopyMemory pOleInPlaceActiveObject, m_IPAOHookStruct.ThisPointer, 4
+         pOleInPlaceFrame.SetActiveObject pOleInPlaceActiveObject, vbNullString
+         If Not pOleInPlaceUIWindow Is Nothing Then
+            pOleInPlaceUIWindow.SetActiveObject pOleInPlaceActiveObject,
+             vbNullString
+         End If
+         CopyMemory pOleInPlaceActiveObject, 0&amp;, 4
+      Else
+         ' The user control:
+         SetFocusAPI m_hWnd
+      End If
+      
+   Case WM_MOUSEACTIVATE
+      If Not GetFocus() = m_hWnd Then
+         SetFocusAPI m_hWndParent
+         ISubclass_WindowProc = MA_NOACTIVATE
+         Exit Function
+      Else
+         ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lParam)
+      End If
+   ' End Implement focus.
+   '
+    ----------------------------------------------------------------------------
+   --
+   
+   End Select
+   
+End Function
+
+Private Function plNotificationEvent(ByVal lhWnd As Long, ByVal iMsg As
+ Integer, ByVal wParam As Long, ByVal lParam As Long) As Long
+Dim lHiWord As Long, lLoWord As Long
+Dim tR As RECT
+
+   If (lParam = m_hWnd) Then
+      pGetHiWordLoWord wParam, lHiWord, lLoWord
+      Select Case lHiWord
+      Case LBN_DBLCLK
+         RaiseEvent DblClick
+      Case LBN_SETFOCUS
+      Case LBN_KILLFOCUS
+      Case LBN_SELCHANGE
+         RaiseEvent SelectionChange
+      Case LBN_SELCANCEL
+      End Select
+   End If
+   
+End Function
+Private Function plKeyEvent(ByVal lhWnd As Long, ByVal iMsg As Integer, ByVal
+ wParam As Long, ByVal lParam As Long) As Long
+Dim iKeyCode As Integer
+Dim iKeyAscii As Integer
+Dim iOrigKeyAscii As Integer
+Dim iShift As Integer
+
+   If (lhWnd = m_hWnd) Then
+      iKeyCode = (wParam And &amp;HFF)
+      ' Alt key pressed = Bit 29
+      If ((lParam And &amp;H20000000) = &amp;H20000000) Then
+          iShift = 1
+      End If
+      Select Case iMsg
+      Case WM_KEYDOWN
+          iShift = piGetShiftState()
+          RaiseEvent KeyDown(iKeyCode, iShift)
+      Case WM_KEYUP
+          iShift = piGetShiftState()
+          RaiseEvent KeyUp(iKeyCode, iShift)
+      Case WM_CHAR
+          iKeyAscii = (wParam And &amp;HFF)
+          iOrigKeyAscii = iKeyAscii
+          RaiseEvent KeyPress(iKeyAscii)
+          If (iKeyAscii = 0) Then
+              plKeyEvent = 1
+          ElseIf (iKeyAscii &lt;&gt; iOrigKeyAscii) Then
+              SendMessageByLong lhWnd, WM_CHAR, iKeyAscii, 0
+              plKeyEvent = 1
+          End If
+      End Select
+   End If
+   
+End Function
+Private Function plMeasureItem(ByVal wParam As Long, ByVal lParam As Long) As
+ Long
+Dim tMIs As MEASUREITEMSTRUCT
+   CopyMemory tMIs, ByVal lParam, Len(tMIs)
+   tMIs.itemWidth = m_lIconWidth + 4
+   tMIs.itemHeight = m_lIconHeight + 4
+   CopyMemory ByVal lParam, tMIs, Len(tMIs)
+   plMeasureItem = 1
+End Function
+Private Function plDrawItem(ByVal wParam As Long, ByVal lParam As Long) As Long
+Dim tDis As DRAWITEMSTRUCT
+Dim bEnabled As Boolean
+Dim bSelected As Boolean
+Dim hBrBack As Long
+Dim lLeft As Long
+Dim lTop As Long
+
+   
+   CopyMemory tDis, ByVal lParam, Len(tDis)
+   
+   ' Evaluate enabled/selected state of item:
+   bSelected = ((tDis.ItemState And ODS_SELECTED) = ODS_SELECTED)
+
+   ' Choose the background colour:
+   If (bSelected) Then
+      hBrBack = GetSysColorBrush(vbHighlight And &amp;H1F&amp;)
+   Else
+      hBrBack = GetSysColorBrush(vbWindowBackground And &amp;H1F&amp;)
+   End If
+   ' Fill the background:
+   FillRect tDis.hdc, tDis.rcItem, hBrBack
+   DeleteObject hBrBack
+   
+   ' Draw the icon:
+   On Error Resume Next
+   lLeft = tDis.rcItem.Left + (tDis.rcItem.Right - tDis.rcItem.Left -
+    m_lIconWidth) \ 2
+   If Not (Err.Number = 0) Then
+      Debug.Print "LLEFT", Err.Number, Err.Description
+      Err.Clear
+   End If
+   lTop = tDis.rcItem.TOp + (tDis.rcItem.Bottom - tDis.rcItem.TOp -
+    m_lIconHeight) \ 2
+   If Not (Err.Number = 0) Then
+      Debug.Print "LTOP", Err.Number, Err.Description
+      Err.Clear
+   End If
+   m_cIml.DrawImage tDis.itemData, tDis.hdc, lLeft, lTop
+   If Not (Err.Number = 0) Then
+      Debug.Print "DRAWIMAGE", Err.Number, Err.Description
+   End If
+   
+
+End Function
+
+Private Function piGetShiftState() As Integer
+Dim iR As Integer
+Dim lR As Long
+Dim lKey As Long
+    iR = iR Or (-1 * pbKeyIsPressed(VK_SHIFT))
+    iR = iR Or (-2 * pbKeyIsPressed(VK_MENU))
+    iR = iR Or (-4 * pbKeyIsPressed(VK_CONTROL))
+    piGetShiftState = iR
+
+End Function
+Private Function pbKeyIsPressed( _
+        ByVal nVirtKeyCode As KeyCodeConstants _
+    ) As Boolean
+Dim lR As Long
+    lR = GetAsyncKeyState(nVirtKeyCode)
+    If (lR And &amp;H8000&amp;) = &amp;H8000&amp; Then
+        pbKeyIsPressed = True
+    End If
+End Function
+
+Private Sub pGetHiWordLoWord( _
+        ByVal lValue As Long, _
+        ByRef lHiWord As Long, _
+        ByRef lLoWord As Long _
+    )
+    lHiWord = lValue \ &amp;H10000
+    lLoWord = (lValue And &amp;HFFFF&amp;)
+End Sub
+
+Private Sub pResize(ByVal lW As Long, ByVal lH As Long)
+   If Not (m_hWnd = 0) Then
+      If (m_bAllowChangeFileName) Then
+         SetWindowPos m_hWnd, 0, UserControl.ScaleX(txtFile.Left,
+          UserControl.ScaleMode, vbPixels), m_lTop, lW - 4, lH - m_lTop - 2,
+          SWP_FRAMECHANGED Or SWP_NOOWNERZORDER Or SWP_SHOWWINDOW
+      Else
+         SetWindowPos m_hWnd, 0, 2, 2, lW - 4, lH - 4, SWP_FRAMECHANGED Or
+          SWP_NOOWNERZORDER Or SWP_SHOWWINDOW
+      End If
+   End If
+End Sub
+
+Friend Function fTranslateAccelerator(lpMsg As VBOleGuids.MSG) As Long
+    
+   fTranslateAccelerator = S_FALSE
+   ' Here you can modify the response to the key down
+   ' accelerator command using the values in lpMsg.  This
+   ' can be used to capture Tabs, Returns, Arrows etc.
+   ' Just process the message as required and return S_OK.
+   If lpMsg.message = WM_KEYDOWN Then
+      Select Case lpMsg.wParam And &amp;HFFFF&amp;
+      Case vbKeyUp, vbKeyDown, vbKeyLeft, vbKeyRight, vbKeyPageDown,
+       vbKeyPageUp, vbKeyHome, vbKeyEnd, vbKeyReturn
+         SendMessageByLong m_hWnd, lpMsg.message, lpMsg.wParam, lpMsg.lParam
+         fTranslateAccelerator = S_OK
+      End Select
+   End If
+   
+End Function
+
+Private Sub UserControl_Initialize()
+   '
+   ' Attach custom IOleInPlaceActiveObject interface
+   Dim IPAO As IOleInPlaceActiveObject
+
+   With m_IPAOHookStruct
+      Set IPAO = Me
+      CopyMemory .IPAOReal, IPAO, 4
+      CopyMemory .TBEx, Me, 4
+      .lpVTable = IPAOVTable
+      .ThisPointer = VarPtr(m_IPAOHookStruct)
+   End With
+   
+   Dim sF As New StdFont
+   sF.Name = "Tahoma"
+   sF.Size = 8.25
+   Set m_fnt = sF
+   m_bAllowChangeFileName = True
+   
+   '
+End Sub
+
+Private Sub UserControl_InitProperties()
+   '
+   pInitialise
+   '
+End Sub
+
+Private Sub UserControl_ReadProperties(PropBag As PropertyBag)
+   '
+   pInitialise
+   
+   m_bAllowChangeFileName = PropBag.ReadProperty("AllowChangeFileName", True)
+   Filename = PropBag.ReadProperty("FileName", "")
+   Font = PropBag.ReadProperty("Font", m_fnt)
+   ScaleMode = PropBag.ReadProperty("ScaleMode", vbTwips)
+   
+   '
+End Sub
+
+Private Sub UserControl_Resize()
+On Error Resume Next
+   If (m_bAllowChangeFileName) Then
+      m_lTop = UserControl.ScaleY(lblSelect.TOp + lblSelect.Height,
+       UserControl.ScaleMode, vbPixels)
+      txtFile.Width = UserControl.ScaleWidth - txtFile.Left - cmdBrowse.Width -
+       UserControl.ScaleX(4, vbPixels, UserControl.ScaleMode)
+      cmdBrowse.Left = txtFile.Width + txtFile.Left + UserControl.ScaleX(2,
+       vbPixels, UserControl.ScaleMode)
+      lblLookFor.Width = UserControl.ScaleWidth - lblLookFor.Left * 2
+      lblSelect.Width = lblLookFor.Width
+   Else
+      m_lTop = 2
+   End If
+   Dim tR As RECT
+   GetClientRect UserControl.hwnd, tR
+   pResize tR.Right - tR.Left, tR.Bottom - tR.TOp
+End Sub
+
+Private Sub UserControl_Show()
+   UserControl_Resize
+End Sub
+
+Private Sub UserControl_Terminate()
+   '
+   pTerminate
+   
+   ' detach pointers.
+   With m_IPAOHookStruct
+      CopyMemory .IPAOReal, 0&amp;, 4
+      CopyMemory .TBEx, 0&amp;, 4
+   End With
+
+   '
+End Sub
+
+Private Sub UserControl_WriteProperties(PropBag As PropertyBag)
+   '
+   PropBag.WriteProperty "AllowChangeFileName", m_bAllowChangeFileName, True
+   PropBag.WriteProperty "FileName", Filename, ""
+   Dim sF As New StdFont
+   sF.Name = "Tahoma"
+   sF.Size = 8.25
+   PropBag.WriteProperty "Font", Font, sF
+   PropBag.WriteProperty "ScaleMode", ScaleMode, vbTwips
+   '
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Icon Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator Icon Selector Control</a>&#160;.&#160;<a href="VB6_Icon_Selector_Full_Source.html">VB6 Icon Selector Full Source</a>&#160;.&#160;ctlIconPicker.ctl</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Icon_Controls/Icon_Selector/VB6_Icon_Selector_Full_Source_zip_ctlIconPicker_ctl.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:54 GMT -->
+</html>

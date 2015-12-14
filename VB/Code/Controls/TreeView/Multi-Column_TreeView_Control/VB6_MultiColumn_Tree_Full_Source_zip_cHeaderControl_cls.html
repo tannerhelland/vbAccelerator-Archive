@@ -1,0 +1,3355 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/TreeView/Multi-Column_TreeView_Control/VB6_MultiColumn_Tree_Full_Source_zip_cHeaderControl_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:14 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cHeaderControl.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cHeaderControl.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">TreeView</a>&#160;.&#160;<a href="article.html">Multi-Column TreeView Control</a>&#160;.&#160;<a href="VB6_MultiColumn_Tree_Full_Source.html">VB6 MultiColumn Tree Full Source</a>&#160;.&#160;cHeaderControl.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_MultiColumn_Tree_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 MultiColumn Tree Binary</a> (73K)</p><p class="nav"><a href="VB5_MultiColumn_Tree_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 MultiColumn Tree Demonstration</a> (52K)</p><p class="nav"><a href="VB5_MultiColumn_Tree_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 MultiColumn Tree Full Source</a> (200K)</p><p /><p class="nav"><a href="VB6_MultiColumn_Tree_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 MultiColumn Tree Binary</a> (74K)</p><p class="nav"><a href="VB6_MultiColumn_Tree_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 MultiColumn Tree Demonstration</a> (49K)</p><p class="nav"><a href="VB6_MultiColumn_Tree_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 MultiColumn Tree Full Source</a> (198K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:14591</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=14591&amp;type=Zip&amp;title=VB6%20MultiColumn%20Tree%20Full%20Source%2Ezip%5FcHeaderControl">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />15 Apr 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13463">vbAccelerator TreeView Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2185">Adding Scroll Bars to Forms, PictureBoxes and User Controls</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4570">ComCtl32 Header Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cHeaderControl.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cHeaderControl"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+'
+ ===============================================================================
+=======
+' Filename: cHeader control
+' Author:   Steve McMahon (steve@vbaccelerator.com)
+' Date:     02 June 1998
+'
+' Requires: SSUBTMR.DLL
+'
+' Description
+' An implementation of the Common Control header control.
+'
+' Changes:
+' 26/11/03 SPM
+' * Added unicode setting to correct problem with Filter setting
+'
+' 15/03/03 SPM
+' * Added grouping support.
+'
+' 14/03/03  SPM
+' * Added Unicode support for NT
+' * Added Filter style and supporting ColumnFilter properties
+' * Added IdealHeight method
+'
+' 25/07/99, SPM
+' * Added Owner-Draw support.
+'
+' 01/01/99, SPM
+' * Attempt to set ColumnImage to -1 (no icon) or an index not in the ImageList
+'   caused GPF.
+' * AddColumn method set image to the first image in the ImageList when no Image
+'   specified.
+' * ColumnHeader property set to "" caused no change or a corrupt string to
+'   appear in the header and ColumnHeader property.
+' * RemoveColumn for column other than the last one caused the ColumnTags to be
+'   incorrect.
+' * Don't raise ColumnEndDrag event when cancel column dragging
+' * Added method for getting or setting column order (ColumnIndex).
+' * Added method for getting and setting column alignment (ColumnTextAlign).
+' * Added method for getting and setting image alignment left/right
+ (ColumnImageOnRight).
+' * Previous version re-created the control from scratch when setting styles,
+ this
+'   was not necessary. Now just the style is changed for a smoother display.
+'
+' Issues:
+' Full Drag mode does not work - drag-drop not supported.
+' No tool-tips.
+'
+'
+ -------------------------------------------------------------------------------
+-------
+' Copyright  1998-199 Steve McMahon (steve@dogma.demon.co.uk)
+' Visit vbAccelerator - free, advanced VB source code.
+'    http://vbaccelerator.com
+'
+ ===============================================================================
+=======
+
+
+
+'
+ ===============================================================================
+=======
+' API declares:
+'
+ ===============================================================================
+=======
+' Memory functions:
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+Private Declare Function LocalAlloc Lib "kernel32" (ByVal wFlags As Long, ByVal
+ dwBytes As Long) As Long
+Private Declare Function LocalFree Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function LocalLock Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function LocalUnlock Lib "kernel32" (ByVal hMem As Long) As Long
+' Memory allocation/manipulation constants:
+Private Const GMEM_DISCARDABLE = &amp;H100
+Private Const GMEM_FIXED = &amp;H0
+Private Const GMEM_INVALID_HANDLE = &amp;H8000
+Private Const GMEM_MODIFY = &amp;H80
+Private Const GMEM_MOVEABLE = &amp;H2
+Private Const GMEM_NOCOMPACT = &amp;H10
+Private Const GMEM_NODISCARD = &amp;H20
+Private Const GMEM_NOT_BANKED = &amp;H1000
+Private Const GMEM_NOTIFY = &amp;H4000
+Private Const GMEM_SHARE = &amp;H2000
+Private Const GMEM_VALID_FLAGS = &amp;H7F72
+Private Const GMEM_ZEROINIT = &amp;H40
+Private Const GPTR = (GMEM_FIXED Or GMEM_ZEROINIT)
+
+' Window style bit functions:
+Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA" _
+    (ByVal hwnd As Long, ByVal nIndex As Long, _
+    ByVal dwNewLong As Long _
+    ) As Long
+Private Declare Function SetWindowLongW Lib "user32" _
+    (ByVal hwnd As Long, ByVal nIndex As Long, _
+    ByVal dwNewLong As Long _
+    ) As Long
+Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA" _
+    (ByVal hwnd As Long, ByVal nIndex As Long _
+    ) As Long
+Private Declare Function GetWindowLongW Lib "user32" _
+    (ByVal hwnd As Long, ByVal nIndex As Long _
+    ) As Long
+' Window Long indexes:
+Private Const GWL_EXSTYLE = (-20)
+Private Const GWL_HINSTANCE = (-6)
+Private Const GWL_HWNDPARENT = (-8)
+Private Const GWL_ID = (-12)
+Private Const GWL_STYLE = (-16)
+Private Const GWL_USERDATA = (-21)
+Private Const GWL_WNDPROC = (-4)
+
+' Creating new windows:
+Private Declare Function CreateWindowEx Lib "user32" Alias "CreateWindowExA" ( _
+   ByVal dwExStyle As Long, _
+   ByVal lpClassName As String, _
+   ByVal lpWindowName As String, _
+   ByVal dwStyle As Long, _
+   ByVal x As Long, ByVal y As Long, _
+   ByVal nWidth As Long, ByVal nHeight As Long, _
+   ByVal hWndParent As Long, _
+   ByVal hMenu As Long, _
+   ByVal hInstance As Long, _
+   lpParam As Any) As Long
+Private Declare Function CreateWindowExW Lib "user32" ( _
+   ByVal dwExStyle As Long, _
+   ByVal lpClassName As Long, _
+   ByVal lpWindowName As Long, _
+   ByVal dwStyle As Long, _
+   ByVal x As Long, ByVal y As Long, _
+   ByVal nWidth As Long, ByVal nHeight As Long, _
+   ByVal hWndParent As Long, _
+   ByVal hMenu As Long, _
+   ByVal hInstance As Long, _
+   lpParam As Any) As Long
+' General window styles:
+Private Const WS_BORDER = &amp;H800000
+Private Const WS_CAPTION = &amp;HC00000                  '  WS_BORDER Or WS_DLGFRAME
+Private Const WS_CHILD = &amp;H40000000
+Private Const WS_CHILDWINDOW = (WS_CHILD)
+Private Const WS_CLIPCHILDREN = &amp;H2000000
+Private Const WS_CLIPSIBLINGS = &amp;H4000000
+Private Const WS_DISABLED = &amp;H8000000
+Private Const WS_DLGFRAME = &amp;H400000
+Private Const WS_EX_ACCEPTFILES = &amp;H10&amp;
+Private Const WS_EX_DLGMODALFRAME = &amp;H1&amp;
+Private Const WS_EX_NOPARENTNOTIFY = &amp;H4&amp;
+Private Const WS_EX_TOPMOST = &amp;H8&amp;
+Private Const WS_EX_TRANSPARENT = &amp;H20&amp;
+Private Const WS_GROUP = &amp;H20000
+Private Const WS_HSCROLL = &amp;H100000
+Private Const WS_MAXIMIZE = &amp;H1000000
+Private Const WS_MAXIMIZEBOX = &amp;H10000
+Private Const WS_MINIMIZE = &amp;H20000000
+Private Const WS_ICONIC = WS_MINIMIZE
+Private Const WS_MINIMIZEBOX = &amp;H20000
+Private Const WS_OVERLAPPED = &amp;H0&amp;
+Private Const WS_POPUP = &amp;H80000000
+Private Const WS_SYSMENU = &amp;H80000
+Private Const WS_TABSTOP = &amp;H10000
+Private Const WS_THICKFRAME = &amp;H40000
+Private Const WS_SIZEBOX = WS_THICKFRAME
+Private Const WS_TILED = WS_OVERLAPPED
+Private Const WS_VISIBLE = &amp;H10000000
+Private Const WS_VSCROLL = &amp;H200000
+Private Const WS_OVERLAPPEDWINDOW = (WS_OVERLAPPED Or WS_CAPTION Or WS_SYSMENU
+ Or WS_THICKFRAME Or WS_MINIMIZEBOX Or WS_MAXIMIZEBOX)
+Private Const WS_TILEDWINDOW = WS_OVERLAPPEDWINDOW
+Private Const WS_POPUPWINDOW = (WS_POPUP Or WS_BORDER Or WS_SYSMENU)
+
+' Window appearance control:
+Private Declare Function ShowWindow Lib "user32" (ByVal hwnd As Long, ByVal
+ nCmdShow As Long) As Long
+' Show window styles
+Private Const SW_SHOWNORMAL = 1
+Private Const SW_ERASE = &amp;H4
+Private Const SW_HIDE = 0
+Private Const SW_INVALIDATE = &amp;H2
+Private Const SW_MAX = 10
+Private Const SW_MAXIMIZE = 3
+Private Const SW_MINIMIZE = 6
+Private Const SW_NORMAL = 1
+Private Const SW_OTHERUNZOOM = 4
+Private Const SW_OTHERZOOM = 2
+Private Const SW_PARENTCLOSING = 1
+Private Const SW_RESTORE = 9
+Private Const SW_PARENTOPENING = 3
+Private Const SW_SHOW = 5
+Private Const SW_SCROLLCHILDREN = &amp;H1
+Private Const SW_SHOWDEFAULT = 10
+Private Const SW_SHOWMAXIMIZED = 3
+Private Const SW_SHOWMINIMIZED = 2
+Private Const SW_SHOWMINNOACTIVE = 7
+Private Const SW_SHOWNA = 8
+Private Const SW_SHOWNOACTIVATE = 4
+Private Declare Function SetWindowPos Lib "user32" (ByVal hwnd As Long, ByVal
+ hWndInsertAfter As Long, ByVal x As Long, ByVal y As Long, ByVal cx As Long,
+ ByVal cy As Long, ByVal wFlags As Long) As Long
+Private Const SWP_SHOWWINDOW = &amp;H40
+Private Declare Function DestroyWindow Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function EnableWindow Lib "user32" (ByVal hwnd As Long, ByVal
+ fEnable As Long) As Long
+Private Declare Function SetFocus Lib "user32" (ByVal hwnd As Long) As Long
+Private Declare Function MoveWindow Lib "user32" (ByVal hwnd As Long, ByVal x
+ As Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ bRepaint As Long) As Long
+Private Declare Function GetWindowRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function InflateRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Declare Function InvalidateRect Lib "user32" (ByVal hwnd As Long,
+ lpRect As RECT, ByVal bErase As Long) As Long
+Private Declare Function PtInRect Lib "user32" (lpRect As RECT, ByVal ptX As
+ Long, ByVal ptY As Long) As Long
+Private Declare Function MapWindowPoints Lib "user32" (ByVal hwndFrom As Long,
+ ByVal hwndTo As Long, lppt As Any, ByVal cPoints As Long) As Long
+Private Declare Function UpdateWindow Lib "user32" (ByVal hwnd As Long) As Long
+
+' Window relationship functions:
+Private Declare Function SetParent Lib "user32" (ByVal hWndChild As Long, ByVal
+ hWndNewParent As Long) As Long
+Private Declare Function GetParent Lib "user32" (ByVal hwnd As Long) As Long
+Private Type POINTAPI
+    x As Long
+    y As Long
+End Type
+Private Declare Function ClientToScreen Lib "user32" (ByVal hwnd As Long,
+ lpPoint As POINTAPI) As Long
+Private Declare Function ScreenToClient Lib "user32" (ByVal hwnd As Long,
+ lpPoint As POINTAPI) As Long
+Private Declare Function ChildWindowFromPoint Lib "user32" (ByVal hWndParent As
+ Long, ByVal x As Long, ByVal y As Long) As Long
+Private Declare Function GetWindow Lib "user32" (ByVal hwnd As Long, ByVal wCmd
+ As Long) As Long
+Private Const GW_CHILD = 5
+Private Const GW_HWNDFIRST = 0
+Private Const GW_HWNDLAST = 1
+Private Const GW_HWNDNEXT = 2
+Private Const GW_HWNDPREV = 3
+Private Const GW_MAX = 5
+Private Const GW_OWNER = 4
+Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+
+' Message functions:
+Private Declare Function SendMessageByString Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ String) As Long
+Private Declare Function SendMessageByLong Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+Private Declare Function SendMessageByStringW Lib "user32" Alias "SendMessageW"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Declare Function SendMessageByLongW Lib "user32" Alias "SendMessageW"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Declare Function SendMessageW Lib "user32" (ByVal hwnd As Long, ByVal
+ wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+Private Declare Function PostMessage Lib "user32" Alias "PostMessageA" (ByVal
+ hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As Long)
+ As Long
+
+' Various
+Private Declare Function CreateDC Lib "gdi32" Alias "CreateDCA" (ByVal
+ lpDriverName As String, lpDeviceName As Any, lpOutput As Any, lpInitData As
+ Any) As Long
+Private Declare Function DeleteDC Lib "gdi32" (ByVal hdc As Long) As Long
+Private Declare Function GetCursorPos Lib "user32" (lpPoint As POINTAPI) As Long
+
+Private Declare Function GetVersion Lib "kernel32" () As Long
+Private Declare Function lstrlenA Lib "kernel32" (ByVal lpString As Long) As
+ Long
+Private Declare Function lstrlenW Lib "kernel32" (ByVal lpString As Long) As
+ Long
+
+' Font
+'Private Const LF_FACESIZE = 32
+'Private Type LOGFONT
+'    lfHeight As Long
+'    lfWidth As Long
+'    lfEscapement As Long
+'    lfOrientation As Long
+'    lfWeight As Long
+'    lfItalic As Byte
+'    lfUnderline As Byte
+'    lfStrikeOut As Byte
+'    lfCharSet As Byte
+'    lfOutPrecision As Byte
+'    lfClipPrecision As Byte
+'    lfQuality As Byte
+'    lfPitchAndFamily As Byte
+'    lfFaceName(LF_FACESIZE) As Byte
+'End Type
+Private Const FW_NORMAL = 400
+Private Const FW_BOLD = 700
+Private Const FF_DONTCARE = 0
+Private Const DEFAULT_QUALITY = 0
+Private Const DEFAULT_PITCH = 0
+Private Const DEFAULT_CHARSET = 1
+Private Declare Function CreateFontIndirect&amp; Lib "gdi32" Alias
+ "CreateFontIndirectA" (lpLogFont As LOGFONT)
+Private Declare Function MulDiv Lib "kernel32" (ByVal nNumber As Long, ByVal
+ nNumerator As Long, ByVal nDenominator As Long) As Long
+Private Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal
+ hObject As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+Private Declare Function GetDeviceCaps Lib "gdi32" (ByVal hdc As Long, ByVal
+ nIndex As Long) As Long
+    Private Const BITSPIXEL = 12
+    Private Const LOGPIXELSX = 88    '  Logical pixels/inch in X
+    Private Const LOGPIXELSY = 90    '  Logical pixels/inch in Y
+
+' GDI functions
+Private Declare Function CreateCompatibleBitmap Lib "gdi32" (ByVal hdc As Long,
+ ByVal nWidth As Long, ByVal nHeight As Long) As Long
+Private Declare Function CreateCompatibleDC Lib "gdi32" (ByVal hdc As Long) As
+ Long
+Private Declare Function DrawTextA Lib "user32" (ByVal hdc As Long, ByVal lpStr
+ As String, ByVal nCount As Long, lpRect As RECT, ByVal wFormat As Long) As Long
+Private Declare Function DrawTextW Lib "user32" (ByVal hdc As Long, ByVal lpStr
+ As Long, ByVal nCount As Long, lpRect As RECT, ByVal wFormat As Long) As Long
+Private Const DT_TOP = &amp;H0
+Private Const DT_LEFT = &amp;H0
+Private Const DT_CENTER = &amp;H1
+Private Const DT_RIGHT = &amp;H2
+Private Const DT_VCENTER = &amp;H4
+Private Const DT_BOTTOM = &amp;H8
+Private Const DT_WORDBREAK = &amp;H10
+Private Const DT_SINGLELINE = &amp;H20
+Private Const DT_EXPANDTABS = &amp;H40
+Private Const DT_TABSTOP = &amp;H80
+Private Const DT_NOCLIP = &amp;H100
+Private Const DT_EXTERNALLEADING = &amp;H200
+Private Const DT_CALCRECT = &amp;H400
+Private Const DT_NOPREFIX = &amp;H800
+Private Const DT_INTERNAL = &amp;H1000
+Private Const DT_EDITCONTROL = &amp;H2000
+Private Const DT_PATH_ELLIPSIS = &amp;H4000
+Private Const DT_END_ELLIPSIS = &amp;H8000&amp; ' bug fix 27/04/2003
+Private Const DT_MODIFYSTRING = &amp;H10000
+Private Const DT_RTLREADING = &amp;H20000
+Private Const DT_WORD_ELLIPSIS = &amp;H40000
+Private Const DT_NOFULLWIDTHCHARBREAK = &amp;H80000
+Private Const DT_HIDEPREFIX = &amp;H100000
+Private Const DT_PREFIXONLY = &amp;H200000
+Private Declare Function CreatePen Lib "gdi32" (ByVal nPenStyle As Long, ByVal
+ nWidth As Long, ByVal crColor As Long) As Long
+Private Declare Function GetSysColor Lib "user32" (ByVal nIndex As Long) As Long
+Private Const PS_SOLID = 0
+Private Declare Function GetSysColorBrush Lib "user32" (ByVal nIndex As Long)
+ As Long
+Private Declare Function CreateSolidBrush Lib "gdi32" (ByVal crColor As Long)
+ As Long
+Private Declare Function OleTranslateColor Lib "OLEPRO32.DLL" (ByVal OLE_COLOR
+ As Long, ByVal HPALETTE As Long, pccolorref As Long) As Long
+Private Const CLR_INVALID = -1
+Private Declare Function FillRect Lib "user32" (ByVal hdc As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+Private Declare Function SetBkColor Lib "gdi32" (ByVal hdc As Long, ByVal
+ crColor As Long) As Long
+Private Declare Function SetBkMode Lib "gdi32" (ByVal hdc As Long, ByVal
+ nBkMode As Long) As Long
+Private Declare Function SetTextColor Lib "gdi32" (ByVal hdc As Long, ByVal
+ crColor As Long) As Long
+Private Declare Function MoveToEx Lib "gdi32" (ByVal hdc As Long, ByVal x As
+ Long, ByVal y As Long, lpPoint As POINTAPI) As Long
+Private Declare Function LineTo Lib "gdi32" (ByVal hdc As Long, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Const TRANSPARENT = 1
+Private Const OPAQUE = 2
+
+' CommonControls function
+Private Declare Sub InitCommonControls Lib "comctl32.dll" ()
+Private Declare Function ImageList_Create Lib "COMCTL32" (ByVal cx As Long,
+ ByVal cy As Long, ByVal flags As Long, ByVal cInitial As Long, ByVal cGrow As
+ Long) As Long
+Private Const ILC_MASK = &amp;H1
+Private Const ILC_COLOR = &amp;H0
+Private Const ILC_COLORDDB = &amp;HFE
+Private Const ILC_COLOR4 = &amp;H4
+Private Const ILC_COLOR8 = &amp;H8
+Private Const ILC_COLOR16 = &amp;H10
+Private Const ILC_COLOR24 = &amp;H18
+Private Const ILC_COLOR32 = &amp;H20
+Private Declare Function ImageList_AddMasked Lib "COMCTL32" (ByVal hIml As
+ Long, ByVal hbmImage As Long, ByVal crMask As Long) As Long
+Private Declare Function ImageList_GetImageCount Lib "COMCTL32" (ByVal
+ hImagelist As Long) As Long
+Private Declare Function ImageList_Destroy Lib "COMCTL32" (ByVal hImagelist As
+ Long) As Long
+Private Declare Function ImageList_Draw Lib "COMCTL32" (ByVal hIml As Long,
+ ByVal i As Long, ByVal hdcDst As Long, ByVal x As Long, ByVal y As Long, ByVal
+ fStyle As Long) As Long
+Private Const ILD_NORMAL = &amp;H0
+Private Const ILD_TRANSPARENT = &amp;H1
+Private Const ILD_MASK = &amp;H10
+Private Const ILD_IMAGE = &amp;H20
+Private Const ILD_ROP = &amp;H40
+Private Const ILD_BLEND25 = &amp;H2
+Private Const ILD_BLEND50 = &amp;H4
+Private Const ILD_OVERLAYMASK = &amp;HF00
+Private Const ILD_PRESERVEALPHA = &amp;H1000           ' // This preserves the
+ alpha channel in dest
+Private Const ILD_SCALE = &amp;H2000                   ' // Causes the image to be
+ scaled to cx, cy instead of clipped
+Private Const ILD_DPISCALE = &amp;H4000
+Private Declare Function ImageList_GetIconSize Lib "COMCTL32" (ByVal hIml As
+ Long, cx As Long, cy As Long) As Long
+
+Private Const CCM_FIRST = &amp;H2000                    '// Common control shared
+ messages
+Private Const CCM_SETUNICODEFORMAT = (CCM_FIRST + 5)
+Private Const CCM_GETUNICODEFORMAT = (CCM_FIRST + 6)
+
+' Header stuff:
+Private Const WC_HEADERA = "SysHeader32"
+Private Const WC_HEADER = WC_HEADERA
+
+Private Const HDS_HORZ = &amp;H0
+Private Const HDS_BUTTONS = &amp;H2
+Private Const HDS_HIDDEN = &amp;H8
+
+Private Const HDS_HOTTRACK = &amp;H4 ' v 4.70
+Private Const HDS_DRAGDROP = &amp;H40 ' v 4.70
+Private Const HDS_FULLDRAG = &amp;H80
+
+Private Const HDS_FILTERBAR = &amp;H100 ' v 5.8
+Private Const HDS_FLAT = &amp;H200 ' v 6.0
+
+
+Private Const HDI_WIDTH = &amp;H1
+Private Const HDI_HEIGHT = HDI_WIDTH
+Private Const HDI_TEXT = &amp;H2
+Private Const HDI_FORMAT = &amp;H4
+Private Const HDI_LPARAM = &amp;H8
+Private Const HDI_BITMAP = &amp;H10
+
+'
+Private Const HDI_IMAGE = &amp;H20
+Private Const HDI_DI_SETITEM = &amp;H40
+Private Const HDI_ORDER = &amp;H80
+Private Const HDI_FILTER = &amp;H100
+
+
+Private Const HDF_LEFT = 0
+Private Const HDF_RIGHT = 1
+Private Const HDF_CENTER = 2
+Private Const HDF_JUSTIFYMASK = &amp;H3
+Private Const HDF_RTLREADING = 4
+
+Private Const HDF_SORTUP = &amp;H400
+Private Const HDF_SORTDOWN = &amp;H200
+
+' 4.70+
+Private Const HDF_BITMAP_ON_RIGHT = &amp;H1000
+Private Const HDF_IMAGE = &amp;H800
+
+Private Const HDF_OWNERDRAW = &amp;H8000
+Private Const HDF_STRING = &amp;H4000
+Private Const HDF_BITMAP = &amp;H2000
+
+Private Const HDFT_ISSTRING = &amp;H0           '// HD_ITEM.pvFilter points to a
+ HD_TEXTFILTER
+Private Const HDFT_ISNUMBER = &amp;H1           '// HD_ITEM.pvFilter points to a INT
+Private Const HDFT_HASNOVALUE = &amp;H8000      '// clear the filter, by setting
+ this bit
+
+
+Private Const HDM_FIRST = &amp;H1200                    '// Header messages
+
+Private Const HDM_GETITEMCOUNT = (HDM_FIRST + 0)
+' Header_GetItemCount(hwndHD) \
+'    (int)SendMessage((hwndHD), HDM_GETITEMCOUNT, 0, 0L)
+Private Const HDM_INSERTITEMA = (HDM_FIRST + 1)
+Private Const HDM_INSERTITEMW = (HDM_FIRST + 10)
+Private Const HDM_INSERTITEM = HDM_INSERTITEMA
+'Header_InsertItem(hwndHD, i, phdi) \
+'    (int)SendMessage((hwndHD), HDM_INSERTITEM, (WPARAM)(int)(i),
+ (LPARAM)(const HD_ITEM FAR*)(phdi))
+Private Const HDM_DELETEITEM = (HDM_FIRST + 2)
+'Header_DeleteItem(hwndHD, i) \
+'    (BOOL)SendMessage((hwndHD), HDM_DELETEITEM, (WPARAM)(int)(i), 0L)
+Private Const HDM_GETITEMA = (HDM_FIRST + 3)
+Private Const HDM_GETITEMW = (HDM_FIRST + 11)
+Private Const HDM_GETITEM = HDM_GETITEMA
+'Header_GetItem(hwndHD, i, phdi) \
+'    (BOOL)SendMessage((hwndHD), HDM_GETITEM, (WPARAM)(int)(i),
+ (LPARAM)(HD_ITEM FAR*)(phdi))
+Private Const HDM_SETITEMA = (HDM_FIRST + 4)
+Private Const HDM_SETITEMW = (HDM_FIRST + 12)
+Private Const HDM_SETITEM = HDM_SETITEMA
+' Header_SetItem(hwndHD, i, phdi) \
+'    (BOOL)SendMessage((hwndHD), HDM_SETITEM, (WPARAM)(int)(i), (LPARAM)(const
+ HD_ITEM FAR*)(phdi))
+Private Const HDM_LAYOUT = (HDM_FIRST + 5)
+' Header_Layout(hwndHD, playout) \
+'    (BOOL)SendMessage((hwndHD), HDM_LAYOUT, 0, (LPARAM)(HD_LAYOUT
+ FAR*)(playout))
+Private Const HDM_ORDERTOINDEX = (HDM_FIRST + 15)
+Private Const HDM_GETITEMRECT = (HDM_FIRST + 7)
+'#define Header_GetItemRect(hwnd, iItem, lprc) \
+'        (BOOL)SNDMSG((hwnd), HDM_GETITEMRECT, (WPARAM)(iItem), (LPARAM)(lprc))
+Private Const HDM_SETIMAGELIST = (HDM_FIRST + 8)
+'  Header_SetImageList(hwnd, himl) \
+'        (HIMAGELIST)SNDMSG((hwnd), HDM_SETIMAGELIST, 0, (LPARAM)himl)
+Private Const HDM_GETIMAGELIST = (HDM_FIRST + 9)
+' Header_GetImageList(hwnd) \
+'        (HIMAGELIST)SNDMSG((hwnd), HDM_GETIMAGELIST, 0, 0)
+Private Const HDM_CREATEDRAGIMAGE = (HDM_FIRST + 16)      '// wparam = which
+ item (by index)
+'#define Header_CreateDragImage(hwnd, i) \
+'        (HIMAGELIST)SNDMSG((hwnd), HDM_CREATEDRAGIMAGE, (WPARAM)(i), 0)
+
+Private Const HDM_SETHOTDIVIDER = (HDM_FIRST + 19)
+'#define Header_SetHotDivider(hwnd, fPos, dw) \
+'        (int)SNDMSG((hwnd), HDM_SETHOTDIVIDER, (WPARAM)(fPos), (LPARAM)(dw))
+'// convenience message for external dragdrop
+'// wParam = BOOL  specifying whether the lParam is a dwPos of the cursor
+'//              position or the index of which divider to hotlight
+'// lParam = depends on wParam  (-1 and wParm = FALSE turns off hotlight)
+'#endif      // _WIN32_IE &gt;= 0x0300'
+
+Private Const HDM_SETUNICODEFORMAT = CCM_SETUNICODEFORMAT
+'#define Header_SetUnicodeFormat(hwnd, fUnicode)  \
+'    (BOOL)SNDMSG((hwnd), HDM_SETUNICODEFORMAT, (WPARAM)(fUnicode), 0)
+
+Private Const HDM_GETUNICODEFORMAT = CCM_GETUNICODEFORMAT
+'#define Header_GetUnicodeFormat(hwnd)  \
+'    (BOOL)SNDMSG((hwnd), HDM_GETUNICODEFORMAT, 0, 0)
+
+'#if (_WIN32_IE &gt;= 0x0500)
+Private Const HDM_SETFILTERCHANGETIMEOUT = (HDM_FIRST + 22)
+'#define Header_SetFilterChangeTimeout(hwnd, i) \
+'        (int)SNDMSG((hwnd), HDM_SETFILTERCHANGETIMEOUT, 0, (LPARAM)(i))
+Private Const HDM_EDITFILTER = (HDM_FIRST + 23)
+'#define Header_EditFilter(hwnd, i, fDiscardChanges) \
+'        (int)SNDMSG((hwnd), HDM_EDITFILTER, (WPARAM)(i),
+ MAKELPARAM(fDiscardChanges, 0))
+Private Const HDM_CLEARFILTER = (HDM_FIRST + 24)
+
+Private Const HHT_NOWHERE = &amp;H1
+Private Const HHT_ONHEADER = &amp;H2
+Private Const HHT_ONDIVIDER = &amp;H4
+Private Const HHT_ONDIVOPEN = &amp;H8
+Private Const HHT_ABOVE = &amp;H100
+Private Const HHT_BELOW = &amp;H200
+Private Const HHT_TORIGHT = &amp;H400
+Private Const HHT_TOLEFT = &amp;H800
+Private Const HDM_HITTEST = (HDM_FIRST + 6)
+
+Private Const H_MAX As Long = &amp;HFFFF + 1
+Private Const HDN_FIRST = H_MAX - 300&amp;                  '// header
+Private Const HDN_LAST = H_MAX - 399&amp;
+
+Private Const HDN_ITEMCHANGINGA = (HDN_FIRST - 0)
+Private Const HDN_ITEMCHANGINGW = (HDN_FIRST - 20)
+Private Const HDN_ITEMCHANGEDA = (HDN_FIRST - 1)
+Private Const HDN_ITEMCHANGEDW = (HDN_FIRST - 21)
+Private Const HDN_ITEMCLICKA = (HDN_FIRST - 2)
+Private Const HDN_ITEMCLICKW = (HDN_FIRST - 22)
+Private Const HDN_ITEMDBLCLICKA = (HDN_FIRST - 3)
+Private Const HDN_ITEMDBLCLICKW = (HDN_FIRST - 23)
+Private Const HDN_DIVIDERDBLCLICKA = (HDN_FIRST - 5)
+Private Const HDN_DIVIDERDBLCLICKW = (HDN_FIRST - 25)
+Private Const HDN_BEGINTRACKA = (HDN_FIRST - 6)
+Private Const HDN_BEGINTRACKW = (HDN_FIRST - 26)
+Private Const HDN_ENDTRACKA = (HDN_FIRST - 7)
+Private Const HDN_ENDTRACKW = (HDN_FIRST - 27)
+Private Const HDN_TRACKA = (HDN_FIRST - 8)
+Private Const HDN_TRACKW = (HDN_FIRST - 28)
+
+' v 4.70
+Private Const HDN_BEGINDRAG = (HDN_FIRST - 10)
+Private Const HDN_ENDDRAG = (HDN_FIRST - 11)
+
+' v 5.00
+Private Const HDN_FILTERCHANGE = (HDN_FIRST - 12)
+Private Const HDN_FILTERBTNCLICK = (HDN_FIRST - 13)
+
+
+
+Private Const NM_FIRST = H_MAX               '(0U-  0U)       // generic to all
+ controls
+Private Const NM_LAST = H_MAX - 99&amp; '               (0U- 99U)
+
+Private Const NM_OUTOFMEMORY = (NM_FIRST - 1)
+Private Const NM_CLICK = (NM_FIRST - 2)
+Private Const NM_DBLCLK = (NM_FIRST - 3)
+Private Const NM_RETURN = (NM_FIRST - 4)
+Private Const NM_RCLICK = (NM_FIRST - 5)
+Private Const NM_RDBLCLK = (NM_FIRST - 6)
+Private Const NM_SETFOCUS = (NM_FIRST - 7)
+Private Const NM_KILLFOCUS = (NM_FIRST - 8)
+Private Const NM_RELEASEDCAPTURE = (NM_FIRST - 16)
+
+
+Private Type HD_HITTESTINFO
+    pt As POINTAPI
+    flags As Long
+    iItem As Long
+End Type
+
+Private Type HDITEMA
+    mask As Long
+    cxy As Long
+    pszText As String
+    hbm As Long
+    cchTextMax As Long
+    fmt As Long
+    lParam As Long
+    ' 4.70:
+    iImage As Long
+    iOrder As Long
+    ' 5.00
+    type As Long
+    pvFilter As Long
+End Type
+
+Private Type HDITEMW
+    mask As Long
+    cxy As Long
+    pszText As Long
+    hbm As Long
+    cchTextMax As Long
+    fmt As Long
+    lParam As Long
+    ' 4.70:
+    iImage As Long
+    iOrder As Long
+    ' 5.00
+    type As Long
+    pvFilter As Long
+End Type
+
+Private Type NMHDR
+    hwndFrom As Long
+    idfrom As Long
+    code As Long
+End Type
+Private Type HDNOITFYA
+    hdr As NMHDR
+    iItem As Long
+    iButton As Long
+    pitem As HDITEMA
+End Type
+Private Type HDNOITFYW
+    hdr As NMHDR
+    iItem As Long
+    iButton As Long
+    pitem As HDITEMW
+End Type
+
+' This structure is a *bit* VB unfriendly...
+Private Type NMHEADER
+   hdr As NMHDR
+   iItem As Long
+   iButton As Long
+   lPtrHDItem As Long '    HDITEM  FAR* pItem
+End Type
+    
+Private Type HDTEXTFILTER
+    pszText As Long                      '// [in] pointer to the buffer
+     containing the filter (ANSI)
+    cchTextMax As Long                   '// [in] max size of buffer/edit
+     control buffer
+End Type
+    
+Private Type WINDOWPOS
+    hwnd As Long
+    hWndInsertAfter As Long
+    x As Long
+    y As Long
+    cx As Long
+    cy As Long
+    flags As Long
+End Type
+Private Type RECT
+    left As Long
+    top As Long
+    right As Long
+    bottom As Long
+End Type
+Private Type HDLAYOUT
+    lprc As Long
+    lpwpos As Long
+End Type
+    
+Private Const LF_FACESIZE = 32
+Private Type LOGFONT
+   lfHeight As Long ' The font size (see below)
+   lfWidth As Long ' Normally you don't set this, just let Windows create the
+    Default
+   lfEscapement As Long ' The angle, in 0.1 degrees, of the font
+   lfOrientation As Long ' Leave as default
+   lfWeight As Long ' Bold, Extra Bold, Normal etc
+   lfItalic As Byte ' As it says
+   lfUnderline As Byte ' As it says
+   lfStrikeOut As Byte ' As it says
+   lfCharSet As Byte ' As it says
+   lfOutPrecision As Byte ' Leave for default
+   lfClipPrecision As Byte ' Leave for default
+   lfQuality As Byte ' Leave for default
+   lfPitchAndFamily As Byte ' Leave for default
+   lfFaceName(LF_FACESIZE) As Byte ' The font name converted to a byte array
+End Type
+    
+
+' Messages:
+
+' General windows messages:
+Private Const WM_COMMAND = &amp;H111
+Private Const WM_KEYDOWN = &amp;H100
+Private Const WM_KEYUP = &amp;H101
+Private Const WM_CHAR = &amp;H102
+Private Const WM_SETFOCUS = &amp;H7
+Private Const WM_KILLFOCUS = &amp;H8
+Private Const WM_SETFONT = &amp;H30
+Private Const WM_GETTEXT = &amp;HD
+Private Const WM_GETTEXTLENGTH = &amp;HE
+Private Const WM_SETTEXT = &amp;HC
+Private Const WM_NOTIFY = &amp;H4E&amp;
+Private Const WM_PAINT = &amp;HF
+Private Const WM_USER = &amp;H400
+Private Const UM_STARTDRAG = WM_USER + &amp;H113
+Private Const UM_ENDDRAG = WM_USER + &amp;H114
+
+'
+ ===============================================================================
+=======
+' Private variables:
+'
+ ===============================================================================
+=======
+
+' BEGIN SGRID SPECIFIC -----------
+' Position
+Private m_tR As RECT
+Private m_bInitSize As Boolean
+' IsVisible:
+Private m_bVisible As Boolean
+' User mode?
+Private m_bUserMode As Boolean
+
+Private Const DEFAULT_GROUPBOX_HINT_TEXT = ""
+' END SGRID SPECIFIC -----------
+
+
+
+' Handle of control window:
+Private m_hWnd As Long
+Private m_hWndParent As Long
+Private m_bIsNt As Boolean
+' Font support:
+Private m_font As StdFont
+Private m_tULF As LOGFONT
+Private m_hFnt As Long
+' Image list:
+Private m_hIml As Long
+' Drag Image List:
+Private m_hImlDragImageList As Long
+' Tags and Keys:
+Private m_sTag() As String
+Private m_sKey() As String
+' Filter Change Time Out
+Private m_lFilterChangeTimeOut As Long
+
+' Subclassing support:
+Implements ISubclass
+Private m_bSubClass As Boolean
+
+' Drag drop timer
+Private WithEvents m_tmrDragDrop As CTimer
+Attribute m_tmrDragDrop.VB_VarHelpID = -1
+
+' Style setting
+Private m_bHotTrack As Boolean
+Private m_bDragReorderColumns As Boolean
+Private m_bButtons As Boolean
+Private m_bFullDrag As Boolean
+Private m_bFilterBar As Boolean
+' Enable:
+Private m_bEnabled As Boolean
+            
+' Column/width whilst column changing:
+Private m_lCol As Long
+Private m_lCXY As Long
+Private m_lColOrder As Long
+
+' Last return code of call:
+Private m_lR As Long
+
+' New stuff for grouping
+Private Type tGroupCol
+   lColumn As Long
+   lOrigColSize As Long
+   lOrigColOrder As Long
+   tR As RECT
+   bMouseOver As Boolean
+   bPressed As Boolean
+   sXMouseDown As Single
+   sYMouseDown As Single
+End Type
+Private m_sGroupBoxHintText As String
+Private m_tGroupedCol() As tGroupCol
+Private m_iGroupedHeaderCount As Long
+Private m_bAllowGrouping As Boolean
+Private m_bHideGroupingBox As Boolean
+Private m_bAutoHeight As Boolean
+Private m_cDrag As pcImageListDrag
+Private m_iDragCol As Long
+Private m_bPreventDrag As Boolean
+Private m_lLastDivider As Long
+Private m_bHidingDragImage As Boolean
+Private m_lDragCandidateBefore As Long
+Private m_lDragCandidateAfter As Long
+
+'
+ ===============================================================================
+=======
+' Implementation:
+'
+ ===============================================================================
+=======
+' Item Alignment options:
+Public Enum EHdrTextAlign
+    HdrTextALignLeft = HDF_LEFT
+    HdrTextALignCentre = HDF_CENTER
+    HdrTextALignRight = HDF_RIGHT
+    HdrTextAlignRTLReading = HDF_RTLREADING
+End Enum
+
+' Sort Bitmap options:
+Public Enum EHdrSortBitmapTypes
+   HdrSortBitmapNone = 0
+   HdrSortBitmapUp = HDF_SORTUP
+   HdrSortBitmapDown = HDF_SORTDOWN
+End Enum
+
+' Events
+Public Event ColumnWidthChanged(ByVal lColumn As Long, lWidth As Long)
+Public Event ColumnWidthChanging(ByVal lColumn As Long, lWidth As Long, bCancel
+ As Boolean)
+Public Event StartColumnWidthChange(ByVal lColumn As Long, lWidth As Long,
+ bCancel As Boolean)
+Public Event DividerDblClick(ByVal lColumn As Long)
+Public Event ColumnClick(ByVal lColumn As Long)
+Public Event ColumnDblClick(ByVal lColumn As Long)
+Public Event ColumnBeginDrag(ByVal lColumn As Long)
+Public Event ColumnManualDragRequest(ByVal lColumn As Long, ByRef
+ bForceManualDragDrop As Boolean)
+Public Event ColumnEndDrag(ByVal lColumn As Long, ByVal lOrder As Long)
+Public Event ColumnFilterClick(ByVal lColumn As Long)
+Public Event ColumnFilterChange(ByVal lColumn As Long, ByVal sFilter As String)
+Public Event RightClick(ByVal x As Single, ByVal y As Single)
+Public Event Resize()
+' BEGIN SGRID SPECIFIC -----------
+Public Event RePaint()
+Public Event OleDrag()
+Public Event ColumnGroupChange(lColumn As Long)
+Public Event ColumnUnGroup(lColumn As Long)
+' END SGRID SPECIFIC -----------
+
+
+' BEGIN SGRID SPECIFIC
+ --------------------------------------------------------------------
+Private Function TranslateColor(ByVal oColor As OLE_COLOR) As Long
+Dim lColor As Long
+   OleTranslateColor oColor, 0, lColor
+   TranslateColor = lColor
+End Function
+
+Friend Property Get Visible() As Boolean
+   Visible = m_bVisible
+End Property
+Friend Property Let Visible(ByVal bVisible As Boolean)
+   m_bVisible = bVisible
+   If m_hWnd &lt;&gt; 0 Then
+      If (bVisible) Then
+         ShowWindow m_hWnd, SW_SHOW
+      Else
+         ShowWindow m_hWnd, SW_HIDE
+      End If
+   End If
+End Property
+Friend Property Get left() As Long
+   left = m_tR.left
+End Property
+Friend Property Get top() As Long
+   top = m_tR.top
+End Property
+Friend Property Get Width() As Long
+   Width = m_tR.right - m_tR.left
+End Property
+Friend Property Get Height() As Long
+   Height = m_tR.bottom - m_tR.top
+End Property
+Friend Property Let left(ByVal lLeft As Long)
+Dim lOrigLeft As Long
+   lOrigLeft = m_tR.left
+   m_tR.right = lLeft + m_tR.right - m_tR.left
+   m_tR.left = lLeft
+   pResize Not (m_tR.left = lOrigLeft)
+End Property
+Friend Property Let top(ByVal lTop As Long)
+   m_tR.bottom = lTop + m_tR.bottom - m_tR.top
+   m_tR.top = lTop
+   pResize
+End Property
+Friend Property Let Width(ByVal lWidth As Long)
+   m_tR.right = m_tR.left + lWidth
+   pResize
+End Property
+Friend Property Let Height(ByVal lHeight As Long)
+   m_tR.bottom = m_tR.top + lHeight
+   pResize
+End Property
+Friend Sub Move(ByVal lLeft As Long, ByVal lTop As Long, Optional ByVal lWidth
+ As Long = -1, Optional ByVal lHeight As Long = -1)
+
+   m_tR.right = lLeft + m_tR.right - m_tR.left
+   m_tR.left = lLeft
+   m_tR.bottom = lTop + m_tR.bottom - m_tR.top
+   m_tR.top = lTop
+   If (lWidth &gt; -1) Then
+      m_tR.right = m_tR.left + lWidth
+   End If
+   If (lHeight &gt; -1) Then
+      m_tR.bottom = m_tR.top + lHeight
+   End If
+   pResize
+End Sub
+Private Sub pResize(Optional ByVal bForceUpdate As Boolean = False)
+   If m_hWnd &lt;&gt; 0 Then
+      m_bInitSize = True
+      MoveWindow m_hWnd, m_tR.left, m_tR.top, m_tR.right - m_tR.left,
+       m_tR.bottom - m_tR.top, 1
+      'If Not (isXp) Or bForceUpdate Then
+         InvalidateRect m_hWnd, m_tR, 1
+         UpdateWindow m_hWnd
+      'End If
+   End If
+End Sub
+
+Friend Sub Init(ByVal hWndParent As Long, ByVal bUserMode As Boolean)
+   m_hWndParent = hWndParent
+   m_bUserMode = bUserMode
+   pCreateHeader
+End Sub
+
+Friend Sub StealthSetColumnWidth(ByVal lColumn As Long, ByVal lWidthPixels As
+ Long)
+Dim tHI As HDITEMA
+Dim i As Long
+
+   For i = 1 To m_iGroupedHeaderCount
+      If (m_tGroupedCol(i).lColumn = lColumn) Then
+         m_tGroupedCol(i).lOrigColSize = lWidthPixels
+         Exit Sub
+      End If
+   Next i
+
+   tHI.mask = HDI_WIDTH
+   tHI.cxy = lWidthPixels
+   pbSetHeaderItemInfo lColumn, tHI
+   
+   
+End Sub
+' END SGRID SPECIFIC
+ --------------------------------------------------------------------
+Friend Property Get HideGroupingBox() As Boolean
+   HideGroupingBox = m_bHideGroupingBox
+End Property
+Friend Property Let HideGroupingBox(ByVal Value As Boolean)
+   If Not (m_bHideGroupingBox = Value) Then
+      m_bHideGroupingBox = Value
+      RaiseEvent Resize
+   End If
+End Property
+
+Friend Property Get AllowGrouping() As Boolean
+   AllowGrouping = m_bAllowGrouping
+End Property
+Friend Property Let AllowGrouping(ByVal Value As Boolean)
+   If Not (m_bAllowGrouping = Value) Then
+      m_bAllowGrouping = Value
+      If Not (m_bAllowGrouping) Then
+         Do While (m_iGroupedHeaderCount &gt; 0)
+            ColumnIsGrouped(m_tGroupedCol(1).lColumn) = False
+         Loop
+      End If
+      RaiseEvent Resize
+   End If
+End Property
+
+Friend Property Get GroupBoxHintText() As String
+   GroupBoxHintText = m_sGroupBoxHintText
+End Property
+Friend Property Let GroupBoxHintText(ByVal sText As String)
+   m_sGroupBoxHintText = sText
+End Property
+
+Friend Property Get Enabled() As Boolean
+   Enabled = m_bEnabled
+End Property
+Friend Property Let Enabled(ByVal bEnabled As Boolean)
+Static bResetOnEnable As Boolean
+   If Not (m_bEnabled = bEnabled) Then
+      m_bEnabled = bEnabled
+      If Not (m_bEnabled) Then
+         If (m_bButtons) Then
+            HasButtons = False
+            m_bButtons = True
+            bResetOnEnable = True
+         End If
+      Else
+         If (bResetOnEnable) Then
+            If (m_bButtons) Then
+               m_bButtons = False
+               HasButtons = True
+            End If
+         End If
+      End If
+      EnableWindow m_hWnd, Abs(m_bEnabled)
+   End If
+End Property
+
+Friend Property Get ColumnKey(ByVal lColumn As Long) As String
+   ColumnKey = m_sKey(lColumn)
+End Property
+Friend Property Let ColumnKey(ByVal lColumn As Long, ByVal sKey As String)
+   If (lColumn &lt; ColumnCount) Then
+      m_sKey(lColumn) = sKey
+   Else
+   End If
+End Property
+
+Friend Property Get ColumnTag(ByVal lColumn As Long) As String
+    ColumnTag = m_sTag(lColumn)
+End Property
+Friend Property Let ColumnTag(ByVal lColumn As Long, ByVal sTag As String)
+    If (lColumn &lt; ColumnCount) Then
+        m_sTag(lColumn) = sTag
+    Else
+        'debugmsg "Error setting column tag."
+    End If
+End Property
+
+Friend Sub SetImageList(ByVal lhDC As Long, ByRef vImageList As Variant)
+    If (VarType(vImageList) = vbLong) Then
+        m_hIml = vImageList
+        pSetImageList
+    ElseIf (VarType(vImageList) = vbObject) Then
+        On Error Resume Next
+        ' Ensure image list is initialised:
+        vImageList.ListImages(1).Draw lhDC
+        Err.Clear
+        m_hIml = vImageList.hImagelist
+        If (Err.Number &lt;&gt; 0) Then
+            m_hIml = 0
+            'debugmsg "Error setting image list."
+        Else
+            If (m_hWnd &lt;&gt; 0) Then
+                pSetImageList
+            End If
+        End If
+        On Error GoTo 0
+    Else
+        'debugmsg "Error setting image list."
+    End If
+End Sub
+Friend Property Get HasButtons() As Boolean
+   HasButtons = m_bButtons
+End Property
+Friend Property Let HasButtons(ByVal bHasButtons As Boolean)
+   If (bHasButtons &lt;&gt; m_bButtons) Then
+      m_bButtons = bHasButtons
+      If (m_hWnd &lt;&gt; 0) Then
+         pSetStyle HDS_BUTTONS, bHasButtons
+      End If
+   End If
+End Property
+Friend Property Get FullDrag() As Boolean
+   FullDrag = m_bFullDrag
+End Property
+Friend Property Let FullDrag(ByVal bFullDrag As Boolean)
+   If (m_bFullDrag &lt;&gt; bFullDrag) Then
+      m_bFullDrag = bFullDrag
+      If Not (m_hWnd = 0) Then
+         pSetStyle HDS_FULLDRAG, bFullDrag
+      End If
+   End If
+End Property
+Friend Property Get FilterBar() As Boolean
+   FilterBar = m_bFilterBar
+End Property
+Friend Property Let FilterBar(ByVal bFilterBar As Boolean)
+   If Not (m_bFilterBar = bFilterBar) Then
+      m_bFilterBar = bFilterBar
+      If Not (m_hWnd = 0) Then
+         pSetStyle HDS_FILTERBAR, bFilterBar
+         pResize
+      End If
+   End If
+End Property
+
+Friend Property Get ColumnX(ByVal lColumn As Long) As Long
+Dim i As Long
+Dim x As Long
+   For i = 0 To ColumnCount - 1
+      If (ColumnIndex(lColumn) = i) Then
+         Exit For
+      Else
+         If Not ColumnIsGrouped(ColumnAtIndex(i)) Then
+            x = x + ColumnWidth(ColumnAtIndex(i))
+         End If
+      End If
+   Next i
+   ColumnX = x
+End Property
+
+Friend Property Get ColumnAtIndex(ByVal lIndex As Long) As Long
+Dim i As Long
+   For i = 0 To ColumnCount - 1
+      If (ColumnIndex(i) = lIndex) Then
+         ColumnAtIndex = i
+         Exit For
+      End If
+   Next i
+End Property
+
+Friend Property Get ColumnIndex(ByVal lColumn As Long) As Long
+Dim tHI As HDITEMA
+   If Not (lColumn = m_lCol) Then
+      tHI.mask = HDI_ORDER
+      If (pbGetHeaderItemInfo(lColumn, tHI)) Then
+         ColumnIndex = tHI.iOrder
+      End If
+   Else
+      ColumnIndex = m_lColOrder
+   End If
+End Property
+Friend Property Let ColumnIndex(ByVal lColumn As Long, ByVal lOrder As Long)
+Dim tHI As HDITEMA
+   If Not (ColumnIndex(lColumn) = lOrder) Then
+      tHI.mask = HDI_ORDER
+      tHI.iOrder = lOrder
+      If (pbSetHeaderItemInfo(lColumn, tHI)) Then
+         ' ok
+      Else
+         ' error
+         'debugmsg "Set column order error"
+      End If
+   End If
+End Property
+
+Friend Property Get ColumnExtraData(ByVal lColumn As Long) As Long
+Dim tHI As HDITEMA
+    tHI.mask = HDI_LPARAM
+    If (pbGetHeaderItemInfo(lColumn, tHI)) Then
+        ColumnExtraData = tHI.lParam
+    Else
+        ' Error
+        'debugmsg "Get column extra data error"
+    End If
+End Property
+Friend Property Let ColumnExtraData(ByVal lColumn As Long, ByVal lExtraData As
+ Long)
+Dim tHI As HDITEMA
+    tHI.mask = HDI_LPARAM
+    tHI.lParam = lExtraData
+    If (pbSetHeaderItemInfo(lColumn, tHI)) Then
+    Else
+        ' Error
+        'debugmsg "Set column extra data error"
+    End If
+End Property
+Friend Property Get ColumnTextAlign(ByVal lColumn As Long) As EHdrTextAlign
+Dim tHI As HDITEMA
+   tHI.mask = HDI_FORMAT
+   If (pbGetHeaderItemInfo(lColumn, tHI)) Then
+      ColumnTextAlign = tHI.fmt And &amp;H7&amp;
+   End If
+End Property
+Friend Property Let ColumnTextAlign(ByVal lColumn As Long, ByVal eAlign As
+ EHdrTextAlign)
+Dim tHI As HDITEMA
+   tHI.mask = HDI_FORMAT
+   If (pbGetHeaderItemInfo(lColumn, tHI)) Then
+      tHI.fmt = tHI.fmt And Not &amp;H7&amp;
+      tHI.fmt = tHI.fmt Or eAlign
+      If (pbSetHeaderItemInfo(lColumn, tHI)) Then
+         If (ColumnIsGrouped(lColumn)) Then
+            ' repaint
+            RaiseEvent RePaint
+         End If
+      Else
+         ' failed.
+      End If
+   End If
+End Property
+
+Friend Property Get ColumnWidth(ByVal lColumn As Long) As Long
+Dim tHI As HDITEMA
+Dim i As Long
+   If (lColumn = m_lCol) Then
+      ColumnWidth = m_lCXY
+   Else
+      If (ColumnIsGrouped(lColumn)) Then
+         For i = 1 To m_iGroupedHeaderCount
+            If (m_tGroupedCol(i).lColumn = lColumn) Then
+               ColumnWidth = m_tGroupedCol(i).lOrigColSize
+               Exit For
+            End If
+         Next i
+      Else
+         tHI.mask = HDI_WIDTH
+         If (pbGetHeaderItemInfo(lColumn, tHI)) Then
+             ColumnWidth = tHI.cxy
+         Else
+             ' Error
+             'debugmsg "Get column width error"
+         End If
+      End If
+   End If
+End Property
+
+Friend Property Let ColumnWidth(ByVal lColumn As Long, ByVal lWidthPixels As
+ Long)
+Dim tHI As HDITEMA
+Dim i As Long
+    If Not (ColumnWidth(lColumn) = lWidthPixels) Then
+      If (ColumnIsGrouped(lColumn)) Then
+         For i = 1 To m_iGroupedHeaderCount
+            If (m_tGroupedCol(i).lColumn = lColumn) Then
+               m_tGroupedCol(i).lOrigColSize = lWidthPixels
+               Exit For
+            End If
+         Next i
+      Else
+         tHI.mask = HDI_WIDTH
+         tHI.cxy = lWidthPixels
+         If (pbSetHeaderItemInfo(lColumn, tHI)) Then
+            RaiseEvent ColumnWidthChanged(lColumn, lWidthPixels)
+         Else
+            ' Error
+            '#debugmsg "Set column width error"
+         End If
+      End If
+   End If
+End Property
+Friend Property Get ColumnImage(ByVal lColumn As Long) As Long
+Dim tHI As HDITEMA
+   tHI.mask = HDI_FORMAT
+   If (pbGetHeaderItemInfo(lColumn, tHI)) Then
+      If (tHI.fmt And HDF_IMAGE) = HDF_IMAGE Then
+         tHI.mask = HDI_IMAGE
+         If (pbGetHeaderItemInfo(lColumn, tHI)) Then
+             ColumnImage = tHI.iImage
+         Else
+             ' Error
+             'debugmsg "Get column image error"
+         End If
+      Else
+         ColumnImage = -1
+      End If
+   End If
+End Property
+
+Friend Property Let ColumnImage(ByVal lColumn As Long, ByVal lImage As Long)
+Dim tHI As HDITEMA
+   If Not (ColumnImage(lColumn) = lImage) Then
+      tHI.mask = HDI_FORMAT
+      If pbGetHeaderItemInfo(lColumn, tHI) Then
+         If (pbValidImage(lImage) &lt; 0) Then
+            tHI.fmt = tHI.fmt Or HDF_IMAGE
+            tHI.mask = tHI.mask Or HDI_IMAGE
+            tHI.iImage = lImage
+         Else
+            tHI.fmt = tHI.fmt And Not HDF_IMAGE
+         End If
+         If (pbSetHeaderItemInfo(lColumn, tHI)) Then
+             ' ok
+             If (ColumnIsGrouped(lColumn)) Then
+               ' Repaint
+               RaiseEvent RePaint
+             End If
+         Else
+             ' Error
+             'debugmsg "Set column image error"
+         End If
+      End If
+   End If
+End Property
+Private Function pbValidImage(ByVal lImgIndex As Long) As Boolean
+Dim iCount As Long
+   If Not (m_hIml = 0) Then
+      iCount = ImageList_GetImageCount(m_hIml)
+      If (lImgIndex &gt; -1) And (lImgIndex &lt; iCount) Then
+         pbValidImage = True
+      End If
+   End If
+End Function
+
+Friend Property Get ColumnImageOnRight(ByVal lColumn As Long) As Boolean
+Dim tHI As HDITEMA
+   tHI.mask = HDI_FORMAT
+   If (pbGetHeaderItemInfo(lColumn, tHI)) Then
+      ColumnImageOnRight = ((tHI.fmt And HDF_BITMAP_ON_RIGHT) =
+       HDF_BITMAP_ON_RIGHT)
+   End If
+End Property
+Friend Property Let ColumnImageOnRight(ByVal lColumn As Long, ByVal bState As
+ Boolean)
+Dim tHI As HDITEMA
+   tHI.mask = HDI_FORMAT
+   If (pbGetHeaderItemInfo(lColumn, tHI)) Then
+      If (bState) Then
+         tHI.fmt = tHI.fmt Or HDF_BITMAP_ON_RIGHT
+      Else
+         tHI.fmt = tHI.fmt And Not HDF_BITMAP_ON_RIGHT
+      End If
+      If (pbSetHeaderItemInfo(lColumn, tHI)) Then
+         ' ok
+         If (ColumnIsGrouped(lColumn)) Then
+            ' Repaint
+            RaiseEvent RePaint
+         End If
+      Else
+         'debugmsg "Failed to set image on right property"
+      End If
+   End If
+End Property
+
+Friend Property Get ColumnFilter(ByVal lColumn As Long) As String
+Dim tHI As HDITEMA
+Dim sFilter As String
+   tHI.mask = HDI_FILTER
+   If (pbGetHeaderItemInfo(lColumn, tHI, sFilter)) Then
+      ColumnFilter = sFilter
+   End If
+End Property
+
+Friend Property Let ColumnFilter(ByVal lColumn As Long, ByVal sFilter As String)
+   If Len(sFilter) = 0 Then
+      ' Clear the filter:
+      If (m_bIsNt) Then
+         SendMessageByLongW m_hWnd, HDM_CLEARFILTER, lColumn, 0
+      Else
+         SendMessageByLong m_hWnd, HDM_CLEARFILTER, lColumn, 0
+      End If
+   Else
+      ' Add the text to the filter:
+      Dim tHI As HDITEMA
+      tHI.mask = HDI_FILTER
+      tHI.type = HDFT_ISSTRING
+      If pbSetHeaderItemInfo(lColumn, tHI, sFilter) Then
+      Else
+         'debugmsg "Failed to set filter."
+      End If
+   End If
+End Property
+
+Friend Sub ColumnStartFilterEdit(ByVal lColumn As Long)
+   If (m_bIsNt) Then
+      SendMessageByLongW m_hWnd, HDM_EDITFILTER, lColumn, 0
+   Else
+      SendMessageByLong m_hWnd, HDM_EDITFILTER, lColumn, 0
+   End If
+End Sub
+
+Friend Property Get ColumnSortBitmap(ByVal lColumn As Long) As
+ EHdrSortBitmapTypes
+Dim tHI As HDITEMA
+   tHI.mask = HDI_FORMAT
+   If (pbGetHeaderItemInfo(lColumn, tHI)) Then
+      If (tHI.fmt And HdrSortBitmapUp) = HdrSortBitmapUp Then
+         ColumnSortBitmap = HdrSortBitmapUp
+      ElseIf (tHI.fmt And HdrSortBitmapDown) = HdrSortBitmapDown Then
+         ColumnSortBitmap = HdrSortBitmapDown
+      Else
+         ColumnSortBitmap = HdrSortBitmapNone
+      End If
+   End If
+End Property
+Friend Property Let ColumnSortBitmap(ByVal lColumn As Long, ByVal
+ eSortBitmapType As EHdrSortBitmapTypes)
+Dim tHI As HDITEMA
+   tHI.mask = HDI_FORMAT
+   If (pbGetHeaderItemInfo(lColumn, tHI)) Then
+      If (eSortBitmapType = HdrSortBitmapDown) Then
+         tHI.fmt = tHI.fmt Or HdrSortBitmapDown And Not HdrSortBitmapUp
+      ElseIf (eSortBitmapType = HdrSortBitmapUp) Then
+         tHI.fmt = tHI.fmt Or HdrSortBitmapUp And Not HdrSortBitmapDown
+      Else
+         tHI.fmt = tHI.fmt And Not (HdrSortBitmapUp Or HdrSortBitmapDown)
+      End If
+      If (pbSetHeaderItemInfo(lColumn, tHI)) Then
+         ' ok
+         If (ColumnIsGrouped(lColumn)) Then
+            ' Repaint
+            RaiseEvent RePaint
+         End If
+      Else
+         'debugmsg "Failed to set ColumnSortBitmap"
+      End If
+   End If
+End Property
+
+Friend Property Get ColumnHeader(ByVal lColumn As Long) As String
+Dim tHI As HDITEMA
+Dim sColHeader As String
+Dim iPos As Long
+   tHI.cchTextMax = 255
+   sColHeader = String$(tHI.cchTextMax, Chr$(0))
+   tHI.mask = HDI_TEXT
+   tHI.pszText = sColHeader
+   If (pbGetHeaderItemInfo(lColumn, tHI)) Then
+      sColHeader = tHI.pszText
+      iPos = InStr(sColHeader, Chr$(0))
+      If Not (iPos = 0) Then
+         ColumnHeader = left$(sColHeader, iPos - 1)
+      Else
+         ColumnHeader = sColHeader
+      End If
+   Else
+      ' error
+      'debugmsg "Get column header text error"
+   End If
+End Property
+Friend Property Let ColumnHeader(ByVal lColumn As Long, ByVal sText As String)
+Dim tHI As HDITEMA
+
+   tHI.cchTextMax = Len(sText)
+   If (sText = "") Then
+      tHI.pszText = vbNullChar
+   Else
+      tHI.pszText = sText
+   End If
+   tHI.mask = HDI_TEXT
+   If pbSetHeaderItemInfo(lColumn, tHI) Then
+      If (ColumnIsGrouped(lColumn)) Then
+         ' Repaint
+         RaiseEvent RePaint
+      End If
+   Else
+       ' Error
+       'debugmsg "Set column header text error"
+   End If
+   
+End Property
+
+Friend Property Get ColumnOwnerDraw(ByVal lColumn As Long) As Boolean
+Dim tHI As HDITEMA
+   tHI.mask = HDI_FORMAT
+   If pbGetHeaderItemInfo(lColumn, tHI) Then
+      ColumnOwnerDraw = ((tHI.fmt And HDF_OWNERDRAW) = HDF_OWNERDRAW)
+   End If
+End Property
+Friend Property Let ColumnOwnerDraw(ByVal lColumn As Long, ByVal bState As
+ Boolean)
+Dim tHI As HDITEMA
+   tHI.mask = HDI_FORMAT
+   If pbGetHeaderItemInfo(lColumn, tHI) Then
+      If bState Then
+         tHI.fmt = tHI.fmt Or HDF_OWNERDRAW
+      Else
+         tHI.fmt = tHI.fmt And Not HDF_OWNERDRAW
+      End If
+      If pbSetHeaderItemInfo(lColumn, tHI) Then
+         ' ok
+      Else
+         'debugmsg "Set column owner draw error"
+      End If
+   End If
+End Property
+
+Friend Property Get ColumnIsGrouped(ByVal lColumn As Long) As Boolean
+Dim i As Long
+   For i = 1 To m_iGroupedHeaderCount
+      If (m_tGroupedCol(i).lColumn = lColumn) Then
+         ColumnIsGrouped = True
+         Exit For
+      End If
+   Next i
+End Property
+Friend Property Let ColumnIsGrouped(ByVal lColumn As Long, ByVal bState As
+ Boolean)
+   ColumnIsGroupedSub lColumn, bState, -1
+End Property
+
+Private Sub ColumnIsGroupedSub(ByVal lColumn As Long, ByVal bState As Boolean,
+ ByVal lNewOrder As Long)
+Dim i As Long
+Dim lExistingIndex As Long
+Dim lOrigColSize As Long
+Dim lOrigColOrder As Long
+Dim tHI As HDITEMA
+
+   For i = 1 To m_iGroupedHeaderCount
+      If (m_tGroupedCol(i).lColumn = lColumn) Then
+         lOrigColSize = m_tGroupedCol(i).lOrigColSize
+         lOrigColOrder = m_tGroupedCol(i).lOrigColOrder
+         lExistingIndex = i
+         Exit For
+      End If
+   Next i
+   
+   If (bState) Then
+      If (lExistingIndex &gt; 0) Then
+         ' nothing to do
+         tHI.mask = HDI_WIDTH
+         tHI.cxy = 0
+         pbSetHeaderItemInfo lColumn, tHI
+
+      Else
+         ' Add to the end of the grouping:
+         ColumnGroupOrder(lColumn) = m_iGroupedHeaderCount
+      End If
+   Else
+      If (lExistingIndex = 0) Or (m_iGroupedHeaderCount = 0) Then
+         ' nothing to do
+         
+      Else
+         ' 'Return' the column to the header:
+         
+         ' Shift any existing items up:
+         For i = lExistingIndex + 1 To m_iGroupedHeaderCount
+            LSet m_tGroupedCol(i - 1) = m_tGroupedCol(i)
+         Next i
+         ' Remove the item from the array:
+         m_iGroupedHeaderCount = m_iGroupedHeaderCount - 1
+         If (m_iGroupedHeaderCount &gt; 0) Then
+            ReDim Preserve m_tGroupedCol(1 To m_iGroupedHeaderCount) As
+             tGroupCol
+         Else
+            Erase m_tGroupedCol
+         End If
+         ' Make the column visible again at the end of the order
+         If (lNewOrder &lt; 0) Then
+            If (lOrigColOrder &lt; ColumnCount) Then
+               ColumnIndex(lColumn) = lOrigColOrder
+            Else
+               ColumnIndex(lColumn) = ColumnCount - 1
+            End If
+         Else
+            ColumnIndex(lColumn) = lNewOrder
+         End If
+         ColumnWidth(lColumn) = lOrigColSize
+         ' Resize:
+         pResize
+         ' Repaint
+         RaiseEvent RePaint
+      End If
+   End If
+
+End Sub
+
+Friend Property Get ColumnGroupCount() As Long
+   ColumnGroupCount = m_iGroupedHeaderCount
+End Property
+
+Friend Property Get ColumnGroupOrder(ByVal lColumn As Long) As Long
+Dim i As Long
+Dim lR As Long
+   lR = 0
+   For i = 1 To m_iGroupedHeaderCount
+      If (m_tGroupedCol(i).lColumn = lColumn) Then
+         lR = i
+         Exit For
+      End If
+   Next i
+   ColumnGroupOrder = lR - 1
+End Property
+Friend Property Let ColumnGroupOrder(ByVal lColumn As Long, ByVal lOrder As
+ Long)
+Dim i As Long
+Dim lExistingIndex As Long
+Dim tGExisting As tGroupCol
+Dim tHI As HDITEMA
+
+   ' Check order index:
+   If (lOrder &gt; m_iGroupedHeaderCount) Or (lOrder &lt; -1) Then
+      'Err.Raise 9
+      Exit Property
+   End If
+   
+   ' Find if the column already exists in the groups
+   For i = 1 To m_iGroupedHeaderCount
+      If (m_tGroupedCol(i).lColumn = lColumn) Then
+         lExistingIndex = i
+         LSet tGExisting = m_tGroupedCol(i)
+         Exit For
+      End If
+   Next i
+            
+   If (lOrder = m_iGroupedHeaderCount) Then
+      ' This item wants to be added to the end of the groupings.
+      ' We need to check that it isn't already in the groupings -
+      ' if it is, then you can't add at this order, instead you
+      ' would change the order of the existing item:
+      If (lExistingIndex &gt; 0) Then
+         'Err.Raise 9
+         Exit Property
+      End If
+      
+      ' Ok so it wasn't already there, let's add it:
+      m_iGroupedHeaderCount = m_iGroupedHeaderCount + 1
+      ReDim Preserve m_tGroupedCol(1 To m_iGroupedHeaderCount) As tGroupCol
+      With m_tGroupedCol(m_iGroupedHeaderCount)
+         .lColumn = -1
+         .lOrigColOrder = ColumnIndex(lColumn)
+         .lOrigColSize = ColumnWidth(lColumn)
+         .lColumn = lColumn
+      End With
+      tHI.mask = HDI_WIDTH
+      tHI.cxy = 0
+      pbSetHeaderItemInfo lColumn, tHI
+      ColumnIndex(lColumn) = 0
+            
+      ' Resize (we've added something)
+      pResize
+      ' Repaint
+      RaiseEvent RePaint
+   
+   ElseIf (lOrder &lt; 0) Then
+      ' We're removing this column from the grouping
+      ' if it is there
+      If (lExistingIndex &gt; 0) Then
+         Debug.Assert "TODO" = ""
+      Else
+         ' nothing to do
+      End If
+      
+   Else
+      ' Check if this column is already in the grouping:
+      If (lExistingIndex &gt; 0) Then
+         ' We are moving this item from the existing location to the new one:
+         ' Check if the column is already at this position:
+         If (lExistingIndex = lOrder + 1) Then
+            ' nothing to do
+         Else
+            ' Check which direction we're going in:
+            If (lExistingIndex - 1 &lt; lOrder) Then
+               ' Increasing the order.  Move anything from
+               ' lExistingIndex to lOrder + 1 up one:
+               For i = lExistingIndex To lOrder
+                  LSet m_tGroupedCol(i) = m_tGroupedCol(i + 1)
+               Next i
+               ' Now put this item at lOrder + 1:
+               LSet m_tGroupedCol(lOrder + 1) = tGExisting
+            Else
+               ' Decreasing the order.  Move anything from
+               For i = lExistingIndex - 1 To lOrder + 1 Step -1
+                  LSet m_tGroupedCol(i + 1) = m_tGroupedCol(i)
+               Next i
+               ' Now put this item at lOrder + 1:
+               LSet m_tGroupedCol(lOrder + 1) = tGExisting
+            End If
+            ' Repaint
+            RaiseEvent RePaint
+         End If
+      Else
+         If (lExistingIndex &gt; 0) Then
+            ' We are inserting this item at the specified index:
+            m_iGroupedHeaderCount = m_iGroupedHeaderCount + 1
+            ReDim Preserve m_tGroupedCol(1 To m_iGroupedHeaderCount) As
+             tGroupCol
+            For i = m_iGroupedHeaderCount To lExistingIndex Step -1
+               LSet m_tGroupedCol(i) = m_tGroupedCol(i - 1)
+            Next i
+            With m_tGroupedCol(m_iGroupedHeaderCount)
+               .lColumn = -1
+               .lOrigColOrder = ColumnIndex(lColumn)
+               .lOrigColSize = ColumnWidth(lColumn)
+               .lColumn = lColumn
+            End With
+            tHI.mask = HDI_WIDTH
+            tHI.cxy = 0
+            pbSetHeaderItemInfo lColumn, tHI
+            ColumnIndex(lColumn) = 0
+            
+            ' Resize (we've added something)
+            pResize
+            ' Repaint
+            RaiseEvent RePaint
+         Else
+            ' inserting this item:
+            m_iGroupedHeaderCount = m_iGroupedHeaderCount + 1
+            ReDim Preserve m_tGroupedCol(1 To m_iGroupedHeaderCount) As
+             tGroupCol
+            For i = m_iGroupedHeaderCount To lOrder + 2 Step -1
+               LSet m_tGroupedCol(i) = m_tGroupedCol(i - 1)
+            Next i
+            With m_tGroupedCol(lOrder + 1)
+               .lColumn = -1
+               .lOrigColOrder = ColumnIndex(lColumn)
+               .lOrigColSize = ColumnWidth(lColumn)
+               .lColumn = lColumn
+            End With
+            tHI.mask = HDI_WIDTH
+            tHI.cxy = 0
+            pbSetHeaderItemInfo lColumn, tHI
+            ColumnIndex(lColumn) = 0
+            
+            ' Resize (we've added something)
+            pResize
+            ' Repaint
+            RaiseEvent RePaint
+         End If
+      End If
+   End If
+End Property
+
+
+Friend Property Get HotTrack() As Boolean
+   HotTrack = m_bHotTrack
+End Property
+Friend Property Let HotTrack(ByVal bHotTrack As Boolean)
+   If Not (m_bHotTrack = bHotTrack) Then
+      m_bHotTrack = bHotTrack
+      If Not (m_hWnd = 0) Then
+         pSetStyle HDS_HOTTRACK, bHotTrack
+      End If
+   End If
+End Property
+Friend Property Get DragReOrderColumns() As Boolean
+   DragReOrderColumns = m_bDragReorderColumns
+End Property
+Friend Property Let DragReOrderColumns(ByVal bState As Boolean)
+   If Not (m_bDragReorderColumns = bState) Then
+      m_bDragReorderColumns = bState
+      If Not (m_hWnd = 0) Then
+         pSetStyle HDS_DRAGDROP, bState
+      End If
+   End If
+End Property
+
+Friend Function ColumnHitTest(ByVal xPixels As Long, ByVal yPixels As Long) As
+ Long
+Dim i As Long
+Dim j As Long
+Dim lIndex As Long
+Dim rc As RECT
+Dim yHeader As Long
+   
+   lIndex = -1
+   
+   yHeader = yPixels
+   If (m_bAllowGrouping And Not (m_bHideGroupingBox)) Then
+      GetWindowRect m_hWndParent, rc
+      yHeader = yPixels + rc.bottom - rc.top - Height
+   End If
+   For i = 0 To ColumnCount - 1
+      If Not (ColumnIsGrouped(i)) Then
+         If (m_bIsNt) Then
+            SendMessageW m_hWnd, HDM_GETITEMRECT, i, rc
+         Else
+            SendMessage m_hWnd, HDM_GETITEMRECT, i, rc
+         End If
+         If Not (PtInRect(rc, xPixels, yHeader) = 0) Then
+            lIndex = i
+            Exit For
+         End If
+      End If
+   Next i
+   
+   If (lIndex = -1) Then
+      For i = 1 To m_iGroupedHeaderCount
+         If Not (PtInRect(m_tGroupedCol(i).tR, xPixels, yPixels) = 0) Then
+            lIndex = m_tGroupedCol(i).lColumn
+            Exit For
+         End If
+      Next i
+   End If
+   
+   ColumnHitTest = lIndex
+   
+End Function
+
+Friend Sub RemoveColumn(ByVal lColumn As Long)
+Dim lR As Long
+Dim iCol As Long
+
+   If (ColumnIsGrouped(lColumn)) Then
+      ColumnIsGrouped(lColumn) = False
+   End If
+
+   lR = SendMessageByLong(m_hWnd, HDM_DELETEITEM, lColumn, 0)
+   If (lR &lt;&gt; 0) Then
+      If (ColumnCount &gt; 0) Then
+         For iCol = lColumn To UBound(m_sTag) - 1
+            m_sTag(iCol) = m_sTag(iCol + 1)
+            m_sKey(iCol) = m_sKey(iCol + 1)
+         Next iCol
+         ReDim Preserve m_sTag(0 To ColumnCount - 1) As String
+         ReDim Preserve m_sKey(0 To ColumnCount - 1) As String
+      Else
+         Erase m_sTag
+         Erase m_sKey
+      End If
+   End If
+   
+End Sub
+
+
+Private Sub pSetStyle(ByVal lStyleFlags As Long, ByVal bState As Boolean)
+Dim lStyle As Long
+   If (m_bIsNt) Then
+      lStyle = GetWindowLongW(m_hWnd, GWL_STYLE)
+   Else
+      lStyle = GetWindowLong(m_hWnd, GWL_STYLE)
+   End If
+   If (bState) Then
+      lStyle = lStyle Or lStyleFlags
+   Else
+      lStyle = lStyle And Not lStyleFlags
+   End If
+   If (m_bIsNt) Then
+      SetWindowLongW m_hWnd, GWL_STYLE, lStyle
+   Else
+      SetWindowLong m_hWnd, GWL_STYLE, lStyle
+   End If
+End Sub
+
+Private Function pbGetHeaderItemInfo( _
+      ByVal lCol As Long, _
+      tHI As HDITEMA, _
+      Optional ByRef sFilter As String _
+   ) As Boolean
+   
+   Dim tHDTF As HDTEXTFILTER
+   
+   If (m_bIsNt) Then
+      
+      ' Copy fields to tHIW structure
+      Dim tHIW As HDITEMW
+      Dim b() As Byte
+      Dim lSize As Long
+      Dim bFilter() As Byte
+      With tHIW
+         .cxy = tHI.cxy
+         .fmt = tHI.fmt
+         .hbm = tHI.hbm
+         .iImage = tHI.iImage
+         .iOrder = tHI.iOrder
+         .lParam = tHI.lParam
+         .mask = tHI.mask
+         If ((.mask And HDI_TEXT) = HDI_TEXT) Then
+            ReDim b(0 To (tHI.cchTextMax * 2) - 1) As Byte
+            .cchTextMax = tHI.cchTextMax
+            .pszText = VarPtr(b(0))
+         End If
+         If ((.mask And HDI_FILTER) = HDI_FILTER) Then
+            ReDim bFilter(0 To 511) As Byte
+            tHDTF.pszText = VarPtr(bFilter(0))
+            tHDTF.cchTextMax = 255
+            .pvFilter = VarPtr(tHDTF)
+            .type = tHI.type
+         End If
+      End With
+      
+      ' Send message as Unicode:
+      If Not (SendMessageW(m_hWnd, HDM_GETITEMW, lCol, tHIW) = 0) Then
+         ' Get the fields back into tHI:
+         With tHI
+            .cchTextMax = tHIW.cchTextMax
+            .cxy = tHIW.cxy
+            .fmt = tHIW.fmt
+            .hbm = tHIW.hbm
+            .iImage = tHIW.iImage
+            .iOrder = tHIW.iOrder
+            .lParam = tHIW.lParam
+            .mask = tHIW.mask
+            If ((.mask And HDI_TEXT) = HDI_TEXT) Then
+               ' Trim nulls:
+               lSize = lstrlenW(VarPtr(b(0)))
+               If (lSize &gt; 0) Then
+               ReDim Preserve b(0 To (lSize * 2) - 1) As Byte
+                  tHI.pszText = b
+               End If
+            End If
+            If ((.mask And HDI_FILTER) = HDI_FILTER) Then
+               lSize = lstrlenW(VarPtr(bFilter(0)))
+               ReDim Preserve bFilter(0 To (lSize * 2) - 1) As Byte
+               sFilter = bFilter
+               .type = tHIW.type
+            End If
+         End With
+         pbGetHeaderItemInfo = True
+      End If
+   Else
+      If ((tHI.mask And HDI_FILTER) = HDI_FILTER) Then
+         ReDim bFilter(0 To 255) As Byte
+         tHDTF.pszText = VarPtr(bFilter(0))
+         tHDTF.cchTextMax = UBound(bFilter)
+         tHI.pvFilter = VarPtr(tHDTF)
+      End If
+      If Not (SendMessage(m_hWnd, HDM_GETITEM, lCol, tHI) = 0) Then
+         If ((tHI.mask And HDI_FILTER) = HDI_FILTER) Then
+            lSize = lstrlenA(VarPtr(bFilter(0)))
+            ReDim Preserve bFilter(0 To lSize - 1) As Byte
+            sFilter = StrConv(bFilter, vbUnicode)
+         End If
+         pbGetHeaderItemInfo = True
+      End If
+   End If
+End Function
+Private Function pbSetHeaderItemInfo( _
+      ByVal lCol As Long, _
+      tHI As HDITEMA, _
+      Optional sFilter As String _
+   ) As Boolean
+   
+   If (m_bIsNt) Then
+      Dim tHIW As HDITEMW
+      Dim b() As Byte
+      Dim bFilter() As Byte
+      Dim lSize As Long
+      Dim tHDTF As HDTEXTFILTER
+      
+      ' Copy fields to tHIW structure
+      With tHIW
+         .cxy = tHI.cxy
+         .fmt = tHI.fmt
+         .hbm = tHI.hbm
+         .iImage = tHI.iImage
+         .iOrder = tHI.iOrder
+         .lParam = tHI.lParam
+         .mask = tHI.mask
+         If ((.mask And HDI_TEXT) = HDI_TEXT) Then
+            If (Len(tHI.pszText) &gt; 0) Then
+               b = tHI.pszText
+               ReDim Preserve b(0 To UBound(b) + 2) As Byte
+            Else
+               ReDim b(0 To 1) As Byte
+            End If
+            .cchTextMax = (UBound(b) + 1) / 2
+            .pszText = VarPtr(b(0))
+         End If
+         If ((.mask And HDI_FILTER) = HDI_FILTER) Then
+            If (Len(sFilter) &gt; 0) Then
+               bFilter = sFilter
+               ReDim Preserve bFilter(0 To UBound(bFilter) + 2) As Byte
+            Else
+               ReDim bFilter(0 To 1) As Byte
+            End If
+            tHDTF.pszText = VarPtr(bFilter(0))
+            tHDTF.cchTextMax = (UBound(bFilter) + 1) / 2
+            .pvFilter = VarPtr(tHDTF)
+         End If
+         .type = tHI.type
+      End With
+      
+      ' Send message as Unicode:
+      If Not (SendMessageW(m_hWnd, HDM_SETITEMW, lCol, tHIW) = 0) Then
+         pbSetHeaderItemInfo = True
+      End If
+   
+   Else
+      If ((tHI.mask And HDI_FILTER) = HDI_FILTER) Then
+         If (Len(sFilter) &gt; 0) Then
+            bFilter = StrConv(sFilter, vbFromUnicode)
+            ReDim Preserve bFilter(0 To UBound(bFilter) + 1) As Byte
+         Else
+            ReDim bFilter(0 To 0) As Byte
+         End If
+         tHDTF.cchTextMax = UBound(bFilter) + 1
+         tHDTF.pszText = VarPtr(bFilter(0))
+         tHI.pvFilter = VarPtr(tHDTF)
+      End If
+      If Not (SendMessage(m_hWnd, HDM_SETITEM, lCol, tHI) = 0) Then
+         pbSetHeaderItemInfo = True
+      End If
+   End If
+End Function
+
+Friend Function AddColumn( _
+        ByVal sText As String, _
+        Optional ByVal lWidth As Long = 64, _
+        Optional ByVal eTextAlign As EHdrTextAlign = HdrTextALignLeft, _
+        Optional ByVal lExtraData As Long = 0, _
+        Optional ByVal lImage As Long = -1, _
+        Optional ByVal lInsertAfter As Long = -1 _
+    ) As Long
+Dim tHI As HDITEMA
+Dim tHIW As HDITEMW
+Dim b() As Byte
+Dim lR As Long
+Dim wP As Long
+
+   tHI.mask = HDI_TEXT Or HDI_WIDTH Or HDI_FORMAT Or HDI_LPARAM
+   tHI.fmt = eTextAlign Or HDF_STRING
+   If Not (m_hIml = 0) Then
+      If (pbValidImage(lImage)) Then
+         tHI.mask = tHI.mask Or HDI_IMAGE
+         tHI.fmt = tHI.fmt Or HDF_IMAGE
+         tHI.iImage = lImage
+      End If
+   End If
+   tHI.cxy = lWidth
+   tHI.lParam = lExtraData
+   If Len(sText) = 0 Then
+      tHI.mask = tHI.mask And Not HDI_TEXT
+   Else
+      tHI.pszText = sText
+      tHI.cchTextMax = Len(sText)
+   End If
+   
+   If (lInsertAfter &lt; 0) Then
+      wP = ColumnCount + 1
+   Else
+      wP = lInsertAfter
+   End If
+   
+   If (m_bIsNt) Then
+      ' Copy to tHIW:
+      With tHIW
+         .mask = tHI.mask
+         .fmt = tHI.fmt
+         .iImage = tHI.iImage
+         .cxy = tHI.cxy
+         .lParam = tHI.lParam
+         .cchTextMax = tHI.cchTextMax
+         If (Len(sText) &gt; 0) Then
+            b = tHI.pszText
+            ReDim Preserve b(0 To UBound(b) + 2) As Byte
+         Else
+            ReDim b(0 To 1) As Byte
+         End If
+         .pszText = VarPtr(b(0))
+      End With
+      m_lR = SendMessageW(m_hWnd, HDM_INSERTITEMW, wP, tHIW)
+   Else
+      m_lR = SendMessage(m_hWnd, HDM_INSERTITEM, wP, tHI)
+   End If
+      
+   If (ColumnCount &gt; 0) Then
+      ReDim Preserve m_sTag(0 To ColumnCount - 1) As String
+      ReDim Preserve m_sKey(0 To ColumnCount - 1) As String
+   End If
+   
+   AddColumn = m_lR
+   
+            
+End Function
+Friend Property Get ColumnCount() As Long
+    m_lR = SendMessageByLong(m_hWnd, HDM_GETITEMCOUNT, 0, 0)
+    ColumnCount = m_lR
+End Property
+Friend Sub SetFont(ByVal lhDC As Long, sFont As StdFont)
+Dim hFnt As Long
+
+   If Not (m_font Is sFont) Then
+      Set m_font = sFont
+      ' Store a log font structure for this font:
+      lhDC = CreateDC("DISPLAY", ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)
+      pOLEFontToLogFont sFont, lhDC, m_tULF
+      DeleteDC lhDC
+      ' Store old font handle:
+      hFnt = m_hFnt
+      ' Create a new version of the font:
+      m_hFnt = CreateFontIndirect(m_tULF)
+      ' Ensure the header has the correct font:
+      If Not (m_hWnd = 0) Then
+         SendMessage m_hWnd, WM_SETFONT, m_hFnt, 1
+      End If
+      ' Delete previous version, if we had one:
+      If Not (hFnt = 0) Then
+         DeleteObject hFnt
+      End If
+      pResize
+   End If
+    
+End Sub
+
+Friend Property Get ColumnHeaderFromPoint(ByVal x As Long, ByVal y As Long) As
+ Long
+Dim lCol As Long
+Dim i As Long
+   
+   lCol = -1
+   For i = 1 To m_iGroupedHeaderCount
+      If Not (PtInRect(m_tGroupedCol(i).tR, x, y) = 0) Then
+         ColumnHeaderFromPoint = m_tGroupedCol(i).lColumn
+         Exit Property
+      End If
+   Next i
+
+   If (y &gt;= m_tR.top) And (y &lt;= m_tR.bottom) Then
+
+      Dim xLast As Long
+      Dim lWidth As Long
+      xLast = m_tR.left
+      For i = 0 To ColumnCount - 1
+         lCol = ColumnAtIndex(i)
+         If Not (ColumnIsGrouped(lCol)) Then
+            lWidth = ColumnWidth(lCol)
+            If (x &gt;= xLast) And (x &lt; xLast + lWidth) Then
+               ColumnHeaderFromPoint = lCol
+               Exit Property
+            End If
+            xLast = xLast + lWidth
+         End If
+      Next i
+      
+   End If
+   
+   ColumnHeaderFromPoint = lCol
+   
+End Property
+
+Private Property Get IdealHeaderHeight() As Long
+Dim tHDL As HDLAYOUT
+Dim rc As RECT
+Dim pwpos As WINDOWPOS
+Dim lR As Long
+Dim lHeight As Long
+Dim cx As Long
+Dim cy As Long
+   
+   tHDL.lprc = VarPtr(rc)
+   tHDL.lpwpos = VarPtr(pwpos)
+   
+   lR = SendMessage(m_hWnd, HDM_LAYOUT, 0, tHDL)
+   lHeight = pwpos.cy
+   ImageList_GetIconSize m_hIml, cx, cy
+   If (lHeight &lt; cy + 4) Then
+      lHeight = cy + 4
+   End If
+   
+   IdealHeaderHeight = lHeight
+
+End Property
+
+Friend Property Get IdealHeight() As Long
+Dim lHeight As Long
+   
+   lHeight = Height
+   If (m_bAllowGrouping And Not (m_bHideGroupingBox)) Then
+      If (m_iGroupedHeaderCount = 0) Then
+         lHeight = lHeight + lHeight + 12 + 8
+      Else
+         lHeight = lHeight + lHeight + 12 + (m_iGroupedHeaderCount * 8)
+      End If
+   End If
+   
+   IdealHeight = lHeight
+   
+End Property
+
+Friend Sub ClearAllFilters()
+   If (m_bIsNt) Then
+      SendMessageByLongW m_hWnd, HDM_CLEARFILTER, -1, 0
+   Else
+      SendMessageByLong m_hWnd, HDM_CLEARFILTER, -1, 0
+   End If
+End Sub
+
+Friend Property Get FilterChangeTimeOut() As Long
+   FilterChangeTimeOut = m_lFilterChangeTimeOut
+End Property
+Friend Property Let FilterChangeTimeOut(ByVal lTimeOutMs As Long)
+   m_lFilterChangeTimeOut = lTimeOutMs
+   If (m_bIsNt) Then
+      SendMessageByLongW m_hWnd, HDM_SETFILTERCHANGETIMEOUT, 0, lTimeOutMs
+   Else
+      SendMessageByLong m_hWnd, HDM_SETFILTERCHANGETIMEOUT, 0, lTimeOutMs
+   End If
+End Property
+
+Friend Property Get DragImageList(ByVal lColumn As Long)
+   ClearDragImageList
+   If (ColumnIsGrouped(lColumn)) Then
+      Dim i As Long
+      Dim lIndex As Long
+      Dim lWidth As Long
+      Dim lHeight As Long
+      ' Need to create a new image list for dragging:
+      For i = 1 To m_iGroupedHeaderCount
+         If (m_tGroupedCol(i).lColumn = lColumn) Then
+            lIndex = i
+            Exit For
+         End If
+      Next i
+      lWidth = m_tGroupedCol(lIndex).tR.right - m_tGroupedCol(lIndex).tR.left
+      lHeight = Height
+      m_hImlDragImageList = ImageList_Create(lWidth, lHeight, ILC_MASK Or
+       ILC_COLOR32, 1, 1)
+      
+      ' Now need to create an image of the item to be dragged to add to the
+       drag image list:
+      Dim lhDCDisp As Long
+      Dim lhDC As Long
+      Dim lhBmp As Long
+      Dim lhBmpOld As Long
+      Dim tR As RECT
+      Dim hFontOld As Long
+      
+      tR.right = lWidth
+      tR.bottom = lHeight
+      
+      lhDCDisp = CreateDC("DISPLAY", ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)
+      lhDC = CreateCompatibleDC(lhDCDisp)
+      lhBmp = CreateCompatibleBitmap(lhDCDisp, lWidth, lHeight)
+      DeleteDC lhDCDisp
+      lhBmpOld = SelectObject(lhDC, lhBmp)
+      ' Draw the item onto the DC:
+      hFontOld = SelectObject(lhDC, m_hFnt)
+      DrawGroupedHeaderItem lhDC, lIndex, tR
+      SelectObject lhDC, hFontOld
+      ' Select the bitmap out:
+      SelectObject lhDC, lhBmp
+      ' Clear up DC:
+      DeleteDC lhDC
+      
+      ' Add the bitmap to the ImageList:
+      ImageList_AddMasked m_hImlDragImageList, lhBmp, &amp;H10101
+      ' Clear up the bitmap:
+      DeleteObject lhBmp
+   Else
+      If (m_bIsNt) Then
+         m_hImlDragImageList = SendMessageByLongW(m_hWnd, HDM_CREATEDRAGIMAGE,
+          lColumn, 0)
+      Else
+         m_hImlDragImageList = SendMessageByLong(m_hWnd, HDM_CREATEDRAGIMAGE,
+          lColumn, 0)
+      End If
+   End If
+   DragImageList = m_hImlDragImageList
+End Property
+
+Friend Sub ClearDragImageList()
+   If (m_hImlDragImageList) Then
+      ImageList_Destroy m_hImlDragImageList
+      m_hImlDragImageList = 0
+   End If
+End Sub
+
+Friend Function SetHotDivider(ByVal x As Long, ByVal y As Long) As Long
+Dim rc As RECT
+   GetClientRect m_hWnd, rc
+   If (y &gt; -8) And (y &lt; rc.bottom + 8) Then
+      Dim lXY As Long
+      lXY = (x And &amp;HFFFF&amp;)
+      lXY = lXY Or (y And &amp;H7FFF) * &amp;H10000
+      If (y And &amp;H8000) = &amp;H8000 Then
+         lXY = lXY Or &amp;H80000000
+      End If
+      If (m_bIsNt) Then
+         SetHotDivider = SendMessageByLongW(m_hWnd, HDM_SETHOTDIVIDER, 1, lXY)
+      Else
+         SetHotDivider = SendMessageByLong(m_hWnd, HDM_SETHOTDIVIDER, 1, lXY)
+      End If
+   Else
+      SendMessageByLong m_hWnd, HDM_SETHOTDIVIDER, 0, -1
+      SetHotDivider = -1
+   End If
+End Function
+
+Friend Function SetHotDividerForCursorPos() As Long
+Dim tP As POINTAPI
+   GetCursorPos tP
+   ScreenToClient m_hWnd, tP
+   SetHotDividerForCursorPos = SetHotDivider(tP.x, tP.y)
+End Function
+
+Private Sub pOLEFontToLogFont(fntThis As StdFont, hdc As Long, tLF As LOGFONT)
+Dim sFont As String
+Dim iChar As Integer
+
+    ' Convert an OLE StdFont to a LOGFONT structure:
+    With tLF
+        sFont = fntThis.Name
+        ' There is a quicker way involving StrConv and CopyMemory, but
+        ' this is simpler!:
+        For iChar = 1 To Len(sFont)
+            .lfFaceName(iChar - 1) = CByte(Asc(Mid$(sFont, iChar, 1)))
+        Next iChar
+        ' Based on the Win32SDK documentation:
+        .lfHeight = -MulDiv((fntThis.Size), (GetDeviceCaps(hdc, LOGPIXELSY)),
+         72)
+        .lfItalic = fntThis.Italic
+        If (fntThis.Bold) Then
+            .lfWeight = FW_BOLD
+        Else
+            .lfWeight = FW_NORMAL
+        End If
+        .lfUnderline = fntThis.Underline
+        .lfStrikeOut = fntThis.Strikethrough
+    End With
+
+End Sub
+
+
+
+Private Sub pCreateHeader()
+Dim rcParent As RECT
+Dim wP As WINDOWPOS
+Dim wStyle As Long
+Dim lPtr As Long
+
+   ' create the header control.
+   wStyle = WS_CHILD Or WS_VISIBLE Or HDS_HORZ
+   If (m_bHotTrack) Then
+      wStyle = wStyle Or HDS_HOTTRACK
+   End If
+   If (m_bDragReorderColumns) Then
+      wStyle = wStyle Or HDS_DRAGDROP
+   End If
+   If (m_bButtons) Then
+      wStyle = wStyle Or HDS_BUTTONS
+   End If
+   If (m_bFullDrag) Then
+      wStyle = wStyle Or HDS_FULLDRAG
+   End If
+   If (m_bFilterBar) Then
+      wStyle = wStyle Or HDS_FILTERBAR
+   End If
+   
+    
+    If Not m_bInitSize Then
+      GetClientRect m_hWndParent, m_tR
+      m_tR.bottom = m_tR.top + 20
+      m_bInitSize = True
+   End If
+   
+   If (m_bIsNt) Then
+      m_hWnd = CreateWindowExW(0, StrPtr(WC_HEADER), StrPtr(""), _
+         wStyle, _
+         0, 0, m_tR.right - m_tR.left, m_tR.bottom - m_tR.top, _
+         m_hWndParent, 0, App.hInstance, 0)
+   Else
+      m_hWnd = CreateWindowEx(0, WC_HEADER, "", _
+         wStyle, _
+         0, 0, m_tR.right - m_tR.left, m_tR.bottom - m_tR.top, _
+         m_hWndParent, 0, App.hInstance, 0)
+   End If
+   
+   If Not (m_hWnd = 0) Then
+       ' Commence subclassing:
+       pSubClass
+       ' Set the image list
+       pSetImageList
+       
+      ' If NT then we can have Unicode (thanks to Dana Seaman)
+      If (m_bIsNt) Then
+         SendMessageByLong m_hWnd, CCM_SETUNICODEFORMAT, 1, 0&amp;
+      End If
+       
+      If Not (m_bUserMode) Then
+         ' why does the text not appear in design time?
+         AddColumn "Header Control", 128
+      End If
+        
+       Visible = m_bVisible
+      
+   End If
+    
+
+End Sub
+Private Sub pSubClass()
+   If (m_bUserMode) Then
+      If (m_hWnd &lt;&gt; 0) Then
+         AttachMessage Me, m_hWndParent, WM_NOTIFY
+         AttachMessage Me, m_hWnd, UM_STARTDRAG
+         AttachMessage Me, m_hWnd, UM_ENDDRAG
+   
+         m_bSubClass = True
+      End If
+   End If
+End Sub
+Private Sub pUnSubClass()
+    If Not (m_hWnd = 0) Then
+        If (m_bSubClass) Then
+            DetachMessage Me, m_hWndParent, WM_NOTIFY
+            DetachMessage Me, m_hWnd, UM_STARTDRAG
+            DetachMessage Me, m_hWnd, UM_ENDDRAG
+        End If
+    End If
+End Sub
+Private Sub pSetImageList()
+    If (m_hIml &lt;&gt; 0) Then
+        SendMessageByLong m_hWnd, HDM_SETIMAGELIST, 0, m_hIml
+        If (m_hIml &lt;&gt; SendMessageByLong(m_hWnd, HDM_GETIMAGELIST, 0, 0)) Then
+            'debugmsg "Error getting image list"
+        End If
+    End If
+End Sub
+Friend Sub ClearUp()
+   If (m_hWnd &lt;&gt; 0) Then
+      pUnSubClass
+      ShowWindow m_hWnd, SW_HIDE
+      SetParent m_hWnd, 0
+      DestroyWindow m_hWnd
+      m_hWnd = 0
+      If (m_hFnt &lt;&gt; 0) Then
+         DeleteObject m_hFnt
+      End If
+   End If
+   
+End Sub
+
+Private Sub Class_Initialize()
+   'debugmsg "cHeaderControl:Initialize"
+
+   ' Ensure that the common control DLL is loaded,
+   InitCommonControls
+   
+   ' Are we running NT?
+   Dim lVer As Long
+   lVer = GetVersion()
+   m_bIsNt = ((lVer And &amp;H80000000) = 0)
+   
+   ' Enabled default
+   m_bEnabled = True
+   m_lFilterChangeTimeOut = 2000 ' default to 2s
+   m_lCol = -1
+   
+   m_sGroupBoxHintText = DEFAULT_GROUPBOX_HINT_TEXT
+            
+   HotTrack = True
+   DragReOrderColumns = True
+   HasButtons = True
+   FullDrag = False
+   
+   Set m_cDrag = New pcImageListDrag
+   Set m_tmrDragDrop = New CTimer
+   
+End Sub
+
+Private Sub Class_Terminate()
+   ClearUp
+   'debugmsg "cHeaderControl:Terminate"
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As EMsgResponse)
+    '
+End Property
+
+Private Property Get ISubclass_MsgResponse() As EMsgResponse
+    ISubclass_MsgResponse = emrPreprocess
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+Dim tNMH As NMHDR
+Dim tHDN As NMHEADER
+Dim lHDI() As Long
+Dim bCancel As Boolean
+Dim sCol As String
+Dim i As Long
+
+   Select Case iMsg
+   Case WM_NOTIFY
+      
+      CopyMemory tNMH, ByVal lParam, LenB(tNMH)
+      
+      Select Case tNMH.code
+      Case HDN_BEGINTRACKA, HDN_BEGINTRACKW
+         CopyMemory tHDN, ByVal lParam, Len(tHDN)
+         ' Get HD_ITEM from tHDN.lPtrHDItem.  Don't use a HD_ITEM
+         ' structure - you will crash...
+         ' Here we only need up to the second long (HD_ITEM.cxy)
+         ReDim lHDI(0 To 1) As Long
+         CopyMemory lHDI(0), ByVal tHDN.lPtrHDItem, 8
+         ' Check if this column is grouped:
+         If (m_bAllowGrouping) Then
+            If (ColumnIsGrouped(tHDN.iItem)) Then
+               ' Don't allow it to be sized
+               ISubclass_WindowProc = 1
+               Exit Function
+            End If
+         End If
+         RaiseEvent StartColumnWidthChange(tHDN.iItem, lHDI(1), bCancel)
+         If (bCancel) Then
+            ISubclass_WindowProc = 1
+         End If
+         
+      Case HDN_TRACKA, HDN_TRACKW
+          CopyMemory tHDN, ByVal lParam, LenB(tHDN)
+          ' Get HD_ITEM from tHDN.lPtrHDItem.  Don't use a HD_ITEM
+          ' structure - you will crash...
+          ' Here we only need up to the second long (HD_ITEM.cxy)
+          ReDim lHDI(0 To 1) As Long
+          CopyMemory lHDI(0), ByVal tHDN.lPtrHDItem, 8
+          RaiseEvent ColumnWidthChanging(tHDN.iItem, lHDI(1), bCancel)
+          If (bCancel) Then
+              ISubclass_WindowProc = 1
+          End If
+          
+      Case HDN_ENDTRACKA, HDN_ENDTRACKW
+         ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lParam)
+         CopyMemory tHDN, ByVal lParam, LenB(tHDN)
+         If (m_bAllowGrouping) Then
+            If (ColumnIsGrouped(tHDN.iItem)) Then
+               ' No events
+               Exit Function
+            End If
+         End If
+         ' Get HD_ITEM from tHDN.lPtrHDItem.  Don't use a HD_ITEM
+         ' structure - you will crash...
+         ' Here we only need up to the second long (HD_ITEM.cxy)
+         ReDim lHDI(0 To 1) As Long
+         CopyMemory lHDI(0), ByVal tHDN.lPtrHDItem, 8
+         m_lCol = tHDN.iItem
+         m_lCXY = lHDI(1)
+         RaiseEvent ColumnWidthChanged(tHDN.iItem, lHDI(1))
+         m_lCol = -1
+          
+      Case HDN_DIVIDERDBLCLICKA, HDN_DIVIDERDBLCLICKW
+          CopyMemory tHDN, ByVal lParam, LenB(tHDN)
+          RaiseEvent DividerDblClick(tHDN.iItem)
+          
+      Case HDN_ITEMCLICKA, HDN_ITEMCLICKW
+          CopyMemory tHDN, ByVal lParam, LenB(tHDN)
+          RaiseEvent ColumnClick(tHDN.iItem)
+          
+      Case HDN_ITEMDBLCLICKA, HDN_ITEMDBLCLICKW
+          CopyMemory tHDN, ByVal lParam, LenB(tHDN)
+          RaiseEvent ColumnDblClick(tHDN.iItem)
+          
+      Case HDN_BEGINDRAG
+         If m_bPreventDrag Then
+            ISubclass_WindowProc = 1
+         Else
+            CopyMemory tHDN, ByVal lParam, LenB(tHDN)
+            RaiseEvent ColumnBeginDrag(tHDN.iItem)
+            Dim bForceManualDragDrop As Boolean
+            RaiseEvent ColumnManualDragRequest(tHDN.iItem, bForceManualDragDrop)
+            If (bForceManualDragDrop) Then
+               m_bPreventDrag = True
+               m_lCol = -1
+               ISubclass_WindowProc = 1
+            ElseIf (m_bAllowGrouping And Not (m_bHideGroupingBox)) Then
+               m_iDragCol = tHDN.iItem
+               PostMessage m_hWnd, UM_STARTDRAG, 0, 0
+               ISubclass_WindowProc = 1
+            End If
+         End If
+         
+      Case HDN_ENDDRAG
+         ISubclass_WindowProc = CallOldWindowProc(hwnd, iMsg, wParam, lParam)
+         CopyMemory tHDN, ByVal lParam, LenB(tHDN)
+         ' Get HD_ITEM from tHDN.lPtrHDItem.  Don't use a HD_ITEM
+         ' structure - you will crash...
+         ' Here we only need up to the ninth long (HD_ITEM.iOrder)
+         ReDim lHDI(0 To 8) As Long
+         CopyMemory lHDI(0), ByVal tHDN.lPtrHDItem, 36
+         ' Check for cancel:
+         If (lHDI(8) &gt; -1) Then
+            'm_lCol = tHDN.iItem
+            'm_lColOrder = lHDI(8)
+            m_lCol = -1
+            'RaiseEvent ColumnEndDrag(tHDN.iItem, lHDI(8))
+            PostMessage m_hWnd, UM_ENDDRAG, tHDN.iItem, lHDI(8)
+         End If
+         m_lCol = -1
+         
+      Case HDN_FILTERBTNCLICK
+         ' Get NMHDFILTERBTNCLICK.  Only require NMHDR + 1
+         CopyMemory tHDN, ByVal lParam, 16
+         RaiseEvent ColumnFilterClick(tHDN.iItem)
+         
+      Case HDN_FILTERCHANGE
+         ' Filter change.  Don't get details of the item in
+         ' this event, so need to call GetItem..
+         CopyMemory tHDN, ByVal lParam, LenB(tHDN)
+         Dim sFilter As String
+         sFilter = ColumnFilter(tHDN.iItem)
+         RaiseEvent ColumnFilterChange(tHDN.iItem, sFilter)
+         
+      Case NM_RCLICK
+         ' Right click in control
+         Dim sx As Single, sy As Single
+         Dim tP As POINTAPI
+         GetCursorPos tP
+         ScreenToClient m_hWnd, tP
+         'sx = UserControl.ScaleX(tP.x, vbPixels, UserControl.ScaleMode)
+         'sy = UserControl.ScaleY(tP.y, vbPixels, UserControl.ScaleMode)
+         sx = tP.x
+         sy = tP.y + m_tR.top
+         RaiseEvent RightClick(sx, sy)
+         
+      Case NM_RELEASEDCAPTURE
+         ' End of stop dragging mode:
+         m_bPreventDrag = False
+      Case Else
+      
+      End Select
+   
+   Case UM_STARTDRAG
+      RaiseEvent OleDrag
+      m_lCol = -1
+
+   Case UM_ENDDRAG
+      RaiseEvent ColumnEndDrag(wParam, lParam)
+      
+   End Select
+   
+End Function
+
+Private Sub m_tmrDragDrop_ThatTime()
+Dim rc As RECT
+Dim tP As POINTAPI
+   GetCursorPos tP
+   GetWindowRect m_hWndParent, rc
+   If (PtInRect(rc, tP.x, tP.y) = 0) Then
+      m_cDrag.HideDragImage True
+      If (m_lLastDivider &gt; -1) Then
+         m_lLastDivider = SetHotDividerForCursorPos()
+      End If
+      m_bHidingDragImage = True
+   Else
+      GetWindowRect m_hWnd, rc
+      If (PtInRect(rc, tP.x, tP.y) = 0) Then
+         ' In control
+         If (m_lLastDivider &gt; -1) Then
+            m_cDrag.HideDragImage True
+            m_lLastDivider = SetHotDividerForCursorPos()
+         ElseIf (m_bHidingDragImage) Then
+         End If
+         m_cDrag.HideDragImage False
+      Else
+         ' In header:
+         m_cDrag.HideDragImage True
+         m_lLastDivider = SetHotDividerForCursorPos()
+         m_cDrag.HideDragImage False
+      End If
+      m_bHidingDragImage = False
+   End If
+End Sub
+
+
+Friend Sub UserControl_MouseDown(Button As Integer, Shift As Integer, x As
+ Single, y As Single)
+   '
+Dim i As Long
+Dim mX As Long
+Dim mY As Long
+   If (m_bAllowGrouping And Not (m_bHideGroupingBox)) Then
+      If (m_iGroupedHeaderCount &gt; 0) Then
+         If (Button = vbLeftButton) Then
+            ' is the mouse down on a header?
+            mX = x
+            mY = y
+            For i = 1 To m_iGroupedHeaderCount
+               If Not (PtInRect(m_tGroupedCol(i).tR, mX, mY) = 0) Then
+                  m_tGroupedCol(i).bMouseOver = True
+                  m_tGroupedCol(i).bPressed = True
+                  m_tGroupedCol(i).sXMouseDown = x
+                  m_tGroupedCol(i).sYMouseDown = y
+                  ' repaint:
+                  RaiseEvent RePaint
+                  Exit For
+               End If
+            Next i
+         End If
+      End If
+   End If
+End Sub
+
+Friend Sub UserControl_MouseMove(Button As Integer, Shift As Integer, x As
+ Single, y As Single)
+   '
+Dim i As Long
+Dim mX As Long
+Dim mY As Long
+Dim iOver As Long
+   If (m_bAllowGrouping And Not (m_bHideGroupingBox)) Then
+      If (m_iGroupedHeaderCount &gt; 0) Then
+         If (Button = vbLeftButton) Then
+            mX = x
+            mY = y
+            ' is the mouse down on a header?
+            For i = 1 To m_iGroupedHeaderCount
+               If (i &gt; m_iGroupedHeaderCount) Then
+                  Exit For
+               End If
+               If (m_tGroupedCol(i).bPressed) Then
+                  If (PtInRect(m_tGroupedCol(i).tR, mX, mY) = 0) Then
+                     ' Mouse out of clicked item
+                     If (m_tGroupedCol(i).bMouseOver) Then
+                        m_tGroupedCol(i).bMouseOver = False
+                        ' repaint
+                        RaiseEvent RePaint
+                     End If
+                  Else
+                     ' Mouse in clicked item
+                     If Not (m_tGroupedCol(i).bMouseOver) Then
+                        m_tGroupedCol(i).bMouseOver = True
+                        ' repaint
+                        RaiseEvent RePaint
+                     End If
+                  End If
+                  ' Check for dragging:
+                  If Abs(x - m_tGroupedCol(i).sXMouseDown) &gt; 8 Or Abs(y -
+                   m_tGroupedCol(i).sYMouseDown) &gt; 8 Then
+                     m_iDragCol = m_tGroupedCol(i).lColumn
+                     m_tGroupedCol(i).bMouseOver = False
+                     m_tGroupedCol(i).bPressed = False
+                     RaiseEvent OleDrag
+                  End If
+               End If
+            Next i
+         End If
+      End If
+   End If
+   '
+End Sub
+
+Friend Sub UserControl_MouseUp(Button As Integer, Shift As Integer, x As
+ Single, y As Single)
+   '
+Dim i As Long
+Dim mX As Long
+Dim mY As Long
+   If (m_bAllowGrouping And Not (m_bHideGroupingBox)) Then
+      If (Button = vbRightButton) Then
+         ' right click
+         RaiseEvent RightClick(x, y)
+      ElseIf (Button = vbLeftButton) Then
+         If (m_iGroupedHeaderCount &gt; 0) Then
+            'mX = UserControl.ScaleX(x, UserControl.ScaleMode, vbPixels)
+            'mY = UserControl.ScaleY(y, UserControl.ScaleMode, vbPixels)
+            mX = x
+            mY = y
+            ' is the mouse released on the item that was pressed?
+            For i = 1 To m_iGroupedHeaderCount
+               If Not (PtInRect(m_tGroupedCol(i).tR, mX, mY) = 0) Then
+                  If (m_tGroupedCol(i).bPressed) Then
+                     ' This is a left click
+                     RaiseEvent ColumnClick(m_tGroupedCol(i).lColumn)
+                  End If
+                  m_tGroupedCol(i).bMouseOver = True
+               Else
+                  m_tGroupedCol(i).bMouseOver = False
+               End If
+               m_tGroupedCol(i).bPressed = False
+            Next i
+            RaiseEvent RePaint
+         End If
+      End If
+   End If
+   '
+End Sub
+
+Friend Sub UserControl_OLECompleteDrag(Effect As Long)
+   '
+   m_cDrag.CompleteDrag
+   Enabled = True
+   m_tmrDragDrop.Interval = 0
+   m_lDragCandidateBefore = 0
+   m_lDragCandidateAfter = 0
+   SetHotDivider -100, -100
+   ClearDragImageList
+   RaiseEvent RePaint
+   '
+End Sub
+
+Friend Sub UserControl_OLEDragDrop(Data As DataObject, Effect As Long, Button
+ As Integer, Shift As Integer, x As Single, y As Single)
+   '
+   Dim b() As Byte
+      
+   
+   On Error Resume Next
+   b = Data.GetData(&amp;HFFFFB046)
+   Dim s As String
+   On Error GoTo 0
+   s = b
+   If (InStr(s, "SGrid2Header") = 1) Then
+      
+      
+      m_cDrag.CompleteDrag
+      ClearDragImageList
+      Enabled = True
+      m_tmrDragDrop.Interval = 0
+      If (m_iDragCol = -1) Then
+         Exit Sub
+      End If
+
+      Dim lIndex As Long
+      lIndex = SetHotDividerForCursorPos()
+      If (lIndex &gt; -1) Then
+         m_lDragCandidateBefore = 0
+         m_lDragCandidateAfter = 0
+         ' Set the order of this item:
+         If (ColumnIsGrouped(m_iDragCol)) Then
+            ' Adding the item back into the header:
+            ColumnIsGroupedSub m_iDragCol, False, lIndex - 1
+            RaiseEvent ColumnUnGroup(m_iDragCol)
+         Else
+            ' Dragging with the header itself
+            If (lIndex &gt; ColumnIndex(m_iDragCol)) Then
+               ColumnIndex(m_iDragCol) = lIndex - 1
+               RaiseEvent ColumnEndDrag(m_iDragCol, lIndex - 1)
+            Else
+               ColumnIndex(m_iDragCol) = lIndex
+               RaiseEvent ColumnEndDrag(m_iDragCol, lIndex)
+            End If
+         End If
+      Else
+         ' Somewhere in the grouping area:
+         Dim lOrder As Long
+         If (ColumnIsGrouped(m_iDragCol)) Then
+            If (m_lDragCandidateBefore = 0 And m_lDragCandidateAfter = 0) Then
+               ' nothing to do
+               Exit Sub
+            End If
+         End If
+         lOrder = m_iGroupedHeaderCount
+         If (m_lDragCandidateBefore &gt; 0) Then
+            lOrder = m_lDragCandidateBefore
+         ElseIf (m_lDragCandidateAfter &gt; 0) Then
+            lOrder = m_lDragCandidateAfter
+         End If
+         If (lOrder &gt; 0) Then
+            If Not (ColumnIsGrouped(m_iDragCol)) And (m_lDragCandidateAfter =
+             m_iGroupedHeaderCount) Then
+               ' nothing
+            Else
+               lOrder = lOrder - 1
+            End If
+         End If
+         If (ColumnIsGrouped(m_iDragCol)) Then
+            If (lOrder &gt;= m_iGroupedHeaderCount - 1) Then
+               lOrder = m_iGroupedHeaderCount - 1
+            End If
+         End If
+         m_lDragCandidateBefore = 0
+         m_lDragCandidateAfter = 0
+         ColumnGroupOrder(m_iDragCol) = lOrder
+         RaiseEvent ColumnGroupChange(m_iDragCol)
+         
+      End If
+      SetHotDivider -100, -100
+   End If
+
+   '
+End Sub
+
+Friend Sub UserControl_OLEDragOver(Data As DataObject, Effect As Long, Button
+ As Integer, Shift As Integer, x As Single, y As Single, State As Integer)
+   '
+   If (m_bAllowGrouping And Not (m_bHideGroupingBox)) Then
+      Dim b() As Byte
+      On Error Resume Next
+      b = Data.GetData(&amp;HFFFFB046)
+      Dim s As String
+      On Error GoTo 0
+      s = b
+   
+      If (InStr(s, "SGrid2Header") = 1) Then
+         
+         Dim lhWndParent As Long
+         lhWndParent = CLng(Mid(s, 14))
+         If Not (lhWndParent = m_hWndParent) Then
+            ' Don't allow the header to be dropped onto
+            ' another SGrid control
+            Effect = vbDropEffectNone
+            Exit Sub
+         End If
+         
+         Effect = vbDropEffectMove
+         
+         Dim tP As POINTAPI
+         Dim rc As RECT
+         GetCursorPos tP
+         GetWindowRect m_hWnd, rc
+         If (tP.y &gt;= rc.top - 8) Then
+            
+            If (tP.y &gt;= rc.bottom + 16) Then
+               ' Over the grid
+               Effect = vbDropEffectNone
+               Exit Sub
+            End If
+         
+            If (m_lDragCandidateBefore &gt; 0) Or (m_lDragCandidateAfter &gt; 0) Then
+               m_lDragCandidateBefore = 0
+               m_lDragCandidateAfter = 0
+               ' repaint
+               m_cDrag.HideDragImage True
+               RaiseEvent RePaint
+               m_cDrag.HideDragImage False
+            End If
+            Exit Sub
+         End If
+                           
+         GetWindowRect lhWndParent, rc
+         InflateRect rc, 16, 16
+         If PtInRect(rc, tP.x, tP.y) = 0 Then
+            ' Outside the owning control
+            Effect = vbDropEffectNone
+            Exit Sub
+         End If
+         
+         Dim lMinOffsetAfter As Long
+         Dim lMinOffsetBefore As Long
+         Dim lCandidateAfter As Long
+         Dim lCandidateBefore As Long
+         Dim lThisOffset As Long
+         Dim i As Long
+         Dim lDragOrderIndex As Long
+         
+         For i = 1 To m_iGroupedHeaderCount
+            If (m_tGroupedCol(i).lColumn = m_iDragCol) Then
+               lDragOrderIndex = i
+               Exit For
+            End If
+         Next i
+         
+         ScreenToClient m_hWndParent, tP
+         lMinOffsetBefore = &amp;H7FFFFFFF
+         lMinOffsetAfter = &amp;H7FFFFFFF
+         For i = 1 To m_iGroupedHeaderCount
+            ' Candidate for replacement:
+            If (i &gt; lDragOrderIndex) Or (lDragOrderIndex = 0) Then
+               ' Potentially the dragged item could go after this one:
+               lThisOffset = (tP.x - (m_tGroupedCol(i).tR.left +
+                (m_tGroupedCol(i).tR.right - m_tGroupedCol(i).tR.left) \ 2))
+               If (lThisOffset &gt; 0) Then
+                  If (lThisOffset &lt; lMinOffsetAfter) Then
+                     lCandidateAfter = i
+                     lMinOffsetAfter = lThisOffset
+                  End If
+               End If
+            End If
+            If (i &lt; lDragOrderIndex) Or (lDragOrderIndex = 0) Then
+               ' Potentially the dragged item could go before this one:
+               lThisOffset = (m_tGroupedCol(i).tR.left +
+                (m_tGroupedCol(i).tR.right - m_tGroupedCol(i).tR.left) \ 2) -
+                tP.x
+               If (lThisOffset &gt; 0) Then
+                  If (lThisOffset &lt; lMinOffsetBefore) Then
+                     lCandidateBefore = i
+                     lMinOffsetBefore = lThisOffset
+                  End If
+               End If
+            End If
+         Next i
+         
+         If (lCandidateBefore = m_lDragCandidateBefore) And (lCandidateAfter =
+          m_lDragCandidateAfter) Then
+            ' nothing to do
+         Else
+            m_lDragCandidateBefore = lCandidateBefore
+            m_lDragCandidateAfter = lCandidateAfter
+            If (m_lDragCandidateBefore &gt; 0) And (m_lDragCandidateAfter &gt; 0) Then
+               If Abs(lMinOffsetBefore) &lt; Abs(lMinOffsetAfter) Then
+                  m_lDragCandidateAfter = 0
+               Else
+                  m_lDragCandidateBefore = 0
+               End If
+            End If
+            
+            ' repaint
+            m_cDrag.HideDragImage True
+            RaiseEvent RePaint
+            m_cDrag.HideDragImage False
+         End If
+         
+      End If
+   End If
+   '
+End Sub
+
+Friend Sub UserControl_OLEStartDrag(Data As DataObject, AllowedEffects As Long)
+   '
+   m_cDrag.hImagelist = DragImageList(m_iDragCol)
+   
+   Dim tP As POINTAPI
+   GetCursorPos tP
+   If (ColumnIsGrouped(m_iDragCol)) Then
+      ScreenToClient m_hWndParent, tP
+      Dim i As Long
+      For i = 1 To m_iGroupedHeaderCount
+         If (m_tGroupedCol(i).lColumn = m_iDragCol) Then
+            m_cDrag.StartDrag 0, tP.x - m_tGroupedCol(i).tR.left, tP.y -
+             m_tGroupedCol(i).tR.top
+            Exit For
+         End If
+      Next i
+   Else
+      ScreenToClient m_hWnd, tP
+      m_cDrag.StartDrag 0, tP.x - ColumnX(m_iDragCol), tP.y
+   End If
+
+   
+   Dim b() As Byte
+   b = "SGrid2Header:" &amp; m_hWndParent
+   Data.SetData b, &amp;HFFFFB046
+   Data.SetData ColumnHeader(m_iDragCol), vbCFText
+   AllowedEffects = vbDropEffectMove
+         
+   m_tmrDragDrop.Interval = 25
+   
+   '
+End Sub
+
+Friend Sub PaintGroups(ByVal lhDC As Long, ByVal oGroupAreaColor As OLE_COLOR)
+Dim lHeight As Long
+Dim tR As RECT
+Dim tCalcR As RECT
+Dim rc As RECT
+Dim i As Long
+Dim sText As String
+Dim lIconIndex As Long
+Dim hPenDark As Long
+Dim hPenOld As Long
+Dim tJunk As POINTAPI
+Dim hBr As Long
+Dim lColor As Long
+
+   If (m_bAllowGrouping And Not (m_bHideGroupingBox)) Then
+            
+      lHeight = Height
+      GetClientRect m_hWndParent, rc
+      
+      hBr = CreateSolidBrush(TranslateColor(oGroupAreaColor))
+      LSet tR = rc
+      tR.bottom = tR.top + IdealHeight - Height
+      FillRect lhDC, tR, hBr
+      DeleteObject hBr
+      
+      If (m_iGroupedHeaderCount = 0) Then
+         ' Draw the GroupBoxDragHint text:
+         tR.left = 8
+         tR.top = 8
+         tR.bottom = tR.top + lHeight
+         tR.right = rc.right - 8
+         LSet tCalcR = tR
+         If (m_bIsNt) Then
+            DrawTextW lhDC, StrPtr(" " &amp; m_sGroupBoxHintText &amp; " "), -1,
+             tCalcR, DT_CALCRECT Or DT_SINGLELINE
+         Else
+            DrawTextA lhDC, " " &amp; m_sGroupBoxHintText &amp; " ", -1, tCalcR,
+             DT_CALCRECT Or DT_SINGLELINE
+         End If
+         tR.right = tR.left + tCalcR.right - tCalcR.left + 4
+         'If (oGroupAreaColor = vbButtonShadow) Then
+            hBr = GetSysColorBrush(vbButtonFace And &amp;H1F&amp;)
+         'Else
+         '   hBr = CreateSolidBrush(BlendColor(oGroupAreaColor, vbButtonFace))
+         'End If
+         FillRect lhDC, tR, hBr
+         DeleteObject hBr
+         SetBkMode lhDC, OPAQUE
+         'If (oGroupAreaColor = vbButtonShadow) Then
+            SetBkColor lhDC, GetSysColor(vbButtonFace And &amp;H1F&amp;)
+            SetTextColor lhDC, GetSysColor(vb3DShadow And &amp;H1F&amp;)
+         'Else
+         '   SetBkColor lhDC, BlendColor(oGroupAreaColor, vbButtonFace)
+         '   SetTextColor lhDC, BlendColor(oGroupAreaColor, vbWindowText)
+         'End If
+         If (m_bIsNt) Then
+            DrawTextW lhDC, StrPtr(" " &amp; m_sGroupBoxHintText &amp; " "), -1, tR,
+             DT_SINGLELINE Or DT_END_ELLIPSIS Or DT_VCENTER
+         Else
+            DrawTextA lhDC, " " &amp; m_sGroupBoxHintText &amp; " ", -1, tR,
+             DT_SINGLELINE Or DT_END_ELLIPSIS Or DT_VCENTER
+         End If
+      Else
+         ' Draw the grouped headers:
+         
+         tR.left = 8
+         tR.top = 8
+         tR.bottom = tR.top + lHeight
+         tR.right = rc.right - 8
+         LSet tCalcR = tR
+         For i = 1 To m_iGroupedHeaderCount
+            ' Calculate Text Size:
+            sText = ColumnHeader(m_tGroupedCol(i).lColumn)
+            If (m_bIsNt) Then
+               DrawTextW lhDC, StrPtr(" " &amp; sText &amp; " "), -1, tCalcR,
+                DT_SINGLELINE Or DT_CALCRECT
+            Else
+               DrawTextA lhDC, " " &amp; sText &amp; " ", -1, tCalcR, DT_SINGLELINE Or
+                DT_CALCRECT
+            End If
+            ' Draw the header:
+            tR.right = tR.left + (tCalcR.right - tCalcR.left) + 4
+            lIconIndex = ColumnImage(m_tGroupedCol(i).lColumn)
+            If (lIconIndex &gt; -1) Then
+               tR.right = tR.right + 24
+            End If
+            
+            ' Store the rectangle:
+            LSet m_tGroupedCol(i).tR = tR
+            
+            DrawGroupedHeaderItem lhDC, i, tR
+            
+            ' Get the bound rectangle back again:
+            LSet tR = m_tGroupedCol(i).tR
+            
+            If (m_lDragCandidateBefore = i) Then
+               ' Draw candidate marks at the left edge
+               DrawDragCandidate lhDC, i, tR, True
+            ElseIf (m_lDragCandidateAfter = i) Then
+               ' Draw candidate marks at the right edge
+               DrawDragCandidate lhDC, i, tR, False
+            End If
+                        
+            If (i &lt; m_iGroupedHeaderCount) Then
+               ' Draw the connector:
+               hPenDark = CreatePen(PS_SOLID, 1, GetSysColor(vb3DDKShadow And
+                &amp;H1F))
+               hPenOld = SelectObject(lhDC, hPenDark)
+               MoveToEx lhDC, tR.right - 8, tR.bottom, tJunk
+               LineTo lhDC, tR.right - 8, tR.bottom + 4
+               LineTo lhDC, tR.right + 16, tR.bottom + 4
+               SelectObject lhDC, hPenOld
+               DeleteObject hPenDark
+            End If
+            
+            ' Offset for the next one:
+            tR.left = tR.left + (tR.right - tR.left) + 8
+            tR.top = tR.top + 8
+            tR.bottom = tR.bottom + 8
+         Next i
+                  
+      End If
+   End If
+
+End Sub
+
+Private Sub DrawDragCandidate( _
+      ByVal lhDC As Long, _
+      ByVal lIndex As Long, _
+      tR As RECT, _
+      ByVal bBefore As Boolean _
+   )
+Dim hPenCandidate As Long
+Dim hPenOld As Long
+Dim tP As POINTAPI
+Dim tJunk As POINTAPI
+
+   hPenCandidate = CreatePen(PS_SOLID, 1, RGB(255, 0, 0))
+   hPenOld = SelectObject(lhDC, hPenCandidate)
+      
+   If (bBefore) Then
+      tP.x = tR.left
+   Else
+      tP.x = tR.right
+   End If
+   
+   ' Draw top candidate mark
+   MoveToEx lhDC, tP.x, tR.top - 8, tJunk
+   LineTo lhDC, tP.x, tR.top - 1
+   MoveToEx lhDC, tP.x - 1, tR.top - 8, tJunk
+   LineTo lhDC, tP.x - 1, tR.top - 2
+   MoveToEx lhDC, tP.x + 1, tR.top - 8, tJunk
+   LineTo lhDC, tP.x + 1, tR.top - 2
+   MoveToEx lhDC, tP.x - 2, tR.top - 3, tJunk
+   LineTo lhDC, tP.x + 3, tR.top - 3
+   MoveToEx lhDC, tP.x - 3, tR.top - 4, tJunk
+   LineTo lhDC, tP.x + 4, tR.top - 4
+         
+   ' Draw bottom candidate mark
+   MoveToEx lhDC, tP.x, tR.bottom + 8, tJunk
+   LineTo lhDC, tP.x, tR.bottom + 1
+   MoveToEx lhDC, tP.x - 1, tR.bottom + 8, tJunk
+   LineTo lhDC, tP.x - 1, tR.bottom + 2
+   MoveToEx lhDC, tP.x + 1, tR.bottom + 8, tJunk
+   LineTo lhDC, tP.x + 1, tR.bottom + 2
+   MoveToEx lhDC, tP.x - 2, tR.bottom + 3, tJunk
+   LineTo lhDC, tP.x + 3, tR.bottom + 3
+   MoveToEx lhDC, tP.x - 3, tR.bottom + 4, tJunk
+   LineTo lhDC, tP.x + 4, tR.bottom + 4
+   
+   
+   SelectObject lhDC, hPenOld
+   DeleteObject hPenCandidate
+   
+End Sub
+Private Sub DrawGroupedHeaderItem( _
+      ByVal lhDC As Long, _
+      ByVal lGroupIndex As Long, _
+      tR As RECT)
+Dim hBr As Long
+Dim hPenLight As Long
+Dim hPenDark As Long
+Dim lIconIndex As Long
+Dim lFmt As Long
+Dim sText As String
+
+   SetTextColor lhDC, GetSysColor(vbWindowText And &amp;H1F&amp;)
+
+   hPenLight = CreatePen(PS_SOLID, 1, GetSysColor(vb3DHighlight And &amp;H1F&amp;))
+   hPenDark = CreatePen(PS_SOLID, 1, GetSysColor(vb3DDKShadow And &amp;H1F&amp;))
+
+   ' Fill background:
+   hBr = GetSysColorBrush(vbButtonFace And &amp;H1F&amp;)
+   FillRect lhDC, tR, hBr
+   DeleteObject hBr
+   
+   ' Draw the border:
+   Dim hPenTopLeft As Long
+   Dim hPenRightBottom As Long
+   Dim tJunk As POINTAPI
+   Dim hPenOld As Long
+   
+   If (m_tGroupedCol(lGroupIndex).bPressed And
+    m_tGroupedCol(lGroupIndex).bMouseOver) Then
+      hPenTopLeft = hPenDark
+      hPenRightBottom = hPenLight
+   Else
+      hPenRightBottom = hPenDark
+      hPenTopLeft = hPenLight
+   End If
+               
+   hPenOld = SelectObject(lhDC, hPenTopLeft)
+   MoveToEx lhDC, tR.left, tR.bottom - 1, tJunk
+   LineTo lhDC, tR.left, tR.top
+   LineTo lhDC, tR.right - 1, tR.top
+   SelectObject lhDC, hPenOld
+   hPenOld = SelectObject(lhDC, hPenRightBottom)
+   MoveToEx lhDC, tR.right - 1, tR.top, tJunk
+   LineTo lhDC, tR.right - 1, tR.bottom - 1
+   LineTo lhDC, tR.left, tR.bottom - 1
+   SelectObject lhDC, hPenOld
+   
+   tR.left = tR.left + 1
+   tR.right = tR.right - 1
+   tR.top = tR.top + 1
+   tR.bottom = tR.bottom - 1
+   
+   ' Get the text format:
+   lFmt = DT_SINGLELINE Or DT_END_ELLIPSIS Or DT_VCENTER
+   If ((ColumnTextAlign(m_tGroupedCol(lGroupIndex).lColumn) And
+    HdrTextALignCentre) = HdrTextALignCentre) Then
+      lFmt = lFmt Or DT_CENTER
+   ElseIf ((ColumnTextAlign(m_tGroupedCol(lGroupIndex).lColumn) And
+    HdrTextALignRight) = HdrTextALignRight) Then
+      lFmt = lFmt Or DT_RIGHT
+   End If
+   If ((ColumnTextAlign(m_tGroupedCol(lGroupIndex).lColumn) And
+    HdrTextAlignRTLReading) = HdrTextAlignRTLReading) Then
+      lFmt = lFmt Or DT_RTLREADING
+   End If
+   
+   If (m_tGroupedCol(lGroupIndex).bPressed) And
+    (m_tGroupedCol(lGroupIndex).bMouseOver) Then
+      tR.top = tR.top + 1
+      tR.left = tR.left + 1
+      tR.bottom = tR.bottom + 1
+      tR.right = tR.right + 1
+   End If
+   
+   ' Draw icon if any:
+   lIconIndex = ColumnImage(m_tGroupedCol(lGroupIndex).lColumn)
+   If (lIconIndex &gt; -1) Then
+      If (ColumnImageOnRight(m_tGroupedCol(lGroupIndex).lColumn)) Then
+         ImageList_Draw m_hIml, lIconIndex, lhDC, tR.right - 20, tR.top +
+          (tR.bottom - tR.top - 16) \ 2, ILD_TRANSPARENT
+         tR.right = tR.right - 20
+      Else
+         ImageList_Draw m_hIml, lIconIndex, lhDC, tR.left + 4, tR.top +
+          (tR.bottom - tR.top - 16) \ 2, ILD_TRANSPARENT
+         tR.left = tR.left + 20
+      End If
+   End If
+   tR.right = tR.right - 1
+   tR.left = tR.left + 1
+   sText = ColumnHeader(m_tGroupedCol(lGroupIndex).lColumn)
+   ' Draw text:
+   SetBkMode lhDC, TRANSPARENT
+   If (m_bIsNt) Then
+      DrawTextW lhDC, StrPtr(" " &amp; sText &amp; " "), -1, tR, lFmt
+   Else
+      DrawTextA lhDC, " " &amp; sText &amp; " ", -1, tR, lFmt
+   End If
+         
+   DeleteObject hPenLight
+   DeleteObject hPenDark
+
+End Sub
+      
+
+
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">TreeView</a>&#160;.&#160;<a href="article.html">Multi-Column TreeView Control</a>&#160;.&#160;<a href="VB6_MultiColumn_Tree_Full_Source.html">VB6 MultiColumn Tree Full Source</a>&#160;.&#160;cHeaderControl.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 18 April 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/TreeView/Multi-Column_TreeView_Control/VB6_MultiColumn_Tree_Full_Source_zip_cHeaderControl_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:14 GMT -->
+</html>

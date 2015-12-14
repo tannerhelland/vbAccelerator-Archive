@@ -1,0 +1,121 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Trapping_The_Tab_Key_in_a_UserControl_with_IOLEInPlaceActiveObject/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:10 GMT -->
+<head>
+
+<title>vbAccelerator - How to Trap the Tab Key in a UserControl with IOLEInPlaceActiveObject</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Right. You are trying to create a control in VB, and your control has to catch the Tab key. It might be a grid, 
+where you would expect tab to move between cells, or it might be an editor control. This is not an unreasonable 
+request of any programming language which lets you create a control. Or is it? Want to go mad? You will if you try to intercept 
+Tabs properly in VB unless someone tells you the answer..." /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;How to Trap the Tab Key in a UserControl with IOLEInPlaceActiveObject</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="TabCatch_Sample_Code.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />TabCatch Sample Code</a> (22K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:2771</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2771&amp;type=Article&amp;title=How%20to%20Trap%20the%20Tab%20Key%20in%20a%20UserControl%20with%20IOLEInPlaceActiveObject">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><p class="nav">&#160;&#160;Mike Gainer</p><p class="nav">&#160;&#160;Bill Storage</p><p class="nav">&#160;&#160;Matt Curland</p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />20 Feb 1999<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1431">VB Type Library Registration Utility</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1412">Owner Draw Combo and List Boxes Version 2.1</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2190">Dealing with Circular References</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>How to Trap the Tab Key in a UserControl with IOLEInPlaceActiveObject</h1><img src="tabcatch.gif" width="331" height="258" alt="IOLEInPlaceActiveObject demonstration" /><p /><p>Right. You are trying to create a control in VB, and your control has to catch the Tab key. It might be a grid, 
+where you would expect tab to move between cells, or it might be an editor control. This is not an unreasonable 
+request of any programming language which lets you create a control. Or is it? Want to go mad? You will if you try to intercept 
+Tabs properly in VB unless someone tells you the answer...</p><p>This article is here to show you a brilliant technique but also may help you interpret 
+Bruce McKinney's assertion that "VB makes the easy things easy, but the hard things harder".</p><p>The code provided here is based on code and a <a href="http://www.vbaccelerator.com/article.asp?id=1025">Type Library</a> put together 
+by Matt Curland, Bill Storage and Mike Gainer.</p><h2>Tabs And Stuff</h2><p>There are two ways to look at the tab key problem. Firstly, if you're working in VB you can 
+set <i>TabStop</i> to False for all controls on the form. Then, theoretically all controls intercept 
+the Tab key. I personally find the <i>TabStop</i> property to work somewhere between dubious and 
+ineffective. No matter. Having set <i>TabStop</i> to false, you're then on your own about Tab processing. 
+If a control intercepts the tab key, its really up to you what you do. People have been acclaimed 
+as masters of Visual Basic for coding large forms which are in control of tabs without using the 
+<i>TabStop</i> property. However, there is a fundamental encapsulation problem here. When you want 
+to intercept the Tab key on one control, you have the large scale issue of coding Tab handling 
+for all other controls on the form. You can't just write the code into the only control which requires the Tab.</p><h2>Don't Even Go There</h2><p>That's just trying to code a VB only control which intercepts tabs. A much more 
+difficult problem occurs if you're trying to do something out of the ordinary, such 
+as intercept keys in a window you have created using the Windows API. This was my problem for 
+over a year on the <a href="http://www.vbaccelerator.com/article.asp?id=1412">Owner-Draw Combo and List Box Control</a>. VB firmly 
+refuses to acknowledge an API window as something which can partake in the tab order unless 
+you can somehow tell it that's what you want to do. (You can check out some more examples of 
+this occuring in some of the other free controls distributed on the internet for VB which create
+a Win32 control using <i>CreateWindowEx</i>.) Forms appear to have control windows integrated but 
+as soon as you press Tab, nothing happens.</p><h2>Toughest Kid in the Infants</h2><p>The issue of trapping tabs in controls is one that is is designed into the ActiveX 
+control specification. The problem you have in VB with this is that there is no obvious 
+way of getting at this functionality. All ActiveX controls must implement the <i>IOleInPlaceActiveObject</i>
+ interface which covers a variety of interfacing issues between the control and its parent, 
+including control activation, context sensitive help, drawing resize borders and 
+responding to accelerator keys (including the Tab key). The implementation of this interface 
+is preset and buried within a VB control. With some hacking, you can override the preset implementation, however.</p><p>The first thing you need to do this is a Type Library (TLB) which interfaces VB to the COM interface. 
+This TLB is only required when working in the VB IDE, and tells VB where the calls to be made are 
+located within the OLE DLLs. When you compile a sample using a Type Library, VB compiles in the 
+references to the calls and you no longer require the TLB file. The Type Library for this sample 
+is available from the <a href="articlec68c.html?id=1025">Type Library OleGuids.Tlb page</a>. Unzip the 
+file to a suitable directory and register it either by:</p><ol><li>Using VB<br />
+Choose Project-References then click Browse and pick the file</li><li>Using the VB TLB Registration Utility<br />
+Sometimes VB's TLB registration function goes wrong, particularly with multiple versions of TLB files.
+A solution to this problem is to use the <a href="http://www.vbaccelerator.com/article.asp?id=1431">VB TLB registration utility</a>.</li></ol><p>Once the library is in place, you need to be able to intercept VB's existing implementation 
+of <i>IOLEInPlaceActiveObject</i> and replace it with a customised one. As we are only interested 
+here in intercepting Tabs at run-time, the only time you need to modify the interface is when 
+the control gets focus. To do this, the code subclasses the <i>WM_SETFOCUS</i> message for the control, 
+allowing VB to process it first. Once VB is done with it, the code then uses various arcane hacks to modify the 
+<i>vtable</i> of the UserControl object, replacing the existing <i>IOLEInPlaceActiveObject</i> interface pointers with 
+a new set pointing to VB functions implemented in a module, <i>mIOLEInPlaceActiveObject.Bas</i>. As a 
+consequence, <i>TranslateAccelerator</i> calls are routed to the version in your code. It is then 
+a simple matter to return the COM code <i>S_OK</i> after getting the Tab key, thus informing the ActiveX 
+interface that the key is wanted in the control. The <i>mIOLEInPlaceActiveObject</i> module has to communicate 
+<i>TranslateAccelerator</i> events with the control. To achieve this without setting up 
+a circular reference between the control and the module (which would prevent the control from ever terminating), 
+un-referenced object pointers are used. These are set up during the <i>UserControl_Initialize</i> event and cleared 
+at <i>UserControl_Terminate</i>. Check out <a href="http://www.vbaccelerator.com/article.asp?id=2190">Dealing with Circular References</a>
+for more information about using object pointers to prevent circular references.</p><p>The code to implement this is mad. If you want to do it, you'll just want to copy code 
+from another project into your own (you're not going to remember how to do it every time!). For this 
+reason the download <i>TabCatch</i> project provides a bare-bones template for implementing Tab interception 
+in controls.</p><h2>J'Accuse</h2><p>This doesn't seem reasonable. I've been visiting MSDN over the last month 
+to look at the OLE interfaces which have to be implemented between ActiveX controls and their container 
+(such as VB, IE, Word etc). The more I read about it the more I think that VB's designers left out too 
+many interfaces. VB's job is to make things easier, but how difficult would it have been to add a 
+<i>TranslateAccelerator</i> implementation? Does it have to impossible to access the other 
+OLE interfaces such as the one which controls run-time size of your control, the one which controls 
+whether you can negotiate space in the non-client area of the parent and so on? These are COM interfaces after all, 
+so why are we stuck with a narrow preset implementation unless you make hacks like described here?</p><h2>Deal With It</h2><p>In any case, I guess we're stuck with the way VB is. .NET makes life a bit easier as you get a much more detailed
+framework to play with.  But using the code presented here you have a means of creating properly responsive
+UserControls, particularly ones which use the Windows API to create new controls.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Techniques</a>&#160;.&#160;How to Trap the Tab Key in a UserControl with IOLEInPlaceActiveObject</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 15 January 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Techniques/Trapping_The_Tab_Key_in_a_UserControl_with_IOLEInPlaceActiveObject/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:12 GMT -->
+</html>

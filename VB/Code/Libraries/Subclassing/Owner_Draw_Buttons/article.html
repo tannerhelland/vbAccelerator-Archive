@@ -1,0 +1,198 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Owner_Draw_Buttons/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:55:28 GMT -->
+<head>
+
+<title>vbAccelerator - Drawing Buttons, Option Boxes and Check Boxes In Your Own Style </title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+If you set the Style property for VB's CommandButton, OptionBox or 
+CheckBox controls to Graphical, VB turns the control into an Owner-Draw 
+control. By default VB allows you to associate three pictures with 
+these controls.   However, if you've ever tried this you will know that the 
+button draws like a turd when you set these properties.
+
+The code with this sample shows you how to intercept the WM_DRAWITEM
+messages an Owner-Draw button sends to its parent whenever it is about to
+draw itself and replace VB's implementation with something a bit nicer.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;Drawing Buttons, Option Boxes and Check Boxes In Your Own Style </p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_OwnerDraw_Buttons.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 OwnerDraw Buttons</a> (34K)</p><p /><p class="nav"><a href="VB6_OwnerDraw_Buttons.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 OwnerDraw Buttons</a> (32K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4575</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4575&amp;type=Article&amp;title=Drawing%20Buttons%2C%20Option%20Boxes%20and%20Check%20Boxes%20In%20Your%20Own%20Style%20">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />27 Jan 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Drawing Buttons, Option Boxes and Check Boxes In Your Own Style </h1><p class="splash">Subclass the standard VB Buttons to draw anything on their surface.</p><img src="odbtn.gif" width="200" height="128" alt="Owner Draw Button &#xD;&#xA;            Samples" /><p /><p>
+If you set the <i>Style</i> property for VB's CommandButton, OptionBox or 
+CheckBox controls to <i>Graphical</i>, VB turns the control into an Owner-Draw 
+control. By default VB allows you to associate three pictures with 
+these controls.   However, if you've ever tried this you will know that the 
+button draws like a turd when you set these properties.
+</p><p>
+The code with this sample shows you how to intercept the <i>WM_DRAWITEM</i>
+messages an Owner-Draw button sends to its parent whenever it is about to
+draw itself and replace VB's implementation with something a bit nicer.
+</p><h2>How it Works</h2><p>
+The basic function of the class is to intercept <i>WM_DRAWITEM</i>
+messages send to a window handle. When it gets these, it determines whether
+the message was sent by a button control; if it was it asks your code if
+you want to draw the item yourself, passing the information you need to
+draw using GDI calls. If you do choose to draw it, the class eats the
+<i>WM_DRAWITEM</i> message so the button does not receive it. If you
+don't choose to draw the object yourself, then the class passes the message
+on to the old Window Procedure which performs the standard drawing
+built into the button.
+</p><h2>About the <i>WM_DRAWITEM</i> message</h2><p>
+The <i>WM_DRAWITEM</i> message passes a pointer to a structure, 
+<i>DRAWITEMSTRUCT</i> as the lParam of the message:
+</p><pre>
+Type DRAWITEMSTRUCT
+   CtlType As Long     ' -The Type of control firing the message
+   CtlID As Long       ' -The ID of the control when created
+   ItemId As Long      ' -The ListIndex of the item to draw
+   ItemAction As Long  ' -What action is causing the draw call
+   ItemState As Long   ' -The state of the item to be drawn
+   hwndItem As Long    ' -The hWnd of the window to draw in
+   hDC As Long         ' -The DC of the window to draw in
+   rcItem As RECT      ' -The bounding rectangle of the item to be drawn
+   itemData As Long    ' -The item data of the item to be drawn
+End Type
+</pre><p class="tipHeader">Tip Getting at Data From a Memory Pointer</p><div class="tip"><p>
+In Win32 API calls, often you get a pointer to data rather than
+the data itself. To get at data pointed to by a Long, you can use the ubiqutous
+<i>CopyMemory</i> API alias:
+</p><pre>
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+   lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+   ...
+
+   Dim tDIS As DRAWITEMSTRUCT
+
+   CopyMemory tDis, ByVal lParam, Len(tDis)
+</pre><p>
+Note the use of ByVal in the second parameter of <i>CopyMemory</i>. You
+need to do this because the <i>CopyMemory</i> declare uses the <i>As Any</i>
+type to allow it to work for all types of structures and pointers. If
+you pass a <i>Long</i> parameter without <i>ByVal</i> to lpvSource,
+<i>CopyMemory</i> will attempt to copy the memory holding the long value
+(i.e. 4 bytes) because VB has actually passed a pointer to the long value
+(lParam) itself rather than passing its value as a pointer. This leads
+very quickly to a crash if the data you are copying is more than
+4 bytes long! So in this case specifying ByVal VB passes the value
+of lParam across rather than a pointer to lParam and so the copy works.
+</p><p>
+If the data pointed to be lParam is a string, you can use the API 
+call <i>lstrlen</i> (<i>lstrlenw</i> if it's a Unicode string) to find out 
+the size of the string in the memory being pointed to. You just have 
+to modify the standard VB declare to accept As Any and call it like this:
+</p><pre>
+Declare Function lstrlen Lib "kernel32" Alias "lstrlenA" ( _
+   lpString As Any) As Long
+   
+   ...
+
+   lLen = lstrlen(ByVal lParam)
+</pre></div><h2>In Use</h2><p>
+The Owner-Draw button code supplied with this project comes in 
+two classes: a <i>cOwnerDrawButton</i> class which handles registering 
+window handles to detect the <i>WM_DRAWITEM</i> messages and an interface class 
+<i>IOwnerDrawButton</i> which your code should implements to perform 
+the actual drawing of the buttons. Whilst it wasn't strictly necessary to 
+code an interface for this class (the <i>cOwnerDrawButton</i> class could 
+just raise an event to the calling form), this class should perform at 
+maximum speed to ensure the buttons draw nicely in a user interface. If 
+you use an event interface between a class and the owner, you are using a 
+form of late-bound interface. Late-bound interfaces are always slower 
+in operation than early-bound ones, and you can prevent late-binding by 
+raising your "events" through an implemented interface.
+</p><p>
+The cOwnerDrawButton class presents these public interfaces:
+</p><ul><li><strong>Attach</strong><br />
+Connects the class to an object which implements the <i>IOwnerDrawButton</i>
+interface.
+</li><li><strong>AddhWnd</strong><br />
+Adds another window handle to check for <i>WM_DRAWITEM</i> messages on.  The
+<i>WM_DRAWITEM</i> messages are sent to a button's <i>Container</i> control.
+If all your buttons are located on a form, then you only need to check for
+messages on the form itself.  However, if you also have buttons contained in a
+PictureBox or Frame, you need to check that object's handle too.
+</li><li><strong>Detach</strong><br />
+Clears up the subclassing code in the class. Note this method is called
+automatically when a <i>cOwnerDrawButton</i> object terminates.
+</li><li><strong>RedrawButton</strong><br />
+This method forces a control to repaint itself. Use it if you 
+have changed the style of a button to be drawn at run-time.
+</li><li><strong>SetBorderStyle</strong><br />
+If you are not perfoming any drawing code yourself, then setting this 
+property for a graphical button will cause it to draw with a thin 
+border rather than the standard two-pixel one.
+</li><li><strong>SetStandardButtonStyle</strong><br />
+If you are not performing any drawing code yourself, then setting this 
+property for a graphical button will cause it to draw in one of the 
+enumerated standard styles (such as Close, Left, Right etc).
+</li></ul><p>
+In order to use the class, the form containing the graphical buttons must
+implement the <i>IOwnerDrawButton</i> interface. This interface contains
+the following methods and properties:
+</p><ul><li><strong>ButtonContainerhWnd</strong><br />
+This is called when you first <i>Attach</i> to the class. Return the 
+<i>hWnd</i> value of the container of the buttons you want to set to 
+Owner-Drawn. If you have more than one container on your form which includes 
+owner-draw buttons, then return any one of them and subsequently use the 
+cOwnerDrawButton class' <i>AddhWnd</i> method to add futher containers.
+</li><li><strong>DoOwnerDraw</strong><br />
+Called to request whether a given <i>hWnd</i> should be owner-drawn or not. 
+Return <i>True</i> to continue with Owner-Draw processing, or <i>False</i> 
+if you want the default button method to be called.
+</li><li><strong>DrawItem</strong><br />
+Called when a button is about to be drawn. The parameters pass in the 
+window handle of the item to drawn, the Device context (hDC) to draw on, 
+the Left, Top, Right and Bottom positions as well as a series of flags 
+indicating whether the button is checked, pushed, enabled or in focus. 
+The last parameter, <i>bDoDefault</i> allows you to instruct the class 
+to do default button drawing regardless of whether you do some 
+drawing yourself.
+</li></ul><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;Drawing Buttons, Option Boxes and Check Boxes In Your Own Style </p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 29 March 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Owner_Draw_Buttons/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:55:29 GMT -->
+</html>

@@ -1,0 +1,183 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Colourisation/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:48 GMT -->
+<head>
+
+<title>vbAccelerator - Colourisation</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Image colourisation is a widely-used technique in image processing which can 
+be used to create sepia-toned effects as well as adjusting images so they
+can be used as watermarks and in the creation of layered background images.
+This article demonstrates how to use the Hue, Luminance and Saturation model
+to perform colourisation and to adjust the intensity of the applied effect.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;Colourisation</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Colourisation_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Colourisation Demonstration</a> (69K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:13014</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13014&amp;type=Article&amp;title=Colourisation">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />23 Oct 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3162">Hue Luminance and Saturation (HLS) Model and Manipulating Colours</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3017">True Colour DIBSection</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3016">Alpha DIBSections</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Colourisation</h1><p class="splash">Adjust the colour of an image for sepia-style effects</p><img src="colourisation.png" width="260" height="177" alt="Colourisation Demonstration" /><p /><p>
+Image colourisation is a widely-used technique in image processing which can 
+be used to create sepia-toned effects as well as adjusting images so they
+can be used as watermarks and in the creation of layered background images.
+This article demonstrates how to use the Hue, Luminance and Saturation model
+to perform colourisation and to adjust the intensity of the applied effect.
+</p><h2>About Colourisation</h2><p>
+The <a href="http://www.vbaccelerator.com/article.asp?id=3162">Hue, Luminance and Saturation</a> article describes
+how colours can be modelled as a combination of these three variables rather than the 
+standard Red, Green and Blue.  This provides a mechanism to perform colourisation, since
+it enables the colour of a pixel to be varied by adjusting the Hue and Saturation
+independently of its brightness.
+</p><p>
+Using this code, a given R,G,B value can be colourised as follows:
+</p><pre>
+   Dim h As Single, s As Single, l As Single
+   Dim newR As Long, newG As Long, newB As Long
+
+   ' Obtain the luminance:
+   RGBToHLS origR, origG, origB, h, s, l
+   ' Now get the new colour using the input hue and saturation
+   HLSToRGB hue, saturation, l, newR, newG, newB
+
+</pre><p>
+Once this is done you can then control the intensity with which 
+the colourisation effect is applied.  This is done by adding the difference
+between the new colourised colour and the original, multiplied by an
+intensity between 0 and 1:
+</p><pre>
+   newR = origR + intensity * (newR - origR)
+   newG = origG + intensity * (newG - origG)
+   newB = origB + intensity * (newB - origB)
+</pre><h2>Applying the Filter</h2><p>
+Given this algorithm, it is straightforward to apply it to an image using
+a <a href="http://www.vbaccelerator.com/article.asp?id=3017">DIB Section</a>.  For each pixel 
+in the image array, read the red, green and blue
+values and then apply the algorithm, writing out the new value.  The first
+thing to note is that my HLS code has Hue values between -1 and 5, and Luminance
+and Saturation between 0 and 1.  To make the input parameters easier to use,
+input Hue and Luminance are instead expressed as integers between 0 and 255, in the same
+way that Microsoft applications do.  This means the input values need to be denormalized
+before use so they match the expected values.
+</p><pre>
+
+   ' Convert source and destination images into arrays:
+   Dim bDib() As Byte
+   Dim bDibDst() As Byte
+   Dim tSA As SAFEARRAY2D
+   Dim tSADst As SAFEARRAY2D
+    
+   ' Get the bits in the from DIB section:
+   With tSA
+       .cbElements = 1
+       .cDims = 2
+       .Bounds(0).lLbound = 0
+       .Bounds(0).cElements = cSrc.Height
+       .Bounds(1).lLbound = 0
+       .Bounds(1).cElements = cSrc.BytesPerScanLine
+       .pvData = cSrc.DIBSectionBitsPtr
+   End With
+   CopyMemory ByVal VarPtrArray(bDib()), VarPtr(tSA), 4
+   
+   ' Get the bits in the from DIB section:
+   With tSADst
+       .cbElements = 1
+       .cDims = 2
+       .Bounds(0).lLbound = 0
+       .Bounds(0).cElements = cDst.Height
+       .Bounds(1).lLbound = 0
+       .Bounds(1).cElements = cDst.BytesPerScanLine()
+       .pvData = cDst.DIBSectionBitsPtr
+   End With
+   CopyMemory ByVal VarPtrArray(bDibDst()), VarPtr(tSADst), 4
+   
+   ' Perform colourisation   
+   Dim x As Long
+   Dim y As Long
+   Dim xEnd As Long
+   Dim yEnd As Long
+   Dim h As Single
+   Dim s As Single
+   Dim l As Single
+   Dim lR As Long
+   Dim lG As Long
+   Dim lB As Long
+   Dim hDN As Single
+   Dim sDN As Single
+   Dim fInt As Single
+      
+   ' Calculate denormalized Hue, Saturation &amp; Intensity:
+   hDN = ((m_lHue * 6#) / 255#) - 1#
+   sDN = (m_lSaturation / 255#)
+   fInt = (m_lIntensity / 100#)
+      
+   xEnd = cSrc.BytesPerScanLine() - 3
+   yEnd = cSrc.Height - 1
+      
+   For x = 0 To xEnd Step 3
+      For y = 0 To yEnd
+         ' Obtain the luminance:
+         RGBToHLS bDib(x + 2, y), bDib(x + 1, y), bDib(x, y), h, s, l
+         ' Now get the new colour using the input hue and saturation
+         HLSToRGB hDN, sDN, l, lR, lG, lB
+         ' Apply the intensity of the effect:
+         lR = bDib(x + 2, y) + fInt * (lR - bDib(x + 2, y))
+         lG = bDib(x + 1, y) + fInt * (lG - bDib(x + 1, y))
+         lB = bDib(x, y) + fInt * (lB - bDib(x, y))
+         ' Set new destination colour:
+         bDibDst(x + 2, y) = lR
+         bDibDst(x + 1, y) = lG
+         bDibDst(x, y) = lB
+      Next y
+   Next x
+      
+   CopyMemory ByVal VarPtrArray(bDibDst), 0&amp;, 4
+   CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+</pre><h2>Conclusion</h2><p>
+The sample code demonstrates applying colourisation to a True Colour DIB Section.
+It would be simple to modify the code so it applies to an <a href="http://www.vbaccelerator.com/article.asp?id=3016">alpha DIB Sections</a>
+as well.
+   </p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;Colourisation</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 November 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Colourisation/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:49 GMT -->
+</html>

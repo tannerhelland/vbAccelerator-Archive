@@ -1,0 +1,141 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Menus/PopupMenu_-_StartMenu_ICQ_Like_Sample/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:50:42 GMT -->
+<head>
+
+<title>vbAccelerator - Using the cNewMenu DLL to Create Start Menu/ICQ Style Pop-up Menus</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="The PopupMenu ActiveX DLL let's you create an unlimited number of cool-looking pop-up menus 
+in your application, but what to do in the unlikely event that even that's not cool enough for you? 
+The new version gives you this control too. The OwnerDraw property, which applies to each 
+menu item allows you to intercept measuring and drawing events for the menu item, and 
+to either add bits or completely take charge of drawing the items.This sample shows you how to add to the existing menu, in order to create a side bar 
+up the left-hand edge of the menu to give a pop-up menu that Start Menu/ICQ look. 
+Another sample (Owner Draw Pop-up Menus) shows you how to take complete control of drawing the menu 
+items to create a line-style and a highlight-colour picker." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Menus</a>&#160;.&#160;Using the cNewMenu DLL to Create Start Menu/ICQ Style Pop-up Menus</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_ICQ_Menu_Demonstration_Project.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ICQ Menu Demonstration Project</a> (68K)</p><p /><p class="nav"><a href="VB6_ICQ_Menu_Demonstration_Project.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ICQ Menu Demonstration Project</a> (59K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:9</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=9&amp;type=Article&amp;title=Using%20the%20cNewMenu%20DLL%20to%20Create%20Start%20Menu%2FICQ%20Style%20Pop%2Dup%20Menus">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />13 Feb 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Using the cNewMenu DLL to Create Start Menu/ICQ Style Pop-up Menus</h1><img src="icqpmenu.gif" width="328" height="297" alt="ICQ Style Menu Demonstration" /><p /><p>The PopupMenu ActiveX DLL let's you create an unlimited number of cool-looking pop-up menus 
+in your application, but what to do in the unlikely event that even that's not cool enough for you? 
+The new version gives you this control too. The <i>OwnerDraw</i> property, which applies to each 
+menu item allows you to intercept measuring and drawing events for the menu item, and 
+to either add bits or completely take charge of drawing the items.</p><p>This sample shows you how to add to the existing menu, in order to create a side bar 
+up the left-hand edge of the menu to give a pop-up menu that Start Menu/ICQ look. 
+Another sample (Owner Draw Pop-up Menus) shows you how to take complete control of drawing the menu 
+items to create a line-style and a highlight-colour picker.</p><h2>How it Works</h2><p>When you set the OwnerDraw property to true for a menu item, the cNewMenu 
+ActiveX DLL will raise <i>MeasureItem</i> and <i>DrawItem</i> events to your code. 
+If you don't do anything to respond to these methods except set the <i>bDoDefault</i> parameter 
+to True during the <i>DrawItem</i> event, the menu will draw using the standard style.</p><p>On the other hand, you can freely modify the width and height of the item during the 
+<i>MeasureItem</i> method, and during the <i>DrawItem</i> method you can adjust the rectangle 
+in which the item draws. In this sample I want to increase the size of menu items so they accommodate 
+the side bar, and also ensure they draw after the side bar. I use a PictureBox to hold 
+the graphic of the side bar called <i>picSideBar</i>. So in response to <i>MeasureItem</i>:</p><pre>
+Private Sub m_cMenu_MeasureItem(_
+   ByVal lMenuIndex As Long, _
+   lWidth As Long, _
+   lHeight As Long _
+)
+   ' When a menu item is owner-draw, it will raise this event to request
+   ' its size. lWidth as lHeight will be already filled in with the
+   ' size of the menu item as it would be if the standard drawing method
+   ' was used.
+
+   ' Here we check if the item being measured is in the main pop-up menu;
+   ' if it is we add the width to accommodate the side bar logo:
+   If m_cMenu.hMenu(1) = m_cMenu.hMenu(lMenuIndex) Then
+      ' Add the side bar width:
+      lWidth = lWidth + picSideBar.Width \ Screen.TwipsPerPixelX + 1
+   End If
+End Sub
+</pre><p>And in response to <i>DrawItem</i>: </p><pre>
+Private Sub m_cMenu_DrawItem( _
+   ByVal hDC As Long, _
+   ByVal lMenuIndex As Long, _
+   lLeft As Long, lTop As Long, _
+   lRight As Long, lBottom As Long, _
+   ByVal bSelected As Boolean, ByVal bChecked As Boolean, _
+   ByVal bDisabled As Boolean, _
+   bDoDefault As Boolean _
+)
+   Dim lW As Long
+   ' The DrawItem event for Owner Draw menu items either allows you
+   ' to draw the entire item, or just to do some new drawing then
+   ' let the standard method do its stuff. This is useful if you
+   ' want to add a graphic to the left or right of the menu item.
+
+   ' Here we draw the relevant part of the side bar
+   ' logo to the left of the menu then offset the
+   ' left position so the rest of the menu draws
+   ' after it:
+   lW = picSideBar.Width \ Screen.TwipsPerPixelX
+   BitBlt hDC, lLeft, lTop, lW, lBottom - lTop, _
+      picSideBar.hDC, 0, lTop, vbSrcCopy
+   lLeft = lLeft + lW + 1
+   bDoDefault = True
+End Sub
+</pre><p>Note that all the measurements are in pixels.</p><h2>Drawing The Sidebar Itself</h2><p>To draw the side bar you just need a method of creating a vertical font and a gradient. 
+Both of these are covered in more detail in the class supplied with the article 
+"Text at any angle". You'll see that you can customise the font, the text to be drawn, 
+the icon to be drawn and the start and end colours of the gradient using the class. 
+The only extra thing required to make this work is to determine how tall the side bar will be. 
+This is done by asking the DLL for the menu item height using the <i>MenuItemHeight</i> 
+property of the menu items.</p><pre>
+' Firstly, evaluate the menu item's height in the main menu:
+Dim lHeight As Long, lT As Long
+
+For i = 1 To m_cMenu.Count
+   ' Check if item is in the main menu:
+   If (m_cMenu.hMenu(i) = m_cMenu.hMenu(1)) Then
+      ' Add the item:
+      lHeight = lHeight + m_cMenu.MenuItemHeight(i)
+      lT = lT + 1
+   End If
+Next i
+</pre><h2>Other Stuff</h2><p>The sample also implements a very simple PictureClip style animated button control. 
+Have fun with it!</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Menus</a>&#160;.&#160;Using the cNewMenu DLL to Create Start Menu/ICQ Style Pop-up Menus</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 1999-2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 25 November 2002</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Menus/PopupMenu_-_StartMenu_ICQ_Like_Sample/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:50:43 GMT -->
+</html>

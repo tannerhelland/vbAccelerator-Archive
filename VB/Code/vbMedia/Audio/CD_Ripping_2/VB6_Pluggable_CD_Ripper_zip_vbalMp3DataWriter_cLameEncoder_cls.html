@@ -1,0 +1,585 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_2/VB6_Pluggable_CD_Ripper_zip_vbalMp3DataWriter_cLameEncoder_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: vbalMp3DataWriter_cLameEncoder.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: vbalMp3DataWriter_cLameEncoder.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" /><link rel="contents" href="VB6_Pluggable_CD_Ripper.html" /><link rel="meta" type="application/rdf+xml" href="VB6%20Pluggable%20CD%20Ripper.html" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">CD Ripping in VB Part 2</a>&#160;.&#160;<a href="VB6_Pluggable_CD_Ripper.html">VB6 Pluggable CD Ripper</a>&#160;.&#160;vbalMp3DataWriter_cLameEncoder.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_CD_Ripper_Plugin_Interface.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 CD Ripper Plugin Interface</a> (9K)</p><p class="nav"><a href="VB5_Pluggable_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Pluggable CD Ripper</a> (191K)</p><p /><p class="nav"><a href="VB6_CD_Ripper_Plugin_Interface.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 CD Ripper Plugin Interface</a> (9K)</p><p class="nav"><a href="VB6_Pluggable_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Pluggable CD Ripper</a> (189K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:15346</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=15346&amp;type=Zip&amp;title=VB6%20Pluggable%20CD%20Ripper%2Ezip%5FvbalMp3DataWriter%5FcLameEncoder">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />27 May 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13703">SGrid 2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2767">vbAccelerator Visual Studio Style Tab Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14898">MP3 Encoding with LAME</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14971">CD Ripping in VB Part 1</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: vbalMp3DataWriter_cLameEncoder.cls</h1><p>This file is part of the download <a href="VB6_Pluggable_CD_Ripper.html">VB6 Pluggable CD Ripper</a>, which is described in the article <a href="article.html">CD Ripping in VB Part 2</a>.</p><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cLameEncoder"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+' ------------------------------------------------------------
+' Name:   cLameEncoder
+' Author: Steve McMahon (steve@vbaccelerator.com)
+' Date:   2004-05-06
+' Description:
+' VB wrapper around the LAME encoder DLL API.
+'
+' See http://vbaccelerator.com/
+' ------------------------------------------------------------
+
+Public Enum ELameSampleRate
+   eLameSampleRate32000 = 32000 'MPEG-I
+   eLameSampleRate44100 = 44100 'MPEG-I
+   eLameSampleRate48000 = 48000 'MPEG-I
+   eLameSampleRate16000 = 16000 'MPEG-I
+   eLameSampleRate22050 = 22050 'MPEG-I
+   eLameSampleRate24000 = 24000 'MPEG-I
+   eLameSampleRate8000 = 8000 ' MPEG-II.5
+   eLameSampleRate11025 = 11025 ' MPEG-II.5
+   eLameSampleRate12000 = 12000 ' MPEG-II.5
+End Enum
+
+Public Enum ELameBitRate
+   ' MPEG-I and MPEG-II Bit rates
+   eLameBitRate32 = 32
+   eLameBitRate40 = 40
+   eLameBitRate48 = 48
+   eLameBitRate56 = 56
+   eLameBitRate64 = 64
+   eLameBitRate80 = 80
+   eLameBitRate96 = 96
+   eLameBitRate112 = 112
+   eLameBitRate128 = 128
+   eLameBitRate160 = 160
+   eLameBitRate192 = 192 ' MPEG-I only
+   eLameBitRate224 = 224 ' MPEG-I only
+   eLameBitRate256 = 256 ' MPEG-I only
+   eLameBitRate320 = 320 ' MPEG-I only
+                     
+   ' MPEG-II only bit rates
+   eLameBitRate8 = 8
+   eLameBitRate16 = 16
+   eLameBitRate24 = 24
+   eLameBitRate144 = 144
+
+End Enum
+
+Public Enum ELamePresetEncodingOption
+   LQP_NOPRESET = -1
+
+   '// QUALITY PRESETS
+   LQP_NORMAL_QUALITY = 0
+   LQP_LOW_QUALITY = 1
+   LQP_HIGH_QUALITY = 2
+   LQP_VOICE_QUALITY = 3
+   LQP_R3MIX = 4 ' V3
+   LQP_VERYHIGH_QUALITY = 5
+   LQP_STANDARD = 6 ' V2
+   LQP_FAST_STANDARD = 7 ' V2
+   LQP_EXTREME = 8 ' V0
+   LQP_FAST_EXTREME = 9 ' V0
+   LQP_INSANE = 10 ' 320
+   LQP_ABR = 11
+   LQP_CBR = 12
+   LQP_MEDIUM = 13 ' V4
+   LQP_FAST_MEDIUM = 14 ' V4
+
+   '// Old style prests (these are translated into the new styles)
+   'LQP_PHONE = 1000
+   'LQP_SW = 2000
+   'LQP_AM = 3000
+   'LQP_FM = 4000
+   'LQP_VOICE = 5000
+   'LQP_RADIO = 6000
+   'LQP_TAPE = 7000
+   'LQP_HIFI = 8000
+   'LQP_CD = 9000
+   'LQP_STUDIO = 10000
+
+End Enum
+
+Public Enum ELameVBRMethodOption
+   VBR_METHOD_NONE = -1
+   VBR_METHOD_DEFAULT = 0
+   VBR_METHOD_OLD = 1
+   VBR_METHOD_NEW = 2
+   VBR_METHOD_ABR = 4
+End Enum
+
+Public Enum ELameVBRQualityOption
+   VBR_QUALITY_0_HIGHEST = 0
+   VBR_QUALITY_1_HIGH = 1
+   VBR_QUALITY_2_HIGH = 2
+   VBR_QUALITY_3_MID = 3
+   VBR_QUALITY_4_MID = 4
+   VBR_QUALITY_5_MID = 5
+   VBR_QUALITY_6_MID = 6
+   VBR_QUALITY_7_LOW = 7
+   VBR_QUALITY_8_LOW = 8
+   VBR_QUALITY_9_LOWEST = 9
+End Enum
+
+Public Enum ELameOutputModeOption
+
+   BE_MP3_MODE_STEREO = 0
+   BE_MP3_MODE_JSTEREO = 1
+   BE_MP3_MODE_DUALCHANNEL = 2
+   BE_MP3_MODE_MONO = 3
+End Enum
+
+
+Public Enum ELameMP3Version
+   MPEG1 = 1
+   MPEG2 = 0
+End Enum
+
+Public Enum ELameErrorCode
+   BE_ERR_SUCCESSFUL = &amp;H0
+   BE_ERR_INVALID_FORMAT = &amp;H1
+   BE_ERR_INVALID_FORMAT_PARAMETERS = &amp;H2
+   BE_ERR_NO_MORE_HANDLES = &amp;H3
+   BE_ERR_INVALID_HANDLE = &amp;H4
+   BE_ERR_BUFFER_TOO_SMALL = &amp;H5
+End Enum
+
+Private Enum EBeConfigFormat
+   BE_CONFIG_MP3 = 0
+   BE_CONFIG_LAME = 256
+End Enum
+
+
+Private Type BE_CONFIG_FORMAT_LHV1
+   ' 4
+   dwStructVersion As Long ' 1
+   ' 8
+   dwStructSize As Long ' 331
+   ' 12
+   dwSampleRate As ELameSampleRate
+   ' 16
+   dwReSampleRate As Long ' Set to 0 for encoder to decide
+   ' 20
+   nMode As ELameOutputModeOption ' Stereomode for MP3 file. This can be either
+    BE_MP3_MODE_STEREO, BE_MP3_MODE_JSTEREO, BE_MP3_MODE_DUALCHANNEL or
+    BE_MP3_MODE_MONO.
+   ' 24
+   dwBitRate As ELameBitRate ' For CBR, this specifies the actual bitrate, for
+    VBR, it specifies the minimum bitrate
+                     ' Allowed bitrates are: 32, 40, 48, 56, 64, 80, 96, 112,
+                      128, 160, 192, 224, 256 and 320.for MPEG-I
+                     ' Allowed bitrates are: 8, 16, 24, 32, 40, 48, 56, 64, 80,
+                      96, 112, 128, 144 and 160.for MPEG-II
+                     ' Note: dwBitrate is used as the minimum bitrate in the
+                      case of using a VBR mode.
+   ' 28
+   dwMaxBitrate As Long ' When VBR mode is enabled, it specifies the maximum
+    allowed bitrate (see also dwBitrate to specify the minium bitrate), for CBR
+    mode this setting is ignored.
+   ' 32
+   nPreset As ELamePresetEncodingOption ' Keep in mind that the presets can
+    overwrite some of the other settings, since it is called right before the
+    encoder is initialized
+   
+   ' 36
+   dwMpegVersion As ELameMP3Version
+   ' 40
+   dwPsyModel As Long 'ELamePsychoAcousticModel?
+   ' 44
+   dwEmphasis As Long
+   
+   ' 48
+   bPrivate As Long ' If this is set to TRUE the Private bit in the MP3 stream
+    will be set.
+   ' 52
+   bCRC As Long ' Set this to TRUE in order to enable CRC-checksum in the
+    bitstream.
+   ' 56
+   bCopyright As Long ' If this is set to TRUE the Copyright bit in the MP3
+    stream will be set.
+   ' 60
+   bOriginal As Long ' If this is set to TRUE the Original bit in the MP3
+    stream will be set.
+      
+   ' 64
+   bWriteVBRHeader As Long ' Specifes if the XING VBR header should be written
+    or not. When this option is enabled, you have to call the beWriteVBRHeader
+    function when encoding has been completed. Keep in mind that the VBR info
+    tag can also be written for CBR encoded files, the TAG info can be useful
+    for additional info like encoder delay and the like.
+   ' 68
+   bEnableVBR As Long
+   ' 72
+   nVBRQuality As ELameVBRQualityOption ' VBR quality option
+   ' 76
+   dwVbrAbr_bps As Long ' If the Average Bit Rate is specified, the lame
+    encoder ignores the nVBRQuality settings (However, bEnableVBR must be set
+    to TRUE and the format.LHV1.nVbrMethod parameter should be set to
+    VBR_METHOD_ABR). The allowed range for the format.LHV1.dwVbrAbr_bps
+    parameter any integer value between:
+                        ' MPEG-I: 32000 .. 320000 bps
+                        ' MPEG-II: 8000 .. 160000 bps
+   ' 80
+   nVBRMethod As ELameVBRMethodOption
+   
+   ' 84
+   bNoBitRes As Long ' Disables the bit-resorvoir and disables the insertion of
+    padded frames
+   ' 88
+   bStrictIso As Long
+   
+   ' 90
+   nQuality As Integer ' Note: ELameQualitySetting, Quality Setting, HIGH BYTE
+    should be NOT LOW byte, otherwhise quality is set to 5. This is done to be
+    backward compatible. So to set quality to 3, you have to set the nQuality
+    parameter to 0xFC03.
+   
+   ' 90 + 237 = 327
+   bPadding(0 To 236) As Byte
+   
+End Type
+
+Private Type BE_CONFIG_FORMAT
+   lvh1 As BE_CONFIG_FORMAT_LHV1
+End Type
+
+Private Type BE_CONFIG  '331
+   dwConfig As Long ' EBeConfigFormat, 4
+   format As BE_CONFIG_FORMAT ' 327
+End Type
+
+Private Declare Function beInitStream Lib "lameencshim.dll" ( _
+   beConfig As BE_CONFIG, _
+   pdwSamples As Long, _
+   pdwBufferSize As Long, _
+   phbeStream As Long) As Long
+Private Declare Function beCloseStream Lib "lameencshim.dll" ( _
+   ByVal hbeStream As Long) As Long
+Private Declare Function beEncodeChunk Lib "lameencshim.dll" ( _
+   ByVal hbeStream As Long, _
+   ByVal nSamples As Long, _
+   pSamples As Any, _
+   pOutput As Any, _
+   pdwOutput As Long _
+   ) As Long
+Private Declare Function beDeinitStream Lib "lameencshim.dll" ( _
+   ByVal hbeStream As Long, pOutput As Any, pdwOutput As Long) As Long
+
+Private m_tBeConfig As BE_CONFIG
+Private m_hBeStream As Long
+Private m_dwSamples As Long
+Private m_dwBufferSize As Long
+Private m_sFileOut As String
+Private m_cWriter As cMp3Writer
+Private m_cVer As cLameEncoderVersion
+
+Public Event Progress(ByVal samplesDone As Long, ByVal totalSamples As Long,
+ cancel As Boolean)
+
+Private Const cErrBase = 29770
+
+Public Property Get Version() As cLameEncoderVersion
+   If (m_cVer Is Nothing) Then
+      Set m_cVer = New cLameEncoderVersion
+   End If
+   Set Version = m_cVer
+End Property
+
+Private Function FileExists(ByVal sFile As String) As Boolean
+Dim sDir As String
+   On Error Resume Next
+   sDir = Dir(sFile)
+   FileExists = ((Err.Number = 0) And Len(sDir) &gt; 0)
+End Function
+
+Private Sub KillFileIfExists(ByVal sFile As String)
+   On Error Resume Next
+   Kill sFile
+End Sub
+
+Public Property Get EncodingPreset() As ELamePresetEncodingOption
+   EncodingPreset = m_tBeConfig.format.lvh1.nPreset
+End Property
+Public Property Let EncodingPreset(ByVal value As ELamePresetEncodingOption)
+   m_tBeConfig.format.lvh1.nPreset = value
+End Property
+
+Public Property Get BitRate() As ELameBitRate
+   BitRate = m_tBeConfig.format.lvh1.dwBitRate
+End Property
+Public Property Let BitRate(ByVal value As ELameBitRate)
+   m_tBeConfig.format.lvh1.dwBitRate = value
+End Property
+
+Public Property Get SampleRate() As ELameSampleRate
+   SampleRate = m_tBeConfig.format.lvh1.dwSampleRate
+End Property
+Public Property Let SampleRate(ByVal value As ELameSampleRate)
+   m_tBeConfig.format.lvh1.dwSampleRate = value
+End Property
+
+Public Property Get OutputMode() As ELameOutputModeOption
+   OutputMode = m_tBeConfig.format.lvh1.nMode
+End Property
+Public Property Let OutputMode(ByVal value As ELameOutputModeOption)
+   m_tBeConfig.format.lvh1.nMode = value
+End Property
+
+Public Property Get FileName() As String
+   FileName = m_sFileOut
+End Property
+
+Public Sub OpenFile(ByVal sFile As String)
+   KillFileIfExists sFile
+   m_sFileOut = sFile
+   LameInitialise
+   If (m_hBeStream = 0) Then
+      errHandler "lameConvert", 1, False
+      Exit Sub
+   End If
+   Set m_cWriter = createMp3Writer()
+End Sub
+
+Public Property Get BufferSize() As Long
+   BufferSize = m_dwBufferSize \ 2
+End Property
+
+Public Function WriteData(ByVal lPtrBuffer As Long, ByVal lSize As Long) As Long
+   
+   If Not (m_cWriter Is Nothing) Then
+      Dim lRemaining As Long
+      Dim dwWrite As Long
+      Dim eErr As ELameErrorCode
+      
+      eErr = beEncodeChunk(m_hBeStream, _
+            lSize \ 2, _
+            ByVal lPtrBuffer, _
+            ByVal m_cWriter.BufferPointer, dwWrite)
+      m_cWriter.WriteBufferToFile dwWrite
+      
+      errHandler "WriteData", eErr, True
+      
+      WriteData = (dwWrite = lSize)
+      
+   End If
+   
+End Function
+
+Public Sub CloseFile()
+Dim dwWrite As Long
+Dim eErr As ELameErrorCode
+   If Not (m_hBeStream = 0) Then
+      ' Here we need to check for any left over buffer
+   
+      eErr = beDeinitStream(m_hBeStream, ByVal m_cWriter.BufferPointer, dwWrite)
+      errHandler "lameConvert", eErr, True
+      m_cWriter.WriteBufferToFile dwWrite
+      m_cWriter.CloseFile
+   End If
+   Set m_cWriter = Nothing
+End Sub
+
+
+'   Dim eErr As ELameErrorCode
+'   Dim dwWrite As Long
+'   Dim samplesDone As Long
+'   Dim cancel As Boolean
+'
+'   Do While (cReader.Read() And Not (cancel))
+'      eErr = beEncodeChunk(m_hBeStream, _
+'         cReader.ReadBufferSize * 2, _
+'         ByVal cReader.ReadBufferPtr, _
+'         ByVal cWriter.BufferPointer, dwWrite)
+'      errHandler "lameConvert", eErr, True
+'
+'      cWriter.WriteBufferToFile dwWrite
+'
+'      samplesDone = samplesDone + cReader.ReadBufferSize * 2
+'      RaiseEvent Progress(samplesDone, cReader.AudioLength * 2, cancel)
+'   Loop
+'
+'   If Not (cancel) Then
+'      eErr = beDeinitStream(m_hBeStream, ByVal cWriter.BufferPointer, dwWrite)
+'      errHandler "lameConvert", eErr, True
+'      cWriter.WriteBufferToFile dwWrite
+'      RaiseEvent Progress(cReader.AudioLength * 2, cReader.AudioLength * 2,
+ cancel)
+'      cWriter.CloseFile
+'   Else
+'      cWriter.CloseFile
+'      KillFileIfExists cWriter.Filename
+'   End If
+'
+'   Set cWriter = Nothing
+'   Set cReader = Nothing
+'   LameClose
+'
+'   Exit Sub
+'
+'errorHandler:
+'   ' Clean up:
+'   Dim lErr As Long
+'   Dim sErr As String
+'   lErr = Err.Number
+'   sErr = Err.Description
+'   On Error Resume Next
+'   Set cWriter = Nothing
+'   Set cReader = Nothing
+'   LameClose
+'   On Error GoTo 0
+'   ' rethrow
+'   Err.Raise lErr, App.EXEName &amp; ".lameConvert", sErr
+'   Exit Sub
+'
+'End Sub
+
+Private Sub LameInitialise()
+Dim eErr As ELameErrorCode
+   LameClose
+   
+   eErr = beInitStream(m_tBeConfig, m_dwSamples, m_dwBufferSize, m_hBeStream)
+   If (eErr &lt;&gt; BE_ERR_SUCCESSFUL) Then
+      m_dwSamples = 0
+      m_dwBufferSize = 0
+      m_hBeStream = 0
+   End If
+   errHandler "lameInit", eErr, True
+   
+End Sub
+
+Private Sub LameClose()
+Dim eErr As ELameErrorCode
+
+   If (m_hBeStream) Then
+      eErr = beCloseStream(m_hBeStream)
+      m_hBeStream = 0
+      m_dwSamples = 0
+      m_dwBufferSize = 0
+      errHandler "lameClose", eErr, True
+   End If
+   
+End Sub
+
+Private Function createMp3Writer() As cMp3Writer
+   
+   Dim cWriter As New cMp3Writer
+   On Error GoTo errorHandler
+   cWriter.BufferSize = m_dwBufferSize
+   cWriter.FileName = m_sFileOut
+   Set createMp3Writer = cWriter
+   Exit Function
+   
+errorHandler:
+   ' rethrow
+   Dim lErr As Long
+   Dim sErr As String
+   lErr = Err.Number: sErr = Err.Description
+   Set cWriter = Nothing
+   Err.Raise lErr, "createMp3Writer", sErr
+   
+   Exit Function
+
+End Function
+
+
+Public Sub errHandler(ByVal sProc As String, ByVal lErr As Long, ByVal
+ bLameError As Boolean)
+Dim sMsg As String
+   If (bLameError) Then
+      Select Case lErr
+      Case BE_ERR_SUCCESSFUL
+         Exit Sub
+      Case BE_ERR_INVALID_FORMAT
+         sMsg = "Invalid Format"
+      Case BE_ERR_INVALID_FORMAT_PARAMETERS
+         sMsg = "Invalid Format Parameters"
+      Case BE_ERR_NO_MORE_HANDLES
+         sMsg = "Out of LAME handles"
+      Case BE_ERR_INVALID_HANDLE
+         sMsg = "LAME handle is invalid"
+      Case BE_ERR_BUFFER_TOO_SMALL
+         sMsg = "Buffer is too small"
+      End Select
+   Else
+      Select Case lErr
+      Case 1
+         sMsg = "Lame engine not initialised"
+      Case 7
+         sMsg = "Unable to allocate memory"
+      End Select
+   End If
+   Err.Raise cErrBase + lErr, App.EXEName &amp; "." &amp; sProc, sMsg
+End Sub
+
+Private Sub Class_Initialize()
+   ' Set up default configuration
+   With m_tBeConfig
+      .dwConfig = BE_CONFIG_LAME
+      With .format.lvh1
+         .dwStructVersion = 1
+         .dwStructSize = 331
+         .dwSampleRate = eLameSampleRate44100
+         .dwReSampleRate = 0
+         .nMode = BE_MP3_MODE_JSTEREO
+         .dwBitRate = eLameBitRate128
+         .nPreset = LQP_R3MIX
+         .dwMpegVersion = MPEG1
+         .dwPsyModel = 0
+         .dwEmphasis = 0
+         .bOriginal = 1
+         .bWriteVBRHeader = 1
+         .bNoBitRes = 1
+      End With
+   End With
+End Sub
+
+Private Sub Class_Terminate()
+   On Error Resume Next ' don't throw in terminate
+   LameClose
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">CD Ripping in VB Part 2</a>&#160;.&#160;<a href="VB6_Pluggable_CD_Ripper.html">VB6 Pluggable CD Ripper</a>&#160;.&#160;vbalMp3DataWriter_cLameEncoder.cls</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 12 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_2/VB6_Pluggable_CD_Ripper_zip_vbalMp3DataWriter_cLameEncoder_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+</html>

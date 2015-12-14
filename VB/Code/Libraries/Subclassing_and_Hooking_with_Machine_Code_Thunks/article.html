@@ -1,0 +1,191 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing_and_Hooking_with_Machine_Code_Thunks/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:55:24 GMT -->
+<head>
+
+<title>vbAccelerator - Subclassing and Hooking with Machine Code Thunks</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="VB's AddressOf is limited in that it can only provide an address to 
+a function within a module, and not one in a class.  This makes doing many things with it
+harder.  However, there is a way of getting a callback to a class function, 
+although you need to know a little assembler to do it.  Don't 
+worry if you don't though - here Paul Caton presents some fantastic 
+reusable code showing how to subclass or hook any Window without modules using this technique.
+" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Libraries</a>&#160;.&#160;Subclassing and Hooking with Machine Code Thunks</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB6_WinSubHook.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 WinSubHook</a> (92K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4090</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4090&amp;type=Article&amp;title=Subclassing%20and%20Hooking%20with%20Machine%20Code%20Thunks">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:paul_caton@hotmail.com">Paul Caton</a></p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />20 Feb 2003<br />First Posted</p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3487">Creating Drop-Shadows</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Subclassing and Hooking with Machine Code Thunks</h1><p class="splash">Eliminate the .bas modules for AddressOf tasks for easier to manageable subclassing
+and hooking code.</p><img src="thunkSample.png" width="219" height="209" alt="Window Shadow/Fade Out Transparency Sample" /><p /><p>VB's <i>AddressOf</i> is limited in that it can only provide an address to 
+a function within a module, and not one in a class.  This makes doing many things with it
+harder.  However, there is a way of getting a callback to a class function, 
+although you need to know a little assembler to do it.  Don't 
+worry if you don't though - here Paul Caton presents some fantastic 
+reusable code showing how to subclass or hook any Window without modules using this technique.
+</p><h2>What's In The Download</h2><p>The download contains five different samples:</p><ol><li><strong>Shadow</strong><br />
+Demonstrates a control which uses the <i>cSubClass</i> assembler thunk to add a configurable
+shadow and fade-in/fade-out effects to any form.  Similar to the sample 
+<a href="http://www.vbaccelerator.com/article.asp?id=3487">Drop Shadows</a> except everything runs without external 
+modules.</li><li><strong>SubClass</strong><br />
+A full demonstration of the features of subclasser through this method.  You can choose to receive
+all messages before or after they are processed by Windows, or to filter the messages for better
+performance.  All using a single class...</li><li><strong>Timer</strong><br />
+A completely self contained Timer which works outside forms.</li><li><strong>ApiWindow</strong><br />
+Demonstrates how to create Windows with a custom class and control their behaviour through
+the instantiating class.  If you've bought or glanced at Stephen Teihet's 
+book "Subclassing and Hooking with Visual Basic"
+then you'll immediately see how much easier it is to do it this way!</li><li><strong>Hooker</strong><br />
+Not actually a soft-pr0n game as I had first hoped, but 
+rather a demonstration of using the technique to install a Windows Hook for pretty
+much any type of hook you care to use.  Demonstrates <i>WH_SHELL</i>, <i>WH_MOUSE</i>, <i>WH_KEYBOARD</i>,
+<i>WH_FOREGROUNDIDLE</i> and the various other message related-hooks.
+    </li></ol><h2>Subclassing Without Modules - A Quick Overview</h2><p>This describes the steps need to set a subclass and demonstrates using the code
+to respond to the <i>WM_MINMAXINFO</i> message to prevent a form being made smaller
+than a certain size.
+First add <i>cSubClass.cls</i> from the download and then 
+reference the included <i>WinSubHook.TLB</i> (Windows/Subclass/Hook/Timer interface 1.4).
+Once this is done, you start subclassing by:</p><ol><li>Implementing the <i>ISubClass</i> interface.
+<pre>
+Implements iSubClass
+
+Private Sub iSubclass_After( _
+    lReturn As Long, _
+    ByVal hwnd As Long, _
+    ByVal uMsg As WinSubHook.eMsg, _
+    ByVal wParam As Long, _
+    ByVal lParam As Long)
+   '
+   ' Respond to any messages you want to subclass
+   ' after Windows has processed them here
+   '
+End Sub
+
+Private Sub iSubclass_Before( _
+    bHandled As Boolean, _
+    lReturn As Long, 
+    hwnd As Long, 
+    uMsg As WinSubHook.eMsg, 
+    wParam As Long, _
+    lParam As Long)
+   '
+   ' Respond to any messages you want to subclass
+   ' before Windows has processed them here
+   '
+End Sub
+</pre></li><li>Creating an instance of the <i>cSubClass</i> object and starting the subclasser:
+<pre>
+Private m_cSubClass As cSubClass
+
+Private Sub Form_Load()
+
+   Set m_cSubClass = New cSubClass
+   ' hWnd to subclass, then object which implements
+   ' iSubClass:
+   m_cSubClass.SubClass Me.hWnd, Me
+
+   ' Now you can specify individual messages to 
+   ' respond to before or after Windows:
+   m_cSubClass.AddMsg WM_GETMINMAXINFO, MSG_AFTER
+
+End Sub   
+</pre></li><li>Writing your subclassing code.  In this case, we use <i>WM_GETMINMAXINFO</i> to
+prevent the form from being made too small:
+<pre>
+
+Private Type MINMAXINFO
+   ptReserved As WinSubHook.Point
+   ptMaxSize As WinSubHook.Point
+   ptMaxPosition As WinSubHook.Point
+   ptMinTrackSize As WinSubHook.Point
+   ptMaxTrackSize As WinSubHook.Point
+End Type
+
+Private Sub iSubclass_After( _
+    lReturn As Long, _
+    ByVal hwnd As Long, _
+    ByVal uMsg As WinSubHook.eMsg, _
+    ByVal wParam As Long, _
+    ByVal lParam As Long)
+   '
+   Dim mmiT As MINMAXINFO
+
+   ' Copy parameter to local variable for processing
+   CopyMemory mmiT, ByVal lParam, LenB(mmiT)
+   
+   ' Minimium width and height for sizing
+   mmiT.ptMinTrackSize.x = 256
+   mmiT.ptMinTrackSize.y = 256
+       
+   ' Copy modified results back to parameter
+   CopyMemory ByVal lParam, mmiT, LenB(mmiT)
+   '
+End Sub
+</pre></li></ol><h2>The World Is Never Enough</h2><p>Although this is by far the best subclassing sample I've seen, I would 
+note that at the current release you cannot subclass the same window from more than
+one class without causing a crash.  As long as you're careful about how you apply
+the subclass you will be fine, but if you even inadvertently start subclassing the
+same window twice (the usual way this happens is when you use the subclasser in
+a user control or a DLL, and the messages you need to receive are send to the container or parent
+of the object, and then you put two instances of the control on the same container - 
+see <a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing without the crashes</a> for more
+details)  you will soon start to see random crashes.  On my system this manifests itself as
+the exciting vanishing window syndrome!  There are two possible ways to stop this
+happening: use ComCt32.DLL v6.0 subclassing (fixes all problems; the downside is
+it requires new ASM code and only works on XP) or attempt to use the Windows Properties 
+database again.  I will keep you posted.</p><h2>More Information</h2><p>If you're still using VB6 then I would definitely recommend 
+getting hold of a copy of Matt Currland's excellent book "Advanced Visual Basic 6".  
+Although it was unfortunately published just that wee bit too late as the .NET
+framework was occupying everyone else's minds, it nevertheless demonstrates 
+conclusively how so many of VB's issues have a solution.  If the entirety of
+Matt's ideas had been included in VB6 in a controllable way then none of us would 
+have had so much to complain about when VB6 was released (not that I would complain 
+about the .NET framework though; it is clearly a fantastic thing and replacing COM is something
+more of an undertaking than just fixing a few annoyances with VB.  Mind you, it'll be much more
+persuasive if Microsoft really do release a .NET MS Office and IE).  The book describes
+the thunking technique (albeit briefly) but its certainly worth your money.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Libraries</a>&#160;.&#160;Subclassing and Hooking with Machine Code Thunks</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 July 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing_and_Hooking_with_Machine_Code_Thunks/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:55:24 GMT -->
+</html>

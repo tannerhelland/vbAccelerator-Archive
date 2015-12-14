@@ -1,0 +1,280 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Working_with_Multiple_Monitors/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:44:10 GMT -->
+<head>
+
+<title>vbAccelerator - Working with Multiple Monitors</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Windows 98/2000 systems and above provide support for multiple monitors.  This is a great thing except that
+it messes up old programs which attempt to do things like centre Windows or otherwise
+restrict their position to the visible area of the screen.  This tip provides some simple
+code to allow you to work with multiple monitors.
+" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Working with Multiple Monitors</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Multiple_Monitor_Support_Sample_Code.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />Multiple Monitor Support Sample Code</a> (57K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:12340</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12340&amp;type=Article&amp;title=Working%20with%20Multiple%20Monitors">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 1</a></p><p class="nav">Updated:29 January 2004</p>
+<br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />27 Jun 2003<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Working with Multiple Monitors</h1><img src="multiMonitor.png" width="360" height="261" alt="" /><p /><p>
+Windows 98/2000 systems and above provide support for multiple monitors.  This is a great thing except that
+it messes up old programs which attempt to do things like centre Windows or otherwise
+restrict their position to the visible area of the screen.  This tip provides some simple
+code to allow you to work with multiple monitors.
+</p><h2>About Multiple Monitors</h2><p>
+Multiple monitor support in Windows is achieved by providing a rectangular Virtual Screen area 
+onto which the physical monitors are mapped.  The diagram below, taken directly from the MSDN documentation, demonstrates the kind of setup that could result if multi-monitor support were 
+to be used by a madman or madwoman with plenty of old hardware and some bizarrely shapped monitors:
+    </p><img src="monitorLayout.png" width="472" height="176" alt="Idiotic Monitor Layout" /><p class="caption">Idiotic but possible monitor layout</p><p>
+The useful things to note are that the monitors may or may not contain all of the 
+actual virtual screen information and that a screen may have coordinates which are 
+offset from the origin in either direction.  Finally, the size of the virtual screen
+is currently not supposed to exceed +/-32767, since there are a number of old-school
+API calls and messages in Win32 which follow the sort of sharp thinking that led to the idea in DOS
+that no-one would ever have more than 64k memory in their PC.  (Unfortunately, I feel
+this strategy is already pretty much kcufed since 200dpi screens are on their way. Although
+I can't afford any of them, never mind a 30" version...)
+    </p><h2>Using Multiple Monitors</h2><p>
+The only times you really need to know about multiple monitors are:
+</p><ol><li>When positioning objects on screen</li><li>When drawing objects which span multiple monitors, the monitors have
+different display characteristics and you want the display to render with
+the highest quality achievable.</li></ol><p>
+Unfortunately, the second case is pretty much 
+beyond the scope of VB unless you choose to do all painting by intercepting 
+<span class="code">WM_PAINT</span> messages. This would really be making life
+extraordinarily hard for yourself, even by vbAccelerator standards.
+    </p><p>
+In any case, most multiple monitor systems are driven from a single
+graphics card and have the same colour depth in each monitor.  When that doesn't
+occur, your users shouldn't really expect to be able to drag 
+your lovely alpha-blended window onto their amber-screen EGA debugging display and
+expect everything will still look perfect.
+</p><p>
+So back to centring and sizing, which is relatively simple.  You need to be 
+able to determine the size of the virtual screen area and each of the 
+monitors within that area.
+</p><h3>Determing the Size of the Virtual Screen</h3><p>
+In the same way that the usable screen area used to be provided through the 
+<span class="code">SystemParametersInfo</span> API call, the Virtual Screen size is 
+also, as well as the number of physical monitors and whether each has the same
+colour depth.  The
+code below demonstrates how to retrieve this information:
+</p><pre>
+Private Const SM_CXVIRTUALSCREEN = 78
+Private Const SM_CYVIRTUALSCREEN = 79
+Private Const SM_CMONITORS = 80
+Private Const SM_SAMEDISPLAYFORMAT = 81
+
+Private Declare Function GetSystemMetrics Lib "user32" ( _
+   ByVal nIndex As Long) As Long
+
+Public Property Get VirtualScreenWidth() As Long
+   VirtualScreenWidth = GetSystemMetrics(SM_CXVIRTUALSCREEN)
+End Property
+Public Property Get VirtualScreenHeight() As Long
+   VirtualScreenHeight = GetSystemMetrics(SM_CYVIRTUALSCREEN)
+End Property
+Public Property Get DisplayMonitorCount() As Long
+   DisplayMonitorCount = GetSystemMetrics(SM_CMONITORS)
+End Property
+Public Property Get AllMonitorsSame() As Long
+   AllMonitorsSame = GetSystemMetrics(SM_SAMEDISPLAYFORMAT)
+End Property
+</pre><h3>Evaluating Monitor Size and Work Area</h3><p>
+Each monitor has an overall size and a work area, which represents
+the size with any explorer bars (like the task bar, or the misguided
+Office docking help thingies) subtracted.  The <span class="code">EnumDisplayMonitors</span>
+API call is provided to allow this to be performed.  This is a callback method which
+provides details of all attached monitors, along with a <span class="code">hMonitor</span>
+handle which can be used to interrogate the monitor.
+</p><p>
+As with any callback function, unless you implement a <a href="http://www.vbaccelerator.com/article.asp?id=4090">Machine
+Code Thunk</a> you must implement the function which gets called within a VB module.  As my
+personal knowledge of machine code can be approximated as (or at least tends to) none, 
+I've used module, which means the enumeration works as follows:
+</p><pre>
+Private Declare Function EnumDisplayMonitors Lib "user32" ( _
+      ByVal hDC As Long, _
+      lprcClip As Any, _
+      ByVal lpfnEnum As Long, _
+      ByVal dwData As Long _
+   ) As Long
+
+Private Function MonitorEnumProc( _
+      ByVal hMonitor As Long, _
+      ByVal hDCMonitor As Long, _
+      ByVal lprcMonitor As Long, _
+      ByVal dwData As Long _
+   ) As Long
+   ' Do something with the monitor here...
+   MonitorEnumProc = 1
+End Function
+
+Public Sub EnumMonitors(cM As cMonitors)
+   EnumDisplayMonitors 0, ByVal 0&amp;, AddressOf MonitorEnumProc, 0
+End Sub
+</pre><p>
+The parameters returned by the <span class="code">MonitorEnumProc</span> are primarily
+aimed at responding to a <span class="code">WM_PAINT</span> message.  More usefully, the
+<span class="code">hMonitor</span> handle can be converted into the details of the monitor
+in question: its name, its size and work area size and whether it is the primary monitor 
+or not.  To do this you use the <span class="code">GetMonitorInfo</span> API function.
+This function is provided in both Unicode and ANSI versions to account for monitor names
+in either language.  Both versions are translated in this code:
+</p><pre>
+Private Type RECT
+   Left As Long
+   Top As Long
+   right As Long
+   bottom As Long
+End Type
+
+Private Const CCHDEVICENAME = 32
+
+Private Type MONITORINFOEXA
+   cbSize As Long
+   rcMonitor As RECT
+   rcWork As RECT
+   dwFlags As Long
+   b(0 To CCHDEVICENAME - 1) As Byte
+End Type
+
+Private Type MONITORINFOEXW
+   cbSize As Long
+   rcMonitor As RECT
+   rcWork As RECT
+   dwFlags As Long
+   b(0 To CCHDEVICENAME * 2 - 1) As Byte
+End Type
+
+Private Declare Function GetMonitorInfoA Lib "user32" ( _
+      ByVal hMonitor As Long, _
+      lpmi As MONITORINFOEXA _
+   ) As Long
+Private Declare Function GetMonitorInfoW Lib "user32" ( _
+      ByVal hMonitor As Long, _
+      lpmi As MONITORINFOEXW _
+   ) As Long
+
+Private Const MONITORINFOF_PRIMARY = &amp;H1
+
+Private m_hMonitor As Long
+Private m_sName As String
+Private m_rcMonitor As RECT
+Private m_rcWork As RECT
+Private m_bIsPrimary As Boolean
+
+...
+
+   If (IsNt) Then
+      Dim tMIW As MONITORINFOEXW
+      tMIW.cbSize = Len(tMIW)
+      GetMonitorInfoW hMonitor, tMIW
+      With tMIW
+         LSet m_rcMonitor = .rcMonitor
+         LSet m_rcWork = .rcWork
+         m_bIsPrimary = _
+            ((.dwFlags And MONITORINFOF_PRIMARY) = MONITORINFOF_PRIMARY)
+         sName = .b
+         iPos = InStr(sName, vbNullChar)
+      End With
+   Else
+      Dim tMIA As MONITORINFOEXA
+      tMIA.cbSize = Len(tMIA)
+      GetMonitorInfoA hMonitor, tMIA
+      With tMIA
+         LSet m_rcMonitor = .rcMonitor
+         LSet m_rcWork = .rcWork
+         m_bIsPrimary = _
+            ((.dwFlags And MONITORINFOF_PRIMARY) = MONITORINFOF_PRIMARY)
+         sName = StrConv(.b, vbUnicode)
+      End With
+   End If
+   iPos = InStr(sName, vbNullChar)
+   If (iPos &gt; 0) Then
+      m_sName = Left(sName, iPos - 1)
+   Else
+      m_sName = sName
+   End If
+</pre><p class="tip">Note that if you don't need the monitor name, then you can
+simplify this call by missing out the name parameter entirely.  In this case
+you only ever need the ANSI version of the function and the declares look
+like this:
+<pre>
+Private Type MONITORINFO
+   cbSize As Long
+   rcMonitor As RECT
+   rcWork As RECT
+   dwFlags As Long
+End Type
+
+Private Declare Function GetMonitorInfoA Lib "user32" ( _
+      ByVal hMonitor As Long, _
+      lpmi As MONITORINFO _
+   ) As Long
+</pre></p><h2>Wrapping It Up</h2><p>
+With this code its easy to create wrapper for the function.  The class
+<span class="code">cMonitors</span> is responsible for providing information
+about the Virtual Screen area, and to store a collection of monitors which
+contain information about the individual monitors.  As VB provides no easily
+accessible support to a strongly typed collection, the implemented collection 
+is an index only version, even though access by the <span class="code">hMonitor</span>
+handle would be sensible.  The code is arranged so that <span class="code">cMonitors</span>
+class is responsible for responding to callbacks from the <span class="code">mMonitors</span>
+module containing the callback and the creates an array of <span class="code">cMonitor</span>
+objects which can be used to access the position, name and primary information about the 
+monitors.
+</p><p>
+The sample code demonstrates some of the types of functions you might want to achieve 
+in a multiple monitor system, such as ensuring your form is on a specific monitor, 
+centred on a specific monitor or maximised there.
+</p><h2>Conclusion</h2><p>
+Working with multiple monitor systems is generally trivial unless you have to save 
+or restore a screen position.  In this case you can easily get access to the 
+details of the current monitor arrangement using the simple classes provided with
+this tip.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Working with Multiple Monitors</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 7 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Working_with_Multiple_Monitors/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:44:11 GMT -->
+</html>

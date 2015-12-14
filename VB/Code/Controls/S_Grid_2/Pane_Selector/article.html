@@ -1,0 +1,291 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/Pane_Selector/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:49:57 GMT -->
+<head>
+<title>vbAccelerator - Panel Selector Control</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This article provides a regional selection control which can be floated over other
+controls to provide additional options for the selected item.  The demonstration
+then shows how to use the control in conjunction with SGrid 2.0 in hot-tracking
+mode to provide an interface similar to the lists in the TaskPane in Microsoft Office 
+XP.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" />
+<link rel="contents" href="../index.html" /><link rel="meta" type="application/rdf+xml" href="article.rdf" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;Panel Selector Control</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Pane_Selector_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Pane Selector Binary</a> (9K)</p><p class="nav"><a href="VB5_Pane_Selector_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Pane Selector Demonstration</a> (180K)</p><p class="nav"><a href="VB5_Pane_Selector_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Pane Selector Full Source</a> (195K)</p><p /><p class="nav"><a href="VB6_Pane_Selector_Binary.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Pane Selector Binary</a> (9K)</p><p class="nav"><a href="VB6_Pane_Selector_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Pane Selector Demonstration</a> (180K)</p><p class="nav"><a href="VB6_Pane_Selector_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Pane Selector Full Source</a> (195K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:13701</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13701&amp;type=Article&amp;title=Panel%20Selector%20Control">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />24 Jan 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=931">Using the System Image List with (and without) vbAccelerator Controls</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2768">A window that's star-shaped, circular or tank-shaped</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13703">SGrid 2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14">Reading and Saving .ICO files and resources in VB</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Panel Selector Control</h1><img src="panelSelector.png" width="430" height="250" alt="Panel Selector Demonstration Project" /><p /><p>
+This article provides a regional selection control which can be floated over other
+controls to provide additional options for the selected item.  The demonstration
+then shows how to use the control in conjunction with SGrid 2.0 in hot-tracking
+mode to provide an interface similar to the lists in the TaskPane in Microsoft Office 
+XP.
+</p><h2>About The Panel Selector Control</h2><p>
+In Office XP, there are a series of TaskPanes which provide contextual functions
+whilst working with documents.  The Clipboard TaskPane is one example:
+</p><img src="taskPane.png" width="218" height="255" alt="Clipboard TaskPane" /><p class="caption">The Office XP Clipboard TaskPane</p><p>
+The highlighted item can either be selected directly, or you can choose the drop-down 
+to pick some additional options.  Presumably the main rationale for this is to make it 
+directly obvious that there is more than one thing you can do with the hot item,
+rather than assuming that the user will right-click to find out.  It's also a way
+of allowing you to perform one of many actions on an item that doesn't really
+ have any sort of selection state.
+</p><p>
+Although Office integrates the highlighting functionality into the drawing of the
+selection, I wanted to create a the same effect in a reusable form, hence a
+control. 
+</p><h2>Implementing a Pane Selector</h2><p>
+If this is to implemented as control, you need to provide a control that is 
+transparent except for the border and the button, so the underlying control
+can be seen through and selected if desired.  In theory this is possible using
+WindowLess UserControls in VB6 using the <span class="code">MaskPicture</span>
+property, but that isn't ideal.  A simple to use alternative is to use the
+<span class="code">SetWindowsRgn</span> to modify the shape of a Window, as
+described in the <a href="http://www.vbaccelerator.com/article.asp?id=2768">Geometric Windows Shapes</a>
+article.
+</p><p>
+To make the control work like the one in Office XP, the Window's shape should
+have two disconnected regions; one region being a single-pixel wide border, and 
+the other a rectangle for the button; as shown in the below:
+</p><img src="regions.png" width="128" height="96" alt="Pane Selector control regions" /><p class="caption">Pane Selector Control Regions</p><p>
+Setting this up in code isn't too tricky as Windows provides lots of functionality for
+combining regions together.  You simply need to combine a region which is the difference
+between the outside and the inside of the border with the region for the button.  Here's
+the code:
+</p><pre>
+Private Type RECT
+   left As Long
+   top As Long
+   right As Long
+   bottom As Long
+End Type
+
+Private Declare Function GetClientRect Lib "user32" ( _
+    ByVal hWnd As Long, lpRect As RECT) As Long
+Private Declare Function SetWindowRgn Lib "user32" _
+    (ByVal hWnd As Long, ByVal hRgn As Long, _
+    ByVal bRedraw As Long) As Long
+Private Declare Function CreateRectRgn Lib "gdi32" _
+    (ByVal X1 As Long, ByVal Y1 As Long, _
+    ByVal X2 As Long, ByVal Y2 As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" _
+    (ByVal hObject As Long) As Long
+Private Declare Function CombineRgn Lib "gdi32" _
+    (ByVal hDestRgn As Long, _
+    ByVal hSrcRgn1 As Long, ByVal hSrcRgn2 As Long, _
+    ByVal nCombineMode As Long) As Long
+
+' Region combination types:
+Private Const RGN_AND = 1
+Private Const RGN_COPY = 5
+Private Const RGN_DIFF = 4
+Private Const RGN_MAX = RGN_COPY
+Private Const RGN_MIN = RGN_AND
+Private Const RGN_OR = 2
+Private Const RGN_XOR = 3
+' Region combination return values:
+Private Const COMPLEXREGION = 3
+Private Const SIMPLEREGION = 2
+Private Const NULLREGION = 1
+
+...
+
+Dim rc As RECT
+Dim rcIn As RECT
+Dim bRightToLeft As Boolean
+Dim hRgnOutBorder As Long
+Dim hRgnInBorder As Long
+Dim hRgnButton As Long
+Dim lR As Long
+
+   bRightToLeft = UserControl.RightToLeft
+
+   GetClientRect UserControl.hWnd, rc
+   
+   m_hRgn = CreateRectRgn(0, 0, 0, 0)
+   hRgnOutBorder = CreateRectRgn( _ 
+      rc.left, rc.top, rc.right, rc.bottom)
+   LSet rcIn = rc
+   InflateRect rcIn, -1, -1
+   hRgnInBorder = CreateRectRgn( _
+       rcIn.left, rcIn.top, rcIn.right, rcIn.bottom)
+   lR = CombineRgn(m_hRgn, hRgnOutBorder, hRgnInBorder, RGN_DIFF)
+   
+   m_rcButton.top = rcIn.top + 1
+   m_rcButton.bottom = rcIn.bottom - 1
+   If (bRightToLeft) Then
+      m_rcButton.left = rcIn.left + 1
+      m_rcButton.right = rcIn.left + m_lButtonWidth + 1
+   Else
+      m_rcButton.left = rcIn.right - m_lButtonWidth - 1
+      m_rcButton.right = rcIn.right - 1
+   End If
+   hRgnButton = CreateRectRgn( _
+      m_rcButton.left, m_rcButton.top, _
+      m_rcButton.right, m_rcButton.bottom)
+   
+   lR = CombineRgn(m_hRgn, m_hRgn, hRgnButton, RGN_OR)
+   
+   DeleteObject hRgnButton
+   DeleteObject hRgnInBorder
+   DeleteObject hRgnOutBorder
+   
+   SetWindowRgn UserControl.hWnd, m_hRgn, 1
+</pre><p>
+Once that's done the rest of the control is pretty straightforward.
+</p><h2>Using the Control with SGrid 2.0</h2><p>
+The sample presented here is an Icon Browser which shows all of the icons in a particular
+directory and allows you to open or delete them. Icon information is extracted using the
+<a href="http://www.vbaccelerator.com/article.asp?id=14">IconEx</a> class.
+ Although SGrid 2.0 has a number of
+powerful formatting options, it doesn't have one for showing centrally aligned icons
+with text underneath.  Therefore this sample uses the Owner-Draw cell facility of the
+grid to render a customised cell.  The following code does the trick, using a 
+<a href="http://www.vbaccelerator.com/article.asp?id=931">System Image List</a> to draw the icon directly from 
+the ICO file on disk:
+</p><pre>
+Implements IGridCellOwnerDraw
+
+Private m_cIml As cVBALSysImageList
+
+Private Sub Form_Load
+   grdIcons.OwnerDrawImpl = Me
+End Sub
+
+Private Sub IGridCellOwnerDraw_Draw( _
+   cell As cGridCell, _
+   ByVal lHDC As Long, _
+   ByVal eDrawStage As ECGDrawStage, _
+   ByVal lLeft As Long, ByVal lTop As Long, _
+   ByVal lRight As Long, ByVal lBottom As Long, _
+   bSkipDefault As Boolean
+   )
+   '
+   If (eDrawStage = ecgBeforeIconAndText) Then
+      '
+      bSkipDefault = True
+      
+      ' Draw icon
+      Dim lIconX As Long
+      Dim lIconY As Long
+      lIconY = lTop + 2
+      lIconX = lLeft + (lRight - lLeft - m_cIml.IconSizeX) \ 2
+      m_cIml.DrawImage cell.Text, lHDC, lIconX, lIconY
+      
+      ' Draw text
+      Dim rc As RECT
+      rc.left = lLeft + 1
+      rc.right = lRight - 1
+      rc.top = m_cIml.IconSizeY + 4
+      rc.bottom = lBottom - 1
+      DrawTextA lHDC, fileNameOf(cell.Text), -1, rc, cell.TextAlign
+      
+      '
+   End If
+   '
+End Sub
+</pre><p>
+With that in place the pane selector control can be displayed in the appropriate location.
+Putting the grid into Hot Tracking mode using the <span class="code">HotTrack</span> 
+property means it raises the <span class="code">HotItemChange</span> event whenever
+the mouse over item changes.  The <span class="code">ScrollChange</span> event is also
+raised whenever the user scrolls the grid.  Using these two events we can position
+the Pane Selector control over the grid in the correct place:
+</p><pre>
+Private Sub grdIcons_HotItemChange(ByVal lRow As Long, ByVal lCol As Long)
+
+   If (m_bShowingMenu) Then
+      Exit Sub
+   End If
+
+   If (lRow &gt; 0) And (lCol &gt; 0) Then
+      Dim lLeft As Long
+      Dim lTop As Long
+      Dim lWidth As Long
+      Dim lHeight As Long
+      grdIcons.CellBoundary lRow, lCol, lLeft, lTop, lWidth, lHeight
+
+      If (grdIcons.top + lTop &lt; 0) Then
+         paneSelector.Visible = False
+      Else
+         paneSelector.Move _
+            grdIcons.left + _
+                IIf(lCol = 2, _
+                    grdIcons.ColumnWidth(1) * Screen.TwipsPerPixelX, _
+                    0), _
+            grdIcons.top + lTop, _
+            grdIcons.ColumnWidth(1) * Screen.TwipsPerPixelX, _
+            lHeight
+         If Not (paneSelector.Visible) Then
+            paneSelector.Visible = True
+         End If
+      End If
+      paneSelector.ZOrder
+   Else
+      paneSelector.Visible = False
+   End If
+End Sub
+
+Private Sub grdIcons_ScrollChange(ByVal eBar As ECGScrollBarTypes)
+   '
+   grdIcons_HotItemChange grdIcons.HotRow, grdIcons.HotCol
+   '
+End Sub
+</pre><p>
+Note that we don't want the selector control to appear with parts showing off the
+top of the grid control.  This is achieved by making the grid and the 
+pane selector control children of a PictureBox control, which would clip the
+Pane Selector when you attempt to move it off the top of the grid. However,
+I discovered that Windows gets confused about the region of the control if 
+the top coordinate is clipped, and hence the code includes a check that hides
+the selector if its top coordinate would be off the top of the grid.
+</p><h2>Conclusion</h2><p>
+This article provides a reusable pane selector control and demonstrates how to 
+integrate it as a floating selection control over the SGrid 2.0 control.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">S Grid 2</a>&#160;.&#160;Panel Selector Control</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 9 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/S_Grid_2/Pane_Selector/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:49:59 GMT -->
+</html>

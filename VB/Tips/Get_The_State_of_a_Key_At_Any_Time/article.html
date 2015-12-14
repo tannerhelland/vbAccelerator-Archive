@@ -1,0 +1,122 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Get_The_State_of_a_Key_At_Any_Time/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:15 GMT -->
+<head>
+
+<title>vbAccelerator - Get the state of a key at any time</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="If you're trying to create an interactive app, or a VB game, whether its in DirectX or using GDI calls, then reading a key state asynchronously is considerably faster than waiting for KeyUp, KeyDown or KeyPress event on a form. Checking the key state this way can also be very useful when trying to check for shift states when responding to a WM_KEYDOWN event if you are doing sub-classing." /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Get the state of a key at any time</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:1015</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1015&amp;type=Article&amp;title=Get%20the%20state%20of%20a%20key%20at%20any%20time">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />1 Aug 1998<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Get the state of a key at any time</h1><p /><p>If you're trying to create an interactive app, or a VB game, whether its in DirectX or using GDI calls, then reading a key state asynchronously is considerably faster than waiting for <i>KeyUp</i>, <i>KeyDown</i> or <i>KeyPress</i> event on a form. Checking the key state this way can also be very useful when trying to check for shift states when responding to a <i>WM_KEYDOWN</i> event if you are doing sub-classing.</p><p>I used this technique to speed up a DirectX sample at Visual Basic Area 51. Because the original sample only updated the screen in response to form KeyDown events, the result was 400% quicker! (In fact, too quick - I had to put a slowdown in the loop to keep up!).</p><p>Create a new project, and add a Picture Box and a Command Button to the form. Then paste the following code into the form: </p><pre>
+Private m_bPlay As Boolean 
+Private Declare Function GetAsyncKeyState Lib "user32" _
+    (ByVal vKey As Long) As Integer 
+Private Declare Sub Sleep Lib "kernel32" _
+    (ByVal dwMilliseconds As Long) 
+
+Private Sub cmdPlay_Click() 
+Dim i As Long 
+Dim iLast As Long 
+
+    If cmdPlay.Caption = "&amp;Stop" Then 
+        m_bPlay = False 
+        cmdPlay.Caption = "&amp;Play" 
+    Else 
+        cmdPlay.Caption = "&amp;Stop" 
+        m_bPlay = True 
+        i = 1 
+        Do 
+            ' Determine if the left or right keys are 
+            ' pressed: 
+            If (GetAsyncKeyState(vbKeyLeft)) Then 
+                ' Diminish the colour 
+                i = i - 1 
+            ElseIf (GetAsyncKeyState(vbKeyRight)) Then 
+                ' Increase the colour 
+                i = i + 1 
+            End If 
+            
+            ' Colour within bounds: 
+            If (i &lt; 1) Then i = 15 
+            If (i &gt; 15) Then i = 1 
+            
+            ' If colour has changed, change the display: 
+            If (iLast &lt;&gt; i) Then 
+                With Picture1 
+                    .Cls 
+                    .ForeColor = QBColor(i) 
+                    ' Generate a RGB complement for the background: 
+                    .BackColor = &amp;HFFFFFF And (Not QBColor(i)) 
+                    .CurrentX = 64 * Screen.TwipsPerPixelX 
+                    .CurrentY = 64 * Screen.TwipsPerPixelY 
+                    
+                    Picture1.Print Hex$(QBColor(i)) 
+                End With 
+            End If 
+            iLast = i 
+            
+            ' This is here to stop the animation 
+            ' getting too fast to see: 
+            Sleep 25 
+            ' Ensure we can still click buttons etc 
+            DoEvents 
+            
+        Loop While m_bPlay 
+            
+    End If 
+    
+End Sub 
+
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer) 
+    If (cmdPlay.Caption = "&amp;Stop") Then 
+        cmdPlay_Click 
+    End If 
+End Sub 
+</pre><p>When you click on the command button, the code starts a DoEvents loop in which it checks if the Right Key or Left Key are pressed. When one is pressed, it changes the background and foreground colours of the Picture Box and displays the QBColor code.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Get the state of a key at any time</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 1998-2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 28 November 2002</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Get_The_State_of_a_Key_At_Any_Time/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:15 GMT -->
+</html>

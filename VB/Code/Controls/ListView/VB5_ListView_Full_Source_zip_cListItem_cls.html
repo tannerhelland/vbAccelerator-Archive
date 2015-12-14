@@ -1,0 +1,490 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/ListView/VB5_ListView_Full_Source_zip_cListItem_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:23 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cListItem.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cListItem.cls" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator ListView Control</a>&#160;.&#160;<a href="VB5_ListView_Full_Source.html">VB5 ListView Full Source</a>&#160;.&#160;cListItem.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_ListView_Control.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ListView Control</a> (84K)</p><p class="nav"><a href="VB5_ListView_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ListView Demonstration</a> (200K)</p><p class="nav"><a href="VB5_ListView_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ListView Full Source</a> (344K)</p><p /><p class="nav"><a href="VB6_ListView_Control.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ListView Control</a> (85K)</p><p class="nav"><a href="VB6_ListView_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ListView Demonstration</a> (196K)</p><p class="nav"><a href="VB6_ListView_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ListView Full Source</a> (341K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:4133</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4133&amp;type=Zip&amp;title=VB5%20ListView%20Full%20Source%2Ezip%5FcListItem">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 8 / 16</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 8 / 11</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:8 February 2004</p>
+<br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />20 Jun 2003<br /><p class="update">Bug fixes and minor enhancements to the control:</p><p class="update">The <span class="code">Selected</span> property of
+a ListItem always returned false, meaning it was impossible to 
+determine which items were selected in a multi-select ListView.
+Corrected. Same problem with the <span class="code">ItemCut</span>
+property.</p><p class="update"><span class="code">Icon</span> property of ListItem set
+the icon of the next item along in the control.  Fixed.</p><p class="update"><span class="code">Position</span> property added to the 
+ColumnHeader object to allow the order of the column headers to be read
+and set programmatically.</p><p class="update">Insert before parameter to the <span class="code">Add</span> method
+of the ListItems collection was ignored.  Corrected.</p><p class="update">Setting a column alignment to right caused the column to be
+centred, and vice-versa. Fixed.</p><p class="update">Mouse Up events were only generated for double-clicks.  Now
+corrected.</p><p class="update">A <span class="code">KeyDown</span> event was generated when
+a <span class="code">KeyUp</span> should have been.  Fixed</p><p class="update">Option to place the background image at a specified location
+rather than tile it added.</p><p class="update"><span class="code">NoColumnHeaders</span> property added to
+allow column headers to be hidden in Detail view.</p><p class="update">Added a call to <span class="code">LoadLibrary</span> on 
+Shell32.DLL to prevent crashes when using a manifest.</p><p class="update">Thanks to Ben Andersen, Ian Goodwin, Vasanth Raj, Greg Thomson,
+Frank Peters for the bug reports and code.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3376">Making VB Apply XP Visual Styles at Design and Debug Time</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1427">Adding XP Visual Styles to Your Visual Basic Application</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1024">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cListItem.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cListItem"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+Private m_hWnd As Long
+Private m_lPtr As Long
+Private m_lId As Long
+Private m_lIndex As Long
+
+Friend Function fInit(ByVal hwnd As Long, ByVal lId As Long, ByVal lPtr As Long)
+   m_hWnd = hwnd
+   m_lId = lId
+   m_lPtr = lPtr
+End Function
+
+Private Function pbVerify(ByRef ctlThis As vbalListViewCtl) As Boolean
+Dim lPtr As Long
+Dim ctl As vbalListViewCtl
+   If IsWindow(m_hWnd) Then
+      lPtr = GetProp(m_hWnd, gcObjectProp)
+      If Not (lPtr = 0) Then
+         Set ctlThis = ObjectFromPtr(lPtr)
+         m_lIndex = ctlThis.fVerifylParam(m_lPtr)
+         If m_lIndex &gt; 0 Then
+            ' Check this is still the right item:
+            Dim cI As pcListItem
+            Set cI = ObjectFromPtr(m_lPtr)
+            If m_lId = cI.ID Then
+               pbVerify = True
+            Else
+               gErr 3, "cListItem"
+            End If
+         Else
+            gErr 3, "cListItems"
+         End If
+      Else
+         gErr 1, "cListItems"
+      End If
+   Else
+      gErr 1, "cListItems"
+   End If
+End Function
+Public Property Get ToolTipText() As String
+Attribute ToolTipText.VB_Description = "Gets/sets the ToolTip text to display
+ for this item."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      ToolTipText = pc.ToolTipText
+   End If
+End Property
+Public Property Let ToolTipText(ByVal sText As String)
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      pc.ToolTipText = sText
+   End If
+End Property
+Public Property Get Text() As String
+Attribute Text.VB_Description = "Gets/sets the text of this item."
+Attribute Text.VB_UserMemId = 0
+Attribute Text.VB_MemberFlags = "200"
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Text = ctl.fItemCaption(m_lIndex)
+   End If
+End Property
+Public Property Let Text(ByVal sText As String)
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      ctl.fItemCaption(m_lIndex) = sText
+   End If
+End Property
+Public Property Get Key() As String
+Attribute Key.VB_Description = "Gets/sets the key of the item in the control."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      Key = pc.Key
+   End If
+End Property
+Public Property Let Key(ByVal sKey As String)
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      If ctl.fIsDuplicateItemKey(sKey) Then
+         gErr 5, "cListItem"
+      Else
+         Dim pc As pcListItem
+         Set pc = ObjectFromPtr(m_lPtr)
+         ctl.fChangeKey pc.Key, sKey
+         pc.Key = sKey
+      End If
+   End If
+End Property
+Public Property Get Index() As Long
+Attribute Index.VB_Description = "Gets/sets the index of the item within the
+ control."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      Index = ctl.fItemIndexForKey(pc.Key)
+   End If
+End Property
+Public Property Get ItemData() As Long
+Attribute ItemData.VB_Description = "Gets/sets a custom long value associated
+ with the item."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      ItemData = pc.ItemData
+   End If
+End Property
+Public Property Let ItemData(ByVal lItemData As Long)
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      pc.ItemData = lItemData
+   End If
+End Property
+Public Property Get Tag() As String
+Attribute Tag.VB_Description = "Gets/sets a custom string value associated with
+ this item."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      Tag = pc.Tag
+   End If
+End Property
+Public Property Let Tag(ByVal sTag As String)
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      pc.Tag = sTag
+   End If
+End Property
+Public Property Get BackColor() As OLE_COLOR
+Attribute BackColor.VB_Description = "Gets/sets the background colour of the
+ item when the control's CustomDraw mode is True.  Set to -1 to make the item
+ transparent."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      BackColor = pc.BackColor
+   End If
+End Property
+Public Property Let BackColor(ByVal oColor As OLE_COLOR)
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      pc.BackColor = oColor
+   End If
+End Property
+Public Property Get ForeColor() As OLE_COLOR
+Attribute ForeColor.VB_Description = "Gets/sets the foreground colour of the
+ item when the control's CustomDraw mode is True.  Set to -1 to use the
+ default."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      ForeColor = pc.ForeColor
+   End If
+End Property
+Public Property Let ForeColor(ByVal oColor As OLE_COLOR)
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      pc.ForeColor = oColor
+   End If
+End Property
+Public Property Get Font() As IFont
+Attribute Font.VB_Description = "Gets/sets the item font when the control's
+ CustomDraw mode is True.  Set to nothing to use the default."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      Set Font = pc.Font
+   End If
+End Property
+Public Property Let Font(ByVal iFnt As IFont)
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      Set pc.Font = iFnt
+   End If
+End Property
+Public Property Set Font(ByVal iFnt As IFont)
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      Set pc.Font = iFnt
+   End If
+End Property
+Public Property Get IconIndex() As Long
+Attribute IconIndex.VB_Description = "Gets/sets the 0-based index of the icon
+ to use in the ImageList for this item."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      IconIndex = pc.Icon
+   End If
+End Property
+Public Property Let IconIndex(ByVal lIconIndex As Long)
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      ctl.fItemIconIndex(m_lIndex) = lIconIndex
+   End If
+End Property
+Public Property Get StateIconIndex() As Long
+Attribute StateIconIndex.VB_Description = "Gets/sets the state icon index.  Not
+ implemented at this time."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      StateIconIndex = pc.StateIcon
+   End If
+End Property
+Public Property Let StateIconIndex(ByVal lIconIndex As Long)
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim pc As pcListItem
+      Set pc = ObjectFromPtr(m_lPtr)
+      ctl.fItemStateIconIndex(m_lIndex) = lIconIndex
+   End If
+End Property
+Public Property Get Checked() As Boolean
+Attribute Checked.VB_Description = "Gets/sets whether the item is checked or
+ not."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Checked = ctl.fItemChecked(m_lIndex)
+   End If
+End Property
+Public Property Let Checked(ByVal bChecked As Boolean)
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      ctl.fItemChecked(m_lIndex) = bChecked
+   End If
+End Property
+Public Property Get Hot() As Boolean
+Attribute Hot.VB_Description = "Gets/sets whether this item is Hot (shown as if
+ the mouse is tracking over it) or not."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Hot = ctl.fItemHot(m_lIndex)
+   End If
+End Property
+Public Property Let Hot(ByVal bHot As Boolean)
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      ctl.fItemHot(m_lIndex) = bHot
+   End If
+End Property
+Public Property Get Cut() As Boolean
+Attribute Cut.VB_Description = "Gets/sets whether the item displays faded, as
+ in Explorer when you Edit-&gt;Cut an item."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Cut = ctl.fItemCut(m_lIndex)
+   End If
+End Property
+Public Property Let Cut(ByVal bCut As Boolean)
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      ctl.fItemCut(m_lIndex) = bCut
+   End If
+End Property
+
+Public Property Get Indent() As Long
+Attribute Indent.VB_Description = "Gets/sets the identation of the item in
+ Report Mode."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Indent = ctl.fItemIndent(m_lIndex)
+   End If
+End Property
+Public Property Let Indent(ByVal lIndent As Long)
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      ctl.fItemIndent(m_lIndex) = lIndent
+   End If
+End Property
+
+Public Sub StartEdit()
+Attribute StartEdit.VB_Description = "Starts a label edit action."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      ctl.fStartEdit m_lIndex
+   End If
+End Sub
+Public Sub EnsureVisible()
+Attribute EnsureVisible.VB_Description = "Ensures this item is visible in the
+ control."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      ctl.fEnsureVisible m_lIndex
+   End If
+End Sub
+Public Property Get Selected() As Boolean
+Attribute Selected.VB_Description = "Gets/sets whether this item is selected or
+ not."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Selected = ctl.fItemSelected(m_lIndex)
+   End If
+End Property
+Public Property Let Selected(ByVal bState As Boolean)
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      ctl.fItemSelected(m_lIndex) = bState
+   End If
+End Property
+Public Property Get top() As Single
+Attribute top.VB_Description = "Gets/sets the Top position of this item within
+ the control."
+Dim ctl As vbalListViewCtl
+Dim lTop As Long
+Dim X As Single, Y As Single
+   If pbVerify(ctl) Then
+      lTop = ctl.fItemPositionY(m_lIndex)
+      ctl.fScale 0, lTop, X, Y
+      top = Y
+   End If
+End Property
+Public Property Let top(ByVal lTop As Single)
+Dim ctl As vbalListViewCtl
+Dim xPixels As Long, yPixels As Long
+   If pbVerify(ctl) Then
+      ctl.fUnScale 0, lTop, xPixels, yPixels
+      ctl.fSetItemPosition m_lIndex, ctl.fItemPositionX(m_lIndex), yPixels
+   End If
+End Property
+Public Property Get left() As Single
+Attribute left.VB_Description = "Gets/sets the left position of the item in the
+ control."
+Dim ctl As vbalListViewCtl
+Dim lLeft As Long
+Dim X As Single, Y As Single
+   If pbVerify(ctl) Then
+      lLeft = ctl.fItemPositionX(m_lIndex)
+      ctl.fScale lLeft, 0, X, Y
+      left = X
+   End If
+End Property
+Public Property Let left(ByVal lLeft As Single)
+Dim ctl As vbalListViewCtl
+Dim xPixels As Long, yPixels As Long
+   If pbVerify(ctl) Then
+      ctl.fUnScale lLeft, 0, xPixels, yPixels
+      ctl.fSetItemPosition m_lIndex, xPixels, ctl.fItemPositionY(m_lIndex)
+   End If
+End Property
+Public Property Get SubItems() As cSubItems
+Attribute SubItems.VB_Description = "Gets the collection of SubItems associated
+ with this item."
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      Dim cS As New cSubItems
+      cS.fInit m_hWnd, m_lId, m_lPtr
+      Set SubItems = cS
+   End If
+End Property
+Public Property Get Group() As cItemGroup
+Attribute Group.VB_Description = "Gets/sets the group that this item appears
+ in.  Requires ComCtl32.DLL v6.0."
+Dim ctl As vbalListViewCtl
+Dim lGroupId As Long
+Dim lGroupPtr As Long
+
+   If pbVerify(ctl) Then
+      ctl.fGetItemGroup m_lIndex, lGroupId, lGroupPtr
+      If Not (lGroupPtr = 0) Then
+         Dim cG As New cItemGroup
+         cG.fInit m_hWnd, lGroupId, lGroupPtr
+         Set Group = cG
+      End If
+   End If
+   
+End Property
+Public Property Let Group(cG As cItemGroup)
+   pSetGroup cG
+End Property
+Public Property Set Group(cG As cItemGroup)
+   pSetGroup cG
+End Property
+
+Private Sub pSetGroup(cG As cItemGroup)
+Dim ctl As vbalListViewCtl
+   If pbVerify(ctl) Then
+      ctl.fSetItemGroup m_lIndex, cG.Key
+   End If
+End Sub
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator ListView Control</a>&#160;.&#160;<a href="VB5_ListView_Full_Source.html">VB5 ListView Full Source</a>&#160;.&#160;cListItem.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 23 June 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/ListView/VB5_ListView_Full_Source_zip_cListItem_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:23 GMT -->
+</html>

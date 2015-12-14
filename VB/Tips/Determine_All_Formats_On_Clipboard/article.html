@@ -1,0 +1,169 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Determine_All_Formats_On_Clipboard/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:16 GMT -->
+<head>
+
+<title>vbAccelerator - Determine every format available on the clipboard, including custom formats</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="Whilst VB allows you to determine if the standard, recognised clipboard formats are on the clipboard, you can't determine if any other formats are present. So, for example, if you want to know if the clipboard contains data from Excel (which always pastes at least its own customised format called 'Wk1'), or if you want to determine whether Rich Text format is available to enable a Paste menu, you can't do it." /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Determine every format available on the clipboard, including custom formats</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:1013</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1013&amp;type=Article&amp;title=Determine%20every%20format%20available%20on%20the%20clipboard%2C%20including%20custom%20formats">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />1 Aug 1998<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1018">Read A Custom Clipboard Format</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3619">Customising Clipboard Use </a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Determine every format available on the clipboard, including custom formats</h1><p /><p>Whilst VB allows you to determine if the standard, recognised clipboard formats are on the clipboard, you can't determine if any other formats are present. So, for example, if you want to know if the clipboard contains data from Excel (which always pastes at least its own customised format called 'Wk1'), or if you want to determine whether Rich Text format is available to enable a Paste menu, you can't do it.</p><p>This tip shows how to determine all the formats currently available on the clipboard, including the customised formats.</p><p>Start a new project in VB. Add a Command button and a ListBox to the project's form, then add the following code:</p><pre>
+Private Declare Function CountClipboardFormats Lib "USER32" () As Long 
+Private Declare Function EnumClipboardFormats Lib "USER32" ( _
+    ByVal wFormat As Long) As Long 
+Private Declare Function OpenClipboard Lib "USER32" ( _
+    ByVal hWnd As Long) As Long 
+Private Declare Function CloseClipboard Lib "USER32" () As Long 
+Private Declare Function GetClipboardFormatName Lib "USER32" _
+    Alias "GetClipboardFormatNameA" _
+    (ByVal wFormat As Long, ByVal lpString As String, _
+    ByVal nMaxCount As Long) As Long 
+Private Enum EPredefinedClipboardFormatConstants 
+    [_First] = 1 
+    CF_TEXT = 1 
+    CF_BITMAP = 2 
+    CF_METAFILEPICT = 3 
+    CF_SYLK = 4 
+    CF_DIF = 5 
+    CF_TIFF = 6 
+    CF_OEMTEXT = 7 
+    CF_DIB = 8 
+    CF_PALETTE = 9 
+    CF_PENDATA = 10 
+    CF_RIFF = 11 
+    CF_WAVE = 12 
+    CF_UNICODETEXT = 13 
+    CF_ENHMETAFILE = 14 
+    CF_HDROP = 15 
+    CF_LOCALE = 16 
+    CF_MAX = 17 
+    [_Last] = 17 
+End Enum 
+
+
+Private Property Get FormatName( _ 
+        ByVal lFormatId As Long _ 
+    ) As String 
+' Returns the format name for a clipboard format id: 
+Dim lSize As Long 
+Dim sBuf As String 
+Dim lR As Long 
+    
+    If (lFormatId &gt;= EPredefinedClipboardFormatConstants.[_First] _
+        And lFormatId &lt;= EPredefinedClipboardFormatConstants.[_Last]) Then 
+        ' For pre-defined formats, we have to make the text 
+        ' up ourselves: 
+        Select Case lFormatId 
+        Case CF_TEXT 
+            FormatName = "Text" 
+        Case CF_BITMAP 
+            FormatName = "Bitmap Picture" 
+        Case CF_METAFILEPICT 
+            FormatName = "Meta-File Picture" 
+        Case CF_SYLK 
+            FormatName = "Microsoft Symbolic Link (SYLK) data." 
+        Case CF_DIF 
+            FormatName = "Software Arts' Data Interchange information." 
+        Case CF_TIFF = 6 
+            FormatName = "Tagged Image File Format (TIFF) Picture" 
+        Case CF_OEMTEXT 
+            FormatName = "Text (OEM)" 
+        Case CF_DIB 
+            FormatName = "DIB Bitmap Picture" 
+        Case CF_PALETTE 
+            FormatName = "Colour Palette" 
+        Case CF_PENDATA 
+            FormatName = "Pen Data" 
+        Case CF_RIFF 
+            FormatName = "RIFF Audio data" 
+        Case CF_WAVE 
+            FormatName = "Wave File" 
+        Case CF_UNICODETEXT 
+            FormatName = "Text (Unicode)" 
+        Case CF_ENHMETAFILE 
+            FormatName = "Enhanced Meta-File Picture" 
+        Case CF_HDROP 
+            FormatName = "File List" 
+        Case CF_LOCALE 
+            FormatName = "Text Locale Identifier" 
+        End Select 
+    Else 
+        ' For custom formats, we can ask the Clipboard for 
+        ' the registered name: 
+        lSize = 255 
+        sBuf = String$(lSize, 0) 
+        lR = GetClipboardFormatName(lFormatId, sBuf, lSize) 
+        If (lR &lt;&gt; 0) Then 
+            FormatName = Left$(sBuf, lR) 
+        End If 
+    End If 
+End Property 
+
+Private Sub Command1_Click() 
+Dim lR As Long 
+Dim iCount As Long 
+    
+    List1.Clear 
+
+    If (OpenClipboard(Me.hWnd)) Then 
+        lR = EnumClipboardFormats(0) 
+        If (lR &lt;&gt; 0) Then 
+            Do 
+                iCount = iCount + 1 
+                List1.AddItem FormatName(lR) 
+                List1.ItemData(List1.NewIndex) = lR 
+                lR = EnumClipboardFormats(lR) 
+            Loop While lR &lt;&gt; 0 
+        End If 
+    End If 
+    CloseClipboard 
+    
+End Sub 
+</pre><p>When you click the command button, the list box will be filled with a list of available data formats. The List field is set to the format name, and the item data of each item is set to the clipboard format's ID. To see custom formats in the list, try copying something from Word, Write or Internet Explorer before clicking the button.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Determine every format available on the clipboard, including custom formats</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Determine_All_Formats_On_Clipboard/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:17 GMT -->
+</html>

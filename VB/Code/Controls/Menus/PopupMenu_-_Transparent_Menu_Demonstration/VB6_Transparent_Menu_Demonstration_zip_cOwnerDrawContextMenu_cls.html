@@ -1,0 +1,275 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Menus/PopupMenu_-_Transparent_Menu_Demonstration/VB6_Transparent_Menu_Demonstration_zip_cOwnerDrawContextMenu_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:13 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cOwnerDrawContextMenu.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cOwnerDrawContextMenu.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Menus</a>&#160;.&#160;<a href="article.html">PopupMenu - Transparent Menu Demonstration</a>&#160;.&#160;<a href="VB6_Transparent_Menu_Demonstration.html">VB6 Transparent Menu Demonstration</a>&#160;.&#160;cOwnerDrawContextMenu.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Transparent_Menu_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Transparent Menu Demonstration</a> (32K)</p><p /><p class="nav"><a href="VB6_Transparent_Menu_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Transparent Menu Demonstration</a> (31K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:393</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=393&amp;type=Zip&amp;title=VB6%20Transparent%20Menu%20Demonstration%2Ezip%5FcOwnerDrawContextMenu">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Nov 2002<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2946">Window Shapes Using Layering</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cOwnerDrawContextMenu.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "cOwnerDrawContextMenu"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+'
+ ===============================================================================
+=======
+'
+' Name:     vbAccelerator Transparent Menu Demo
+' Author:   Steve McMahon (steve@vbaccelerator.com)
+' Date:     18 February 2001
+'
+' Requires: cNewMenu6.DLL
+'           SSUBTMR6.DLL
+'
+' Copyright  1998-2001 Steve McMahon for vbAccelerator
+'
+'
+ -------------------------------------------------------------------------------
+-------
+' Visit vbAccelerator - advanced free source code for VB programmers
+' http://vbaccelerator.com
+'
+'
+ -------------------------------------------------------------7-----------------
+-------
+
+Private Const WM_CONTEXTMENU = &amp;H7B&amp;
+Private Const WM_DESTROY = &amp;H2&amp;
+
+Public Event ContextMenu(ByVal Key As String, ByRef bDoDefault As Boolean)
+
+Implements ISubclass
+
+Private m_cP As cPopupMenu
+Private Type tContextMenuItem
+   sKey As String
+   lhWnd As Long
+   sPopupMenuKey As String
+   bUseStoreRestore As Boolean
+End Type
+Private m_tItems() As tContextMenuItem
+Private m_iItemCount As Long
+
+Public Sub Add(ByVal Key As String, ByVal hWnd As Long, ByVal sMenuKey As
+ String)
+Dim lIndex As Long
+   lIndex = plIndex(Key)
+   If lIndex = 0 Then
+      lIndex = plIndex(hWnd)
+      If lIndex = 0 Then
+         m_iItemCount = m_iItemCount + 1
+         ReDim Preserve m_tItems(1 To m_iItemCount) As tContextMenuItem
+         With m_tItems(m_iItemCount)
+            .sKey = Key
+            .lhWnd = hWnd
+            .sPopupMenuKey = sMenuKey
+         End With
+         pSubClass m_tItems(m_iItemCount).lhWnd
+      End If
+   End If
+End Sub
+Public Property Get hWnd(ByVal Key As String) As Long
+Dim lIndex As Long
+   lIndex = plIndex(Key)
+   If lIndex &gt; 0 Then
+      hWnd = m_tItems(lIndex).lhWnd
+   End If
+End Property
+Public Property Let hWnd(ByVal Key As String, ByVal hWnd As Long)
+Dim lIndex As Long
+   lIndex = plIndex(Key)
+   If lIndex &gt; 0 Then
+      pUnSubClass hWnd
+      m_tItems(lIndex).lhWnd = hWnd
+      pSubClass hWnd
+   End If
+End Property
+Private Function plIndex(Key As Variant) As Long
+Dim i As Long
+   If VarType(Key) = vbString Then
+      ' key search
+      For i = 1 To m_iItemCount
+         If m_tItems(i).sKey = Key Then
+            plIndex = i
+            Exit For
+         End If
+      Next i
+   Else
+      ' hwnd search
+      For i = 1 To m_iItemCount
+         If m_tItems(i).lhWnd = Key Then
+            plIndex = i
+            Exit For
+         End If
+      Next i
+   End If
+End Function
+
+Public Sub Remove(ByVal Key As String)
+Dim lIndex As Long
+Dim i As Long
+   lIndex = plIndex(Key)
+   If lIndex &gt; 0 Then
+      pUnSubClass m_tItems(lIndex).lhWnd
+      If m_iItemCount &gt; 1 Then
+         For i = lIndex To m_iItemCount - 1
+            LSet m_tItems(i) = m_tItems(i + 1)
+         Next i
+         m_iItemCount = m_iItemCount + 1
+         ReDim Preserve m_tItems(1 To m_iItemCount) As tContextMenuItem
+      Else
+         m_iItemCount = 0
+      End If
+   End If
+End Sub
+Public Property Let PopupMenu(cP As cPopupMenu)
+   pSetMenu cP
+End Property
+Public Property Set PopupMenu(cP As cPopupMenu)
+   pSetMenu cP
+End Property
+Private Sub pSetMenu(cP As cPopupMenu)
+   Set m_cP = cP
+End Sub
+Private Sub pSubClass(ByVal hWnd As Long)
+   AttachMessage Me, hWnd, WM_CONTEXTMENU
+   AttachMessage Me, hWnd, WM_DESTROY
+End Sub
+Private Sub pUnSubClass(ByVal hWnd As Long)
+   DetachMessage Me, hWnd, WM_CONTEXTMENU
+   DetachMessage Me, hWnd, WM_DESTROY
+End Sub
+Private Sub pClearUp()
+Dim i As Long
+   For i = 1 To m_iItemCount
+      pUnSubClass m_tItems(i).lhWnd
+   Next i
+   m_iItemCount = 0
+   Set m_cP = Nothing
+End Sub
+
+Private Sub Class_Terminate()
+   pClearUp
+End Sub
+
+Private Property Get LoWord(ByRef lThis As Long) As Long
+   LoWord = (lThis And &amp;HFFFF&amp;)
+End Property
+
+Private Property Get HiWord(ByRef lThis As Long) As Long
+   If (lThis And &amp;H80000000) = &amp;H80000000 Then
+      HiWord = ((lThis And &amp;H7FFF0000) \ &amp;H10000) Or &amp;H8000&amp;
+   Else
+      HiWord = (lThis And &amp;HFFFF0000) \ &amp;H10000
+   End If
+End Property
+
+
+Private Property Let ISubClass_MsgResponse(ByVal RHS As SSubTimer6.EMsgResponse)
+   '
+End Property
+
+Private Property Get ISubClass_MsgResponse() As SSubTimer6.EMsgResponse
+   ISubClass_MsgResponse = emrConsume
+End Property
+
+Private Function ISubClass_WindowProc(ByVal hWnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+Dim lR As Long
+Dim lIndex As Long
+Dim bDoDefault As Boolean
+Dim lX As Long, lY As Long
+   '
+   Select Case iMsg
+   Case WM_CONTEXTMENU
+      Debug.Print "ContextMenu"
+      
+      On Error Resume Next
+      lIndex = plIndex(hWnd)
+      If Err.Number = 0 And lIndex &gt; 0 Then
+         RaiseEvent ContextMenu(m_tItems(lIndex).sKey, bDoDefault)
+         
+         lR = m_cP.IndexForKey(m_tItems(lIndex).sPopupMenuKey)
+         If lR &gt; 0 Then
+            lX = LoWord(lParam)
+            lY = HiWord(lParam)
+            m_cP.ShowPopupAbsolute lX, lY, lR
+         Else
+            bDoDefault = True
+         End If
+      Else
+         bDoDefault = True
+      End If
+      
+      If bDoDefault Then
+         ISubClass_WindowProc = CallOldWindowProc(hWnd, iMsg, wParam, lParam)
+      End If
+      
+   Case WM_DESTROY
+      lIndex = plIndex(hWnd)
+      If lIndex &gt; 0 Then
+         On Error Resume Next
+         Remove m_tItems(lIndex).sKey
+      End If
+   End Select
+   '
+End Function
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Menus</a>&#160;.&#160;<a href="article.html">PopupMenu - Transparent Menu Demonstration</a>&#160;.&#160;<a href="VB6_Transparent_Menu_Demonstration.html">VB6 Transparent Menu Demonstration</a>&#160;.&#160;cOwnerDrawContextMenu.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Menus/PopupMenu_-_Transparent_Menu_Demonstration/VB6_Transparent_Menu_Demonstration_zip_cOwnerDrawContextMenu_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:13 GMT -->
+</html>

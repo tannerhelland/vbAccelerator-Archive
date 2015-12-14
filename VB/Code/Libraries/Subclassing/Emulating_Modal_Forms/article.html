@@ -1,0 +1,128 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Emulating_Modal_Forms/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:21 GMT -->
+<head>
+
+<title>vbAccelerator - Emulating Modal Forms</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Sometimes, the restrictions applied when showing a modal form can be restrictive.  For example,
+if your application can have more than one main view window, a modal dialog prevents any other
+form from being activated whilst the modal dialog is displayed.  Another example occurs when
+you want to try and show a Drop-Down Form or a floating toolbar from an otherwise
+modal form.  This article demonstrates how to emulate showing a modal form and fix these limitations.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;Emulating Modal Forms</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Emulated_Modality_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Emulated Modality Demonstration</a> (16K)</p><p /><p class="nav"><a href="VB6_Emulated_Modality_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Emulated Modality Demonstration</a> (15K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:13011</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13011&amp;type=Article&amp;title=Emulating%20Modal%20Forms">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />1 Nov 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1070">vbAccelerator Drop-Down and Popup Form Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=11826">vbAccelerator Office Docking Bar Control</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Emulating Modal Forms</h1><p class="splash">Demonstrates how to show non-modal forms and have them behave as if they were shown modally.</p><img src="emulatingModality.png" width="181" height="161" alt="Emulating Modality Demonstration" /><p /><p>
+Sometimes, the restrictions applied when showing a modal form can be restrictive.  For example,
+if your application can have more than one main view window, a modal dialog prevents any other
+form from being activated whilst the modal dialog is displayed.  Another example occurs when
+you want to try and show a <a href="http://www.vbaccelerator.com/article.asp?id=1070">Drop-Down Form</a> or a <a href="http://www.vbaccelerator.com/article.asp?id=11826">floating toolbar</a> from an otherwise
+modal form.  This article demonstrates how to emulate showing a modal form and fix these limitations.
+</p><h2>About Modal Forms</h2><p>
+Fundamentally there is really only one difference in showing a modal form compared to
+a non-modal one.  When you show a modal form, other forms in the application are disabled
+(set to VB <code>.Enabled = false</code>).  This prevents you from clicking on the other
+forms and when you switch to the application by Alt-Tabbing or clicking on it the modal
+form is brought to the front.  This means that there is a fairly simple path in VB code
+to emulate a modal form.  There are two other aspects to the behaviour that need to be
+considered:
+</p><ol><li>When the modal form is dismissed, you want the parent form to regain focus.  If it
+is still disabled when this occurs, then the parent form won't get the focus back.</li><li>Using the <span class="code">Show</span> method from VB stops further code from
+running until the modal dialog has closed.</li></ol><p>
+Resolving the first issue means you need to disable the main form prior to showing
+the dialog, detect when the dialog is closing and then re-enable the main form.
+To a degree this can be done using VB events, however, note the the <span class="code">Unload</span>
+event fires to late to re-enable the main form.  For this reason, you can use
+a <a href="http://www.vbaccelerator.com/article.asp?id=17">subclass</a> on the dialog to detect the 
+<span class="code">WM_SHOWWINDOW</span> message which is sent to it prior to the 
+Window being destroyed.
+</p><p>
+The second issue can easily be emulated by running a loop which simply calls 
+<span class="code">DoEvents</span> whilst the dialog is shown modally.  This
+isn't the most efficient method but realisitically isn't going to be much of a
+drain on CPU. 
+</p><p>
+Putting these techniques together allows us to create a class which manages
+showing a modal dialog using emulated techniques.
+</p><h2>About the <span class="code">cShowModal</span> class</h2><p>
+The aim of the <span class="code">cShowModal</span> class is to make the transition from
+using VB's <span class="code">Show vbModal</span> to the new technique as straightforward
+as possible.  Where in VB code you write:
+</p><pre>
+   ' Create dialog
+   Dim f As New frmDialog
+   ' Show modally
+   f.Show vbModal, Me
+   
+   ' f has now closed, do further processing
+</pre><p>
+With the emulated version you just need to create a new instance of the class and 
+use that rather than the <span class="code">Show</span> method:
+</p><pre>
+   ' Create dialog
+   Dim f As New frmDialog
+   ' Create emulated modal manager class:
+   Dim c As New cShowModal
+   ' Show Modally:
+   c.ShowModal f, Me
+
+   ' f has now closed, do further processing:
+</pre><p>
+If you try the demonstration project, you will see that you can either try showing
+the dialog using VB's standard methods, or using the emulated class.  When you use
+the emulated class, you can start doing things that VB doesn't let you do, such 
+as having two independent main windows which have their own independent modal dialogs, 
+and showing modeless dialogs from modal dialogs.
+</p><h2>Conclusion</h2><p>
+This article demonstrates how to wrap showing a VB form modelessly and have it behave
+as if it were a modal form.  The technique is not frequently needed, but it can be
+invaluable when creating sophisticated UIs that use floating and drop-down forms.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Subclassing</a>&#160;.&#160;Emulating Modal Forms</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 November 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Emulating_Modal_Forms/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:22 GMT -->
+</html>

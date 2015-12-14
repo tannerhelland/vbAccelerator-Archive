@@ -1,0 +1,434 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Colour_Depth_Reduction/VB5_Colour_Depth_Sample_zip_cImageProcessDIB_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:47 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cImageProcessDIB.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cImageProcessDIB.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;<a href="article.html">Colour Depth Control</a>&#160;.&#160;<a href="VB5_Colour_Depth_Sample.html">VB5 Colour Depth Sample</a>&#160;.&#160;cImageProcessDIB.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Colour_Depth_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Colour Depth Sample</a> (128K)</p><p /><p class="nav"><a href="VB6_Colour_Depth_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Colour Depth Sample</a> (123K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:3214</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3214&amp;type=Zip&amp;title=VB5%20Colour%20Depth%20Sample%2Ezip%5FcImageProcessDIB">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><p class="nav">&#160;&#160;Brian Schimpf</p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />13 Jan 2003<br /><p class="update">Added VB6 Version</p><p class="update">Tidied up the demonstration code classes to make them easier to reuse.</p><p class="update">Previously the optimal palette method was checking 3 times too many pixels in the 
+x direction. Now corrected; the performance is consequently a little better...</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3211">Optimised Colour Reduction Using Octrees</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3172">Floyd-Stucci Colour Reduction Methods and Gray Scaling</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3017">True Colour DIBSection</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cImageProcessDIB.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cColourReduceDIB"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+'
+ ===============================================================================
+===
+' cColourReduceDIB.cls
+' Copyright  1999 Steve McMahon
+' Visit vbAccelerator at http://vbaccelerator.com
+'
+' Provides functions for colour reduction of a cDIBSection
+' object:
+'  * Floyd-Stucci colour reduction to BW &amp; Arbitrary Palettes
+'  * Optimal Palette Generation using Octree-Colour Quantisation
+'  * Grey Scaling
+'
+'
+ ===============================================================================
+===
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Type SAFEARRAYBOUND
+    cElements As Long
+    lLbound As Long
+End Type
+Private Type SAFEARRAY2D
+    cDims As Integer
+    fFeatures As Integer
+    cbElements As Long
+    cLocks As Long
+    pvData As Long
+    Bounds(0 To 1) As SAFEARRAYBOUND
+End Type
+Private Declare Function VarPtrArray Lib "msvbvm50.dll" Alias "VarPtr" (Ptr()
+ As Any) As Long
+
+Private Declare Function timeGetTime Lib "winmm.dll" () As Long
+
+Public Event InitProgress(ByVal lMax As Long)
+Public Event Progress(ByVal lPosition As Long)
+Public Event Complete(ByVal lTimeMs As Long)
+
+Private Type tPalItem
+   rgbRed As Byte
+   rgbGreen As Byte
+   rgbBlue As Byte
+   lColorRef As Long
+End Type
+   
+
+Public Sub BlackAndWhite( _
+        ByRef cFrom As cDIBSection, _
+        ByRef cTo As cDIBSection _
+    )
+' Converts to Black and WHite using Floyd-Steinberg error diffusion
+' process.
+' see http://www.dcs.ed.ac.uk/~mxr/gfx/faqs/colourspace.faq for details.
+'
+Dim pict() As Byte
+Dim pict2() As Byte
+Dim sa As SAFEARRAY2D
+Dim sa2 As SAFEARRAY2D
+Dim x As Long, y As Long
+Dim i As Long, iCoeff As Long
+Dim lTIme As Long
+Dim xMax As Long, yMax As Long
+Dim lError As Long
+Dim lNew As Long
+Dim iC As Long, iC2 As Long
+
+    lTIme = timeGetTime()
+       
+    GrayScale cFrom
+       
+    ' have the local matrix point to bitmap pixels
+    With sa
+        .cbElements = 1
+        .cDims = 2
+        .Bounds(0).lLbound = 0
+        .Bounds(0).cElements = cTo.Height
+        .Bounds(1).lLbound = 0
+        .Bounds(1).cElements = cTo.BytesPerScanLine
+        .pvData = cTo.DIBSectionBitsPtr
+    End With
+    CopyMemory ByVal VarPtrArray(pict), VarPtr(sa), 4
+    ' Pict now stores the To buffer
+        
+    ' have the local matrix point to bitmap pixels
+    With sa2
+        .cbElements = 1
+        .cDims = 2
+        .Bounds(0).lLbound = 0
+        .Bounds(0).cElements = cFrom.Height
+        .Bounds(1).lLbound = 0
+        .Bounds(1).cElements = cFrom.BytesPerScanLine
+        .pvData = cFrom.DIBSectionBitsPtr
+    End With
+    CopyMemory ByVal VarPtrArray(pict2), VarPtr(sa2), 4
+    ' Pict2 now stores the From buffer
+
+
+    yMax = cTo.Height - 1
+    xMax = (cTo.Width - 1) * 3
+    
+    RaiseEvent InitProgress(xMax)
+    For x = 0 To xMax Step 3
+        For y = 0 To yMax
+            ' Apply a simple threshold:
+            If (pict2(x, y) &gt; 128) Then
+                iC = iC + 1
+                pict(x, y) = 255
+                pict(x + 1, y) = 255
+                pict(x + 2, y) = 255
+                lError = (255 - pict2(x, y)) - 128
+            Else
+                iC2 = iC2 + 1
+                pict(x, y) = 0
+                pict(x + 1, y) = 0
+                pict(x + 2, y) = 0
+                ' Black tolerance:
+                If (pict2(x, y) &gt; 16) Then
+                    lError = pict2(x, y)
+                Else
+                    lError = 0
+                End If
+            End If
+            
+            ' Diffuse the error:
+            If (x &lt; xMax - 3) Then
+                lNew = pict2(x + 3, y) + (lError * 7) \ 16
+                If (lNew &gt; 255) Then lNew = 255
+                If (lNew &lt; 0) Then lNew = 0
+                pict2(x + 3, y) = lNew
+                pict2(x + 4, y) = lNew
+                pict2(x + 5, y) = lNew
+            End If
+            If (y &lt; yMax) Then
+                For i = -3 To 3 Step 3
+                    If (x + i) &gt; 0 And (x + i) &lt; xMax Then
+                        Select Case i
+                        Case -3
+                            iCoeff = 3
+                        Case 0
+                            iCoeff = 5
+                        Case 3
+                            iCoeff = 1
+                        End Select
+                        lNew = pict2(x + i, y + 1) + (lError * iCoeff) \ 16
+                        If (lNew &gt; 255) Then lNew = 255
+                        If (lNew &lt; 0) Then lNew = 0
+                        pict2(x + i, y + 1) = lNew
+                        pict2(x + i + 1, y + 1) = lNew
+                        pict2(x + i + 2, y + 1) = lNew
+                    End If
+                Next i
+            End If
+        Next y
+        RaiseEvent Progress(x)
+    Next x
+    
+    ' clear the temporary array descriptor
+    ' without destroying the local temporary array
+    CopyMemory ByVal VarPtrArray(pict), 0&amp;, 4
+    CopyMemory ByVal VarPtrArray(pict2), 0&amp;, 4
+    
+    cFrom.LoadPictureBlt cTo.hdc
+    RaiseEvent Complete(timeGetTime - lTIme)
+    
+    
+End Sub
+
+Public Sub ApplyPalette( _
+      ByRef cFrom As cDIBSection, _
+      ByRef cTo As cDIBSection, _
+      ByRef cPal As cPalette, _
+      Optional ByVal bDiffuseError As Boolean = True _
+   )
+'
+Dim pict() As Byte
+Dim pict2() As Byte
+Dim sa As SAFEARRAY2D
+Dim sa2 As SAFEARRAY2D
+Dim x As Long, y As Long
+Dim i As Long, iCoeff As Long, j As Long
+Dim lTIme As Long
+Dim xMax As Long, yMax As Long
+Dim lErrorRed As Long, lErrorBlue As Long, lErrorGreen As Long
+Dim lNewRed As Long, lNewBlue As Long, lNewGreen As Long
+Dim lIndex As Long
+Dim iC As Long, iC2 As Long
+
+
+    lTIme = timeGetTime()
+       
+    ' have the local matrix point to bitmap pixels
+    With sa
+        .cbElements = 1
+        .cDims = 2
+        .Bounds(0).lLbound = 0
+        .Bounds(0).cElements = cTo.Height
+        .Bounds(1).lLbound = 0
+        .Bounds(1).cElements = cTo.BytesPerScanLine
+        .pvData = cTo.DIBSectionBitsPtr
+    End With
+    CopyMemory ByVal VarPtrArray(pict), VarPtr(sa), 4
+    ' Pict now stores the To buffer
+        
+    ' have the local matrix point to bitmap pixels
+    With sa2
+        .cbElements = 1
+        .cDims = 2
+        .Bounds(0).lLbound = 0
+        .Bounds(0).cElements = cFrom.Height
+        .Bounds(1).lLbound = 0
+        .Bounds(1).cElements = cFrom.BytesPerScanLine
+        .pvData = cFrom.DIBSectionBitsPtr
+    End With
+    CopyMemory ByVal VarPtrArray(pict2), VarPtr(sa2), 4
+    ' Pict2 now stores the From buffer
+   
+    yMax = cTo.Height - 1
+    xMax = (cTo.Width - 1) * 3
+    
+    RaiseEvent InitProgress(xMax)
+    For x = 0 To xMax Step 3
+        For y = 0 To yMax
+            ' Get nearest colour:
+            
+            lIndex = cPal.ClosestIndex(pict2(x + 2, y), pict2(x + 1, y),
+             pict2(x, y))
+                                 
+            pict(x + 2, y) = cPal.Red(lIndex)
+            pict(x + 1, y) = cPal.Green(lIndex)
+            pict(x, y) = cPal.Blue(lIndex)
+                        
+            If bDiffuseError Then
+               lErrorRed = -1 * (CLng(pict(x + 2, y)) - pict2(x + 2, y))
+               lErrorGreen = -1 * (CLng(pict(x + 1, y)) - pict2(x + 1, y))
+               lErrorBlue = -1 * (CLng(pict(x, y)) - pict2(x, y))
+               
+               ' Diffuse the error:
+               'Debug.Print lErrorRed, lErrorGreen, lErrorBlue
+               If Abs(lErrorRed) + Abs(lErrorGreen) + Abs(lErrorBlue) &gt; 3 Then
+                  If (x &lt; xMax - 3) Then
+                      lNewBlue = pict2(x + 3, y) + (lErrorBlue * 7) \ 16
+                      lNewGreen = pict2(x + 4, y) + (lErrorGreen * 7) \ 16
+                      lNewRed = pict2(x + 5, y) + (lErrorRed * 7) \ 16
+                      Range lNewBlue, 0, 255
+                      Range lNewGreen, 0, 255
+                      Range lNewRed, 0, 255
+                      pict2(x + 3, y) = lNewBlue
+                      pict2(x + 4, y) = lNewGreen
+                      pict2(x + 5, y) = lNewRed
+                  End If
+                  If (y &lt; yMax) Then
+                      For i = -3 To 3 Step 3
+                          If (x + i) &gt; 0 And (x + i) &lt; xMax Then
+                              Select Case i
+                              Case -3
+                                  iCoeff = 0
+                              Case 0
+                                  iCoeff = 4
+                              Case 3
+                                  iCoeff = 0
+                              End Select
+                              lNewBlue = pict2(x + i, y + 1) + (lErrorBlue *
+                               iCoeff) \ 16
+                              lNewGreen = pict2(x + i + 1, y + 1) +
+                               (lErrorGreen * iCoeff) \ 16
+                              lNewRed = pict2(x + i + 2, y + 1) + (lErrorRed *
+                               iCoeff) \ 16
+                              Range lNewBlue, 0, 255
+                              Range lNewGreen, 0, 255
+                              Range lNewRed, 0, 255
+                              pict2(x + i, y + 1) = lNewBlue
+                              pict2(x + i + 1, y + 1) = lNewGreen
+                              pict2(x + i + 2, y + 1) = lNewRed
+                          End If
+                      Next i
+                  End If
+               End If
+            End If
+        Next y
+        RaiseEvent Progress(x)
+    Next x
+    
+    ' clear the temporary array descriptor
+    ' without destroying the local temporary array
+    CopyMemory ByVal VarPtrArray(pict), 0&amp;, 4
+    CopyMemory ByVal VarPtrArray(pict2), 0&amp;, 4
+    
+    Debug.Print iC, iC2
+    cFrom.LoadPictureBlt cTo.hdc
+    RaiseEvent Complete(timeGetTime - lTIme)
+    
+    
+End Sub
+   
+Private Sub Range( _
+      ByRef lIn As Long, _
+      ByVal lMin As Long, _
+      ByVal lMax As Long _
+   )
+   If (lIn &lt; lMin) Then
+      lIn = lMin
+   ElseIf (lIn &gt; lMax) Then
+      lIn = lMax
+   End If
+End Sub
+
+Public Sub GrayScale( _
+        ByRef cTo As cDIBSection _
+    )
+' Gray scale using standard intensity components.
+' see http://www.dcs.ed.ac.uk/~mxr/gfx/faqs/colourspace.faq for details.
+'
+Dim bDib() As Byte
+Dim x As Long, y As Long
+Dim xMax As Long, yMax As Long
+Dim bContinue As Boolean
+Dim lB As Long, lG As Long, lR As Long
+Dim lGray As Long
+Dim lTIme As Long
+Dim tSA As SAFEARRAY2D
+
+    lTIme = timeGetTime()
+        
+    ' have the local matrix point to bitmap pixels
+    With tSA
+        .cbElements = 1
+        .cDims = 2
+        .Bounds(0).lLbound = 0
+        .Bounds(0).cElements = cTo.Height
+        .Bounds(1).lLbound = 0
+        .Bounds(1).cElements = cTo.BytesPerScanLine
+        .pvData = cTo.DIBSectionBitsPtr
+    End With
+    CopyMemory ByVal VarPtrArray(bDib), VarPtr(tSA), 4
+        
+    yMax = cTo.Height - 1
+    xMax = cTo.Width - 1
+    
+    RaiseEvent InitProgress(xMax)
+    For x = 0 To (xMax * 3) Step 3
+        For y = 0 To yMax
+            lB = bDib(x, y)
+            lG = bDib(x + 1, y)
+            lR = bDib(x + 2, y)
+                
+            'But now all people *should* use the most accurate, it means ITU
+             standard:
+            lGray = (222 * lR + 707 * lG + 71 * lB) / 1000
+            
+            bDib(x, y) = lGray
+            bDib(x + 1, y) = lGray
+            bDib(x + 2, y) = lGray
+        Next y
+        RaiseEvent Progress(x)
+    Next x
+    
+    ' clear the temporary array descriptor
+    ' without destroying the local temporary array
+    CopyMemory ByVal VarPtrArray(bDib), 0&amp;, 4
+    
+    RaiseEvent Complete(timeGetTime - lTIme)
+    
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;<a href="article.html">Colour Depth Control</a>&#160;.&#160;<a href="VB5_Colour_Depth_Sample.html">VB5 Colour Depth Sample</a>&#160;.&#160;cImageProcessDIB.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Colour_Depth_Reduction/VB5_Colour_Depth_Sample_zip_cImageProcessDIB_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:47 GMT -->
+</html>

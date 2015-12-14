@@ -1,0 +1,505 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Skins/VB5_NeoCaption_Full_Source_zip_cToolbarMenu_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:13 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cToolbarMenu.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cToolbarMenu.cls" /><link rel="stylesheet" href="../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator NeoCaption Component v2.0</a>&#160;.&#160;<a href="VB5_NeoCaption_Full_Source.html">VB5 NeoCaption Full Source</a>&#160;.&#160;cToolbarMenu.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Skins.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />Skins</a> (52K)</p><p /><p class="nav"><a href="VB5_NeoCaption_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 NeoCaption Demonstration</a> (114K)</p><p class="nav"><a href="VB5_NeoCaption_DLL.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 NeoCaption DLL</a> (74K)</p><p class="nav"><a href="VB5_NeoCaption_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 NeoCaption Full Source</a> (239K)</p><p /><p class="nav"><a href="VB6_NeoCaption_Demonstration.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 NeoCaption Demonstration</a> (127K)</p><p class="nav"><a href="VB6_NeoCaption_DLL.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 NeoCaption DLL</a> (74K)</p><p class="nav"><a href="VB6_NeoCaption_Full_Source.html"><img src="../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 NeoCaption Full Source</a> (253K)</p><br /><br /><img src="../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:870</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=870&amp;type=Zip&amp;title=VB5%20NeoCaption%20Full%20Source%2Ezip%5FcToolbarMenu">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 3 / 3</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:10 November 2003</p>
+<br /><br /><img src="../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../res/update.png" width="8" height="8" alt="Update" />21 Feb 2002<br /><p class="update">Release of Version 2.0.</p><p class="update">Fixes for support of different sized skinning parts.</p><p class="update">New <i>cSkinConfiguration</i> object for setting up the skin, which
+includes XML serialization and deserialization</p><p class="update">Colour customisation using HLS and RGB added.</p><p class="update">Transparent colour now added.</p><p class="update">Three new skins included.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cToolbarMenu.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cToolbarMenu"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+' =======================================================================
+' FileName:    cToolbarMenu
+' Author:      Steve McMahon
+' Date:        8 Feb 2000
+'
+' Allows menus to pop up and cancel as the user hovers
+' over toolbar buttons.
+'
+'
+' Copyright  2000 Steve McMahon
+' =======================================================================
+
+Private Enum TRACKINGSTATE   '{ // menubar has three states:
+   TRACK_NONE = 0 ',   // * normal, not tracking anything
+   TRACK_BUTTON ',     // * tracking buttons (F10/Alt mode)
+   TRACK_POPUP       '// * tracking popups
+End Enum
+
+' Track popup menu constants:
+
+Private m_iTrackingState As TRACKINGSTATE
+Private m_bProcessRightArrow As Boolean
+Private m_bProcessLeftArrow  As Boolean
+Private m_hMenuTracking As Long
+Private m_iPopupTracking As Long
+Private m_bEscapeWasPressed As Boolean
+Private m_tPMouse As POINTAPI
+Private m_iNewPopup As Long
+Private m_bIn As Boolean
+
+Private m_hWnd As Long
+Private m_lPtr As Long
+
+Private m_iExit As Integer
+
+Implements ISubclass
+
+
+Friend Sub CoolMenuAttach(ByRef hWndA As Long, ByVal cBar As cMenuBar)
+Dim lPtr As Long
+
+   m_iExit = 0
+   CoolMenuDetach
+   m_hWnd = hWndA
+   SendMessageLong m_hWnd, WM_ENTERMENULOOP, 0, 0
+   AttachMessage Me, m_hWnd, WM_MENUSELECT
+   m_lPtr = ObjPtr(cBar)
+   
+End Sub
+Friend Sub CoolMenuDetach()
+   If (m_hWnd &lt;&gt; 0) Then
+      SendMessageLong m_hWnd, WM_EXITMENULOOP, 0, 0
+      DetachMessage Me, m_hWnd, WM_MENUSELECT
+      m_hWnd = 0
+   End If
+   m_hWnd = 0
+   m_lPtr = 0
+End Sub
+
+'/////////////////
+'// When user selects a new menu item, note whether it has a submenu
+'// and/or parent menu, so I know whether right/left arrow should
+'// move to the next popup.
+'//
+Private Sub MenuSelect(ByVal hMenu As Long, ByVal iItem As Long)
+   If (m_iTrackingState &gt; 0) Then
+      '// process right-arrow if item is NOT a submenu
+      m_bProcessRightArrow = (GetSubMenu(hMenu, iItem) = 0)
+      '// process left-arrow if curent menu is one I'm tracking
+      m_bProcessLeftArrow = (hMenu = m_hMenuTracking)
+   End If
+End Sub
+
+
+'//////////////////
+'// Handle menu input event: Look for left/right to change popup menu,
+'// mouse movement over over a different menu button for "hot" popup effect.
+'// Returns TRUE if message handled (to eat it).
+'//
+Friend Function MenuInput(m As Msg) As Boolean
+Dim iMsg As Long
+Dim vKey As Long
+Dim tP As POINTAPI
+Dim iButton As Long
+
+   'ASSERT_VALID(this);
+   Debug.Assert m_iTrackingState = TRACK_POPUP  '; // sanity check
+   iMsg = m.message
+
+   If (iMsg = WM_KEYDOWN) Then
+      
+      '// handle left/right-arow.
+      vKey = m.wParam
+      If ((vKey = vbKeyLeft And m_bProcessLeftArrow) Or _
+         (vKey = vbKeyRight And m_bProcessRightArrow)) Then
+
+         'MBTRACE(_T("CMenuBar::OnMenuInput: handle VK_LEFT/RIGHT\n"));
+         CancelMenuAndTrackNewOne _
+            GetNextOrPrevButton(m_iPopupTracking, vKey = vbKeyLeft)
+         MenuInput = True ' // eat it
+      
+      ' // escape:
+      ElseIf (vKey = vbKeyEscape) Then
+         m_bEscapeWasPressed = True ';    // (menu will abort itself)
+      End If
+      
+   ElseIf (iMsg = WM_MOUSEMOVE Or iMsg = WM_LBUTTONDOWN) Then
+      '// handle mouse move or click
+      LSet tP = m.pt
+      'ScreenToClient m_hWndBand, tP
+
+      If (iMsg = WM_MOUSEMOVE) Then
+         'If (tP.X &lt;&gt; m_tPMouse.X) And (tP.Y &lt;&gt; m_tPMouse.Y) Then
+            iButton = HitTest(tP)
+            If IsValidButton(iButton) Then
+               If iButton &lt;&gt; m_iPopupTracking Then
+                  '// user moved mouse over a different button: track its popup
+                  CancelMenuAndTrackNewOne iButton
+               End If
+            End If
+            LSet m_tPMouse = tP
+         'End If
+      ElseIf iMsg = WM_LBUTTONDOWN Then
+         If (HitTest(tP) = m_iPopupTracking) Then
+            '// user clicked on same button I am tracking: cancel menu
+            'MBTRACE(_T("CMenuBar:OnMenuInput: handle mouse click to exit
+             popup\n"));
+            CancelMenuAndTrackNewOne -1
+            MenuInput = True ' // eat it
+         End If
+      End If
+      
+   ElseIf iMsg = WM_LBUTTONUP Or iMsg = WM_RBUTTONUP Then
+   
+   End If
+
+End Function
+
+Private Function HitTest(pt As POINTAPI) As Long
+Dim cBar As cMenuBar
+   If GetBar(cBar) Then
+      HitTest = cBar.HitTest(pt)
+   End If
+
+End Function
+Private Property Get IsValidButton(ByVal iButton As Long) As Boolean
+   If (iButton &gt; 0) Then
+      IsValidButton = True
+   End If
+End Property
+
+'//////////////////
+'// Cancel the current popup menu by posting WM_CANCELMODE, and track a new
+'// menu. iNewPopup is which new popup to track (-1 to quit).
+'//
+Private Sub CancelMenuAndTrackNewOne(ByVal iNewPopup As Long)
+Dim cBar As cMenuBar
+Dim hMenuPopup As Long
+   'MBTRACE(_T("CMenuBar::CancelMenuAndTrackNewOne: %d\n"), iNewPopup);
+   'ASSERT_VALID(this);
+   If iNewPopup &gt; 0 Then
+      If (iNewPopup &lt;&gt; m_iPopupTracking) Then
+         If GetBar(cBar) Then
+            hMenuPopup = cBar.GetMenuHandle(iNewPopup)
+            If hMenuPopup &lt;&gt; 0 Then
+               'PostMessage m_hWndOwner, WM_CANCELMODE, 0, 0 ' // quit menu loop
+               PostMessage m_hWnd, WM_CANCELMODE, 0, 0
+               m_iNewPopup = iNewPopup                '// go to this popup (-1
+                = quit)
+            End If
+         End If
+      End If
+   End If
+End Sub
+
+'//////////////////
+'// Track the popup submenu associated with the i'th button in the menu bar.
+'// This fn actually goes into a loop, tracking different menus until the user
+'// selects a command or exits the menu.
+'//
+Friend Function TrackPopup(ByVal iButton As Long) As Long
+Dim nMenuItems As Long
+Dim tPM As TPMPARAMS
+Dim rcButton As RECT
+Dim pt As POINTAPI
+Dim hMenuPopup As Long
+Dim lR As Long
+Dim hwnd As Long
+Dim lRtnID As Long
+Dim cBar As cMenuBar
+
+   If Not m_bIn Then
+      m_bIn = True
+      m_iNewPopup = iButton
+      'Debug.Assert m_hMenu &lt;&gt; 0
+      If GetBar(cBar) Then
+         
+         nMenuItems = cBar.Count 'GetMenuItemCount(m_hMenu)
+      
+         Do While (m_iNewPopup &gt; -1)               '// while user selects
+          another menu
+            
+            lRtnID = 0
+      
+            m_iNewPopup = -1                '// assume quit after this
+            PressButton iButton, True       '// press the button
+            'UpdateWindow ToolbarhWnd(m_hWnd)             '// and force repaint
+             now
+      
+            SetTrackingState TRACK_POPUP, iButton '// enter tracking state
+      
+            '// Need to install a hook to trap menu input in order to make
+            '// left/right-arrow keys and "hot" mouse tracking work.
+            '//
+            AttachMsgHook Me
+      
+            '// get submenu and display it beneath button
+            GetRect iButton, rcButton
+            'ClientRectToScreen m_hWndBand, rcButton
+            tPM.cbSize = Len(tPM)
+            ComputeMenuTrackPoint rcButton, tPM, pt
+            
+            'hMenuPopup = GetSubMenu(m_hMenu, iButton)
+            hMenuPopup = cBar.GetMenuHandle(iButton)
+            
+            If hMenuPopup &lt;&gt; 0 Then
+               ' Show the menu:
+               m_hMenuTracking = hMenuPopup
+               lR = TrackPopupMenuEx(hMenuPopup, _
+                  TPM_LEFTALIGN Or TPM_LEFTBUTTON Or TPM_VERTICAL, _
+                  pt.x, pt.y, m_hWnd, tPM)
+               'lR is the ID of the menu
+               lRtnID = lR
+            End If
+                  
+            '// uninstall hook.
+            DetachMsgHook
+      
+            PressButton iButton, False    ';   // un-press button
+            'UpdateWindow ToolbarhWNd(m_hWnd)                '// and force
+             repaint now
+            
+            '// If the user exited the menu loop by pressing Escape,
+            '// return to track-button state; otherwise normal non-tracking
+             state.
+            If (m_bEscapeWasPressed) Then
+               SetTrackingState TRACK_NONE, iButton
+            Else
+               SetTrackingState TRACK_NONE, iButton
+            End If
+            
+            '// If the user moved mouse to a new top-level popup (eg from File
+             to
+            '// Edit button), I will have posted a WM_CANCELMODE to quit
+            '// the first popup, and set m_iNewPopup to the new menu to show.
+            '// Otherwise, m_iNewPopup will be -1 as set above.
+            '// So just set iButton to the next popup menu and keep looping...
+            iButton = m_iNewPopup
+            
+         Loop
+      
+         ' Set hot button if mouse is over, otherwise not:
+         
+         ' The ID of the selected menu
+         TrackPopup = lRtnID
+      End If
+      m_bIn = False
+   End If
+End Function
+Private Sub ComputeMenuTrackPoint(ByRef rc As RECT, tPM As TPMPARAMS, tP As
+ POINTAPI)
+   tP.x = rc.left
+   tP.y = rc.bottom
+   LSet tPM.rcExclude = rc
+End Sub
+
+Private Function GetBar(ByRef cBar As cMenuBar) As Boolean
+   If Not m_lPtr = 0 Then
+      Set cBar = ObjectFromPtr(m_lPtr)
+      'Debug.Print "GetBar:OK"
+      GetBar = True
+   End If
+End Function
+
+Private Sub PressButton(ByVal iButton As Long, ByVal bState As Boolean)
+Dim fState As Long
+Dim cBar As cMenuBar
+
+   If GetBar(cBar) Then
+      If iButton &gt; 0 And iButton &lt;= cBar.Count Then
+         cBar.PressButton iButton, bState
+      End If
+   End If
+
+End Sub
+
+Private Sub GetRect(ByVal iButton As Long, ByRef tR As RECT)
+Dim cBar As cMenuBar
+   tR.left = 0: tR.top = 0: tR.bottom = 0: tR.right = 0
+   If GetBar(cBar) Then
+      If iButton &gt; 0 And iButton &lt;= cBar.Count Then
+         cBar.GetRect iButton, tR
+      End If
+   End If
+End Sub
+Private Function GetHotItem() As Long
+Dim cBar As cMenuBar
+   If GetBar(cBar) Then
+      GetHotItem = cBar.HotItem
+   End If
+End Function
+Private Function SetHotItem(ByVal iButton As Long) As Long
+Dim cBar As cMenuBar
+   If GetBar(cBar) Then
+      'Debug.Print "Setting hot item: " &amp; iButton
+      cBar.HotItem = iButton
+   End If
+End Function
+Private Function GetButtonVisible(ByVal iButton As Long) As Boolean
+   GetButtonVisible = True
+End Function
+Private Function GetButtonCount() As Long
+Dim cBar As cMenuBar
+   If GetBar(cBar) Then
+      GetButtonCount = cBar.Count
+   End If
+End Function
+
+Private Sub SetTrackingState(ByVal iState As TRACKINGSTATE, ByVal iButton As
+ Long)
+   If (iState &lt;&gt; m_iTrackingState) Then
+      If (iState = TRACK_NONE) Then
+         iButton = -1
+      End If
+'#ifdef _DEBUG
+'      static LPCTSTR StateName[] = { _T("NONE"), _T("BUTTON"), _T("POPUP") };
+'      MBTRACE(_T("CMenuBar::SetTrackingState to %s, button=%d\n"),
+'         StateName[iState], iButton);
+'#End If
+
+      SetHotItem iButton              '// could be none (-1)
+
+      If (iState = TRACK_POPUP) Then
+         '// set related state stuff
+         m_bEscapeWasPressed = False 'FALSE;   // assume Esc key not pressed
+         m_bProcessRightArrow = True        '// assume left/right arrow..
+         m_bProcessLeftArrow = True         '; // ..will move to prev/next popup
+         m_iPopupTracking = iButton          '// which popup I'm tracking
+      End If
+      m_iTrackingState = iState
+   End If
+End Sub
+
+
+Private Function GetNextOrPrevButton(ByVal iButton As Long, ByVal bPrev As
+ Boolean) As Long
+Dim iSB As Long
+Dim bfound As Boolean
+
+   If (bPrev) Then
+      iSB = iButton
+      Do While Not bfound
+         
+         iButton = iButton - 1
+         If iButton &lt; 1 Then
+            iButton = GetButtonCount()
+         End If
+         
+         If Not (GetButtonVisible(iButton)) Then
+            If iButton = iSB Then
+               iButton = -1
+               Exit Do
+            End If
+         Else
+            bfound = True
+         End If
+         
+      Loop
+      
+   Else
+      iSB = iButton
+      Do While Not bfound
+         iButton = iButton + 1
+         If (iButton &gt; GetButtonCount()) Then
+            iButton = 1
+         End If
+         
+         If Not GetButtonVisible(iButton) Then
+            If iButton = iSB Then
+               iButton = -1
+               Exit Do
+            End If
+         Else
+            bfound = True
+         End If
+         
+      Loop
+      
+   End If
+   GetNextOrPrevButton = iButton
+End Function
+'//////////////////
+'// Toggle state from home state to button-tracking and back
+'//
+Private Sub ToggleTrackButtonMode()
+   If (m_iTrackingState = TRACK_NONE Or m_iTrackingState = TRACK_BUTTON) Then
+      If m_iTrackingState = TRACK_NONE Then
+         SetTrackingState TRACK_BUTTON, 1
+      Else
+         SetTrackingState TRACK_NONE, 1
+     End If
+   End If
+End Sub
+
+
+
+Private Property Get ISubclass_MsgResponse() As SSubTimer.EMsgResponse
+   If CurrentMessage = WM_MENUSELECT Then
+      ISubclass_MsgResponse = emrPreprocess
+   End If
+End Property
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As SSubTimer.EMsgResponse)
+   '
+End Property
+
+
+Private Function ISubclass_WindowProc(ByVal hwnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+   Select Case iMsg
+   Case WM_MENUSELECT
+      MenuSelect lParam, (wParam And &amp;HFFFF&amp;)
+   End Select
+End Function
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../index.html">VB</a>&#160;.&#160;<a href="../../index.html">Code</a>&#160;.&#160;<a href="../index.html">Controls</a>&#160;.&#160;<a href="article.html">vbAccelerator NeoCaption Component v2.0</a>&#160;.&#160;<a href="VB5_NeoCaption_Full_Source.html">VB5 NeoCaption Full Source</a>&#160;.&#160;cToolbarMenu.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Skins/VB5_NeoCaption_Full_Source_zip_cToolbarMenu_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:13 GMT -->
+</html>

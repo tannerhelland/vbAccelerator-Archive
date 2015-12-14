@@ -1,0 +1,284 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Shell_Projects/Shortcut_Filename/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:55 GMT -->
+<head>
+
+<title>vbAccelerator - Getting the Correct Filename for a Shortcut</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+If your application creates or otherwise manipulates shortcuts
+then you should use the Operating System to determine what the filename for the shortcut should
+be, as the extension is subject to i18n.  This article demonstrates how to use the 
+SHGetNewLinkInfo API call to do this, and also provides a handy class
+which can make working with ANSI and Unicode String API declares in the same code easier.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Shell Projects</a>&#160;.&#160;Getting the Correct Filename for a Shortcut</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Shell_Link_Filename.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Shell Link Filename</a> (13K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:13010</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13010&amp;type=Article&amp;title=Getting%20the%20Correct%20Filename%20for%20a%20Shortcut">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />23 Oct 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Getting the Correct Filename for a Shortcut</h1><p class="splash">Demonstrates how to use the shell to get the suggested shortcut name, and provides
+a useful class for working with Strings in the API</p><img src="linkFilename.png" width="397" height="236" alt="Shortcut filename demonstration project" /><p /><p>
+If your application creates or otherwise manipulates <a href="http://www.vbaccelerator.com/article.asp?id=4573">shortcuts</a>
+then you should use the Operating System to determine what the filename for the shortcut should
+be, as the extension is subject to i18n.  This article demonstrates how to use the 
+<span class="code">SHGetNewLinkInfo</span> API call to do this, and also provides a handy class
+which can make working with ANSI and Unicode String API declares in the same code easier.
+</p><h2>The <span class="code">SHGetNewLinkInfo</span> API call</h2><p>
+The declaration of this function in the Platform SDK is as follows:
+</p><pre>
+BOOL SHGetNewLinkInfo(
+    LPCTSTR pszLinkTo,
+    LPCTSTR pszDir,
+    LPTSTR pszName,
+    BOOL *pfMustCopy,
+    UINT uFlags
+);
+</pre><p>
+The function takes two input strings, <span class="code">pszLinkTo</span> and 
+<span class="code">pszDir</span>, which represent the file to link to and the directory to 
+create the new link in respectively and one ouput string for the new link file name, 
+<span class="code">pszName</span>, which must be pre-initialised to hold the result.
+<span class="code">pfMustCopy</span> is set to 1 if the shortcut you're creating is a link
+to another shortcut and hence can be simply copied, and <span class="code">uFlags</span>
+specifies flags which control the function.
+</p><p>
+Note that the declare specifies <span class="code">TSTR</span> string types.  This implies that
+there are both ANSI and Unicode versions of the declares, and they take either an ANSI or Unicode
+string.  Whilst VB's <span class="code">Declare</span> keyword makes it (kind of) easy to work
+with ANSI strings, it does not help at all with Unicode ones.  If you want to work with Unicode
+strings you need to either put the declare in a Type Library, or start manipulating the string
+memory directly.  Either way is fairly complex to achieve, so in this sample I've included a
+class, <span class="code">cStringPointer</span> which wraps some of this functionality up.
+</p><h3>Manipulating Memory to Represent Strings</h3><p>
+In memory there isn't much difference between an ANSI and a Unicode string.  Both consist
+of a pointer to a block of memory which is at least terminated by a null character (\0). The 
+Unicode block is simply twice the size of the ANSI equivalent.  Creating a pointer to a memory area
+which represents either string is fairly straightforward using the Win32 memory block allocation 
+APIs.  However, getting the data in and out of the memory block as a string, and making sure
+the memory buffer is cleaned up correctly is a bit more tedious.  For this reason, a 
+class wrapper to the code is a sensible idea.  Here's the code for <span class="code">cStringPointer</span>:
+</p><pre>
+Option Explicit
+
+Private Declare Function LocalAlloc Lib "kernel32" ( _
+   ByVal wFlags As Long, ByVal wBytes As Long) As Long
+Private Declare Function LocalFree Lib "kernel32" ( _
+   ByVal hMem As Long) As Long
+Private Declare Function LocalLock Lib "kernel32" ( _
+   ByVal hMem As Long) As Long
+Private Declare Function LocalUnlock Lib "kernel32" ( _
+   ByVal hMem As Long) As Long
+
+Private Const GMEM_ZEROINIT = &amp;H40
+Private Const GMEM_FIXED = &amp;H0
+Private Const GPTR = (GMEM_FIXED Or GMEM_ZEROINIT)
+
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+   lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+
+Private Declare Function lstrlenA Lib "kernel32" ( _ 
+   ByVal lpString As Long) As Long
+Private Declare Function lstrlenW Lib "kernel32" ( _ 
+   ByVal lpString As Long) As Long
+
+Private Declare Function GetVersion Lib "kernel32" () As Long
+
+Private m_hMem As Long
+Private m_lBufSize As Long
+Private m_lPtr As Long
+
+Public Sub SetString(ByVal sString As String)
+   Dispose
+   If (Len(sString) &gt; 0) Then
+      Dim b() As Byte
+      If IsNt Then
+         b = sString
+      Else
+         b = StrConv(sString, vbFromUnicode)
+      End If
+      ReDim Preserve b(0 To UBound(b) + 1) As Byte
+      m_hMem = LocalAlloc(GPTR, UBound(b) + 1)
+      m_lPtr = LocalLock(m_hMem)
+      CopyMemory ByVal m_lPtr, b(0), UBound(b) + 1
+   Else
+      m_hMem = LocalAlloc(GPTR, 1)
+      m_lPtr = LocalLock(m_hMem)
+   End If
+
+End Sub
+Public Function GetString() As String
+   
+   Dim sRet As String
+   If Not (m_lPtr = 0) Then
+      Dim b() As Byte
+      Dim lLen As Long
+      If IsNt Then
+         lLen = lstrlenW(m_lPtr) * 2
+      Else
+         lLen = lstrlenA(m_lPtr)
+      End If
+      If (lLen &gt; 0) Then
+         ReDim b(0 To lLen) As Byte
+         CopyMemory b(0), ByVal m_lPtr, lLen
+         If IsNt Then
+            sRet = b
+         Else
+            sRet = StrConv(b, vbUnicode)
+         End If
+         Dim iPos As Long
+         iPos = InStr(sRet, vbNullChar)
+         If (iPos &gt; 1) Then
+            GetString = Left(sRet, iPos - 1)
+         Else
+            GetString = sRet
+         End If
+      End If
+   End If
+
+End Function
+Public Property Get Ptr() As Long
+   Ptr = m_lPtr
+End Property
+Public Property Let Ptr(ByVal lPtr As Long)
+   Dispose
+   ' This is pointer must be owned elsewhere
+   ' so we have no hMem.  No attempt to free
+   ' this pointer will (or can) be made by
+   ' this class
+   m_lPtr = lPtr
+End Property
+
+Private Function IsNt() As Boolean
+Dim lVer As Long
+   lVer = GetVersion()
+   IsNt = ((lVer And &amp;H80000000) = 0)
+End Function
+
+Public Sub Dispose()
+   If Not (m_hMem = 0) Then
+      If Not (m_lPtr = 0) Then
+         LocalUnlock m_lPtr
+         m_lPtr = 0
+      End If
+      LocalFree m_hMem
+      m_hMem = 0
+   End If
+End Sub
+
+Private Sub Class_Terminate()
+   Dispose
+End Sub
+</pre><p>
+As you can see, the class checks the Windows version: if it is NT then the string is held
+as Unicode, otherwise it is held as ANSI and VB's Unicode - ANSI conversions are invoked
+on the string.   The class includes methods you can use to get or set the string from
+the buffer, as well as to either get the pointer to the string or to set the pointer to
+a new API string.  The class also knows how to deallocate the memory, and also 
+not to deallocate things it doesn't own (when the pointer has been externally set).
+Note that like VB, the "String" associated with the class is immutable: if you
+change the string then a new buffer is allocated.
+</p><p>
+With this available, we're in a position to make using the <span class="code">SHGetNewLinkInfo</span>
+easier.
+</p><h3>Unicode and ANSI Declares with cStringPointer</h3><p>
+Rather than using 
+<span class="code">String</span> at all in the declares, all String parameters are set
+to <span class="code">ByVal Long</span>:
+</p><pre>
+Private Declare Function SHGetNewLinkInfoA Lib "shell32.dll" ( _
+    ByVal pszLinkTo As Long, _
+    ByVal pszDir As Long, _
+    ByVal pszName As Long, _
+    ByRef pfMustCopy As Long, _
+    ByVal uFlags As Long) As Long
+
+Private Declare Function SHGetNewLinkInfoW Lib "shell32.dll" ( _
+    ByVal pszLinkTo As Long, _
+    ByVal pszDir As Long, _
+    ByVal pszName As Long, _
+    ByRef pfMustCopy As Long, _
+    ByVal uFlags As Long) As Long
+</pre><p>
+Actually making the call becomes nice an easy:
+</p><pre>
+Public Property Get NewLinkFilename( _
+      ByVal sFileToLinkTo As String, _
+      ByVal sLinkDirectory As String, _
+      Optional ByVal eLinkOptions As EShellLinkFilenameOptions = 0 _
+   ) As String
+Dim cLinkTo As New cStringPointer
+Dim cLinkDir As New cStringPointer
+Dim cFilename As New cStringPointer
+Dim lCopyFlag As Long
+Dim lR As Long
+   
+   cLinkTo.SetString sFileToLinkTo
+   cLinkDir.SetString sLinkDirectory
+   cFilename.SetString String$(MAX_PATH, 0)
+   
+   If (IsNt) Then
+      lR = SHGetNewLinkInfoW( _
+         cLinkTo.Ptr, cLinkDir.Ptr, cFilename.Ptr, _
+         lCopyFlag, eLinkOptions)
+   Else
+      lR = SHGetNewLinkInfoA( _
+         cLinkTo.Ptr, cLinkDir.Ptr, cFilename.Ptr, _
+         lCopyFlag, eLinkOptions)
+   End If
+   
+   NewLinkFilename = cFilename.GetString()
+   
+End Property
+</pre><p>
+I think you'll agree that that makes handling strings somewhat easier.  Here we've
+accomplished calling a function that has both in and out string values, in both ANSI and Unicode,
+with only a handful of lines of code.
+</p><h2>Conclusion</h2><p>
+This article demonstrates how to obtain the correct filename for a new Shortcut
+using the Shell's API.  The associated <span class="code">cStringPointer</span> class 
+used to perform this function may well prove useful in your projects too!
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Shell Projects</a>&#160;.&#160;Getting the Correct Filename for a Shortcut</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 15 November 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Shell_Projects/Shortcut_Filename/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:46:56 GMT -->
+</html>

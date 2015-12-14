@@ -1,0 +1,1457 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/AVI_Player/Transparent_AVI_Player/VB6_Transparent_AVI_Player_Full_Source_zip_cAVICtrl_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:15 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cAVICtrl.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cAVICtrl.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">AVI Player</a>&#160;.&#160;<a href="article.html">Transparent AVI Player Control</a>&#160;.&#160;<a href="VB6_Transparent_AVI_Player_Full_Source.html">VB6 Transparent AVI Player Full Source</a>&#160;.&#160;cAVICtrl.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Transparent_AVI_Player_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Transparent AVI Player Control</a> (13K)</p><p class="nav"><a href="VB5_Transparent_AVI_Player_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Transparent AVI Player Demonstration</a> (57K)</p><p class="nav"><a href="VB5_Transparent_AVI_Player_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Transparent AVI Player Full Source</a> (87K)</p><p /><p class="nav"><a href="VB6_Transparent_AVI_Player_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Transparent AVI Player Control</a> (13K)</p><p class="nav"><a href="VB6_Transparent_AVI_Player_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Transparent AVI Player Demonstration</a> (56K)</p><p class="nav"><a href="VB6_Transparent_AVI_Player_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Transparent AVI Player Full Source</a> (86K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:3957</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3957&amp;type=Zip&amp;title=VB6%20Transparent%20AVI%20Player%20Full%20Source%2Ezip%5FcAVICtrl">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />23 Nov 2003<br /><p class="update">The last version of the control only rendered the AVI 
+transparently when a background bitmap was selected.  Corrected so now
+the <span class="code">BackColor</span> of the control is displayed 
+when no background bitmap is present.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3377">Finding Which DLL Contains an API Call</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cAVICtrl.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "cAVICtrl"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+'
+ -------------------------------------------------------------------------------
+--------
+' cAVICtrl.cls
+' Steve McMahon
+' vbAccelerator.com
+'
+' Demonstrates how to play an AVI from first principles.
+
+
+' // Based on MFC Code written by Jens Schacherl:
+' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //'
+ //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' ///
+' //
+' // Copyright (C) 1999 by Jens Schacherl (16.09.1999)
+' // All rights reserved.
+' //
+' // This is free source code and you are allowed to use it even in your
+' // billion-dollar-application as long as you leave this copyright notice
+' // unchanged.
+' //
+' // No warranty of any kind, expressed or implied, is included with this
+' // software. Any responsibility for damages, loss of money or hair etc. rests
+' // entirely with the prospective user.
+' // Have fun but use it at your own risk.
+' //
+' // Mail me your thoughts to:  schacherl@spiess.com (preferred) or
+' //                      jschacherl@csi.com
+' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //'
+ //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' ///
+
+'#define streamtypeVIDEO         mmioFOURCC('v', 'i', 'd', 's')
+'#ifndef MKFOURCC
+'#define MKFOURCC( ch0, ch1, ch2, ch3 )                                    \
+'      ( (DWORD)(BYTE)(ch0) | ( (DWORD)(BYTE)(ch1) &lt;&lt; 8 ) |  \
+'      ( (DWORD)(BYTE)(ch2) &lt;&lt; 16 ) | ( (DWORD)(BYTE)(ch3) &lt;&lt; 24 ) )
+'#End If
+'
+'#if !defined(_INC_MMSYSTEM)
+'    #define mmioFOURCC MKFOURCC
+'#End If
+Private Const streamtypeVIDEO = &amp;H73646976 ' reads "vids"
+
+Private Const RT_AVIVIDEO = "AVI"
+Private Const ID_TIMER = 111
+
+Private Const AVC_HALFSPEED = &amp;H1               ' // plays video with half speed
+Private Const AVC_DOUBLESPEED = &amp;H2             ' // plays video with double
+ speed
+
+Private Const AVC_CENTERAVI = &amp;H4               ' // centers video inside the
+ window
+Private Const AVC_STRETCHAVI = &amp;H8              ' // stretches video to fit
+ inside of the window
+Private Const AVC_CENTERRECT = &amp;H10             ' // resizes window, center
+ point stays the same
+
+Private Const AVC_AUTOPLAY = &amp;H20            ' // starts playing automatically
+ after Load()
+
+Private Const AVC_MAPWINDOWCOLOR = &amp;H40         ' // background is COLOR_WINDOW
+ instead of transparent (like CAnimateCtrl's AVS_"TRANSPARENT")
+Private Const AVC_FIRSTPIXTRANSPRNT = &amp;H80      ' // ignore clrTransparent
+ parameter and use color of firstframes first pixel for transparency
+
+Private Type RECT
+   Left As Long
+   Top As Long
+   Right As Long
+   Bottom As Long
+End Type
+Private Type WINDOWPOS
+   hWnd As Long
+   hWndInsertAfter As Long
+   x As Long
+   y As Long
+   cx As Long
+   cy As Long
+   flags As Long
+End Type
+Private Type BITMAPINFOHEADER
+   biSize As Long
+   biWidth As Long
+   biHeight As Long
+   biPlanes As Integer
+   biBitCount As Integer
+   biCompression As Long
+   biSizeImage As Long
+   biXPelsPerMeter As Long
+   biYPelsPerMeter As Long
+   biClrUsed As Long
+   biClrImportant As Long
+End Type
+Private Const OF_READ = &amp;H0
+Private Const OF_SHARE_EXCLUSIVE = &amp;H10
+Private Declare Function GetWindowRect Lib "user32" (ByVal hWnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function GetClientRect Lib "user32" (ByVal hWnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function MoveWindow Lib "user32" (ByVal hWnd As Long, ByVal x
+ As Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ bRepaint As Long) As Long
+Private Declare Function SetWindowPos Lib "user32" (ByVal hWnd As Long, ByVal
+ hWndInsertAfter As Long, ByVal x As Long, ByVal y As Long, ByVal cx As Long,
+ ByVal cy As Long, ByVal wFlags As Long) As Long
+Private Declare Function GetParent Lib "user32" (ByVal hWnd As Long) As Long
+Private Declare Function MapWindowPoints Lib "user32" (ByVal hwndFrom As Long,
+ ByVal hwndTo As Long, lppt As Any, ByVal cPoints As Long) As Long
+Private Const SWP_FRAMECHANGED = &amp;H20        '  The frame changed: send
+ WM_NCCALCSIZE
+Private Const SWP_HIDEWINDOW = &amp;H80
+Private Const SWP_NOACTIVATE = &amp;H10
+Private Const SWP_NOCOPYBITS = &amp;H100
+Private Const SWP_NOMOVE = &amp;H2
+Private Const SWP_NOOWNERZORDER = &amp;H200      '  Don't do owner Z ordering
+Private Const SWP_NOREDRAW = &amp;H8
+Private Const SWP_NOSIZE = &amp;H1
+Private Const SWP_NOZORDER = &amp;H4
+Private Const SWP_SHOWWINDOW = &amp;H40
+Private Const WM_ERASEBKGND = &amp;H14
+Private Const WM_PAINT = &amp;HF
+Private Const WM_DESTROY = &amp;H2
+Private Const WM_WINDOWPOSCHANGING = &amp;H46
+Private Const WM_WININICHANGE = &amp;H1A
+Private Declare Function IsWindow Lib "user32" (ByVal hWnd As Long) As Long
+Private Declare Function InvalidateRectAsNull Lib "user32" Alias
+ "InvalidateRect" (ByVal hWnd As Long, lpRect As Any, ByVal bErase As Long) As
+ Long
+Private Declare Function UpdateWindow Lib "user32" (ByVal hWnd As Long) As Long
+Private Declare Function GetDC Lib "user32" (ByVal hWnd As Long) As Long
+Private Declare Function ReleaseDC Lib "user32" (ByVal hWnd As Long, ByVal hdc
+ As Long) As Long
+Private Declare Function DeleteDC Lib "gdi32" (ByVal hdc As Long) As Long
+Private Declare Function CreateCompatibleBitmap Lib "gdi32" (ByVal hdc As Long,
+ ByVal nWidth As Long, ByVal nHeight As Long) As Long
+Private Declare Function CreateCompatibleDC Lib "gdi32" (ByVal hdc As Long) As
+ Long
+Private Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal
+ hObject As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+Private Declare Function BitBlt Lib "gdi32" (ByVal hDestDC As Long, ByVal x As
+ Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal dwRop As Long)
+ As Long
+Private Declare Function SetBkColor Lib "gdi32" (ByVal hdc As Long, ByVal
+ crColor As Long) As Long
+Private Declare Function SetTextColor Lib "gdi32" (ByVal hdc As Long, ByVal
+ crColor As Long) As Long
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+Private Declare Function RedrawWindow Lib "user32" (ByVal hWnd As Long,
+ lprcUpdate As RECT, ByVal hrgnUpdate As Long, ByVal fuRedraw As Long) As Long
+Private Const RDW_ALLCHILDREN = &amp;H80
+Private Const RDW_ERASE = &amp;H4
+Private Const RDW_ERASENOW = &amp;H200
+Private Const RDW_FRAME = &amp;H400
+Private Const RDW_INTERNALPAINT = &amp;H2
+Private Const RDW_INVALIDATE = &amp;H1
+Private Const RDW_NOCHILDREN = &amp;H40
+Private Const RDW_NOERASE = &amp;H20
+Private Const RDW_NOFRAME = &amp;H800
+Private Const RDW_NOINTERNALPAINT = &amp;H10
+Private Const RDW_UPDATENOW = &amp;H100
+Private Const RDW_VALIDATE = &amp;H8
+Private Declare Function OleTranslateColor Lib "OLEPRO32.DLL" (ByVal OLE_COLOR
+ As Long, ByVal HPALETTE As Long, pccolorref As Long) As Long
+Private Declare Function CreateSolidBrush Lib "gdi32" (ByVal crColor As Long)
+ As Long
+
+Private Declare Function FillRect Lib "user32" (ByVal hdc As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+Private Declare Function GetObjectAPI Lib "gdi32" Alias "GetObjectA" (ByVal
+ hObject As Long, ByVal nCount As Long, lpObject As Any) As Long
+Private Type BITMAP '24 bytes
+        bmType As Long
+        bmWidth As Long
+        bmHeight As Long
+        bmWidthBytes As Long
+        bmPlanes As Integer
+        bmBitsPixel As Integer
+        bmBits As Long
+End Type
+
+
+'STDAPI_(void) AVIFileInit(void);   // Call this first!
+Private Declare Sub AVIFileInit Lib "avifil32.dll" ()
+'STDAPI_(void) AVIFileExit(void);
+Private Declare Sub AVIFileExit Lib "avifil32.dll" ()
+'STDAPI_(ULONG) AVIStreamAddRef       (PAVISTREAM pavi);
+Private Declare Function AVIStreamAddRef Lib "avifil32.dll" (pavi As Any) As
+ Long
+'STDAPI_(ULONG) AVIStreamRelease      (PAVISTREAM pavi);
+Private Declare Function AVIStreamRelease Lib "avifil32.dll" (pavi As Any) As
+ Long
+'STDAPI AVIStreamOpenFromFileA(PAVISTREAM FAR *ppavi, LPCSTR szFile,
+'              DWORD fccType, LONG lParam,
+'              UINT mode, CLSID FAR *pclsidHandler);
+Private Declare Function AVIStreamOpenFromFile Lib "avifil32.dll" Alias
+ "AVIStreamOpenFromFileA" ( _
+      ppavi As Any, ByVal szFile As String, _
+      ByVal fccType As Long, ByVal lParam As Long, _
+      ByVal mode As Long, pclsidHandler As Any _
+   ) As Long
+'STDAPI_(PGETFRAME) AVIStreamGetFrameOpen(PAVISTREAM pavi,
+'                LPBITMAPINFOHEADER lpbiWanted);
+Private Declare Function AVIStreamGetFrameOpen Lib "avifil32.dll" ( _
+         pavi As Any, lpbiWanted As Any _
+      ) As Long
+'STDAPI_(LONG) AVIStreamLength       (PAVISTREAM pavi);
+Private Declare Function AVIStreamLength Lib "avifil32.dll" (pavi As Any) As
+ Long
+'#define     AVIStreamEndTime(pavi) \
+'            AVIStreamSampleToTime(pavi, AVIStreamEnd(pavi))
+'#define     AVIStreamEnd(pavi) \
+'            (AVIStreamStart(pavi) + AVIStreamLength(pavi))
+'STDAPI_(LONG) AVIStreamStart        (PAVISTREAM pavi);
+Private Declare Function AVIStreamStart Lib "avifil32.dll" (pavi As Any) As Long
+'STDAPI_(LONG) AVIStreamSampleToTime (PAVISTREAM pavi, LONG lSample);
+Private Declare Function AVIStreamSampleToTime Lib "avifil32.dll" (pavi As Any,
+ ByVal lSample As Long) As Long
+'STDAPI AVIStreamGetFrameClose(PGETFRAME pg);
+Private Declare Function AVIStreamGetFrameClose Lib "avifil32.dll" (pg As Any)
+ As Long
+'STDAPI_(LPVOID) AVIStreamGetFrame(PGETFRAME pg, LONG lPos);
+Private Declare Function AVIStreamGetFrame Lib "avifil32.dll" (pg As Any, ByVal
+ lPos As Long) As Long
+
+
+Private Type TAVISTREAMINFO ' this is the ANSI version
+    fccType As Long
+    fccHandler As Long
+    dwFlags As Long         '/* Contains AVITF_* flags */
+    dwCaps As Long
+    wPriority As Integer
+    wLanguage As Integer
+    dwScale As Long
+    dwRate As Long ' /* dwRate / dwScale == samples/second */
+    dwStart As Long
+    dwLength As Long '; /* In units above... */
+    dwInitialFrames As Long
+    dwSuggestedBufferSize As Long
+    dwQuality As Long
+    dwSampleSize As Long
+    rcFrame As RECT
+    dwEditCount As Long
+    dwFormatChangeCount As Long
+    szName(0 To 63) As Byte
+End Type
+'STDAPI AVIStreamInfoA (PAVISTREAM pavi, LPAVISTREAMINFOA psi, LONG lSize);
+Private Declare Sub AVIStreamInfo Lib "avifil32.dll" Alias "AVIStreamInfoA"
+ (pavi As Any, psi As TAVISTREAMINFO, ByVal lSize As Long)
+
+' DrawDIB functions:
+'extern HDRAWDIB VFWAPI DrawDibOpen(void);
+Private Declare Function DrawDibOpen Lib "msvfw32.dll" () As Long
+'extern BOOL VFWAPI DrawDibClose(HDRAWDIB hdd);
+Private Declare Function DrawDibClose Lib "msvfw32.dll" (ByVal hDD As Long) As
+ Long
+'extern BOOL VFWAPI DrawDibDraw(HDRAWDIB hdd,
+'                                   HDC      hdc,
+'                                   int      xDst,
+'                                   int      yDst,
+'                                   int      dxDst,
+'                                   int      dyDst,
+'                                   LPBITMAPINFOHEADER lpbi,
+'                                   LPVOID   lpBits,
+'                                   int      xSrc,
+'                                   int      ySrc,
+'                                   int      dxSrc,
+'                                   int      dySrc,
+'                                   UINT     wFlags);
+Private Declare Function DrawDibDraw Lib "msvfw32.dll" (ByVal hDD As Long,
+ ByVal hdc As Long, _
+      ByVal xDst As Long, ByVal yDst As Long, ByVal dxDst As Long, ByVal dyDst
+       As Long, _
+      lpBI As Any, lpBits As Any, _
+      ByVal xSrc As Long, ByVal ySrc As Long, ByVal dxSrc As Long, ByVal dySrc
+       As Long, _
+      ByVal wFlags As Long) As Long
+      
+
+Private m_hWnd As Long
+Private m_sFileName As String
+Private m_dwFlags As Long
+Private m_bTransparent As Boolean
+Private m_bCentre As Boolean
+Private m_csTempFile As String
+Private m_nRealWidth As Long
+Private m_nRealHeight As Long
+Private m_nAVIOffsetY As Long
+Private m_nAVIOffsetX As Long
+Private m_bOnce As Boolean
+Private m_bInitBkg As Boolean
+Private m_hDrawDib As Long
+Private m_nTimerTime As Long
+Private m_lFrames As Long
+Private m_nCurrentFrame As Long
+Private m_bPlaying As Boolean
+
+Private m_oTransColor As OLE_COLOR
+Private m_oBackColor As OLE_COLOR
+
+' MemDC for drawing background to AVI:
+Private m_cDCBack As pcMemDC
+Private m_tR As RECT
+
+' MemDC for holding picture:
+Private m_cDCPicture As pcMemDC
+Private m_pic As StdPicture
+
+Private m_pGF As Long ' PGETFRAME
+Private m_pAS As Long ' PAVISTREAM
+
+Private WithEvents m_cTimer As CTimer
+Attribute m_cTimer.VB_VarHelpID = -1
+
+Implements ISubclass
+
+Public Property Get BackColor() As OLE_COLOR
+   BackColor = m_oBackColor
+End Property
+Public Property Let BackColor(ByVal oColor As OLE_COLOR)
+   m_oBackColor = oColor
+   m_bInitBkg = True
+End Property
+
+Public Property Get Picture() As StdPicture
+   Set Picture = m_pic
+End Property
+Public Property Let Picture(sPic As StdPicture)
+   pSetPicture sPic
+End Property
+Public Property Set Picture(sPic As StdPicture)
+   pSetPicture sPic
+End Property
+Private Sub pSetPicture(sPic As StdPicture)
+   If Not sPic Is Nothing Then
+      Set m_cDCPicture = New pcMemDC
+      m_cDCPicture.CreateFromPicture sPic
+   Else
+      Set m_cDCPicture = Nothing
+   End If
+   Set m_pic = sPic
+   m_bInitBkg = True
+   Invalidate
+End Sub
+Public Property Get TransparentColor() As OLE_COLOR
+   TransparentColor = m_oTransColor
+End Property
+Public Property Let TransparentColor(ByVal oColor As OLE_COLOR)
+   m_oTransColor = oColor
+   Invalidate
+End Property
+
+Public Property Get Transparent() As Boolean
+   Transparent = m_bTransparent
+End Property
+Public Property Let Transparent(ByVal bState As Boolean)
+   m_bTransparent = bState
+   m_bInitBkg = True
+   Invalidate
+End Property
+Public Property Get Centre() As Boolean
+   Centre = m_bCentre
+End Property
+Public Property Let Centre(ByVal bState As Boolean)
+   m_bCentre = bState
+   m_bInitBkg = True
+   Invalidate
+End Property
+      
+Private Function AVIStreamEndTime() As Long
+Dim lSample As Long
+   lSample = AVIStreamStart(ByVal m_pAS) + AVIStreamLength(ByVal m_pAS)
+   AVIStreamEndTime = AVIStreamSampleToTime(ByVal m_pAS, lSample)
+End Function
+
+Public Sub Attach(ByVal hWndA As Long)
+   ' Ensure not already in use:
+   Detach
+   
+   ' Store hWnd:
+   m_hWnd = hWndA
+   
+   ' Attach the messages:
+   AttachMessage Me, m_hWnd, WM_PAINT
+   AttachMessage Me, m_hWnd, WM_ERASEBKGND
+   AttachMessage Me, m_hWnd, WM_WINDOWPOSCHANGING
+   AttachMessage Me, m_hWnd, WM_WININICHANGE
+   AttachMessage Me, m_hWnd, WM_DESTROY
+   
+End Sub
+Public Sub Detach()
+   If Not m_hWnd = 0 Then
+      ' Stop &amp; Clear up:
+      CtrlDestroy
+      
+      ' Detach messages:
+      DetachMessage Me, m_hWnd, WM_PAINT
+      DetachMessage Me, m_hWnd, WM_ERASEBKGND
+      DetachMessage Me, m_hWnd, WM_WINDOWPOSCHANGING
+      DetachMessage Me, m_hWnd, WM_WININICHANGE
+      DetachMessage Me, m_hWnd, WM_DESTROY
+      
+      ' Clear hWnd:
+      m_hWnd = 0
+   End If
+End Sub
+
+Public Sub Test(ByVal nF As Long)
+Dim lpBI As Long
+Dim rcClip As RECT
+Dim lHDC As Long
+Dim lR As Long
+
+   'GetClientRect m_hWnd, rcClip
+
+   'lpBI = AVIStreamGetFrame(ByVal m_pGF, nF)
+   'Debug.Assert (lpBI &lt;&gt; 0)
+
+   lHDC = GetDC(m_hWnd)
+   'lR = DrawDibDraw(m_hDrawDib, lhDC, rcClip.Left + m_nAVIOffsetX, rcClip.Top
+    + m_nAVIOffsetY, _
+   '            m_nRealWidth, m_nRealHeight, ByVal lpBI, ByVal 0&amp;, _
+   '            0, 0, -1, -1, 0)
+   
+   m_nCurrentFrame = nF
+   DrawCurrentFrame lHDC
+   
+   ReleaseDC m_hWnd, lHDC
+
+End Sub
+
+Private Sub Invalidate()
+Dim tR As RECT
+   If IsWindow(m_hWnd) Then
+      'InvalidateRectAsNull m_hWnd, ByVal 0&amp;, 1
+      'UpdateWindow m_hWnd
+      OnPaint
+   End If
+End Sub
+
+Private Sub Class_Initialize()
+   
+   m_bTransparent = True
+   
+   ' // initialize members
+   CtrlInit
+
+   ' // open avi library
+   AVIFileInit
+
+   ' // open draw lib
+   m_hDrawDib = DrawDibOpen()
+   Debug.Assert (m_hDrawDib &lt;&gt; 0)     ' Trouble!
+
+End Sub
+
+Private Sub Class_Terminate()
+   Detach
+   
+   ' // close drawing library
+   If Not (m_hDrawDib = 0) Then
+      DrawDibClose m_hDrawDib
+      m_hDrawDib = 0
+   End If
+   
+   ' No more bitmap
+   Set m_cDCBack = Nothing
+   Set m_cDCPicture = Nothing
+
+   ' // close avi library
+   AVIFileExit
+
+End Sub
+
+
+'BEGIN_MESSAGE_MAP(CAVICtrl, CWnd)
+'   ' //{{AFX_MSG_MAP(CAVICtrl)
+'   ON_WM_WINDOWPOSCHANGING()
+'   ON_WM_PAINT()
+'   ON_WM_ERASEBKGND()
+'   ON_WM_SYSCOLORCHANGE()
+'   ON_WM_DESTROY()
+'   ' //}}AFX_MSG_MAP
+'END_MESSAGE_MAP()
+
+
+' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //'
+ //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' ///
+' // CAVICtrl public members
+'Private function LoadFromResource(ByVal nIDResource As Long, ByVal dwFlags As
+ Long, ByVal clrTransparent As Long) as boolean
+'Dim hRes As Long
+'Dim hMem As Long
+'Dim dwSizeRes As Long
+'Dim lpData As Long
+'
+'   ' // pls subclass *before* loading
+'   If Not (IsWindow(m_hWnd) = 0) Then
+'      LoadFromResource = False
+'   Else
+'
+'      If (m_pAS) Then
+'         ' // control has been used before: reinitialize everything
+'         CtrlDestroy
+'         CtrlInit
+'      End If
+'
+'      ' // find &amp; load our avi resource
+'      hRes = FindResource(hInstance, nIDResource, RT_AVIVIDEO)
+'      If (hRes = 0) Then
+'         lErr = Err.LastDllError
+'         Debug.Print "FindRes error=" &amp; lErr
+'         LoadFromResource = False
+'      Else
+'
+'         hMem = LoadResource(AfxGetResourceHandle(), hRes);
+'   _ASSERTE(hMem);
+'   dwSizeRes = ::SizeofResource(AfxGetResourceHandle(), hRes);
+'   _ASSERTE(dwSizeRes &gt; 0L);
+'
+'   lpData = ::LockResource(hMem);
+'   _ASSERTE(lpData);
+'
+'   ' // create temp file
+'   _ASSERTE(m_csTempFile.IsEmpty());
+'
+'   ' //VERIFY(GetTempPath(_MAX_PATH, szTempDir));
+'   ' //VERIFY(GetTempFileName(szTempDir, _T("AVC"), 0,
+ m_csTempFile.GetBuffer(_MAX_PATH)));
+'   ' //m_csTempFile.ReleaseBuffer();
+'   m_csTempFile = GetTempAVIFileName();
+'   _ASSERTE(!m_csTempFile.IsEmpty());
+'
+'   ' // for NT it's ok, but stupid Win98 cannot open the file if the extension
+ is not AVI
+'   /*CString sNewName(m_csTempFile);
+'   sNewName.Replace(".TMP", ".AVI");
+'   _trename(m_csTempFile, sNewName);
+'   m_csTempFile = sNewName;*/
+'
+'   ' // open temp file and write avi data to it
+'   CFile tmpFile;
+'
+'   if (!tmpFile.Open(m_csTempFile, CFile::modeCreate | CFile::modeWrite |
+ CFile::shareDenyWrite))
+'   {
+'      TRACE("Failed opening temp file\n");
+'      return E_FAIL;
+'   }
+'
+'   TRY
+'   {
+'      tmpFile.Write(lpData, dwSizeRes);
+'   }
+'   CATCH(CFileException, e)
+'   {
+'      TRACE("Failed writing temp file: %d\n", e-&gt;m_cause);
+'      tmpFile.Close();
+'
+'      return E_FAIL;
+'   }
+'   END_CATCH
+'
+'   tmpFile.Close();
+'
+'   ' // OLH to Unlock-/FreeResource says that they are obsolete, but most of
+ the
+'   ' // Win32 samples still use them...so what?
+'   ' // Anyway they are redefined as dummies in AFXV_W32.H so it makes no
+ sense calling them.
+'   ' //::UnlockResource(hMem);
+'   ' //::FreeResource(hMem);
+'
+'   return Load(m_csTempFile, dwFlags, clrTransparent);
+'}
+'End Sub
+
+Public Property Get FileName() As String
+   FileName = m_sFileName
+End Property
+Public Property Let FileName(ByVal sFileName As String)
+   m_sFileName = sFileName
+End Property
+
+Public Function Load() As Boolean
+   
+   ' // pls subclass *before* loading
+   If (IsWindow(m_hWnd) = 0) Then
+      Load = False
+      
+   Else
+   
+      If Not (m_pAS = 0) Then
+         ' // control has been used before: reinitialize everything
+         CtrlDestroy
+         CtrlInit
+      End If
+
+      Dim hr As Long ' HResult
+
+      ' // open AVI
+      hr = AVIStreamOpenFromFile(m_pAS, m_sFileName, streamtypeVIDEO, _
+                         0, OF_READ Or OF_SHARE_EXCLUSIVE, ByVal 0&amp;)
+      If FAILED(hr) Then
+         Debug.Assert False
+         m_pAS = 0
+      Else
+
+         ' //set flags and color
+         'm_dwFlags = dwFlags
+         'm_clrTransp = m_clrTransparent
+
+         ' // open frames
+         Debug.Assert (m_pAS &lt;&gt; 0)
+         m_pGF = AVIStreamGetFrameOpen(ByVal m_pAS, ByVal 0&amp;)
+         Debug.Assert (m_pGF &lt;&gt; 0)
+         
+         ' // get number of frames
+         m_lFrames = AVIStreamLength(ByVal m_pAS)
+         Debug.Assert (m_lFrames &gt; 0)
+
+         ' // calculate timer delay
+         Dim lLTime As Long
+         lLTime = AVIStreamEndTime()
+         Debug.Assert (lLTime &gt; 0)
+         m_nTimerTime = (lLTime / m_lFrames)
+   
+         ' // get size of control
+         Dim rcCtrl As RECT
+         GetClientRect m_hWnd, rcCtrl
+
+         ' // get size of avi
+         Dim si As TAVISTREAMINFO
+         AVIStreamInfo ByVal m_pAS, si, Len(si)
+
+         ' // precalculate some often needed values in case we need them later
+         Dim nOfsX As Long, nOfsY As Long
+         Dim nWidth As Long, nHeight As Long
+         
+         nWidth = si.rcFrame.Right - si.rcFrame.Left
+         nHeight = si.rcFrame.Bottom - si.rcFrame.Top
+         If (m_dwFlags And AVC_CENTERAVI) = AVC_CENTERAVI Then
+            m_nAVIOffsetX = nOfsX
+            m_nAVIOffsetY = nOfsY
+
+            ' //special case: different size of ctrl and avi
+            m_nRealWidth = nWidth
+            m_nRealHeight = nHeight
+
+         ElseIf (Not (m_dwFlags And AVC_STRETCHAVI) = AVC_STRETCHAVI) Then
+            Dim rcW As RECT, hWNdP As Long
+            
+            'GetWindowRect m_hWnd, rcW
+            'hWNdP = GetParent(m_hWnd)
+            'MapWindowPoints 0, hWNdP, rcW, 2
+            'MoveWindow m_hWnd, rcW.Left, rcW.Top, nWidth, nHeight, 1
+            'Invalidate
+
+            m_nRealWidth = nWidth
+            m_nRealHeight = nHeight
+
+'            If (m_dwFlags And AVC_CENTERRECT) = AVC_CENTERRECT Then
+'               ' // calculate ctrl postion relative to parent and move it
+'               GetWindowRect
+'               CRect rcWnd;
+'               GetWindowRect(&amp;rcWnd);
+'
+'               CWnd* pParent = GetParent();
+'               _ASSERTE(pParent);
+'               if (pParent)
+'               {
+'                  pParent-&gt;ScreenToClient(&amp;rcWnd);
+'                  rcWnd.OffsetRect(nOfsX, nOfsY);
+'                  MoveWindow(rcWnd, FALSE);
+'               }
+'            End If
+         End If
+'
+'
+'         ' // not transparent
+'         if (m_dwFlags &amp; AVC_MAPWINDOWCOLOR)
+'         {
+'            CClientDC dcCtrl(this);
+'
+'            m_dcBkg.CreateCompatibleDC(&amp;dcCtrl);
+'            m_bmpBkg.CreateCompatibleBitmap(&amp;dcCtrl, rcCtrl.Width(),
+ rcCtrl.Height());
+'            m_pbmpBkgOld = m_dcBkg.SelectObject(&amp;m_bmpBkg);
+'            m_dcBkg.FillSolidRect(&amp;rcCtrl, ::GetSysColor(COLOR_WINDOW));
+'         }
+'         else if (m_dwFlags &amp; AVC_FIRSTPIXTRANSPRNT)
+'         {
+'            m_clrTransp = GetFirstPixelColor();
+'         }
+'
+'         ' // autoplay?
+'         if (m_dwFlags &amp; AVC_AUTOPLAY)
+'         {
+'            VERIFY(Play());
+'         }
+'
+'         return hr;
+         Load = True
+      End If
+   End If
+           
+End Function
+Public Property Get Width() As Long
+   Width = m_nRealWidth
+End Property
+Public Property Get Height() As Long
+   Height = m_nRealHeight
+End Property
+
+Public Function AVIPlay(Optional ByVal bOnce As Boolean = False) As Boolean
+Dim lTime As Long
+
+   If Not (m_pAS = 0) Then
+      ' // set flag
+      m_bOnce = bOnce
+
+      If (m_bPlaying) Then
+         ' // reset frame to first and exit
+         m_nCurrentFrame = 0
+         
+      End If
+
+      ' // draw current (first) frame
+      Invalidate
+
+      ' // set timer
+      If m_cTimer Is Nothing Then
+         Set m_cTimer = New CTimer
+      End If
+      
+      lTime = m_nTimerTime
+      If (m_dwFlags And AVC_HALFSPEED) = AVC_HALFSPEED Then
+         lTime = m_nTimerTime * 2
+      ElseIf (m_dwFlags And AVC_DOUBLESPEED) = AVC_DOUBLESPEED Then
+         lTime = m_nTimerTime / 2
+      End If
+      
+      m_cTimer.Interval = lTime
+
+      ' // flags
+      m_bPlaying = True
+
+      AVIPlay = True
+   End If
+   
+End Function
+Public Property Get FrameTime() As Long
+   FrameTime = m_nTimerTime
+End Property
+Public Property Let FrameTime(ByVal lTime As Long)
+   If lTime &gt; 0 Then
+      m_nTimerTime = lTime
+      If m_bPlaying Then
+         m_cTimer.Interval = lTime
+      End If
+   End If
+End Property
+Public Property Get IsPlaying() As Boolean
+   IsPlaying = m_bPlaying
+End Property
+Public Property Get IsLoaded() As Boolean
+   IsLoaded = Not ((m_pAS = 0) Or (m_pGF = 0))
+End Property
+
+Public Function AVIStop(Optional ByVal bResetToFirst As Boolean = False) As
+ Boolean
+
+   ' // reset even if not playing
+   If (bResetToFirst) Then
+      m_nCurrentFrame = 0
+      Invalidate
+   End If
+
+   If Not (m_bPlaying) Then
+      AVIStop = True
+   End If
+
+   ' // stop playing
+   m_cTimer.Interval = 0
+
+   m_bPlaying = False
+
+   AVIStop = True
+
+   
+End Function
+
+
+Public Function AVISeek(ByVal nTo As Long) As Boolean
+   If nTo &lt;= m_lFrames Then
+      If (m_bPlaying) Then
+         AVIStop False
+      End If
+   
+      m_nCurrentFrame = Max(nTo, m_lFrames)
+      Invalidate
+   End If
+End Function
+
+Public Property Get FrameCount() As Long
+   If m_pAS Then
+      FrameCount = AVIStreamLength(ByVal m_pAS)
+   End If
+End Property
+
+Public Property Get CurrentFrame() As Long
+   CurrentFrame = m_nCurrentFrame
+End Property
+
+
+Private Function OnPaint() As Long
+Dim lHDC As Long
+   If (m_pAS) Then
+      lHDC = GetDC(m_hWnd)
+      DrawCurrentFrame lHDC
+      ReleaseDC m_hWnd, lHDC
+   End If
+End Function
+
+
+Private Function OnEraseBkgnd() As Long
+   ' // if needed, get new background
+   If (m_bInitBkg) Then
+   
+      m_bInitBkg = False
+      InitBackground
+   End If
+
+   ' // do nothing else here
+   ' // it would cause too much flicker if we'd restore the background here
+   OnEraseBkgnd = 1
+
+End Function
+
+
+Private Function OnWindowPosChanging(lpwndpos As WINDOWPOS) As Long
+   If (lpwndpos.flags And (SWP_HIDEWINDOW Or SWP_SHOWWINDOW)) = 0 Then
+      m_bInitBkg = True
+   End If
+End Function
+
+Private Sub OnSysColorChange()
+Dim lHDC As Long
+'
+'   if (m_dcBkg.m_hDC &amp;&amp; (m_dwFlags &amp; AVC_MAPWINDOWCOLOR))
+'   {
+'      CRect rcCtrl;
+'
+'      GetClientRect(&amp;rcCtrl);
+'      m_dcBkg.FillSolidRect(&amp;rcCtrl, ::GetSysColor(COLOR_WINDOW));
+'   }
+'}
+   If Not m_hWnd = 0 Then
+      '
+   End If
+End Sub
+
+Private Sub OnDestroy()
+   Detach
+End Sub
+
+Private Sub pDrawBackground()
+   ' If we have picture, tile or stretch into
+   ' background as required, else set the
+   ' background colour:
+   If Not (m_cDCPicture Is Nothing) Then
+   '   ' Stretch or tile
+      TileArea m_cDCBack.hdc, 0, 0, m_tR.Right - m_tR.Left, m_tR.Bottom -
+       m_tR.Top, m_cDCPicture.hdc, m_cDCPicture.Width, m_cDCPicture.Height, 0, 0
+   Else
+      Dim hBr As Long
+      hBr = CreateSolidBrush(TranslateColor(m_oBackColor))
+      FillRect m_cDCBack.hdc, m_tR, hBr
+      DeleteObject hBr
+   End If
+   
+End Sub
+Private Sub TileArea( _
+        ByVal hdc As Long, _
+        ByVal x As Long, _
+        ByVal y As Long, _
+        ByVal Width As Long, _
+        ByVal Height As Long, _
+        ByVal lSrcDC As Long, _
+        ByVal lBitmapW As Long, _
+        ByVal lBitmapH As Long, _
+        ByVal lSrcOffsetX As Long, _
+        ByVal lSrcOffsetY As Long _
+    )
+Dim lSrcX As Long
+Dim lSrcY As Long
+Dim lSrcStartX As Long
+Dim lSrcStartY As Long
+Dim lSrcStartWidth As Long
+Dim lSrcStartHeight As Long
+Dim lDstX As Long
+Dim lDstY As Long
+Dim lDstWidth As Long
+Dim lDstHeight As Long
+
+    lSrcStartX = ((x + lSrcOffsetX) Mod lBitmapW)
+    lSrcStartY = ((y + lSrcOffsetY) Mod lBitmapH)
+    lSrcStartWidth = (lBitmapW - lSrcStartX)
+    lSrcStartHeight = (lBitmapH - lSrcStartY)
+    lSrcX = lSrcStartX
+    lSrcY = lSrcStartY
+    
+    lDstY = y
+    lDstHeight = lSrcStartHeight
+    
+    Do While lDstY &lt; (y + Height)
+        If (lDstY + lDstHeight) &gt; (y + Height) Then
+            lDstHeight = y + Height - lDstY
+        End If
+        lDstWidth = lSrcStartWidth
+        lDstX = x
+        lSrcX = lSrcStartX
+        Do While lDstX &lt; (x + Width)
+            If (lDstX + lDstWidth) &gt; (x + Width) Then
+                lDstWidth = x + Width - lDstX
+                If (lDstWidth = 0) Then
+                    lDstWidth = 4
+                End If
+            End If
+            'If (lDstWidth &gt; Width) Then lDstWidth = Width
+            'If (lDstHeight &gt; Height) Then lDstHeight = Height
+            BitBlt hdc, lDstX, lDstY, lDstWidth, lDstHeight, lSrcDC, lSrcX,
+             lSrcY, vbSrcCopy
+            lDstX = lDstX + lDstWidth
+            lSrcX = 0
+            lDstWidth = lBitmapW
+        Loop
+        lDstY = lDstY + lDstHeight
+        lSrcY = 0
+        lDstHeight = lBitmapH
+    Loop
+End Sub
+
+' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //'
+ //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' ///
+' // CAVICtrl protected members
+
+Private Sub DrawCurrentFrame(ByVal lHDC As Long)
+Dim lpBI As Long
+Dim tBi As BITMAPINFOHEADER
+Dim rcClip As RECT
+Dim hdcComp As Long
+Dim hBmp As Long
+Dim hBmpOld As Long
+Dim lR As Long
+
+   GetClientRect m_hWnd, rcClip
+   If m_bCentre Then
+      m_nAVIOffsetX = ((rcClip.Right - rcClip.Left) - Width) \ 2
+      m_nAVIOffsetY = ((rcClip.Bottom - rcClip.Top) - Height) \ 2
+   Else
+      m_nAVIOffsetX = 0
+      m_nAVIOffsetY = 0
+   End If
+   
+'   lpBi = (LPBITMAPINFOHEADER)AVIStreamGetFrame(m_pGF, (LONG)m_nCurrentFrame);
+'   _ASSERTE(lpBi);
+   lpBI = AVIStreamGetFrame(ByVal m_pGF, m_nCurrentFrame)
+   Debug.Assert (lpBI &lt;&gt; 0)
+   
+   If (lpBI) Then
+      
+      If m_bTransparent Then
+         ' // create compatible dc &amp; bitmap
+   '      CDC dcComp;
+   '      CBitmap bmp, *bmpOld;
+   '
+   '      dcComp.CreateCompatibleDC(pDC);
+   '      bmp.CreateCompatibleBitmap(pDC, rcClip.Width(), rcClip.Height());
+   '      bmpOld = dcComp.SelectObject(&amp;bmp);
+         hdcComp = CreateCompatibleDC(lHDC)
+         hBmp = CreateCompatibleBitmap(lHDC, rcClip.Right - rcClip.Left + 1,
+          rcClip.Bottom - rcClip.Top + 1)
+         hBmpOld = SelectObject(hdcComp, hBmp)
+         
+         If m_bInitBkg Then
+            LSet m_tR = rcClip
+            m_cDCBack.Width = m_tR.Right - m_tR.Left
+            m_cDCBack.Height = m_tR.Bottom - m_tR.Top
+            pDrawBackground
+            m_bInitBkg = False
+         End If
+   '
+   '       // again, this is only for dumb Win95/98 :-(
+   '       // initialize background of compatible dc
+   '      dcComp.BitBlt(0, 0, rcClip.Width(), rcClip.Height(), &amp;m_dcBkg, 0, 0,
+    SRCCOPY);
+         BitBlt hdcComp, 0, 0, rcClip.Right - rcClip.Left + 1, rcClip.Bottom -
+          rcClip.Top - 1, m_cDCBack.hdc, 0, 0, vbSrcCopy
+   '
+   '       // draw into comp dc
+   '      VERIFY(DrawDibDraw(m_hDrawDib, dcComp.GetSafeHdc(),
+    rcClip.left+m_nAVIOffsetX, rcClip.top+m_nAVIOffsetY,
+   '                     m_nRealWidth, m_nRealHeight, lpBi, NULL,
+   '                     0, 0, -1, -1, 0));
+         lR = DrawDibDraw(m_hDrawDib, hdcComp, rcClip.Left + m_nAVIOffsetX,
+          rcClip.Top + m_nAVIOffsetY, _
+                     m_nRealWidth, m_nRealHeight, ByVal lpBI, ByVal 0&amp;, _
+                     0, 0, -1, -1, 0)
+   
+   '
+   '       // draw transparently to screen
+   '      DrawTransparent(rcClip.left, rcClip.top,
+   '                  rcClip.Width(), rcClip.Height(), &amp;dcComp, pDC);
+         DrawTransparent rcClip.Left, rcClip.Top, rcClip.Right - rcClip.Left +
+          1, rcClip.Bottom - rcClip.Top + 1, hdcComp, lHDC
+         
+         SelectObject hdcComp, hBmpOld
+         DeleteObject hBmp
+         DeleteDC hdcComp
+'
+   '      dcComp.SelectObject(bmpOld);
+'   }
+      Else
+         '
+         lR = DrawDibDraw(m_hDrawDib, lHDC, rcClip.Left + m_nAVIOffsetX,
+          rcClip.Top + m_nAVIOffsetY, _
+                     m_nRealWidth, m_nRealHeight, ByVal lpBI, ByVal 0&amp;, _
+                     0, 0, -1, -1, 0)
+      
+      End If
+
+   End If
+'}
+End Sub
+
+Private Sub DrawTransparent( _
+      ByVal x As Long, _
+      ByVal y As Long, _
+      ByVal nWidth As Long, _
+      ByVal nHeight As Long, _
+      ByVal hDCSrc As Long, _
+      ByVal hDCDst As Long _
+   )
+'{
+'   CDC maskDC, memDC;
+'   CBitmap maskBmp, *pOldMaskBmp, memBmp, *pOldMemBmp;
+Dim hDCMask As Long
+Dim hBmpMask As Long
+Dim hBmpMaskOld As Long
+Dim hDCMem As Long
+Dim hBmpMem As Long
+Dim hBmpMemOld As Long
+
+'
+'
+'   maskDC.CreateCompatibleDC(pSrcDC);
+'   maskBmp.CreateBitmap(nWidth, nHeight, 1, 1, NULL);
+'   pOldMaskBmp = maskDC.SelectObject(&amp;maskBmp);
+   hDCMask = CreateCompatibleDC(0)
+   hBmpMask = CreateCompatibleBitmap(hDCMask, nWidth, nHeight)
+   hBmpMaskOld = SelectObject(hDCMask, hBmpMask)
+
+'   memDC.CreateCompatibleDC(pDstDC);
+'   memBmp.CreateCompatibleBitmap(pDstDC, nWidth, nHeight);
+'   pOldMemBmp = memDC.SelectObject(&amp;memBmp);
+   hDCMem = CreateCompatibleDC(hDCDst)
+   hBmpMem = CreateCompatibleBitmap(hDCDst, nWidth, nHeight)
+   hBmpMemOld = SelectObject(hDCMem, hBmpMem)
+
+'
+'   memDC.BitBlt(0, 0, nWidth, nHeight, &amp;m_dcBkg, 0, 0, SRCCOPY);
+   BitBlt hDCMem, 0, 0, nWidth, nHeight, m_cDCBack.hdc, 0, 0, vbSrcCopy
+
+'
+'   pSrcDC-&gt;SetBkColor(m_clrTransp);
+'   maskDC.BitBlt(m_nAVIOffsetX, m_nAVIOffsetY, m_nRealWidth, m_nRealHeight,
+ pSrcDC, m_nAVIOffsetX, m_nAVIOffsetY, SRCCOPY);
+   SetBkColor hDCSrc, TranslateColor(m_oTransColor)
+   BitBlt hDCMask, m_nAVIOffsetX, m_nAVIOffsetY, m_nRealWidth, m_nRealHeight,
+    hDCSrc, m_nAVIOffsetX, m_nAVIOffsetY, vbSrcCopy
+'
+'   pSrcDC-&gt;SetBkColor(BLACK);
+'   pSrcDC-&gt;SetTextColor(WHITE);
+'   pSrcDC-&gt;BitBlt(m_nAVIOffsetX, m_nAVIOffsetY, nWidth, nHeight, &amp;maskDC,
+ m_nAVIOffsetX, m_nAVIOffsetY, SRCAND);
+   SetBkColor hDCSrc, &amp;H0&amp;
+   SetTextColor hDCSrc, &amp;HFFFFFF
+   BitBlt hDCSrc, m_nAVIOffsetX, m_nAVIOffsetY, nWidth, nHeight, hDCMask,
+    m_nAVIOffsetX, m_nAVIOffsetY, vbSrcAnd
+'
+'   memDC.SetBkColor(WHITE);
+'   memDC.SetTextColor(BLACK);
+'   memDC.BitBlt(m_nAVIOffsetX, m_nAVIOffsetY, m_nRealWidth, m_nRealHeight,
+ &amp;maskDC, m_nAVIOffsetX, m_nAVIOffsetY, SRCAND);
+'   memDC.BitBlt(0, 0, nWidth, nHeight, pSrcDC, 0, 0, SRCPAINT);
+   SetBkColor hDCMem, &amp;HFFFFFF
+   SetTextColor hDCMem, &amp;H0&amp;
+   BitBlt hDCMem, m_nAVIOffsetX, m_nAVIOffsetY, m_nRealWidth, m_nRealHeight,
+    hDCMask, m_nAVIOffsetX, m_nAVIOffsetY, vbSrcAnd
+   BitBlt hDCMem, 0, 0, nWidth, nHeight, hDCSrc, 0, 0, vbSrcPaint
+
+'
+'   pDstDC-&gt;BitBlt(x, y, nWidth, nHeight, &amp;memDC, 0, 0, SRCCOPY);
+   BitBlt hDCDst, x, y, nWidth, nHeight, hDCMem, 0, 0, vbSrcCopy
+'
+'   memDC.SelectObject(pOldMemBmp);
+'   maskDC.SelectObject(pOldMaskBmp);
+   SelectObject hDCMem, hBmpMemOld
+   DeleteObject hBmpMem
+   DeleteDC hDCMem
+   
+   SelectObject hDCMask, hBmpMaskOld
+   DeleteObject hBmpMask
+   DeleteDC hDCMask
+   
+'}
+
+End Sub
+
+
+Private Sub InitBackground()
+
+   If (m_pAS = 0) Or ((m_dwFlags And AVC_MAPWINDOWCOLOR) = AVC_MAPWINDOWCOLOR)
+    Then
+      Exit Sub
+   End If
+'
+'   CWnd* pParentWnd;
+'   CRect rcAVIWnd, rcParent;
+'
+'   ' // init
+'   pParentWnd = GetParent();
+'   _ASSERTE(pParentWnd);
+'   if (!pParentWnd)
+'   {
+'      return;
+'   }
+'
+'   ' // calculate position of control in parent
+'   GetWindowRect(&amp;rcAVIWnd);
+'
+'   ' // border moves window later, so we move it here too
+'   if (GetExStyle() &amp; (WS_EX_CLIENTEDGE|WS_EX_DLGMODALFRAME))
+'   {
+'     
+ rcAVIWnd.OffsetRect(GetSystemMetrics(SM_CXEDGE),GetSystemMetrics(SM_CYEDGE));
+'   }
+'   else if(GetStyle() &amp; WS_BORDER)
+'   {
+'      rcAVIWnd.OffsetRect(GetSystemMetrics(SM_CXBORDER),
+ GetSystemMetrics(SM_CYBORDER));
+'   }
+'
+'   rcParent = rcAVIWnd;
+'   pParentWnd-&gt;ScreenToClient(&amp;rcParent);
+'   GetClientRect(&amp;rcAVIWnd); ' // recycle this rect...
+'
+'   ' // get parents dc
+'   CClientDC dcParent(pParentWnd);
+'
+'   ' // cleanup old dc &amp; bmp if exist
+'   if (m_pbmpBkgOld)
+'   {
+'      m_dcBkg.SelectObject(m_pbmpBkgOld);
+'      m_dcBkg.DeleteDC();
+'      m_bmpBkg.DeleteObject();
+'   }
+'
+'   ' // get parent image from behind control
+'   m_dcBkg.CreateCompatibleDC(&amp;dcParent);
+'   m_bmpBkg.CreateCompatibleBitmap(&amp;dcParent, rcAVIWnd.Width(),
+ rcAVIWnd.Height());
+'   m_pbmpBkgOld = m_dcBkg.SelectObject(&amp;m_bmpBkg);
+'   _ASSERTE(m_pbmpBkgOld != NULL);
+'
+'   ' //ShowWindow(SW_HIDE);
+'   m_dcBkg.BitBlt(rcAVIWnd.left, rcAVIWnd.top, rcAVIWnd.Width(),
+ rcAVIWnd.Height(),
+'               &amp;dcParent, rcParent.left, rcParent.top, SRCCOPY);
+'   ' //ShowWindow(SW_RESTORE);
+'}
+'
+
+End Sub
+
+Private Function GetFirstPixelColor() As Long
+'   _ASSERTE(m_pAS);
+'   _ASSERTE(m_pGF);
+'
+'   LPBITMAPINFO lpbi;
+'
+'   ' // fetch first frame
+'   lpbi = (LPBITMAPINFO)AVIStreamGetFrame(m_pGF, 0);
+'   _ASSERTE(lpbi);
+'
+'   ' // currently works only with 8bit-BMPs
+'   if (!lpbi || lpbi-&gt;bmiHeader.biBitCount != 8)
+'   {
+'      return LTGREEN;
+'   }
+'
+'   ' // get first pixel and use as index in the color table
+'   LPBYTE lpbyIndex = (LPBYTE)((DWORD)lpbi + lpbi-&gt;bmiHeader.biSize +
+ (lpbi-&gt;bmiHeader.biClrUsed*sizeof(RGBQUAD)));
+'   RGBQUAD* pRGBFirst = (RGBQUAD*)(&amp;lpbi-&gt;bmiColors[*lpbyIndex]);
+'
+'   return RGB(pRGBFirst-&gt;rgbRed, pRGBFirst-&gt;rgbGreen, pRGBFirst-&gt;rgbBlue);
+End Function
+
+
+Private Property Get GetTempAVIFileName() As String
+'{
+'   CString sTempDir, sTempFile, sRet;
+'
+'   VERIFY(GetTempPath(_MAX_PATH, sTempDir.GetBuffer(_MAX_PATH+1)));
+'   sTempDir.ReleaseBuffer();
+'   _ASSERTE(!sTempDir.IsEmpty());
+'
+'   ' // make sure to create unique filename
+'   Do
+'   {
+'      sTempFile.Format("AVC%X.AVI", GetTickCount());
+'      Sleep(100);
+'      sRet = sTempDir + sTempFile;
+'   }
+'   while (_taccess(sRet, 0) == 0);
+'
+'   return sRet;
+'}
+'
+End Property
+
+' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //'
+ //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' //' ///
+' // CAVICtrl private helper functions
+Private Sub CtrlInit()
+   m_pAS = 0
+   m_pGF = 0
+   'm_pbmpBkgOld = 0
+   m_nCurrentFrame = 0
+   m_nAVIOffsetX = 0
+   m_nAVIOffsetY = 0
+   m_bPlaying = False
+   m_bInitBkg = True
+   Set m_cDCBack = New pcMemDC
+   
+End Sub
+
+Private Sub CtrlDestroy()
+Dim bS As Boolean
+
+   ' // still running?
+   If (m_bPlaying) Then
+      AVIStop
+   End If
+   
+   ' // close frame interface
+   If (m_pGF) Then
+      bS = (AVIStreamGetFrameClose(ByVal m_pGF) = 0)
+      Debug.Assert bS
+      m_pGF = 0
+   End If
+
+   ' // release avi stream
+   If Not (m_pAS = 0) Then
+      AVIStreamRelease ByVal m_pAS
+      m_pAS = 0
+   End If
+
+   ' // clear up background if exists
+   Set m_cDCBack = Nothing
+   Set m_cDCPicture = Nothing
+      
+   ' // delete temp file if exist
+   'if (!m_csTempFile.IsEmpty())
+   '{
+   '   VERIFY(DeleteFile(m_csTempFile));
+   '   m_csTempFile.Empty();
+   '}
+'}
+
+
+End Sub
+
+Private Property Let ISubClass_MsgResponse(ByVal RHS As EMsgResponse)
+   '
+End Property
+
+Private Property Get ISubClass_MsgResponse() As EMsgResponse
+   Select Case CurrentMessage
+   Case WM_ERASEBKGND
+      ISubClass_MsgResponse = emrConsume
+   Case Else
+      ISubClass_MsgResponse = emrPreprocess
+   End Select
+End Property
+
+Private Function ISubClass_WindowProc(ByVal hWnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+   
+   Select Case iMsg
+   Case WM_PAINT
+      OnPaint
+   'Case WM_ERASEBKGND
+      'ISubClass_WindowProc = OnEraseBkgnd()
+   Case WM_WINDOWPOSCHANGING
+      Dim tWP As WINDOWPOS
+      CopyMemory tWP, ByVal lParam, Len(tWP)
+      OnWindowPosChanging tWP
+   Case WM_WININICHANGE
+      OnSysColorChange
+   Case WM_DESTROY
+      OnDestroy
+   End Select
+   
+End Function
+
+
+Private Function FAILED(ByVal hr As Long) As Boolean
+   FAILED = Not (SUCCEEDED(hr))
+End Function
+Private Function SUCCEEDED(ByVal hr As Long) As Boolean
+   SUCCEEDED = ((hr And &amp;H80000000) = 0)
+End Function
+Private Function Max(ByVal lArg1 As Long, ByVal lArg2 As Long) As Long
+   If lArg1 &gt; lArg2 Then
+      Max = lArg1
+   Else
+      Max = lArg2
+   End If
+End Function
+Private Function TranslateColor(ByVal oClr As OLE_COLOR, _
+                        Optional hPal As Long = 0) As Long
+    ' Convert Automation color to Windows color
+    If OleTranslateColor(oClr, hPal, TranslateColor) Then
+        TranslateColor = -1 'CLR_INVALID
+    End If
+End Function
+
+
+
+Private Sub m_cTimer_ThatTime()
+  '
+'{
+'   CAVICtrl* pThis = (CAVICtrl*)CWnd::FromHandle(hWnd);
+'   _ASSERTE(pThis);
+'   if (pThis == NULL)
+'   {
+'      return;
+'   }
+'
+'   if (++pThis-&gt;m_nCurrentFrame &gt;= (UINT)pThis-&gt;m_lFrames)
+'   {
+'      pThis-&gt;m_nCurrentFrame = 0;
+'
+'      if (pThis-&gt;m_bOnce)
+'      {
+'         pThis-&gt;Stop(TRUE);
+'         return;
+'      }
+'   }
+'
+'   pThis-&gt;Invalidate();
+  
+   If IsLoaded Then
+      ' Draw next frmae:
+      m_nCurrentFrame = m_nCurrentFrame + 1
+      If m_nCurrentFrame &gt;= m_lFrames Then
+         If m_bOnce Then
+            AVIStop
+            Exit Sub
+         End If
+         m_nCurrentFrame = 0
+      End If
+      'Invalidate
+      Test m_nCurrentFrame
+   End If
+  
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">AVI Player</a>&#160;.&#160;<a href="article.html">Transparent AVI Player Control</a>&#160;.&#160;<a href="VB6_Transparent_AVI_Player_Full_Source.html">VB6 Transparent AVI Player Full Source</a>&#160;.&#160;cAVICtrl.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 24 November 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/AVI_Player/Transparent_AVI_Player/VB6_Transparent_AVI_Player_Full_Source_zip_cAVICtrl_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:15 GMT -->
+</html>

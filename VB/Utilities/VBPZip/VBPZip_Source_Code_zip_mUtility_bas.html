@@ -1,0 +1,586 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/VBPZip/VBPZip_Source_Code_zip_mUtility_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:20:03 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: mUtility.bas</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: mUtility.bas" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Visual Basic Project Zip Utility</a>&#160;.&#160;<a href="VBPZip_Source_Code.html">VBPZip Source Code</a>&#160;.&#160;mUtility.bas</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Info-ZIP_Unzip_DLL_(Renamed_vbuzip10_dll).html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />Info-ZIP Unzip DLL (Renamed vbuzip10.dll)</a> (63K)</p><p /><p class="nav"><a href="VBPZip_Source_Code.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VBPZip Source Code</a> (152K)</p><p class="nav"><a href="VBPZip_VB5_Executable.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VBPZip VB5 Executable</a> (69K)</p><p class="nav"><a href="VBPZip_VB6_Executable.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VBPZip VB6 Executable</a> (62K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2150</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2150&amp;type=Zip&amp;title=VBPZip%20Source%20Code%2Ezip%5FmUtility">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:3 July 2003</p>
+<br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />3 Mar 2003<br /><p class="update">Previous version failed on Windows 2000 because the
+	version check in the NoStatusBar component was incorrect. Now fixed.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1426">Zipping files using the free Info-Zip Zip DLL (now with encryption support)</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1424">Introduction to the freeware Info-ZIP libraries</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: mUtility.bas</h1><pre>Attribute VB_Name = "mUtility"
+Option Explicit
+
+Public g_cFileTypes As New cVBFileTypes
+
+Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long) As Long
+Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA"
+ (ByVal hwnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long
+Private Const GWL_EXSTYLE = (-20)
+Private Const WS_EX_WINDOWEDGE = &amp;H100
+Private Const WS_EX_CLIENTEDGE = &amp;H200
+Private Const WS_EX_STATICEDGE = &amp;H20000
+Private Declare Function SetWindowPos Lib "user32" (ByVal hwnd As Long, ByVal
+ hWndInsertAfter As Long, ByVal x As Long, ByVal y As Long, ByVal cx As Long,
+ ByVal cy As Long, ByVal wFlags As Long) As Long
+Private Enum ESetWindowPosStyles
+    SWP_SHOWWINDOW = &amp;H40
+    SWP_HIDEWINDOW = &amp;H80
+    SWP_FRAMECHANGED = &amp;H20 ' The frame changed: send WM_NCCALCSIZE
+    SWP_NOACTIVATE = &amp;H10
+    SWP_NOCOPYBITS = &amp;H100
+    SWP_NOMOVE = &amp;H2
+    SWP_NOOWNERZORDER = &amp;H200 ' Don't do owner Z ordering
+    SWP_NOREDRAW = &amp;H8
+    SWP_NOREPOSITION = SWP_NOOWNERZORDER
+    SWP_NOSIZE = &amp;H1
+    SWP_NOZORDER = &amp;H4
+    SWP_DRAWFRAME = SWP_FRAMECHANGED
+    HWND_NOTOPMOST = -2
+End Enum
+Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA"
+ (ByVal hwnd As Long, ByVal lpOperation As String, ByVal lpFile As String,
+ ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As
+ Long) As Long
+Private Declare Function ShellExecuteForExplore Lib "shell32.dll" Alias
+ "ShellExecuteA" (ByVal hwnd As Long, ByVal lpOperation As String, ByVal lpFile
+ As String, lpParameters As Any, lpDirectory As Any, ByVal nShowCmd As Long) As
+ Long
+Public Enum EShellShowConstants
+    essSW_HIDE = 0
+    essSW_MAXIMIZE = 3
+    essSW_MINIMIZE = 6
+    essSW_SHOWMAXIMIZED = 3
+    essSW_SHOWMINIMIZED = 2
+    essSW_SHOWNORMAL = 1
+    essSW_SHOWNOACTIVATE = 4
+    essSW_SHOWNA = 8
+    essSW_SHOWMINNOACTIVE = 7
+    essSW_SHOWDEFAULT = 10
+    essSW_RESTORE = 9
+    essSW_SHOW = 5
+End Enum
+Private Const ERROR_FILE_NOT_FOUND = 2&amp;
+Private Const ERROR_PATH_NOT_FOUND = 3&amp;
+Private Const ERROR_BAD_FORMAT = 11&amp;
+Private Const SE_ERR_ACCESSDENIED = 5        ' access denied
+Private Const SE_ERR_ASSOCINCOMPLETE = 27
+Private Const SE_ERR_DDEBUSY = 30
+Private Const SE_ERR_DDEFAIL = 29
+Private Const SE_ERR_DDETIMEOUT = 28
+Private Const SE_ERR_DLLNOTFOUND = 32
+Private Const SE_ERR_FNF = 2                ' file not found
+Private Const SE_ERR_NOASSOC = 31
+Private Const SE_ERR_PNF = 3                ' path not found
+Private Const SE_ERR_OOM = 8                ' out of memory
+Private Const SE_ERR_SHARE = 26
+
+Private Const MAX_PATH = 260
+Private Declare Function GetShortPathName Lib "kernel32" Alias
+ "GetShortPathNameA" (ByVal lpszLongPath As String, ByVal lpszShortPath As
+ String, ByVal cchBuffer As Long) As Long
+Private Type FILETIME
+   dwLowDateTime As Long
+   dwHighDateTime As Long
+End Type
+Private Type WIN32_FIND_DATA
+   dwFileAttributes As Long
+   ftCreationTime As FILETIME
+   ftLastAccessTime As FILETIME
+   ftLastWriteTime As FILETIME
+   nFileSizeHigh As Long
+   nFileSizeLow As Long
+   dwReserved0 As Long
+   dwReserved1 As Long
+   cFileName As String * MAX_PATH
+   cAlternate As String * 14
+End Type
+Private Declare Function FindFirstFile Lib "kernel32" Alias "FindFirstFileA"
+ (ByVal lpFileName As String, lpFindFileData As WIN32_FIND_DATA) As Long
+Private Declare Function FindClose Lib "kernel32" (ByVal hFindFile As Long) As
+ Long
+Private Declare Function lopen Lib "kernel32" Alias "_lopen" (ByVal lpPathName
+ As String, ByVal iReadWrite As Long) As Long
+Private Declare Function lclose Lib "kernel32" Alias "_lclose" (ByVal hFile As
+ Long) As Long
+Private Declare Function SetFileTime Lib "kernel32" (ByVal hFile As Long,
+ lpCreationTime As FILETIME, lpLastAccessTime As FILETIME, lpLastWriteTime As
+ FILETIME) As Long
+Private Declare Function SetFileAttributes Lib "kernel32" Alias
+ "SetFileAttributesA" (ByVal lpFileName As String, ByVal dwFileAttributes As
+ Long) As Long
+Private Const OF_WRITE = &amp;H1
+Private Const OF_SHARE_DENY_WRITE = &amp;H20
+Private Const GENERIC_WRITE = &amp;H40000000
+Private Const GENERIC_READ = &amp;H80000000
+Private Const FILE_SHARE_WRITE = &amp;H2
+Private Const CREATE_ALWAYS = 2
+Private Const FILE_BEGIN = 0
+Private Const SECTION_MAP_WRITE = &amp;H2
+
+
+Public Sub ThinBorder(ByVal hwnd As Long, ByVal bState As Boolean)
+Dim lStyle As Long
+   ' Thin border:
+   lStyle = GetWindowLong(hwnd, GWL_EXSTYLE)
+   If bState Then
+      lStyle = lStyle And Not WS_EX_CLIENTEDGE Or WS_EX_STATICEDGE
+   Else
+      lStyle = lStyle Or WS_EX_CLIENTEDGE And Not WS_EX_STATICEDGE
+   End If
+   SetWindowLong hwnd, GWL_EXSTYLE, lStyle
+   ' Make the style 'take':
+   SetWindowPos hwnd, 0, 0, 0, 0, 0, SWP_NOACTIVATE Or SWP_NOZORDER Or
+    SWP_FRAMECHANGED Or SWP_NOSIZE Or SWP_NOMOVE
+
+End Sub
+
+Public Function ReadFileText( _
+      ByVal sCmd As String, _
+      ByRef sText As String _
+   ) As Boolean
+Dim iFile As Integer
+On Error GoTo ErrorHandler
+   If FileExists(sCmd) Then
+      iFile = FreeFile
+      Open sCmd For Binary Access Read Lock Write As #iFile
+      sText = String$(LOF(iFile), 0)
+      Get #iFile, , sText
+      Close #iFile
+      ReadFileText = True
+   Else
+      Error 53
+   End If
+   Exit Function
+
+ErrorHandler:
+   MsgBox "Error reading file: " &amp; Err.Description, vbInformation
+   Exit Function
+   
+   Resume 0
+End Function
+Public Function WriteFileText( _
+      ByVal sCmd As String, _
+      ByRef sText As String _
+   ) As Boolean
+Dim iFile As Integer
+On Error GoTo ErrorHandler
+   iFile = FreeFile
+   Open sCmd For Binary Access Write Lock Read As #iFile
+   Put #iFile, , sText
+   Close #iFile
+   WriteFileText = True
+   Exit Function
+
+ErrorHandler:
+   MsgBox "Error reading file: " &amp; Err.Description, vbInformation
+   Exit Function
+   
+   Resume 0
+End Function
+Public Function ReplaceFileText( _
+      ByVal sFile As String, _
+      ByRef sText As String _
+   ) As Boolean
+Dim tFnd As WIN32_FIND_DATA
+Dim bFileExisted As Boolean
+Dim hFile As Long
+Dim hSearch As Long
+
+   hSearch = FindFirstFile(sFile, tFnd)
+   If Not (hSearch = -1) Then
+      FindClose hSearch
+      Kill sFile
+   End If
+   ReplaceFileText = WriteFileText(sFile, sText)
+   ' Now if we are replacing an existing file, then we want to
+   ' put the file creation and archive information back again:
+   If bFileExisted Then
+      
+      hFile = lopen(sFile, OF_WRITE Or OF_SHARE_DENY_WRITE)
+      If hFile = 0 Then
+         ' problem
+      Else
+         SetFileTime hFile, tFnd.ftCreationTime, tFnd.ftLastAccessTime,
+          tFnd.ftLastWriteTime
+         lclose hFile
+         SetFileAttributes sFile, tFnd.dwFileAttributes
+      End If
+      
+   End If
+   
+End Function
+
+Public Function FileExists( _
+      ByVal sFile As String _
+   ) As Boolean
+Dim tFnd As WIN32_FIND_DATA
+Dim hSearch As Long
+
+   hSearch = FindFirstFile(sFile, tFnd)
+   If Not (hSearch = -1) Then
+      FindClose hSearch
+      FileExists = True
+   End If
+End Function
+
+Public Sub KillFileIfExists( _
+      ByVal sFile As String _
+   )
+   On Error Resume Next
+   Kill sFile
+End Sub
+
+Public Function InstrRev(ByVal sThis As String, ByVal sToFind As String) As Long
+Dim lLen As Long
+Dim iPos As Long
+   iPos = Len(sThis)
+   lLen = Len(sToFind)
+   If iPos &gt; 0 Then
+      Do
+         If StrComp(Mid$(sThis, iPos, lLen), sToFind) = 0 Then
+            InstrRev = iPos
+            Exit Function
+         Else
+            iPos = iPos - 1
+         End If
+      Loop While iPos &gt; 0
+   End If
+End Function
+
+Public Function NormalizePath(ByVal sPath As String) As String
+   If Len(sPath) &gt; 0 Then
+      If Right$(sPath, 1) &lt;&gt; "\" Then
+         sPath = sPath &amp; "\"
+      End If
+   End If
+   NormalizePath = sPath
+End Function
+
+Public Function AddFileToPath(ByVal sPath As String, ByVal sFile As String) As
+ String
+Dim iPos As Long
+Dim sPart As String
+   
+   If Len(sPath) &gt; 0 Then
+      If Right$(sPath, 1) = "\" Then
+         sPath = Left$(sPath, Len(sPath) - 1)
+      End If
+   End If
+   
+   Dim cS As New cSplitString
+   cS.TheString = sFile
+   cS.Splitter = "\"
+   Do
+      sPart = cS.NextItem
+      If sPart = "." Then
+         ' ignore:
+      ElseIf sPart = ".." Then
+         ' loose a directory from the path:
+         iPos = InstrRev(sPath, "\")
+         If iPos &gt; 0 Then
+            sPath = Left$(sPath, iPos - 1)
+         End If
+      ElseIf sPart = "" Then
+         ' implies the first part of the directory is a \, i.e. the
+         ' root:
+         iPos = InStr(sPath, "\")
+         If iPos &gt; 0 Then
+            sPath = Left$(sPath, iPos - 1)
+         End If
+      Else
+         ' append a directory to the path:
+         sPath = NormalizePath(sPath) &amp; sPart
+      End If
+   Loop While cS.More
+   AddFileToPath = sPath
+End Function
+
+Public Function ReplaceSection( _
+        ByVal sToModify As String, _
+        ByVal sToReplace As String, _
+        ByVal sReplaceWith As String _
+    ) As String
+' ==================================================================
+' Replaces all occurrences of sToReplace with
+' sReplaceWidth in sToModify.
+' ==================================================================
+Dim iLastPos As Long
+Dim iNextPos As Long
+Dim iReplaceLen As Long
+Dim sOut As String
+    iReplaceLen = Len(sToReplace)
+    iLastPos = 1
+    iNextPos = InStr(iLastPos, sToModify, sToReplace)
+    sOut = ""
+    Do While (iNextPos &gt; 0)
+        If (iNextPos &gt; 1) Then
+            sOut = sOut &amp; Mid$(sToModify, iLastPos, (iNextPos - iLastPos))
+        End If
+        sOut = sOut &amp; sReplaceWith
+        iLastPos = iNextPos + iReplaceLen
+        iNextPos = InStr(iLastPos, sToModify, sToReplace)
+    Loop
+    If (iLastPos &lt;= Len(sToModify)) Then
+        sOut = sOut &amp; Mid$(sToModify, (iLastPos))
+    End If
+    ReplaceSection = sOut
+End Function
+
+
+Public Function ShellEx( _
+        ByVal sFile As String, _
+        Optional ByVal eShowCmd As EShellShowConstants = essSW_SHOWDEFAULT, _
+        Optional ByVal sParameters As String = "", _
+        Optional ByVal sDefaultDir As String = "", _
+        Optional sOperation As String = "open", _
+        Optional Owner As Long = 0 _
+    ) As Boolean
+Dim lR As Long
+Dim lErr As Long, sErr As Long
+    If (InStr(UCase$(sFile), ".EXE") &lt;&gt; 0) Then
+        eShowCmd = 0
+    End If
+    On Error Resume Next
+    If (sParameters = "") And (sDefaultDir = "") Then
+        lR = ShellExecuteForExplore(Owner, sOperation, sFile, 0, 0,
+         essSW_SHOWNORMAL)
+    Else
+        lR = ShellExecute(Owner, sOperation, sFile, sParameters, sDefaultDir,
+         eShowCmd)
+    End If
+    If (lR &lt; 0) Or (lR &gt; 32) Then
+        ShellEx = True
+    Else
+        ' raise an appropriate error:
+        lErr = vbObjectError + 1048 + lR
+        Select Case lR
+        Case 0
+            lErr = 7: sErr = "Out of memory"
+        Case ERROR_FILE_NOT_FOUND
+            lErr = 53: sErr = "File not found"
+        Case ERROR_PATH_NOT_FOUND
+            lErr = 76: sErr = "Path not found"
+        Case ERROR_BAD_FORMAT
+            sErr = "The executable file is invalid or corrupt"
+        Case SE_ERR_ACCESSDENIED
+            lErr = 75: sErr = "Path/file access error"
+        Case SE_ERR_ASSOCINCOMPLETE
+            sErr = "This file type does not have a valid file association."
+        Case SE_ERR_DDEBUSY
+            lErr = 285: sErr = "The file could not be opened because the target
+             application is busy. Please try again in a moment."
+        Case SE_ERR_DDEFAIL
+            lErr = 285: sErr = "The file could not be opened because the DDE
+             transaction failed. Please try again in a moment."
+        Case SE_ERR_DDETIMEOUT
+            lErr = 286: sErr = "The file could not be opened due to time out.
+             Please try again in a moment."
+        Case SE_ERR_DLLNOTFOUND
+            lErr = 48: sErr = "The specified dynamic-link library was not
+             found."
+        Case SE_ERR_FNF
+            lErr = 53: sErr = "File not found"
+        Case SE_ERR_NOASSOC
+            sErr = "No application is associated with this file type."
+        Case SE_ERR_OOM
+            lErr = 7: sErr = "Out of memory"
+        Case SE_ERR_PNF
+            lErr = 76: sErr = "Path not found"
+        Case SE_ERR_SHARE
+            lErr = 75: sErr = "A sharing violation occurred."
+        Case Else
+            sErr = "An error occurred occurred whilst trying to open or print
+             the selected file."
+        End Select
+                
+        Err.Raise lErr, , App.EXEName &amp; ".GShell", sErr
+        ShellEx = False
+    End If
+
+End Function
+
+
+Public Function GetShortPath(ByVal sPath As String) As String
+Dim sShortPath As String
+Dim lR As Long
+Dim iPos As Long
+   sShortPath = String$(MAX_PATH + 1, 0)
+   lR = GetShortPathName(sPath, sShortPath, MAX_PATH)
+   If lR = 0 Then
+       Error 53 ' File not found
+   Else
+      iPos = InStr(sShortPath, vbNullChar)
+      If iPos &gt; 1 Then
+         GetShortPath = Left$(sShortPath, iPos - 1)
+      Else
+         GetShortPath = sShortPath
+      End If
+   End If
+End Function
+Public Function GetLongPath(ByVal sPath As String) As String
+Dim sLongPath As String
+Dim lR As Long
+Dim tFR As WIN32_FIND_DATA
+Dim hSearch As Long
+Dim iPos As Long
+Dim iLastPos As Long
+Dim sBit As String
+
+   sLongPath = ""
+   sBit = ""
+   iLastPos = 1
+   iPos = InStr(sPath, "\")
+   Do
+      If (iPos &gt; 0) Then
+         sBit = NormalizePath(sBit) &amp; Mid$(sPath, iLastPos, iPos - iLastPos)
+      Else
+         sBit = NormalizePath(sBit) &amp; Mid$(sPath, iLastPos)
+      End If
+      If iPos &gt; 4 Or iLastPos &gt; 4 Then
+         hSearch = FindFirstFile(sBit, tFR)
+         If Not (hSearch = 0 Or hSearch = -1) Then
+            FindClose hSearch
+            lR = InStr(tFR.cFileName, vbNullChar)
+            sLongPath = NormalizePath(sLongPath)
+            If lR &gt; 1 Then
+               sLongPath = sLongPath &amp; Left$(tFR.cFileName, lR - 1)
+            Else
+               sLongPath = sLongPath &amp; tFR.cFileName
+            End If
+         Else
+            Error 53
+            Exit Function
+         End If
+      Else
+         sLongPath = NormalizePath(sLongPath) &amp; sBit
+      End If
+      If iPos &gt; 0 Then
+         iLastPos = iPos + 1
+         iPos = InStr(iLastPos, sPath, "\")
+      Else
+         iLastPos = 0
+      End If
+   Loop While (iLastPos &gt; 0)
+   GetLongPath = sLongPath
+   
+End Function
+
+Public Function RelativePath( _
+      ByVal sTo As String, _
+      ByVal sFile As String _
+   ) As String
+Dim sToBit As String
+Dim sFileBit As String
+Dim sFilePart As String
+Dim sRel As String
+Dim bMatch As Boolean
+Dim iPos As Long
+
+   bMatch = True
+   sRel = ""
+   sTo = GetLongPath(sTo)
+   iPos = InstrRev(sFile, "\")
+   sFilePart = Mid$(sFile, iPos + 1)
+   sFile = GetLongPath(Left$(sFile, iPos - 1))
+   Dim cSTo As New cSplitString
+   Dim cSFile As New cSplitString
+   cSTo.Splitter = "\"
+   cSFile.Splitter = "\"
+   cSTo.TheString = sTo
+   cSFile.TheString = sFile
+   Do
+      sToBit = cSTo.NextItem
+      sFileBit = cSFile.NextItem
+      
+      'Debug.Print sToBit, sFileBit
+      If bMatch Then
+         If UCase$(sToBit) = UCase$(sFileBit) Then
+            ' cool
+         Else
+            bMatch = False
+         End If
+      End If
+      
+      If Not bMatch Then
+         If sToBit &lt;&gt; "" Then
+            If sFileBit = "" Then
+               sRel = "..\" &amp; NormalizePath(sRel)
+            Else
+               sRel = "..\" &amp; NormalizePath(sRel) &amp; sFileBit
+            End If
+         Else
+            sRel = NormalizePath(sRel) &amp; sFileBit
+         End If
+      End If
+      
+   Loop While (cSFile.More Or cSTo.More)
+   
+   'Debug.Print
+   RelativePath = NormalizePath(sRel) &amp; sFilePart
+   
+End Function
+
+Public Function ExtractTag(ByVal sString, ByVal sStartTag As String, ByVal
+ sEndTag As String, ByRef sTag As String) As Boolean
+Dim iPos As Long
+Dim iNextPos As Long
+   iPos = InStr(sString, sStartTag)
+   If iPos &gt; 0 Then
+      iPos = iPos + Len(sStartTag)
+      iNextPos = InStr(iPos, sString, sEndTag)
+      If iNextPos &gt; 0 Then
+         sTag = Mid$(sString, iPos, iNextPos - iPos)
+         ExtractTag = True
+      End If
+   End If
+End Function
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Visual Basic Project Zip Utility</a>&#160;.&#160;<a href="VBPZip_Source_Code.html">VBPZip Source Code</a>&#160;.&#160;mUtility.bas</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/VBPZip/VBPZip_Source_Code_zip_mUtility_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:20:03 GMT -->
+</html>

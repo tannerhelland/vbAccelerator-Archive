@@ -1,0 +1,330 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Texture_Brush/Texture_Brush_Code_zip_cTextureBrush_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:47 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cTextureBrush.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cTextureBrush.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;<a href="article.html">Drawing With Textures</a>&#160;.&#160;<a href="Texture_Brush_Code.html">Texture Brush Code</a>&#160;.&#160;cTextureBrush.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Texture_Brush_Code.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Texture Brush Code</a> (123K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:4947</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4947&amp;type=Zip&amp;title=Texture%20Brush%20Code%2Ezip%5FcTextureBrush">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />28 Mar 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2770">Tiling Bitmaps into Controls, Forms and MDI Form backgrounds </a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=7">PopupMenu DLL - Create Unlimited Popup Menus</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13">Creating Single Pixel Dotted Lines</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cTextureBrush.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "cTextureBrush"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Type POINTAPI
+   x As Long
+   y As Long
+End Type
+Private Type RECT
+   left As Long
+   top As Long
+   right As Long
+   bottom As Long
+End Type
+Private Type BITMAP
+    bmType As Long
+    bmWidth As Long
+    bmHeight As Long
+    bmWidthBytes As Long
+    bmPlanes As Integer
+    bmBitsPixel As Integer
+    bmBits As Long
+End Type
+Private Declare Function GetObjectAPI Lib "gdi32" Alias "GetObjectA" (ByVal
+ hObject As Long, ByVal nCount As Long, lpObject As Any) As Long
+Private Declare Function SetBrushOrgEx Lib "gdi32" (ByVal hdc As Long, ByVal
+ nXOrg As Long, ByVal nYOrg As Long, lppt As Any) As Long
+Private Declare Function UnrealizeObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+Private Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal
+ hObject As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+Private Declare Function PatBlt Lib "gdi32" (ByVal hdc As Long, ByVal x As
+ Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ dwRop As Long) As Long
+Private Declare Function CreateBitmapIndirect Lib "gdi32" (lpBitmap As BITMAP)
+ As Long
+Private Declare Function CreatePatternBrush Lib "gdi32" (ByVal hBitmap As Long)
+ As Long
+Private Declare Function FillRect Lib "user32" (ByVal hdc As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+Private Declare Function OleTranslateColor Lib "OLEPRO32.DLL" (ByVal OLE_COLOR
+ As Long, ByVal HPALETTE As Long, pccolorref As Long) As Long
+Private Const CLR_INVALID = -1
+Private Declare Function SetBkColor Lib "gdi32" (ByVal hdc As Long, ByVal
+ crColor As Long) As Long
+Private Declare Function SetTextColor Lib "gdi32" (ByVal hdc As Long, ByVal
+ crColor As Long) As Long
+Private Declare Function CreateDCAsNull Lib "gdi32" Alias "CreateDCA" (ByVal
+ lpDriverName As String, lpDeviceName As Any, lpOutput As Any, lpInitData As
+ Any) As Long
+Private Declare Function DeleteDC Lib "gdi32" (ByVal hdc As Long) As Long
+Private Declare Function CreateCompatibleBitmap Lib "gdi32" (ByVal hdc As Long,
+ ByVal nWidth As Long, ByVal nHeight As Long) As Long
+Private Declare Function CreateCompatibleDC Lib "gdi32" (ByVal hdc As Long) As
+ Long
+Private Declare Function BitBlt Lib "gdi32" (ByVal hDestDC As Long, ByVal x As
+ Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal
+ hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal dwRop As Long)
+ As Long
+
+Public Enum EPBRasterOperations
+   PATCOPY = &amp;HF00021  ' (DWORD) dest = pattern
+   PATINVERT = &amp;H5A0049        ' (DWORD) dest = pattern XOR dest
+   PATPAINT = &amp;HFB0A09        ' (DWORD) dest = DPSnoo
+End Enum
+
+Private m_hBrush As Long
+Private m_lWidth As Long
+Private m_lHeight As Long
+
+Public Sub CreateFromPicture(picThis As IPicture)
+   ' Create a copy of the bitmap:
+   Dim lhDC As Long
+   Dim lhDCCopy As Long
+   Dim lhBmpCopy As Long
+   Dim lhBmpCopyOld As Long
+   Dim lhBmpOld As Long
+   Dim lhDCC As Long
+   Dim tBM As BITMAP
+   
+   GetObjectAPI picThis.Handle, Len(tBM), tBM
+   lhDCC = CreateDCAsNull("DISPLAY", ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)
+   lhDC = CreateCompatibleDC(lhDCC)
+   lhBmpOld = SelectObject(lhDC, picThis.Handle)
+   
+   lhDCCopy = CreateCompatibleDC(lhDCC)
+   lhBmpCopy = CreateCompatibleBitmap(lhDCC, tBM.bmWidth, tBM.bmHeight)
+   lhBmpCopyOld = SelectObject(lhDCCopy, lhBmpCopy)
+
+   BitBlt lhDCCopy, 0, 0, tBM.bmWidth, tBM.bmHeight, lhDC, 0, 0, vbSrcCopy
+   
+   If Not (lhDCC = 0) Then
+      DeleteDC lhDCC
+   End If
+   If Not (lhBmpOld = 0) Then
+      SelectObject lhDC, lhBmpOld
+   End If
+   If Not (lhDC = 0) Then
+      DeleteDC lhDC
+   End If
+   If Not (lhBmpCopyOld = 0) Then
+      SelectObject lhDCCopy, lhBmpCopyOld
+   End If
+   If Not (lhDCCopy = 0) Then
+      DeleteDC lhDCCopy
+   End If
+   
+   CreateFromHBitmap lhBmpCopy
+   
+   DeleteObject lhBmpCopy
+   
+   
+End Sub
+Public Sub CreateFromDC(ByVal lhDC As Long, ByVal lWidth As Long, ByVal lHeight
+ As Long)
+   ' Copy the bitmap in lHDC:
+   Dim lhDCCopy As Long
+   Dim lhBmpCopy As Long
+   Dim lhBmpCopyOld As Long
+   Dim lhDCC As Long
+   Dim tBM As BITMAP
+   
+   lhDCC = CreateDCAsNull("DISPLAY", ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)
+   lhDCCopy = CreateCompatibleDC(lhDCC)
+   lhBmpCopy = CreateCompatibleBitmap(lhDCC, lWidth, lHeight)
+   lhBmpCopyOld = SelectObject(lhDCCopy, lhBmpCopy)
+   
+   BitBlt lhDCCopy, 0, 0, lWidth, lHeight, lhDC, 0, 0, vbSrcCopy
+   
+   If Not (lhDCC = 0) Then
+      DeleteDC lhDCC
+   End If
+   If Not (lhBmpCopyOld = 0) Then
+      SelectObject lhDCCopy, lhBmpCopyOld
+   End If
+   If Not (lhDCCopy = 0) Then
+      DeleteDC lhDCCopy
+   End If
+   
+   CreateFromHBitmap lhBmpCopy
+   
+   DeleteObject lhBmpCopy
+   
+End Sub
+
+Public Sub CreateFromHBitmap(ByVal hBmp As Long)
+   
+   Destroy
+   
+   Dim tBM As BITMAP
+   GetObjectAPI hBmp, Len(tBM), tBM
+   m_hBrush = CreatePatternBrush(hBmp)
+   m_lWidth = tBM.bmWidth
+   m_lHeight = tBM.bmHeight
+   
+End Sub
+
+Public Sub DrawLine( _
+      ByVal hdc As Long, _
+      ByVal xPixels As Long, _
+      ByVal yPixels As Long, _
+      ByVal widthPixels As Long, _
+      ByVal heightPixels As Long, _
+      Optional ByVal eRop As EPBRasterOperations = PATCOPY, _
+      Optional ByVal oBackColor As OLE_COLOR = -1, _
+      Optional ByVal oForeColor As OLE_COLOR = -1 _
+   )
+Dim hOldBrush As Long
+Dim lBkColor As Long
+Dim lForeColor As Long
+   hOldBrush = SelectObject(hdc, m_hBrush)
+      If Not (oBackColor = -1) Then
+         lBkColor = SetBkColor(hdc, TranslateColor(oBackColor))
+      End If
+      If Not (oForeColor = -1) Then
+         lForeColor = SetTextColor(hdc, TranslateColor(oForeColor))
+      End If
+   PatBlt hdc, xPixels, yPixels, widthPixels, heightPixels, eRop
+   If Not (oBackColor = -1) Then
+      SetBkColor hdc, lBkColor
+   End If
+   If Not (oForeColor = -1) Then
+       SetTextColor hdc, lForeColor
+   End If
+   SelectObject hdc, hOldBrush
+End Sub
+Public Sub Rectangle( _
+      ByVal hdc As Long, _
+      ByVal xPixels As Long, _
+      ByVal yPixels As Long, _
+      ByVal widthRectPixels As Long, _
+      ByVal heightRectPixels As Long, _
+      ByVal lineSizePixels As Long, _
+      Optional ByVal eRop As EPBRasterOperations = PATCOPY, _
+      Optional ByVal bFill As Boolean = False, _
+      Optional ByVal oBackColor As OLE_COLOR = -1, _
+      Optional ByVal oForeColor As OLE_COLOR = -1 _
+   )
+Dim lBkColor As Long
+Dim lForeColor As Long
+
+   If bFill Then
+      Dim tR As RECT
+      tR.left = xPixels: tR.top = xPixels
+      tR.right = tR.left + widthRectPixels: tR.bottom = tR.top +
+       heightRectPixels
+      FillRect hdc, tR, m_hBrush
+   Else
+      Dim hOldBrush As Long
+      hOldBrush = SelectObject(hdc, m_hBrush)
+      If Not (oBackColor = -1) Then
+         lBkColor = SetBkColor(hdc, TranslateColor(oBackColor))
+      End If
+      If Not (oForeColor = -1) Then
+         lForeColor = SetTextColor(hdc, TranslateColor(oForeColor))
+      End If
+      PatBlt hdc, xPixels, yPixels, widthRectPixels, lineSizePixels, eRop
+      PatBlt hdc, xPixels + widthRectPixels, yPixels, lineSizePixels,
+       heightRectPixels, eRop
+      PatBlt hdc, xPixels, yPixels + heightRectPixels, widthRectPixels,
+       lineSizePixels, eRop
+      PatBlt hdc, xPixels, yPixels, lineSizePixels, heightRectPixels, eRop
+      If Not (oBackColor = -1) Then
+         SetBkColor hdc, lBkColor
+      End If
+      If Not (oForeColor = -1) Then
+          SetTextColor hdc, lForeColor
+      End If
+      SelectObject hdc, hOldBrush
+   End If
+End Sub
+   
+Public Sub SetBrushOrigin( _
+      ByVal hdc As Long, _
+      ByVal xPixels As Long, _
+      ByVal yPixels As Long _
+   )
+   SetBrushOrgEx hdc, -xPixels And m_lWidth, -yPixels And m_lHeight, ByVal 0&amp;
+End Sub
+
+Private Function TranslateColor(ByVal oClr As OLE_COLOR, _
+                        Optional hPal As Long = 0) As Long
+    ' Convert Automation color to Windows color
+    If OleTranslateColor(oClr, hPal, TranslateColor) Then
+        TranslateColor = CLR_INVALID
+    End If
+End Function
+Public Sub Destroy()
+   If m_hBrush &lt;&gt; 0 Then
+      DeleteObject m_hBrush
+      m_hBrush = 0
+   End If
+End Sub
+
+Private Sub Class_Terminate()
+   Destroy
+End Sub
+
+
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Graphics and GDI</a>&#160;.&#160;<a href="article.html">Drawing With Textures</a>&#160;.&#160;<a href="Texture_Brush_Code.html">Texture Brush Code</a>&#160;.&#160;cTextureBrush.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Graphics_and_GDI/Texture_Brush/Texture_Brush_Code_zip_cTextureBrush_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:47 GMT -->
+</html>

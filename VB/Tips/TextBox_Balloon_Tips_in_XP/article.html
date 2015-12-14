@@ -1,0 +1,126 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/TextBox_Balloon_Tips_in_XP/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:00 GMT -->
+<head>
+
+<title>vbAccelerator - Text Box Balloon tip support in XP</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This tip demonstrates how to to use the new Balloon Tip support
+provided for TextBoxes under XP.  Cue Banners may also work, 
+but only if you don't have multiple language support installed." /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Text Box Balloon tip support in XP</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="XP_TextBox_Balloon_Tips.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />XP TextBox Balloon Tips</a> (13K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4587</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4587&amp;type=Article&amp;title=Text%20Box%20Balloon%20tip%20support%20in%20XP">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />26 Jun 2003<br />Manifest was missing from download.</p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Text Box Balloon tip support in XP</h1><img src="balloonTips.png" width="399" height="231" alt="Balloon Tip Demonstration" /><p /><p>This tip demonstrates how to to use the new Balloon Tip support
+provided for TextBoxes under XP.  Cue Banners <span class="i">may</span> also work, 
+but only if you don't have multiple language support installed.</p><p>Under XP, TextBoxes now support Balloon Tip notifications
+and allegedly provide support for a "Cue Banner" (basically
+a piece of grayed instructional text such as "Type Your Query Here"
+which disappears when the user clicks on it.  However, I was unable to
+get the latter to go, I am told this occurs if you have multiple languages
+installed on your XP system.  Balloon tips work fine though!</p><p>
+To use this sample you must be linked to ComCtl32.DLL version 6.0 or above.
+See the articles <a href="http://www.vbaccelerator.com/article.asp?id=3376">Making VB Apply XP Visual Styles at Design and Debug Time</a> and <a href="http://www.vbaccelerator.com/article.asp?id=1427">Adding XP Visual 
+Styles to your Visual Basic Application</a> for more details on how to do this.
+The sample code uses a <i>manifest</i> file to achieve this.
+</p><p>
+The <i>cTextBoxXP</i> class provided with the download provides a simple
+wrapper around the new functionality.  Once you assign a TextBox to the
+class, You can set the <i>BalloonTipIcon</i>, 
+<i>BalloonTipText</i> and <i>BalloonTipTitle</i> properties and then show
+and hide the balloon tip using <i>ShowBalloonTip</i> and <i>HideBalloonTip</i>.
+</p><p>Since the new functions are only available in Unicode, the conversion
+to VB has to use pointers for each of the string parameters.  Luckily in
+this case VB's <i>StrPtr</i> function makes it easy.  Basic code to
+display a BalloonTip is as follows:
+</p><pre>
+Private Type EDITBALLOONTIP
+    cbStruct As Long
+    pszTitle As Long
+    pszText As Long
+    ttiIcon As Long
+End Type
+
+Private Const ECM_FIRST = &amp;H1500
+Private Const EM_SHOWBALLOONTIP = (ECM_FIRST + 3)
+Private Const EM_HIDEBALLOONTIP = (ECM_FIRST + 4)
+
+Private Declare Function SendMessageLongW Lib "user32" _
+   Alias "SendMessageW" ( _
+      ByVal hWnd As Long, _
+      ByVal wMsg As Long, _
+      ByVal wParam As Long, _
+      ByVal lParam As Long) As Long
+Private Declare Function SendMessageW Lib "user32" ( _
+   ByVal hWnd As Long, _
+   ByVal wMsg As Long, _
+   ByVal wParam As Long, _
+   lParam As Any) As Long
+
+Public Enum BalloonTipIconConstants
+   TTI_NONE = 0
+   TTI_INFO = 1
+   TTI_WARNING = 2
+   TTI_ERROR = 3
+End Enum
+
+
+Public Sub ShowBalloonTip()
+Dim lR As Long
+   Dim tEBT As EDITBALLOONTIP
+   tEBT.cbStruct = LenB(tEBT)
+   tEBT.pszText = StrPtr(m_sText) ' Text to show
+   tEBT.pszTitle = StrPtr(m_sTitle) ' Title to show
+   tEBT.ttiIcon = m_eIcon ' One of the balloon tip icons
+   lR = SendMessageW(m_hWnd, EM_SHOWBALLOONTIP, 0, tEBT)
+End Sub
+Public Sub HideBalloonTip()
+Dim lR As Long
+   lR = SendMessageLongW(m_hWnd, EM_HIDEBALLOONTIP, 0, 0)
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Text Box Balloon tip support in XP</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 July 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/TextBox_Balloon_Tips_in_XP/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:01 GMT -->
+</html>

@@ -1,0 +1,314 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/UserControl_OLE_Extensions/IOLEControl/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:06:41 GMT -->
+<head>
+
+<title>vbAccelerator - Using IOLEControl to intercept Alt-keys and Determine when events are frozen</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This article demonstrates how to replace VB's rather useless implementation of the
+IOLEControl interface with something you can actually use to get an event
+when an Alt-key is pressed.
+It also demonstrates how to use the code
+to receive EventsFrozen notifications which can be useful if you want
+to change a controls behaviour when the user has pressed pause in the IDE.
+    " /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">UserControl OLE Extensions</a>&#160;.&#160;Using IOLEControl to intercept Alt-keys and Determine when events are frozen</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="IOLEControl_Samples.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />IOLEControl Samples</a> (36K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:12139</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12139&amp;type=Article&amp;title=Using%20IOLEControl%20to%20intercept%20Alt%2Dkeys%20and%20Determine%20when%20events%20are%20frozen">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />7 Jun 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2771">How to Trap the Tab Key in a UserControl with IOLEInPlaceActiveObject</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12140">vbAccelerator COM/VB Support Type Library (vbaCOM.Tlb)</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3347">Edanmo's VB Page</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Using IOLEControl to intercept Alt-keys and Determine when events are frozen</h1><p class="splash">Add proper mnemonic processing support to VB controls.</p><img src="ioleControl.png" width="354" height="263" alt="IOLEControl Mnemonic Demonstration" /><p /><p>
+This article demonstrates how to replace VB's rather useless implementation of the
+<i>IOLEControl</i> interface with something you can actually use to get an event
+when an Alt-key is pressed.
+It also demonstrates how to use the code
+to receive <i>EventsFrozen</i> notifications which can be useful if you want
+to change a controls behaviour when the user has pressed pause in the IDE.
+    </p><h2>About <i>IOLEControl</i></h2><p>
+The <i>IOLEControl</i> interface is one of many which help interface an
+ActiveX control with its parent.  This particular interface has something
+of a grab bag of features: it controls keyboard mnemonic (Alt-key) handling,
+notifying controls when ambient properties change and notifies controls
+when their container can or can't receive events.
+</p><p>
+VB's built-in implementation of this interface is half-hearted. The
+only feature that's implemented properly is the notification of ambient
+property changes through the <i>AmbientChanged</i> event. Mnemonic processing
+is broken: although you can specify a series of keys which can activate the
+control through the <i>AccessKeys</i> property, the only thing that happens
+when one of these keys is pressed is that the control gets focus if it didn't 
+before.  This allows you to create controls which behave like a label control,
+but not ones which behave like (for example) a Toolbar, when each button could
+have its own alt-key mnemonic.  The EventsFrozen event notification is not directly
+implemented (although it appears that the <i>AmbientChanged</i> event fires
+with a property name of <i>UIDead</i> when this occurs, which might be a suitable
+alternative).
+</p><h2>Using The Code</h2><p>
+There are two samples in the download. The first is a minimal control demonstrating
+how to support multiple Alt- key mnemonics, which resembles the keyboard interface
+for something like a toolbar control.  The second demonstrates how to use a control
+to determine when events are frozen.
+</p><h3>1. Processing Mnemonics</h3><p>
+To process mnemonics you need to do the following:
+</p><ol><li><strong>Reference a Type Library Specifying the IOLEControl Interface</strong><br /><p>
+In this project, I have used the <a href="http://www.vbaccelerator.com/article.asp?id=12140">vbAccelerator 
+COM/VB Support Type Library</a>, however, any 
+type library which supports a VB usable <i>IOLEControl</i> interface should
+be suitable (Eduardo Morcillo's excellent and comprehensive 
+<a href="http://www.vbaccelerator.com/article.asp?id=3347">OleLib.TLB</a> is a great alternative).
+</p></li><li><strong>Add <i>mIOLEControl.bas</i> and <i>pcMnemonics.cls</i></strong> to your control's project<br />
+These provide most of the code you need to use <i>IOLEControl</i> are 
+provided in the download.  To make it easier to ensure you've done everything at compile 
+time, <i>mIOLEControl.bas</i> refers directly to the control's name.  You need to replace
+all instances of the </li><li><strong>Implement Required Methods</strong><p>
+In order to use the interface, you must implement <i>GetControlInfo</i> (which allows you 
+to tell the container which mnemonic keys your control will intercept) and 
+the <i>OnMnemonic</i> methods (which is fired whenever a mnemonic for your control is 
+activated).  These should be implemented as <i>Friend</i> methods so they are not
+visible to callers of the control but the <i>mIOLEControl.bas</i> module can call
+them.
+</p><p>
+The signatures of these methods are as follows:
+</p><pre>
+Friend Function GetControlInfo(pCI As CONTROLINFO) As Long
+
+End Function
+
+Friend Function OnMnemonic(pMsg As MSG) As Long
+
+End Function
+</pre><p>
+The simplest way to use them is in conjunction with the <i>pcMnemonics</i> 
+class.  This wraps up most of the details of creating accelerator tables
+which is required to support <i>GetControlInfo</i> and also provides a 
+simple wrapper to store the mnemonics you define.  In this case the
+code is as follows:
+</p><pre>
+
+' Windows keyboard message constants:
+Private Const WM_SYSCHAR&amp; = &amp;H106&amp;
+Private Const WM_SYSKEYDOWN&amp; = &amp;H104&amp;
+
+Private m_cMnemonics As New pcMnemonics
+
+Friend Function GetControlInfo(pCI As CONTROLINFO) As Long
+   
+   pCI.cb = LenB(pCI)
+   pCI.cAccel = m_cMnemonics.Count
+   pCI.hAccel = m_cMnemonics.hAccel
+   pCI.dwFlags = 0
+   
+End Function
+
+Friend Function OnMnemonic(pMsg As MSG) As Long
+   
+   If (pMsg.Message = WM_SYSCHAR Or _
+      pMsg.Message = WM_SYSKEYDOWN) Then
+      
+      Dim i As Long
+      For i = 1 To m_cMnemonics.Count
+         If (pMsg.wParam = m_cMnemonics.VirtKey(i)) Then
+            
+            ' Process the mnemonic press here
+
+            Exit For
+         End If
+      Next i
+   End If
+   
+End Function
+</pre><p>
+Note that you can also modify mnemonic processing so
+you always receive Return and Escape key events even when 
+in a dialog with Default or Cancel buttons defined when 
+your control is in focus.  To do this, modify the value
+of <i>pCI.dwFlags</i> in the <i>GetControlInfo</i> to
+any combination of <i>CTRLINFO_EATS_RETURN</i> (=1)
+and/or <i>CTRLINFO_EATS_ESCAPE</i> (=2).
+</p></li><li><strong>Add Code to Override The VB Implementation</strong><p>
+To do this you need to create variables to store the original
+pointers for the <i>GetControlInfo</i> and <i>OnMnemonic</i>
+methods, and then  use the <i>ReplaceVTableEntry</i> method
+to set the new ones:
+</p><pre>
+Private m_ptrGetControlInfoOrig As Long
+Private m_ptrOnMnemonicOrg As Long
+
+
+Private Sub UserControl_Initialize()
+       
+   ' Get the IOLEControl interface of the control
+   Dim IOleCtl As IOleControl
+   Set IOleCtl = Me
+   ' Replace IOLEControl methods:
+   m_ptrGetControlInfoOrig = ReplaceVTableEntry( _
+      ObjPtr(IOleCtl), _
+      IDX_GetControlInfo, _
+      AddressOf mIOleControl.IOleControl_GetControlInfo, _
+      ObjPtr(Me) _
+      )
+   m_ptrOnMnemonicOrg = ReplaceVTableEntry( _
+      ObjPtr(IOleCtl), _
+      IDX_OnMnemonic, _
+      AddressOf mIOleControl.IOleControl_OnMnemonic, _
+      ObjPtr(Me) _
+      )
+    
+End Sub
+
+Private Sub UserControl_Terminate()
+   
+   ' Get the IOLEControl interface of the control
+   Dim IOleCtl As IOleControl
+   Set IOleCtl = Me
+   ' Restore IOleControl methods:
+   ReplaceVTableEntry _
+      ObjPtr(IOleCtl), _
+      IDX_GetControlInfo, _
+      m_ptrGetControlInfoOrig
+   ReplaceVTableEntry _
+      ObjPtr(IOleCtl), _
+      IDX_OnMnemonic, _
+      m_ptrOnMnemonicOrg
+      
+End Sub
+</pre></li></ol><p>
+Once this is done, you're ready to start adding new mnemonics.
+The <i>pcMnemonics</i> class provides methods to add shortcuts
+keys based on either the a string character (useful if your control
+has labels which include the ampersand prefix) or the virtual
+key code.  There are two corresponding remove methods and 
+also methods for enumerating the keys which have been set up.
+Refer to the demonstration to see these methods in action.
+</p><p>
+Note that if you want to change which mnemonics are set up
+at run-time, you may need to force the container to 
+acknowledge that you want a change.  In VB you can do this
+by modifying the <i>AccessKeys</i> property.  I chose to 
+simply toggle the value of this property between a space
+and an empty string, which does the trick:
+</p><pre>
+Private Sub updateMnemonics()
+   If (UserControl.AccessKeys = "") Then
+      UserControl.AccessKeys = " "
+   Else
+      UserControl.AccessKeys = ""
+   End If
+End Sub
+</pre><h3>2. Events Frozen Notifications</h3><p>
+Setting up an Events Frozen notification is done in a very similar
+to the last example, except for the last two stages you 
+implement and override the <i>FreezeEvents</i> method instead:
+</p><pre>
+Private m_ptrFreezeEventsOrig As Long
+
+Friend Function FreezeEvents(bFreeze As Long) As Long
+   ' Process event here.  If bFreeze = 0 then 
+   ' events are unfrozen, otherwise they are
+   ' frozen.
+End Function
+
+
+Private Sub UserControl_Initialize()
+
+   Dim iOleCtl As IOleControl
+   Set iOleCtl = Me
+   
+   m_ptrFreezeEventsOrig = ReplaceVTableEntry( _
+      ObjPtr(iOleCtl), IDX_FreezeEvents, _
+      AddressOf mIOleControl.IOleControl_FreezeEvents, _
+      ObjPtr(Me) _
+      )
+   
+End Sub
+
+Private Sub UserControl_Terminate()
+   Dim iOleCtl As IOleControl
+   Set iOleCtl = Me
+   
+   ReplaceVTableEntry _
+      ObjPtr(iOleCtl), IDX_FreezeEvents, _
+      m_ptrFreezeEventsOrig
+
+End Sub
+</pre><h2>How It Works</h2><p>
+This technique is a well-known hack to work around limitations of 
+COM objects which don't provide the facilities you want, and relies
+on the way COM objects are laid out physically in memory.  Since this
+is specified in the COM contract, you know that all COM objects <ul>must</ul>
+adhere to the same layout (although this layout can be different depending on 
+a machine's processor architecture, in practice this doesn't really matter for 
+ActiveX objects since we only ever practically run on 32-bit x86 architectures).
+</p><h2>Overriding COM Object Methods</h2><p>
+A COM object in memory is laid out as a sequence of pointers to the functions
+to be called. This sequence is called the <i>vTable</i> (or Virtual Table).  Each object instance
+contains a  memory pointer to this table (an object pointer in memory is actually
+just a pointer to this).  So if we can get the pointer to the vtable,
+then in theory we can replace any of the original functions with our own versions.
+</p><p>
+This is achieved in the code using the <i>ReplaceVTableEntry</i> method.  Basically
+all this needs to do is to locate the table entry to replace, and put a new pointer
+in its place then return.  My version of the code additionally allows you to 
+associate another pointer with this change.  I use this additional pointer to 
+store an un-referenced instance of the owning control, so I can later get
+a control instance and call it.
+</p><p>
+To locate the table entry to replace, we first note that on a 32-bit process all
+memory addresses are 4 bytes long.  The vTable is laid out sequentially, with each
+method following the other in sequence.  So the table entry to replace can be
+identified by its index in the interface.  You can see the layout of an <i>IOLEControl</i>
+interface by looking at its definition in the PlatformSDK (you will find this in the
+file <i>OCIdl.Idl</i>). However, note that as with all COM objects, the object must implement
+IUnknown, and hence the first three members must be the 
+three members of the <i>IUnknown</i> interface: 
+</p><ol><li><i>QueryInterface</i></li><li><i>AddRef</i></li><li><i>Release</i></li></ol><p>
+Therefore the first entry of a COM interface will appear at position 4, following the
+pointer to the <i>Release</i> method.
+</p><p>
+A similar technique is used in the <a href="http://www.vbaccelerator.com/article.asp?id=2771">IOLEInPlaceActiveObject TabCatch sample</a>, 
+except in that code the entire vTable is replaced, rather than just individual methods. 
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">UserControl OLE Extensions</a>&#160;.&#160;Using IOLEControl to intercept Alt-keys and Determine when events are frozen</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/UserControl_OLE_Extensions/IOLEControl/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:06:42 GMT -->
+</html>

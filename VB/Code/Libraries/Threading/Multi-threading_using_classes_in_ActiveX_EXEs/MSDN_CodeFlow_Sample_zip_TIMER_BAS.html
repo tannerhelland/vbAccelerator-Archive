@@ -1,0 +1,104 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Threading/Multi-threading_using_classes_in_ActiveX_EXEs/MSDN_CodeFlow_Sample_zip_TIMER_BAS.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:51 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: TIMER.BAS</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: TIMER.BAS" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Threading</a>&#160;.&#160;<a href="article.html">Multi-Threaded VB Using ActiveX EXEs</a>&#160;.&#160;<a href="MSDN_CodeFlow_Sample.html">MSDN CodeFlow Sample</a>&#160;.&#160;TIMER.BAS</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="MSDN_CodeFlow_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />MSDN CodeFlow Sample</a> (38K)</p><p /><p class="nav"><a href="Multi-Threaded_EXE_Project.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />Multi-Threaded EXE Project</a> (18K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:3705</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3705&amp;type=Zip&amp;title=MSDN%20CodeFlow%20Sample%2Ezip%5FTIMER">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />1 Jan 2000<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1026">IShellFolder Extended Type Library Version 1.2 (ISHF_Ex.Tlb)</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3377">Finding Which DLL Contains an API Call</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: TIMER.BAS</h1><pre>Attribute VB_Name = "modTimer"
+'-------------------------------------------------------------------------------
+' Copyright  1997 Microsoft Corporation. All rights reserved.
+'
+' You have a royalty-free right to use, modify, reproduce and distribute the
+' Sample Application Files (and/or any modified version) in any way you find
+' useful, provided that you agree that Microsoft has no warranty, obligations or
+' liability for any Sample Application Files.
+'-------------------------------------------------------------------------------
+
+Option Explicit
+
+Private Declare Function SetTimer Lib "user32" (ByVal hWnd As Long, _
+    ByVal nIDEvent As Long, ByVal uElapse As Long, ByVal lpTimerFunc As Long) _
+    As Long
+Private Declare Function KillTimer Lib "user32" (ByVal hWnd As Long, _
+    ByVal nIDEvent As Long) As Long
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    pDest As Any, pSource As Any, ByVal ByteLen As Long)
+
+Public gcTimerObjects As Collection
+
+Private Sub TimerProc(ByVal lHwnd As Long, ByVal lMsg As Long, _
+    ByVal lTimerID As Long, ByVal lTime As Long)
+
+    Dim nPtr As Long
+    Dim oTimerObject As objTimer
+
+    'Create a Timer object from the pointer
+    nPtr = gcTimerObjects.Item(Str$(lTimerID))
+    CopyMemory oTimerObject, nPtr, 4
+    'Call a method which will fire the Timer event
+    oTimerObject.Tick
+    'Get rid of the Timer object so that VB will not try to release it
+    CopyMemory oTimerObject, 0&amp;, 4
+End Sub
+
+Public Function StartTimer(lInterval As Long) As Long
+    StartTimer = SetTimer(0, 0, lInterval, AddressOf TimerProc)
+End Function
+
+Public Sub StopTimer(lTimerID As Long)
+    KillTimer 0, lTimerID
+End Sub
+
+Public Sub SetInterval(lInterval As Long, lTimerID As Long)
+    SetTimer 0, lTimerID, lInterval, AddressOf TimerProc
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Threading</a>&#160;.&#160;<a href="article.html">Multi-Threaded VB Using ActiveX EXEs</a>&#160;.&#160;<a href="MSDN_CodeFlow_Sample.html">MSDN CodeFlow Sample</a>&#160;.&#160;TIMER.BAS</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Threading/Multi-threading_using_classes_in_ActiveX_EXEs/MSDN_CodeFlow_Sample_zip_TIMER_BAS.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:51 GMT -->
+</html>

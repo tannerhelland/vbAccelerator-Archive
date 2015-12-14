@@ -1,0 +1,138 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Utility_Controls/HotKey_Control/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:06:43 GMT -->
+<head>
+
+<title>vbAccelerator - ComCtl32.DLL HotKey Control</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+The hotkey control is one of the controls provided as part of COMCTL32.DLL, but, 
+being of somewhat limited utility, has never found its way into Visual Basic's 
+controls. If you need one, however, it does the job really well. 
+
+When it has focus, you can press CTRL, ALT and SHIFT key combinations, and it 
+will show the chosen key combination as a string in a text box. You 
+can then use the key combination as, in this example, a hot key for 
+the application, or you could use it as a menu accelerator.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Utility Controls</a>&#160;.&#160;ComCtl32.DLL HotKey Control</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_HotKey_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 HotKey Control</a> (22K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:4571</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=4571&amp;type=Article&amp;title=ComCtl32%2EDLL%20HotKey%20Control">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 2 / 2</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:24 November 2003</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />22 Nov 1999<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=4576">Creating and Responding to System-Wide Hotkeys</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>ComCtl32.DLL HotKey Control</h1><p class="splash">Provides a simple way to allow your user to set up hotkeys</p><img src="hotkey.gif" width="283" height="185" alt="Hot Key Control Demonstration application." /><p /><p>
+The hotkey control is one of the controls provided as part of COMCTL32.DLL, but, 
+being of somewhat limited utility, has never found its way into Visual Basic's 
+controls. If you need one, however, it does the job really well. 
+</p><p>
+When it has focus, you can press CTRL, ALT and SHIFT key combinations, and it 
+will show the chosen key combination as a string in a text box. You 
+can then use the key combination as, in this example, a hot key for 
+the application, or you could use it as a menu accelerator.
+</p><p>
+For some more details of setting up Hotkeys, see the subclassing article
+<a href="http://www.vbaccelerator.com/article.asp?id=4576">Creating and Responding to System-Wide
+Hotkeys</a>.  To set up a simple hot-key to activate your application,
+you only need this code:
+</p><pre>
+Private Const WM_SETHOTKEY = &amp;H32 
+Private Declare Function SendMessageByLong Lib "user32" _
+   Alias "SendMessageA" _
+     (ByVal hWnd As Long, _
+      ByVal wMsg As Long, _
+      ByVal wParam As Long, _
+      ByVal lParam As Long _
+   ) As Long 
+
+Public Enum echkModifierKeys 
+    HOTKEYF_SHIFT = &amp;H1 
+    HOTKEYF_CONTROL = &amp;H2 
+    HOTKEYF_ALT = &amp;H4 
+    HOTKEYF_EXT = &amp;H8 
+    HOTKEYF_SHIFTCONTROL = &amp;H3 
+    HOTKEYF_ALTSHIFT = &amp;H5 
+    HOTKEYF_CONTROLALT = &amp;H6 
+    HOTKEYF_CONTROLALTSHIFT = &amp;H7 
+End Enum 
+
+
+Public Function SetHotKey( _ 
+        ByVal hWnd As Long, _ 
+        ByVal eKeyCode As VBRUN.KeyCodeConstants, _ 
+        ByVal eModifier As echkModifierKeys _ 
+    ) As Boolean 
+Dim iR As Long 
+Dim lKey As Long 
+    ' wParam is a word with the LoByte set to 
+    ' the key code and the HiByte set to the modifier:
+    lKey = (eKeyCode And &amp;HFF&amp;) Or _
+        ((eModifier And &amp;HFF&amp;) * &amp;H100&amp;) 
+    iR = SendMessageByLong(hWnd, WM_SETHOTKEY, lKey, 0) 
+    Select Case iR 
+    Case 2 
+        Err.Raise 20001, App.EXEName &amp; ".SetHotKey", _
+           "Hot key previously assigned" 
+    Case 1 
+        ' success 
+        SetHotKey = True 
+    Case 0 
+        Err.Raise 20002, App.EXEName &amp; ".SetHotKey", _
+           "Invalid window for Hot key" 
+    Case -1 
+        Err.Raise 20003, App.EXEName &amp; ".SetHotKey", _
+           "Invalid Hot key" 
+    Case Else 
+        Err.Raise 20004, App.EXEName &amp; ".SetHotKey", _
+           "Failed to set Hot key" 
+    End Select
+End Function
+</pre><p>
+Please note there is no VB6 compile currently available for this control,
+but its easy enough to build one from the source.  Just switch the
+subclasser from the VB5 version (SSubTmr.DLL) to the VB6 one (SSubTmr6.DLL),
+change the Project Name and File Name and you're away.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Utility Controls</a>&#160;.&#160;ComCtl32.DLL HotKey Control</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 10 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Utility_Controls/HotKey_Control/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:06:44 GMT -->
+</html>

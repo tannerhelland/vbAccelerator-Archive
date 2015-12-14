@@ -1,0 +1,378 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Common_Dialogs/Find_and_Replace/VB5_FindReplace_Class_and_Sample_zip_cFindReplace_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cFindReplace.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cFindReplace.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Common Dialogs</a>&#160;.&#160;<a href="article.html">Using the Find and Replace Common Dialogs</a>&#160;.&#160;<a href="VB5_FindReplace_Class_and_Sample.html">VB5 FindReplace Class and Sample</a>&#160;.&#160;cFindReplace.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_FindReplace_Class_and_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 FindReplace Class and Sample</a> (18K)</p><p /><p class="nav"><a href="VB6_FindReplace_Class_and_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 FindReplace Class and Sample</a> (17K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:12312</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12312&amp;type=Zip&amp;title=VB5%20FindReplace%20Class%20and%20Sample%2Ezip%5FcFindReplace">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />20 Jun 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=12338">Win32 Hooks in VB - The vbAccelerator Hook Library</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cFindReplace.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cFindReplace"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Type FINDREPLACE
+   lStructSize As Long        '// size of this struct 0x20
+   hWndOwner As Long          '// handle to owner's window
+   hInstance As Long          '// instance handle of.EXE that
+                              '//   contains cust. dlg. template
+   flags As Long            '// one or more of the FR_??
+   lpstrFindWhat As Long      '// ptr. to search string
+   lpstrReplaceWith As Long '// ptr. to replace string
+   wFindWhatLen As Integer        '// size of find buffer
+   wReplaceWithLen As Integer '// size of replace buffer
+   lCustData As Long          '// data passed to hook fn.
+   lpfnHook As Long           '// ptr. to hook fn. or NULL
+   lpTemplateName As Long   '// custom template name
+End Type
+Private Declare Function FindTextA Lib "COMDLG32.DLL" (tF As FINDREPLACE) As
+ Long
+Private Declare Function ReplaceTextA Lib "COMDLG32.DLL" (tF As FINDREPLACE) As
+ Long
+Private Declare Function FindTextW Lib "COMDLG32.DLL" (tF As FINDREPLACE) As
+ Long
+Private Declare Function ReplaceTextW Lib "COMDLG32.DLL" (tF As FINDREPLACE) As
+ Long
+Public Enum EFindReplaceFlags
+    FR_DOWN = &amp;H1&amp;
+    FR_WHOLEWORD = &amp;H2&amp;
+    FR_MATCHCASE = &amp;H4&amp;
+    FR_ENABLEHOOK = &amp;H100&amp;
+    FR_ENABLETEMPLATE = &amp;H200&amp;
+    FR_NOUPDOWN = &amp;H400&amp;
+    FR_NOMATCHCASE = &amp;H800&amp;
+    FR_NOWHOLEWORD = &amp;H1000&amp;
+    FR_ENABLETEMPLATEHANDLE = &amp;H2000&amp;
+    FR_HIDEUPDOWN = &amp;H4000&amp;
+    FR_HIDEMATCHCASE = &amp;H8000&amp;
+    FR_HIDEWHOLEWORD = &amp;H10000
+End Enum
+Private Enum EFindReplaceNotificationFlags
+    FR_REPLACEALL = &amp;H20&amp;
+    FR_DIALOGTERM = &amp;H40&amp;
+    FR_SHOWHELP = &amp;H80&amp;
+    FR_FINDNEXT = &amp;H8&amp;
+    FR_REPLACE = &amp;H10&amp;
+End Enum
+Private Declare Function GetVersion Lib "kernel32" () As Long
+
+Private m_iFindReplaceMsg As Long  '// message identifier for FINDMSGSTRING
+Private Const FINDMSGSTRING = "commdlg_FindReplace"
+Private Declare Function LocalAlloc Lib "kernel32" (ByVal wFlags As Long, ByVal
+ wBytes As Long) As Long
+Private Declare Function LocalFree Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function LocalLock Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function LocalUnlock Lib "kernel32" (ByVal hMem As Long) As Long
+Private Declare Function RegisterWindowMessage Lib "user32" Alias
+ "RegisterWindowMessageA" (ByVal lpString As String) As Long
+Private Const GMEM_FIXED = &amp;H0
+Private Const GMEM_ZEROINIT = &amp;H40
+Private Const GPTR = (GMEM_FIXED Or GMEM_ZEROINIT)
+Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+    lpvDest As Any, lpvSource As Any, ByVal cbCopy As Long)
+Private Declare Sub ZeroMemory Lib "kernel32" Alias "RtlMoveMemory" ( _
+   lpvDest As Any, ByVal numBytes As Long)
+Private Declare Function CloseWindow Lib "user32" (ByVal hWnd As Long) As Long
+Private Declare Function IsWindow Lib "user32" (ByVal hWnd As Long) As Long
+Private Declare Function SendMessageLong Lib "user32" Alias "SendMessageA"
+ (ByVal hWnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Const WM_SYSCOMMAND = &amp;H112
+Private Const SC_RESTORE = &amp;HF120
+Private Const SC_CLOSE = &amp;HF060&amp;
+Private Declare Function SetFocusAPI Lib "user32" Alias "SetFocus" (ByVal hWnd
+ As Long) As Long
+
+Implements ISubclass
+
+Private m_tF As FINDREPLACE
+Private m_hWndFindText As Long
+
+Private m_lBuffLen As Long
+Private m_hFindBuffMem As Long
+Private m_lptrFindBuff As Long
+Private m_hReplaceBuffMem As Long
+Private m_lptrReplaceBuff As Long
+
+Private m_hWndOwner As Long
+
+Public Event ShowHelp()
+Public Event FindNext(ByVal sToFind As String, ByVal eFlags As
+ EFindReplaceFlags)
+Public Event Replace(ByVal sToReplace As String, ByVal sReplaceWith As String,
+ ByVal eFlags As EFindReplaceFlags)
+Public Event ReplaceAll(ByVal sToReplace As String, ByVal sReplaceWith As
+ String, ByVal eFlags As EFindReplaceFlags)
+
+Public Function VBFindText( _
+        ByVal hWndOwner As Long, _
+        Optional ByVal sFindWhat As String = "", _
+        Optional ByVal eFlags As EFindReplaceFlags _
+    ) As Boolean
+      
+   If Not (m_hWndFindText = 0) Then
+      SendMessageLong m_hWndFindText, WM_SYSCOMMAND, SC_CLOSE, 0
+   End If
+      
+   m_tF.hWndOwner = hWndOwner
+   m_tF.lCustData = hWndOwner
+   m_tF.hInstance = 0
+   m_tF.flags = eFlags
+   SetString m_tF.lpstrFindWhat, sFindWhat
+   If IsNt Then
+      m_hWndFindText = FindTextW(m_tF)
+   Else
+      m_hWndFindText = FindTextA(m_tF)
+   End If
+   If Not (m_hWndFindText = 0) Then
+      m_hWndOwner = hWndOwner
+      AttachMessage Me, hWndOwner, m_iFindReplaceMsg
+      mFindReplaceHook.Attach m_hWndFindText
+      VBFindText = True
+   End If
+    
+End Function
+
+Public Function VBReplaceText( _
+      ByVal hWndOwner As Long, _
+      Optional ByVal sReplaceWhat As String = "", _
+      Optional ByVal sReplaceWith As String = "", _
+      Optional ByVal eFlags As EFindReplaceFlags _
+   ) As Boolean
+   
+   If Not (m_hWndFindText = 0) Then
+      SendMessageLong m_hWndFindText, WM_SYSCOMMAND, SC_CLOSE, 0
+   End If
+      
+   m_tF.hWndOwner = hWndOwner
+   m_tF.lCustData = hWndOwner
+   m_tF.hInstance = 0
+   m_tF.flags = eFlags
+   SetString m_tF.lpstrFindWhat, sReplaceWhat
+   SetString m_tF.lpstrReplaceWith, sReplaceWith
+   If IsNt Then
+      m_hWndFindText = ReplaceTextW(m_tF)
+   Else
+      m_hWndFindText = ReplaceTextA(m_tF)
+   End If
+   If Not (m_hWndFindText = 0) Then
+      m_hWndOwner = hWndOwner
+      AttachMessage Me, hWndOwner, m_iFindReplaceMsg
+      mFindReplaceHook.Attach m_hWndFindText
+      VBReplaceText = True
+   End If
+   
+End Function
+
+Public Property Get hWndDialog() As Long
+   hWndDialog = m_hWndFindText
+End Property
+
+Public Sub CloseDialog()
+   If Not (m_hWndFindText = 0) Then
+      If (IsWindow(m_hWndFindText)) Then
+         SendMessageLong m_hWndFindText, WM_SYSCOMMAND, SC_CLOSE, 0
+      End If
+   End If
+End Sub
+
+Private Sub Class_Initialize()
+    
+   m_tF.lStructSize = Len(m_tF)
+   
+   If IsNt Then
+      m_lBuffLen = 1024
+   Else
+      m_lBuffLen = 512
+   End If
+   
+   m_hFindBuffMem = LocalAlloc(GPTR, m_lBuffLen)
+   m_lptrFindBuff = LocalLock(m_hFindBuffMem)
+   
+   m_hReplaceBuffMem = LocalAlloc(GPTR, m_lBuffLen)
+   m_lptrReplaceBuff = LocalLock(m_hReplaceBuffMem)
+   
+   m_tF.lpstrFindWhat = m_lptrFindBuff
+   m_tF.wFindWhatLen = m_lBuffLen
+   m_tF.lpstrReplaceWith = m_lptrReplaceBuff
+   m_tF.wReplaceWithLen = m_lBuffLen
+         
+   m_iFindReplaceMsg = RegisterWindowMessage(FINDMSGSTRING)
+
+End Sub
+
+Private Sub Class_Terminate()
+   If Not (m_hWndOwner = 0) Then
+      DetachMessage Me, m_hWndOwner, m_iFindReplaceMsg
+      mFindReplaceHook.Detach
+   End If
+   If Not (m_hWndFindText = 0) Then
+      ' Want to close the dialog:
+      SendMessageLong m_hWndFindText, WM_SYSCOMMAND, SC_CLOSE, 0
+   End If
+   If Not (m_lptrFindBuff = 0) Then
+      LocalUnlock m_hFindBuffMem
+      m_lptrFindBuff = 0
+   End If
+   If Not (m_hFindBuffMem = 0) Then
+      LocalFree m_hFindBuffMem
+   End If
+   If Not (m_lptrReplaceBuff = 0) Then
+      LocalUnlock m_hReplaceBuffMem
+      m_lptrReplaceBuff = 0
+   End If
+   If Not (m_hReplaceBuffMem = 0) Then
+      LocalFree m_hReplaceBuffMem
+      m_hReplaceBuffMem = 0
+   End If
+End Sub
+
+Private Property Let ISubclass_MsgResponse(ByVal RHS As SSubTimer.EMsgResponse)
+   '
+End Property
+
+Private Property Get ISubclass_MsgResponse() As SSubTimer.EMsgResponse
+   ISubclass_MsgResponse = emrPreprocess
+End Property
+
+Private Function ISubclass_WindowProc(ByVal hWnd As Long, ByVal iMsg As Long,
+ ByVal wParam As Long, ByVal lParam As Long) As Long
+Dim tFR As FINDREPLACE
+Dim eFlags As EFindReplaceFlags
+Dim sToFind As String
+Dim sReplaceWith As String
+
+   Select Case iMsg
+   Case m_iFindReplaceMsg
+      CopyMemory tFR, ByVal lParam, Len(tFR)
+      Select Case True
+      Case ((tFR.flags And FR_DIALOGTERM) = FR_DIALOGTERM)
+         DetachMessage Me, m_hWndOwner, m_iFindReplaceMsg
+         mFindReplaceHook.Detach
+         m_hWndFindText = 0
+      Case ((tFR.flags And FR_SHOWHELP) = FR_SHOWHELP)
+         RaiseEvent ShowHelp
+         SetFocusAPI m_hWndFindText
+      Case ((tFR.flags And FR_FINDNEXT) = FR_FINDNEXT)
+         eFlags = tFR.flags And Not (FR_DIALOGTERM Or FR_SHOWHELP Or
+          FR_FINDNEXT Or FR_REPLACE Or FR_REPLACEALL)
+         sToFind = GetString(tFR.lpstrFindWhat)
+         RaiseEvent FindNext(sToFind, eFlags)
+         SetFocusAPI m_hWndFindText
+      Case ((tFR.flags And FR_REPLACE) = FR_REPLACE)
+         eFlags = tFR.flags And Not (FR_DIALOGTERM Or FR_SHOWHELP Or
+          FR_FINDNEXT Or FR_REPLACE Or FR_REPLACEALL)
+         sToFind = GetString(tFR.lpstrFindWhat)
+         sReplaceWith = GetString(tFR.lpstrReplaceWith)
+         RaiseEvent Replace(sToFind, sReplaceWith, eFlags)
+         SetFocusAPI m_hWndFindText
+      Case ((tFR.flags And FR_REPLACEALL) = FR_REPLACEALL)
+         eFlags = tFR.flags And Not (FR_DIALOGTERM Or FR_SHOWHELP Or
+          FR_FINDNEXT Or FR_REPLACE Or FR_REPLACEALL)
+         sToFind = GetString(tFR.lpstrFindWhat)
+         sReplaceWith = GetString(tFR.lpstrReplaceWith)
+         RaiseEvent ReplaceAll(sToFind, sReplaceWith, eFlags)
+         SetFocusAPI m_hWndFindText
+      End Select
+   End Select
+End Function
+
+Private Function GetString(ByVal lPtr As Long) As String
+   Dim sRet As String
+   If Not (lPtr = 0) Then
+      Dim b() As Byte
+      ReDim b(0 To m_lBuffLen - 1) As Byte
+      CopyMemory b(0), ByVal lPtr, m_lBuffLen
+      If IsNt Then
+         sRet = b
+      Else
+         sRet = StrConv(b, vbUnicode)
+      End If
+      Dim iPos As Long
+      iPos = InStr(sRet, vbNullChar)
+      If (iPos &gt; 1) Then
+         GetString = Left(sRet, iPos - 1)
+      End If
+   End If
+End Function
+Private Sub SetString(ByVal lPtr As Long, ByVal sString As String)
+   If Not (lPtr = 0) Then
+      If (Len(sString) &gt; 0) Then
+         Dim b() As Byte
+         If IsNt Then
+            If (Len(sString) &gt; m_lBuffLen \ 2) Then
+               sString = Left(sString, m_lBuffLen \ 2)
+            End If
+            b = sString
+         Else
+            If (Len(sString) &gt; m_lBuffLen) Then
+               sString = Left(sString, m_lBuffLen)
+            End If
+            b = StrConv(sString, vbFromUnicode)
+         End If
+         ReDim Preserve b(0 To m_lBuffLen) As Byte
+         CopyMemory ByVal lPtr, b(0), m_lBuffLen
+      End If
+   End If
+End Sub
+Private Function IsNt() As Boolean
+Dim lVer As Long
+   lVer = GetVersion()
+   IsNt = ((lVer And &amp;H80000000) = 0)
+End Function
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Common Dialogs</a>&#160;.&#160;<a href="article.html">Using the Find and Replace Common Dialogs</a>&#160;.&#160;<a href="VB5_FindReplace_Class_and_Sample.html">VB5 FindReplace Class and Sample</a>&#160;.&#160;cFindReplace.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 23 June 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Common_Dialogs/Find_and_Replace/VB5_FindReplace_Class_and_Sample_zip_cFindReplace_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+</html>

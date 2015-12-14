@@ -1,0 +1,66 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Combo_and_List_Boxes/ComboBoxEx/bugTrak1411-2.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:24 GMT -->
+<head>
+<title>vbAccelerator - SendKeys “{TAB}” does not move focus to another control when ComboBoxEx is in focus</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+This article presents an implementation of the Common Controls ComboBoxEx control from scratch in Visual
+Basic.  Although this control is available with some versions of VB, this version provides a number of
+enhancements including pre-built styles (drive picking, font picking, colour picking) and helper such as 
+auto-completion.  And you get the full source code to play around with!
+	" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Combo and List Boxes</a>&#160;.&#160;<a href="article.html">vbAccelerator ComboBoxEx Control</a>&#160;.&#160;<a href="bugTrak.html">BugTrak Summary</a>&#160;.&#160;SendKeys “{TAB}” does not move focus to another control when ComboBoxEx is in focus</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_ComboBoxEx_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ComboBoxEx Control</a> (28K)</p><p class="nav"><a href="VB5_ComboBoxEx_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ComboBoxEx Demonstration</a> (38K)</p><p class="nav"><a href="VB5_ComboBoxEx_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 ComboBoxEx Full Source</a> (94K)</p><p /><p class="nav"><a href="VB6_ComboBoxEx_Control.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ComboBoxEx Control</a> (28K)</p><p class="nav"><a href="VB6_ComboBoxEx_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ComboBoxEx Demonstration</a> (34K)</p><p class="nav"><a href="VB6_ComboBoxEx_Full_Source.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 ComboBoxEx Full Source</a> (91K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:1411</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1411&amp;type=Article&amp;title=vbAccelerator%20ComboBoxEx%20Control">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 2</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:12 January 2004</p>
+<br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />26 Jan 2003<br /><p class="update">Updated WM_CTLCOLOR.. processing so the control renders
+correctly with an XP Manifest.</p><p class="update">Added missing mnubar.bmp to download.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1412">Owner Draw Combo and List Boxes Version 2.1</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1025">Ole Guid and interface definitions (OleGuids.Tlb) </a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>SendKeys “{TAB}” does not move focus to another control when ComboBoxEx is in focus</h1><h2>Summary</h2><table class="article"><tr><td>Id:</td><td>1411.2</td></tr><tr><td>Type:</td><td><img src="../../../../../res/btBugClosed.png" width="16" height="16" alt="Bug" />&#160;Bug</td></tr><tr><td>Current Status:</td><td>Resolution Identified</td></tr></table><h2>Detail</h2><table class="article"><tr class="header"><td>11&#160;Jan&#160;2004</td><td>Open</td><td width="100%">Ferry van de Berg</td></tr><tr><td colspan="3"><p>I have a question about your ComboBoxEx control;</p><p>I use the following code to let the program operator use the Return key to move between controls;</p><pre>Private Sub Form1_KeyDown(Keycode As Integer, Shift As Integer)
+   If KeyCode = vbKeyReturn Or KeyCode = vbKeyDown Then SendKeys "{TAB}"
+End Sub 
+</pre><p>It works fine with all the controls, but not with the ComboBoxEx control, is there something wrong with my code?</p><p>I also tried some other code, but it seems not to work.</p></td></tr><tr class="header"><td>12&#160;Jan&#160;2004</td><td>Resolution Identified</td><td width="100%">Steve McMahon</td></tr><tr><td colspan="3"><p>This can be fixed by adding the same code to the ComboBoxEx control’s own KeyDown event.  However, this indicates that there is some sort of issue with the focus handling, which I have not yet got to the bottom of.</p></td></tr></table><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Combo and List Boxes</a>&#160;.&#160;<a href="article.html">vbAccelerator ComboBoxEx Control</a>&#160;.&#160;<a href="bugTrak.html">BugTrak Summary</a>&#160;.&#160;SendKeys “{TAB}” does not move focus to another control when ComboBoxEx is in focus</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 January 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Combo_and_List_Boxes/ComboBoxEx/bugTrak1411-2.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:24 GMT -->
+</html>

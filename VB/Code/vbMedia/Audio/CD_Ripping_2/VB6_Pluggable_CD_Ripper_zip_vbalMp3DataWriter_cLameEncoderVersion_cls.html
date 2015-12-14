@@ -1,0 +1,158 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_2/VB6_Pluggable_CD_Ripper_zip_vbalMp3DataWriter_cLameEncoderVersion_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: vbalMp3DataWriter_cLameEncoderVersion.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: vbalMp3DataWriter_cLameEncoderVersion.cls" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /><link rel="SHORTCUT ICON" href="http://www.vbaccelerator.com/home/res/vbaccel.ico" /><link rel="copyright" href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp" /><link rel="contents" href="VB6_Pluggable_CD_Ripper.html" /><link rel="meta" type="application/rdf+xml" href="VB6%20Pluggable%20CD%20Ripper.html" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">CD Ripping in VB Part 2</a>&#160;.&#160;<a href="VB6_Pluggable_CD_Ripper.html">VB6 Pluggable CD Ripper</a>&#160;.&#160;vbalMp3DataWriter_cLameEncoderVersion.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_CD_Ripper_Plugin_Interface.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 CD Ripper Plugin Interface</a> (9K)</p><p class="nav"><a href="VB5_Pluggable_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Pluggable CD Ripper</a> (191K)</p><p /><p class="nav"><a href="VB6_CD_Ripper_Plugin_Interface.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 CD Ripper Plugin Interface</a> (9K)</p><p class="nav"><a href="VB6_Pluggable_CD_Ripper.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Pluggable CD Ripper</a> (189K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:15346</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=15346&amp;type=Zip&amp;title=VB6%20Pluggable%20CD%20Ripper%2Ezip%5FvbalMp3DataWriter%5FcLameEncoderVersion">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />27 May 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13703">SGrid 2.0</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2767">vbAccelerator Visual Studio Style Tab Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14898">MP3 Encoding with LAME</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=14971">CD Ripping in VB Part 1</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: vbalMp3DataWriter_cLameEncoderVersion.cls</h1><p>This file is part of the download <a href="VB6_Pluggable_CD_Ripper.html">VB6 Pluggable CD Ripper</a>, which is described in the article <a href="article.html">CD Ripping in VB Part 2</a>.</p><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cLameEncoderVersion"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+' ------------------------------------------------------------
+' Name:   cLameEncoderVersion
+' Author: Steve McMahon (steve@vbaccelerator.com)
+' Date:   2004-05-06
+' Description:
+' Wrapper around LAME Encoder Version call.
+'
+' See http://vbaccelerator.com/
+' ------------------------------------------------------------
+
+Private Declare Sub beVersion Lib "lameencshim.dll" ( _
+   beVersion As BE_VERSION)
+
+Private Const BE_MAX_HOMEPAGE As Long = 128
+Private Type BE_VERSION
+   '// BladeEnc DLL Version number
+   byDLLMajorVersion As Byte
+   byDLLMinorVersion As Byte
+   '// BladeEnc Engine Version Number
+   byMajorVersion As Byte
+   byMinorVersion As Byte
+   '// DLL Release date
+   byDay As Byte
+   byMonth As Byte
+   
+   btYearHomepageDetail(0 To 133) As Byte
+   ' Word alignment problem
+   'WORD wYear
+   '// BladeEnc Homepage URL
+   'CHAR  zHomepage[BE_MAX_HOMEPAGE + 1];
+
+   'BYTE  byAlphaLevel;
+   'BYTE  byBetaLevel;
+   'BYTE  byMMXEnabled;
+
+   btReserved(0 To 124) As Byte
+
+End Type
+
+Private m_tBeVer As BE_VERSION
+Private m_dReleaseDate As Date
+Private m_sHomePage As String
+
+Public Property Get DllMajorVersion() As Byte
+   DllMajorVersion = m_tBeVer.byDLLMajorVersion
+End Property
+Public Property Get DllMinorVersion() As Byte
+   DllMinorVersion = m_tBeVer.byDLLMinorVersion
+End Property
+Public Property Get MajorVersion() As Byte
+   MajorVersion = m_tBeVer.byMajorVersion
+End Property
+Public Property Get MinorVersion() As Byte
+   MinorVersion = m_tBeVer.byMinorVersion
+End Property
+Public Property Get ReleaseDate() As Date
+   ReleaseDate = m_dReleaseDate
+End Property
+Public Property Get HomePage() As String
+   HomePage = m_sHomePage
+End Property
+Public Property Get AlphaLevel() As Byte
+   AlphaLevel = m_tBeVer.btYearHomepageDetail(131)
+End Property
+Public Property Get BetaLevel() As Byte
+   BetaLevel = m_tBeVer.btYearHomepageDetail(132)
+End Property
+Public Property Get MMXEnabled() As Byte
+   MMXEnabled = m_tBeVer.btYearHomepageDetail(133)
+End Property
+
+Private Sub decodeReleaseDate()
+Dim iYear As Long
+   iYear = m_tBeVer.btYearHomepageDetail(0)
+   iYear = iYear Or (m_tBeVer.btYearHomepageDetail(1) * &amp;H100&amp;)
+   On Error Resume Next
+   m_dReleaseDate = DateSerial(iYear, m_tBeVer.byMonth, m_tBeVer.byDay)
+End Sub
+Private Sub decodeHomePage()
+Dim i As Long
+   i = 2
+   Do While m_tBeVer.btYearHomepageDetail(i) &gt; 0 And (i &lt;= BE_MAX_HOMEPAGE + 2)
+      m_sHomePage = m_sHomePage &amp; Chr(m_tBeVer.btYearHomepageDetail(i))
+      i = i + 1
+   Loop
+End Sub
+
+Private Sub Class_Initialize()
+   beVersion m_tBeVer
+   decodeReleaseDate
+   decodeHomePage
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Audio</a>&#160;.&#160;<a href="article.html">CD Ripping in VB Part 2</a>&#160;.&#160;<a href="VB6_Pluggable_CD_Ripper.html">VB6 Pluggable CD Ripper</a>&#160;.&#160;vbalMp3DataWriter_cLameEncoderVersion.cls</p><br /><table style="font-size: 100%;"><tr><td valign="top"><a href="http://creativecommons.org/licenses/by/1.0/"><img src="../../../../../res/cc.png" width="88" height="31" alt="Creative Commons Licence" /></a></td></a></td><td valign="top"><p class="nav" style="padding-bottom: 4px;">All contents of this web site are licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Licence</a>, except where otherwise noted.</p><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>, vbAccelerator Ltd.<br />Last Updated: 12 June 2004</p></td></tr></table></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Audio/CD_Ripping_2/VB6_Pluggable_CD_Ripper_zip_vbalMp3DataWriter_cLameEncoderVersion_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:46 GMT -->
+</html>

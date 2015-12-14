@@ -1,0 +1,236 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Change_The_Width_of_Items_in_a_Listbox/ListBoxHScroll_zip_ListBoxHScroll_ListBoxHScrollDemo_Form1_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:19 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: ListBoxHScroll_ListBoxHScrollDemo_Form1.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: ListBoxHScroll_ListBoxHScrollDemo_Form1.frm" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;<a href="article.html">Change The Width of Items in a Listbox</a>&#160;.&#160;<a href="ListBoxHScroll.html">ListBoxHScroll</a>&#160;.&#160;ListBoxHScroll_ListBoxHScrollDemo_Form1.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="ListBoxHScroll.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />ListBoxHScroll</a> (38K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:12855</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12855&amp;type=Zip&amp;title=ListBoxHScroll%2Ezip%5FListBoxHScroll%5FListBoxHScrollDemo%5FForm1">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />5 Sep 2003<br /><p class="update">Added a code example provided by 
+<a href="http://www.10tec.com/">10Tec</a> which automatically
+calculates the required width for items in the ListBox. This
+code can be used to either size the ListBox so the items fit
+without a scroll bar, or to set the ListBox item width precisely
+so the Horizontal scroll bar just covers the longest item.
+Very neat!</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: ListBoxHScroll_ListBoxHScrollDemo_Form1.frm</h1><pre>VERSION 5.00
+Begin VB.Form Form1 
+   Caption         =   "ListBoxHScroll Class Demo"
+   ClientHeight    =   5100
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   6885
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   5100
+   ScaleWidth      =   6885
+   StartUpPosition =   3  'Windows Default
+   Begin VB.TextBox txtItemCnt 
+      Height          =   315
+      Left            =   1440
+      TabIndex        =   8
+      Text            =   "50"
+      Top             =   180
+      Width           =   615
+   End
+   Begin VB.CommandButton cmdRemoveHScr 
+      Caption         =   "Change the form width to remove the horizontal
+       scroll bar"
+      Height          =   855
+      Left            =   120
+      TabIndex        =   7
+      Top             =   4080
+      Width           =   1815
+   End
+   Begin VB.CommandButton cmdConnect 
+      Caption         =   "Connecting to the populated listbox"
+      Height          =   555
+      Left            =   120
+      TabIndex        =   6
+      Top             =   3360
+      Width           =   1815
+   End
+   Begin VB.CommandButton cmdChangeCap 
+      Caption         =   "Change caption of the last item"
+      Height          =   555
+      Left            =   120
+      TabIndex        =   5
+      Top             =   2640
+      Width           =   1815
+   End
+   Begin VB.CommandButton cmdAddItem 
+      Caption         =   "Add item"
+      Height          =   375
+      Left            =   120
+      TabIndex        =   4
+      Top             =   1140
+      Width           =   1815
+   End
+   Begin VB.CommandButton cmdClear 
+      Caption         =   "Clear"
+      Height          =   375
+      Left            =   120
+      TabIndex        =   3
+      Top             =   2100
+      Width           =   1815
+   End
+   Begin VB.CommandButton cmdRemoveLast 
+      Caption         =   "Remove the last item"
+      Height          =   375
+      Left            =   120
+      TabIndex        =   2
+      Top             =   1620
+      Width           =   1815
+   End
+   Begin VB.ListBox List1 
+      Height          =   3240
+      IntegralHeight  =   0   'False
+      Left            =   2220
+      Style           =   1  'Checkbox
+      TabIndex        =   1
+      Top             =   120
+      Width           =   4395
+   End
+   Begin VB.CommandButton cmdPopulate 
+      Caption         =   "Populate the listbox"
+      Height          =   375
+      Left            =   120
+      TabIndex        =   0
+      Top             =   600
+      Width           =   1815
+   End
+   Begin VB.Label Label1 
+      AutoSize        =   -1  'True
+      Caption         =   "Number of items:"
+      Height          =   195
+      Left            =   180
+      TabIndex        =   9
+      Top             =   240
+      Width           =   1185
+   End
+End
+Attribute VB_Name = "Form1"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Declare Function GetSystemMetrics Lib "user32" (ByVal nIndex As Long)
+ As Long
+Private Const SM_CXFRAME = 32
+
+Dim LBHS As CListBoxHScroll
+
+Private Sub cmdAddItem_Click()
+   LBHS.AddItem "New item: " + String(Int(Rnd * 30) + 1, "W") + "!"
+End Sub
+
+Private Sub cmdChangeCap_Click()
+   LBHS.List(List1.ListCount - 1) = "New caption: " + String(Int(Rnd * 30) + 1,
+    "W") + "!"
+End Sub
+
+Private Sub cmdClear_Click()
+   LBHS.Clear
+End Sub
+
+Private Sub cmdConnect_Click()
+   Dim i As Long
+   
+   List1.Clear
+   
+   For i = 1 To Val(txtItemCnt)
+      List1.AddItem "Item #" &amp; i &amp; ": " &amp; String(Int(Rnd * 30) + 1, "W") &amp; "!"
+   Next
+   
+   LBHS.RefreshHScroll
+End Sub
+
+Private Sub cmdPopulate_Click()
+   Dim i As Long
+   
+   LBHS.Clear
+   
+   For i = 1 To Val(txtItemCnt)
+      LBHS.AddItem "Item #" &amp; i &amp; ": " &amp; String(Int(Rnd * 30) + 1, "W") &amp; "!"
+   Next
+End Sub
+
+Private Sub cmdRemoveHScr_Click()
+   Me.Width = List1.Left + _
+      LBHS.MinWidthNoHScroll * Screen.TwipsPerPixelX + _
+      2 * GetSystemMetrics(SM_CXFRAME) * Screen.TwipsPerPixelX + _
+      120
+End Sub
+
+Private Sub cmdRemoveLast_Click()
+   If List1.ListCount = 0 Then
+      MsgBox "Nothing to remove!", vbCritical
+   Else
+      LBHS.RemoveItem List1.ListCount - 1
+   End If
+End Sub
+
+Private Sub Form_Load()
+   With List1.Font
+      .Name = "Arial"
+      .Size = 12
+      .Italic = True
+   End With
+   
+   Set LBHS = New CListBoxHScroll
+   LBHS.Attach List1
+End Sub
+
+Private Sub Form_Resize()
+   On Error Resume Next
+   List1.Move List1.Left, List1.Top, Me.ScaleWidth - List1.Left - 120,
+    Me.ScaleHeight - List1.Top - 120
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;<a href="article.html">Change The Width of Items in a Listbox</a>&#160;.&#160;<a href="ListBoxHScroll.html">ListBoxHScroll</a>&#160;.&#160;ListBoxHScroll_ListBoxHScrollDemo_Form1.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 8 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Change_The_Width_of_Items_in_a_Listbox/ListBoxHScroll_zip_ListBoxHScroll_ListBoxHScrollDemo_Form1_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:19 GMT -->
+</html>

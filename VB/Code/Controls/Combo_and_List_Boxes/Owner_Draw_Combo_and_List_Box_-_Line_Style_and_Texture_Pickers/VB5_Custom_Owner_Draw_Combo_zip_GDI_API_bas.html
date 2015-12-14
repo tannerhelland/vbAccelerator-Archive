@@ -1,0 +1,373 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Combo_and_List_Boxes/Owner_Draw_Combo_and_List_Box_-_Line_Style_and_Texture_Pickers/VB5_Custom_Owner_Draw_Combo_zip_GDI_API_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:24 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: GDI_API.bas</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: GDI_API.bas" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Combo and List Boxes</a>&#160;.&#160;<a href="article.html">Using ecdClientDrawOnly with the Owner Draw Combo List Box Control</a>&#160;.&#160;<a href="VB5_Custom_Owner_Draw_Combo.html">VB5 Custom Owner Draw Combo</a>&#160;.&#160;GDI_API.bas</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Custom_Owner_Draw_Combo.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Custom Owner Draw Combo</a> (43K)</p><p /><p class="nav"><a href="VB6_Custom_Owner_Draw_Combo.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Custom Owner Draw Combo</a> (41K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:1634</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1634&amp;type=Zip&amp;title=VB5%20Custom%20Owner%20Draw%20Combo%2Ezip%5FGDI%5FAPI">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />19 Dec 2002<br />VB6 version posted.</p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1412">Owner Draw Combo and List Boxes Version 2.1</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: GDI_API.bas</h1><pre>Attribute VB_Name = "mGDI_API"
+Option Explicit
+    
+' General:
+Declare Function GetWindowWord Lib "user32" (ByVal hwnd As Long, ByVal nIndex
+ As Long) As Integer
+    Public Const GWW_HINSTANCE = (-6)
+    
+' GDI object functions:
+Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal hObject As
+ Long) As Long
+Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As Long
+Declare Function GetObjectAPI Lib "gdi32" Alias "GetObjectA" (ByVal hObject As
+ Long, ByVal nCount As Long, lpObject As Any) As Long
+Declare Function GetDC Lib "user32" (ByVal hwnd As Long) As Long
+Declare Function DeleteDC Lib "gdi32" (ByVal hdc As Long) As Long
+Declare Function ReleaseDC Lib "user32" (ByVal hwnd As Long, ByVal hdc As Long)
+ As Long
+Declare Function CreateCompatibleDC Lib "gdi32" (ByVal hdc As Long) As Long
+Declare Function CreateCompatibleBitmap Lib "gdi32" (ByVal hdc As Long, ByVal
+ nWidth As Long, ByVal nHeight As Long) As Long
+Declare Function GetDeviceCaps Lib "gdi32" (ByVal hdc As Long, ByVal nIndex As
+ Long) As Long
+    Public Const BITSPIXEL = 12
+    Public Const LOGPIXELSX = 88    '  Logical pixels/inch in X
+    Public Const LOGPIXELSY = 90    '  Logical pixels/inch in Y
+' System metrics:
+Declare Function GetSystemMetrics Lib "user32" (ByVal nIndex As Long) As Long
+    Public Const SM_CXICON = 11
+    Public Const SM_CYICON = 12
+    Public Const SM_CXFRAME = 32
+    Public Const SM_CYCAPTION = 4
+    Public Const SM_CYFRAME = 33
+    Public Const SM_CYBORDER = 6
+    Public Const SM_CXBORDER = 5
+
+' Region paint and fill functions:
+Declare Function PaintRgn Lib "gdi32" (ByVal hdc As Long, ByVal hRgn As Long)
+ As Long
+Declare Function ExtFloodFill Lib "gdi32" (ByVal hdc As Long, ByVal X As Long,
+ ByVal Y As Long, ByVal crColor As Long, ByVal wFillType As Long) As Long
+    Public Const FLOODFILLBORDER = 0
+    Public Const FLOODFILLSURFACE = 1
+Declare Function GetPixel Lib "gdi32" (ByVal hdc As Long, ByVal X As Long,
+ ByVal Y As Long) As Long
+
+' Pen functions:
+Declare Function CreatePen Lib "gdi32" (ByVal nPenStyle As Long, ByVal nWidth
+ As Long, ByVal crColor As Long) As Long
+Type LOGBRUSH
+   lbStyle As Long
+   lbColor As Long
+   lbHatch As Long
+End Type
+Declare Function ExtCreatePen Lib "gdi32" (ByVal dwPenStyle As Long, ByVal
+ dwWidth As Long, lplb As LOGBRUSH, ByVal dwStyleCount As Long, lpStyle As
+ Long) As Long
+Public Const PS_ALTERNATE = 8
+Public Const PS_COSMETIC = &amp;H0
+Public Const PS_DASH = 1                    '  -------
+Public Const PS_DASHDOT = 3                 '  _._._._
+Public Const PS_DASHDOTDOT = 4              '  _.._.._
+Public Const PS_DOT = 2                     '  .......
+Public Const PS_ENDCAP_FLAT = &amp;H200
+Public Const PS_ENDCAP_MASK = &amp;HF00
+Public Const PS_ENDCAP_ROUND = &amp;H0
+Public Const PS_ENDCAP_SQUARE = &amp;H100
+Public Const PS_GEOMETRIC = &amp;H10000
+Public Const PS_INSIDEFRAME = 6
+Public Const PS_JOIN_BEVEL = &amp;H1000
+Public Const PS_JOIN_MASK = &amp;HF000
+Public Const PS_JOIN_MITER = &amp;H2000
+Public Const PS_JOIN_ROUND = &amp;H0
+Public Const PS_NULL = 5
+Public Const PS_SOLID = 0
+Public Const PS_STYLE_MASK = &amp;HF
+Public Const PS_TYPE_MASK = &amp;HF0000
+Public Const PS_USERSTYLE = 7
+Declare Function BeginPath Lib "gdi32" (ByVal hdc As Long) As Long
+Declare Function EndPath Lib "gdi32" (ByVal hdc As Long) As Long
+Declare Function CloseFigure Lib "gdi32" (ByVal hdc As Long) As Long
+Declare Function StrokePath Lib "gdi32" (ByVal hdc As Long) As Long
+
+
+' Brush functions:
+Declare Function CreateSolidBrush Lib "gdi32" (ByVal crColor As Long) As Long
+Declare Function CreatePatternBrush Lib "gdi32" (ByVal hBitmap As Long) As Long
+
+' Line functions:
+Declare Function LineTo Lib "gdi32" (ByVal hdc As Long, ByVal X As Long, ByVal
+ Y As Long) As Long
+Type POINTAPI
+        X As Long
+        Y As Long
+End Type
+Declare Function MoveToEx Lib "gdi32" (ByVal hdc As Long, ByVal X As Long,
+ ByVal Y As Long, lpPoint As POINTAPI) As Long
+
+' Colour functions:
+Declare Function SetTextColor Lib "gdi32" (ByVal hdc As Long, ByVal crColor As
+ Long) As Long
+Declare Function SetBkColor Lib "gdi32" (ByVal hdc As Long, ByVal crColor As
+ Long) As Long
+Declare Function SetBkMode Lib "gdi32" (ByVal hdc As Long, ByVal nBkMode As
+ Long) As Long
+    Public Const OPAQUE = 2
+    Public Const TRANSPARENT = 1
+Declare Function GetSysColor Lib "user32" (ByVal nIndex As Long) As Long
+    Public Const COLOR_ACTIVEBORDER = 10
+    Public Const COLOR_ACTIVECAPTION = 2
+    Public Const COLOR_ADJ_MAX = 100
+    Public Const COLOR_ADJ_MIN = -100
+    Public Const COLOR_APPWORKSPACE = 12
+    Public Const COLOR_BACKGROUND = 1
+    Public Const COLOR_BTNFACE = 15
+    Public Const COLOR_BTNHIGHLIGHT = 20
+    Public Const COLOR_BTNSHADOW = 16
+    Public Const COLOR_BTNTEXT = 18
+    Public Const COLOR_CAPTIONTEXT = 9
+    Public Const COLOR_GRAYTEXT = 17
+    Public Const COLOR_HIGHLIGHT = 13
+    Public Const COLOR_HIGHLIGHTTEXT = 14
+    Public Const COLOR_INACTIVEBORDER = 11
+    Public Const COLOR_INACTIVECAPTION = 3
+    Public Const COLOR_INACTIVECAPTIONTEXT = 19
+    Public Const COLOR_MENU = 4
+    Public Const COLOR_MENUTEXT = 7
+    Public Const COLOR_SCROLLBAR = 0
+    Public Const COLOR_WINDOW = 5
+    Public Const COLOR_WINDOWFRAME = 6
+    Public Const COLOR_WINDOWTEXT = 8
+    Public Const COLORONCOLOR = 3
+
+' Shell Extract icon functions:
+Declare Function FindExecutable Lib "shell32.dll" Alias "FindExecutableA"
+ (ByVal lpFile As String, ByVal lpDirectory As String, ByVal lpResult As
+ String) As Long
+Declare Function ExtractIcon Lib "shell32.dll" Alias "ExtractIconA" (ByVal
+ hInst As Long, ByVal lpszExeFileName As String, ByVal nIconIndex As Long) As
+ Long
+
+' Icon functions:
+Declare Function DrawIcon Lib "user32" (ByVal hdc As Long, ByVal X As Long,
+ ByVal Y As Long, ByVal hIcon As Long) As Long
+Declare Function DestroyIcon Lib "user32" (ByVal hIcon As Long) As Long
+Declare Function DrawIconEx Lib "user32" (ByVal hdc As Long, ByVal xLeft As
+ Long, ByVal yTop As Long, ByVal hIcon As Long, ByVal cxWidth As Long, ByVal
+ cyWidth As Long, ByVal istepIfAniCur As Long, ByVal hbrFlickerFreeDraw As
+ Long, ByVal diFlags As Long) As Boolean
+Declare Function LoadImage Lib "user32" Alias "LoadImageA" (ByVal hInst As
+ Long, ByVal lpsz As String, ByVal un1 As Long, ByVal n1 As Long, ByVal n2 As
+ Long, ByVal un2 As Long) As Long
+    Public Const LR_LOADMAP3DCOLORS = &amp;H1000
+    Public Const LR_LOADFROMFILE = &amp;H10
+    Public Const LR_LOADTRANSPARENT = &amp;H20
+
+' Blitting functions
+Declare Function BitBlt Lib "gdi32" (ByVal hDestDC As Long, ByVal X As Long,
+ ByVal Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal hSrcDC As
+ Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal dwRop As Long) As Long
+    Public Const SRCAND = &amp;H8800C6
+    Public Const SRCCOPY = &amp;HCC0020
+    Public Const SRCERASE = &amp;H440328
+    Public Const SRCINVERT = &amp;H660046
+    Public Const SRCPAINT = &amp;HEE0086
+    Public Const BLACKNESS = &amp;H42
+    Public Const WHITENESS = &amp;HFF0062
+Declare Function PatBlt Lib "gdi32" (ByVal hdc As Long, ByVal X As Long, ByVal
+ Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal dwRop As Long)
+ As Long
+Declare Function LoadBitmapBynum Lib "user32" Alias "LoadBitmapA" (ByVal
+ hInstance As Long, ByVal lpBitmapName As Long) As Long
+Type BITMAP '14 bytes
+    bmType As Long
+    bmWidth As Long
+    bmHeight As Long
+    bmWidthBytes As Long
+    bmPlanes As Integer
+    bmBitsPixel As Integer
+    bmBits As Long
+End Type
+Declare Function CreateBitmapIndirect Lib "gdi32" (lpBitmap As BITMAP) As Long
+
+' Text functions:
+Type RECT
+    left As Long
+    tOp As Long
+    Right As Long
+    Bottom As Long
+End Type
+Declare Function PtInRect Lib "user32" (lpRect As RECT, ByVal ptX As Long,
+ ByVal ptY As Long) As Long
+Declare Function DrawText Lib "user32" Alias "DrawTextA" (ByVal hdc As Long,
+ ByVal lpStr As String, ByVal nCount As Long, lpRect As RECT, ByVal wFormat As
+ Long) As Long
+    Public Const DT_BOTTOM = &amp;H8
+    Public Const DT_CENTER = &amp;H1
+    Public Const DT_LEFT = &amp;H0
+    Public Const DT_CALCRECT = &amp;H400
+    Public Const DT_WORDBREAK = &amp;H10
+    Public Const DT_VCENTER = &amp;H4
+    Public Const DT_TOP = &amp;H0
+    Public Const DT_TABSTOP = &amp;H80
+    Public Const DT_SINGLELINE = &amp;H20
+    Public Const DT_RIGHT = &amp;H2
+    Public Const DT_NOCLIP = &amp;H100
+    Public Const DT_INTERNAL = &amp;H1000
+    Public Const DT_EXTERNALLEADING = &amp;H200
+    Public Const DT_EXPANDTABS = &amp;H40
+    Public Const DT_CHARSTREAM = 4
+    Public Const DT_NOPREFIX = &amp;H800
+Type DRAWTEXTPARAMS
+    cbSize As Long
+    iTabLength As Long
+    iLeftMargin As Long
+    iRightMargin As Long
+    uiLengthDrawn As Long
+End Type
+Declare Function DrawTextEx Lib "user32" Alias "DrawTextExA" (ByVal hdc As
+ Long, ByVal lpsz As String, ByVal n As Long, lpRect As RECT, ByVal un As Long,
+ lpDrawTextParams As DRAWTEXTPARAMS) As Long
+Declare Function DrawTextExAsNull Lib "user32" Alias "DrawTextExA" (ByVal hdc
+ As Long, ByVal lpsz As String, ByVal n As Long, lpRect As RECT, ByVal un As
+ Long, ByVal lpDrawTextParams As Long) As Long
+    Public Const DT_EDITCONTROL = &amp;H2000
+    Public Const DT_PATH_ELLIPSIS = &amp;H4000
+    Public Const DT_END_ELLIPSIS = &amp;H8000
+    Public Const DT_MODIFYSTRING = &amp;H10000
+    Public Const DT_RTLREADING = &amp;H20000
+    Public Const DT_WORD_ELLIPSIS = &amp;H40000
+
+Type SIZEAPI
+    cx As Long
+    cy As Long
+End Type
+Public Declare Function GetTextExtentPoint32 Lib "gdi32" Alias
+ "GetTextExtentPoint32A" (ByVal hdc As Long, ByVal lpsz As String, ByVal
+ cbString As Long, lpSize As SIZEAPI) As Long
+Public Declare Function GetStockObject Lib "gdi32" (ByVal nIndex As Long) As
+ Long
+    Public Const ANSI_FIXED_FONT = 11
+    Public Const ANSI_VAR_FONT = 12
+    Public Const SYSTEM_FONT = 13
+    Public Const DEFAULT_GUI_FONT = 17 'win95 only
+Declare Function FillRect Lib "user32" (ByVal hdc As Long, lpRect As RECT,
+ ByVal hBrush As Long) As Long
+Declare Function Rectangle Lib "gdi32" (ByVal hdc As Long, ByVal X1 As Long,
+ ByVal y1 As Long, ByVal x2 As Long, ByVal y2 As Long) As Long
+Declare Function DrawEdge Lib "user32" (ByVal hdc As Long, qrc As RECT, ByVal
+ edge As Long, ByVal grfFlags As Long) As Long
+    Public Const BF_LEFT = 1
+    Public Const BF_TOP = 2
+    Public Const BF_RIGHT = 4
+    Public Const BF_BOTTOM = 8
+    Public Const BF_RECT = BF_LEFT Or BF_TOP Or BF_RIGHT Or BF_BOTTOM
+    Public Const BF_MIDDLE = 2048
+    Public Const BDR_SUNKENINNER = 8
+    Public Const BDR_SUNKENOUTER = 2
+
+Declare Function ShowWindow Lib "user32" (ByVal hwnd As Long, ByVal nCmdShow As
+ Long) As Long
+    Public Const SW_SHOWNOACTIVATE = 4
+
+' Scrolling and region functions:
+Declare Function ScrollDC Lib "user32" (ByVal hdc As Long, ByVal dx As Long,
+ ByVal dy As Long, lprcScroll As RECT, lprcClip As RECT, ByVal hrgnUpdate As
+ Long, lprcUpdate As RECT) As Long
+Declare Function SetWindowRgn Lib "user32" (ByVal hwnd As Long, ByVal hRgn As
+ Long, ByVal bRedraw As Long) As Long
+Declare Function SelectClipRgn Lib "gdi32" (ByVal hdc As Long, ByVal hRgn As
+ Long) As Long
+Declare Function CreateRectRgn Lib "gdi32" (ByVal X1 As Long, ByVal y1 As Long,
+ ByVal x2 As Long, ByVal y2 As Long) As Long
+Declare Function CreateRectRgnIndirect Lib "gdi32" (lpRect As RECT) As Long
+Declare Function CreatePolyPolygonRgn Lib "gdi32" (lpPoint As POINTAPI,
+ lpPolyCounts As Long, ByVal nCount As Long, ByVal nPolyFillMode As Long) As
+ Long
+Declare Function CreatePolygonRgn Lib "gdi32" (lpPoint As POINTAPI, ByVal
+ nCount As Long, ByVal nPolyFillMode As Long)
+Declare Function SaveDC Lib "gdi32" (ByVal hdc As Long) As Long
+Declare Function RestoreDC Lib "gdi32" (ByVal hdc As Long, ByVal hSavedDC As
+ Long) As Long
+
+Public Const LF_FACESIZE = 32
+Type LOGFONT
+    lfHeight As Long
+    lfWidth As Long
+    lfEscapement As Long
+    lfOrientation As Long
+    lfWeight As Long
+    lfItalic As Byte
+    lfUnderline As Byte
+    lfStrikeOut As Byte
+    lfCharSet As Byte
+    lfOutPrecision As Byte
+    lfClipPrecision As Byte
+    lfQuality As Byte
+    lfPitchAndFamily As Byte
+    lfFaceName(LF_FACESIZE) As Byte
+End Type
+Public Const FW_NORMAL = 400
+Public Const FW_BOLD = 700
+Public Const FF_DONTCARE = 0
+Public Const DEFAULT_QUALITY = 0
+Public Const DEFAULT_PITCH = 0
+Public Const DEFAULT_CHARSET = 1
+Declare Function CreateFontIndirect&amp; Lib "gdi32" Alias "CreateFontIndirectA"
+ (lpLogFont As LOGFONT)
+Declare Function MulDiv Lib "kernel32" (ByVal nNumber As Long, ByVal nNumerator
+ As Long, ByVal nDenominator As Long) As Long
+Declare Function DrawFocusRect Lib "user32" (ByVal hdc As Long, lpRect As RECT)
+ As Long
+
+Declare Function OleTranslateColor Lib "OLEPRO32.DLL" (ByVal OLE_COLOR As Long,
+ ByVal HPALETTE As Long, pccolorref As Long) As Long
+Public Const CLR_INVALID = -1
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Combo and List Boxes</a>&#160;.&#160;<a href="article.html">Using ecdClientDrawOnly with the Owner Draw Combo List Box Control</a>&#160;.&#160;<a href="VB5_Custom_Owner_Draw_Combo.html">VB5 Custom Owner Draw Combo</a>&#160;.&#160;GDI_API.bas</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Combo_and_List_Boxes/Owner_Draw_Combo_and_List_Box_-_Line_Style_and_Texture_Pickers/VB5_Custom_Owner_Draw_Combo_zip_GDI_API_bas.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:24 GMT -->
+</html>

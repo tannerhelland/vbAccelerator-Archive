@@ -1,0 +1,352 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Working_with_Multiple_Monitors/Multiple_Monitor_Support_Sample_Code_zip_frmTestMonitors_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:19 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmTestMonitors.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmTestMonitors.frm" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;<a href="article.html">Working with Multiple Monitors</a>&#160;.&#160;<a href="Multiple_Monitor_Support_Sample_Code.html">Multiple Monitor Support Sample Code</a>&#160;.&#160;frmTestMonitors.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Multiple_Monitor_Support_Sample_Code.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />Multiple Monitor Support Sample Code</a> (57K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:12628</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=12628&amp;type=Zip&amp;title=Multiple%20Monitor%20Support%20Sample%20Code%2Ezip%5FfrmTestMonitors">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 1</a></p><p class="nav">Updated:29 January 2004</p>
+<br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />27 Jun 2003<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmTestMonitors.frm</h1><pre>VERSION 5.00
+Begin VB.Form frmMonitors 
+   Caption         =   "System Monitors"
+   ClientHeight    =   4410
+   ClientLeft      =   2805
+   ClientTop       =   2295
+   ClientWidth     =   7215
+   Icon            =   "frmTestMonitors.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   4410
+   ScaleWidth      =   7215
+   Begin VB.PictureBox picTools 
+      Align           =   1  'Align Top
+      BorderStyle     =   0  'None
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   435
+      Left            =   0
+      ScaleHeight     =   435
+      ScaleWidth      =   7215
+      TabIndex        =   1
+      Top             =   0
+      Width           =   7215
+      Begin VB.CommandButton cmdMaximise 
+         Caption         =   "Ma&amp;ximise"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Left            =   3960
+         TabIndex        =   5
+         Top             =   0
+         Width           =   975
+      End
+      Begin VB.CommandButton cmdCentre 
+         Caption         =   "&amp;Centre"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Left            =   2940
+         TabIndex        =   4
+         Top             =   0
+         Width           =   975
+      End
+      Begin VB.CommandButton cmdMove 
+         Caption         =   "&amp;Move"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Left            =   1920
+         TabIndex        =   3
+         Top             =   0
+         Width           =   975
+      End
+      Begin VB.ComboBox cboMonitors 
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Left            =   60
+         Style           =   2  'Dropdown List
+         TabIndex        =   2
+         Top             =   30
+         Width           =   1815
+      End
+   End
+   Begin VB.Timer tmrMove 
+      Interval        =   50
+      Left            =   6660
+      Top             =   720
+   End
+   Begin VB.PictureBox picMonitors 
+      AutoRedraw      =   -1  'True
+      BackColor       =   &amp;H00000000&amp;
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   3255
+      Left            =   60
+      ScaleHeight     =   159.75
+      ScaleMode       =   0  'User
+      ScaleWidth      =   321.75
+      TabIndex        =   0
+      Top             =   480
+      Width           =   6495
+   End
+End
+Attribute VB_Name = "frmMonitors"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private m_cM As New cMonitors
+
+Private Sub showMonitors()
+Dim i As Long
+
+   With picMonitors
+      .Cls
+      .ScaleWidth = m_cM.VirtualScreenWidth + 64
+      .ScaleHeight = .Height * (.ScaleWidth / .Width)
+           
+   End With
+   
+   With m_cM
+      picMonitors.Line (.VirtualScreenLeft + 32, .VirtualScreenTop +
+       32)-(.VirtualScreenWidth + .VirtualScreenLeft + 32, .VirtualScreenHeight
+       + .VirtualScreenTop + 32), &amp;HFF00&amp;, BF
+      For i = 1 To .MonitorCount
+         With .Monitor(i)
+            picMonitors.ForeColor = vbWhite
+            picMonitors.Line (.Left + 32, .Top + 32)-(.Left + 32 + .Width, .Top
+             + 32 + .Height), QBColor(i * 2), BF
+            picMonitors.Line (.WorkLeft + 32, .WorkTop + 32)-(.WorkLeft + 32 +
+             .WorkWidth, .WorkTop + 32 + .WorkHeight), QBColor(i * 2 + 1), BF
+            
+            picMonitors.CurrentX = .Left + 36
+            picMonitors.CurrentY = .Top + 36
+            picMonitors.Print .Name &amp; IIf(.IsPrimary, " (Primary)", "")
+            picMonitors.CurrentX = .Left + 36
+         End With
+      Next i
+      
+   End With
+
+Dim lX1 As Long, lY1 As Long, lX2 As Long, lY2 As Long
+   lX1 = Me.ScaleX(Me.Left, vbTwips, vbPixels) + 32
+   lY1 = Me.ScaleY(Me.Top, vbTwips, vbPixels) + 32
+   lX2 = lX1 + Me.ScaleX(Me.Width, vbTwips, vbPixels)
+   lY2 = lY1 + Me.ScaleY(Me.Height, vbTwips, vbPixels)
+   picMonitors.Line (lX1, lY1)-(lX2, lY2), vbWhite, BF
+   
+   picMonitors.CurrentX = 32
+   picMonitors.CurrentY = m_cM.VirtualScreenHeight + m_cM.VirtualScreenHeight \
+    32
+   picMonitors.Print IIf(m_cM.AllMonitorsSame, "All monitors have same display
+    format", "Monitors have different display formats")
+   
+   picMonitors.Refresh
+   
+End Sub
+
+Private Sub cmdCentre_Click()
+Dim cMonTo As cMonitor
+Dim lWidth As Long
+Dim lHeight As Long
+   
+   Set cMonTo = m_cM.Monitor(cboMonitors.ItemData(cboMonitors.ListIndex))
+   
+   If (Me.WindowState = vbMaximized) Then
+      Me.WindowState = vbNormal
+   End If
+   
+   lWidth = Me.ScaleX(Me.Width, vbTwips, vbPixels)
+   If (lWidth &gt; cMonTo.WorkWidth) Then
+      lWidth = cMonTo.WorkWidth
+   End If
+   lHeight = Me.ScaleY(Me.Height, vbTwips, vbPixels)
+   If (lHeight &gt; cMonTo.WorkHeight) Then
+      lHeight = cMonTo.WorkHeight
+   End If
+   
+   Me.Move _
+      Me.ScaleX((cMonTo.WorkLeft + (cMonTo.WorkWidth - lWidth) \ 2), vbPixels,
+       vbTwips), _
+      Me.ScaleY((cMonTo.WorkTop + (cMonTo.WorkHeight - lHeight) \ 2), vbPixels,
+       vbTwips)
+   
+   '
+End Sub
+
+Private Sub cmdMaximise_Click()
+   '
+Dim cMonTo As cMonitor
+Dim cMonFrom As cMonitor
+   
+   Set cMonTo = m_cM.Monitor(cboMonitors.ItemData(cboMonitors.ListIndex))
+   Set cMonFrom = m_cM.MonitorForWindow(Me.hwnd)
+   
+   If Not (cMonTo.hMonitor = cMonFrom.hMonitor) Then
+      ' we need to swap onto the new monitor:
+      If (Me.WindowState = vbMaximized) Then
+         Me.WindowState = vbNormal
+      End If
+      Me.Move Me.ScaleX(cMonTo.Left, vbPixels, vbTwips), Me.ScaleY(cMonTo.Top,
+       vbPixels, vbTwips)
+   End If
+   Me.WindowState = vbMaximized
+
+   '
+End Sub
+
+Private Sub cmdMove_Click()
+   '
+Dim cMonTo As cMonitor
+Dim cMonFrom As cMonitor
+   
+   Set cMonTo = m_cM.Monitor(cboMonitors.ItemData(cboMonitors.ListIndex))
+   Set cMonFrom = m_cM.MonitorForWindow(Me.hwnd)
+   
+   If Not (cMonTo.hMonitor = cMonFrom.hMonitor) Then
+      
+      ' work out my offset from the origin of this monitor:
+      Dim lOffsetX As Long
+      Dim lOffsetY As Long
+      lOffsetX = ScaleX(Me.Left, vbTwips, vbPixels) - cMonFrom.Left
+      lOffsetY = ScaleY(Me.Top, vbTwips, vbPixels) - cMonFrom.Top
+      
+      If (lOffsetX &lt; 0) Then
+         lOffsetX = 32
+      End If
+      If (lOffsetY &lt; 0) Then
+         lOffsetY = 32
+      End If
+      
+      ' move to the newly selected monitor
+      Me.Move Me.ScaleX(lOffsetX + cMonTo.Left, vbPixels, vbTwips),
+       Me.ScaleY(lOffsetY + cMonTo.Top, vbPixels, vbTwips)
+         
+   End If
+   '
+End Sub
+
+Private Sub Form_Load()
+Dim i As Long
+   With m_cM
+      For i = 1 To .MonitorCount
+         cboMonitors.AddItem .Monitor(i).Name
+         cboMonitors.ItemData(cboMonitors.NewIndex) = i
+      Next i
+   End With
+   If (cboMonitors.ListCount &gt; 0) Then
+      cboMonitors.ListIndex = 0
+   End If
+End Sub
+
+Private Sub Form_Paint()
+   showMonitors
+End Sub
+
+Private Sub Form_Resize()
+On Error Resume Next
+   picMonitors.Move picMonitors.Left, picMonitors.Top, _
+      Me.ScaleWidth - picMonitors.Left * 2, _
+      Me.ScaleHeight - picMonitors.Top - picMonitors.Left
+End Sub
+
+Private Sub tmrMove_Timer()
+Static fLeft As Single, fTop As Single
+   ' really use WM_MOVING for this, but for the sake of the demo:
+   If Not (Me.Top = fLeft) Or Not (Me.Left = fLeft) Then
+      Me.Refresh
+   End If
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;<a href="article.html">Working with Multiple Monitors</a>&#160;.&#160;<a href="Multiple_Monitor_Support_Sample_Code.html">Multiple Monitor Support Sample Code</a>&#160;.&#160;frmTestMonitors.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 July 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Working_with_Multiple_Monitors/Multiple_Monitor_Support_Sample_Code_zip_frmTestMonitors_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:19 GMT -->
+</html>

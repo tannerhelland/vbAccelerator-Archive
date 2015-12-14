@@ -1,0 +1,361 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Menus/PopupMenu_-_SysTray_Demonstration/VB5_SysTray_With_Icons_Demonstration_zip_fSysTrayIconMenu_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:13 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: fSysTrayIconMenu.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: fSysTrayIconMenu.frm" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Menus</a>&#160;.&#160;<a href="article.html">Using Popup Menu ActiveX DLL to create SysTray Menus with Icons</a>&#160;.&#160;<a href="VB5_SysTray_With_Icons_Demonstration.html">VB5 SysTray With Icons Demonstration</a>&#160;.&#160;fSysTrayIconMenu.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_SysTray_With_Icons_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 SysTray With Icons Demonstration</a> (38K)</p><p /><p class="nav"><a href="VB6_SysTray_With_Icons_Demonstration.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 SysTray With Icons Demonstration</a> (33K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:377</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=377&amp;type=Zip&amp;title=VB5%20SysTray%20With%20Icons%20Demonstration%2Ezip%5FfSysTrayIconMenu">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />21 Mar 2000<br /><p class="update">Added the Win32 API call <span class="code">SetForegroundWindow</span> before showing the SysTray menu - 
+this ensures that the menu dismisses when the user clicks off the menu onto 
+(for example) the desktop, whereas before it used to stick.</p><p class="update">Fixed problem on systems with Large Fonts set. The code hardcoded a twips/pixel value 
+of 15 into the message values responded to from the SysTray. Now the code uses VB's 
+<span class="code">ScaleX</span> method to get the correct message value so it works on all systems.</p></p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=7">PopupMenu DLL - Create Unlimited Popup Menus</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=961">icoIcon</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2">vbAccelerator ImageList Control and Class v2.0</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: fSysTrayIconMenu.frm</h1><pre>VERSION 5.00
+Begin VB.Form fSysTrayIconMenu 
+   BorderStyle     =   0  'None
+   ClientHeight    =   2070
+   ClientLeft      =   6330
+   ClientTop       =   5595
+   ClientWidth     =   5205
+   ControlBox      =   0   'False
+   LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
+   ScaleHeight     =   2070
+   ScaleWidth      =   5205
+   ShowInTaskbar   =   0   'False
+   Visible         =   0   'False
+End
+Attribute VB_Name = "fSysTrayIconMenu"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+
+' frmSysTray.
+' Steve McMahon
+' based on code supplied from Ben Baird:
+
+'Author:
+'        Ben Baird &lt;psyborg@cyberhighway.com&gt;
+'        Copyright (c) 1997, Ben Baird
+'
+'Purpose:
+'        Demonstrates setting an icon in the taskbar's
+'        system tray without the overhead of subclassing
+'        to receive events.
+
+Private Declare Function SetForegroundWindow Lib "user32" (ByVal hwnd As Long)
+ As Long
+
+Private Type POINTAPI
+   x As Long
+   y As Long
+End Type
+Private Declare Function GetCursorPos Lib "user32" (lpPoint As POINTAPI) As Long
+Private Type RECT
+   Left As Long
+   Top As Long
+   Right As Long
+   Bottom As Long
+End Type
+Private Declare Function GetWindowRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function SendMessageLong Lib "user32" Alias "SendMessageA"
+ (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As
+ Long) As Long
+Private Const WM_CANCELMODE = &amp;H1F
+Private Declare Function TrackPopupMenu Lib "user32" (ByVal hMenu As Long,
+ ByVal wFlags As Long, ByVal x As Long, ByVal y As Long, ByVal nReserved As
+ Long, ByVal hwnd As Long, lprc As RECT) As Long
+' Track popup menu constants:
+Private Const TPM_CENTERALIGN = &amp;H4&amp;
+Private Const TPM_LEFTALIGN = &amp;H0&amp;
+Private Const TPM_LEFTBUTTON = &amp;H0&amp;
+Private Const TPM_RIGHTALIGN = &amp;H8&amp;
+Private Const TPM_RIGHTBUTTON = &amp;H2&amp;
+
+Private Const TPM_NONOTIFY = &amp;H80&amp;           '/* Don't send any notification
+ msgs */
+Private Const TPM_RETURNCMD = &amp;H100
+Private Const TPM_HORIZONTAL = &amp;H0          '/* Horz alignment matters more */
+Private Const TPM_VERTICAL = &amp;H40           '/* Vert alignment matters more */
+
+Private Declare Function Shell_NotifyIcon Lib "shell32.dll" Alias
+ "Shell_NotifyIconA" (ByVal dwMessage As Long, lpData As NOTIFYICONDATA) As Long
+
+Private Const NIF_ICON = &amp;H2
+Private Const NIF_MESSAGE = &amp;H1
+Private Const NIF_TIP = &amp;H4
+Private Const NIM_ADD = &amp;H0
+Private Const NIM_MODIFY = &amp;H1
+Private Const NIM_DELETE = &amp;H2
+Private Const MAX_TOOLTIP As Integer = 64
+Private Type NOTIFYICONDATA
+    cbSize As Long
+    hwnd As Long
+    uID As Long
+    uFlags As Long
+    uCallbackMessage As Long
+    hIcon As Long
+    szTip As String * MAX_TOOLTIP
+End Type
+Private nfIconData As NOTIFYICONDATA
+
+Private Const WM_MOUSEMOVE = &amp;H200
+Private Const WM_LBUTTONDBLCLK = &amp;H203
+Private Const WM_LBUTTONDOWN = &amp;H201
+Private Const WM_LBUTTONUP = &amp;H202
+Private Const WM_RBUTTONDBLCLK = &amp;H206
+Private Const WM_RBUTTONDOWN = &amp;H204
+Private Const WM_RBUTTONUP = &amp;H205
+
+Public Event SysTrayMouseDown(ByVal eButton As MouseButtonConstants)
+Public Event SysTrayMouseUp(ByVal eButton As MouseButtonConstants)
+Public Event SysTrayMouseMove()
+Public Event SysTrayDoubleClick(ByVal eButton As MouseButtonConstants)
+Public Event MenuClick(ByVal lIndex As Long, ByVal sKey As String)
+
+Private WithEvents m_cM As cPopupMenu
+Attribute m_cM.VB_VarHelpID = -1
+Private m_bAddedMenuItem As Boolean
+Private m_hWndOwner As Long
+
+Public Sub Initialise(ByVal hWndOwner As Long)
+   m_hWndOwner = hWndOwner
+   'Add the icon to the system tray...
+   With nfIconData
+       .hwnd = Me.hwnd
+       .uID = Me.Icon
+       .uFlags = NIF_ICON Or NIF_MESSAGE Or NIF_TIP
+       .uCallbackMessage = WM_MOUSEMOVE
+       .hIcon = Me.Icon.Handle
+       .szTip = App.FileDescription &amp; Chr$(0)
+       .cbSize = Len(nfIconData)
+   End With
+   Shell_NotifyIcon NIM_ADD, nfIconData
+   Set m_cM = New cPopupMenu
+   m_cM.hWndOwner = hWndOwner
+
+End Sub
+
+Public Property Get ToolTip() As String
+Dim sTip As String
+Dim iPos As Long
+    sTip = nfIconData.szTip
+    iPos = InStr(sTip, Chr$(0))
+    If (iPos &lt;&gt; 0) Then
+        sTip = Left$(sTip, iPos - 1)
+    End If
+    ToolTip = sTip
+End Property
+Public Property Let ToolTip(ByVal sTip As String)
+    If (sTip &amp; Chr$(0) &lt;&gt; nfIconData.szTip) Then
+        nfIconData.szTip = sTip &amp; Chr$(0)
+        nfIconData.uFlags = NIF_TIP
+        Shell_NotifyIcon NIM_MODIFY, nfIconData
+    End If
+End Property
+Public Property Get IconHandle() As Long
+    IconHandle = nfIconData.hIcon
+End Property
+Public Property Let IconHandle(ByVal hIcon As Long)
+    If (hIcon &lt;&gt; nfIconData.hIcon) Then
+        nfIconData.hIcon = hIcon
+        nfIconData.uFlags = NIF_ICON
+        Shell_NotifyIcon NIM_MODIFY, nfIconData
+    End If
+End Property
+Public Property Let ImageList(ils As Variant)
+   m_cM.ImageList = ils
+End Property
+Public Property Get PopupMenuObject() As cPopupMenu
+   Set PopupMenuObject = m_cM
+End Property
+Public Function AddMenuItem( _
+      ByVal sCaption As String, _
+      Optional ByVal sKey As String = "", _
+      Optional ByVal bDefault As Boolean = False, _
+      Optional ByVal lItemData As Long = 0, _
+      Optional ByVal lParentIndex As Long = 0, _
+      Optional ByVal lIconIndex As Long = -1, _
+      Optional ByVal bChecked As Boolean = False, _
+      Optional ByVal bEnabled As Boolean = True _
+   ) As Long
+Dim lR As Long
+   lR = m_cM.AddItem(sCaption, , lItemData, lParentIndex, lIconIndex, bChecked,
+    bEnabled, sKey)
+   If lR &gt; 0 Then
+      If bDefault Then
+         m_cM.Default(lR) = True
+      End If
+      AddMenuItem = lR
+   End If
+    
+End Function
+Private Function ValidIndex(ByVal lIndex As Long) As Boolean
+   ValidIndex = (lIndex &gt;= 1 And lIndex &lt;= m_cM.Count)
+End Function
+Private Function ValidIndexVar(ByVal vKey As Variant, ByRef lIndex As Long) As
+ Boolean
+Dim lI As Long
+Dim lIdx As Long
+   If IsNumeric(vKey) Then
+      lIdx = vKey
+   Else
+      For lI = 1 To m_cM.Count
+         If m_cM.ItemKey(lI) = vKey Then
+            lIdx = lI
+            Exit For
+         End If
+      Next lI
+   End If
+   If ValidIndex(lIdx) Then
+      ValidIndexVar = True
+      lIndex = lIdx
+   End If
+End Function
+Public Sub EnableMenuItem(ByVal lIndex As Long, ByVal bState As Boolean)
+   If (ValidIndex(lIndex)) Then
+      m_cM.Enabled(lIndex) = bState
+   Else
+      Err.Raise 9
+   End If
+End Sub
+Public Function RemoveMenuItem(ByVal iIndex As Long) As Long
+   If (ValidIndex(iIndex)) Then
+      m_cM.RemoveItem iIndex
+   Else
+      Err.Raise 9
+   End If
+End Function
+Public Property Get Default(ByVal vKey As Variant) As Boolean
+Dim lIndex As Long
+   If (ValidIndexVar(vKey, lIndex)) Then
+      Default = m_cM.Default(lIndex)
+   Else
+      Err.Raise 9
+   End If
+End Property
+Public Property Let Default(ByVal vKey As Variant, ByVal bState As Boolean)
+Dim lIndex As Long
+   If (ValidIndexVar(vKey, lIndex)) Then
+       m_cM.Default(lIndex) = bState
+   Else
+       Err.Raise 9
+   End If
+End Property
+Public Property Get Checked(ByVal vKey As Variant) As Boolean
+Dim lIndex As Long
+   If (ValidIndexVar(vKey, lIndex)) Then
+      Checked = m_cM.Checked(lIndex)
+   Else
+      Err.Raise 9
+   End If
+End Property
+Public Property Let Checked(ByVal vKey As Variant, ByVal bState As Boolean)
+Dim lIndex As Long
+   If (ValidIndexVar(vKey, lIndex)) Then
+       m_cM.Checked(lIndex) = bState
+   Else
+       Err.Raise 9
+   End If
+End Property
+Public Function ShowMenu()
+Dim lIndex As Long
+Dim lR As Long
+Dim sKey As String
+Dim tP As POINTAPI
+Dim tR As RECT
+
+   SetForegroundWindow Me.hwnd
+   GetCursorPos tP
+   lR = m_cM.ShowPopupAbsolute(tP.x, tP.y)
+   If lR &gt; 0 Then
+      sKey = m_cM.ItemKey(lR)
+      RaiseEvent MenuClick(lR, sKey)
+   End If
+   
+End Function
+
+
+Private Sub Form_MouseMove(Button As Integer, Shift As Integer, x As Single, y
+ As Single)
+   Dim lX As Long
+
+   lX = Me.ScaleX(x, Me.ScaleMode, vbPixels)
+   Select Case lX
+   Case WM_MOUSEMOVE
+      RaiseEvent SysTrayMouseMove
+   Case WM_LBUTTONDOWN
+      RaiseEvent SysTrayMouseDown(vbLeftButton)
+   Case WM_LBUTTONUP
+      RaiseEvent SysTrayMouseUp(vbLeftButton)
+   Case WM_LBUTTONDBLCLK
+      RaiseEvent SysTrayDoubleClick(vbLeftButton)
+   Case WM_RBUTTONDOWN
+      RaiseEvent SysTrayMouseDown(vbRightButton)
+   Case WM_RBUTTONUP
+      RaiseEvent SysTrayMouseUp(vbRightButton)
+   Case WM_RBUTTONDBLCLK
+      RaiseEvent SysTrayDoubleClick(vbRightButton)
+   End Select
+
+End Sub
+
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+    Shell_NotifyIcon NIM_DELETE, nfIconData
+    Set m_cM = Nothing
+End Sub
+
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Menus</a>&#160;.&#160;<a href="article.html">Using Popup Menu ActiveX DLL to create SysTray Menus with Icons</a>&#160;.&#160;<a href="VB5_SysTray_With_Icons_Demonstration.html">VB5 SysTray With Icons Demonstration</a>&#160;.&#160;fSysTrayIconMenu.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Menus/PopupMenu_-_SysTray_Demonstration/VB5_SysTray_With_Icons_Demonstration_zip_fSysTrayIconMenu_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:30:13 GMT -->
+</html>

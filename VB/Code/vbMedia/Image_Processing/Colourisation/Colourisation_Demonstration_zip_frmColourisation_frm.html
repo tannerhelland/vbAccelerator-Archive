@@ -1,0 +1,268 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Colourisation/Colourisation_Demonstration_zip_frmColourisation_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: frmColourisation.frm</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: frmColourisation.frm" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;<a href="index.html">Colourisation</a>&#160;.&#160;<a href="article.html"></a>&#160;.&#160;<a href="Colourisation_Demonstration.html">Colourisation Demonstration</a>&#160;.&#160;frmColourisation.frm</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: frmColourisation.frm</h1><pre>VERSION 5.00
+Begin VB.Form frmColourisation 
+   Caption         =   "vbAccelerator Colourisation Demonstration"
+   ClientHeight    =   4785
+   ClientLeft      =   3945
+   ClientTop       =   2880
+   ClientWidth     =   7665
+   BeginProperty Font 
+      Name            =   "Tahoma"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "frmColourisation.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   4785
+   ScaleWidth      =   7665
+   Begin VB.HScrollBar hscSaturation 
+      Height          =   255
+      LargeChange     =   32
+      Left            =   4680
+      Max             =   255
+      SmallChange     =   16
+      TabIndex        =   8
+      Top             =   4320
+      Value           =   100
+      Width           =   1575
+   End
+   Begin VB.HScrollBar hscHue 
+      Height          =   255
+      LargeChange     =   32
+      Left            =   4680
+      Max             =   255
+      SmallChange     =   16
+      TabIndex        =   5
+      Top             =   3960
+      Value           =   100
+      Width           =   1575
+   End
+   Begin VB.CommandButton cmdSource 
+      Caption         =   "Load I&amp;mage..."
+      Height          =   435
+      Left            =   60
+      TabIndex        =   2
+      Top             =   3900
+      Width           =   1455
+   End
+   Begin VB.PictureBox picSource 
+      Height          =   3435
+      Left            =   60
+      ScaleHeight     =   225
+      ScaleMode       =   3  'Pixel
+      ScaleWidth      =   241
+      TabIndex        =   1
+      Top             =   420
+      Width           =   3675
+   End
+   Begin VB.PictureBox picResult 
+      Height          =   3435
+      Left            =   3840
+      ScaleHeight     =   225
+      ScaleMode       =   3  'Pixel
+      ScaleWidth      =   241
+      TabIndex        =   0
+      Top             =   420
+      Width           =   3675
+   End
+   Begin VB.Label lblSaturation 
+      Caption         =   "&amp;Saturation"
+      Height          =   255
+      Left            =   3840
+      TabIndex        =   10
+      Top             =   4320
+      Width           =   855
+   End
+   Begin VB.Label lblSaturationValue 
+      Height          =   255
+      Left            =   6360
+      TabIndex        =   9
+      Top             =   4320
+      Width           =   675
+   End
+   Begin VB.Label lblHue 
+      Caption         =   "&amp;Hue"
+      Height          =   255
+      Left            =   3840
+      TabIndex        =   7
+      Top             =   3960
+      Width           =   855
+   End
+   Begin VB.Label lblHueValue 
+      Height          =   255
+      Left            =   6360
+      TabIndex        =   6
+      Top             =   3960
+      Width           =   675
+   End
+   Begin VB.Label lblSource 
+      BackColor       =   &amp;H80000010&amp;
+      Caption         =   " Source Image"
+      ForeColor       =   &amp;H80000014&amp;
+      Height          =   255
+      Left            =   60
+      TabIndex        =   4
+      Top             =   60
+      Width           =   3675
+   End
+   Begin VB.Label lblResult 
+      BackColor       =   &amp;H80000010&amp;
+      Caption         =   " Result"
+      ForeColor       =   &amp;H80000014&amp;
+      Height          =   255
+      Left            =   3840
+      TabIndex        =   3
+      Top             =   60
+      Width           =   3675
+   End
+End
+Attribute VB_Name = "frmColourisation"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private m_cSourceImage As New cDIBSection
+Private m_cColouriseImage As New cDIBSection
+Private m_cColourise As New cColourise
+
+Private Sub Process()
+   lblHueValue.Caption = hscHue.value
+   lblSaturationValue.Caption = hscSaturation.value
+   m_cColourise.Hue = hscHue.value
+   m_cColourise.Saturation = hscSaturation.value
+   m_cColourise.Process m_cSourceImage, m_cColouriseImage
+   picResult.Refresh
+End Sub
+
+Private Sub openImage(ByVal sFile As String)
+   Dim sPic As StdPicture
+   Set sPic = LoadPicture(sFile)
+   m_cSourceImage.CreateFromPicture sPic
+   picSource.Refresh
+   m_cColouriseImage.Create m_cSourceImage.Width, m_cSourceImage.Height
+   hscHue_Change
+End Sub
+
+Private Sub cmdSource_Click()
+On Error GoTo ErrorHandler
+   
+   Dim c As New cCommonDialog
+   Dim sFile As String
+   If c.VBGetOpenFileName(sFile, Filter:="Picture Files
+    (*.GIF;*.JPG;*.BMP)|*.GIF;*.JPG;*.BMP|All Files (*.*)|*.*",
+    DefaultExt:="BMP", Owner:=Me.hwnd) Then
+      openImage sFile
+   End If
+   Exit Sub
+
+ErrorHandler:
+   MsgBox "Problem getting source image: [" &amp; Err.Description &amp; "]",
+    vbExclamation
+   Exit Sub
+End Sub
+
+
+Private Sub Form_Load()
+   
+   Me.Show
+   Me.Refresh
+   
+On Error GoTo ErrorHandler
+   Dim sFile As String
+   sFile = App.Path
+   If (Right$(sFile, 1) &lt;&gt; "\") Then sFile = sFile &amp; "\"
+   sFile = sFile &amp; "supercomputer.gif"
+   openImage sFile
+   Exit Sub
+   
+ErrorHandler:
+   MsgBox "Problem getting source image: [" &amp; Err.Description &amp; "]",
+    vbExclamation
+   Exit Sub
+End Sub
+
+Private Sub hscHue_Change()
+   Process
+End Sub
+
+Private Sub hscHue_Scroll()
+   Process
+End Sub
+
+Private Sub hscSaturation_Change()
+   Process
+End Sub
+
+Private Sub hscSaturation_Scroll()
+   Process
+End Sub
+
+Private Sub picResult_Paint()
+   m_cColouriseImage.PaintPicture picResult.hdc
+End Sub
+
+Private Sub picSource_Paint()
+   m_cSourceImage.PaintPicture picSource.hdc
+End Sub
+
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">vbMedia</a>&#160;.&#160;<a href="../index.html">Image Processing</a>&#160;.&#160;<a href="index.html">Colourisation</a>&#160;.&#160;<a href="article.html"></a>&#160;.&#160;<a href="Colourisation_Demonstration.html">Colourisation Demonstration</a>&#160;.&#160;frmColourisation.frm</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 8 September 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/vbMedia/Image_Processing/Colourisation/Colourisation_Demonstration_zip_frmColourisation_frm.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:25:45 GMT -->
+</html>

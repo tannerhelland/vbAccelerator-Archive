@@ -1,0 +1,974 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/VBPZip/VBPZip_Source_Code_zip_cNoStatusBar_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:20:03 GMT -->
+<head>
+<title>vbAccelerator - Contents of code file: cNoStatusBar.cls</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="vbAccelerator - Contents of code file: cNoStatusBar.cls" /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Visual Basic Project Zip Utility</a>&#160;.&#160;<a href="VBPZip_Source_Code.html">VBPZip Source Code</a>&#160;.&#160;cNoStatusBar.cls</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="Info-ZIP_Unzip_DLL_(Renamed_vbuzip10_dll).html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />Info-ZIP Unzip DLL (Renamed vbuzip10.dll)</a> (63K)</p><p /><p class="nav"><a href="VBPZip_Source_Code.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VBPZip Source Code</a> (152K)</p><p class="nav"><a href="VBPZip_VB5_Executable.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VBPZip VB5 Executable</a> (69K)</p><p class="nav"><a href="VBPZip_VB6_Executable.html"><img src="../../../res/get.png" width="8" height="8" alt="Download Page" />VBPZip VB6 Executable</a> (62K)</p><br /><br /><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Zip:2150</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=2150&amp;type=Zip&amp;title=VBPZip%20Source%20Code%2Ezip%5FcNoStatusBar">Link to code Zip</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav"><a href="bugTrak.html">BugTrak</a></p><p class="nav"><a href="bugTrak.html#bugs"><img src="../../../res/btBug.png" width="16" height="16" alt="Bug" />&#160;Bugs:</a> 1 / 1</p><p class="nav"><a href="bugTrak.html#issues"><img src="../../../res/btIssue.png" width="16" height="16" alt="Issue" />&#160;Issues:</a> 0 / 0</p><p class="nav"><a href="bugTrak.html#questions"><img src="../../../res/btQuestion.png" width="16" height="16" alt="Question" />&#160;Questions:</a> 0 / 0</a></p><p class="nav">Updated:3 July 2003</p>
+<br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />3 Mar 2003<br /><p class="update">Previous version failed on Windows 2000 because the
+	version check in the NoStatusBar component was incorrect. Now fixed.</p></p><p class="update"><a href="updates.html">Update History &gt;</a></p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1426">Zipping files using the free Info-Zip Zip DLL (now with encryption support)</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=1424">Introduction to the freeware Info-ZIP libraries</a></p><br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>vbAccelerator - Contents of code file: cNoStatusBar.cls</h1><pre>VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "cNoStatusBar"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+' =========================================================================
+' vbAccelerator NoStatusbar class
+' Copyright  1998 Steve McMahon (steve@dogma.demon.co.uk)
+'
+' This class draws a status bar onto a PictureBox, UserControl
+' or form.  Code derived from the vbAccelerator Status Bar
+' control, a full VB implementation of the COMCTL32.DLL Status Bar.
+'
+' * Text and icons in panels
+' * Simple mode support
+' * Height calculation available
+' * Size gripper
+'
+' Visit vbAccelerator at http://vbaccelerator.com
+' =========================================================================
+
+
+' =========================================================================
+' Declares, constants and types required for fake status bar:
+' =========================================================================
+Private Type POINTAPI
+   x As Long
+   y As Long
+End Type
+Private Type RECT
+   Left As Long
+   Top As Long
+   Right As Long
+   Bottom As Long
+End Type
+Private Declare Function DrawStatusText Lib "comctl32" Alias "DrawStatusTextA"
+ (ByVal hdc As Long, lprc As RECT, ByVal pszText As String, ByVal uFlags As
+ Long) As Long
+Private Declare Function ImageList_GetIcon Lib "comctl32" (ByVal hImageList As
+ Long, ByVal ImgIndex As Long, ByVal fuFlags As Long) As Long
+Private Declare Function ImageList_GetIconSize Lib "comctl32" (ByVal hImageList
+ As Long, cx As Long, cy As Long) As Long
+Private Declare Function DrawIconEx Lib "user32" (ByVal hdc As Long, ByVal
+ xLeft As Long, ByVal yTop As Long, ByVal hIcon As Long, ByVal cxWidth As Long,
+ ByVal cyWidth As Long, ByVal istepIfAniCur As Long, ByVal hbrFlickerFreeDraw
+ As Long, ByVal diFlags As Long) As Long
+Private Const DI_MASK = &amp;H1
+Private Const DI_IMAGE = &amp;H2
+Private Const DI_NORMAL = &amp;H3
+Private Const DI_COMPAT = &amp;H4
+Private Const DI_DEFAULTSIZE = &amp;H8
+Private Declare Function DestroyIcon Lib "user32" (ByVal hIcon As Long) As Long
+Private Declare Function DrawText Lib "user32" Alias "DrawTextA" (ByVal hdc As
+ Long, ByVal lpStr As String, ByVal nCount As Long, lpRect As RECT, ByVal
+ wFormat As Long) As Long
+Private Const DT_CALCRECT = &amp;H400
+Private Const DT_CENTER = &amp;H1
+Private Const DT_VCENTER = &amp;H4
+Private Const DT_SINGLELINE = &amp;H20
+Private Const DT_RIGHT = &amp;H2
+Private Const DT_BOTTOM = &amp;H8
+Private Const DT_WORD_ELLIPSIS = &amp;H40000
+Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect
+ As RECT) As Long
+Private Declare Function OffsetRect Lib "user32" (lpRect As RECT, ByVal x As
+ Long, ByVal y As Long) As Long
+Private Const SBT_NOBORDERS = &amp;H100
+Private Const SBT_POPOUT = &amp;H200
+Private Const SBT_RTLREADING = &amp;H400
+Private Declare Function GetSysColorBrush Lib "user32" (ByVal nIndex As Long)
+ As Long
+Private Declare Function FillRect Lib "user32" (ByVal hdc As Long, lpRect As
+ RECT, ByVal hBrush As Long) As Long
+Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As
+ Long
+Private Const COLOR_BTNFACE = 15
+
+' XP DrawTheme declares for XP version
+Private Declare Function GetVersion Lib "kernel32" () As Long
+Private Declare Function OpenThemeData Lib "uxtheme.dll" _
+   (ByVal hwnd As Long, ByVal pszClassList As Long) As Long
+Private Declare Function CloseThemeData Lib "uxtheme.dll" _
+   (ByVal hTheme As Long) As Long
+Private Declare Function DrawThemeBackground Lib "uxtheme.dll" _
+   (ByVal hTheme As Long, ByVal lhDC As Long, _
+    ByVal iPartId As Long, ByVal iStateId As Long, _
+    pRect As RECT, pClipRect As RECT) As Long
+Private Declare Function GetThemeBackgroundContentRect Lib "uxtheme.dll" _
+   (ByVal hTheme As Long, ByVal hdc As Long, _
+    ByVal iPartId As Long, ByVal iStateId As Long, _
+    pBoundingRect As RECT, pContentRect As RECT) As Long
+Private Declare Function DrawThemeText Lib "uxtheme.dll" _
+   (ByVal hTheme As Long, ByVal hdc As Long, ByVal iPartId As Long, _
+    ByVal iStateId As Long, ByVal pszText As Long, _
+    ByVal iCharCount As Long, ByVal dwTextFlag As Long, _
+    ByVal dwTextFlags2 As Long, pRect As RECT) As Long
+Private Declare Function DrawThemeIcon Lib "uxtheme.dll" _
+   (ByVal hTheme As Long, ByVal hdc As Long, ByVal iPartId As Long, _
+    ByVal iStateId As Long, pRect As RECT, _
+    ByVal himl As Long, ByVal iImageIndex As Long) As Long
+Private Const S_OK = 0
+
+' =========================================================================
+' Implementation of fake status bar:
+' =========================================================================
+Public Enum ENSBRPanelStyleConstants
+   estbrStandard = &amp;H0&amp;
+   estbrNoBorders = SBT_NOBORDERS
+   estbrRaisedBorder = SBT_POPOUT
+End Enum
+Private Type tStatusPanel
+   lID As Long
+   sKey As String
+   lItemData As Long
+   iImgIndex As Long
+   hIcon As Long
+   sText As String
+   sToolTipText As String
+   lMinWidth As Long
+   lIdealWidth As Long
+   lSetWidth As Long
+   bSpring As Boolean
+   bFit As Boolean
+   eStyle As ENSBRPanelStyleConstants
+   bState As Boolean
+   tR As RECT
+End Type
+Private m_tPanels() As tStatusPanel
+Private m_iPanelCount As Long
+Private m_bSizeGrip As Boolean
+Private m_hIml As Long
+Private m_pic As PictureBox
+Private m_lIconSize As Long
+Private m_obj As Object
+Private m_lLeft As Long, m_lTop As Long
+Private m_lHeight As Long
+Private m_bSimpleMode As Boolean
+Private m_sSimpleText As String
+
+Private m_bIsXpOrAbove As Boolean
+Private m_bUseXpStyles As Boolean
+
+Private Sub GetWindowsVersion( _
+      Optional ByRef lMajor = 0, _
+      Optional ByRef lMinor = 0, _
+      Optional ByRef lRevision = 0, _
+      Optional ByRef lBuildNumber = 0 _
+   )
+Dim lR As Long
+   lR = GetVersion()
+   lBuildNumber = (lR And &amp;H7F000000) \ &amp;H1000000
+   If (lR And &amp;H80000000) Then lBuildNumber = lBuildNumber Or &amp;H80
+   lRevision = (lR And &amp;HFF0000) \ &amp;H10000
+   lMinor = (lR And &amp;HFF00&amp;) \ &amp;H100
+   lMajor = (lR And &amp;HFF)
+End Sub
+
+Public Property Get SimpleMode() As Boolean
+   SimpleMode = m_bSimpleMode
+End Property
+Public Property Let SimpleMode(ByVal bSimple As Boolean)
+   m_bSimpleMode = bSimple
+   Draw
+End Property
+Public Property Get SimpleText() As String
+   SimpleText = m_sSimpleText
+End Property
+Public Property Let SimpleText(ByVal sText As String)
+   m_sSimpleText = sText
+   If (m_bSimpleMode) Then
+      Draw
+   End If
+End Property
+
+Public Property Get AllowXPStyles() As Boolean
+   AllowXPStyles = m_bIsXpOrAbove
+End Property
+Public Property Let AllowXPStyles(ByVal bState As Boolean)
+   If (bState) Then
+      If Not (m_bIsXpOrAbove) Then
+         Err.Raise vbObjectError + 1052, App.EXEName &amp; ".vbalStatusBar", "XP
+          Styles not supported on this Windows installation."
+      Else
+         m_bUseXpStyles = True
+      End If
+   Else
+      m_bUseXpStyles = False
+   End If
+
+End Property
+
+Public Property Let SizeGrip(ByVal bSizeGrip As Boolean)
+   m_bSizeGrip = bSizeGrip
+   Draw
+End Property
+Public Property Get SizeGrip() As Boolean
+   SizeGrip = m_bSizeGrip
+End Property
+
+Public Function AddPanel( _
+      Optional ByVal eStyle As ENSBRPanelStyleConstants = estbrStandard, _
+      Optional ByVal sText As String = "", _
+      Optional ByVal iImgIndex As Long = -1, _
+      Optional ByVal lMinWidth As Long = 64, _
+      Optional ByVal bSpring As Boolean = False, _
+      Optional ByVal bFitContents As Boolean = False, _
+      Optional ByVal lItemData As Long = 0, _
+      Optional ByVal sKey As String = "", _
+      Optional ByVal vKeyBefore As Variant _
+   ) As Long
+Dim iIndex As Long
+Dim i As Long
+Dim bEnabled As Boolean
+Dim tR As RECT
+   
+   If (m_iPanelCount &gt;= &amp;HFF) Then
+      Err.Raise vbObjectError + 1051, App.EXEName &amp; ".vbalStatusBar", "Too many
+       panels."
+      Exit Function
+   End If
+      
+   If Not IsMissing(vKeyBefore) Then
+      ' Determine if vKeyBefore is valid:
+      iIndex = PanelIndex(vKeyBefore)
+      If (iIndex &gt; 0) Then
+         ' ok. Insert a space:
+         m_iPanelCount = m_iPanelCount + 1
+         ReDim Preserve m_tPanels(1 To m_iPanelCount) As tStatusPanel
+         For i = m_iPanelCount To iIndex + 1 Step -1
+            LSet m_tPanels(i) = m_tPanels(i - 1)
+         Next i
+         m_tPanels(iIndex).hIcon = 0
+      Else
+         ' Failed
+         Exit Function
+      End If
+   Else
+      ' Insert a space at the end:
+      m_iPanelCount = m_iPanelCount + 1
+      ReDim Preserve m_tPanels(1 To m_iPanelCount) As tStatusPanel
+      iIndex = m_iPanelCount
+   End If
+   
+   ' Set up the info:
+   If (bSpring) Then
+      For i = 1 To m_iPanelCount
+         If (i &lt;&gt; iIndex) Then
+            m_tPanels(i).bSpring = False
+         End If
+      Next i
+   End If
+   
+   With m_tPanels(iIndex)
+      .bFit = bFitContents
+      .bSpring = bSpring
+      .eStyle = eStyle
+      .iImgIndex = iImgIndex
+      .lMinWidth = lMinWidth
+      .lItemData = lItemData
+      .sKey = sKey
+      .sText = sText
+   End With
+   
+   ' Add the information to the status bar:
+   pEvaluateIdealSize iIndex
+   pResizeStatus
+   
+   ' Now ensure the text, style, tooltip and icon are actually correct:
+   PanelText(iIndex) = m_tPanels(iIndex).sText
+   PanelIcon(iIndex) = m_tPanels(iIndex).iImgIndex
+      
+   Draw
+   
+End Function
+
+Public Sub Draw()
+Dim i As Long, iEnd As Long
+Dim lhDC As Long
+Dim lX As Long, lY As Long
+Dim hBr As Long, tR As RECT, tOR As RECT, tBR As RECT
+Dim fntThis As StdFont
+Dim bEnd As Boolean
+Dim hTheme As Long
+Dim hR As Long
+Dim rc As RECT
+Dim rcContent As RECT
+Dim bUseXpStyles As Boolean
+   
+   GetClientRect m_obj.hwnd, tR
+   
+   If (m_bUseXpStyles) Then
+      bUseXpStyles = True
+      On Error Resume Next ' Just in case
+      hTheme = OpenThemeData(m_obj.hwnd, StrPtr("Status"))
+      On Error GoTo 0
+      If (hTheme = 0) Then
+         bUseXpStyles = False
+      Else
+         ' draw the background for the status bar:
+         hR = DrawThemeBackground(hTheme, m_obj.hdc, 4, 0, tR, tR)
+         If (hR &lt;&gt; S_OK) Then
+            bUseXpStyles = False
+         End If
+      End If
+   End If
+   
+   If Not (bUseXpStyles) Then
+      hBr = GetSysColorBrush(COLOR_BTNFACE)
+      FillRect m_obj.hdc, tR, hBr
+      DeleteObject hBr
+   End If
+
+   LSet tOR = tR
+
+   pResizeStatus
+   lhDC = m_obj.hdc
+   If (m_bSimpleMode) Then
+      If (bUseXpStyles) Then
+         hR = DrawThemeBackground(hTheme, m_obj.hdc, 2, _
+                0, tR, tR)
+         hR = GetThemeBackgroundContentRect(hTheme, _
+                m_obj.hdc, 2, 0, tR, rcContent)
+         hR = DrawThemeText(hTheme, m_obj.hdc, 2, 0, _
+                StrPtr(" " &amp; m_sSimpleText), -1, _
+                DT_VCENTER Or DT_SINGLELINE, _
+                0, rcContent)
+      Else
+         DrawText lhDC, m_sSimpleText, -1, _
+            tR, DT_VCENTER Or DT_SINGLELINE
+      End If
+   Else
+      Dim iPart As Long
+      For i = 1 To m_iPanelCount
+         If (i = m_iPanelCount) Then
+            iPart = 2
+         Else
+            iPart = 1
+         End If
+         With m_tPanels(i)
+            LSet tBR = .tR
+            If (tBR.Right &gt; tOR.Right) Then
+               tBR.Right = tOR.Right - 1
+               bEnd = True
+            End If
+            If (.hIcon &lt;&gt; 0) Then
+               If Not (bUseXpStyles) Then
+                  DrawStatusText lhDC, tBR, "", .eStyle
+                  ' Draw the icon:
+                  lY = tBR.Top + 1 + (tBR.Bottom - tBR.Top - 2 - m_lIconSize) \
+                   2
+                  lX = tBR.Left + 2
+                  DrawIconEx lhDC, lX, lY, .hIcon, m_lIconSize, m_lIconSize, 0,
+                   0, DI_NORMAL
+                  ' Draw the text:
+                  If (Len(.sText) &gt; 0) Then
+                     tBR.Left = tBR.Left + m_lIconSize + 4
+                     DrawText lhDC, .sText, -1, tBR, DT_VCENTER Or
+                      DT_SINGLELINE Or DT_WORD_ELLIPSIS
+                  End If
+               Else
+                  hR = DrawThemeBackground(hTheme, m_obj.hdc, iPart, _
+                               0, tBR, tBR)
+                  hR = GetThemeBackgroundContentRect(hTheme, _
+                            m_obj.hdc, iPart, 0, tBR, rcContent)
+                  
+                  ' Fails...
+                  'hR = DrawThemeIcon(hTheme, m_obj.hdc, 0, _
+                  '            0, tBR, m_hIml, .iImgIndex)
+                  lY = tBR.Top + 2 + (tBR.Bottom - tBR.Top - 2 - m_lIconSize) \
+                   2
+                  lX = tBR.Left + 2
+                  DrawIconEx lhDC, lX, lY, .hIcon, m_lIconSize, m_lIconSize, 0,
+                   0, DI_NORMAL
+                  rcContent.Left = rcContent.Left + m_lIconSize + 4
+                  hR = DrawThemeText(hTheme, m_obj.hdc, 1, 0, _
+                            StrPtr(" " &amp; .sText), -1, _
+                            DT_VCENTER Or DT_SINGLELINE Or DT_WORD_ELLIPSIS, _
+                            0, rcContent)
+               End If
+            Else
+               If Not (bUseXpStyles) Then
+                  DrawStatusText lhDC, tBR, .sText, .eStyle
+               Else
+                  hR = DrawThemeBackground(hTheme, m_obj.hdc, iPart, _
+                               0, tBR, tBR)
+                  hR = GetThemeBackgroundContentRect(hTheme, _
+                            m_obj.hdc, iPart, 0, tBR, rcContent)
+            
+                  hR = DrawThemeText(hTheme, m_obj.hdc, 1, 0, _
+                            StrPtr(" " &amp; .sText), -1, _
+                            DT_VCENTER Or DT_SINGLELINE, _
+                            0, rcContent)
+               End If
+            End If
+            If bEnd Then
+               Exit For
+            End If
+         End With
+      Next i
+   
+   End If
+   
+   If (m_bSizeGrip) Then
+      If (bUseXpStyles) Then
+         LSet tOR = tR
+         tOR.Left = tR.Right - (tR.Bottom - tR.Top)
+         hR = DrawThemeBackground(hTheme, m_obj.hdc, 3, _
+                  0, tOR, tOR)
+      Else
+         Set fntThis = New StdFont
+         With fntThis
+            .Name = m_obj.Font.Name
+            .Size = m_obj.Font.Size
+            .Bold = m_obj.Font.Bold
+            .Italic = m_obj.Font.Italic
+            .Underline = m_obj.Font.Underline
+         End With
+         m_obj.Font.Name = "Marlett"
+         m_obj.Font.Size = fntThis.Size * 4 / 3
+         m_obj.ForeColor = vb3DHighlight
+         OffsetRect tOR, -2, -1
+         DrawText lhDC, "o", 1, tOR, DT_BOTTOM Or DT_RIGHT Or DT_SINGLELINE
+         m_obj.ForeColor = vbButtonShadow
+         'OffsetRect tOR, 1, 0
+         DrawText lhDC, "p", 1, tOR, DT_BOTTOM Or DT_RIGHT Or DT_SINGLELINE
+         Set m_obj.Font = fntThis
+         m_obj.ForeColor = vbWindowText
+      End If
+   End If
+   
+   If (hTheme) Then
+      CloseThemeData hTheme
+   End If
+   
+End Sub
+
+Public Function RemovePanel( _
+      ByVal vKey As Variant _
+   )
+Dim iIndex As Long
+Dim i As Long
+   iIndex = PanelIndex(vKey)
+   If (iIndex &gt; 0) Then
+      If (m_tPanels(iIndex).hIcon &lt;&gt; 0) Then
+         DestroyIcon m_tPanels(iIndex).hIcon
+      End If
+      For i = iIndex To m_iPanelCount - 1
+         LSet m_tPanels(i) = m_tPanels(i + 1)
+      Next i
+      m_iPanelCount = m_iPanelCount - 1
+      If (m_iPanelCount &gt; 0) Then
+         ReDim Preserve m_tPanels(1 To m_iPanelCount) As tStatusPanel
+      End If
+      Draw
+   End If
+End Function
+
+
+Public Sub SetLeftTopOffsets(ByVal lLeft As Long, ByVal lTop As Long)
+   m_lLeft = lLeft
+   m_lTop = lTop
+End Sub
+
+Public Property Let ImageList(vThis As Variant)
+Dim cy As Long, lR As Long
+    
+    ' Set the ImageList handle property either from a VB
+    ' image list or directly:
+    m_hIml = 0
+    If TypeName(vThis) = "ImageList" Then
+        ' VB ImageList control.  Note that unless
+        ' some call has been made to an object within a
+        ' VB ImageList the image list itself is not
+        ' created.  Therefore hImageList returns error. So
+        ' ensure that the ImageList has been initialised by
+        ' drawing into nowhere:
+        On Error Resume Next
+        ' Get the image list initialised..
+        vThis.ListImages(1).Draw 0, 0, 0, 1
+        m_hIml = vThis.hImageList
+        If (Err.Number &lt;&gt; 0) Then
+            ' No images.
+            m_hIml = 0
+        Else
+            ' Get the icon size:
+            lR = ImageList_GetIconSize(m_hIml, m_lIconSize, cy)
+        End If
+        On Error GoTo 0
+    ElseIf VarType(vThis) = vbLong Then
+        ' (Note that the default property of a vbAccelerator ImageList
+        ' is the hIml property.)
+        
+        ' Assume ImageList handle:
+        m_hIml = vThis
+        ' Get the icon size:
+        lR = ImageList_GetIconSize(m_hIml, m_lIconSize, cy)
+    Else
+        Err.Raise vbObjectError + 1049, App.EXEName &amp; ".vbalStatusBar",
+         "ImageList property expects ImageList object or long hImageList
+         handle."
+    End If
+       
+End Property
+
+Public Sub Create(ByRef objThis As Object)
+Dim lhDC As Long
+Dim lWidth As Long
+Dim lHeight As Long
+Dim tR As RECT
+
+   Set m_obj = objThis
+   
+   ' Check if required methods are supported:
+   On Error Resume Next
+   lhDC = m_obj.hdc
+   lWidth = m_obj.ScaleWidth
+   lHeight = m_obj.ScaleHeight
+   If (Err.Number &lt;&gt; 0) Then
+      Set m_obj = Nothing
+      Err.Raise 9, App.EXEName &amp; ".cNoStatusBar", "Invalid object passed to
+       Create."
+   Else
+      ' Get the height of the font and store:
+      DrawText lhDC, "Xy", 2, tR, DT_CALCRECT
+      m_lHeight = tR.Bottom - tR.Top + 10
+   End If
+   
+End Sub
+
+Public Property Set Font(ByRef fntThis As StdFont)
+Dim tR As RECT
+   Set m_obj.Font = fntThis
+   ' Get the height of the font and store:
+   DrawText m_obj.hdc, "Xy", 2, tR, DT_CALCRECT
+   m_lHeight = tR.Bottom - tR.Top + 10
+End Property
+Public Property Get Font() As StdFont
+   Font = m_obj.Font
+End Property
+
+Public Property Get Height() As Long
+   Height = m_lHeight * Screen.TwipsPerPixelY
+End Property
+
+Public Property Get PanelCount() As Long
+   PanelCount = m_iPanelCount
+End Property
+Public Sub GetPanelRect( _
+      ByVal vKey As Variant, _
+      Optional ByRef iLeftPixels As Long, _
+      Optional ByRef iTopPixels As Long, _
+      Optional ByRef iRightPixels As Long, _
+      Optional ByRef iBottomPixels As Long _
+   )
+Dim iPanel As Long
+Dim tR As RECT
+   iPanel = PanelIndex(vKey)
+   If (iPanel &gt; 0) Then
+      With m_tPanels(iPanel).tR
+         iLeftPixels = .Left
+         iTopPixels = .Top
+         iRightPixels = .Right
+         iBottomPixels = .Bottom
+      End With
+   End If
+End Sub
+
+Public Property Get PanelKey(ByVal lIndex As Long) As Variant
+Dim iPanel As Long
+   If (lIndex &gt; 0) And (lIndex &lt;= m_iPanelCount) Then
+      PanelKey = m_tPanels(lIndex).sKey
+   Else
+      Err.Raise vbObjectError + 1050, App.EXEName &amp; ".vbalStatusBar", "Invalid
+       Panel Index: " &amp; lIndex
+   End If
+   
+End Property
+Public Property Let PanelKey(ByVal lIndex As Long, ByVal vKey As Variant)
+   If (lIndex &gt; 0) And (lIndex &lt;= m_iPanelCount) Then
+      m_tPanels(lIndex).sKey = vKey
+   Else
+      Err.Raise vbObjectError + 1050, App.EXEName &amp; ".vbalStatusBar", "Invalid
+       Panel Index: " &amp; lIndex
+   End If
+   
+End Property
+Public Property Get PanelExists(ByVal vKey As Variant) As Long
+   On Error Resume Next
+   Dim i As Long
+   i = PanelIndex(vKey)
+   PanelExists = ((i &gt; 0) And (Err.Number = 0))
+   Err.Clear
+   On Error GoTo 0
+End Property
+Public Property Get PanelIndex(ByVal vKey As Variant) As Long
+Dim i As Long
+Dim iFound As Long
+
+   If (IsNumeric(vKey)) Then
+      If (vKey &gt; 0) And (vKey &lt;= m_iPanelCount) Then
+         PanelIndex = vKey
+      Else
+         Err.Raise vbObjectError + 1050, App.EXEName &amp; ".vbalStatusBar",
+          "Invalid Panel Index: " &amp; vKey
+      End If
+   Else
+      For i = 1 To m_iPanelCount
+         If m_tPanels(i).sKey = vKey Then
+            iFound = i
+            Exit For
+         End If
+      Next i
+      If (iFound &gt; 0) Then
+         PanelIndex = iFound
+      Else
+         Err.Raise vbObjectError + 1050, App.EXEName &amp; ".vbalStatusBar",
+          "Invalid Panel Index: " &amp; vKey
+      End If
+   End If
+   
+End Property
+Public Property Let PanelText(ByVal vKey As Variant, ByVal sText As String)
+Dim iPanel As Long
+Dim iPartuType As Long
+Dim lR As Long
+   iPanel = PanelIndex(vKey)
+   If (iPanel &gt; 0) Then
+      m_tPanels(iPanel).sText = sText
+      Draw
+   End If
+End Property
+Public Property Get PanelText(ByVal vKey As Variant) As String
+Dim iPanel As Long
+   iPanel = PanelIndex(vKey)
+   If (iPanel &gt; 0) Then
+      PanelText = m_tPanels(iPanel).sText
+   End If
+End Property
+Public Property Let PanelSpring(ByVal vKey As Variant, ByVal bState As Boolean)
+Dim iPanel As Long
+Dim i As Long
+   iPanel = PanelIndex(vKey)
+   If (iPanel &gt; 0) Then
+      If (m_tPanels(iPanel).bSpring &lt;&gt; bState) Then
+         For i = 1 To m_iPanelCount
+            If i = iPanel Then
+               m_tPanels(iPanel).bSpring = bState
+            Else
+               m_tPanels(iPanel).bSpring = False
+            End If
+         Next i
+         pEvaluateIdealSize iPanel
+         pResizeStatus
+      End If
+   End If
+End Property
+Public Property Get PanelSpring(ByVal vKey As Variant) As Boolean
+Dim iPanel As Long
+   iPanel = PanelIndex(vKey)
+   If (iPanel &gt; 0) Then
+      PanelSpring = m_tPanels(iPanel).bSpring
+   End If
+End Property
+Public Property Let PanelFitToContents(ByVal vKey As Variant, ByVal bState As
+ Boolean)
+Dim iPanel As Long
+   iPanel = PanelIndex(vKey)
+   If (iPanel &gt; 0) Then
+      If (m_tPanels(iPanel).bFit &lt;&gt; bState) Then
+         m_tPanels(iPanel).bFit = bState
+         pEvaluateIdealSize iPanel
+         pResizeStatus
+      End If
+   End If
+End Property
+Public Property Get PanelFitToContents(ByVal vKey As Variant) As Boolean
+Dim iPanel As Long
+   iPanel = PanelIndex(vKey)
+   If (iPanel &gt; 0) Then
+      PanelFitToContents = m_tPanels(iPanel).bFit
+   End If
+End Property
+Public Property Get PanelIcon(ByVal vKey As Variant) As Long
+Dim iPanel As Long
+   iPanel = PanelIndex(vKey)
+   If (iPanel &gt; 0) Then
+      PanelIcon = m_tPanels(iPanel).iImgIndex
+   End If
+End Property
+Public Property Get PanelhIcon(ByVal vKey As Variant) As Long
+Dim iPanel As Long
+   iPanel = PanelIndex(vKey)
+   If (iPanel &gt; 0) Then
+      ' Returns a hIcon if any:
+      PanelhIcon = m_tPanels(iPanel).hIcon
+   End If
+End Property
+Public Property Let PanelIcon(ByVal vKey As Variant, ByVal iImgIndex As Long)
+Dim iPanel As Long
+   iPanel = PanelIndex(vKey)
+   If (iPanel &gt; 0) Then
+      If (m_tPanels(iPanel).hIcon &lt;&gt; 0) Then
+         DestroyIcon m_tPanels(iPanel).hIcon
+      End If
+      m_tPanels(iPanel).hIcon = 0
+      m_tPanels(iPanel).iImgIndex = iImgIndex
+      If (iImgIndex &gt; -1) Then
+         ' extract a copy of the icon and add to sbar:
+         m_tPanels(iPanel).hIcon = ImageList_GetIcon(m_hIml, iImgIndex, 0)
+      End If
+      Draw
+   End If
+End Property
+Public Property Let PanelhIcon(ByVal vKey As Variant, ByVal hIcon As Long)
+Dim iPanel As Long
+   iPanel = PanelIndex(vKey)
+   If (iPanel &gt; 0) Then
+      ' Destroy existing hIcon:
+      If (m_tPanels(iPanel).hIcon &lt;&gt; 0) Then
+         DestroyIcon m_tPanels(iPanel).hIcon
+      End If
+      m_tPanels(iPanel).hIcon = hIcon
+      Draw
+   End If
+End Property
+Public Property Let PanelStyle(ByVal vKey As Variant, ByVal eStyle As
+ ENSBRPanelStyleConstants)
+Dim iPanel As Long
+   iPanel = PanelIndex(vKey)
+   If (iPanel &gt; 0) Then
+      iPanel = iPanel - 1
+      m_tPanels(iPanel).eStyle = eStyle
+      Draw
+   End If
+End Property
+Public Property Get PanelStyle(ByVal vKey As Variant) As
+ ENSBRPanelStyleConstants
+Dim iPanel As Long
+   iPanel = PanelIndex(vKey)
+   If (iPanel &gt; 0) Then
+      PanelStyle = m_tPanels(iPanel).eStyle
+   End If
+End Property
+Public Property Get PanelMinWidth(ByVal vKey As Variant) As Long
+Dim iPanel As Long
+   iPanel = PanelIndex(vKey)
+   If (iPanel &gt; 0) Then
+      PanelMinWidth = m_tPanels(iPanel).lMinWidth
+   End If
+End Property
+Public Property Get PanelIdealWidth(ByVal vKey As Variant) As Long
+Dim iPanel As Long
+   iPanel = PanelIndex(vKey)
+   If (iPanel &gt; 0) Then
+      PanelIdealWidth = m_tPanels(iPanel).lIdealWidth
+   End If
+End Property
+Public Property Let PanelIdealWidth(ByVal vKey As Variant, ByVal lWidth As Long)
+Dim iPanel As Long
+   iPanel = PanelIndex(vKey)
+   If (iPanel &gt; 0) Then
+      m_tPanels(iPanel).lIdealWidth = lWidth
+      pResizeStatus
+   End If
+End Property
+Private Sub pEvaluateIdealSize( _
+      ByVal iStartPanel As Long, _
+      Optional ByVal iEndPanel As Long = -1 _
+   )
+Dim i As Long
+Dim tR As RECT
+Dim lhDC As Long
+
+   If (m_iPanelCount &gt; 0) Then
+      If (iEndPanel &lt; iStartPanel) Then
+         iEndPanel = iStartPanel
+      End If
+      lhDC = m_obj.hdc
+      For i = iStartPanel To iEndPanel
+         DrawText lhDC, m_tPanels(i).sText, Len(m_tPanels(i).sText), tR,
+          DT_CALCRECT
+         m_tPanels(i).lIdealWidth = tR.Right - tR.Left + 12
+         If (m_tPanels(i).lIdealWidth &lt; m_tPanels(i).lMinWidth) Then
+            m_tPanels(i).lIdealWidth = m_tPanels(i).lMinWidth
+         End If
+      Next i
+   End If
+End Sub
+Private Sub pResizeStatus()
+Dim tR As RECT
+Dim i As Long
+Dim iSpringIndex As Long
+Dim lpParts() As Long
+   
+   If (m_iPanelCount &gt; 0) Then
+      
+      GetClientRect m_obj.hwnd, tR
+      tR.Left = tR.Left + m_lLeft
+      tR.Top = tR.Top + m_lTop
+      
+      ' Initiallly set to minimum widths:
+      ReDim lpParts(0 To m_iPanelCount - 1) As Long
+      If (m_tPanels(1).bFit) Then
+         lpParts(0) = m_tPanels(1).lIdealWidth
+      Else
+         lpParts(0) = m_tPanels(1).lMinWidth
+      End If
+      If (m_tPanels(1).hIcon) Then
+         lpParts(0) = lpParts(0) + m_lIconSize
+      End If
+      If (m_tPanels(1).bSpring) Then
+         iSpringIndex = 1
+      End If
+      For i = 2 To m_iPanelCount
+         If (m_tPanels(i).bFit) Then
+            lpParts(i - 1) = lpParts(i - 2) + m_tPanels(i).lIdealWidth
+         Else
+            lpParts(i - 1) = lpParts(i - 2) + m_tPanels(i).lMinWidth
+         End If
+         If (m_tPanels(i).bSpring) Then
+            iSpringIndex = i
+         End If
+         If (m_tPanels(i).hIcon &lt;&gt; 0) Then
+            ' Add space for the icon:
+            lpParts(i - 1) = lpParts(i - 1) + m_lIconSize
+         End If
+         If (i = m_iPanelCount) Then
+            lpParts(i - 1) = lpParts(i - 1) + (tR.Bottom - tR.Top) \ 2
+         End If
+      Next i
+      
+      ' Will all bars fit in at maximum size?
+      If (lpParts(m_iPanelCount - 1) &gt; tR.Right) Then
+         ' Draw all panels at min width
+      Else
+         ' Spring the spring panel to fit:
+         If (iSpringIndex = 0) Then
+            iSpringIndex = m_iPanelCount
+         End If
+         lpParts(iSpringIndex - 1) = lpParts(iSpringIndex - 1) + (tR.Right -
+          lpParts(m_iPanelCount - 1))
+         For i = iSpringIndex + 1 To m_iPanelCount
+            If (m_tPanels(i).bFit) Then
+               lpParts(i - 1) = lpParts(i - 2) + m_tPanels(i).lIdealWidth
+            Else
+               lpParts(i - 1) = lpParts(i - 2) + m_tPanels(i).lMinWidth
+            End If
+            If (m_tPanels(i).hIcon &lt;&gt; 0) Then
+               ' Add space for the icon:
+               lpParts(i - 1) = lpParts(i - 1) + m_lIconSize
+            End If
+            If (i = m_iPanelCount) Then
+               lpParts(i - 1) = lpParts(i - 1) + (tR.Bottom - tR.Top) \ 2
+            End If
+         Next i
+      End If
+      
+      m_tPanels(1).lSetWidth = lpParts(0)
+      For i = 2 To m_iPanelCount
+         m_tPanels(i).lSetWidth = lpParts(i - 1) - lpParts(i - 2)
+      Next i
+      
+      ' Set the sizes:
+      For i = 1 To m_iPanelCount
+         With m_tPanels(i).tR
+            If (i = 1) Then
+               .Left = tR.Left
+            Else
+               .Left = lpParts(i - 2)
+            End If
+            If (i = m_iPanelCount) Then
+               .Right = lpParts(i - 1)
+            Else
+               .Right = lpParts(i - 1) - 1
+            End If
+            .Top = tR.Top
+            .Bottom = tR.Bottom
+         End With
+      Next i
+      
+   End If
+   
+End Sub
+
+
+Private Sub Class_Initialize()
+   Dim lMajor As Long
+   Dim lMinor As Long
+   GetWindowsVersion lMajor, lMinor
+   If (lMajor &gt; 5) Then
+      m_bIsXpOrAbove = True
+   ElseIf ((lMajor = 5) And (lMinor &gt;= 1)) Then
+      m_bIsXpOrAbove = True
+   End If
+   If (m_bIsXpOrAbove) Then
+      m_bUseXpStyles = True
+   End If
+End Sub
+
+Private Sub Class_Terminate()
+Dim i As Long
+Dim lR As Long
+   ' Delete any icons owned by the sbar:
+   For i = 1 To m_iPanelCount
+      If (m_tPanels(i).hIcon &lt;&gt; 0) Then
+         lR = DestroyIcon(m_tPanels(i).hIcon)
+         m_tPanels(i).hIcon = 0
+      End If
+   Next i
+End Sub
+</pre><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Utilities</a>&#160;.&#160;<a href="article.html">Visual Basic Project Zip Utility</a>&#160;.&#160;<a href="VBPZip_Source_Code.html">VBPZip Source Code</a>&#160;.&#160;cNoStatusBar.cls</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 12 April 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Utilities/VBPZip/VBPZip_Source_Code_zip_cNoStatusBar_cls.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:20:03 GMT -->
+</html>

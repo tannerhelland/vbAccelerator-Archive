@@ -1,0 +1,309 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Command_Bar/QuickStart_-_Creating_an_IE_Toolbar/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:50:07 GMT -->
+<head>
+
+<title>vbAccelerator - QuickStart - Creating an IE Toolbar</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="
+Describes how to use the vbAccelerator CommandBar
+control by demonstrating how to create a toolbar which looks like the 
+Internet Explorer main toolbar.
+" /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Command Bar</a>&#160;.&#160;QuickStart - Creating an IE Toolbar</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_QuickStart_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 QuickStart Sample</a> (78K)</p><p /><p class="nav"><a href="VB6_QuickStart_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 QuickStart Sample</a> (72K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:13694</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=13694&amp;type=Article&amp;title=QuickStart%20%2D%20Creating%20an%20IE%20Toolbar">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" />﻿<p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />25 Jan 2004<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=13695">vbAccelerator CommandBar Control</a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>QuickStart - Creating an IE Toolbar</h1><img src="quickStart.png" width="640" height="198" alt="QuickStart Toolbar" /><p /><p>
+Describes how to use the vbAccelerator CommandBar
+control by demonstrating how to create a toolbar which looks like the 
+Internet Explorer main toolbar.
+</p><h2>Creating the Toolbar</h2><p>
+The first thing you will need are ImageLists containing
+the icons to display.  There are two image lists associated with each 
+CommandBar control instance: the <span class="code">ToolbarImageList</span>
+and the <span class="code">MenuImageList</span>.  As the names suggest, the
+first is used when rendering toolbars and the second when rendering menus.
+Note that if icons in the menus are the same size as the ones in the toolbar
+then the same image list object can be used for both.
+</p><p>
+You can use any ImageList control including MSCOMCTL.OCX and vbAccelerator
+Image List controls as the image source; 
+however, for the purposes of this sample I've used the 
+<a href="http://www.vbaccelerator.com/article.asp?id=2">ImageList class</a>. Refer to the ImageList
+article for more details on using this object.  Two image lists are created;
+one containing the toolbar images with indexes 0 to 15 and another containing
+two menu images.
+</p><p>
+With the images in place, there are five steps to creating the toolbar:
+</p><ol><li>Creating the controls.</li><li>Creating the toolbar and menu buttons.</li><li>Creating the command bars for the toolbars and menus.</li><li>Assigning the command bars to the controls.</li><li>Responding to events.</li></ol><p>
+These are covered in turn.
+</p><h3>1. Creating the controls</h3><p>
+First, add the vbalCmdBar6.ocx control to your project by choosing Project-Components
+and pick the vbAccelerator VB6 CommandBar control.  You will get two new items
+in your toolbox:
+</p><img src="toolbox.png" width="111" height="129" alt="vbalCmdBar controls in the Toolbox" /><p class="caption">vbAccelerator CommandBar controls.</p><p>
+Draw an instance of the vbalCommandBar control on your form and name it 
+<span class="i">cmdBar</span>.  Now, whenever the command bar
+control needs to show a menu, it will ask your form for a new instance of a command bar
+control to use as the popup menu.  The easiest way to service this request is by making
+all of your command bar controls into a <span class="i">control array</span> in VB.
+Therefore set the <span class="code">Index</span> property of the new control to 0.
+</p><h3>2. Creating the toolbar and menu buttons</h3><p>
+The IE toolbar in this demo consists of 16 buttons, three of which are hidden and
+four of which have drop downs.
+The drop down buttons are the Back, Forward and Mail and Edit buttons.  The Back and Forward
+items are dynamically added as the user navigates whereas the Mail and Edit menus would
+normally contain a configurable list of items read from the registry.  In this case we'll hard-code the Edit and Mail menus to contain a fixed set of items.
+</p><p>
+Adding buttons to the collection of available buttons is accomplished through the 
+<span class="code">Bars</span> property of the control, which exposes an
+<span class="code">Add</span> method.  <span class="code">Add</span> takes
+seven properties, six of can be defaulted, and returns the newly created
+<span class="code">cButton</span> object.
+</p><ul><li><span class="code">sKey</span> - the key for the new button.  This must be
+<span class="i">globally</span> unique in your project.</li><li><span class="code">iIcon</span> - zero based index of the icon to show for
+the button, or -1 if no icon. Optional; the default is no icon.</li><li><span class="code">sCaption</span> - the caption for the button.  Optional;
+the default is no caption.</li><li><span class="code">eStyle</span> - the style for the button.  Optional; defaults
+to a standard push button.</li><li><span class="code">sToolTip</span> - tooltip to display when the mouse hovers
+over the button.  Optional; default is no tooltip.</li><li><span class="code">vShortcutKey</span> - shortcut key for the button.  Optional;
+defaults to no shortcut key.</li><li><span class="code">eShortcutModifier</span> - when using a shortcut key, this
+specifies the shift keys (control, shift, alt) which must be pressed in combination
+with the key.  Optional; defaults to the control key.</li></ul><p>
+Other properties of the buttons, such as whether the caption or drop-down arrow is shown and
+whether the button is visible must be set using the properties of the button.
+Therefore the buttons are added as follows:
+</p><pre>
+Private Sub ConfigureButtons()
+Dim btn As cButton
+   
+   With cmdBar(0).Buttons
+   
+      ' -------------------------------
+      ' Create tool bar buttons:
+      ' -------------------------------
+      Set btn = .Add("BACK", 0, "Back", eSplit, "Back", _
+         vbKeyLeft, vbAltMask)
+      btn.ShowCaptionInToolbar = True
+      btn.Enabled = False
+      Set btn = .Add("FORWARD", 1, "Forward", eSplit, "Forward", _
+         vbKeyRight, vbAltMask)
+      btn.Enabled = False
+      .Add "STOP", 2, "Stop", , "Stop"
+      .Add "REFRESH", 3, "Refresh", , "Refresh"
+      .Add "HOME", 4, "Home", , "Home", vbKeyHome, vbAltMask
+      .Add "SEP1", , , eSeparator
+      
+      Set btn = .Add("SEARCH", 5, "Search", eRadioNullable, , _
+         vbKeyE, vbCtrlMask)
+      btn.ShowCaptionInToolbar = True
+      Set btn = .Add("FAVOURITES", 6, "Favourites", eRadioNullable, , _
+         vbKeyI, vbCtrlMask)
+      btn.ShowCaptionInToolbar = True
+      Set btn = .Add("MEDIA", 11, "Media", eRadioNullable)
+      btn.ShowCaptionInToolbar = True
+      .Add "HISTORY", 12, "History", eRadioNullable
+      .Add "SEP2", , , eSeparator
+      
+      Set btn = .Add("MAIL", 13, "Mail")
+      btn.ShowDropDownInToolbar = True
+      .Add "PRINT", 7, "Print"
+      Set btn = .Add("FONTSIZE", 8, "Text Size")
+      btn.Visible = False
+      .Add "EDIT", 9, "Edit", eSplit
+      Set btn = .Add("TOOLS", 10, "Show Tools", , "Show Tools")
+      btn.Visible = False
+      Set btn = .Add("FULLSCREEN", 14, "Full Screen")
+      btn.Visible = False
+      .Add "DISCUSS", 15, "Discuss", , "Discuss"
+      
+      ' -------------------------------
+      ' Create mail menu buttons
+      ' -------------------------------
+      .Add "MAIL:READ", , "&amp;Read Mail"
+      .Add "MAIL:NEW", , "&amp;New Message..."
+      .Add "MAIL:LINK", , "Send a &amp;Link..."
+      .Add "MAIL:PAGE", , "Send &amp;Page..."
+      .Add "MAIL:SEP1", , , eSeparator
+      .Add "MAIL:NEWS", , "Read Ne&amp;ws"
+      
+      ' -------------------------------
+      ' Create edit menu buttons
+      ' -------------------------------
+      .Add "EDIT:NOTEPAD", 0, "Edit with &amp;Notepad"
+      .Add "EDIT:WORDPAD", 1, "Edit with &amp;Wordpad"
+            
+   End With
+   
+End Sub
+</pre><h3>3. Creating the command bars for the toolbars and menus.</h3><p>
+In this sample there will be five command bars: one for the toolbar itself, and
+one for each of the popup menus.  Creating these is usually a two-step process:
+first create the bars and assign the buttons; then assign any drop-down bars to 
+the buttons they should drop down from.  New command bars are created through the
+control's <span class="code">CommandBars</span> collection.  The <span class="code">Add</span>
+method takes the Key (which again must be globally unique) and optional title of 
+the command bar and returns the newly created instance.  The <span class="code">Buttons</span>
+collection of the returned object can then be used to assign the buttons:
+</p><pre>
+Private Sub ConfigureBars()
+
+Dim barStandard As cCommandBar
+Dim barBack As cCommandBar
+Dim barNext As cCommandBar
+Dim barMail As cCommandBar
+Dim barEdit As cCommandBar
+Dim barButtons As cCommandBarButtons
+
+   With cmdBar(0).CommandBars
+      ' Create the standard buttons bar:
+      Set barStandard = .Add("STANDARD", "Standard Buttons")
+      
+      ' Create bars for the back and next
+      Set barBack = .Add("BACK", "Back")
+      Set barNext = .Add("NEXT", "Next")
+      
+      ' Create the edit bar:
+      Set barEdit = .Add("EDIT")
+      ' Create the mail bar:
+      Set barMail = .Add("MAIL")
+      
+   End With
+   
+   ' Assign the buttons
+   Set barButtons = barStandard.Buttons
+   With cmdBar(0).Buttons
+      barButtons.Add .Item("BACK")
+      barButtons.Add .Item("FORWARD")
+      barButtons.Add .Item("STOP")
+      barButtons.Add .Item("REFRESH")
+      barButtons.Add .Item("HOME")
+      barButtons.Add .Item("SEP1")
+      barButtons.Add .Item("SEARCH")
+      barButtons.Add .Item("FAVOURITES")
+      barButtons.Add .Item("MEDIA")
+      barButtons.Add .Item("HISTORY")
+      barButtons.Add .Item("SEP2")
+      barButtons.Add .Item("MAIL")
+      barButtons.Add .Item("PRINT")
+      barButtons.Add .Item("EDIT")
+      barButtons.Add .Item("TOOLS")
+      barButtons.Add .Item("FULLSCREEN")
+      barButtons.Add .Item("DISCUSS")
+   End With
+   
+   Set barButtons = barMail.Buttons
+   With cmdBar(0).Buttons
+      barButtons.Add .Item("MAIL:READ")
+      barButtons.Add .Item("MAIL:NEW")
+      barButtons.Add .Item("MAIL:LINK")
+      barButtons.Add .Item("MAIL:PAGE")
+      barButtons.Add .Item("MAIL:SEP1")
+      barButtons.Add .Item("MAIL:NEWS")
+   End With
+   
+   Set barButtons = barEdit.Buttons
+   With cmdBar(0).Buttons
+      barButtons.Add .Item("EDIT:NOTEPAD")
+      barButtons.Add .Item("EDIT:WORDPAD")
+   End With
+   
+      ' Assign the drop-downs to their buttons:
+   With cmdBar(0).Buttons
+      .Item("BACK").bar = barBack
+      .Item("FORWARD").bar = barNext
+      .Item("MAIL").bar = barMail
+      .Item("EDIT").bar = barEdit
+   End With
+
+End Sub
+</pre><h3>4. Assigning the command bars to the controls.</h3><p>
+Now the command bars have all been configured, we just need to connect
+the control to the CommandBar that should be displayed.  This is done
+using the <span class="code">Toolbar</span> property.  The Image Lists
+can be configured here too:
+</p><pre>
+   cmdBar(0).ToolbarImageList = m_ilsTools.hIml
+   cmdBar(0).MenuImageList = m_ilsMenu.hIml
+   cmdBar(0).Toolbar = cmdBar(0).CommandBars("STANDARD")
+</pre><h3>5. Responding to events.</h3><p>
+As noted before, the Command Bar control displays menus in new instances of
+itself, and it calls back to your form in order to obtain the new instance.
+Therefore the most important event to respond to is the 
+<span class="code">RequestNewInstance</span> event.  When responding to this,
+you simply load a new instance of the control.  The only thing to watch is
+to ensure that the returned instance does not have a specific alignment set:
+</p><pre>
+Private Sub cmdBar_RequestNewInstance(Index As Integer, ctl As Object)
+ 
+   ' Load new instance:
+   Dim i As Long
+   i = cmdBar.UBound + 1
+   Load cmdBar(i)
+
+   ' Important: Align must be 0:
+   cmdBar(i).Align = 0
+   Set ctl = cmdBar(i)
+
+End Sub
+</pre><p>
+You can now respond to click events from the buttons and menu items.  Since the 
+controls are in a control array, all events are directed through the same
+event handler, regardless of whether they originate from a button or a menu:
+</p><pre>
+Private Sub cmdBar_ButtonClick(Index As Integer, btn As cButton)
+   '
+   Debug.Print "Clicked button : " &amp; btn.Key &amp; ", (" &amp; btn.Caption &amp; ")"
+   Debug.Print "       checked : " &amp; btn.Checked
+   '
+End Sub
+</pre><h2>Conclusion</h2><p>
+This article has provided a quick walkthrough of setting up a simple
+CommandBar control which has the same structure as the Standard toolbar
+in Internet Explorer.  Following the pattern described in the article, 
+you should find using the CommandBar control in your own application straightforward.
+</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Controls</a>&#160;.&#160;<a href="../index.html">Command Bar</a>&#160;.&#160;QuickStart - Creating an IE Toolbar</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2004 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 1 February 2004</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Controls/Command_Bar/QuickStart_-_Creating_an_IE_Toolbar/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:50:08 GMT -->
+</html>

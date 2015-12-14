@@ -1,0 +1,169 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Clipboard/Clipboard_Ring_Sample/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:12 GMT -->
+<head>
+
+<title>vbAccelerator - Clipboard Ring Sample</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This sample uses the cClipboardViewer class to hook into
+clipboard change notifications, and then displays them in a pinnable ListBar in a similar manner
+to the Clipboard Ring functionality provided in Visual Studio." /><link rel="stylesheet" href="../../../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Clipboard</a>&#160;.&#160;Clipboard Ring Sample</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../../../res/download.png" width="125" height="21" alt="Downloads" /><p class="nav"><a href="VB5_Clipboard_Ring_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB5 Clipboard Ring Sample</a> (55K)</p><p /><p class="nav"><a href="VB6_Clipboard_Ring_Sample.html"><img src="../../../../../res/get.png" width="8" height="8" alt="Download Page" />VB6 Clipboard Ring Sample</a> (52K)</p><br /><br /><img src="../../../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:3772</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=3772&amp;type=Article&amp;title=Clipboard%20Ring%20Sample">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../../../res/update.png" width="8" height="8" alt="Update" />12 Feb 2003<br />First Posted</p><br /><br /><img src="../../../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3771">vbAccelerator Visual Studio Style ToolBox ListBar</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing Without The Crashes</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2767">vbAccelerator Visual Studio Style Tab Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=2310">vbAccelerator MDITabs Control</a></p><p class="nav"><img src="../../../../../res/rel.png" width="8" height="8" alt="Related Item" /><a href="http://www.vbaccelerator.com/article.asp?id=3619">Customising Clipboard Use </a></p><br /><br /><img src="../../../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Clipboard Ring Sample</h1><p class="splash">Demonstrates how to build a pinnable Visual Studio style clipboard ring using clipboard notifications and vbAccelerator controls</p><img src="clipRing.png" width="423" height="257" alt="Clipboard Ring Sample" /><p /><p>This sample uses the <a href="http://www.vbaccelerator.com/article.asp?id=3619">cClipboardViewer</a> class to hook into
+clipboard change notifications, and then displays them in a pinnable ListBar in a similar manner
+to the Clipboard Ring functionality provided in Visual Studio.</p><h2>To Run This Sample</h2><p>You need a number of vbAccelerator controls to run this sample (although I recommend downloading them anyway
+because they're kinda cool):</p><ul><li><a href="http://www.vbaccelerator.com/article.asp?id=3771">Visual Studio Style ToolBox ListBar Control</a></li><li><a href="http://www.vbaccelerator.com/article.asp?id=2767">Visual Studio Style Tab Control</a></li><li><a href="http://www.vbaccelerator.com/article.asp?id=2310">MDITabs Control</a></li><li><a href="http://www.vbaccelerator.com/article.asp?id=17">Subclassing and Timer Assistant</a></li></ul><p>Once you have these, you're ready to begin.  Run the demonstration.  Each time you copy something to
+the clipboard (from any application on the system), if it contains Text it will be added to the 
+Clipboard Ring bar within the Tools tab.  The sample limits the number of items to a maximum of 100 entries,
+after which it starts deleting the earliest ones; however you can change this limit to anything you want.
+To add an entry from the clipboard ring bar then either drag it onto the document or double-click/press return
+in the toolbox itself.</p><h2>Brief Description</h2><p>If you look at the main MDI form in the control, you'll see that it contains two controls: a Tab Control 
+and a ToolBox ListBar control within the tab control.</p><p>The tab control is docked left with the <i>Pinnable</i> property set to True and <i>Pinned</i> set to False 
+- this makes the tab display as a vertical bar which slides out its contents when the mouse moves over it.  Since
+there is only going to be one item in the tab (the ToolBox) the <i>ShowTabs</i> property is set to False.  This
+means that if the control is pinned by the user, it will not display tabs at the bottom.</p><p>The toolbox control is added as a child of the Tab Control at runtime.  In this sample, the user isn't
+allowed to close the toolbox so the <i>CanClose</i> property of the tab is set to false:</p><pre>
+   Dim tabX As cTab
+   ' Set Image List:
+   tabTools.ImageList = ilsIcons
+
+   ' Don't show tabs when pinned:
+   tabTools.ShowTabs = False
+
+   ' Add the tab to hold the toolbox:
+   Set tabX = tabTools.Tabs.Add( _
+       "TOOLS", , _
+       "Tools", _
+       ilsIcons.ListImages("TOOLBOX").Index - 1)
+
+   ' Make the tab contain the toolbox:
+   tabX.Panel = tbxClipboard
+
+   ' Don't allow the user to close it:
+   tabX.CanClose = False
+</pre><p>That's all you need to set up the tab control.  The ToolBox control is initialised with a single bar
+and initially just one item (the "Pointer" item which represents no selection):</p><pre>
+   ' Set Image List:
+   tbxClipboard.ImageList = ilsIcons
+
+   ' Add the Clipboard Ring Bar:
+   Dim tbr As cToolBoxBar
+   Set tbr = tbxClipboard.Bars.Add("CLIPBOARD", , "Clipboard Ring")
+
+   ' Add the Pointer to the bar:
+   Dim itmX As cToolItem
+   Set itmX = tbr.Items.Add( _
+       "C" &amp; m_lId, , _
+       "Pointer", _
+       ilsIcons.ListImages("POINTER").Index - 1)
+
+   ' Don't let the user drag this item:
+   itmX.CanDrag = False
+</pre><p>Finally, the sample checks for clipboard change notifications, and whenever
+it receives one through the <i>ClipboardChanged</i> event adds it to the toolbox:</p><pre>
+Private WithEvents m_cClipView As cClipboardViewer
+
+..
+
+Private Sub MDIForm_Load()
+
+   ...
+
+   Set m_cClipView = New cClipboardViewer
+   m_cClipView.InitClipboardChangeNotification _
+      Me.hwnd
+
+End Sub
+
+
+Private Sub m_cClipView_ClipboardChanged()
+ 
+  ' If the clipboard contains text:
+   If (Clipboard.GetFormat(vbCFText)) Then
+ 
+      ' Generate a new key:
+      m_lId = m_lId + 1
+
+      ' Add the item with this key:
+      Dim itmX As cToolItem
+      Set itmX = tbxClipboard.Bars(1).Items.Add( _
+          "C" &amp; m_lId, , _
+          Clipboard.GetText, _
+          ilsIcons.ListImages("TEXT").Index - 1)
+
+      ' Limit to 100 entries;  if more, then remove the
+      ' earliest one:
+      If (tbxClipboard.Bars(1).Items.Count &gt; 101) Then
+         ' limit to 100 entries:
+         tbxClipboard.Bars(1).Items.Remove "C" &amp; m_lId - 100
+      End If
+
+      ' Select the new item (optional):
+      itmX.Selected = True
+
+   End If
+End Sub
+</pre><h2>Enhancing It</h2><p>This sample is simple enough, but hopefully it demonstrates how easy it is to add powerful tool box 
+functionality to your application.  Here are some ideas about further enhancements:</p><ul><li><strong>Add HTML Support</strong><br />
+You could easily add HTML fragments by reading the HTML custom 
+clipboard format using the provided <i>cCustomClipboard</i> class. To see how to do it, run the 
+<a href="http://www.vbaccelerator.com/article.asp?id=3619">Simple Clipboard Viewer</a> and copying from IE.  You'll see that
+there is custom format called "HTML Format" which contains the copied HTML.  The HTML
+is copied in context, with all required surrounding tags (such as body, styles, javascript etc);
+the actual copied fragment is surrounded by &lt;!--StartFragment--&gt; and &lt;!--EndFragment--&gt;
+comments.</li><li><strong>Add an Entity Toolbox</strong><br />
+You could add a new bar with a list of HTML entities.  The user could then drag or double-click these 
+into the text box.</li><li><strong>Add a HTML Tag Toolbar</strong><br />
+A bar could contain the HTML tags, such as &lt;table&gt;, &lt;img&gt; and so on.  When an item is 
+dropped on the editor, you can show a context sensitive dialog to ask the user to configure the tag
+or its attributes.</li><li><strong>Favourites</strong><br />
+Users could maintain a list of useful snippets in their own custom bars.  Its easy to add bars and items
+to the ToolBox control at runtime; and its easy to enumerate through the contents and persist them to
+a user's XML file.</li></ul><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../../../index.html">VB</a>&#160;.&#160;<a href="../../../index.html">Code</a>&#160;.&#160;<a href="../../index.html">Libraries</a>&#160;.&#160;<a href="../index.html">Clipboard</a>&#160;.&#160;Clipboard Ring Sample</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 29 March 2003</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Code/Libraries/Clipboard/Clipboard_Ring_Sample/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 20:47:13 GMT -->
+</html>

@@ -1,0 +1,235 @@
+﻿<html lang="en" >
+
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Replace_One_Colour_With_Another_in_a_Picture/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:12 GMT -->
+<head>
+
+<title>vbAccelerator - Replace one Colour with another in a Picture using BitBlt</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="AUTHOR" content="Steve McMahon" /><meta name="KEYWORDS" content=".NET, .NET Framework, C#, CSharp, VB, Visual Basic, VB5, VB6, Visual Basic, Active X, Controls, Components" /><meta name="DESCRIPTION" content="This tip shows you how to replace one colour with another in a bitmap. This method uses BitBlt to ensure the operation is as speedy as possible, and will run very quickly." /><link rel="stylesheet" href="../../../res/screen.css" media="SCREEN" /><link rel="stylesheet" href="../../../res/print.css" media="PRINT" /></head><body>
+<table>
+<tr class="adbar" bgcolor="#83726a"><tr class="footer"><td></td>
+<td>
+<p class="center">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4690375644913255";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</p>
+</td>
+<td></td>
+</tr></tr><tr class="navbar"><td><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Replace one Colour with another in a Picture using BitBlt</p></td><td></td></tr><tr class="navbar"><td colspan="3"><hr /></td></tr><tr valign="top"><td class="sidebar"><img src="../../../res/information.png" width="125" height="21" alt="Information" /><p class="nav">Article:1387</p><p class="nav">&#160;&#160;<a href="http://www.vbaccelerator.com/linkto.asp?id=1387&amp;type=Article&amp;title=Replace%20one%20Colour%20with%20another%20in%20a%20Picture%20using%20BitBlt">Link to this page</a></p><p class="nav">Applies To:</p><p class="nav">&#160;&#160;VB5</p><p class="nav">&#160;&#160;VB6</p><p class="nav">Author:</p><p class="nav">&#160;&#160;<a href="mailto:steve@vbaccelerator.com">Steve McMahon</a></p><br /><br /><img src="../../../res/bugTrak.png" width="125" height="21" alt="BugTrak System" /><p class="nav">No logged bugs.</p><br /><br /><img src="../../../res/updates.png" width="125" height="21" alt="Updates" /><p class="nav"><img src="../../../res/update.png" width="8" height="8" alt="Update" />9 Aug 1998<br />First Posted</p><br /><br /><img src="../../../res/related.png" width="125" height="21" alt="Related Items" />﻿<br /><br /><img src="../../../res/search.png" width="125" height="21" alt="Search" />
+<!-- Search Google -->
+<form method="GET" action="http://www.google.com/custom">
+<a href="http://www.google.com/search"><img src="../../../../../www.google.com/logos/Logo_40wht.gif" alt="Google" /></A><br />
+<input type="text" name="q" size="31" maxlength="255" value="" class="search" /><br />
+<input type="submit" name="sa" value="Search Google" class="search" />
+<input type="hidden" name="cof" value="T:black;LW:330;ALC:990000;L:http://www.vbaccelerator.com/images/accl9.gif;LC:660000;LH:66;BGC:white;AH:left;VLC:999966;S:http://vbaccelerator.com/;GALT:999966;AWFID:67c7759ff27e5395;" />
+<input type="hidden" name="domains" value="vbaccelerator.com" /><br />
+<p class="nav"><input type="radio" name="sitesearch" value="" />Search WWW<br /></p>
+<p class="nav"><input type="radio" name="sitesearch" value="vbaccelerator.com" checked="true" />vbAccelerator<br /></p>
+</FORM>
+<!-- Search Google -->
+<br /><br />
+
+<a href="http://www.vbaccelerator.com/home/The_Site/NewSite/article.asp"><img src="../../../res/newsite.png" width="125" height="129" alt="The New Site" /></a>
+<br /><br />
+</td><td width="100%" valign="top"><h1>Replace one Colour with another in a Picture using BitBlt</h1><p /><p>This tip shows you how to replace one colour with another in a bitmap. This method uses <i>BitBlt</i> to ensure the operation is as speedy as possible, and will run very quickly.</p><p>Start a new project in VB. Add a new module, then add the following code to it:</p><pre>
+Option Explicit 
+
+Private Type RECT 
+    left As Long 
+    Top As Long 
+    Right As Long 
+    Bottom As Long 
+End Type 
+' Creates a memory DC 
+Private Declare Function CreateCompatibleDC Lib "gdi32" ( _ 
+    ByVal hDC As Long _ 
+    ) As Long 
+' Creates a bitmap in memory: 
+Private Declare Function CreateCompatibleBitmap Lib "gdi32" ( _ 
+    ByVal hDC As Long, _ 
+    ByVal nWidth As Long, ByVal nHeight As Long _ 
+    ) As Long 
+' Places a GDI Object into DC, returning the previous one: 
+Private Declare Function SelectObject Lib "gdi32" _ 
+    (ByVal hDC As Long, ByVal hObject As Long _ 
+    ) As Long 
+' Deletes a GDI Object: 
+Private Declare Function DeleteObject Lib "gdi32" _ 
+    (ByVal hObject As Long _ 
+    ) As Long 
+' Copies Bitmaps from one DC to another, can also perform 
+' raster operations during the transfer: 
+Private Declare Function BitBlt Lib "gdi32" ( _ 
+    ByVal hDestDC As Long, _ 
+    ByVal x As Long, ByVal y As Long, _ 
+    ByVal nWidth As Long, ByVal nHeight As Long, _ 
+    ByVal hSrcDC As Long, _ 
+    ByVal xSrc As Long, ByVal ySrc As Long, _ 
+    ByVal dwRop As Long _ 
+    ) As Long 
+Private Const SRCCOPY = &amp;HCC0020 
+Private Const SRCAND = &amp;H8800C6 
+Private Const SRCPAINT = &amp;HEE0086 
+Private Const SRCINVERT = &amp;H660046 
+
+' Sets the backcolour of a device context: 
+Private Declare Function SetBkColor Lib "gdi32" ( _
+    ByVal hDC As Long, ByVal crColor As Long _
+    ) As Long 
+' Create a brush of a given colour: 
+Declare Function CreateSolidBrush Lib "gdi32" ( _ 
+    ByVal crColor As Long _ 
+    ) As Long 
+' Fills a RECT in a DC with a specified brush 
+Declare Function FillRect Lib "user32" ( _ 
+    ByVal hDC As Long, _ 
+    lpRect As RECT, _ 
+    ByVal hBrush As Long _ 
+    ) As Long 
+
+Public Sub ReplaceColor( _ 
+        ByRef picThis As PictureBox, _ 
+        ByVal lFromColour As Long, _ 
+        ByVal lToColor As Long _ 
+    ) 
+Dim lW As Long 
+Dim lH As Long 
+Dim lMaskDC As Long, lMaskBMP As Long, lMaskBMPOLd As Long 
+Dim lCopyDC As Long, lCopyBMP As Long, lCopyBMPOLd As Long 
+Dim tR As RECT 
+Dim hBr As Long 
+    
+    ' Cache the width &amp; height of the picture: 
+    lW = picThis.ScaleWidth \ Screen.TwipsPerPixelX 
+    lH = picThis.ScaleHeight \ Screen.TwipsPerPixelY 
+
+    ' Create a Mono DC &amp; Bitmap 
+    If (CreateDC(picThis, lW, lH, lMaskDC, lMaskBMP, lMaskBMPOLd, True)) Then 
+        ' Create a DC &amp; Bitmap with the same colour depth 
+        ' as the picture: 
+        If (CreateDC(picThis, lW, lH, lCopyDC, lCopyBMP, lCopyBMPOLd)) Then 
+            ' Make a mask from the picture which is white in the 
+            ' replace colour area: 
+            SetBkColor picThis.hDC, lFromColour 
+            BitBlt lMaskDC, 0, 0, lW, lH, picThis.hDC, 0, 0, SRCCOPY 
+                        
+            ' Fill the colour DC with the colour we want to replace with 
+            tR.Right = lW: tR.Bottom = lH 
+            hBr = CreateSolidBrush(lToColor) 
+            FillRect lCopyDC, tR, hBr 
+            DeleteObject hBr 
+            ' Turn the colour DC black except where the mask is white: 
+            BitBlt lCopyDC, 0, 0, lW, lH, lMaskDC, 0, 0, SRCAND 
+            
+            ' Create an inverted mask, so it is black where the 
+            ' colour is to be replaced but white otherwise: 
+            hBr = CreateSolidBrush(&amp;HFFFFFF) 
+            FillRect lMaskDC, tR, hBr 
+            DeleteObject hBr 
+            BitBlt lMaskDC, 0, 0, lW, lH, picThis.hDC, 0, 0, SRCINVERT 
+
+            ' AND the inverted mask with the picture. The picture 
+            ' goes black where the colour is to be replaced, but is 
+            ' unaffected otherwise. 
+            SetBkColor picThis.hDC, &amp;HFFFFFF 
+            BitBlt picThis.hDC, 0, 0, lW, lH, lMaskDC, 0, 0, SRCAND 
+                        
+            ' Finally, OR the coloured item with the picture. Where 
+            ' the picture is black and the coloured DC isn't, 
+            ' the colour will be transferred: 
+            BitBlt picThis.hDC, 0, 0, lW, lH, lCopyDC, 0, 0, SRCPAINT 
+            picThis.Refresh 
+            
+            ' Clear up the colour DC: 
+            SelectObject lCopyDC, lCopyBMPOLd 
+            DeleteObject lCopyBMP 
+            DeleteObject lCopyDC 
+            
+        End If 
+        
+        ' Clear up the mask DC: 
+        SelectObject lMaskDC, lMaskBMPOLd 
+        DeleteObject lMaskBMP 
+        DeleteObject lMaskDC 
+    End If 
+End Sub 
+
+Public Function CreateDC( _ 
+        ByRef picThis As PictureBox, _ 
+        ByVal lW As Long, ByVal lH As Long, _ 
+        ByRef lhDC As Long, ByRef lhBmp As Long, ByRef lhBmpOld As Long, _ 
+        Optional ByVal bMono As Boolean = False _ 
+    ) As Boolean 
+    
+    If (bMono) Then 
+        lhDC = CreateCompatibleDC(0) 
+    Else 
+        lhDC = CreateCompatibleDC(picThis.hDC) 
+    End If 
+    If (lhDC &lt;&gt; 0) Then 
+        If (bMono) Then 
+            lhBmp = CreateCompatibleBitmap(lhDC, lW, lH) 
+        Else 
+            lhBmp = CreateCompatibleBitmap(picThis.hDC, lW, lH) 
+        End If 
+        If (lhBmp &lt;&gt; 0) Then 
+            lhBmpOld = SelectObject(lhDC, lhBmp) 
+            CreateDC = True 
+        Else 
+            DeleteObject lhDC 
+            lhDC = 0 
+        End If 
+    End If 
+    
+End Function 
+</pre><p>To test out the function, add a Command button and a Picture Boxes to the project's form. Set the <i>Autoredraw</i> property on the Picture box to True. Then paste the code below into the form:</p><pre>
+Private Sub Command1_Click() 
+Static i As Integer 
+    ReplaceColor Picture1, QBColor(i), &amp;HFFFF&amp; 
+    i = i + 1 
+    If (i &gt; 15) Then 
+        MsgBox "All colours replaced." 
+    End If 
+End Sub 
+
+Private Sub Form_Load() 
+Dim i As Long 
+Dim x As Long, y As Long, w As Long, h As Long 
+    ' Draw something in the from picture box. 
+    ' Alternatively, you could load a picture 
+    ' into it and set the BackColor to the 
+    ' colour you want to make transparent. 
+    Picture1.BackColor = &amp;HFFFF00 
+    For i = 1 To 200 
+        x = Rnd * Picture1.ScaleWidth: y = Rnd * Picture1.ScaleHeight 
+        w = Rnd * Picture1.ScaleWidth: h = Rnd * Picture1.ScaleHeight 
+        Picture1.Line (x, y)-(x + w, y + h), QBColor(Rnd * 15), BF 
+        Picture1.CurrentX = x: Picture1.CurrentY = y 
+        Picture1.Print "vbAccelerator Mask Demo" 
+    Next i 
+End Sub 
+</pre><p>During <i>Form_Load</i>, a random pattern of multi coloured squares and text is added. 
+When you click the button, one of the colours will be replaced using the <i>BitBlt</i> method.</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p><p>&#160;</p></td><td class="rightbar" valign="top" bgcolor="#C2BEB1">
+<!-- No right bar content currently defined -->
+</td></tr><tr class="footer"><td></td>
+<td>
+<p class="center"></p>
+</td>
+<td></td>
+</tr><tr><td colspan="3"><hr /></td></tr><tr class="footer"><td valign="top"><a href="http://www.vbaccelerator.com/home/index.asp"><img width="125" height="25" src="../../../res/vbaccelerator.png" alt="vbAccelerator Logo" /></a></td><td valign="bottom"><p class="nav"><a href="http://www.vbaccelerator.com/home/index.asp">Home</a>&#160;.&#160;<a href="../../index.html">VB</a>&#160;.&#160;<a href="../index.html">Tips</a>&#160;.&#160;Replace one Colour with another in a Picture using BitBlt</p><br /><p class="nav"><a href="http://www.vbaccelerator.com/home/The_Site/Copyright/article.asp">Copyright</a> &#169; 1998-2003 Steve McMahon <a href="mailto:steve@vbaccelerator.com">steve@vbaccelerator.com</a>.  All rights reserved.<br />Last Updated: 28 November 2002</p></td><td></td></tr></table>
+</body>
+<!-- Mirrored from www.vbaccelerator.com/home/VB/Tips/Replace_One_Colour_With_Another_in_a_Picture/article.asp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2015 21:19:12 GMT -->
+</html>
